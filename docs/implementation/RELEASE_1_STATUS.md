@@ -13,7 +13,7 @@
 | 2 | Categorías, creación y fotos | Implementado; QA pendiente | `docs/design/verification/create-event-r1/README.md` | Flujo real navegador + Storage |
 | 3 | Mapa, descubrimiento y detalle | Implementado; QA pendiente | `docs/design/verification/map-detail-r1/README.md` | Sesión real, tiles OSM y dispositivo |
 | 4 | Inscripciones, retiro y cupos | Implementado; QA pendiente | `docs/design/verification/participations-r1/README.md` | Auth/REST real y QA humana; migración aplicada |
-| 5 | Mis eventos | Pendiente | — | Consultas, pantalla real, actualización |
+| 5 | Mis eventos | Implementado; QA pendiente | `docs/design/verification/my-events-r1/README.md` | RPC aplicada/verificada; Auth/REST real y revisión humana pendientes |
 | 6 | QA integral y cierre R1 | Pendiente | — | Evidencia para los 28 CA, PWA, RLS |
 
 ## Protocolo de actualización por bloque
@@ -37,11 +37,13 @@
 - Riesgos/pendientes: dos sesiones reales Auth/REST, revisión humana y teléfono físico. Prueba SQL remota no equivale a login real. Bloque 5 permanece pendiente.
 
 ### Bloque 5
-- Estado: Pendiente.
-- PR:
-- Pruebas ejecutadas:
-- Criterios confirmados:
-- Riesgos/pendientes:
+- Estado: Implementado; QA pendiente.
+- PR: [#4](https://github.com/EnzoG14/PlanIt/pull/4), draft; rama exclusiva `codex/block-5-my-events`, basada en `main` con Bloque 4 integrado (`696348c`).
+- Migración: `20261010154930_my_events_read.sql`, **aplicada por el usuario en planit-v2 y verificada el 10/10/2026**. Siete migraciones sincronizadas, dry-run sin pendientes. RPC de lectura SECURITY INVOKER, auth.uid(), paginación y proyección mínima; sin cambios en tablas/RLS.
+- Pruebas ejecutadas: build/lint; replay PostgreSQL 17.5 local con tres identidades SQL, historial/media/RLS/paginación; Edge con dos cuentas fixture a 375×812 y 1280×900. Regresiones SQL/UI de participaciones y discovery, incluidas diez carreras reales de último cupo. [Evidencia, capturas y matriz CA](../design/verification/my-events-r1/README.md).
+- Criterios confirmados: cobertura local de RF-R1-07.CA-01..04 según plan versionado; **ninguno marcado Validado**. Separación, detalle, actualización y vacíos/privacidad cubiertos por SQL y fixtures.
+- Verificación remota: cuerpo de RPC coincide con SQL versionado; grants/search_path/RLS comprobados. Transacción READ ONLY con dos identidades SQL pasó Organizo/Participo contra consultas propias, parámetros inválidos y rechazo de anon/sin identidad, sin crear datos. [Resultados](../design/verification/my-events-r1/remote-results.json). Advisors de seguridad conservan tres avisos intencionales de RPC SECURITY DEFINER del Bloque 4 y aviso previo de protección de contraseñas filtradas desactivada; sin aviso de get_my_events.
+- Riesgos/pendientes: dos sesiones Auth/REST reales, Storage HTTP real, QA humana y teléfono físico. Roles SQL/fixtures no equivalen a sesiones reales; no se añadieron casos históricos remotos de prueba. Bloque 6 sin iniciar.
 
 ### Bloque 6
 - Estado: Pendiente.

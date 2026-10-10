@@ -15,6 +15,7 @@ export function EventDetailPage() {
 
 function EventDetailContent({ id }: { id: string }) {
   const location = useLocation()
+  const myEventsReturnTo = location.state?.myEventsReturnTo === '/my-events?section=organizing' || location.state?.myEventsReturnTo === '/my-events?section=participating' ? location.state.myEventsReturnTo : '/my-events'
   const { session } = useAuth()
   const [category, setCategory] = useState('Categoría no disponible')
   const [event, setEvent] = useState<EventRecord | null>(null)
@@ -51,6 +52,6 @@ function EventDetailContent({ id }: { id: string }) {
     <p className="event-description">{event.description}</p>
     <p className="field-hint">Horarios de Argentina.</p>
     <EventParticipation key={`${id}:${session?.user.id}`} eventId={id} />
-    <Link className="secondary-link" to="/my-events">Ir a Mis eventos</Link>
+    <Link className="secondary-link" to={myEventsReturnTo}>Ir a Mis eventos</Link>
   </div>
 }

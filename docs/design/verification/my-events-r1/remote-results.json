@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-10",
+  "project": "planit-v2",
+  "projectRef": "iepeqmvzjguwlhnecsdq",
+  "appliedBy": "User; verified read-only by Codex",
+  "migrations": [
+    {
+      "version": "20261010011204",
+      "name": "create_profiles_and_categories"
+    },
+    {
+      "version": "20261010013449",
+      "name": "create_profiles_and_categories"
+    },
+    {
+      "version": "20261010023448",
+      "name": "restrict_rls_auto_enable_execute"
+    },
+    {
+      "version": "20261010042701",
+      "name": "create_events_and_event_media"
+    },
+    {
+      "version": "20261010052653",
+      "name": "public_event_discovery"
+    },
+    {
+      "version": "20261010150232",
+      "name": "event_participations"
+    },
+    {
+      "version": "20261010154930",
+      "name": "my_events_read"
+    }
+  ],
+  "cli": {
+    "migrationList": "PASS: seven local/remote versions synchronized",
+    "dryRun": {
+      "upToDate": true,
+      "pendingMigrations": [],
+      "skipVault": true
+    }
+  },
+  "rls": [
+    {
+      "table": "categories",
+      "enabled": true
+    },
+    {
+      "table": "event_images",
+      "enabled": true
+    },
+    {
+      "table": "event_participations",
+      "enabled": true
+    },
+    {
+      "table": "events",
+      "enabled": true
+    },
+    {
+      "table": "files",
+      "enabled": true
+    }
+  ],
+  "rpc": {
+    "name": "get_my_events",
+    "config": [
+      "search_path=\"\""
+    ],
+    "result": "TABLE(id uuid, title text, starts_at timestamp without time zone, ends_at timestamp without time zone, location_name text, address text, category_name text, event_state text, participation_status text, image_path text)",
+    "arguments": "p_section text, p_offset integer DEFAULT 0",
+    "volatility": "s",
+    "anon_execute": false,
+    "public_execute": false,
+    "security_definer": false,
+    "authenticated_execute": true
+  },
+  "normalizedBodyMd5": "4ebc2576cb6a7f0efbd00d6e66d7599a",
+  "localBodyMatches": true,
+  "readOnlyRpcTest": {
+    "result": "PASS",
+    "existing_sql_identities_tested": 2,
+    "organizing_and_participating_match_own_rls_queries": true,
+    "invalid_parameters_missing_identity_and_anon_rejected": true,
+    "environment": "READ ONLY transaction; SQL role/JWT context only, no Auth login or HTTP test; no persistent data changes"
+  },
+  "securityAdvisors": [
+    {
+      "name": "authenticated_security_definer_function_executable",
+      "title": "Signed-In Users Can Execute SECURITY DEFINER Function",
+      "level": "WARN",
+      "facing": "EXTERNAL",
+      "categories": [
+        "SECURITY"
+      ],
+      "description": "Detects `SECURITY DEFINER` functions that are callable by signed-in users. Revoke `EXECUTE`, switch the function to `SECURITY INVOKER`, or move it out of your exposed API schema if signed-in users should not call it.",
+      "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable",
+      "count": 3,
+      "findings": [
+        {
+          "detail": "Function `public.get_event_participation_summary(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_event_participation_summary`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "get_event_participation_summary",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "p_event_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-10T16:24:33.682Z"
+        },
+        {
+          "detail": "Function `public.leave_event(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/leave_event`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "leave_event",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "p_event_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-10T16:24:33.682Z"
+        },
+        {
+          "detail": "Function `public.register_for_event(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/register_for_event`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "register_for_event",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "p_event_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-10T16:24:33.682Z"
+        }
+      ]
+    },
+    {
+      "name": "auth_leaked_password_protection",
+      "title": "Leaked Password Protection Disabled",
+      "level": "WARN",
+      "facing": "EXTERNAL",
+      "categories": [
+        "SECURITY"
+      ],
+      "description": "Leaked password protection is currently disabled.",
+      "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection",
+      "count": 1,
+      "findings": [
+        {
+          "detail": "Supabase Auth prevents the use of compromised passwords by checking against HaveIBeenPwned.org. Enable this feature to enhance security.",
+          "metadata": {
+            "type": "auth",
+            "entity": "Auth"
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "SQL roles and JWT context are not real Supabase Auth sessions or browser/REST E2E",
+    "No remote test data created; remote historical cases were not newly exercised",
+    "No DDL, data mutations, or migrations applied by Codex during this verification"
+  ]
+}
