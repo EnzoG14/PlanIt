@@ -87,6 +87,7 @@ export async function publishEvent(attempt: PublishAttempt, userId: string, onPr
   }
 }
 export async function loadEvent(id: string): Promise<EventRecord | null> {
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) return null
   if (!supabase) throw new Error('La conexión no está configurada.')
   const { data, error } = await supabase.from('events').select('id,organizer_id,title,description,starts_at,ends_at,address,location_name,latitude,longitude,capacity,category_id,visibility,cancelled_at,archived_at').eq('id', id).maybeSingle()
   if (error) throw error

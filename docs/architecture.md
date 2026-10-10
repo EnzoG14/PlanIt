@@ -40,6 +40,8 @@ Ver ../AGENTS.md, ../src/AGENTS.md, ../supabase/AGENTS.md y database.md.
 
 ## Decisión de mapa
 
+PROMPT 05 implementa `/map` autenticado, tarjetas y detalle mínimo. Leaflet aislado en `src/components/maps`, dominio/consultas en `src/features/events` y geolocalización compartida en `src/features/location`. [Arquitectura de descubrimiento](map-architecture.md). RPC desplegada en planit-v2 el 10/10/2026 con autorización del usuario. Mis eventos mantiene su preparación para el bloque siguiente.
+
 Leaflet + React Leaflet: mapa raster sencillo, suficiente para marcadores y selección de ubicación, sin infraestructura geográfica extra. Instalar al implementar su primer uso, no en BLOQUE 0.
 
 Tiles iniciales: `https://tile.openstreetmap.org/{z}/{x}/{y}.png`, atribución visible «© OpenStreetMap contributors» con enlace a https://www.openstreetmap.org/copyright. Mantener el Referer y la caché HTTP normal del navegador; no descargar anticipadamente ni ofrecer mapas offline. Centralizar la configuración del proveedor al integrar el mapa para facilitar reemplazo. El servicio es de disponibilidad best-effort, sin SLA; revisar antes de aumentar tráfico. Política: https://operations.osmfoundation.org/policies/tiles/.

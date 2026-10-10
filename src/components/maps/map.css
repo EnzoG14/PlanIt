@@ -1,0 +1,12 @@
+.event-map-frame { position: relative; border: 1px solid var(--color-border); border-radius: 16px; overflow: hidden; isolation: isolate; }
+.event-map { height: clamp(320px, 48svh, 540px); width: 100%; background: #ddd; color-scheme: light; }
+.event-map .leaflet-control-attribution { font-size: 11px; max-width: 100%; }
+.event-map .leaflet-control-attribution a { text-decoration: underline; }
+.event-map .leaflet-control-zoom a { background: var(--color-field); color: var(--color-text); width: 44px; height: 44px; line-height: 44px; }
+.event-map .leaflet-control-zoom a.leaflet-disabled { background: var(--color-bg-elevated); color: var(--color-text-muted); }
+.planit-marker { background: transparent; border: 0; }
+.planit-marker span { display: block; width: 30px; height: 30px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #0753ff; border: 3px solid #f8f8ff; box-shadow: 0 2px 8px #060b2770; }
+.planit-marker span::after { content: ''; position: absolute; width: 8px; height: 8px; left: 8px; top: 8px; border-radius: 50%; background: white; }
+.planit-marker.is-selected span { background: #7651df; box-shadow: 0 0 0 5px #8d66fa70; }
+.event-map .leaflet-tooltip { background: var(--color-bg-elevated); color: var(--color-text); border-color: var(--color-border); }
+.map-tile-error { margin: 0; padding: 12px; background: var(--color-bg-elevated); font-size: 13px; }

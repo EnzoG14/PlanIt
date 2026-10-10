@@ -31,6 +31,8 @@
 - `user_category_interests` usa clave primaria compuesta.
 
 ## Migraciones
+
+- `20261010052653_public_event_discovery.sql`: **aplicada en planit-v2 el 10/10/2026 con autorización del usuario**. Agrega RPC SECURITY INVOKER de descubrimiento por viewport, vigencia según reloj Argentina y visibilidad pública. EXECUTE sólo authenticated; sin modificar lectura histórica del propietario. Historial sincronizado, dry-run posterior sin pendientes, consulta remota bajo dos identidades authenticated verificada con ROLLBACK. [Verificación](design/verification/map-detail-r1/README.md).
 - `20261010011204_create_profiles_and_categories.sql` está vacía y **ya registrada como aplicada**. No editar.
 - `20261010013449_create_profiles_and_categories.sql`: primera migración real, con `profiles`, `categories`, RLS y trigger de creación de perfil. **Aplicada en planit-v2**, confirmado mediante MCP e historial de CLI el 09/10/2026 (Argentina).
 - `20261010023448_restrict_rls_auto_enable_execute.sql`: **aplicada en planit-v2 el 10/10/2026 (Argentina), con autorización del usuario**. Revoca EXECUTE de PUBLIC, anon y authenticated sobre `public.rls_auto_enable()`, conservando función, propietario y event trigger. Los dos avisos de ejecución pública de esta función ya no aparecen en advisors.

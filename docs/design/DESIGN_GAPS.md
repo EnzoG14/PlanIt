@@ -26,6 +26,10 @@
 
 ## Cambios por accesibilidad y plataforma — permitidos sin rediseño
 
+### Mapa/detalle PROMPT 05 (10/10/2026)
+
+Mapa Leaflet real con OSM claro, controles oscuros y tarjetas propias según teléfonos 4/5 R1. Sin búsqueda, favoritos ni filtros inertes. Detalle con portada/placeholder, categoría, datos y cupo real; confirmados/barra/CTA pendientes de tabla/RPC de participación. [Capturas y criterios](verification/map-detail-r1/README.md). Nueva migración de descubrimiento aplicada en planit-v2 el 10/10/2026 con autorización del usuario; consulta y permisos verificados remotamente.
+
 ### Adaptación visual del BLOQUE 0 (10/10/2026)
 
 - Login/registro conservan composición centrada e icono circular de R1, pero muestran el estado de preparación en lugar de formularios inertes. El CTA sólo navega al mapa; no inicia sesión ni publica.

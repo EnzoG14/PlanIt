@@ -11,6 +11,7 @@ import './App.css'
 
 const CreateEventPage = lazy(() => import('./pages/CreateEventPage').then(module => ({ default: module.CreateEventPage })))
 const EventDetailPage = lazy(() => import('./pages/EventDetailPage').then(module => ({ default: module.EventDetailPage })))
+const MapPage = lazy(() => import('./pages/MapPage').then(module => ({ default: module.MapPage })))
 
 function App() {
   return (
@@ -18,10 +19,10 @@ function App() {
       <Routes>
         <Route element={<AppLayout />}>
           <Route index element={<Navigate to="/map" replace />} />
-          <Route path="map" element={<FoundationPage page="map" />} />
           <Route path="register" element={<AuthPage key="register" mode="register" />} />
           <Route path="login" element={<AuthPage key="login" mode="login" />} />
           <Route element={<RequireAuth />}>
+            <Route path="map" element={<Suspense fallback={<StatusMessage title="Cargando mapa">Esperá un momento.</StatusMessage>}><MapPage /></Suspense>} />
             <Route path="events/new" element={<Suspense fallback={<StatusMessage title="Cargando formulario">Esperá un momento.</StatusMessage>}><CreateEventPage /></Suspense>} />
             <Route path="events/:id" element={<Suspense fallback={<StatusMessage title="Cargando evento">Esperá un momento.</StatusMessage>}><EventDetailPage /></Suspense>} />
             <Route path="my-events" element={<FoundationPage page="myEvents" />} />

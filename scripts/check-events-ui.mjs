@@ -96,7 +96,7 @@ try {
       assert.equal(state.rpc, 1); assert.equal(state.uploads, 1)
       assert.equal(state.events.size, 1)
       await page.locator('dd').filter({ hasText: /20:00/ }).waitFor()
-      assert.equal(await page.locator('.event-gallery img').count(), 1)
+      assert.equal(await page.locator('.event-hero img').count(), 1)
       await page.screenshot({ path: `${output}/success-390x844.png`, fullPage: true })
     }
     assert.deepEqual(errors, [])

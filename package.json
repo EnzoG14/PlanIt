@@ -10,15 +10,20 @@
     "preview": "vite preview",
     "check:foundation": "node scripts/check-foundation.mjs",
     "check:auth": "node scripts/check-auth.mjs",
-    "check:events": "node scripts/check-events.mjs"
+    "check:events": "node scripts/check-events.mjs",
+    "check:discovery": "node scripts/check-discovery.mjs",
+    "check:discovery:ui": "node scripts/check-discovery-ui.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",
+    "leaflet": "1.9.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-leaflet": "5.0.0",
     "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
+    "@types/leaflet": "1.9.21",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",

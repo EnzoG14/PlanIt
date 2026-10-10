@@ -8,6 +8,7 @@ import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
 import { loadCategories, PublicationError, publishEvent, type PublishAttempt } from '../features/events/api'
 import { emptyEvent, validateEvent, validateImages, type Category, type EventErrors, type EventValues } from '../features/events/validation'
+import { getCurrentLocation } from '../features/location/geolocation'
 
 export function CreateEventPage() {
   const { session } = useAuth()
@@ -56,18 +57,17 @@ export function CreateEventPage() {
     setErrors(current => ({ ...current, [field]: undefined }))
   }
   function locate() {
-    if (!navigator.geolocation) { setLocationError('Tu navegador no permite obtener la ubicación. Ingresá las coordenadas manualmente.'); return }
     setLocating(true); setLocationError('')
     const revision = ++locationRevision.current
-    navigator.geolocation.getCurrentPosition(position => {
+    getCurrentLocation().then(position => {
       if (revision !== locationRevision.current) return
-      setValues(current => ({ ...current, latitude: position.coords.latitude.toFixed(6), longitude: position.coords.longitude.toFixed(6) }))
+      setValues(current => ({ ...current, latitude: position.latitude.toFixed(6), longitude: position.longitude.toFixed(6) }))
       setErrors(current => ({ ...current, latitude: undefined, longitude: undefined }))
       setLocating(false)
-    }, () => {
+    }).catch(() => {
       if (revision !== locationRevision.current) return
       setLocationError('No pudimos obtener tu ubicación. Ingresá las coordenadas manualmente.'); setLocating(false)
-    }, { timeout: 10000, maximumAge: 0, enableHighAccuracy: true })
+    })
   }
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
