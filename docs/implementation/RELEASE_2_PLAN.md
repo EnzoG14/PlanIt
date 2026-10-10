@@ -3,7 +3,8 @@
 **Versión:** 1.0 — 10/10/2026 (Argentina).  
 **Estado:** plan propuesto; ninguna función de R2 se considera implementada por este documento.  
 **Referencia de formato:** docs/implementation/RELEASE_1_PLAN.md.  
-**Fuentes funcionales:** documento Planificación (Google Docs), pestañas «Nueva planificación — RF R1 a R7», «Criterios de aceptación — R1 a R7» y «Especificación técnica — R1 a R7», RF-R2-01 a RF-R2-07.  
+**Fuentes funcionales:** documento Planificación (Google Docs), pestañas «Nueva planificación — RF R1 a R7», «Criterios de aceptación — R1 a R7» y «Especificación técnica — R1 a R7», RF-R2-01 a RF-R2-07.
+**Contrato funcional local obligatorio:** [docs/requirements/RELEASE_2_REQUIREMENTS.md](../requirements/RELEASE_2_REQUIREMENTS.md) (7 RF con descripción, prioridad, actores y 28 criterios de aceptación en su redacción original). Para Codex, consultar primero esta copia versionada; el documento de Google Docs conserva la referencia de procedencia.  
 **Referencia visual:** docs/design/mockups/release-2.png (cinco pantallas), docs/design/DESIGN_SYSTEM.md, SCREENS.md y DESIGN_GAPS.md.  
 **Seguimiento vivo:** docs/implementation/RELEASE_2_STATUS.md.
 
@@ -28,7 +29,7 @@ La release cubre **7 RF y 28 CA (cuatro por RF)**. Las referencias visuales defi
 
 ## B. Contrato general de trabajo para Codex
 
-1. Leer antes de cada bloque: AGENTS.md, CLAUDE.md, src/AGENTS.md, supabase/AGENTS.md, docs/architecture.md, docs/database.md, docs/implementation/RELEASE_1_PLAN.md, RELEASE_2_PLAN.md, RELEASE_2_STATUS.md y las guías visuales de docs/design.
+1. Leer antes de cada bloque: AGENTS.md, CLAUDE.md, src/AGENTS.md, supabase/AGENTS.md, docs/architecture.md, docs/database.md, **docs/requirements/RELEASE_2_REQUIREMENTS.md**, docs/implementation/RELEASE_1_PLAN.md, RELEASE_2_PLAN.md, RELEASE_2_STATUS.md y las guías visuales de docs/design.
 2. Inspeccionar la rama base y los archivos reales antes de planificar modificaciones. **No asumir que una tabla/RPC documentada ya existe.**
 3. **Destino exclusivo** de Supabase: planit-v2, proyecto iepeqmvzjguwlhnecsdq. El proyecto histórico fmqzokxvpqxfzvcnzvjm es exclusivamente de referencia; no escribir, migrar ni cambiar su configuración.
 4. No modificar migraciones aplicadas. Toda alteración de esquema/privilegios se versiona como una migración posterior y se prueba primero localmente. **No ejecutar SQL remoto, configurar Auth/Realtime o desplegar sin permiso expreso.**
@@ -175,7 +176,7 @@ La release cubre **7 RF y 28 CA (cuatro por RF)**. Las referencias visuales defi
 
 ## G. Contrato de prompts breves
 
-Los archivos docs/implementation/prompts/RELEASE_2_BLOCK_0.md a RELEASE_2_BLOCK_5.md contienen solamente el alcance particular de cada bloque. **Se completan leyendo este plan**, los RF/CA oficiales, el estado y el mockup. No reemplazan este documento.
+Los archivos docs/implementation/prompts/RELEASE_2_BLOCK_0.md a RELEASE_2_BLOCK_5.md contienen solamente el alcance particular de cada bloque. **Se completan leyendo este plan**, el contrato funcional local docs/requirements/RELEASE_2_REQUIREMENTS.md, el estado y el mockup. No reemplazan estos documentos.
 
 Al recibir un prompt:
 1. Leer plan + status + documentación aplicable.
