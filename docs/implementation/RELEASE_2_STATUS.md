@@ -12,7 +12,7 @@
 
 | Bloque | Alcance | RF | Estado | PR / evidencia | Pendiente |
 | --- | --- | --- | --- | --- | --- |
-| 0 | Preparar R2, navegación y contrato de diseño | Transversal | Implementado; QA pendiente | [PR #7 fusionada](https://github.com/EnzoG14/PlanIt/pull/7); verificación en seguimiento | Revisión humana del contrato visual; revisión visual responsive pendiente |
+| 0 | Preparar R2, navegación y contrato de diseño | Transversal | Implementado; QA pendiente | [PR #7 fusionada](https://github.com/EnzoG14/PlanIt/pull/7); [PR #8 de verificación](https://github.com/EnzoG14/PlanIt/pull/8) | Revisión humana del contrato visual; revisión visual responsive pendiente |
 | 1 | Inicio, categorías y detalle ampliado | R2-01/02/03 | Pendiente | — | 12 CA, lectura segura de organizador e imágenes |
 | 2 | Chat de evento: leer y enviar texto | R2-04/05 | Pendiente | — | 8 CA, migración, RLS, envío transaccional, UI |
 | 3 | Mi perfil (lectura propia ampliada) | R2-06 | Pendiente | — | 4 CA, perfil propio y avatar opcional |
@@ -44,7 +44,7 @@
 
 - Estado: Implementado; QA pendiente (no validado por revisión humana).
 - Rama base original: `main` en `c2b17f30fc845906c47ef3ae0fedc96b94bbcf25`; rama de implementación: `codex/r2-block-0-navigation-docs`. Seguimiento de verificación basado en el merge `c5afa827bab4990f05320a6b7f5660ce43a6e337` de `origin/main`.
-- PR: [#7 — docs: prepare Release 2 block 0 navigation contract](https://github.com/EnzoG14/PlanIt/pull/7), fusionada por el usuario. La verificación posterior se registra en una PR de seguimiento.
+- PRs: [#7 — docs: prepare Release 2 block 0 navigation contract](https://github.com/EnzoG14/PlanIt/pull/7), fusionada; [#8 — docs: record Release 2 block 0 verification results](https://github.com/EnzoG14/PlanIt/pull/8), abierta para registrar los resultados posteriores.
 - Cambios: contrato de rutas, disponibilidad por bloque, navegación, estados y límites visuales en `docs/implementation/RELEASE_2_BLOCK_0.md`. Sin cambios de código, migraciones ni recursos remotos.
 - Rutas: inspección de `src/App.tsx` y `src/components/AppLayout.tsx` confirmó que `/` redirige a `/map`, las rutas R1 permanecen disponibles y la navegación no enlaza a `/home`, chat ni notificaciones antes de estar implementados. `/events/:id` y `/me` ya existen.
 - Diseño: revisión visual de `docs/design/mockups/release-2.png` y contraste con DESIGN_SYSTEM, SCREENS y DESIGN_GAPS; no se modificó la UI, por lo que no se generó captura responsive de la aplicación.
