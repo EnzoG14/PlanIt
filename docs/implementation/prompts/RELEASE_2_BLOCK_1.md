@@ -1,5 +1,7 @@
 # Codex — R2, BLOQUE 1: Inicio, categorías y detalle ampliado
 
+**Requisitos funcionales y CA oficiales:** `docs/requirements/RELEASE_2_REQUIREMENTS.md`. Leé la sección de los RF correspondientes; la copia local tiene prioridad operativa frente a depender de acceso a Google Docs. No cambies sus textos sin aprobación.
+
 **RF:** R2-01, R2-02 y R2-03 (12 CA).
 
 Leé docs/implementation/RELEASE_2_PLAN.md (**B, C, D/BLOQUE 1, E y F**), RELEASE_2_STATUS.md, los RF/CA originales en Planificación, las instrucciones AGENTS y docs/design/mockups/release-2.png (pantallas 1 y 2). Trabajá desde main actualizado en rama propia.
