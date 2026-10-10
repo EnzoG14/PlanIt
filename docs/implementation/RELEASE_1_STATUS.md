@@ -38,7 +38,7 @@
 
 ### Bloque 5
 - Estado: Implementado; QA pendiente.
-- PR: pendiente de enlazar; rama exclusiva `codex/block-5-my-events`, basada en `main` con Bloque 4 integrado (`696348c`).
+- PR: [#4](https://github.com/EnzoG14/PlanIt/pull/4), draft; rama exclusiva `codex/block-5-my-events`, basada en `main` con Bloque 4 integrado (`696348c`).
 - Migración: `20261010154930_my_events_read.sql`, **sólo en Git, NO aplicada al remoto**. RPC de lectura SECURITY INVOKER, auth.uid(), paginación y proyección mínima; sin cambios en tablas/RLS.
 - Pruebas ejecutadas: build/lint; replay PostgreSQL 17.5 local con tres identidades SQL, historial/media/RLS/paginación; Edge con dos cuentas fixture a 375×812 y 1280×900. Regresiones SQL/UI de participaciones y discovery, incluidas diez carreras reales de último cupo. [Evidencia, capturas y matriz CA](../design/verification/my-events-r1/README.md).
 - Criterios confirmados: cobertura local de RF-R1-07.CA-01..04 según plan versionado; **ninguno marcado Validado**. Separación, detalle, actualización y vacíos/privacidad cubiertos por SQL y fixtures.
