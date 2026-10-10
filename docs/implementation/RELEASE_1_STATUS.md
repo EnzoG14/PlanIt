@@ -29,7 +29,7 @@
 
 ### Bloque 4
 - Estado: Implementado; QA pendiente.
-- PR: rama exclusiva `codex/block-4-participations`, destino `main`.
+- PR: [#3](https://github.com/EnzoG14/PlanIt/pull/3), draft; rama exclusiva `codex/block-4-participations`, destino `main`.
 - Migraciones: `20261010150232_event_participations.sql` **pendiente remotamente**; replay ejecutado sólo en PostgreSQL 17.5 local. Cinco previas aplicadas; historial y dry-run verificaron única pendiente.
 - Pruebas ejecutadas: build/lint, regresión SQL discovery; PostgreSQL real con diez carreras multiconexión de cupo 1, constraints/RLS/RPC/historial/retries; UI fixture móvil 375×812 y escritorio 1280×900. [Evidencia y matriz de ocho CA](../design/verification/participations-r1/README.md).
 - Criterios confirmados: resultados locales PASS de RF-R1-05.CA-01..04 y RF-R1-06.CA-01..04; **ninguno marcado Validado**.
