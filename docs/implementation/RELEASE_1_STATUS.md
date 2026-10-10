@@ -13,7 +13,7 @@
 | 2 | Categorías, creación y fotos | Implementado; QA pendiente | `docs/design/verification/create-event-r1/README.md` | Flujo real navegador + Storage |
 | 3 | Mapa, descubrimiento y detalle | Implementado; QA pendiente | `docs/design/verification/map-detail-r1/README.md` | Sesión real, tiles OSM y dispositivo |
 | 4 | Inscripciones, retiro y cupos | Implementado; QA pendiente | `docs/design/verification/participations-r1/README.md` | Auth/REST real y QA humana; migración aplicada |
-| 5 | Mis eventos | Pendiente | — | Consultas, pantalla real, actualización |
+| 5 | Mis eventos | Implementado; QA pendiente | `docs/design/verification/my-events-r1/README.md` | Despliegue autorizado de RPC, Auth/REST real y revisión humana |
 | 6 | QA integral y cierre R1 | Pendiente | — | Evidencia para los 28 CA, PWA, RLS |
 
 ## Protocolo de actualización por bloque
@@ -37,11 +37,12 @@
 - Riesgos/pendientes: dos sesiones reales Auth/REST, revisión humana y teléfono físico. Prueba SQL remota no equivale a login real. Bloque 5 permanece pendiente.
 
 ### Bloque 5
-- Estado: Pendiente.
-- PR:
-- Pruebas ejecutadas:
-- Criterios confirmados:
-- Riesgos/pendientes:
+- Estado: Implementado; QA pendiente.
+- PR: pendiente de enlazar; rama exclusiva `codex/block-5-my-events`, basada en `main` con Bloque 4 integrado (`696348c`).
+- Migración: `20261010154930_my_events_read.sql`, **sólo en Git, NO aplicada al remoto**. RPC de lectura SECURITY INVOKER, auth.uid(), paginación y proyección mínima; sin cambios en tablas/RLS.
+- Pruebas ejecutadas: build/lint; replay PostgreSQL 17.5 local con tres identidades SQL, historial/media/RLS/paginación; Edge con dos cuentas fixture a 375×812 y 1280×900. Regresiones SQL/UI de participaciones y discovery, incluidas diez carreras reales de último cupo. [Evidencia, capturas y matriz CA](../design/verification/my-events-r1/README.md).
+- Criterios confirmados: cobertura local de RF-R1-07.CA-01..04 según plan versionado; **ninguno marcado Validado**. Separación, detalle, actualización y vacíos/privacidad cubiertos por SQL y fixtures.
+- Riesgos/pendientes: autorizar y aplicar la RPC antes de usar esta pantalla contra planit-v2; dos sesiones Auth/REST reales, Storage HTTP real, QA humana y teléfono físico. Docker local sin daemon; roles SQL/fixtures no equivalen a sesiones reales. Bloque 6 sin iniciar.
 
 ### Bloque 6
 - Estado: Pendiente.

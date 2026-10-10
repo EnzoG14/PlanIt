@@ -1,0 +1,25 @@
+.my-events-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
+.my-events-heading h1 { font-size: 26px; margin: 0 0 8px; letter-spacing: -.5px; }
+.my-events-heading p { color: var(--color-text-muted); font-size: 14px; margin: 0; }
+.my-events-create { width: 48px; height: 48px; min-height: 48px; flex-shrink: 0; padding: 0; }
+.my-events-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+.my-events-tabs button { min-height: 44px; padding: 10px 20px; border: 1px solid var(--color-border); border-radius: 999px; background: var(--color-field); color: var(--color-text-muted); font: inherit; cursor: pointer; }
+.my-events-tabs button[aria-selected="true"] { color: white; background: var(--color-primary); border-color: var(--color-primary); }
+.my-events-list { display: grid; gap: 12px; list-style: none; margin: 0; padding: 0; }
+.compact-event-card { background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-card); overflow: hidden; }
+.compact-event-link { display: flex; gap: 12px; padding: 12px; border-radius: var(--radius-card); }
+.compact-event-link:hover { background: var(--color-field); }
+.compact-event-link:focus-visible { outline-offset: -4px; }
+.compact-event-photo { position: relative; display: flex; justify-content: center; align-items: center; width: 76px; height: 88px; flex-shrink: 0; overflow: hidden; border-radius: 10px; background: linear-gradient(135deg, #14328b, #292054); color: var(--color-text-muted); }
+.compact-event-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.compact-event-body { min-width: 0; flex: 1; }
+.compact-event-body h3 { font-size: 16px; line-height: 1.3; overflow-wrap: anywhere; margin: 0 0 8px; }
+.compact-event-body p { display: flex; gap: 6px; align-items: flex-start; font-size: 12px; line-height: 1.5; color: var(--color-text-muted); overflow-wrap: anywhere; margin: 4px 0; }
+.compact-event-body p .icon { width: 16px; height: 16px; margin-top: 1px; }
+.compact-event-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.event-state { display: inline-flex; align-items: center; padding: 5px 8px; font-size: 12px; border: 1px solid #384778; border-radius: 999px; color: #c5d5ff; background: #172454; }
+.state-open, .participation-confirmed { color: #83f3c9; background: #10343b; border-color: #256259; }
+.state-cancelled, .participation-cancelled, .participation-removed { color: #ffb9c7; background: #331b35; border-color: #78405b; }
+.state-archived, .state-ended { color: #d0c5f4; background: #242044; }
+.load-more-events { width: 100%; margin-top: 20px; }
+@media (min-width: 768px) { .compact-event-photo { width: 96px; height: 100px; } .compact-event-link { padding: 16px; gap: 16px; } .compact-event-body h3 { font-size: 18px; } .compact-event-body p { font-size: 14px; } }
