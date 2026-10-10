@@ -12,7 +12,7 @@
 
 | Bloque | Alcance | RF | Estado | PR / evidencia | Pendiente |
 | --- | --- | --- | --- | --- | --- |
-| 0 | Preparar R2, navegación y contrato de diseño | Transversal | Implementado; QA pendiente | [PR #7](https://github.com/EnzoG14/PlanIt/pull/7) · `codex/r2-block-0-navigation-docs` | Revisión humana del contrato visual; build/lint bloqueados por `node_modules` |
+| 0 | Preparar R2, navegación y contrato de diseño | Transversal | Implementado; QA pendiente | [PR #7](https://github.com/EnzoG14/PlanIt/pull/7) · `codex/r2-block-0-navigation-docs` | Revisión humana del contrato visual |
 | 1 | Inicio, categorías y detalle ampliado | R2-01/02/03 | Pendiente | — | 12 CA, lectura segura de organizador e imágenes |
 | 2 | Chat de evento: leer y enviar texto | R2-04/05 | Pendiente | — | 8 CA, migración, RLS, envío transaccional, UI |
 | 3 | Mi perfil (lectura propia ampliada) | R2-06 | Pendiente | — | 4 CA, perfil propio y avatar opcional |
@@ -48,8 +48,8 @@
 - Cambios: contrato de rutas, disponibilidad por bloque, navegación, estados y límites visuales en `docs/implementation/RELEASE_2_BLOCK_0.md`. Sin cambios de código, migraciones ni recursos remotos.
 - Rutas: inspección de `src/App.tsx` y `src/components/AppLayout.tsx` confirmó que `/` redirige a `/map`, las rutas R1 permanecen disponibles y la navegación no enlaza a `/home`, chat ni notificaciones antes de estar implementados. `/events/:id` y `/me` ya existen.
 - Diseño: revisión visual de `docs/design/mockups/release-2.png` y contraste con DESIGN_SYSTEM, SCREENS y DESIGN_GAPS; no se modificó la UI, por lo que no se generó captura responsive de la aplicación.
-- Verificación: `npm run build` y `npm run lint` intentados; ambos no pudieron iniciar (`tsc` y `oxlint` no encontrados). `npm ci` falló en todos los intentos con `EPERM` al quitar `node_modules/@rolldown/binding-win32-x64-msvc/rolldown-binding.win32-x64-msvc.node`, incluso en un intento fuera del sandbox. No se reportan como aprobados.
-- Límites: no hubo verificación visual responsive en navegador por tratarse de un cambio documental y no estar disponibles las dependencias locales. Sin CA funcionales propios de este bloque; no se ejecutó QA de bloques posteriores.
+- Verificación: `npm ci` instaló 376 paquetes (0 vulnerabilidades reportadas); `npm run build` y `npm run lint` pasaron; `git diff --check` pasó. La inspección de rutas confirmó que no aparecen enlaces a destinos R2 aún no implementados.
+- Límites: no hubo verificación visual responsive en navegador porque el cambio es documental y no modifica la UI. Sin CA funcionales propios de este bloque; no se ejecutó QA de bloques posteriores.
 - Decisiones: las rutas R2 se documentan pero permanecen sin registrar ni enlazar hasta sus bloques funcionales. Sin migraciones locales o remotas.
 
 ### Bloque 1 — Inicio y detalle
