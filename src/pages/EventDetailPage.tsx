@@ -4,7 +4,7 @@ import { Icon } from '../components/Icon'
 import { useAuth } from '../features/auth/useAuth'
 import { StatusMessage } from '../components/StatusMessage'
 import { EventParticipation } from '../components/EventParticipation'
-import { loadCategories, loadEvent, loadEventImages, type EventRecord } from '../features/events/api'
+import { loadCategories, loadEvent, loadEventImages, loadEventOrganizer, type EventRecord } from '../features/events/api'
 import { formatEventTime } from '../features/events/validation'
 import './discovery.css'
 
@@ -16,10 +16,13 @@ export function EventDetailPage() {
 function EventDetailContent({ id }: { id: string }) {
   const location = useLocation()
   const myEventsReturnTo = location.state?.myEventsReturnTo === '/my-events?section=organizing' || location.state?.myEventsReturnTo === '/my-events?section=participating' ? location.state.myEventsReturnTo : '/my-events'
+  const returnTo = location.state?.returnTo === '/home' ? '/home' : '/map'
   const { session } = useAuth()
   const [category, setCategory] = useState('Categoría no disponible')
   const [event, setEvent] = useState<EventRecord | null>(null)
   const [images, setImages] = useState<string[]>([])
+  const [organizer, setOrganizer] = useState<{ display_name: string; username: string } | null>(null)
+  const [organizerError, setOrganizerError] = useState(false)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [imageError, setImageError] = useState(false)
@@ -33,6 +36,7 @@ function EventDetailContent({ id }: { id: string }) {
         document.title = `${data.title} · PlanIt`
         try { const categories = await loadCategories(); if (active) setCategory(categories.find(item => item.id === data.category_id)?.name ?? 'Categoría no disponible') } catch { /* Category failure must not hide the event. */ }
         try { const photos = await loadEventImages(id); if (active) setImages(photos) } catch { if (active) setImageError(true) }
+        try { const profile = await loadEventOrganizer(id); if (active) setOrganizer(profile) } catch { if (active) setOrganizerError(true) }
       }
     }).catch(() => { if (active) setError('No pudimos consultar el evento. Revisá la conexión y reintentá.') }).finally(() => { if (active) setLoading(false) })
     return () => { active = false }
@@ -43,13 +47,18 @@ function EventDetailContent({ id }: { id: string }) {
   if (!event) return <StatusMessage title="Evento no disponible">No encontramos el evento o no tenés permiso para consultarlo.</StatusMessage>
   return <div className="event-detail-page">
     {location.state?.published && <StatusMessage title="Evento publicado">Tu evento ya está disponible para la comunidad.</StatusMessage>}
-    <Link className="detail-back secondary-link" to="/map"><Icon name="back" />Volver al mapa</Link>
+    <Link className="detail-back secondary-link" to={returnTo}><Icon name="back" />{returnTo === '/home' ? 'Volver al inicio' : 'Volver al mapa'}</Link>
     <div className="event-hero">{images[0] && !imageError ? <img src={images[0]} width="960" height="600" alt={`Foto de ${event.title}`} onError={() => setImageError(true)} /> : <div className="event-hero-placeholder"><Icon name="calendar" /><span>Sin foto de portada</span></div>}<div className="event-hero-overlay" /></div>
     <h1>{event.title}</h1>
     <span className="category-chip">{category}</span>
     {imageError && <p role="status" className="field-error">No pudimos cargar las fotos. <button className="text-button" onClick={retry}>Reintentar</button></p>}
     <dl className="detail-metadata"><dt><Icon name="calendar" />Inicio</dt><dd>{formatEventTime(event.starts_at)}</dd><dt><Icon name="clock" />Fin</dt><dd>{formatEventTime(event.ends_at)}</dd><dt><Icon name="pin" />Lugar</dt><dd>{event.location_name ?? event.address}</dd>{event.location_name && <><dt>Dirección</dt><dd>{event.address}</dd></>}</dl>
     <p className="event-description">{event.description}</p>
+    {images.length > 1 && <section className="event-gallery" aria-label="Fotos del evento">{images.slice(1).map((url, index) => <img key={`${url}-${index}`} src={url} width="360" height="240" alt={`Foto ${index + 2} de ${event.title}`} loading="lazy" onError={e => { e.currentTarget.hidden = true }} />)}</section>}
+    <section className="event-organizer" aria-labelledby="event-organizer-title">
+      <h2 id="event-organizer-title">Organizador</h2>
+      {organizer ? <><strong>{organizer.display_name}</strong><p>@{organizer.username}</p></> : organizerError ? <p role="status">No pudimos cargar los datos del organizador. <button className="text-button" type="button" onClick={retry}>Reintentar</button></p> : <p>Datos del organizador no disponibles.</p>}
+    </section>
     <p className="field-hint">Horarios de Argentina.</p>
     <EventParticipation key={`${id}:${session?.user.id}`} eventId={id} />
     <Link className="secondary-link" to={myEventsReturnTo}>Ir a Mis eventos</Link>
