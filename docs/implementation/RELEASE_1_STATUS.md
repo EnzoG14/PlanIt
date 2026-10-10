@@ -47,7 +47,7 @@
 
 ### Bloque 6
 - Estado: Implementado; QA pendiente. **No Validado**: requiere revisión humana y pruebas reales de aceptación.
-- PR: pendiente de publicar para revisión; esta rama no se fusionó.
+- PR: [#5 — QA integral y trazabilidad de Release 1](https://github.com/EnzoG14/PlanIt/pull/5), draft abierto hacia `main`; esta rama no se fusionó.
 - Matriz de 28 criterios, con textos literales de `Planificación`: [docs/qa/RELEASE_1_ACCEPTANCE.md](../qa/RELEASE_1_ACCEPTANCE.md). Corte 10/10/2026: 11 CA aprobados sólo por pruebas acotadas PostgreSQL local/UI fixture y 17 no probados. Ningún resultado fixture se presenta como E2E.
 - Informe de comandos, Advisors, seguridad, PWA, visual y NO-GO: [docs/qa/RELEASE_1_TEST_REPORT.md](../qa/RELEASE_1_TEST_REPORT.md). Capturas sin PII: [docs/qa/screenshots/](../qa/screenshots/).
 - Reconciliación: rama basada en `origin/main` `9f54deb`; siete migraciones versionadas coinciden con la lista read-only de `planit-v2` (`iepeqmvzjguwlhnecsdq`). Sin SQL remoto ni cambios de Auth. `vite.config.ts` preexistente se preservó y queda fuera del cambio.
