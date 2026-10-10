@@ -14,7 +14,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 0 | Preparar R2, navegación y contrato de diseño | Transversal | Implementado; QA pendiente | [PR #7 fusionada](https://github.com/EnzoG14/PlanIt/pull/7); [PR #8 de verificación](https://github.com/EnzoG14/PlanIt/pull/8) | Revisión humana del contrato visual; revisión visual responsive pendiente |
 | 1 | Inicio, categorías y detalle ampliado | R2-01/02/03 | Implementado; QA pendiente | rama `codex/r2-block-1-home-detail`; [PR #9](https://github.com/EnzoG14/PlanIt/pull/9) | 12 CA cubiertos por checks locales; aceptación humana y Auth/REST/Storage remoto pendientes |
-| 2 | Chat de evento: leer y enviar texto | R2-04/05 | Implementado; QA pendiente | [PR #10](https://github.com/EnzoG14/PlanIt/pull/10); [evidencia](../design/verification/event-chat/README.md) | Migración remota pendiente de permiso; REST/Auth real y aceptación humana pendientes |
+| 2 | Chat de evento: leer y enviar texto | R2-04/05 | Implementado; QA pendiente | [PR #10](https://github.com/EnzoG14/PlanIt/pull/10); [evidencia](../design/verification/event-chat/README.md) | Migración aplicada; REST/Auth real y aceptación humana pendientes |
 | 3 | Mi perfil (lectura propia ampliada) | R2-06 | Pendiente | — | 4 CA, perfil propio y avatar opcional |
 | 4 | Bandeja de notificaciones | R2-07 | Pendiente | — | 4 CA, migración, RLS, lectura/marcar leído |
 | 5 | QA integral, seguridad y regresión R1 | R2-01 a 07 | Pendiente | — | Matriz 28 CA, E2E según autorización y revisión humana |
@@ -72,7 +72,7 @@
 - Estado: Implementado; QA pendiente (sin aceptación humana).
 - Base: `origin/main` en `18457eac3fb1cfe8b33a875c55c620df4bf3d607`, PR #9 integrada; rama nueva `codex/r2-block-2-event-chat`.
 - PR: [#10 — feat(r2): implement event group chat with protected history and sending](https://github.com/EnzoG14/PlanIt/pull/10), borrador sin fusionar; implementación en commit `6bd1282`.
-- Migración: `20261010214526_event_chat.sql`, sólo versionada y probada en PostgreSQL local; **no aplicada en planit-v2**. Sin SQL ni configuración remota.
+- Migración: `20261010214526_event_chat.sql`, **aplicada en planit-v2** (iepeqmvzjguwlhnecsdq) el 10/10/2026 con autorización expresa del usuario. Versiones locales/remotas sincronizadas (9); dry-run posterior sin pendientes. Sin cambios Auth/Storage/Realtime.
 - Cambios: conversación única por evento desde publicación, trigger + backfill idempotente; historial paginado de 50 mensajes, cursor created_at/id; `/events/:id/chat` protegida y enlazada desde detalle para organizador/confirmed; vacío/error/sólo lectura, burbujas marino/azul/violeta y composer con límite 2000.
 - Seguridad: RLS para organizador/confirmed; cancelled/removed no acreditan acceso, tampoco al cerrar. Sin mutaciones REST directas. RPC deriva sender_id de auth.uid(), bloquea evento y participación, exige READ COMMITTED y verifica cierre con reloj posterior al lock. UUID retenido en memoria durante reintentos previene duplicación. Repetición de un envío ya persistido puede devolver ID tras cierre, sin insertar.
 - Perfil social: proyección limitada a display_name/username del emisor; sin SELECT general de profiles. Funciones definer con autorización explícita, search_path vacío y EXECUTE sólo authenticated; helper privado sin identidad elegida por cliente.
@@ -80,7 +80,8 @@
 - CA: RF-R2-04.CA-01..04 y RF-R2-05.CA-01..04.
 - Evidencia: [matriz/capturas](../design/verification/event-chat/README.md), postgres-results.json y ui-results.json. PostgreSQL real local con scaffold Auth/Storage; navegador con fixtures interceptados, no E2E Supabase real.
 - Pruebas: build/lint, check:events, check:auth, check:participations, check:my-events, check:home-events, `node scripts/check-chat.mjs`, `node scripts/check-chat-ui.mjs` y diff --check. Resultados y límites en la evidencia.
-- Pendientes: aplicación remota autorizada; migration list/dry-run/advisors, JWT/REST con dos cuentas, smoke R1 real, revisión humana y teclado/safe areas físico. Bloques 3–5 sin iniciar.
+- Verificación remota: RLS activa, grants sin INSERT/UPDATE/DELETE authenticated ni SELECT anon; RPC EXECUTE authenticated y no anon, search_path vacío; cero eventos sin chat y cero duplicados, trigger presente. Asesores: tres avisos nuevos de SECURITY DEFINER autenticado intencional junto a cuatro heredados y leaked-password protection; sin errores.
+- Pendientes: JWT/REST con dos cuentas, smoke R1 real, revisión humana y teclado/safe areas físico. Bloques 3–5 sin iniciar.
 - Fuera de la PR: cambios locales previos en package.json/package-lock.json y eliminación de .env.example, preservados.
 
 ### Bloque 3 — Mi perfil

@@ -1,6 +1,6 @@
 # R2 — BLOQUE 2: chat por evento
 
-Implementado; QA pendiente. Base `18457eac3fb1cfe8b33a875c55c620df4bf3d607`; rama `codex/r2-block-2-event-chat`. Ninguna migración aplicada remotamente.
+Implementado; QA pendiente. Base `18457eac3fb1cfe8b33a875c55c620df4bf3d607`; rama `codex/r2-block-2-event-chat`. Migración del chat aplicada en planit-v2 el 10/10/2026 con autorización expresa del usuario.
 
 ## Contrato y seguridad
 
@@ -43,4 +43,4 @@ Fondo marino, burbujas entrantes oscuras/propias azul-violeta, header, fecha/emi
 
 ## Pendientes
 
-Migración `20261010214526_event_chat.sql` requiere permiso remoto. Inspeccionar migration list/dry-run/advisors antes/después de aplicar. Probar JWT/REST real con dos cuentas/no miembro: historial/envío/ID directo/retiro/remoción/cierre. Revisar teléfono físico con teclado/safe areas y smoke R1 real. No se modificó Realtime ni otro recurso remoto.
+Migración `20261010214526_event_chat.sql` aplicada y registrada remotamente. Migration list sincronizado (9 versiones); dry-run posterior sin pendientes. Consulta remota de catálogo confirma RLS en ambas tablas, sin mutaciones authenticated ni lectura anon; las tres RPC tienen search_path vacío, EXECUTE authenticated y no anon. Backfill: cero eventos sin conversación, cero duplicados; trigger presente. Asesor de seguridad: tres advertencias nuevas por RPC SECURITY DEFINER autenticadas intencionales, además de las cuatro RPC previas y protección de contraseñas heredada. No se reportaron errores. No se cambió Auth/Realtime. Probar JWT/REST real con dos cuentas/no miembro: historial/envío/ID directo/retiro/remoción/cierre. Revisar teléfono físico con teclado/safe areas y smoke R1 real. No se modificó Realtime ni otro recurso remoto.
