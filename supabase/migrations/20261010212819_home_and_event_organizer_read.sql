@@ -1,4 +1,4 @@
--- Release 2, block 1. Local preparation only; do not apply remotely without approval.
+-- Release 2, block 1. Applied to planit-v2 as migration 20261010212819.
 begin;
 
 -- Upcoming public events are read through the existing events/media RLS. A
