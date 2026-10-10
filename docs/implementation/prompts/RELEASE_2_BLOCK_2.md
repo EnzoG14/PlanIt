@@ -1,5 +1,7 @@
 # Codex — R2, BLOQUE 2: chat grupal por evento
 
+**Requisitos funcionales y CA oficiales:** `docs/requirements/RELEASE_2_REQUIREMENTS.md`. Leé la sección de los RF correspondientes; la copia local tiene prioridad operativa frente a depender de acceso a Google Docs. No cambies sus textos sin aprobación.
+
 **RF:** R2-04 y R2-05 (8 CA).
 
 Leé docs/implementation/RELEASE_2_PLAN.md (**B, C, D/BLOQUE 2 y E**), RELEASE_2_STATUS.md, docs/database.md, la especificación/CA oficiales y la pantalla 3 del mockup R2. Revisá esquema, migraciones y seguridad de participaciones de R1 antes de escribir código.
