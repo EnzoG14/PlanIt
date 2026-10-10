@@ -15,7 +15,7 @@
 | 0 | Preparar R2, navegación y contrato de diseño | Transversal | Implementado; QA pendiente | [PR #7 fusionada](https://github.com/EnzoG14/PlanIt/pull/7); [PR #8 de verificación](https://github.com/EnzoG14/PlanIt/pull/8) | Revisión humana del contrato visual; revisión visual responsive pendiente |
 | 1 | Inicio, categorías y detalle ampliado | R2-01/02/03 | Implementado; QA pendiente | rama `codex/r2-block-1-home-detail`; [PR #9](https://github.com/EnzoG14/PlanIt/pull/9) | 12 CA cubiertos por checks locales; aceptación humana y Auth/REST/Storage remoto pendientes |
 | 2 | Chat de evento: leer y enviar texto | R2-04/05 | Implementado; QA pendiente | [PR #10](https://github.com/EnzoG14/PlanIt/pull/10); [evidencia](../design/verification/event-chat/README.md) | Migración aplicada; REST/Auth real y aceptación humana pendientes |
-| 3 | Mi perfil (lectura propia ampliada) | R2-06 | Implementado; QA pendiente | rama `codex/r2-block-3-own-profile`; [evidencia](../design/verification/own-profile/README.md) | 4 CA con SQL local/UI fixture; cuentas reales y aceptación humana pendientes |
+| 3 | Mi perfil (lectura propia ampliada) | R2-06 | Implementado; QA pendiente | [PR #11](https://github.com/EnzoG14/PlanIt/pull/11); [evidencia](../design/verification/own-profile/README.md) | 4 CA con SQL local/UI fixture; cuentas reales y aceptación humana pendientes |
 | 4 | Bandeja de notificaciones | R2-07 | Pendiente | — | 4 CA, migración, RLS, lectura/marcar leído |
 | 5 | QA integral, seguridad y regresión R1 | R2-01 a 07 | Pendiente | — | Matriz 28 CA, E2E según autorización y revisión humana |
 
@@ -88,7 +88,7 @@
 
 - Estado: Implementado; QA pendiente (sin aceptación humana).
 - Base: `origin/main` en `1719a25`, PR #10 integrada; rama nueva `codex/r2-block-3-own-profile`.
-- PR: en preparación, independiente del bloque 2.
+- PR: [#11 — feat(r2): implement own profile consultation](https://github.com/EnzoG14/PlanIt/pull/11), borrador sin fusionar; implementación en commit `dacdf59`.
 - Cambios: `/me` consulta nombre/username/bio/avatar_file_id propios; correo desde Auth. Avatar circular con firma de 300 segundos sólo para archivo propio accesible, placeholder en faltantes/fallos. Mantiene marino/azul/violeta, biografía centrada, navegación Perfil activa y acceso real a Mis eventos; sin funciones R5 del collage.
 - Sesiones: estado nuevo por identidad/token, descarte de respuestas tardías y limpieza durante recarga/error; datos actualizados al reabrir, recuperar foco o pulsar Actualizar perfil. AuthProvider y permisos existentes conservados.
 - Migraciones: ninguna; sin SQL/escrituras/configuración remotas, sin ampliación de grants/RLS/Storage. Avatar sólo desde referencia ya persistida; no edición/carga ni permisos nuevos.
