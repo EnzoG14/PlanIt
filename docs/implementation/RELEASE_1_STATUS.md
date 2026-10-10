@@ -14,7 +14,7 @@
 | 3 | Mapa, descubrimiento y detalle | Implementado; QA pendiente | `docs/design/verification/map-detail-r1/README.md` | Sesión real, tiles OSM y dispositivo |
 | 4 | Inscripciones, retiro y cupos | Implementado; QA pendiente | `docs/design/verification/participations-r1/README.md` | Auth/REST real y QA humana; migración aplicada |
 | 5 | Mis eventos | Implementado; QA pendiente | `docs/design/verification/my-events-r1/README.md` | RPC aplicada/verificada; Auth/REST real y revisión humana pendientes |
-| 6 | QA integral y cierre R1 | Pendiente | — | Evidencia para los 28 CA, PWA, RLS |
+| 6 | QA integral y cierre R1 | Validado por aceptación manual del usuario (10/10/2026) | [Matriz de 28 CA](../qa/RELEASE_1_ACCEPTANCE.md); [informe QA](../qa/RELEASE_1_TEST_REPORT.md) | Pendiente: tratamiento de WARN de seguridad y reproducibilidad por caso |
 
 ## Protocolo de actualización por bloque
 
@@ -46,9 +46,10 @@
 - Riesgos/pendientes: dos sesiones Auth/REST reales, Storage HTTP real, QA humana y teléfono físico. Roles SQL/fixtures no equivalen a sesiones reales; no se añadieron casos históricos remotos de prueba. Bloque 6 sin iniciar.
 
 ### Bloque 6
-- Estado: Pendiente.
-- PR:
-- Matriz de 28 criterios de aceptación: ruta.
-- PWA en dispositivo: evidencia.
-- RLS/Storage/concurrencia: evidencia.
-- Riesgos/pendientes:
+- Estado: **Validado** por confirmación explícita del usuario el 10/10/2026: “Probé todo a mano y funciona, está todo validado”. La matriz registra los 28 CA como `Aprobado` por esta aceptación manual. No se adjuntaron pasos ni artefactos individuales por criterio; Codex no presenta sus pruebas fixture/locales como un E2E remoto observado.
+- PR: [#5 — QA integral y trazabilidad de Release 1](https://github.com/EnzoG14/PlanIt/pull/5), draft abierto hacia `main`; esta rama no se fusionó.
+- Matriz de 28 criterios, con textos literales de `Planificación`: [docs/qa/RELEASE_1_ACCEPTANCE.md](../qa/RELEASE_1_ACCEPTANCE.md). Los resultados automatizados locales/fixture siguen distinguidos de la aceptación manual del usuario.
+- Informe de comandos, Advisors, seguridad, PWA, visual y estado GO/NO-GO: [docs/qa/RELEASE_1_TEST_REPORT.md](../qa/RELEASE_1_TEST_REPORT.md). Capturas sin PII: [docs/qa/screenshots/](../qa/screenshots/).
+- Reconciliación: rama basada en `origin/main` `9f54deb`; siete migraciones versionadas coinciden con la lista read-only de `planit-v2` (`iepeqmvzjguwlhnecsdq`). Sin SQL remoto ni cambios de Auth. `vite.config.ts` preexistente se preservó y queda fuera del cambio.
+- Pendiente para decisión global de release: tratamiento explícito de WARN de RPC `SECURITY DEFINER`, policies permisivas y leaked-password protection; se solicitó aceptación del usuario o resolución y no se cambió configuración ni SQL. El informe precisa qué pruebas remotas no fueron observadas independientemente por Codex.
+- Recomendación de release: **pendiente** de respuesta sobre WARN; ver [decisión y criterios](../qa/RELEASE_1_TEST_REPORT.md#decisión-de-release). `Validado` refleja la aceptación manual explícita del Bloque 6, no el cierre automático de los riesgos de seguridad.
