@@ -13,7 +13,7 @@
 | Bloque | Alcance | RF | Estado | PR / evidencia | Pendiente |
 | --- | --- | --- | --- | --- | --- |
 | 0 | Preparar R2, navegación y contrato de diseño | Transversal | Implementado; QA pendiente | [PR #7 fusionada](https://github.com/EnzoG14/PlanIt/pull/7); [PR #8 de verificación](https://github.com/EnzoG14/PlanIt/pull/8) | Revisión humana del contrato visual; revisión visual responsive pendiente |
-| 1 | Inicio, categorías y detalle ampliado | R2-01/02/03 | Implementado; QA pendiente | rama `codex/r2-block-1-home-detail`; PR pendiente | 12 CA cubiertos por checks locales; aceptación humana y Auth/REST/Storage remoto pendientes |
+| 1 | Inicio, categorías y detalle ampliado | R2-01/02/03 | Implementado; QA pendiente | rama `codex/r2-block-1-home-detail`; [PR #9](https://github.com/EnzoG14/PlanIt/pull/9) | 12 CA cubiertos por checks locales; aceptación humana y Auth/REST/Storage remoto pendientes |
 | 2 | Chat de evento: leer y enviar texto | R2-04/05 | Pendiente | — | 8 CA, migración, RLS, envío transaccional, UI |
 | 3 | Mi perfil (lectura propia ampliada) | R2-06 | Pendiente | — | 4 CA, perfil propio y avatar opcional |
 | 4 | Bandeja de notificaciones | R2-07 | Pendiente | — | 4 CA, migración, RLS, lectura/marcar leído |
@@ -56,7 +56,7 @@
 
 - Estado: Implementado; QA pendiente (sin validación/aceptación humana).
 - Rama base: `origin/main` actualizado a `611d169b6a0a167e6cd9837293ae2e085e762eef`; rama `codex/r2-block-1-home-detail`.
-- PR: pendiente de creación.
+- PR: [#9 — feat(r2): add event home and expanded detail](https://github.com/EnzoG14/PlanIt/pull/9), abierta, sin fusionar.
 - Migración local propuesta: `20261010165000_home_and_event_organizer_read.sql`, no aplicada en Supabase. No se ejecutó SQL remoto ni se modificó configuración/Auth/Storage.
 - Cambios: `/home` autenticado con consulta keyset ordenada por `starts_at,id`, eventos públicos futuros y vigentes, grupos por categoría, portadas firmadas en lote y estados loading/error/empty; detalle amplía organizador mediante proyección autorizada de `display_name,username`, muestra galería disponible y conserva la participación R1. Navegación principal: Inicio, Mapa, Mis eventos y Perfil; Crear permanece accesible desde Mis eventos. `/` y rutas R1 no cambian.
 - CA: RF-R2-01.CA-01..04, RF-R2-02.CA-01..04, RF-R2-03.CA-01..04.
