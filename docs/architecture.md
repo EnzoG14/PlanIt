@@ -30,6 +30,10 @@ PlanIt es una PWA universitaria para descubrir, organizar y participar en evento
 
 Ver ../AGENTS.md, ../src/AGENTS.md, ../supabase/AGENTS.md y database.md.
 
+## Chat R2 — BLOQUE 2
+
+Ruta protegida `/events/:id/chat` desde detalle para organizador/confirmed. RPC autorizadas entregan header/estado e historial paginado con representación social mínima; envío transaccional con UUID idempotente y bloqueo evento/participación. Tablas con RLS sin mutaciones REST del cliente. Historial de eventos cerrados sólo lectura; retirados/removidos sin acceso. Refresco explícito y al recuperar foco, sin configuración Realtime. Migración `20261010214526_event_chat.sql` aplicada en planit-v2 el 10/10/2026 con autorización del usuario; historial sincronizado y RLS/grants verificados. [Evidencia y límites](design/verification/event-chat/README.md).
+
 ## Base frontend — BLOQUE 0
 
 - React Router con layout común y rutas `/register`, `/login`, `/map`, `/events/new`, `/my-events`, `/events/:id` y 404; `/` redirige a `/map`.

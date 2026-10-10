@@ -1,0 +1,26 @@
+{
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "environment": "Local PostgreSQL; SQL Auth/Storage scaffolding, no real Auth/REST",
+  "results": [
+    {
+      "test": "Replay migrations; invoker function, empty search_path",
+      "result": "PASS"
+    },
+    {
+      "test": "Two identities: creation / registration / leave / rejoin, unique row, role separation, third-party exclusion, minimal projection",
+      "result": "PASS"
+    },
+    {
+      "test": "Ended / cancelled / archived precedence; own removed history and media retained; stranger cannot read historical event/media",
+      "result": "PASS"
+    },
+    {
+      "test": "31-row lookahead, deterministic tie ordering, complete pagination without duplicates",
+      "result": "PASS"
+    },
+    {
+      "test": "Invalid section/offset, anon, missing JWT rejected",
+      "result": "PASS"
+    }
+  ]
+}

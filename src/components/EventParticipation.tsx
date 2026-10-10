@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Icon } from './Icon'
 import { changeParticipation, loadParticipationSummary, participationError, type ParticipationSummary } from '../features/events/participation'
 
@@ -59,6 +60,7 @@ export function EventParticipation({ eventId }: { eventId: string }) {
     </div></div>
     {summary?.is_organizer && <p className="participation-notice">Organizás este evento. No ocupás cupo ni podés inscribirte.</p>}
     {summary?.own_status === 'confirmed' && <p className="participation-notice" role="status">Ya participás.</p>}
+    {summary && (summary.is_organizer || summary.own_status === 'confirmed') && <Link className="secondary-link" to={`/events/${eventId}/chat`}>Abrir chat del evento</Link>}
     {summary?.own_status === 'cancelled' && <p className="participation-notice" role="status">Tu participación está cancelada.</p>}
     <button className="gradient-link gradient-button participation-action" disabled={pending || !(canLeave || canJoin)} onClick={() => void refresh(canLeave ? 'leave' : 'register')}>
       {pending ? 'Consultando participación…' : canLeave ? 'Retirarme' : label}
