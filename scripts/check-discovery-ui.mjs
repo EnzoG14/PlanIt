@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
 const browser = await chromium.launch({ headless: true, channel: 'msedge' })
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4182'
-const output = 'docs/design/verification/map-detail-r1'
+const output = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/map-detail-r1'
 await mkdir(output, { recursive: true })
 const user = { id: '20000000-0000-4000-8000-000000000001', email: 'fixture@example.invalid', aud: 'authenticated', role: 'authenticated', app_metadata: { provider: 'email' }, user_metadata: {}, identities: [], created_at: '2026-10-10T12:00:00Z' }
 const event = { id: '30000000-0000-4000-8000-000000000001', organizer_id: '20000000-0000-4000-8000-000000000002', title: 'Encuentro de música — prueba', description: 'Compartimos música con la comunidad. Datos de prueba para verificar la interfaz.', starts_at: '2099-10-11T20:00:00', ends_at: '2099-10-11T22:00:00', address: 'Av. Corrientes 123, Buenos Aires', location_name: 'Centro cultural', latitude: -34.6037, longitude: -58.3816, capacity: 20, category_id: '10000000-0000-4000-8000-000000000001', visibility: 'public', cancelled_at: null, archived_at: null, category_name: 'Música', image_path: null }
@@ -24,6 +24,7 @@ try {
       if(path === '/rest/v1/events') return reply(mode === 'missing' ? [] : [event])
       if(path === '/rest/v1/categories') return reply([{ id:event.category_id,name:'Música',is_active:true }])
       if(path === '/rest/v1/event_images') return reply([])
+      if(path === '/rest/v1/rpc/get_event_participation_summary') return reply([{confirmed_count:0,capacity:event.capacity,available_spots:event.capacity,own_status:null,is_organizer:false,event_state:'open'}])
       return reply([],200)
     })
     const page = await context.newPage(); const errors=[]
@@ -40,8 +41,7 @@ try {
     await page.screenshot({path:`${output}/map-${width}x${height}.png`,fullPage:true})
     await page.getByRole('region',{name:'Evento seleccionado'}).getByRole('link',{name:'Ver detalle',exact:true}).click()
     await page.getByRole('heading',{name:event.title,level:1}).waitFor()
-    await page.getByText('Las inscripciones todavía no están habilitadas.',{exact:true}).waitFor()
-    assert.equal(await page.getByRole('button',{name:/Unirme|Retirarme/}).count(),0)
+    await page.getByRole('button',{name:'Unirme',exact:true}).waitFor()
     assert.match(await page.locator('.detail-metadata').innerText(),/20:00/)
     await page.screenshot({path:`${output}/detail-${width}x${height}.png`,fullPage:true})
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true)

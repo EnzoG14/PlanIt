@@ -40,6 +40,12 @@
 .event-capacity strong { font-size: 15px; }
 .event-capacity p, .participation-notice { font-size: 13px; color: var(--color-text-muted); margin: 8px 0 0; }
 .participation-notice { padding: 16px 0; }
+.event-capacity > div { width: 100%; }
+.capacity-bar { display: block; width: 100%; height: 8px; margin-top: 12px; border: 0; border-radius: 999px; overflow: hidden; background: #414860; }
+.capacity-bar::-webkit-progress-bar { background: #414860; border-radius: 999px; }
+.capacity-bar::-webkit-progress-value { background: var(--gradient-primary); border-radius: 999px; }
+.capacity-bar::-moz-progress-bar { background: var(--gradient-primary); border-radius: 999px; }
+.participation-action { width: 100%; margin-top: 16px; }
 @media (max-width: 420px) { .map-heading { align-items: flex-start; } .map-heading h1 { font-size: 21px; } .location-button { flex-direction: column; font-size: 12px; padding: 8px; } }
 @media (min-width: 900px) { main:has(.map-page) { max-width: 1080px; } .event-card-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } .event-card-photo { height: 180px; } .event-hero { height: 300px; } }
 @media (prefers-reduced-motion: reduce) { .event-map * { transition: none !important; } }

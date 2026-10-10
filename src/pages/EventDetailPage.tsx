@@ -3,8 +3,9 @@ import { Link, useLocation, useParams } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { useAuth } from '../features/auth/useAuth'
 import { StatusMessage } from '../components/StatusMessage'
+import { EventParticipation } from '../components/EventParticipation'
 import { loadCategories, loadEvent, loadEventImages, type EventRecord } from '../features/events/api'
-import { argentinaNow, formatEventTime } from '../features/events/validation'
+import { formatEventTime } from '../features/events/validation'
 import './discovery.css'
 
 export function EventDetailPage() {
@@ -49,8 +50,7 @@ function EventDetailContent({ id }: { id: string }) {
     <dl className="detail-metadata"><dt><Icon name="calendar" />Inicio</dt><dd>{formatEventTime(event.starts_at)}</dd><dt><Icon name="clock" />Fin</dt><dd>{formatEventTime(event.ends_at)}</dd><dt><Icon name="pin" />Lugar</dt><dd>{event.location_name ?? event.address}</dd>{event.location_name && <><dt>Dirección</dt><dd>{event.address}</dd></>}</dl>
     <p className="event-description">{event.description}</p>
     <p className="field-hint">Horarios de Argentina.</p>
-    <div className="event-capacity"><Icon name="people" /><div><strong>Cupo: {event.capacity} participantes</strong><p>La cantidad de confirmados estará disponible cuando se habiliten las inscripciones.</p></div></div>
-    <p className="participation-notice" role="status">{event.archived_at ? 'Este evento está archivado.' : event.cancelled_at ? 'Este evento está cancelado.' : event.ends_at <= argentinaNow() ? 'Este evento ya finalizó.' : event.organizer_id === session?.user.id ? 'Organizás este evento. No ocupás cupo ni podés inscribirte.' : 'Las inscripciones todavía no están habilitadas.'}</p>
+    <EventParticipation key={`${id}:${session?.user.id}`} eventId={id} />
     <Link className="secondary-link" to="/my-events">Ir a Mis eventos</Link>
   </div>
 }

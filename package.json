@@ -12,7 +12,9 @@
     "check:auth": "node scripts/check-auth.mjs",
     "check:events": "node scripts/check-events.mjs",
     "check:discovery": "node scripts/check-discovery.mjs",
-    "check:discovery:ui": "node scripts/check-discovery-ui.mjs"
+    "check:discovery:ui": "node scripts/check-discovery-ui.mjs",
+    "check:participations": "node scripts/check-participations.mjs",
+    "check:participations:ui": "node scripts/check-participations-ui.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",
