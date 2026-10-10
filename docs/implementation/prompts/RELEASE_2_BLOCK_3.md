@@ -1,5 +1,7 @@
 # Codex — R2, BLOQUE 3: Mi perfil
 
+**Requisitos funcionales y CA oficiales:** `docs/requirements/RELEASE_2_REQUIREMENTS.md`. Leé la sección de los RF correspondientes; la copia local tiene prioridad operativa frente a depender de acceso a Google Docs. No cambies sus textos sin aprobación.
+
 **RF:** R2-06 (4 CA).
 
 Leé docs/implementation/RELEASE_2_PLAN.md (**B, D/BLOQUE 3, E y F**), RELEASE_2_STATUS.md, reglas AGENTS y docs/design/mockups/release-2.png (pantalla 4). Revisá /me y AuthProvider de R1.
