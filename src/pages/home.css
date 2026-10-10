@@ -1,0 +1,24 @@
+.home-page { max-width: 1080px; margin-inline: auto; }
+.home-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
+.home-heading h1 { margin: 0 0 8px; font-size: 26px; letter-spacing: -.5px; }
+.home-heading p { margin: 0; color: var(--color-text-muted); font-size: 14px; }
+.home-category-groups { display: grid; gap: 28px; }
+.home-category h2 { margin: 0; font-size: 19px; letter-spacing: -.25px; }
+.home-event-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; list-style: none; padding: 0; margin: 14px 0 0; }
+.home-event-list li { min-width: 0; }
+.home-event-list .event-card-photo { height: 180px; }
+.home-event-list .event-card-actions { display: none; }
+.home-load-more { width: 100%; margin-top: 28px; }
+.home-map-link { justify-content: flex-start; padding-left: 0; }
+@media (max-width: 520px) {
+  .home-heading { margin-bottom: 24px; }
+  .home-heading h1 { font-size: 24px; }
+  .home-category-groups { gap: 24px; }
+  .home-event-list { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .home-event-list .event-card-photo { height: 190px; }
+}
+@media (min-width: 900px) {
+  main:has(.home-page) { max-width: 1160px; }
+  .home-event-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .home-event-list .event-card-photo { height: 190px; }
+}

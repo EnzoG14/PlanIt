@@ -13,6 +13,7 @@ const CreateEventPage = lazy(() => import('./pages/CreateEventPage').then(module
 const EventDetailPage = lazy(() => import('./pages/EventDetailPage').then(module => ({ default: module.EventDetailPage })))
 const MapPage = lazy(() => import('./pages/MapPage').then(module => ({ default: module.MapPage })))
 const MyEventsPage = lazy(() => import('./pages/MyEventsPage').then(module => ({ default: module.MyEventsPage })))
+const HomePage = lazy(() => import('./pages/HomePage').then(module => ({ default: module.HomePage })))
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="register" element={<AuthPage key="register" mode="register" />} />
           <Route path="login" element={<AuthPage key="login" mode="login" />} />
           <Route element={<RequireAuth />}>
+            <Route path="home" element={<Suspense fallback={<StatusMessage title="Cargando Inicio">Esperá un momento.</StatusMessage>}><HomePage /></Suspense>} />
             <Route path="map" element={<Suspense fallback={<StatusMessage title="Cargando mapa">Esperá un momento.</StatusMessage>}><MapPage /></Suspense>} />
             <Route path="events/new" element={<Suspense fallback={<StatusMessage title="Cargando formulario">Esperá un momento.</StatusMessage>}><CreateEventPage /></Suspense>} />
             <Route path="events/:id" element={<Suspense fallback={<StatusMessage title="Cargando evento">Esperá un momento.</StatusMessage>}><EventDetailPage /></Suspense>} />

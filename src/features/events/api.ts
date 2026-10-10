@@ -93,6 +93,13 @@ export async function loadEvent(id: string): Promise<EventRecord | null> {
   if (error) throw error
   return data
 }
+export async function loadEventOrganizer(eventId: string): Promise<{ display_name: string; username: string } | null> {
+  if (!supabase) throw new Error('La conexión no está configurada.')
+  const { data, error } = await supabase.rpc('get_event_organizer', { p_event_id: eventId })
+  if (error) throw error
+  const organizer = data?.[0]
+  return organizer ? { display_name: organizer.display_name, username: organizer.username } : null
+}
 export async function loadEventImages(id: string): Promise<string[]> {
   if (!supabase) throw new Error('La conexión no está configurada.')
   const { data, error } = await supabase.from('event_images').select('files(storage_path)').eq('event_id', id).order('sort_order')
@@ -100,6 +107,6 @@ export async function loadEventImages(id: string): Promise<string[]> {
   const paths = (data ?? []).flatMap(row => (Array.isArray(row.files) ? row.files : [row.files]).filter(Boolean).map(file => file.storage_path))
   if (!paths.length) return []
   const signed = await supabase.storage.from('event_media').createSignedUrls(paths, 300)
-  if (signed.error || signed.data?.some(file => file.error || !file.signedUrl)) throw new Error('No se pudieron cargar las fotos.')
+  if (signed.error) throw new Error('No se pudieron cargar las fotos.')
   return signed.data?.flatMap(file => file.signedUrl ? [file.signedUrl] : []) ?? []
 }

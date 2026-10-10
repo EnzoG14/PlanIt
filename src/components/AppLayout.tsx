@@ -33,7 +33,7 @@ export function AppLayout() {
         <Link className="icon-link" to="/map" aria-label="Volver al mapa"><Icon name="back" /></Link>
         <Link className="brand" to="/map" aria-label="PlanIt, inicio">Plan<span>It</span></Link>
       </div> : <header className="app-header">
-        <NavLink className="brand" to="/map" aria-label="PlanIt, inicio"><img src="/favicon.svg" width="32" height="32" alt="" />Plan<span>It</span></NavLink>
+        <NavLink className="brand" to="/home" aria-label="PlanIt, inicio"><img src="/favicon.svg" width="32" height="32" alt="" />Plan<span>It</span></NavLink>
         <nav className="account-nav" aria-label="Cuenta">{loading ? <span role="status">Comprobando sesión…</span> : session ? <><NavLink to="/me">Mi perfil</NavLink><button className="text-button" type="button" disabled={signingOut} onClick={logout}>{signingOut ? 'Saliendo…' : 'Salir'}</button></> : <><NavLink to="/login">Ingresar</NavLink><NavLink to="/register">Crear cuenta</NavLink></>}</nav>
       </header>}
       <main id="main-content" tabIndex={-1}>
@@ -43,9 +43,9 @@ export function AppLayout() {
         <Outlet />
       </main>
       {!isAuth && <nav className="primary-nav" aria-label="Navegación principal">
+        <NavLink to="/home"><Icon name="home" /><span>Inicio</span></NavLink>
         <NavLink to="/map"><Icon name="map" /><span>Mapa</span></NavLink>
         <NavLink to="/my-events"><Icon name="calendar" /><span>Mis eventos</span></NavLink>
-        <NavLink to="/events/new"><Icon name="plus" /><span>Crear</span></NavLink>
         {session && <NavLink to="/me"><Icon name="user" /><span>Perfil</span></NavLink>}
       </nav>}
     </div>
