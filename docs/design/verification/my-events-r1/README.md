@@ -6,7 +6,7 @@ Estado: **Implementado; QA pendiente**, 10/10/2026. Base: `main` con PR #3 integ
 
 `/my-events` tiene dos tabs accesibles, Organizo y Participo. La selección se conserva en `?section=organizing|participating` y al volver desde una tarjeta del detalle. Crear abre `/events/new`; publicar conserva el flujo existente al detalle y desde allí a Mis eventos. Sin borradores, filtros de fecha, menú de gestión, asistentes ni solicitudes de reingreso.
 
-RPC `get_my_events(p_section text, p_offset integer default 0)` en `20261010154930_my_events_read.sql`: **NO aplicada a Supabase remoto**. SECURITY INVOKER, `search_path=''`, EXECUTE exclusivo de authenticated y validación de sesión/sección/offset. Las filas se filtran por auth.uid() en PostgreSQL y siguen bajo RLS. No se acepta userId; no se alteran tablas, índices, políticas ni las RPC de inscripción/retiro.
+RPC `get_my_events(p_section text, p_offset integer default 0)` en `20261010154930_my_events_read.sql`: **aplicada por el usuario en planit-v2 y verificada el 10/10/2026**. SECURITY INVOKER, `search_path=''`, EXECUTE exclusivo de authenticated y validación de sesión/sección/offset. Las filas se filtran por auth.uid() en PostgreSQL y siguen bajo RLS. No se acepta userId; no se alteran tablas, índices, políticas ni las RPC de inscripción/retiro.
 
 Organizo deriva de organizer_id; Participo de la participación propia y excluye organizadores. Estados de evento: archivado > cancelado > finalizado según ends_at/reloj Argentina > publicado. Estado de inscripción independiente: confirmed/cancelled/removed. Removed sólo muestra historial autorizado; no revela motivo ni autor ni habilita funciones R3.
 
@@ -35,6 +35,19 @@ Reproducción: usar las herramientas locales preexistentes de pruebas (`.partici
 
 Resultados estructurados: [PostgreSQL](postgres-results.json), [UI](ui-results.json), [regresión de participaciones](regressions/postgres-results.json). Las capturas regeneradas de detalle de discovery se guardaron bajo `regressions/` para conservar intacta la evidencia de bloques anteriores.
 
+## Comprobación remota posterior al despliegue del usuario
+
+Verificada el 10/10/2026 únicamente en `planit-v2` (`iepeqmvzjguwlhnecsdq`). [Resultados](remote-results.json).
+
+- MCP y `npx supabase migration list --linked`: las siete versiones coinciden, incluida `20261010154930` / `my_events_read`.
+- `npx supabase db push --linked --dry-run --skip-vault`: upToDate=true, ninguna migración pendiente; no se ejecutó push real.
+- Catálogo: firma/retorno correctos, STABLE, SECURITY INVOKER, search_path vacío, EXECUTE authenticated=true / anon=false / PUBLIC=false. RLS activo en events, event_participations, event_images, files y categories; políticas de lectura histórica y multimedia preservadas.
+- Cuerpo remoto idéntico al de la migración, normalizando CRLF: MD5 `4ebc2576cb6a7f0efbd00d6e66d7599a` en ambos.
+- Transacción READ ONLY + ROLLBACK: dos identidades SQL existentes, ambas secciones coinciden con las consultas propias bajo RLS; sección/offset inválidos, JWT sin identidad y anon rechazados. Sin crear datos ni exponer IDs/perfiles; no se agregaron fixtures históricos remotos. Esta prueba no equivale a login Auth ni llamadas REST del navegador.
+- Advisors: se conservan los [tres avisos intencionales SECURITY DEFINER del Bloque 4](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable) y el aviso previo de [protección de contraseñas filtradas desactivada](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection). La RPC get_my_events no aparece en los avisos.
+
+La migración fue aplicada por el usuario. Codex sólo realizó consultas de verificación y dry-run; no aplicó DDL ni modificó datos remotos. El estado continúa Implementado; QA pendiente.
+
 ## Matriz operativa RF-R1-07.CA-01..04
 
 La agrupación sigue el alcance del Bloque 5 del plan R1 versionado: separación por rol, detalle, actualización y vacíos/privacidad. El cotejo final con los CA originales y su aprobación corresponden a la revisión humana.
@@ -62,7 +75,7 @@ Comparación realizada con el primer teléfono R3 y navegación/detalle R1. Se p
 ## Pendientes y riesgos
 
 - Revisión humana; no marcar Validado automáticamente.
-- Aplicar la migración sólo con autorización en planit-v2. Mientras falte, la pantalla informa indisponibilidad y permite reintentar.
+- Migración aplicada/verificada en planit-v2; no hay despliegue SQL pendiente del Bloque 5.
 - Dos sesiones Auth/REST reales y Storage HTTP real tras despliegue: los roles SQL y los fixtures no equivalen a login real.
 - Docker instalado sin daemon operativo; no se iniciaron contenedores ni se modificó la validación del destino Supabase para permitir otro backend.
 - Prueba en teléfono físico/PWA y revisión visual humana.
