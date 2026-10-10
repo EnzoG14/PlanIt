@@ -12,7 +12,7 @@
 | 1 | Registro, login y sesión | Implementado; QA pendiente | `docs/design/verification/auth-r1/README.md` | Validación final integrada |
 | 2 | Categorías, creación y fotos | Implementado; QA pendiente | `docs/design/verification/create-event-r1/README.md` | Flujo real navegador + Storage |
 | 3 | Mapa, descubrimiento y detalle | Implementado; QA pendiente | `docs/design/verification/map-detail-r1/README.md` | Sesión real, tiles OSM y dispositivo |
-| 4 | Inscripciones, retiro y cupos | Pendiente | — | Migración, RPC, UI y pruebas concurrentes |
+| 4 | Inscripciones, retiro y cupos | Implementado; QA pendiente | `docs/design/verification/participations-r1/README.md` | Aplicación autorizada de migración, Auth/REST real y QA humana |
 | 5 | Mis eventos | Pendiente | — | Consultas, pantalla real, actualización |
 | 6 | QA integral y cierre R1 | Pendiente | — | Evidencia para los 28 CA, PWA, RLS |
 
@@ -28,12 +28,12 @@
 ## Actas por bloque
 
 ### Bloque 4
-- Estado: Pendiente.
-- PR:
-- Migraciones (archivo / aplicada remotamente):
-- Pruebas ejecutadas:
-- Criterios confirmados:
-- Riesgos/pendientes:
+- Estado: Implementado; QA pendiente.
+- PR: rama exclusiva `codex/block-4-participations`, destino `main`.
+- Migraciones: `20261010150232_event_participations.sql` **pendiente remotamente**; replay ejecutado sólo en PostgreSQL 17.5 local. Cinco previas aplicadas; historial y dry-run verificaron única pendiente.
+- Pruebas ejecutadas: build/lint, regresión SQL discovery; PostgreSQL real con diez carreras multiconexión de cupo 1, constraints/RLS/RPC/historial/retries; UI fixture móvil 375×812 y escritorio 1280×900. [Evidencia y matriz de ocho CA](../design/verification/participations-r1/README.md).
+- Criterios confirmados: resultados locales PASS de RF-R1-05.CA-01..04 y RF-R1-06.CA-01..04; **ninguno marcado Validado**.
+- Riesgos/pendientes: despliegue autorizado, advisors tras despliegue, dos sesiones reales Auth/REST, revisión humana y teléfono físico. Bloque 5 permanece pendiente.
 
 ### Bloque 5
 - Estado: Pendiente.

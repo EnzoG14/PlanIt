@@ -32,6 +32,8 @@
 
 ## Migraciones
 
+- `20261010150232_event_participations.sql`: **pendiente de autorización y aplicación en planit-v2**. Participaciones e historial con RLS propio, FK RESTRICT, RPC `register_for_event` / `leave_event` con identidad de sesión y lock de evento; resumen mínimo autorizado sin identidades. Registro exige READ COMMITTED (snapshot congelado se rechaza); reinscripción cancelled reutiliza fila y removed requiere futura aprobación R3. [Contratos, justificación SECURITY DEFINER, pruebas PostgreSQL multiconexión y límites](design/verification/participations-r1/README.md).
+
 - `20261010052653_public_event_discovery.sql`: **aplicada en planit-v2 el 10/10/2026 con autorización del usuario**. Agrega RPC SECURITY INVOKER de descubrimiento por viewport, vigencia según reloj Argentina y visibilidad pública. EXECUTE sólo authenticated; sin modificar lectura histórica del propietario. Historial sincronizado, dry-run posterior sin pendientes, consulta remota bajo dos identidades authenticated verificada con ROLLBACK. [Verificación](design/verification/map-detail-r1/README.md).
 - `20261010011204_create_profiles_and_categories.sql` está vacía y **ya registrada como aplicada**. No editar.
 - `20261010013449_create_profiles_and_categories.sql`: primera migración real, con `profiles`, `categories`, RLS y trigger de creación de perfil. **Aplicada en planit-v2**, confirmado mediante MCP e historial de CLI el 09/10/2026 (Argentina).
