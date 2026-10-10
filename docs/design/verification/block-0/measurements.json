@@ -1,0 +1,878 @@
+[
+  {
+    "route": "login",
+    "height": 812,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 375,
+    "targets": [
+      {
+        "height": 44,
+        "label": "Volver al mapa",
+        "width": 44
+      },
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 59.953125
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 335
+      },
+      {
+        "height": 44,
+        "label": "Ir a crear cuenta",
+        "width": 335
+      }
+    ],
+    "title": "Ingresar · PlanIt",
+    "width": 375
+  },
+  {
+    "route": "register",
+    "height": 812,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 375,
+    "targets": [
+      {
+        "height": 44,
+        "label": "Volver al mapa",
+        "width": 44
+      },
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 59.953125
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 335
+      },
+      {
+        "height": 44,
+        "label": "Ir a ingresar",
+        "width": 335
+      }
+    ],
+    "title": "Creá tu cuenta · PlanIt",
+    "width": 375
+  },
+  {
+    "route": "map",
+    "height": 812,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 375,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 62.453125
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 88.609375
+      },
+      {
+        "height": 52,
+        "label": "Ir a la pantalla de ingreso",
+        "width": 335
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 116.984375
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 116.984375
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 116.984375
+      }
+    ],
+    "title": "Mapa · PlanIt",
+    "width": 375
+  },
+  {
+    "route": "events/new",
+    "height": 812,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 375,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 62.453125
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 88.609375
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 335
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 116.984375
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 116.984375
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 116.984375
+      }
+    ],
+    "title": "Creá un evento · PlanIt",
+    "width": 375
+  },
+  {
+    "route": "my-events",
+    "height": 812,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 375,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 62.453125
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 88.609375
+      },
+      {
+        "height": 52,
+        "label": "Ir a la pantalla de ingreso",
+        "width": 335
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 116.984375
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 116.984375
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 116.984375
+      }
+    ],
+    "title": "Mis eventos · PlanIt",
+    "width": 375
+  },
+  {
+    "route": "events/test-id",
+    "height": 812,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 375,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 62.453125
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 88.609375
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 335
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 116.984375
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 116.984375
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 116.984375
+      }
+    ],
+    "title": "Detalle del evento · PlanIt",
+    "width": 375
+  },
+  {
+    "route": "missing-page",
+    "height": 812,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 375,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 62.453125
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 88.609375
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 335
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 116.984375
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 116.984375
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 116.984375
+      }
+    ],
+    "title": "Página no encontrada · PlanIt",
+    "width": 375
+  },
+  {
+    "route": "login",
+    "height": 844,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 390,
+    "targets": [
+      {
+        "height": 44,
+        "label": "Volver al mapa",
+        "width": 44
+      },
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 59.953125
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 350
+      },
+      {
+        "height": 44,
+        "label": "Ir a crear cuenta",
+        "width": 350
+      }
+    ],
+    "title": "Ingresar · PlanIt",
+    "width": 390
+  },
+  {
+    "route": "register",
+    "height": 844,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 390,
+    "targets": [
+      {
+        "height": 44,
+        "label": "Volver al mapa",
+        "width": 44
+      },
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 59.953125
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 350
+      },
+      {
+        "height": 44,
+        "label": "Ir a ingresar",
+        "width": 350
+      }
+    ],
+    "title": "Creá tu cuenta · PlanIt",
+    "width": 390
+  },
+  {
+    "route": "map",
+    "height": 844,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 390,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 62.453125
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 88.609375
+      },
+      {
+        "height": 52,
+        "label": "Ir a la pantalla de ingreso",
+        "width": 350
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 121.984375
+      }
+    ],
+    "title": "Mapa · PlanIt",
+    "width": 390
+  },
+  {
+    "route": "events/new",
+    "height": 844,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 390,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 62.453125
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 88.609375
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 350
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 121.984375
+      }
+    ],
+    "title": "Creá un evento · PlanIt",
+    "width": 390
+  },
+  {
+    "route": "my-events",
+    "height": 844,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 390,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 62.453125
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 88.609375
+      },
+      {
+        "height": 52,
+        "label": "Ir a la pantalla de ingreso",
+        "width": 350
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 121.984375
+      }
+    ],
+    "title": "Mis eventos · PlanIt",
+    "width": 390
+  },
+  {
+    "route": "events/test-id",
+    "height": 844,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 390,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 62.453125
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 88.609375
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 350
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 121.984375
+      }
+    ],
+    "title": "Detalle del evento · PlanIt",
+    "width": 390
+  },
+  {
+    "route": "missing-page",
+    "height": 844,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 390,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 62.453125
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 88.609375
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 350
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 121.984375
+      }
+    ],
+    "title": "Página no encontrada · PlanIt",
+    "width": 390
+  },
+  {
+    "route": "login",
+    "height": 800,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 1280,
+    "targets": [
+      {
+        "height": 44,
+        "label": "Volver al mapa",
+        "width": 44
+      },
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 59.953125
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 400
+      },
+      {
+        "height": 44,
+        "label": "Ir a crear cuenta",
+        "width": 400
+      }
+    ],
+    "title": "Ingresar · PlanIt",
+    "width": 1280
+  },
+  {
+    "route": "register",
+    "height": 800,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 1280,
+    "targets": [
+      {
+        "height": 44,
+        "label": "Volver al mapa",
+        "width": 44
+      },
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 59.953125
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 400
+      },
+      {
+        "height": 44,
+        "label": "Ir a ingresar",
+        "width": 400
+      }
+    ],
+    "title": "Creá tu cuenta · PlanIt",
+    "width": 1280
+  },
+  {
+    "route": "map",
+    "height": 800,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 1280,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 66.015625
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 94.1875
+      },
+      {
+        "height": 52,
+        "label": "Ir a la pantalla de ingreso",
+        "width": 640
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 160
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 160
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 160
+      }
+    ],
+    "title": "Mapa · PlanIt",
+    "width": 1280
+  },
+  {
+    "route": "events/new",
+    "height": 800,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 1280,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 66.015625
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 94.1875
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 640
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 160
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 160
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 160
+      }
+    ],
+    "title": "Creá un evento · PlanIt",
+    "width": 1280
+  },
+  {
+    "route": "my-events",
+    "height": 800,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 1280,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 66.015625
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 94.1875
+      },
+      {
+        "height": 52,
+        "label": "Ir a la pantalla de ingreso",
+        "width": 640
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 160
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 160
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 160
+      }
+    ],
+    "title": "Mis eventos · PlanIt",
+    "width": 1280
+  },
+  {
+    "route": "events/test-id",
+    "height": 800,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 1280,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 66.015625
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 94.1875
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 640
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 160
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 160
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 160
+      }
+    ],
+    "title": "Detalle del evento · PlanIt",
+    "width": 1280
+  },
+  {
+    "route": "missing-page",
+    "height": 800,
+    "inputs": 0,
+    "scrollPadding": "112px",
+    "scrollWidth": 1280,
+    "targets": [
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 99.953125
+      },
+      {
+        "height": 44,
+        "label": "Ingresar",
+        "width": 66.015625
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 94.1875
+      },
+      {
+        "height": 52,
+        "label": "Volver al mapa",
+        "width": 640
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 160
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 160
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 160
+      }
+    ],
+    "title": "Página no encontrada · PlanIt",
+    "width": 1280
+  }
+]

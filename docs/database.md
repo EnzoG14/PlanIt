@@ -33,9 +33,10 @@
 ## Migraciones
 - `20261010011204_create_profiles_and_categories.sql` está vacía y **ya registrada como aplicada**. No editar.
 - `20261010013449_create_profiles_and_categories.sql`: primera migración real, con `profiles`, `categories`, RLS y trigger de creación de perfil. **Aplicada en planit-v2**, confirmado mediante MCP e historial de CLI el 09/10/2026 (Argentina).
-- `20261010023448_restrict_rls_auto_enable_execute.sql`: **pendiente, sólo en Git**. Revoca EXECUTE de PUBLIC, anon y authenticated sobre la función interna `public.rls_auto_enable()`. Conserva función, propietario y event trigger `ensure_rls`; no cambia las tablas ni políticas. El dry-run identifica únicamente esta migración pendiente. Los avisos de asesores seguirán presentes hasta su aplicación autorizada.
-- Futuras: eventos/intereses → participaciones → relaciones → mensajería → multimedia/Storage → notificaciones → accesos → funciones transaccionales → auditoría RLS/semillas.
-- La FK `profiles.avatar_file_id -> files.id` se agrega después de crear `files`.
+- `20261010023448_restrict_rls_auto_enable_execute.sql`: **aplicada en planit-v2 el 10/10/2026 (Argentina), con autorización del usuario**. Revoca EXECUTE de PUBLIC, anon y authenticated sobre `public.rls_auto_enable()`, conservando función, propietario y event trigger. Los dos avisos de ejecución pública de esta función ya no aparecen en advisors.
+- `20261010042701_create_events_and_event_media.sql`: **aplicada en planit-v2 el 10/10/2026 (Argentina), con autorización del usuario**. Crea events, seed de cinco categorías, files/event_images, bucket privado event_media, RPC SECURITY INVOKER idempotente y RLS/grants mínimos. Historial CLI sincronizado y dry-run posterior sin migraciones pendientes. Prueba SQL remota con dos identidades existentes y ROLLBACK verificó creación/lectura, validaciones, idempotencia y permisos sin dejar eventos de prueba. Evidencia y limitaciones: [Crear evento R1](design/verification/create-event-r1/README.md).
+- Futuras: intereses → participaciones → relaciones → mensajería → ampliación multimedia/Storage → notificaciones → accesos → funciones transaccionales → auditoría RLS/semillas. Eventos y media mínima ya están desplegados.
+- La FK `profiles.avatar_file_id -> files.id` ya fue agregada por la migración de eventos/media mínima.
 - No usar claves `service_role` en PWA, ni `SECURITY DEFINER` sin autorización/validación explícita.
 - Habilitar RLS desde cada `CREATE TABLE`; los permisos públicos no deben exponer datos sensibles.
 

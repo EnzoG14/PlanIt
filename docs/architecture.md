@@ -33,7 +33,7 @@ Ver ../AGENTS.md, ../src/AGENTS.md, ../supabase/AGENTS.md y database.md.
 ## Base frontend — BLOQUE 0
 
 - React Router con layout común y rutas `/register`, `/login`, `/map`, `/events/new`, `/my-events`, `/events/:id` y 404; `/` redirige a `/map`.
-- Son páginas de preparación: todavía no implementan formularios, autenticación, consultas de eventos ni protección por sesión. La pantalla de detalle no confirma que un ID exista.
+- El BLOQUE 0 comenzó con páginas de preparación. Auth fue reemplazada por formularios y sesión real; `/events/new` y `/events/:id` ahora implementan creación y consulta mínima. Mapa y Mis eventos conservan su estado de preparación para los bloques siguientes.
 - CSS propio responsive, variables compartidas y componentes sencillos. Sin biblioteca adicional de estilos.
 - Cliente Supabase único: valida URL exacta de planit-v2 y formato publishable; si falta configuración, no crea cliente y muestra un aviso sin imprimir valores. Una validación local no prueba conectividad ni permisos.
 - PWA con iconos propios y precache sólo de recursos estáticos del build. Sin runtime caching de Supabase, Auth, perfiles, imágenes privadas ni tiles. La app no ofrece operaciones de eventos offline.
@@ -43,3 +43,11 @@ Ver ../AGENTS.md, ../src/AGENTS.md, ../supabase/AGENTS.md y database.md.
 Leaflet + React Leaflet: mapa raster sencillo, suficiente para marcadores y selección de ubicación, sin infraestructura geográfica extra. Instalar al implementar su primer uso, no en BLOQUE 0.
 
 Tiles iniciales: `https://tile.openstreetmap.org/{z}/{x}/{y}.png`, atribución visible «© OpenStreetMap contributors» con enlace a https://www.openstreetmap.org/copyright. Mantener el Referer y la caché HTTP normal del navegador; no descargar anticipadamente ni ofrecer mapas offline. Centralizar la configuración del proveedor al integrar el mapa para facilitar reemplazo. El servicio es de disponibilidad best-effort, sin SLA; revisar antes de aumentar tráfico. Política: https://operations.osmfoundation.org/policies/tiles/.
+
+## Creación de eventos — BLOQUE 2
+
+Formulario local en `src/pages/CreateEventPage.tsx`, validación/fechas y llamadas en `src/features/events/`. Campos de inicio y fin se envían como timestamps de Argentina sin conversión desde la zona del dispositivo. Ubicación manual y geolocalización optativa según alternativa admitida por el plan técnico; mapa de descubrimiento pendiente del BLOQUE 3.
+
+La publicación sube fotos opcionales y llama a `create_event` para insertar evento completo y relaciones atómicamente, usando identidad derivada de Auth y RLS. Reintentos inciertos conservan un UUID, datos y archivos sólo en memoria. `/events/:id` consulta el registro y media autorizada para confirmar el resultado. Las rutas de eventos se cargan por separado para conservar el tamaño del bundle inicial. No se agregaron dependencias de producción.
+
+SQL y bucket **aplicados en planit-v2 el 10/10/2026 con autorización del usuario**. Historial de migraciones sincronizado; creación, validaciones y permisos probados por SQL remoto con ROLLBACK, sin dejar eventos de prueba. Storage HTTP y el flujo completo desde el navegador siguen pendientes de prueba real. [Pruebas, capturas, alcance y pendientes](design/verification/create-event-r1/README.md).

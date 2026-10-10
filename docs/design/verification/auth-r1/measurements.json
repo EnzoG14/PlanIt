@@ -1,0 +1,168 @@
+[
+  {
+    "controls": [
+      {
+        "height": 44,
+        "label": "Volver al mapa",
+        "width": 44
+      },
+      {
+        "height": 44,
+        "label": "PlanIt, inicio",
+        "width": 59.953125
+      },
+      {
+        "height": 52,
+        "label": "email",
+        "width": 335
+      },
+      {
+        "height": 52,
+        "label": "password",
+        "width": 335
+      },
+      {
+        "height": 44,
+        "label": "Mostrar contraseña",
+        "width": 44
+      },
+      {
+        "height": 52,
+        "label": "Continuar",
+        "width": 335
+      },
+      {
+        "height": 44,
+        "label": "Crear cuenta",
+        "width": 94.1875
+      }
+    ],
+    "height": 812,
+    "screen": "login",
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "buttons": [
+      {
+        "height": 44,
+        "label": "Mostrar contraseña",
+        "width": 44
+      },
+      {
+        "height": 52,
+        "label": "Crear cuenta",
+        "width": 335
+      }
+    ],
+    "height": 812,
+    "inputs": [
+      {
+        "font": "16px",
+        "height": 52,
+        "id": "display-name"
+      },
+      {
+        "font": "16px",
+        "height": 52,
+        "id": "email"
+      },
+      {
+        "font": "16px",
+        "height": 52,
+        "id": "password"
+      }
+    ],
+    "screen": "register",
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "height": 844,
+    "screen": "register",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "height": 800,
+    "screen": "login",
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  {
+    "height": 800,
+    "screen": "register",
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  {
+    "height": 844,
+    "navBottom": "8px",
+    "navLinks": [
+      {
+        "height": 56,
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "width": 121.984375
+      },
+      {
+        "height": 56,
+        "width": 121.984375
+      }
+    ],
+    "screen": "my-events-authenticated",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "fieldBottom": 259.78125,
+    "fieldTop": 207.78125,
+    "focused": "password",
+    "height": 460,
+    "outline": "3px",
+    "screen": "register-reduced-height",
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "controls": [
+      {
+        "height": 44,
+        "label": "Mi perfil",
+        "width": 63.71875
+      },
+      {
+        "height": 44,
+        "label": "Salir",
+        "width": 44
+      },
+      {
+        "height": 56,
+        "label": "Mapa",
+        "width": 91.5
+      },
+      {
+        "height": 56,
+        "label": "Mis eventos",
+        "width": 91.5
+      },
+      {
+        "height": 56,
+        "label": "Crear",
+        "width": 91.5
+      },
+      {
+        "height": 56,
+        "label": "Perfil",
+        "width": 91.5
+      }
+    ],
+    "height": 844,
+    "navPadding": "8px",
+    "screen": "profile-account-2",
+    "scrollWidth": 390,
+    "width": 390
+  }
+]

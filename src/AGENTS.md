@@ -13,3 +13,22 @@ Aplican también las reglas de `../AGENTS.md`.
 - PWA: iconos reales en `public/icons/`, manifest consistente, service worker no debe cachear indiscriminadamente respuestas privadas de Supabase.
 - Eventos y fechas: el sistema acordó horario Argentina y timestamp sin zona; centralizar parsing/formateo; nunca depender accidentalmente de la zona horaria del equipo.
 - Antes de entregar cambios de código, ejecutar `npm run build` y `npm run lint` cuando esté disponible.
+
+## Diseño visual obligatorio de PlanIt
+
+Antes de modificar cualquier interfaz, componente visual o archivo CSS, leer:
+
+- `docs/design/AGENTS.md`
+- `docs/design/DESIGN_SYSTEM.md`
+- `docs/design/SCREENS.md`
+- `docs/design/DESIGN_GAPS.md`
+
+Abrir visualmente las imágenes relevantes de `docs/design/mockups/`.
+
+**CRÍTICO:** preservar la identidad visual original de PlanIt. No crear un diseño alternativo ni reemplazar la paleta azul oscuro/violeta.
+
+Los mockups definen la apariencia; los requisitos funcionales y el modelo de datos aprobado definen el comportamiento.
+
+Utilizar las skills de diseño frontend, UX y React disponibles cuando correspondan.
+
+Antes de dar una pantalla por terminada, contrastarla visualmente con su mockup y verificar su funcionamiento en dispositivos móviles.

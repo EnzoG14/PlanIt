@@ -1,45 +1,53 @@
-import { useEffect } from 'react'
-import { NavLink, Outlet, useLocation } from 'react-router-dom'
-import { supabaseConfigError } from '../lib/supabase'
+import { useEffect, useState } from 'react'
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
+import { supabase, supabaseConfigError } from '../lib/supabase'
+import { useAuth } from '../features/auth/useAuth'
+import { GradientButton } from './GradientButton'
+import { Icon } from './Icon'
 import { StatusMessage } from './StatusMessage'
 
 export function AppLayout() {
   const { pathname } = useLocation()
+  const isAuth = pathname === '/login' || pathname === '/register'
+  const { session, loading, error, retry } = useAuth()
+  const [signingOut, setSigningOut] = useState(false)
+  const [logoutError, setLogoutError] = useState(false)
+  async function logout() {
+    if (!supabase || signingOut) return
+    setSigningOut(true)
+    setLogoutError(false)
+    try {
+      const { error: signOutError } = await supabase.auth.signOut({ scope: 'local' })
+      if (signOutError) setLogoutError(true)
+    } catch { setLogoutError(true) }
+    finally { setSigningOut(false) }
+  }
   useEffect(() => {
     document.getElementById('main-content')?.focus({ preventScroll: true })
     window.scrollTo(0, 0)
   }, [pathname])
-
   return (
-    <div className="app-shell">
+    <div className={`app-shell ${isAuth ? 'auth-shell' : 'product-shell'}`}>
       <a className="skip-link" href="#main-content">Saltar al contenido</a>
-      <header className="app-header">
-        <NavLink className="brand" to="/map" aria-label="PlanIt, inicio">
-          <img src="/favicon.svg" width="36" height="36" alt="" />
-          <span>PlanIt<span className="brand-dot">.</span></span>
-        </NavLink>
-        <nav className="primary-nav" aria-label="Navegación principal">
-          <NavLink to="/map">Explorar</NavLink>
-          <NavLink to="/my-events">Mis eventos</NavLink>
-          <NavLink to="/events/new">Crear evento</NavLink>
-        </nav>
-        <nav className="account-nav" aria-label="Cuenta">
-          <NavLink to="/login">Ingresar</NavLink>
-          <NavLink className="button button-small" to="/register">Registrarme</NavLink>
-        </nav>
-      </header>
+      {isAuth ? <div className="auth-topbar">
+        <Link className="icon-link" to="/map" aria-label="Volver al mapa"><Icon name="back" /></Link>
+        <Link className="brand" to="/map" aria-label="PlanIt, inicio">Plan<span>It</span></Link>
+      </div> : <header className="app-header">
+        <NavLink className="brand" to="/map" aria-label="PlanIt, inicio"><img src="/favicon.svg" width="32" height="32" alt="" />Plan<span>It</span></NavLink>
+        <nav className="account-nav" aria-label="Cuenta">{loading ? <span role="status">Comprobando sesión…</span> : session ? <><NavLink to="/me">Mi perfil</NavLink><button className="text-button" type="button" disabled={signingOut} onClick={logout}>{signingOut ? 'Saliendo…' : 'Salir'}</button></> : <><NavLink to="/login">Ingresar</NavLink><NavLink to="/register">Crear cuenta</NavLink></>}</nav>
+      </header>}
       <main id="main-content" tabIndex={-1}>
-        {supabaseConfigError && (
-          <StatusMessage title="Configuración pendiente" tone="error">
-            {supabaseConfigError}
-          </StatusMessage>
-        )}
+        {supabaseConfigError && <StatusMessage title="Configuración pendiente" tone="error">{supabaseConfigError}</StatusMessage>}
+        {error && <div className="session-error"><StatusMessage title="No se pudo recuperar la sesión" tone="error">{error}</StatusMessage><GradientButton type="button" onClick={retry}>Reintentar</GradientButton></div>}
+        {logoutError && <StatusMessage title="No se pudo cerrar la sesión" tone="error">Revisá la conexión y volvé a pulsar Salir.</StatusMessage>}
         <Outlet />
       </main>
-      <footer className="app-footer">
-        <span>PlanIt · Encontrá tu próximo plan.</span>
-        <span>Versión inicial en preparación</span>
-      </footer>
+      {!isAuth && <nav className="primary-nav" aria-label="Navegación principal">
+        <NavLink to="/map"><Icon name="map" /><span>Mapa</span></NavLink>
+        <NavLink to="/my-events"><Icon name="calendar" /><span>Mis eventos</span></NavLink>
+        <NavLink to="/events/new"><Icon name="plus" /><span>Crear</span></NavLink>
+        {session && <NavLink to="/me"><Icon name="user" /><span>Perfil</span></NavLink>}
+      </nav>}
     </div>
   )
 }
