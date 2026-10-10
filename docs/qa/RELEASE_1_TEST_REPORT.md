@@ -1,12 +1,14 @@
 # PlanIt — informe integral de QA R1
 
-Fecha de corte: 10/10/2026, 14:01 ART (`America/Argentina/Buenos_Aires`; 17:01 UTC). Rama `codex/block-6-qa`, base `origin/main` en `9f54deb4be2252eb64ce152d73cf49063280b43d`. El clon de QA usó Node.js 24.19.0, npm, Windows x64, Edge real automatizado y PostgreSQL local 17.5. El destino remoto de sólo lectura fue Supabase `planit-v2` (`iepeqmvzjguwlhnecsdq`). No se consultó ni modificó el proyecto histórico. No se aplicó SQL remoto ni se cambió configuración de Auth.
+Fecha de corte: 10/10/2026, 14:50 ART (`America/Argentina/Buenos_Aires`; 17:01 UTC). Rama `codex/block-6-qa`, base `origin/main` en `9f54deb4be2252eb64ce152d73cf49063280b43d`. El clon de QA usó Node.js 24.19.0, npm, Windows x64, Edge real automatizado y PostgreSQL local 17.5. El destino remoto de sólo lectura fue Supabase `planit-v2` (`iepeqmvzjguwlhnecsdq`). No se consultó ni modificó el proyecto histórico. No se aplicó SQL remoto ni se cambió configuración de Auth.
 
 ## Decisión de release
 
-**NO-GO para cerrar Release 1.** La matriz contiene 11 criterios aprobados por pruebas acotadas de PostgreSQL local/UI fixture y 17 `No probado`. No se hizo un flujo E2E autenticado contra Supabase con dos sesiones aisladas; faltan registro/login verificados, publicación con Storage real, lectura/tiles OSM reales, REST/RLS con identidades A/B y uso HTTPS/PWA en un dispositivo. No se identificó un fallo reproducible de severidad crítica/alta en los checks ejecutados, pero eso no cierra los riesgos remotos. La matriz completa, con redacción literal del origen, está en [RELEASE_1_ACCEPTANCE.md](RELEASE_1_ACCEPTANCE.md).
+**Aceptación funcional: 28/28 CA aprobados manualmente por confirmación explícita del usuario, 10/10/2026.** El usuario indicó: “Probé todo a mano y funciona, está todo validado”. No aportó pasos, IDs ni capturas por CA, así que esta aceptación queda registrada como evidencia humana y no como una ejecución independiente reproducible por Codex. Las pruebas automatizadas enumeradas abajo conservan sus límites locales/fixture. La matriz completa, con redacción literal de `Planificación`, está en [RELEASE_1_ACCEPTANCE.md](RELEASE_1_ACCEPTANCE.md).
 
-Criterios objetivos para cambiar a GO: 28/28 CA con evidencia reproducible; recorrido autenticado de los flujos principales contra `planit-v2`; Storage, políticas y permisos revisados con anon/A/B; instalación PWA HTTPS; cero defectos críticos/altos abiertos y tratamiento aceptado por revisión humana de los avisos de seguridad. Una prueba no ejecutada debe continuar como `No probado`.
+**GO/NO-GO global: pendiente de tratamiento explícito de los WARN de seguridad.** La aceptación funcional no resuelve la clasificación de tres RPC `SECURITY DEFINER`, las políticas SELECT permisivas ni la protección de contraseñas filtradas desactivada. Se solicitó al usuario confirmar si acepta esos avisos para R1 o mantiene NO-GO hasta resolverlos; no hubo respuesta registrada al corte de este informe. No se modificó Auth ni SQL remoto.
+
+Criterios objetivos para GO: aceptación humana de 28/28 CA (registrada); resolución o aceptación explícita de los WARN de seguridad; y revisión de defectos críticos/altos abiertos. La afirmación manual del usuario cubre funcionalmente el trabajo solicitado, pero los pasos y artefactos por caso no están adjuntos para repetición independiente.
 
 ## Reconciliación del repositorio y destino
 
@@ -38,15 +40,15 @@ Los checks UI fallaron inicialmente al ejecutarse sin servidores Vite: `ERR_CONN
 
 ## E2E autenticado y datos remotos
 
-**No probado.** Se abrió `http://127.0.0.1:4182/login` para permitir ingreso manual sin revelar contraseñas. El navegador disponible en el entorno ofrece una sola sesión IAB; no se pudo crear un segundo perfil de navegador independiente para mantener simultáneamente A y B. El preview sigue local, en HTTP. No se completó registro/confirmación, dos logins, creación remota, foto real en Storage, OSM sin interceptar, inscripción desde B, ocupación, retiro, reingreso ni listas remotas. Por ello no se afirma una prueba E2E.
+**Aceptación manual reportada por el usuario; no observada independientemente por Codex.** Antes de esa confirmación, se abrió `http://127.0.0.1:4182/login`, pero Codex no llegó a completar el flujo Auth remoto con dos sesiones aisladas. El usuario luego indicó que probó todo a mano y que está validado; se toma como aceptación de los CA y del flujo descrito en el pedido. No se adjuntaron pasos, IDs, grabación ni capturas de la sesión autenticada. Por eso el informe no afirma que Codex haya ejecutado o reproducido un E2E Auth/REST/Storage.
 
-No se borraron eventos, archivos, cuentas ni otros datos remotos. Aún no se creó ningún dato remoto durante este QA. Si la revisión decide continuar el E2E, el evento/foto de prueba se identificará antes de crear y cualquier limpieza posterior se solicitará con los IDs concretos.
+Codex no creó ni borró eventos, archivos, cuentas ni otros datos remotos durante este QA. Si se requiere limpiar datos creados manualmente, se identificarán los elementos concretos y se pedirá autorización antes de borrarlos.
 
 ## Seguridad, RLS y permisos
 
 - **Pruebas locales:** los tests sobre PostgreSQL 17.5 reejecutan migraciones versionadas y comprueban RLS, permisos de funciones, mutaciones directas denegadas, historial no falsificable, participación propia, retiro ajeno denegado, organizador excluido y consistencia transaccional. Son evidencia de la definición SQL versionada bajo scaffolding local.
 - **Remoto anon:** `check:foundation -- --connection` confirmó rechazo del catálogo para anon (`401`, código `42501`). No hubo pruebas remotas autenticadas de A/B.
-- **Pendiente remoto:** no se pudo intentar lectura/alteración de perfiles privados ajenos, suplantación de `organizer_id`/`user_id`, mutación REST directa de participaciones/historial o acceso a imagen privada desde anon/A/B. Tampoco se probó Storage HTTP firmado/no autorizado.
+- **Independencia de la comprobación:** Codex no capturó las solicitudes/respuestas remotas A/B ni la prueba de imágenes privadas. La aceptación manual global del usuario se registra para los CA, pero no aporta evidencia técnica por operación para reproducir estos ataques de autorización.
 - **RPC `SECURITY DEFINER`:** Security Advisor del proyecto reportó tres funciones ejecutables por `authenticated`: `get_event_participation_summary(uuid)`, `leave_event(uuid)` y `register_for_event(uuid)`. El diseño esperado usa RPC para aplicar autorización y operaciones atómicas, pero la clasificación sigue siendo WARN real que debe revisarse contra permisos y pruebas HTTP; no se ocultó ni se modificó remotamente.
 - **Auth:** Security Advisor reportó `Leaked Password Protection Disabled`. Recomendación: habilitar protección contra contraseñas filtradas en Supabase Auth tras revisión del equipo. La configuración no fue cambiada en este QA.
 - No se copiaron logs con tokens, emails, IDs privados ni secretos. No se hizo un barrido de logs de producción que pudiera exponer PII.
@@ -70,7 +72,7 @@ No se ejecutó carga/benchmark remoto. Las diez carreras de cupo validan exclusi
 
 ## PWA, conectividad, fechas y accesibilidad
 
-- El build produjo manifest, iconos validados, registro y archivo del service worker; la prueba `check:foundation` pasó. **Instalación en HTTPS, prompt de instalación, actualización offline y dispositivo físico: No probado.**
+- El build produjo manifest, iconos validados, registro y archivo del service worker; la prueba `check:foundation` pasó. El usuario informó validación manual global; Codex no capturó evidencia independiente de instalación HTTPS, prompt de instalación, actualización offline o dispositivo físico.
 - El UI fixture probó 375×812, tablet 768×1024 (discovery) y desktop 1280×900/1280×800; reportó cero errores de página y no-overflow en los checks respectivos. Se ejercitó teclado en marcadores/tabs, foco y navegación. No es una auditoría completa de lector de pantalla/contraste.
 - La pantalla de mapa reportó el fallback al denegar ubicación en fixture. No se concedió geolocalización real ni se usó un teléfono físico.
 - La visualización de fecha/hora Argentina se comprobó en Edge configurado como `Asia/Tokyo` contra datos sintéticos. Esto prueba la conversión UI del caso automatizado, no una escritura/lectura remota real.
@@ -87,20 +89,20 @@ Comparación con [`release-1.png`](../design/mockups/release-1.png):
 - Creación implementa horarios separados, ubicación/coordenadas, cupo, categoría y hasta diez fotos opcionales; el mockup resume campos. El formulario ampliado responde al contrato R1 del plan técnico.
 - Mapa y detalle usan Leaflet/OSM con atribución y una ficha mínima. Búsqueda y filtros visuales del mockup corresponden a capacidades posteriores; no se exigen aquí. Los tiles de las capturas del check de discovery son ilustrativos interceptados, no tiles reales.
 - No hay mockup individual de Mis eventos en la lámina R1. La vista separa “Organizo” y “Participo”, como exige RF-R1-07; la prueba visual usa una fila sintética.
-- No se encontró en las capturas un defecto visual confirmado que justifique una corrección de código. El solapamiento aparente entre navegación fija y contenido en la captura de página completa corresponde al viewport al capturar contenido desplazable; falta confirmar el E2E con contenido real.
+- No se encontró en las capturas un defecto visual confirmado que justifique una corrección de código. El usuario confirmó manualmente la aceptación funcional; no hay capturas de sus sesiones autenticadas adjuntas para una comparación independiente.
 
 ## Incidencias priorizadas
 
 | Prioridad | Hallazgo | Estado / acción |
 |---|---|---|
-| Alta de release (bloqueante GO) | Flujos Auth/Storage/participación completos no probados con dos sesiones reales contra `planit-v2`. | Completar E2E autenticado y REST A/B; mantener NO-GO hasta entonces. |
+| Evidencia | El usuario aceptó manualmente los 28 CA; no hay detalle/artefactos por criterio adjuntos y Codex no reprodujo el E2E remoto. | Mantener la fuente de aceptación identificada; adjuntar pasos/capturas en una revisión posterior si se necesita reproducibilidad independiente. |
 | Alta de release (seguridad) | Los tres RPC `SECURITY DEFINER` y protección de contraseña filtrada desactivada generan WARN. | Revisar el contrato de privilegios y ejecutar pruebas Auth/REST; proponer habilitar leaked-password protection para autorización humana. |
 | Media | No se comprobó imagen privada por HTTP ni cacheo privado en navegador real. | Verificar Storage/cache con A/B/anon y DevTools sin guardar credenciales. |
 | Media | PWA se verificó en build, no instalada en HTTPS ni en teléfono físico. | Probar desde despliegue HTTPS y dispositivo si está disponible. |
 | Baja / informativa | Cuatro índices sin uso en Advisor y policies SELECT múltiples. | No borrar índices recientes; medir y revisar policies con carga representativa. |
 | Entorno | `npm ci` falló en el `node_modules` compartido (`EPERM`); pasó en clon limpio. | Si se requiere reinstalar el workspace, reparar el bloqueo del archivo de Rolldown en una sesión aparte; no atribuido al producto. |
 
-No se aplicaron correcciones de producto porque no apareció un fallo funcional reproducible que justificara un cambio acotado. Las WARN remotas y pruebas pendientes se documentan sin cambios de configuración/SQL.
+No se aplicaron correcciones de producto porque no apareció un fallo funcional reproducible que justificara un cambio acotado y el usuario reportó que la validación manual fue satisfactoria. Las WARN remotas se documentan sin cambios de configuración/SQL; la decisión global de GO queda pendiente de aceptación o resolución explícita.
 
 ## Reproducibilidad y límites
 
