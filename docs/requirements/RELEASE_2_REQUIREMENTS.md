@@ -21,13 +21,13 @@
 
 | RF | Nombre | Prioridad | Implementación R2 |
 | --- | --- | --- | --- |
-| [RF-R2-01](#rf-r2-01) | Consultar el detalle ampliado de un evento | Alta | Bloque 1 |
-| [RF-R2-02](#rf-r2-02) | Explorar eventos recientes en Inicio | Alta | Bloque 1 |
-| [RF-R2-03](#rf-r2-03) | Visualizar eventos agrupados por categoría | Media | Bloque 1 |
-| [RF-R2-04](#rf-r2-04) | Visualizar mensajes del chat de un evento | Alta | Bloque 2 |
-| [RF-R2-05](#rf-r2-05) | Enviar mensajes de texto al chat de un evento | Alta | Bloque 2 |
-| [RF-R2-06](#rf-r2-06) | Consultar mi perfil | Media | Bloque 3 |
-| [RF-R2-07](#rf-r2-07) | Consultar un centro de notificaciones | Media | Bloque 4 |
+| `RF-R2-01` | Consultar el detalle ampliado de un evento | Alta | Bloque 1 |
+| `RF-R2-02` | Explorar eventos recientes en Inicio | Alta | Bloque 1 |
+| `RF-R2-03` | Visualizar eventos agrupados por categoría | Media | Bloque 1 |
+| `RF-R2-04` | Visualizar mensajes del chat de un evento | Alta | Bloque 2 |
+| `RF-R2-05` | Enviar mensajes de texto al chat de un evento | Alta | Bloque 2 |
+| `RF-R2-06` | Consultar mi perfil | Media | Bloque 3 |
+| `RF-R2-07` | Consultar un centro de notificaciones | Media | Bloque 4 |
 
 ## RF-R2-01 — Consultar el detalle ampliado de un evento
 
