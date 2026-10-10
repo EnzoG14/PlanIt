@@ -32,7 +32,8 @@
 
 ## Migraciones
 - `20261010011204_create_profiles_and_categories.sql` está vacía y **ya registrada como aplicada**. No editar.
-- `20261010013449_create_profiles_and_categories.sql`: primera migración real, con `profiles`, `categories`, RLS y trigger de creación de perfil. **Sólo en rama, sin aplicar**.
+- `20261010013449_create_profiles_and_categories.sql`: primera migración real, con `profiles`, `categories`, RLS y trigger de creación de perfil. **Aplicada en planit-v2**, confirmado mediante MCP e historial de CLI el 09/10/2026 (Argentina).
+- `20261010023448_restrict_rls_auto_enable_execute.sql`: **pendiente, sólo en Git**. Revoca EXECUTE de PUBLIC, anon y authenticated sobre la función interna `public.rls_auto_enable()`. Conserva función, propietario y event trigger `ensure_rls`; no cambia las tablas ni políticas. El dry-run identifica únicamente esta migración pendiente. Los avisos de asesores seguirán presentes hasta su aplicación autorizada.
 - Futuras: eventos/intereses → participaciones → relaciones → mensajería → multimedia/Storage → notificaciones → accesos → funciones transaccionales → auditoría RLS/semillas.
 - La FK `profiles.avatar_file_id -> files.id` se agrega después de crear `files`.
 - No usar claves `service_role` en PWA, ni `SECURITY DEFINER` sin autorización/validación explícita.
