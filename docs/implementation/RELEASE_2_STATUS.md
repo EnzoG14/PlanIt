@@ -15,7 +15,7 @@
 | 0 | Preparar R2, navegación y contrato de diseño | Transversal | Implementado; QA pendiente | [PR #7 fusionada](https://github.com/EnzoG14/PlanIt/pull/7); [PR #8 de verificación](https://github.com/EnzoG14/PlanIt/pull/8) | Revisión humana del contrato visual; revisión visual responsive pendiente |
 | 1 | Inicio, categorías y detalle ampliado | R2-01/02/03 | Implementado; QA pendiente | rama `codex/r2-block-1-home-detail`; [PR #9](https://github.com/EnzoG14/PlanIt/pull/9) | 12 CA cubiertos por checks locales; aceptación humana y Auth/REST/Storage remoto pendientes |
 | 2 | Chat de evento: leer y enviar texto | R2-04/05 | Implementado; QA pendiente | [PR #10](https://github.com/EnzoG14/PlanIt/pull/10); [evidencia](../design/verification/event-chat/README.md) | Migración aplicada; REST/Auth real y aceptación humana pendientes |
-| 3 | Mi perfil (lectura propia ampliada) | R2-06 | Pendiente | — | 4 CA, perfil propio y avatar opcional |
+| 3 | Mi perfil (lectura propia ampliada) | R2-06 | Implementado; QA pendiente | rama `codex/r2-block-3-own-profile`; [evidencia](../design/verification/own-profile/README.md) | 4 CA con SQL local/UI fixture; cuentas reales y aceptación humana pendientes |
 | 4 | Bandeja de notificaciones | R2-07 | Pendiente | — | 4 CA, migración, RLS, lectura/marcar leído |
 | 5 | QA integral, seguridad y regresión R1 | R2-01 a 07 | Pendiente | — | Matriz 28 CA, E2E según autorización y revisión humana |
 
@@ -86,12 +86,17 @@
 
 ### Bloque 3 — Mi perfil
 
-- Estado: Pendiente.
-- PR: —
-- Migraciones: —
-- CA: RF-R2-06.CA-01..04.
-- Evidencia y pruebas: —
-- Riesgos: datos privados entre sesiones, fotos inexistentes, UI del mockup con acciones R5.
+- Estado: Implementado; QA pendiente (sin aceptación humana).
+- Base: `origin/main` en `1719a25`, PR #10 integrada; rama nueva `codex/r2-block-3-own-profile`.
+- PR: en preparación, independiente del bloque 2.
+- Cambios: `/me` consulta nombre/username/bio/avatar_file_id propios; correo desde Auth. Avatar circular con firma de 300 segundos sólo para archivo propio accesible, placeholder en faltantes/fallos. Mantiene marino/azul/violeta, biografía centrada, navegación Perfil activa y acceso real a Mis eventos; sin funciones R5 del collage.
+- Sesiones: estado nuevo por identidad/token, descarte de respuestas tardías y limpieza durante recarga/error; datos actualizados al reabrir, recuperar foco o pulsar Actualizar perfil. AuthProvider y permisos existentes conservados.
+- Migraciones: ninguna; sin SQL/escrituras/configuración remotas, sin ampliación de grants/RLS/Storage. Avatar sólo desde referencia ya persistida; no edición/carga ni permisos nuevos.
+- CA: RF-R2-06.CA-01..04; [matriz y capturas](../design/verification/own-profile/README.md), ui-results.json y postgres-results.json.
+- Pruebas: build/lint, check:auth, check:events y diff --check. `node scripts/check-profile.mjs`: PostgreSQL real local con scaffold Auth/Storage; dos identidades y anon, consultas por ID/sin filtro, actualización propia y denegación cruzada, lectura de archivo/objeto propio. `node scripts/check-profile-ui.mjs`: Edge con fixtures Auth/REST/Storage, móvil 375×812 y desktop 1280×900, cambio A/B con consulta A pendiente, logout, recarga/foco, campos ausentes y avatar denegado/ajeno/roto.
+- Diseño: capturas revisadas contra teléfono 4; se omiten métricas, intereses, seguidores, entradas y configuración/edición no disponibles. Correo y Actualizar perfil son accesos/datos reales, sin controles inertes.
+- Pendientes: dos cuentas reales Auth/REST/Storage, aceptación humana, smoke completo R1 real y teclado/safe areas físico. `.auth-test.local` no está disponible. Evidencia fixture/SQL local no equivale a E2E remoto.
+- Fuera de la PR: cambios locales previos en package.json/package-lock.json y eliminación de .env.example, preservados. Bloques 4/5 sin iniciar.
 
 ### Bloque 4 — Notificaciones
 
