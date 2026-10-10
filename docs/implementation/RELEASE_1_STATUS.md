@@ -46,9 +46,10 @@
 - Riesgos/pendientes: dos sesiones Auth/REST reales, Storage HTTP real, QA humana y teléfono físico. Roles SQL/fixtures no equivalen a sesiones reales; no se añadieron casos históricos remotos de prueba. Bloque 6 sin iniciar.
 
 ### Bloque 6
-- Estado: Pendiente.
-- PR:
-- Matriz de 28 criterios de aceptación: ruta.
-- PWA en dispositivo: evidencia.
-- RLS/Storage/concurrencia: evidencia.
-- Riesgos/pendientes:
+- Estado: Implementado; QA pendiente. **No Validado**: requiere revisión humana y pruebas reales de aceptación.
+- PR: pendiente de publicar para revisión; esta rama no se fusionó.
+- Matriz de 28 criterios, con textos literales de `Planificación`: [docs/qa/RELEASE_1_ACCEPTANCE.md](../qa/RELEASE_1_ACCEPTANCE.md). Corte 10/10/2026: 11 CA aprobados sólo por pruebas acotadas PostgreSQL local/UI fixture y 17 no probados. Ningún resultado fixture se presenta como E2E.
+- Informe de comandos, Advisors, seguridad, PWA, visual y NO-GO: [docs/qa/RELEASE_1_TEST_REPORT.md](../qa/RELEASE_1_TEST_REPORT.md). Capturas sin PII: [docs/qa/screenshots/](../qa/screenshots/).
+- Reconciliación: rama basada en `origin/main` `9f54deb`; siete migraciones versionadas coinciden con la lista read-only de `planit-v2` (`iepeqmvzjguwlhnecsdq`). Sin SQL remoto ni cambios de Auth. `vite.config.ts` preexistente se preservó y queda fuera del cambio.
+- Pendientes de aceptación: flujo E2E con dos sesiones Auth aisladas, alta/confirmación/login/restauración, evento y foto reales, tiles OSM, detalle/inscripción/ocupación/retiro/reingreso/listas; REST/RLS/Storage remoto con anon/A/B; PWA HTTPS/celular/caché; revisión de WARN de RPC `SECURITY DEFINER`, policies permisivas y leaked-password protection.
+- Recomendación: **NO-GO** hasta tener 28/28 CA probados, recorrido autenticado remoto, cero defectos críticos/altos abiertos y revisión humana de los riesgos. Ver [criterios objetivos](../qa/RELEASE_1_TEST_REPORT.md#decisión-de-release).
