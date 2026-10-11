@@ -1,4 +1,8 @@
 .app-shell { min-height: 100svh; background: radial-gradient(ellipse at 0 0, #0a1956 0, transparent 45%), var(--color-bg); }
+html.chat-active, .chat-active body { overflow: hidden; overscroll-behavior: none; }
+.app-shell.chat-shell { position: fixed; inset-inline: 0; top: var(--chat-viewport-top, 0px); height: var(--chat-viewport-height, 100dvh); min-height: 0; overflow: hidden; }
+.chat-shell main { display: flex; flex-direction: column; width: 100%; height: 100%; min-height: 0; max-width: 960px; padding: 0 max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left)); overflow: hidden; }
+.chat-shell main > :not(.chat-page) { flex-shrink: 0; }
 .app-header, .auth-topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(12px + env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) 12px max(16px, env(safe-area-inset-left)); }
 .app-header { border-bottom: 1px solid var(--color-border); }
 .brand { display: inline-flex; align-items: center; min-height: 44px; font-size: 24px; font-weight: 750; letter-spacing: -1px; }

@@ -1,0 +1,105 @@
+{
+  "environment": "Edge; intercepted Auth/RPC/Phoenix fixtures; no remote writes",
+  "results": [
+    {
+      "width": 360,
+      "height": 800,
+      "geometry": {
+        "pageHeight": 1029,
+        "viewport": 800,
+        "pageScroll": 0,
+        "list": {
+          "top": 353.59375,
+          "bottom": 769.59375,
+          "height": 416
+        },
+        "composer": {
+          "top": 584.8125,
+          "bottom": 716,
+          "height": 131.1875
+        },
+        "last": {
+          "top": 641.78125,
+          "bottom": 761.96875,
+          "height": 120.1875
+        },
+        "bottomGap": 0
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "geometry": {
+        "pageHeight": 1035,
+        "viewport": 812,
+        "pageScroll": 0,
+        "list": {
+          "top": 353.59375,
+          "bottom": 775.828125,
+          "height": 422.234375
+        },
+        "composer": {
+          "top": 596.8125,
+          "bottom": 728,
+          "height": 131.1875
+        },
+        "last": {
+          "top": 647.78125,
+          "bottom": 767.96875,
+          "height": 120.1875
+        },
+        "bottomGap": 0
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "geometry": {
+        "pageHeight": 1031,
+        "viewport": 844,
+        "pageScroll": 0,
+        "list": {
+          "top": 332.796875,
+          "bottom": 771.671875,
+          "height": 438.875
+        },
+        "composer": {
+          "top": 628.8125,
+          "bottom": 760,
+          "height": 131.1875
+        },
+        "last": {
+          "top": 643.984375,
+          "bottom": 764.171875,
+          "height": 120.1875
+        },
+        "bottomGap": 0
+      }
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "geometry": {
+        "pageHeight": 1084,
+        "viewport": 900,
+        "pageScroll": 0,
+        "list": {
+          "top": 329.796875,
+          "bottom": 824.796875,
+          "height": 495
+        },
+        "composer": {
+          "top": 664.8125,
+          "bottom": 796,
+          "height": 131.1875
+        },
+        "last": {
+          "top": 721.890625,
+          "bottom": 816.484375,
+          "height": 94.59375
+        },
+        "bottomGap": 0
+      }
+    }
+  ]
+}

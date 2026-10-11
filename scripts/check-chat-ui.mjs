@@ -5,7 +5,7 @@ import { pathToFileURL } from 'node:url'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/USUARIO/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
 const browser = await chromium.launch({headless:true,channel:'msedge'})
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4180'
-const output = 'docs/design/verification/event-chat'
+const output = process.env.PLANIT_CHAT_UI_OUTPUT ?? 'docs/design/verification/event-chat'
 await mkdir(output,{recursive:true})
 const user = {id:'20000000-0000-4000-8000-000000000001',email:'fixture@example.invalid',aud:'authenticated',role:'authenticated',app_metadata:{provider:'email'},user_metadata:{},identities:[],created_at:'2026-10-10T12:00:00Z'}
 const eventId='30000000-0000-4000-8000-000000000001'
