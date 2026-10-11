@@ -1,0 +1,17 @@
+# Codex — R3, BLOQUE 7: QA integral y cierre
+
+**RF/CA:** R3-01..09, **37 criterios**. **Precondición:** bloques 0–6 integrados con sus migraciones pertinentes tras autorización. **Referencias visuales:** `docs/design/mockups/r3/01-mis-eventos.png`, `docs/design/mockups/r3/02-editar-evento.png`, `docs/design/mockups/r3/03-galeria.png`, `docs/design/mockups/r3/04-asistentes.png`, `docs/design/mockups/r3/05-solicitudes-reincorporacion.png`, `docs/design/mockups/r3/06-acciones-evento.png`, `docs/design/mockups/r3/07-estados-dialogos.png` (consultar también `docs/design/mockups/r3/README.md` y el collage original `docs/design/mockups/release-3.png`).
+
+**Precondiciones comunes:** leer `AGENTS.md`, `src/AGENTS.md`, `supabase/AGENTS.md`, `docs/requirements/RELEASE_3_REQUIREMENTS.md`, `docs/implementation/RELEASE_3_PLAN.md`, `RELEASE_3_STATUS.md` y `docs/design/{AGENTS,DESIGN_SYSTEM,SCREENS,DESIGN_GAPS}.md`. Consultar para el RF las secciones **Flujo funcional, Datos y operaciones, Reglas y validaciones y Verificación** de «Especificación técnica — R1 a R7» en Planificación. **El PNG determina apariencia, no funcionalidades.** Si falta un PNG, registrar el bloqueo de comparación visual y no inventar que fue revisado.
+
+**Protocolo:** partir de `main` actualizado (una rama/PR exclusiva por bloque), verificar primero código y esquema real; no asumir que las RPC propuestas existen. Migraciones incrementales, probadas localmente, RLS/grants mínimos, identidad desde `auth.uid()`. No tocar proyecto Supabase antiguo ni ejecutar SQL/configuración remota, merge o despliegue sin autorización. Ejecutar build/lint y pruebas relevantes; documentar pruebas reales vs fixtures, capturas, CA, pendientes y migraciones en STATUS. No marcar «Validado» sin aceptación humana.
+
+## Entregables y verificaciones
+1. Crear `docs/qa/RELEASE_3_ACCEPTANCE.md` con **37 filas literales** RF/CA, caso de prueba, estado, enlace a evidencia y pendientes; crear `docs/qa/RELEASE_3_TEST_REPORT.md` con resultados, riesgos y recomendación GO/NO-GO.
+2. Ejecutar `npm ci`, build/lint/checks existentes y específicos; reproducir migraciones localmente y comparar historia local/remota. Identificar pruebas SQL locales, UI fixture y HTTP/REST/Auth/Storage remotos por separado. No ejecutar pruebas remotas con mutación sin permiso expreso.
+3. Seguridad con dos identidades + anon/no miembro: UPDATE/archivo/galería/remoción/reincorporación ajenos denegados por RLS/RPC, no sólo ruta. Revisar grants, definer, almacenamiento y permisos de chat al remover/cerrar.
+4. Carrera de cupo con inscripción vs edición y aprobación vs última plaza; pruebas de rollback al archivar/remover, carga interrumpida, 10/11 fotos, cooldown de 7 días y persistencia histórica.
+5. Pantallas individuales y diálogos en 360×800, 375×812, 390×844, 768×1024 y escritorio; foco/teclado/scroll/safe areas y contraste. Registrar capturas **antes/después** contra cada PNG existente, indicando diferencias justificadas por RF.
+6. Smoke de R1/R2: Auth, creación, mapa, inscripción/retiro, Mis eventos, detalle, chat y notificaciones. Documentar fallos existentes vs introducidos.
+
+Actualizar STATUS sin marcar «Validado» ni inventar ejecución E2E; abrir PR QA y detenerse.
