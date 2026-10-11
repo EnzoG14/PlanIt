@@ -1,0 +1,4 @@
+PASS: CA-02/04: two SQL identities read only own profile; direct ID, unfiltered SELECT and cross-account UPDATE cannot expose/change private data
+PASS: CA-03: subsequent read reflects persisted profile updates; absent optional values stay null
+PASS: Existing file/Storage RLS permits own unlinked avatar object and hides it from another account; no permission changes
+PASS: Anonymous role cannot SELECT profiles

@@ -1,0 +1,121 @@
+{
+  "environment": "Real Auth/REST/Storage and Edge; existing local test accounts; no fixtures, signup, SQL or data mutations",
+  "results": [
+    {
+      "test": "Two isolated real Auth sessions; distinct identities",
+      "status": "PASS"
+    },
+    {
+      "test": "Account 1: own profile; direct cross-account private columns hidden by real REST/RLS",
+      "status": "PASS"
+    },
+    {
+      "test": "Account 1: notification RPC and direct REST recipient isolation (0 visible)",
+      "status": "PASS"
+    },
+    {
+      "test": "Account 1: Home RPC and persisted detail/social projection (1 rows)",
+      "status": "PASS"
+    },
+    {
+      "test": "Account 1: authorized chat header/history REST (1 conversations)",
+      "status": "PASS"
+    },
+    {
+      "test": "Account 1: R1 My events organizing/participating RPC smoke",
+      "status": "PASS"
+    },
+    {
+      "test": "Account 2: own profile; direct cross-account private columns hidden by real REST/RLS",
+      "status": "PASS"
+    },
+    {
+      "test": "Account 2: notification RPC and direct REST recipient isolation (1 visible)",
+      "status": "PASS"
+    },
+    {
+      "test": "Account 2: Home RPC and persisted detail/social projection (1 rows)",
+      "status": "PASS"
+    },
+    {
+      "test": "Account 2: authorized chat header/history REST (1 conversations)",
+      "status": "PASS"
+    },
+    {
+      "test": "Account 2: R1 My events organizing/participating RPC smoke",
+      "status": "PASS"
+    },
+    {
+      "test": "Direct outsider chat/history access",
+      "status": "PENDING",
+      "detail": "No disjoint membership in the existing test data"
+    },
+    {
+      "test": "Anonymous real REST SELECT and RPC denied",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 1: own profile, no other identity, reload restores session",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 1: Home card opens persisted detail, organizer and available photo",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 1: empty notification inbox is explicit",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 1: Home and notification inbox read against live REST",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 1: existing authorized chat opens",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 1: authenticated Realtime channel connects (not message delivery)",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 2: own profile, no other identity, reload restores session",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 2: Home card opens persisted detail, organizer and available photo",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 2: persisted notification content and timestamp displayed",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 2: Home and notification inbox read against live REST",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 2: existing authorized chat opens",
+      "status": "PASS"
+    },
+    {
+      "test": "Real browser 2: authenticated Realtime channel connects (not message delivery)",
+      "status": "PASS"
+    },
+    {
+      "test": "Notification mark-read E2E",
+      "status": "PENDING",
+      "detail": "Read-only run; no writes"
+    },
+    {
+      "test": "Real send/delivery/reconnect/expiry and closed-event E2E",
+      "status": "PENDING",
+      "detail": "No messages inserted and no event state changed; fixtures/SQL cover these cases separately"
+    },
+    {
+      "test": "Real Storage signed photo download",
+      "status": "PASS",
+      "detail": "2 existing home photos fetched"
+    }
+  ]
+}

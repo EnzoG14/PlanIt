@@ -1,0 +1,1 @@
+PASS: mobile/desktop, double click, withdrawal/rejoin, lost response, refresh failure/retry, full/removed/closed/organizer, safe RPC arguments, Argentina time, no overflow/errors. HTTP fixtures.

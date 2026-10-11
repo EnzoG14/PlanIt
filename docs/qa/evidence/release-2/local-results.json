@@ -1,0 +1,62 @@
+[
+  {
+    "check": "foundation",
+    "exitCode": 0,
+    "seconds": 0.47
+  },
+  {
+    "check": "auth",
+    "exitCode": 0,
+    "seconds": 0.5
+  },
+  {
+    "check": "events",
+    "exitCode": 0,
+    "seconds": 0.38
+  },
+  {
+    "check": "discovery",
+    "exitCode": 0,
+    "seconds": 1.37
+  },
+  {
+    "check": "mapbox",
+    "exitCode": 0,
+    "seconds": 0.58
+  },
+  {
+    "check": "realtime",
+    "exitCode": 0,
+    "seconds": 1.55
+  },
+  {
+    "check": "home-events",
+    "exitCode": 0,
+    "seconds": 36.08
+  },
+  {
+    "check": "chat",
+    "exitCode": 0,
+    "seconds": 37.6
+  },
+  {
+    "check": "profile",
+    "exitCode": 0,
+    "seconds": 36.72
+  },
+  {
+    "check": "notifications",
+    "exitCode": 0,
+    "seconds": 36.11
+  },
+  {
+    "check": "participations",
+    "exitCode": 0,
+    "seconds": 36.05
+  },
+  {
+    "check": "my-events",
+    "exitCode": 0,
+    "seconds": 37.53
+  }
+]

@@ -1,0 +1,32 @@
+
+> planit@0.0.0 check:r2:live
+> node scripts/check-release-2-live.mjs --readonly
+
+PASS: Two isolated real Auth sessions; distinct identities
+PASS: Account 1: own profile; direct cross-account private columns hidden by real REST/RLS
+PASS: Account 1: notification RPC and direct REST recipient isolation (0 visible)
+PASS: Account 1: Home RPC and persisted detail/social projection (1 rows)
+PASS: Account 1: authorized chat header/history REST (1 conversations)
+PASS: Account 1: R1 My events organizing/participating RPC smoke
+PASS: Account 2: own profile; direct cross-account private columns hidden by real REST/RLS
+PASS: Account 2: notification RPC and direct REST recipient isolation (1 visible)
+PASS: Account 2: Home RPC and persisted detail/social projection (1 rows)
+PASS: Account 2: authorized chat header/history REST (1 conversations)
+PASS: Account 2: R1 My events organizing/participating RPC smoke
+PENDING: Direct outsider chat/history access
+PASS: Anonymous real REST SELECT and RPC denied
+PASS: Real browser 1: own profile, no other identity, reload restores session
+PASS: Real browser 1: Home card opens persisted detail, organizer and available photo
+PASS: Real browser 1: empty notification inbox is explicit
+PASS: Real browser 1: Home and notification inbox read against live REST
+PASS: Real browser 1: existing authorized chat opens
+PASS: Real browser 1: authenticated Realtime channel connects (not message delivery)
+PASS: Real browser 2: own profile, no other identity, reload restores session
+PASS: Real browser 2: Home card opens persisted detail, organizer and available photo
+PASS: Real browser 2: persisted notification content and timestamp displayed
+PASS: Real browser 2: Home and notification inbox read against live REST
+PASS: Real browser 2: existing authorized chat opens
+PASS: Real browser 2: authenticated Realtime channel connects (not message delivery)
+PENDING: Notification mark-read E2E
+PENDING: Real send/delivery/reconnect/expiry and closed-event E2E
+PASS: Real Storage signed photo download

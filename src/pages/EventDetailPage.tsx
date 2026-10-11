@@ -10,7 +10,8 @@ import './discovery.css'
 
 export function EventDetailPage() {
   const { id = '' } = useParams()
-  return <EventDetailContent key={id} id={id} />
+  const { session } = useAuth()
+  return <EventDetailContent key={`${id}:${session?.user.id}:${session?.access_token}`} id={id} />
 }
 
 function EventDetailContent({ id }: { id: string }) {
@@ -29,17 +30,45 @@ function EventDetailContent({ id }: { id: string }) {
   const [attempt, setAttempt] = useState(0)
   useEffect(() => {
     let active = true
-    loadEvent(id).then(async data => {
-      if (!active) return
-      setEvent(data)
-      if (data) {
-        document.title = `${data.title} · PlanIt`
-        try { const categories = await loadCategories(); if (active) setCategory(categories.find(item => item.id === data.category_id)?.name ?? 'Categoría no disponible') } catch { /* Category failure must not hide the event. */ }
-        try { const photos = await loadEventImages(id); if (active) setImages(photos) } catch { if (active) setImageError(true) }
-        try { const profile = await loadEventOrganizer(id); if (active) setOrganizer(profile) } catch { if (active) setOrganizerError(true) }
-      }
-    }).catch(() => { if (active) setError('No pudimos consultar el evento. Revisá la conexión y reintentá.') }).finally(() => { if (active) setLoading(false) })
-    return () => { active = false }
+    let revision = 0
+    async function load() {
+      const request = ++revision
+      const current = () => active && request === revision
+      setLoading(true)
+      setEvent(null)
+      setImages([])
+      setOrganizer(null)
+      setOrganizerError(false)
+      setCategory('Categoría no disponible')
+      setImageError(false)
+      setError('')
+      document.title = 'Detalle del evento · PlanIt'
+      try {
+        const data = await loadEvent(id)
+        if (!current()) return
+        setEvent(data)
+        if (data) {
+          document.title = `${data.title} · PlanIt`
+          await Promise.all([
+            loadCategories().then(categories => { if (current()) setCategory(categories.find(item => item.id === data.category_id)?.name ?? 'Categoría no disponible') }).catch(() => { /* Category failure must not hide the event. */ }),
+            loadEventImages(id).then(photos => { if (current()) setImages(photos) }).catch(() => { if (current()) setImageError(true) }),
+            loadEventOrganizer(id).then(profile => { if (current()) setOrganizer(profile) }).catch(() => { if (current()) setOrganizerError(true) }),
+          ])
+        }
+      } catch { if (current()) setError('No pudimos consultar el evento. Revisá la conexión y reintentá.') }
+      finally { if (current()) setLoading(false) }
+    }
+    const refresh = () => { if (document.visibilityState === 'visible') void load() }
+    void load()
+    window.addEventListener('focus', refresh)
+    window.addEventListener('online', refresh)
+    document.addEventListener('visibilitychange', refresh)
+    return () => {
+      active = false
+      window.removeEventListener('focus', refresh)
+      window.removeEventListener('online', refresh)
+      document.removeEventListener('visibilitychange', refresh)
+    }
   }, [id, attempt])
   if (loading) return <StatusMessage title="Cargando evento">Esperá un momento.</StatusMessage>
   function retry() { setLoading(true); setError(''); setImageError(false); setImages([]); setAttempt(value => value + 1) }

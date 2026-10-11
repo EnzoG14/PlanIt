@@ -1,0 +1,52 @@
+[
+  {
+    "check": "home-ui",
+    "exitCode": 0,
+    "seconds": 9.36
+  },
+  {
+    "check": "chat-ui",
+    "exitCode": 0,
+    "seconds": 9.35
+  },
+  {
+    "check": "profile-ui",
+    "exitCode": 0,
+    "seconds": 4.98
+  },
+  {
+    "check": "notifications-ui",
+    "exitCode": 0,
+    "seconds": 9.22
+  },
+  {
+    "check": "realtime-ui",
+    "exitCode": 0,
+    "seconds": 9.85
+  },
+  {
+    "check": "chat-layout-ui",
+    "exitCode": 0,
+    "seconds": 10.1
+  },
+  {
+    "check": "events-ui",
+    "exitCode": 0,
+    "seconds": 15.62
+  },
+  {
+    "check": "participations-ui",
+    "exitCode": 0,
+    "seconds": 8.25
+  },
+  {
+    "check": "my-events-ui",
+    "exitCode": 0,
+    "seconds": 15.35
+  },
+  {
+    "check": "discovery-ui",
+    "exitCode": 1,
+    "seconds": 32.27
+  }
+]

@@ -1,0 +1,3 @@
+PASS simulated: bursts coalesce; invalidations during query run again; errors recover; disposal stops queued work
+PASS simulated: UUID deduplication, chronological microsecond/UUID ordering, recovery beyond 6 pages
+PASS simulated: all channel statuses, fresh channel on CLOSED, auth refresh/focus/online recovery, cleanup and ignored stale callbacks

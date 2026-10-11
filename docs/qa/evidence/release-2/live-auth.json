@@ -1,0 +1,19 @@
+{
+  "environment": "Real Supabase Auth HTTPS; existing local test credentials; no signup",
+  "results": [
+    {
+      "account": 1,
+      "session": true,
+      "errorCode": null,
+      "errorName": null,
+      "status": null
+    },
+    {
+      "account": 2,
+      "session": true,
+      "errorCode": null,
+      "errorName": null,
+      "status": null
+    }
+  ]
+}

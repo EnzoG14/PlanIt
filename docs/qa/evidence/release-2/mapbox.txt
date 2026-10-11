@@ -1,0 +1,2 @@
+failed to load config from D:\planit\vite.config.ts
+PASS: wrapped/world/antimeridian/polar bounds, missing/public/secret tokens, build rejects secrets before bundling.

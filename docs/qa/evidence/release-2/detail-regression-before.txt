@@ -1,0 +1,22 @@
+PASS: mobile: categorized home card opens matching detail, shows real organizer projection, placeholder media, and returns to home
+PASS: desktop: categorized home card opens matching detail, shows real organizer projection, placeholder media, and returns to home
+PASS: Empty home state is informative and contains no sample cards
+PASS: Keyset pagination appends the next page and merges repeated category groups
+PASS: Available signed photos render as a hero and a detail gallery
+PASS: Home query failure gives an explicit error with retry
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Timeout 3000ms exceeded.
+Call log:
+  - waiting for getByRole('heading', { name: 'Evento no disponible' }) to be visible
+
+    at D:\planit\scripts\check-home-ui.mjs:137:75 {
+  log: [
+    "  - waiting for getByRole('heading', { name: 'Evento no disponible' }) to be visible"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.19.0

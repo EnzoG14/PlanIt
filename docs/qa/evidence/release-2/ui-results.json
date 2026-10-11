@@ -1,0 +1,60 @@
+{
+  "note": "Final successful executions; initial batch in ui-initial-results.json. Home rerun after detail fix; discovery rerun on port 4187 with pk.fixture and intercepted style.",
+  "results": [
+    {
+      "check": "home-ui",
+      "exitCode": 0,
+      "finalStatus": "PASS"
+    },
+    {
+      "check": "chat-ui",
+      "exitCode": 0,
+      "finalStatus": "PASS"
+    },
+    {
+      "check": "profile-ui",
+      "exitCode": 0,
+      "finalStatus": "PASS"
+    },
+    {
+      "check": "notifications-ui",
+      "exitCode": 0,
+      "finalStatus": "PASS"
+    },
+    {
+      "check": "realtime-ui",
+      "exitCode": 0,
+      "finalStatus": "PASS"
+    },
+    {
+      "check": "chat-layout-ui",
+      "exitCode": 0,
+      "finalStatus": "PASS"
+    },
+    {
+      "check": "events-ui",
+      "exitCode": 0,
+      "finalStatus": "PASS"
+    },
+    {
+      "check": "participations-ui",
+      "exitCode": 0,
+      "finalStatus": "PASS"
+    },
+    {
+      "check": "my-events-ui",
+      "exitCode": 0,
+      "finalStatus": "PASS"
+    },
+    {
+      "check": "discovery-ui",
+      "exitCode": 0,
+      "finalStatus": "PASS"
+    },
+    {
+      "check": "discovery-webgl",
+      "exitCode": 0,
+      "finalStatus": "PASS"
+    }
+  ]
+}

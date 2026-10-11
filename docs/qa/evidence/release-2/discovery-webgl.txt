@@ -1,0 +1,1 @@
+PASS (webgl): responsive, cards/preview/detail, location, limit, empty/error/retry and unmount. Map unavailable fallback. Fixtures only; no live Mapbox validation.
