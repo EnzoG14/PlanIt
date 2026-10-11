@@ -8,7 +8,7 @@
 
 | Bloque | Alcance | RF | Estado | PR/evidencia | Pendientes |
 | --- | --- | --- | --- | --- | --- |
-| 0 | Preparación, rutas y diseño | Transversal | Implementado; QA pendiente | rama `codex/r3-block-0`; [decisiones/evidencia](RELEASE_3_BLOCK_0_DECISIONS.md) | Revisión y aceptación humana del contrato |
+| 0 | Preparación, rutas y diseño | Transversal | Implementado; QA pendiente | [PR #18](https://github.com/EnzoG14/PlanIt/pull/18); rama `codex/r3-block-0`; [decisiones/evidencia](RELEASE_3_BLOCK_0_DECISIONS.md) | Revisión y aceptación humana del contrato |
 | 1 | Mis eventos organizados | R3-04 | Pendiente | — | get_my_events existe; faltan filtros completos/históricos, menú y regreso coherente |
 | 2 | Editar evento | R3-01 | Pendiente | — | Reutilizar formulario; update_event ausente, cupo concurrente y política de históricos por resolver |
 | 3 | Galería | R3-03 | Pendiente | — | Media básica existe; faltan operaciones administrativas de orden/baja/limpieza |
@@ -37,7 +37,7 @@
 
 ### Bloque 0 — Preparación entregada; QA pendiente
 
-- **Base/rama:** origin/main actualizado (`42d0ce1`) → `codex/r3-block-0`; PR exclusiva documental. Revisión humana pendiente; no «Validado».
+- **Base/rama:** origin/main actualizado (`42d0ce1`) → `codex/r3-block-0`; [PR #18](https://github.com/EnzoG14/PlanIt/pull/18), exclusiva documental. Revisión humana pendiente; no «Validado».
 - **Entrega:** [RELEASE_3_BLOCK_0_DECISIONS.md](RELEASE_3_BLOCK_0_DECISIONS.md), este seguimiento, índice de mockups y siete PNG originales sin transformar. El documento distingue rutas actuales/futuras, origen/regreso, acceso de organizador/participante/removido, componentes y contratos mínimos, brechas y dependencias de bloques 1–6.
 - **Fuentes:** prompt/plan/contrato R3, guías y mockups originales, arquitectura/modelo/migraciones, contexto R2 y [Planificacion](https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit), reorganización vigente y especificación técnica de los nueve RF. No se utiliza R3 histórico de analítica/push.
 - **Auditoría:** CodeGraph y lectura de migraciones; SELECT remoto de catálogos, definiciones, políticas, grants, restricciones/triggers, bucket e historial en iepeqmvzjguwlhnecsdq. Lectura administrativa de metadatos, sin invocar operaciones de negocio, sin leer perfiles privados ni tocar el proyecto histórico.
