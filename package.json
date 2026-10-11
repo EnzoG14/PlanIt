@@ -18,18 +18,17 @@
     "check:participations": "node scripts/check-participations.mjs",
     "check:participations:ui": "node scripts/check-participations-ui.mjs",
     "check:my-events": "node scripts/check-my-events.mjs",
-    "check:my-events:ui": "node scripts/check-my-events-ui.mjs"
+    "check:my-events:ui": "node scripts/check-my-events-ui.mjs",
+    "check:mapbox": "node scripts/check-mapbox.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",
-    "leaflet": "1.9.4",
+    "mapbox-gl": "^3.32.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-leaflet": "5.0.0",
     "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
-    "@types/leaflet": "1.9.21",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
