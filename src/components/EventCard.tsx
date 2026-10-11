@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
 import { Icon } from './Icon'
 import { formatEventTime } from '../features/events/validation'
 import type { EventPreview } from '../features/events/discovery'
@@ -7,7 +8,21 @@ import type { MyEventListItem } from '../features/events/my-events'
 const eventStates = { open: 'Publicado', ended: 'Finalizado', cancelled: 'Cancelado', archived: 'Archivado' }
 const participationStates = { confirmed: 'Confirmada', cancelled: 'Cancelada', removed: 'Removida' }
 
-export function CompactEventCard({ event, returnTo }: { event: MyEventListItem; returnTo: string }) {
+export function CompactEventCard({ event, returnTo, showMenu = false }: { event: MyEventListItem; returnTo: string; showMenu?: boolean }) {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menu = useRef<HTMLDivElement>(null)
+  const trigger = useRef<HTMLButtonElement>(null)
+  const detail = useRef<HTMLAnchorElement>(null)
+  useEffect(() => {
+    if (!menuOpen) return
+    detail.current?.focus()
+    function close() { setMenuOpen(false); trigger.current?.focus() }
+    const outside = (event: PointerEvent) => { if (!menu.current?.contains(event.target as Node)) close() }
+    const escape = (event: globalThis.KeyboardEvent) => { if (event.key === 'Escape') { event.preventDefault(); close() } }
+    document.addEventListener('pointerdown', outside)
+    document.addEventListener('keydown', escape)
+    return () => { document.removeEventListener('pointerdown', outside); document.removeEventListener('keydown', escape) }
+  }, [menuOpen])
   return <article className="compact-event-card">
     <Link to={`/events/${event.id}`} state={{ myEventsReturnTo: returnTo }} className="compact-event-link">
       <span className="compact-event-photo"><Icon name="calendar" />{event.imageUrl && <img src={event.imageUrl} alt="" width="80" height="88" loading="lazy" onError={e => { e.currentTarget.hidden = true }} />}</span>
@@ -20,6 +35,10 @@ export function CompactEventCard({ event, returnTo }: { event: MyEventListItem; 
         </div>
       </div>
     </Link>
+    {showMenu && <div className="compact-event-menu" ref={menu} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setMenuOpen(false) }}>
+      <button ref={trigger} type="button" className="compact-event-menu-trigger" aria-label={`Acciones de ${event.title}`} aria-expanded={menuOpen} aria-controls={menuOpen ? `event-menu-${event.id}` : undefined} onClick={() => setMenuOpen(open => !open)}><Icon name="more" /></button>
+      {menuOpen && <div className="compact-event-menu-panel" id={`event-menu-${event.id}`}><Link ref={detail} to={`/events/${event.id}`} state={{ myEventsReturnTo: returnTo }}>Ver detalle</Link></div>}
+    </div>}
   </article>
 }
 

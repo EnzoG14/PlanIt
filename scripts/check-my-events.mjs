@@ -22,13 +22,14 @@ const check = test => { results.push({ test, result: 'PASS' }); console.log(`PAS
 async function connect() { const client = new pg.Client({ host: '127.0.0.1', port, user: 'postgres', database: 'postgres', connectionTimeoutMillis: 5000 }); await client.connect(); clients.push(client); return client }
 async function role(client, id) { await client.query('reset role'); await client.query("select set_config('request.jwt.claim.sub',$1,false)", [id ?? '']); await client.query(`set role ${id ? 'authenticated' : 'anon'}`) }
 const list = async (client, section, offset = 0) => (await client.query('select * from public.get_my_events($1,$2)', [section, offset])).rows
+const organized = async (client, filter = 'all', offset = 0) => (await client.query('select * from public.get_my_organized_events($1,$2)', [filter, offset])).rows
 try {
   await run(initdb, ['-D', directory, '-U', 'postgres', '-A', 'trust', '--encoding=UTF8', '--locale=C'], { windowsHide: true, timeout: 30000 })
   await run(pg_ctl, ['-D', directory, '-l', `${directory}/server.log`, '-o', `-h 127.0.0.1 -p ${port}`, '-w', 'start'], { windowsHide: true, timeout: 30000 })
   started = true
   const admin = await connect()
   const version = (await admin.query('select version()')).rows[0].version
-  await admin.query(`create role anon; create role authenticated;
+  await admin.query(`create role anon; create role authenticated; create role service_role;
     create schema auth; create schema storage;
     create table auth.users(id uuid primary key,raw_user_meta_data jsonb);
     create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
@@ -100,12 +101,50 @@ try {
   assert.equal(new Set([...page1.slice(0,30), ...page2].map(row => row.id)).size, 36)
   assert.deepEqual((await list(a, 'organizing')).map(row => row.id), page1.map(row => row.id))
   check('31-row lookahead, deterministic tie ordering, complete pagination without duplicates')
+  const organizedFn = (await admin.query("select prosecdef,proconfig from pg_proc where oid='public.get_my_organized_events(text,integer)'::regprocedure")).rows[0]
+  assert.equal(organizedFn.prosecdef, false); assert.ok(organizedFn.proconfig.includes('search_path=""'))
+  for (const roleName of ['anon', 'service_role']) assert.equal((await admin.query("select has_function_privilege($1,'public.get_my_organized_events(text,integer)','EXECUTE') as allowed", [roleName])).rows[0].allowed, false)
+  assert.deepEqual((await organized(a, 'archived')).map(row => row.id), [id])
+  assert.equal((await organized(a, 'archived'))[0].image_path, path)
+  assert.equal((await organized(a, 'all')).length, 31)
+  assert.equal((await organized(a, 'all', 30)).length, 5)
+  assert.deepEqual(await organized(a, 'past'), [])
+  assert.deepEqual(await organized(a, 'cancelled'), [])
+  // These matches are behind 35 future rows in the unfiltered list.
+  const ongoingId = await create(owner, 'En curso')
+  const endedId = await create(owner, 'Finalizado')
+  const cancelledId = await create(owner, 'Cancelado pasado')
+  await admin.query("update public.events set starts_at=(statement_timestamp() at time zone 'America/Argentina/Buenos_Aires')-interval '1 hour', ends_at=(statement_timestamp() at time zone 'America/Argentina/Buenos_Aires')+interval '1 hour' where id=$1", [ongoingId])
+  for (const eventId of [endedId, cancelledId]) await admin.query("update public.events set starts_at='2020-01-01',ends_at='2020-01-02' where id=$1", [eventId])
+  await admin.query('update public.events set cancelled_at=now() where id=$1', [cancelledId])
+  assert.deepEqual((await organized(a, 'past')).map(row => row.id), [endedId])
+  assert.deepEqual((await organized(a, 'cancelled')).map(row => row.id), [cancelledId])
+  const upcoming = [...(await organized(a, 'upcoming')).slice(0,30), ...await organized(a, 'upcoming',30)]
+  assert.equal(upcoming.length,36); assert.ok(upcoming.some(row=>row.id===ongoingId))
+  assert.ok(upcoming.every(row=>row.event_state==='open' && row.participation_status===null))
+  // At the server's end boundary the event is ended; browser timezone is irrelevant.
+  await admin.query("update public.events set ends_at=(statement_timestamp() at time zone 'America/Argentina/Buenos_Aires') where id=$1", [ongoingId])
+  assert.ok((await organized(a, 'past')).some(row=>row.id===ongoingId))
+  await admin.query('update public.events set archived_at=now() where id=$1', [cancelledId])
+  assert.deepEqual(await organized(a, 'cancelled'), [])
+  assert.ok((await organized(a, 'archived')).some(row=>row.id===cancelledId && row.event_state==='archived'))
+  assert.equal((await organized(b)).length,1)
+  assert.ok(!(await organized(b)).some(row=>row.id===endedId))
+  assert.deepEqual(await organized(c), [])
+  assert.equal((await list(b,'participating'))[0].event_state,'archived')
+  await assert.rejects(a.query('update public.events set title=$1 where id=$2',['No permitido',id]),/permission denied/)
+  await assert.rejects(a.query('delete from public.events where id=$1',[id]),/permission denied/)
+  for (const args of [['invalid',0],[null,0],['all',-1],['all',null]]) await assert.rejects(a.query('select * from public.get_my_organized_events($1,$2)',args), /invalid_list_parameters/)
+  await assert.rejects(a.query('select * from public.get_my_organized_events(p_organizer_id => $1)',[participant]), /does not exist/)
+  check('R3 filters precede pagination; archived-only history, ongoing/end boundary, state precedence, signed-media path, A/B isolation, invoker/minimal grants and no write privilege')
   for (const args of [['invalid',0], [null,0], ['organizing',-1], ['organizing',null]]) await assert.rejects(a.query('select * from public.get_my_events($1,$2)', args), /invalid_list_parameters/)
   await role(c, null); await assert.rejects(list(c, 'organizing'), /permission denied/)
+  await assert.rejects(organized(c), /permission denied/)
   await role(c, stranger); await c.query("select set_config('request.jwt.claim.sub','',false)")
   await assert.rejects(list(c, 'organizing'), /authentication_required/)
+  await assert.rejects(organized(c), /authentication_required/)
   check('Invalid section/offset, anon, missing JWT rejected')
-  const out = 'docs/design/verification/my-events-r1'
+  const out = 'docs/design/verification/r3-block-1'
   await mkdir(out, { recursive: true })
   await writeFile(`${out}/postgres-results.json`, JSON.stringify({ version, environment: 'Local PostgreSQL; SQL Auth/Storage scaffolding, no real Auth/REST', results }, null, 2))
 } finally {

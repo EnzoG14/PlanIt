@@ -6,6 +6,7 @@ import { StatusMessage } from '../components/StatusMessage'
 import { EventParticipation } from '../components/EventParticipation'
 import { loadCategories, loadEvent, loadEventImages, loadEventOrganizer, type EventRecord } from '../features/events/api'
 import { formatEventTime } from '../features/events/validation'
+import { validatedMyEventsReturn, myEventsPath } from '../features/events/my-events'
 import './discovery.css'
 
 export function EventDetailPage() {
@@ -16,8 +17,7 @@ export function EventDetailPage() {
 
 function EventDetailContent({ id }: { id: string }) {
   const location = useLocation()
-  const myEventsReturnTo = location.state?.myEventsReturnTo === '/my-events?section=organizing' || location.state?.myEventsReturnTo === '/my-events?section=participating' ? location.state.myEventsReturnTo : '/my-events'
-  const returnTo = location.state?.returnTo === '/home' ? '/home' : '/map'
+  const listOrigin = validatedMyEventsReturn(location.state?.myEventsReturnTo)
   const { session } = useAuth()
   const [category, setCategory] = useState('Categoría no disponible')
   const [event, setEvent] = useState<EventRecord | null>(null)
@@ -74,9 +74,12 @@ function EventDetailContent({ id }: { id: string }) {
   function retry() { setLoading(true); setError(''); setImageError(false); setImages([]); setAttempt(value => value + 1) }
   if (error) return <><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage><button className="secondary-button" onClick={retry}>Reintentar</button></>
   if (!event) return <StatusMessage title="Evento no disponible">No encontramos el evento o no tenés permiso para consultarlo.</StatusMessage>
+  const discoveryOrigin = location.state?.returnTo === '/home' ? '/home' : location.state?.returnTo === '/map' ? '/map' : null
+  const myEventsReturnTo = listOrigin ?? (event.organizer_id === session?.user.id ? myEventsPath('organizing') : '/my-events')
+  const returnTo = listOrigin ?? discoveryOrigin ?? (event.organizer_id === session?.user.id ? myEventsReturnTo : '/map')
   return <div className="event-detail-page">
     {location.state?.published && <StatusMessage title="Evento publicado">Tu evento ya está disponible para la comunidad.</StatusMessage>}
-    <Link className="detail-back secondary-link" to={returnTo}><Icon name="back" />{returnTo === '/home' ? 'Volver al inicio' : 'Volver al mapa'}</Link>
+    <Link className="detail-back secondary-link" to={returnTo}><Icon name="back" />{returnTo.startsWith('/my-events') ? 'Volver a Mis eventos' : returnTo === '/home' ? 'Volver al inicio' : 'Volver al mapa'}</Link>
     <div className="event-hero">{images[0] && !imageError ? <img src={images[0]} width="960" height="600" alt={`Foto de ${event.title}`} onError={() => setImageError(true)} /> : <div className="event-hero-placeholder"><Icon name="calendar" /><span>Sin foto de portada</span></div>}<div className="event-hero-overlay" /></div>
     <h1>{event.title}</h1>
     <span className="category-chip">{category}</span>
