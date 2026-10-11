@@ -17,7 +17,7 @@
 | 2 | Chat de evento: leer y enviar texto | R2-04/05 | Implementado; QA pendiente | [PR #10](https://github.com/EnzoG14/PlanIt/pull/10); [evidencia](../design/verification/event-chat/README.md) | Migración aplicada; REST/Auth real y aceptación humana pendientes |
 | 3 | Mi perfil (lectura propia ampliada) | R2-06 | Implementado; QA pendiente | [PR #11](https://github.com/EnzoG14/PlanIt/pull/11); [evidencia](../design/verification/own-profile/README.md) | 4 CA con SQL local/UI fixture; cuentas reales y aceptación humana pendientes |
 | 4 | Bandeja de notificaciones | R2-07 | Implementado; QA pendiente | [PR #12](https://github.com/EnzoG14/PlanIt/pull/12); [evidencia](../design/verification/notifications/README.md) | Migración aplicada; REST/JWT real y aceptación humana pendientes |
-| 5 | QA integral, seguridad y regresión R1 | R2-01 a 07 | Implementado; QA pendiente | rama `codex/r2-block-5-qa`; [matriz 28 CA](../qa/RELEASE_2_ACCEPTANCE.md), [informe](../qa/RELEASE_2_TEST_REPORT.md) | NO-GO para cierre: E2E de escrituras/entrega/negativos remotos, dispositivo y aceptación humana |
+| 5 | QA integral, seguridad y regresión R1 | R2-01 a 07 | Implementado; QA pendiente | [PR #16 (Draft)](https://github.com/EnzoG14/PlanIt/pull/16); [matriz 28 CA](../qa/RELEASE_2_ACCEPTANCE.md), [informe](../qa/RELEASE_2_TEST_REPORT.md) | NO-GO para cierre: E2E de escrituras/entrega/negativos remotos, dispositivo y aceptación humana |
 
 ## Estado de partida
 
@@ -119,7 +119,7 @@
 
 - Estado: Implementado; QA pendiente, 11/10/2026 Argentina. Ningún CA marcado Validado.
 - Rama nueva: `codex/r2-block-5-qa`, desde `origin/main` `8d21ed4` (PR #15 integrada). Bloques 0–4 y ampliación Realtime integrados en esta base; las actas anteriores describen sus cortes históricos.
-- PR: preparada para revisión de `main`; URL se registra al abrirla. No fusionada.
+- PR: [#16 — QA integral, matriz de aceptación y corrección de detalle obsoleto](https://github.com/EnzoG14/PlanIt/pull/16), Draft hacia `main`, sin fusionar. Implementación y evidencia en `6ba166b`.
 - Entregables: [matriz literal de los 28 CA](../qa/RELEASE_2_ACCEPTANCE.md), [informe integral](../qa/RELEASE_2_TEST_REPORT.md), [evidencias/capturas](../qa/evidence/release-2/README.md) y script optativo `npm run check:r2:live` para lectura real sin crear datos.
 - PASS: npm ci (372 paquetes, 0 vulnerabilidades), build/lint; doce checks locales de foundation/Auth/eventos/discovery/Mapbox/reconciliación/Home/chat/perfil/avisos/participaciones/Mis eventos. Once escenarios/suites UI finales: diez scripts existentes más modo WebGL de discovery, con HTTP/WS fixture. PostgreSQL temporal real reproduce migraciones y carreras, Auth/Storage scaffold; no equivale a Supabase E2E.
 - Prueba real: dos cuentas locales existentes, login y REST/RLS de perfiles/avisos A/B/anon; Home comparado con events persistidos, proyección social mínima y GET de fotos firmadas, chat autorizado y Mis eventos. Edge real en contextos separados 375×812/1280×900: perfil/reload, Inicio→detalle/foto/organizador, bandeja A vacía/B con aviso y chat autorizado. Canal Realtime conecta en ambas cuentas; **no se acredita entrega de mensajes**. Sin signup, escrituras de datos, SQL remoto ni cambios de configuración.
