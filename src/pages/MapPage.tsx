@@ -6,11 +6,12 @@ import { StatusMessage } from '../components/StatusMessage'
 import { discoverEvents, type EventPreview } from '../features/events/discovery'
 import { defaultLocation, getCurrentLocation, type MapBounds } from '../features/location/geolocation'
 import './discovery.css'
+import { fallbackBounds } from '../components/maps/provider'
 
 const EventMap = lazy(() => import('../components/maps/EventMap').then(module => ({ default: module.EventMap })))
 export function MapPage() {
   const [center, setCenter] = useState(defaultLocation)
-  const [bounds, setBounds] = useState<MapBounds | null>(null)
+  const [bounds, setBounds] = useState<MapBounds>(() => fallbackBounds(defaultLocation))
   const [events, setEvents] = useState<EventPreview[]>([])
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
@@ -26,11 +27,17 @@ export function MapPage() {
     if (!bounds) return
     let active = true
     const timer = window.setTimeout(() => {
-      setLoading(true); setError(''); setEvents([]); setSelectedId(null)
+      setLoading(true); setError('')
       discoverEvents(bounds).then(result => {
-        if (active) { setEvents(result.events); setTruncated(result.truncated); setImageError(result.imageError) }
+        if (active) {
+          setEvents(result.events); setTruncated(result.truncated); setImageError(result.imageError)
+          setSelectedId(current => result.events.some(event => event.id === current) ? current : null)
+        }
       }).catch(failure => {
-        if (active) setError(failure?.code === 'PGRST202' ? 'La exploración todavía no está habilitada en el servidor.' : 'No pudimos cargar los eventos. Revisá la conexión y reintentá.')
+        if (active) {
+          setEvents([]); setSelectedId(null)
+          setError(failure?.code === 'PGRST202' ? 'La exploración todavía no está habilitada en el servidor.' : 'No pudimos cargar los eventos. Revisá la conexión y reintentá.')
+        }
       }).finally(() => { if (active) setLoading(false) })
     }, 300)
     return () => { active = false; window.clearTimeout(timer) }

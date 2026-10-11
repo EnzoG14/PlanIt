@@ -4,7 +4,10 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig(({ mode }) => {
-  const { VITE_SUPABASE_PUBLISHABLE_KEY: key } = loadEnv(mode, process.cwd(), 'VITE_')
+  const { VITE_SUPABASE_PUBLISHABLE_KEY: key, VITE_MAPBOX_ACCESS_TOKEN: mapToken } = loadEnv(mode, process.cwd(), 'VITE_')
+  if (mapToken && mapToken !== 'replace_with_public_mapbox_token' && !/^pk\.[A-Za-z0-9._-]+$/.test(mapToken)) {
+    throw new Error('VITE_MAPBOX_ACCESS_TOKEN debe ser público pk. No se generará un bundle con tokens secretos o inválidos.')
+  }
   // Rechazar claves no públicas antes de que Vite las incluya en el bundle.
   if (key && key !== 'replace_with_project_publishable_key' && !/^sb_publishable_[A-Za-z0-9_-]+$/.test(key)) {
     throw new Error('VITE_SUPABASE_PUBLISHABLE_KEY debe ser una clave publishable. No se generará un bundle con claves no públicas.')

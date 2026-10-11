@@ -1,0 +1,44 @@
+[
+  {
+    "width": 375,
+    "height": 812,
+    "initialCenter": "Buenos Aires",
+    "keyboardAndZoom": false,
+    "stableCanvas": false,
+    "style401": false,
+    "missingToken": true,
+    "overflow": false,
+    "pageErrors": [],
+    "mode": "missing",
+    "supabase": "intercepted",
+    "mapboxService": "not-validated"
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "initialCenter": "Buenos Aires",
+    "keyboardAndZoom": false,
+    "stableCanvas": false,
+    "style401": false,
+    "missingToken": true,
+    "overflow": false,
+    "pageErrors": [],
+    "mode": "missing",
+    "supabase": "intercepted",
+    "mapboxService": "not-validated"
+  },
+  {
+    "width": 1280,
+    "height": 900,
+    "initialCenter": "Buenos Aires",
+    "keyboardAndZoom": false,
+    "stableCanvas": false,
+    "style401": false,
+    "missingToken": true,
+    "overflow": false,
+    "pageErrors": [],
+    "mode": "missing",
+    "supabase": "intercepted",
+    "mapboxService": "not-validated"
+  }
+]

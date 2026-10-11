@@ -48,11 +48,9 @@ Ruta protegida `/events/:id/chat` desde detalle para organizador/confirmed. RPC 
 
 ## Decisión de mapa
 
-PROMPT 05 implementa `/map` autenticado, tarjetas y detalle mínimo. Leaflet aislado en `src/components/maps`, dominio/consultas en `src/features/events` y geolocalización compartida en `src/features/location`. [Arquitectura de descubrimiento](map-architecture.md). RPC desplegada en planit-v2 el 10/10/2026 con autorización del usuario. Mis eventos mantiene su preparación para el bloque siguiente.
+Mapbox GL JS 3.32.0 aislado en `src/components/maps`, cargado con el componente diferido. Standard nocturno, controles accesibles, atribución visible y marcadores DOM actualizados sin reconstruir el mapa. Página, dominio, geolocalización y RPC conservan sus responsabilidades. Token exclusivamente público `VITE_MAPBOX_ACCESS_TOKEN`, restringido por URL; errores del motor no bloquean tarjetas ni detalles. Sin cambios de Auth, SQL, RLS o backend.
 
-Leaflet + React Leaflet: mapa raster sencillo, suficiente para marcadores y selección de ubicación, sin infraestructura geográfica extra. Instalar al implementar su primer uso, no en BLOQUE 0.
-
-Tiles iniciales: `https://tile.openstreetmap.org/{z}/{x}/{y}.png`, atribución visible «© OpenStreetMap contributors» con enlace a https://www.openstreetmap.org/copyright. Mantener el Referer y la caché HTTP normal del navegador; no descargar anticipadamente ni ofrecer mapas offline. Centralizar la configuración del proveedor al integrar el mapa para facilitar reemplazo. El servicio es de disponibilidad best-effort, sin SLA; revisar antes de aumentar tráfico. Política: https://operations.osmfoundation.org/policies/tiles/.
+Si el motor no está disponible, las tarjetas consultan un área aproximada del centro elegido (Buenos Aires inicialmente); el aviso distingue esta zona del viewport real. Mapbox usa red y caché HTTP normal, sin descarga anticipada ni caché offline de servicios. La implementación previa Leaflet/OSM y su aceptación R1 se conservan en documentación histórica. [Arquitectura](map-architecture.md), [implementación](implementation/MAPBOX_MIGRATION.md).
 
 ## Creación de eventos — BLOQUE 2
 
