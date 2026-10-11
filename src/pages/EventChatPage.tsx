@@ -43,6 +43,24 @@ function ChatContent({ eventId, userId }: { eventId: string; userId: string }) {
     else if (position.bottom) element.scrollTop = element.scrollHeight
     scroll.current = null
   }, [messages])
+  const hasMessages = messages.length > 0
+  useLayoutEffect(() => {
+    const element = list.current
+    if (!element) return
+    let height = element.clientHeight
+    let atBottom = element.scrollHeight - element.scrollTop - height < 64
+    const onScroll = () => {
+      if (height === element.clientHeight) atBottom = element.scrollHeight - element.scrollTop - height < 64
+    }
+    // Keep the latest message visible on keyboard/browser resize only for readers at the bottom.
+    const observer = new ResizeObserver(() => {
+      if (atBottom) element.scrollTop = element.scrollHeight
+      height = element.clientHeight
+    })
+    observer.observe(element)
+    element.addEventListener('scroll', onScroll)
+    return () => { observer.disconnect(); element.removeEventListener('scroll', onScroll) }
+  }, [hasMessages])
   useEffect(() => {
     let active = true
     mounted.current = true
@@ -133,14 +151,13 @@ function ChatContent({ eventId, userId }: { eventId: string; userId: string }) {
   }
   const closed = header && header.event_state !== 'open'
   return <section className="chat-page" aria-label="Chat del evento">
-    <header className="chat-header"><Link className="secondary-link" to={`/events/${eventId}`} aria-label="Volver al evento"><Icon name="back" /></Link><span className="chat-event-icon" aria-hidden="true"><Icon name="calendar" /></span><div><h1>{header?.title ?? 'Chat del evento'}</h1><p>Organizador y asistentes confirmados</p></div></header>
+    <header className="chat-header"><Link className="icon-link" to={`/events/${eventId}`} aria-label="Volver al evento"><Icon name="back" /></Link><h1>{header?.title ?? 'Chat del evento'}</h1></header>
     <div className="chat-refresh"><p>{connection === 'connected' ? 'Mensajes en tiempo real.' : connection === 'connecting' ? 'Conectando el chat…' : 'Conexión interrumpida. Recuperaremos los mensajes al reconectar.'}</p><button className="text-button" disabled={pending || sending} onClick={() => refresh.current()}>Actualizar chat</button></div>
-    {unavailable ? <StatusMessage title="Chat no disponible">Sólo el organizador y los asistentes confirmados pueden acceder.</StatusMessage> : error ? <StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage> : pending && !header ? <StatusMessage title="Cargando chat">Esperá un momento.</StatusMessage> : <>
+    {unavailable ? <div className="chat-state"><StatusMessage title="Chat no disponible">Sólo el organizador y los asistentes confirmados pueden acceder.</StatusMessage></div> : error ? <div className="chat-state"><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage></div> : pending && !header ? <div className="chat-state"><StatusMessage title="Cargando chat">Esperá un momento.</StatusMessage></div> : <>
       {closed && <p className="chat-read-only" role="status">{header.event_state === 'ended' ? 'Evento finalizado' : header.event_state === 'archived' ? 'Evento archivado' : 'Evento cancelado'} · Chat de sólo lectura.</p>}
       {hasOlder && <button className="text-button" disabled={pending || sending} onClick={() => refresh.current(messages[0])}>Cargar mensajes anteriores</button>}
-      {messages.length === 0 ? <StatusMessage title="Todavía no hay mensajes">El historial de este evento está vacío.</StatusMessage> : <ol className="chat-messages" ref={list} aria-label="Historial de mensajes">{messages.map(message => <li key={message.id} data-message-id={message.id} className={message.sender_id === userId ? 'chat-own' : 'chat-incoming'}><div className="chat-message-meta"><strong>{message.sender_id === userId ? 'Vos' : message.display_name}</strong><span>@{message.username}</span></div><p className="chat-bubble">{message.body}</p><time dateTime={`${message.created_at}-03:00`}>{formatEventTime(message.created_at)}</time></li>)}</ol>}
-      {!closed && <form className="chat-composer" onSubmit={send}><label htmlFor="chat-text">Mensaje</label><div><textarea id="chat-text" value={text} disabled={sending} onChange={e => setText(e.target.value)} placeholder="Escribí un mensaje…" rows={2} aria-describedby="chat-text-limit" /><button className="gradient-link gradient-button" disabled={pending || sending || !text.trim() || [...text.trim()].length > 2000} type="submit">{sending ? 'Enviando…' : 'Enviar'}</button></div><p id="chat-text-limit">{[...text.trim()].length}/2000 caracteres</p></form>}
+      {messages.length === 0 ? <div className="chat-state"><StatusMessage title="Todavía no hay mensajes">El historial de este evento está vacío.</StatusMessage></div> : <ol className="chat-messages" ref={list} tabIndex={0} aria-label="Historial de mensajes">{messages.map(message => <li key={message.id} data-message-id={message.id} className={message.sender_id === userId ? 'chat-own' : 'chat-incoming'}><div className="chat-message-meta"><strong>{message.sender_id === userId ? 'Vos' : message.display_name}</strong><span>@{message.username}</span></div><p className="chat-bubble">{message.body}</p><time dateTime={`${message.created_at}-03:00`}>{formatEventTime(message.created_at)}</time></li>)}</ol>}
+      {!closed && <form className="chat-composer" onSubmit={send}><label htmlFor="chat-text">Mensaje</label><div><textarea id="chat-text" value={text} disabled={sending} onChange={e => setText(e.target.value)} placeholder="Escribí un mensaje…" rows={2} aria-describedby="chat-text-limit" /><button className="gradient-link gradient-button" disabled={pending || sending || !text.trim() || [...text.trim()].length > 2000} type="submit">{sending ? 'Enviando…' : 'Enviar'}</button></div><p id="chat-text-limit">{[...text.trim()].length}/2000 caracteres</p>{sendError && <p role="alert" className="field-error">{sendError}</p>}</form>}
     </>}
-    {sendError && <p role="alert" className="field-error">{sendError}</p>}
   </section>
 }
