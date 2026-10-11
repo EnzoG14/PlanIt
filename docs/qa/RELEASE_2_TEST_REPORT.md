@@ -4,6 +4,8 @@ Fecha: 11/10/2026, Argentina. Rama `codex/r2-block-5-qa`, base `origin/main` en 
 
 ## Decisión
 
+**Actualización humana — 11/10/2026, 18:46 ART:** el usuario corroboró a mano los cambios y aprobó la PR #16. Se acepta la corrección y los entregables de esta PR. No aportó resultados por CA ni confirmación específica de los E2E y excepciones pendientes; la aprobación de la PR no modifica retrospectivamente los resultados de Codex ni acredita el cierre integral de R2. Sin merge autorizado por este mensaje.
+
 **NO-GO para declarar R2 validada/cerrada.** Hay evidencia local automatizada para los 28 CA y lectura real con dos cuentas existentes, pero faltan envío/entrega/reconexión reales de chat, JWT de no miembro/removido, eventos cerrados reales, marca de lectura real, smoke completo de escrituras R1 y aceptación humana. Ninguno de esos pendientes fue aceptado explícitamente. No hay defectos funcionales altos/críticos reproducibles abiertos en las pruebas ejecutadas; el defecto de ficha obsoleta se corrigió y tiene regresión PASS. La ausencia de fallos en la muestra no acredita los escenarios pendientes.
 
 La PR entrega el bloque 5 para revisión, sin marcar **Validado**, cerrar la release, aplicar SQL remoto, cambiar Auth/Realtime/Storage ni fusionar. [Matriz literal de 28 CA](RELEASE_2_ACCEPTANCE.md).

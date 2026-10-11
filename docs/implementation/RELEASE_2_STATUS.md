@@ -17,7 +17,7 @@
 | 2 | Chat de evento: leer y enviar texto | R2-04/05 | Implementado; QA pendiente | [PR #10](https://github.com/EnzoG14/PlanIt/pull/10); [evidencia](../design/verification/event-chat/README.md) | Migración aplicada; REST/Auth real y aceptación humana pendientes |
 | 3 | Mi perfil (lectura propia ampliada) | R2-06 | Implementado; QA pendiente | [PR #11](https://github.com/EnzoG14/PlanIt/pull/11); [evidencia](../design/verification/own-profile/README.md) | 4 CA con SQL local/UI fixture; cuentas reales y aceptación humana pendientes |
 | 4 | Bandeja de notificaciones | R2-07 | Implementado; QA pendiente | [PR #12](https://github.com/EnzoG14/PlanIt/pull/12); [evidencia](../design/verification/notifications/README.md) | Migración aplicada; REST/JWT real y aceptación humana pendientes |
-| 5 | QA integral, seguridad y regresión R1 | R2-01 a 07 | Implementado; QA pendiente | [PR #16 (Draft)](https://github.com/EnzoG14/PlanIt/pull/16); [matriz 28 CA](../qa/RELEASE_2_ACCEPTANCE.md), [informe](../qa/RELEASE_2_TEST_REPORT.md) | NO-GO para cierre: E2E de escrituras/entrega/negativos remotos, dispositivo y aceptación humana |
+| 5 | QA integral, seguridad y regresión R1 | R2-01 a 07 | Validado por aprobación manual de los cambios de PR (11/10/2026) | [PR #16](https://github.com/EnzoG14/PlanIt/pull/16); [matriz 28 CA](../qa/RELEASE_2_ACCEPTANCE.md), [informe](../qa/RELEASE_2_TEST_REPORT.md) | Cierre integral R2 pendiente: E2E/seguridad/dispositivo documentados; aprobación de PR no acredita todos los casos |
 
 ## Estado de partida
 
@@ -117,9 +117,9 @@
 
 ### Bloque 5 — QA y aceptación R2
 
-- Estado: Implementado; QA pendiente, 11/10/2026 Argentina. Ningún CA marcado Validado.
+- Estado: Validado por aprobación manual del usuario de los cambios de PR, 11/10/2026 Argentina. La matriz integral conserva los pendientes por CA; no se acreditan pruebas adicionales de Codex.
 - Rama nueva: `codex/r2-block-5-qa`, desde `origin/main` `8d21ed4` (PR #15 integrada). Bloques 0–4 y ampliación Realtime integrados en esta base; las actas anteriores describen sus cortes históricos.
-- PR: [#16 — QA integral, matriz de aceptación y corrección de detalle obsoleto](https://github.com/EnzoG14/PlanIt/pull/16), Draft hacia `main`, sin fusionar. Implementación y evidencia en `6ba166b`.
+- PR: [#16 — QA integral, matriz de aceptación y corrección de detalle obsoleto](https://github.com/EnzoG14/PlanIt/pull/16), cambios aprobados manualmente por el usuario, hacia `main`, sin fusionar. Implementación y evidencia en `6ba166b`.
 - Entregables: [matriz literal de los 28 CA](../qa/RELEASE_2_ACCEPTANCE.md), [informe integral](../qa/RELEASE_2_TEST_REPORT.md), [evidencias/capturas](../qa/evidence/release-2/README.md) y script optativo `npm run check:r2:live` para lectura real sin crear datos.
 - PASS: npm ci (372 paquetes, 0 vulnerabilidades), build/lint; doce checks locales de foundation/Auth/eventos/discovery/Mapbox/reconciliación/Home/chat/perfil/avisos/participaciones/Mis eventos. Once escenarios/suites UI finales: diez scripts existentes más modo WebGL de discovery, con HTTP/WS fixture. PostgreSQL temporal real reproduce migraciones y carreras, Auth/Storage scaffold; no equivale a Supabase E2E.
 - Prueba real: dos cuentas locales existentes, login y REST/RLS de perfiles/avisos A/B/anon; Home comparado con events persistidos, proyección social mínima y GET de fotos firmadas, chat autorizado y Mis eventos. Edge real en contextos separados 375×812/1280×900: perfil/reload, Inicio→detalle/foto/organizador, bandeja A vacía/B con aviso y chat autorizado. Canal Realtime conecta en ambas cuentas; **no se acredita entrega de mensajes**. Sin signup, escrituras de datos, SQL remoto ni cambios de configuración.
@@ -127,7 +127,8 @@
 - Seguridad: migraciones/políticas/grants/RPC inspeccionados y negativos SQL locales PASS (outsider/removed/anon, escrituras directas, identidad falsa, cierre y carreras). Advisors remotos: 7 WARN definer authenticated intencionales y 1 WARN leaked-password protection heredado; performance: 1 WARN múltiples SELECT en events y 8 INFO índices sin uso. No ERROR; aceptación de excepciones aún pendiente.
 - Migraciones: 11 versiones locales/remotas coincidentes antes/después por MCP. Ninguna nueva o aplicada en este bloque; no se ejecutó SQL remoto ni db push/dry-run. Proyecto histórico no consultado ni modificado.
 - Diseño: revisión visual de las cinco pantallas contra mockup R2 móvil/escritorio; mantienen marino/azul/violeta y omisiones de funciones futuras. Safe areas/teclado son CSS y simulación; PWA manifest/SW PASS, instalación física/hosting HTTPS pendiente.
-- Decisión: **NO-GO para declarar R2 cerrada/validada**. 28 CA con cobertura local automatizada y límites explícitos; pendientes de envío/entrega/reconexión/JWT/cierre real, outsider/removido real (A/B comparten chat), marca de lectura real, escrituras R1 reales y revisión/aceptación humana. No se presume aceptación de pendientes ni se traslada la validación manual R1 a R2.
+- Aprobación humana (11/10/2026, 18:46 ART): el usuario informó «Ya corroboré a mano los cambios así que se puede dar por aprobada esa pr». Se registra aceptación manual de los cambios de #16, incluidos la corrección y los entregables QA, sin pasos/capturas por caso aportados. No equivale a una ejecución automatizada ni a una aprobación formal de review de GitHub.
+- Decisión de alcance: **PR #16 aprobada manualmente; cierre integral de R2 aún pendiente**. El NO-GO del informe sigue referido a la release completa: no hay confirmación específica de los E2E de envío/entrega/reconexión/JWT/cierre, outsider/removido, marca real, escrituras R1, dispositivo o aceptación de WARN. No se infiere autorización de merge de esta aprobación.
 - Fuera de PR: cambio local previo `vite.config.ts` (allowedHosts) conservado. Artefactos históricos regenerados por los checks conservan copia recuperable en `.qa-artifacts-backup.local`; la evidencia de esta corrida se versiona bajo docs/qa/evidence/release-2.
 
 ## Checklist de cierre de cada bloque

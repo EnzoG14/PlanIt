@@ -75,4 +75,4 @@ Evidencia transversal: [lectura real Auth/REST/Storage y dos contextos Edge](evi
 
 ## Aceptación humana
 
-Pendiente. No hay autorización para marcar Validado ni aceptación explícita de los pendientes de esta matriz. Registrar persona, fecha, casos/evidencias adicionales y decisión antes de cambiar estados.
+El 11/10/2026 a las 18:46 ART el usuario informó: «Ya corroboré a mano los cambios así que se puede dar por aprobada esa pr». Se registra **aprobación manual de los cambios de PR #16**, sin pasos ni capturas por CA aportados. La matriz conserva los estados parciales porque esa confirmación no identifica los 28 casos ni acepta explícitamente sus pendientes E2E/seguridad/dispositivo. La revisión humana de la PR ya no está pendiente; el cierre integral de R2 sí.
