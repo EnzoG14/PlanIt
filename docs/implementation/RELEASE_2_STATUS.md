@@ -138,7 +138,7 @@
 
 - Estado: implementado; validación remota y aceptación humana pendientes. Esta ampliación reemplaza el transporte manual documentado históricamente en bloques 2/4.
 - Rama: codex/r2-realtime-chat-notifications. Base origin/main, commit 5a3aed5, que integra PRs #10/#12. Worktree C:/Users/enzog/planit-worktrees/r2-realtime; el cambio previo de vite.config.ts en D:/planit permanece fuera de esta rama.
-- Destino de PR: main; contiene ambas dependencias. PR Draft publicada al cerrar la tarea, sin merge.
+- Destino de PR: main; contiene ambas dependencias. [PR #14 — realtime chat, notifications and unread indicator](https://github.com/EnzoG14/PlanIt/pull/14), Draft, sin merge. Implementación efe80f0.
 - RF: RF-R2-04, RF-R2-05 y RF-R2-07; requisitos oficiales conservados.
 - Chat: INSERT filtrado por conversación autorizada, RPC de historial, recuperación multipágina, UUID/orden/microsegundos, cursor anterior preservado, scroll anclado y textarea intacto; envío y reglas de cierre existentes.
 - Avisos: canal INSERT/UPDATE por recipient_id compartido por layout/bandeja; reconciliación de IDs en lotes y recuperación del rango cargado. COUNT exacto RLS e índice parcial para badge; sin productores R6, Push, DM o adjuntos.

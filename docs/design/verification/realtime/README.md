@@ -1,6 +1,6 @@
 # Realtime R2 — implementación y verificación
 
-Fecha: 11/10/2026, Argentina. Rama codex/r2-realtime-chat-notifications, base origin/main en 5a3aed5. PR Draft hacia main, sin merge. Worktree independiente en C:/Users/enzog/planit-worktrees/r2-realtime. Cambio local previo de vite.config.ts en D:/planit preservado. No se modificó ninguna configuración ni se ejecutó SQL remoto.
+Fecha: 11/10/2026, Argentina. Rama codex/r2-realtime-chat-notifications, base origin/main en 5a3aed5. [PR #14](https://github.com/EnzoG14/PlanIt/pull/14), Draft hacia main, sin merge. Commit de implementación efe80f0. Worktree independiente en C:/Users/enzog/planit-worktrees/r2-realtime. Cambio local previo de vite.config.ts en D:/planit preservado. No se modificó ninguna configuración ni se ejecutó SQL remoto.
 
 ## Solución y archivos
 
@@ -63,3 +63,46 @@ Reproducción local: npm ci; herramientas SQL ignoradas pg + embedded-postgres s
 - La recuperación revalida todas las páginas hasta el límite cargado; su costo crece con el historial abierto. Señales ordinarias de avisos usan lotes de IDs; COUNT es exacto e indexado. No hay store global de contenido, servidor WS ni sistema offline.
 - Actualizar permanece como recuperación secundaria. El indicador oculta un total desconocido al fallar la consulta y vuelve a consultar con señales/foco/reconexión.
 - Sólo sincronización de datos ya persistidos: sin R5/R6/R7, Push, emails, recordatorios, adjuntos, DM ni productores automáticos.
+
+## Inventario completo de entrega
+
+- docs/architecture.md
+- docs/database.md
+- docs/design/verification/event-chat/README.md
+- docs/design/verification/event-chat/chat-desktop.png
+- docs/design/verification/event-chat/chat-mobile.png
+- docs/design/verification/event-chat/chat-read-only-desktop.png
+- docs/design/verification/event-chat/chat-read-only-mobile.png
+- docs/design/verification/event-chat/postgres-results.json
+- docs/design/verification/notifications/README.md
+- docs/design/verification/notifications/desktop-empty.png
+- docs/design/verification/notifications/desktop-error.png
+- docs/design/verification/notifications/desktop-inbox.png
+- docs/design/verification/notifications/mobile-empty.png
+- docs/design/verification/notifications/mobile-error.png
+- docs/design/verification/notifications/mobile-inbox.png
+- docs/design/verification/notifications/postgres-results.json
+- docs/design/verification/realtime/README.md
+- docs/design/verification/realtime/chat-desktop.png
+- docs/design/verification/realtime/chat-mobile.png
+- docs/design/verification/realtime/notifications-desktop.png
+- docs/design/verification/realtime/notifications-mobile.png
+- docs/design/verification/realtime/ui-results.json
+- docs/implementation/RELEASE_2_STATUS.md
+- package.json
+- scripts/check-chat-ui.mjs
+- scripts/check-chat.mjs
+- scripts/check-notifications-ui.mjs
+- scripts/check-notifications.mjs
+- scripts/check-realtime-ui.mjs
+- scripts/check-realtime.mjs
+- src/App.css
+- src/components/AppLayout.tsx
+- src/features/notifications/NotificationsProvider.tsx
+- src/features/notifications/api.ts
+- src/features/notifications/realtime-context.ts
+- src/lib/realtime.ts
+- src/lib/reconciliation.ts
+- src/pages/EventChatPage.tsx
+- src/pages/NotificationsPage.tsx
+- supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql
