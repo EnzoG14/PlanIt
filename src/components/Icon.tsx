@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 const paths = {
+  bell: <><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></>,
   title: <path d="M4 5h16M12 5v15M8 20h8" />,
   description: <><path d="M8 6h13M8 12h13M8 18h9M3 6h1M3 12h1M3 18h1" /></>,
   clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,

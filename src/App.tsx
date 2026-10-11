@@ -15,6 +15,7 @@ const MapPage = lazy(() => import('./pages/MapPage').then(module => ({ default: 
 const MyEventsPage = lazy(() => import('./pages/MyEventsPage').then(module => ({ default: module.MyEventsPage })))
 const HomePage = lazy(() => import('./pages/HomePage').then(module => ({ default: module.HomePage })))
 const EventChatPage = lazy(() => import('./pages/EventChatPage').then(module => ({ default: module.EventChatPage })))
+const NotificationsPage = lazy(() => import('./pages/NotificationsPage').then(module => ({ default: module.NotificationsPage })))
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="register" element={<AuthPage key="register" mode="register" />} />
           <Route path="login" element={<AuthPage key="login" mode="login" />} />
           <Route element={<RequireAuth />}>
+            <Route path="notifications" element={<Suspense fallback={<StatusMessage title="Cargando notificaciones">Esperá un momento.</StatusMessage>}><NotificationsPage /></Suspense>} />
             <Route path="events/:id/chat" element={<Suspense fallback={<StatusMessage title="Cargando chat">Esperá un momento.</StatusMessage>}><EventChatPage /></Suspense>} />
             <Route path="home" element={<Suspense fallback={<StatusMessage title="Cargando Inicio">Esperá un momento.</StatusMessage>}><HomePage /></Suspense>} />
             <Route path="map" element={<Suspense fallback={<StatusMessage title="Cargando mapa">Esperá un momento.</StatusMessage>}><MapPage /></Suspense>} />
