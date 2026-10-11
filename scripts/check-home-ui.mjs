@@ -40,7 +40,7 @@ async function context(viewport) {
       }
       return reply(mode === 'empty' ? [] : [{ ...event, category_name:'Música', image_path:null }])
     }
-    if (path === '/rest/v1/events') return reply([event])
+    if (path === '/rest/v1/events') return mode === 'unavailable' ? reply([]) : mode === 'detail-error' ? reply({ code:'XX000',message:'fixture failure' },500) : reply([event])
     if (path === '/rest/v1/categories') return reply([{ id:event.category_id,name:'Música',is_active:true }])
     if (path === '/rest/v1/event_images') return reply(mode === 'photos' ? [{ files:{ storage_path:'fixture/cover.webp' } },{ files:{ storage_path:'fixture/gallery.webp' } }] : [])
     if (path === '/rest/v1/rpc/get_event_organizer') return reply([{ display_name:'Organizadora de prueba',username:'organizadora' }])
@@ -126,6 +126,51 @@ try {
   await errorPage.getByRole('button', { name:'Reintentar' }).waitFor()
   check('Home query failure gives an explicit error with retry')
   await errorContext.close()
+
+  const { browserContext: revokedContext, setMode: setRevoked } = await context({ width:375,height:812 })
+  const revokedPage = await revokedContext.newPage()
+  revokedPage.setDefaultTimeout(3000)
+  await revokedPage.goto(`${origin}/events/${eventId}`)
+  await revokedPage.getByText('@organizadora').waitFor()
+  setRevoked('unavailable')
+  await revokedPage.evaluate(() => window.dispatchEvent(new Event('focus')))
+  await revokedPage.getByRole('heading', { name:'Evento no disponible' }).waitFor()
+  assert.equal(await revokedPage.getByText('@organizadora').count(),0)
+  assert.equal(await revokedPage.locator('.event-detail-page').count(),0)
+  check('Detail revalidates on focus and clears an event whose access was revoked (CA-04)')
+  setRevoked('success')
+  await revokedPage.evaluate(() => window.dispatchEvent(new Event('online')))
+  await revokedPage.getByText('@organizadora').waitFor()
+  setRevoked('detail-error')
+  await revokedPage.evaluate(() => window.dispatchEvent(new Event('focus')))
+  await revokedPage.getByRole('heading', { name:'No se pudo cargar' }).waitFor()
+  assert.equal(await revokedPage.locator('.event-detail-page').count(),0)
+  setRevoked('success')
+  await revokedPage.getByRole('button', { name:'Reintentar',exact:true }).click()
+  await revokedPage.getByText('@organizadora').waitFor()
+  check('Detail clears stale data on network failure and recovers on retry/online')
+  let releaseDetail
+  const lateResponse = new Promise(resolve => { releaseDetail = resolve })
+  let holdFirst = true
+  await revokedContext.route('**/rest/v1/events?**', async route => {
+    if (!holdFirst) return route.fallback()
+    holdFirst = false
+    await lateResponse
+    return route.fulfill({ status:200,contentType:'application/json',body:JSON.stringify([event]) })
+  })
+  const staleRequest = revokedPage.waitForRequest(request => new URL(request.url()).pathname === '/rest/v1/events')
+  await revokedPage.evaluate(() => window.dispatchEvent(new Event('focus')))
+  await staleRequest
+  setRevoked('unavailable')
+  await revokedPage.evaluate(() => window.dispatchEvent(new Event('online')))
+  await revokedPage.getByRole('heading', { name:'Evento no disponible' }).waitFor()
+  const staleReply = revokedPage.waitForResponse(response => new URL(response.url()).pathname === '/rest/v1/events' && response.status() === 200)
+  releaseDetail()
+  await staleReply
+  await revokedPage.waitForTimeout(100)
+  assert.equal(await revokedPage.locator('.event-detail-page').count(),0)
+  check('A late successful detail response cannot restore an event after newer access denial')
+  await revokedContext.close()
 
   await writeFile(`${output}/ui-results.json`, JSON.stringify({ environment:'Playwright against local Vite with fixture Supabase Auth/REST responses; no real users or remote writes',results },null,2))
 } finally { await browser.close() }

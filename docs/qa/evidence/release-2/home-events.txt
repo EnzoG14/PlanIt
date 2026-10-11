@@ -1,0 +1,5 @@
+PASS: Replay migrations; home invoker and organizer projection definer use empty search_path
+PASS: Upcoming events are deterministically ordered, grouped with their stored categories, and keyset-paginated without gaps
+PASS: Past, cancelled, and archived events are excluded; authenticated access is required
+PASS: Organizer projection exposes only social name/username to an event participant; strangers cannot resolve unlisted organizers or read private profile fields
+PASS: Incomplete page cursor returns no data

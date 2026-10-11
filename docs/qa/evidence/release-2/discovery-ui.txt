@@ -1,0 +1,1 @@
+PASS (engine): responsive, cards/preview/detail, location, limit, empty/error/retry and unmount. Keyboard markers, stable canvas, pan/zoom and style 401. Fixtures only; no live Mapbox validation.

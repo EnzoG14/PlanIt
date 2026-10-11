@@ -17,7 +17,7 @@
 | 2 | Chat de evento: leer y enviar texto | R2-04/05 | Implementado; QA pendiente | [PR #10](https://github.com/EnzoG14/PlanIt/pull/10); [evidencia](../design/verification/event-chat/README.md) | Migración aplicada; REST/Auth real y aceptación humana pendientes |
 | 3 | Mi perfil (lectura propia ampliada) | R2-06 | Implementado; QA pendiente | [PR #11](https://github.com/EnzoG14/PlanIt/pull/11); [evidencia](../design/verification/own-profile/README.md) | 4 CA con SQL local/UI fixture; cuentas reales y aceptación humana pendientes |
 | 4 | Bandeja de notificaciones | R2-07 | Implementado; QA pendiente | [PR #12](https://github.com/EnzoG14/PlanIt/pull/12); [evidencia](../design/verification/notifications/README.md) | Migración aplicada; REST/JWT real y aceptación humana pendientes |
-| 5 | QA integral, seguridad y regresión R1 | R2-01 a 07 | Pendiente | — | Matriz 28 CA, E2E según autorización y revisión humana |
+| 5 | QA integral, seguridad y regresión R1 | R2-01 a 07 | Implementado; QA pendiente | rama `codex/r2-block-5-qa`; [matriz 28 CA](../qa/RELEASE_2_ACCEPTANCE.md), [informe](../qa/RELEASE_2_TEST_REPORT.md) | NO-GO para cierre: E2E de escrituras/entrega/negativos remotos, dispositivo y aceptación humana |
 
 ## Estado de partida
 
@@ -117,12 +117,18 @@
 
 ### Bloque 5 — QA y aceptación R2
 
-- Estado: Pendiente.
-- PR: —
-- Matriz de 28 CA: docs/qa/RELEASE_2_ACCEPTANCE.md (se crea durante el bloque).
-- Informe: docs/qa/RELEASE_2_TEST_REPORT.md (se crea durante el bloque).
-- Evidencia y pruebas: —
-- Decisión final: Pendiente de revisión y aceptación humana.
+- Estado: Implementado; QA pendiente, 11/10/2026 Argentina. Ningún CA marcado Validado.
+- Rama nueva: `codex/r2-block-5-qa`, desde `origin/main` `8d21ed4` (PR #15 integrada). Bloques 0–4 y ampliación Realtime integrados en esta base; las actas anteriores describen sus cortes históricos.
+- PR: preparada para revisión de `main`; URL se registra al abrirla. No fusionada.
+- Entregables: [matriz literal de los 28 CA](../qa/RELEASE_2_ACCEPTANCE.md), [informe integral](../qa/RELEASE_2_TEST_REPORT.md), [evidencias/capturas](../qa/evidence/release-2/README.md) y script optativo `npm run check:r2:live` para lectura real sin crear datos.
+- PASS: npm ci (372 paquetes, 0 vulnerabilidades), build/lint; doce checks locales de foundation/Auth/eventos/discovery/Mapbox/reconciliación/Home/chat/perfil/avisos/participaciones/Mis eventos. Once escenarios/suites UI finales: diez scripts existentes más modo WebGL de discovery, con HTTP/WS fixture. PostgreSQL temporal real reproduce migraciones y carreras, Auth/Storage scaffold; no equivale a Supabase E2E.
+- Prueba real: dos cuentas locales existentes, login y REST/RLS de perfiles/avisos A/B/anon; Home comparado con events persistidos, proyección social mínima y GET de fotos firmadas, chat autorizado y Mis eventos. Edge real en contextos separados 375×812/1280×900: perfil/reload, Inicio→detalle/foto/organizador, bandeja A vacía/B con aviso y chat autorizado. Canal Realtime conecta en ambas cuentas; **no se acredita entrega de mensajes**. Sin signup, escrituras de datos, SQL remoto ni cambios de configuración.
+- Fallo reproducible corregido R2-QA-01: detalle conservaba ficha previa cuando perdía acceso y se recuperaba foco. Ahora revalida foco/visibilidad/online, limpia ficha/media/organizador, aísla identidad/token y descarta respuestas anteriores; regresiones de revocación, error/retry y respuesta tardía PASS. Sin cambios de CSS/mockup/branding.
+- Seguridad: migraciones/políticas/grants/RPC inspeccionados y negativos SQL locales PASS (outsider/removed/anon, escrituras directas, identidad falsa, cierre y carreras). Advisors remotos: 7 WARN definer authenticated intencionales y 1 WARN leaked-password protection heredado; performance: 1 WARN múltiples SELECT en events y 8 INFO índices sin uso. No ERROR; aceptación de excepciones aún pendiente.
+- Migraciones: 11 versiones locales/remotas coincidentes antes/después por MCP. Ninguna nueva o aplicada en este bloque; no se ejecutó SQL remoto ni db push/dry-run. Proyecto histórico no consultado ni modificado.
+- Diseño: revisión visual de las cinco pantallas contra mockup R2 móvil/escritorio; mantienen marino/azul/violeta y omisiones de funciones futuras. Safe areas/teclado son CSS y simulación; PWA manifest/SW PASS, instalación física/hosting HTTPS pendiente.
+- Decisión: **NO-GO para declarar R2 cerrada/validada**. 28 CA con cobertura local automatizada y límites explícitos; pendientes de envío/entrega/reconexión/JWT/cierre real, outsider/removido real (A/B comparten chat), marca de lectura real, escrituras R1 reales y revisión/aceptación humana. No se presume aceptación de pendientes ni se traslada la validación manual R1 a R2.
+- Fuera de PR: cambio local previo `vite.config.ts` (allowedHosts) conservado. Artefactos históricos regenerados por los checks conservan copia recuperable en `.qa-artifacts-backup.local`; la evidencia de esta corrida se versiona bajo docs/qa/evidence/release-2.
 
 ## Checklist de cierre de cada bloque
 

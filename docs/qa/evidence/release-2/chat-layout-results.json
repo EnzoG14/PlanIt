@@ -1,0 +1,153 @@
+{
+  "environment": "Edge; intercepted Auth/RPC/Phoenix fixtures; no remote writes",
+  "results": [
+    {
+      "width": 360,
+      "height": 800,
+      "result": "PASS",
+      "geometry": {
+        "pageHeight": 800,
+        "viewport": 800,
+        "pageScroll": 0,
+        "list": {
+          "top": 173,
+          "bottom": 656.8125,
+          "height": 483.8125
+        },
+        "composer": {
+          "top": 664.8125,
+          "bottom": 800,
+          "height": 135.1875
+        },
+        "last": {
+          "top": 529.1875,
+          "bottom": 649.375,
+          "height": 120.1875
+        },
+        "bottomGap": 0
+      },
+      "scenarios": [
+        "single scroll",
+        "last message",
+        "send",
+        "pagination anchor",
+        "incoming reader position",
+        "keyboard height and bottom pinning",
+        "visual viewport offset",
+        "read only",
+        "route cleanup"
+      ]
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "result": "PASS",
+      "geometry": {
+        "pageHeight": 812,
+        "viewport": 812,
+        "pageScroll": 0,
+        "list": {
+          "top": 173,
+          "bottom": 668.8125,
+          "height": 495.8125
+        },
+        "composer": {
+          "top": 676.8125,
+          "bottom": 812,
+          "height": 135.1875
+        },
+        "last": {
+          "top": 541.1875,
+          "bottom": 661.375,
+          "height": 120.1875
+        },
+        "bottomGap": 0
+      },
+      "scenarios": [
+        "single scroll",
+        "last message",
+        "send",
+        "pagination anchor",
+        "incoming reader position",
+        "keyboard height and bottom pinning",
+        "visual viewport offset",
+        "read only",
+        "route cleanup"
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "result": "PASS",
+      "geometry": {
+        "pageHeight": 844,
+        "viewport": 844,
+        "pageScroll": 0,
+        "list": {
+          "top": 173,
+          "bottom": 700.8125,
+          "height": 527.8125
+        },
+        "composer": {
+          "top": 708.8125,
+          "bottom": 844,
+          "height": 135.1875
+        },
+        "last": {
+          "top": 573.1875,
+          "bottom": 693.375,
+          "height": 120.1875
+        },
+        "bottomGap": 0
+      },
+      "scenarios": [
+        "single scroll",
+        "last message",
+        "send",
+        "pagination anchor",
+        "incoming reader position",
+        "keyboard height and bottom pinning",
+        "visual viewport offset",
+        "read only",
+        "route cleanup"
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "result": "PASS",
+      "geometry": {
+        "pageHeight": 900,
+        "viewport": 900,
+        "pageScroll": 0,
+        "list": {
+          "top": 173,
+          "bottom": 756.8125,
+          "height": 583.8125
+        },
+        "composer": {
+          "top": 764.8125,
+          "bottom": 900,
+          "height": 135.1875
+        },
+        "last": {
+          "top": 654.09375,
+          "bottom": 748.6875,
+          "height": 94.59375
+        },
+        "bottomGap": 0
+      },
+      "scenarios": [
+        "single scroll",
+        "last message",
+        "send",
+        "pagination anchor",
+        "incoming reader position",
+        "keyboard height and bottom pinning",
+        "visual viewport offset",
+        "read only",
+        "route cleanup"
+      ]
+    }
+  ]
+}

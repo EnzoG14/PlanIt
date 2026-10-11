@@ -1,0 +1,5 @@
+PASS: Replay migrations; invoker function, empty search_path
+PASS: Two identities: creation / registration / leave / rejoin, unique row, role separation, third-party exclusion, minimal projection
+PASS: Ended / cancelled / archived precedence; own removed history and media retained; stranger cannot read historical event/media
+PASS: 31-row lookahead, deterministic tie ordering, complete pagination without duplicates
+PASS: Invalid section/offset, anon, missing JWT rejected

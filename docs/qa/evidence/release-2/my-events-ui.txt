@@ -1,0 +1,48 @@
+[
+  {
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "result": "PASS",
+    "scenarios": [
+      "two fixture accounts; role separation",
+      "keyboard tabs",
+      "create/detail/list",
+      "join/leave/rejoin/browser back",
+      "history/removed",
+      "network/RLS/missing migration/retry",
+      "image fallback/batch signing",
+      "pagination/reset/deduplication",
+      "stale tab response",
+      "focus/visibility",
+      "account change",
+      "invalid session/direct route",
+      "44px create target/no overflow"
+    ],
+    "rpcCalls": 40
+  },
+  {
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "result": "PASS",
+    "scenarios": [
+      "two fixture accounts; role separation",
+      "keyboard tabs",
+      "create/detail/list",
+      "join/leave/rejoin/browser back",
+      "history/removed",
+      "network/RLS/missing migration/retry",
+      "image fallback/batch signing",
+      "pagination/reset/deduplication",
+      "stale tab response",
+      "focus/visibility",
+      "account change",
+      "invalid session/direct route",
+      "44px create target/no overflow"
+    ],
+    "rpcCalls": 40
+  }
+]

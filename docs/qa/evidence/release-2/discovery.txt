@@ -1,0 +1,1 @@
+PASS: SQL real local, RLS invoker, public/active/time/area filters, owner exclusions, antimeridian, invalid bounds, empty, anonymous denial.

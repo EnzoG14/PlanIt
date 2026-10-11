@@ -1,0 +1,43 @@
+{
+  "project": "iepeqmvzjguwlhnecsdq",
+  "local": [
+    "20261010011204_create_profiles_and_categories.sql",
+    "20261010013449_create_profiles_and_categories.sql",
+    "20261010023448_restrict_rls_auto_enable_execute.sql",
+    "20261010042701_create_events_and_event_media.sql",
+    "20261010052653_public_event_discovery.sql",
+    "20261010150232_event_participations.sql",
+    "20261010154930_my_events_read.sql",
+    "20261010212819_home_and_event_organizer_read.sql",
+    "20261010214526_event_chat.sql",
+    "20261011163653_notifications_inbox.sql",
+    "20261011193316_r2_realtime_chat_notifications.sql"
+  ],
+  "remoteBefore": [
+    "20261010011204",
+    "20261010013449",
+    "20261010023448",
+    "20261010042701",
+    "20261010052653",
+    "20261010150232",
+    "20261010154930",
+    "20261010212819",
+    "20261010214526",
+    "20261011163653",
+    "20261011193316"
+  ],
+  "remoteAfter": [
+    "20261010011204",
+    "20261010013449",
+    "20261010023448",
+    "20261010042701",
+    "20261010052653",
+    "20261010150232",
+    "20261010154930",
+    "20261010212819",
+    "20261010214526",
+    "20261011163653",
+    "20261011193316"
+  ],
+  "source": "Supabase list_migrations before and after this QA; 11 matching versions, no remote SQL or deployment performed"
+}
