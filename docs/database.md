@@ -32,7 +32,7 @@
 
 ## Migraciones
 
-- `20261011232326_my_organized_events_read.sql`: **creada y probada localmente; no aplicada en planit-v2**. Agrega `get_my_organized_events(text, integer)` SECURITY INVOKER, search_path vacío, EXECUTE sólo authenticated, dueño desde auth.uid(). Cinco filtros antes de páginas de 30+1 y reloj Argentina. Conserva get_my_events para Participo/clientes anteriores y no modifica tablas/RLS. [Evidencia y límites R3](design/verification/r3-block-1/README.md).
+- `20261011232326_my_organized_events_read.sql`: **aplicada en planit-v2 el 11/10/2026 con autorización expresa del usuario**. Agrega `get_my_organized_events(text, integer)` SECURITY INVOKER, search_path vacío, EXECUTE sólo authenticated, dueño desde auth.uid(). Cinco filtros antes de páginas de 30+1 y reloj Argentina. Conserva get_my_events para Participo/clientes anteriores y no modifica tablas/RLS. Historial sincronizado, dry-run sin pendientes y consultas SQL remotas de sólo lectura con dos identidades simuladas PASS; HTTP/JWT real pendiente. [Evidencia y límites R3](design/verification/r3-block-1/README.md).
 
 - 20261011193316_r2_realtime_chat_notifications.sql: **aplicada en planit-v2 el 11/10/2026 con autorización expresa del usuario**. Publicación idempotente de messages/notifications; get_notification_changes(uuid[]) invoker con RLS propia y destinos autorizados, máximo 100 IDs, EXECUTE sólo authenticated; índice parcial recipient_id WHERE read_at IS NULL. Sin cambios de políticas, grants de tabla ni RPCs existentes. [Verificación](design/verification/realtime/README.md).
 

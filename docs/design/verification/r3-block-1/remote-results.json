@@ -1,0 +1,38 @@
+{
+  "date_argentina": "2026-10-11",
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "migration": "20261011232326_my_organized_events_read.sql",
+  "authorization": "Explicit user request to apply remote migrations after PR #19 delivery",
+  "application": "PASS: CLI db push --project-ref iepeqmvzjguwlhnecsdq --skip-vault --yes",
+  "history": "PASS: 12 local/remote versions match; subsequent dry-run is up to date with zero pending migrations",
+  "rpc": {
+    "signature": "get_my_organized_events(text,integer)",
+    "security_definer": false,
+    "search_path": "",
+    "authenticated_execute": true,
+    "anon_execute": false,
+    "service_role_execute": false,
+    "legacy_get_my_events": "Unchanged"
+  },
+  "smoke_test": {
+    "result": "PASS",
+    "environment": "Remote PostgreSQL READ ONLY transaction / ROLLBACK; two existing identities simulated by SQL roles and JWT subject setting; no real HTTP/JWT",
+    "scenarios": [
+      "Five filters with offsets 0 and 30 for both identities",
+      "Returned rows belong to the simulated organizer and have the expected filter state",
+      "Participo legacy RPC executes successfully",
+      "Invalid filter and negative offset rejected",
+      "Missing JWT subject rejected",
+      "Anon cannot execute the RPC"
+    ],
+    "limitations": "Does not prove all historical states exist in the remote dataset or real Auth/REST/Storage browser flows"
+  },
+  "security_advisors": {
+    "before_after": "Unchanged; no new finding for this migration",
+    "existing_authenticated_definer_warnings": 7,
+    "existing_leaked_password_protection_warning": true
+  },
+  "business_data_changed": false,
+  "frontend_deployed": false,
+  "human_acceptance": "Pending"
+}

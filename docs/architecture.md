@@ -32,7 +32,7 @@ Ver ../AGENTS.md, ../src/AGENTS.md, ../supabase/AGENTS.md y database.md.
 
 ## Mis eventos organizados — R3 Bloque 1
 
-`/my-events?section=organizing&filter=…` conserva Organizo/Participo. Organizo consulta filtros completos en get_my_organized_events antes de paginar; Participo conserva get_my_events. MyEventsPage/CompactEventCard reutilizan fotos firmadas, estados y carga adicional, añaden Actualizar y menú Ver detalle. El detalle valida destinos internos y conserva sección/filtro, con fallback Organizo para dueño y orígenes Inicio/Mapa explícitos. Migración creada y probada localmente, **pendiente de autorización y aplicación remota antes del despliegue**. [Contratos, pruebas y capturas](design/verification/r3-block-1/README.md).
+`/my-events?section=organizing&filter=…` conserva Organizo/Participo. Organizo consulta filtros completos en get_my_organized_events antes de paginar; Participo conserva get_my_events. MyEventsPage/CompactEventCard reutilizan fotos firmadas, estados y carga adicional, añaden Actualizar y menú Ver detalle. El detalle valida destinos internos y conserva sección/filtro, con fallback Organizo para dueño y orígenes Inicio/Mapa explícitos. Migración **aplicada en planit-v2 el 11/10/2026 con autorización expresa del usuario**, historial sincronizado y verificación SQL remota de sólo lectura PASS. HTTP/JWT y aceptación humana pendientes; sin despliegue frontend. [Contratos, pruebas y capturas](design/verification/r3-block-1/README.md).
 
 ## Notificaciones R2 — BLOQUE 4
 
