@@ -30,6 +30,10 @@ PlanIt es una PWA universitaria para descubrir, organizar y participar en evento
 
 Ver ../AGENTS.md, ../src/AGENTS.md, ../supabase/AGENTS.md y database.md.
 
+## Mis eventos organizados — R3 Bloque 1
+
+`/my-events?section=organizing&filter=…` conserva Organizo/Participo. Organizo consulta filtros completos en get_my_organized_events antes de paginar; Participo conserva get_my_events. MyEventsPage/CompactEventCard reutilizan fotos firmadas, estados y carga adicional, añaden Actualizar y menú Ver detalle. El detalle valida destinos internos y conserva sección/filtro, con fallback Organizo para dueño y orígenes Inicio/Mapa explícitos. Migración creada y probada localmente, **pendiente de autorización y aplicación remota antes del despliegue**. [Contratos, pruebas y capturas](design/verification/r3-block-1/README.md).
+
 ## Notificaciones R2 — BLOQUE 4
 
 Ruta protegida `/notifications`, campana en cabecera y consulta paginada por created_at/id. Tabla notifications con RLS propia del destinatario; sólo read_at actualizable con hora servidor y primera lectura inmutable. RPCs SECURITY INVOKER reutilizan RLS existente para destinos de eventos/chat y revalidan al abrir. Estado aislado por cuenta, Postgres Changes INSERT/UPDATE por destinatario y reconciliación mediante RPC; sin avisos generados ni Push. Campana y bandeja comparten un canal por cuenta, con COUNT exacto sujeto a RLS desde cualquier ruta. Migración `20261011163653_notifications_inbox.sql` aplicada en planit-v2 el 11/10/2026 con autorización expresa del usuario; historial sincronizado y permisos verificados. [Evidencia y límites](design/verification/notifications/README.md).

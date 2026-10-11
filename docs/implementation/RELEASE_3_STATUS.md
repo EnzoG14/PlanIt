@@ -2,14 +2,14 @@
 
 **Plan:** [RELEASE_3_PLAN.md](RELEASE_3_PLAN.md). **Contrato:** [RELEASE_3_REQUIREMENTS.md](../requirements/RELEASE_3_REQUIREMENTS.md) (9 RF, 37 CA). **Diseño:** [R3 original](../design/mockups/release-3.png) y [mockups individuales R3](../design/mockups/r3/README.md).
 
-**Corte documental:** 11/10/2026 (Argentina). **Bloque 0 entregado como preparación documental**; las funcionalidades de bloques 1–6 y la QA integral no se declaran implementadas. [Auditoría y decisiones](RELEASE_3_BLOCK_0_DECISIONS.md).
+**Corte:** 11/10/2026 (Argentina). **Bloque 0 entregado como preparación documental; Bloque 1 implementado en rama, QA remota y aceptación pendientes**. Bloques 2–6 y QA integral pendientes. [Auditoría y decisiones](RELEASE_3_BLOCK_0_DECISIONS.md).
 
 **Estados posibles:** Pendiente · En curso · Implementado; QA pendiente · Bloqueado · Validado. «Validado» requiere aceptación humana respaldada por evidencia; no equivale a PR abierta.
 
 | Bloque | Alcance | RF | Estado | PR/evidencia | Pendientes |
 | --- | --- | --- | --- | --- | --- |
 | 0 | Preparación, rutas y diseño | Transversal | Implementado; QA pendiente | [PR #18](https://github.com/EnzoG14/PlanIt/pull/18); rama `codex/r3-block-0`; [decisiones/evidencia](RELEASE_3_BLOCK_0_DECISIONS.md) | Revisión y aceptación humana del contrato |
-| 1 | Mis eventos organizados | R3-04 | Pendiente | — | get_my_events existe; faltan filtros completos/históricos, menú y regreso coherente |
+| 1 | Mis eventos organizados | R3-04 | Implementado; QA pendiente | Rama `codex/r3-block-1`; [CA/pruebas/capturas](../design/verification/r3-block-1/README.md) | Aplicación remota autorizada, HTTP/JWT A/B reales, acciones de bloques posteriores y aceptación humana |
 | 2 | Editar evento | R3-01 | Pendiente | — | Reutilizar formulario; update_event ausente, cupo concurrente y política de históricos por resolver |
 | 3 | Galería | R3-03 | Pendiente | — | Media básica existe; faltan operaciones administrativas de orden/baja/limpieza |
 | 4 | Asistentes y remoción | R3-05/06 | Pendiente | — | SELECT propio no da nómina; faltan proyección mínima/remoción y pruebas historial/chat |
@@ -48,8 +48,16 @@
 - **Migraciones/configuración:** ninguna creada, modificada o aplicada; sin despliegue ni cambios remotos. R1/R2 permanecen intactos. Cambio previo de vite.config.ts preservado y excluido de la PR.
 - **Pendientes:** aceptar contrato; resolver política de edición histórica en bloque 2 y conciliar referencias de la especificación a perfiles/notificaciones antes de añadirlas; implementar y verificar bloques 1–6, QA integral y permisos con usuarios reales. No continuar, fusionar o aplicar migraciones con esta entrega.
 
-### Bloque 1 — Pendiente
-Sin código, pruebas ni migraciones.
+### Bloque 1 — Implementado; QA pendiente
+
+- **Base/rama:** `origin/main` actualizado (`6275242`, Bloque 0 fusionado) → `codex/r3-block-1`; PR exclusiva del bloque. Cambio previo de vite.config.ts preservado y excluido.
+- **Entrega:** filtros Todos/Próximos/Pasados/Cancelados/Archivados en Organizo antes de paginar; Próximos incluye en curso por decisión del usuario, Todos excluye archivados. Precedencia archived/cancelled/ended/open. URL/regreso conserva filtro; menú accesible sólo Ver detalle; Actualizar, vacíos por filtro, protección de respuestas tardías y reintento de carga adicional sin perder resultados. Participo conserva RPC, contenido, navegación e historial.
+- **Código/contratos:** MyEventsPage, my-events, CompactEventCard/Icon, estilos de Mis eventos y regreso de EventDetailPage. Nueva RPC get_my_organized_events(text, integer) invoker y con identidad desde auth.uid(); get_my_events existente intacta, sin ampliar RLS ni permisos de tablas.
+- **Migración:** `20261011232326_my_organized_events_read.sql` creada con CLI y probada en PostgreSQL local; **no aplicada remotamente**. Autorizar/aplicar antes de desplegar frontend; RPC ausente produce error reintentable y no resultados parciales.
+- **Verificación:** build/lint PASS (aviso existente de chunk Mapbox); check:my-events PASS, seis grupos con replay completo en PostgreSQL 17.5 y scaffolding Auth/Storage. check:my-events:ui PASS, diecinueve grupos por viewport en Edge 375×812 y 1280×900, Auth/REST/Storage fixtures y zona Tokyo; git diff --check PASS. [Matriz CA → caso → evidencia, reproducción y límites](../design/verification/r3-block-1/README.md), [SQL](../design/verification/r3-block-1/postgres-results.json), [UI](../design/verification/r3-block-1/ui-results.json).
+- **Seguridad/regresión:** A/B/tercero, anon/JWT ausente, parámetros inválidos, no organizer_id cliente, grants mínimos, propiedad/histórico/media y ausencia de UPDATE/DELETE en SQL local. Fixture UI cubre estados/filtros, páginas, creación, Participo, inscripción/retiro/reinscripción, errores/fotos, menú/foco, orígenes Inicio/Mapa/Participo y URLs externas rechazadas. Lecturas remotas sólo de metadatos; no equivalen a HTTP/JWT real.
+- **Visual:** originales individual/collage abiertos; inspeccionadas capturas móvil/escritorio y menú/histórico. Identidad marino/azul/violeta conservada; shell vigente, categoría/fechas completas, chips con targets de 44 px y aclaración/Actualizar son adaptaciones documentadas. Fotos de fixtures/placeholder, no extraídas del mockup; sin overflow.
+- **Pendientes:** HTTP/Auth/REST/Storage A/B reales tras aplicación autorizada, dispositivo físico/safe-area, aceptación humana. CA-02 verifica detalle y menú integrado; edición/cancelación/asistentes se conectan en bloques 2/4/5, sin declararlos aprobados aquí. Sin merge, despliegue, SQL/configuración remota ni cambios en el Supabase antiguo; no «Validado».
 
 ### Bloque 2 — Pendiente
 Sin código, pruebas ni migraciones.

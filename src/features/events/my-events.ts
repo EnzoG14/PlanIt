@@ -2,6 +2,25 @@ import { supabase } from '../../lib/supabase'
 import type { ParticipationStatus } from './participation'
 
 export type MyEventsSection = 'organizing' | 'participating'
+export const organizedFilters = { all: 'Todos', upcoming: 'Próximos', past: 'Pasados', cancelled: 'Cancelados', archived: 'Archivados' } as const
+export type OrganizedEventsFilter = keyof typeof organizedFilters
+
+export function organizedFilter(value: string | null): OrganizedEventsFilter {
+  return value && Object.hasOwn(organizedFilters, value) ? value as OrganizedEventsFilter : 'all'
+}
+
+export function myEventsPath(section: MyEventsSection, filter: OrganizedEventsFilter = 'all'): string {
+  return section === 'organizing' ? `/my-events?section=organizing&filter=${filter}` : '/my-events?section=participating'
+}
+
+// Accept only the list's known internal routes; never redirect to arbitrary state URLs.
+export function validatedMyEventsReturn(value: unknown): string | null {
+  if (typeof value !== 'string') return null
+  if (!/^\/my-events\?section=(organizing|participating)(&filter=(all|upcoming|past|cancelled|archived))?$/.test(value)) return null
+  const params = new URLSearchParams(value.split('?')[1])
+  const section = params.get('section') as MyEventsSection
+  return myEventsPath(section, organizedFilter(params.get('filter')))
+}
 export type MyEventListItem = {
   id: string; title: string; starts_at: string; ends_at: string
   location_name: string | null; address: string; category_name: string
@@ -10,9 +29,11 @@ export type MyEventListItem = {
 }
 export const myEventsPageSize = 30
 
-export async function loadMyEvents(section: MyEventsSection, offset = 0) {
+export async function loadMyEvents(section: MyEventsSection, offset = 0, filter: OrganizedEventsFilter = 'all') {
   if (!supabase) throw new Error('La conexión no está configurada.')
-  const { data, error } = await supabase.rpc('get_my_events', { p_section: section, p_offset: offset })
+  const { data, error } = section === 'organizing'
+    ? await supabase.rpc('get_my_organized_events', { p_filter: filter, p_offset: offset })
+    : await supabase.rpc('get_my_events', { p_section: section, p_offset: offset })
   if (error) throw error
   const rows = (data ?? []) as Omit<MyEventListItem, 'imageUrl'>[]
   const visible = rows.slice(0, myEventsPageSize)
