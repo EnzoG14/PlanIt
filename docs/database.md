@@ -32,7 +32,7 @@
 
 ## Migraciones
 
-- `20261011163653_notifications_inbox.sql`: **sólo local; pendiente de autorización/aplicación en planit-v2**. Bandeja R2 sin generadores: notifications con FK RESTRICT e índices, RLS por destinatario y UPDATE únicamente read_at con hora servidor/primera lectura inmutable. RPCs get_notifications/get_notification_target/mark_notification_read SECURITY INVOKER, search_path vacío y EXECUTE sólo authenticated. Destinos sujetos a RLS existente de evento/chat, sin conceder acceso por el aviso. [Pruebas y límites](design/verification/notifications/README.md).
+- `20261011163653_notifications_inbox.sql`: **aplicada en planit-v2 el 11/10/2026 con autorización expresa del usuario**. Bandeja R2 sin generadores: notifications con FK RESTRICT e índices, RLS por destinatario y UPDATE únicamente read_at con hora servidor/primera lectura inmutable. RPCs get_notifications/get_notification_target/mark_notification_read SECURITY INVOKER, search_path vacío y EXECUTE sólo authenticated. Destinos sujetos a RLS existente de evento/chat, sin conceder acceso por el aviso. [Pruebas y límites](design/verification/notifications/README.md).
 
 - `20261010214526_event_chat.sql`: **aplicada en planit-v2** (iepeqmvzjguwlhnecsdq) el 10/10/2026 con autorización expresa del usuario, R2 bloque 2. conversations/messages con RLS organizador/confirmed, trigger + backfill único por evento; envío sólo RPC con identidad Auth, lock evento/participación, reloj Argentina, límite 2000 e idempotencia UUID. Sin mutaciones REST directas ni perfiles privados. Eventos cerrados conservan lectura autorizada; cancelled/removed no acceden. Sin cambios Realtime. [Pruebas y límites](design/verification/event-chat/README.md).
 

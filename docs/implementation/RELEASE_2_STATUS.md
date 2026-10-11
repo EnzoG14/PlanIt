@@ -16,7 +16,7 @@
 | 1 | Inicio, categorías y detalle ampliado | R2-01/02/03 | Implementado; QA pendiente | rama `codex/r2-block-1-home-detail`; [PR #9](https://github.com/EnzoG14/PlanIt/pull/9) | 12 CA cubiertos por checks locales; aceptación humana y Auth/REST/Storage remoto pendientes |
 | 2 | Chat de evento: leer y enviar texto | R2-04/05 | Implementado; QA pendiente | [PR #10](https://github.com/EnzoG14/PlanIt/pull/10); [evidencia](../design/verification/event-chat/README.md) | Migración aplicada; REST/Auth real y aceptación humana pendientes |
 | 3 | Mi perfil (lectura propia ampliada) | R2-06 | Implementado; QA pendiente | [PR #11](https://github.com/EnzoG14/PlanIt/pull/11); [evidencia](../design/verification/own-profile/README.md) | 4 CA con SQL local/UI fixture; cuentas reales y aceptación humana pendientes |
-| 4 | Bandeja de notificaciones | R2-07 | Implementado; QA pendiente | [PR #12](https://github.com/EnzoG14/PlanIt/pull/12); [evidencia](../design/verification/notifications/README.md) | Migración sólo local; REST/JWT real y aceptación humana pendientes |
+| 4 | Bandeja de notificaciones | R2-07 | Implementado; QA pendiente | [PR #12](https://github.com/EnzoG14/PlanIt/pull/12); [evidencia](../design/verification/notifications/README.md) | Migración aplicada; REST/JWT real y aceptación humana pendientes |
 | 5 | QA integral, seguridad y regresión R1 | R2-01 a 07 | Pendiente | — | Matriz 28 CA, E2E según autorización y revisión humana |
 
 ## Estado de partida
@@ -103,15 +103,15 @@
 - Estado: Implementado; QA pendiente (11/10/2026 Argentina, sin aceptación humana).
 - Base: `origin/main` actualizado en `a71b3bfc5f9a6194222ff9319a712611b9ceec4b`; rama nueva `codex/r2-block-4-notifications`.
 - PR: [#12 — feat(r2): implement private notification inbox](https://github.com/EnzoG14/PlanIt/pull/12), borrador sin fusionar; implementación en commit `2a1f799`.
-- Migración: `20261011163653_notifications_inbox.sql`, **sólo local; no aplicada en remoto**. Reproduce todas las migraciones en PostgreSQL temporal con scaffold Auth/Storage; sin cambios Auth/Realtime ni Push.
-- Metadatos remotos verificados sin execute_sql: planit-v2 mantiene 9 migraciones hasta event_chat y 9 tablas públicas con RLS; notifications no existe todavía.
+- Migración: `20261011163653_notifications_inbox.sql`, **aplicada en planit-v2 el 11/10/2026 con autorización expresa del usuario**. Reproduce todas las migraciones en PostgreSQL temporal con scaffold Auth/Storage; sin cambios Auth/Realtime ni Push.
+- Verificación remota posterior: 10 migraciones sincronizadas y dry-run sin pendientes; notifications con RLS, SELECT propio, UPDATE sólo read_at, sin INSERT/DELETE de cliente ni acceso anon. Tres RPC invoker con search_path vacío y EXECUTE sólo authenticated; trigger presente. Consulta READ ONLY con dos identidades SQL verificó bandejas vacías y destino ausente; anon denegado. Sin avisos nuevos de seguridad: siete SECURITY DEFINER heredados y leaked-password protection ya documentados.
 - Cambios: `/notifications` autenticada desde campana en cabecera; 30 filas + lookahead, cursor created_at/id, tipo/título/cuerpo/fecha Argentina y leído/no leído. Actualizar/foco reinician, cuenta nueva descarta filas y respuestas tardías. Loading/error/empty y migración aún no disponible; marcado sin éxito optimista y revalidación del destino al abrir.
 - Seguridad: RLS sólo destinatario, sin INSERT/DELETE de cliente y UPDATE exclusivo read_at con trigger reloj servidor/primera lectura inmutable. RPCs invoker, search_path vacío y EXECUTE sólo authenticated; sin identidad destinataria proporcionada desde navegador. Destinos heredan RLS evento/chat y vuelven a autorizar al navegar; ninguna notificación concede acceso.
 - CA: RF-R2-07.CA-01..04.
 - Evidencia: [matriz, capturas y límites](../design/verification/notifications/README.md), postgres-results.json y ui-results.json. SQL real local con A/B/anon; UI fixtures interceptados en 375×812 y 1280×900, reloj dispositivo Tokyo, teclado, fallos de red/marca, recurso revocado y cambio de cuenta con respuesta tardía.
 - Pruebas PASS: build, lint, `node scripts/check-notifications.mjs`, `node scripts/check-notifications-ui.mjs`, check:auth, check:events, check:participations (incluye carreras de cupo), check:my-events y diff --check.
 - Diseño: revisión contra pantalla 5 de mockup R2. Filas marino/violeta, iconos circulares, nav inferior existente; fecha completa y acciones táctiles aumentan altura. Se omiten filtros ilustrativos, agrupaciones relativas y contenido ficticio de producción.
-- Pendientes: autorización/aplicación remota con historial/dry-run/asesores, REST/JWT con dos cuentas reales, revisión humana responsive/safe areas y smoke R1 real. No declarar fixtures como E2E ni marcar Validado. Bloque 5 sin iniciar.
+- Pendientes: REST/JWT con dos cuentas reales, revisión humana responsive/safe areas y smoke R1 real. No declarar fixtures como E2E ni marcar Validado. Bloque 5 sin iniciar.
 - Fuera de PR: cambio local previo en `vite.config.ts` (allowedHosts) preservado.
 - Riesgos/decisiones: sin productores hasta R6, por lo que la bandeja vacía es legítima. No hay nuevos SECURITY DEFINER ni permisos amplios para el cliente.
 

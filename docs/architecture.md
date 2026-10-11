@@ -32,7 +32,7 @@ Ver ../AGENTS.md, ../src/AGENTS.md, ../supabase/AGENTS.md y database.md.
 
 ## Notificaciones R2 — BLOQUE 4
 
-Ruta protegida `/notifications`, campana en cabecera y consulta paginada por created_at/id. Tabla notifications con RLS propia del destinatario; sólo read_at actualizable con hora servidor y primera lectura inmutable. RPCs SECURITY INVOKER reutilizan RLS existente para destinos de eventos/chat y revalidan al abrir. Refresco explícito/al foco, estado aislado por cuenta y sin avisos generados, Push ni Realtime. Migración `20261011163653_notifications_inbox.sql` sólo local, pendiente de autorización remota. [Evidencia y límites](design/verification/notifications/README.md).
+Ruta protegida `/notifications`, campana en cabecera y consulta paginada por created_at/id. Tabla notifications con RLS propia del destinatario; sólo read_at actualizable con hora servidor y primera lectura inmutable. RPCs SECURITY INVOKER reutilizan RLS existente para destinos de eventos/chat y revalidan al abrir. Refresco explícito/al foco, estado aislado por cuenta y sin avisos generados, Push ni Realtime. Migración `20261011163653_notifications_inbox.sql` aplicada en planit-v2 el 11/10/2026 con autorización expresa del usuario; historial sincronizado y permisos verificados. [Evidencia y límites](design/verification/notifications/README.md).
 
 ## Chat R2 — BLOQUE 2
 
