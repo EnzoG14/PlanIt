@@ -1,8 +1,8 @@
 # PlanIt — Plan técnico de implementación Release 3 (para Codex)
 
-**Versión:** 1.0 — 11/10/2026 (Argentina). **Estado:** propuesto, sólo documentación; ninguna funcionalidad R3 se declara implementada ni validada.
+**Versión:** 1.1 — 11/10/2026 (Argentina). **Estado:** propuesto, sólo documentación; ninguna funcionalidad R3 se declara implementada ni validada.
 **Contrato funcional local:** [RELEASE_3_REQUIREMENTS.md](../requirements/RELEASE_3_REQUIREMENTS.md) — 9 RF y 37 CA, copiados de las pestañas «Nueva planificación», «Criterios de aceptación» y «Especificación técnica» del documento Planificación. Se usa la **reorganización de octubre de 2026**, no las releases históricas.
-**Diseño:** [mockup R3 original](../design/mockups/release-3.png), [referencias visuales individuales](../design/r3-proposal/README.md), DESIGN_SYSTEM.md, SCREENS.md y DESIGN_GAPS.md.
+**Diseño:** [mockup R3 original](../design/mockups/release-3.png), [mockups individuales R3](../design/mockups/r3/README.md), DESIGN_SYSTEM.md, SCREENS.md y DESIGN_GAPS.md.
 **Seguimiento:** [RELEASE_3_STATUS.md](RELEASE_3_STATUS.md). **Referencia técnica de formato:** RELEASE_2_PLAN.md / RELEASE_2_STATUS.md / docs/implementation/prompts/RELEASE_2_BLOCK_*.md.
 
 ## A. Alcance, entregables y trazabilidad
@@ -42,6 +42,7 @@ En `main` al preparar este plan existen las páginas `MyEventsPage.tsx` (pestañ
 ## D. Bloques de implementación
 
 ### BLOQUE 0 — Preparación R3
+**Mockups:** los siete PNG en `docs/design/mockups/r3/` (ver índice).
 - Auditar archivos/rutas, contratos de `events`, media, participaciones/historial y superficies R2 de chat; analizar las siete referencias visuales más el mockup original.
 - Definir navegación desde `/my-events?section=organizing` y `/events/:id`: edición, galería, asistentes, solicitudes y acción de duplicar. Mantener accesibles histórico y regreso coherente.
 - Definir componentes compartidos, formularios, confirmaciones y estados sin implementar botones inertes. No abrir rutas vacías de funcionalidad futura.
@@ -49,6 +50,7 @@ En `main` al preparar este plan existen las páginas `MyEventsPage.tsx` (pestañ
 - **Salida:** mapa de rutas/contratos y estado actualizado; sin SQL ni cambios remotos. Build/lint si cambia frontend.
 
 ### BLOQUE 1 — Mis eventos organizados
+**Mockup:** `docs/design/mockups/r3/01-mis-eventos.png`.
 **RF:** R3-04 (4 CA).
 - Extender la sección Organizo real sin reescribir Participo. Incluir propios activos e históricos con filtros operativos Todos/Próximos/Pasados/Cancelados/Archivados y badges coherentes con `event_state`.
 - Menú contextual sólo para acciones autorizadas y disponibles según estado; no mostrar acciones aún no implementadas como operativas.
@@ -57,6 +59,7 @@ En `main` al preparar este plan existen las páginas `MyEventsPage.tsx` (pestañ
 - **DoD:** RF-R3-04.CA-01..04, A/B y estados históricos, regression Mis eventos R1 y mobile/desktop.
 
 ### BLOQUE 2 — Editar evento
+**Mockup:** `docs/design/mockups/r3/02-editar-evento.png`.
 **RF:** R3-01 (4 CA).
 - Reusar estructura, tipos y validaciones de `CreateEventPage`; precargar título, descripción, `starts_at`, `ends_at`, lugar/dirección, coordenadas, categoría, capacidad y campos existentes editables.
 - Validar fechas/horas coherentes y cupo `>= confirmed` **en BD**, incluso ante concurrencia. Sólo dueño y según estado real; no crear un evento nuevo por accidente.
@@ -65,6 +68,7 @@ En `main` al preparar este plan existen las páginas `MyEventsPage.tsx` (pestañ
 - **DoD:** RF-R3-01.CA-01..04, acceso directo de tercero denegado, concurrencia y responsive.
 
 ### BLOQUE 3 — Administrar galería
+**Mockup:** `docs/design/mockups/r3/03-galeria.png`.
 **RF:** R3-03 (4 CA).
 - Reutilizar `event_media`, `files` y `event_images` y convenciones de R1. Selector móvil + drag-and-drop desktop, previews, carga con estado/error, máximo 10, formatos/tamaños según contrato real.
 - Reordenar imágenes y portada = primera por `sort_order`. Brindar alternativa accesible al drag-and-drop (controles mover).
@@ -73,6 +77,7 @@ En `main` al preparar este plan existen las páginas `MyEventsPage.tsx` (pestañ
 - **DoD:** RF-R3-03.CA-01..04; primera/décima/undécima foto, fallo parcial, permisos A/B, móvil.
 
 ### BLOQUE 4 — Asistentes y remoción
+**Mockups:** `docs/design/mockups/r3/04-asistentes.png`, `07-estados-dialogos.png`.
 **RF:** R3-05/06 (8 CA).
 - Vista administrativa de asistentes confirmados del evento propio, con búsqueda por nombre y estados confirmados/removidos diferenciados; ninguna columna de email/sexo/DOB privado.
 - Consulta mínima a `event_participations` + proyección social autorizada. Otros usuarios no acceden a la ruta ni a la RPC/REST subyacente. La lista pública/social de R5 es un caso distinto.
@@ -81,6 +86,7 @@ En `main` al preparar este plan existen las páginas `MyEventsPage.tsx` (pestañ
 - **DoD:** RF-R3-05.CA-01..04 + R3-06.CA-01..04, historial, denegación cruzada, regresión chat R2.
 
 ### BLOQUE 5 — Acciones y duplicación
+**Mockups:** `docs/design/mockups/r3/06-acciones-evento.png`, `07-estados-dialogos.png`, `02-editar-evento.png` (referencia de campos del formulario).
 **RF:** R3-02/07 (8 CA).
 - Presentar acciones del dueño en detalle y/o menú propio de lista; acciones deshabilitadas/omitidas según vigencia. Confirmaciones claras con opción cancelar y errores sin éxito ficticio.
 - Cancelar marca estado, bloquea nuevas inscripciones/escritura de chat, conserva mensajes, media, participaciones e historial.
@@ -89,6 +95,7 @@ En `main` al preparar este plan existen las páginas `MyEventsPage.tsx` (pestañ
 - **DoD:** RF-R3-02.CA-01..04 + R3-07.CA-01..04; fallo/rollback, duplicado no persistido antes de guardar, datos originales íntegros.
 
 ### BLOQUE 6 — Reincorporaciones
+**Mockups:** `docs/design/mockups/r3/05-solicitudes-reincorporacion.png`, `07-estados-dialogos.png`, `04-asistentes.png`.
 **RF:** R3-08/09 (9 CA).
 - Para `removed` con acceso vigente, opción `Solicitar reincorporación` en detalle: primera inmediata, sólo una pendiente, sin solicitud para otros estados, luego de rechazo cooldown de 7 días desde `resolved_at`.
 - Para organizador, bandeja pendientes accesible desde asistentes; aprobar/rechazar con confirmación, estado actualizado e historial. **No convertir `pending` en estado de participación:** es estado de `event_rejoin_requests`.
@@ -98,13 +105,18 @@ En `main` al preparar este plan existen las páginas `MyEventsPage.tsx` (pestañ
 - **DoD:** RF-R3-08.CA-01..04 + R3-09.CA-01..05, pruebas A/B, duplicación/cooldown, última plaza y evento cerrado.
 
 ### BLOQUE 7 — QA y cierre
+**Mockups:** contrastar los siete PNG de `docs/design/mockups/r3/`; no reportar capturas como verificadas si los archivos aún no están.
 - Crear `docs/qa/RELEASE_3_ACCEPTANCE.md` y `docs/qa/RELEASE_3_TEST_REPORT.md` cuando existan resultados; matriz **37 CA** con estado y evidencias verificables.
 - Ejecutar `npm ci`, build/lint, checks, pruebas de SQL local y HTTP/Auth/REST/Storage reales **sólo con autorización/credenciales**. Revisar RLS, grants, RPC, concurrency, histórico e inconsistencias Storage.
 - Dos usuarios y no miembro, ruta directa, error de red, estados activos/pasados/cancelados/archivados, galería/cupo, remoción/chat y reincorporación; QA responsive 360×800, 375×812, 390×844, 768×1024 y desktop.
 - Smoke R1/R2: crear/inscribir/retirar, mapa, lista, detalle, chat y notificaciones. Documentar incidencias, excepciones, GO/NO-GO y aceptación humana.
 - No declarar 37/37 aprobados ni «Validado» si no se ejecutaron pruebas reales.
 
-## E. Decisiones y riesgos transversales
+## E. Contrato de mockups y riesgos transversales
+
+- **Carpeta canónica de R3:** `docs/design/mockups/r3/`. El `README.md` indica siete nombres exactos y su relación con bloques. Las imágenes individuales deben ser incorporadas manualmente por el usuario antes de la revisión visual de cada bloque; un enlace a un PNG aún ausente **no implica que exista**.
+- **Regla de implementación:** usar los PNG para layout, jerarquía, estados visuales y componentes, no para inventar datos, campos o capacidades. Capturas antes/después se comparan al archivo existente y se documentan excepciones.
+
 
 - **Transacciones:** cupo al editar y al aprobar reingreso; carrera remoción/chat; cancelación + archivado; consistencia de galería/Storage.
 - **Privacidad:** el mockup incluye emails y perfiles; sólo proyección social permitida. Mostrar nombres/username/avatar donde RLS lo autorice.

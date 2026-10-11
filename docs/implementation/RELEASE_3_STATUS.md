@@ -1,6 +1,6 @@
 # PlanIt — Release 3: seguimiento de implementación
 
-**Plan:** [RELEASE_3_PLAN.md](RELEASE_3_PLAN.md). **Contrato:** [RELEASE_3_REQUIREMENTS.md](../requirements/RELEASE_3_REQUIREMENTS.md) (9 RF, 37 CA). **Diseño:** [R3 original](../design/mockups/release-3.png) y [propuesta visual](../design/r3-proposal/README.md).
+**Plan:** [RELEASE_3_PLAN.md](RELEASE_3_PLAN.md). **Contrato:** [RELEASE_3_REQUIREMENTS.md](../requirements/RELEASE_3_REQUIREMENTS.md) (9 RF, 37 CA). **Diseño:** [R3 original](../design/mockups/release-3.png) y [mockups individuales R3](../design/mockups/r3/README.md).
 
 **Corte documental:** 11/10/2026 (Argentina). **No se implementó R3 con esta PR**: es exclusivamente planificación, especificación local y material de referencia visual.
 
@@ -21,7 +21,7 @@
 
 - Revisados archivos visibles en `main`: `MyEventsPage`, `CreateEventPage`, `EventDetailPage`, `EventChatPage`; servicios actuales de eventos y participación. No hay entregas R3 acreditadas en este corte.
 - La planificación funcional vigente separa R3 (operaciones) de R6 (analítica). La versión histórica de Planificación tiene otro alcance y otra numeración: no mezclar.
-- Las capturas R3 son ilustraciones y contienen elementos desalineados con los requisitos; consultar `docs/design/r3-proposal/README.md` antes de implementar.
+- Las capturas R3 son ilustraciones y contienen elementos desalineados con los requisitos; consultar `docs/design/mockups/r3/README.md`. **Los siete PNG individuales están pendientes de ser añadidos por el usuario**; sólo está versionado su índice y nomenclatura. Ningún bloque podrá declarar contraste visual completado sin verificar el PNG respectivo.
 - **Estado de Supabase remoto:** no auditado para R3 al crear estos documentos. Consultar esquema y migraciones antes de cualquier SQL; no asumir ausencia/presencia de tablas o RPC.
 - **CI/build/lint:** no ejecutados contra una rama local del código por tratarse de documentación. PR requiere revisión editorial y de exactitud antes de iniciar bloque 0.
 
