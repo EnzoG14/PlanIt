@@ -30,6 +30,10 @@ PlanIt es una PWA universitaria para descubrir, organizar y participar en evento
 
 Ver ../AGENTS.md, ../src/AGENTS.md, ../supabase/AGENTS.md y database.md.
 
+## Notificaciones R2 — BLOQUE 4
+
+Ruta protegida `/notifications`, campana en cabecera y consulta paginada por created_at/id. Tabla notifications con RLS propia del destinatario; sólo read_at actualizable con hora servidor y primera lectura inmutable. RPCs SECURITY INVOKER reutilizan RLS existente para destinos de eventos/chat y revalidan al abrir. Refresco explícito/al foco, estado aislado por cuenta y sin avisos generados, Push ni Realtime. Migración `20261011163653_notifications_inbox.sql` sólo local, pendiente de autorización remota. [Evidencia y límites](design/verification/notifications/README.md).
+
 ## Chat R2 — BLOQUE 2
 
 Ruta protegida `/events/:id/chat` desde detalle para organizador/confirmed. RPC autorizadas entregan header/estado e historial paginado con representación social mínima; envío transaccional con UUID idempotente y bloqueo evento/participación. Tablas con RLS sin mutaciones REST del cliente. Historial de eventos cerrados sólo lectura; retirados/removidos sin acceso. Refresco explícito y al recuperar foco, sin configuración Realtime. Migración `20261010214526_event_chat.sql` aplicada en planit-v2 el 10/10/2026 con autorización del usuario; historial sincronizado y RLS/grants verificados. [Evidencia y límites](design/verification/event-chat/README.md).

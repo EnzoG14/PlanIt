@@ -1,0 +1,30 @@
+{
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "environment": "Local PostgreSQL with Auth/Storage scaffolding; no Supabase HTTP/JWT",
+  "results": [
+    {
+      "test": "CA-04: fresh inbox is empty; migrations generate no notifications",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-01/02/03: persisted content/time, A/B isolation including direct and unfiltered SELECT",
+      "result": "PASS"
+    },
+    {
+      "test": "Keyset pagination with tied timestamps, lookahead and concurrent newer insertion stays stable",
+      "result": "PASS"
+    },
+    {
+      "test": "Only own read_at can change; server timestamp, immutable first read, idempotent retries; forged INSERT/DELETE/content/identity updates denied",
+      "result": "PASS"
+    },
+    {
+      "test": "Targets inherit event/chat RLS; nonmember, removed access, hidden event and foreign notification never grant navigation",
+      "result": "PASS"
+    },
+    {
+      "test": "RLS enabled; all new RPCs SECURITY INVOKER, empty search_path; anon and missing identity denied",
+      "result": "PASS"
+    }
+  ]
+}

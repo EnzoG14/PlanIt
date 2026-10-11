@@ -34,7 +34,7 @@ export function AppLayout() {
         <Link className="brand" to="/map" aria-label="PlanIt, inicio">Plan<span>It</span></Link>
       </div> : <header className="app-header">
         <NavLink className="brand" to="/home" aria-label="PlanIt, inicio"><img src="/favicon.svg" width="32" height="32" alt="" />Plan<span>It</span></NavLink>
-        <nav className="account-nav" aria-label="Cuenta">{loading ? <span role="status">Comprobando sesión…</span> : session ? <><NavLink to="/me">Mi perfil</NavLink><button className="text-button" type="button" disabled={signingOut} onClick={logout}>{signingOut ? 'Saliendo…' : 'Salir'}</button></> : <><NavLink to="/login">Ingresar</NavLink><NavLink to="/register">Crear cuenta</NavLink></>}</nav>
+        <nav className="account-nav" aria-label="Cuenta">{loading ? <span role="status">Comprobando sesión…</span> : session ? <><NavLink className="icon-link" to="/notifications" aria-label="Notificaciones"><Icon name="bell" /></NavLink><NavLink to="/me">Mi perfil</NavLink><button className="text-button" type="button" disabled={signingOut} onClick={logout}>{signingOut ? 'Saliendo…' : 'Salir'}</button></> : <><NavLink to="/login">Ingresar</NavLink><NavLink to="/register">Crear cuenta</NavLink></>}</nav>
       </header>}
       <main id="main-content" tabIndex={-1}>
         {supabaseConfigError && <StatusMessage title="Configuración pendiente" tone="error">{supabaseConfigError}</StatusMessage>}
