@@ -9,7 +9,7 @@
 | Bloque | Alcance | RF | Estado | PR/evidencia | Pendientes |
 | --- | --- | --- | --- | --- | --- |
 | 0 | Preparación, rutas y diseño | Transversal | Implementado; QA pendiente | [PR #18](https://github.com/EnzoG14/PlanIt/pull/18); rama `codex/r3-block-0`; [decisiones/evidencia](RELEASE_3_BLOCK_0_DECISIONS.md) | Revisión y aceptación humana del contrato |
-| 1 | Mis eventos organizados | R3-04 | Implementado; QA pendiente | Rama `codex/r3-block-1`; [CA/pruebas/capturas](../design/verification/r3-block-1/README.md) | Aplicación remota autorizada, HTTP/JWT A/B reales, acciones de bloques posteriores y aceptación humana |
+| 1 | Mis eventos organizados | R3-04 | Implementado; QA pendiente | [PR #19](https://github.com/EnzoG14/PlanIt/pull/19); rama `codex/r3-block-1`; [CA/pruebas/capturas](../design/verification/r3-block-1/README.md) | Aplicación remota autorizada, HTTP/JWT A/B reales, acciones de bloques posteriores y aceptación humana |
 | 2 | Editar evento | R3-01 | Pendiente | — | Reutilizar formulario; update_event ausente, cupo concurrente y política de históricos por resolver |
 | 3 | Galería | R3-03 | Pendiente | — | Media básica existe; faltan operaciones administrativas de orden/baja/limpieza |
 | 4 | Asistentes y remoción | R3-05/06 | Pendiente | — | SELECT propio no da nómina; faltan proyección mínima/remoción y pruebas historial/chat |
@@ -50,7 +50,7 @@
 
 ### Bloque 1 — Implementado; QA pendiente
 
-- **Base/rama:** `origin/main` actualizado (`6275242`, Bloque 0 fusionado) → `codex/r3-block-1`; PR exclusiva del bloque. Cambio previo de vite.config.ts preservado y excluido.
+- **Base/rama:** `origin/main` actualizado (`6275242`, Bloque 0 fusionado) → `codex/r3-block-1`; [PR #19](https://github.com/EnzoG14/PlanIt/pull/19) exclusiva del bloque. Cambio previo de vite.config.ts preservado y excluido.
 - **Entrega:** filtros Todos/Próximos/Pasados/Cancelados/Archivados en Organizo antes de paginar; Próximos incluye en curso por decisión del usuario, Todos excluye archivados. Precedencia archived/cancelled/ended/open. URL/regreso conserva filtro; menú accesible sólo Ver detalle; Actualizar, vacíos por filtro, protección de respuestas tardías y reintento de carga adicional sin perder resultados. Participo conserva RPC, contenido, navegación e historial.
 - **Código/contratos:** MyEventsPage, my-events, CompactEventCard/Icon, estilos de Mis eventos y regreso de EventDetailPage. Nueva RPC get_my_organized_events(text, integer) invoker y con identidad desde auth.uid(); get_my_events existente intacta, sin ampliar RLS ni permisos de tablas.
 - **Migración:** `20261011232326_my_organized_events_read.sql` creada con CLI y probada en PostgreSQL local; **no aplicada remotamente**. Autorizar/aplicar antes de desplegar frontend; RPC ausente produce error reintentable y no resultados parciales.
