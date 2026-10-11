@@ -16,6 +16,7 @@ async function setup(viewport) {
   await context.addInitScript(({user})=>localStorage.setItem('sb-iepeqmvzjguwlhnecsdq-auth-token',JSON.stringify({access_token:'fixture-token',refresh_token:'fixture-refresh',expires_at:Math.floor(Date.now()/1000)+3600,token_type:'bearer',user})),{user})
   let mode='success'; let state='open'; let lostResponse=true; const sends=[]
   const messages=[{id:'40000000-0000-4000-8000-000000000001',sender_id:'20000000-0000-4000-8000-000000000002',display_name:'Sofía de prueba',username:'sofia_fixture',body:'¡Hola! Nos encontramos en el evento.',created_at:'2026-10-10T19:12:00'}]
+  await context.routeWebSocket('**/realtime/v1/websocket**', ws => { ws.onMessage(() => {}) })
   await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**',async route=>{
     const path=new URL(route.request().url()).pathname
     const reply=(body,status=200)=>route.fulfill({status,contentType:'application/json',body:JSON.stringify(body)})
@@ -66,6 +67,7 @@ try {
     await page.getByRole('button',{name:'Enviar',exact:true}).click()
     await page.waitForFunction(()=>document.querySelector('#chat-text')?.value==='')
     assert.equal(fixture.sends.length,2);assert.equal(fixture.sends[0].p_message_id,fixture.sends[1].p_message_id)
+    await page.getByText('¡Nos vemos! Texto de prueba',{exact:true}).waitFor()
     assert.equal(await page.getByText('¡Nos vemos! Texto de prueba',{exact:true}).count(),1)
     assert.ok(await page.locator('.chat-own').count())
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth))

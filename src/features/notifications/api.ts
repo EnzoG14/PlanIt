@@ -34,3 +34,17 @@ export function notificationsError(error: unknown): string {
   if (['42501', 'PGRST301', 'PGRST303'].includes(code)) return 'No pudimos autorizar la consulta. Comprobá tu sesión y reintentá.'
   return 'No pudimos consultar tus avisos. Revisá la conexión y reintentá.'
 }
+
+export async function loadUnreadCount(userId: string): Promise<number> {
+  if (!supabase) throw new Error('unconfigured')
+  const { count, error } = await supabase.from('notifications').select('id', { count: 'exact', head: true }).eq('recipient_id', userId).is('read_at', null)
+  if (error) throw error
+  if (count === null) throw new Error('count_unavailable')
+  return count
+}
+export async function loadNotificationChanges(ids: string[]): Promise<NotificationItem[]> {
+  if (!supabase) throw new Error('unconfigured')
+  const { data, error } = await supabase.rpc('get_notification_changes', { p_ids: ids })
+  if (error) throw error
+  return (data ?? []) as NotificationItem[]
+}

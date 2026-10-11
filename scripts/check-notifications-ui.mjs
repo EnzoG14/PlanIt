@@ -21,9 +21,12 @@ try {
     const rows = Array.from({ length: 35 }, (_, i) => ({ id: `40000000-0000-4000-8000-${String(100-i).padStart(12,'0')}`, type: 'event_update', title: i === 0 ? 'Actualización del evento' : i === 1 ? 'Aviso sin destino' : `Aviso de prueba ${i}`, body: i === 1 ? null : 'Contenido registrado para esta cuenta. Datos de prueba.', created_at: '2026-10-11T12:30:00', read_at: i === 2 ? '2026-10-11T12:40:00' : null, target: i === 0 ? '/events/'+event : null }))
     let mode = 'success', failMark = false, target = '/events/'+event, listCalls = 0, markCalls = 0, release = null
     const errors = [], requests = []
+  await context.routeWebSocket('**/realtime/v1/websocket**', ws => { ws.onMessage(() => {}) })
     await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**', async route => {
       const req = route.request(), url = new URL(req.url()), id = req.headers().authorization?.includes(b) ? b : a
       const reply = (body, status=200) => route.fulfill({ status, contentType: 'application/json', body: JSON.stringify(body) })
+      if (url.pathname === '/rest/v1/notifications') return route.fulfill({status:200,headers:{'content-range':'0-0/'+(id===a?rows.filter(row=>!row.read_at).length:0),'access-control-expose-headers':'content-range'},contentType:'application/json',body:''})
+      if (url.pathname === '/rest/v1/rpc/get_notification_changes') return reply(id===a?rows.filter(row=>req.postDataJSON().p_ids.includes(row.id)).map(row=>({...row,target})):[])
       if (url.pathname === '/auth/v1/user') return reply(user(id))
       if (url.pathname === '/rest/v1/rpc/get_notifications') {
         listCalls++; const params = req.postDataJSON(); requests.push(params)
@@ -33,7 +36,7 @@ try {
         if (mode === 'missing') return reply({code:'PGRST202',message:'not deployed'},404)
         if (mode === 'empty' || id === b) return reply([])
         const start = params.p_before_id ? rows.findIndex(row=>row.id===params.p_before_id)+1 : 0
-        return reply(rows.slice(start,start+31))
+        return reply(rows.slice(start,start+31).map(row=>({...row,target:row.target?target:null})))
       }
       if (url.pathname === '/rest/v1/rpc/mark_notification_read') {
         markCalls++; const params=req.postDataJSON(); assert.deepEqual(Object.keys(params),['p_id'])
@@ -45,7 +48,7 @@ try {
       return reply([])
     })
     const page = await context.newPage(); page.setDefaultTimeout(10000); page.on('pageerror',error=>errors.push(error.message))
-    await page.goto(origin+'/me'); await page.getByRole('link',{name:'Notificaciones',exact:true}).click()
+    await page.goto(origin+'/me'); await page.getByRole('link',{name:/^Notificaciones/}).click()
     await page.getByRole('heading',{name:'Actualización del evento',exact:true}).waitFor()
     assert.equal(await page.locator('.notification-row').count(),30)
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false)
@@ -76,7 +79,7 @@ try {
     while(!release) await new Promise(resolve=>setTimeout(resolve,20))
     mode='success';release(); await page.getByRole('heading',{name:'Actualización del evento',exact:true}).waitFor()
     check(`${name}: loading, network error, missing migration and retry recovery`)
-    const calls=listCalls; await page.evaluate(()=>window.dispatchEvent(new Event('focus'))); await page.waitForFunction(()=>document.querySelector('.notification-row'))
+    const calls=listCalls; await page.evaluate(()=>window.dispatchEvent(new Event('focus'))); for(let attempt=0;attempt<100&&listCalls===calls;attempt++) await page.waitForTimeout(10); await page.waitForFunction(()=>document.querySelector('.notification-row'))
     await page.getByRole('heading',{name:'Actualización del evento',exact:true}).waitFor(); assert.ok(listCalls>calls)
     release=null; mode='delay'; await page.getByRole('button',{name:'Actualizar',exact:true}).click()
     await page.getByRole('heading',{name:'Cargando notificaciones'}).waitFor()

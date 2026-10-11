@@ -56,6 +56,10 @@ try {
     }
     if (sql.trim()) await admin.query(sql)
   }
+  await admin.query(await readFile('supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql','utf8'))
+  assert.deepEqual((await admin.query("select tablename from pg_publication_tables where pubname='supabase_realtime' order by tablename")).rows.map(row=>row.tablename),['messages','notifications'])
+  check('Realtime publication contains only messages/notifications; incremental migration reapplication is safe')
+
   const event = (await admin.query('select id from public.events')).rows[0].id
   const tables = (await admin.query("select relname,relrowsecurity from pg_class where oid in ('public.conversations'::regclass,'public.messages'::regclass)")).rows
   assert.ok(tables.length === 2 && tables.every(table=>table.relrowsecurity))

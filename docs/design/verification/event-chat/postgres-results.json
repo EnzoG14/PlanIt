@@ -1,7 +1,11 @@
 {
-  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
   "environment": "Local PostgreSQL with Auth/Storage scaffolding; no real Supabase REST/Auth",
   "results": [
+    {
+      "test": "Realtime publication contains only messages/notifications; incremental migration reapplication is safe",
+      "result": "PASS"
+    },
     {
       "test": "Chat tables enable RLS; public definer endpoints have empty search_path and deny anonymous execution",
       "result": "PASS"

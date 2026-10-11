@@ -7,6 +7,10 @@
       "result": "PASS"
     },
     {
+      "test": "Realtime batch RPC isolates recipients, rejects anon and oversized batches; exact unread count exceeds page size; migration idempotent",
+      "result": "PASS"
+    },
+    {
       "test": "CA-01/02/03: persisted content/time, A/B isolation including direct and unfiltered SELECT",
       "result": "PASS"
     },
