@@ -55,6 +55,13 @@ try {
   const ids=[]
   for(let i=0;i<35;i++) ids.push((await admin.query("insert into public.notifications(recipient_id,type,title,body,created_at,event_id) values ($1,'event_update',$2,'Contenido persistido','2026-10-11 12:30',$3) returning id",[owner,'Aviso '+i,event])).rows[0].id)
   const other=(await admin.query("insert into public.notifications(recipient_id,type,title) values ($1,'system','Aviso B') returning id",[participant])).rows[0].id
+  await admin.query(await readFile('supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql','utf8'))
+  assert.equal((await a.query('select count(*)::int as count from public.notifications where read_at is null')).rows[0].count,35)
+  assert.deepEqual((await b.query('select * from public.get_notification_changes($1)',[ids])).rows,[])
+  assert.equal((await a.query('select * from public.get_notification_changes($1)',[[ids[0],other]])).rows.length,1)
+  assert.equal((await admin.query("select has_function_privilege('anon','public.get_notification_changes(uuid[])','EXECUTE') as allowed")).rows[0].allowed,false)
+  await assert.rejects(a.query('select * from public.get_notification_changes($1)',[Array(101).fill(ids[0])]), /invalid_ids/)
+  check('Realtime batch RPC isolates recipients, rejects anon and oversized batches; exact unread count exceeds page size; migration idempotent')
   const first=(await a.query('select * from public.get_notifications()')).rows
   assert.equal(first.length,31);assert.equal(first[0].body,'Contenido persistido'); assert.equal(first[0].created_at.getHours(),12)
   assert.ok(first.every(row=>row.target==='/events/'+event))

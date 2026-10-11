@@ -44,3 +44,7 @@ Fondo marino, burbujas entrantes oscuras/propias azul-violeta, header, fecha/emi
 ## Pendientes
 
 Migración `20261010214526_event_chat.sql` aplicada y registrada remotamente. Migration list sincronizado (9 versiones); dry-run posterior sin pendientes. Consulta remota de catálogo confirma RLS en ambas tablas, sin mutaciones authenticated ni lectura anon; las tres RPC tienen search_path vacío, EXECUTE authenticated y no anon. Backfill: cero eventos sin conversación, cero duplicados; trigger presente. Asesor de seguridad: tres advertencias nuevas por RPC SECURITY DEFINER autenticadas intencionales, además de las cuatro RPC previas y protección de contraseñas heredada. No se reportaron errores. No se cambió Auth/Realtime. Probar JWT/REST real con dos cuentas/no miembro: historial/envío/ID directo/retiro/remoción/cierre. Revisar teléfono físico con teclado/safe areas y smoke R1 real. No se modificó Realtime ni otro recurso remoto.
+
+## Ampliación Realtime — 11/10/2026
+
+El transporte de refresco manual descrito arriba es la evidencia histórica del bloque original. La ampliación R2 agrega Postgres Changes y mantiene autorización, paginación y contratos de escritura. Los scripts SQL/UI fueron ampliados y ejecutados nuevamente; las capturas y JSON de esta carpeta reflejan la regresión local. [Implementación, pruebas de suscripción/reconexión, matriz manual y límites](../realtime/README.md). La migración nueva sigue sin aplicarse en Supabase remoto.

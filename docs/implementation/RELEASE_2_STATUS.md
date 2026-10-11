@@ -133,3 +133,18 @@
 - [ ] Comparar visualmente con mockup R2 en móvil y escritorio.
 - [ ] Registrar CA cubiertos y límites de cada evidencia (fixture, PostgreSQL local, REST real).
 - [ ] Actualizar este archivo; enviar PR; esperar revisión.
+
+## Ampliación R2 — Realtime de chat y notificaciones (11/10/2026 Argentina)
+
+- Estado: implementado; validación remota y aceptación humana pendientes. Esta ampliación reemplaza el transporte manual documentado históricamente en bloques 2/4.
+- Rama: codex/r2-realtime-chat-notifications. Base origin/main, commit 5a3aed5, que integra PRs #10/#12. Worktree C:/Users/enzog/planit-worktrees/r2-realtime; el cambio previo de vite.config.ts en D:/planit permanece fuera de esta rama.
+- Destino de PR: main; contiene ambas dependencias. PR Draft publicada al cerrar la tarea, sin merge.
+- RF: RF-R2-04, RF-R2-05 y RF-R2-07; requisitos oficiales conservados.
+- Chat: INSERT filtrado por conversación autorizada, RPC de historial, recuperación multipágina, UUID/orden/microsegundos, cursor anterior preservado, scroll anclado y textarea intacto; envío y reglas de cierre existentes.
+- Avisos: canal INSERT/UPDATE por recipient_id compartido por layout/bandeja; reconciliación de IDs en lotes y recuperación del rango cargado. COUNT exacto RLS e índice parcial para badge; sin productores R6, Push, DM o adjuntos.
+- Conexión: SUBSCRIBED recupera; ERROR/TIMED_OUT rejoin del SDK, CLOSED canal nuevo/backoff; foco/visibilidad/online/TOKEN_REFRESHED revalidan. Colas retienen señales en vuelo; cleanup por identidad/evento; respuestas tardías descartadas.
+- Migración 20261011193316_r2_realtime_chat_notifications.sql: sólo Git, sin aplicar. Probada en PostgreSQL temporal local, incluida segunda aplicación. No se ejecutó SQL remoto ni se alteró configuración Supabase. Estado actual de publicación remota no confirmado; se deberá consultar con autorización o desde el Dashboard antes de despliegue.
+- PASS: npm ci (0 vulnerabilidades), build, lint, check:realtime (simulado), check:realtime:ui (React/SDK con HTTP/Phoenix WS interceptado); check-chat.mjs y check-notifications.mjs (PostgreSQL local), check-chat-ui.mjs y check-notifications-ui.mjs (fixtures); check:auth, check:events, check:foundation, check:participations, check:my-events, check:home-events y check:discovery. Diff check sin errores. Fallos iniciales de herramientas ausentes en el worktree se resolvieron copiando herramientas locales ignoradas; últimas ejecuciones PASS.
+- Evidencia: [informe Realtime](../design/verification/realtime/README.md), ui-results.json y capturas móvil/escritorio revisadas contra mockup R2. Tests no equivalen a sesiones/JWT reales ni autorizan marcar el bloque Validado.
+- Pendiente: autorización separada para desplegar SQL/configuración, dos sesiones reales + outsider/anon/removido, publicación activa y prueba real de reconexión/rotación JWT, aceptación responsive/teclado/safe areas y smoke remoto R1.
+- Límite: una revocación sin señal se detecta en la próxima revalidación; SQL/RLS ya impide lecturas/envíos/entregas futuras. Recuperar un rango grande requiere varias páginas; no hay replay ni almacenamiento offline privado.

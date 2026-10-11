@@ -18,7 +18,9 @@
     "check:participations": "node scripts/check-participations.mjs",
     "check:participations:ui": "node scripts/check-participations-ui.mjs",
     "check:my-events": "node scripts/check-my-events.mjs",
-    "check:my-events:ui": "node scripts/check-my-events-ui.mjs"
+    "check:my-events:ui": "node scripts/check-my-events-ui.mjs",
+    "check:realtime": "node scripts/check-realtime.mjs",
+    "check:realtime:ui": "node scripts/check-realtime-ui.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",
