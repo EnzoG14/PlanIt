@@ -2,9 +2,9 @@
 
 **Carpeta canónica:** `docs/design/mockups/r3/`. Referencia previa: `../release-3.png`.
 
-Este índice fija los nombres exactos para las **siete imágenes individuales** del diseño R3. **Los PNG todavía no están cargados en esta PR**; el usuario los incorporará aquí. No crear imágenes vacías/placeholders para fingir que están disponibles. La presencia de este README hace visible la carpeta en Git.
+Este índice fija los nombres exactos para las **siete imágenes individuales** del diseño R3. **Los siete PNG originales se incorporan en la PR del Bloque 0** y fueron abiertos visualmente junto con el collage original el 11/10/2026. Se conservan sin transformación; son referencias de diseño, no capturas de UI implementada. [Correspondencia con rutas/componentes, RF y bloques](../../../implementation/RELEASE_3_BLOCK_0_DECISIONS.md#5-correspondencia-visual-y-excepciones).
 
-| Archivo que debe subirse aquí | Pantalla o conjunto | Usado en el bloque |
+| Archivo disponible | Pantalla o conjunto | Usado en el bloque |
 | --- | --- | --- |
 | `01-mis-eventos.png` | Organizo / Participo; estados | 0, 1, 7 |
 | `02-editar-evento.png` | Formulario de edición | 0, 2, 5, 7 |
@@ -14,9 +14,9 @@ Este índice fija los nombres exactos para las **siete imágenes individuales** 
 | `06-acciones-evento.png` | Acciones del organizador en detalle | 0, 5, 7 |
 | `07-estados-dialogos.png` | Confirmaciones, removido y solicitudes | 0, 4, 5, 6, 7 |
 
-## Instrucciones para agregar las imágenes
+## Conservación y revisión de las imágenes
 
-1. Subir cada PNG **con el nombre exacto de la tabla**, sin cambiar los nombres de los prompts.
+1. Conservar cada PNG original **con el nombre exacto de la tabla**, sin cambiar los nombres de los prompts.
 2. Mantener sólo las imágenes de referencia (no generar mockups de pantallas falsas).
 3. Antes de empezar cada bloque de frontend, Codex debe abrir el/los PNG correspondientes. Si faltan, indicar qué archivo falta y dejar la comparación visual pendiente, sin declarar que el diseño fue verificado.
 
