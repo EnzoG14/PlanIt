@@ -49,3 +49,5 @@ Asesores antes/después: sin errores ni nuevos avisos. Persisten las [siete func
 ## Ampliación Realtime — 11/10/2026
 
 El transporte de refresco manual descrito arriba es la evidencia histórica del bloque original. La ampliación R2 agrega Postgres Changes y mantiene autorización, paginación y contratos de escritura. Los scripts SQL/UI fueron ampliados y ejecutados nuevamente; las capturas y JSON de esta carpeta reflejan la regresión local. [Implementación, pruebas de suscripción/reconexión, matriz manual y límites](../realtime/README.md). La migración nueva sigue sin aplicarse en Supabase remoto.
+
+Actualización de despliegue (11/10/2026): la migración Realtime nueva fue aplicada con autorización expresa en planit-v2; 11 versiones sincronizadas y publicación/RLS/grants verificados. La validación WS con JWT reales sigue pendiente. Ver sección de despliegue del [informe Realtime](../realtime/README.md).

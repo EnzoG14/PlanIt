@@ -148,3 +148,11 @@
 - Evidencia: [informe Realtime](../design/verification/realtime/README.md), ui-results.json y capturas móvil/escritorio revisadas contra mockup R2. Tests no equivalen a sesiones/JWT reales ni autorizan marcar el bloque Validado.
 - Pendiente: autorización separada para desplegar SQL/configuración, dos sesiones reales + outsider/anon/removido, publicación activa y prueba real de reconexión/rotación JWT, aceptación responsive/teclado/safe areas y smoke remoto R1.
 - Límite: una revocación sin señal se detecta en la próxima revalidación; SQL/RLS ya impide lecturas/envíos/entregas futuras. Recuperar un rango grande requiere varias páginas; no hay replay ni almacenamiento offline privado.
+
+### Despliegue autorizado de Realtime — 11/10/2026
+
+- El usuario autorizó aplicar la migración y configurar las variables de entorno del worktree. Se aplicó 20261011193316_r2_realtime_chat_notifications.sql por CLI con versión 20261011193316 y --skip-vault, exclusivamente en planit-v2 (iepeqmvzjguwlhnecsdq). Esta actualización reemplaza los pendientes remotos de publicación/migración señalados arriba.
+- Historial: 11 migraciones sincronizadas; dry-run posterior sin pendientes. Publicación previamente vacía, ahora contiene messages/notifications y admite INSERT/UPDATE. Catálogo confirma RLS activa, RPC invoker/search_path vacío/EXECUTE authenticated y no anon, sin INSERT/DELETE de cliente ni SELECT anon, índice de no leídas presente.
+- Verificación READ ONLY con dos identidades SQL existentes: lectura de bandeja y RPC de lotes, aislamiento de destinatario y chat; ROLLBACK sin fixtures/escrituras. No equivale a JWT/WS real. Asesores sin avisos nuevos frente al estado previo: siete SECURITY DEFINER autenticados intencionales y protección de contraseñas filtradas desactivada, heredados.
+- .env.local creado en C:/Users/enzog/planit-worktrees/r2-realtime con únicamente VITE_SUPABASE_URL y VITE_SUPABASE_PUBLISHABLE_KEY desde configuración existente validada. Archivo ignorado, valores no registrados en Git ni impresos. Build PASS con configuración real.
+- Sin cambios de Auth/Storage/Vault ni merge. Permanecen pendientes las sesiones reales de Realtime y aceptación humana.

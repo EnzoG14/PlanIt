@@ -11,7 +11,7 @@ Fecha: 11/10/2026, Argentina. Rama codex/r2-realtime-chat-notifications, base or
 | Chat | src/pages/EventChatPage.tsx | Canal por cuenta/conversación autorizada; RPC existente; historial anterior y scroll anclado; no se vacía textarea; envío idempotente existente |
 | Avisos | src/features/notifications/NotificationsProvider.tsx, realtime-context.ts, api.ts; src/pages/NotificationsPage.tsx | Un canal por cuenta en layout; lotes de IDs y revalidación de páginas cargadas; lecturas confirmadas/destinos frente a respuestas antiguas |
 | Campana | src/components/AppLayout.tsx, src/App.css | COUNT HEAD exacto con RLS; badge 1–99/99+, aria-label con total real, no badge al cero/desconocido |
-| SQL | supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql | Publicación idempotente, RPC invoker de lotes de hasta 100 IDs, índice parcial de no leídas; **pendiente remoto** |
+| SQL | supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql | Publicación idempotente, RPC invoker de lotes de hasta 100 IDs, índice parcial de no leídas; **aplicada en planit-v2 el 11/10/2026** |
 | Tests | scripts/check-realtime.mjs, check-realtime-ui.mjs, check-chat.mjs, check-chat-ui.mjs, check-notifications.mjs, check-notifications-ui.mjs; package.json | Unidades/lifecycle simulados, React/SDK con fixtures HTTP/WS, SQL local y regresiones |
 | Docs/evidencia | docs/architecture.md, docs/database.md, docs/implementation/RELEASE_2_STATUS.md; verification/event-chat, notifications y realtime | Decisiones, matrices, resultados y capturas actualizados |
 
@@ -46,7 +46,7 @@ Los primeros intentos de algunas regresiones carecían de herramientas ignoradas
 
 Reproducción local: npm ci; herramientas SQL ignoradas pg + embedded-postgres según scripts existentes; PLANIT_PLAYWRIGHT_PATH al runtime disponible; Vite en 4191 con URL planit-v2 y **clave ficticia** sb_publishable_fixture. PLANIT_UI_ORIGIN=http://127.0.0.1:4191. Los scripts de navegador interceptan HTTP/WebSocket; no deben confundirse con conexión real.
 
-## Matriz manual pendiente — requiere autorización de despliegue
+## Matriz manual — despliegue aplicado; sesiones reales pendientes
 
 1. Revisar publicación actual en planit-v2 (iepeqmvzjguwlhnecsdq) y grants/RLS; tras permiso explícito aplicar 20261011193316_r2_realtime_chat_notifications.sql, revisar historial/advisors. Nunca utilizar el proyecto histórico. No hay cambios remotos extra obligatorios si la publicación y el servicio Realtime están disponibles.
 2. Abrir A (organizador), B (confirmed) y C (no miembro) con JWT reales; anónimo en otro contexto. Suscribir C/anon directamente al conversation_id conocido y comprobar ausencia de payloads. A/B envían texto; ambas sesiones reciben por RPC sin refresco, eco una sola vez, texto/UUID persistidos y orden estable.
@@ -58,7 +58,7 @@ Reproducción local: npm ci; herramientas SQL ignoradas pg + embedded-postgres s
 
 ## Límites y decisiones
 
-- **No se afirma funcionamiento remoto** ni aceptación final: publicación/migración pendiente, sesiones/JWT/WS reales sin verificar.
+- **No se afirma entrega WS remota** ni aceptación final: publicación/migración verificadas en remoto, sesiones/JWT/WS reales todavía sin verificar.
 - Una revocación quieta y el cierre por reloj se detectan al revalidar; la autorización PostgreSQL de lecturas/envíos/entregas permanece vigente. No se añaden publicaciones de membresía, polling ni reglas nuevas.
 - La recuperación revalida todas las páginas hasta el límite cargado; su costo crece con el historial abierto. Señales ordinarias de avisos usan lotes de IDs; COUNT es exacto e indexado. No hay store global de contenido, servidor WS ni sistema offline.
 - Actualizar permanece como recuperación secundaria. El indicador oculta un total desconocido al fallar la consulta y vuelve a consultar con señales/foco/reconexión.
@@ -106,3 +106,13 @@ Reproducción local: npm ci; herramientas SQL ignoradas pg + embedded-postgres s
 - src/pages/EventChatPage.tsx
 - src/pages/NotificationsPage.tsx
 - supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql
+
+## Despliegue remoto autorizado — 11/10/2026
+
+El usuario autorizó expresamente la aplicación y las variables del worktree. La única migración pendiente, 20261011193316_r2_realtime_chat_notifications.sql, se aplicó con CLI (versión exacta conservada) y --skip-vault en planit-v2, ref iepeqmvzjguwlhnecsdq. Se completó el paso 1 de despliegue de la matriz anterior; no se modificaron el proyecto histórico, Auth, Storage, Vault ni productores de avisos.
+
+PASS: migration list (11 versiones sincronizadas), dry-run posterior sin pendientes; publicación previa existente pero vacía y ahora con messages/notifications; INSERT/UPDATE activos; RLS en ambas tablas; SELECT authenticated, sin INSERT/DELETE cliente ni SELECT anon; get_notification_changes SECURITY INVOKER con search_path vacío, EXECUTE authenticated/no anon e índice parcial existente. Prueba READ ONLY con dos identidades SQL existentes comprobó ejecución de get_notifications/get_notification_changes y aislamiento de filas de bandeja/chat, con ROLLBACK sin fixtures. Estos controles de catálogo/roles no prueban la entrega real de payloads Realtime con JWT.
+
+Asesores de seguridad antes/después sin avisos nuevos: siete funciones SECURITY DEFINER autenticadas existentes ([explicación del linter](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable)) y protección de contraseñas filtradas desactivada ([documentación](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection)). No se cambiaron esos permisos ni Auth.
+
+.env.local creado en este worktree con las dos variables VITE_SUPABASE_URL/VITE_SUPABASE_PUBLISHABLE_KEY desde la configuración existente validada; exclusivamente clave pública y URL exacta de planit-v2. git check-ignore confirma exclusión; valores no impresos ni versionados. npm run build PASS con la configuración real. La PR sigue Draft sin merge. Pendientes: dos sesiones Auth/JWT/WS reales y aceptación humana.
