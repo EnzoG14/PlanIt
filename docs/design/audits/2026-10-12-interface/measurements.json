@@ -1,0 +1,709 @@
+[
+  {
+    "route": "/login",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/register",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [
+      {
+        "text": "",
+        "label": "Mapbox homepage",
+        "w": 88,
+        "h": 23
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/home",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/map",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [
+      {
+        "text": "© Mapbox",
+        "label": null,
+        "w": 50.296875,
+        "h": 12
+      },
+      {
+        "text": "© OpenStreetMap",
+        "label": null,
+        "w": 88.828125,
+        "h": 12
+      },
+      {
+        "text": "Improve this map",
+        "label": null,
+        "w": 91.078125,
+        "h": 12
+      },
+      {
+        "text": "",
+        "label": "Mapbox homepage",
+        "w": 88,
+        "h": 23
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/my-events",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/me",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/notifications",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/new",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "formValidation": {
+      "active": "event-title",
+      "invalid": 11
+    }
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/edit",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/chat",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/chat",
+    "mode": "keyboard-height-240",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/login",
+    "mode": "normal",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [
+      {
+        "text": "",
+        "label": "Mapbox homepage",
+        "w": 88,
+        "h": 23
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/register",
+    "mode": "normal",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [
+      {
+        "text": "© Mapbox",
+        "label": null,
+        "w": 50.296875,
+        "h": 12
+      },
+      {
+        "text": "© OpenStreetMap",
+        "label": null,
+        "w": 88.828125,
+        "h": 12
+      },
+      {
+        "text": "Improve this map",
+        "label": null,
+        "w": 91.078125,
+        "h": 12
+      },
+      {
+        "text": "",
+        "label": "Mapbox homepage",
+        "w": 88,
+        "h": 23
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/home",
+    "mode": "normal",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [
+      {
+        "text": "Encuentro de música de la comunidad",
+        "label": null,
+        "w": 303.046875,
+        "h": 22
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/map",
+    "mode": "normal",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [
+      {
+        "text": "© Mapbox",
+        "label": null,
+        "w": 50.296875,
+        "h": 12
+      },
+      {
+        "text": "© OpenStreetMap",
+        "label": null,
+        "w": 88.828125,
+        "h": 12
+      },
+      {
+        "text": "Improve this map",
+        "label": null,
+        "w": 91.078125,
+        "h": 12
+      },
+      {
+        "text": "",
+        "label": "Mapbox homepage",
+        "w": 88,
+        "h": 23
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/my-events",
+    "mode": "normal",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/me",
+    "mode": "normal",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/notifications",
+    "mode": "normal",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/new",
+    "mode": "normal",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001",
+    "mode": "normal",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001",
+    "mode": "dialog",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/edit",
+    "mode": "normal",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/chat",
+    "mode": "normal",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/home",
+    "mode": "server-error",
+    "width": 390,
+    "scroll": 390,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "retryRecovered": 1
+  },
+  {
+    "route": "/login",
+    "mode": "normal",
+    "width": 768,
+    "scroll": 768,
+    "over": [],
+    "small": [
+      {
+        "text": "",
+        "label": "Mapbox homepage",
+        "w": 88,
+        "h": 23
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/register",
+    "mode": "normal",
+    "width": 768,
+    "scroll": 768,
+    "over": [],
+    "small": [
+      {
+        "text": "© Mapbox",
+        "label": null,
+        "w": 50.296875,
+        "h": 12
+      },
+      {
+        "text": "© OpenStreetMap",
+        "label": null,
+        "w": 88.828125,
+        "h": 12
+      },
+      {
+        "text": "Improve this map",
+        "label": null,
+        "w": 91.078125,
+        "h": 12
+      },
+      {
+        "text": "",
+        "label": "Mapbox homepage",
+        "w": 88,
+        "h": 23
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/home",
+    "mode": "normal",
+    "width": 768,
+    "scroll": 768,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/map",
+    "mode": "normal",
+    "width": 768,
+    "scroll": 768,
+    "over": [],
+    "small": [
+      {
+        "text": "© Mapbox",
+        "label": null,
+        "w": 50.296875,
+        "h": 12
+      },
+      {
+        "text": "© OpenStreetMap",
+        "label": null,
+        "w": 88.828125,
+        "h": 12
+      },
+      {
+        "text": "Improve this map",
+        "label": null,
+        "w": 91.078125,
+        "h": 12
+      },
+      {
+        "text": "",
+        "label": "Mapbox homepage",
+        "w": 88,
+        "h": 23
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/my-events",
+    "mode": "normal",
+    "width": 768,
+    "scroll": 768,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/me",
+    "mode": "normal",
+    "width": 768,
+    "scroll": 768,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/notifications",
+    "mode": "normal",
+    "width": 768,
+    "scroll": 768,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/new",
+    "mode": "normal",
+    "width": 768,
+    "scroll": 768,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001",
+    "mode": "normal",
+    "width": 768,
+    "scroll": 768,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/edit",
+    "mode": "normal",
+    "width": 768,
+    "scroll": 768,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/chat",
+    "mode": "normal",
+    "width": 768,
+    "scroll": 768,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/login",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [
+      {
+        "text": "",
+        "label": "Mapbox homepage",
+        "w": 88,
+        "h": 23
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/register",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [
+      {
+        "text": "© Mapbox",
+        "label": null,
+        "w": 50.296875,
+        "h": 12
+      },
+      {
+        "text": "© OpenStreetMap",
+        "label": null,
+        "w": 88.828125,
+        "h": 12
+      },
+      {
+        "text": "Improve this map",
+        "label": null,
+        "w": 91.078125,
+        "h": 12
+      },
+      {
+        "text": "",
+        "label": "Mapbox homepage",
+        "w": 88,
+        "h": 23
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/home",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [
+      {
+        "text": "Encuentro de música de la comunidad",
+        "label": null,
+        "w": 303.046875,
+        "h": 22
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/map",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [
+      {
+        "text": "© Mapbox",
+        "label": null,
+        "w": 50.296875,
+        "h": 12
+      },
+      {
+        "text": "© OpenStreetMap",
+        "label": null,
+        "w": 88.828125,
+        "h": 12
+      },
+      {
+        "text": "Improve this map",
+        "label": null,
+        "w": 91.078125,
+        "h": 12
+      },
+      {
+        "text": "",
+        "label": "Mapbox homepage",
+        "w": 88,
+        "h": 23
+      }
+    ],
+    "h1": 1
+  },
+  {
+    "route": "/my-events",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/me",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/notifications",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/new",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/edit",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/chat",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/me",
+    "mode": "text-scale-stress-200percent",
+    "width": 1280,
+    "scroll": 5777,
+    "over": [
+      {
+        "tag": "NAV",
+        "cls": "account-nav",
+        "text": "Mi perfilSalir",
+        "right": 3251.625
+      },
+      {
+        "tag": "A",
+        "cls": "active",
+        "text": "Mi perfil",
+        "right": 2505.6875
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "text-button",
+        "text": "Salir",
+        "right": 3251.625
+      },
+      {
+        "tag": "H1",
+        "cls": "",
+        "text": "Mi perfil",
+        "right": 1339.5
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "text-button",
+        "text": "Actualizar perfil",
+        "right": 1395.5
+      },
+      {
+        "tag": "SPAN",
+        "cls": "",
+        "text": "Mis eventos",
+        "right": 7458
+      },
+      {
+        "tag": "SPAN",
+        "cls": "",
+        "text": "›",
+        "right": 8117
+      },
+      {
+        "tag": "SPAN",
+        "cls": "",
+        "text": "Mis eventos",
+        "right": 1600.625
+      }
+    ],
+    "small": [],
+    "h1": 1
+  }
+]

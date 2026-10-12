@@ -1,0 +1,111 @@
+[
+  {
+    "route": "/login",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/register",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "authValidation": {
+      "active": "display-name",
+      "invalid": 3,
+      "path": "/register"
+    }
+  },
+  {
+    "route": "/events/new",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "formValidation": {
+      "active": "event-title",
+      "invalid": 11
+    }
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/chat",
+    "mode": "normal",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/chat",
+    "mode": "keyboard-height-240",
+    "width": 320,
+    "scroll": 320,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/login",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/register",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/new",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/events/30000000-0000-4000-8000-000000000001/chat",
+    "mode": "normal",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "route": "/me",
+    "mode": "text-scale-200percent",
+    "width": 1280,
+    "scroll": 1280,
+    "over": [],
+    "small": [],
+    "h1": 1
+  },
+  {
+    "moduleFailure": {
+      "rootText": "",
+      "path": "/home"
+    }
+  }
+]
