@@ -1,115 +1,116 @@
-# PlanIt — Sistema visual aprobado (v2.0)
+# PlanIt — Sistema visual aprobado (v3.0 · Amanecer)
 
-**Aprobación:** 12/10/2026, evolución visual de pantallas implementadas R1–R3. **Implementación:** pendiente. Esta actualización es documental; la PWA y las capturas existentes todavía representan el sistema anterior.
+**Aprobación:** 12/10/2026, dirección **B · Amanecer** del design-lab, sobre las pantallas implementadas de R1–R3. **Implementación:** pendiente. Esta actualización es documental; la PWA, el piloto Mis eventos y las capturas existentes todavía representan el sistema marino oscuro v2.0.
 
 ## 1. Autoridad y relación entre documentos
 
-[DESIGN.md](../../DESIGN.md) es la fuente normativa de tokens, roles visuales y componentes. Este documento explica su aplicación en PlanIt y sus criterios de aceptación; no define una segunda paleta o receta CSS. El [shape aprobado](proposals/r1-r3-visual-evolution.md) conserva las decisiones de composición por pantalla.
+[DESIGN.md](../../DESIGN.md) es la fuente normativa de tokens, roles visuales y componentes. Este documento explica su aplicación en PlanIt y sus criterios de aceptación; no define una segunda paleta ni recetas CSS. La [decisión de dirección](proposals/amanecer-direction.md) registra por qué se eligió B, qué cambia respecto de v2.0 y qué elementos del lab requieren decisión funcional. El [shape R1–R3](proposals/r1-r3-visual-evolution.md) conserva los objetivos de jerarquía por pantalla; sus decisiones visuales marinas quedan reemplazadas.
 
-Los RF/CA, arquitectura y modelo de datos determinan qué hace la aplicación. Los [mockups R1–R7](SCREENS.md) siguen siendo referencias de identidad, pero la evolución aprobada reemplaza la obligación visual anterior de usar CTA degradados, brillos y superficies anidadas. Los collages no son especificaciones de funcionalidades ni medidas exactas.
+El [design-lab](../../design-lab/README.md) (`/b`) es el prototipo ejecutable: sirve para ver composición, estados y movimiento, pero no es código de producción ni fuente de tokens. Sus datos son ficticios y sus fotos, ilustraciones SVG.
 
-El alcance actual es R1–R3 ya implementado, incluidas reincorporaciones y componentes compartidos. No autoriza UI, SQL, cambios de rutas o nuevas funciones. R4–R7 requerirán su propio alcance funcional; su presencia en un mockup no lo aprueba.
+Los RF/CA, arquitectura y modelo de datos determinan qué hace la aplicación. Los [mockups R1–R7](SCREENS.md) quedan como referencia histórica de contenido y funciones, no de apariencia. El alcance actual es R1–R3 ya implementado, incluidas reincorporaciones y componentes compartidos; no autoriza SQL, cambios de rutas ni nuevas funciones. R4–R7 requerirán su propio alcance funcional.
 
 ## 2. Identidad y dirección
 
-**Fotografía expresiva, interfaz marina y sobria.** Dark-first con marino uniforme, azul para acciones y selección, violeta como acento puntual. El contenido aporta energía; la interfaz permite leer, comparar y actuar.
+**La agenda con luz difusa.** Claro, aireado y tipográfico: la información manda y el color es luz, no relleno. El marino es la tinta de la acción y la navegación; azul y violeta conservan su familia con roles nuevos.
 
-- Botones, chips seleccionados, navegación, mensajes y barras de cupo usan colores sólidos.
-- No usar iluminaciones radiales, halos ni brillos ornamentales. Un overlay fotográfico discreto se admite sólo cuando hace falta para legibilidad.
-- Separar secciones con espacio y, si es necesario, un divisor. Reservar contenedores elevados para una unidad interactiva o una capa real.
-- Fotografía de color natural, sin tinte azul/violeta obligatorio. La identidad oscura admite también deporte, arte, comunidad y eventos diurnos.
-- Conservar el nombre, logo, iconos lineales y navegación existente. No introducir glassmorphism, fondos crema/verde ni un branding alternativo.
+- **Luz:** una mancha difusa violeta→azul detrás del encabezado de la pantalla; sólo fondo.
+- **Tinta:** botones principales, dock, burbujas propias, segmentos y día seleccionados. Texto blanco encima.
+- **Azul:** filtro de estado seleccionado, barras de cupo, envío de chat.
+- **Superficies:** blanco y blanco translúcido (cristal) con sombras lavanda suaves; una superficie por unidad.
+- **Forma:** píldoras para lo accionable; radios de 26–36 px en tarjetas, hojas y portadas.
+- **Fotografía:** color natural, sin tinte, de cualquier categoría y hora del día.
+- Se conservan el nombre, el logo, los iconos lineales y las cuatro pestañas. Sin tema oscuro en esta etapa.
 
 ## 3. Tokens y accesibilidad
 
-Valores y asignaciones exactos: [frontmatter de DESIGN.md](../../DESIGN.md). No copiar una paleta normativa paralela ni mantener ejemplos CSS que vuelvan a imponer degradados.
+Valores y asignaciones exactos: [frontmatter de DESIGN.md](../../DESIGN.md). No copiar una paleta normativa paralela. El lab nombra sus variables CSS `--bg`, `--ink`, `--muted`, `--primary`, `--violet`, `--violet-deep`, `--focus`, `--success-text`, `--danger-text` y `--glass`; la implementación elegirá su convención y retirará `--color-*` y `--gradient-primary` de v2.0.
 
-| Rol | Token normativo | Aplicación |
+| Rol | Token | Aplicación |
 |---|---|---|
-| Fondo | bg | Marino uniforme |
-| Superficie elevada | bg-elevated | Menú, diálogo o unidad de evento que requiere superficie |
-| Campo | field | Entradas y acciones secundarias |
-| Divisor | border | Separación decorativa; insuficiente para delimitar por sí solo un campo |
-| Borde de control | control-border | Contorno perceptible de inputs y controles; token objetivo aún no aplicado |
-| Acción / selección | primary | Azul sólido |
-| Acento de identidad | purple | Énfasis puntual, sin borde violeta universal |
-| Foco | focus | Indicador de teclado visible |
-| Texto | text / text-muted | Jerarquía principal / secundaria |
-| Categoría | chip-bg / chip-text | Metadatos pasivos y énfasis discreto |
-| Navegación | nav-bg | Fondo de barra inferior |
-| Error | error-text / error-border | Mensaje e indicador asociados |
-| Estados | success / danger | Texto/icono y explicación; nunca sólo color |
-| Acción destructiva | danger-action | Relleno rojo sólido con texto blanco |
+| Fondo | bg | Lavanda casi blanca |
+| Superficies | surface / surface-card / surface-glass / surface-soft | Campos y diálogos / tarjetas y filas / paneles flotantes / vista previa seleccionada |
+| Tinta | ink / ink-hover | Acción principal, dock, burbuja propia, selección de modo |
+| Selección de filtro | primary | Azul sólido |
+| Luz y acento | violet / violet-deep / lavender | Mancha, pip, acento de texto, foco |
+| Texto | text / text-muted / text-on-wash | Principal / secundario / secundario sobre la mancha |
+| Contorno de control | control-border | Inputs y controles con borde |
+| Divisor | divider | Separación decorativa |
+| Categoría | chip-bg / chip-text | Metadatos pasivos |
+| Navegación | ink / dock-text / surface | Dock, iconos inactivos, píldora activa |
+| Estados | success-* / info-* / warn-* / danger-* | Avisos pastel con icono y texto |
+| Acción destructiva | danger-action | Relleno rojo con texto blanco |
+| Deshabilitado | disabled-bg / disabled-text | Sustituye a la opacidad |
 
-Control-border diferencia controles de divisores: contraste calculado de 3,56:1 contra field y 4,19:1 contra bg. Danger-action toma el rojo oscuro ya presente en la implementación y da 5,58:1 con blanco. Su incorporación al documento no equivale a añadir variables CSS. El extremo violeta del CTA antiguo deja de ser un rol normativo del sistema objetivo.
+**Contraste calculado de pares clave** (no acredita el conjunto de la interfaz): ink/bg 17,9:1 · text-muted/bg 5,7:1 · text-on-wash/bg 10,6:1 · blanco/primary 5,69:1 · violet-deep/blanco 7,2:1 · blanco/danger-action 5,58:1 · success-text/blanco 5,33:1 · chip-text/chip-bg 7,3:1 · dock-text/ink 9,7:1 · control-border/blanco 3,76:1 y /bg 3,47:1 (≥ 3:1 para delimitar controles). Avisos pastel ≥ 7,7:1. **Violeta sólo con texto tinta (4,99:1)**: blanco sobre violeta da 3,88:1.
 
-Mantener texto normal con contraste de al menos 4,5:1 y elementos visuales necesarios para reconocer controles con al menos 3:1. Comprobar estados, superficies y fotos; estos pares aislados no acreditan cumplimiento global. No asumir que purple puede llevar texto blanco pequeño sin verificarlo.
+Texto normal ≥ 4,5:1; elementos necesarios para reconocer controles ≥ 3:1. Comprobar estados, cristal sobre el violeta de la mancha y texto sobre fotografías; ningún par aislado acredita cumplimiento global.
 
 ## 4. Tipografía, formas y densidad
 
-Conservar Segoe UI con fallback de sistema y sans-serif; no se conoce la familia exacta de los mockups. Usar los roles de DESIGN.md, sin fuentes externas ni estilos display nuevos. Campos a 16 px, labels visibles y errores cercanos. Fecha, lugar y disponibilidad no se reducen a texto diminuto para hacerlos caber.
+**Bricolage Grotesque** con fallback Segoe UI y system-ui. Es una fuente externa aprobada con la dirección: se autoaloja (variable, subconjunto latino, `font-display: swap`, incluida en el precache de la PWA) y no se carga desde un CDN. Roles: display 40, headline 32, title-lg 24, title 19, body 16, meta 13,5, label 14, action 15, input 16 y caption 12,5 (insignias y horas). Cifras tabulares para horas y conteos.
 
-Radios y espaciados del frontmatter conservan medidas nominales de la base existente. No son alturas rígidas ni una cuadrícula universal. Mantener redondeo suave de controles y fotos; no rodear el contenido con varias cajas sucesivas. Avatares circulares conservan su función; emblemas y aros decorativos se reducen.
+Fecha, lugar y disponibilidad no bajan de 13,5 px. Campos a 16 px con label visible y errores cercanos. Títulos largos envuelven; el contenido completo debe seguir consultable. Radios, espacios y alturas del frontmatter son medidas nominales, no una cuadrícula rígida; no fijar alturas que recorten texto ampliado.
 
 ## 5. Aplicación por pantalla implementada
 
-| Pantalla | Jerarquía objetivo |
+| Pantalla | Jerarquía objetivo en Amanecer |
 |---|---|
-| Inicio | Categorías actuales y lista fotográfica en una columna móvil. Foto, título, fecha y lugar juntos; evitar categoría repetida como badge |
-| Mapa | Exploración geográfica actual, controles claros y resultados en una columna móvil. Una vista previa seleccionada sin duplicar contenedores completos |
-| Detalle | Foto acotada, título, fecha/lugar, disponibilidad y participación cercanos. Descripción, organizador, galería y gestión siguen sin omitir información |
-| Ingresar / Crear cuenta | Encabezado y emblema compactos, primer campo accesible pronto, validación y confirmación de correo preservadas |
-| Crear / Editar | Un formulario con títulos de sección, sin tarjetas por bloque. Campos completos, fin de evento y portada de edición compacta |
-| Mis eventos | Organizo/Participo, filtros y estados existentes. Filas con miniatura y acciones separadas; priorizar la primera fila |
-| Galería | Fotografías como superficie principal. Carga compacta, portada identificable y acciones táctiles de ordenar/quitar |
-| Asistentes / Reincorporaciones | Filas y divisores con identidad, estado y acciones estables; distinguir participación y solicitud |
-| Chat | Entrantes marinos, salientes sólidos, autor/hora legibles y composer alcanzable con poca altura |
-| Mi perfil | Avatar, nombre y biografía primero; datos de cuenta secundarios, sin contadores o accesos inventados |
-| Notificaciones | Lista continua, novedades por peso y señal discreta, texto leído/no leído y acciones de recuperación |
+| Inicio | Marca y campana, saludo con el nombre visible, titular grande y lista de tarjetas con foto lateral (hora, categoría, título, lugar y lugares libres). La tira por día y las tarjetas rápidas del lab requieren decisión funcional ([§4 de la decisión](proposals/amanecer-direction.md)); mientras tanto se conserva la agrupación actual |
+| Mapa | Mapa real a pantalla completa con tema claro; tarjeta de título de cristal; hoja inferior con una vista previa seleccionada y pocas filas; ubicación como botón circular de tinta |
+| Detalle | Portada de ~300 px con volver, contador de fotos y categoría en insignias blancas; titular; datos de fecha, lugar y cupo agrupados con barra azul; descripción, organizador, galería y gestión después. Acción de participación fija abajo con estados: unirme, inscripto, cupo completo, removido, en revisión, finalizado y organizador |
+| Ingresar / Crear cuenta | Topbar propia, encabezado compacto, campos blancos con label y borde de control, píldora de tinta de ancho completo. Validación y confirmación de correo preservadas |
+| Crear / Editar | Subpantalla sin dock: formulario con títulos de sección, campos de 52 px, errores asociados, fecha/hora apilables y portada compacta; publicar como acción fija. Un aviso de publicación por confirmar |
+| Mis eventos | Titular y botón de crear; segmento Organizo/Participo (tinta); filtros de estado (azul seleccionado); línea de tiempo con hora a la izquierda y filas con barra por estado, miniatura, menú y pie con estado en texto y cupo; vacío específico |
+| Galería | Fotografías como superficie principal, portada identificable, ordenar/quitar con áreas de 44 px; carga compacta |
+| Asistentes / Reincorporaciones | Segmento Confirmados/Removidos, búsqueda y filas con avatar, identidad y menú; solicitudes con tarjeta por solicitud y aprobar/rechazar con confirmación; participación y solicitud diferenciadas |
+| Chat | Cabecera de cristal con volver, entrantes blancas con autor en violeta, salientes de tinta, composer de cristal con contador y envío azul; modo lectura con aviso |
+| Mi perfil | Avatar, nombre y usuario primero; biografía como contenido; cuenta (correo, Mis eventos, Notificaciones, Cerrar sesión) como lista. Sin contadores ni accesos inventados |
+| Notificaciones | Lista agrupada por día; fila con icono, tipo, título, texto, hora y estado leído/no leído en palabras; acciones con 44 px |
 
-La lista fotográfica en Inicio es la experiencia visual principal para descubrir. Mapa conserva su destino y tarea actuales. No cambiar la ruta inicial ni añadir el toggle Mapa/Lista, búsqueda o filtros de R4.
+La lista fotográfica en Inicio y la portada en Detalle son la experiencia visual principal; Mapa conserva su destino y tarea. No cambiar la ruta inicial ni añadir búsqueda, filtros o el toggle Mapa/Lista de R4.
 
 ## 6. Componentes, estados y reutilización
 
-Reutilizar AppLayout, ScreenHeader, FormField, StatusMessage, EventCard/CompactEventCard y diálogos cuando su responsabilidad coincida. El nombre actual GradientButton no obliga a conservar un degradado; cualquier renombre o ajuste de API se decidirá al implementar. No crear una biblioteca propia extensa ni incorporar un UI kit.
+Reutilizar AppLayout, ScreenHeader, FormField, StatusMessage, EventCard/CompactEventCard, AccountMenu y diálogos cuando su responsabilidad coincida. `GradientButton` conserva su nombre hasta decidirlo al implementar, pero ya no puede producir degradados: pasa a tinta sólida. No crear una biblioteca extensa ni incorporar un UI kit.
 
-- **Acciones:** principal azul sólido; secundaria con superficie y borde; peligro rojo sólido; texto con área activable amplia. Diferenciar disabled de loading.
-- **Campos:** labels, borde perceptible, foco y errores asociados. Iconos sólo si ayudan y no recortan valores nativos de fecha/hora.
-- **Tarjetas:** una unidad de evento con fotografía e información; apertura amplia sin enlaces anidados ni tabulación redundante. Filas compactas para gestión.
-- **Chips:** metadatos pasivos o filtros existentes con semántica de selección. No convertir una categoría en acción nueva.
-- **Navegación:** Inicio, Mapa, Mis eventos y Perfil según sesión; icono + texto y estado activo sólido. Destinos y permisos se conservan.
-- **Diálogos:** modalidad nativa, foco inicial y restauración, scroll y controles alcanzables. Confirmar acciones irreversibles y conservar comprobaciones inciertas.
-- **Feedback:** carga breve y estable; vacío específico; error contextual con recuperación real; éxito breve y anunciado. Conservar los datos del formulario ante fallo de guardado.
+- **Acciones:** principal de tinta; secundaria con borde de tinta; peligro rojo sólido; texto/icono con área de 44 px. Diferenciar disabled de loading y mantener el bloqueo de doble envío.
+- **Selección:** tinta para modo o lugar en la agenda (segmentos, día); azul para filtros (`aria-pressed`). Chips de categoría son metadato pasivo.
+- **Campos:** label visible, borde de control, foco violeta de 3 px y errores asociados; iconos sólo si ayudan y sin recortar valores nativos.
+- **Tarjetas y filas:** una unidad de evento; apertura amplia con un solo enlace; acciones como menú aparte. Sin tarjetas anidadas.
+- **Navegación:** dock flotante de tinta. Activo = píldora blanca con etiqueta; inactivos = iconos con nombre accesible. Reservar ≈ 98 px + safe area.
+- **Diálogos y hojas:** modalidad nativa o equivalente accesible, foco inicial y retorno, Escape, scroll y controles alcanzables con poca altura; scrim con velo marino.
+- **Feedback:** avisos pastel con icono y texto; carga breve y estable; vacío específico; error contextual con recuperación real; éxito breve y anunciado.
+- **Movimiento:** entrada escalonada breve y transiciones de 200–250 ms; con `prefers-reduced-motion` se eliminan desplazamientos y se conserva el cambio de estado.
+- **Cristal:** con fallback opaco cuando no hay `backdrop-filter` o se pide menos transparencia; limitar su uso en listas largas por rendimiento móvil.
 
-Los errores de carga de pantalla también necesitan una recuperación efectiva. No confundir una mejora estética de StatusMessage con resolver la descarga fallida de una ruta diferida.
+Los errores de carga de pantalla también necesitan una recuperación efectiva; una mejora estética de StatusMessage no resuelve una descarga fallida de una ruta diferida.
 
 ## 7. Fotografía, mapa y contenido
 
-Fotografía protagonista sólo donde ayuda a elegir o reconocer un evento. Preferir texto debajo de la foto; superponerlo requiere verificar fotos claras, oscuras y cargadas. Recorte consistente sin deformación. Mantener hasta diez imágenes por evento conforme al contrato vigente.
+Fotografía de color natural, recorte consistente y sin deformación. Texto sobre foto sólo en insignias blancas casi opacas (hora, categoría, contador) y botones sobre portada con overlay discreto; verificar con fotos claras, oscuras y cargadas. Hasta diez imágenes por evento. Sin foto o ante error: alternativa compacta e informativa, no un hero ficticio. No usar imágenes de collages ni las ilustraciones SVG del lab como contenido real.
 
-Sin foto o ante error, usar una alternativa compacta y explícita que conserve la información. Un placeholder no se convierte en un hero grande por defecto. No usar imágenes del collage como contenido real ni presentar imágenes generadas como documentación de eventos existentes.
+La PWA usa Mapbox: mantener mapa geográfico real con estilo claro compatible con la paleta, atribuciones, controles distinguibles y lista útil si el mapa carga o falla. Marcadores azul/violeta con anillo de tinta. El dibujo del lab no sustituye datos ni autoriza cambiar de proveedor.
 
-La PWA actual usa Mapbox; mantener mapa geográfico real, atribuciones, controles distinguibles y tarjetas útiles mientras carga o falla. El dibujo del mockup no sustituye datos ni autoriza un cambio de proveedor.
-
-Fixtures y capturas de prueba permanecen identificados como tales. La fotografía de fiestas de los collages ilustra composición; no restringe el catálogo a vida nocturna.
+Fixtures y capturas de prueba permanecen identificados como tales.
 
 ## 8. Mobile-first y aceptación futura
 
-- Una columna móvil para resultados legibles; grid en escritorio sólo cuando el contenido cabe. No fijar un breakpoint universal para todas las pantallas.
-- Zonas activables de al menos 44×44 CSS px como objetivo ergonómico; conservar foco visible, orden de teclado y etiquetas accesibles.
-- Safe areas y reserva para navegación inferior; ni CTA persistentes ni menús deben tapar contenido, foco o mensajes.
-- Fecha/hora se apilan cuando el valor nativo no cabe. Chat adapta encabezado, historial y composer al teclado y a poca altura, manteniendo contador y errores alcanzables.
-- Probar títulos largos/sin espacios, textos extensos, fotos/avatars ausentes, galerías de 0/1/10 imágenes y listas de distinta longitud.
-- Comprobar 320, 375, 390, 768 y 1280 px, texto aumentado y altura reducida; revisar overflow del documento y recortes internos.
-- Probar teclado, lector de pantalla, movimiento reducido y dispositivos reales, incluidos gestos del mapa, teclado móvil y safe areas. La emulación no acredita por sí sola estos casos.
+- Una columna móvil; grid o columna central en escritorio sólo cuando el contenido cabe.
+- Áreas activables ≥ 44×44 px; foco visible; orden de teclado; etiquetas accesibles, incluidos los iconos del dock.
+- Safe areas y reserva para el dock; ni CTA persistentes ni menús tapan contenido, foco o mensajes. La barra de acción fija usa un desvanecimiento para no cortar texto.
+- Fecha/hora apiladas cuando el valor nativo no cabe. Chat adaptado al teclado y poca altura con contador y errores alcanzables.
+- Probar títulos largos/sin espacios, textos extensos, fotos/avatares ausentes, galerías de 0/1/10 imágenes y listas de distinta longitud.
+- Comprobar 320, 375, 390, 768 y 1280 px, texto aumentado y altura reducida; overflow del documento y recortes internos.
+- Verificar la fuente autoalojada (carga, fallback, FOIT/FOUT), `prefers-reduced-motion`, `prefers-reduced-transparency` y contraste del cristal sobre la mancha.
+- Probar teclado, lector de pantalla y dispositivos reales (gestos del mapa, teclado móvil, safe areas, rendimiento del desenfoque). La emulación no los acredita.
 
-Contrastar la futura implementación con esta dirección y con los mockups para los rasgos que se conservan. No exigir fidelidad al brillo o degradado que el usuario decidió retirar. El póster externo —círculos, numeración y títulos R1/R2/R3— nunca forma parte de la app.
-
-Los pendientes de la [auditoría](audits/2026-10-12-interface.md) siguen abiertos hasta corregirlos y verificarlos. No declarar la UI migrada, probada o aceptada por actualizar documentos.
+Contrastar la implementación con la dirección y el lab sólo en los rasgos aprobados. No exigir fidelidad pixel-perfect al lab ni a los collages; el póster externo (círculos, numeración, títulos R1/R2/R3) nunca forma parte de la app. Los pendientes de la [auditoría](audits/2026-10-12-interface.md) siguen abiertos hasta corregirlos y verificarlos. No declarar la UI migrada, probada o aceptada por actualizar documentos.
 
 ## 9. Registro y mantenimiento
 
 - **v1.0:** referencia original de mockups y tokens aproximados; CTA degradados y superficies iluminadas.
-- **v2.0 — 12/10/2026:** evolución R1–R3 confirmada por el usuario: fotografía protagonista, botones sólidos, superficies planas y usabilidad móvil. Tokens y patrones consolidados en DESIGN.md; aplicación en la PWA pendiente.
+- **v2.0 — 12/10/2026:** evolución marina R1–R3: fotografía protagonista, botones azules sólidos, superficies planas. Reemplazada.
+- **v3.0 — 12/10/2026:** dirección **B · Amanecer** aprobada tras comparar A, B y C en el design-lab: modo claro, tinta marina, mancha difusa, cristal suave, píldoras y Bricolage Grotesque. Tokens consolidados en DESIGN.md; aplicación pendiente.
 
-Mantener .impeccable/design.json alineado con DESIGN.md. Sus snippets son ejemplos documentales del objetivo aprobado; las rampas y breakpoints no son prueba de cambios en CSS. Antes de implementar, consultar este documento, DESIGN.md, SCREENS.md, DESIGN_GAPS.md y requisitos aplicables; ante conflicto visual, la dirección aprobada aquí reemplaza sólo las reglas anteriores que contradice.
+Mantener [.impeccable/design.json](../../.impeccable/design.json) alineado con DESIGN.md; sus snippets son ejemplos del objetivo, no CSS desplegado. Antes de implementar, consultar este documento, DESIGN.md, la decisión de dirección, SCREENS.md (sólo funciones), DESIGN_GAPS.md y los requisitos aplicables; ante conflicto visual, Amanecer reemplaza las reglas marinas anteriores que contradice.

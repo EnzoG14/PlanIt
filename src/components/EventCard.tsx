@@ -38,21 +38,25 @@ export function CompactEventCard({ event, returnTo, showMenu = false, onChanged 
     document.addEventListener('keydown', escape)
     return () => { document.removeEventListener('pointerdown', outside); document.removeEventListener('keydown', escape); window.removeEventListener('resize', position) }
   }, [menuOpen])
-  return <article className="compact-event-card">
+  return <article className={`compact-event-card is-${event.event_state}${showMenu ? ' has-menu' : ''}`}>
     <Link to={`/events/${event.id}`} state={{ myEventsReturnTo: returnTo }} className="compact-event-link">
-      <span className="compact-event-photo"><Icon name="calendar" />{event.imageUrl && <img src={event.imageUrl} alt="" width="80" height="88" loading="lazy" onError={e => { e.currentTarget.hidden = true }} />}</span>
-      <div className="compact-event-body">
-        <h3>{event.title}</h3>
-        <p><Icon name="calendar" />{formatEventTime(event.starts_at)}</p>
-        <p><Icon name="pin" />{event.location_name ?? event.address}</p>
-        <div className="compact-event-badges"><span className="category-chip">{event.category_name}</span><span className={`event-state state-${event.event_state}`}>{eventStates[event.event_state]}</span>
-          {event.participation_status && <span className={`event-state participation-${event.participation_status}`}>Inscripción: {participationStates[event.participation_status]}</span>}
+      <div className="compact-event-main">
+        <span className="compact-event-photo" aria-hidden="true"><Icon name="calendar" />{event.imageUrl && <img src={event.imageUrl} alt="" width="52" height="52" loading="lazy" onError={e => { e.currentTarget.hidden = true }} />}</span>
+        <div className="compact-event-body">
+          <h3>{event.title}</h3>
+          <p><Icon name="pin" /><span className="compact-event-location">{event.location_name ?? event.address}</span></p>
         </div>
+      </div>
+      <div className="compact-event-badges"><span className={`event-state state-${event.event_state}`}>{eventStates[event.event_state]}</span>
+        {event.participation_status && <span className={`event-state participation-${event.participation_status}`}>Inscripción: {participationStates[event.participation_status]}</span>}
+        <span className="category-chip">{event.category_name}</span>
       </div>
     </Link>
     {showMenu && <div className="compact-event-menu" ref={menu} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setMenuOpen(false) }}>
       <button ref={trigger} type="button" className="compact-event-menu-trigger" aria-label={`Acciones de ${event.title}`} aria-expanded={menuOpen} aria-controls={menuOpen ? `event-menu-${event.id}` : undefined} onClick={() => setMenuOpen(open => !open)}><Icon name="more" /></button>
-      {menuOpen && <div className="compact-event-menu-panel" style={{ maxHeight: menuLayout.maxHeight, ...(menuLayout.above ? { top: 'auto', bottom: 44 } : {}) }} id={`event-menu-${event.id}`}><Link ref={detail} to={`/events/${event.id}`} state={{ myEventsReturnTo: returnTo }}>Ver detalle</Link>{event.event_state === 'open' && event.starts_at > argentinaNow() && <Link to={`/events/${event.id}/edit`} state={{ myEventsReturnTo: returnTo }}>Editar evento</Link>}<Link to={`/events/${event.id}/gallery`} state={{ myEventsReturnTo: returnTo }}>Gestionar imágenes</Link><Link to={`/events/${event.id}/attendees`} state={{ myEventsReturnTo: returnTo }}>Ver asistentes</Link>
+      {menuOpen && <div className="compact-event-menu-panel" style={{ maxHeight: menuLayout.maxHeight, ...(menuLayout.above ? { top: 'auto', bottom: 44 } : {}) }} id={`event-menu-${event.id}`}>
+        {menuLayout.maxHeight < 320 && <p className="compact-event-menu-hint">Desplazá para ver más acciones</p>}
+        <Link ref={detail} to={`/events/${event.id}`} state={{ myEventsReturnTo: returnTo }}>Ver detalle</Link>{event.event_state === 'open' && event.starts_at > argentinaNow() && <Link to={`/events/${event.id}/edit`} state={{ myEventsReturnTo: returnTo }}>Editar evento</Link>}<Link to={`/events/${event.id}/gallery`} state={{ myEventsReturnTo: returnTo }}>Gestionar imágenes</Link><Link to={`/events/${event.id}/attendees`} state={{ myEventsReturnTo: returnTo }}>Ver asistentes</Link>
         <button type="button" onClick={() => { setMenuOpen(false); setAction('duplicate') }}>Duplicar evento</button>
         {event.event_state === 'open' && <button type="button" className="event-menu-danger" onClick={() => { setMenuOpen(false); setAction('cancel') }}>Cancelar evento</button>}
         {event.event_state !== 'archived' && <button type="button" className="event-menu-danger" onClick={() => { setMenuOpen(false); setAction('archive') }}>Archivar evento</button>}

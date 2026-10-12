@@ -144,7 +144,7 @@ try {
   await assert.rejects(list(c, 'organizing'), /authentication_required/)
   await assert.rejects(organized(c), /authentication_required/)
   check('Invalid section/offset, anon, missing JWT rejected')
-  const out = 'docs/design/verification/r3-block-1'
+  const out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/r3-block-1'
   await mkdir(out, { recursive: true })
   await writeFile(`${out}/postgres-results.json`, JSON.stringify({ version, environment: 'Local PostgreSQL; SQL Auth/Storage scaffolding, no real Auth/REST', results }, null, 2))
 } finally {

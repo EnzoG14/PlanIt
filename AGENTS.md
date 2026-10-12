@@ -20,10 +20,10 @@ PlanIt es un proyecto universitario: PWA de descubrimiento, organización y part
 ### Diseño
 
 1. [PRODUCT.md](PRODUCT.md), cuando exista, para contexto y principios de producto.
-2. [DESIGN.md](DESIGN.md) aprobado, fuente normativa de tokens y patrones visuales.
+2. [DESIGN.md](DESIGN.md) aprobado, fuente normativa de tokens y patrones visuales. Dirección vigente: **B · Amanecer** (claro, tinta marina, mancha difusa), registrada en [docs/design/proposals/amanecer-direction.md](docs/design/proposals/amanecer-direction.md).
 3. [docs/design/DESIGN_SYSTEM.md](docs/design/DESIGN_SYSTEM.md), aplicación del sistema.
 4. Componentes y patrones aprobados de la aplicación, distinguiendo el objetivo aprobado del código aún sin migrar.
-5. Mockups anteriores R1–R3 como referencias históricas de contexto; no objetivos de fidelidad pixel-perfect.
+5. Prototipo [design-lab](design-lab/README.md) (`/b`) como ilustración de composición y estados, y mockups anteriores R1–R3 como referencias históricas de contexto; no objetivos de fidelidad pixel-perfect.
 
 El diseño no redefine la funcionalidad. Los mockups y prompts históricos no prevalecen sobre el sistema visual consolidado con Impeccable. Para UI, aplicar [las reglas de diseño](docs/design/AGENTS.md). El refresh se sigue por separado en [su plan](docs/implementation/UI_REFRESH_R1_R3_PLAN.md) y [estado](docs/implementation/UI_REFRESH_R1_R3_STATUS.md); no constituye nuevas releases funcionales.
 

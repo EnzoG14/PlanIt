@@ -1,5 +1,7 @@
 # PlanIt — Shape de evolución visual R1–R3
 
+> **Parcialmente reemplazado — 12/10/2026.** El usuario aprobó después la dirección **B · Amanecer** ([decisión](amanecer-direction.md), [DESIGN.md](../../../DESIGN.md)). Este brief conserva su valor para la jerarquía por pantalla (§3), la fotografía y el contenido real (§4), la interacción móvil y los estados (§5) y los límites (§6). **Quedan reemplazados** su lenguaje visual marino (§2: fondo marino uniforme, superficies planas, azul como acción principal, ausencia de vidrio/sombras suaves, tipografía de sistema) y las referencias a la identidad "marino profundo" del §1. Donde haya conflicto visual, manda Amanecer.
+
 **Fecha:** 12/10/2026. **Estado:** dirección confirmada por el usuario el 12/10/2026, sin implementación. **Modo:** Operate: descubrir un evento, decidir si participar y gestionar eventos con claridad desde el teléfono.
 
 Este brief cubre únicamente pantallas ya implementadas de R1, R2 y R3, incluidos sus estados y componentes compartidos. Sustituye el alcance R4 planteado inicialmente. No modifica el contrato funcional. Su dirección fue consolidada, por pedido del usuario, en [DESIGN.md](../../../DESIGN.md) y [DESIGN_SYSTEM.md](../DESIGN_SYSTEM.md); su aplicación en la PWA sigue pendiente.

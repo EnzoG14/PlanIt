@@ -69,3 +69,15 @@ Mapa Leaflet real con OSM claro, controles oscuros y tarjetas propias según tel
 2. Ninguna función ilustrativa fue implementada creando datos no diseñados.
 3. Screenshots móviles reales preservan la identidad azul/violeta y el patrón de navegación.
 4. Las diferencias con la imagen tienen explicación y son aceptadas expresamente cuando alteran la experiencia prevista.
+
+## Dirección B · Amanecer: elementos del design-lab sin contrato (12/10/2026)
+
+El prototipo [design-lab](../../design-lab/README.md) dibuja elementos que no tienen requisito en R1–R3. Son composición visual; no se implementan sin decisión funcional (detalle en la [decisión de dirección](proposals/amanecer-direction.md#4-elementos-del-lab-que-requieren-decisión-funcional)).
+
+| Elemento del lab | Estado funcional / decisión |
+| --- | --- |
+| Tira de 7 días con conteo en Inicio | Es un filtro/navegación por fecha (R4). Hasta decidir, Inicio conserva su agrupación actual con estilo Amanecer |
+| Tarjeta rápida «próximo evento» | Requiere definir la fuente (participaciones u organizados); no inventar datos |
+| Contadores Organizás / Participás / Próximos en el perfil | El perfil propio no define contadores; no implementar |
+| Buscador y chips de categoría en Inicio/Mapa | Composición del mock; la búsqueda y los filtros de exploración son R4 |
+| Eventos, personas y cupos del lab | Ficticios; las fotos son ilustraciones SVG de reemplazo |

@@ -1,38 +1,222 @@
-.my-events-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
-.my-events-heading h1 { font-size: 26px; margin: 0 0 8px; letter-spacing: -.5px; }
-.my-events-heading p { color: var(--color-text-muted); font-size: 14px; margin: 0; }
-.my-events-create { width: 48px; height: 48px; min-height: 48px; flex-shrink: 0; padding: 0; }
-.my-events-tabs { display: flex; gap: 4px; padding: 4px; margin-bottom: 16px; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-bg-elevated); }
-.my-events-tabs button { flex: 1; min-width: 0; min-height: 44px; padding: 10px 16px; border: 1px solid transparent; border-radius: 12px; background: transparent; color: var(--color-text-muted); font: inherit; cursor: pointer; }
-.my-events-tabs button[aria-selected="true"] { color: white; background: linear-gradient(100deg, var(--color-primary), var(--color-purple)); }
-.my-events-filters { display: flex; flex-wrap: wrap; gap: 8px; }
-.my-events-filters button { min-height: 44px; padding: 8px 14px; border: 1px solid var(--color-border); border-radius: 999px; background: var(--color-bg-elevated); color: var(--color-text-muted); font: inherit; font-size: 14px; cursor: pointer; }
-.my-events-filters button[aria-pressed="true"] { background: linear-gradient(100deg, var(--color-primary), var(--color-purple)); color: white; }
-.my-events-filter-hint { margin: 12px 0 0; }
-.my-events-refresh { display: flex; justify-content: flex-end; margin-bottom: 8px; }
-.my-events-refresh button { min-height: 44px; }
-.my-events-list { display: grid; gap: 12px; list-style: none; margin: 0; padding: 0; }
-.compact-event-card { position: relative; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-card); }
-.compact-event-card:has(.compact-event-menu) .compact-event-link { padding-right: 52px; }
-.compact-event-menu { position: absolute; top: 4px; right: 4px; }
-.compact-event-menu:has(.compact-event-menu-panel) { z-index: 2; }
-.compact-event-menu-trigger { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 10px; background: transparent; color: var(--color-text); cursor: pointer; }
-.compact-event-menu-trigger:hover, .compact-event-menu-trigger[aria-expanded="true"] { background: var(--color-field); }
-.compact-event-menu-panel { position: absolute; top: 44px; right: 0; min-width: 144px; border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-field); box-shadow: 0 6px 16px #0006; }
-.compact-event-menu-panel a { display: flex; align-items: center; min-height: 44px; padding: 8px 16px; border-radius: 12px; color: var(--color-text); }
-.compact-event-link { display: flex; gap: 12px; padding: 12px; border-radius: var(--radius-card); }
-.compact-event-link:hover { background: var(--color-field); }
-.compact-event-link:focus-visible { outline-offset: -4px; }
-.compact-event-photo { position: relative; display: flex; justify-content: center; align-items: center; width: 76px; height: 88px; flex-shrink: 0; overflow: hidden; border-radius: 10px; background: linear-gradient(135deg, #14328b, #292054); color: var(--color-text-muted); }
-.compact-event-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.compact-event-body { min-width: 0; flex: 1; }
-.compact-event-body h3 { font-size: 16px; line-height: 1.3; overflow-wrap: anywhere; margin: 0 0 8px; }
-.compact-event-body p { display: flex; gap: 6px; align-items: flex-start; font-size: 12px; line-height: 1.5; color: var(--color-text-muted); overflow-wrap: anywhere; margin: 4px 0; }
-.compact-event-body p .icon { width: 16px; height: 16px; margin-top: 1px; }
-.compact-event-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.event-state { display: inline-flex; align-items: center; padding: 5px 8px; font-size: 12px; border: 1px solid #384778; border-radius: 999px; color: #c5d5ff; background: #172454; }
-.state-open, .participation-confirmed { color: #83f3c9; background: #10343b; border-color: #256259; }
-.state-cancelled, .participation-cancelled, .participation-removed { color: #ffb9c7; background: #331b35; border-color: #78405b; }
-.state-archived, .state-ended { color: #d0c5f4; background: #242044; }
-.load-more-events { width: 100%; margin-top: 20px; }
-@media (min-width: 768px) { .compact-event-photo { width: 96px; height: 100px; } .compact-event-link { padding: 16px; gap: 16px; } .compact-event-body h3 { font-size: 18px; } .compact-event-body p { font-size: 14px; } }
+/* Amanecer pilot. Every rule is scoped to this route (.my-events-shell / .my-events-page):
+   the global tokens still belong to the Foundation block, so other screens are not restyled.
+   Values come from DESIGN.md; the --am-* names mark them as the Amanecer set. */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url('../assets/fonts/bricolage-grotesque-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+:root:has(.my-events-shell) { color-scheme: light; background: #f6f5fd; }
+
+.my-events-shell {
+  --am-bg: #f6f5fd; --am-surface: #fff; --am-glass: rgba(255, 255, 255, .72); --am-glass-blur: blur(18px); --am-card: rgba(255, 255, 255, .9); --am-soft: #f1eeff;
+  --am-ink: #060b27; --am-ink-hover: #1b2250; --am-muted: #565f8a; --am-on-wash: #2f3664;
+  --am-primary: #0753ff; --am-violet-deep: #5b34d6; --am-lavender: #c5b5ff;
+  --am-control: #7a82a8; --am-divider: rgba(6, 11, 39, .08); --am-divider-dashed: rgba(6, 11, 39, .14);
+  --am-chip-bg: #ece8ff; --am-chip-text: #4a2bc0; --am-dock-text: #adb7d8;
+  --am-success: #0a7a58; --am-success-bg: #d9f5ea; --am-success-on: #064d39;
+  --am-warn-bg: #fff1d6; --am-warn-on: #6b4300;
+  --am-danger: #c0153a; --am-danger-action: #ce103d; --am-danger-bg: #ffe1e7; --am-danger-on: #8a1030;
+  --am-disabled-bg: #d9dbe8; --am-disabled-text: #4a527a;
+  --am-shadow: 0 10px 28px rgba(36, 24, 110, .08);
+  --am-ease: cubic-bezier(.16, 1, .3, 1);
+  /* Legacy tokens used by shared components (StatusMessage, buttons, account menu, dialog), remapped for this route only. */
+  --color-bg: var(--am-bg); --color-bg-elevated: var(--am-surface); --color-field: var(--am-soft); --color-border: var(--am-divider);
+  --color-control-border: var(--am-control); --color-text: var(--am-ink); --color-text-muted: var(--am-muted);
+  --color-primary: var(--am-primary); --color-purple: var(--am-violet-deep); --color-focus: var(--am-violet-deep);
+  --gradient-primary: var(--am-ink);
+  --radius-control: 999px; --radius-card: 28px;
+  position: relative; isolation: isolate; color-scheme: light; color: var(--am-ink); background: var(--am-bg);
+  font-family: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+}
+@media (prefers-reduced-transparency: reduce) { .my-events-shell { --am-glass: rgba(255, 255, 255, .96); --am-glass-blur: none; --am-card: rgba(255, 255, 255, .97); } }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .my-events-shell { --am-glass: rgba(255, 255, 255, .96); --am-card: rgba(255, 255, 255, .97); } }
+
+/* The wash: one decorative band behind the heading (the only gradient allowed besides photo overlays). */
+.my-events-shell::before {
+  content: ''; position: absolute; z-index: -1; inset: 0 0 auto; height: 520px; pointer-events: none;
+  background:
+    radial-gradient(circle 250px at 8% 4%, rgba(141, 102, 250, .58), transparent 72%),
+    radial-gradient(circle 220px at 98% 12%, rgba(7, 83, 255, .36), transparent 72%),
+    radial-gradient(ellipse 230px 140px at 30% 46%, rgba(197, 181, 255, .75), transparent 72%);
+  -webkit-mask-image: linear-gradient(#000 55%, transparent); mask-image: linear-gradient(#000 55%, transparent);
+}
+.my-events-shell :focus-visible { outline: 3px solid var(--am-violet-deep); outline-offset: 3px; }
+
+/* Header (brand, notifications, account) */
+.my-events-shell .app-header { max-width: 600px; margin-inline: auto; padding-inline: max(20px, env(safe-area-inset-left)) max(20px, env(safe-area-inset-right)); border-bottom: 0; }
+.my-events-shell .brand span { color: var(--am-violet-deep); }
+.my-events-shell .account-nav { align-items: center; gap: 8px; }
+.my-events-shell .notifications-bell { width: 44px; height: 44px; border: 1px solid var(--am-divider); border-radius: 50%; background: var(--am-surface); color: var(--am-ink); }
+.my-events-shell .notifications-bell:hover { background: var(--am-chip-bg); }
+.my-events-shell .notifications-bell.active { background: var(--am-ink); color: #fff; }
+.my-events-shell .notifications-badge { top: -4px; right: -4px; background: var(--am-ink); color: #fff; border-color: var(--am-bg); }
+.my-events-shell .account-menu-trigger { min-height: 44px; border: 1px solid var(--am-control); border-radius: 999px; background: var(--am-glass); -webkit-backdrop-filter: var(--am-glass-blur); backdrop-filter: var(--am-glass-blur); color: var(--am-ink); font-weight: 650; }
+.my-events-shell .account-menu-trigger:hover, .my-events-shell .account-menu-trigger[aria-expanded="true"] { background: var(--am-surface); }
+.my-events-shell .account-menu-trigger .icon:last-child { color: var(--am-muted); }
+.my-events-shell .account-menu-panel { width: min(224px, calc(100vw - 32px)); padding: 6px; border: 0; border-radius: 22px; background: var(--am-surface); box-shadow: 0 18px 40px rgba(36, 24, 110, .2); }
+.my-events-shell .account-menu-panel a, .my-events-shell .account-menu-panel button { border-radius: 16px; font-weight: 650; }
+.my-events-shell .account-menu-panel a:hover, .my-events-shell .account-menu-panel button:hover { background: var(--am-soft); }
+.my-events-shell .account-menu-panel button { border-top: 1px solid var(--am-divider); border-radius: 0 0 16px 16px; }
+.my-events-shell .account-menu-panel button:disabled { color: var(--am-disabled-text); }
+.my-events-shell .account-menu-panel :focus-visible { outline-offset: -3px; }
+
+/* Dock: floating ink pill; only the active destination shows its label (the others keep an accessible name). */
+.my-events-shell .primary-nav { inset-inline: auto; left: 50%; right: auto; bottom: calc(18px + env(safe-area-inset-bottom)); transform: translateX(-50%); width: max-content; max-width: calc(100% - 16px); height: 64px; gap: 4px; padding: 6px; border: 0; border-radius: 999px; background: var(--am-ink); box-shadow: 0 16px 36px rgba(6, 11, 39, .38); }
+.my-events-shell .primary-nav a { flex: 0 0 auto; flex-direction: row; gap: 8px; min-width: 52px; max-width: none; min-height: 52px; height: 52px; padding: 0 14px; border-radius: 999px; color: var(--am-dock-text); font-size: 14px; font-weight: 700; white-space: nowrap; transition: background-color .25s, color .25s; }
+.my-events-shell .primary-nav a:hover { background-color: rgba(255, 255, 255, .1); color: #fff; }
+.my-events-shell .primary-nav a.active { padding: 0 18px; background: var(--am-surface); color: var(--am-ink); }
+.my-events-shell .primary-nav a.active .icon { color: var(--am-ink); }
+.my-events-shell .primary-nav a:not(.active) span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.my-events-shell .primary-nav a:focus-visible { outline-color: var(--am-lavender); outline-offset: -3px; }
+.my-events-shell .primary-nav a.active:focus-visible { outline-color: var(--am-violet-deep); }
+
+.my-events-shell main { position: relative; z-index: 1; max-width: 600px; padding-top: 16px; padding-bottom: calc(112px + env(safe-area-inset-bottom)); }
+.my-events-shell main:focus-visible { box-shadow: none; outline: none; }
+
+/* Heading */
+.my-events-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 16px; margin: 4px 0 16px; padding-inline: 4px; }
+.my-events-heading > div { flex: 1; min-width: min(180px, 100%); }
+.my-events-heading h1 { margin: 0 0 8px; font-size: clamp(32px, 9.6vw, 38px); line-height: 1; font-weight: 700; letter-spacing: -.035em; text-wrap: balance; }
+.my-events-heading p { margin: 0; color: var(--am-on-wash); font-size: 15px; font-weight: 600; line-height: 1.4; }
+.my-events-create { display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex-shrink: 0; min-width: 48px; min-height: 48px; padding: 0 20px; border-radius: 999px; background: var(--am-ink); color: #fff; font-size: 15px; font-weight: 700; transition: background-color .2s, transform .25s var(--am-ease); }
+.my-events-create .icon { width: 20px; height: 20px; }
+.my-events-create:hover { background: var(--am-ink-hover); }
+.my-events-create:active { transform: scale(.94); }
+
+/* Organizo / Participo: ink selects a mode */
+.my-events-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 5px; border: 1px solid rgba(255, 255, 255, .92); border-radius: 999px; background: var(--am-glass); -webkit-backdrop-filter: var(--am-glass-blur); backdrop-filter: var(--am-glass-blur); }
+.my-events-tabs button { min-width: 0; min-height: 48px; padding: 0 12px; border: 0; border-radius: 999px; background: transparent; color: var(--am-muted); font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; transition: background-color .25s, color .25s, transform .25s var(--am-ease); }
+.my-events-tabs button:hover { color: var(--am-ink); background: rgba(255, 255, 255, .7); }
+.my-events-tabs button:active { transform: scale(.97); }
+.my-events-tabs button[aria-selected="true"] { background: var(--am-ink); color: #fff; }
+.my-events-tabs button[aria-selected="true"]:hover { background: var(--am-ink-hover); }
+.my-events-tabs button:focus-visible { outline-offset: 2px; }
+
+/* State filters: blue applies a filter */
+.my-events-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.my-events-filters button { min-height: 44px; padding: 0 16px; border: 1px solid var(--am-control); border-radius: 999px; background: var(--am-glass); -webkit-backdrop-filter: var(--am-glass-blur); backdrop-filter: var(--am-glass-blur); color: var(--am-muted); font: inherit; font-size: 15px; font-weight: 650; cursor: pointer; transition: background-color .25s, color .25s, border-color .25s, transform .25s var(--am-ease); }
+.my-events-filters button:hover { background: var(--am-surface); color: var(--am-ink); }
+.my-events-filters button:active { transform: scale(.96); }
+.my-events-filters button[aria-pressed="true"] { background: var(--am-primary); border-color: var(--am-primary); color: #fff; }
+.my-events-filter-hint { margin: 10px 4px 0; color: var(--am-on-wash); font-size: 13.5px; line-height: 1.45; }
+.my-events-notice { margin: 12px 0 0; }
+.my-events-notice:empty { margin: 0; }
+.my-events-notice:not(:empty) { padding: 12px 16px; border-radius: 18px; background: var(--am-success-bg); color: var(--am-success-on); font-size: 14.5px; font-weight: 650; line-height: 1.45; }
+.my-events-refresh { display: flex; justify-content: flex-end; margin: 0; }
+.my-events-refresh button { min-height: 44px; padding-inline: 14px; border-radius: 999px; color: var(--am-ink); font-size: 14px; font-weight: 650; }
+.my-events-shell .text-button:hover { background: var(--am-chip-bg); }
+.my-events-shell .text-button:disabled { color: var(--am-disabled-text); }
+
+/* Timeline: time on the left, one row-card per event */
+.my-events-days, .my-events-list { list-style: none; margin: 0; padding: 0; }
+.my-events-day h2 { margin: 18px 4px 10px; color: var(--am-on-wash); font-size: 15px; font-weight: 700; line-height: 1.3; letter-spacing: 0; text-wrap: balance; }
+.my-events-slot { display: grid; grid-template-columns: minmax(52px, max-content) minmax(0, 1fr); gap: 6px; margin-bottom: 12px; min-width: 0; }
+.my-events-slot time { padding-top: 17px; color: var(--am-violet-deep); font-size: 14.5px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.my-events-page .compact-event-card { position: relative; min-width: 0; border: 1px solid #fff; border-radius: 26px; background: var(--am-card); box-shadow: var(--am-shadow); }
+.my-events-page .compact-event-card::before { content: ''; position: absolute; left: 7px; top: 16px; bottom: 16px; width: 4px; border-radius: 4px; background: var(--am-primary); pointer-events: none; }
+.my-events-page .compact-event-card.is-cancelled::before { background: var(--am-danger); }
+.my-events-page .compact-event-card.is-ended::before, .my-events-page .compact-event-card.is-archived::before { background: #adb2cf; }
+.my-events-page .compact-event-link { display: block; min-width: 0; padding: 12px 12px 12px 22px; border-radius: 26px; transition: background-color .2s; }
+.my-events-page .compact-event-link:hover { background: rgba(241, 238, 255, .7); }
+.my-events-page .compact-event-link:focus-visible { outline: 3px solid var(--am-violet-deep); outline-offset: -4px; }
+.my-events-page .compact-event-main { display: flex; align-items: flex-start; gap: 12px; min-width: 0; }
+.my-events-page .has-menu .compact-event-main { padding-right: 40px; }
+.my-events-page .compact-event-photo { position: relative; display: grid; place-items: center; width: 52px; height: 52px; flex-shrink: 0; overflow: hidden; border-radius: 16px; background: var(--am-chip-bg); color: var(--am-chip-text); }
+.my-events-page .compact-event-photo .icon { width: 22px; height: 22px; }
+.my-events-page .compact-event-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.my-events-page .compact-event-body { min-width: 0; flex: 1; }
+.my-events-page .compact-event-body h3 { margin: 0 0 4px; font-size: 17px; line-height: 1.2; font-weight: 700; letter-spacing: -.02em; overflow-wrap: anywhere; }
+/* Full text stays in the accessibility tree and in the linked event detail. */
+.my-events-page .compact-event-body h3, .my-events-page .compact-event-location { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+.my-events-page .compact-event-body h3 { -webkit-line-clamp: 3; }
+.my-events-page .compact-event-location { -webkit-line-clamp: 2; }
+.my-events-page .compact-event-body p { display: flex; align-items: flex-start; gap: 6px; margin: 0; color: var(--am-muted); font-size: 13.5px; line-height: 1.4; overflow-wrap: anywhere; }
+.my-events-page .compact-event-body p .icon { width: 16px; height: 16px; margin-top: 1px; }
+.my-events-page .compact-event-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--am-divider-dashed); }
+.my-events-page .event-state { display: inline-flex; align-items: center; gap: 7px; color: var(--am-muted); font-size: 13.5px; font-weight: 700; line-height: 1.3; }
+.my-events-page .event-state::before { content: ''; width: 8px; height: 8px; flex-shrink: 0; border-radius: 50%; background: currentColor; }
+.my-events-page .state-open, .my-events-page .participation-confirmed { color: var(--am-success); }
+.my-events-page .state-cancelled, .my-events-page .participation-cancelled, .my-events-page .participation-removed { color: var(--am-danger); }
+.my-events-page .category-chip { display: inline-flex; align-items: center; min-height: 26px; margin-left: auto; padding: 0 10px; border: 0; border-radius: 999px; background: var(--am-chip-bg); color: var(--am-chip-text); font-size: 12.5px; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; }
+
+/* Organizer menu */
+.my-events-page .compact-event-menu { position: absolute; top: 8px; right: 8px; }
+.my-events-page .compact-event-menu:has(.compact-event-menu-panel) { z-index: 3; }
+.my-events-page .compact-event-menu-trigger { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: var(--am-muted); cursor: pointer; transition: background-color .2s, color .2s; }
+.my-events-page .compact-event-menu-trigger:hover, .my-events-page .compact-event-menu-trigger[aria-expanded="true"] { background: var(--am-chip-bg); color: var(--am-ink); }
+.my-events-page .compact-event-menu-trigger:focus-visible { outline-offset: -3px; }
+.my-events-page .compact-event-menu-panel { position: absolute; top: 48px; right: 0; width: min(240px, calc(100vw - 48px)); padding: 6px; overflow-y: scroll; overscroll-behavior: contain; scrollbar-gutter: stable; scrollbar-color: var(--am-control) var(--am-soft); border: 0; border-radius: 22px; background: var(--am-surface); box-shadow: 0 18px 40px rgba(36, 24, 110, .22); }
+.my-events-page .compact-event-menu-panel a, .my-events-page .compact-event-menu-panel button { display: flex; align-items: center; width: 100%; min-height: 44px; padding: 10px 14px; border: 0; border-radius: 16px; background: transparent; color: var(--am-ink); font-size: 15px; font-weight: 600; text-align: start; overflow-wrap: anywhere; cursor: pointer; }
+.my-events-page .compact-event-menu-panel a:hover, .my-events-page .compact-event-menu-panel button:hover { background: var(--am-soft); }
+.my-events-page .compact-event-menu-panel :focus-visible { outline-offset: -3px; }
+.my-events-page .compact-event-menu-hint { margin: 4px 8px 8px; color: var(--am-muted); font-size: 13.5px; line-height: 1.4; }
+.my-events-page .compact-event-menu-panel::-webkit-scrollbar { width: 8px; }
+.my-events-page .compact-event-menu-panel::-webkit-scrollbar-track { background: var(--am-soft); border-radius: 8px; }
+.my-events-page .compact-event-menu-panel::-webkit-scrollbar-thumb { background: var(--am-control); border-radius: 8px; }
+.my-events-page .compact-event-menu-panel .event-menu-danger { color: var(--am-danger); }
+.my-events-page .compact-event-menu-panel .event-menu-danger:hover { background: var(--am-danger-bg); }
+.my-events-page .compact-event-menu-panel :not(.event-menu-danger) + .event-menu-danger { margin-top: 4px; border-top: 1px solid var(--am-divider); border-radius: 0 0 16px 16px; }
+
+/* Feedback and secondary actions */
+.my-events-shell .status-message { padding: 24px 22px; border: 1px solid #fff; border-radius: 28px; background: var(--am-glass); -webkit-backdrop-filter: var(--am-glass-blur); backdrop-filter: var(--am-glass-blur); box-shadow: var(--am-shadow); }
+.my-events-shell .status-message h2 { margin: 0 0 8px; font-size: 19px; line-height: 1.2; font-weight: 700; letter-spacing: -.02em; }
+.my-events-shell .status-message p { color: var(--am-muted); font-size: 15px; }
+.my-events-shell .status-error { margin-bottom: 12px; border-color: transparent; border-radius: 18px; background: var(--am-danger-bg); }
+.my-events-shell .status-error h2 { color: var(--am-danger-on); }
+.my-events-shell .status-error p { color: var(--am-danger-on); }
+.my-events-shell .secondary-button, .my-events-shell .secondary-link { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border: 1.5px solid var(--am-ink); border-radius: 999px; background: transparent; color: var(--am-ink); font-size: 15px; font-weight: 700; text-decoration: none; transition: background-color .2s; }
+.my-events-shell .secondary-button:hover, .my-events-shell .secondary-link:hover { background: var(--am-surface); }
+.my-events-shell .secondary-button:disabled { border-color: transparent; background: var(--am-disabled-bg); color: var(--am-disabled-text); cursor: default; }
+.my-events-page .status-message + .secondary-link { margin-top: 12px; }
+.my-events-page .field-hint[role="status"] { margin: 12px 0 0; padding: 12px 16px; border-radius: 18px; background: var(--am-warn-bg); color: var(--am-warn-on); font-size: 14px; font-weight: 600; line-height: 1.45; }
+.my-events-page .field-hint[role="status"] .text-button { min-height: 44px; padding: 0 10px; color: var(--am-warn-on); font-size: 14px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.my-events-page .load-more-events { width: 100%; margin-top: 8px; }
+.my-events-shell .session-error { margin-bottom: 16px; }
+.my-events-shell .gradient-button, .my-events-shell .gradient-link { min-height: 48px; border-radius: 999px; background: var(--am-ink); font-weight: 700; }
+.my-events-shell .gradient-button:hover, .my-events-shell .gradient-link:hover { background: var(--am-ink-hover); box-shadow: none; }
+.my-events-shell .gradient-button:disabled { background: var(--am-disabled-bg); color: var(--am-disabled-text); border: 0; }
+
+/* Confirmation dialog (same component, white sheet over the ink veil). Full dialog refresh belongs to block 7. */
+.my-events-shell .event-action-dialog { padding: 26px 22px 22px; border: 0; border-radius: 32px; background: var(--am-surface); color: var(--am-ink); box-shadow: 0 30px 70px rgba(6, 11, 39, .35); }
+.my-events-shell .event-action-dialog::backdrop { background: rgba(6, 11, 39, .5); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+.my-events-shell .event-action-dialog h2 { font-size: 22px; letter-spacing: -.025em; }
+.my-events-shell .event-action-dialog .field-error { color: var(--am-danger); font-size: 14px; font-weight: 650; }
+.my-events-shell .event-action-close { border-radius: 50%; color: var(--am-muted); }
+.my-events-shell .event-action-close:hover { background: var(--am-chip-bg); }
+.my-events-shell .event-action-symbol { border: 0; background: var(--am-chip-bg); color: var(--am-chip-text); }
+.my-events-shell .action-cancel .event-action-symbol { background: var(--am-danger-bg); color: var(--am-danger); }
+.my-events-shell .event-action-dialog-buttons button { border-radius: 999px; font-weight: 700; }
+.my-events-shell .event-action-danger { background: var(--am-danger-action); color: #fff; }
+.my-events-shell .event-action-dialog button:disabled { opacity: 1; background: var(--am-disabled-bg); color: var(--am-disabled-text); border-color: transparent; }
+
+/* Entrance: short staggered rise; removed for reduced motion */
+@keyframes my-events-rise { from { opacity: 0; transform: translateY(12px); } }
+@media (prefers-reduced-motion: no-preference) { .my-events-rise { animation: my-events-rise .6s var(--am-ease) backwards; animation-delay: calc(var(--i, 0) * 70ms); } }
+@media (prefers-reduced-motion: reduce) { .my-events-shell * { transition-duration: .01ms !important; } }
+
+@media (max-width: 479px) { .my-events-create-extra { display: none; } }
+@media (max-width: 399px) {
+  .my-events-create { width: 48px; padding: 0; }
+  .my-events-create span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .my-events-filters { gap: 6px; }
+  .my-events-filters button { padding: 0 13px; font-size: 14.5px; }
+}
+@media (max-width: 359px) {
+  .my-events-slot { grid-template-columns: minmax(42px, max-content) minmax(0, 1fr); gap: 4px; }
+  .my-events-slot time { font-size: 13.5px; }
+  .my-events-shell .primary-nav a { min-width: 46px; padding: 0 11px; }
+  .my-events-shell .primary-nav a.active { padding: 0 14px; }
+  .my-events-shell .primary-nav { gap: 2px; }
+}
+@media (min-width: 768px) {
+  .my-events-shell main { padding-top: 24px; }
+  .my-events-heading { margin-bottom: 24px; }
+  .my-events-heading h1 { font-size: 40px; }
+  .my-events-page .compact-event-link { padding: 14px 14px 14px 24px; }
+  .my-events-page .compact-event-photo { width: 60px; height: 60px; }
+  .my-events-page .compact-event-body h3 { font-size: 18px; }
+}
