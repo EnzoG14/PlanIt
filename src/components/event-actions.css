@@ -1,0 +1,28 @@
+.event-management { margin: 1.25rem 0; display: grid; gap: .8rem; }
+.event-management-rows { border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: 0 .8rem; background: var(--color-bg-elevated); }
+.event-management-rows a, .event-management-rows button { display: flex; align-items: center; gap: 1rem; width: 100%; min-height: 56px; padding: .8rem .3rem; border: 0; background: transparent; color: var(--color-text); font: inherit; text-align: left; cursor: pointer; }
+.event-management-rows > :not(:last-child) { border-bottom: 1px solid var(--color-border); }
+.event-management-rows span:first-of-type { flex: 1; overflow-wrap: anywhere; }
+.event-management-rows .icon { width: 24px; height: 24px; flex-shrink: 0; }
+.event-management-rows a:hover, .event-management-rows button:hover { background: var(--color-field); }
+.event-management-danger { border-color: #78405b; background: #331b3533; }
+.event-management-danger button { color: #ff526c; }
+.event-action-dialog { box-sizing: border-box; width: min(440px,calc(100% - 2rem)); max-height: calc(100dvh - 2rem); overflow-y: auto; overscroll-behavior: contain; padding: 1.5rem; border: 1px solid var(--color-purple); border-radius: var(--radius-card); background: var(--color-bg-elevated); color: var(--color-text); text-align: center; }
+.event-action-dialog::backdrop { background: #02051bcc; }
+.event-action-dialog h2 { font-size: 1.25rem; }
+.event-action-dialog p { line-height: 1.5; overflow-wrap: anywhere; color: var(--color-text-muted); }
+.event-action-dialog .field-error { color: #ffb9c7; }
+.event-action-close { position: absolute; top: .2rem; right: .2rem; width: 44px; height: 44px; background: transparent; color: var(--color-text-muted); border: 0; font-size: 1.7rem; cursor: pointer; }
+.event-action-symbol { display: grid; place-items: center; width: 64px; height: 64px; margin: .2rem auto; border-radius: 50%; border: 1px solid var(--color-purple); color: var(--color-purple); background: #8d66fa18; }
+.event-action-symbol .icon { width: 32px; height: 32px; }
+.action-cancel .event-action-symbol { color: #ff526c; border-color: #ff526c; background: #ff526c18; }
+.event-action-dialog-buttons { display: flex; gap: .7rem; margin-top: 1.2rem; }
+.event-action-dialog-buttons button { flex: 1; min-width: 0; min-height: 48px; font: inherit; cursor: pointer; }
+.event-action-danger { border: 0; border-radius: var(--radius-control); padding: .6rem; background: linear-gradient(95deg,#ff2254,#ce103d); color: white; font-weight: 700; }
+.event-action-dialog button:disabled { cursor: default; opacity: .55; }
+.compact-event-menu-panel button { display: flex; align-items: center; width: 100%; min-height: 44px; padding: 8px 16px; border: 0; border-radius: 12px; background: transparent; color: var(--color-text); font: inherit; text-align: left; cursor: pointer; }
+.compact-event-menu-panel button:hover { background: var(--color-bg-elevated); }
+.compact-event-menu-panel { overflow-y: auto; overscroll-behavior: contain; }
+.compact-event-menu-panel button.event-menu-danger { color: #ff526c; }
+.event-action-notice { color: #83f3c9; overflow-wrap: anywhere; }
+.duplicate-back { margin-bottom: 1rem; }

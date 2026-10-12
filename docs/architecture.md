@@ -2,6 +2,10 @@
 
 PlanIt es una PWA universitaria para descubrir, organizar y participar en eventos. No se utiliza React Native ni Expo.
 
+## R3 Bloque 5 — Acciones del organizador
+
+Detalle y menú Organizo comparten confirmaciones accesibles para cancelar/archivar/duplicar; cierre usa RPC autorizadas, bloquea doble envío y reconcilia respuestas inciertas por lectura. Después reconsulta detalle, cupos y listas; archivo permanece en el histórico propio. `/events/new?duplicateFrom=:id` reutiliza el formulario de creación con origen autorizado por BD, fechas vacías y sin fotos/relaciones heredadas; no persiste hasta publicar. Renovación de token conserva cambios; cuenta/origen distinto descarta formulario/respuestas anteriores. La creación normal mantiene UUID idempotente nuevo y conversación vacía. Migración sólo local, pendiente de autorización remota; sin merge/despliegue. [Contratos, ocho CA, pruebas y capturas](design/verification/r3-block-5/README.md).
+
 ## Stack
 - React + TypeScript + Vite; React Router; vite-plugin-pwa.
 - Supabase Auth, PostgreSQL con RLS, Storage y Realtime.
