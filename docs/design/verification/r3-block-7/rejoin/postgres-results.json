@@ -1,0 +1,46 @@
+{
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "environment": "Isolated real PostgreSQL; Auth/Storage SQL scaffolding; no remote HTTP/JWT",
+  "results": [
+    {
+      "test": "Full migration replay; RLS, no generic writes, authenticated-only definers with empty search_path",
+      "result": "PASS"
+    },
+    {
+      "test": "R3-08 CA01–03: immediate first request, one pending, confirmed/cancelled/never removed denied; owner projection and cross-account/anon/direct access secured",
+      "result": "PASS"
+    },
+    {
+      "test": "R3-08 CA04 / R3-09 CA02,04: seven-day boundary, rejection audit without fabricated transition, approval actor/history/chat recovery, immutable resolved requests",
+      "result": "PASS"
+    },
+    {
+      "test": "A new removal after approval allows a new immediate request",
+      "result": "PASS"
+    },
+    {
+      "test": "Historical holder retains access to unlisted detail; no grant is fabricated for strangers",
+      "result": "PASS"
+    },
+    {
+      "test": "R3-08 CA04 / R3-09 CA05: ended/cancelled/archived block requests and approvals; human-approved rejection after closure retained",
+      "result": "PASS"
+    },
+    {
+      "test": "R3-09 CA03: full remains pending without reservation; freeing a place does not autoapprove",
+      "result": "PASS"
+    },
+    {
+      "test": "Failure in history or resolution rolls back participation, capacity, history and request together",
+      "result": "PASS"
+    },
+    {
+      "test": "Eleven real blocked-lock races: duplicate resolution/request, approval vs registration both orders, approvals for last seat, cancellation/archive both orders; no overcapacity",
+      "result": "PASS"
+    },
+    {
+      "test": "R3-09 CA01: pending-only pagination with stable date/UUID order, counts and minimal social projection",
+      "result": "PASS"
+    }
+  ]
+}

@@ -34,7 +34,7 @@
 .attendees-danger-icon .icon { width: 32px; height: 32px; }
 .attendees-dialog > div { display: flex; gap: .7rem; margin-top: 1.2rem; }
 .attendees-dialog > div button { flex: 1; min-height: 48px; }
-.attendees-remove { background: linear-gradient(95deg,#ff2254,#ce103d); color: white; border: 0; border-radius: var(--radius-control); padding: .6rem 1rem; font: inherit; font-weight: 700; cursor: pointer; }
+.attendees-remove { background: linear-gradient(95deg,#dc1743,#ce103d); color: white; border: 0; border-radius: var(--radius-control); padding: .6rem 1rem; font: inherit; font-weight: 700; cursor: pointer; }
 .attendees-page button:disabled { cursor: default; opacity: .55; }
 @media(max-width: 480px) {
   .attendees-list > li { grid-template-columns: 44px minmax(0,1fr) 44px; gap: .5rem; padding: .65rem; }

@@ -1,0 +1,180 @@
+{
+  "environment": "Edge browser, intercepted Supabase fixtures; Tokyo timezone; not live Auth/HTTP/JWT",
+  "results": [
+    {
+      "viewport": "360x800",
+      "test": "Asistentes navigation, 30 pending requests, safe identity, Argentina dates, original dark cards and no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Pagination retry preserves rows; confirmation cancel/Escape/focus; server full preserves pending",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Single submission; lost approval/rejection reconciled by exact status; failed reconciliation only reads on retry",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Closed approval disabled, rejection allowed; direct wrong-event and participant administration denied",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "User first/full request, double click and lost response; pending/rejected/cooldown/eligible/approved/closed, Argentina in Tokyo, read failure blocks resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Empty list, missing migration/retry, token refresh revalidation; cancelled uncertain dialog still requires exact read",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Account change discards late administrative response; anonymous route redirects to login",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Asistentes navigation, 30 pending requests, safe identity, Argentina dates, original dark cards and no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Pagination retry preserves rows; confirmation cancel/Escape/focus; server full preserves pending",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Single submission; lost approval/rejection reconciled by exact status; failed reconciliation only reads on retry",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Closed approval disabled, rejection allowed; direct wrong-event and participant administration denied",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "User first/full request, double click and lost response; pending/rejected/cooldown/eligible/approved/closed, Argentina in Tokyo, read failure blocks resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Empty list, missing migration/retry, token refresh revalidation; cancelled uncertain dialog still requires exact read",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Account change discards late administrative response; anonymous route redirects to login",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Asistentes navigation, 30 pending requests, safe identity, Argentina dates, original dark cards and no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Pagination retry preserves rows; confirmation cancel/Escape/focus; server full preserves pending",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Single submission; lost approval/rejection reconciled by exact status; failed reconciliation only reads on retry",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Closed approval disabled, rejection allowed; direct wrong-event and participant administration denied",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "User first/full request, double click and lost response; pending/rejected/cooldown/eligible/approved/closed, Argentina in Tokyo, read failure blocks resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Empty list, missing migration/retry, token refresh revalidation; cancelled uncertain dialog still requires exact read",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Account change discards late administrative response; anonymous route redirects to login",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Asistentes navigation, 30 pending requests, safe identity, Argentina dates, original dark cards and no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Pagination retry preserves rows; confirmation cancel/Escape/focus; server full preserves pending",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Single submission; lost approval/rejection reconciled by exact status; failed reconciliation only reads on retry",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Closed approval disabled, rejection allowed; direct wrong-event and participant administration denied",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "User first/full request, double click and lost response; pending/rejected/cooldown/eligible/approved/closed, Argentina in Tokyo, read failure blocks resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Empty list, missing migration/retry, token refresh revalidation; cancelled uncertain dialog still requires exact read",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Account change discards late administrative response; anonymous route redirects to login",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Asistentes navigation, 30 pending requests, safe identity, Argentina dates, original dark cards and no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Pagination retry preserves rows; confirmation cancel/Escape/focus; server full preserves pending",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Single submission; lost approval/rejection reconciled by exact status; failed reconciliation only reads on retry",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Closed approval disabled, rejection allowed; direct wrong-event and participant administration denied",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "User first/full request, double click and lost response; pending/rejected/cooldown/eligible/approved/closed, Argentina in Tokyo, read failure blocks resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Empty list, missing migration/retry, token refresh revalidation; cancelled uncertain dialog still requires exact read",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Account change discards late administrative response; anonymous route redirects to login",
+      "result": "PASS"
+    }
+  ]
+}

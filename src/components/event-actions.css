@@ -18,7 +18,7 @@
 .action-cancel .event-action-symbol { color: #ff526c; border-color: #ff526c; background: #ff526c18; }
 .event-action-dialog-buttons { display: flex; gap: .7rem; margin-top: 1.2rem; }
 .event-action-dialog-buttons button { flex: 1; min-width: 0; min-height: 48px; font: inherit; cursor: pointer; }
-.event-action-danger { border: 0; border-radius: var(--radius-control); padding: .6rem; background: linear-gradient(95deg,#ff2254,#ce103d); color: white; font-weight: 700; }
+.event-action-danger { border: 0; border-radius: var(--radius-control); padding: .6rem; background: linear-gradient(95deg,#dc1743,#ce103d); color: white; font-weight: 700; }
 .event-action-dialog button:disabled { cursor: default; opacity: .55; }
 .compact-event-menu-panel button { display: flex; align-items: center; width: 100%; min-height: 44px; padding: 8px 16px; border: 0; border-radius: 12px; background: transparent; color: var(--color-text); font: inherit; text-align: left; cursor: pointer; }
 .compact-event-menu-panel button:hover { background: var(--color-bg-elevated); }
