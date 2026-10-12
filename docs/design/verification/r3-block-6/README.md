@@ -1,6 +1,6 @@
 # R3 Bloque 6 — Solicitudes de reincorporación
 
-Implementado; QA y aceptación humana pendientes. [PR #24](https://github.com/EnzoG14/PlanIt/pull/24) en borrador. Rama `codex/r3-block-6`, base `origin/main` `dd4bb07` (PR #23 integrada). Evidencia del 12/10/2026, Argentina. Migración propuesta y probada localmente; **no aplicada remotamente**. Cambio previo de `vite.config.ts` preservado y excluido de la PR.
+Implementado; QA y aceptación humana pendientes. [PR #24](https://github.com/EnzoG14/PlanIt/pull/24) en borrador. Rama `codex/r3-block-6`, base `origin/main` `dd4bb07` (PR #23 integrada). Evidencia del 12/10/2026, Argentina. Migración **aplicada y verificada en planit-v2 con autorización explícita posterior del usuario**. Cambio previo de `vite.config.ts` preservado y excluido de la PR.
 
 ## Contratos y decisiones
 
@@ -57,4 +57,6 @@ Identidad marino/azul/violeta, cards, badge amarillo, acciones azul-violeta/rojo
 
 Plan, STATUS, requisitos locales, decisiones del bloque 0, guías de diseño, arquitectura/modelo y especificación técnica R3-08/09 de Planificación consultados. Metadatos de tablas de `planit-v2` inspeccionados: participación mantiene confirmed/cancelled/removed, timestamps sin zona, relaciones y RLS; solicitudes ausentes. Definiciones de RPC/trigger se inspeccionaron en migraciones versionadas, no se afirma auditoría remota exhaustiva de sus cuerpos.
 
-Migración `20261012155501_event_rejoin_requests.sql` creada por CLI y replay local probado; pendiente de autorización/aplicación remota. Antes de aplicar, contrastar nuevamente historial, RPC/grants y advisors en planit-v2. HTTP/Auth/JWT/REST/Realtime reales A/B, dispositivo físico y aceptación humana pendientes. Sin SQL remoto, cambios en Supabase antiguo, merge, despliegue ni estado «Validado».
+Migración `20261012155501_event_rejoin_requests.sql` creada por CLI y replay local probado; aplicada el 12/10/2026 tras autorización explícita del usuario. Preflight detectó sólo esta pendiente; push con --skip-vault sin seeds/roles, diecisiete versiones sincronizadas y dry-run posterior sin pendientes. Siete cuerpos RPC/trigger idénticos al SQL versionado; search_path vacío, EXECUTE authenticated sin PUBLIC/anon, RLS propia, grants SELECT y restricciones/índices verificados. Smoke remoto READ ONLY/ROLLBACK rechazó identidad ausente en las cinco RPC nuevas sin escribir datos de negocio. [Resumen y metadatos](remote-migration-summary.json).
+
+Advisors: dieciséis → veintiún [avisos SECURITY DEFINER autenticado](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable), correspondientes a cinco RPC deliberadas con autorización explícita; [protección de contraseñas filtradas deshabilitada](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection) preexistente, sin cambios. HTTP/Auth/JWT/REST/Realtime reales A/B, dispositivo físico y aceptación humana pendientes. Sin cambios en Vault, Supabase antiguo, merge, despliegue ni estado «Validado».

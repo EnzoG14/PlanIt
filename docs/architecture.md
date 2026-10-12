@@ -90,7 +90,7 @@ La recepción real depende de la publicación activa y RLS evaluada por Supabase
 
 ## Reincorporaciones R3 — Bloque 6
 
-Implementadas en Git y probadas localmente; migración remota pendiente. El removido solicita desde detalle mediante `request_rejoin`; el organizador revisa `/events/:id/rejoin-requests`, enlazada desde Asistentes. Lecturas mínimas autorizadas por RPC, RLS propia y ninguna escritura genérica. `pending` corresponde únicamente a solicitud; aprobar reconfirma la participación existente y recupera los permisos de chat ya definidos.
+Implementadas en Git y probadas localmente; migración aplicada y verificada en planit-v2 el 12/10/2026 con autorización explícita posterior del usuario. Historial sincronizado, cuerpos y permisos comprobados; HTTP/JWT y aceptación humana pendientes. El removido solicita desde detalle mediante `request_rejoin`; el organizador revisa `/events/:id/rejoin-requests`, enlazada desde Asistentes. Lecturas mínimas autorizadas por RPC, RLS propia y ninguna escritura genérica. `pending` corresponde únicamente a solicitud; aprobar reconfirma la participación existente y recupera los permisos de chat ya definidos.
 
 Resolución y cupo son transaccionales con el mismo lock de evento que inscripción/edición/remoción/cierre. Una respuesta perdida se comprueba por solicitud exacta antes de reintentar; cuenta/evento nuevos descartan respuestas anteriores. Refresco explícito/foco/online/visibilidad, sin nueva publicación Realtime ni notificaciones automáticas. Rechazos tras el cierre permitidos por decisión del usuario; pedidos/aprobaciones bloqueados. [Contratos, nueve CA y evidencia](design/verification/r3-block-6/README.md).
 
