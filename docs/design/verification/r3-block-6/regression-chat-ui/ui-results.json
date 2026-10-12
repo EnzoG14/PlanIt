@@ -1,0 +1,35 @@
+{
+  "environment": "Playwright UI fixtures; no remote changes",
+  "results": [
+    {
+      "test": "mobile: chronological sender history, Argentina time in Tokyo browser, send/reopen, blank/size validation, lost-response retry same UUID without duplicates; no horizontal overflow",
+      "result": "PASS",
+      "evidence": "Playwright intercepted fixtures, not Supabase REST/Auth"
+    },
+    {
+      "test": "mobile: closed composer hidden, empty/error states, denied direct route and cleared cached messages",
+      "result": "PASS",
+      "evidence": "Playwright intercepted fixtures, not Supabase REST/Auth"
+    },
+    {
+      "test": "mobile: older history prepends without duplicate or page errors",
+      "result": "PASS",
+      "evidence": "Playwright intercepted fixtures, not Supabase REST/Auth"
+    },
+    {
+      "test": "desktop: chronological sender history, Argentina time in Tokyo browser, send/reopen, blank/size validation, lost-response retry same UUID without duplicates; no horizontal overflow",
+      "result": "PASS",
+      "evidence": "Playwright intercepted fixtures, not Supabase REST/Auth"
+    },
+    {
+      "test": "desktop: closed composer hidden, empty/error states, denied direct route and cleared cached messages",
+      "result": "PASS",
+      "evidence": "Playwright intercepted fixtures, not Supabase REST/Auth"
+    },
+    {
+      "test": "desktop: older history prepends without duplicate or page errors",
+      "result": "PASS",
+      "evidence": "Playwright intercepted fixtures, not Supabase REST/Auth"
+    }
+  ]
+}

@@ -88,4 +88,10 @@ Bandeja utiliza get_notifications para carga/paginación/recuperación del rango
 
 La recepción real depende de la publicación activa y RLS evaluada por Supabase. Los tests locales verifican permisos/SELECT del mismo contrato; el navegador intercepta el protocolo WebSocket y no acredita entrega remota. Una revocación silenciosa sin nuevos mensajes se detecta en la siguiente revalidación (foco/reconexión/consulta/envío); no se publican participaciones ni se añade polling para detectar revocaciones instantáneamente. [Evidencia, manual remoto y límites](design/verification/realtime/README.md).
 
+## Reincorporaciones R3 — Bloque 6
+
+Implementadas en Git y probadas localmente; migración remota pendiente. El removido solicita desde detalle mediante `request_rejoin`; el organizador revisa `/events/:id/rejoin-requests`, enlazada desde Asistentes. Lecturas mínimas autorizadas por RPC, RLS propia y ninguna escritura genérica. `pending` corresponde únicamente a solicitud; aprobar reconfirma la participación existente y recupera los permisos de chat ya definidos.
+
+Resolución y cupo son transaccionales con el mismo lock de evento que inscripción/edición/remoción/cierre. Una respuesta perdida se comprueba por solicitud exacta antes de reintentar; cuenta/evento nuevos descartan respuestas anteriores. Refresco explícito/foco/online/visibilidad, sin nueva publicación Realtime ni notificaciones automáticas. Rechazos tras el cierre permitidos por decisión del usuario; pedidos/aprobaciones bloqueados. [Contratos, nueve CA y evidencia](design/verification/r3-block-6/README.md).
+
 Verificación de despliegue (11/10/2026): historial local/remoto con 11 versiones sincronizadas, dry-run sin pendientes, publicación supabase_realtime con messages/notifications, RPC invoker y RLS/grants intactos e índice parcial presente. Worktree configurado con .env.local ignorado (URL y publishable key), build PASS. Entrega WS/JWT con dos sesiones reales sigue pendiente.

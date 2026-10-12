@@ -103,6 +103,7 @@ function AttendeesContent({ eventId }: { eventId: string }) {
     {!denied && <>
       <div className="attendees-filters" role="group" aria-label="Estado de inscripción">
         {(['confirmed', 'removed'] as const).map(value => <button key={value} type="button" aria-pressed={status === value} disabled={removing} onClick={() => { setStatus(value); setNotice('') }}>{value === 'confirmed' ? 'Confirmados' : 'Removidos'}{page && <span>{value === 'confirmed' ? page.confirmed_count : page.removed_count}</span>}</button>)}
+        {page && <Link className="requests-filter" to={`/events/${eventId}/rejoin-requests`} state={origin}>Solicitudes{page.pending_count !== undefined && <span>{page.pending_count}</span>}</Link>}
       </div>
       <label className="attendees-search"><Icon name="search" /><span className="visually-hidden">Buscar asistentes por nombre</span><input type="search" placeholder="Buscar asistentes…" maxLength={120} value={search} disabled={removing} onChange={e => { setSearch(e.target.value); setNotice('') }} /></label>
     </>}
