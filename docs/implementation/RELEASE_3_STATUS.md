@@ -10,7 +10,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 0 | Preparación, rutas y diseño | Transversal | Implementado; QA pendiente | [PR #18](https://github.com/EnzoG14/PlanIt/pull/18); rama `codex/r3-block-0`; [decisiones/evidencia](RELEASE_3_BLOCK_0_DECISIONS.md) | Revisión y aceptación humana del contrato |
 | 1 | Mis eventos organizados | R3-04 | Implementado; QA pendiente | [PR #19](https://github.com/EnzoG14/PlanIt/pull/19); rama `codex/r3-block-1`; [CA/pruebas/capturas](../design/verification/r3-block-1/README.md) | Migración aplicada; pendientes HTTP/JWT A/B reales, acciones de bloques posteriores y aceptación humana |
-| 2 | Editar evento | R3-01 | Implementado; QA pendiente | Rama `codex/r3-block-2`; [CA/pruebas/capturas](../design/verification/r3-block-2/README.md) | Migración sólo local; HTTP/JWT A/B, dispositivo físico y aceptación humana pendientes |
+| 2 | Editar evento | R3-01 | Implementado; QA pendiente | [PR #20](https://github.com/EnzoG14/PlanIt/pull/20); rama `codex/r3-block-2`; [CA/pruebas/capturas](../design/verification/r3-block-2/README.md) | Migración sólo local; HTTP/JWT A/B, dispositivo físico y aceptación humana pendientes |
 | 3 | Galería | R3-03 | Pendiente | — | Media básica existe; faltan operaciones administrativas de orden/baja/limpieza |
 | 4 | Asistentes y remoción | R3-05/06 | Pendiente | — | SELECT propio no da nómina; faltan proyección mínima/remoción y pruebas historial/chat |
 | 5 | Cancelar/archivar/duplicar | R3-02/07 | Pendiente | — | RPC de cierre ausentes; duplicar sólo formulario local sin fotos/relaciones |
@@ -62,7 +62,7 @@
 
 ### Bloque 2 — Implementado; QA pendiente
 
-- **Base/rama:** `origin/main` actualizado (`66b6ee9`, Bloque 1 fusionado) → `codex/r3-block-2`. Cambio previo de vite.config.ts preservado y excluido.
+- **Base/rama:** `origin/main` actualizado (`66b6ee9`, Bloque 1 fusionado) → `codex/r3-block-2`; [PR #20](https://github.com/EnzoG14/PlanIt/pull/20), exclusiva del bloque. Cambio previo de vite.config.ts preservado y excluido.
 - **Decisión confirmada por el usuario:** editar sólo eventos propios antes de su inicio original y sin cancelar/archivar. En curso, finalizados, cancelados y archivados denegados en UI y RPC; no se reabren históricos.
 - **Entrega:** ruta autenticada `/events/:id/edit`, entradas en detalle y menú Organizo; formulario precargado compartido con creación, portada en lectura, mínimos fecha/hora Argentina, cupo operativo, loading/error/no autorizado/no encontrado/no editable. Regreso conserva orígenes/filtros; cambios locales sobreviven fallos/token refresh; cuenta/evento nuevos descartan respuestas anteriores. Doble envío bloqueado y respuesta incierta reconciliada por lectura sin reenvío automático.
 - **BD:** `update_event` actualiza mismo ID y sólo contenido; identidad auth.uid(), definer justificado para lock/conteo, search_path vacío y EXECUTE authenticated. READ COMMITTED y lock de evento compartido con inscripción/retiro; conteo confirmed después del lock. Sin UPDATE/DELETE genéricos, nuevas tablas, cambios de media/historial/chat ni dependencias de producción.
