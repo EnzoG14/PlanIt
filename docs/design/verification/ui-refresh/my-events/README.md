@@ -1,5 +1,7 @@
 # Mis eventos — piloto UI Refresh (realineado a Amanecer)
 
+> **Actualización posterior a la entrega — 12/10/2026:** PR #27 fusionada en `main` (cb5a249). El registro siguiente conserva los resultados y límites de aquella revisión. El bloque 0.5 centraliza su fundación sin rediseñar el piloto; [nueva evidencia](../amanecer-foundation/README.md). La fusión no acredita pruebas humanas no realizadas.
+
 12/10/2026. Rama `design/ui-refresh-my-events` ([PR draft #27](https://github.com/EnzoG14/PlanIt/pull/27)). Implementación lista para revisión; la aceptación visual y funcional humana sigue pendiente. No cambia las releases funcionales ni el backend.
 
 El piloto se había implementado en marino v2.0 y la dirección vigente pasó a **B · Amanecer** ([DESIGN.md](../../../../../DESIGN.md), [decisión](../../../proposals/amanecer-direction.md)). Esta versión realinea la capa visual de la pantalla. Se conservan tres juegos de capturas:

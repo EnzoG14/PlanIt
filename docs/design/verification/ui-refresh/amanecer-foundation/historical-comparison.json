@@ -1,0 +1,74 @@
+[
+  {
+    "file": "organizing-1280x900.png",
+    "historical_size": [
+      1280,
+      964
+    ],
+    "current_size": [
+      1280,
+      964
+    ],
+    "difference_bbox": null
+  },
+  {
+    "file": "organizing-320x800.png",
+    "historical_size": [
+      320,
+      1086
+    ],
+    "current_size": [
+      320,
+      1086
+    ],
+    "difference_bbox": null
+  },
+  {
+    "file": "organizing-360x800.png",
+    "historical_size": [
+      360,
+      1011
+    ],
+    "current_size": [
+      360,
+      1011
+    ],
+    "difference_bbox": null
+  },
+  {
+    "file": "organizing-375x812.png",
+    "historical_size": [
+      375,
+      993
+    ],
+    "current_size": [
+      375,
+      993
+    ],
+    "difference_bbox": null
+  },
+  {
+    "file": "organizing-390x844.png",
+    "historical_size": [
+      390,
+      982
+    ],
+    "current_size": [
+      390,
+      982
+    ],
+    "difference_bbox": null
+  },
+  {
+    "file": "organizing-768x1024.png",
+    "historical_size": [
+      768,
+      1024
+    ],
+    "current_size": [
+      768,
+      1024
+    ],
+    "difference_bbox": null
+  }
+]

@@ -1,6 +1,6 @@
 # PlanIt — Dirección visual aprobada: B · Amanecer
 
-**Fecha:** 12/10/2026. **Estado:** dirección confirmada por el usuario; aplicación en la PWA pendiente. **Modo:** Operate. **Prototipo de referencia:** [design-lab](../../../design-lab/README.md), rutas `/b` y `/b/<pantalla>`; contrato de la dirección en [design-lab/directions/b.md](../../../design-lab/directions/b.md).
+**Fecha:** 12/10/2026. **Estado actualizado tras PR #27:** dirección confirmada; Mis eventos implementada y fusionada en `main`; restantes pantallas pendientes. **Modo:** Operate. **Prototipo de referencia:** [design-lab](../../../design-lab/README.md), rutas `/b` y `/b/<pantalla>`; contrato de la dirección en [design-lab/directions/b.md](../../../design-lab/directions/b.md).
 
 Esta decisión **reemplaza la dirección marina oscura v2.0** consolidada tras el [shape R1–R3](r1-r3-visual-evolution.md). De ese shape siguen vigentes los objetivos de usabilidad (jerarquía por pantalla, estados, fotografía real, mobile-first, límites funcionales); dejan de serlo su fondo marino uniforme, la paleta oscura y la prohibición de vidrio/sombras suaves. Los tokens y patrones están en [DESIGN.md](../../../DESIGN.md); su aplicación y aceptación, en [DESIGN_SYSTEM.md](../DESIGN_SYSTEM.md).
 
@@ -56,11 +56,11 @@ El lab es una propuesta visual. Los siguientes elementos no deben implementarse 
 
 ## 5. Piloto Mis eventos (PR #27)
 
-El [piloto de Mis eventos](../verification/ui-refresh/my-events/README.md) se implementó con la dirección marina v2.0. Su estructura (filas con miniatura, filtros, estados, paginación, menú y la lógica funcional) se conserva; su capa visual (fondo, colores, botones, pestañas, menú Cuenta) debe realinearse con Amanecer en el bloque de Foundation visual. No se aceptó ni fusionó: la revisión humana sigue pendiente y debe hacerse sobre la versión alineada.
+El [piloto de Mis eventos](../verification/ui-refresh/my-events/README.md) comenzó con marino v2.0 y luego se realineó a Amanecer dentro de PR #27, fusionada en `main` (cb5a249). El bloque 0.5 extrae sus tokens y patrones: no vuelve a diseñar timeline, encabezado, pestañas, filtros, tarjetas, menús, navegación ni espaciados. La integración Git no sustituye aceptación visual humana. Los registros v2.0 y los resultados históricos se preservan.
 
 ## 6. Orden de aplicación
 
-1. **Fundación Amanecer:** tokens CSS globales y reemplazo de las variables `--color-*`/`--gradient-primary`, fuente autoalojada, botón, campo, dock/AppLayout, StatusMessage y diálogo; realinear el piloto Mis eventos.
+1. **Fundación Amanecer:** tokens `--pi-*` compartidos, misma fuente autoalojada y patrones de botón/campo/dock/feedback/menú/diálogo con activación explícita. Adaptadores heredados temporales; preservar el piloto ya integrado sin propagar automáticamente el tema.
 2. Login/registro y Crear/Editar.
 3. Inicio, Mapa y Detalle (tras decidir la sección 4).
 4. Galería y Asistentes; Chat, Perfil y Notificaciones; Acciones y Reincorporaciones.

@@ -1,0 +1,143 @@
+{
+  "environment": "Edge; no session; external requests blocked; no Auth writes",
+  "results": [
+    {
+      "mode": "login",
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "result": "PASS",
+      "amanecer": false,
+      "family": "\"Segoe UI\", system-ui, sans-serif",
+      "field": "rgb(21, 29, 62)",
+      "color": "rgb(248, 248, 255)",
+      "primary": "linear-gradient(95deg, rgb(7, 83, 255), rgb(118, 81, 223))",
+      "overflow": false,
+      "preparedFixture": {
+        "field": "rgb(255, 255, 255)",
+        "border": "rgb(122, 130, 168)",
+        "borderWidth": "1px",
+        "focus": "rgb(91, 52, 214)",
+        "primary": "rgb(6, 11, 39)",
+        "titleSize": "32px",
+        "family": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    },
+    {
+      "mode": "register",
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "result": "PASS",
+      "amanecer": false,
+      "family": "\"Segoe UI\", system-ui, sans-serif",
+      "field": "rgb(21, 29, 62)",
+      "color": "rgb(248, 248, 255)",
+      "primary": "linear-gradient(95deg, rgb(7, 83, 255), rgb(118, 81, 223))",
+      "overflow": false,
+      "preparedFixture": {
+        "field": "rgb(255, 255, 255)",
+        "border": "rgb(122, 130, 168)",
+        "borderWidth": "1px",
+        "focus": "rgb(91, 52, 214)",
+        "primary": "rgb(6, 11, 39)",
+        "titleSize": "32px",
+        "family": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    },
+    {
+      "mode": "login",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "result": "PASS",
+      "amanecer": false,
+      "family": "\"Segoe UI\", system-ui, sans-serif",
+      "field": "rgb(21, 29, 62)",
+      "color": "rgb(248, 248, 255)",
+      "primary": "linear-gradient(95deg, rgb(7, 83, 255), rgb(118, 81, 223))",
+      "overflow": false,
+      "preparedFixture": {
+        "field": "rgb(255, 255, 255)",
+        "border": "rgb(122, 130, 168)",
+        "borderWidth": "1px",
+        "focus": "rgb(91, 52, 214)",
+        "primary": "rgb(6, 11, 39)",
+        "titleSize": "32px",
+        "family": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    },
+    {
+      "mode": "register",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "result": "PASS",
+      "amanecer": false,
+      "family": "\"Segoe UI\", system-ui, sans-serif",
+      "field": "rgb(21, 29, 62)",
+      "color": "rgb(248, 248, 255)",
+      "primary": "linear-gradient(95deg, rgb(7, 83, 255), rgb(118, 81, 223))",
+      "overflow": false,
+      "preparedFixture": {
+        "field": "rgb(255, 255, 255)",
+        "border": "rgb(122, 130, 168)",
+        "borderWidth": "1px",
+        "focus": "rgb(91, 52, 214)",
+        "primary": "rgb(6, 11, 39)",
+        "titleSize": "32px",
+        "family": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    },
+    {
+      "mode": "login",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "result": "PASS",
+      "amanecer": false,
+      "family": "\"Segoe UI\", system-ui, sans-serif",
+      "field": "rgb(21, 29, 62)",
+      "color": "rgb(248, 248, 255)",
+      "primary": "linear-gradient(95deg, rgb(7, 83, 255), rgb(118, 81, 223))",
+      "overflow": false,
+      "preparedFixture": {
+        "field": "rgb(255, 255, 255)",
+        "border": "rgb(122, 130, 168)",
+        "borderWidth": "1px",
+        "focus": "rgb(91, 52, 214)",
+        "primary": "rgb(6, 11, 39)",
+        "titleSize": "32px",
+        "family": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    },
+    {
+      "mode": "register",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "result": "PASS",
+      "amanecer": false,
+      "family": "\"Segoe UI\", system-ui, sans-serif",
+      "field": "rgb(21, 29, 62)",
+      "color": "rgb(248, 248, 255)",
+      "primary": "linear-gradient(95deg, rgb(7, 83, 255), rgb(118, 81, 223))",
+      "overflow": false,
+      "preparedFixture": {
+        "field": "rgb(255, 255, 255)",
+        "border": "rgb(122, 130, 168)",
+        "borderWidth": "1px",
+        "focus": "rgb(91, 52, 214)",
+        "primary": "rgb(6, 11, 39)",
+        "titleSize": "32px",
+        "family": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    }
+  ]
+}

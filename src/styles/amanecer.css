@@ -1,0 +1,88 @@
+/* Opt-in shared patterns. Route composition stays in page CSS. */
+:root:has(.amanecer-shell) { color-scheme: light; background: var(--pi-color-bg); }
+
+.app-shell.amanecer-shell {
+  /* Legacy tokens used by shared components (StatusMessage, buttons, account menu, dialog), remapped for this route only. */
+  --color-bg: var(--pi-color-bg); --color-bg-elevated: var(--pi-color-surface); --color-field: var(--pi-color-surface-soft); --color-border: var(--pi-color-divider);
+  --color-control-border: var(--pi-color-control-border); --color-text: var(--pi-color-ink); --color-text-muted: var(--pi-color-text-muted);
+  --color-primary: var(--pi-color-primary); --color-purple: var(--pi-color-violet-deep); --color-focus: var(--pi-color-violet-deep);
+  --gradient-primary: var(--pi-color-ink);
+  --radius-control: var(--pi-radius-pill); --radius-card: var(--pi-radius-card);
+  position: relative; isolation: isolate; color-scheme: light; color: var(--pi-color-ink); background: var(--pi-color-bg);
+  font-family: var(--pi-font-family);
+}
+@media (prefers-reduced-transparency: reduce) { .amanecer-shell { --pi-color-surface-glass: var(--pi-glass-opaque); --pi-glass-blur: none; --pi-color-surface-card: var(--pi-card-opaque); } }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .amanecer-shell { --pi-color-surface-glass: var(--pi-glass-opaque); --pi-color-surface-card: var(--pi-card-opaque); } }
+
+/* Header (brand, notifications, account) */
+.amanecer-shell .brand span { color: var(--pi-color-violet-deep); }
+.amanecer-shell .account-nav { align-items: center; gap: 8px; }
+.amanecer-shell .notifications-bell { width: 44px; height: 44px; border: 1px solid var(--pi-color-divider); border-radius: 50%; background: var(--pi-color-surface); color: var(--pi-color-ink); }
+.amanecer-shell .notifications-bell:hover { background: var(--pi-color-chip-bg); }
+.amanecer-shell .notifications-bell.active { background: var(--pi-color-ink); color: #fff; }
+.amanecer-shell .notifications-badge { top: -4px; right: -4px; background: var(--pi-color-ink); color: #fff; border-color: var(--pi-color-bg); }
+.amanecer-shell .account-menu-trigger { min-height: 44px; border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-pill); background: var(--pi-color-surface-glass); -webkit-backdrop-filter: var(--pi-glass-blur); backdrop-filter: var(--pi-glass-blur); color: var(--pi-color-ink); font-weight: 650; }
+.amanecer-shell .account-menu-trigger:hover, .amanecer-shell .account-menu-trigger[aria-expanded="true"] { background: var(--pi-color-surface); }
+.amanecer-shell .account-menu-trigger .icon:last-child { color: var(--pi-color-text-muted); }
+.amanecer-shell .account-menu-panel { width: min(224px, calc(100vw - 32px)); padding: 6px; border: 0; border-radius: 22px; background: var(--pi-color-surface); box-shadow: var(--pi-shadow-menu); }
+.amanecer-shell .account-menu-panel a, .amanecer-shell .account-menu-panel button { border-radius: 16px; font-weight: 650; }
+.amanecer-shell .account-menu-panel a:hover, .amanecer-shell .account-menu-panel button:hover { background: var(--pi-color-surface-soft); }
+.amanecer-shell .account-menu-panel button { border-top: 1px solid var(--pi-color-divider); border-radius: 0 0 16px 16px; }
+.amanecer-shell .account-menu-panel button:disabled { color: var(--pi-color-disabled-text); }
+.amanecer-shell .account-menu-panel :focus-visible { outline-offset: -3px; }
+
+/* Dock: floating ink pill; only the active destination shows its label (the others keep an accessible name). */
+.amanecer-shell .primary-nav { inset-inline: auto; left: 50%; right: auto; bottom: calc(18px + env(safe-area-inset-bottom)); transform: translateX(-50%); width: max-content; max-width: calc(100% - 16px); height: 64px; gap: 4px; padding: 6px; border: 0; border-radius: var(--pi-radius-pill); background: var(--pi-color-ink); box-shadow: var(--pi-shadow-dock); }
+.amanecer-shell .primary-nav a { flex: 0 0 auto; flex-direction: row; gap: 8px; min-width: 52px; max-width: none; min-height: 52px; height: 52px; padding: 0 14px; border-radius: var(--pi-radius-pill); color: var(--pi-color-dock-text); font-size: 14px; font-weight: 700; white-space: nowrap; transition: background-color .25s, color .25s; }
+.amanecer-shell .primary-nav a:hover { background-color: rgba(255, 255, 255, .1); color: #fff; }
+.amanecer-shell .primary-nav a.active { padding: 0 18px; background: var(--pi-color-surface); color: var(--pi-color-ink); }
+.amanecer-shell .primary-nav a.active .icon { color: var(--pi-color-ink); }
+.amanecer-shell .primary-nav a:not(.active) span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.amanecer-shell .primary-nav a:focus-visible { outline-color: var(--pi-color-lavender); outline-offset: -3px; }
+.amanecer-shell .primary-nav a.active:focus-visible { outline-color: var(--pi-color-violet-deep); }
+
+
+/* Feedback and secondary actions */
+.amanecer-shell .status-message { padding: 24px 22px; border: 1px solid #fff; border-radius: var(--pi-radius-card); background: var(--pi-color-surface-glass); -webkit-backdrop-filter: var(--pi-glass-blur); backdrop-filter: var(--pi-glass-blur); box-shadow: var(--pi-shadow-card); }
+.amanecer-shell .status-message h2 { margin: 0 0 8px; font-size: 19px; line-height: 1.2; font-weight: 700; letter-spacing: -.02em; }
+.amanecer-shell .status-message p { color: var(--pi-color-text-muted); font-size: 15px; }
+.amanecer-shell .status-error { margin-bottom: 12px; border-color: transparent; border-radius: var(--pi-radius-notice); background: var(--pi-color-danger-bg); }
+.amanecer-shell .status-error h2 { color: var(--pi-color-danger-on-bg); }
+.amanecer-shell .status-error p { color: var(--pi-color-danger-on-bg); }
+.amanecer-shell .secondary-button, .amanecer-shell .secondary-link { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border: 1.5px solid var(--pi-color-ink); border-radius: var(--pi-radius-pill); background: transparent; color: var(--pi-color-ink); font-size: 15px; font-weight: 700; text-decoration: none; transition: background-color .2s; }
+.amanecer-shell .secondary-button:hover, .amanecer-shell .secondary-link:hover { background: var(--pi-color-surface); }
+.amanecer-shell .secondary-button:disabled { border-color: transparent; background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); cursor: default; }
+.amanecer-shell .session-error { margin-bottom: 16px; }
+.amanecer-shell .gradient-button, .amanecer-shell .gradient-link { min-height: 48px; border-radius: var(--pi-radius-pill); background: var(--pi-color-ink); font-weight: 700; }
+.amanecer-shell .gradient-button:hover, .amanecer-shell .gradient-link:hover { background: var(--pi-color-ink-hover); box-shadow: none; }
+.amanecer-shell .gradient-button:disabled { background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); border: 0; }
+
+/* Confirmation dialog (same component, white sheet over the ink veil). Full dialog refresh belongs to block 7. */
+.amanecer-shell .event-action-dialog { padding: 26px 22px 22px; border: 0; border-radius: var(--pi-radius-sheet); background: var(--pi-color-surface); color: var(--pi-color-ink); box-shadow: var(--pi-shadow-dialog); }
+.amanecer-shell .event-action-dialog::backdrop { background: var(--pi-color-scrim); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+.amanecer-shell .event-action-dialog h2 { font-size: 22px; letter-spacing: -.025em; }
+.amanecer-shell .event-action-dialog .field-error { color: var(--pi-color-danger-text); font-size: 14px; font-weight: 650; }
+.amanecer-shell .event-action-close { border-radius: 50%; color: var(--pi-color-text-muted); }
+.amanecer-shell .event-action-close:hover { background: var(--pi-color-chip-bg); }
+.amanecer-shell .event-action-symbol { border: 0; background: var(--pi-color-chip-bg); color: var(--pi-color-chip-text); }
+.amanecer-shell .action-cancel .event-action-symbol { background: var(--pi-color-danger-bg); color: var(--pi-color-danger-text); }
+.amanecer-shell .event-action-dialog-buttons button { border-radius: var(--pi-radius-pill); font-weight: 700; }
+.amanecer-shell .event-action-danger { background: var(--pi-color-danger-action); color: #fff; }
+.amanecer-shell .event-action-dialog button:disabled { opacity: 1; background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); border-color: transparent; }
+
+
+.amanecer-shell :focus-visible { outline: var(--pi-focus-width) solid var(--pi-color-focus); outline-offset: 3px; }
+.amanecer-shell .text-button:hover { background: var(--pi-color-chip-bg); }
+.amanecer-shell .text-button:disabled { color: var(--pi-color-disabled-text); }
+
+/* Existing components, prepared for Auth/forms without activating those routes. */
+.app-shell.amanecer-shell .screen-header h1 { font-size: var(--pi-font-headline-size); line-height: var(--pi-font-headline-line-height); letter-spacing: var(--pi-font-headline-tracking); font-weight: var(--pi-font-headline-weight); }
+.amanecer-shell .screen-header p { color: var(--pi-color-text-muted); }
+.amanecer-shell .screen-emblem { background: var(--pi-color-surface); border-color: var(--pi-color-divider); color: var(--pi-color-violet-deep); }
+.amanecer-shell .form-field label { color: var(--pi-color-text); font-size: var(--pi-font-label-size); font-weight: var(--pi-font-label-weight); }
+.amanecer-shell .field-control :is(input, select, textarea) { background: var(--pi-color-surface); color: var(--pi-color-text); border: 1.5px solid var(--pi-color-control-border); border-radius: var(--pi-radius-field); font-size: var(--pi-font-input-size); }
+.amanecer-shell .field-control :is(input, textarea)::placeholder { color: var(--pi-color-placeholder); opacity: 1; }
+.amanecer-shell .field-control :is(input, select, textarea):focus-visible { outline-offset: 1px; }
+.amanecer-shell .field-control [aria-invalid="true"] { border: 2px solid var(--pi-color-danger-text); }
+.amanecer-shell .form-field .field-error { color: var(--pi-color-danger-text); font-size: var(--pi-font-meta-size); font-weight: 650; }
+@media (prefers-reduced-motion: reduce) { .amanecer-shell * { transition-duration: .01ms !important; } }

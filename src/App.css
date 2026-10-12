@@ -1,3 +1,5 @@
+@import './styles/amanecer.css';
+
 .app-shell { min-height: 100svh; background: radial-gradient(ellipse at 0 0, #0a1956 0, transparent 45%), var(--color-bg); }
 html.chat-active, .chat-active body { overflow: hidden; overscroll-behavior: none; }
 .app-shell.chat-shell { position: fixed; inset-inline: 0; top: var(--chat-viewport-top, 0px); height: var(--chat-viewport-height, 100dvh); min-height: 0; overflow: hidden; }

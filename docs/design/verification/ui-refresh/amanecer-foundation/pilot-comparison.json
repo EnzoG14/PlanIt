@@ -1,0 +1,1315 @@
+[
+  {
+    "suite": "after",
+    "file": "account-logout-rejected-1280x900.png",
+    "size": [
+      1280,
+      900
+    ],
+    "after_size": [
+      1280,
+      900
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "account-logout-rejected-320x800.png",
+    "size": [
+      320,
+      800
+    ],
+    "after_size": [
+      320,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "account-logout-rejected-360x800.png",
+    "size": [
+      360,
+      800
+    ],
+    "after_size": [
+      360,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "account-logout-rejected-375x812.png",
+    "size": [
+      375,
+      812
+    ],
+    "after_size": [
+      375,
+      812
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "account-logout-rejected-390x844.png",
+    "size": [
+      390,
+      844
+    ],
+    "after_size": [
+      390,
+      844
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "account-logout-rejected-768x1024.png",
+    "size": [
+      768,
+      1024
+    ],
+    "after_size": [
+      768,
+      1024
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "account-menu-1280x900.png",
+    "size": [
+      1280,
+      964
+    ],
+    "after_size": [
+      1280,
+      964
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "account-menu-320x800.png",
+    "size": [
+      320,
+      1086
+    ],
+    "after_size": [
+      320,
+      1086
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "account-menu-360x800.png",
+    "size": [
+      360,
+      1011
+    ],
+    "after_size": [
+      360,
+      1011
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "account-menu-375x812.png",
+    "size": [
+      375,
+      993
+    ],
+    "after_size": [
+      375,
+      993
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "account-menu-390x844.png",
+    "size": [
+      390,
+      982
+    ],
+    "after_size": [
+      390,
+      982
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "account-menu-768x1024.png",
+    "size": [
+      768,
+      1024
+    ],
+    "after_size": [
+      768,
+      1024
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "cancel-dialog-1280x900.png",
+    "size": [
+      1280,
+      900
+    ],
+    "after_size": [
+      1280,
+      900
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "cancel-dialog-320x800.png",
+    "size": [
+      320,
+      800
+    ],
+    "after_size": [
+      320,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "cancel-dialog-360x800.png",
+    "size": [
+      360,
+      800
+    ],
+    "after_size": [
+      360,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "cancel-dialog-375x812.png",
+    "size": [
+      375,
+      812
+    ],
+    "after_size": [
+      375,
+      812
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "cancel-dialog-390x844.png",
+    "size": [
+      390,
+      844
+    ],
+    "after_size": [
+      390,
+      844
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "cancel-dialog-768x1024.png",
+    "size": [
+      768,
+      1024
+    ],
+    "after_size": [
+      768,
+      1024
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "empty-1280x900.png",
+    "size": [
+      1280,
+      900
+    ],
+    "after_size": [
+      1280,
+      900
+    ],
+    "difference_bbox": [
+      360,
+      307,
+      505,
+      321
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "empty-320x800.png",
+    "size": [
+      320,
+      800
+    ],
+    "after_size": [
+      320,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "empty-360x800.png",
+    "size": [
+      360,
+      800
+    ],
+    "after_size": [
+      360,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "empty-375x812.png",
+    "size": [
+      375,
+      812
+    ],
+    "after_size": [
+      375,
+      812
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "empty-390x844.png",
+    "size": [
+      390,
+      844
+    ],
+    "after_size": [
+      390,
+      844
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "empty-768x1024.png",
+    "size": [
+      768,
+      1024
+    ],
+    "after_size": [
+      768,
+      1024
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "loading-1280x900.png",
+    "size": [
+      1280,
+      900
+    ],
+    "after_size": [
+      1280,
+      900
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "loading-320x800.png",
+    "size": [
+      320,
+      800
+    ],
+    "after_size": [
+      320,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "loading-360x800.png",
+    "size": [
+      360,
+      800
+    ],
+    "after_size": [
+      360,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "loading-375x812.png",
+    "size": [
+      375,
+      812
+    ],
+    "after_size": [
+      375,
+      812
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "loading-390x844.png",
+    "size": [
+      390,
+      844
+    ],
+    "after_size": [
+      390,
+      844
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "loading-768x1024.png",
+    "size": [
+      768,
+      1024
+    ],
+    "after_size": [
+      768,
+      1024
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "long-broken-photo-1280x900.png",
+    "size": [
+      1280,
+      900
+    ],
+    "after_size": [
+      1280,
+      900
+    ],
+    "difference_bbox": [
+      360,
+      307,
+      505,
+      340
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "long-broken-photo-320x800.png",
+    "size": [
+      320,
+      800
+    ],
+    "after_size": [
+      320,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "long-broken-photo-360x800.png",
+    "size": [
+      360,
+      800
+    ],
+    "after_size": [
+      360,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "long-broken-photo-375x812.png",
+    "size": [
+      375,
+      812
+    ],
+    "after_size": [
+      375,
+      812
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "long-broken-photo-390x844.png",
+    "size": [
+      390,
+      844
+    ],
+    "after_size": [
+      390,
+      844
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "long-broken-photo-768x1024.png",
+    "size": [
+      768,
+      1024
+    ],
+    "after_size": [
+      768,
+      1024
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "many-menu-1280x900.png",
+    "size": [
+      1280,
+      5947
+    ],
+    "after_size": [
+      1280,
+      5947
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "many-menu-320x800.png",
+    "size": [
+      320,
+      7130
+    ],
+    "after_size": [
+      320,
+      7130
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "many-menu-360x800.png",
+    "size": [
+      360,
+      6208
+    ],
+    "after_size": [
+      360,
+      6208
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "many-menu-375x812.png",
+    "size": [
+      375,
+      5965
+    ],
+    "after_size": [
+      375,
+      5965
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "many-menu-390x844.png",
+    "size": [
+      390,
+      5826
+    ],
+    "after_size": [
+      390,
+      5826
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "many-menu-768x1024.png",
+    "size": [
+      768,
+      5947
+    ],
+    "after_size": [
+      768,
+      5947
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "network-error-1280x900.png",
+    "size": [
+      1280,
+      900
+    ],
+    "after_size": [
+      1280,
+      900
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "network-error-320x800.png",
+    "size": [
+      320,
+      800
+    ],
+    "after_size": [
+      320,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "network-error-360x800.png",
+    "size": [
+      360,
+      800
+    ],
+    "after_size": [
+      360,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "network-error-375x812.png",
+    "size": [
+      375,
+      812
+    ],
+    "after_size": [
+      375,
+      812
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "network-error-390x844.png",
+    "size": [
+      390,
+      844
+    ],
+    "after_size": [
+      390,
+      844
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "network-error-768x1024.png",
+    "size": [
+      768,
+      1024
+    ],
+    "after_size": [
+      768,
+      1024
+    ],
+    "difference_bbox": [
+      136,
+      321,
+      325,
+      340
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "organizing-1280x900.png",
+    "size": [
+      1280,
+      964
+    ],
+    "after_size": [
+      1280,
+      964
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "organizing-320x800.png",
+    "size": [
+      320,
+      1086
+    ],
+    "after_size": [
+      320,
+      1086
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "organizing-360x800.png",
+    "size": [
+      360,
+      1011
+    ],
+    "after_size": [
+      360,
+      1011
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "organizing-375x812.png",
+    "size": [
+      375,
+      993
+    ],
+    "after_size": [
+      375,
+      993
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "organizing-390x844.png",
+    "size": [
+      390,
+      982
+    ],
+    "after_size": [
+      390,
+      982
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "organizing-768x1024.png",
+    "size": [
+      768,
+      1024
+    ],
+    "after_size": [
+      768,
+      1024
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "participating-1280x900.png",
+    "size": [
+      1280,
+      906
+    ],
+    "after_size": [
+      1280,
+      906
+    ],
+    "difference_bbox": [
+      833,
+      12,
+      920,
+      56
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "participating-320x800.png",
+    "size": [
+      320,
+      1063
+    ],
+    "after_size": [
+      320,
+      1063
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "participating-360x800.png",
+    "size": [
+      360,
+      989
+    ],
+    "after_size": [
+      360,
+      989
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "participating-375x812.png",
+    "size": [
+      375,
+      991
+    ],
+    "after_size": [
+      375,
+      991
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "participating-390x844.png",
+    "size": [
+      390,
+      933
+    ],
+    "after_size": [
+      390,
+      933
+    ],
+    "difference_bbox": [
+      283,
+      12,
+      370,
+      56
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "participating-768x1024.png",
+    "size": [
+      768,
+      1024
+    ],
+    "after_size": [
+      768,
+      1024
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "short-menu-1280x900.png",
+    "size": [
+      1280,
+      662
+    ],
+    "after_size": [
+      1280,
+      662
+    ],
+    "difference_bbox": [
+      625,
+      428,
+      957,
+      662
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "short-menu-320x800.png",
+    "size": [
+      320,
+      726
+    ],
+    "after_size": [
+      320,
+      726
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "short-menu-360x800.png",
+    "size": [
+      360,
+      710
+    ],
+    "after_size": [
+      360,
+      710
+    ],
+    "difference_bbox": [
+      79,
+      428,
+      339,
+      581
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "short-menu-375x812.png",
+    "size": [
+      375,
+      691
+    ],
+    "after_size": [
+      375,
+      691
+    ],
+    "difference_bbox": [
+      60,
+      430,
+      375,
+      655
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "short-menu-390x844.png",
+    "size": [
+      390,
+      693
+    ],
+    "after_size": [
+      390,
+      693
+    ],
+    "difference_bbox": [
+      79,
+      431,
+      369,
+      587
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "short-menu-768x1024.png",
+    "size": [
+      768,
+      662
+    ],
+    "after_size": [
+      768,
+      662
+    ],
+    "difference_bbox": [
+      163,
+      400,
+      663,
+      555
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "text-200-1280x900.png",
+    "size": [
+      1280,
+      1079
+    ],
+    "after_size": [
+      1280,
+      1079
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "text-200-320x800.png",
+    "size": [
+      320,
+      1258
+    ],
+    "after_size": [
+      320,
+      1258
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "text-200-360x800.png",
+    "size": [
+      360,
+      1273
+    ],
+    "after_size": [
+      360,
+      1273
+    ],
+    "difference_bbox": [
+      34,
+      485,
+      284,
+      660
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "text-200-375x812.png",
+    "size": [
+      375,
+      1210
+    ],
+    "after_size": [
+      375,
+      1210
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "after",
+    "file": "text-200-390x844.png",
+    "size": [
+      390,
+      1166
+    ],
+    "after_size": [
+      390,
+      1166
+    ],
+    "difference_bbox": [
+      34,
+      428,
+      352,
+      553
+    ]
+  },
+  {
+    "suite": "after",
+    "file": "text-200-768x1024.png",
+    "size": [
+      768,
+      1079
+    ],
+    "after_size": [
+      768,
+      1079
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-home",
+    "file": "detail-desktop.png",
+    "size": [
+      1280,
+      900
+    ],
+    "after_size": [
+      1280,
+      900
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-home",
+    "file": "detail-gallery-mobile.png",
+    "size": [
+      375,
+      812
+    ],
+    "after_size": [
+      375,
+      812
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-home",
+    "file": "detail-mobile.png",
+    "size": [
+      375,
+      812
+    ],
+    "after_size": [
+      375,
+      812
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-home",
+    "file": "detail-organizer-desktop.png",
+    "size": [
+      1280,
+      900
+    ],
+    "after_size": [
+      1280,
+      900
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-home",
+    "file": "detail-organizer-mobile.png",
+    "size": [
+      375,
+      812
+    ],
+    "after_size": [
+      375,
+      812
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-home",
+    "file": "home-desktop.png",
+    "size": [
+      1280,
+      900
+    ],
+    "after_size": [
+      1280,
+      900
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-home",
+    "file": "home-mobile.png",
+    "size": [
+      375,
+      812
+    ],
+    "after_size": [
+      375,
+      812
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-map",
+    "file": "detail-1280x900.png",
+    "size": [
+      1280,
+      1424
+    ],
+    "after_size": [
+      1280,
+      1424
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-map",
+    "file": "detail-375x812.png",
+    "size": [
+      375,
+      1379
+    ],
+    "after_size": [
+      375,
+      1379
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-map",
+    "file": "detail-768x1024.png",
+    "size": [
+      768,
+      1344
+    ],
+    "after_size": [
+      768,
+      1344
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-map",
+    "file": "empty-375x812.png",
+    "size": [
+      375,
+      989
+    ],
+    "after_size": [
+      375,
+      989
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-map",
+    "file": "error-375x812.png",
+    "size": [
+      375,
+      1061
+    ],
+    "after_size": [
+      375,
+      1061
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-map",
+    "file": "map-1280x900.png",
+    "size": [
+      1280,
+      1528
+    ],
+    "after_size": [
+      1280,
+      1528
+    ],
+    "difference_bbox": [
+      121,
+      1048,
+      458,
+      1227
+    ]
+  },
+  {
+    "suite": "regression-map",
+    "file": "map-375x812.png",
+    "size": [
+      375,
+      1570
+    ],
+    "after_size": [
+      375,
+      1570
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-map",
+    "file": "map-768x1024.png",
+    "size": [
+      768,
+      1538
+    ],
+    "after_size": [
+      768,
+      1538
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-map",
+    "file": "mapbox-error-375x812.png",
+    "size": [
+      375,
+      1363
+    ],
+    "after_size": [
+      375,
+      1363
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-chat",
+    "file": "after-1280x900.png",
+    "size": [
+      1280,
+      900
+    ],
+    "after_size": [
+      1280,
+      900
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-chat",
+    "file": "after-360x800.png",
+    "size": [
+      360,
+      800
+    ],
+    "after_size": [
+      360,
+      800
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-chat",
+    "file": "after-375x812.png",
+    "size": [
+      375,
+      812
+    ],
+    "after_size": [
+      375,
+      812
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-chat",
+    "file": "after-390x844.png",
+    "size": [
+      390,
+      844
+    ],
+    "after_size": [
+      390,
+      844
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-chat",
+    "file": "keyboard-height-1280.png",
+    "size": [
+      1280,
+      500
+    ],
+    "after_size": [
+      1280,
+      500
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-chat",
+    "file": "keyboard-height-360.png",
+    "size": [
+      360,
+      500
+    ],
+    "after_size": [
+      360,
+      500
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-chat",
+    "file": "keyboard-height-375.png",
+    "size": [
+      375,
+      500
+    ],
+    "after_size": [
+      375,
+      500
+    ],
+    "difference_bbox": null
+  },
+  {
+    "suite": "regression-chat",
+    "file": "keyboard-height-390.png",
+    "size": [
+      390,
+      500
+    ],
+    "after_size": [
+      390,
+      500
+    ],
+    "difference_bbox": null
+  }
+]

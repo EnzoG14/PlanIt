@@ -1,6 +1,6 @@
 # PlanIt — Sistema visual aprobado (v3.0 · Amanecer)
 
-**Aprobación:** 12/10/2026, dirección **B · Amanecer** del design-lab, sobre las pantallas implementadas de R1–R3. **Implementación:** pendiente. Esta actualización es documental; la PWA, el piloto Mis eventos y las capturas existentes todavía representan el sistema marino oscuro v2.0.
+**Aprobación:** 12/10/2026, dirección **B · Amanecer**. **Actualización tras PR #27:** Mis eventos está implementada y fusionada en `main` (cb5a249). El bloque 0.5 extrae la fundación compartida sin rediseñarla; las demás pantallas siguen pendientes. Las capturas marinas se conservan como historia; `my-events/after/` representa Amanecer. Ver [workflow](UI_WORKFLOW.md) y [evidencia de fundación](verification/ui-refresh/amanecer-foundation/README.md).
 
 ## 1. Autoridad y relación entre documentos
 
@@ -24,7 +24,7 @@ Los RF/CA, arquitectura y modelo de datos determinan qué hace la aplicación. L
 
 ## 3. Tokens y accesibilidad
 
-Valores y asignaciones exactos: [frontmatter de DESIGN.md](../../DESIGN.md). No copiar una paleta normativa paralela. El lab nombra sus variables CSS `--bg`, `--ink`, `--muted`, `--primary`, `--violet`, `--violet-deep`, `--focus`, `--success-text`, `--danger-text` y `--glass`; la implementación elegirá su convención y retirará `--color-*` y `--gradient-primary` de v2.0.
+Valores y asignaciones exactos: [frontmatter de DESIGN.md](../../DESIGN.md). Implementación central en `src/styles/tokens.css`, namespace `--pi-*`; no copiar una paleta normativa paralela. Los nombres del lab no son API de producción. `src/styles/amanecer.css` activa los patrones bajo `.amanecer-shell`; los adaptadores `--color-*`/`--gradient-primary` permanecen acotados hasta migrar sus consumidores. No sustituir las variables heredadas globales antes de completar las pantallas pendientes.
 
 | Rol | Token | Aplicación |
 |---|---|---|
@@ -72,7 +72,7 @@ La lista fotográfica en Inicio y la portada en Detalle son la experiencia visua
 
 ## 6. Componentes, estados y reutilización
 
-Reutilizar AppLayout, ScreenHeader, FormField, StatusMessage, EventCard/CompactEventCard, AccountMenu y diálogos cuando su responsabilidad coincida. `GradientButton` conserva su nombre hasta decidirlo al implementar, pero ya no puede producir degradados: pasa a tinta sólida. No crear una biblioteca extensa ni incorporar un UI kit.
+Reutilizar AppLayout, ScreenHeader, FormField, StatusMessage, EventCard/CompactEventCard, AccountMenu y diálogos cuando su responsabilidad coincida. `GradientButton` conserva nombre y API: tinta sólida bajo `.amanecer-shell`, degradado heredado fuera de ella hasta la migración de cada pantalla. No crear una biblioteca extensa ni incorporar un UI kit. Los campos y ScreenHeader tienen estilos opt-in preparados; su composición debe revisarse en el bloque correspondiente.
 
 - **Acciones:** principal de tinta; secundaria con borde de tinta; peligro rojo sólido; texto/icono con área de 44 px. Diferenciar disabled de loading y mantener el bloqueo de doble envío.
 - **Selección:** tinta para modo o lugar en la agenda (segmentos, día); azul para filtros (`aria-pressed`). Chips de categoría son metadato pasivo.
