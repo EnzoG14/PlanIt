@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-12",
+  "project": "planit-v2",
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "user_authorization": "Hace la migracion a la db remota por favor",
+  "migration": "20261012044919_close_and_duplicate_events.sql",
+  "application": "PASS: supabase db push --linked --skip-vault --yes",
+  "preflight": "dry-run: only the block 5 migration pending",
+  "postflight": "dry-run: upToDate=true; migrations=[]; 16 remote versions",
+  "functions": {
+    "cancel_event": {"body_matches_git": true, "security_definer": true},
+    "archive_event": {"body_matches_git": true, "security_definer": true},
+    "get_event_duplicate_source": {"body_matches_git": true, "security_definer": false}
+  },
+  "permissions": "All three: empty search_path; EXECUTE authenticated; no EXECUTE PUBLIC or anon",
+  "all_public_tables_rls": true,
+  "authenticated_events_update": false,
+  "authenticated_events_delete": false,
+  "missing_identity_smoke_test": "PASS: all three reject with authentication_required / 42501 before touching event rows",
+  "security_advisors": {
+    "before": {"authenticated_security_definer_function_executable": 14, "auth_leaked_password_protection": 1},
+    "after": {"authenticated_security_definer_function_executable": 16, "auth_leaked_password_protection": 1},
+    "new_findings": "Two deliberate authenticated SECURITY DEFINER RPCs, with ownership checks and minimum grants; password warning preexisting"
+  },
+  "unchanged": "No Vault, seeds, roles, business data writes, frontend deployment or merge",
+  "pending": "Real HTTP/JWT A/B, physical device, human acceptance"
+}

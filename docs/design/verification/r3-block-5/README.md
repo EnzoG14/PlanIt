@@ -1,6 +1,6 @@
 # R3 Bloque 5 — Cancelar, archivar y duplicar
 
-Implementado; QA y aceptación humana pendientes. [PR #23](https://github.com/EnzoG14/PlanIt/pull/23) en borrador. Rama `codex/r3-block-5`, base `origin/main` `a031c1b` (PR #22 integrada). Evidencia del 12/10/2026, Argentina. Migración creada y probada localmente; **no aplicada remotamente**. Sin merge ni despliegue; cambio previo de `vite.config.ts` preservado y excluido.
+Implementado; QA y aceptación humana pendientes. [PR #23](https://github.com/EnzoG14/PlanIt/pull/23) en borrador. Rama `codex/r3-block-5`, base `origin/main` `a031c1b` (PR #22 integrada). Evidencia del 12/10/2026, Argentina. Migración creada y probada localmente; **aplicada y verificada en planit-v2 el 12/10/2026 con autorización explícita posterior del usuario**. Sin merge ni despliegue; cambio previo de `vite.config.ts` preservado y excluido.
 
 ## Contratos y decisiones
 
@@ -52,4 +52,4 @@ Datos y fechas de fixtures; algunas capturas muestran la validación de fechas p
 
 ## Pendientes
 
-Aplicación remota de `20261012044919_close_and_duplicate_events.sql` requiere autorización separada. Hasta aplicarla, las operaciones nuevas muestran error de disponibilidad; no se declara funcionamiento remoto. HTTP/Auth/JWT/REST/Storage/Realtime A/B reales, dispositivo físico y aceptación humana pendientes. Ningún CA se marca “Validado”.
+Aplicación remota de `20261012044919_close_and_duplicate_events.sql` completada el 12/10/2026 con autorización explícita posterior del usuario: dry-run previo sólo incluía esta migración; push con `--skip-vault`; dieciséis versiones sincronizadas y dry-run posterior sin pendientes. Los cuerpos de las tres RPC coinciden con Git, search_path vacío y EXECUTE sólo authenticated (sin PUBLIC/anon); RLS público conservado y sin UPDATE/DELETE genéricos. Smoke SQL rechaza identidad ausente en las tres RPC antes de operar. Advisors: dos avisos nuevos corresponden a las RPC SECURITY DEFINER autenticadas deliberadas; aviso de contraseñas filtradas preexistente. Sin escrituras de negocio, Vault, seeds ni roles. [Resumen remoto](remote-migration-summary.json). HTTP/Auth/JWT/REST/Storage/Realtime A/B reales, dispositivo físico y aceptación humana pendientes. Ningún CA se marca “Validado”.
