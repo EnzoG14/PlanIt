@@ -1,108 +1,115 @@
-# PlanIt — Sistema visual de referencia (v1.0)
+# PlanIt — Sistema visual aprobado (v2.0)
 
-> **Fuente principal:** imágenes `mockups/release-1.png` a `mockups/release-7.png`, proporcionadas para preservar el diseño original de la app al reconstruirla como PWA React. Las capturas son *referencias visuales*, no planos de medidas exactas ni prueba de funcionalidades implementadas.
->
-> **Jerarquía de verdad:** requisitos funcionales/criterios de aceptación y decisiones de arquitectura determinan **qué hace** PlanIt; estos mockups determinan **cómo se ve y organiza** la interfaz. Si chocan, informar el conflicto y respetar el comportamiento aprobado. No implementar funcionalidades por el solo hecho de aparecer en una imagen.
+**Aprobación:** 12/10/2026, evolución visual de pantallas implementadas R1–R3. **Implementación:** pendiente. Esta actualización es documental; la PWA y las capturas existentes todavía representan el sistema anterior.
 
-## 1. ADN visual — innegociable
+## 1. Autoridad y relación entre documentos
 
-- **Dark-first:** fondos azul medianoche, no fondos blancos, beige ni verde. Aplicación de estética oscura, tecnológica y social, con profundidad por superficies azul-marino superpuestas.
-- **Acento eléctrico:** azul cobalto intenso que transiciona a violeta/lila. Los CTA principales usan degradado **azul → violeta** horizontal; elementos seleccionados usan azul.
-- **Tipografía:** sans-serif contemporánea y compacta, blanca o gris lavanda, con títulos claros y de buena jerarquía. Inter o una fuente sans del sistema puede aproximarla, **pero no se conoce la familia exacta original**.
-- **Elementos:** formularios en superficies oscuras suavemente iluminadas, bordes finos azul-lavanda, esquinas redondeadas, pills para categorías y filtros, íconos lineales.
-- **Imágenes de eventos:** protagonistas. Tarjetas con fotografías grandes de fiestas, música, arte, rooftops y encuentros nocturnos. Overlays oscuros y legibilidad alta.
-- **Mobile-first:** el diseño de producto que muestran los mockups es una app de una columna, con CTA accesibles desde el pulgar y navegación inferior para áreas principales; desktop será una adaptación responsiva, **no otro diseño nuevo**.
-- **Sensación visual:** premium pero simple; no incorporar glassmorphism extremo, estética corporativa genérica, gradientes verde-mint, emojis como íconos ni sombras exageradas.
+[DESIGN.md](../../DESIGN.md) es la fuente normativa de tokens, roles visuales y componentes. Este documento explica su aplicación en PlanIt y sus criterios de aceptación; no define una segunda paleta o receta CSS. El [shape aprobado](proposals/r1-r3-visual-evolution.md) conserva las decisiones de composición por pantalla.
 
-### Importante: póster versus interfaz
+Los RF/CA, arquitectura y modelo de datos determinan qué hace la aplicación. Los [mockups R1–R7](SCREENS.md) siguen siendo referencias de identidad, pero la evolución aprobada reemplaza la obligación visual anterior de usar CTA degradados, brillos y superficies anidadas. Los collages no son especificaciones de funcionalidades ni medidas exactas.
 
-Cada PNG representa un **collage de cinco teléfonos sobre un póster de presentación** (título enorme, círculos exteriores, numeración y subtítulos bajo los teléfonos). **Los círculos azules gigantes, la numeración 1–5 y los títulos “R1/R2...” no son parte de la UI móvil**. Sólo utilizar como diseño de aplicación lo que aparece *dentro de las pantallas de los teléfonos*.
+El alcance actual es R1–R3 ya implementado, incluidas reincorporaciones y componentes compartidos. No autoriza UI, SQL, cambios de rutas o nuevas funciones. R4–R7 requerirán su propio alcance funcional; su presencia en un mockup no lo aprueba.
 
-## 2. Tokens aproximados
+## 2. Identidad y dirección
 
-Colores propuestos observando los mockups; **son aproximaciones visuales iniciales, no valores extraídos de Figma ni exactos**. Ajustarlos comparando screenshots reales contra las referencias.
+**Fotografía expresiva, interfaz marina y sobria.** Dark-first con marino uniforme, azul para acciones y selección, violeta como acento puntual. El contenido aporta energía; la interfaz permite leer, comparar y actuar.
 
-| Token | Valor inicial sugerido | Uso |
-| --- | --- | --- |
-| `--color-bg` | `#060B27` | Fondo profundo de la aplicación |
-| `--color-bg-elevated` | `#0D1638` | Tarjetas y bloques secundarios |
-| `--color-field` | `#151D3E` | Inputs, filtros, filas clicables |
-| `--color-border` | `#303D70` | Bordes y divisores tenues |
-| `--color-text` | `#F8F8FF` | Títulos y contenido destacado |
-| `--color-text-muted` | `#ADB7D8` | Descripciones, metadatos |
-| `--color-primary` | `#0753FF` | Selección y comienzo de CTA |
-| `--color-purple` | `#8D66FA` | Final de CTA, acento alternativo |
-| `--color-accent-pink` | `#CF54E9` | Acento ocasional |
-| `--color-success` | `#13CB92` | Confirmado / disponible |
-| `--color-danger` | `#FF526C` | Cancelar / eliminar visualmente (archivar en negocio) |
+- Botones, chips seleccionados, navegación, mensajes y barras de cupo usan colores sólidos.
+- No usar iluminaciones radiales, halos ni brillos ornamentales. Un overlay fotográfico discreto se admite sólo cuando hace falta para legibilidad.
+- Separar secciones con espacio y, si es necesario, un divisor. Reservar contenedores elevados para una unidad interactiva o una capa real.
+- Fotografía de color natural, sin tinte azul/violeta obligatorio. La identidad oscura admite también deporte, arte, comunidad y eventos diurnos.
+- Conservar el nombre, logo, iconos lineales y navegación existente. No introducir glassmorphism, fondos crema/verde ni un branding alternativo.
 
-Gradiente de CTA: `linear-gradient(95deg, #0753FF 0%, #8D66FA 100%)`.
+## 3. Tokens y accesibilidad
 
-```css
-:root {
-  color-scheme: dark;
-  --color-bg: #060b27;
-  --color-bg-elevated: #0d1638;
-  --color-field: #151d3e;
-  --color-border: #303d70;
-  --color-text: #f8f8ff;
-  --color-text-muted: #adb7d8;
-  --color-primary: #0753ff;
-  --color-purple: #8d66fa;
-  --color-success: #13cb92;
-  --color-danger: #ff526c;
-  --gradient-primary: linear-gradient(95deg, #0753ff, #8d66fa);
-  --radius-control: 12px;
-  --radius-card: 16px;
-  --radius-pill: 999px;
-}
-```
+Valores y asignaciones exactos: [frontmatter de DESIGN.md](../../DESIGN.md). No copiar una paleta normativa paralela ni mantener ejemplos CSS que vuelvan a imponer degradados.
 
-## 3. Tipografía y densidad
+| Rol | Token normativo | Aplicación |
+|---|---|---|
+| Fondo | bg | Marino uniforme |
+| Superficie elevada | bg-elevated | Menú, diálogo o unidad de evento que requiere superficie |
+| Campo | field | Entradas y acciones secundarias |
+| Divisor | border | Separación decorativa; insuficiente para delimitar por sí solo un campo |
+| Borde de control | control-border | Contorno perceptible de inputs y controles; token objetivo aún no aplicado |
+| Acción / selección | primary | Azul sólido |
+| Acento de identidad | purple | Énfasis puntual, sin borde violeta universal |
+| Foco | focus | Indicador de teclado visible |
+| Texto | text / text-muted | Jerarquía principal / secundaria |
+| Categoría | chip-bg / chip-text | Metadatos pasivos y énfasis discreto |
+| Navegación | nav-bg | Fondo de barra inferior |
+| Error | error-text / error-border | Mensaje e indicador asociados |
+| Estados | success / danger | Texto/icono y explicación; nunca sólo color |
+| Acción destructiva | danger-action | Relleno rojo sólido con texto blanco |
 
-- Texto primario en blanco cálido; secundario en azul-gris o lavanda. Nunca azul tenue sobre fondo azul sin comprobar contraste.
-- Título de pantalla móvil aprox. 22–28 px, peso 650–750; títulos de tarjeta 16–20; body 14–16; metadata 12–13. Son guías para web móvil, no medidas obtenidas del PNG.
-- Utilizar una escala de espacio coherente de 4/8/12/16/24/32 px; mantener respiración sin hacer la interfaz innecesariamente alta.
-- Formularios con label o placeholder legible, ícono a la izquierda cuando sea útil, input mínimo ~48–52 px; foco visible, error debajo y no solamente color.
-- CTA principal ancho completo, altura aproximada 48–54 px, esquinas ~12 px, texto blanco semibold.
-- Controles interactivos con área táctil de al menos 44×44 CSS px; teclado/foco y `prefers-reduced-motion`.
+Control-border diferencia controles de divisores: contraste calculado de 3,56:1 contra field y 4,19:1 contra bg. Danger-action toma el rojo oscuro ya presente en la implementación y da 5,58:1 con blanco. Su incorporación al documento no equivale a añadir variables CSS. El extremo violeta del CTA antiguo deja de ser un rol normativo del sistema objetivo.
 
-## 4. Componentes base a extraer (cuando haya caso real)
+Mantener texto normal con contraste de al menos 4,5:1 y elementos visuales necesarios para reconocer controles con al menos 3:1. Comprobar estados, superficies y fotos; estos pares aislados no acreditan cumplimiento global. No asumir que purple puede llevar texto blanco pequeño sin verificarlo.
 
-1. `AppShell` / `BottomNavigation` para pantallas autenticadas (Inicio, Mapa, Mis eventos, Perfil; ocultar o no mostrar rutas futuras hasta implementarlas).
-2. `AuthScreenLayout`: fondo marino, encabezado compacto/progreso sólo si representa un flujo real, ícono circular, formulario y CTA inferior.
-3. `GradientButton`, variantes primaria/secundaria/peligro; disabled/loading.
-4. `TextField`, `PasswordField`, `SelectField`, `DateTimeField`, `LocationField` visualmente compatibles.
-5. `CategoryChip`: inactiva contorno fino, activa azul eléctrico; una sola categoría por evento, aunque existan múltiples chips en filtro de búsqueda futuro.
-6. `EventCard`: imagen con overlay, título, horario, lugar, etiquetas y acción coherente con RF.
-7. `EventHero`: fotografía grande, información agrupada, capacidad y CTA.
-8. `CapacityBar`: barra azul-violeta y texto n/N; derivada de participantes confirmados.
-9. `ListRow`: icono lineal, título, descripción/badge, chevron; para menús y listas.
-10. `ScreenHeader`: flecha atrás, título, acciones autorizadas. **No inventar favoritos, entradas, rating, share o funciones no aprobadas**.
-11. `LoadingState` / `EmptyState` / `ErrorState` estilizados; evitar páginas placeholder de marketing como solución definitiva.
+## 4. Tipografía, formas y densidad
 
-No construir una biblioteca propia extensa antes de tener dos pantallas que requieran reutilización. No incorporar un UI kit con estilos ajenos a los mockups.
+Conservar Segoe UI con fallback de sistema y sans-serif; no se conoce la familia exacta de los mockups. Usar los roles de DESIGN.md, sin fuentes externas ni estilos display nuevos. Campos a 16 px, labels visibles y errores cercanos. Fecha, lugar y disponibilidad no se reducen a texto diminuto para hacerlos caber.
 
-## 5. Estructura y navegación
+Radios y espaciados del frontmatter conservan medidas nominales de la base existente. No son alturas rígidas ni una cuadrícula universal. Mantener redondeo suave de controles y fotos; no rodear el contenido con varias cajas sucesivas. Avatares circulares conservan su función; emblemas y aros decorativos se reducen.
 
-- **Pantallas de autenticación:** diseño dedicado a pantalla completa, sin header corporativo de escritorio ni footer promocional.
-- **Zona de exploración:** búsqueda superior, chips y mapa o tarjetas; la búsqueda avanzada, filtros múltiples y favoritos corresponden a releases posteriores.
-- **Detalle:** imagen hero, título, fecha/hora, dirección, descripción, capacidad, acción principal de inscripción. Mantener CTA visible sin tapar contenido.
-- **Navegación inferior móvil:** los mockups R2 muestran cuatro secciones `Inicio`, `Mapa`, `Mis eventos`, `Perfil` con ícono + etiqueta y estado activo azul. R1 puede necesitar una versión reducida coherente con las rutas realmente disponibles. Respetar áreas seguras: `env(safe-area-inset-bottom)`.
-- **Escritorio:** contenido con máximo ancho legible, grid en listados y navegación adaptada, conservando tokens y jerarquía visual; no replicar marco de teléfono en la web.
-- **Mapa:** usar un mapa geográfico real cuando se implemente (ej., Leaflet). El dibujo oscuro del mockup ilustra apariencia, no sustituye datos geográficos ni las atribuciones del proveedor de tiles.
+## 5. Aplicación por pantalla implementada
 
-## 6. Fotografía, íconos y activos
+| Pantalla | Jerarquía objetivo |
+|---|---|
+| Inicio | Categorías actuales y lista fotográfica en una columna móvil. Foto, título, fecha y lugar juntos; evitar categoría repetida como badge |
+| Mapa | Exploración geográfica actual, controles claros y resultados en una columna móvil. Una vista previa seleccionada sin duplicar contenedores completos |
+| Detalle | Foto acotada, título, fecha/lugar, disponibilidad y participación cercanos. Descripción, organizador, galería y gestión siguen sin omitir información |
+| Ingresar / Crear cuenta | Encabezado y emblema compactos, primer campo accesible pronto, validación y confirmación de correo preservadas |
+| Crear / Editar | Un formulario con títulos de sección, sin tarjetas por bloque. Campos completos, fin de evento y portada de edición compacta |
+| Mis eventos | Organizo/Participo, filtros y estados existentes. Filas con miniatura y acciones separadas; priorizar la primera fila |
+| Galería | Fotografías como superficie principal. Carga compacta, portada identificable y acciones táctiles de ordenar/quitar |
+| Asistentes / Reincorporaciones | Filas y divisores con identidad, estado y acciones estables; distinguir participación y solicitud |
+| Chat | Entrantes marinos, salientes sólidos, autor/hora legibles y composer alcanzable con poca altura |
+| Mi perfil | Avatar, nombre y biografía primero; datos de cuenta secundarios, sin contadores o accesos inventados |
+| Notificaciones | Lista continua, novedades por peso y señal discreta, texto leído/no leído y acciones de recuperación |
 
-- Las fotos ilustrativas dentro de los mockups son referencias de composición/color, **no un paquete de assets reutilizables**. No recortar y publicar fotos extraídas del collage como contenido real de eventos.
-- Usar iconos lineales consistentes (un único set, por ejemplo Lucide si está aceptado como dependencia), no mezcla arbitraria de Unicode/emojis.
-- El logo e iconografía de PWA que creó BLOQUE 0 son provisionales frente al diseño original: revisarlos comparando el mockup. No reemplazarlos por otro branding sin aprobación.
-- Si faltan fotos reales de prueba, usar placeholders propios y dejar indicado que son datos ficticios; nunca simular en la app eventos reales inexistentes.
+La lista fotográfica en Inicio es la experiencia visual principal para descubrir. Mapa conserva su destino y tarea actuales. No cambiar la ruta inicial ni añadir el toggle Mapa/Lista, búsqueda o filtros de R4.
 
-## 7. Criterios de fidelidad
+## 6. Componentes, estados y reutilización
 
-- Comparar capturas reales de navegador móvil (360×800, 375×812 y 390×844) con la parte correspondiente del mockup; no usar comparación pixel a pixel contra el collage reducido.
-- Revisar fondos, acentos, títulos, proporciones, card/image crops, botones, inputs, chips, navegación, áreas táctiles y safe-area.
-- Validar también ancho 768 px y escritorio >= 1200 px sin desbordes.
-- Aceptación: misma identidad visual y organización; diferencias razonables para accesibilidad, responsive y campos obligatorios adicionales, documentadas.
-- Ante duda de colores exactos o layout oculto por el collage, marcar `NO DEFINIDO POR MOCKUP` y pedir decisión; no fingir precisión.
+Reutilizar AppLayout, ScreenHeader, FormField, StatusMessage, EventCard/CompactEventCard y diálogos cuando su responsabilidad coincida. El nombre actual GradientButton no obliga a conservar un degradado; cualquier renombre o ajuste de API se decidirá al implementar. No crear una biblioteca propia extensa ni incorporar un UI kit.
+
+- **Acciones:** principal azul sólido; secundaria con superficie y borde; peligro rojo sólido; texto con área activable amplia. Diferenciar disabled de loading.
+- **Campos:** labels, borde perceptible, foco y errores asociados. Iconos sólo si ayudan y no recortan valores nativos de fecha/hora.
+- **Tarjetas:** una unidad de evento con fotografía e información; apertura amplia sin enlaces anidados ni tabulación redundante. Filas compactas para gestión.
+- **Chips:** metadatos pasivos o filtros existentes con semántica de selección. No convertir una categoría en acción nueva.
+- **Navegación:** Inicio, Mapa, Mis eventos y Perfil según sesión; icono + texto y estado activo sólido. Destinos y permisos se conservan.
+- **Diálogos:** modalidad nativa, foco inicial y restauración, scroll y controles alcanzables. Confirmar acciones irreversibles y conservar comprobaciones inciertas.
+- **Feedback:** carga breve y estable; vacío específico; error contextual con recuperación real; éxito breve y anunciado. Conservar los datos del formulario ante fallo de guardado.
+
+Los errores de carga de pantalla también necesitan una recuperación efectiva. No confundir una mejora estética de StatusMessage con resolver la descarga fallida de una ruta diferida.
+
+## 7. Fotografía, mapa y contenido
+
+Fotografía protagonista sólo donde ayuda a elegir o reconocer un evento. Preferir texto debajo de la foto; superponerlo requiere verificar fotos claras, oscuras y cargadas. Recorte consistente sin deformación. Mantener hasta diez imágenes por evento conforme al contrato vigente.
+
+Sin foto o ante error, usar una alternativa compacta y explícita que conserve la información. Un placeholder no se convierte en un hero grande por defecto. No usar imágenes del collage como contenido real ni presentar imágenes generadas como documentación de eventos existentes.
+
+La PWA actual usa Mapbox; mantener mapa geográfico real, atribuciones, controles distinguibles y tarjetas útiles mientras carga o falla. El dibujo del mockup no sustituye datos ni autoriza un cambio de proveedor.
+
+Fixtures y capturas de prueba permanecen identificados como tales. La fotografía de fiestas de los collages ilustra composición; no restringe el catálogo a vida nocturna.
+
+## 8. Mobile-first y aceptación futura
+
+- Una columna móvil para resultados legibles; grid en escritorio sólo cuando el contenido cabe. No fijar un breakpoint universal para todas las pantallas.
+- Zonas activables de al menos 44×44 CSS px como objetivo ergonómico; conservar foco visible, orden de teclado y etiquetas accesibles.
+- Safe areas y reserva para navegación inferior; ni CTA persistentes ni menús deben tapar contenido, foco o mensajes.
+- Fecha/hora se apilan cuando el valor nativo no cabe. Chat adapta encabezado, historial y composer al teclado y a poca altura, manteniendo contador y errores alcanzables.
+- Probar títulos largos/sin espacios, textos extensos, fotos/avatars ausentes, galerías de 0/1/10 imágenes y listas de distinta longitud.
+- Comprobar 320, 375, 390, 768 y 1280 px, texto aumentado y altura reducida; revisar overflow del documento y recortes internos.
+- Probar teclado, lector de pantalla, movimiento reducido y dispositivos reales, incluidos gestos del mapa, teclado móvil y safe areas. La emulación no acredita por sí sola estos casos.
+
+Contrastar la futura implementación con esta dirección y con los mockups para los rasgos que se conservan. No exigir fidelidad al brillo o degradado que el usuario decidió retirar. El póster externo —círculos, numeración y títulos R1/R2/R3— nunca forma parte de la app.
+
+Los pendientes de la [auditoría](audits/2026-10-12-interface.md) siguen abiertos hasta corregirlos y verificarlos. No declarar la UI migrada, probada o aceptada por actualizar documentos.
+
+## 9. Registro y mantenimiento
+
+- **v1.0:** referencia original de mockups y tokens aproximados; CTA degradados y superficies iluminadas.
+- **v2.0 — 12/10/2026:** evolución R1–R3 confirmada por el usuario: fotografía protagonista, botones sólidos, superficies planas y usabilidad móvil. Tokens y patrones consolidados en DESIGN.md; aplicación en la PWA pendiente.
+
+Mantener .impeccable/design.json alineado con DESIGN.md. Sus snippets son ejemplos documentales del objetivo aprobado; las rampas y breakpoints no son prueba de cambios en CSS. Antes de implementar, consultar este documento, DESIGN.md, SCREENS.md, DESIGN_GAPS.md y requisitos aplicables; ante conflicto visual, la dirección aprobada aquí reemplaza sólo las reglas anteriores que contradice.

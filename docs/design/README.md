@@ -1,35 +1,29 @@
-# PlanIt — Contrato de diseño para agentes
+# PlanIt — Referencias de diseño y refresh R1–R3
 
-Esta carpeta contiene referencias **visuales** del diseño original de PlanIt y prompts para guiar a Codex durante la implementación de la nueva PWA. **No** redefine los requisitos ni el modelo de datos aprobados.
+El sistema aprobado describe el objetivo visual; la PWA todavía no está migrada. La Foundation conserva las decisiones de Impeccable y prepara instrucciones y seguimiento independiente. No redefine requisitos ni el modelo de datos.
 
-## Contenido
+## Referencias vigentes
 
-- `mockups/release-1.png` ... `release-7.png`: siete collages suministrados por el proyecto, con cinco pantallas cada uno.
-- `AGENTS.md`: reglas obligatorias para agentes que diseñan/implementan UI.
-- `DESIGN_SYSTEM.md`: identidad visual, tokens aproximados, componentes y navegación.
-- `SCREENS.md`: 35 pantallas visuales y su relación con releases/RF.
-- `DESIGN_GAPS.md`: contradicciones mockup–RF/BD para evitar inventar funcionalidades.
-- `prompts/01_AUDITORIA_VISUAL.md`: auditoría sin modificar código.
-- `prompts/02_ADAPTAR_FOUNDATION.md`: recuperar la estética original en bloque 0.
-- `prompts/03_AUTH_R1.md`: implementar formularios reales R1 con fidelidad visual.
-- `prompts/04_CREAR_EVENTO_R1.md`: crear evento con diseño original y datos completos.
-- `prompts/05_MAPA_DETALLE_R1.md`: mapa real y detalle mínimo R1.
-- `prompts/06_QA_VISUAL.md`: comparar screenshots y documentar hallazgos.
+1. [PRODUCT.md](../../PRODUCT.md): contexto y principios de producto, cuando exista.
+2. [DESIGN.md](../../DESIGN.md): tokens y patrones aprobados.
+3. [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md): aplicación y criterios de aceptación.
+4. Componentes y patrones aprobados; el [shape R1–R3](proposals/r1-r3-visual-evolution.md) detalla la composición.
+5. [Mockups e inventario](SCREENS.md): contexto histórico, sin obligación pixel-perfect.
 
-## Cómo usar con Codex
+[AGENTS.md](AGENTS.md) y [src/AGENTS.md](../../src/AGENTS.md) gobiernan el trabajo. RF/CA, especificación técnica, decisiones de negocio y contratos de datos determinan la funcionalidad y autorizaciones.
 
-1. Ubicá este directorio exactamente en `docs/design/` del repositorio PlanIt.
-2. Abrí las skills de UI/web/React en tu instalación de Codex; si están en `.agents/skills/` versionalas cuando corresponda.
-3. Añadí esta instrucción a `src/AGENTS.md` (y opcionalmente al `AGENTS.md` raíz):
+## Evidencia y seguimiento
 
-   > En cada cambio de UI, leer `docs/design/AGENTS.md`, `docs/design/DESIGN_SYSTEM.md`, `docs/design/SCREENS.md`, `docs/design/DESIGN_GAPS.md` y **abrir visualmente** los mockups relevantes. Los RF/CA determinan el comportamiento; los mockups determinan el diseño. No agregar features sólo por verse en una captura.
+- [Consolidación de auditorías](audits/UI_REFRESH_R1_R3.md), con alcance y límites de evidencia.
+- [Critique original](audits/2026-10-12-impeccable-critique.md) y [audit técnico original](audits/2026-10-12-interface.md), conservados como evidencia histórica.
+- [Plan visual](../implementation/UI_REFRESH_R1_R3_PLAN.md) y [estado visual](../implementation/UI_REFRESH_R1_R3_STATUS.md), independientes de las releases funcionales.
+- [Capturas del audit](verification/interface-audit-2026-10-12/) y [QA posterior de R3](verification/r3-block-7/README.md).
+- [Brechas mockup–contrato](DESIGN_GAPS.md): restricciones funcionales que siguen aplicando.
 
-4. Entregale a Codex el contenido de `prompts/01_AUDITORIA_VISUAL.md` y revisá su auditoría.
-5. Una vez aceptado, usar `prompts/02_ADAPTAR_FOUNDATION.md` para reemplazar el estilo provisional del bloque 0.
-6. Después seguir prompts específicos junto con el plan técnico R1 previamente aprobado. No aplicar SQL remoto desde una tarea de diseño.
+## Uso
 
-## Notas de fidelidad
+Consultar el sistema y shape antes de modificar UI. Usar Impeccable cuando esté disponible, sin regenerar documentos ni cambiar decisiones aprobadas. Reutilizar componentes, conservar comportamiento y verificar con capturas reales de móvil/escritorio. Los casos no probados deben quedar explícitos.
 
-Las capturas adjuntas son diapositivas que incluyen decoración **fuera** de los teléfonos; sólo la UI *dentro* de cada teléfono es referencia de producto. Los colores de `DESIGN_SYSTEM.md` son aproximados y deben afinarse contrastando una página real.
+Los prompts anteriores bajo prompts/ y los collages R1–R7 son históricos: cualquier instrucción de reproducir degradados, brillos o apariencia original queda subordinada a DESIGN.md. No repetir init/document/critique/audit/shape de Foundation. No agregar funciones por su presencia en un collage ni extraer sus fotografías como contenido real.
 
-No copiar fotos incrustadas en las diapositivas como assets de eventos reales; son referencias ilustrativas. No tratar el mockup como modelo funcional: `DESIGN_GAPS.md` explica las diferencias.
+La siguiente etapa propuesta es Mis eventos; sigue pendiente y requiere un pedido de implementación. Esta tarea finaliza con la PR documental Foundation.

@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T19:11:55.753Z",
+  "title": "Design System: PlanIt",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Marino medianoche",
+        "tonalRamp": [
+          "oklch(15.00% 0.05797 270.26)",
+          "oklch(26.43% 0.05797 270.26)",
+          "oklch(37.86% 0.05797 270.26)",
+          "oklch(49.29% 0.05797 270.26)",
+          "oklch(60.71% 0.05797 270.26)",
+          "oklch(72.14% 0.05797 270.26)",
+          "oklch(83.57% 0.05797 270.26)",
+          "oklch(95.00% 0.05797 270.26)"
+        ]
+      },
+      "bg-elevated": {
+        "role": "neutral",
+        "displayName": "Marino elevado",
+        "tonalRamp": [
+          "oklch(15.00% 0.06727 268.95)",
+          "oklch(26.43% 0.06727 268.95)",
+          "oklch(37.86% 0.06727 268.95)",
+          "oklch(49.29% 0.06727 268.95)",
+          "oklch(60.71% 0.06727 268.95)",
+          "oklch(72.14% 0.06727 268.95)",
+          "oklch(83.57% 0.06727 268.95)",
+          "oklch(95.00% 0.06727 268.95)"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Marino de campo",
+        "tonalRamp": [
+          "oklch(15.00% 0.06365 270.79)",
+          "oklch(26.43% 0.06365 270.79)",
+          "oklch(37.86% 0.06365 270.79)",
+          "oklch(49.29% 0.06365 270.79)",
+          "oklch(60.71% 0.06365 270.79)",
+          "oklch(72.14% 0.06365 270.79)",
+          "oklch(83.57% 0.06365 270.79)",
+          "oklch(95.00% 0.06365 270.79)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Borde azul lavanda",
+        "tonalRamp": [
+          "oklch(15.00% 0.08876 270.85)",
+          "oklch(26.43% 0.08876 270.85)",
+          "oklch(37.86% 0.08876 270.85)",
+          "oklch(49.29% 0.08876 270.85)",
+          "oklch(60.71% 0.08876 270.85)",
+          "oklch(72.14% 0.08876 270.85)",
+          "oklch(83.57% 0.08876 270.85)",
+          "oklch(95.00% 0.08876 270.85)"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Blanco lavanda",
+        "tonalRamp": [
+          "oklch(15.00% 0.00927 286.23)",
+          "oklch(26.43% 0.00927 286.23)",
+          "oklch(37.86% 0.00927 286.23)",
+          "oklch(49.29% 0.00927 286.23)",
+          "oklch(60.71% 0.00927 286.23)",
+          "oklch(72.14% 0.00927 286.23)",
+          "oklch(83.57% 0.00927 286.23)",
+          "oklch(95.00% 0.00927 286.23)"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Lavanda suave",
+        "tonalRamp": [
+          "oklch(15.00% 0.04832 271.97)",
+          "oklch(26.43% 0.04832 271.97)",
+          "oklch(37.86% 0.04832 271.97)",
+          "oklch(49.29% 0.04832 271.97)",
+          "oklch(60.71% 0.04832 271.97)",
+          "oklch(72.14% 0.04832 271.97)",
+          "oklch(83.57% 0.04832 271.97)",
+          "oklch(95.00% 0.04832 271.97)"
+        ]
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Azul eléctrico",
+        "tonalRamp": [
+          "oklch(15.00% 0.26121 263.12)",
+          "oklch(26.43% 0.26121 263.12)",
+          "oklch(37.86% 0.26121 263.12)",
+          "oklch(49.29% 0.26121 263.12)",
+          "oklch(60.71% 0.26121 263.12)",
+          "oklch(72.14% 0.26121 263.12)",
+          "oklch(83.57% 0.26121 263.12)",
+          "oklch(95.00% 0.26121 263.12)"
+        ]
+      },
+      "purple": {
+        "role": "secondary",
+        "displayName": "Violeta luminoso",
+        "tonalRamp": [
+          "oklch(15.00% 0.21080 291.21)",
+          "oklch(26.43% 0.21080 291.21)",
+          "oklch(37.86% 0.21080 291.21)",
+          "oklch(49.29% 0.21080 291.21)",
+          "oklch(60.71% 0.21080 291.21)",
+          "oklch(72.14% 0.21080 291.21)",
+          "oklch(83.57% 0.21080 291.21)",
+          "oklch(95.00% 0.21080 291.21)"
+        ]
+      },
+      "focus": {
+        "role": "neutral",
+        "displayName": "Lavanda de foco",
+        "tonalRamp": [
+          "oklch(15.00% 0.10408 293.88)",
+          "oklch(26.43% 0.10408 293.88)",
+          "oklch(37.86% 0.10408 293.88)",
+          "oklch(49.29% 0.10408 293.88)",
+          "oklch(60.71% 0.10408 293.88)",
+          "oklch(72.14% 0.10408 293.88)",
+          "oklch(83.57% 0.10408 293.88)",
+          "oklch(95.00% 0.10408 293.88)"
+        ]
+      },
+      "nav-bg": {
+        "role": "neutral",
+        "displayName": "Marino de navegación",
+        "tonalRamp": [
+          "oklch(15.00% 0.05721 270.60)",
+          "oklch(26.43% 0.05721 270.60)",
+          "oklch(37.86% 0.05721 270.60)",
+          "oklch(49.29% 0.05721 270.60)",
+          "oklch(60.71% 0.05721 270.60)",
+          "oklch(72.14% 0.05721 270.60)",
+          "oklch(83.57% 0.05721 270.60)",
+          "oklch(95.00% 0.05721 270.60)"
+        ]
+      },
+      "chip-bg": {
+        "role": "neutral",
+        "displayName": "Azul de etiqueta",
+        "tonalRamp": [
+          "oklch(15.00% 0.08891 268.65)",
+          "oklch(26.43% 0.08891 268.65)",
+          "oklch(37.86% 0.08891 268.65)",
+          "oklch(49.29% 0.08891 268.65)",
+          "oklch(60.71% 0.08891 268.65)",
+          "oklch(72.14% 0.08891 268.65)",
+          "oklch(83.57% 0.08891 268.65)",
+          "oklch(95.00% 0.08891 268.65)"
+        ]
+      },
+      "chip-text": {
+        "role": "neutral",
+        "displayName": "Lavanda de etiqueta",
+        "tonalRamp": [
+          "oklch(15.00% 0.06085 268.73)",
+          "oklch(26.43% 0.06085 268.73)",
+          "oklch(37.86% 0.06085 268.73)",
+          "oklch(49.29% 0.06085 268.73)",
+          "oklch(60.71% 0.06085 268.73)",
+          "oklch(72.14% 0.06085 268.73)",
+          "oklch(83.57% 0.06085 268.73)",
+          "oklch(95.00% 0.06085 268.73)"
+        ]
+      },
+      "error-text": {
+        "role": "semantic",
+        "displayName": "Texto de error",
+        "tonalRamp": [
+          "oklch(15.00% 0.08269 5.74)",
+          "oklch(26.43% 0.08269 5.74)",
+          "oklch(37.86% 0.08269 5.74)",
+          "oklch(49.29% 0.08269 5.74)",
+          "oklch(60.71% 0.08269 5.74)",
+          "oklch(72.14% 0.08269 5.74)",
+          "oklch(83.57% 0.08269 5.74)",
+          "oklch(95.00% 0.08269 5.74)"
+        ]
+      },
+      "error-border": {
+        "role": "semantic",
+        "displayName": "Borde de error",
+        "tonalRamp": [
+          "oklch(15.00% 0.08499 350.77)",
+          "oklch(26.43% 0.08499 350.77)",
+          "oklch(37.86% 0.08499 350.77)",
+          "oklch(49.29% 0.08499 350.77)",
+          "oklch(60.71% 0.08499 350.77)",
+          "oklch(72.14% 0.08499 350.77)",
+          "oklch(83.57% 0.08499 350.77)",
+          "oklch(95.00% 0.08499 350.77)"
+        ]
+      },
+      "success": {
+        "role": "semantic",
+        "displayName": "Éxito de asistentes",
+        "tonalRamp": [
+          "oklch(15.00% 0.15642 164.04)",
+          "oklch(26.43% 0.15642 164.04)",
+          "oklch(37.86% 0.15642 164.04)",
+          "oklch(49.29% 0.15642 164.04)",
+          "oklch(60.71% 0.15642 164.04)",
+          "oklch(72.14% 0.15642 164.04)",
+          "oklch(83.57% 0.15642 164.04)",
+          "oklch(95.00% 0.15642 164.04)"
+        ]
+      },
+      "danger": {
+        "role": "semantic",
+        "displayName": "Peligro",
+        "tonalRamp": [
+          "oklch(15.00% 0.20802 16.03)",
+          "oklch(26.43% 0.20802 16.03)",
+          "oklch(37.86% 0.20802 16.03)",
+          "oklch(49.29% 0.20802 16.03)",
+          "oklch(60.71% 0.20802 16.03)",
+          "oklch(72.14% 0.20802 16.03)",
+          "oklch(83.57% 0.20802 16.03)",
+          "oklch(95.00% 0.20802 16.03)"
+        ]
+      },
+      "control-border": {
+        "role": "neutral",
+        "displayName": "Borde de control (objetivo)",
+        "tonalRamp": [
+          "oklch(15.00% 0.06782 269.01)",
+          "oklch(26.43% 0.06782 269.01)",
+          "oklch(37.86% 0.06782 269.01)",
+          "oklch(49.29% 0.06782 269.01)",
+          "oklch(60.71% 0.06782 269.01)",
+          "oklch(72.14% 0.06782 269.01)",
+          "oklch(83.57% 0.06782 269.01)",
+          "oklch(95.00% 0.06782 269.01)"
+        ]
+      },
+      "danger-action": {
+        "role": "semantic",
+        "displayName": "Acción destructiva sólida",
+        "tonalRamp": [
+          "oklch(15.00% 0.21183 18.23)",
+          "oklch(26.43% 0.21183 18.23)",
+          "oklch(37.86% 0.21183 18.23)",
+          "oklch(49.29% 0.21183 18.23)",
+          "oklch(60.71% 0.21183 18.23)",
+          "oklch(72.14% 0.21183 18.23)",
+          "oklch(83.57% 0.21183 18.23)",
+          "oklch(95.00% 0.21183 18.23)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Encabezado",
+        "purpose": "Título de pantalla y detalle."
+      },
+      "input": {
+        "displayName": "Campo",
+        "purpose": "Entrada de formularios a 16 px."
+      }
+    },
+    "shadows": [
+      {
+        "name": "overlay-menu",
+        "value": "0 6px 16px #0006",
+        "purpose": "Separar el menú del contenido cubierto."
+      }
+    ],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "map-heading-max",
+        "value": "420px",
+        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
+      },
+      {
+        "name": "attendees-max",
+        "value": "480px",
+        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
+      },
+      {
+        "name": "home-single-column-max",
+        "value": "520px",
+        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
+      },
+      {
+        "name": "profile-min",
+        "value": "760px",
+        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
+      },
+      {
+        "name": "desktop-navigation-min",
+        "value": "768px",
+        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
+      },
+      {
+        "name": "three-column-grid-min",
+        "value": "900px",
+        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Acción principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Objetivo aprobado, pendiente de implementación en la PWA. CTA compartido; altura mínima y relleno azul sólido.",
+      "html": "<button class=\"ds-primary\">Publicar evento</button>",
+      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-primary{display: flex; align-items: center; justify-content: center; min-height: var(--control-height); border-radius: var(--radius-control); padding: 14px 16px; background: var(--color-primary, #0753ff); color: white; font-size: 15px; font-weight: 650; text-align: center;width: 100%; border: 0; cursor: pointer;}.ds-primary:hover{outline: 1px solid var(--color-focus, #c5b5ff); outline-offset: -3px;}.ds-primary:disabled{background: var(--color-field); color: var(--color-text-muted); border: 1px solid var(--color-border); cursor: default;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
+    },
+    {
+      "name": "Acción secundaria",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Acción de apoyo con superficie y borde.",
+      "html": "<button class=\"ds-secondary\">Actualizar</button>",
+      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-secondary{min-height: 44px; border: 1px solid var(--color-control-border, #65749e); background: var(--color-field); color: var(--color-text); border-radius: var(--radius-control); padding: 10px 14px; cursor: pointer;}.ds-secondary:disabled{color: var(--color-text-muted); cursor: default;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
+    },
+    {
+      "name": "Acción de texto",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Acción discreta con área táctil de 44 px.",
+      "html": "<button class=\"ds-text\">Ver detalle</button>",
+      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-text{min-width: 44px; min-height: 44px; padding: 8px; border: 0; border-radius: 8px; color: var(--color-text); background: transparent; font-size: 13px; cursor: pointer;}.ds-text:hover{background: var(--color-field);}.ds-text:disabled{color: var(--color-text-muted); cursor: default;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
+    },
+    {
+      "name": "Campo de formulario",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Etiqueta visible, campo oscuro y foco lavanda.",
+      "html": "<label class=\"ds-label\" for=\"ds-title\">Título del evento</label><input class=\"ds-input\" id=\"ds-title\" placeholder=\"Nombre del evento\">",
+      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-label{display: block; margin-bottom: 8px; font-size: 14px; color: var(--color-text-muted);}.ds-input{color: var(--color-text); background: var(--color-field); border: 1px solid var(--color-control-border, #65749e); border-radius: var(--radius-control); min-height: var(--control-height); padding: 12px 16px;font-size:16px;width:100%;}.ds-input::placeholder{color: var(--color-text-muted); opacity: 1;}.ds-input[aria-invalid=\"true\"]{border-color: #ffb9c7;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
+    },
+    {
+      "name": "Categoría",
+      "kind": "chip",
+      "refersTo": "category-chip",
+      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Etiqueta pasiva; no simula un filtro disponible.",
+      "html": "<span class=\"ds-chip\">Música</span>",
+      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-chip{display: inline-flex; padding: 5px 10px; background: #172454; border: 1px solid #303d70; border-radius: 999px; color: #c5d5ff; font-size: 12px;}"
+    },
+    {
+      "name": "Tarjeta de evento",
+      "kind": "card",
+      "refersTo": "event-card",
+      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Placeholder explícito y composición de descubrimiento.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-photo\">Sin foto de portada</div><div class=\"ds-body\"><span class=\"ds-chip\">Música</span><h3>Evento de ejemplo</h3><p>Contenido ilustrativo del sistema visual</p></div></article>",
+      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-card{min-width: 0; overflow: hidden; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-bg-elevated); content-visibility: auto; contain-intrinsic-size: auto 340px;}.ds-photo{position: relative; display: flex; align-items: center; justify-content: center; height: 130px; background: var(--color-field, #151d3e); overflow: hidden;color:var(--color-text-muted);}.ds-photo::after{content: ''; position: absolute; inset: 0; background: var(--color-field, #151d3e); pointer-events: none;}.ds-body{padding: 12px;}.ds-card h3{font-size: 17px; line-height: 1.35; margin: 10px 0 8px; overflow-wrap: anywhere;}.ds-card p{font-size: 12px; color: var(--color-text-muted); margin: 4px 0;}.ds-chip{display: inline-flex; padding: 5px 10px; background: #172454; border: 1px solid #303d70; border-radius: 999px; color: #c5d5ff; font-size: 12px;}"
+    },
+    {
+      "name": "Navegación inferior",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Icono y etiqueta con estado activo; preview sin posicionamiento fijo.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Principal\"><a href=\"#\" class=\"ds-active\" aria-current=\"page\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m3 10 9-7 9 7v11h-6v-7H9v7H3Z\"/></svg>Inicio</a><a href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M3 6 9 3l6 3 6-3v15l-6 3-6-3-6 3ZM9 3v15m6-12v15\"/></svg>Mapa</a></nav>",
+      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-nav{position: fixed; z-index: 2; bottom: 0; inset-inline: 0; display: flex; justify-content: center; padding: 8px max(12px, env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); border-top: 1px solid var(--color-border); background: #090f2b;position:relative;bottom:auto;}.ds-nav a{display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; gap: 6px; max-width: 160px; min-height: 56px; border-radius: var(--radius-control); color: var(--color-text-muted); font-size: 12px;}.ds-nav a.ds-active{background: var(--color-field, #151d3e); color: #c5d5ff;}.ds-nav a:hover{background-color: var(--color-field);}.ds-icon{width: 24px; height: 24px; flex-shrink: 0;}.ds-active .ds-icon{color: #87adff;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
+    },
+    {
+      "name": "Confirmación",
+      "kind": "custom",
+      "refersTo": "dialog",
+      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Superficie de diálogo; preview estático sin representar una operación real.",
+      "html": "<section class=\"ds-dialog\" aria-label=\"Ejemplo de confirmación\"><h2>Confirmar acción</h2><p>Ejemplo visual de una confirmación de PlanIt.</p><button class=\"ds-secondary\">Volver</button></section>",
+      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-dialog{box-sizing: border-box; width: min(440px,calc(100% - 2rem)); max-height: calc(100dvh - 2rem); overflow-y: auto; overscroll-behavior: contain; padding: 1.5rem; border: 1px solid var(--color-control-border, #65749e); border-radius: var(--radius-card); background: var(--color-bg-elevated); color: var(--color-text); text-align: center;}.ds-dialog h2{font-size: 1.25rem;}.ds-dialog p{line-height: 1.5; overflow-wrap: anywhere; color: var(--color-text-muted);}.ds-secondary{min-height: 44px; border: 1px solid var(--color-control-border, #65749e); background: var(--color-field); color: var(--color-text); border-radius: var(--radius-control); padding: 10px 14px; cursor: pointer;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
+    },
+    {
+      "name": "Acción destructiva",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Objetivo aprobado: confirmación roja sólida; pendiente de implementación en la PWA.",
+      "html": "<button class=\"ds-danger\">Cancelar evento</button>",
+      "css": ".ds-danger{background:var(--color-danger-action,#ce103d);color:white;border:0;border-radius:12px;padding:14px 16px;min-height:52px;font:650 15px Segoe UI,system-ui,sans-serif;cursor:pointer}.ds-danger:hover{outline:1px solid var(--color-error-text,#ffb9c7);outline-offset:-3px}.ds-danger:focus-visible{outline:3px solid var(--color-focus,#c5b5ff);outline-offset:4px}.ds-danger:disabled{background:var(--color-field,#151d3e);color:var(--color-text-muted,#adb7d8);cursor:default}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Fotografía expresiva, interfaz marina y sobria",
+    "overview": "PlanIt conserva su identidad dark-first y sus acentos azul/violeta. El contenido del evento aporta energía y contexto; la interfaz organiza la información y permite actuar. La fotografía es protagonista al descubrir y consultar eventos. Formularios, conversación y gestión priorizan la tarea, con encabezados compactos y jerarquías legibles.\n\nLas superficies son planas en reposo. Espacio, contraste tonal y divisores separan secciones; menús y diálogos tienen elevación funcional. El escritorio amplía la composición sin convertirse en otra identidad.",
+    "keyCharacteristics": [
+      "Marino uniforme, azul para acciones y selección, violeta como acento puntual.",
+      "Fotografías de color natural; información debajo de la imagen por defecto.",
+      "Botones sólidos, controles distinguibles y foco visible, sin halos ornamentales.",
+      "Una unidad visual por evento; filas y divisores para gestión, sin tarjetas anidadas.",
+      "Usabilidad móvil, feedback accesible y recuperación de errores como parte del diseño."
+    ],
+    "rules": [
+      {
+        "name": "The Purposeful Color Rule",
+        "body": "Color para acción, selección, identidad o estado. No usar gradientes en botones, mensajes, chips, barras de cupo, navegación ni bloques informativos. Un overlay fotográfico discreto sólo se admite si aporta legibilidad.",
+        "section": "colors"
+      },
+      {
+        "name": "The Clear Path Rule",
+        "body": "Reservar espacio para navegación inferior, safe areas, foco y teclado. Una acción persistente no tapa contenido ni feedback. Fecha/hora se apilan cuando el control nativo no puede mostrar todo el valor. Chat adapta encabezado, historial y composer a la altura disponible y mantiene errores alcanzables.",
+        "section": "layout"
+      },
+      {
+        "name": "The Single Surface Rule",
+        "body": "Una unidad visual por evento o bloque interactivo. Dentro, jerarquizar con espacio y texto antes de añadir otro contenedor.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** conservar marino, azul y violeta, reservando el color para roles claros.",
+      "**Do** dar protagonismo a fotografía autorizada en descubrimiento y a la tarea en gestión.",
+      "**Do** separar secciones con espacio/divisores y usar una sola superficie por unidad.",
+      "**Do** comprobar contraste, foco, tacto, texto ampliado, safe areas y altura reducida.",
+      "**Do** conservar funciones, privacidad, validaciones y datos del contrato vigente.",
+      "**Do** distinguir este objetivo aprobado de las capturas y CSS todavía sin migrar."
+    ],
+    "donts": [
+      "**Don't** usar gradientes decorativos, halos o tarjetas anidadas para expresar identidad.",
+      "**Don't** limitar la fotografía y el contenido a fiestas nocturnas.",
+      "**Don't** agrandar placeholders hasta que dominen la pantalla.",
+      "**Don't** convertir chips pasivos en acciones ni dibujar funciones de futuras releases.",
+      "**Don't** copiar fotografías, círculos, numeración o títulos exteriores de los collages.",
+      "**Don't** cambiar branding, rutas, backend o reglas de negocio al aplicar este sistema."
+    ]
+  }
+}

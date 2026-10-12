@@ -10,9 +10,23 @@ PlanIt es un proyecto universitario: PWA de descubrimiento, organización y part
 - Convención de código y SQL: nombres en inglés, `snake_case` en base, componentes React en `PascalCase`.
 
 ## Fuentes de verdad
-1. Requisitos R1–R7 de PlanIt y decisiones de diseño aprobadas.
-2. Migraciones versionadas en `supabase/migrations/` (fuente ejecutable del esquema).
-3. `docs/architecture.md` y `docs/database.md` como resumen técnico.
+
+### Funcionalidad
+
+1. Requisitos funcionales R1–R7 y criterios de aceptación aprobados.
+2. Especificación técnica y decisiones de negocio aprobadas; `docs/architecture.md` y `docs/database.md` como resumen técnico.
+3. Contratos de datos, migraciones versionadas en `supabase/migrations/` (fuente ejecutable del esquema) y autorizaciones vigentes.
+
+### Diseño
+
+1. [PRODUCT.md](PRODUCT.md), cuando exista, para contexto y principios de producto.
+2. [DESIGN.md](DESIGN.md) aprobado, fuente normativa de tokens y patrones visuales.
+3. [docs/design/DESIGN_SYSTEM.md](docs/design/DESIGN_SYSTEM.md), aplicación del sistema.
+4. Componentes y patrones aprobados de la aplicación, distinguiendo el objetivo aprobado del código aún sin migrar.
+5. Mockups anteriores R1–R3 como referencias históricas de contexto; no objetivos de fidelidad pixel-perfect.
+
+El diseño no redefine la funcionalidad. Los mockups y prompts históricos no prevalecen sobre el sistema visual consolidado con Impeccable. Para UI, aplicar [las reglas de diseño](docs/design/AGENTS.md). El refresh se sigue por separado en [su plan](docs/implementation/UI_REFRESH_R1_R3_PLAN.md) y [estado](docs/implementation/UI_REFRESH_R1_R3_STATUS.md); no constituye nuevas releases funcionales.
+
 Si existe una discrepancia entre requisitos y código, informar y proponer la corrección. No inventar requisitos nuevos.
 
 ## Reglas obligatorias

@@ -1,36 +1,39 @@
 # PlanIt — Reglas específicas para agentes de diseño/UI
 
-> Estas instrucciones complementan `../../AGENTS.md` y `../../src/AGENTS.md`. Leer `DESIGN_SYSTEM.md`, `SCREENS.md` y `DESIGN_GAPS.md` antes de diseñar o modificar UI. Para trabajo en `src/`, el prompt de Codex debe citar expresamente estos documentos; también conviene enlazarlos desde `src/AGENTS.md`.
+Complementan [AGENTS.md raíz](../../AGENTS.md) y [la guía de frontend](../../src/AGENTS.md). Consultar las referencias antes de modificar UI; no hace falta que el prompt vuelva a citarlas para que sean obligatorias.
 
-## Prioridades
+## Autoridad
 
-1. **Preservar la identidad visual original** de los siete mockups `mockups/release-N.png`. No rediseñar de cero ni imponer paletas, gradientes o navegación distintos.
-2. **La lógica funcional viene de RF/CA aprobados y del contrato de datos**, no del dibujo. Si una captura representa una función fuera del alcance o contradictoria, conservar su lenguaje visual sin implementar la función.
-3. Mobile-first en PWA React/TypeScript/Vite, con adaptación responsive de escritorio, accesibilidad, foco, tamaño táctil y safe-areas.
-4. Reusar las skills locales instaladas de frontend-design, web-design-guidelines y React best practices si están disponibles; su consejo genérico nunca prevalece sobre el diseño específico de PlanIt.
-5. No tocar RLS, SQL, datos remotos, Supabase histórico, Auth ni migraciones desde tareas puramente de diseño.
+**Funcionalidad:** requisitos y criterios de aceptación aprobados → especificación técnica y decisiones de negocio → contratos de datos, migraciones y autorizaciones vigentes. No inventar requisitos ni convertir una ilustración en una función.
 
-## Fuente de verdad para cada pantalla
+**Diseño:** [PRODUCT.md](../../PRODUCT.md) cuando exista → [DESIGN.md](../../DESIGN.md) aprobado → [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) → componentes y patrones aprobados → mockups históricos R1–R3. PRODUCT.md aporta contexto; DESIGN.md define tokens. El [shape aprobado](proposals/r1-r3-visual-evolution.md) desarrolla la composición por pantalla.
 
-- `mockups/release-1.png`...`mockups/release-7.png`: apariencia visual.
-- `SCREENS.md`: inventario de pantallas y componentes visibles.
-- `DESIGN_SYSTEM.md`: paleta, composición, densidad, navegación y adaptaciones.
-- `DESIGN_GAPS.md`: contradicciones entre visual y modelo funcional.
-- RF/CA originales: comportamiento y alcance por release.
+[SCREENS.md](SCREENS.md), [DESIGN_GAPS.md](DESIGN_GAPS.md), mockups y prompts anteriores aportan inventario y contexto histórico. Sus instrucciones de fidelidad, CTA degradados, brillos o recuperación de la apariencia original quedan subordinadas al sistema aprobado. No exigir fidelidad pixel-perfect a collages ni a capturas anteriores al refresh.
 
-## Protocolo de cambios UI
+## Dirección y uso de Impeccable
 
-1. Inspeccionar pantalla actual y mockup objetivo.
-2. Identificar qué conservar de estructura técnica y qué modificar de apariencia. Tomar una captura antes del cambio cuando sea posible.
-3. Describir cambios visibles y componentes a reutilizar; si el cambio es grande, pedir aprobación antes de reescribir.
-4. Implementar sin inventar acciones ni botones inertes. Ocultar features futuras en lugar de mostrarlas como funcionales.
-5. Comparar screenshots después del cambio; ejecutar build/lint y probar mobile + desktop.
-6. Informar excepciones visuales motivadas por requisitos, accesibilidad o limitaciones de navegador.
+- Fotografía expresiva, interfaz marina y sobria. Conservar nombre, logo, paleta azul/violeta, iconos lineales, rutas y navegación vigente.
+- Dar prioridad al producto y a la tarea: acciones sólidas, superficies planas, espacio/divisores y una unidad visual por evento. Retirar gradientes decorativos, halos y contenedores anidados según el shape.
+- Utilizar Impeccable cuando esté disponible en rediseño, crítica y refinamiento. Leer el contexto aprobado antes de actuar; no cambiar decisiones ni regenerar el sistema por iniciativa propia.
+- Foundation no vuelve a ejecutar init, document, critique, audit o shape. Conservar sus resultados. Las observaciones históricas sobre documentación desincronizada no autorizan regenerarla como efecto secundario. Una auditoría integral posterior requiere su propio alcance y reporte, sin sobrescribir evidencia previa.
+- Reutilizar componentes existentes y su responsabilidad; evitar variantes redundantes, fuentes externas, UI kits o dependencias sin necesidad.
+- Mobile-first con continuidad en escritorio, accesibilidad, foco visible, targets cómodos, safe areas y estados recuperables.
 
-## Prohibiciones
+## Protocolo de implementación futura
 
-- No replicar en la app los títulos “PlanIt · R1 Lanzamiento”, los círculos decorativos externos ni la numeración de las diapositivas.
-- No conservar la estética verde/crema y el header de marketing provisional del BLOQUE 0 como identidad definitiva.
-- No usar capturas como backgrounds de páginas ni insertar imágenes del collage como tarjetas de eventos reales.
-- No agregar borradores persistidos, entradas/pagos, reseñas, rating, favoritos, listas de amigos, audio en chat, permisos granulares nuevos u otras funciones sólo porque se ven en una captura.
-- No eliminar campos que exijan RF o el modelo de BD aunque no se vean en el mockup (por ejemplo `ends_at` en Crear evento).
+1. Leer sistema, shape, [auditoría consolidada](audits/UI_REFRESH_R1_R3.md), [plan](../implementation/UI_REFRESH_R1_R3_PLAN.md), [estado visual](../implementation/UI_REFRESH_R1_R3_STATUS.md) y contratos funcionales aplicables.
+2. Inspeccionar la pantalla actual y tomar capturas reales antes de editar; identificar sesión, datos de prueba y dimensiones. Consultar mockups sólo para rasgos conservados.
+3. Implementar el bloque autorizado con el cambio mínimo y componentes reutilizables, preservando comportamiento. Una decisión aprobada no necesita nueva aprobación para ejecutarse dentro del pedido; plantear conflictos o cambios de dirección fuera del alcance antes de aplicarlos.
+4. Verificar capturas después del cambio en móvil/escritorio contra el objetivo aprobado. Comprobar 320/375/390/768/1280 px, texto ampliado, poca altura, recortes internos, foco, navegación y estados. Ejecutar build/lint si cambia frontend.
+5. Probar dispositivos reales para teclado, safe areas y gestos del mapa, y lector de pantalla para anuncios; registrar claramente los casos no ejercitados. No presentar fixtures o emulación como aceptación humana o prueba remota.
+6. Actualizar sólo el seguimiento visual con cambios, evidencia y pendientes. Las etapas visuales no son nuevas releases funcionales; no actualizar estados funcionales por trabajo estético.
+
+## Restricciones conservadas
+
+- Mantener seguridad, autenticación, permisos, privacidad, validaciones, fechas Argentina y estructura del proyecto. No tocar modelos de datos, RPC, migraciones, RLS, SQL ni reglas de negocio por motivos estéticos; no escribir en Supabase desde tareas de diseño.
+- No persistir borradores; no borrar eventos o historiales; conservar cancelación/archivo y comprobaciones de resultado incierto.
+- No eliminar campos exigidos por RF/BD aunque no aparezcan en mockups, incluido ends_at.
+- No agregar entradas/pagos, reseñas, rating, favoritos, amigos, audio, filtros nuevos o permisos por verse en una captura; no dibujar botones inertes de futuras releases.
+- No replicar títulos R1–R7, círculos externos o numeración del póster. No conservar verde/crema de marketing como identidad ni usar capturas como fondos.
+- No extraer fotos del collage como eventos reales; usar contenido autorizado o fixtures identificados. Ausencia de foto implica una alternativa compacta, no una portada ficticia.
+- No declarar pantallas migradas, defectos resueltos o aceptación por actualizar documentación. Foundation termina con su PR y no modifica pantallas.

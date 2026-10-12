@@ -16,19 +16,17 @@ Aplican también las reglas de `../AGENTS.md`.
 
 ## Diseño visual obligatorio de PlanIt
 
-Antes de modificar cualquier interfaz, componente visual o archivo CSS, leer:
+Antes de modificar UI, componentes visuales o CSS, consultar [reglas de diseño](../docs/design/AGENTS.md), [PRODUCT.md](../PRODUCT.md) cuando exista, [DESIGN.md](../DESIGN.md), [DESIGN_SYSTEM.md](../docs/design/DESIGN_SYSTEM.md), [shape aprobado](../docs/design/proposals/r1-r3-visual-evolution.md), [SCREENS.md](../docs/design/SCREENS.md), [DESIGN_GAPS.md](../docs/design/DESIGN_GAPS.md), [auditoría consolidada](../docs/design/audits/UI_REFRESH_R1_R3.md) y [plan visual](../docs/implementation/UI_REFRESH_R1_R3_PLAN.md).
 
-- `docs/design/AGENTS.md`
-- `docs/design/DESIGN_SYSTEM.md`
-- `docs/design/SCREENS.md`
-- `docs/design/DESIGN_GAPS.md`
+La jerarquía funcional es: RF/CA aprobados → especificación técnica y decisiones de negocio → contratos de datos, migraciones y autorizaciones. La jerarquía visual es: PRODUCT.md cuando exista → DESIGN.md aprobado → DESIGN_SYSTEM.md → componentes y patrones aprobados → mockups históricos R1–R3. El contexto de producto no sustituye los contratos funcionales.
 
-Abrir visualmente las imágenes relevantes de `docs/design/mockups/`.
+- Conservar la dirección aprobada: fotografía expresiva, interfaz marina y sobria, acciones sólidas y superficies planas. Priorizar la tarea y el contenido sobre efectos decorativos. No reemplazar la paleta azul/violeta ni reinterpretar decisiones aprobadas por iniciativa propia.
+- Utilizar Impeccable para rediseño, crítica o refinamiento cuando esté disponible. Consultar el contexto existente; no regenerar PRODUCT.md, DESIGN.md o DESIGN_SYSTEM.md ni repetir init/document/critique/audit/shape de Foundation. Una evaluación futura explícitamente solicitada conserva los reportes anteriores y distingue sus resultados. Las recomendaciones de skills genéricas no prevalecen sobre el sistema aprobado.
+- Reutilizar componentes y APIs existentes cuando corresponda: AppLayout, ScreenHeader, EventCard/CompactEventCard, FormField, StatusMessage y diálogos. Evitar variantes redundantes, dependencias o un UI kit innecesarios.
+- Mantener mobile-first, adaptación de escritorio, contraste, semántica, foco, áreas táctiles, safe areas y recuperación de errores.
+- Consultar visualmente los mockups antiguos cuando aporten contexto; no son un objetivo pixel-perfect ni autorizan recuperar degradados, halos o tarjetas anidadas retirados por el shape. SCREENS.md y los prompts históricos describen el diseño anterior; aplicar sólo las partes compatibles con la jerarquía vigente.
+- Conservar la funcionalidad R1–R3: seguridad, Auth, Supabase, RLS, permisos, fechas, validaciones y estructura. No cambiar modelos de datos, RPC, migraciones, políticas ni reglas de negocio por motivos estéticos. No agregar funciones de R4–R7 ni borrar campos requeridos para simplificar el diseño.
 
-**CRÍTICO:** preservar la identidad visual original de PlanIt. No crear un diseño alternativo ni reemplazar la paleta azul oscuro/violeta.
+Antes de terminar una pantalla, capturar la implementación real antes/después en móvil y escritorio y contrastarla con DESIGN.md y el shape, identificando fixtures. Revisar 320, 375, 390, 768 y 1280 px, texto ampliado, poca altura, teclado/foco y estados de carga/vacío/error; comprobar también recortes internos. Documentar lo no probado; emulación no equivale a teclado móvil, gestos o lector de pantalla reales. Ejecutar build/lint para cambios de frontend y registrar evidencia en el seguimiento visual, sin modificar el estado funcional de R1–R3 por mejoras estéticas.
 
-Los mockups definen la apariencia; los requisitos funcionales y el modelo de datos aprobado definen el comportamiento.
-
-Utilizar las skills de diseño frontend, UX y React disponibles cuando correspondan.
-
-Antes de dar una pantalla por terminada, contrastarla visualmente con su mockup y verificar su funcionamiento en dispositivos móviles.
+Esta Foundation sólo prepara documentación y referencias. No implementar pantallas hasta recibir el pedido correspondiente; seguir las etapas del plan visual y cerrar esta tarea al entregar su PR.

@@ -1,0 +1,1173 @@
+[
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 1,
+    "snippet": "Undocumented color #0a1956 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#0a1956",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 8,
+    "snippet": "font-size: 24px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "24px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 10,
+    "snippet": "Undocumented color #b49aff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#b49aff",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 12,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "13px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 21,
+    "snippet": "Undocumented color #33375c is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#33375c",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 21,
+    "snippet": "Undocumented color #252152 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#252152",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 21,
+    "snippet": "Undocumented color #10162f is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#10162f",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 26,
+    "snippet": "Undocumented color #25182f is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#25182f",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 30,
+    "snippet": "Undocumented color #b49aff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#b49aff",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 49,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "13px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 55,
+    "snippet": "font-size: 18px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "18px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 62,
+    "snippet": "Undocumented color #14328b is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#14328b",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 63,
+    "snippet": "Undocumented color #87adff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#87adff",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 65,
+    "snippet": "Undocumented color #201950 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#201950",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 65,
+    "snippet": "Undocumented color #0a1956 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#0a1956",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 73,
+    "snippet": "font-size: 24px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "24px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 91,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "13px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\App.css",
+    "line": 116,
+    "snippet": "font-size: 11px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "11px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\components\\event-actions.css",
+    "line": 8,
+    "snippet": "Undocumented color #331b3533 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#331b3533",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\components\\event-actions.css",
+    "line": 12,
+    "snippet": "font-size: 1.25rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.25rem",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\components\\event-actions.css",
+    "line": 15,
+    "snippet": "font-size: 1.7rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.7rem",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\components\\event-actions.css",
+    "line": 21,
+    "snippet": "Undocumented color #ff2254 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ff2254",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\components\\event-actions.css",
+    "line": 21,
+    "snippet": "Undocumented color #ce103d is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ce103d",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\components\\event-actions.css",
+    "line": 27,
+    "snippet": "Undocumented color #83f3c9 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#83f3c9",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\components\\maps\\map.css",
+    "line": 3,
+    "snippet": "font-size: 11px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "11px",
+    "importedBy": [
+      "EventMap.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\components\\maps\\map.css",
+    "line": 14,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "13px",
+    "importedBy": [
+      "EventMap.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\index.css",
+    "line": 34,
+    "snippet": "Undocumented color #5340a2 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#5340a2"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\chat.css",
+    "line": 5,
+    "snippet": "font-size: 18px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "18px",
+    "importedBy": [
+      "EventChatPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\chat.css",
+    "line": 6,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "13px",
+    "importedBy": [
+      "EventChatPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\chat.css",
+    "line": 12,
+    "snippet": "border-radius: 4px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "4px",
+    "importedBy": [
+      "EventChatPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\chat.css",
+    "line": 14,
+    "snippet": "font-size: 11px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "11px",
+    "importedBy": [
+      "EventChatPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\chat.css",
+    "line": 17,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "13px",
+    "importedBy": [
+      "EventChatPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 2,
+    "snippet": "font-size: 24px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "24px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 3,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "13px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 9,
+    "snippet": "font-size: 18px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "18px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 13,
+    "snippet": "Undocumented color #14328b is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#14328b",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 13,
+    "snippet": "Undocumented color #292054 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#292054",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 32,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "13px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 34,
+    "snippet": "Undocumented color #14328b is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#14328b",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 34,
+    "snippet": "Undocumented color #292054 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#292054",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 37,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "13px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 41,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "13px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 47,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "13px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 50,
+    "snippet": "Undocumented color #414860 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#414860",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\discovery.css",
+    "line": 55,
+    "snippet": "font-size: 21px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "21px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-attendees.css",
+    "line": 4,
+    "snippet": "font-size: 1.25rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.25rem",
+    "importedBy": [
+      "EventAttendeesPage.tsx",
+      "EventRejoinRequestsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-attendees.css",
+    "line": 9,
+    "snippet": "Undocumented color #ffffff1c is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ffffff1c",
+    "importedBy": [
+      "EventAttendeesPage.tsx",
+      "EventRejoinRequestsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-attendees.css",
+    "line": 30,
+    "snippet": "font-size: 1.25rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.25rem",
+    "importedBy": [
+      "EventAttendeesPage.tsx",
+      "EventRejoinRequestsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-attendees.css",
+    "line": 32,
+    "snippet": "font-size: 1.7rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.7rem",
+    "importedBy": [
+      "EventAttendeesPage.tsx",
+      "EventRejoinRequestsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-attendees.css",
+    "line": 37,
+    "snippet": "Undocumented color #ff2254 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ff2254",
+    "importedBy": [
+      "EventAttendeesPage.tsx",
+      "EventRejoinRequestsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-attendees.css",
+    "line": 37,
+    "snippet": "Undocumented color #ce103d is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ce103d",
+    "importedBy": [
+      "EventAttendeesPage.tsx",
+      "EventRejoinRequestsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-gallery.css",
+    "line": 18,
+    "snippet": "font-size: .8rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": ".8rem",
+    "importedBy": [
+      "EventGalleryPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-gallery.css",
+    "line": 19,
+    "snippet": "font-size: 1.8rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.8rem",
+    "importedBy": [
+      "EventGalleryPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-rejoin.css",
+    "line": 1,
+    "snippet": "font-size: clamp(1.35rem, 4.5vw, 1.8rem) has fluid endpoints 1.35rem and 1.8rem off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.35rem",
+    "importedBy": [
+      "EventParticipation.tsx",
+      "EventRejoinRequestsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-rejoin.css",
+    "line": 5,
+    "snippet": "Undocumented color #171125 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#171125",
+    "importedBy": [
+      "EventParticipation.tsx",
+      "EventRejoinRequestsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-rejoin.css",
+    "line": 5,
+    "snippet": "Undocumented color #ffc448 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ffc448",
+    "importedBy": [
+      "EventParticipation.tsx",
+      "EventRejoinRequestsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\event-rejoin.css",
+    "line": 5,
+    "snippet": "font-size: .8rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": ".8rem",
+    "importedBy": [
+      "EventParticipation.tsx",
+      "EventRejoinRequestsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\home.css",
+    "line": 6,
+    "snippet": "font-size: 19px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "19px",
+    "importedBy": [
+      "HomePage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\home.css",
+    "line": 15,
+    "snippet": "font-size: 24px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "24px",
+    "importedBy": [
+      "HomePage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\my-events.css",
+    "line": 26,
+    "snippet": "Undocumented color #14328b is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#14328b",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\my-events.css",
+    "line": 26,
+    "snippet": "Undocumented color #292054 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#292054",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\my-events.css",
+    "line": 33,
+    "snippet": "Undocumented color #384778 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#384778",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\my-events.css",
+    "line": 34,
+    "snippet": "Undocumented color #83f3c9 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#83f3c9",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\my-events.css",
+    "line": 34,
+    "snippet": "Undocumented color #10343b is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#10343b",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\my-events.css",
+    "line": 34,
+    "snippet": "Undocumented color #256259 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#256259",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\my-events.css",
+    "line": 35,
+    "snippet": "Undocumented color #331b35 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#331b35",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\my-events.css",
+    "line": 36,
+    "snippet": "Undocumented color #d0c5f4 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#d0c5f4",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\my-events.css",
+    "line": 36,
+    "snippet": "Undocumented color #242044 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#242044",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\my-events.css",
+    "line": 38,
+    "snippet": "font-size: 18px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "18px",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\notifications.css",
+    "line": 5,
+    "snippet": "Undocumented color #171b45 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#171b45",
+    "importedBy": [
+      "NotificationsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\notifications.css",
+    "line": 6,
+    "snippet": "Undocumented color #b59aff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#b59aff",
+    "importedBy": [
+      "NotificationsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\notifications.css",
+    "line": 6,
+    "snippet": "Undocumented color #292050 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#292050",
+    "importedBy": [
+      "NotificationsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\profile.css",
+    "line": 2,
+    "snippet": "font-size: 24px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "24px",
+    "importedBy": [
+      "ProfilePage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\profile.css",
+    "line": 9,
+    "snippet": "font-size: 22px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "22px",
+    "importedBy": [
+      "ProfilePage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "D:\\planit\\src\\pages\\profile.css",
+    "line": 19,
+    "snippet": "font-size: 24px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "24px",
+    "importedBy": [
+      "ProfilePage.tsx"
+    ]
+  }
+]
