@@ -2,7 +2,7 @@
 
 **Plan:** [RELEASE_3_PLAN.md](RELEASE_3_PLAN.md). **Contrato:** [RELEASE_3_REQUIREMENTS.md](../requirements/RELEASE_3_REQUIREMENTS.md) (9 RF, 37 CA). **Diseño:** [R3 original](../design/mockups/release-3.png) y [mockups individuales R3](../design/mockups/r3/README.md).
 
-**Corte:** 11/10/2026 (Argentina). **Bloques 0–2 implementados; QA y aceptación pendientes**. Bloques 3–6 y QA integral pendientes. [Auditoría y decisiones](RELEASE_3_BLOCK_0_DECISIONS.md).
+**Corte:** 11/10/2026 (Argentina). **Bloques 0–3 implementados; QA y aceptación pendientes**. Bloques 4–6 y QA integral pendientes. [Auditoría y decisiones](RELEASE_3_BLOCK_0_DECISIONS.md).
 
 **Estados posibles:** Pendiente · En curso · Implementado; QA pendiente · Bloqueado · Validado. «Validado» requiere aceptación humana respaldada por evidencia; no equivale a PR abierta.
 
@@ -11,7 +11,7 @@
 | 0 | Preparación, rutas y diseño | Transversal | Implementado; QA pendiente | [PR #18](https://github.com/EnzoG14/PlanIt/pull/18); rama `codex/r3-block-0`; [decisiones/evidencia](RELEASE_3_BLOCK_0_DECISIONS.md) | Revisión y aceptación humana del contrato |
 | 1 | Mis eventos organizados | R3-04 | Implementado; QA pendiente | [PR #19](https://github.com/EnzoG14/PlanIt/pull/19); rama `codex/r3-block-1`; [CA/pruebas/capturas](../design/verification/r3-block-1/README.md) | Migración aplicada; pendientes HTTP/JWT A/B reales, acciones de bloques posteriores y aceptación humana |
 | 2 | Editar evento | R3-01 | Implementado; QA pendiente | [PR #20](https://github.com/EnzoG14/PlanIt/pull/20); rama `codex/r3-block-2`; [CA/pruebas/capturas](../design/verification/r3-block-2/README.md) | Migración aplicada y verificada; HTTP/JWT A/B, dispositivo físico y aceptación humana pendientes |
-| 3 | Galería | R3-03 | Pendiente | — | Media básica existe; faltan operaciones administrativas de orden/baja/limpieza |
+| 3 | Galería | R3-03 | Implementado; QA pendiente | [PR #21](https://github.com/EnzoG14/PlanIt/pull/21) en borrador; rama `codex/r3-block-3`; [CA/pruebas/capturas](../design/verification/r3-block-3/README.md) | Migración aplicada y verificada; HTTP/JWT A/B, dispositivo físico y aceptación humana |
 | 4 | Asistentes y remoción | R3-05/06 | Pendiente | — | SELECT propio no da nómina; faltan proyección mínima/remoción y pruebas historial/chat |
 | 5 | Cancelar/archivar/duplicar | R3-02/07 | Pendiente | — | RPC de cierre ausentes; duplicar sólo formulario local sin fotos/relaciones |
 | 6 | Reincorporaciones | R3-08/09 | Pendiente | — | Tabla/RPC ausentes; depende de remoción, autorización administrativa y locks/cooldown |
@@ -72,8 +72,17 @@
 - **Aplicación remota posterior:** CLI push aplicó únicamente edit_own_event con --skip-vault; trece versiones sincronizadas y dry-run sin pendientes. Cuerpo RPC idéntico a Git; definer/search_path/RLS y permisos verificados por catálogos, anon sin EXECUTE y cliente sin UPDATE/DELETE. Permiso administrativo service_role proviene de defaults del proyecto. Advisors pasó de siete a ocho definer autenticados (update_event esperado/justificado), protección de contraseñas filtradas deshabilitada preexistente. [Registro](../design/verification/r3-block-2/remote-migration-results.json). Sin cambios de Vault ni escrituras de datos de negocio; no acredita HTTP/JWT real.
 - **Pendientes:** HTTP/JWT A/B real, revisión humana y dispositivo físico. Sin merge/despliegue ni «Validado».
 
-### Bloque 3 — Pendiente
-Sin código, pruebas ni migraciones.
+### Bloque 3 — Implementado; QA pendiente
+
+- **Base/rama:** `origin/main` actualizado (`a636e3a`, bloques anteriores integrados) → `codex/r3-block-3`; checkout limpio `mapbox-worktree`. Cambios previos del directorio principal preservados. [PR #21](https://github.com/EnzoG14/PlanIt/pull/21) en borrador, exclusiva del bloque.
+- **Entrega:** `/events/:id/gallery`, enlaces en detalle/Organizo, selector/drop, previews React, estado real por carga, máximo diez, reintento/descartar, confirmar baja y ordenar por controles accesibles. Primera por sort_order es portada; detalle/listas consultan orden vigente. Actualizar renueva fotos; revisar/limpiar cargas abandonadas permite recuperación después de recargar.
+- **Fallos/retención:** paths inmutables sin upsert, reconciliación de respuesta perdida e idempotencia por path/ID; limpieza de subidas no registradas y pendiente explícito si falla. Se conservan metadatos/objetos registrados incluso después de retirar la última asociación; archivos compartidos no se destruyen. Sin garbage collector físico en este bloque.
+- **Migración:** `20261012013634_manage_event_gallery.sql` creada con CLI, probada localmente; **aplicada en planit-v2 el 11/10/2026 con autorización expresa posterior del usuario**. RPC añadir/quitar/ordenar y consulta mínima de cargas interrumpidas, identidad auth.uid, locks evento/path, READ COMMITTED, grants mínimos y search_path vacío. Sin UPDATE/DELETE genéricos. Constraint de posición diferible y protección de carrera registro/borrado Storage; creación R1 conservada.
+- **Auditoría remota:** SELECT de metadatos en planit-v2: trece versiones, bucket privado JPEG/PNG/WebP 5 MiB y políticas coincidentes; RPC nuevas ausentes. Sin modificación remota, datos de negocio ni proyecto antiguo.
+- **Verificación:** build/lint PASS (aviso Mapbox existente), diez grupos SQL real local con replay/Auth-Storage scaffolding y 65 grupos UI Edge fixtures en cinco viewports/Tokyo. Límite, orden/portada, baja/compartidos, inválidos, interrupción/commit perdido/limpieza/firma, permisos A/B/anon/REST-Storage equivalente y carreras; regresión check:events/edit-event/my-events y creación/edición UI PASS. [Matriz CA → evidencia y límites](../design/verification/r3-block-3/README.md).
+- **Visual:** PNG individual/collage abiertos; capturas móvil/tablet/escritorio contrastadas, sin overflow. Identidad preservada; controles táctiles de orden, recuperación, formato/tamaño reales y shell vigente son adaptaciones documentadas. Fotos de fixtures, no del mockup.
+- **Aplicación remota posterior:** push aplicó únicamente manage_event_gallery con --skip-vault. Catorce versiones sincronizadas y dry-run posterior sin pendientes; ocho cuerpos de funciones coinciden con Git, RLS/grants/search_path/políticas y constraint diferible comprobados. Cero archivos registrados sin objeto. Advisors: nueve → trece avisos; los cuatro nuevos corresponden a las RPC SECURITY DEFINER autenticadas previstas/justificadas, protección de contraseñas filtradas deshabilitada preexistente. Permiso administrativo service_role proviene de defaults del proyecto. [Resumen verificable](../design/verification/r3-block-3/remote-migration-summary.json). Sin cambios Vault ni escrituras de datos de negocio; no acredita HTTP/JWT real.
+- **Pendientes:** HTTP/Auth/JWT/REST/Storage A/B reales, safe-area/dispositivo físico y revisión humana. No «Validado», merge ni despliegue frontend; bloque 4 no iniciado.
 
 ### Bloque 4 — Pendiente
 Sin código, pruebas ni migraciones.

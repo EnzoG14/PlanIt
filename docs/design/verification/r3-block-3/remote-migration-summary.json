@@ -1,0 +1,49 @@
+{
+  "project": "iepeqmvzjguwlhnecsdq",
+  "migration": "20261012013634_manage_event_gallery.sql",
+  "applied": true,
+  "history_synchronized": true,
+  "migration_count": 14,
+  "function_source_match_count": 8,
+  "rls_and_minimal_grants": "PASS",
+  "registered_files_without_objects": 0,
+  "advisors_before": 9,
+  "advisors_after": 13,
+  "new_findings": [
+    {
+      "name": "authenticated_security_definer_function_executable",
+      "level": "WARN",
+      "metadata": {
+        "name": "add_event_image",
+        "schema": "public"
+      }
+    },
+    {
+      "name": "authenticated_security_definer_function_executable",
+      "level": "WARN",
+      "metadata": {
+        "name": "get_event_unregistered_uploads",
+        "schema": "public"
+      }
+    },
+    {
+      "name": "authenticated_security_definer_function_executable",
+      "level": "WARN",
+      "metadata": {
+        "name": "remove_event_image",
+        "schema": "public"
+      }
+    },
+    {
+      "name": "authenticated_security_definer_function_executable",
+      "level": "WARN",
+      "metadata": {
+        "name": "reorder_event_images",
+        "schema": "public"
+      }
+    }
+  ],
+  "vault_secrets_changed": false,
+  "business_data_written": false,
+  "limitation": "Catalog/definition verification only; no remote HTTP/Auth/JWT/Storage business tests"
+}
