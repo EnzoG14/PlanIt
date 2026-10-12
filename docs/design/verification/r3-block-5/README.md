@@ -1,6 +1,6 @@
 # R3 Bloque 5 — Cancelar, archivar y duplicar
 
-Implementado; QA y aceptación humana pendientes. Rama `codex/r3-block-5`, base `origin/main` `a031c1b` (PR #22 integrada). Evidencia del 12/10/2026, Argentina. Migración creada y probada localmente; **no aplicada remotamente**. Sin merge ni despliegue; cambio previo de `vite.config.ts` preservado y excluido.
+Implementado; QA y aceptación humana pendientes. [PR #23](https://github.com/EnzoG14/PlanIt/pull/23) en borrador. Rama `codex/r3-block-5`, base `origin/main` `a031c1b` (PR #22 integrada). Evidencia del 12/10/2026, Argentina. Migración creada y probada localmente; **no aplicada remotamente**. Sin merge ni despliegue; cambio previo de `vite.config.ts` preservado y excluido.
 
 ## Contratos y decisiones
 

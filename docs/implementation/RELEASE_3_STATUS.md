@@ -13,7 +13,7 @@
 | 2 | Editar evento | R3-01 | Implementado; QA pendiente | [PR #20](https://github.com/EnzoG14/PlanIt/pull/20); rama `codex/r3-block-2`; [CA/pruebas/capturas](../design/verification/r3-block-2/README.md) | Migración aplicada y verificada; HTTP/JWT A/B, dispositivo físico y aceptación humana pendientes |
 | 3 | Galería | R3-03 | Implementado; QA pendiente | [PR #21](https://github.com/EnzoG14/PlanIt/pull/21) integrada; rama `codex/r3-block-3`; [CA/pruebas/capturas](../design/verification/r3-block-3/README.md) | Migración aplicada y verificada; HTTP/JWT A/B, dispositivo físico y aceptación humana |
 | 4 | Asistentes y remoción | R3-05/06 | Implementado; QA pendiente | [PR #22](https://github.com/EnzoG14/PlanIt/pull/22) integrada; rama `codex/r3-block-4`; [8 CA/pruebas/capturas](../design/verification/r3-block-4/README.md) | Migración aplicada y verificada; HTTP/JWT/Realtime A/B real, dispositivo físico y aceptación humana pendientes |
-| 5 | Cancelar/archivar/duplicar | R3-02/07 | Implementado; QA pendiente | Rama `codex/r3-block-5`; [8 CA/pruebas/capturas](../design/verification/r3-block-5/README.md) | Migración sólo local; aplicación remota autorizada, HTTP/JWT A/B real, dispositivo físico y aceptación humana pendientes |
+| 5 | Cancelar/archivar/duplicar | R3-02/07 | Implementado; QA pendiente | [PR #23](https://github.com/EnzoG14/PlanIt/pull/23) en borrador; rama `codex/r3-block-5`; [8 CA/pruebas/capturas](../design/verification/r3-block-5/README.md) | Migración sólo local; aplicación remota autorizada, HTTP/JWT A/B real, dispositivo físico y aceptación humana pendientes |
 | 6 | Reincorporaciones | R3-08/09 | Pendiente | — | Tabla/RPC ausentes; depende de remoción, autorización administrativa y locks/cooldown |
 | 7 | QA integral | R3-01..09 | Pendiente | — | Matriz 37 CA y regresiones |
 
@@ -86,7 +86,7 @@
 
 ### Bloque 4 — Implementado; QA pendiente
 
-- **Base/rama:** `origin/main` actualizado (`8e1537d`, Bloque 3 integrado) → `codex/r3-block-4`; [PR #22](https://github.com/EnzoG14/PlanIt/pull/22) exclusiva del bloque, en borrador. Cambio previo de vite.config.ts preservado y excluido. Evidencias históricas regeneradas por regresiones restauradas con autorización explícita del usuario; resultados actuales copiados bajo este bloque.
+- **Base/rama:** `origin/main` actualizado (`8e1537d`, Bloque 3 integrado) → `codex/r3-block-4`; [PR #22](https://github.com/EnzoG14/PlanIt/pull/22) exclusiva del bloque, integrada. Cambio previo de vite.config.ts preservado y excluido. Evidencias históricas regeneradas por regresiones restauradas con autorización explícita del usuario; resultados actuales copiados bajo este bloque.
 - **Decisión confirmada:** remover sólo en evento vigente, antes y durante su realización; finalizados/cancelados/archivados mantienen nómina de sólo lectura. Removidos no se convierten en cancelled ni se reinscriben por registro ordinario.
 - **Entrega:** `/events/:id/attendees` desde detalle propio/menú Organizo; regreso conserva orígenes/filtros. Confirmados/Removidos, búsqueda literal por nombre antes de paginar, contadores operacionales e iniciales/nombre/username exclusivamente. Carga/vacío/error/reintento/Actualizar/carga adicional; respuestas tardías descartadas. Sin datos privados, navegación social, Solicitudes futuras, CSV ni notificaciones inventadas.
 - **Operación:** diálogo cancelable con teclado/foco, doble envío bloqueado y reconciliación incluso ante respuesta perdida sin éxito ficticio. `remove_participant` valida auth.uid()/autoría/vinculación/vigencia, READ COMMITTED y locks evento→participación. Trigger existente registra una transición y actor/organizer_removal; fallo revierte estado/historial/cupo. Reintentos removed vigentes no generan otro movimiento.
@@ -99,7 +99,7 @@
 
 ### Bloque 5 — Implementado; QA pendiente
 
-- **Base/rama:** `origin/main` actualizado (`a031c1b`, PR #22 integrada) → `codex/r3-block-5`, exclusiva del bloque. Cambio previo de `vite.config.ts` preservado y excluido.
+- **Base/rama:** `origin/main` actualizado (`a031c1b`, PR #22 integrada) → `codex/r3-block-5`; [PR #23](https://github.com/EnzoG14/PlanIt/pull/23) en borrador, exclusiva del bloque. Cambio previo de `vite.config.ts` preservado y excluido.
 - **Decisiones:** cancelar sólo antes/durante por confirmación del usuario; finalizados se archivan o duplican. Duplicación sin fotos/relaciones, conforme al Bloque 0 y revisión de ownership/retención de galería. Sin borradores persistidos ni DELETE.
 - **Entrega:** filas de gestión en detalle y acciones en menú Organizo; mismo diálogo accesible con cancelar/Escape/foco, doble envío bloqueado y comprobación de respuesta incierta sin reenvío automático. Menú ajusta posición/altura al espacio visible para evitar navegación inferior. Listas/detalle/cupos se reconsultan después del éxito; archivado accesible desde histórico propio.
 - **Duplicación:** `/events/new?duplicateFrom=:id`, origen autorizado por RPC invoker incluso si el ajeno es público. Formulario compartido editable, fechas vacías/futuras, categoría disponible, sin fila/upload al abrir o salir. Publicación normal con ID nuevo/mismo dueño y conversación nueva vacía, sin participantes/historial/mensajes/fotos originales. Cuenta/origen nuevo descarta datos/respuestas; renovación conserva cambios; respuesta tardía de publicación no navega tras cambiar de cuenta.
