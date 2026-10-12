@@ -26,3 +26,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.codex
+.claude
+.agents
+.impeccable/critique
+.impeccable/live
