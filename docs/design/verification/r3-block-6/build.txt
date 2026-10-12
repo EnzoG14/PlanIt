@@ -1,0 +1,63 @@
+
+> planit@0.0.0 build
+> tsc -b && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 133 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/registerSW.js                                   0.13 kB
+dist/manifest.webmanifest                            0.45 kB
+dist/index.html                                      0.87 kB │ gzip:   0.49 kB
+dist/assets/EditEventPage-C6-wzkKq.css               0.59 kB │ gzip:   0.31 kB
+dist/assets/HomePage-ulakufHm.css                    1.16 kB │ gzip:   0.47 kB
+dist/assets/event-rejoin-DCpi5KPx.css                1.51 kB │ gzip:   0.56 kB
+dist/assets/NotificationsPage-BNbeDAMC.css           1.66 kB │ gzip:   0.64 kB
+dist/assets/EventChatPage-DkLbmk32.css               2.30 kB │ gzip:   0.82 kB
+dist/assets/EventGalleryPage-CdPO_CX2.css            2.72 kB │ gzip:   0.98 kB
+dist/assets/EventActionDialog-DO9Ru0Ui.css           2.83 kB │ gzip:   0.93 kB
+dist/assets/MyEventsPage-DDc9d7ry.css                4.07 kB │ gzip:   1.20 kB
+dist/assets/event-attendees-BQnmhUK1.css             4.60 kB │ gzip:   1.33 kB
+dist/assets/discovery-BJyNzkIT.css                   4.86 kB │ gzip:   1.41 kB
+dist/assets/index-2Zflr3Nf.css                      12.89 kB │ gzip:   3.27 kB
+dist/assets/EventMap-dAsqhbR7.css                   50.10 kB │ gzip:   6.20 kB
+dist/assets/geolocation-DXgn9iGR.js                  0.56 kB │ gzip:   0.37 kB
+dist/assets/event-attendees-C1zqWjpo.js              1.20 kB │ gzip:   0.66 kB
+dist/assets/my-events-1F3EYoh4.js                    1.70 kB │ gzip:   0.94 kB
+dist/assets/event-rejoin-CY58BZba.js                 2.11 kB │ gzip:   0.90 kB
+dist/assets/actions-BsGO9sbB.js                      2.12 kB │ gzip:   1.02 kB
+dist/assets/validation-D2rhc211.js                   2.88 kB │ gzip:   1.32 kB
+dist/assets/EventActionDialog-DOJpEPVX.js            3.32 kB │ gzip:   1.58 kB
+dist/assets/participation-arz7Zdm4.js                3.95 kB │ gzip:   1.69 kB
+dist/assets/HomePage-B3HS-Fhi.js                     4.14 kB │ gzip:   1.79 kB
+dist/assets/EventFields-BRxrY3IJ.js                  4.31 kB │ gzip:   1.60 kB
+dist/assets/api-CHzVv9l3.js                          4.60 kB │ gzip:   1.88 kB
+dist/assets/NotificationsPage-DHz_Bwqz.js            4.87 kB │ gzip:   2.02 kB
+dist/assets/EventCard-Cgq2fVJB.js                    4.93 kB │ gzip:   1.66 kB
+dist/assets/MapPage-CXwytxhg.js                      5.21 kB │ gzip:   2.35 kB
+dist/assets/EditEventPage-CfZD7M6b.js                5.45 kB │ gzip:   2.41 kB
+dist/assets/MyEventsPage-CWLRvgJX.js                 5.49 kB │ gzip:   2.16 kB
+dist/assets/CreateEventPage-ZvfyHrNZ.js              6.29 kB │ gzip:   2.69 kB
+dist/assets/EventChatPage-DUuC-t8K.js                7.37 kB │ gzip:   2.98 kB
+dist/assets/EventRejoinRequestsPage-DIm3v1xh.js      8.08 kB │ gzip:   2.96 kB
+dist/assets/EventAttendeesPage-9dV6p_my.js           8.20 kB │ gzip:   2.95 kB
+dist/assets/jsx-runtime-TSwjJPAg.js                 10.40 kB │ gzip:   4.03 kB
+dist/assets/EventDetailPage-DaFvAslz.js             11.46 kB │ gzip:   3.89 kB
+dist/assets/EventGalleryPage-CxJejHwv.js            12.32 kB │ gzip:   4.51 kB
+dist/assets/index-ndxPOtYq.js                      494.51 kB │ gzip: 143.25 kB
+dist/assets/EventMap-8hcKYxNJ.js                 1,865.09 kB │ gzip: 518.60 kB
+
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 765ms
+
+PWA v2.0.0
+mode      generateSW
+precache  48 entries (2538.39 KiB)
+files generated
+  dist/sw.js
+  dist/workbox-9c191d2f.js

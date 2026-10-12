@@ -66,7 +66,8 @@ try {
     const open = async name => { const row = list().filter({ has: page.getByText(name, { exact: true }) }); await row.locator('summary').click(); await row.getByRole('button', { name: 'Remover', exact: true }).click(); await page.getByRole('dialog').waitFor() }
     await page.goto(`${origin}/events/${id}/attendees`); await list().last().waitFor(); await ready()
     assert.equal(await list().count(), 30); assert.equal(await page.getByText('34 / 80 asistentes', { exact: true }).count(), 1)
-    assert.equal(await page.getByText('@asistente_0', { exact: true }).count(), 1); assert.equal(await page.locator('.attendees-page').getByText(/@gmail|fixture@example|Solicitudes|CSV/).count(), 0)
+    assert.equal(await page.getByText('@asistente_0', { exact: true }).count(), 1); assert.equal(await page.locator('.attendees-page').getByText(/@gmail|fixture@example|CSV/).count(), 0)
+    assert.equal(await page.getByRole('link', { name: 'Solicitudes', exact: true }).count(), 1)
     await page.screenshot({ path: `${out}/confirmed-${width}.png` })
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true)
     check('Protected list, minimal identity, real fixture counts, original dark composition and no overflow')

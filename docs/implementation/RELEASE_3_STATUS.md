@@ -2,7 +2,7 @@
 
 **Plan:** [RELEASE_3_PLAN.md](RELEASE_3_PLAN.md). **Contrato:** [RELEASE_3_REQUIREMENTS.md](../requirements/RELEASE_3_REQUIREMENTS.md) (9 RF, 37 CA). **Diseño:** [R3 original](../design/mockups/release-3.png) y [mockups individuales R3](../design/mockups/r3/README.md).
 
-**Corte:** 12/10/2026 (Argentina). **Bloques 0–5 implementados; QA y aceptación pendientes**. Bloque 6 y QA integral pendientes. [Auditoría y decisiones](RELEASE_3_BLOCK_0_DECISIONS.md).
+**Corte:** 12/10/2026 (Argentina). **Bloques 0–6 implementados; QA y aceptación pendientes**. QA integral pendiente. [Auditoría y decisiones](RELEASE_3_BLOCK_0_DECISIONS.md).
 
 **Estados posibles:** Pendiente · En curso · Implementado; QA pendiente · Bloqueado · Validado. «Validado» requiere aceptación humana respaldada por evidencia; no equivale a PR abierta.
 
@@ -14,7 +14,7 @@
 | 3 | Galería | R3-03 | Implementado; QA pendiente | [PR #21](https://github.com/EnzoG14/PlanIt/pull/21) integrada; rama `codex/r3-block-3`; [CA/pruebas/capturas](../design/verification/r3-block-3/README.md) | Migración aplicada y verificada; HTTP/JWT A/B, dispositivo físico y aceptación humana |
 | 4 | Asistentes y remoción | R3-05/06 | Implementado; QA pendiente | [PR #22](https://github.com/EnzoG14/PlanIt/pull/22) integrada; rama `codex/r3-block-4`; [8 CA/pruebas/capturas](../design/verification/r3-block-4/README.md) | Migración aplicada y verificada; HTTP/JWT/Realtime A/B real, dispositivo físico y aceptación humana pendientes |
 | 5 | Cancelar/archivar/duplicar | R3-02/07 | Implementado; QA pendiente | [PR #23](https://github.com/EnzoG14/PlanIt/pull/23) en borrador; rama `codex/r3-block-5`; [8 CA/pruebas/capturas](../design/verification/r3-block-5/README.md) | Migración aplicada y verificada; HTTP/JWT A/B real, dispositivo físico y aceptación humana pendientes |
-| 6 | Reincorporaciones | R3-08/09 | Pendiente | — | Tabla/RPC ausentes; depende de remoción, autorización administrativa y locks/cooldown |
+| 6 | Reincorporaciones | R3-08/09 | Implementado; QA pendiente | [PR #24](https://github.com/EnzoG14/PlanIt/pull/24) en borrador; rama `codex/r3-block-6`; [9 CA/pruebas/capturas](../design/verification/r3-block-6/README.md) | Migración aplicada y verificada; HTTP/JWT A/B, dispositivo físico y aceptación humana pendientes |
 | 7 | QA integral | R3-01..09 | Pendiente | — | Matriz 37 CA y regresiones |
 
 ## Estado de partida
@@ -112,8 +112,16 @@
 
 - **Aplicación remota posterior (12/10/2026):** autorización explícita del usuario; CLI aplicó únicamente close_and_duplicate_events con --skip-vault. Dieciséis versiones sincronizadas y dry-run sin pendientes; cuerpos de las tres RPC coinciden con Git, search_path vacío y EXECUTE authenticated sin PUBLIC/anon. RLS público conservado, sin UPDATE/DELETE genéricos; smoke SQL de las tres RPC rechaza identidad ausente. Advisors agrega dos avisos por RPC SECURITY DEFINER autenticadas deliberadas; contraseña filtrada deshabilitada preexistente. Sin Vault/seeds/roles/datos de negocio. [Resumen remoto](../design/verification/r3-block-5/remote-migration-summary.json).
 
-### Bloque 6 — Pendiente
-Sin código, pruebas ni migraciones.
+### Bloque 6 — Implementado; QA pendiente
+
+- **Base/rama:** `origin/main` actualizado `dd4bb07` (PR #23 integrada) → `codex/r3-block-6`; [PR #24](https://github.com/EnzoG14/PlanIt/pull/24) en borrador, exclusiva del bloque. Cambio previo de `vite.config.ts` preservado y excluido.
+- **Entrega:** solicitudes del removido en detalle, primera inmediata incluso sin cupo, pending/rechazo/fecha elegible/aprobación, bandeja `/events/:id/rejoin-requests` desde Asistentes, contador de pendientes y páginas de 30. Confirmaciones accesibles, envío único, reconciliación de respuesta perdida por ID exacto sin reenvío incierto, carga/vacío/error/denegación, foco/online/visibilidad y descarte de respuestas al cambiar cuenta/evento.
+- **BD:** `event_rejoin_requests` pending/approved/rejected, FK RESTRICT, UNIQUE parcial de una pending y CHECK de fechas/revisor. RLS SELECT propia, sin mutaciones genéricas; proyecciones del dueño con nombre/username exclusivamente. RPCs de estado/listado/pedido/resolución/comprobación con auth.uid, search_path vacío y EXECUTE authenticated. READ COMMITTED, lock evento→participación→solicitud, cupo confirmado después de esperar, cooldown desde resolución del último rechazo. Sin cupo sigue pendiente; no reserva ni autoaprueba. Trigger conserva una transición real `rejoin_approval`; rechazo se audita en solicitud sin fabricar transición.
+- **Decisión explícita del usuario:** rechazar pendientes está permitido tras finalizar/cancelar/archivar; nuevas solicitudes/aprobaciones permanecen bloqueadas. Excepción documentada frente a «No resolver tras finalizar/cancelar/archivar» en la especificación técnica; sin notificaciones automáticas, campos de motivo ni expansión de alcance R4–R7.
+- **Migración:** `20261012155501_event_rejoin_requests.sql` creada con CLI, replay probado en PostgreSQL local; **aplicada y verificada en planit-v2 el 12/10/2026 con autorización explícita posterior del usuario**. Única pendiente en preflight; push con --skip-vault, diecisiete versiones sincronizadas y dry-run sin pendientes. Siete cuerpos RPC/trigger idénticos a Git, RLS/grants/índices/CHECK comprobados y cinco RPC rechazan identidad ausente en READ ONLY/ROLLBACK. Advisors agrega cinco avisos SECURITY DEFINER deliberados (16 → 21); contraseña filtrada deshabilitada preexistente. Sin Vault/seeds/roles/datos de negocio. [Resumen remoto](../design/verification/r3-block-6/remote-migration-summary.json).
+- **Verificación:** build/lint PASS (aviso Mapbox preexistente), SQL local real con Auth/Storage scaffolding, identidades A/B/tercero/anon/ausente, RLS/grants, CHECK/UNIQUE, READ COMMITTED, cooldown, privacidad, rollback y once carreras de bloqueo. UI fixtures Edge en cinco tamaños y Asia/Tokyo: estados, paginación/error/retry, foco/confirmaciones, doble envío/respuesta perdida, comprobación fallida y cuenta nueva con lectura tardía. Regresiones de creación/edición/cupo/participación/asistentes/acciones/chat, con evidencia nueva bajo este bloque. [Matriz de nueve CA, reproducción y límites](../design/verification/r3-block-6/README.md).
+- **Visual:** originales asistentes/solicitudes/estados/collage abiertos y capturas reales contrastadas; identidad marino/azul/violeta conservada. Shell vigente, cupo operativo/contexto, username/iniciales, badge móvil, omisión de motivos y fecha exacta son adaptaciones documentadas. Sin overflow.
+- **Pendientes:** HTTP/Auth/JWT/REST/Realtime A/B reales, dispositivo físico/safe-area y aceptación humana. Sin proyecto antiguo, merge, despliegue ni “Validado”.
 
 ### Bloque 7 — Pendiente
 Sin código, pruebas ni migraciones.

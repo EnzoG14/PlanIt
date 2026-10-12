@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 const paths = {
+  check: <path d="m5 12 4 4L19 6" />,
+  close: <path d="m6 6 12 12M18 6 6 18" />,
   copy: <><rect x="8" y="8" width="13" height="13" rx="2" /><path d="M16 8V3H3v13h5" /></>,
   archive: <><rect x="3" y="3" width="18" height="5" rx="1" /><path d="M5 8v13h14V8M9 12h6" /></>,
   pause: <><circle cx="12" cy="12" r="9" /><path d="M9 8v8M15 8v8" /></>,

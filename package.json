@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:rejoin": "node scripts/check-rejoin.mjs",
+    "check:rejoin:ui": "node scripts/check-rejoin-ui.mjs",
+    "check:r3-block-6:regressions": "node scripts/check-block-6-regressions.mjs",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",

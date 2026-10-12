@@ -1,0 +1,255 @@
+{
+  "project": "planit-v2",
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "date_argentina": "2026-10-12",
+  "authorization": "Usuario: hace las migraciones a la db remota por favor",
+  "migration": "20261012155501_event_rejoin_requests.sql",
+  "command": "supabase db push --linked --skip-vault --yes",
+  "preflight_pending_count": 1,
+  "applied": true,
+  "migration_count": 17,
+  "postflight_up_to_date": true,
+  "function_body_comparisons": [
+    {
+      "name": "planit_private.record_participation_history",
+      "identical": true
+    },
+    {
+      "name": "public.get_event_attendees",
+      "identical": true
+    },
+    {
+      "name": "public.get_event_rejoin_requests",
+      "identical": true
+    },
+    {
+      "name": "public.get_my_rejoin_status",
+      "identical": true
+    },
+    {
+      "name": "public.request_rejoin",
+      "identical": true
+    },
+    {
+      "name": "public.resolve_rejoin",
+      "identical": true
+    },
+    {
+      "name": "public.get_event_rejoin_resolution",
+      "identical": true
+    }
+  ],
+  "catalog_checks": {
+    "rls": true,
+    "grants": [
+      {
+        "grantee": "authenticated",
+        "grantor": "postgres",
+        "table_name": "event_rejoin_requests",
+        "is_grantable": "NO",
+        "table_schema": "public",
+        "table_catalog": "postgres",
+        "privilege_type": "SELECT",
+        "with_hierarchy": "YES"
+      }
+    ],
+    "columns": [
+      {
+        "name": "id",
+        "type": "uuid"
+      },
+      {
+        "name": "participation_id",
+        "type": "uuid"
+      },
+      {
+        "name": "status",
+        "type": "text"
+      },
+      {
+        "name": "requested_at",
+        "type": "timestamp without time zone"
+      },
+      {
+        "name": "resolved_at",
+        "type": "timestamp without time zone"
+      },
+      {
+        "name": "reviewed_by",
+        "type": "uuid"
+      }
+    ],
+    "indexes": [
+      "CREATE UNIQUE INDEX event_rejoin_requests_pkey ON public.event_rejoin_requests USING btree (id)",
+      "CREATE UNIQUE INDEX rejoin_requests_one_pending_idx ON public.event_rejoin_requests USING btree (participation_id) WHERE (status = 'pending'::text)",
+      "CREATE INDEX rejoin_requests_participation_date_idx ON public.event_rejoin_requests USING btree (participation_id, requested_at DESC, id DESC)",
+      "CREATE INDEX rejoin_requests_reviewer_idx ON public.event_rejoin_requests USING btree (reviewed_by) WHERE (reviewed_by IS NOT NULL)"
+    ],
+    "policies": [
+      {
+        "cmd": "SELECT",
+        "qual": "(EXISTS ( SELECT 1\n   FROM event_participations p\n  WHERE ((p.id = event_rejoin_requests.participation_id) AND (p.user_id = ( SELECT auth.uid() AS uid)))))",
+        "roles": [
+          "authenticated"
+        ],
+        "tablename": "event_rejoin_requests",
+        "permissive": "PERMISSIVE",
+        "policyname": "rejoin_requests_select_own",
+        "schemaname": "public",
+        "with_check": null
+      }
+    ],
+    "functions": [
+      {
+        "body": "\nbegin\n    if TG_OP = 'INSERT' then\n        insert into public.participation_history(participation_id, previous_status, new_status, changed_by, reason)\n        values (new.id, null, new.status, auth.uid(),\n            case new.status when 'confirmed' then 'registration' when 'cancelled' then 'voluntary_leave' else 'organizer_removal' end);\n    elsif old.status is distinct from new.status then\n        insert into public.participation_history(participation_id, previous_status, new_status, changed_by, reason)\n        values (new.id, old.status, new.status, auth.uid(),\n            case when old.status = 'removed' and new.status = 'confirmed' then 'rejoin_approval'\n                when new.status = 'confirmed' then 'registration' when new.status = 'cancelled' then 'voluntary_leave' else 'organizer_removal' end);\n    end if;\n    return new;\nend;\n",
+        "name": "record_participation_history",
+        "config": [
+          "search_path=\"\""
+        ],
+        "schema": "planit_private",
+        "definer": false,
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": false
+      },
+      {
+        "body": "\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if not exists (select 1 from public.events where id = p_event_id and organizer_id = auth.uid()) then\n        raise exception 'event_unavailable' using errcode = '42501';\n    end if;\n    if p_status is null or p_status not in ('confirmed', 'removed') or p_search is null\n        or char_length(p_search) > 120 or p_offset is null or p_offset < 0 then\n        raise exception 'invalid_attendees_query' using errcode = '22023';\n    end if;\n    return (\n        with page as materialized (\n            select p.id as participation_id, p.user_id, p.status, profile.display_name, profile.username,\n                lower(profile.display_name) as sort_name\n            from public.event_participations p join public.profiles profile on profile.id = p.user_id\n            where p.event_id = p_event_id and p.status = p_status\n                and strpos(lower(profile.display_name), lower(btrim(p_search))) > 0\n            order by lower(profile.display_name), p.id limit 31 offset p_offset\n        )\n        select jsonb_build_object(\n            'title', e.title, 'capacity', e.capacity,\n            'event_state', case when e.archived_at is not null then 'archived'\n                when e.cancelled_at is not null then 'cancelled'\n                when e.ends_at <= (statement_timestamp() at time zone 'America/Argentina/Buenos_Aires') then 'ended' else 'open' end,\n            'confirmed_count', (select count(*) from public.event_participations where event_id = e.id and status = 'confirmed'),\n            'removed_count', (select count(*) from public.event_participations where event_id = e.id and status = 'removed'),\n            'pending_count', (select count(*) from public.event_rejoin_requests r join public.event_participations p on p.id = r.participation_id where p.event_id = e.id and r.status = 'pending'),\n            'has_more', (select count(*) > 30 from page),\n            'attendees', coalesce((select jsonb_agg(to_jsonb(visible) - 'sort_name' order by sort_name, participation_id)\n                from (select * from page order by sort_name, participation_id limit 30) visible), '[]'::jsonb)\n        )\n        from public.events e\n        where e.id = p_event_id\n    );\nend;\n",
+        "name": "get_event_attendees",
+        "config": [
+          "search_path=\"\""
+        ],
+        "schema": "public",
+        "definer": true,
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": true
+      },
+      {
+        "body": "\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if not exists (select 1 from public.events where id = p_event_id and organizer_id = auth.uid()) then raise exception 'event_unavailable' using errcode = '42501'; end if;\n    if p_offset is null or p_offset < 0 then raise exception 'invalid_rejoin_query' using errcode = '22023'; end if;\n    return (\n        with page as materialized (\n            select r.id as request_id, r.participation_id, r.status, r.requested_at, profile.display_name, profile.username\n            from public.event_rejoin_requests r join public.event_participations p on p.id = r.participation_id\n            join public.profiles profile on profile.id = p.user_id\n            where p.event_id = p_event_id and r.status = 'pending'\n            order by r.requested_at desc, r.id desc limit 31 offset p_offset\n        )\n        select jsonb_build_object('title', e.title, 'capacity', e.capacity,\n            'event_state', case when e.archived_at is not null then 'archived' when e.cancelled_at is not null then 'cancelled'\n                when e.ends_at <= (statement_timestamp() at time zone 'America/Argentina/Buenos_Aires') then 'ended' else 'open' end,\n            'confirmed_count', (select count(*) from public.event_participations where event_id = e.id and status = 'confirmed'),\n            'pending_count', (select count(*) from public.event_rejoin_requests r join public.event_participations p on p.id=r.participation_id where p.event_id=e.id and r.status='pending'),\n            'has_more', (select count(*) > 30 from page),\n            'requests', coalesce((select jsonb_agg(to_jsonb(visible) order by requested_at desc, request_id desc)\n                from (select * from page order by requested_at desc, request_id desc limit 30) visible), '[]'::jsonb))\n        from public.events e where e.id = p_event_id\n    );\nend;\n",
+        "name": "get_event_rejoin_requests",
+        "config": [
+          "search_path=\"\""
+        ],
+        "schema": "public",
+        "definer": true,
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": true
+      },
+      {
+        "body": "\ndeclare\n    v_event public.events%rowtype;\n    v_part public.event_participations%rowtype;\n    v_request public.event_rejoin_requests%rowtype;\n    v_next timestamp;\n    v_now timestamp := statement_timestamp() at time zone 'America/Argentina/Buenos_Aires';\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    select * into v_event from public.events where id = p_event_id;\n    select * into v_part from public.event_participations where event_id = p_event_id and user_id = auth.uid();\n    if v_event.id is null or not (v_event.organizer_id = auth.uid() or v_part.id is not null\n        or (v_event.visibility = 'public' and v_event.cancelled_at is null and v_event.archived_at is null)) then\n        raise exception 'event_unavailable' using errcode = '42501';\n    end if;\n    select * into v_request from public.event_rejoin_requests where participation_id = v_part.id order by requested_at desc, id desc limit 1;\n    if v_request.status = 'rejected' then v_next := v_request.resolved_at + interval '7 days'; end if;\n    return jsonb_build_object('request_id', v_request.id, 'status', v_request.status,\n        'requested_at', v_request.requested_at, 'resolved_at', v_request.resolved_at, 'next_eligible_at', v_next,\n        'can_request', coalesce(v_part.status = 'removed' and v_event.organizer_id <> auth.uid()\n            and v_event.cancelled_at is null and v_event.archived_at is null and v_event.ends_at > v_now\n            and v_request.status is distinct from 'pending' and (v_next is null or v_next <= v_now), false));\nend;\n",
+        "name": "get_my_rejoin_status",
+        "config": [
+          "search_path=\"\""
+        ],
+        "schema": "public",
+        "definer": true,
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": true
+      },
+      {
+        "body": "\ndeclare\n    v_event public.events%rowtype;\n    v_part public.event_participations%rowtype;\n    v_request public.event_rejoin_requests%rowtype;\n    v_now timestamp;\n    v_id uuid;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then raise exception 'retry_read_committed' using errcode = '40001'; end if;\n    select * into v_event from public.events where id = p_event_id for update;\n    if not found then raise exception 'event_unavailable' using errcode = '42501'; end if;\n    select * into v_part from public.event_participations where event_id = p_event_id and user_id = auth.uid() for update;\n    if not found or v_part.status <> 'removed' or v_event.organizer_id = auth.uid() then raise exception 'rejoin_not_removed' using errcode = 'P0001'; end if;\n    -- The holder retains authorized detail access, including unlisted historical participation.\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\n    if v_event.cancelled_at is not null or v_event.archived_at is not null or v_event.ends_at <= v_now then raise exception 'event_closed' using errcode = 'P0001'; end if;\n    select * into v_request from public.event_rejoin_requests where participation_id = v_part.id order by requested_at desc, id desc limit 1 for update;\n    if v_request.status = 'pending' then raise exception 'rejoin_already_pending' using errcode = 'P0001'; end if;\n    if v_request.status = 'rejected' and v_request.resolved_at + interval '7 days' > v_now then raise exception 'rejoin_cooldown' using errcode = 'P0001'; end if;\n    insert into public.event_rejoin_requests(participation_id, requested_at) values(v_part.id, v_now) returning id into v_id;\n    return v_id;\nend;\n",
+        "name": "request_rejoin",
+        "config": [
+          "search_path=\"\""
+        ],
+        "schema": "public",
+        "definer": true,
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": true
+      },
+      {
+        "body": "\ndeclare\n    v_event public.events%rowtype;\n    v_part public.event_participations%rowtype;\n    v_request public.event_rejoin_requests%rowtype;\n    v_now timestamp;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then raise exception 'retry_read_committed' using errcode = '40001'; end if;\n    select * into v_event from public.events where id = p_event_id for update;\n    if not found or v_event.organizer_id <> auth.uid() then raise exception 'event_unavailable' using errcode = '42501'; end if;\n    if p_decision is null or p_decision not in ('approved','rejected') then raise exception 'invalid_rejoin_decision' using errcode = '22023'; end if;\n    select p.* into v_part from public.event_participations p join public.event_rejoin_requests r on r.participation_id = p.id\n        where r.id = p_request_id and p.event_id = p_event_id for update of p;\n    if not found then raise exception 'rejoin_unavailable' using errcode = 'P0001'; end if;\n    select * into v_request from public.event_rejoin_requests where id = p_request_id for update;\n    if v_request.status <> 'pending' then raise exception 'rejoin_already_resolved' using errcode = 'P0001'; end if;\n    if v_part.status <> 'removed' then raise exception 'rejoin_not_removed' using errcode = 'P0001'; end if;\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\n    if p_decision = 'approved' then\n        if v_event.cancelled_at is not null or v_event.archived_at is not null or v_event.ends_at <= v_now then raise exception 'event_closed' using errcode = 'P0001'; end if;\n        if (select count(*) from public.event_participations where event_id=p_event_id and status='confirmed') >= v_event.capacity then raise exception 'event_full' using errcode = 'P0001'; end if;\n        update public.event_participations set status='confirmed' where id=v_part.id;\n    end if;\n    -- Human-approved exception: rejection is allowed after closure; no transition is fabricated.\n    update public.event_rejoin_requests set status=p_decision, resolved_at=v_now, reviewed_by=auth.uid() where id=p_request_id;\nend;\n",
+        "name": "resolve_rejoin",
+        "config": [
+          "search_path=\"\""
+        ],
+        "schema": "public",
+        "definer": true,
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": true
+      },
+      {
+        "body": "\ndeclare v_status text;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if not exists (select 1 from public.events where id=p_event_id and organizer_id=auth.uid()) then raise exception 'event_unavailable' using errcode='42501'; end if;\n    select r.status into v_status from public.event_rejoin_requests r join public.event_participations p on p.id=r.participation_id where r.id=p_request_id and p.event_id=p_event_id;\n    if not found then raise exception 'rejoin_unavailable' using errcode='P0001'; end if;\n    return v_status;\nend;\n",
+        "name": "get_event_rejoin_resolution",
+        "config": [
+          "search_path=\"\""
+        ],
+        "schema": "public",
+        "definer": true,
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": true
+      }
+    ],
+    "migrations": [
+      "20261010011204",
+      "20261010013449",
+      "20261010023448",
+      "20261010042701",
+      "20261010052653",
+      "20261010150232",
+      "20261010154930",
+      "20261010212819",
+      "20261010214526",
+      "20261011163653",
+      "20261011193316",
+      "20261011232326",
+      "20261012001058",
+      "20261012013634",
+      "20261012031717",
+      "20261012044919",
+      "20261012155501"
+    ],
+    "constraints": [
+      "CHECK ((((status = 'pending'::text) AND (resolved_at IS NULL) AND (reviewed_by IS NULL)) OR ((status = ANY (ARRAY['approved'::text, 'rejected'::text])) AND (resolved_at IS NOT NULL) AND (reviewed_by IS NOT NULL))))",
+      "CHECK (((resolved_at IS NULL) OR (resolved_at >= requested_at)))",
+      "FOREIGN KEY (participation_id) REFERENCES event_participations(id) ON DELETE RESTRICT",
+      "PRIMARY KEY (id)",
+      "FOREIGN KEY (reviewed_by) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "CHECK ((status = ANY (ARRAY['pending'::text, 'approved'::text, 'rejected'::text])))"
+    ],
+    "public_tables_without_rls": 0
+  },
+  "missing_identity_smoke": {
+    "passed": true,
+    "functions": 5,
+    "transaction": "READ ONLY / ROLLBACK",
+    "expected_sqlstate": "42501",
+    "expected_message": "authentication_required"
+  },
+  "advisors_before": {
+    "authenticated_security_definer_function_executable": 16,
+    "auth_leaked_password_protection": 1
+  },
+  "advisors_after": [
+    {
+      "name": "authenticated_security_definer_function_executable",
+      "count": 21,
+      "level": "WARN",
+      "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable"
+    },
+    {
+      "name": "auth_leaked_password_protection",
+      "count": 1,
+      "level": "WARN",
+      "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection"
+    }
+  ],
+  "advisors_explanation": "Cinco nuevas RPC SECURITY DEFINER autenticadas son deliberadas: autorizan explícitamente y evitan escrituras genéricas. Aviso Auth preexistente sin cambio.",
+  "unchanged": [
+    "Vault",
+    "seeds",
+    "roles",
+    "datos de negocio",
+    "proyecto Supabase antiguo"
+  ],
+  "pending": [
+    "HTTP/Auth/JWT/REST/Realtime A/B reales",
+    "dispositivo físico",
+    "aceptación humana"
+  ]
+}

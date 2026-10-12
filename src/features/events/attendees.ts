@@ -3,7 +3,7 @@ import { supabase } from '../../lib/supabase'
 export type AttendeeStatus = 'confirmed' | 'removed'
 export type Attendee = { participation_id: string; user_id: string; status: AttendeeStatus; display_name: string; username: string }
 export type AttendeesPage = {
-  title: string; capacity: number; confirmed_count: number; removed_count: number
+  title: string; capacity: number; confirmed_count: number; removed_count: number; pending_count?: number
   event_state: 'open' | 'ended' | 'cancelled' | 'archived'; has_more: boolean; attendees: Attendee[]
 }
 export const attendeesPageSize = 30

@@ -75,3 +75,11 @@
 - Migraciones reproducibles y sin errores de advisors.
 
 Consultar ../AGENTS.md y ../supabase/AGENTS.md antes de cambiar esquema.
+
+## R3 Bloque 6 — Migración aplicada y verificada
+
+Aplicada en planit-v2 el 12/10/2026 con autorización explícita posterior del usuario. Diecisiete versiones sincronizadas, dry-run sin pendientes; siete cuerpos de funciones/trigger coinciden con Git, permisos/RLS/índices/CHECK verificados y cinco RPC rechazan identidad ausente. [Registro remoto](design/verification/r3-block-6/remote-migration-summary.json). HTTP/JWT real y aceptación humana pendientes.
+
+`20261012155501_event_rejoin_requests.sql` incorpora solicitudes con FK RESTRICT a participación, estados pending/approved/rejected, requested_at/resolved_at/reviewed_by y UNIQUE parcial de una pending. CHECK exige resolución/revisor coherentes y cronología válida; fechas propias sin zona, hora Argentina. RLS SELECT de solicitud propia y sin permisos de mutación directa; identidad del solicitante se deriva de la participación, sin duplicar datos privados.
+
+RPCs `get_my_rejoin_status`, `get_event_rejoin_requests`, `request_rejoin`, `resolve_rejoin` y `get_event_rejoin_resolution` autorizan desde auth.uid; la bandeja y comprobación son sólo del dueño. READ COMMITTED y locks evento→participación→solicitud protegen contra dobles resoluciones y carreras por cupo. Aprobar exige vigencia y cupo confirmado; sin plaza conserva pending sin reservar/autoaprobar. El trigger existente registra `rejoin_approval` para removed→confirmed. Rechazo conserva participación, fecha/revisor y solicitud histórica; habilita otro pedido después de siete días desde resolución. Por decisión humana, se permite rechazar tras cierre, nunca pedir/aprobar. `get_event_attendees` conserva firma/privacidad y agrega pending_count. [Pruebas y límites](design/verification/r3-block-6/README.md).
