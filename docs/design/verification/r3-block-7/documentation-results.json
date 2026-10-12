@@ -1,0 +1,48 @@
+{
+  "literal_criteria": 37,
+  "local_links_checked": 166,
+  "passing_suites": 28,
+  "originals": [
+    {
+      "file": "docs/design/mockups/r3/01-mis-eventos.png",
+      "sha256": "fc57ad4a8a286b2eacb855fcdfa39ac358dcd206078a9f1e19889a0afb6971b9",
+      "unchanged": true
+    },
+    {
+      "file": "docs/design/mockups/r3/02-editar-evento.png",
+      "sha256": "a32ce472d869ee875034578051ac6e7fc9cfe408b3454af9da7c9b8599f008c1",
+      "unchanged": true
+    },
+    {
+      "file": "docs/design/mockups/r3/03-galeria.png",
+      "sha256": "5d24d77a90ca3cb19f1a987f269957dc71e19fc1fbf0d2924dee13cf0407a9aa",
+      "unchanged": true
+    },
+    {
+      "file": "docs/design/mockups/r3/04-asistentes.png",
+      "sha256": "66a6ab3efbd48683e82f24c8766159b99b2013bdcb2396d05bc18f4f2d85939b",
+      "unchanged": true
+    },
+    {
+      "file": "docs/design/mockups/r3/05-solicitudes-reincorporacion.png",
+      "sha256": "68f02d3eae5e511a682d3aae3a52f46255b21d8a0df6951aa5fcb3084629ab1a",
+      "unchanged": true
+    },
+    {
+      "file": "docs/design/mockups/r3/06-acciones-evento.png",
+      "sha256": "d5b35f89acbad50162f7384c08f3fb03e0ca2e67176640b0e96edc0efd362d08",
+      "unchanged": true
+    },
+    {
+      "file": "docs/design/mockups/r3/07-estados-dialogos.png",
+      "sha256": "8d1302e7de3d5b00394eda42bf2a8f83e7f130d1e1da07a9c6ecda83fc67a4cb",
+      "unchanged": true
+    },
+    {
+      "file": "docs/design/mockups/release-3.png",
+      "sha256": "16dcce42f2ae6f55cad0a2067d538746424a8eb44c4cecf5758d6e63c6740253",
+      "unchanged": true
+    }
+  ],
+  "result": "PASS"
+}

@@ -1,0 +1,37 @@
+{
+  "method": "sRGB relative luminance against white; both solid gradient stops (not a full page contrast audit)",
+  "before": {
+    "color": "ff2254",
+    "ratio": 3.744096598052017
+  },
+  "results": [
+    {
+      "file": "src/components/event-actions.css",
+      "selector": ".event-action-danger",
+      "white_text": true,
+      "colors": [
+        "dc1743",
+        "ce103d"
+      ],
+      "ratios": [
+        4.944973311122906,
+        5.576410885284644
+      ],
+      "result": "PASS"
+    },
+    {
+      "file": "src/pages/event-attendees.css",
+      "selector": ".attendees-remove",
+      "white_text": true,
+      "colors": [
+        "dc1743",
+        "ce103d"
+      ],
+      "ratios": [
+        4.944973311122906,
+        5.576410885284644
+      ],
+      "result": "PASS"
+    }
+  ]
+}

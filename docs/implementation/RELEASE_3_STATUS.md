@@ -2,7 +2,7 @@
 
 **Plan:** [RELEASE_3_PLAN.md](RELEASE_3_PLAN.md). **Contrato:** [RELEASE_3_REQUIREMENTS.md](../requirements/RELEASE_3_REQUIREMENTS.md) (9 RF, 37 CA). **Diseño:** [R3 original](../design/mockups/release-3.png) y [mockups individuales R3](../design/mockups/r3/README.md).
 
-**Corte:** 12/10/2026 (Argentina). **Bloques 0–6 implementados; QA y aceptación pendientes**. QA integral pendiente. [Auditoría y decisiones](RELEASE_3_BLOCK_0_DECISIONS.md).
+**Corte:** 12/10/2026 (Argentina). **Bloques 0–6 implementados; QA y aceptación pendientes**. QA integral local/fixture ejecutado; E2E real y aceptación humana pendientes. [Auditoría y decisiones](RELEASE_3_BLOCK_0_DECISIONS.md).
 
 **Estados posibles:** Pendiente · En curso · Implementado; QA pendiente · Bloqueado · Validado. «Validado» requiere aceptación humana respaldada por evidencia; no equivale a PR abierta.
 
@@ -15,7 +15,7 @@
 | 4 | Asistentes y remoción | R3-05/06 | Implementado; QA pendiente | [PR #22](https://github.com/EnzoG14/PlanIt/pull/22) integrada; rama `codex/r3-block-4`; [8 CA/pruebas/capturas](../design/verification/r3-block-4/README.md) | Migración aplicada y verificada; HTTP/JWT/Realtime A/B real, dispositivo físico y aceptación humana pendientes |
 | 5 | Cancelar/archivar/duplicar | R3-02/07 | Implementado; QA pendiente | [PR #23](https://github.com/EnzoG14/PlanIt/pull/23) en borrador; rama `codex/r3-block-5`; [8 CA/pruebas/capturas](../design/verification/r3-block-5/README.md) | Migración aplicada y verificada; HTTP/JWT A/B real, dispositivo físico y aceptación humana pendientes |
 | 6 | Reincorporaciones | R3-08/09 | Implementado; QA pendiente | [PR #24](https://github.com/EnzoG14/PlanIt/pull/24) en borrador; rama `codex/r3-block-6`; [9 CA/pruebas/capturas](../design/verification/r3-block-6/README.md) | Migración aplicada y verificada; HTTP/JWT A/B, dispositivo físico y aceptación humana pendientes |
-| 7 | QA integral | R3-01..09 | Pendiente | — | Matriz 37 CA y regresiones |
+| 7 | QA integral | R3-01..09 | Implementado; QA pendiente | Rama `codex/r3-block-7`; [37 CA](../qa/RELEASE_3_ACCEPTANCE.md), [informe NO-GO](../qa/RELEASE_3_TEST_REPORT.md), [evidencia nueva](../design/verification/r3-block-7/README.md) | HTTP/Auth/JWT/REST/Storage/Realtime A/B reales, móvil físico y aceptación humana |
 
 ## Estado de partida
 
@@ -123,5 +123,13 @@
 - **Visual:** originales asistentes/solicitudes/estados/collage abiertos y capturas reales contrastadas; identidad marino/azul/violeta conservada. Shell vigente, cupo operativo/contexto, username/iniciales, badge móvil, omisión de motivos y fecha exacta son adaptaciones documentadas. Sin overflow.
 - **Pendientes:** HTTP/Auth/JWT/REST/Realtime A/B reales, dispositivo físico/safe-area y aceptación humana. Sin proyecto antiguo, merge, despliegue ni “Validado”.
 
-### Bloque 7 — Pendiente
-Sin código, pruebas ni migraciones.
+### Bloque 7 — Implementado; QA pendiente
+
+- **Base/rama:** `origin/main` actualizado `d9c0a69` (PR #24 integrada) → `codex/r3-block-7`, checkout aislado `r3-qa-worktree`. Checkouts/cambios previos preservados; PR exclusiva de QA en borrador.
+- **Entrega:** [37 filas literales RF/CA](../qa/RELEASE_3_ACCEPTANCE.md), [informe de pruebas y NO-GO](../qa/RELEASE_3_TEST_REPORT.md), [evidencia nueva y comparación visual](../design/verification/r3-block-7/README.md). Ejecutor `check:r3` redirige suites existentes sin sobrescribir evidencia histórica; comparación de metadatos local/remoto y comprobación de contraste reproducibles.
+- **Corrección mínima:** extremo rojo de las confirmaciones cancelar/remover oscurecido, blanco 3,74:1 → 4,94:1; conserva identidad y layout de originales. Capturas antes/después; sin cambios de lógica funcional, contratos ni requisitos.
+- **Verificación:** npm ci PASS (cero vulnerabilidades), build/lint PASS (aviso Mapbox preexistente); SQL PostgreSQL 18.4 aislado con Auth/Storage scaffolding, PGlite y validaciones, UI Edge fixtures. Dos identidades/tercero/anon/sin identidad, grants/RLS/privacidad, rollback/históricos, cupo y carreras, 10/11 fotos/interrupciones, siete días/última plaza/cierre, duplicación sin persistir antes de publicar. Responsive R3 en 360×800, 375×812, 390×844, 768×1024 y 1280×900, zona Tokyo; regresiones R1/R2 locales/fixtures registradas por separado.
+- **Auditoría remota read-only:** planit-v2, 17 versiones coincidentes, RLS en 11 tablas públicas, 31 funciones públicas de negocio idénticas al replay tras normalizar exclusivamente CRLF/LF. RPC sin EXECUTE anon, search_path fijo, grants por tabla/columna/políticas registrados. Asesores mantienen 21 definers autenticados y protección de contraseñas filtradas deshabilitada, preexistentes. Catálogos no equivalen a HTTP/JWT real.
+- **Visual:** siete originales y collage abiertos; muestras de capturas nuevas móvil/tablet/escritorio comparadas, excepciones de shell/privacidad/fechas/controles accesibles documentadas. Sin rediseño ni funcionalidades ilustrativas nuevas. Foco/Escape/scroll/overflow comprobados por fixtures; teclado virtual/notch/safe-area físico pendiente.
+- **Migraciones/configuración:** ninguna creada/editada/aplicada; consultas remotas READ ONLY/ROLLBACK, sin datos de negocio, Vault, proyecto antiguo, merge ni despliegue. Errores de entorno/ejecutor y límites en el informe, sin inventar E2E.
+- **Pendientes/recomendación:** NO-GO para declarar la release Validada: dos cuentas y autorización expresa para E2E HTTP/Auth/REST/Storage/Realtime A/B con mutaciones, dispositivo físico y aceptación humana. Ninguno de los 37 CA se marca Validado. Entrega para revisión; detenerse sin iniciar siguiente bloque/release.

@@ -1,0 +1,11 @@
+{
+  "project": "iepeqmvzjguwlhnecsdq",
+  "migration_count": 17,
+  "all_public_tables_rls": true,
+  "no_anon_function_execute": true,
+  "no_generic_table_writes": true,
+  "private_bucket_config": "PASS",
+  "identical_function_count": 31,
+  "mismatched_function_count": 0,
+  "excluded": "rls_auto_enable is a platform event-trigger scaffold locally, not a business RPC"
+}

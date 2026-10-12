@@ -1,0 +1,10 @@
+{
+  "date_argentina": "2026-10-12",
+  "migration_count": 17,
+  "public_table_count": 11,
+  "all_public_tables_rls": true,
+  "bucket_matches_versioned_contract": true,
+  "authenticated_definer_warnings": 21,
+  "leaked_password_protection_warning": true,
+  "raw_catalogs": "Kept only in ignored local files; no raw policies, grants, configuration, or remote definitions exported"
+}
