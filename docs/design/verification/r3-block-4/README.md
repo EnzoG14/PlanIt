@@ -1,6 +1,6 @@
 # R3 Bloque 4 — Asistentes y remoción
 
-Implementado; QA y aceptación humana pendientes. Evidencia del 12/10/2026 (Argentina), rama `codex/r3-block-4`, base `origin/main` `8e1537d` (Bloque 3 integrado). No se aplicó la migración nueva en remoto, no se fusionó ni desplegó frontend.
+Implementado; QA y aceptación humana pendientes. [PR #22](https://github.com/EnzoG14/PlanIt/pull/22) en borrador. Evidencia del 12/10/2026 (Argentina), rama `codex/r3-block-4`, base `origin/main` `8e1537d` (Bloque 3 integrado). No se aplicó la migración nueva en remoto, no se fusionó ni desplegó frontend.
 
 ## Contrato y decisiones
 
