@@ -42,6 +42,7 @@ function MyEventsList({ section, filter }: { section: MyEventsSection; filter: O
   const [error, setError] = useState('')
   const [appendError, setAppendError] = useState(false)
   const [imageError, setImageError] = useState(false)
+  const [notice, setNotice] = useState('')
   const revision = useRef(0)
   const busy = useRef(false)
   const offset = useRef(0)
@@ -74,19 +75,20 @@ function MyEventsList({ section, filter }: { section: MyEventsSection; filter: O
     }
     reload.current = () => { void fetchPage() }
     more.current = () => { void fetchPage(true) }
-    const onReturn = () => { if (document.visibilityState === 'visible' && !busy.current) void fetchPage() }
+    const onReturn = () => { if (document.visibilityState === 'visible' && !busy.current && !document.querySelector('dialog[open]')) void fetchPage() }
     window.addEventListener('focus', onReturn)
     document.addEventListener('visibilitychange', onReturn)
     void fetchPage()
     return () => { active = false; revision.current += 1; window.removeEventListener('focus', onReturn); document.removeEventListener('visibilitychange', onReturn) }
   }, [section, filter])
   return <section id={`panel-${section}`} role="tabpanel" aria-labelledby={`tab-${section}`} tabIndex={0} aria-busy={loading || loadingMore}>
+    <p className="event-action-notice" role="status">{notice}</p>
     <div className="my-events-refresh"><button type="button" className="text-button" disabled={loading || loadingMore} onClick={() => reload.current()}>Actualizar</button></div>
     {loading ? <div role="status"><StatusMessage title="Cargando tus eventos">Esperá un momento.</StatusMessage></div> : <>
       {error && <div><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage><button type="button" className="secondary-button" disabled={loadingMore} onClick={() => appendError ? more.current() : reload.current()}>{appendError ? 'Reintentar carga adicional' : 'Reintentar'}</button></div>}
       {!error && !events.length && !hasMore && <><StatusMessage title={section === 'organizing' ? `No hay eventos en ${organizedFilters[filter]}` : 'Todavía no tenés participaciones'}>{section === 'organizing' ? filter === 'all' ? 'Creá un evento o consultá tu histórico en Archivados.' : 'Probá otro filtro para consultar tus eventos.' : 'Explorá el mapa y elegí un evento para sumarte.'}</StatusMessage><Link className="secondary-link" to={section === 'organizing' ? '/events/new' : '/map'}>{section === 'organizing' ? 'Crear evento' : 'Explorar el mapa'}</Link></>}
       {imageError && <p className="field-hint" role="status">No pudimos cargar algunas fotos. <button className="text-button" type="button" onClick={() => reload.current()}>Reintentar fotos</button></p>}
-      {events.length > 0 && <ul className="my-events-list">{events.map(event => <li key={event.id}><CompactEventCard event={event} returnTo={myEventsPath(section, filter)} showMenu={section === 'organizing'} /></li>)}</ul>}
+      {events.length > 0 && <ul className="my-events-list">{events.map(event => <li key={event.id}><CompactEventCard event={event} returnTo={myEventsPath(section, filter)} showMenu={section === 'organizing'} onChanged={message => { setNotice(message); reload.current(); requestAnimationFrame(() => document.getElementById(`panel-${section}`)?.focus()) }} /></li>)}</ul>}
       {hasMore && !error && <button className="secondary-button load-more-events" type="button" disabled={loadingMore} onClick={() => more.current()}>{loadingMore ? 'Cargando más…' : 'Cargar más'}</button>}
       <span className="sr-only" role="status">{!loading && !error ? `${events.length} eventos cargados.` : ''}</span>
     </>}

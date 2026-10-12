@@ -6,7 +6,7 @@ import { StatusMessage } from '../components/StatusMessage'
 import { EventParticipation } from '../components/EventParticipation'
 import { loadCategories, loadEvent, loadEventImages, loadEventOrganizer, type EventRecord } from '../features/events/api'
 import { formatEventTime } from '../features/events/validation'
-import { isEventEditable } from '../features/events/edit'
+import { EventManagement } from '../components/EventManagement'
 import { validatedMyEventsReturn, myEventsPath } from '../features/events/my-events'
 import './discovery.css'
 
@@ -29,6 +29,8 @@ function EventDetailContent({ id }: { id: string }) {
   const [error, setError] = useState('')
   const [imageError, setImageError] = useState(false)
   const [attempt, setAttempt] = useState(0)
+  const [notice, setNotice] = useState('')
+  const [participationRevision, setParticipationRevision] = useState(0)
   useEffect(() => {
     let active = true
     let revision = 0
@@ -59,7 +61,7 @@ function EventDetailContent({ id }: { id: string }) {
       } catch { if (current()) setError('No pudimos consultar el evento. Revisá la conexión y reintentá.') }
       finally { if (current()) setLoading(false) }
     }
-    const refresh = () => { if (document.visibilityState === 'visible') void load() }
+    const refresh = () => { if (document.visibilityState === 'visible' && !document.querySelector('dialog[open]')) void load() }
     void load()
     window.addEventListener('focus', refresh)
     window.addEventListener('online', refresh)
@@ -94,10 +96,12 @@ function EventDetailContent({ id }: { id: string }) {
       {organizer ? <><strong>{organizer.display_name}</strong><p>@{organizer.username}</p></> : organizerError ? <p role="status">No pudimos cargar los datos del organizador. <button className="text-button" type="button" onClick={retry}>Reintentar</button></p> : <p>Datos del organizador no disponibles.</p>}
     </section>
     <p className="field-hint">Horarios de Argentina.</p>
-    <EventParticipation key={`${id}:${session?.user.id}`} eventId={id} />
-    {event.organizer_id === session?.user.id && isEventEditable(event) && <Link className="secondary-link" to={`/events/${id}/edit`} state={{ myEventsReturnTo: listOrigin ?? undefined, returnTo: discoveryOrigin ?? undefined }}>Editar evento</Link>}
-    {event.organizer_id === session?.user.id && <Link className="secondary-link" to={`/events/${id}/gallery`} state={{ myEventsReturnTo: listOrigin ?? undefined, returnTo: discoveryOrigin ?? undefined }}>Gestionar imágenes</Link>}
-    {event.organizer_id === session?.user.id && <Link className="secondary-link" to={`/events/${id}/attendees`} state={{ myEventsReturnTo: listOrigin ?? undefined, returnTo: discoveryOrigin ?? undefined }}>Ver asistentes</Link>}
+    <EventParticipation key={`${id}:${session?.user.id}:${participationRevision}`} eventId={id} />
+    <p role="status" className="event-action-notice">{notice}</p>
+    {event.organizer_id === session?.user.id && <EventManagement event={event} origin={{ myEventsReturnTo: listOrigin ?? undefined, returnTo: discoveryOrigin ?? undefined }} onChanged={message => {
+      setNotice(message); setParticipationRevision(value => value + 1)
+      void loadEvent(id).then(data => setEvent(data)).catch(() => { setError('La operación se completó, pero no pudimos actualizar el detalle. Reintentá la consulta.') })
+    }} />}
     <Link className="secondary-link" to={myEventsReturnTo}>Ir a Mis eventos</Link>
   </div>
 }

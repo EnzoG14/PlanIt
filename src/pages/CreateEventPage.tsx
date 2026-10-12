@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { EventFields } from '../components/EventFields'
 import { GradientButton } from '../components/GradientButton'
 import { ScreenHeader } from '../components/ScreenHeader'
@@ -8,10 +8,24 @@ import { useAuth } from '../features/auth/useAuth'
 import { loadCategories, PublicationError, publishEvent, type PublishAttempt } from '../features/events/api'
 import { emptyEvent, validateEvent, validateImages, type Category, type EventErrors, type EventValues } from '../features/events/validation'
 import { getCurrentLocation } from '../features/location/geolocation'
+import { loadDuplicateSource } from '../features/events/actions'
+import { validatedMyEventsReturn } from '../features/events/my-events'
 
 export function CreateEventPage() {
   const { session } = useAuth()
+  const [params] = useSearchParams()
+  const duplicateFrom = params.get('duplicateFrom')
+  // Account/source changes discard old forms, token renewals preserve local edits.
+  return <CreateEventForm key={`${session?.user.id}:${duplicateFrom ?? 'new'}`} duplicateFrom={duplicateFrom} />
+}
+function CreateEventForm({ duplicateFrom }: { duplicateFrom: string | null }) {
+  const { session } = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
+  const origin = { myEventsReturnTo: validatedMyEventsReturn(location.state?.myEventsReturnTo) ?? undefined, returnTo: location.state?.returnTo === '/home' || location.state?.returnTo === '/map' ? location.state.returnTo as string : undefined }
+  const [sourceLoading, setSourceLoading] = useState(duplicateFrom !== null)
+  const [sourceError, setSourceError] = useState('')
+  const [sourceAttempt, setSourceAttempt] = useState(0)
   const [values, setValues] = useState<EventValues>({ ...emptyEvent })
   const [categories, setCategories] = useState<Category[]>([])
   const [catalogLoading, setCatalogLoading] = useState(true)
@@ -27,13 +41,21 @@ export function CreateEventPage() {
   const [locating, setLocating] = useState(false)
   const [locationError, setLocationError] = useState('')
   const sending = useRef(false)
+  const mounted = useRef(false)
   const locationRevision = useRef(0)
   const attempt = useRef<PublishAttempt | null>(null)
   const formRef = useRef<HTMLFormElement>(null)
   const feedbackRef = useRef<HTMLDivElement>(null)
   const locked = busy || uncertain
+  useEffect(() => { mounted.current = true; return () => { mounted.current = false } }, [])
 
-  useEffect(() => { document.title = 'Crear evento · PlanIt' }, [])
+  useEffect(() => { document.title = duplicateFrom !== null ? 'Duplicar evento · PlanIt' : 'Crear evento · PlanIt' }, [duplicateFrom])
+  useEffect(() => {
+    if (duplicateFrom === null) return
+    let active = true
+    loadDuplicateSource(duplicateFrom).then(data => { if (active) setValues(data) }).catch(failure => { if (active) setSourceError(failure instanceof Error ? failure.message : 'No pudimos cargar el origen.') }).finally(() => { if (active) setSourceLoading(false) })
+    return () => { active = false }
+  }, [duplicateFrom, sourceAttempt])
   useEffect(() => {
     let active = true
     loadCategories().then(data => { if (active) setCategories(data) }).catch(() => { if (active) setCatalogError('No pudimos cargar las categorías. Revisá la conexión y reintentá.') }).finally(() => { if (active) setCatalogLoading(false) })
@@ -70,7 +92,7 @@ export function CreateEventPage() {
   }
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (sending.current || !session || catalogLoading || catalogError || locating) return
+    if (sending.current || !session || sourceLoading || sourceError || catalogLoading || catalogError || locating) return
     setError('')
     if (!uncertain) {
       const validation = validateEvent(values, categories, files)
@@ -84,8 +106,10 @@ export function CreateEventPage() {
     locationRevision.current += 1
     try {
       const id = await publishEvent(attempt.current, session.user.id, setProgress)
-      navigate(`/events/${id}`, { replace: true, state: { published: true } })
+      if (!mounted.current) return
+      navigate(`/events/${id}`, { replace: true, state: { published: true, ...origin } })
     } catch (failure) {
+      if (!mounted.current) return
       const pending = failure instanceof PublicationError && failure.uncertain
       setUncertain(pending)
       setError(failure instanceof Error ? failure.message : 'No se pudo publicar. Revisá la conexión e intentá nuevamente.')
@@ -94,10 +118,13 @@ export function CreateEventPage() {
         setCatalogLoading(true); setCatalogError('')
         setCatalogAttempt(value => value + 1)
       }
-    } finally { sending.current = false; setBusy(false); setProgress('') }
+    } finally { sending.current = false; if (mounted.current) { setBusy(false); setProgress('') } }
   }
+  if (sourceLoading) return <StatusMessage title="Cargando evento de origen">Esperá un momento.</StatusMessage>
+  if (sourceError) return <><StatusMessage title="No se pudo duplicar" tone="error">{sourceError}</StatusMessage><button type="button" className="secondary-button" onClick={() => { setSourceLoading(true); setSourceError(''); setSourceAttempt(value => value + 1) }}>Reintentar</button><Link className="secondary-link" to={origin.myEventsReturnTo ?? '/my-events?section=organizing&filter=all'}>Volver a Mis eventos</Link></>
   return <div className="create-event-page">
-    <ScreenHeader title="Creá un evento" description="Compartí un plan con la comunidad." icon="calendar" />
+    {duplicateFrom !== null && <Link className="secondary-link duplicate-back" to={`/events/${duplicateFrom}`} state={origin}>Volver al evento original</Link>}
+    <ScreenHeader title={duplicateFrom !== null ? 'Duplicá un evento' : 'Creá un evento'} description={duplicateFrom !== null ? 'Revisá los datos y elegí nuevas fechas. Las fotos y participaciones no se copian.' : 'Compartí un plan con la comunidad.'} icon="calendar" />
     <form ref={formRef} className="event-form" onSubmit={submit} noValidate aria-busy={busy}>
       <EventFields values={values} errors={errors} categories={categories} locked={locked} change={change} locating={locating} locate={locate} locationError={locationError} catalogLoading={catalogLoading} catalogError={catalogError} retryCategories={() => { setCatalogLoading(true); setCatalogError(''); setCatalogAttempt(value => value + 1) }} />
       <div className="form-field"><label htmlFor="event-images">Fotos (opcional)</label><input className="image-picker" id="event-images" name="images" type="file" accept="image/jpeg,image/png,image/webp" multiple disabled={locked} aria-invalid={Boolean(errors.images)} aria-describedby={errors.images ? 'event-images-error' : 'event-images-hint'} onChange={event => {
@@ -111,6 +138,7 @@ export function CreateEventPage() {
       {error && <div ref={feedbackRef} tabIndex={-1} className="auth-feedback"><StatusMessage title={uncertain ? 'Publicación por confirmar' : 'No se pudo publicar'} tone="error">{error}{uncertain && ' Conservamos los datos de este intento. Reintentá para comprobarlo sin crear otro evento.'}</StatusMessage></div>}
       <GradientButton type="submit" disabled={busy || locating || catalogLoading || Boolean(catalogError) || !categories.length}>{busy ? progress || 'Publicando…' : uncertain ? 'Comprobar publicación' : 'Publicar evento'}</GradientButton>
       <p className="field-hint event-public-note">El evento será público. Los datos se envían al pulsar Publicar evento.</p>
+      {duplicateFrom !== null && <Link className="secondary-link" to={`/events/${duplicateFrom}`} state={origin}>Salir sin guardar</Link>}
       <span role="status" className="sr-only">{progress}</span>
     </form>
   </div>

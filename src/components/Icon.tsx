@@ -1,5 +1,10 @@
 import type { ReactNode } from 'react'
 const paths = {
+  copy: <><rect x="8" y="8" width="13" height="13" rx="2" /><path d="M16 8V3H3v13h5" /></>,
+  archive: <><rect x="3" y="3" width="18" height="5" rx="1" /><path d="M5 8v13h14V8M9 12h6" /></>,
+  pause: <><circle cx="12" cy="12" r="9" /><path d="M9 8v8M15 8v8" /></>,
+  edit: <><path d="m16 3 5 5-13 13H3v-5zM13 6l5 5" /></>,
+  image: <><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8" cy="8" r="2" /><path d="m3 17 5-5 4 4 4-6 5 7" /></>,
   search: <><circle cx="10" cy="10" r="7" /><path d="m15 15 6 6" /></>,
   userRemove: <><circle cx="9" cy="8" r="4" /><path d="M3 21v-2a6 6 0 0 1 12 0v2M16 12h6" /></>,
   bell: <><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></>,

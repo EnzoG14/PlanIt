@@ -1,0 +1,265 @@
+{
+  "environment": "Edge headless, Auth/REST/Storage fixtures, Asia/Tokyo; no remote JWT or real device",
+  "results": [
+    {
+      "viewport": "375x812",
+      "test": "Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Rejected action reports no success; confirmation executes once and reconsults detail/participation",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Missing source RPC shows retry; inactive source category requires an available selection before publish",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Changing source discards late source response and local form data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Archived chat keeps historical messages and removes composer",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Rejected action reports no success; confirmation executes once and reconsults detail/participation",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Missing source RPC shows retry; inactive source category requires an available selection before publish",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Changing source discards late source response and local form data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Archived chat keeps historical messages and removes composer",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Rejected action reports no success; confirmation executes once and reconsults detail/participation",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Missing source RPC shows retry; inactive source category requires an available selection before publish",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Changing source discards late source response and local form data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Archived chat keeps historical messages and removes composer",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Rejected action reports no success; confirmation executes once and reconsults detail/participation",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Missing source RPC shows retry; inactive source category requires an available selection before publish",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Changing source discards late source response and local form data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Archived chat keeps historical messages and removes composer",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Rejected action reports no success; confirmation executes once and reconsults detail/participation",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Missing source RPC shows retry; inactive source category requires an available selection before publish",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Auth token renewal preserves edits without source refetch; new account clears form and reauthorizes source; original account gets fresh data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Changing source discards late source response and local form data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Archived chat keeps historical messages and removes composer",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Late publication response from previous account cannot navigate or expose success in new account; logout clears form",
+      "result": "PASS"
+    }
+  ]
+}

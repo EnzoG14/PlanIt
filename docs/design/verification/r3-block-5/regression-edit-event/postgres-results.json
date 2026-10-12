@@ -1,0 +1,38 @@
+{
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "environment": "Isolated local PostgreSQL, Auth/Storage scaffolding; no remote business writes or HTTP/JWT",
+  "results": [
+    {
+      "test": "Native date/time minima use Argentina and roll over midnight; end follows start",
+      "result": "PASS"
+    },
+    {
+      "test": "Replay migrations; invoker function, empty search_path",
+      "result": "PASS"
+    },
+    {
+      "test": "Organizer edits same ID; Argentina overnight timestamps, detail/list readback; retries retain one event/chat",
+      "result": "PASS"
+    },
+    {
+      "test": "Invalid fields/dates/category rollback; capacity equals confirmed allowed, smaller denied; participation/history unchanged",
+      "result": "PASS"
+    },
+    {
+      "test": "B/anon/missing identity/nonexistent event/direct UPDATE and DELETE denied; frozen snapshot rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "Cancelled/archived/ongoing/ended cannot be edited or reopened",
+      "result": "PASS"
+    },
+    {
+      "test": "Race: reduction locks first; registration waits then fails full",
+      "result": "PASS"
+    },
+    {
+      "test": "Race: registration locks first; reduction waits then sees committed confirmed count and fails",
+      "result": "PASS"
+    }
+  ]
+}
