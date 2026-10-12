@@ -104,6 +104,14 @@ try {
     failure = false; rows = [row(0)]; slow = true
     await page.getByRole('button',{ name:'Reintentar',exact:true }).click(); await shot('loading'); await ready(); slow = false
     if (phase === 'after') {
+      await page.getByRole('button',{name:/Acciones de/}).click()
+      await page.getByRole('button',{name:'Cancelar evento',exact:true}).click()
+      const dialog = page.getByRole('dialog'); await dialog.waitFor()
+      const box = await dialog.boundingBox()
+      assert.ok(box.x >= 0 && box.x + box.width <= width && box.y >= 0 && box.y + box.height <= height, `${width}: dialog clipping`)
+      await shot('cancel-dialog')
+      await page.keyboard.press('Escape'); await dialog.waitFor({ state: 'hidden' })
+      assert.equal(await page.getByRole('button',{name:/Acciones de/}).evaluate(el => el === document.activeElement), true, 'focus returns to the menu trigger')
       await page.setViewportSize({ width, height: 360 }); await refresh()
       await page.getByRole('button',{name:/Acciones de/}).scrollIntoViewIfNeeded()
       await page.getByRole('button',{name:/Acciones de/}).click(); await measure('short-menu')

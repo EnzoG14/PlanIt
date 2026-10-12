@@ -1,5 +1,6 @@
 import { supabase } from '../../lib/supabase'
 import type { ParticipationStatus } from './participation'
+import { argentinaNow, formatEventTime } from './validation'
 
 export type MyEventsSection = 'organizing' | 'participating'
 export const organizedFilters = { all: 'Todos', upcoming: 'Próximos', past: 'Pasados', cancelled: 'Cancelados', archived: 'Archivados' } as const
@@ -28,6 +29,32 @@ export type MyEventListItem = {
   participation_status: ParticipationStatus | null; image_path: string | null; imageUrl: string | null
 }
 export const myEventsPageSize = 30
+
+// Presentation only: starts_at is Argentina wall-clock text, so it is sliced and never parsed with the device zone.
+const weekdays = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado']
+const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+export function eventStartTime(startsAt: string): string { return startsAt.slice(11, 16) }
+export function eventDayLabel(startsAt: string, now = argentinaNow()): string {
+  const [year, month, day] = startsAt.slice(0, 10).split('-').map(Number)
+  if (!year || !month || !day) return formatEventTime(startsAt)
+  const date = new Date(Date.UTC(year, month - 1, day))
+  const key = date.toISOString().slice(0, 10)
+  const today = now.slice(0, 10)
+  const tomorrow = new Date(Date.parse(`${today}T00:00:00Z`) + 86400000).toISOString().slice(0, 10)
+  const prefix = key === today ? 'Hoy · ' : key === tomorrow ? 'Mañana · ' : ''
+  return `${prefix}${weekdays[date.getUTCDay()]} ${day} de ${months[month - 1]}${String(year) === now.slice(0, 4) ? '' : ` de ${year}`}`
+}
+// Consecutive grouping keeps the server order and the pagination untouched.
+export function groupEventsByDay(events: MyEventListItem[]): { key: string; label: string; events: MyEventListItem[] }[] {
+  const now = argentinaNow()
+  const groups: { key: string; label: string; events: MyEventListItem[] }[] = []
+  for (const event of events) {
+    const key = event.starts_at.slice(0, 10), last = groups[groups.length - 1]
+    if (last && last.key === key) last.events.push(event)
+    else groups.push({ key, label: eventDayLabel(event.starts_at, now), events: [event] })
+  }
+  return groups
+}
 
 export async function loadMyEvents(section: MyEventsSection, offset = 0, filter: OrganizedEventsFilter = 'all') {
   if (!supabase) throw new Error('La conexión no está configurada.')

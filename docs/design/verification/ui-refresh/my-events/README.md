@@ -1,60 +1,74 @@
-# Mis eventos — piloto UI Refresh
+# Mis eventos — piloto UI Refresh (realineado a Amanecer)
 
-12/10/2026. Rama `design/ui-refresh-my-events`, desde `origin/main` 796aadc con Foundation #26 integrada. Implementación lista para revisión; aceptación visual y funcional humana pendiente. No cambia las releases funcionales.
+12/10/2026. Rama `design/ui-refresh-my-events` ([PR draft #27](https://github.com/EnzoG14/PlanIt/pull/27)). Implementación lista para revisión; la aceptación visual y funcional humana sigue pendiente. No cambia las releases funcionales ni el backend.
 
-## Comparación
+El piloto se había implementado en marino v2.0 y la dirección vigente pasó a **B · Amanecer** ([DESIGN.md](../../../../../DESIGN.md), [decisión](../../../proposals/amanecer-direction.md)). Esta versión realinea la capa visual de la pantalla. Se conservan tres juegos de capturas:
 
-| Vista | Antes | Después | Primera fila antes → después |
-| --- | --- | --- | --- |
-| 320 × 800 | [Captura](before/organizing-320x800.png) | [Captura](after/organizing-320x800.png) | 478 → 379 px |
-| 360 × 800 | [Captura](before/organizing-360x800.png) | [Captura](after/organizing-360x800.png) | 478 → 379 px |
-| 375 × 812 | [Captura](before/organizing-375x812.png) | [Captura](after/organizing-375x812.png) | 478 → 379 px |
-| 390 × 844 | [Captura](before/organizing-390x844.png) | [Captura](after/organizing-390x844.png) | 478 → 379 px |
-| 768 × 1024 | [Captura](before/organizing-768x1024.png) | [Captura](after/organizing-768x1024.png) | 429 → 343 px |
-| 1280 × 900 | [Captura](before/organizing-1280x900.png) | [Captura](after/organizing-1280x900.png) | 429 → 343 px |
+| Carpeta | Contenido |
+| --- | --- |
+| [`before/`](before/) | Diseño original, antes del refresh (evidencia histórica) |
+| [`v2-marino/`](v2-marino/) | Primer piloto marino v2.0, reemplazado (evidencia histórica, antes `after/`) |
+| [`after/`](after/) | **Piloto Amanecer** (vigente) |
 
-Las posiciones proceden de los JSON de mediciones, no de una estimación visual. Las imágenes son capturas de la app real en Edge Chromium headless, con Auth/REST/Storage interceptados. Identidades, eventos y portada geométrica son fixtures; la portada no representa una fotografía de un evento real. Zona del navegador Asia/Tokyo para detectar dependencia accidental del horario del equipo. No se realizaron escrituras remotas.
+## Comparación (organizando, primera fila de evento)
 
-## Cambios y criterio
+| Vista | Antes | Marino v2.0 | Amanecer | Primera fila (px) |
+| --- | --- | --- | --- | --- |
+| 320 × 800 | [captura](before/organizing-320x800.png) | [captura](v2-marino/organizing-320x800.png) | [captura](after/organizing-320x800.png) | 478 → 379 → 425 |
+| 360 × 800 | [captura](before/organizing-360x800.png) | [captura](v2-marino/organizing-360x800.png) | [captura](after/organizing-360x800.png) | 478 → 379 → 427 |
+| 375 × 812 | [captura](before/organizing-375x812.png) | [captura](v2-marino/organizing-375x812.png) | [captura](after/organizing-375x812.png) | 478 → 379 → 429 |
+| 390 × 844 | [captura](before/organizing-390x844.png) | [captura](v2-marino/organizing-390x844.png) | [captura](after/organizing-390x844.png) | 478 → 379 → 430 |
+| 768 × 1024 | [captura](before/organizing-768x1024.png) | [captura](v2-marino/organizing-768x1024.png) | [captura](after/organizing-768x1024.png) | 429 → 343 → 399 |
+| 1280 × 900 | [captura](before/organizing-1280x900.png) | [captura](v2-marino/organizing-1280x900.png) | [captura](after/organizing-1280x900.png) | 429 → 343 → 399 |
 
-- Dirección aprobada: fondo marino uniforme, acción y filtro activos azules sólidos, pestañas planas con indicador, navegación activa sólida sólo en esta ruta. Se reutilizan `AppLayout`, `CompactEventCard`, `StatusMessage` y el diálogo existente. Sin dependencias nuevas.
-- Lista continua con divisores, miniatura compacta, título a 17 px, fecha/lugar y estados a 14 px. Categoría secundaria sin otra pill. Acciones separadas del enlace del evento. Creación con texto visible «Crear» en móvil y «Crear evento» en escritorio.
-- C3: se eliminan el contenedor de pestañas y la ayuda histórica permanente; la explicación de Próximos sigue junto al filtro. Se conserva Actualizar y se elimina el margen de la región de éxito cuando está vacía.
-- Accesibilidad/plataforma: contorno perceptible de filtros, targets de al menos 44 px, foco heredado, menú con scroll, borde funcional y aviso de continuación cuando hay poca altura (el sistema operativo puede ocultar su scrollbar). Títulos extremos limitados visualmente a tres líneas y lugar a dos; su texto íntegro permanece en el DOM/nombre accesible y en el detalle enlazado. Fecha y estados no se truncan. El área fotográfica decorativa no añade «Sin foto» al nombre del evento cuando una imagen la cubre.
-- El encabezado puede envolver al aumentar texto. Se mantienen safe areas y reserva inferior del shell existente. El menú conserva el cálculo de altura/posición y su restauración de foco, sin nuevos permisos ni cambios de operaciones.
-- Los estilos del piloto están acotados por `.my-events-shell`/`.my-events-page`. `EventCard` de descubrimiento, CSS global, backend, RPC, SQL, RLS y estados funcionales no se modificaron. El cambio local previo de Vite se excluye de la PR.
+Las posiciones salen de los `measurements.json`. **Amanecer baja la primera fila ~50 px respecto de v2.0** (titular de 38 px, selector de vidrio de 58 px, día en la línea de tiempo); sigue ~50 px por encima del diseño original. Es consecuencia del diseño aprobado (aireado y tipográfico), no un ajuste de accesibilidad. Las capturas son de la app real en Edge Chromium headless con Auth/REST/Storage interceptados; identidades, eventos y la portada geométrica son fixtures, no fotografías reales. Zona del navegador Asia/Tokyo para detectar dependencia accidental del horario del equipo. No hay escrituras remotas.
 
-## Evidencia de estados y pruebas
+## Qué cambió
 
-36 capturas anteriores y 48 posteriores cubren Organizo, Participo (confirmada/cancelada/removida), 36 eventos y carga adicional, menú en el último evento, textos largos, foto fallida/ausente, vacío, red fallida y reintento, carga, altura de 360 px y ampliación de texto.
+**Diseño aprobado (DESIGN.md):**
+- Modo claro `#f6f5fd`, tinta marina para la acción (Crear, segmento activo, dock), azul sólo en el filtro seleccionado, violeta-deep para horas y foco. Una mancha difusa superior (pseudo-elemento, fuera del árbol de accesibilidad, sin animación). Sin gradientes en botones, chips ni tarjetas.
+- Bricolage Grotesque **autoalojada** (`src/assets/fonts/`, subconjunto latino variable, licencia OFL incluida; no se agregó paquete npm; se añadió `woff2` al precache de la PWA).
+- Titular de 38 px con tracking negativo; segmento Organizo/Participo de vidrio con selección de tinta; filtros en píldoras de vidrio de 44 px.
+- Línea de tiempo: encabezado de día («Hoy · …», «Mañana · …»), hora a la izquierda, fila-tarjeta de 26 px con barra de estado de 4 px, miniatura de 52 px, menú de 44 px y pie con estado en texto + categoría pasiva. Se eliminó la línea de fecha duplicada y la píldora de categoría sobre el título.
+- Dock flotante de tinta: sólo la pestaña activa muestra etiqueta; las demás conservan nombre accesible y `aria-current`.
+- Menú Cuenta, menú de acciones y diálogo de confirmación en blanco sobre velo marino; el destructivo usa rojo sólido sin degradado.
+- Cristal con respaldo opaco (`prefers-reduced-transparency` y sin `backdrop-filter`); entrada escalonada de 600 ms desactivada con `prefers-reduced-motion`.
 
-[Mediciones anteriores](before/measurements.json), [posteriores](after/measurements.json), [critique](critique.md) y [audit final](audit.md). Las capturas `short-menu` conservan en su nombre las dimensiones iniciales, pero el viewport efectivo mide **360 px de altura**, registrado en el JSON posterior. `fullPage` incluye el contenido fuera del viewport; la barra fija aparece en su posición visible. El caso `text-200` duplica los tamaños computados de todos los elementos de la pantalla; es una prueba sintética de texto, no zoom nativo ni lector de pantalla.
+**Ajustes por accesibilidad / plataforma (no son parte del lab):**
+- Filtros sin seleccionar llevan borde `control-border` `#7a82a8` (≥ 3:1) para delimitar el control; el lab usa sólo un borde blanco.
+- Crear pasa a botón redondo de sólo icono por debajo de 400 px (nombre accesible «Crear evento») para no partir el titular; los filtros se envuelven en filas en lugar de scroll horizontal oculto.
+- Hora, menú y estado se mantienen ≥ 13,5 px; la columna de hora crece con el texto ampliado.
+- Texto largo: título 3 líneas y lugar 2 con contenido íntegro en el DOM y en el detalle (sin cambios).
+
+**Omitido deliberadamente:** contadores por rol y «cupo» del lab (no existen en el contrato de `get_my_events`/`get_my_organized_events`; no se inventan métricas).
+
+## Alcance y archivos
+
+Estilos acotados a `.my-events-shell` / `.my-events-page`, que remapean los tokens `--color-*` heredados sólo en esta ruta; otras pantallas (incluido el detalle, visible en las capturas de acciones) conservan su apariencia. Archivos: `src/pages/MyEventsPage.tsx`, `src/pages/my-events.css`, `src/components/EventCard.tsx` (`CompactEventCard`), `src/features/events/my-events.ts` (sólo formato por día), `vite.config.ts` (precache de `woff2`), `src/assets/fonts/`, y el runner `scripts/check-my-events-refresh-ui.mjs` (añade diálogo y foco de retorno). Sin dependencias nuevas, SQL, RPC, RLS ni migraciones.
+
+## Pruebas
 
 | Comando | Resultado y alcance |
 | --- | --- |
-| `npm run build` | PASS; conserva aviso del módulo Mapbox (~518,61 kB gzip), fuera de este bloque |
-| `npm run lint` | Exit 0; 204 warnings en binarios JS locales de Impeccable bajo `.agents`/`.claude`, excluidos de la PR |
+| `npm run build` | PASS; conserva el aviso del chunk de Mapbox, fuera del bloque |
+| `npm run lint` | Exit 0; los warnings provienen de binarios locales de Impeccable bajo `.agents`/`.claude`, ajenos a la entrega |
 | `npx oxlint src scripts` | PASS sin diagnósticos |
-| `npm run check:my-events` | PASS, seis grupos sobre PostgreSQL 17.5 aislado; replay de migraciones sólo en la BD efímera local |
-| `npm run check:my-events:ui` | PASS a 375 × 812 y 1280 × 900; [resultados](regression-list/ui-results.json) |
-| `npm run check:event-actions:ui` | PASS a 360/375/390/768/1280 px; [resultados](regression-actions/ui-results.json) |
-| `node scripts/check-my-events-refresh-ui.mjs before` / `after` | PASS; sin overflow horizontal, targets comprobados suficientes, último comando del menú alcanzable por foco con poca altura |
-| `git diff --check` | PASS |
+| `npm run check:my-events` | PASS, seis grupos sobre PostgreSQL efímero local; replay de migraciones sólo en esa BD |
+| `PLANIT_UI_OUTPUT=… npm run check:my-events:ui` | PASS a 375 × 812 y 1280 × 900; [resultados](regression-list/ui-results.json) |
+| `PLANIT_UI_ORIGIN=… PLANIT_UI_OUTPUT=… npm run check:event-actions:ui` | PASS a 360/375/390/768/1280 px; [resultados](regression-actions/ui-results.json) |
+| `node scripts/check-my-events-refresh-ui.mjs after` | PASS; 48 capturas, sin overflow horizontal, targets ≥ 44 px, menú sin recorte (incluso a 360 px de alto), diálogo dentro del viewport y foco devuelto al disparador, Cuenta/logout con respuesta rechazada y exitosa |
 
-[Resultados PostgreSQL](regression-list/postgres-results.json). Las regresiones preservan filtros previos a paginación, precedencia, historia archivada, estados, cuenta/sesión, regreso contextual, respuestas tardías, carga adicional/reintento, Storage y permisos. Los checks de acciones incluyen duplicación, cancelación/archivo, resultado incierto, restricciones por estado y ausencia de segunda escritura. Las escrituras de los recorridos de UI se interceptan; no son pruebas E2E remotas.
-
-Los runners existentes admiten ahora `PLANIT_UI_OUTPUT` para guardar resultados nuevos sin sobrescribir evidencia histórica. El nuevo runner no añade dependencias.
+Las regresiones comprueban filtros previos a la paginación, precedencia de estados, historia archivada, regreso contextual, respuestas tardías, carga adicional/reintento, Storage y permisos. Los recorridos de UI interceptan las escrituras: no son E2E remotos. Las capturas `fullPage` muestran el dock fijo en su posición visible, a mitad de página.
 
 ## Impeccable y límites
 
-### Ajuste de Cuenta aprobado durante la revisión
+- Se leyeron DESIGN.md, DESIGN_SYSTEM, la decisión Amanecer, el lab (`/b`) y la auditoría. **No se ejecutaron `critique`, `polish`, `harden` ni `audit` de Impeccable ni Live Mode sobre esta versión**: la revisión fue manual sobre capturas reales y mediciones. El [critique](critique.md) y el [audit](audit.md) existentes evalúan la versión marino v2.0 y se conservan como historia.
+- Contraste calculado, no medido con herramienta: texto apagado sobre vidrio en el peor caso de la mancha ≈ 5,0:1; el resto usa los pares del DESIGN.md.
+- No probado: lector de pantalla (incluido el dock con iconos inactivos), zoom nativo, teclado móvil y safe areas en dispositivos físicos, rendimiento del desenfoque en móviles de gama baja, fotografías reales claras/oscuras, carga de la fuente en red lenta (FOUT con `swap`) y E2E remoto. El texto ampliado es una duplicación de tamaños computados, no zoom nativo.
 
-Mi perfil y Salir del header se agrupan ahora en **Cuenta**, junto a la campana. Disclosure con icono/etiqueta/flecha, superficie marina, perfil y cierre de sesión separados. Se aplica únicamente al piloto; el header de otras rutas conserva su comportamiento anterior. Nuevos `AccountMenu.tsx`/`account-menu.css`, dos iconos lineales en el registro existente y composición en AppLayout. No cambia la llamada de logout ni el alcance local de sesión.
+## Decisiones que requieren aprobación
 
-El runner posterior verifica ArrowDown, foco inicial en Mi perfil, Escape/retorno de foco, clic afuera, navegación a `/me`, alcance por ruta, estado bloqueado durante logout y eliminación de la sesión local tanto con respuesta HTTP rechazada como exitosa (una solicitud por intento). [Cuenta móvil](after/account-menu-320x800.png), [Cuenta escritorio](after/account-menu-1280x900.png), [logout con rechazo remoto simulado](after/account-logout-rejected-375x812.png). Los seis tamaños anteriores mantienen los checks de layout y estados; las capturas posteriores incorporan este ajuste. Build/lint y la regresión de Mis eventos se repiten.
-
-Se corrigieron dos supuestos del nuevo test: el clic afuera apuntaba al título cubierto por el panel, y se esperaba que un fallo HTTP mantuviera al usuario conectado. El SDK instalado (`@supabase/auth-js`, `_signOut`) elimina la sesión local incluso al devolver ese error; se comprobó contra su código y la [documentación de signOut](https://supabase.com/docs/reference/javascript/auth-signout). Esa lógica preexistente no se modificó. La prueba además detectó blur/cierre anticipado al deshabilitar el control; el menú ahora conserva el estado visible mientras espera.
-
-Se ejecutó `context` una vez y se leyeron critique/polish/harden/audit/craft-floor. Crítica con dos subagentes independientes autorizados, detector TSX y revisión de capturas; refinamiento acotado y confirmación final. El helper `live` respondió, pero no hubo sesión durable activa (`live-resume: active:false`). La navegación inicial del navegador integrado falló; el assessment B consiguió luego abrir una pestaña nueva, inspeccionar AX/estilos/captura y cerrarla. No se inyectó un overlay ni se generaron/aceptaron variantes Live: la evaluación visual principal usa la automatización existente. Se emitió `live-server stop`; no quedó helper de esta tarea activo.
-
-Pendientes: aceptación humana, lector de pantalla, zoom nativo, teclado y safe areas en iOS/Android físicos, fotografías reales claras/oscuras y E2E remoto. Las pruebas automáticas no acreditan esos casos. Los diálogos mantienen su diseño anterior; el refresh de acciones completas pertenece al bloque 7. A1 (recuperación de módulos), A3 global (inputs) y A8 (perfilado del mapa) siguen pendientes en sus alcances; el borde de control se aplica aquí sólo a controles del piloto. No se propone una dirección nueva ni quedan decisiones visuales nuevas para aprobar.
+1. El dock y el header de Amanecer sólo existen en esta ruta; al navegar a otra pantalla vuelve el marino v2.0 hasta la Fundación (bloque 0.5). Es la consecuencia de no cambiar otras pantallas sin aprobación.
+2. `<meta name="theme-color">` y el manifest siguen en `#060b27` (global).
+3. Borde de control en filtros sin seleccionar y Crear redondo bajo 400 px (ver arriba).
+4. Primera fila ~50 px más baja que en v2.0 (ver comparación).

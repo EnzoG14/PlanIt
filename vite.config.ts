@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => {
       VitePWA({
         registerType: 'autoUpdate',
         workbox: {
-          globPatterns: ['**/*.{js,css,html,svg,png}'],
+          globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
           // Sólo recursos locales de la app. Supabase y tiles usan la red.
           runtimeCaching: [],
         },
