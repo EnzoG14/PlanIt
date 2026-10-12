@@ -22,7 +22,7 @@ Las selecciones viven sólo en React. UUID de path permanece en los reintentos, 
 
 ## Migración y seguridad
 
-`20261012013634_manage_event_gallery.sql`: **creada en Git y probada localmente; NO aplicada remotamente**.
+`20261012013634_manage_event_gallery.sql`: creada en Git y probada localmente; **aplicada en planit-v2 el 11/10/2026 con autorización expresa posterior del usuario**.
 
 - `add_event_image(uuid,text)`, `remove_event_image(uuid,uuid)`, `reorder_event_images(uuid,uuid[],uuid[])`, `get_event_unregistered_uploads(uuid)`: EXECUTE sólo authenticated, `auth.uid()`, search_path vacío y autorización explícita del organizador.
 - SECURITY DEFINER para lock del evento y mutaciones sin conceder UPDATE/DELETE de tablas; función privada de bloqueo no ejecutable por clientes. RPC de consulta de cargas devuelve sólo paths propios sin registro.
@@ -64,7 +64,17 @@ Conservados marino/azul/violeta, encabezado, zona de carga punteada, grilla de d
 1. `npm run build` y `npm run lint`.
 2. `npm run check:gallery`: requiere el mismo kit PostgreSQL/pg ignorado de las pruebas SQL anteriores en `.participation-test-tools.local/node_modules`. No instala paquetes de producción.
 3. Levantar `npm run dev -- --host 127.0.0.1 --port 4187`; configurar `PLANIT_UI_ORIGIN=http://127.0.0.1:4187` y `PLANIT_PLAYWRIGHT_PATH` al Playwright del runtime; `npm run check:gallery:ui`.
-4. Después de revisión y autorización separada, aplicar únicamente la nueva migración en planit-v2. Ejecutar HTTP con sesiones A/B y anon: añadir/décima/undécima, reordenar/baja, intento REST directo/Storage ajeno, path compartido, fallos y expiración. Revisar asesores y permiso de funciones/grants.
+4. Migración ya aplicada y verificada por catálogos en planit-v2. Pendiente ejecutar HTTP con sesiones A/B y anon: añadir/décima/undécima, reordenar/baja, intento REST directo/Storage ajeno, path compartido, fallos y expiración.
 5. Dispositivo físico, safe-area, cancelación por cierre de pestaña, multi-sesión y aceptación visual humana pendientes. Cerrar otras sesiones de carga antes de limpiar subidas abandonadas; los objetos ya registrados permanecen protegidos incluso ante carrera.
 
-No merge, despliegue, SQL remoto ni avance al bloque 4.
+## Aplicación remota autorizada — 11/10/2026
+
+El usuario autorizó aplicar las migraciones después de la entrega de la PR. Historial/dry-run confirmaron una única pendiente: `20261012013634_manage_event_gallery.sql`. Push con `--skip-vault --yes` aplicó únicamente esa migración; sin roles, semillas, cambios Vault ni escrituras de datos de negocio. Un fallo temporal de autenticación en la primera lectura del historial se resolvió al reintentar; la aplicación terminó correctamente.
+
+Catorce versiones local/remoto sincronizadas y dry-run posterior sin pendientes. Catálogos verificaron los ocho cuerpos de funciones idénticos a Git, search_path vacío, anon sin EXECUTE, grants autenticados mínimos, RLS intacta, sin UPDATE/DELETE genéricos, UNIQUE de posición diferible y política Storage de borrado protegido. La consulta de integridad no encontró archivos registrados sin objeto. service_role conserva acceso administrativo de los defaults del proyecto; no se utiliza en frontend.
+
+Asesores antes/después: nueve → trece avisos; los cuatro nuevos son `authenticated_security_definer_function_executable` para add_event_image/remove_event_image/reorder_event_images/get_event_unregistered_uploads, intencionales para las operaciones controladas descritas arriba. Protección de contraseñas filtradas deshabilitada es preexistente. No hay avisos nuevos de ejecución anónima/RLS desactivada/search_path mutable.
+
+Evidencias: [resumen](remote-migration-summary.json), [catálogos y cuerpos](remote-migration-results.json), [historial](migration-history-after.json), [asesores antes](advisors-before.json)/[después](advisors-after.json). [SELECT reproducible](verify-remote-migration.sql) y [comparación local](verify-remote-migration.mjs): ejecutar desde raíz del checkout con `node docs/design/verification/r3-block-3/verify-remote-migration.mjs`. Estos checks no son pruebas HTTP/Auth/JWT/Storage de negocio reales.
+
+Sin merge, despliegue frontend ni avance al bloque 4. Aceptación humana pendiente.

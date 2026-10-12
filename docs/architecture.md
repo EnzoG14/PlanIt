@@ -58,7 +58,7 @@ Si el motor no está disponible, las tarjetas consultan un área aproximada del 
 
 ## Galería administrable — Release 3
 
-Galería administrativa R3 en `/events/:id/gallery`, con selección/preview local, cargas individuales, reintentos por path inmutable y operaciones RPC controladas del organizador. Portada por sort_order; los objetos registrados se retienen al quitar asociaciones para conservar archivos compartidos. Recuperación explícita de cargas no registradas mediante Storage API. Migración `20261012013634_manage_event_gallery.sql` propuesta/probada localmente, **sin aplicar remotamente**. [Contratos, capturas y límites](design/verification/r3-block-3/README.md).
+Galería administrativa R3 en `/events/:id/gallery`, con selección/preview local, cargas individuales, reintentos por path inmutable y operaciones RPC controladas del organizador. Portada por sort_order; los objetos registrados se retienen al quitar asociaciones para conservar archivos compartidos. Recuperación explícita de cargas no registradas mediante Storage API. Migración `20261012013634_manage_event_gallery.sql` **aplicada en planit-v2 el 11/10/2026 con autorización expresa posterior del usuario**; historial, cuerpos y permisos remotos verificados, HTTP/JWT real pendiente. [Contratos, capturas y límites](design/verification/r3-block-3/README.md).
 
 ## Creación de eventos — BLOQUE 2
 
