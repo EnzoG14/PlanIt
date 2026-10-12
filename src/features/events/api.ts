@@ -108,5 +108,6 @@ export async function loadEventImages(id: string): Promise<string[]> {
   if (!paths.length) return []
   const signed = await supabase.storage.from('event_media').createSignedUrls(paths, 300)
   if (signed.error) throw new Error('No se pudieron cargar las fotos.')
+  if (signed.data?.some(file => !file.signedUrl || file.error)) throw new Error('No se pudieron renovar las fotos. Reintentá.')
   return signed.data?.flatMap(file => file.signedUrl ? [file.signedUrl] : []) ?? []
 }

@@ -56,6 +56,10 @@ Mapbox GL JS 3.32.0 aislado en `src/components/maps`, cargado con el componente 
 
 Si el motor no está disponible, las tarjetas consultan un área aproximada del centro elegido (Buenos Aires inicialmente); el aviso distingue esta zona del viewport real. Mapbox usa red y caché HTTP normal, sin descarga anticipada ni caché offline de servicios. La implementación previa Leaflet/OSM y su aceptación R1 se conservan en documentación histórica. [Arquitectura](map-architecture.md), [implementación](implementation/MAPBOX_MIGRATION.md).
 
+## Galería administrable — Release 3
+
+Galería administrativa R3 en `/events/:id/gallery`, con selección/preview local, cargas individuales, reintentos por path inmutable y operaciones RPC controladas del organizador. Portada por sort_order; los objetos registrados se retienen al quitar asociaciones para conservar archivos compartidos. Recuperación explícita de cargas no registradas mediante Storage API. Migración `20261012013634_manage_event_gallery.sql` propuesta/probada localmente, **sin aplicar remotamente**. [Contratos, capturas y límites](design/verification/r3-block-3/README.md).
+
 ## Creación de eventos — BLOQUE 2
 
 Formulario local en `src/pages/CreateEventPage.tsx`, validación/fechas y llamadas en `src/features/events/`. Campos de inicio y fin se envían como timestamps de Argentina sin conversión desde la zona del dispositivo. Ubicación manual y geolocalización optativa según alternativa admitida por el plan técnico; mapa de descubrimiento pendiente del BLOQUE 3.

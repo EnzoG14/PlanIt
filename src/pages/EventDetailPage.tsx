@@ -96,6 +96,7 @@ function EventDetailContent({ id }: { id: string }) {
     <p className="field-hint">Horarios de Argentina.</p>
     <EventParticipation key={`${id}:${session?.user.id}`} eventId={id} />
     {event.organizer_id === session?.user.id && isEventEditable(event) && <Link className="secondary-link" to={`/events/${id}/edit`} state={{ myEventsReturnTo: listOrigin ?? undefined, returnTo: discoveryOrigin ?? undefined }}>Editar evento</Link>}
+    {event.organizer_id === session?.user.id && <Link className="secondary-link" to={`/events/${id}/gallery`} state={{ myEventsReturnTo: listOrigin ?? undefined, returnTo: discoveryOrigin ?? undefined }}>Gestionar imágenes</Link>}
     <Link className="secondary-link" to={myEventsReturnTo}>Ir a Mis eventos</Link>
   </div>
 }
