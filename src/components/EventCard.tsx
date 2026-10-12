@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import { Icon } from './Icon'
-import { formatEventTime } from '../features/events/validation'
+import { argentinaNow, formatEventTime } from '../features/events/validation'
 import type { EventPreview } from '../features/events/discovery'
 import type { MyEventListItem } from '../features/events/my-events'
 
@@ -37,7 +37,7 @@ export function CompactEventCard({ event, returnTo, showMenu = false }: { event:
     </Link>
     {showMenu && <div className="compact-event-menu" ref={menu} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setMenuOpen(false) }}>
       <button ref={trigger} type="button" className="compact-event-menu-trigger" aria-label={`Acciones de ${event.title}`} aria-expanded={menuOpen} aria-controls={menuOpen ? `event-menu-${event.id}` : undefined} onClick={() => setMenuOpen(open => !open)}><Icon name="more" /></button>
-      {menuOpen && <div className="compact-event-menu-panel" id={`event-menu-${event.id}`}><Link ref={detail} to={`/events/${event.id}`} state={{ myEventsReturnTo: returnTo }}>Ver detalle</Link></div>}
+      {menuOpen && <div className="compact-event-menu-panel" id={`event-menu-${event.id}`}><Link ref={detail} to={`/events/${event.id}`} state={{ myEventsReturnTo: returnTo }}>Ver detalle</Link>{event.event_state === 'open' && event.starts_at > argentinaNow() && <Link to={`/events/${event.id}/edit`} state={{ myEventsReturnTo: returnTo }}>Editar evento</Link>}</div>}
     </div>}
   </article>
 }

@@ -1,0 +1,432 @@
+[
+  {
+    "viewport": 360,
+    "scrollWidth": 360,
+    "controls": [
+      {
+        "name": "Salir",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "name": "title",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "description",
+        "width": 320,
+        "height": 89
+      },
+      {
+        "name": "start_date",
+        "width": 154,
+        "height": 52
+      },
+      {
+        "name": "start_time",
+        "width": 154,
+        "height": 52
+      },
+      {
+        "name": "end_date",
+        "width": 154,
+        "height": 52
+      },
+      {
+        "name": "end_time",
+        "width": 154,
+        "height": 52
+      },
+      {
+        "name": "address",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "location_name",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "Usar mi ubicación actual",
+        "width": 201.875,
+        "height": 44
+      },
+      {
+        "name": "latitude",
+        "width": 154,
+        "height": 52
+      },
+      {
+        "name": "longitude",
+        "width": 154,
+        "height": 52
+      },
+      {
+        "name": "category_id",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "capacity",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "images",
+        "width": 320,
+        "height": 70
+      },
+      {
+        "name": "Publicar evento",
+        "width": 320,
+        "height": 52
+      }
+    ]
+  },
+  {
+    "viewport": 375,
+    "scrollWidth": 375,
+    "controls": [
+      {
+        "name": "Salir",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "name": "title",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "description",
+        "width": 335,
+        "height": 89
+      },
+      {
+        "name": "start_date",
+        "width": 161.5,
+        "height": 52
+      },
+      {
+        "name": "start_time",
+        "width": 161.5,
+        "height": 52
+      },
+      {
+        "name": "end_date",
+        "width": 161.5,
+        "height": 52
+      },
+      {
+        "name": "end_time",
+        "width": 161.5,
+        "height": 52
+      },
+      {
+        "name": "address",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "location_name",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "Usar mi ubicación actual",
+        "width": 201.875,
+        "height": 44
+      },
+      {
+        "name": "latitude",
+        "width": 161.5,
+        "height": 52
+      },
+      {
+        "name": "longitude",
+        "width": 161.5,
+        "height": 52
+      },
+      {
+        "name": "category_id",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "capacity",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "images",
+        "width": 335,
+        "height": 70
+      },
+      {
+        "name": "Publicar evento",
+        "width": 335,
+        "height": 52
+      }
+    ]
+  },
+  {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "controls": [
+      {
+        "name": "Salir",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "name": "title",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "description",
+        "width": 350,
+        "height": 89
+      },
+      {
+        "name": "start_date",
+        "width": 169,
+        "height": 52
+      },
+      {
+        "name": "start_time",
+        "width": 169,
+        "height": 52
+      },
+      {
+        "name": "end_date",
+        "width": 169,
+        "height": 52
+      },
+      {
+        "name": "end_time",
+        "width": 169,
+        "height": 52
+      },
+      {
+        "name": "address",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "location_name",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "Usar mi ubicación actual",
+        "width": 201.875,
+        "height": 44
+      },
+      {
+        "name": "latitude",
+        "width": 169,
+        "height": 52
+      },
+      {
+        "name": "longitude",
+        "width": 169,
+        "height": 52
+      },
+      {
+        "name": "category_id",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "capacity",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "images",
+        "width": 350,
+        "height": 70
+      },
+      {
+        "name": "Publicar evento",
+        "width": 350,
+        "height": 52
+      }
+    ]
+  },
+  {
+    "viewport": 768,
+    "scrollWidth": 768,
+    "controls": [
+      {
+        "name": "Salir",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "name": "title",
+        "width": 440,
+        "height": 52
+      },
+      {
+        "name": "description",
+        "width": 440,
+        "height": 89
+      },
+      {
+        "name": "start_date",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "start_time",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "end_date",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "end_time",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "address",
+        "width": 440,
+        "height": 52
+      },
+      {
+        "name": "location_name",
+        "width": 440,
+        "height": 52
+      },
+      {
+        "name": "Usar mi ubicación actual",
+        "width": 201.875,
+        "height": 44
+      },
+      {
+        "name": "latitude",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "longitude",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "category_id",
+        "width": 440,
+        "height": 52
+      },
+      {
+        "name": "capacity",
+        "width": 440,
+        "height": 52
+      },
+      {
+        "name": "images",
+        "width": 440,
+        "height": 70
+      },
+      {
+        "name": "Publicar evento",
+        "width": 440,
+        "height": 52
+      }
+    ]
+  },
+  {
+    "viewport": 1280,
+    "scrollWidth": 1280,
+    "controls": [
+      {
+        "name": "Salir",
+        "width": 44,
+        "height": 44
+      },
+      {
+        "name": "title",
+        "width": 440,
+        "height": 52
+      },
+      {
+        "name": "description",
+        "width": 440,
+        "height": 89
+      },
+      {
+        "name": "start_date",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "start_time",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "end_date",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "end_time",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "address",
+        "width": 440,
+        "height": 52
+      },
+      {
+        "name": "location_name",
+        "width": 440,
+        "height": 52
+      },
+      {
+        "name": "Usar mi ubicación actual",
+        "width": 201.875,
+        "height": 44
+      },
+      {
+        "name": "latitude",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "longitude",
+        "width": 214,
+        "height": 52
+      },
+      {
+        "name": "category_id",
+        "width": 440,
+        "height": 52
+      },
+      {
+        "name": "capacity",
+        "width": 440,
+        "height": 52
+      },
+      {
+        "name": "images",
+        "width": 440,
+        "height": 70
+      },
+      {
+        "name": "Publicar evento",
+        "width": 440,
+        "height": 52
+      }
+    ]
+  }
+]
