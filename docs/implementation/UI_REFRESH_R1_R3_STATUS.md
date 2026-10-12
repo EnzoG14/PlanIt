@@ -5,7 +5,7 @@ Fecha: 12/10/2026. Registro independiente; no modifica estados funcionales R1/R2
 | Bloque | Etapa | Estado | Evidencia / pendiente |
 | --- | --- | --- | --- |
 | 0 | Foundation y consolidación del sistema visual | Completa | Documentos aprobados preservados, instrucciones alineadas, auditoría y seguimiento creados y validados; [PR draft #26](https://github.com/EnzoG14/PlanIt/pull/26), sin fusionar |
-| 1 | Pantalla piloto: Mis eventos | Implementada; revisión humana pendiente | [Capturas, pruebas y límites](../design/verification/ui-refresh/my-events/README.md); PR draft, sin fusionar |
+| 1 | Pantalla piloto: Mis eventos | Implementada; revisión humana pendiente | [Capturas, pruebas y límites](../design/verification/ui-refresh/my-events/README.md); [PR draft #27](https://github.com/EnzoG14/PlanIt/pull/27), sin fusionar |
 | 2 | Login y registro | Pendiente | Sin implementación del refresh |
 | 3 | Crear y editar eventos | Pendiente | Sin implementación del refresh |
 | 4 | Inicio, mapa y detalle del evento | Pendiente | Sin implementación del refresh |
@@ -28,7 +28,7 @@ Fecha: 12/10/2026. Registro independiente; no modifica estados funcionales R1/R2
 
 ## Bloque 1 — Mis eventos
 
-- Rama `design/ui-refresh-my-events` desde `origin/main` 796aadc, con Foundation #26 ya integrada. Implementación visual exclusiva del piloto; releases funcionales y backend intactos.
+- Rama `design/ui-refresh-my-events` desde `origin/main` 796aadc, con Foundation #26 ya integrada. [PR draft #27](https://github.com/EnzoG14/PlanIt/pull/27) para revisión, sin fusionar. Implementación visual exclusiva del piloto; releases funcionales y backend intactos.
 - C3 corregido: primera fila móvil 478 → 379 px; escritorio 429 → 343 px. Pestañas planas, selección/creación sólidas, filas continuas con miniatura y acciones separadas, metadatos/estados legibles y ayuda contextual. Sin dependencias nuevas.
 - Reutilizados AppLayout, CompactEventCard, StatusMessage y EventActionDialog. Shell y selectores acotados a Mis eventos; otras pantallas no reciben el refresh. Texto largo conserva contenido íntegro accesible/en detalle y resumen visual; faltante/fallo de foto tiene alternativa compacta.
 - Archivos: `src/pages/MyEventsPage.tsx`, `src/pages/my-events.css`, `src/components/EventCard.tsx`, `src/components/AppLayout.tsx`; runner `scripts/check-my-events-refresh-ui.mjs`; tres runners existentes admiten salida configurable para preservar evidencia anterior. Documentación/capturas bajo `docs/design/verification/ui-refresh/my-events/`.
