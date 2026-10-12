@@ -15,7 +15,7 @@ export function MyEventsPage() {
   const filter = organizedFilter(params.get('filter'))
   function select(value: MyEventsSection) { setParams(value === 'organizing' ? { section: value, filter } : { section: value }, { replace: true }) }
   return <div className="my-events-page">
-    <header className="my-events-heading"><div><h1>Mis eventos</h1><p>{section === 'organizing' ? 'Eventos que organizás' : 'Tus planes y tu participación.'}</p></div><Link to="/events/new" className="gradient-link my-events-create" aria-label="Crear evento"><Icon name="plus" /></Link></header>
+    <header className="my-events-heading"><div><h1>Mis eventos</h1><p>{section === 'organizing' ? 'Eventos que organizás' : 'Tus planes y tu participación.'}</p></div><Link to="/events/new" className="my-events-create" aria-label="Crear evento"><Icon name="plus" /><span>Crear<span className="my-events-create-extra"> evento</span></span></Link></header>
     <div className="my-events-tabs" role="tablist" aria-label="Tu relación con los eventos">
       {(['organizing', 'participating'] as const).map(value => <button key={value} id={`tab-${value}`} type="button" role="tab" aria-selected={section === value} aria-controls={section === value ? `panel-${value}` : undefined} tabIndex={section === value ? 0 : -1} onClick={() => select(value)} onKeyDown={(event: KeyboardEvent<HTMLButtonElement>) => {
         if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return
@@ -28,7 +28,7 @@ export function MyEventsPage() {
       <div className="my-events-filters" role="group" aria-label="Filtrar eventos organizados">
         {Object.entries(organizedFilters).map(([value, label]) => <button key={value} type="button" aria-pressed={filter === value} onClick={() => setParams({ section, filter: value }, { replace: true })}>{label}</button>)}
       </div>
-      <p className="field-hint my-events-filter-hint">{filter === 'upcoming' ? 'Próximos incluye eventos en curso que todavía no finalizaron.' : 'Los eventos archivados están en su sección histórica: Archivados.'}</p>
+      {filter === 'upcoming' && <p className="field-hint my-events-filter-hint">Próximos incluye eventos en curso que todavía no finalizaron.</p>}
     </>}
     <MyEventsList key={`${session?.user.id}:${section}:${section === 'organizing' ? filter : 'all'}`} section={section} filter={section === 'organizing' ? filter : 'all'} />
   </div>
@@ -82,7 +82,7 @@ function MyEventsList({ section, filter }: { section: MyEventsSection; filter: O
     return () => { active = false; revision.current += 1; window.removeEventListener('focus', onReturn); document.removeEventListener('visibilitychange', onReturn) }
   }, [section, filter])
   return <section id={`panel-${section}`} role="tabpanel" aria-labelledby={`tab-${section}`} tabIndex={0} aria-busy={loading || loadingMore}>
-    <p className="event-action-notice" role="status">{notice}</p>
+    <p className="event-action-notice my-events-notice" role="status">{notice}</p>
     <div className="my-events-refresh"><button type="button" className="text-button" disabled={loading || loadingMore} onClick={() => reload.current()}>Actualizar</button></div>
     {loading ? <div role="status"><StatusMessage title="Cargando tus eventos">Esperá un momento.</StatusMessage></div> : <>
       {error && <div><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage><button type="button" className="secondary-button" disabled={loadingMore} onClick={() => appendError ? more.current() : reload.current()}>{appendError ? 'Reintentar carga adicional' : 'Reintentar'}</button></div>}

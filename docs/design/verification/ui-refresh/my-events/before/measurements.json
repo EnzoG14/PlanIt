@@ -1,0 +1,575 @@
+{
+  "environment": "Edge Chromium; intercepted Auth/REST/Storage fixtures; no remote writes; Asia/Tokyo clock; reduced motion",
+  "results": [
+    {
+      "width": 320,
+      "height": 800,
+      "name": "organizing",
+      "overflow": false,
+      "firstRow": 477.984375,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 320,
+        "height": 73
+      }
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "name": "participating",
+      "overflow": false,
+      "firstRow": 312.390625,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 320,
+        "height": 73
+      }
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "name": "many-menu",
+      "overflow": false,
+      "firstRow": -6975.015625,
+      "smallTargets": [],
+      "menu": {
+        "x": 151,
+        "y": 161.328125,
+        "width": 144,
+        "height": 360
+      },
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 320,
+        "height": 73
+      }
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "name": "long-broken-photo",
+      "overflow": false,
+      "firstRow": 477.984375,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 320,
+        "height": 73
+      }
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "name": "empty",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 320,
+        "height": 73
+      }
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "name": "network-error",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 320,
+        "height": 73
+      }
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "name": "organizing",
+      "overflow": false,
+      "firstRow": 477.984375,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 360,
+        "height": 73
+      }
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "name": "participating",
+      "overflow": false,
+      "firstRow": 312.390625,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 360,
+        "height": 73
+      }
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "name": "many-menu",
+      "overflow": false,
+      "firstRow": -5012.015625,
+      "smallTargets": [],
+      "menu": {
+        "x": 191,
+        "y": 200,
+        "width": 144,
+        "height": 360
+      },
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 360,
+        "height": 73
+      }
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "name": "long-broken-photo",
+      "overflow": false,
+      "firstRow": 477.984375,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 360,
+        "height": 73
+      }
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "name": "empty",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 360,
+        "height": 73
+      }
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "name": "network-error",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 727,
+        "width": 360,
+        "height": 73
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "name": "organizing",
+      "overflow": false,
+      "firstRow": 477.984375,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 739,
+        "width": 375,
+        "height": 73
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "name": "participating",
+      "overflow": false,
+      "firstRow": 312.390625,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 739,
+        "width": 375,
+        "height": 73
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "name": "many-menu",
+      "overflow": false,
+      "firstRow": -4750.015625,
+      "smallTargets": [],
+      "menu": {
+        "x": 206,
+        "y": 212.4375,
+        "width": 144,
+        "height": 360
+      },
+      "nav": {
+        "x": 0,
+        "y": 739,
+        "width": 375,
+        "height": 73
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "name": "long-broken-photo",
+      "overflow": false,
+      "firstRow": 477.984375,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 739,
+        "width": 375,
+        "height": 73
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "name": "empty",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 739,
+        "width": 375,
+        "height": 73
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "name": "network-error",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 739,
+        "width": 375,
+        "height": 73
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "name": "organizing",
+      "overflow": false,
+      "firstRow": 477.984375,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 771,
+        "width": 390,
+        "height": 73
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "name": "participating",
+      "overflow": false,
+      "firstRow": 312.390625,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 771,
+        "width": 390,
+        "height": 73
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "name": "many-menu",
+      "overflow": false,
+      "firstRow": -4718.015625,
+      "smallTargets": [],
+      "menu": {
+        "x": 221,
+        "y": 244.4375,
+        "width": 144,
+        "height": 360
+      },
+      "nav": {
+        "x": 0,
+        "y": 771,
+        "width": 390,
+        "height": 73
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "name": "long-broken-photo",
+      "overflow": false,
+      "firstRow": 477.984375,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 771,
+        "width": 390,
+        "height": 73
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "name": "empty",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 771,
+        "width": 390,
+        "height": 73
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "name": "network-error",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 0,
+        "y": 771,
+        "width": 390,
+        "height": 73
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "name": "organizing",
+      "overflow": false,
+      "firstRow": 429.1875,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 44,
+        "y": 930,
+        "width": 680,
+        "height": 74
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "name": "participating",
+      "overflow": false,
+      "firstRow": 336.390625,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 44,
+        "y": 930,
+        "width": 680,
+        "height": 74
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "name": "many-menu",
+      "overflow": false,
+      "firstRow": -4885.8125,
+      "smallTargets": [],
+      "menu": {
+        "x": 555,
+        "y": 407.859375,
+        "width": 144,
+        "height": 360
+      },
+      "nav": {
+        "x": 44,
+        "y": 930,
+        "width": 680,
+        "height": 74
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "name": "long-broken-photo",
+      "overflow": false,
+      "firstRow": 429.1875,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 44,
+        "y": 930,
+        "width": 680,
+        "height": 74
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "name": "empty",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 44,
+        "y": 930,
+        "width": 680,
+        "height": 74
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "name": "network-error",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 44,
+        "y": 930,
+        "width": 680,
+        "height": 74
+      }
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "name": "organizing",
+      "overflow": false,
+      "firstRow": 429.1875,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 300,
+        "y": 806,
+        "width": 680,
+        "height": 74
+      }
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "name": "participating",
+      "overflow": false,
+      "firstRow": 336.390625,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 300,
+        "y": 806,
+        "width": 680,
+        "height": 74
+      }
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "name": "many-menu",
+      "overflow": false,
+      "firstRow": -5009.8125,
+      "smallTargets": [],
+      "menu": {
+        "x": 811,
+        "y": 283.859375,
+        "width": 144,
+        "height": 360
+      },
+      "nav": {
+        "x": 300,
+        "y": 806,
+        "width": 680,
+        "height": 74
+      }
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "name": "long-broken-photo",
+      "overflow": false,
+      "firstRow": 429.1875,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 300,
+        "y": 806,
+        "width": 680,
+        "height": 74
+      }
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "name": "empty",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 300,
+        "y": 806,
+        "width": 680,
+        "height": 74
+      }
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "name": "network-error",
+      "overflow": false,
+      "firstRow": null,
+      "smallTargets": [],
+      "menu": null,
+      "nav": {
+        "x": 300,
+        "y": 806,
+        "width": 680,
+        "height": 74
+      }
+    }
+  ]
+}

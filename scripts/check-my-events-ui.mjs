@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
 const browser = await chromium.launch({ headless: true, channel: 'msedge' })
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4186'
-const output = 'docs/design/verification/r3-block-1'
+const output = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/r3-block-1'
 await mkdir(output, { recursive: true })
 const ownerId = '20000000-0000-4000-8000-000000000001'
 const guestId = '20000000-0000-4000-8000-000000000002'
