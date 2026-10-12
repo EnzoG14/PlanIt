@@ -1,6 +1,6 @@
 # R3 Bloque 6 — Solicitudes de reincorporación
 
-Implementado; QA y aceptación humana pendientes. Rama `codex/r3-block-6`, base `origin/main` `dd4bb07` (PR #23 integrada). Evidencia del 12/10/2026, Argentina. Migración propuesta y probada localmente; **no aplicada remotamente**. Cambio previo de `vite.config.ts` preservado y excluido de la PR.
+Implementado; QA y aceptación humana pendientes. [PR #24](https://github.com/EnzoG14/PlanIt/pull/24) en borrador. Rama `codex/r3-block-6`, base `origin/main` `dd4bb07` (PR #23 integrada). Evidencia del 12/10/2026, Argentina. Migración propuesta y probada localmente; **no aplicada remotamente**. Cambio previo de `vite.config.ts` preservado y excluido de la PR.
 
 ## Contratos y decisiones
 
