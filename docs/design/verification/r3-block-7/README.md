@@ -1,6 +1,6 @@
 # R3 Bloque 7 — Evidencia de QA integral
 
-12/10/2026 (Argentina), `codex/r3-block-7`, base `d9c0a69`. [37 CA literales](../../../qa/RELEASE_3_ACCEPTANCE.md), [informe NO-GO y pendientes](../../../qa/RELEASE_3_TEST_REPORT.md). No Validado, no aceptación humana ni E2E remoto implícito.
+12/10/2026 (Argentina), `codex/r3-block-7`, base `d9c0a69`. [37 CA literales](../../../qa/RELEASE_3_ACCEPTANCE.md), [informe NO-GO y pendientes](../../../qa/RELEASE_3_TEST_REPORT.md). [PR #25](https://github.com/EnzoG14/PlanIt/pull/25) en borrador. No Validado, no aceptación humana ni E2E remoto implícito.
 
 ## Ejecutado y reproducible
 
