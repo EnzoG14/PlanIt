@@ -6,7 +6,7 @@ const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PA
 const browser = await chromium.launch({ headless: true, channel: 'msedge' })
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4181'
 const baseline = process.env.PLANIT_CHAT_BASELINE === '1'
-const output = 'docs/design/verification/chat-layout'
+const output = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/chat-layout'
 await mkdir(output, { recursive: true })
 const user = { id: '20000000-0000-4000-8000-000000000001', email: 'fixture@example.invalid', aud: 'authenticated', role: 'authenticated', app_metadata: { provider: 'email' }, user_metadata: {}, identities: [], created_at: '2026-10-10T12:00:00Z' }
 const event = '30000000-0000-4000-8000-000000000001'

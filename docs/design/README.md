@@ -1,6 +1,6 @@
 # PlanIt — Referencias de diseño y refresh R1–R3
 
-La dirección visual aprobada es **B · Amanecer** (12/10/2026): modo claro, tinta marina, mancha difusa, cristal suave y Bricolage Grotesque. El sistema describe el objetivo; la PWA todavía no está migrada (el código y el piloto Mis eventos conservan el marino oscuro v2.0). No redefine requisitos ni el modelo de datos.
+La dirección visual aprobada es **B · Amanecer** (12/10/2026). Mis eventos ya la implementa y está fusionada mediante PR #27; el bloque 0.5 centraliza su fundación técnica sin rediseñarla. Las demás pantallas siguen con el sistema heredado. El diseño no redefine requisitos ni el modelo de datos.
 
 ## Referencias vigentes
 
@@ -27,4 +27,4 @@ Consultar el sistema y shape antes de modificar UI. Usar Impeccable cuando esté
 
 Los prompts anteriores bajo prompts/ y los collages R1–R7 son históricos: cualquier instrucción de reproducir degradados, brillos, fondo oscuro o apariencia original queda subordinada a DESIGN.md. Las auditorías y verificaciones anteriores son evidencia del estado previo; no se reescriben. No regenerar DESIGN.md ni su sidecar sin pedido del usuario. No agregar funciones por su presencia en un collage ni extraer sus fotografías como contenido real.
 
-La siguiente etapa propuesta es la **Fundación Amanecer** (tokens globales, fuente, componentes compartidos y realineación del piloto Mis eventos); requiere un pedido de implementación. Actualizar estos documentos no migra ninguna pantalla.
+La **Fundación Amanecer** aporta `src/styles/tokens.css` y `amanecer.css` opt-in. Consultar [UI_WORKFLOW.md](UI_WORKFLOW.md), [auditoría de extracción](verification/ui-refresh/amanecer-foundation/implementation-audit.md) y [regresión](verification/ui-refresh/amanecer-foundation/README.md). La siguiente etapa es Login/registro (bloque 2), que requiere su propio pedido; esta entrega se detiene en la PR de fundación.

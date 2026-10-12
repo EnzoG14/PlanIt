@@ -5,7 +5,7 @@ const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PA
 const phase = process.argv[2] ?? 'after'
 const requestedWidth = Number(process.argv[3])
 assert.ok(['before', 'after'].includes(phase))
-const output = `docs/design/verification/ui-refresh/my-events/${phase}`
+const output = process.env.PLANIT_UI_OUTPUT ?? `docs/design/verification/ui-refresh/my-events/${phase}`
 await mkdir(output, { recursive: true })
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4186'
 const owner = '20000000-0000-4000-8000-000000000001'
@@ -47,13 +47,29 @@ try {
     const page = await context.newPage()
     const errors = []
     page.on('pageerror', e => errors.push(e.message))
-    const shot = async name => page.screenshot({ path: `${output}/${name}-${width}x${height}.png`, fullPage: true })
-    const ready = async () => { await page.waitForFunction(() => document.querySelector('[role="tabpanel"]')?.getAttribute('aria-busy') === 'false') }
+    const settle = () => page.evaluate(async () => {
+      await document.fonts.ready
+      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+    })
+    const shot = async name => { await settle(); await page.screenshot({ path: `${output}/${name}-${width}x${height}.png`, fullPage: true }) }
+    const ready = async () => {
+      await page.waitForLoadState('networkidle')
+      await page.waitForFunction(() => document.querySelector('[role="tabpanel"]')?.getAttribute('aria-busy') === 'false')
+      await settle()
+    }
     const refresh = async () => { await page.getByRole('button', { name: 'Actualizar', exact: true }).click(); await ready() }
     const measure = async name => {
+      await settle()
       const data = await page.evaluate(() => {
         const rect = el => { const r = el.getBoundingClientRect(); return { x:r.x,y:r.y,width:r.width,height:r.height } }
-        return { overflow: document.documentElement.scrollWidth > innerWidth, firstRow: document.querySelector('.compact-event-card')?.getBoundingClientRect().top ?? null, smallTargets: [...document.querySelectorAll('.my-events-page button, .my-events-create, .primary-nav a')].filter(e => !e.disabled && e.getBoundingClientRect().height > 0 && (e.getBoundingClientRect().height < 44 || e.getBoundingClientRect().width < 44)).map(e => ({ text:e.textContent, ...rect(e) })), menu: document.querySelector('.compact-event-menu-panel') ? rect(document.querySelector('.compact-event-menu-panel')) : null, nav: rect(document.querySelector('.primary-nav')) }
+        const properties = ['font-family', 'font-size', 'font-weight', 'line-height', 'letter-spacing', 'padding', 'margin', 'gap', 'border-radius', 'color', 'background-color', 'background-image', 'box-shadow']
+        const inspected = [...document.querySelectorAll('.app-header *, .my-events-page *, .primary-nav *')].map(el => {
+          const style = getComputedStyle(el)
+          return { element: `${el.tagName}.${el.getAttribute('class') ?? ''}`, ...Object.fromEntries(properties.map(name => [name, style.getPropertyValue(name)])) }
+        })
+        // Repeated cards/SVG children share styles; retain each distinct signature once.
+        const visual = [...new Map(inspected.map(value => [JSON.stringify(value), value])).values()]
+        return { visual, overflow: document.documentElement.scrollWidth > innerWidth, firstRow: document.querySelector('.compact-event-card')?.getBoundingClientRect().top ?? null, smallTargets: [...document.querySelectorAll('.my-events-page button, .my-events-create, .primary-nav a')].filter(e => !e.disabled && e.getBoundingClientRect().height > 0 && (e.getBoundingClientRect().height < 44 || e.getBoundingClientRect().width < 44)).map(e => ({ text:e.textContent, ...rect(e) })), menu: document.querySelector('.compact-event-menu-panel') ? rect(document.querySelector('.compact-event-menu-panel')) : null, nav: rect(document.querySelector('.primary-nav')) }
       })
       assert.equal(data.overflow, false, `${width} ${name}: document overflow`)
       if (phase === 'after') assert.deepEqual(data.smallTargets, [], `${width} ${name}: small targets`)
@@ -121,6 +137,7 @@ try {
       assert.ok(lastAction.y >= panel.y && lastAction.y + lastAction.height <= panel.y + panel.height, 'last menu action reachable by focus')
       await page.keyboard.press('Escape')
       await page.setViewportSize({ width, height })
+      await ready()
       await page.evaluate(() => {
         const elements = [...document.querySelectorAll('.my-events-page *')]
         const sizes = elements.map(el => getComputedStyle(el).fontSize)
@@ -148,6 +165,6 @@ try {
     assert.deepEqual(errors, [])
     await context.close()
   }
-  await writeFile(`${output}/measurements.json`, JSON.stringify({ environment:'Edge Chromium; intercepted Auth/REST/Storage fixtures; no remote writes; Asia/Tokyo clock; reduced motion', results }, null, 2))
+  await writeFile(`${output}/measurements.json`, JSON.stringify({ environment:'Edge Chromium; intercepted Auth/REST/Storage fixtures; no remote writes; Asia/Tokyo clock; reduced motion', results }) + '\n')
   console.log(`${phase}: ${results.length} responsive/state captures PASS`)
 } finally { await browser.close() }

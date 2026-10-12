@@ -6,9 +6,9 @@ Fecha: 12/10/2026. Registro independiente; no modifica estados funcionales R1/R2
 
 | Bloque | Etapa | Estado | Evidencia / pendiente |
 | --- | --- | --- | --- |
-| 0 | Foundation y consolidación del sistema visual | Completa | Documentos aprobados preservados, instrucciones alineadas, auditoría y seguimiento creados y validados; [PR draft #26](https://github.com/EnzoG14/PlanIt/pull/26), sin fusionar |
-| 0.5 | Fundación Amanecer | Pendiente | Documentación de la dirección aprobada actualizada (DESIGN.md, sidecar, DESIGN_SYSTEM, AGENTS); sin implementación en la PWA |
-| 1 | Pantalla piloto: Mis eventos | Realineada a Amanecer (12/10/2026, acotada a la ruta); revisión humana pendiente | [Capturas, pruebas y límites](../design/verification/ui-refresh/my-events/README.md); [PR draft #27](https://github.com/EnzoG14/PlanIt/pull/27), sin fusionar |
+| 0 | Foundation y consolidación del sistema visual | Completa e integrada | Documentos e instrucciones; PR #26 ya integrada antes del piloto. El registro de su entrega draft se conserva debajo |
+| 0.5 | Fundación Amanecer | Implementada; entrega draft | Tokens `--pi-*`, patrones opt-in, misma fuente y compatibilidad; [workflow](../design/UI_WORKFLOW.md), [auditoría/regresión](../design/verification/ui-refresh/amanecer-foundation/README.md). No migra otras rutas |
+| 1 | Pantalla piloto: Mis eventos | Amanecer implementada e integrada en main (cb5a249); aceptación humana no inferida | [Capturas, pruebas y límites](../design/verification/ui-refresh/my-events/README.md); [PR #27 fusionada](https://github.com/EnzoG14/PlanIt/pull/27) |
 | 2 | Login y registro | Pendiente | Sin implementación del refresh |
 | 3 | Crear y editar eventos | Pendiente | Sin implementación del refresh |
 | 4 | Inicio, mapa y detalle del evento | Pendiente | Sin implementación del refresh |
@@ -17,7 +17,18 @@ Fecha: 12/10/2026. Registro independiente; no modifica estados funcionales R1/R2
 | 7 | Acciones y reincorporaciones | Pendiente | Sin implementación del refresh |
 | 8 | Auditoría integral y regresión | Pendiente | Evaluación futura; reportes anteriores preservados |
 
-## Foundation
+## Bloque 0.5 — Fundación Amanecer (actualización tras PR #27)
+
+- Rama `design/ui-refresh-amanecer-foundation` desde `origin/main` cb5a249, referencias sincronizadas sin descartar cambios. `vite.config.ts` local (host de desarrollo) preservado fuera del commit.
+- Tokens centrales `src/styles/tokens.css`: colores, estados, tipografía, espacios, radios, elevación, foco y movimiento aprobados. Mis eventos usa `--pi-*`; no queda paleta `--am-*`. Fuente existente normal variable 200–800 y OFL, misma URL y precache.
+- Patrones compartidos `src/styles/amanecer.css`, opt-in `.amanecer-shell`: botones, Cuenta, dock, feedback y diálogo extraídos; campo/ScreenHeader preparados para próximos bloques. AppLayout sólo activa el scope en `/my-events`. Timeline, heading, tabs, filtros, filas, menú de evento y responsive siguen locales.
+- Compatibilidad: variables globales heredadas intactas; adaptadores `--color-*`, `--gradient-primary` y radios dentro del scope derivan de `--pi-*`. Se retiran cuando se migren todos sus consumidores. No se migró Auth, Inicio, Mapa, Detalle ni Chat.
+- Documentación: estado real del piloto corregido en DESIGN, DESIGN_SYSTEM, README, decisión, plan y AGENTS; registros históricos preservados. [UI_WORKFLOW.md](../design/UI_WORKFLOW.md) explica clon limpio, instalación/versión Impeccable, fixtures, adopción y retirada de compatibilidad.
+- Verificación y límites: [registro nuevo](../design/verification/ui-refresh/amanecer-foundation/README.md). Se preservan las capturas históricas. Critique dual independiente, detector, polish/harden y audit de fundación separados de checks del proyecto. La integración no acredita aceptación humana, lector de pantalla ni dispositivos físicos.
+- PASS final: build, lint, check:amanecer, check:my-events, check:my-events:ui, check:event-actions:ui, runner de refresh, check:amanecer:auth:ui, check:home:ui, check:discovery:ui, check:chat:layout, check:auth, check:foundation, check:home-events y check:discovery. Seis Organizo idénticos a capturas aprobadas; 48 estados con mismos estilos/geometría y 83/96 PNG idénticos; diferencias dinámicas y deuda previa de texto aumentado documentadas.
+- Entrega mediante commit y PR draft hacia main; no fusionar ni comenzar el bloque 2.
+
+## Foundation — registro histórico anterior a la integración
 
 - Rama: design/ui-refresh-r1-r3, creada desde origin/main (51509d5), después de informar que la rama inicial era codex/r3-block-6. Sin merge/rebase ni descarte del trabajo local.
 - Entrega: [PR draft #26](https://github.com/EnzoG14/PlanIt/pull/26) hacia main. Foundation completa; revisión/merge de la PR y todo trabajo de pantallas permanecen fuera de esta tarea.
@@ -29,7 +40,7 @@ Fecha: 12/10/2026. Registro independiente; no modifica estados funcionales R1/R2
 - git diff --check del working tree y comprobación acotada de documentos nuevos/instrucciones: sin errores. git diff --cached --check completo informa dos incidencias heredadas de los reportes preservados: espacio final en critique línea 5 y línea vacía al final de audit técnico. No se alteran esos bytes por el mandato de preservación.
 - Build/lint no ejecutados: entrega documental sin cambios de frontend. No se realizaron nuevas pruebas visuales, escrituras remotas ni migraciones.
 
-## Bloque 1 — Mis eventos
+## Bloque 1 — Mis eventos (registro histórico de la entrega)
 
 - Rama `design/ui-refresh-my-events` desde `origin/main` 796aadc, con Foundation #26 ya integrada. [PR draft #27](https://github.com/EnzoG14/PlanIt/pull/27) para revisión, sin fusionar. Implementación visual exclusiva del piloto; releases funcionales y backend intactos.
 - C3 corregido: primera fila móvil 478 → 379 px; escritorio 429 → 343 px. Pestañas planas, selección/creación sólidas, filas continuas con miniatura y acciones separadas, metadatos/estados legibles y ayuda contextual. Sin dependencias nuevas.
@@ -58,6 +69,6 @@ Fecha: 12/10/2026. Registro independiente; no modifica estados funcionales R1/R2
 
 ## Pendientes
 
-Realinear y revisar el piloto (bloque 0.5) antes de propagar sus patrones. Los hallazgos históricos sin cierre necesitan comprobación futura; los gestos de mapa, teclado real, safe areas, lector de pantalla y perfilado móvil no quedan cubiertos por esta entrega. La dirección visual está aprobada (Amanecer); sólo faltan las decisiones funcionales indicadas arriba.
+Migrar las restantes pantallas sólo en sus bloques autorizados. El piloto ya está integrado y el bloque 0.5 preserva su apariencia. Los hallazgos históricos sin cierre necesitan comprobación futura; gestos de mapa, teclado real, safe areas, lector de pantalla y perfilado móvil siguen pendientes. La dirección visual está aprobada; las decisiones funcionales del lab siguen abiertas.
 
 Para actualizar: registrar por bloque cambios, evidencia, validaciones, límites y aceptación humana por separado; no convertir una mejora de un componente compartido en cierre automático de otras pantallas.

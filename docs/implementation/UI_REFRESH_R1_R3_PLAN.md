@@ -17,8 +17,8 @@ No modificar [estado funcional R1](RELEASE_1_STATUS.md), [R2](RELEASE_2_STATUS.m
 | Bloque | Etapa | Entrega y alcance | Hallazgos relacionados |
 | --- | --- | --- | --- |
 | 0 | Foundation y consolidación del sistema visual | Preservar documentos aprobados y reportes, alinear instrucciones, consolidar auditoría, crear plan/estado y entregar PR documental | Trazabilidad y jerarquía de referencias |
-| 0.5 | Fundación Amanecer | Tokens CSS globales (reemplazo de `--color-*`/`--gradient-primary`), fuente Bricolage Grotesque autoalojada, botón de tinta, campo, dock/AppLayout, StatusMessage, diálogo, mancha y cristal con fallbacks, reduced-motion/transparency; **realinear el piloto Mis eventos** (PR #27) a Amanecer | Prerrequisito de 2–8; A3 (bordes de control), A2 (acción destructiva sólida) |
-| 1 | Pantalla piloto: Mis eventos (implementada en marino v2.0; realineación en 0.5) | Priorizar primera fila, contextualizar ayuda/Actualizar, conservar Organizo/Participo, cinco filtros, estados, paginación y menú; validar patrones reutilizables | C3; revisar shell y recuperación A1, controles compartidos A3 en alcance autorizado |
+| 0.5 | Fundación Amanecer | Extraer `--pi-*` y patrones opt-in; compartir la fuente existente, campo/ScreenHeader, botón, dock, StatusMessage, Cuenta y diálogo; conservar adaptadores heredados acotados y fallbacks. **Preservar el piloto ya integrado** | Prerrequisito de 2–8; regresión sin cambios visuales automáticos |
+| 1 | Pantalla piloto: Mis eventos (Amanecer integrada, PR #27) | Timeline, encabezado, tabs, filtros, cards, menús, navegación y responsive ya implementados; no rediseñar en 0.5 | Evidencia `my-events/after/`; integración no equivale a aceptación humana |
 | 2 | Login y registro | Encabezado compacto, formulario directo, campos/foco legibles; preservar sesión, errores, mostrar contraseña y confirmación de correo | A3; dirección de shape, sin inventar severidades |
 | 3 | Crear y editar eventos | Formulario por secciones sin contenedores redundantes; fechas completas, inicio/fin, ubicación, cupo y portada de edición compacta | A3/A4; conservar validación y estado local |
 | 4 | Inicio, mapa y detalle del evento | Decidir antes los elementos del lab con carga funcional (tira de días, tarjetas rápidas; ver la decisión de dirección). Fotos naturales, fallback compacto, apertura amplia, una columna móvil en resultados; acercar disponibilidad y participación | C1/C2/C4, A1/A7; medir A8 antes de ampliar alcance técnico |
@@ -27,7 +27,7 @@ No modificar [estado funcional R1](RELEASE_1_STATUS.md), [R2](RELEASE_2_STATUS.m
 | 7 | Acciones y reincorporaciones | Acciones sólidas, confirmaciones y filas claras; preservar cancelación/archivo, duplicación, solicitudes, cupos y resultado incierto | A2: migración visual pendiente, sin reabrir el rojo anterior como fallo actual |
 | 8 | Auditoría integral y regresión | Evaluación nueva con alcance explícito, capturas, matriz de recorridos/estados, accesibilidad y regresión R1–R3 | Reevaluar hallazgos con evidencia; no sobrescribir reportes históricos |
 
-Todos los bloques de UI posteriores al piloto comienzan pendientes; el piloto y el bloque 0.5 deben revisarse juntos. Foundation sólo se completa al existir documentación coherente, validaciones y commit/PR; no implica implementación o aceptación visual de ninguna pantalla.
+Actualización tras PR #27 (main cb5a249): el piloto ya está integrado. Los bloques 2–8 siguen pendientes. El bloque 0.5 se cierra con tokens/patrones compartidos, [workflow reproducible](../design/UI_WORKFLOW.md), documentación, regresión y commit/PR draft; no rediseña Mis eventos ni acredita aceptación humana o migración de otras pantallas.
 
 ## Orden y dependencias
 

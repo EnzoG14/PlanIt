@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:amanecer": "node scripts/check-amanecer-tokens.mjs",
+    "check:amanecer:auth:ui": "node scripts/check-amanecer-auth-ui.mjs",
     "check:r3": "node scripts/check-release-3.mjs",
     "check:r3:metadata": "node scripts/check-release-3-metadata.mjs",
     "check:rejoin": "node scripts/check-rejoin.mjs",

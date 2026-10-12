@@ -107,7 +107,7 @@ try {
   await role(c, stranger)
   assert.deepEqual(await page(c, '2099-10-11 20:00', null), [])
   check('Incomplete page cursor returns no data')
-  const out = 'docs/design/verification/home-event-detail'
+  const out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/home-event-detail'
   await mkdir(out, { recursive: true })
   await writeFile(`${out}/postgres-results.json`, JSON.stringify({ version, environment: 'Local PostgreSQL; test Auth/Storage scaffolding only, no real Supabase Auth/REST', results }, null, 2))
 } finally {

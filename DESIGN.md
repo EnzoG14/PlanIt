@@ -234,7 +234,7 @@ La interfaz es clara, aireada y tipográfica. La fotografía de cada evento —d
 
 **Estado y autoridad — 12/10/2026.** El usuario aprobó la **dirección B · Amanecer** del [design-lab](design-lab/README.md) (comparada con A · Marea nocturna y C · Bento tonal) como sistema objetivo de PlanIt. Este documento la consolida y **reemplaza la dirección marina oscura v2.0** (que seguía al [shape R1–R3](docs/design/proposals/r1-r3-visual-evolution.md)). Ver [la decisión](docs/design/proposals/amanecer-direction.md). El frontmatter es la fuente normativa de tokens y asignaciones de componentes; [DESIGN_SYSTEM.md](docs/design/DESIGN_SYSTEM.md) desarrolla su aplicación y aceptación sin mantener otra paleta. Requisitos y arquitectura determinan el comportamiento.
 
-**Este documento no afirma que Amanecer esté aplicado en la PWA.** El código vigente (`src/index.css`, el piloto Mis eventos y el resto de pantallas) todavía usa marino oscuro, CTA degradados y variables `--color-*` de la versión anterior. El [design-lab](design-lab/) (`design-lab/src/b/`) es el prototipo ejecutable de referencia: sus valores no son código desplegado, y donde difieren de este frontmatter manda el frontmatter (ver Colors → Desviaciones). El alcance son las pantallas implementadas de R1–R3 y componentes compartidos; no nuevas funciones R4–R7, cambios de rutas o backend.
+**Actualización de implementación — 12/10/2026, después de PR #27.** Mis eventos ya implementa Amanecer y está fusionada en `main` (cb5a249). La fundación del bloque 0.5 centraliza los valores en `src/styles/tokens.css` y los patrones opt-in en `src/styles/amanecer.css`, preservando el piloto. Las demás pantallas mantienen temporalmente el diseño heredado de `src/index.css` y `App.css`; definir tokens no las migra. El [design-lab](design-lab/) es referencia de composición y estados con fixtures; ante diferencias manda este frontmatter. Alcance R1–R3, sin nuevas funciones, rutas ni backend. Procedimiento: [UI_WORKFLOW.md](docs/design/UI_WORKFLOW.md).
 
 ## Colors
 
@@ -279,7 +279,7 @@ Los valores normativos están únicamente en el frontmatter. Estrategia: neutros
 
 **Familia:** Bricolage Grotesque (con fallback Segoe UI, system-ui, sans-serif). **Carácter:** grotesca con personalidad, pesada en títulos y limpia en lectura; el contraste de tamaño entre títulos grandes y metadatos compactos hace de agenda.
 
-Bricolage es una **fuente externa aprobada con la dirección B**. Se autoaloja (archivo variable subconjunto latino incluido en el build/PWA; `font-display: swap`); no se carga desde Google Fonts en producción. El fallback Segoe UI evita saltos de layout graves y mantiene legible la app sin la fuente. Agregar el archivo o paquete corresponde al bloque de implementación, no a esta documentación.
+Bricolage es una **fuente externa aprobada con la dirección B**. Ya está autoalojada en `src/assets/fonts/` (variable latina normal 200–800, licencia OFL, `font-display: swap`, incluida en build/PWA). El bloque 0.5 comparte su declaración desde `src/styles/tokens.css`; sólo las pantallas opt-in cambian de familia. El fallback Segoe UI/system-ui mantiene la lectura si falla la fuente. No descargar otra copia ni cargarla desde Google Fonts en producción.
 
 ### Hierarchy
 
