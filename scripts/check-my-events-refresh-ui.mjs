@@ -3,6 +3,7 @@ import { mkdir, writeFile } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
 const phase = process.argv[2] ?? 'after'
+const requestedWidth = Number(process.argv[3])
 assert.ok(['before', 'after'].includes(phase))
 const output = `docs/design/verification/ui-refresh/my-events/${phase}`
 await mkdir(output, { recursive: true })
@@ -14,14 +15,20 @@ const row = (n, state = 'open') => ({ id: `30000000-0000-4000-8000-${String(n).p
 const browser = await chromium.launch({ headless: true, channel: 'msedge' })
 const results = []
 try {
-  for (const [width, height] of [[320,800],[360,800],[375,812],[390,844],[768,1024],[1280,900]]) {
+  for (const [width, height] of [[320,800],[360,800],[375,812],[390,844],[768,1024],[1280,900]].filter(([width]) => !requestedWidth || width === requestedWidth)) {
     const context = await browser.newContext({ viewport: { width, height }, timezoneId: 'Asia/Tokyo', reducedMotion: 'reduce' })
     let rows = [row(0), row(1, 'ended'), row(2, 'cancelled')], failure = false, slow = false, brokenPhoto = false
+    let logoutFailure = true, logoutCalls = 0
     await context.addInitScript(token => localStorage.setItem('sb-iepeqmvzjguwlhnecsdq-auth-token', JSON.stringify(token)), token)
     await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**', async route => {
       const path = new URL(route.request().url()).pathname
       const reply = data => route.fulfill({ contentType: 'application/json', body: JSON.stringify(data) })
       if (path === '/auth/v1/user') return reply(user)
+      if (path === '/auth/v1/logout') {
+        logoutCalls++
+        await new Promise(resolve => setTimeout(resolve, 700))
+        return logoutFailure ? route.fulfill({ status: 400, contentType: 'application/json', body: JSON.stringify({ message: 'Fixture logout failure' }) }) : reply({})
+      }
       if (path.endsWith('/get_my_organized_events') || path.endsWith('/get_my_events')) {
         if (failure) return route.abort('failed')
         if (slow) await new Promise(resolve => setTimeout(resolve, 700))
@@ -54,6 +61,25 @@ try {
       await shot(name)
     }
     await page.goto(`${origin}/my-events`); await ready(); await measure('organizing')
+    if (phase === 'after') {
+      const account = page.getByRole('button', { name: 'Cuenta', exact: true })
+      await account.focus(); await page.keyboard.press('ArrowDown')
+      await page.getByRole('link', { name: 'Mi perfil', exact: true }).waitFor()
+      assert.equal(await account.getAttribute('aria-expanded'), 'true')
+      assert.equal(await page.getByRole('link', { name: 'Mi perfil', exact: true }).evaluate(el => el === document.activeElement), true)
+      const panel = await page.locator('.account-menu-panel').boundingBox()
+      assert.ok(panel.x >= 0 && panel.x + panel.width <= width && panel.y + panel.height <= height)
+      await shot('account-menu')
+      await page.keyboard.press('Escape')
+      assert.equal(await account.getAttribute('aria-expanded'), 'false')
+      assert.equal(await account.evaluate(el => el === document.activeElement), true)
+      await account.click(); await page.getByRole('tab', { name: 'Organizo', exact: true }).click()
+      assert.equal(await account.getAttribute('aria-expanded'), 'false')
+      await account.click(); await page.getByRole('link', { name: 'Mi perfil', exact: true }).click()
+      await page.waitForURL('**/me')
+      assert.equal(await page.getByRole('button', { name: 'Cuenta', exact: true }).count(), 0, 'other routes preserve the current header')
+      await page.goto(`${origin}/my-events`); await ready()
+    }
     if (phase === 'after') assert.equal(await page.getByRole('link',{name:/Sin foto/}).count(),0, 'decorative photo fallback must not misname event links')
     await page.getByRole('tab',{ name:'Organizo',exact:true }).focus()
     await page.keyboard.press('ArrowRight'); await ready()
@@ -93,6 +119,23 @@ try {
         elements.forEach((el,n) => { el.style.fontSize = `${parseFloat(sizes[n]) * 2}px` })
       })
       await measure('text-200')
+      await page.reload(); await ready()
+      await page.getByRole('button',{name:'Cuenta',exact:true}).click()
+      await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click()
+      await page.getByRole('button',{name:'Cerrando sesión…',exact:true}).waitFor()
+      assert.equal(await page.getByRole('button',{name:'Cerrando sesión…',exact:true}).isDisabled(),true)
+      // Installed Auth SDK removes the local session even on remote rejection.
+      await page.waitForURL('**/login**')
+      assert.equal(logoutCalls,1)
+      assert.equal(await page.evaluate(() => localStorage.getItem('sb-iepeqmvzjguwlhnecsdq-auth-token')),null)
+      await shot('account-logout-rejected')
+      logoutFailure = false
+      // Navigation reseeds a new fixture session through addInitScript.
+      await page.goto(`${origin}/my-events`); await ready()
+      await page.getByRole('button',{name:'Cuenta',exact:true}).click()
+      await page.getByRole('button',{name:'Cerrar sesión',exact:true}).click()
+      await page.waitForURL('**/login**')
+      assert.equal(logoutCalls,2)
     }
     assert.deepEqual(errors, [])
     await context.close()
