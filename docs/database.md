@@ -1,5 +1,9 @@
 # PlanIt — Modelo de datos y migraciones
 
+## R3 Bloque 4 — Administración de asistentes
+
+`20261012031717_manage_event_attendees.sql`: **aplicada y verificada en planit-v2 el 12/10/2026 con autorización explícita**. Agrega `get_event_attendees(uuid,text,text,integer)` y `remove_participant(uuid,uuid)` controladas, SECURITY DEFINER justificado, search_path vacío y EXECUTE authenticated. La lista exige autoría desde auth.uid() y sólo proyecta participation_id/user_id/status/display_name/username; confirmed/removed, búsqueda literal por nombre y página 30 + lookahead, sin ampliación de RLS de profiles/participaciones/historial. Remoción exige evento vigente y participación confirmed vinculada, locks evento→participación bajo READ COMMITTED y transición removed con historial del trigger existente (actor auth.uid(), razón organizer_removal); reintento removed vigente es no-op. Cupo derivado de confirmed, sin DELETE ni nuevas tablas/tipos de fecha. RLS de chat existente deniega posteriores lecturas/envíos del removido. Replay y carreras en PostgreSQL local PASS; remoto con historial sincronizado, hashes de ambas RPC coincidentes con Git, permisos/RLS verificados y rechazo de identidad ausente; pruebas HTTP/JWT reales pendientes. [Contrato y evidencia](design/verification/r3-block-4/README.md).
+
 ## Proyectos
 - Destino nuevo: `planit-v2`, ref `iepeqmvzjguwlhnecsdq`.
 - Proyecto antiguo `fmqzokxvpqxfzvcnzvjm`: NUNCA modificar ni migrar datos.

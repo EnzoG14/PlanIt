@@ -1,0 +1,34 @@
+{
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "environment": "Isolated real PostgreSQL; Auth/Storage SQL scaffolding; no remote HTTP/JWT",
+  "results": [
+    {
+      "test": "Full migration replay; RLS, unchanged direct mutation grants, authenticated-only RPC and empty search_path",
+      "result": "PASS"
+    },
+    {
+      "test": "Owner-only empty/populated projection; other event, participant, stranger, anon and missing identity denied; private profiles inaccessible",
+      "result": "PASS"
+    },
+    {
+      "test": "Literal case-insensitive name search before stable pagination; count unaffected by filters; invalid queries rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "Removal retains row, one actor/reason history transition, frees capacity; RPC/direct chat reads and sends denied; rejoin and leave cannot reset removed",
+      "result": "PASS"
+    },
+    {
+      "test": "History failure rolls back state and capacity; cancelled or nonexistent participation rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "Upcoming/ongoing removal allowed; ended/cancelled/archived read-only; frozen isolation rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "Real lock races: duplicate removal, withdrawal in both orders, released last seat, chat send before/after removal",
+      "result": "PASS"
+    }
+  ]
+}

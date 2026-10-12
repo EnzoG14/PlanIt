@@ -128,9 +128,11 @@ function ChatContent({ eventId, userId }: { eventId: string; userId: string }) {
     const onReturn = () => { if (document.visibilityState === 'visible') { recovery = true; refresh.current() } }
     // Also allows recovery when the initial authorization/header query failed.
     window.addEventListener('focus', onReturn); document.addEventListener('visibilitychange', onReturn)
+    const authorizationTimer = window.setInterval(onReturn, 30000)
     queue.request()
     return () => {
       active = false; mounted.current = false; queue.dispose(); stopChannel?.(); refresh.current = () => {}
+      window.clearInterval(authorizationTimer)
       window.removeEventListener('focus', onReturn); document.removeEventListener('visibilitychange', onReturn)
     }
   }, [eventId, userId])
