@@ -1,5 +1,7 @@
 # PlanIt — Catálogo visual de pantallas por release
 
+> **Apariencia histórica — 12/10/2026.** Las descripciones visuales de este catálogo (fondo marino oscuro, inputs oscuros, CTA degradado, halos) corresponden a los mockups originales y **no son el objetivo visual**: la dirección vigente es **B · Amanecer** ([DESIGN.md](../../DESIGN.md), [decisión](proposals/amanecer-direction.md)). El catálogo sigue siendo válido como inventario de pantallas, rutas y funciones por release.
+
 **Referencias**: `mockups/release-1.png` a `mockups/release-7.png`. Cada PNG contiene cinco pantallas representativas de una release; los números bajo las pantallas se refieren al collage, no a rutas de la PWA. Estas fichas describen sólo lo visible en los mockups; los campos/acciones no visibles se definen por RF y arquitectura.
 
 ## Release 1 — Lanzamiento (MVP)

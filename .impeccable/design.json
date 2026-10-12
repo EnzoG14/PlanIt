@@ -1,12 +1,58 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-12T19:11:55.753Z",
+  "generatedAt": "2026-10-12T22:18:19.562Z",
   "title": "Design System: PlanIt",
   "extensions": {
     "colorMeta": {
       "bg": {
         "role": "neutral",
-        "displayName": "Marino medianoche",
+        "displayName": "Lavanda casi blanca",
+        "canonical": "oklch(97.32% 0.01065 291.96)",
+        "tonalRamp": [
+          "oklch(15.00% 0.01065 291.96)",
+          "oklch(26.43% 0.01065 291.96)",
+          "oklch(37.86% 0.01065 291.96)",
+          "oklch(49.29% 0.01065 291.96)",
+          "oklch(60.71% 0.01065 291.96)",
+          "oklch(72.14% 0.01065 291.96)",
+          "oklch(83.57% 0.01065 291.96)",
+          "oklch(95.00% 0.01065 291.96)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Blanco tarjeta",
+        "canonical": "oklch(100.00% 0.00000 89.88)",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "surface-soft": {
+        "role": "neutral",
+        "displayName": "Lavanda suave",
+        "canonical": "oklch(95.64% 0.02287 294.07)",
+        "tonalRamp": [
+          "oklch(15.00% 0.02287 294.07)",
+          "oklch(26.43% 0.02287 294.07)",
+          "oklch(37.86% 0.02287 294.07)",
+          "oklch(49.29% 0.02287 294.07)",
+          "oklch(60.71% 0.02287 294.07)",
+          "oklch(72.14% 0.02287 294.07)",
+          "oklch(83.57% 0.02287 294.07)",
+          "oklch(95.00% 0.02287 294.07)"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Tinta marina",
+        "canonical": "oklch(16.55% 0.05797 270.26)",
         "tonalRamp": [
           "oklch(15.00% 0.05797 270.26)",
           "oklch(26.43% 0.05797 270.26)",
@@ -18,79 +64,55 @@
           "oklch(95.00% 0.05797 270.26)"
         ]
       },
-      "bg-elevated": {
-        "role": "neutral",
-        "displayName": "Marino elevado",
+      "ink-hover": {
+        "role": "primary",
+        "displayName": "Tinta elevada",
+        "canonical": "oklch(27.46% 0.08408 273.08)",
         "tonalRamp": [
-          "oklch(15.00% 0.06727 268.95)",
-          "oklch(26.43% 0.06727 268.95)",
-          "oklch(37.86% 0.06727 268.95)",
-          "oklch(49.29% 0.06727 268.95)",
-          "oklch(60.71% 0.06727 268.95)",
-          "oklch(72.14% 0.06727 268.95)",
-          "oklch(83.57% 0.06727 268.95)",
-          "oklch(95.00% 0.06727 268.95)"
-        ]
-      },
-      "field": {
-        "role": "neutral",
-        "displayName": "Marino de campo",
-        "tonalRamp": [
-          "oklch(15.00% 0.06365 270.79)",
-          "oklch(26.43% 0.06365 270.79)",
-          "oklch(37.86% 0.06365 270.79)",
-          "oklch(49.29% 0.06365 270.79)",
-          "oklch(60.71% 0.06365 270.79)",
-          "oklch(72.14% 0.06365 270.79)",
-          "oklch(83.57% 0.06365 270.79)",
-          "oklch(95.00% 0.06365 270.79)"
-        ]
-      },
-      "border": {
-        "role": "neutral",
-        "displayName": "Borde azul lavanda",
-        "tonalRamp": [
-          "oklch(15.00% 0.08876 270.85)",
-          "oklch(26.43% 0.08876 270.85)",
-          "oklch(37.86% 0.08876 270.85)",
-          "oklch(49.29% 0.08876 270.85)",
-          "oklch(60.71% 0.08876 270.85)",
-          "oklch(72.14% 0.08876 270.85)",
-          "oklch(83.57% 0.08876 270.85)",
-          "oklch(95.00% 0.08876 270.85)"
-        ]
-      },
-      "text": {
-        "role": "neutral",
-        "displayName": "Blanco lavanda",
-        "tonalRamp": [
-          "oklch(15.00% 0.00927 286.23)",
-          "oklch(26.43% 0.00927 286.23)",
-          "oklch(37.86% 0.00927 286.23)",
-          "oklch(49.29% 0.00927 286.23)",
-          "oklch(60.71% 0.00927 286.23)",
-          "oklch(72.14% 0.00927 286.23)",
-          "oklch(83.57% 0.00927 286.23)",
-          "oklch(95.00% 0.00927 286.23)"
+          "oklch(15.00% 0.08408 273.08)",
+          "oklch(26.43% 0.08408 273.08)",
+          "oklch(37.86% 0.08408 273.08)",
+          "oklch(49.29% 0.08408 273.08)",
+          "oklch(60.71% 0.08408 273.08)",
+          "oklch(72.14% 0.08408 273.08)",
+          "oklch(83.57% 0.08408 273.08)",
+          "oklch(95.00% 0.08408 273.08)"
         ]
       },
       "text-muted": {
         "role": "neutral",
-        "displayName": "Lavanda suave",
+        "displayName": "Lavanda apagada",
+        "canonical": "oklch(49.60% 0.06977 274.52)",
         "tonalRamp": [
-          "oklch(15.00% 0.04832 271.97)",
-          "oklch(26.43% 0.04832 271.97)",
-          "oklch(37.86% 0.04832 271.97)",
-          "oklch(49.29% 0.04832 271.97)",
-          "oklch(60.71% 0.04832 271.97)",
-          "oklch(72.14% 0.04832 271.97)",
-          "oklch(83.57% 0.04832 271.97)",
-          "oklch(95.00% 0.04832 271.97)"
+          "oklch(15.00% 0.06977 274.52)",
+          "oklch(26.43% 0.06977 274.52)",
+          "oklch(37.86% 0.06977 274.52)",
+          "oklch(49.29% 0.06977 274.52)",
+          "oklch(60.71% 0.06977 274.52)",
+          "oklch(72.14% 0.06977 274.52)",
+          "oklch(83.57% 0.06977 274.52)",
+          "oklch(95.00% 0.06977 274.52)"
+        ]
+      },
+      "text-on-wash": {
+        "role": "neutral",
+        "displayName": "Texto sobre mancha",
+        "canonical": "oklch(35.09% 0.08016 274.97)",
+        "tonalRamp": [
+          "oklch(15.00% 0.08016 274.97)",
+          "oklch(26.43% 0.08016 274.97)",
+          "oklch(37.86% 0.08016 274.97)",
+          "oklch(49.29% 0.08016 274.97)",
+          "oklch(60.71% 0.08016 274.97)",
+          "oklch(72.14% 0.08016 274.97)",
+          "oklch(83.57% 0.08016 274.97)",
+          "oklch(95.00% 0.08016 274.97)"
         ]
       },
       "primary": {
         "role": "primary",
         "displayName": "Azul eléctrico",
+        "canonical": "oklch(53.05% 0.26121 263.12)",
         "tonalRamp": [
           "oklch(15.00% 0.26121 263.12)",
           "oklch(26.43% 0.26121 263.12)",
@@ -102,9 +124,10 @@
           "oklch(95.00% 0.26121 263.12)"
         ]
       },
-      "purple": {
+      "violet": {
         "role": "secondary",
         "displayName": "Violeta luminoso",
+        "canonical": "oklch(62.51% 0.21080 291.21)",
         "tonalRamp": [
           "oklch(15.00% 0.21080 291.21)",
           "oklch(26.43% 0.21080 291.21)",
@@ -116,9 +139,25 @@
           "oklch(95.00% 0.21080 291.21)"
         ]
       },
-      "focus": {
-        "role": "neutral",
-        "displayName": "Lavanda de foco",
+      "violet-deep": {
+        "role": "secondary",
+        "displayName": "Violeta profundo",
+        "canonical": "oklch(48.23% 0.22848 284.99)",
+        "tonalRamp": [
+          "oklch(15.00% 0.22848 284.99)",
+          "oklch(26.43% 0.22848 284.99)",
+          "oklch(37.86% 0.22848 284.99)",
+          "oklch(49.29% 0.22848 284.99)",
+          "oklch(60.71% 0.22848 284.99)",
+          "oklch(72.14% 0.22848 284.99)",
+          "oklch(83.57% 0.22848 284.99)",
+          "oklch(95.00% 0.22848 284.99)"
+        ]
+      },
+      "lavender": {
+        "role": "secondary",
+        "displayName": "Lavanda de luz",
+        "canonical": "oklch(81.28% 0.10408 293.88)",
         "tonalRamp": [
           "oklch(15.00% 0.10408 293.88)",
           "oklch(26.43% 0.10408 293.88)",
@@ -130,121 +169,100 @@
           "oklch(95.00% 0.10408 293.88)"
         ]
       },
-      "nav-bg": {
+      "control-border": {
         "role": "neutral",
-        "displayName": "Marino de navegación",
+        "displayName": "Borde de control",
+        "canonical": "oklch(61.42% 0.05839 275.31)",
         "tonalRamp": [
-          "oklch(15.00% 0.05721 270.60)",
-          "oklch(26.43% 0.05721 270.60)",
-          "oklch(37.86% 0.05721 270.60)",
-          "oklch(49.29% 0.05721 270.60)",
-          "oklch(60.71% 0.05721 270.60)",
-          "oklch(72.14% 0.05721 270.60)",
-          "oklch(83.57% 0.05721 270.60)",
-          "oklch(95.00% 0.05721 270.60)"
+          "oklch(15.00% 0.05839 275.31)",
+          "oklch(26.43% 0.05839 275.31)",
+          "oklch(37.86% 0.05839 275.31)",
+          "oklch(49.29% 0.05839 275.31)",
+          "oklch(60.71% 0.05839 275.31)",
+          "oklch(72.14% 0.05839 275.31)",
+          "oklch(83.57% 0.05839 275.31)",
+          "oklch(95.00% 0.05839 275.31)"
         ]
       },
       "chip-bg": {
-        "role": "neutral",
-        "displayName": "Azul de etiqueta",
+        "role": "secondary",
+        "displayName": "Etiqueta lavanda",
+        "canonical": "oklch(94.10% 0.03109 293.78)",
         "tonalRamp": [
-          "oklch(15.00% 0.08891 268.65)",
-          "oklch(26.43% 0.08891 268.65)",
-          "oklch(37.86% 0.08891 268.65)",
-          "oklch(49.29% 0.08891 268.65)",
-          "oklch(60.71% 0.08891 268.65)",
-          "oklch(72.14% 0.08891 268.65)",
-          "oklch(83.57% 0.08891 268.65)",
-          "oklch(95.00% 0.08891 268.65)"
+          "oklch(15.00% 0.03109 293.78)",
+          "oklch(26.43% 0.03109 293.78)",
+          "oklch(37.86% 0.03109 293.78)",
+          "oklch(49.29% 0.03109 293.78)",
+          "oklch(60.71% 0.03109 293.78)",
+          "oklch(72.14% 0.03109 293.78)",
+          "oklch(83.57% 0.03109 293.78)",
+          "oklch(95.00% 0.03109 293.78)"
         ]
       },
       "chip-text": {
+        "role": "secondary",
+        "displayName": "Texto de etiqueta",
+        "canonical": "oklch(43.56% 0.21397 282.44)",
+        "tonalRamp": [
+          "oklch(15.00% 0.21397 282.44)",
+          "oklch(26.43% 0.21397 282.44)",
+          "oklch(37.86% 0.21397 282.44)",
+          "oklch(49.29% 0.21397 282.44)",
+          "oklch(60.71% 0.21397 282.44)",
+          "oklch(72.14% 0.21397 282.44)",
+          "oklch(83.57% 0.21397 282.44)",
+          "oklch(95.00% 0.21397 282.44)"
+        ]
+      },
+      "dock-text": {
         "role": "neutral",
-        "displayName": "Lavanda de etiqueta",
+        "displayName": "Icono inactivo del dock",
+        "canonical": "oklch(78.26% 0.04832 271.97)",
         "tonalRamp": [
-          "oklch(15.00% 0.06085 268.73)",
-          "oklch(26.43% 0.06085 268.73)",
-          "oklch(37.86% 0.06085 268.73)",
-          "oklch(49.29% 0.06085 268.73)",
-          "oklch(60.71% 0.06085 268.73)",
-          "oklch(72.14% 0.06085 268.73)",
-          "oklch(83.57% 0.06085 268.73)",
-          "oklch(95.00% 0.06085 268.73)"
+          "oklch(15.00% 0.04832 271.97)",
+          "oklch(26.43% 0.04832 271.97)",
+          "oklch(37.86% 0.04832 271.97)",
+          "oklch(49.29% 0.04832 271.97)",
+          "oklch(60.71% 0.04832 271.97)",
+          "oklch(72.14% 0.04832 271.97)",
+          "oklch(83.57% 0.04832 271.97)",
+          "oklch(95.00% 0.04832 271.97)"
         ]
       },
-      "error-text": {
+      "success-text": {
         "role": "semantic",
-        "displayName": "Texto de error",
+        "displayName": "Verde éxito",
+        "canonical": "oklch(51.46% 0.10563 165.02)",
         "tonalRamp": [
-          "oklch(15.00% 0.08269 5.74)",
-          "oklch(26.43% 0.08269 5.74)",
-          "oklch(37.86% 0.08269 5.74)",
-          "oklch(49.29% 0.08269 5.74)",
-          "oklch(60.71% 0.08269 5.74)",
-          "oklch(72.14% 0.08269 5.74)",
-          "oklch(83.57% 0.08269 5.74)",
-          "oklch(95.00% 0.08269 5.74)"
+          "oklch(15.00% 0.10563 165.02)",
+          "oklch(26.43% 0.10563 165.02)",
+          "oklch(37.86% 0.10563 165.02)",
+          "oklch(49.29% 0.10563 165.02)",
+          "oklch(60.71% 0.10563 165.02)",
+          "oklch(72.14% 0.10563 165.02)",
+          "oklch(83.57% 0.10563 165.02)",
+          "oklch(95.00% 0.10563 165.02)"
         ]
       },
-      "error-border": {
+      "danger-text": {
         "role": "semantic",
-        "displayName": "Borde de error",
+        "displayName": "Rojo de estado",
+        "canonical": "oklch(51.89% 0.19816 18.16)",
         "tonalRamp": [
-          "oklch(15.00% 0.08499 350.77)",
-          "oklch(26.43% 0.08499 350.77)",
-          "oklch(37.86% 0.08499 350.77)",
-          "oklch(49.29% 0.08499 350.77)",
-          "oklch(60.71% 0.08499 350.77)",
-          "oklch(72.14% 0.08499 350.77)",
-          "oklch(83.57% 0.08499 350.77)",
-          "oklch(95.00% 0.08499 350.77)"
-        ]
-      },
-      "success": {
-        "role": "semantic",
-        "displayName": "Éxito de asistentes",
-        "tonalRamp": [
-          "oklch(15.00% 0.15642 164.04)",
-          "oklch(26.43% 0.15642 164.04)",
-          "oklch(37.86% 0.15642 164.04)",
-          "oklch(49.29% 0.15642 164.04)",
-          "oklch(60.71% 0.15642 164.04)",
-          "oklch(72.14% 0.15642 164.04)",
-          "oklch(83.57% 0.15642 164.04)",
-          "oklch(95.00% 0.15642 164.04)"
-        ]
-      },
-      "danger": {
-        "role": "semantic",
-        "displayName": "Peligro",
-        "tonalRamp": [
-          "oklch(15.00% 0.20802 16.03)",
-          "oklch(26.43% 0.20802 16.03)",
-          "oklch(37.86% 0.20802 16.03)",
-          "oklch(49.29% 0.20802 16.03)",
-          "oklch(60.71% 0.20802 16.03)",
-          "oklch(72.14% 0.20802 16.03)",
-          "oklch(83.57% 0.20802 16.03)",
-          "oklch(95.00% 0.20802 16.03)"
-        ]
-      },
-      "control-border": {
-        "role": "neutral",
-        "displayName": "Borde de control (objetivo)",
-        "tonalRamp": [
-          "oklch(15.00% 0.06782 269.01)",
-          "oklch(26.43% 0.06782 269.01)",
-          "oklch(37.86% 0.06782 269.01)",
-          "oklch(49.29% 0.06782 269.01)",
-          "oklch(60.71% 0.06782 269.01)",
-          "oklch(72.14% 0.06782 269.01)",
-          "oklch(83.57% 0.06782 269.01)",
-          "oklch(95.00% 0.06782 269.01)"
+          "oklch(15.00% 0.19816 18.16)",
+          "oklch(26.43% 0.19816 18.16)",
+          "oklch(37.86% 0.19816 18.16)",
+          "oklch(49.29% 0.19816 18.16)",
+          "oklch(60.71% 0.19816 18.16)",
+          "oklch(72.14% 0.19816 18.16)",
+          "oklch(83.57% 0.19816 18.16)",
+          "oklch(95.00% 0.19816 18.16)"
         ]
       },
       "danger-action": {
         "role": "semantic",
-        "displayName": "Acción destructiva sólida",
+        "displayName": "Rojo de acción destructiva",
+        "canonical": "oklch(54.39% 0.21183 18.23)",
         "tonalRamp": [
           "oklch(15.00% 0.21183 18.23)",
           "oklch(26.43% 0.21183 18.23)",
@@ -258,172 +276,275 @@
       }
     },
     "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Saludo de Inicio y título de pantalla principal (Mis eventos 38 px)."
+      },
       "headline": {
-        "displayName": "Encabezado",
-        "purpose": "Título de pantalla y detalle."
+        "displayName": "Headline",
+        "purpose": "Título de detalle, nombre en perfil y subpantallas."
+      },
+      "title-lg": {
+        "displayName": "Title large",
+        "purpose": "Encabezados de sección."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Título de evento en tarjeta y filas."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descripción y lectura."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Fecha, lugar y disponibilidad; mínimo 13,5 px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Labels de campo y títulos de grupo."
+      },
+      "action": {
+        "displayName": "Action",
+        "purpose": "Texto de botones."
       },
       "input": {
-        "displayName": "Campo",
-        "purpose": "Entrada de formularios a 16 px."
+        "displayName": "Input",
+        "purpose": "Texto de campos a 16 px."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Insignias y marcas de hora."
       }
     },
     "shadows": [
       {
-        "name": "overlay-menu",
-        "value": "0 6px 16px #0006",
-        "purpose": "Separar el menú del contenido cubierto."
+        "name": "card",
+        "value": "0 10px 28px rgba(36, 24, 110, .08)",
+        "purpose": "Tarjetas de evento, filas y paneles de cristal."
+      },
+      {
+        "name": "hero",
+        "value": "0 18px 40px rgba(36, 24, 110, .18)",
+        "purpose": "Portada del detalle."
+      },
+      {
+        "name": "sheet",
+        "value": "0 -14px 40px rgba(36, 24, 110, .16)",
+        "purpose": "Hoja inferior del mapa."
+      },
+      {
+        "name": "dock",
+        "value": "0 16px 36px rgba(6, 11, 39, .38)",
+        "purpose": "Dock flotante de tinta."
+      },
+      {
+        "name": "dialog",
+        "value": "0 30px 70px rgba(6, 11, 39, .35)",
+        "purpose": "Diálogos sobre scrim."
       }
     ],
-    "motion": [],
+    "materials": [
+      {
+        "name": "glass",
+        "value": "background: rgba(255,255,255,.72); backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,.92)",
+        "purpose": "Paneles flotantes. Fallback sin blur: blanco ≥ .94 (sin soporte o prefers-reduced-transparency)."
+      },
+      {
+        "name": "wash",
+        "value": "blobs desenfocados 64px: #8d66fa .58, #0753ff .36, #c5b5ff .75; banda 520px con máscara linear-gradient(#000 55%, transparent)",
+        "purpose": "Atmósfera superior, aria-hidden y estática."
+      },
+      {
+        "name": "scrim",
+        "value": "rgba(6,11,39,.5) + blur(3px)",
+        "purpose": "Fondo de diálogos y hojas."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entrada escalonada (600 ms, 12 px), escala al presionar, diálogos."
+      },
+      {
+        "name": "state-transition",
+        "value": "200–250ms ease",
+        "purpose": "Color y fondo de chips, segmentos, dock."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media (prefers-reduced-motion: reduce)",
+        "purpose": "Elimina desplazamientos y entradas; conserva el cambio de estado."
+      }
+    ],
     "breakpoints": [
       {
-        "name": "map-heading-max",
-        "value": "420px",
-        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
+        "name": "min-supported",
+        "value": "320px"
       },
       {
-        "name": "attendees-max",
-        "value": "480px",
-        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
+        "name": "phone",
+        "value": "375px"
       },
       {
-        "name": "home-single-column-max",
-        "value": "520px",
-        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
+        "name": "tablet",
+        "value": "768px"
       },
       {
-        "name": "profile-min",
-        "value": "760px",
-        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
-      },
-      {
-        "name": "desktop-navigation-min",
-        "value": "768px",
-        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
-      },
-      {
-        "name": "three-column-grid-min",
-        "value": "900px",
-        "purpose": "Breakpoint observado en la implementación previa; no regla universal del objetivo."
+        "name": "desktop",
+        "value": "1280px"
       }
     ]
   },
   "components": [
     {
-      "name": "Acción principal",
+      "name": "Primary Button (ink pill)",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Objetivo aprobado, pendiente de implementación en la PWA. CTA compartido; altura mínima y relleno azul sólido.",
-      "html": "<button class=\"ds-primary\">Publicar evento</button>",
-      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-primary{display: flex; align-items: center; justify-content: center; min-height: var(--control-height); border-radius: var(--radius-control); padding: 14px 16px; background: var(--color-primary, #0753ff); color: white; font-size: 15px; font-weight: 650; text-align: center;width: 100%; border: 0; cursor: pointer;}.ds-primary:hover{outline: 1px solid var(--color-focus, #c5b5ff); outline-offset: -3px;}.ds-primary:disabled{background: var(--color-field); color: var(--color-text-muted); border: 1px solid var(--color-border); cursor: default;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
+      "description": "Acción principal: píldora de tinta con texto blanco. Una dominante por pantalla.",
+      "html": "<button class=\"ds-btn-primary\">Unirme al evento</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:0;border-radius:999px;background:#060b27;color:#fff;font:700 15px 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;cursor:pointer;transition:background-color .2s,transform .25s cubic-bezier(.16,1,.3,1)}.ds-btn-primary:hover{background:#1b2250}.ds-btn-primary:active{transform:scale(.97)}.ds-btn-primary:focus-visible{outline:3px solid #5b34d6;outline-offset:3px}"
     },
     {
-      "name": "Acción secundaria",
+      "name": "Secondary Button (outline pill)",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Acción de apoyo con superficie y borde.",
-      "html": "<button class=\"ds-secondary\">Actualizar</button>",
-      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-secondary{min-height: 44px; border: 1px solid var(--color-control-border, #65749e); background: var(--color-field); color: var(--color-text); border-radius: var(--radius-control); padding: 10px 14px; cursor: pointer;}.ds-secondary:disabled{color: var(--color-text-muted); cursor: default;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
+      "description": "Acción secundaria: borde de tinta de 1,5 px, fondo transparente.",
+      "html": "<button class=\"ds-btn-secondary\">Crear evento</button>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1.5px solid #060b27;border-radius:999px;background:transparent;color:#060b27;font:700 15px 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;cursor:pointer;transition:background-color .2s}.ds-btn-secondary:hover{background:#fff}.ds-btn-secondary:focus-visible{outline:3px solid #5b34d6;outline-offset:3px}"
     },
     {
-      "name": "Acción de texto",
-      "kind": "button",
-      "refersTo": "button-text",
-      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Acción discreta con área táctil de 44 px.",
-      "html": "<button class=\"ds-text\">Ver detalle</button>",
-      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-text{min-width: 44px; min-height: 44px; padding: 8px; border: 0; border-radius: 8px; color: var(--color-text); background: transparent; font-size: 13px; cursor: pointer;}.ds-text:hover{background: var(--color-field);}.ds-text:disabled{color: var(--color-text-muted); cursor: default;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
-    },
-    {
-      "name": "Campo de formulario",
-      "kind": "input",
-      "refersTo": "input",
-      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Etiqueta visible, campo oscuro y foco lavanda.",
-      "html": "<label class=\"ds-label\" for=\"ds-title\">Título del evento</label><input class=\"ds-input\" id=\"ds-title\" placeholder=\"Nombre del evento\">",
-      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-label{display: block; margin-bottom: 8px; font-size: 14px; color: var(--color-text-muted);}.ds-input{color: var(--color-text); background: var(--color-field); border: 1px solid var(--color-control-border, #65749e); border-radius: var(--radius-control); min-height: var(--control-height); padding: 12px 16px;font-size:16px;width:100%;}.ds-input::placeholder{color: var(--color-text-muted); opacity: 1;}.ds-input[aria-invalid=\"true\"]{border-color: #ffb9c7;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
-    },
-    {
-      "name": "Categoría",
-      "kind": "chip",
-      "refersTo": "category-chip",
-      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Etiqueta pasiva; no simula un filtro disponible.",
-      "html": "<span class=\"ds-chip\">Música</span>",
-      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-chip{display: inline-flex; padding: 5px 10px; background: #172454; border: 1px solid #303d70; border-radius: 999px; color: #c5d5ff; font-size: 12px;}"
-    },
-    {
-      "name": "Tarjeta de evento",
-      "kind": "card",
-      "refersTo": "event-card",
-      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Placeholder explícito y composición de descubrimiento.",
-      "html": "<article class=\"ds-card\"><div class=\"ds-photo\">Sin foto de portada</div><div class=\"ds-body\"><span class=\"ds-chip\">Música</span><h3>Evento de ejemplo</h3><p>Contenido ilustrativo del sistema visual</p></div></article>",
-      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-card{min-width: 0; overflow: hidden; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-bg-elevated); content-visibility: auto; contain-intrinsic-size: auto 340px;}.ds-photo{position: relative; display: flex; align-items: center; justify-content: center; height: 130px; background: var(--color-field, #151d3e); overflow: hidden;color:var(--color-text-muted);}.ds-photo::after{content: ''; position: absolute; inset: 0; background: var(--color-field, #151d3e); pointer-events: none;}.ds-body{padding: 12px;}.ds-card h3{font-size: 17px; line-height: 1.35; margin: 10px 0 8px; overflow-wrap: anywhere;}.ds-card p{font-size: 12px; color: var(--color-text-muted); margin: 4px 0;}.ds-chip{display: inline-flex; padding: 5px 10px; background: #172454; border: 1px solid #303d70; border-radius: 999px; color: #c5d5ff; font-size: 12px;}"
-    },
-    {
-      "name": "Navegación inferior",
-      "kind": "nav",
-      "refersTo": "navigation",
-      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Icono y etiqueta con estado activo; preview sin posicionamiento fijo.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Principal\"><a href=\"#\" class=\"ds-active\" aria-current=\"page\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m3 10 9-7 9 7v11h-6v-7H9v7H3Z\"/></svg>Inicio</a><a href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M3 6 9 3l6 3 6-3v15l-6 3-6-3-6 3ZM9 3v15m6-12v15\"/></svg>Mapa</a></nav>",
-      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-nav{position: fixed; z-index: 2; bottom: 0; inset-inline: 0; display: flex; justify-content: center; padding: 8px max(12px, env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); border-top: 1px solid var(--color-border); background: #090f2b;position:relative;bottom:auto;}.ds-nav a{display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; gap: 6px; max-width: 160px; min-height: 56px; border-radius: var(--radius-control); color: var(--color-text-muted); font-size: 12px;}.ds-nav a.ds-active{background: var(--color-field, #151d3e); color: #c5d5ff;}.ds-nav a:hover{background-color: var(--color-field);}.ds-icon{width: 24px; height: 24px; flex-shrink: 0;}.ds-active .ds-icon{color: #87adff;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
-    },
-    {
-      "name": "Confirmación",
-      "kind": "custom",
-      "refersTo": "dialog",
-      "description": "Objetivo aprobado, pendiente de implementación en la PWA. Superficie de diálogo; preview estático sin representar una operación real.",
-      "html": "<section class=\"ds-dialog\" aria-label=\"Ejemplo de confirmación\"><h2>Confirmar acción</h2><p>Ejemplo visual de una confirmación de PlanIt.</p><button class=\"ds-secondary\">Volver</button></section>",
-      "css": ":host{--color-bg:#060b27;--color-bg-elevated:#0d1638;--color-field:#151d3e;--color-border:#303d70;--color-text:#f8f8ff;--color-text-muted:#adb7d8;--color-primary:#0753ff;--color-purple:#8d66fa;--color-focus:#c5b5ff;--radius-control:12px;--radius-card:16px;--radius-pill:999px;--control-height:52px;font-family:'Segoe UI',system-ui,sans-serif;}.ds-dialog{box-sizing: border-box; width: min(440px,calc(100% - 2rem)); max-height: calc(100dvh - 2rem); overflow-y: auto; overscroll-behavior: contain; padding: 1.5rem; border: 1px solid var(--color-control-border, #65749e); border-radius: var(--radius-card); background: var(--color-bg-elevated); color: var(--color-text); text-align: center;}.ds-dialog h2{font-size: 1.25rem;}.ds-dialog p{line-height: 1.5; overflow-wrap: anywhere; color: var(--color-text-muted);}.ds-secondary{min-height: 44px; border: 1px solid var(--color-control-border, #65749e); background: var(--color-field); color: var(--color-text); border-radius: var(--radius-control); padding: 10px 14px; cursor: pointer;}:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px;}"
-    },
-    {
-      "name": "Acción destructiva",
+      "name": "Danger Button",
       "kind": "button",
       "refersTo": "button-danger",
-      "description": "Objetivo aprobado: confirmación roja sólida; pendiente de implementación en la PWA.",
-      "html": "<button class=\"ds-danger\">Cancelar evento</button>",
-      "css": ".ds-danger{background:var(--color-danger-action,#ce103d);color:white;border:0;border-radius:12px;padding:14px 16px;min-height:52px;font:650 15px Segoe UI,system-ui,sans-serif;cursor:pointer}.ds-danger:hover{outline:1px solid var(--color-error-text,#ffb9c7);outline-offset:-3px}.ds-danger:focus-visible{outline:3px solid var(--color-focus,#c5b5ff);outline-offset:4px}.ds-danger:disabled{background:var(--color-field,#151d3e);color:var(--color-text-muted,#adb7d8);cursor:default}"
+      "description": "Confirmación destructiva: rojo sólido con texto blanco (5,58:1).",
+      "html": "<button class=\"ds-btn-danger\">Cancelar evento</button>",
+      "css": ".ds-btn-danger{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:0;border-radius:999px;background:#ce103d;color:#fff;font:700 15px 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;cursor:pointer}.ds-btn-danger:focus-visible{outline:3px solid #5b34d6;outline-offset:3px}"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Filtro de estado de 44 px: cristal en reposo, azul sólido al seleccionarse (aria-pressed).",
+      "html": "<div style=\"display:flex;gap:8px\"><button class=\"ds-chip\" aria-pressed=\"false\">Todos</button><button class=\"ds-chip is-on\" aria-pressed=\"true\">Publicados</button></div>",
+      "css": ".ds-chip{height:44px;padding:0 17px;border:1px solid rgba(255,255,255,.92);border-radius:999px;background:rgba(255,255,255,.72);color:#565f8a;font:650 15px 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;cursor:pointer;transition:background-color .25s,color .25s}.ds-chip:hover{color:#060b27}.ds-chip.is-on{background:#0753ff;border-color:#0753ff;color:#fff}.ds-chip:focus-visible{outline:3px solid #5b34d6;outline-offset:3px}"
+    },
+    {
+      "name": "Category Chip",
+      "kind": "chip",
+      "refersTo": "category-chip",
+      "description": "Categoría pasiva (metadato, no botón).",
+      "html": "<span class=\"ds-cat\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 18V5l12-2v13\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"18\" cy=\"16\" r=\"3\"/></svg>Música</span>",
+      "css": ".ds-cat{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 10px;border-radius:999px;background:#ece8ff;color:#4a2bc0;font:700 12.5px 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif}.ds-cat svg{width:14px;height:14px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Label visible, campo blanco de 52 px con borde de control; error con texto asociado.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-in\">Nombre del evento</label><input id=\"ds-in\" placeholder=\"Ej.: Picnic en el parque\" /></div>",
+      "css": ".ds-field label{display:block;margin-bottom:6px;color:#060b27;font:650 14px 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif}.ds-field input{width:100%;min-height:52px;padding:0 14px;border:1.5px solid #7a82a8;border-radius:16px;background:#fff;color:#060b27;font:400 16px 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;box-sizing:border-box}.ds-field input::placeholder{color:#6b7399}.ds-field input:focus-visible{outline:3px solid #5b34d6;outline-offset:1px;border-color:#5b34d6}"
+    },
+    {
+      "name": "Event Card",
+      "kind": "card",
+      "refersTo": "event-card",
+      "description": "Tarjeta de descubrimiento: foto lateral con hora, categoría, título, lugar y lugares libres.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-photo\"><span class=\"ds-time\">20:30</span></div><div class=\"ds-body\"><span class=\"ds-cat2\">Música</span><h3>Noche de jazz en la terraza</h3><p><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z\"/><circle cx=\"12\" cy=\"10\" r=\"2.5\"/></svg>Palermo, CABA</p><p class=\"ds-free\">12 lugares libres</p></div></article>",
+      "css": ".ds-card{display:flex;gap:14px;padding:10px;border-radius:28px;background:rgba(255,255,255,.9);border:1px solid #fff;box-shadow:0 10px 28px rgba(36,24,110,.08);color:#060b27;font-family:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;max-width:380px}.ds-photo{position:relative;flex:none;width:100px;height:124px;border-radius:20px;background:#ece8ff}.ds-time{position:absolute;left:8px;bottom:8px;height:26px;padding:0 9px;display:inline-flex;align-items:center;border-radius:999px;background:rgba(255,255,255,.94);font:700 12.5px 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;font-variant-numeric:tabular-nums}.ds-body{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:4px 4px 4px 0}.ds-cat2{height:26px;padding:0 10px;display:inline-flex;align-items:center;border-radius:999px;background:#ece8ff;color:#4a2bc0;font:700 12.5px 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif}.ds-body h3{margin:0;font:700 19px/1.12 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;letter-spacing:-.025em}.ds-body p{margin:0;display:flex;align-items:center;gap:6px;color:#565f8a;font-size:13.5px}.ds-body svg{width:15px;height:15px}.ds-body .ds-free{color:#0a7a58;font-weight:600}"
+    },
+    {
+      "name": "Agenda Row",
+      "kind": "card",
+      "refersTo": "event-row",
+      "description": "Fila de Mis eventos: hora a la izquierda, barra de color por estado y estado en texto.",
+      "html": "<div class=\"ds-slot\"><time>18:00</time><article class=\"ds-row\"><div class=\"ds-rrow\"><span class=\"ds-thumb\"></span><div><h3>Feria de diseño</h3><p>Arte · Centro Cultural</p></div></div><div class=\"ds-foot\"><span class=\"ds-state\"><i></i>Publicado</span><span>34/60 inscriptos</span></div></article></div>",
+      "css": ".ds-slot{display:grid;grid-template-columns:52px minmax(0,1fr);gap:6px;font-family:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;color:#060b27;max-width:380px}.ds-slot time{padding-top:16px;font:700 14.5px 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;font-variant-numeric:tabular-nums}.ds-row{position:relative;padding:12px 8px 12px 18px;border-radius:26px;background:rgba(255,255,255,.9);border:1px solid #fff;box-shadow:0 10px 26px rgba(36,24,110,.08)}.ds-row::before{content:'';position:absolute;left:7px;top:16px;bottom:16px;width:4px;border-radius:2px;background:#0753ff}.ds-rrow{display:flex;align-items:center;gap:12px}.ds-thumb{width:52px;height:52px;border-radius:16px;background:#ece8ff;flex:none}.ds-row h3{margin:0;font:700 16.5px/1.15 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif}.ds-row p{margin:3px 0 0;color:#565f8a;font-size:13px}.ds-foot{display:flex;justify-content:space-between;margin:8px 10px 0 0;padding-top:10px;border-top:1px dashed rgba(6,11,39,.12);color:#565f8a;font-size:13px}.ds-state{display:inline-flex;align-items:center;gap:7px;color:#0a7a58;font-weight:700}.ds-state i{width:8px;height:8px;border-radius:50%;background:currentColor}"
+    },
+    {
+      "name": "Dock",
+      "kind": "nav",
+      "refersTo": "dock",
+      "description": "Navegación flotante de tinta; la pestaña activa se expande a píldora blanca con etiqueta.",
+      "html": "<nav class=\"ds-dock\" aria-label=\"Navegación principal\"><a class=\"ds-it\" aria-label=\"Inicio\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 11l9-8 9 8\"/><path d=\"M5 10v10h14V10\"/></svg></a><a class=\"ds-it\" aria-label=\"Mapa\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 4l6 2 6-2v14l-6 2-6-2-6 2V6z\"/></svg></a><a class=\"ds-it on\" aria-current=\"page\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"3\"/><path d=\"M8 3v4M16 3v4M3 10h18\"/></svg><span>Mis eventos</span></a><a class=\"ds-it\" aria-label=\"Perfil\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21c1-4 4-6 8-6s7 2 8 6\"/></svg></a></nav>",
+      "css": ".ds-dock{display:inline-flex;gap:4px;height:64px;padding:6px;border-radius:999px;background:#060b27;box-shadow:0 16px 36px rgba(6,11,39,.38);font-family:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif}.ds-it{display:flex;align-items:center;justify-content:center;gap:8px;min-width:52px;height:52px;border-radius:999px;color:#adb7d8;font:700 14px 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;white-space:nowrap;cursor:pointer;transition:background-color .25s,color .25s}.ds-it:hover{color:#fff}.ds-it.on{padding:0 18px;background:#fff;color:#060b27}"
+    },
+    {
+      "name": "Chat Bubbles",
+      "kind": "custom",
+      "refersTo": "bubble-outgoing",
+      "description": "Entrantes blancas con autor en violeta; salientes de tinta con hora legible.",
+      "html": "<div class=\"ds-chat\"><div class=\"ds-in\"><b>Camila</b><p>¿Llevamos algo para compartir?</p><time>19:02</time></div><div class=\"ds-out\"><p>Yo llevo bebidas.</p><time>19:03</time></div></div>",
+      "css": ".ds-chat{display:flex;flex-direction:column;gap:6px;max-width:320px;font-family:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif}.ds-in,.ds-out{max-width:80%;padding:10px 14px 7px;border-radius:22px}.ds-in{align-self:flex-start;border-bottom-left-radius:8px;background:#fff;color:#060b27;box-shadow:0 4px 14px rgba(36,24,110,.07)}.ds-out{align-self:flex-end;border-bottom-right-radius:8px;background:#060b27;color:#fff}.ds-in b{display:block;margin-bottom:2px;color:#5b34d6;font-size:12.5px}.ds-chat p{margin:0;font-size:15.5px;line-height:1.4}.ds-chat time{display:block;margin-top:3px;text-align:right;font-size:12.5px;color:#565f8a;font-variant-numeric:tabular-nums}.ds-out time{color:#adb7d8}"
     }
   ],
   "narrative": {
-    "northStar": "Fotografía expresiva, interfaz marina y sobria",
-    "overview": "PlanIt conserva su identidad dark-first y sus acentos azul/violeta. El contenido del evento aporta energía y contexto; la interfaz organiza la información y permite actuar. La fotografía es protagonista al descubrir y consultar eventos. Formularios, conversación y gestión priorizan la tarea, con encabezados compactos y jerarquías legibles.\n\nLas superficies son planas en reposo. Espacio, contraste tonal y divisores separan secciones; menús y diálogos tienen elevación funcional. El escritorio amplía la composición sin convertirse en otra identidad.",
+    "northStar": "La agenda con luz difusa",
+    "overview": "PlanIt es una agenda de planes: la información —qué, cuándo, dónde, cuántos lugares quedan— manda, y el color es luz, no relleno. Una mancha difusa violeta→azul se asoma detrás del encabezado; sobre ella, tarjetas blancas translúcidas y tipografía grande con tracking negativo. El marino profundo ya no es el fondo: es la tinta. Dock, botones principales, burbujas propias y segmentos activos se dibujan en tinta, y por eso la acción siempre se reconoce.\n\nLa interfaz es clara, aireada y tipográfica. La fotografía de cada evento sigue siendo contenido, con color natural y recorte consistente; la interfaz no la tiñe. Formularios, conversación y gestión priorizan la tarea con superficies blancas, bordes de control perceptibles y mensajes con texto.",
     "keyCharacteristics": [
-      "Marino uniforme, azul para acciones y selección, violeta como acento puntual.",
-      "Fotografías de color natural; información debajo de la imagen por defecto.",
-      "Botones sólidos, controles distinguibles y foco visible, sin halos ornamentales.",
-      "Una unidad visual por evento; filas y divisores para gestión, sin tarjetas anidadas.",
-      "Usabilidad móvil, feedback accesible y recuperación de errores como parte del diseño."
+      "Modo claro único: lavanda casi blanca, tarjetas blancas, tinta marina #060b27 para acción y navegación.",
+      "Azul #0753ff para filtros seleccionados, progreso y envío; violeta como luz de fondo y acento puntual.",
+      "Mancha de color difusa sólo como atmósfera superior; nunca relleno de botones, tarjetas ni mensajes.",
+      "Cristal suave y sombras lavanda de baja opacidad para las capas que flotan.",
+      "Píldoras para todo lo accionable; radios grandes (26–36 px) en superficies.",
+      "Títulos de 32–40 px con tracking negativo; datos operativos siempre ≥ 13,5 px.",
+      "Estados con texto, no sólo color; foco violeta visible de 3 px."
     ],
     "rules": [
       {
-        "name": "The Purposeful Color Rule",
-        "body": "Color para acción, selección, identidad o estado. No usar gradientes en botones, mensajes, chips, barras de cupo, navegación ni bloques informativos. Un overlay fotográfico discreto sólo se admite si aporta legibilidad.",
+        "name": "The Light-Not-Fill Rule",
+        "body": "Color como luz (fondo difuso) o señal (selección, estado). No usar gradientes en botones, mensajes, chips, barras de cupo, tarjetas ni navegación.",
         "section": "colors"
       },
       {
+        "name": "The Ink Rule",
+        "body": "La acción es tinta. Una pantalla tiene un solo botón de tinta dominante; el azul señala selección de filtro, no acción.",
+        "section": "colors"
+      },
+      {
+        "name": "The Words Beside Color Rule",
+        "body": "Todo estado lleva texto o icono además de color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Meta Floor Rule",
+        "body": "Fecha, lugar, disponibilidad y errores no bajan de 13,5 px para hacerlos caber.",
+        "section": "typography"
+      },
+      {
         "name": "The Clear Path Rule",
-        "body": "Reservar espacio para navegación inferior, safe areas, foco y teclado. Una acción persistente no tapa contenido ni feedback. Fecha/hora se apilan cuando el control nativo no puede mostrar todo el valor. Chat adapta encabezado, historial y composer a la altura disponible y mantiene errores alcanzables.",
+        "body": "Reservar espacio para el dock, safe areas, foco y teclado. Una acción persistente no tapa contenido ni feedback.",
         "section": "layout"
       },
       {
-        "name": "The Single Surface Rule",
-        "body": "Una unidad visual por evento o bloque interactivo. Dentro, jerarquizar con espacio y texto antes de añadir otro contenedor.",
+        "name": "The Single Wash Rule",
+        "body": "Una mancha por pantalla, en la parte superior. Nunca sobre el dock, dentro de tarjetas ni como fondo de botones.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Opaque Enough Rule",
+        "body": "El cristal se mide contra el peor caso detrás: el texto debe cumplir 4,5:1 sobre el violeta intenso de la mancha.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** conservar marino, azul y violeta, reservando el color para roles claros.",
-      "**Do** dar protagonismo a fotografía autorizada en descubrimiento y a la tarea en gestión.",
-      "**Do** separar secciones con espacio/divisores y usar una sola superficie por unidad.",
-      "**Do** comprobar contraste, foco, tacto, texto ampliado, safe areas y altura reducida.",
-      "**Do** conservar funciones, privacidad, validaciones y datos del contrato vigente.",
-      "**Do** distinguir este objetivo aprobado de las capturas y CSS todavía sin migrar."
+      "Do usar tinta marina para la acción y la navegación; azul para filtros seleccionados y progreso.",
+      "Do dejar que el color sea luz: una mancha superior por pantalla y superficies blancas debajo del contenido.",
+      "Do jerarquizar con tamaño de título, espacio y divisores finos antes de añadir un contenedor.",
+      "Do medir contraste contra el peor caso (cristal sobre violeta, texto sobre foto) y acompañar todo estado con texto o icono.",
+      "Do cuidar dock, safe areas, foco violeta de 3 px, targets de 44 px y texto ampliado.",
+      "Do conservar funciones, privacidad, validaciones y datos del contrato vigente, y distinguir este objetivo del código aún sin migrar."
     ],
     "donts": [
-      "**Don't** usar gradientes decorativos, halos o tarjetas anidadas para expresar identidad.",
-      "**Don't** limitar la fotografía y el contenido a fiestas nocturnas.",
-      "**Don't** agrandar placeholders hasta que dominen la pantalla.",
-      "**Don't** convertir chips pasivos en acciones ni dibujar funciones de futuras releases.",
-      "**Don't** copiar fotografías, círculos, numeración o títulos exteriores de los collages.",
-      "**Don't** cambiar branding, rutas, backend o reglas de negocio al aplicar este sistema."
+      "Don't usar gradientes en botones, tarjetas, chips, mensajes o barras; el degradado violeta→azul del CTA anterior queda retirado.",
+      "Don't poner texto blanco pequeño sobre violeta, ni la mancha detrás de formularios o de lectura larga.",
+      "Don't anidar tarjetas ni mostrar el mismo evento en varios contenedores a la vez.",
+      "Don't convertir chips de categoría en botones ni dibujar funciones de futuras releases.",
+      "Don't teñir fotografías ni limitar el catálogo visual a eventos nocturnos; no copiar fotos de los collages ni de las ilustraciones SVG del lab.",
+      "Don't cargar la fuente desde un CDN en producción ni añadir otra familia.",
+      "Don't reintroducir el marino oscuro como fondo de pantalla, ni un tema oscuro, en esta etapa.",
+      "Don't cambiar branding, rutas, backend o reglas de negocio al aplicar este sistema."
     ]
   }
 }
