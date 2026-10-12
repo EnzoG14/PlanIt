@@ -6,6 +6,7 @@ import { StatusMessage } from '../components/StatusMessage'
 import { EventParticipation } from '../components/EventParticipation'
 import { loadCategories, loadEvent, loadEventImages, loadEventOrganizer, type EventRecord } from '../features/events/api'
 import { formatEventTime } from '../features/events/validation'
+import { isEventEditable } from '../features/events/edit'
 import { validatedMyEventsReturn, myEventsPath } from '../features/events/my-events'
 import './discovery.css'
 
@@ -79,6 +80,7 @@ function EventDetailContent({ id }: { id: string }) {
   const returnTo = listOrigin ?? discoveryOrigin ?? (event.organizer_id === session?.user.id ? myEventsReturnTo : '/map')
   return <div className="event-detail-page">
     {location.state?.published && <StatusMessage title="Evento publicado">Tu evento ya está disponible para la comunidad.</StatusMessage>}
+    {location.state?.edited && <StatusMessage title="Cambios guardados">La información del evento se actualizó.</StatusMessage>}
     <Link className="detail-back secondary-link" to={returnTo}><Icon name="back" />{returnTo.startsWith('/my-events') ? 'Volver a Mis eventos' : returnTo === '/home' ? 'Volver al inicio' : 'Volver al mapa'}</Link>
     <div className="event-hero">{images[0] && !imageError ? <img src={images[0]} width="960" height="600" alt={`Foto de ${event.title}`} onError={() => setImageError(true)} /> : <div className="event-hero-placeholder"><Icon name="calendar" /><span>Sin foto de portada</span></div>}<div className="event-hero-overlay" /></div>
     <h1>{event.title}</h1>
@@ -93,6 +95,7 @@ function EventDetailContent({ id }: { id: string }) {
     </section>
     <p className="field-hint">Horarios de Argentina.</p>
     <EventParticipation key={`${id}:${session?.user.id}`} eventId={id} />
+    {event.organizer_id === session?.user.id && isEventEditable(event) && <Link className="secondary-link" to={`/events/${id}/edit`} state={{ myEventsReturnTo: listOrigin ?? undefined, returnTo: discoveryOrigin ?? undefined }}>Editar evento</Link>}
     <Link className="secondary-link" to={myEventsReturnTo}>Ir a Mis eventos</Link>
   </div>
 }

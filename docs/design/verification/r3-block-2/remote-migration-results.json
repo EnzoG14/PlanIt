@@ -1,0 +1,271 @@
+{
+  "project": "planit-v2",
+  "projectRef": "iepeqmvzjguwlhnecsdq",
+  "dateArgentina": "2026-10-11",
+  "migration": "20261012001058_edit_own_event.sql",
+  "applied": true,
+  "appliedUsing": "supabase db push --project-ref iepeqmvzjguwlhnecsdq --skip-vault --yes",
+  "historyVersions": 13,
+  "pendingMigrations": [],
+  "remoteMetadata": [
+    {
+      "proname": "update_event",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "proacl": "{postgres=X/postgres,service_role=X/postgres,authenticated=X/postgres}",
+      "definition": "CREATE OR REPLACE FUNCTION public.update_event(p_event_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text DEFAULT NULL::text)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare\n    v_user uuid := auth.uid();\n    v_event public.events%rowtype;\n    v_now timestamp;\nbegin\n    if v_user is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'retry_read_committed' using errcode = '40001';\n    end if;\n    -- Same lock as registration/leave. Count AFTER lock using a fresh snapshot.\n    select * into v_event from public.events where id = p_event_id for update;\n    if not found then raise exception 'event_unavailable' using errcode = '42501'; end if;\n    if v_event.organizer_id <> v_user then raise exception 'not_event_organizer' using errcode = '42501'; end if;\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\n    if v_event.cancelled_at is not null or v_event.archived_at is not null or v_event.starts_at <= v_now then\n        raise exception 'event_not_editable' using errcode = 'P0001';\n    end if;\n    if p_starts_at is null or p_ends_at is null or not isfinite(p_starts_at) or not isfinite(p_ends_at)\n        or p_starts_at <= v_now then raise exception 'start_not_future' using errcode = 'P0001'; end if;\n    if p_ends_at <= p_starts_at then raise exception 'end_before_start' using errcode = 'P0001'; end if;\n    if not exists (select 1 from public.categories where id = p_category_id and is_active) then\n        raise exception 'category_inactive' using errcode = 'P0001';\n    end if;\n    if p_capacity is null or p_capacity < 1 then raise exception 'invalid_capacity' using errcode = '23514'; end if;\n    if p_capacity < (select count(*) from public.event_participations where event_id = p_event_id and status = 'confirmed') then\n        raise exception 'capacity_below_confirmed' using errcode = 'P0001';\n    end if;\n    -- Existing NOT NULL/CHECK/FK constraints validate remaining content atomically.\n    update public.events set title = btrim(p_title), description = btrim(p_description),\n        starts_at = p_starts_at, ends_at = p_ends_at, category_id = p_category_id,\n        capacity = p_capacity, address = btrim(p_address), latitude = p_latitude,\n        longitude = p_longitude, location_name = nullif(btrim(p_location_name), '')\n    where id = p_event_id;\n    return p_event_id;\nend;\n$function$\n",
+      "authenticated_execute": true,
+      "anon_execute": false,
+      "direct_update": false,
+      "direct_delete": false,
+      "rls_enabled": true
+    }
+  ],
+  "securityBefore": {
+    "lints": [
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "title": "Signed-In Users Can Execute SECURITY DEFINER Function",
+        "level": "WARN",
+        "facing": "EXTERNAL",
+        "categories": [
+          "SECURITY"
+        ],
+        "description": "Detects `SECURITY DEFINER` functions that are callable by signed-in users. Revoke `EXECUTE`, switch the function to `SECURITY INVOKER`, or move it out of your exposed API schema if signed-in users should not call it.",
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable",
+        "count": 7,
+        "findings": [
+          {
+            "detail": "Function `public.get_event_chat(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_event_chat`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "get_event_chat",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:57:09.674Z"
+          },
+          {
+            "detail": "Function `public.get_event_chat_messages(p_event_id uuid, p_before_at timestamp without time zone, p_before_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_event_chat_messages`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "get_event_chat_messages",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid, p_before_at timestamp without time zone, p_before_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:57:09.674Z"
+          },
+          {
+            "detail": "Function `public.get_event_organizer(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_event_organizer`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "get_event_organizer",
+              "schema": "public",
+              "language": "sql",
+              "arguments": "p_event_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:57:09.674Z"
+          },
+          {
+            "detail": "Function `public.get_event_participation_summary(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_event_participation_summary`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "get_event_participation_summary",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:57:09.674Z"
+          },
+          {
+            "detail": "Function `public.leave_event(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/leave_event`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "leave_event",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:57:09.674Z"
+          },
+          {
+            "detail": "Function `public.register_for_event(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/register_for_event`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "register_for_event",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:57:09.674Z"
+          },
+          {
+            "detail": "Function `public.send_event_chat_message(p_event_id uuid, p_message_id uuid, p_body text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/send_event_chat_message`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "send_event_chat_message",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid, p_message_id uuid, p_body text",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:57:09.674Z"
+          }
+        ]
+      },
+      {
+        "name": "auth_leaked_password_protection",
+        "title": "Leaked Password Protection Disabled",
+        "level": "WARN",
+        "facing": "EXTERNAL",
+        "categories": [
+          "SECURITY"
+        ],
+        "description": "Leaked password protection is currently disabled.",
+        "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection",
+        "count": 1,
+        "findings": [
+          {
+            "detail": "Supabase Auth prevents the use of compromised passwords by checking against HaveIBeenPwned.org. Enable this feature to enhance security.",
+            "metadata": {
+              "type": "auth",
+              "entity": "Auth"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "securityAfter": {
+    "lints": [
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "title": "Signed-In Users Can Execute SECURITY DEFINER Function",
+        "level": "WARN",
+        "facing": "EXTERNAL",
+        "categories": [
+          "SECURITY"
+        ],
+        "description": "Detects `SECURITY DEFINER` functions that are callable by signed-in users. Revoke `EXECUTE`, switch the function to `SECURITY INVOKER`, or move it out of your exposed API schema if signed-in users should not call it.",
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable",
+        "count": 8,
+        "findings": [
+          {
+            "detail": "Function `public.get_event_chat(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_event_chat`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "get_event_chat",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:58:03.126Z"
+          },
+          {
+            "detail": "Function `public.get_event_chat_messages(p_event_id uuid, p_before_at timestamp without time zone, p_before_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_event_chat_messages`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "get_event_chat_messages",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid, p_before_at timestamp without time zone, p_before_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:58:03.126Z"
+          },
+          {
+            "detail": "Function `public.get_event_organizer(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_event_organizer`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "get_event_organizer",
+              "schema": "public",
+              "language": "sql",
+              "arguments": "p_event_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:58:03.126Z"
+          },
+          {
+            "detail": "Function `public.get_event_participation_summary(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_event_participation_summary`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "get_event_participation_summary",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:58:03.126Z"
+          },
+          {
+            "detail": "Function `public.leave_event(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/leave_event`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "leave_event",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:58:03.126Z"
+          },
+          {
+            "detail": "Function `public.register_for_event(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/register_for_event`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "register_for_event",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:58:03.126Z"
+          },
+          {
+            "detail": "Function `public.send_event_chat_message(p_event_id uuid, p_message_id uuid, p_body text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/send_event_chat_message`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "send_event_chat_message",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid, p_message_id uuid, p_body text",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:58:03.126Z"
+          },
+          {
+            "detail": "Function `public.update_event(p_event_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/update_event`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+            "metadata": {
+              "name": "update_event",
+              "schema": "public",
+              "language": "plpgsql",
+              "arguments": "p_event_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text",
+              "security_definer": true
+            },
+            "observed_at": "2026-10-12T00:58:03.126Z"
+          }
+        ]
+      },
+      {
+        "name": "auth_leaked_password_protection",
+        "title": "Leaked Password Protection Disabled",
+        "level": "WARN",
+        "facing": "EXTERNAL",
+        "categories": [
+          "SECURITY"
+        ],
+        "description": "Leaked password protection is currently disabled.",
+        "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection",
+        "count": 1,
+        "findings": [
+          {
+            "detail": "Supabase Auth prevents the use of compromised passwords by checking against HaveIBeenPwned.org. Enable this feature to enhance security.",
+            "metadata": {
+              "type": "auth",
+              "entity": "Auth"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "limits": "Metadata and migration verification only; no remote business data mutations or real A/B HTTP/JWT tests.",
+  "functionBodyMatchesGit": true
+}

@@ -2,7 +2,7 @@
 
 **Plan:** [RELEASE_3_PLAN.md](RELEASE_3_PLAN.md). **Contrato:** [RELEASE_3_REQUIREMENTS.md](../requirements/RELEASE_3_REQUIREMENTS.md) (9 RF, 37 CA). **Diseño:** [R3 original](../design/mockups/release-3.png) y [mockups individuales R3](../design/mockups/r3/README.md).
 
-**Corte:** 11/10/2026 (Argentina). **Bloque 0 entregado como preparación documental; Bloque 1 implementado en rama, QA remota y aceptación pendientes**. Bloques 2–6 y QA integral pendientes. [Auditoría y decisiones](RELEASE_3_BLOCK_0_DECISIONS.md).
+**Corte:** 11/10/2026 (Argentina). **Bloques 0–2 implementados; QA y aceptación pendientes**. Bloques 3–6 y QA integral pendientes. [Auditoría y decisiones](RELEASE_3_BLOCK_0_DECISIONS.md).
 
 **Estados posibles:** Pendiente · En curso · Implementado; QA pendiente · Bloqueado · Validado. «Validado» requiere aceptación humana respaldada por evidencia; no equivale a PR abierta.
 
@@ -10,7 +10,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 0 | Preparación, rutas y diseño | Transversal | Implementado; QA pendiente | [PR #18](https://github.com/EnzoG14/PlanIt/pull/18); rama `codex/r3-block-0`; [decisiones/evidencia](RELEASE_3_BLOCK_0_DECISIONS.md) | Revisión y aceptación humana del contrato |
 | 1 | Mis eventos organizados | R3-04 | Implementado; QA pendiente | [PR #19](https://github.com/EnzoG14/PlanIt/pull/19); rama `codex/r3-block-1`; [CA/pruebas/capturas](../design/verification/r3-block-1/README.md) | Migración aplicada; pendientes HTTP/JWT A/B reales, acciones de bloques posteriores y aceptación humana |
-| 2 | Editar evento | R3-01 | Pendiente | — | Reutilizar formulario; update_event ausente, cupo concurrente y política de históricos por resolver |
+| 2 | Editar evento | R3-01 | Implementado; QA pendiente | [PR #20](https://github.com/EnzoG14/PlanIt/pull/20); rama `codex/r3-block-2`; [CA/pruebas/capturas](../design/verification/r3-block-2/README.md) | Migración aplicada y verificada; HTTP/JWT A/B, dispositivo físico y aceptación humana pendientes |
 | 3 | Galería | R3-03 | Pendiente | — | Media básica existe; faltan operaciones administrativas de orden/baja/limpieza |
 | 4 | Asistentes y remoción | R3-05/06 | Pendiente | — | SELECT propio no da nómina; faltan proyección mínima/remoción y pruebas historial/chat |
 | 5 | Cancelar/archivar/duplicar | R3-02/07 | Pendiente | — | RPC de cierre ausentes; duplicar sólo formulario local sin fotos/relaciones |
@@ -60,8 +60,17 @@
 - **Verificación remota posterior:** doce versiones coincidentes local/remoto, sin migraciones pendientes, invoker/search_path/grants correctos y get_my_events intacta. Transacción READ ONLY/ROLLBACK con dos identidades existentes simuladas: cinco filtros/offsets, propiedad/estados, compatibilidad de Participo, parámetros inválidos, identidad ausente y anon denegados PASS. [Registro](../design/verification/r3-block-1/remote-results.json). Asesores antes/después sin avisos nuevos (siete definer existentes y protección de contraseñas filtradas deshabilitada); enlaces y límites en evidencia.
 - **Pendientes:** HTTP/Auth/REST/Storage A/B reales, dispositivo físico/safe-area, aceptación humana. CA-02 verifica detalle y menú integrado; edición/cancelación/asistentes se conectan en bloques 2/4/5, sin declararlos aprobados aquí. Sin merge, despliegue frontend ni cambios en el Supabase antiguo; no «Validado».
 
-### Bloque 2 — Pendiente
-Sin código, pruebas ni migraciones.
+### Bloque 2 — Implementado; QA pendiente
+
+- **Base/rama:** `origin/main` actualizado (`66b6ee9`, Bloque 1 fusionado) → `codex/r3-block-2`; [PR #20](https://github.com/EnzoG14/PlanIt/pull/20), exclusiva del bloque. Cambio previo de vite.config.ts preservado y excluido.
+- **Decisión confirmada por el usuario:** editar sólo eventos propios antes de su inicio original y sin cancelar/archivar. En curso, finalizados, cancelados y archivados denegados en UI y RPC; no se reabren históricos.
+- **Entrega:** ruta autenticada `/events/:id/edit`, entradas en detalle y menú Organizo; formulario precargado compartido con creación, portada en lectura, mínimos fecha/hora Argentina, cupo operativo, loading/error/no autorizado/no encontrado/no editable. Regreso conserva orígenes/filtros; cambios locales sobreviven fallos/token refresh; cuenta/evento nuevos descartan respuestas anteriores. Doble envío bloqueado y respuesta incierta reconciliada por lectura sin reenvío automático.
+- **BD:** `update_event` actualiza mismo ID y sólo contenido; identidad auth.uid(), definer justificado para lock/conteo, search_path vacío y EXECUTE authenticated. READ COMMITTED y lock de evento compartido con inscripción/retiro; conteo confirmed después del lock. Sin UPDATE/DELETE genéricos, nuevas tablas, cambios de media/historial/chat ni dependencias de producción.
+- **Migración:** `20261012001058_edit_own_event.sql` creada con CLI y probada en PostgreSQL local; **aplicada en planit-v2 el 11/10/2026 con autorización expresa posterior del usuario**. Metadatos remotos de sólo lectura contrastaron doce versiones, ausencia de update_event, columnas/checks/FK/RLS/políticas/grants y contratos de inscripción/Organizo. No son pruebas HTTP/JWT reales.
+- **Verificación:** build/lint PASS (aviso existente Mapbox); SQL local con replay, A/B/anon/identidad ausente, rollback/categoría/fechas/cupo, estados y ambas carreras inscripción/reducción PASS. UI fixtures en cinco viewports, Tokyo, precarga/errores/retry/doble envío/respuesta perdida/orígenes y reconsulta de detalle/lista/Inicio/mapa. Regresión creación SQL/UI, Mis eventos SQL/UI y participación SQL (diez carreras de última plaza) PASS. [Matriz CA y límites](../design/verification/r3-block-2/README.md).
+- **Visual:** originales individual/collage abiertos y capturas móviles/escritorio contrastadas; identidad conservada. Shell vigente, campos adicionales de ubicación, portada de lectura y conteo operacional son adaptaciones documentadas. Sin overflow; dispositivo físico pendiente.
+- **Aplicación remota posterior:** CLI push aplicó únicamente edit_own_event con --skip-vault; trece versiones sincronizadas y dry-run sin pendientes. Cuerpo RPC idéntico a Git; definer/search_path/RLS y permisos verificados por catálogos, anon sin EXECUTE y cliente sin UPDATE/DELETE. Permiso administrativo service_role proviene de defaults del proyecto. Advisors pasó de siete a ocho definer autenticados (update_event esperado/justificado), protección de contraseñas filtradas deshabilitada preexistente. [Registro](../design/verification/r3-block-2/remote-migration-results.json). Sin cambios de Vault ni escrituras de datos de negocio; no acredita HTTP/JWT real.
+- **Pendientes:** HTTP/JWT A/B real, revisión humana y dispositivo físico. Sin merge/despliegue ni «Validado».
 
 ### Bloque 3 — Pendiente
 Sin código, pruebas ni migraciones.

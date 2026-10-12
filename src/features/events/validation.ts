@@ -22,6 +22,16 @@ export function argentinaNow(now = new Date()): string {
   const value = (type: string) => parts.find(part => part.type === type)!.value
   return `${value('year')}-${value('month')}-${value('day')}T${value('hour')}:${value('minute')}:${value('second')}`
 }
+// Native controls have minute precision. Advance to the first valid minute,
+// including the date rollover at midnight; end must also follow start.
+export function eventDateMinimums(values: EventValues, now = new Date()) {
+  const afterMinute = (value: string) => new Date(Date.parse(`${value}Z`) + 60000).toISOString().slice(0, 16)
+  const earliest = afterMinute(argentinaNow(now))
+  const start = argentinaTimestamp(values.start_date, values.start_time)
+  const end = start && afterMinute(start) > earliest ? afterMinute(start) : earliest
+  return { start_date: earliest.slice(0, 10), start_time: values.start_date === earliest.slice(0, 10) ? earliest.slice(11) : undefined,
+    end_date: end.slice(0, 10), end_time: values.end_date === end.slice(0, 10) ? end.slice(11) : undefined }
+}
 export function formatEventTime(value: string): string {
   return new Intl.DateTimeFormat('es-AR', { timeZone: 'America/Argentina/Buenos_Aires', dateStyle: 'medium', timeStyle: 'short', hourCycle: 'h23' }).format(new Date(`${value}-03:00`))
 }
