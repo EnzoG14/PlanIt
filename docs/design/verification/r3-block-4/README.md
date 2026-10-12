@@ -1,13 +1,13 @@
 # R3 Bloque 4 — Asistentes y remoción
 
-Implementado; QA y aceptación humana pendientes. [PR #22](https://github.com/EnzoG14/PlanIt/pull/22) en borrador. Evidencia del 12/10/2026 (Argentina), rama `codex/r3-block-4`, base `origin/main` `8e1537d` (Bloque 3 integrado). No se aplicó la migración nueva en remoto, no se fusionó ni desplegó frontend.
+Implementado; QA y aceptación humana pendientes. [PR #22](https://github.com/EnzoG14/PlanIt/pull/22) en borrador. Evidencia del 12/10/2026 (Argentina), rama `codex/r3-block-4`, base `origin/main` `8e1537d` (Bloque 3 integrado). La migración se aplicó en planit-v2 el 12/10/2026 con autorización explícita posterior del usuario; no se fusionó ni desplegó frontend.
 
 ## Contrato y decisiones
 
 - Ruta autenticada `/events/:id/attendees`, entrada desde detalle propio y menú Organizo. Regreso al detalle conserva origen Inicio/Mapa o sección/filtro de Mis eventos mediante destinos internos validados.
 - Confirmados como vista inicial; Removidos separado. Nombre y username, avatar de iniciales. Sin email, demografía, bio, navegación social R5, Solicitudes de bloque 6, CSV o notificaciones nuevas.
 - **Decisión confirmada por el usuario:** remoción sólo antes y durante eventos vigentes. Finalizados, cancelados y archivados conservan lista de sólo lectura. La RPC verifica el estado con reloj servidor de Argentina después del lock.
-- Nueva migración `20261012031717_manage_event_attendees.sql`, creada con CLI y probada mediante replay completo en PostgreSQL 17.5 local. **Sólo en Git; aplicación remota pendiente de autorización.** Las catorce migraciones previas existen en planit-v2; la auditoría de catálogos confirmó ausencia de las dos RPC del bloque.
+- Nueva migración `20261012031717_manage_event_attendees.sql`, creada con CLI y probada mediante replay completo en PostgreSQL 17.5 local. **Aplicada en planit-v2 el 12/10/2026 con autorización explícita.** Las catorce migraciones previas existen en planit-v2; la auditoría de catálogos confirmó ausencia de las dos RPC del bloque.
 - `get_event_attendees(uuid,text,text,integer)` devuelve JSON con `title`, `capacity`, `event_state`, `confirmed_count`, `removed_count`, `has_more` y `attendees`. Cada fila tiene sólo `participation_id`, `user_id`, `status`, `display_name`, `username`. Verifica propietario incluso si no hay filas. Estado confirmed/removed; búsqueda literal por nombre, case-insensitive y sin comodines, máximo 120 caracteres; offset no negativo. Orden lower(display_name)/participation_id, página 30 + lookahead. Metadatos y filas provienen de la misma instantánea SQL; contadores no dependen de búsqueda/página.
 - `remove_participant(uuid,uuid)` no acepta identidad de organizador: deriva `auth.uid()`, verifica propiedad/evento/participación y READ COMMITTED; locks evento→participación. Sólo confirmed pasa a removed. Reintento removed en evento vigente es no-op; cancelled/inexistente/otro evento se rechazan. Trigger existente registra una sola transición, actor y `organizer_removal`; fallo de historial revierte toda la operación. Sin DELETE ni contador duplicado.
 - SECURITY DEFINER justificado para proyección mínima bajo RLS propia y actualización transaccional sin UPDATE genérico; search_path vacío, referencias calificadas, revocación PUBLIC/anon y EXECUTE authenticated. No se amplían políticas de profiles/participaciones/historial/chat ni permisos directos.
@@ -51,6 +51,12 @@ Se abrieron los originales `04-asistentes.png`, `07-estados-dialogos.png` y el c
 
 Adaptaciones: shell vigente y navegación de cuatro secciones, avatares de iniciales y username por privacidad, título del evento y Actualizar operacionales; badge en segunda línea móvil para mantener controles táctiles de 44 px e identidad legible. Sin marco de teléfono, decoraciones del póster ni Solicitudes futuras. Los nombres/contadores son fixtures, no datos ni fotografías extraídos del mockup. No se observó overflow horizontal.
 
-## Pendientes
+## Aplicación remota posterior — 12/10/2026
 
-Aplicación autorizada de la migración en planit-v2, HTTP/Auth/REST/Realtime con cuentas A/B reales, dispositivo físico/safe-area y aceptación humana. Los ocho CA tienen evidencia local/fixture; ninguno se marca «Validado». Bloques 5/6 y QA integral continúan pendientes.
+Con autorización explícita del usuario, CLI 2.120.0 aplicó únicamente `20261012031717_manage_event_attendees.sql` en planit-v2 con `--skip-vault`. Quince versiones sincronizadas y dry-run posterior sin pendientes. Hashes de los dos cuerpos coinciden con Git; propietario postgres, SECURITY DEFINER, search_path vacío, EXECUTE authenticated y sin EXECUTE PUBLIC/anon. Diez tablas públicas conservan RLS y los permisos directos inspeccionados siguen siendo SELECT. Smoke test remoto: ambas RPC rechazan identidad ausente antes de tocar datos de negocio.
+
+Advisors de seguridad: 13 → 15 hallazgos; los dos nuevos son las RPC SECURITY DEFINER autenticadas deliberadas, con autorización explícita de propietario y proyección mínima. [Descripción del advisor](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable). Protección de contraseñas filtradas deshabilitada preexistente, sin cambios. No se modificaron Vault, seeds, roles ni datos de negocio. [Resumen verificable](remote-migration-summary.json). Esta comprobación no acredita HTTP/JWT/REST/Realtime con cuentas A/B reales.
+
+## QA pendiente
+
+HTTP/Auth/REST/Realtime con cuentas A/B reales, dispositivo físico/safe-area y aceptación humana. Los ocho CA tienen evidencia local/fixture; ninguno se marca «Validado». Bloques 5/6 y QA integral continúan pendientes.

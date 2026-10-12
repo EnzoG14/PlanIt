@@ -1,0 +1,30 @@
+{
+  "date_argentina": "2026-10-12",
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "migration": "20261012031717_manage_event_attendees.sql",
+  "authorization": "Explicit user request to apply the migration to the remote database",
+  "cli_version": "2.120.0",
+  "applied": true,
+  "command": "supabase db push --project-ref iepeqmvzjguwlhnecsdq --skip-vault --yes",
+  "pending_before": ["20261012031717_manage_event_attendees.sql"],
+  "pending_after": [],
+  "migration_versions_synchronized": 15,
+  "functions": [
+    {"name": "get_event_attendees", "body_md5": "854ee06f14c94ece253c1485baa73d01", "matches_git": true},
+    {"name": "remove_participant", "body_md5": "beecd75399b9d7604cb66b2df5e88e6c", "matches_git": true}
+  ],
+  "function_security": {"owner": "postgres", "security_definer": true, "search_path": "", "authenticated_execute": true, "anon_execute": false, "public_execute": false},
+  "public_tables_with_rls": 10,
+  "direct_authenticated_table_grants": "SELECT only for profiles, event_participations, participation_history, conversations and messages; no new table grants in migration",
+  "smoke_test": "PASS: both RPC reject missing identity with authentication_required before reading or mutating business data",
+  "security_advisor_findings_before": 13,
+  "security_advisor_findings_after": 15,
+  "new_advisor_findings": "Two intended authenticated SECURITY DEFINER RPC; explicit auth.uid ownership checks, empty search_path and no PUBLIC/anon EXECUTE",
+  "advisor_remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable",
+  "preexisting_auth_warning": "Leaked password protection disabled; unchanged",
+  "vault_changed": false,
+  "seeds_or_roles_applied": false,
+  "business_data_modified": false,
+  "historical_project_touched": false,
+  "limits": "Catalog verification and missing-identity smoke test only; does not replace HTTP/JWT/REST/Realtime A/B tests, physical device checks or human acceptance. No merge or frontend deployment."
+}
