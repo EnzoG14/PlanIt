@@ -3,7 +3,7 @@
 **Actualización de planificación R4 v1.2 (13/10/2026):** esta edición documental parte del `main` `a378259a6010`, con Amanecer v3.0 integrado (PR #27–#34). La línea de base anterior del 12/10 y los pasos del bloque 0 son históricos/propuestos: **no** acreditan ejecución ni QA R4. Leer `RELEASE_4_VISUAL_INTEGRATION.md`, `DESIGN.md`, `docs/design/UI_WORKFLOW.md`. R3 confirmada validada por el responsable; informe QA versionado conserva NO-GO por falta de E2E/aceptación humana documentada; reportar esa brecha de evidencia sin reabrir A07.
 
 
-**Corte de ejecución:** 13/10/2026 (Argentina). **Estado:** Bloques 0 (documental), 1–6 implementados; QA/revisión humana pendiente. **28/39 CA con evidencia PASS local/fixture (bloques 1–4 y R4-07.CA-01..04), ninguna con JWT real ni Validado**. CA-04 todavía requiere comprobar canje del token anterior en B7; CA-05 tiene evidencia parcial de sin expires_at/cierre de generación, sin canje. 39/39 trazadas. Bloques 7–9 pendientes; enlaces B6 no se pueden canjear hasta B7.
+**Corte de ejecución:** 13/10/2026 (Argentina). **Estado:** Bloques 0 (documental), 1–7 implementados; QA/revisión humana pendiente. **34/39 CA con evidencia PASS local/fixture (bloques 1–4, R4-07.CA-01..05 y R4-08.CA-01..05), ninguna con JWT real ni Validado**. 39/39 trazadas. Bloques 8–9 pendientes. El bloque 7 agrega `redeem_event_link` y `/invite`; la migración está creada y probada localmente, **no aplicada a planit-v2** (requiere autorización).
 
 **Decisiones del responsable (12/10/2026):** A01–A07 aprobadas; **R3 integrada y validada por confirmación expresa**, sujeto únicamente a comprobación técnica de dependencias en `main`. **Fuentes:** `RELEASE_4_PLAN.md`, `../requirements/RELEASE_4_REQUIREMENTS.md`, `RELEASE_4_DECISIONS_PROPOSED.md`, `../qa/RELEASE_4_ACCEPTANCE.md`.
 
@@ -18,7 +18,7 @@
 | 4 | Sugerencias | 06, 4 CA | Implementado; QA pendiente | `codex/r4-block-4`; [PR #43](https://github.com/EnzoG14/PlanIt/pull/43) en borrador | [Evidencia](../design/verification/r4-block-4/README.md) | `20261014120002_get_suggested_events.sql` creada/probada local y **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior** | HTTP/JWT real y revisión humana |
 | 5 | Seguridad ocultos | transversal 07–09 | Implementado; QA pendiente | `codex/r4-block-5`; [PR #44](https://github.com/EnzoG14/PlanIt/pull/44) en borrador | [Auditoría y evidencia](../qa/r4-block-5/README.md) | `20261014120003_hidden_event_access.sql` **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior**; 22 versiones, dry-run al día, RLS/ACL/11 funciones verificadas | HTTP/JWT/Storage/Realtime real, revisión humana; links/UX en bloques 6–8 |
 | 6 | Visibilidad y links | 07, 5 CA | Implementado; QA pendiente | `codex/r4-block-6`; [PR #45](https://github.com/EnzoG14/PlanIt/pull/45) en borrador | [Pruebas y límites](../qa/r4-block-6/README.md) | `20261014120004_event_visibility_links.sql` **aplicada/verificada en planit-v2 el 13/10/2026 con autorización expresa posterior**; 23 versiones sincronizadas | HTTP/JWT real, revisión humana, canje viejo/cerrado CA-04/05 en B7 |
-| 7 | Canje y detalle | 08, 5 CA | Pendiente | — | — | — | Grant y login |
+| 7 | Canje y detalle | 08, 5 CA | Implementado; QA pendiente | `codex/r4-block-7`; PR en borrador | [Pruebas, composición/foco/scopes y límites](../design/verification/r4-block-7/README.md) | `20261014120005_redeem_event_link.sql` creada y probada con PostgreSQL local; **NO aplicada remotamente** | Aplicación remota con autorización, HTTP/JWT real (`check-invite-http.mjs`, NOT RUN), revisión humana |
 | 8 | Revocación | 09, 5 CA | Pendiente | — | — | — | Historial y cupo |
 | 9 | QA / cierre | todos, 39 CA | Pendiente | — | — | — | Casos real/fixture y aceptación |
 
@@ -33,6 +33,14 @@
 7. No pasar a «Validado» sin la revisión de 39 CA y aceptación humana; cada PR debe detenerse para revisión.
 
 ## Actas de ejecución
+
+### Bloque 7 — Implementado; QA pendiente
+
+- **Base/rama:** `origin/main` `a0ba1c3` (PR #44 y #45 integradas; dependencias de B5/B6 verificadas en Git) → rama nueva `codex/r4-block-7` en checkout aislado; `.env.local` copiado y no versionado (gitignored). A01–A07 no se reabren.
+- **SQL:** `redeem_event_link(p_token text) returns uuid`, DEFINER, `search_path=''`, EXECUTE sólo `authenticated`; identidad `auth.uid()`. Hash SHA-256 del token recibido; lock del evento y relectura del link bajo lock (la rotación usa el mismo lock). Exige evento `unlisted`, no finalizado/cancelado/archivado y link activo. `grant revoked` tiene prioridad absoluta (jamás se reactiva, ni con un link nuevo); `active` es idempotente; sin `event_participations` ni cupo. Todo fallo (formato, desconocido, rotado, cerrado, público, revocado) devuelve un único error `invite_unavailable`, sin enumeración. El organizador que canjea su propio enlace no crea grant.
+- **Frontend:** ruta `/invite` fuera de `RequireAuth`; el fragmento `#token=` se captura en memoria del módulo `features/events/invite.ts` y se limpia de la URL con `navigate(replace)` antes de renderizar. Sin query, storage, logs, analytics ni errores con el secreto. Sin sesión: Ingresar/Crear cuenta con `next=/invite` (único destino agregado al allowlist `safeReturnPath`)/Cancelar; el secreto sobrevive el login SPA y se canjea al volver. Tras el RPC se relee `/events/:id` y sólo entonces se muestra «Acceso confirmado» y se navega con replace. Red ≠ no válido (reintento idempotente), sesión vencida y cambio de cuenta (el secreto queda ligado a la identidad y se descarta al cerrar sesión/cambiar de cuenta). Recargar o confirmar el email desde otra pestaña exige reabrir el enlace original (D10). Scope `amanecer-shell invite-shell` en `AppLayout`, dock de cuatro destinos intacto.
+- **Pruebas:** `check:invite` (SQL local, 10 grupos: ACL, CA-01..05, no enumeración con errores idénticos, revocado sin recuperación con token nuevo, ida/vuelta público↔oculto, cerrados, organizador, 5 carreras con espera real de locks) y `check:invite:ui` (Edge, fixtures, 320/375/1280). Regresiones locales: `check:hidden-access`, `check:event-links`, `check:auth`, `check:amanecer`, `check:participations`, build y lint. **No** HTTP/JWT real (`check-invite-http.mjs --run` preparado, NOT RUN), dispositivos físicos, lector de pantalla ni aceptación humana.
+- **Límites:** el token **no se declara seguro de extremo a extremo** hasta verificar servidor y cliente reales: el fragmento no se envía al servidor pero sí existe en el historial/portapapeles del dispositivo hasta limpiarse; extensiones del navegador pueden leer la URL inicial. Link de B6 sigue sin recuperación (A06). Sin merge, deploy ni Validado; detenerse antes del bloque 8.
 
 ### Bloque 6 — Implementado; QA pendiente
 
@@ -104,5 +112,5 @@
 - **Evidencia:** 8 grupos SQL locales y 19 grupos UI con fixtures en cinco tamaños; baseline inmutable before y capturas after nuevas. Incluye ranking más allá de35 candidatos, dos intereses, límites, empate, A/B/anon, ocultos propios/cerrados, confirmados/inactivos, cambio de cuenta/respuesta tardía y polling/expiración. [Pruebas, composición/foco/scopes y límites](../design/verification/r4-block-4/README.md). Build/lint/Amanecer y regresiones registradas en evidencia. Check de filtros ajusta precisión centesimal ante 43.999969px de Chromium para control CSS44px, sin modificar controles.
 - **Límites/fin:** metadata pública previa puede durar hasta reconsulta visible30s más latencia tras cambio externo; detalle revalida. Sin JWT real, dispositivos, lector de pantalla o aceptación humana; no Validado, merge/deploy ni bloque5. Aplicación remota autorizada después de crear PR #43 y registrada; asesores sin avisos nuevos, guard sin identidad probado con ROLLBACK; sin cambios de datos de usuarios ni acceso al proyecto histórico.
 
-### Bloques 7–9 — Pendientes
+### Bloques 8–9 — Pendientes
 - Sin actas, pruebas ni PR de esos bloques.

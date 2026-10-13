@@ -1,5 +1,9 @@
 # PlanIt — Modelo de datos y migraciones
 
+## R4 Bloque 7 — Canje de enlace (creada y probada localmente; NO aplicada)
+
+`20261014120005_redeem_event_link.sql` agrega `public.redeem_event_link(p_token text) returns uuid`: DEFINER, `search_path=''`, EXECUTE sólo `authenticated`, identidad `auth.uid()`. Compara SHA-256 (`extensions.digest`) del token recibido con `event_access_links.token_hash`; toma el lock del evento (el mismo de rotación, visibilidad, cierre y registro) y relee el link bajo lock. Requiere `visibility='unlisted'`, evento no finalizado/cancelado/archivado y link activo; con `grant revoked` falla siempre (nunca se reactiva); con `active` es idempotente; si no existe, inserta el grant con `source_link_id`. No escribe `event_participations` ni consume cupo. Cualquier fallo devuelve el mismo error `invite_unavailable` (P0001). El organizador no crea grant. Sin migraciones remotas aplicadas: requiere autorización expresa.
+
 ## R4 Bloque 6 — Visibilidad/rotación (aplicada)
 
 `20261014120004_event_visibility_links.sql` agrega los parámetros finales `create_event(..., p_visibility text default 'public')` y `update_event(..., p_visibility text default null)` mediante reemplazo de firma sin CASCADE ni dependientes SQL versionados. Hay una única firma por RPC, con defaults que mantienen llamadas R1–R3; la edición antigua conserva la visibilidad actual. INSERT de visibility sólo para auth.uid propietario, con constraints existentes; no se concede UPDATE directo. Edición y transición usan el trigger B5 bajo lock, de modo que confirmed+revoked produce rollback íntegro.

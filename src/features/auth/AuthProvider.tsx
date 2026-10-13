@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import type { Session } from '@supabase/supabase-js'
 import { supabase } from '../../lib/supabase'
 import { AuthContext } from './useAuth'
+import { clearInviteToken } from '../events/invite'
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null)
@@ -18,6 +19,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       // Keep this callback synchronous: Auth holds a lock while notifying listeners.
       if (!active || event === 'INITIAL_SESSION') return
       revision += 1
+      if (event === 'SIGNED_OUT') clearInviteToken()
       setSession(nextSession)
       setError(null)
       setLoading(false)
