@@ -4,12 +4,12 @@
 
 ## Implementación
 
-- Scope `amanecer-shell discovery-shell` sólo en `/home`, `/map` y `/events/:id`, excluyendo `/events/new`. Se reutilizan patrones y fuente autoalojada de la fundación; tokens y CSS Amanecer globales sin cambios.
+- Scope `amanecer-shell discovery-shell` sólo en `/home`, `/map` y `/events/:id`, excluyendo `/events/new`. Se reutilizan patrones y fuente autoalojada de la fundación; tokens normativos sin cambios. El pedido adicional centraliza header y entrada compartidos (ver al final).
 - Inicio conserva consultas, categoría y paginación. Tarjetas con una apertura amplia, foto lateral natural cuando está disponible, fallback compacto ante ausencia/error. Fecha/hora, categoría y ubicación existentes. El contrato de discovery no devuelve cupo: no se inventa disponibilidad ni se agrega consulta por tarjeta.
 - Mapa conserva proveedor Mapbox Standard, bounds, geolocalización, controles, debounce, consultas y marcadores. Preset `day` reemplaza `night`. Marcadores azul/violeta con anillo de tinta, selección también por forma/aria-pressed, foco violeta, atribución legible y controles ≥44px. Fallo compacta canvas a 180px y mantiene aviso/lista.
 - El seleccionado se muestra una vez en vista previa y vuelve a la lista al cerrarla. Selección desde lista transfiere foco al enlace de vista previa; cierre devuelve foco a su botón. Selección desde marcador conserva ese origen para el cierre. `returnTo=/map` explícito mantiene navegación contextual.
 - Detalle conserva datos, acceso, galería, organizador, inicio/fin y horarios Argentina. Portada 300px (220px móvil estrecho) o mensaje compacto sin foto. Descripción legible con saltos de línea. Acción de participación fija a 98px + safe area sobre el dock existente, con reserva inferior de 220px y scroll-padding para foco. Feedback, acceso a chat y gestión permanecen en flujo.
-- **EventParticipation y EventManagement no modificados**. CompactEventCard/Mis eventos no modificados; contratos, backend, Supabase, migraciones y reglas de negocio sin cambios.
+- **EventParticipation y EventManagement no modificados**. CompactEventCard y lógica de Mis eventos conservados; su entrada reutiliza el patrón compartido. Contratos, backend, Supabase, migraciones y reglas de negocio sin cambios.
 
 ## Diferencias deliberadas frente al lab
 

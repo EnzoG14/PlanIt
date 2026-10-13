@@ -11,3 +11,5 @@ Capturas locales con fixtures interceptados, sin escrituras remotas: baseline su
 Reproducción: node scripts/check-screen-shell-ui.mjs (Vite local en 4194; PLANIT_UI_ORIGIN/PLANIT_UI_OUTPUT opcionales).
 
 Integración: origin/main 31c1ac2 (Bloque 3 de formularios) reconciliado conservando event-form-shell y discovery-shell. Se retira su override local de header para usar el patrón compartido.
+
+Verificación completada: build, lint, check:amanecer, check:home:ui, check:discovery:ui, check:my-events:ui, check:amanecer:auth:ui, check:chat:layout; después de integrar main, creación (check-events-ui), edición (check:edit-event:ui) y matriz compartida. Comprobación adicional: header sin sesión en ruta no encontrada (las rutas de producto están protegidas por RequireAuth), sin overflow a 320px; reduced motion en seis rutas.

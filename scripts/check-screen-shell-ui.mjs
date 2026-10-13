@@ -15,7 +15,7 @@ const photo = process.env.PLANIT_UI_PHOTO ? await readFile(process.env.PLANIT_UI
 const metrics = []
 async function fixture(viewport, mode) {
  const context = await browser.newContext({ viewport,timezoneId:'Asia/Tokyo' })
- await context.addInitScript(user => localStorage.setItem('sb-iepeqmvzjguwlhnecsdq-auth-token', JSON.stringify({access_token:'fixture-token',refresh_token:'fixture-refresh',expires_at:Math.floor(Date.now()/1000)+3600,token_type:'bearer',user})), user)
+ if(mode !== 'anonymous') await context.addInitScript(user => localStorage.setItem('sb-iepeqmvzjguwlhnecsdq-auth-token', JSON.stringify({access_token:'fixture-token',refresh_token:'fixture-refresh',expires_at:Math.floor(Date.now()/1000)+3600,token_type:'bearer',user})), user)
  await context.route('https://api.mapbox.com/**', route => route.request().url().includes('/styles/v1/') ? mode === 'map-failure' ? route.fulfill({status:401,body:'{}'}) : route.fulfill({json:{version:8,sources:{fixture:{type:'geojson',data:{type:'FeatureCollection',features:[]},attribution:'© Mapbox · © OpenStreetMap (fixture)'}},layers:[{id:'background',type:'background',paint:{'background-color':'#e8e6f4'}}]}}) : route.fulfill({json:{}}))
  await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**', async route => {
   const path = new URL(route.request().url()).pathname
@@ -42,7 +42,7 @@ async function fixture(viewport, mode) {
 
 try {
  const id=event.id;
- for(const width of [320,375,390,768,1280]) {
+ for(const width of process.argv.includes('--aux-only') ? [] : [320,375,390,768,1280]) {
   const context=await fixture({width,height:844},'organizer');
   const page=await context.newPage();
   let pilot;
@@ -85,6 +85,12 @@ try {
   assert.equal(await page.locator('.account-menu-panel').count(),0,'Account closes on route navigation');
   await context.close();
  }
+ const anonymous=await fixture({width:320,height:844},'anonymous');
+ const anonymousPage=await anonymous.newPage();await anonymousPage.goto(origin+'/pagina-inexistente');
+ await anonymousPage.locator('.app-header').getByRole('link',{name:'Ingresar',exact:true}).waitFor();
+ assert.equal(await anonymousPage.locator('.app-header').getByRole('link',{name:'Crear cuenta',exact:true}).count(),1);
+ assert.equal(await anonymousPage.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Anonymous header overflow');
+ await anonymous.close();
  const context=await fixture({width:390,height:844},'organizer');
  const page=await context.newPage();await page.emulateMedia({reducedMotion:'reduce'});
  for(const path of ['/home','/map','/my-events','/login','/register','/events/'+event.id]) {
@@ -93,6 +99,6 @@ try {
   assert.ok(!animations.includes('screen-rise'),path+' reduced motion');
  }
  await context.close();
- await writeFile(output+'/results.json',JSON.stringify({environment:'Edge, local Vite, intercepted Auth/REST/Mapbox fixtures; no remote writes',metrics},null,2)+'\n');
- console.log('PASS: shared header across 10 product routes at 5 widths; Account focus/navigation; staggered entry; fixed-action ancestry; reduced motion');
+ await writeFile(output+'/results.json',JSON.stringify({environment:'Edge, local Vite, intercepted Auth/REST/Mapbox fixtures; no remote writes',auxiliary:{anonymousHeader:true,reducedMotion:true},metrics},null,2)+'\n');
+ console.log(process.argv.includes('--aux-only') ? 'PASS: anonymous header at 320px and reduced motion in six routes' : 'PASS: shared header across 10 product routes at 5 widths; Account focus/navigation; staggered entry; fixed-action ancestry; anonymous header; reduced motion');
 } finally {await browser.close()}
