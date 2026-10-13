@@ -1,0 +1,7 @@
+{
+  "environment": "Edge; local app; intercepted Auth fixtures; remote traffic blocked; no Supabase writes",
+  "phase": "before",
+  "results": [],
+  "unexpected": [],
+  "pageErrors": []
+}

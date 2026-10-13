@@ -7,9 +7,9 @@ Fecha: 12/10/2026. Registro independiente; no modifica estados funcionales R1/R2
 | Bloque | Etapa | Estado | Evidencia / pendiente |
 | --- | --- | --- | --- |
 | 0 | Foundation y consolidación del sistema visual | Completa e integrada | Documentos e instrucciones; PR #26 ya integrada antes del piloto. El registro de su entrega draft se conserva debajo |
-| 0.5 | Fundación Amanecer | Implementada; entrega draft | Tokens `--pi-*`, patrones opt-in, misma fuente y compatibilidad; [workflow](../design/UI_WORKFLOW.md), [auditoría/regresión](../design/verification/ui-refresh/amanecer-foundation/README.md). No migra otras rutas |
+| 0.5 | Fundación Amanecer | Completa e integrada (PR #28) | Tokens `--pi-*`, patrones opt-in, misma fuente y compatibilidad; [workflow](../design/UI_WORKFLOW.md), [auditoría/regresión](../design/verification/ui-refresh/amanecer-foundation/README.md). No migró otras rutas automáticamente |
 | 1 | Pantalla piloto: Mis eventos | Amanecer implementada e integrada en main (cb5a249); aceptación humana no inferida | [Capturas, pruebas y límites](../design/verification/ui-refresh/my-events/README.md); [PR #27 fusionada](https://github.com/EnzoG14/PlanIt/pull/27) |
-| 2 | Login y registro | Pendiente | Sin implementación del refresh |
+| 2 | Login y registro | Amanecer implementada; entrega draft | [Capturas, critique/audit y pruebas](../design/verification/ui-refresh/auth/README.md); aceptación humana y dispositivos reales pendientes |
 | 3 | Crear y editar eventos | Pendiente | Sin implementación del refresh |
 | 4 | Inicio, mapa y detalle del evento | Pendiente | Sin implementación del refresh |
 | 5 | Galería y asistentes | Pendiente | Sin implementación del refresh |
@@ -27,6 +27,14 @@ Fecha: 12/10/2026. Registro independiente; no modifica estados funcionales R1/R2
 - Verificación y límites: [registro nuevo](../design/verification/ui-refresh/amanecer-foundation/README.md). Se preservan las capturas históricas. Critique dual independiente, detector, polish/harden y audit de fundación separados de checks del proyecto. La integración no acredita aceptación humana, lector de pantalla ni dispositivos físicos.
 - PASS final: build, lint, check:amanecer, check:my-events, check:my-events:ui, check:event-actions:ui, runner de refresh, check:amanecer:auth:ui, check:home:ui, check:discovery:ui, check:chat:layout, check:auth, check:foundation, check:home-events y check:discovery. Seis Organizo idénticos a capturas aprobadas; 48 estados con mismos estilos/geometría y 83/96 PNG idénticos; diferencias dinámicas y deuda previa de texto aumentado documentadas.
 - Entrega mediante commit y PR draft hacia main; no fusionar ni comenzar el bloque 2.
+
+## Bloque 2 — Login y Registro (12/10/2026)
+
+- Rama `design/ui-refresh-auth` desde origin/main `3552d4e` (PR #28 integrada). Sólo UI de `/login` y `/register`; `vite.config.ts` local preservado fuera de la PR. Sin cambios de Auth, Supabase, SQL, configuración, estados funcionales ni bloque 3.
+- AppLayout activa el shell Amanecer en ambas rutas; AuthPage reutiliza ScreenHeader, FormField, GradientButton y StatusMessage. `auth.css` local compone topbar, título, formulario directo, mancha superior aria-hidden, ayuda permanente y frases de confirmación separadas. Tokens/patrones y APIs compartidos sin cambios.
+- Critique dual independiente A/B, detector sin hallazgos, polish/harden y audit final: [registro](../design/verification/ui-refresh/auth/README.md). 12 capturas iniciales antes y 156 finales, seis tamaños, estados con fixtures, texto 200%, altura 240, fallback de fuente y transparencia reducida.
+- PASS build/lint/check:amanecer/check:auth/check:foundation/check:amanecer:auth:ui/check:my-events:ui, regresiones Inicio/Descubrimiento/Chat y comparación Python. Piloto: 36 registros comunes idénticos en estilos/geometría; seis Organizo PNG idénticos, 34/42 PNG comunes idénticos; diferencias dinámicas documentadas. Sin pruebas remotas ni SQL local.
+- Pendientes: aceptación humana, lector de pantalla, zoom nativo, teclado móvil y safe areas físicas, rendimiento real. Capturas emuladas no acreditan estos casos. Sidecar Impeccable anterior a DESIGN.md preservado por el alcance; no init/document/shape.
 
 ## Foundation — registro histórico anterior a la integración
 
