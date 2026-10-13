@@ -6,8 +6,8 @@
 
 | RF | CA esperados | PASS | FAIL | BLOCKED | NOT RUN | Resultado |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| R4-01 | 4 | 0 | 0 | 0 | 4 | NOT RUN |
-| R4-02 | 4 | 0 | 0 | 0 | 4 | NOT RUN |
+| R4-01 | 4 | 4 | 0 | 0 | 0 | PASS local (fixture; sin JWT real) |
+| R4-02 | 4 | 3 | 0 | 0 | 1 | PARCIAL (CA-02 sin fecha/radio) |
 | R4-03 | 4 | 0 | 0 | 0 | 4 | NOT RUN |
 | R4-04 | 4 | 0 | 0 | 0 | 4 | NOT RUN |
 | R4-05 | 4 | 0 | 0 | 0 | 4 | NOT RUN |
@@ -15,13 +15,14 @@
 | R4-07 | 5 | 0 | 0 | 0 | 5 | NOT RUN |
 | R4-08 | 5 | 0 | 0 | 0 | 5 | NOT RUN |
 | R4-09 | 5 | 0 | 0 | 0 | 5 | NOT RUN |
-| **Total** | **39** | **0** | **0** | **0** | **39** | **NO-GO** |
+| **Total** | **39** | **7** | **0** | **0** | **32** | **NO-GO** |
 
 ## Ejecuciones
 
 - Acuerdos A01–A07: **aprobados como decisiones de producto, NO verificados por ejecución R4**. R3 integrada/validada según confirmación del responsable; esta plantilla no certifica tests de regresión de R4.
 
-- `npm ci`, `npm run build`, `npm run lint`: NO EJECUTADO.
+- Bloque 1 (14/10/2026): `npm run build` OK; `oxlint` sin errores; `check:search` (SQL local), `check:search:ui`, `check:home:ui`, `check:home-events`, `check:discovery`, `check:amanecer` PASS con fixtures. `check:discovery:ui` falla en el paso `.planit-marker` también en `main` sin cambios (entorno de mapa). Migración `20261013160000_search_public_events.sql` creada, probada localmente y **aplicada a `planit-v2`** (verificada: registro, search_path, EXECUTE). Sin HTTP/JWT real. Ver [evidencia](../design/verification/r4-block-1/README.md).
+- `npm ci`: NO EJECUTADO.
 - Migraciones locales: NO EJECUTADO.
 - SQL JWT A/B/cross-account: NO EJECUTADO.
 - HTTP/JWT real: NO EJECUTADO.

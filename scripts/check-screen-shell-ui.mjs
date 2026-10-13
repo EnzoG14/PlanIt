@@ -23,7 +23,7 @@ async function fixture(viewport, mode) {
   const own = mode === 'organizer'
   const data = {...event,organizer_id:own ? user.id : event.organizer_id,description:mode === 'long' ? event.description.repeat(80) : event.description}
   if (path === '/auth/v1/user') return reply(user)
-  if (path === '/rest/v1/rpc/get_home_events' || path === '/rest/v1/rpc/discover_public_events') {
+  if (path === '/rest/v1/rpc/search_public_events') {
    if (mode === 'loading') await new Promise(resolve => setTimeout(resolve,1200))
    return mode === 'error' ? reply({message:'fixture failure'},500) : reply(mode === 'empty' ? [] : [{...data,category_name:'Música',image_path:['photo','broken','dark'].includes(mode) ? 'fixture/cover.jpg' : null}])
   }

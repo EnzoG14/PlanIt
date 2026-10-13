@@ -34,7 +34,7 @@ try {
       const path = new URL(route.request().url()).pathname
       const reply = (data,status=200) => route.fulfill({ status, contentType:'application/json',body:JSON.stringify(data) })
       if(path === '/auth/v1/user') return reply(user)
-      if(path === '/rest/v1/rpc/discover_public_events') { calls++; queriedBounds.push(route.request().postDataJSON()); return mode === 'error' ? reply({code:'500',message:'fixture'},500) : reply(mode === 'empty' ? [] : mode === 'limit' ? Array.from({length:101}, (_,index) => ({...event,id:'30000000-0000-4000-8000-'+String(index+1).padStart(12,'0')})) : [event]) }
+      if(path === '/rest/v1/rpc/search_public_events') { calls++; queriedBounds.push(route.request().postDataJSON()); return mode === 'error' ? reply({code:'500',message:'fixture'},500) : reply(mode === 'empty' ? [] : mode === 'limit' ? Array.from({length:101}, (_,index) => ({...event,id:'30000000-0000-4000-8000-'+String(index+1).padStart(12,'0')})) : [event]) }
       if(path === '/rest/v1/events') return reply(mode === 'missing' ? [] : [event])
       if(path === '/rest/v1/categories') return reply([{ id:event.category_id,name:'Música',is_active:true }])
       if(path === '/rest/v1/event_images') return reply([])

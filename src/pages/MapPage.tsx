@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { EventCard } from '../components/EventCard'
 import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
+import { DiscoveryFilters } from '../components/DiscoveryFilters'
+import { useDiscoveryFilters } from '../features/events/useDiscoveryFilters'
+import { hasActiveFilters } from '../features/events/search'
 import { discoverEvents, type EventPreview } from '../features/events/discovery'
 import { defaultLocation, getCurrentLocation, type MapBounds } from '../features/location/geolocation'
 import './discovery.css'
@@ -10,6 +13,9 @@ import { fallbackBounds } from '../components/maps/provider'
 
 const EventMap = lazy(() => import('../components/maps/EventMap').then(module => ({ default: module.EventMap })))
 export function MapPage() {
+  const { filters, filtersKey, search, setFilters } = useDiscoveryFilters()
+  const filtersRef = useRef(filters)
+  useEffect(() => { filtersRef.current = filters })
   const [center, setCenter] = useState(defaultLocation)
   const [bounds, setBounds] = useState<MapBounds>(() => fallbackBounds(defaultLocation))
   const [events, setEvents] = useState<EventPreview[]>([])
@@ -44,7 +50,7 @@ export function MapPage() {
     let active = true
     const timer = window.setTimeout(() => {
       setLoading(true); setError('')
-      discoverEvents(bounds).then(result => {
+      discoverEvents(bounds, filtersRef.current).then(result => {
         if (active) {
           setEvents(result.events); setTruncated(result.truncated); setImageError(result.imageError)
           setSelectedId(current => result.events.some(event => event.id === current) ? current : null)
@@ -57,7 +63,7 @@ export function MapPage() {
       }).finally(() => { if (active) setLoading(false) })
     }, 300)
     return () => { active = false; window.clearTimeout(timer) }
-  }, [bounds, attempt])
+  }, [bounds, attempt, filtersKey])
   async function locate() {
     setLocating(true)
     try { setCenter(await getCurrentLocation()); setLocationNotice('Mapa centrado en tu ubicación. Movelo para explorar.') }
@@ -69,13 +75,14 @@ export function MapPage() {
     <header className="map-heading"><div><h1>Encontrá tu próximo plan</h1><p>Eventos públicos en el mapa</p></div><button className="secondary-button location-button" onClick={locate} disabled={locating}><Icon name="pin" />{locating ? 'Buscando…' : 'Mi ubicación'}</button></header>
     <p className="location-notice" role="status">{locationNotice}</p>
     <button className="text-button" onClick={() => { setCenter({ ...defaultLocation }); setLocationNotice('Ubicación predeterminada: Buenos Aires.') }}>Usar Buenos Aires</button>
+    <DiscoveryFilters filters={filters} onChange={setFilters} idPrefix="map" />
     <Suspense fallback={<StatusMessage title="Cargando mapa">Esperá un momento.</StatusMessage>}><EventMap events={events} center={center} selectedId={selectedId} onSelect={selectFromMarker} onBoundsChange={reportBounds} /></Suspense>
-    {selected && <section ref={preview} className="map-preview" aria-label="Evento seleccionado"><EventCard event={selected} selected returnTo="/map" /><button className="text-button" onClick={() => setSelectedId(null)}>Cerrar vista previa</button></section>}
+    {selected && <section ref={preview} className="map-preview" aria-label="Evento seleccionado"><EventCard event={selected} selected returnTo={`/map${search}`} /><button className="text-button" onClick={() => setSelectedId(null)}>Cerrar vista previa</button></section>}
     <section ref={results} className="map-results" aria-busy={loading} aria-label="Eventos en esta zona"><div className="results-heading"><h2>En esta zona</h2><button className="text-button" onClick={() => setAttempt(value => value + 1)} disabled={loading}>Actualizar eventos</button></div>
-      {loading ? <StatusMessage title="Buscando eventos">Consultando esta zona…</StatusMessage> : error ? <><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage><button className="secondary-button" onClick={() => setAttempt(value => value + 1)}>Reintentar</button></> : !events.length ? <StatusMessage title="No hay eventos en esta zona">Mové el mapa para explorar otros lugares o <Link to="/events/new">creá un evento</Link>.</StatusMessage> : <>
+      {loading ? <StatusMessage title="Buscando eventos">Consultando esta zona…</StatusMessage> : error ? <><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage><button className="secondary-button" onClick={() => setAttempt(value => value + 1)}>Reintentar</button></> : !events.length ? (hasActiveFilters(filters) ? <StatusMessage title="Ningún evento coincide en esta zona">Probá con otro texto, quitá una categoría, limpiá los filtros o mové el mapa.</StatusMessage> : <StatusMessage title="No hay eventos en esta zona">Mové el mapa para explorar otros lugares o <Link to="/events/new">creá un evento</Link>.</StatusMessage>) : <>
         {truncated && <p role="status">Mostramos los primeros 100 eventos. Acercá el mapa para consultar una zona menor.</p>}
         {imageError && <p role="status">Algunas fotos no pudieron cargarse. Podés consultar los eventos igualmente.</p>}
-        <div className="event-card-list">{events.filter(event => event.id !== selectedId).map(event => <EventCard key={event.id} event={event} selected={event.id === selectedId} onSelect={selectFromList} returnTo="/map" />)}</div>
+        <div className="event-card-list">{events.filter(event => event.id !== selectedId).map(event => <EventCard key={event.id} event={event} selected={event.id === selectedId} onSelect={selectFromList} returnTo={`/map${search}`} />)}</div>
       </>}
     </section>
   </div>
