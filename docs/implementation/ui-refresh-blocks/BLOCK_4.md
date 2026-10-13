@@ -34,3 +34,7 @@ Pendientes antes de aceptación: teclado iOS/Android real, safe areas y gestos f
 ## Integración
 
 No se actualiza STATUS compartido. CSS nuevo queda bajo discovery-shell; consumidores compartidos mantienen interfaces. Bloque 7 puede migrar gestión/reincorporaciones sin depender de este bloque. Mantener espacio de la acción inferior al integrar cambios de navegación; contrastar AppLayout/EventCard y CSS con main actualizado y repetir regresiones antes del merge. PR draft; no fusionar.
+
+## Pedido adicional: header y movimiento compartidos
+
+El usuario solicitó compartir la entrada del piloto y el header entre pantallas; confirmó conservar los encabezados especiales de Auth y Chat. Se centralizan los estilos del header principal y la animación por bloques, con protección de acciones fijas, diálogos y reduced motion. Mis eventos reutiliza la misma definición; Cuenta reemplaza Mi perfil/Salir en los otros headers. [Evidencia y reproducción](../../design/verification/ui-refresh/block-4-discovery/header-motion/README.md).

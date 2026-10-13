@@ -61,8 +61,6 @@
   background: radial-gradient(circle 250px at 8% 4%, color-mix(in srgb, var(--pi-color-violet) 58%, transparent), transparent 72%), radial-gradient(circle 220px at 98% 12%, color-mix(in srgb, var(--pi-color-primary) 36%, transparent), transparent 72%), radial-gradient(ellipse 230px 140px at 30% 46%, color-mix(in srgb, var(--pi-color-lavender) 75%, transparent), transparent 72%);
   mask-image: linear-gradient(#000 55%, transparent);
 }
-.discovery-shell .app-header { max-width: 1080px; margin-inline: auto; flex-wrap: wrap; border: 0; }
-.discovery-shell .account-nav { flex-wrap: wrap; }
 .discovery-shell main { max-width: 1080px; padding-top: var(--pi-space-base); }
 .discovery-shell :is(h1, h2, h3, p, dd, strong, a, button) { overflow-wrap: anywhere; }
 .discovery-shell ::selection { background: var(--pi-color-chip-bg); color: var(--pi-color-ink); }

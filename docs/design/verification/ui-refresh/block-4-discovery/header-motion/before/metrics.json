@@ -1,0 +1,31 @@
+{
+  "phase": "before",
+  "environment": "Edge/Playwright; intercepted Auth/REST/Storage; real Mapbox GL engine with empty local style, no remote service validation",
+  "photo": "flat media fixture; no natural photograph",
+  "metrics": [
+    {
+      "name": "home",
+      "width": 390,
+      "mode": "photo",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "mode": "dark",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "mode": "broken",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    }
+  ]
+}

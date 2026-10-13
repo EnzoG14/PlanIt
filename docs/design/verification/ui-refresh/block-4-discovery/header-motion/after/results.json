@@ -1,0 +1,855 @@
+{
+  "environment": "Edge, local Vite, intercepted Auth/REST/Mapbox fixtures; no remote writes",
+  "metrics": [
+    {
+      "path": "/my-events",
+      "width": 320,
+      "header": {
+        "width": 320,
+        "padding": "12px 16px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/home",
+      "width": 320,
+      "header": {
+        "width": 320,
+        "padding": "12px 16px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/map",
+      "width": 320,
+      "header": {
+        "width": 320,
+        "padding": "12px 16px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/me",
+      "width": 320,
+      "header": {
+        "width": 320,
+        "padding": "12px 16px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/notifications",
+      "width": 320,
+      "header": {
+        "width": 320,
+        "padding": "12px 16px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/new",
+      "width": 320,
+      "header": {
+        "width": 320,
+        "padding": "12px 16px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001",
+      "width": 320,
+      "header": {
+        "width": 320,
+        "padding": "12px 16px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/edit",
+      "width": 320,
+      "header": {
+        "width": 320,
+        "padding": "12px 16px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/gallery",
+      "width": 320,
+      "header": {
+        "width": 320,
+        "padding": "12px 16px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/attendees",
+      "width": 320,
+      "header": {
+        "width": 320,
+        "padding": "12px 16px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/my-events",
+      "width": 375,
+      "header": {
+        "width": 375,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/home",
+      "width": 375,
+      "header": {
+        "width": 375,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/map",
+      "width": 375,
+      "header": {
+        "width": 375,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/me",
+      "width": 375,
+      "header": {
+        "width": 375,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/notifications",
+      "width": 375,
+      "header": {
+        "width": 375,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/new",
+      "width": 375,
+      "header": {
+        "width": 375,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001",
+      "width": 375,
+      "header": {
+        "width": 375,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/edit",
+      "width": 375,
+      "header": {
+        "width": 375,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/gallery",
+      "width": 375,
+      "header": {
+        "width": 375,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/attendees",
+      "width": 375,
+      "header": {
+        "width": 375,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/my-events",
+      "width": 390,
+      "header": {
+        "width": 390,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/home",
+      "width": 390,
+      "header": {
+        "width": 390,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/map",
+      "width": 390,
+      "header": {
+        "width": 390,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/me",
+      "width": 390,
+      "header": {
+        "width": 390,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/notifications",
+      "width": 390,
+      "header": {
+        "width": 390,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/new",
+      "width": 390,
+      "header": {
+        "width": 390,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001",
+      "width": 390,
+      "header": {
+        "width": 390,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/edit",
+      "width": 390,
+      "header": {
+        "width": 390,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/gallery",
+      "width": 390,
+      "header": {
+        "width": 390,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/attendees",
+      "width": 390,
+      "header": {
+        "width": 390,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/my-events",
+      "width": 768,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/home",
+      "width": 768,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/map",
+      "width": 768,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/me",
+      "width": 768,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/notifications",
+      "width": 768,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/new",
+      "width": 768,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001",
+      "width": 768,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/edit",
+      "width": 768,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/gallery",
+      "width": 768,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/attendees",
+      "width": 768,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/my-events",
+      "width": 1280,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/home",
+      "width": 1280,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/map",
+      "width": 1280,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/me",
+      "width": 1280,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/notifications",
+      "width": 1280,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/new",
+      "width": 1280,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001",
+      "width": 1280,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/edit",
+      "width": 1280,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/gallery",
+      "width": 1280,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    },
+    {
+      "path": "/events/30000000-0000-4000-8000-000000000001/attendees",
+      "width": 1280,
+      "header": {
+        "width": 600,
+        "padding": "12px 20px",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "color": "rgb(6, 11, 39)",
+        "border": "999px",
+        "height": "44px",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      "motion": {
+        "name": "screen-rise",
+        "duration": "0.6s"
+      }
+    }
+  ]
+}
