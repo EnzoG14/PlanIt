@@ -1,64 +1,41 @@
-# PlanIt
+# PlanIt — Release 4: paquete técnico para implementar con Codex
 
-PWA universitaria para descubrir, organizar y participar en eventos. React 19, TypeScript, Vite, React Router y Supabase.
+**Versión:** 1.1 (decisiones del responsable incorporadas 12/10/2026). **Preparado:** 12/10/2026 (Argentina). **Fuente:** repo `EnzoG14/PlanIt` (`main`, inspeccionado durante preparación) y documento Google Docs «Planificacion», pestañas «Nueva planificación», «Criterios de aceptación», «Especificación técnica» y «Diseño de base de datos». **No se modificó GitHub ni Supabase.**
 
-## Arranque local
+## Archivos y orden recomendado
 
-Usar Node compatible con Vite 8 (20.19+ o 22.12+) y npm.
+1. `docs/requirements/RELEASE_4_REQUIREMENTS.md` — texto funcional oficial: **9 RF, 39 CA**.
+2. `docs/implementation/RELEASE_4_PLAN.md` — plan de arquitectura, datos, seguridad, frontend, migraciones, bloques 0–9 y aceptación.
+3. `docs/implementation/RELEASE_4_DECISIONS_PROPOSED.md` — registro de **7 acuerdos aprobados (A01–A07)** más propuestas técnicas no cerradas. No confundir estas últimas con las decisiones confirmadas.
+4. `docs/implementation/RELEASE_4_STATUS.md` — tabla viva inicial, **todos los bloques pendientes**.
+5. `docs/qa/RELEASE_4_ACCEPTANCE.md` — 39 CA literales, 39 estados «Pendiente».
+6. `docs/qa/RELEASE_4_TEST_PLAN.md` — casos de test funcionales, A/B/anon, amenazas, migraciones, regresiones.
+7. `docs/implementation/RELEASE_4_BLOCK_0_DECISIONS.md` — plantilla de auditoría de Block 0: los hechos verificables se completan al ejecutar.
+8. `docs/qa/RELEASE_4_TEST_REPORT.md` — plantilla de reporte, inicialmente 39/39 NOT RUN y NO-GO.
+9. `docs/implementation/prompts/RELEASE_4_BLOCK_0.md` a `RELEASE_4_BLOCK_9.md` — un prompt autocontenido por PR, ejecutados en orden y con revisión humana.
 
-```powershell
-npm ci
-Copy-Item .env.example .env.local
-# Completar la clave publishable de planit-v2 en .env.local.
-npm run dev
-```
+## Cómo incorporarlo al repositorio
 
-Variables públicas: `VITE_SUPABASE_URL` debe ser `https://iepeqmvzjguwlhnecsdq.supabase.co`; `VITE_SUPABASE_PUBLISHABLE_KEY` debe contener la clave `sb_publishable_...` del mismo proyecto. Obtenerla en la configuración de API de Supabase. Reiniciar Vite después de cambiar variables. Nunca usar secret keys, service_role ni claves privadas en VITE_*. Los archivos de entorno reales se excluyen de Git.
+Copiar `docs/` del paquete a raíz del repositorio **sin reemplazar documentos anteriores**; se crean archivos nuevos R4. Hacer commit de documentación en rama propia, comparar rutas y enlazar desde README si se desea. **Este paquete no incluye migraciones de producción**: cada bloque debe inspeccionar el esquema real y diseñar su SQL incremental con aprobación.
 
-Si falta configuración o el destino es incorrecto, la app muestra un aviso y no inicializa Supabase. Una configuración válida sólo habilita el cliente; no demuestra por sí sola conectividad o permisos.
+## Decisiones del responsable incorporadas
 
-Vite rechaza una clave no pública antes de iniciar o compilar, para impedir que termine incluida en el bundle. El mensaje no imprime la clave.
+1. **Ubicación:** fallback al centro del mapa si GPS no está disponible, claramente identificado; no atribuir una ubicación ficticia al usuario.
+2. **Fecha:** comparar únicamente `starts_at` por día/rango completo de Argentina; no por solapamiento.
+3. **Navegación:** búsqueda y filtros integrados en `/home` y `/map` con estado compartido; sin `/search`.
+4. **Público→oculto:** grants `active` transaccionales para confirmados actuales; jamás revivir `revoked`. Conflicto confirmado+revocado se resuelve explícitamente antes del cambio.
+5. **Oculto→público:** visible para todos según reglas de evento público; conservar grants revocados y estado de participación para futuros ocultamientos.
+6. **Enlaces:** sólo hash en BD, token mostrado al generarse y no recuperable; si se pierde, se rota.
+7. **R3:** el responsable declara R3 integrada y validada. Verificar contratos técnicos en `main` sin reabrir su aprobación.
 
-## Estado del BLOQUE 0
+**Propuestas técnicas no aprobadas específicamente:** radios por defecto, parámetros URL, detalle UI intereses, ranking 100/30/20, formato `#token`, revocar enlace al hacer público, exclusiones de recomendaciones y TTL de URLs firmadas. Están identificadas en el registro de decisiones y Bloque 0.
 
-Rutas base: `/map`, `/register`, `/login`, `/events/new`, `/my-events`, `/events/:id` y 404. `/` redirige a `/map`. Las páginas informan funciones pendientes: todavía no hay registro/login, protección de rutas, mapa ni operaciones de eventos. CSS propio responsive, sin dependencias de estilos.
+Los prompts de bloques 0–9 incluyen estas reglas. El documento de **39 CA oficiales no se alteró**; se agregaron escenarios de prueba complementarios.
 
-La PWA genera manifest, iconos y service worker en producción; precachea recursos estáticos locales y no almacena respuestas de Supabase ni tiles. Para probarla:
+## Estado y limitaciones de auditoría
 
-```powershell
-npm run build
-npm run lint
-npm run check:foundation
-npm run preview -- --host 127.0.0.1
-```
+Se leyó el árbol y archivos relevantes de `main` (React, SQL, R2/R3 docs, políticas y RPC) y las pestañas de Planificación. La imagen PNG de R4 se confirmó presente, pero **no se abrió/inspeccionó visualmente**; los prompts exigen abrirla. No se realizó consulta a Supabase remoto, pruebas JWT A/B ni ejecución de tests de R4. El responsable confirmó R3 integrada/validada con posterioridad al corte documental del STATUS consultado; comprobar exclusivamente que las dependencias técnicas están realmente en la rama base al iniciar R4. Los 39 CA de R4 y sus pruebas siguen pendientes de ejecución.
 
-Abrir la URL que imprime Vite. Verificar rutas directas, navegación con teclado, 404 y diseño móvil. En DevTools → Application comprobar manifest, iconos 192/512/maskable, service worker activo y Cache Storage con recursos locales únicamente. La instalación requiere un navegador compatible y HTTPS fuera de localhost. Hosting futuro debe resolver rutas de la SPA a `index.html`.
+## Actualización 1.2 — Amanecer (13/10/2026)
 
-`npm run check:foundation` prueba configuración inválida, destino histórico/imitado, claves no públicas, manifest y PNG del build. `npm run check:foundation -- --connection` añade una lectura real del catálogo con la clave publishable local; espera acceso anónimo denegado, no un catálogo vacío. No escribe datos ni imprime la clave.
-
-Iconos geométricos propios: generados con `scripts/generate-icons.py` (Python + Pillow), coherentes con `public/favicon.svg`. PNG opacos; contenido maskable dentro de la zona segura central. No se necesita Python para compilar la app.
-
-Mapa futuro: Leaflet + React Leaflet, instalación al primer uso. Tiles OpenStreetMap con atribución visible y sin descarga anticipada/offline; ver [decisión y límites](docs/architecture.md).
-
-## Base de datos
-
-Destino único: **planit-v2 — iepeqmvzjguwlhnecsdq**. La base histórica es intocable.
-
-- Aplicadas: `20261010011204` (vacía) y `20261010013449` (profiles/categories).
-- Pendiente: `20261010023448_restrict_rls_auto_enable_execute.sql`, revocación de permisos de ejecución de una función interna. Conserva `ensure_rls`.
-- El dry-run del BLOQUE 0 sólo identifica esa migración pendiente. No se aplicó SQL remoto.
-
-Antes de cualquier despliegue, revisar la ref de `supabase/.temp/project-ref`, que debe coincidir con el destino; consultar ayuda de la CLI instalada. Comprobaciones sin aplicación:
-
-```powershell
-npx supabase migration list --project-ref iepeqmvzjguwlhnecsdq
-npx supabase db push --dry-run --skip-vault --project-ref iepeqmvzjguwlhnecsdq
-```
-
-El dry-run enumera cambios pendientes; no valida ejecutando el SQL. Aplicar migraciones requiere autorización expresa. No editar migraciones ya aplicadas.
-
-## Documentación y verificación
-
-[Arquitectura](docs/architecture.md), [modelo de datos](docs/database.md), [instrucciones](AGENTS.md) y [evidencia del BLOQUE 0](docs/block-0-verification.md).
-
-Los criterios funcionales RF-R1-01 a RF-R1-07 siguen pendientes de los bloques 1–6. No se crearon cuentas ni datos de prueba en BLOQUE 0.
+Paquete revisado sobre `main` `a378259a60106ddd07b111080a24677ad509bc49` (30 commits desde la base anterior, QA R3 y refresh Amanecer PR #27–#34). Mantiene los **9 RF / 39 CA** y los acuerdos A01–A07. `docs/implementation/RELEASE_4_VISUAL_INTEGRATION.md` fija integración de rutas, componentes, UI y QA. Todos los prompts 0–9 incluyen contrato Amanecer, código reutilizable y regresiones; **no** iniciar R4 desde la documentación v1.1. Diseño: `DESIGN.md` precede al lab y mockups históricos. El paquete es documental: no implanta SQL ni cambios de aplicación.
