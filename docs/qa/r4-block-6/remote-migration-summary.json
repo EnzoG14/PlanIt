@@ -1,0 +1,54 @@
+{
+  "project": "iepeqmvzjguwlhnecsdq",
+  "authorization": "Explicit user request: hace las migraciones a la base remota",
+  "applied_at_utc": "2026-10-13T23:07:55.953Z",
+  "migration": "20261014120004_event_visibility_links.sql",
+  "applied": true,
+  "migration_count": 23,
+  "dry_run_after": "up to date; no pending migrations",
+  "remote_function_sources_identical_to_git": 5,
+  "function_source_hashes": {
+    "create_event": "79c3611d5194aaff84eea1793ca4edcb",
+    "update_event": "432520635c291ca5556ddc3087003fec",
+    "set_event_visibility": "915d4e0e8d3fe638f5cbaa0e6047bea8",
+    "create_or_rotate_event_link": "f6309cb8d696b40ca42737098263410c",
+    "get_event_link_status": "5319879ed59ae09b0df65a3d5e69f449"
+  },
+  "remote_dependencies_before": [],
+  "pgcrypto_schema": "extensions",
+  "rls_privileges_policy_index": "PASS",
+  "remote_sql_smoke": "PASS: three owner RPCs deny authenticated without identity; ROLLBACK; no business rows written",
+  "advisors": {
+    "before": 23,
+    "after": 26,
+    "errors": 0,
+    "new_entries": 4,
+    "notes": "Three new intentional owner-only SECURITY DEFINER RPCs; update_event warning has changed signature (one replaces prior entry). Existing password-protection warning retained.",
+    "new_entries_details": [
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "detail": "Function `public.create_or_rotate_event_link(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/create_or_rotate_event_link`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional."
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "detail": "Function `public.get_event_link_status(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_event_link_status`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional."
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "detail": "Function `public.set_event_visibility(p_event_id uuid, p_visibility text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/set_event_visibility`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional."
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "detail": "Function `public.update_event(p_event_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text, p_visibility text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/update_event`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional."
+      }
+    ]
+  },
+  "http_jwt_storage_realtime": "NOT RUN",
+  "redemption": "NOT RUN: B7",
+  "business_fixture_writes": "NONE",
+  "historical_project_touched": false
+}

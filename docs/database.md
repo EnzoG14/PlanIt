@@ -1,5 +1,13 @@
 # PlanIt — Modelo de datos y migraciones
 
+## R4 Bloque 6 — Visibilidad/rotación (aplicada)
+
+`20261014120004_event_visibility_links.sql` agrega los parámetros finales `create_event(..., p_visibility text default 'public')` y `update_event(..., p_visibility text default null)` mediante reemplazo de firma sin CASCADE ni dependientes SQL versionados. Hay una única firma por RPC, con defaults que mantienen llamadas R1–R3; la edición antigua conserva la visibilidad actual. INSERT de visibility sólo para auth.uid propietario, con constraints existentes; no se concede UPDATE directo. Edición y transición usan el trigger B5 bajo lock, de modo que confirmed+revoked produce rollback íntegro.
+
+RPC nuevas de dueño: `set_event_visibility(uuid,text)`, `create_or_rotate_event_link(uuid)` y `get_event_link_status(uuid)` (sólo booleano, sin hash/ID/token). Las tres son DEFINER con search_path vacío y EXECUTE sólo authenticated. Rotación usa `extensions.gen_random_bytes(32)` + `extensions.digest(token,'sha256')`, lock de evento, revocación e INSERT atómicos y UNIQUE parcial B5. No expires_at; fin/cancelación/archivo bloquean generación. D12 conserva grants e invalida links al hacer público. No se agrega canje de tokens ni administración de grants en este bloque.
+
+Migración creada con CLI como `20261013223733`, renombrada detrás de B5 para respetar el orden versionado. Replay y concurrencia en PostgreSQL efímero PASS. **Aplicada/verificada en planit-v2 el 13/10/2026 por autorización expresa posterior del usuario**: dependencias ausentes, pgcrypto en extensions, 23 versiones sincronizadas, dry-run al día, 5 cuerpos de función iguales a Git, RLS/ACL/defaults/índice y guardas sin identidad PASS. Asesores sin errores; tres nuevas RPC DEFINER de dueño generan avisos intencionales, edición reemplaza su aviso por la nueva firma. [Acta remota](qa/r4-block-6/remote-migration-summary.json). Sin escrituras de fixtures de negocio ni HTTP/JWT real. [Pruebas y límites](qa/r4-block-6/README.md).
+
 ## R4 Bloque 5 — Accesos ocultos (aplicada)
 
 `20261014120003_hidden_event_access.sql` creada/probada por replay local y **aplicada/verificada en planit-v2 el 13/10/2026 con autorización explícita posterior**. 22 versiones sincronizadas, dry-run sin pendientes, 11 cuerpos de funciones idénticos a Git, RLS/ACL/índices/constraints/triggers inspeccionados y asesores sin hallazgos nuevos. Smoke SQL read-only con rol sin identidad e identidad sintética PASS; no equivale a HTTP/JWT real. [Acta remota](qa/r4-block-5/remote-migration-summary.json). Modelo del dominio H de Planificación:

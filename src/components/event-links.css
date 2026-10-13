@@ -1,0 +1,9 @@
+.event-link-panel { min-width: 0; display: grid; gap: var(--pi-space-compact); }
+.event-link-panel h3 { margin: 0; font-size: var(--pi-font-title-size); }
+.event-link-panel > p { margin: 0; color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); line-height: 1.5; }
+.event-link-panel > button { justify-self: start; display: inline-flex; align-items: center; gap: var(--pi-space-tight); min-height: 48px; }
+.event-link-panel > button .icon { width: 20px; height: 20px; }
+.event-management .event-link-dialog { text-align: start; }
+.event-link-dialog input { box-sizing: border-box; width: 100%; min-height: 52px; padding: 12px; border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-field); background: var(--pi-color-surface); color: var(--pi-color-ink); font: inherit; }
+.event-link-dialog label { display: block; margin-bottom: var(--pi-space-tight); font-size: var(--pi-font-label-size); }
+.event-management .event-link-dialog p { font-size: var(--pi-font-meta-size); }

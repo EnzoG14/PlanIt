@@ -1,0 +1,69 @@
+{
+  "base": "0428d4ff601056fa60d61788087ff352c310e070",
+  "date": "2026-10-13",
+  "commands": [
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "notes": "Pre-existing chunk size warning"
+    },
+    {
+      "command": "npm run lint",
+      "result": "PASS",
+      "notes": "Pre-existing warnings only; no errors"
+    },
+    {
+      "command": "npm run check:amanecer",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "command": "npm run check:event-links",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "command": "npm run check:hidden-access",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "command": "npm run check:events",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "command": "npm run check:edit-event",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "command": "npm run check:event-actions",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "command": "npm run check:event-links:ui",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "command": "npm run check:events:ui",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "command": "npm run check:edit-event:ui",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "command": "npm run check:event-actions:ui",
+      "result": "PASS",
+      "notes": ""
+    }
+  ],
+  "remote": "PASS: migration applied by explicit authorization; 23 versions, 5 function sources/ACL/RLS/index/identity guards; no real JWT",
+  "redemption": "NOT RUN: B7",
+  "humanAcceptance": "PENDING"
+}

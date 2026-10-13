@@ -1,0 +1,186 @@
+{
+  "base": "0428d4f",
+  "environment": "Edge/Playwright; Auth/REST fixtures intercepted, SQL not connected, fake tokens masked; no real JWT",
+  "results": [
+    {
+      "width": 320,
+      "test": "Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors",
+      "result": "PASS"
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 export type EventValues = {
   title: string; description: string; start_date: string; start_time: string
   end_date: string; end_time: string; category_id: string; capacity: string
-  location_name: string; address: string; latitude: string; longitude: string
+  location_name: string; address: string; latitude: string; longitude: string; visibility?: string
 }
 export type EventErrors = Partial<Record<keyof EventValues | 'images', string>>
 export type Category = { id: string; name: string; is_active: boolean }
-export const emptyEvent: EventValues = { title: '', description: '', start_date: '', start_time: '', end_date: '', end_time: '', category_id: '', capacity: '', location_name: '', address: '', latitude: '', longitude: '' }
+export const emptyEvent: EventValues = { title: '', description: '', start_date: '', start_time: '', end_date: '', end_time: '', category_id: '', capacity: '', location_name: '', address: '', latitude: '', longitude: '', visibility: 'public' }
 export const imageTypes = ['image/jpeg', 'image/png', 'image/webp']
 export const maxImageBytes = 5 * 1024 * 1024
 
@@ -42,6 +42,7 @@ export function validateImages(files: Pick<File, 'type' | 'size'>[]): string | u
 }
 export function validateEvent(values: EventValues, categories: Category[], files: Pick<File, 'type' | 'size'>[], now = new Date()): EventErrors {
   const errors: EventErrors = {}
+  if (!['public', 'unlisted'].includes(values.visibility ?? 'public')) errors.visibility = 'Elegí Público u Oculto.'
   if (![...values.title.trim()].length || [...values.title.trim()].length > 120) errors.title = 'Escribí un título de hasta 120 caracteres.'
   if (![...values.description.trim()].length || [...values.description.trim()].length > 3000) errors.description = 'Escribí una descripción de hasta 3000 caracteres.'
   const start = argentinaTimestamp(values.start_date, values.start_time)

@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:event-links": "node scripts/check-event-links.mjs",
+    "check:event-links:ui": "node scripts/check-event-links-ui.mjs",
     "check:hidden-access": "node scripts/check-hidden-access.mjs",
     "check:hidden-access:ui": "node scripts/check-hidden-access-ui.mjs",
     "check:suggestions": "node scripts/check-suggestions.mjs",

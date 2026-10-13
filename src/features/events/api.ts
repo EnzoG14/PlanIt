@@ -69,6 +69,7 @@ export async function publishEvent(attempt: PublishAttempt, userId: string, onPr
       p_category_id: attempt.values.category_id, p_capacity: Number(attempt.values.capacity),
       p_location_name: attempt.values.location_name.trim() || null, p_address: attempt.values.address.trim(),
       p_latitude: Number(attempt.values.latitude), p_longitude: Number(attempt.values.longitude), p_image_paths: attempt.paths,
+      p_visibility: attempt.values.visibility ?? 'public',
     })
     if (result.error) {
       // Only a PostgreSQL response proves rollback. Network/PostgREST failures
