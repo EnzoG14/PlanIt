@@ -23,7 +23,7 @@ Regresiones ejecutadas: `check:search`, `check:search:ui` (su selector de objeti
 
 ## Migración
 
-`20261014120000_search_public_events_date_radius.sql`: **creada y probada localmente. NO aplicada a ningún proyecto remoto** (sin autorización). El frontend de esta rama llama a la firma de 14 argumentos: **la migración debe aplicarse a `planit-v2` antes de desplegar**, o Inicio y Mapa fallarán contra el remoto (PGRST202).
+`20261014120000_search_public_events_date_radius.sql`: **creada, probada localmente y **aplicada a `planit-v2`** (`iepeqmvzjguwlhnecsdq`) el 14/10/2026 con `supabase db push` por autorización expresa del responsable (dry-run previo: era la única pendiente). Verificación remota de sólo lectura: migración registrada, una única función de 14 argumentos (la de 9 fue eliminada), `prosecdef=false`, `search_path=""`, EXECUTE `anon`=false / `authenticated`=true. Sin consultas HTTP con JWT reales; proyecto histórico intacto.
 
 ## Criterios de aceptación (8 CA + cierre de R4-02.CA-02)
 
