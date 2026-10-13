@@ -1,0 +1,7 @@
+{
+  "sha": "89f32d5c83a0f91477863fb3b1b4dcf904f55f9b",
+  "localMarkdownFailures": [],
+  "historicalRunUnchanged": true,
+  "method": "check link targets and Git diff against historical run commit after documentary rebase",
+  "servers": "both audit-owned Vite sessions terminated; A/B own tabs closed"
+}

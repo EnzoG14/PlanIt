@@ -1,0 +1,2299 @@
+{
+  "sha": "89f32d5c83a0f91477863fb3b1b4dcf904f55f9b",
+  "sourceSHA": "a378259a60106ddd07b111080a24677ad509bc49",
+  "execution": "reuse of prior captures because runtime/config/assets blobs identical",
+  "sourceManifest": "../a378259/screenshots.json",
+  "generatedInSourceRun": 919,
+  "retained": 208,
+  "contactSheet": "../a378259/review-contact-sheet.jpg",
+  "items": [
+    {
+      "path": "../a378259/check-amanecer-auth-ui/login-auth-error-390x844.png",
+      "sha256": "f9fa9f00fd8ffe3908fd525588a84b9a47b888f2aa619f91d9fb842830d330b5",
+      "bytes": 94145,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/login-font-fallback-390x844.png",
+      "sha256": "883c7492b019e64bcede0e2f3fc75095cc1abbea5c9a51cc64d7f22881372a83",
+      "bytes": 62152,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/login-initial-1280x900.png",
+      "sha256": "07d369a615080b5ee2b0a1dccb748d25e2629f881fc7c3657e75717c1b9cad7e",
+      "bytes": 154772,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/login-initial-320x800.png",
+      "sha256": "53ab018f82b7bb912fa67f985a0aaebc3fad611c6142b2ffedf169b8b5206925",
+      "bytes": 72444,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/login-initial-360x800.png",
+      "sha256": "cef81dac06050de83559f78e5cc2460e71c51631f133fcbe7a076615666691d5",
+      "bytes": 77021,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/login-initial-375x812.png",
+      "sha256": "81280948da0baeefd749299c846e9b47d5d06993125b2817048761068e5d9c83",
+      "bytes": 79078,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/login-initial-390x844.png",
+      "sha256": "fa8c4b8593403b04452782cce78ccfc33bc5139ae7d56cea8b67cca064887cd7",
+      "bytes": 80322,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/login-initial-768x1024.png",
+      "sha256": "72513c07d4260e62002237ea480241ac86503c3162c1c7bd2a5e604623d7d5cb",
+      "bytes": 116934,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/login-short-text-200-390x844.png",
+      "sha256": "ef55667dd67a7989c9edf2f53611c780ea41e8076313e3655447a362d11d463b",
+      "bytes": 107595,
+      "imageDimensions": [
+        390,
+        916
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/login-text-200-390x844.png",
+      "sha256": "b917e682e6af049f89e6667cc3ee75e1296477beb6ecc112718021107c5aeb08",
+      "bytes": 101091,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/login-validation-390x844.png",
+      "sha256": "97e5ca45314a39a156e267103f7d8cc3cfbee290902f6f6e07dd607dd658ebbd",
+      "bytes": 85718,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-auth-error-390x844.png",
+      "sha256": "d6748f43c5eb6c6cd88d1d1ac683d555f0b7c30cc61e50c89c13d6653d039fbf",
+      "bytes": 99833,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-confirmation-390x844.png",
+      "sha256": "a3b62e5ae4cc5bf76919d9292496663b8d952e4f477610eaccaf0badbab8d2c3",
+      "bytes": 87283,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-font-fallback-390x844.png",
+      "sha256": "8fd0d002a5c873880abb1df8c8797c7af6ab301edac1825dac40d9edf3171300",
+      "bytes": 60540,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-initial-1280x900.png",
+      "sha256": "8b61cfbe27c4339e8026fb291c6811bb48040eb6f56e1ecd66d10918f1b05efc",
+      "bytes": 161885,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-initial-320x800.png",
+      "sha256": "dbfc0dede64b4125c08fc5c225f91968d7a8ddf700d81ee233efa88246dcbb93",
+      "bytes": 78997,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-initial-360x800.png",
+      "sha256": "5c7f65fa5bdeea8ceef00de3714cdac857aa29b299a4b385f29842929fd046cf",
+      "bytes": 83806,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-initial-375x812.png",
+      "sha256": "a4fa45692f26d331489ffa12239f9fa562b079f091e5da3c820482bc4ef182cd",
+      "bytes": 85839,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-initial-390x844.png",
+      "sha256": "37c9e31d7e2a0868ea4352193c1e9c1a75fe103ba328808a8adb04703a4ab619",
+      "bytes": 87493,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-initial-768x1024.png",
+      "sha256": "a1c2ef010bb65b3999faf86e35006832ff89ec66998f1e64ad519f93bb15c0b7",
+      "bytes": 123699,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-short-text-200-390x844.png",
+      "sha256": "40ec73fb81478e115c35b249168be9e3252badcb99aa533bee58b83051682334",
+      "bytes": 117197,
+      "imageDimensions": [
+        390,
+        1038
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-text-200-390x844.png",
+      "sha256": "5ef5458aa72d0c3bc4d101987b04de2ed29be8a304206ff2032b6b772f29bcf4",
+      "bytes": 104036,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-amanecer-auth-ui/register-validation-390x844.png",
+      "sha256": "54d944e2832b9d131005ca716639c6caf9e72d3ef8ec3cbb3582414824f850b8",
+      "bytes": 96851,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "auth normal + estados"
+    },
+    {
+      "path": "../a378259/check-chat-layout/after-1280x900.png",
+      "sha256": "22d40ec3b051a5cdacf35726f3a88abf8439385788794a932ce3ddaee1fd4401",
+      "bytes": 206049,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "scroll/composer"
+    },
+    {
+      "path": "../a378259/check-chat-layout/after-360x800.png",
+      "sha256": "420c3ab553989658d50b05ed6ae03173be4596e19669f2ef37ff8bd742c8bce6",
+      "bytes": 114605,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "scroll/composer"
+    },
+    {
+      "path": "../a378259/check-chat-layout/after-375x812.png",
+      "sha256": "68671f16132dd4f37795ad80a567c04319102fb72f724af2f0a859d88dc3643e",
+      "bytes": 116897,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "scroll/composer"
+    },
+    {
+      "path": "../a378259/check-chat-layout/after-390x844.png",
+      "sha256": "e267e9259cdf4f4c21d2adeb32bdcf6e288e96f5cfe100b2c2f2c27b6557359b",
+      "bytes": 119646,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "scroll/composer"
+    },
+    {
+      "path": "../a378259/check-chat-layout/keyboard-height-390.png",
+      "sha256": "9788e8eb0dc8ca71882fc70d8ca21e37f832ee7ca5b6c892daf699cdcf446b14",
+      "bytes": 87618,
+      "imageDimensions": [
+        390,
+        500
+      ],
+      "retained": true,
+      "reason": "scroll/composer"
+    },
+    {
+      "path": "../a378259/check-events-ui/backend-error-390x844.png",
+      "sha256": "c3fdcaf227b446c2074af8de65892ce55de982c1ba3b5edb899f5d3b5da4d708",
+      "bytes": 216642,
+      "imageDimensions": [
+        390,
+        2687
+      ],
+      "retained": true,
+      "reason": "validacion/publicacion fixture"
+    },
+    {
+      "path": "../a378259/check-events-ui/filled-390x844.png",
+      "sha256": "f9368c5f4405ac45bfdc45ad3f46e1dc481b4d4d5a98bec0ad28d65ff27127b1",
+      "bytes": 214633,
+      "imageDimensions": [
+        390,
+        2597
+      ],
+      "retained": true,
+      "reason": "validacion/publicacion fixture"
+    },
+    {
+      "path": "../a378259/check-events-ui/publish-viewport-390x844.png",
+      "sha256": "f08f56f2638d0bee8a83035eb39a453582cd569290403dae216603857416e6a9",
+      "bytes": 42618,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "validacion/publicacion fixture"
+    },
+    {
+      "path": "../a378259/check-events-ui/validation-390x844.png",
+      "sha256": "a9a2f914b8166735d35201282316b956396611dfa50c0eaf56f8020b32c35a55",
+      "bytes": 242660,
+      "imageDimensions": [
+        390,
+        2647
+      ],
+      "retained": true,
+      "reason": "validacion/publicacion fixture"
+    },
+    {
+      "path": "../a378259/check-profile-ui/profile-avatar-mobile.png",
+      "sha256": "f4e6bd89350bd3e38d091b0e1bf3b8a4fcd0413239d25928c02b53f4fba1a9ca",
+      "bytes": 70169,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "avatar"
+    },
+    {
+      "path": "../a378259/check-r3/event-actions-ui/cancel-dialog-390.png",
+      "sha256": "c10d57e4dc1f0ac7e27422f0a4acd5a84fd6bffd4d06645f81eec33adc1ee0d1",
+      "bytes": 74183,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "confirmaciones"
+    },
+    {
+      "path": "../a378259/check-r3/event-actions-ui/duplicate-dialog-390.png",
+      "sha256": "d5380bde46561de9f76133f4f71df3509bbcf41d642b052b6eab82ab8ef045d7",
+      "bytes": 69844,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "confirmaciones"
+    },
+    {
+      "path": "../a378259/check-r3/my-events-ui/empty-390x844.png",
+      "sha256": "d67819ea3cd0e4474afe10d3f9f2b14433d68cac8f0dd05c5f2f5456899cfe9e",
+      "bytes": 92745,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "piloto + regresion"
+    },
+    {
+      "path": "../a378259/check-r3/my-events-ui/error-390x844.png",
+      "sha256": "f51b22225e7b31b0d81708ad166a7f7c0bd3c071e3e6dc3f0fcfd7481f7dc576",
+      "bytes": 96613,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "piloto + regresion"
+    },
+    {
+      "path": "../a378259/check-r3/my-events-ui/menu-390x844.png",
+      "sha256": "71816b8f717b03c7edc30ad6e7135bc14b0a7587114a1cfef98f81ebb66f0bd9",
+      "bytes": 122674,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "piloto + regresion"
+    },
+    {
+      "path": "../a378259/check-r3/my-events-ui/organizing-1280x900.png",
+      "sha256": "7dcf6452cc6a7de195ea130cbef579faca9e2ba09d592966ed4a32a09c73354b",
+      "bytes": 147634,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "piloto + regresion"
+    },
+    {
+      "path": "../a378259/check-r3/my-events-ui/organizing-360x800.png",
+      "sha256": "87f8714917dab7a97bd778d9f38d187c7cf4d98308873ac1b13d9a338155735c",
+      "bytes": 113306,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "piloto + regresion"
+    },
+    {
+      "path": "../a378259/check-r3/my-events-ui/organizing-375x812.png",
+      "sha256": "8c3644f13e8cb84abb885c0f5ccf735e1f39ea66303f1fde40afb0eb50509385",
+      "bytes": 113827,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "piloto + regresion"
+    },
+    {
+      "path": "../a378259/check-r3/my-events-ui/organizing-390x844.png",
+      "sha256": "d8df6304f0dae8b25821aa19c402720b8b6dd0f171e7f4ce40e8880c2c51da46",
+      "bytes": 118592,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/check-r3/my-events-ui/organizing-768x1024.png",
+      "sha256": "011d32adadcf68af97fefaab280c3cea843489924fe0fa6dadacd4cfe96a1086",
+      "bytes": 134727,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "piloto + regresion"
+    },
+    {
+      "path": "../a378259/check-r3/my-events-ui/participating-390x844.png",
+      "sha256": "2686154e07ad4d6ad85c540db2e0d7229b4f281a8f6ecf13a38f61b83b835645",
+      "bytes": 98705,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "piloto + regresion"
+    },
+    {
+      "path": "../a378259/check-r3/my-events-ui/permissions-390x844.png",
+      "sha256": "0b37912384ddc48dfbfc1613b24d4649d2efbfee562c976b5a4f049a93a939af",
+      "bytes": 97284,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "piloto + regresion"
+    },
+    {
+      "path": "../a378259/check-r3/rejoin-ui/approve-dialog-390.png",
+      "sha256": "23e609141d1ea6f467ec2b15bdd1dfc57674f848cf531312c6a740d37e1b35b7",
+      "bytes": 95000,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "confirmaciones"
+    },
+    {
+      "path": "../a378259/check-r3/rejoin-ui/reject-dialog-390.png",
+      "sha256": "0a5bb23de2c6de0de264276262743730cd27071de30b2f440e2e025cefdbd9c9",
+      "bytes": 76458,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "confirmaciones"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-empty-390.png",
+      "sha256": "f4b9497535afda4a21144c4b0bbc7286d87414d6ebd2c63d4f2de4a4f2880855",
+      "bytes": 74812,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-error-390.png",
+      "sha256": "f5556f6ab8c2680816ff87189be6f5453b326b0bfa97b105ff75702839e04472",
+      "bytes": 61672,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-full-1280.png",
+      "sha256": "3c23e3a3d08d76618713eedfda6c2d023a5fe375b9fd64c3ccb9f9a1d0371c2f",
+      "bytes": 205961,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-full-320.png",
+      "sha256": "282387dc0b02fd36a080cd69ea8073c5a703a702e1be2da04c418bdedd5e16d0",
+      "bytes": 106641,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-full-360.png",
+      "sha256": "d94269baffa0a1ab2ebd03aed11b795d763a7bde63b89cf9edab6719db9827d9",
+      "bytes": 115868,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-full-375.png",
+      "sha256": "b7735561fecb98dfb02fa79fe5be2252e28df70a892bb3ce83987af81566090d",
+      "bytes": 118768,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-full-390.png",
+      "sha256": "c0737b949072154c306dc9443f2c33b3638c7f2fc6d3e003e200ebf7a3b185f7",
+      "bytes": 121217,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-full-768.png",
+      "sha256": "a1cd5d41448eae7342cc83b3fd03aa9f1788692d7bde0362b6d1511338fc88d8",
+      "bytes": 189995,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-keyboard-simulated-320.png",
+      "sha256": "8a3390b041bedce091c63bc9454880ecde501a3030f3d4b2d95947e0ec73add6",
+      "bytes": 64848,
+      "imageDimensions": [
+        320,
+        320
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-loading-390.png",
+      "sha256": "a496f610eb703130743621bdffa27a6915a3aa82eb1b119383e345b518370600",
+      "bytes": 42341,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-long-390.png",
+      "sha256": "a4c984be0a44472f00c0d676b2eb1a62b9b52d336e1757cdca82f96b517f0992",
+      "bytes": 106029,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/chat-readonly-390.png",
+      "sha256": "89d6efa94cab1bcef01a43664f56cc6b9f549b02b8e5b9a9802cdf0d2f12a9ff",
+      "bytes": 121755,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/notifications-empty-390.png",
+      "sha256": "c58275c895a96b7df21508bc506354251d24379959024a57c4a3e8b756f92e1b",
+      "bytes": 82096,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/notifications-error-390.png",
+      "sha256": "e7805e0f50f6dd6e821bb8768f3d204ca6615022c1519450f93d32eed401b670",
+      "bytes": 77314,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/notifications-full-1280.png",
+      "sha256": "c387a05e4bf2caee24c92aee8384e4ce87aab8f94778c3409122a605dfc5ea1e",
+      "bytes": 257097,
+      "imageDimensions": [
+        1280,
+        1505
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/notifications-full-320.png",
+      "sha256": "e380d741d66905eb47e158440e0734c953ae317dd89dbc760cde8c9b055c531f",
+      "bytes": 174286,
+      "imageDimensions": [
+        320,
+        1758
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/notifications-full-360.png",
+      "sha256": "670a2956f08f790d438d5517335538e87109d505b9842707bfa72a78ff398c7d",
+      "bytes": 176838,
+      "imageDimensions": [
+        360,
+        1736
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/notifications-full-375.png",
+      "sha256": "9ea2ee866527656270e4186767b47c997fd888e931f96742b4f84f5e42514cf3",
+      "bytes": 174505,
+      "imageDimensions": [
+        375,
+        1736
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/notifications-full-390.png",
+      "sha256": "a0d2d907603281a73f9680830f43591fce34f055c3e06177fb09ec3814b6ff6f",
+      "bytes": 182683,
+      "imageDimensions": [
+        390,
+        1601
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/check-social-ui/notifications-full-768.png",
+      "sha256": "d0779105c65091c104184432ed2c716791cc2e5b265a1038b00f8e2ceac2aae6",
+      "bytes": 220411,
+      "imageDimensions": [
+        768,
+        1505
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/notifications-loading-390.png",
+      "sha256": "1a14f7ba2eb7d4a6f5cfcfa9525fb827d0a37fa499649e480222ee68ccdf9419",
+      "bytes": 59699,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/notifications-long-390.png",
+      "sha256": "d41a3a0076f289c97eab906bf8bce628b42b08f042cd1f94096cbf50a763e856",
+      "bytes": 238457,
+      "imageDimensions": [
+        390,
+        5203
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/profile-empty-390.png",
+      "sha256": "818d119bf287d4fd3b93325236cacadba85830e3668ec2b317588b3134f24b90",
+      "bytes": 99835,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/profile-error-390.png",
+      "sha256": "bdb66e070aaddb277ec9fe7d04adf172d8234ed40762a7697ff3819f725ddae2",
+      "bytes": 83899,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/profile-full-1280.png",
+      "sha256": "e4c449d75755ba4145f64c57402fd05f1c352b09fb04655fbc0a1b11dd9f66d6",
+      "bytes": 175147,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/profile-full-320.png",
+      "sha256": "25d9efc7c988c972214c402dbecd2fae70b08cb5b82351ccf05ae51036834476",
+      "bytes": 90693,
+      "imageDimensions": [
+        320,
+        806
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/profile-full-360.png",
+      "sha256": "b41cfca218d60eec7b94741387f094fce2f0eed0c519bc20491d67c28e8b7920",
+      "bytes": 97001,
+      "imageDimensions": [
+        360,
+        806
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/profile-full-375.png",
+      "sha256": "43acef555f8320b95b18723afd0ac84677c4cfeb4d1baa3f6afb95692f850d09",
+      "bytes": 98739,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/profile-full-390.png",
+      "sha256": "111c005cfb1e77389d7e82ff7b83d64058df72c8c8dd8cb244b327c6937740ae",
+      "bytes": 101324,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/check-social-ui/profile-full-768.png",
+      "sha256": "084f3af103241a0c605e93843cf383a64b20f7fb6aad9c0301736aa9b3f28ef3",
+      "bytes": 138651,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/profile-loading-390.png",
+      "sha256": "bed198719b5f1fa5e73d9efcccc1571f7bc5e2247ce3a234ca59fdb62f7add52",
+      "bytes": 87477,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/profile-long-390.png",
+      "sha256": "6e51f0537910b67b001409ae4a80bcaa216d7330afb64331a0fd9094dbafc9ad",
+      "bytes": 171487,
+      "imageDimensions": [
+        390,
+        1623
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/check-social-ui/profile-reduced-full-375.png",
+      "sha256": "3ce37200f5082b2fa1c845b25988e3b96b4ee007dedc6ab4881444f9354b1ef6",
+      "bytes": 98147,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "social seis viewports + estados"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-320-large-text.jpg",
+      "sha256": "02c680a7c2fb602b141d4bbabfce808417d0d5267a842587add60188604a5f4b",
+      "bytes": 15564,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-archived.jpg",
+      "sha256": "5a33f3b789b7ab8f9276c4be53b6d7b1c9ce8d7f0e32e21aad3fc95163e627bc",
+      "bytes": 13600,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-broken.jpg",
+      "sha256": "9d14de09302a4c310b59b6e37925d3a4e2e82d16013dcb3302447540ed5397d9",
+      "bytes": 14126,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-cancelled.jpg",
+      "sha256": "ae73d5b8b0fc768da9be2154abbf447b9c06b708c96f3d8341d61e96d9548574",
+      "bytes": 13105,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-confirmed.jpg",
+      "sha256": "910a8ab3dd4a1865cfaa8179437368ca9804a6c287e514460eb48f5450f100ba",
+      "bytes": 21323,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-dark.jpg",
+      "sha256": "6c14caf92d38d5d85c8c0095ea6e55b0a91ed4efb357ca90670c733f0d0e3753",
+      "bytes": 14134,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-ended.jpg",
+      "sha256": "8acc91903c7510eb15f113f0e1a667d860bf485ba00fbeb9cb428ec61fcc3c5a",
+      "bytes": 13027,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-full.jpg",
+      "sha256": "5b7d8bdb97bd6d3e7480a17a4d9f7b0648523f9ca8f63f1e5c64077ccc546e01",
+      "bytes": 12862,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-large-text.jpg",
+      "sha256": "b2885e4538bde06f53198bc5fefa915784241d23dd077abc7f61a6afa3e7dee7",
+      "bytes": 16916,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-long.jpg",
+      "sha256": "0a94353c96d8959bb6b2d89a77d1ea8feab8c899253218a27226c2a5e69b61d9",
+      "bytes": 14004,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-organizer.jpg",
+      "sha256": "b2fda33f891e943b817dcdd76863a7072d84eacc0cb5be318705f2af2f7ff5b2",
+      "bytes": 26560,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-photo.jpg",
+      "sha256": "9681524fc606cdaf9a43b2d7e8ca1bb43c6f07f276f8daf573ec387a473cd384",
+      "bytes": 14119,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-removed.jpg",
+      "sha256": "0387379e9917f31b17986864b2235652ae72c60d19d4446c4e00b71bae66fcc4",
+      "bytes": 25182,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/detail-390-short-height.jpg",
+      "sha256": "a3e4f9e1271a68a950f0c422b60b8730a73476aae13e451404c222bd0b956c39",
+      "bytes": 7277,
+      "imageDimensions": [
+        390,
+        360
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/home-390-empty.jpg",
+      "sha256": "c084d985f96ce95263248f813e9c75cf3e1b32f9f0899a0cdea2b270cba6a218",
+      "bytes": 13799,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/home-390-error.jpg",
+      "sha256": "ee00184d14a70f7a18c5a430144841522054a112344bed9916739cf06a526791",
+      "bytes": 14297,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/home-390-loading.jpg",
+      "sha256": "676f03f242b5e7da1146121793c48dc937874a465adb703d6a0abda8f83f139d",
+      "bytes": 14050,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/map-1280-selection.jpg",
+      "sha256": "6a5620240efb13ae554ec8c9124658f335b21e08fe216181d5d09b35356feedc",
+      "bytes": 24368,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/map-320-selection.jpg",
+      "sha256": "7d9953eb7a7751c2d170ecd03479697da97e2665359afc2ebe7273b6fac67f1b",
+      "bytes": 11323,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/map-360-selection.jpg",
+      "sha256": "869862c26148c38492b32dd483d99fcb30b015cca370126d44c0562d4f6faa25",
+      "bytes": 11885,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/map-375-selection.jpg",
+      "sha256": "44f67adf8f263287c87ce20ad8b087d218e8c0ca1283ee22ab26987f4e75482a",
+      "bytes": 12319,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/map-390-map-failure.jpg",
+      "sha256": "f2d45615b68446f68c45ede47b8ffb888d31879553d7f1f4f18868ff96febb75",
+      "bytes": 35519,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/map-390-selection.jpg",
+      "sha256": "07aac8839a344f5f1fa359de7d57098e2c68102db2bc9efc3a4115e928b059a0",
+      "bytes": 12478,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/discovery-observe/map-768-selection.jpg",
+      "sha256": "b3ecabb48ccfb4943ab9ed07954a7f8918704240a76e854fe4a467fa94b7291d",
+      "bytes": 28091,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "descubrimiento seis viewports + estados390"
+    },
+    {
+      "path": "../a378259/forms-rejoin/create-normal-1280.png",
+      "sha256": "f9373f653093141f8cd1452ff987afd79b27121a8cbdbeffa7b77009e9c0d645",
+      "bytes": 262536,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/create-normal-320.png",
+      "sha256": "c543ac8a5f077d458a0ff1ab0cdbb2c2bf109469d09f4afb5f3d6c5fa4f40782",
+      "bytes": 101907,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/create-normal-360.png",
+      "sha256": "a6cacd404af2908d03add73446a4ead881a22dcfb6fa9945048838a3dc3e7d85",
+      "bytes": 111720,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/create-normal-375.png",
+      "sha256": "0d3733526ffb12d8b443b7efb809834a23394e579987a80b0121fb6eebba6f18",
+      "bytes": 113765,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/create-normal-390.png",
+      "sha256": "513b1f4cd9f4a8df5ba2f5cd30be7f18299a316b33c270a041c36b2fb5debb57",
+      "bytes": 117166,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/forms-rejoin/create-normal-768.png",
+      "sha256": "db25463f8f1252dab0d8a0e8efc09e4bb2b040c52acb4917ad1a6638c05be657",
+      "bytes": 191905,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/create-text200-320.png",
+      "sha256": "1475404f60cbacd8bc9ba2af10f87163b4490300dc72b84dcd369a87ddb36daa",
+      "bytes": 46349,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/create-text200-390.png",
+      "sha256": "7efbddc633631ba0758bded9dbeb3d1798bb2caf2e202a228e888f9e8f52eb19",
+      "bytes": 51811,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/create-text200-short-320.png",
+      "sha256": "0ba0c409ba6b62e39df66351d6cd24c3877e2f217705e6470799eabdc0c6a9e3",
+      "bytes": 22187,
+      "imageDimensions": [
+        320,
+        240
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/edit-normal-1280.png",
+      "sha256": "2f0b85d4fb942bf52c12faf698d39976435835e3d3de6b4e6b38713e7990bc26",
+      "bytes": 246525,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/edit-normal-320.png",
+      "sha256": "7281393fcf4335a259f3e1f3f40f8a5f1ef7a3e62cb8097eb277c1cb9c5a07fe",
+      "bytes": 99999,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/edit-normal-360.png",
+      "sha256": "a294f57f699aeeedf86d99364be443cc299525620966c35c8d7de79f0855414f",
+      "bytes": 107616,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/edit-normal-375.png",
+      "sha256": "ea2673ff00be093ff6ffcca16ba0f49ea297468d8eeaf0eb9a8a00fe218b7426",
+      "bytes": 110660,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/edit-normal-390.png",
+      "sha256": "e86d0f9c71edd86907acb995b7c5d8b2f58bbe406998c22d45bd997b5545c496",
+      "bytes": 115908,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/forms-rejoin/edit-normal-768.png",
+      "sha256": "8cfc6df18925f6fb0bcb0554929c6e59be0de557682bd0f2bf2e0a10ce0997d4",
+      "bytes": 180588,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/edit-text200-320.png",
+      "sha256": "dd2f280ffac1cc908fdd85679e3dc5b907e9c32ea762c4a7c9d249ee676f137e",
+      "bytes": 51246,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/edit-text200-390.png",
+      "sha256": "68f538c7375bcaee1b2d67e3719d208eaaf2e34c8aaade4511ecbd4814353c2e",
+      "bytes": 60343,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/edit-text200-short-320.png",
+      "sha256": "ce2067d124d5df4b78141ad0cab5271b0f568ad9d8dc357325383158c4a9bce5",
+      "bytes": 20425,
+      "imageDimensions": [
+        320,
+        240
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/rejoin-normal-1280.png",
+      "sha256": "60b00a091b2df59c5a816ad54eb08cc405dfaa330814e97fac4b23e3b2943b51",
+      "bytes": 181708,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/rejoin-normal-320.png",
+      "sha256": "45ba41b507acf08a78bfa910e5071b9cb8e5a0d91d92d72284b80766ba92a954",
+      "bytes": 109246,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/rejoin-normal-360.png",
+      "sha256": "7130cb2d5ce64abca767f68188b38308d25057249a04302408d052c176fb7793",
+      "bytes": 113395,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/rejoin-normal-375.png",
+      "sha256": "ccf01a6683e9de595ad51ea209190839b03a7462b97615fa691ef715b7fe905b",
+      "bytes": 113672,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/rejoin-normal-390.png",
+      "sha256": "69c329e6bf59ebf51066b255df0d2d1fbfefdd81c28c3db110af6f3fc59b13f8",
+      "bytes": 127210,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/forms-rejoin/rejoin-normal-768.png",
+      "sha256": "5cdf3ed66e5a12a77dfbed4f4cd4f175c2dedaa484239c11f85738fa8d70b845",
+      "bytes": 176504,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/rejoin-text200-320.png",
+      "sha256": "83fac8b8abd9fce0c19d305211660762ad3f8059e9843f30d67f1d41144970e4",
+      "bytes": 99942,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/rejoin-text200-390.png",
+      "sha256": "7932de0ee4225bd7caa50dc607e49feafb7f1cbeb371092d37902abfba41b38e",
+      "bytes": 125326,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/forms-rejoin/rejoin-text200-short-320.png",
+      "sha256": "63a86caccf00f152220fb12ea9d79f9b3a8aec113922a258a387322425ff044a",
+      "bytes": 18930,
+      "imageDimensions": [
+        320,
+        240
+      ],
+      "retained": true,
+      "reason": "seis viewports + stress"
+    },
+    {
+      "path": "../a378259/integration/classic-login-320.png",
+      "sha256": "7a85940a7f83a2ce75db2f298a95d956b2af4b706328054f18b7e9b80c9ccfe1",
+      "bytes": 56774,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/integration/classic-register-320.png",
+      "sha256": "9953ef482d703fc3f5c3e9193e5ea0acddfad949e0f328bc5a0379b0293ef486",
+      "bytes": 55778,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/integration/notice-1280x900.png",
+      "sha256": "31ff2b49e8594b44a3e4d0496167e9479c5fe99e8d830b5c0932f126f7e8848f",
+      "bytes": 68898,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/integration/notice-320x800.png",
+      "sha256": "14688e58954e2b55aeeff6ec7d411e567021b7f5ee7323e604e251dc5b7b951f",
+      "bytes": 52756,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/integration/notice-360x800.png",
+      "sha256": "82822d71eae1108bf7dab0fd885a3e512eae43ebdc57873e42d2ce5e00006853",
+      "bytes": 53950,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/integration/notice-375x812.png",
+      "sha256": "c406acb11c1d1dfa0c7817f6c0de07fac7d78e434fd1195c6a0efee49eb7b1c8",
+      "bytes": 56391,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/integration/notice-390x844.png",
+      "sha256": "dbb5d9ac708eafae3a36f96e8cd0a7fefed9f4c566e3e015302273091d1d4313",
+      "bytes": 57541,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/integration/notice-768x1024.png",
+      "sha256": "e7bc804d2ae803c33640fb6f6318e3951e9cd2b5272baeb6a202be1453c6adcd",
+      "bytes": 76084,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/confirmed-1280.png",
+      "sha256": "bc5e65d14922bb38299dff5eaf0b6b664761c7a8792039bb1e8b3b6ec4cf4f30",
+      "bytes": 176468,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/confirmed-320.png",
+      "sha256": "8a8dd5dadd8bd07f7dbc646d0a55e21404adc65bd781422f22793ecc9c1a61ee",
+      "bytes": 96402,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/confirmed-360.png",
+      "sha256": "32ab49a214472542064269cf822f93e8eb47097fa6864fad65a8a9909ec4bd43",
+      "bytes": 103834,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/confirmed-375.png",
+      "sha256": "b9e34fb930d6a6c58635381a65e88c903d39a0117d04daf43539343be552d72c",
+      "bytes": 107126,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/confirmed-390.png",
+      "sha256": "9934a3fd84423ef6460c13d6e41320c087d15568ca0047525689205fd126d9cb",
+      "bytes": 113999,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/confirmed-768.png",
+      "sha256": "24da5a3458916263706b950e50dadfcf6a4132fa1d8af8549299d8483b8a13f2",
+      "bytes": 184880,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/dialog-390.png",
+      "sha256": "93ddb5244885930b15e2a9e62e144551d027441d5e7a9ea9ab5c78970d683cae",
+      "bytes": 101454,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/dialog-short-1280.png",
+      "sha256": "d203911906d02a989772a14b16d798262541032e2352bcf73f8179c596508eca",
+      "bytes": 81594,
+      "imageDimensions": [
+        1280,
+        320
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/dialog-short-320.png",
+      "sha256": "04339f3d4cef31a36e7cd4b7c40949b412b6c171074db68771da5beacdf0cb24",
+      "bytes": 35262,
+      "imageDimensions": [
+        320,
+        320
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/dialog-short-390.png",
+      "sha256": "203aca3275c776175714931b829583f0037ce561387949ac9cc3dace84683fb6",
+      "bytes": 39081,
+      "imageDimensions": [
+        390,
+        320
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/empty-390.png",
+      "sha256": "35bcdec9b41e63233e08bdac5cd9beecfc1daf7db5474a694b720548198e1bb1",
+      "bytes": 106186,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/focus-1280.png",
+      "sha256": "7f552f8241e717175445467db3ab44039c7845dac90fa4ea91745e2617baeacb",
+      "bytes": 177929,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/focus-320.png",
+      "sha256": "b83b1bc95f1c1d8bee010d496d5c109f35b17ab38b3ce9e2721e2e07bc8174c9",
+      "bytes": 97476,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/long-identity-390.png",
+      "sha256": "d2a95dac9a8aa1899457151c40662c071435952ae7c5d0b2f094214fdc03f6c3",
+      "bytes": 125454,
+      "imageDimensions": [
+        390,
+        1048
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/removed-390.png",
+      "sha256": "06447ce0d9213f8ab949d4ac34ca266aa5eb63475ea55e60793aacb4f53bc495",
+      "bytes": 103345,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/search-empty-390.png",
+      "sha256": "82dc1a21403d9cf6ceb4b8865592ed47b375b2d8cb8604a0b8925f32c38d27a6",
+      "bytes": 101758,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/text-200-1280.png",
+      "sha256": "3727ee0ce411983b41a9df7ea4bf31341365343d9b84c05b862782f4e714efc6",
+      "bytes": 191492,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-attendees-audit/text-200-320.png",
+      "sha256": "3ff306fde2ecbabfdd16eac280b094951978604ebd16bdf0db895ef6565c0aeb",
+      "bytes": 92495,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/dialog-short-1280.png",
+      "sha256": "3136e9bafd3da7aa3d27f80fc012f2ccecf74b6f1c3b9741aef38dbf11e3738f",
+      "bytes": 105469,
+      "imageDimensions": [
+        1280,
+        320
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/dialog-short-320.png",
+      "sha256": "0f7b797fe8f1d9886d00aafe19cf3a7a55830e1a80c19ae61a91924d9015573f",
+      "bytes": 32894,
+      "imageDimensions": [
+        320,
+        320
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/dialog-short-390.png",
+      "sha256": "ea1dbf7377690d03d8076f4576fb5eb0bd802bc1384c5304208a2dbebe2c2d22",
+      "bytes": 32021,
+      "imageDimensions": [
+        390,
+        320
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/empty-390.png",
+      "sha256": "09758b79951620636b4cf50acc978c8cf251e1ed257ee2d612eb8054a1450a55",
+      "bytes": 134138,
+      "imageDimensions": [
+        390,
+        1147
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/focus-1280.png",
+      "sha256": "82333970f3196659049f7ba54d0588bacda71c88c8207f4437d00c05e2e5ece9",
+      "bytes": 188781,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/focus-320.png",
+      "sha256": "2a0cb95f83abbe5cd73fbd2a02172d32ba665142132c51fd530e6340db917533",
+      "bytes": 100890,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/gallery-1280.png",
+      "sha256": "d709979cada1bdb9ad596b0e22671c4f937a09ac55cf32d7828c31d299ab9f37",
+      "bytes": 234611,
+      "imageDimensions": [
+        1280,
+        1513
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/gallery-320.png",
+      "sha256": "8e497ea02a8af71a62f574bfe98d497a50531077d833c8e5cb0d0dd3dec61d05",
+      "bytes": 189915,
+      "imageDimensions": [
+        320,
+        2973
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/gallery-360.png",
+      "sha256": "da46ae935811fba47178f2f62dcb8346cb10c76b6d15fff5384f0ed5ee795b8a",
+      "bytes": 197128,
+      "imageDimensions": [
+        360,
+        3031
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/gallery-375.png",
+      "sha256": "600982750398a94c459461d5be327166258080681f8803c865198e818ccd6ce9",
+      "bytes": 200809,
+      "imageDimensions": [
+        375,
+        3095
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/gallery-390.png",
+      "sha256": "7a73632f109aea736ff215dbfa200f63634da3800c71ea8b4287734deea8a946",
+      "bytes": 206012,
+      "imageDimensions": [
+        390,
+        3160
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/gallery-768.png",
+      "sha256": "d87be8df6a9021dbc6af54143847f54d405c11ae946a2164167cc11724ae3474",
+      "bytes": 226420,
+      "imageDimensions": [
+        768,
+        1985
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/ten-390.png",
+      "sha256": "cfefaa973cb6b9013b3b2da869667abedbc1e3b318199996c16d7358016b1744",
+      "bytes": 254018,
+      "imageDimensions": [
+        390,
+        4614
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/text-200-1280.png",
+      "sha256": "a60cd0a79ecc3336a6e0a465cbd89a0a2e5493bb8a6ed66a991ca4fa6b9e48cc",
+      "bytes": 211547,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/text-200-320.png",
+      "sha256": "b754fa5fa3e02f55773f1bb1f952e2a9151a10d9f03eb12d43cc396f51c8c14e",
+      "bytes": 93975,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/upload-failure-390.png",
+      "sha256": "bdc37afcdc3dd18c94c8108b00065d1a0d84975b3763dc4767d6575ca1dfe223",
+      "bytes": 239948,
+      "imageDimensions": [
+        390,
+        3838
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/upload-shortcut-1280.png",
+      "sha256": "163b7d97b8e1edbc9ea1d70be844598db65ca009f1e21c15a1f72673b12b9fe7",
+      "bytes": 80469,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/management-gallery-audit/upload-shortcut-320.png",
+      "sha256": "663aa1ba920f7fea6e3a36648fc7809944aca98b5e30d8c188c2dd2d592d68b9",
+      "bytes": 45006,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "gestion geometria/foco/extremos"
+    },
+    {
+      "path": "../a378259/notifications-synchronized-probe/mobile-empty.png",
+      "sha256": "f95d3636cfbba70eb30b0d1dd0e7978a61602ae1bb24fdf0da7cc13d62c0f15f",
+      "bytes": 74233,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "fixture sincronizado"
+    },
+    {
+      "path": "../a378259/notifications-synchronized-probe/mobile-error.png",
+      "sha256": "92f131194602368b11c2751e2cd8f55073da6cefd9cddb4ae63510f90ed98dbe",
+      "bytes": 78681,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "fixture sincronizado"
+    },
+    {
+      "path": "../a378259/notifications-synchronized-probe/mobile-inbox.png",
+      "sha256": "d45c12bf5a7cf5831c4ded6792602ab4c80b36be9f67bbe88efd4736e6df6130",
+      "bytes": 116666,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "fixture sincronizado"
+    },
+    {
+      "path": "../a378259/runner-my-events-refresh/account-menu-320x800.png",
+      "sha256": "0efed648f06405d407627021e8e9d2265c52dec7f9109bebcdb849f6b5a74cb1",
+      "bytes": 115377,
+      "imageDimensions": [
+        320,
+        1086
+      ],
+      "retained": true,
+      "reason": "ejecucion parcial runner fallido"
+    },
+    {
+      "path": "../a378259/runner-my-events-refresh/organizing-320x800.png",
+      "sha256": "21f7d535484213fee554ecb3e582085851363c78ffa4f07a9ef641a7e2d6c906",
+      "bytes": 125646,
+      "imageDimensions": [
+        320,
+        1086
+      ],
+      "retained": true,
+      "reason": "ejecucion parcial runner fallido"
+    },
+    {
+      "path": "../a378259/social-confirm/chat-320x240-100-viewport.png",
+      "sha256": "be1b6fd5ce23cb64dfb113379fb44943912269a3e3de0c057e0c3f57450c6093",
+      "bytes": 33432,
+      "imageDimensions": [
+        320,
+        240
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/social-confirm/chat-320x240-200-viewport.png",
+      "sha256": "ef1df25f249f6ef9f357bed081266c30fd3a63a7f3ffd9fdcda439bf16e39f54",
+      "bytes": 27450,
+      "imageDimensions": [
+        320,
+        240
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/social-confirm/chat-390x240-100-viewport.png",
+      "sha256": "58c2e40cacb355c4428b15a55d4b2b6f7caab99ea889449fd4b61458d2d61101",
+      "bytes": 35775,
+      "imageDimensions": [
+        390,
+        240
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/social-confirm/notifications-390x844-200-viewport.png",
+      "sha256": "fba51a21c6c4097076d863898f59a9b405f282e84395e08f04e0a971a7bb9767",
+      "bytes": 123251,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/social-confirm/profile-320x800-200-viewport.png",
+      "sha256": "ecd750b15ecf907244ffb535169aa72e8b0523f4d02f05bab2bf8d3194923038",
+      "bytes": 95279,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "panel revisado"
+    },
+    {
+      "path": "../a378259/social-stress/chat-text200-320.png",
+      "sha256": "4ceabfbeaeb1710222d6a3c5af6453c54469d5bda11071490616cc4c030e169a",
+      "bytes": 100901,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "chat200"
+    },
+    {
+      "path": "../a378259/social-stress/chat-text200-390.png",
+      "sha256": "679c102e3500bfd0351ff2f8169f2d91e277c26a15030840979dc79588842007",
+      "bytes": 118122,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "chat200"
+    },
+    {
+      "path": "../a378259/targeted/lazy-detail-390x844.png",
+      "sha256": "660f7bfb8dd9083cdf205a46a29b1113fa12dcb18a674e4755e20dee8b1d4492",
+      "bytes": 2743,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/targeted/lazy-home-390x844.png",
+      "sha256": "660f7bfb8dd9083cdf205a46a29b1113fa12dcb18a674e4755e20dee8b1d4492",
+      "bytes": 2743,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/targeted/lazy-map-390x844.png",
+      "sha256": "660f7bfb8dd9083cdf205a46a29b1113fa12dcb18a674e4755e20dee8b1d4492",
+      "bytes": 2743,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "hallazgo/contraprueba"
+    },
+    {
+      "path": "../a378259/discovery-stable/detail-stable-1280x900.png",
+      "sha256": "61c59b5f67d9235b557f81a50d81144966b78ed74fb30638ab86ee31a60d274e",
+      "bytes": 158193,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/detail-stable-320x800.png",
+      "sha256": "82e7b569c0081951ec8e12b02674a50e1a9ac3d44467221a46fa36505364aae1",
+      "bytes": 99960,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/detail-stable-360x800.png",
+      "sha256": "2c311eee3330db3f942c3bc60a489419c83e8e6e0b29fe9f69c0b4fc39e4ea31",
+      "bytes": 102959,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/detail-stable-375x812.png",
+      "sha256": "2a9c187c4aa686b117c53393696a48b3d4da188c926ef863a4b23f0a3ba67a91",
+      "bytes": 113470,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/detail-stable-390x844.png",
+      "sha256": "2788f0d72d790495c1985ff5b284dc977c60c4ad68617e61936e0338800aa066",
+      "bytes": 113224,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/detail-stable-768x1024.png",
+      "sha256": "28aac30ee662d4bef144ad1a142ab3738f57366d62994f482609d0fb8f222754",
+      "bytes": 144525,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/home-stable-1280x900.png",
+      "sha256": "d1b193a534404399fcd14e708b949ad857a75a5b5c5661bbd6c4135992182336",
+      "bytes": 122243,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/home-stable-320x800.png",
+      "sha256": "24ef029a52882bf4dea60010cef65902f9b63535479ed69ad6a3d5f7a1ff005c",
+      "bytes": 89724,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/home-stable-360x800.png",
+      "sha256": "a53e7fc440ede5771754382c7904395cfda2da39140e8c9f9cd9b3e4bd2b6916",
+      "bytes": 93950,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/home-stable-375x812.png",
+      "sha256": "033f9156608c98ec7d75aa6f37f1b3d6d713bd0006684212e513000e9e5074d8",
+      "bytes": 94911,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/home-stable-390x844.png",
+      "sha256": "918cda0435c024c8d3c40bfb0334ab2126712696b6e925d8dd9ecc2a0a3049df",
+      "bytes": 96228,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/home-stable-768x1024.png",
+      "sha256": "f96a623c39baa703a6ba8466bca9ab52b8c6c27b98989f1234c16040ce2f174b",
+      "bytes": 110493,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/map-stable-1280x900.png",
+      "sha256": "4f48e55f3ae42526118b5832cd17307833c10d1885c903fd54a7efcf5f352a1b",
+      "bytes": 143048,
+      "imageDimensions": [
+        1280,
+        900
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/map-stable-320x800.png",
+      "sha256": "a8fb18b5ccc539cf8ad01529c00696377fe964a59d281d97d5a44f21d862a3c6",
+      "bytes": 104172,
+      "imageDimensions": [
+        320,
+        800
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/map-stable-360x800.png",
+      "sha256": "e75b1f2a3e78b138df97f46f11731a7a3a5f0d80d1e2824f6ae74aaba5aff63a",
+      "bytes": 112874,
+      "imageDimensions": [
+        360,
+        800
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/map-stable-375x812.png",
+      "sha256": "2cb4e99130d4ee14bd9a87a6731b4a0799cb259b2c964a1227dcc08f13075e92",
+      "bytes": 114912,
+      "imageDimensions": [
+        375,
+        812
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/map-stable-390x844.png",
+      "sha256": "f474dfc1a518ccb1cb8a1c0aebf6f4383f88ed18f5b77ae3fcc72ab85c9d193d",
+      "bytes": 113689,
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    },
+    {
+      "path": "../a378259/discovery-stable/map-stable-768x1024.png",
+      "sha256": "b9a9e6eaf7ae8ea4bbc18d685b35c36acb3a336053073458247b59882fda9b24",
+      "bytes": 132431,
+      "imageDimensions": [
+        768,
+        1024
+      ],
+      "retained": true,
+      "reason": "stable normal after 850ms, source of visual confirmation"
+    }
+  ]
+}

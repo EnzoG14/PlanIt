@@ -1,0 +1,1208 @@
+{
+  "previousSHA": "a378259a60106ddd07b111080a24677ad509bc49",
+  "currentSHA": "89f32d5c83a0f91477863fb3b1b4dcf904f55f9b",
+  "dateArgentina": "2026-10-13",
+  "reason": "origin/main advanced during execution; PR35 contains documentation R4 only",
+  "changedPaths": [
+    "CHANGELOG_R4_1_1.md",
+    "CHANGELOG_R4_1_2.md",
+    "README.md",
+    "docs/implementation/RELEASE_4_BLOCK_0_DECISIONS.md",
+    "docs/implementation/RELEASE_4_DECISIONS_PROPOSED.md",
+    "docs/implementation/RELEASE_4_PLAN.md",
+    "docs/implementation/RELEASE_4_STATUS.md",
+    "docs/implementation/RELEASE_4_VISUAL_INTEGRATION.md",
+    "docs/implementation/prompts/RELEASE_4_BLOCK_0.md",
+    "docs/implementation/prompts/RELEASE_4_BLOCK_1.md",
+    "docs/implementation/prompts/RELEASE_4_BLOCK_2.md",
+    "docs/implementation/prompts/RELEASE_4_BLOCK_3.md",
+    "docs/implementation/prompts/RELEASE_4_BLOCK_4.md",
+    "docs/implementation/prompts/RELEASE_4_BLOCK_5.md",
+    "docs/implementation/prompts/RELEASE_4_BLOCK_6.md",
+    "docs/implementation/prompts/RELEASE_4_BLOCK_7.md",
+    "docs/implementation/prompts/RELEASE_4_BLOCK_8.md",
+    "docs/implementation/prompts/RELEASE_4_BLOCK_9.md",
+    "docs/qa/RELEASE_4_ACCEPTANCE.md",
+    "docs/qa/RELEASE_4_TEST_PLAN.md",
+    "docs/qa/RELEASE_4_TEST_REPORT.md",
+    "docs/requirements/RELEASE_4_REQUIREMENTS.md"
+  ],
+  "protectedPathScopes": [
+    "src",
+    "scripts",
+    "public",
+    "supabase",
+    "package.json",
+    "package-lock.json",
+    "vite.config.ts",
+    "tsconfig.json",
+    "tsconfig.app.json",
+    "tsconfig.node.json",
+    "index.html",
+    "DESIGN.md",
+    "PRODUCT.md",
+    "AGENTS.md",
+    "docs/design/AGENTS.md",
+    "docs/design/DESIGN_SYSTEM.md",
+    "docs/design/proposals/amanecer-direction.md",
+    "docs/design/UI_WORKFLOW.md",
+    "docs/implementation/UI_REFRESH_R1_R3_PLAN.md",
+    "docs/implementation/UI_REFRESH_R1_R3_STATUS.md",
+    "docs/qa/RELEASE_1_ACCEPTANCE.md",
+    "docs/qa/RELEASE_1_TEST_REPORT.md",
+    "docs/qa/RELEASE_2_ACCEPTANCE.md",
+    "docs/qa/RELEASE_2_TEST_REPORT.md",
+    "docs/qa/RELEASE_3_ACCEPTANCE.md",
+    "docs/qa/RELEASE_3_TEST_REPORT.md",
+    ".impeccable/design.json",
+    ".impeccable/config.json"
+  ],
+  "protectedFilesCompared": 189,
+  "allIdentical": true,
+  "comparisons": [
+    {
+      "path": ".impeccable/config.json",
+      "previousBlob": "747d7b34c477d148b20b6fd59b3b9e752db1136b",
+      "currentBlob": "747d7b34c477d148b20b6fd59b3b9e752db1136b",
+      "identical": true
+    },
+    {
+      "path": ".impeccable/design.json",
+      "previousBlob": "db33662cb2900a1a94a38dc184c8c2f356c8815f",
+      "currentBlob": "db33662cb2900a1a94a38dc184c8c2f356c8815f",
+      "identical": true
+    },
+    {
+      "path": "AGENTS.md",
+      "previousBlob": "a343578226e78d630127b341ceba212125e696f7",
+      "currentBlob": "a343578226e78d630127b341ceba212125e696f7",
+      "identical": true
+    },
+    {
+      "path": "DESIGN.md",
+      "previousBlob": "4eea68f1785df36a95d0edc7424e55055db9eb92",
+      "currentBlob": "4eea68f1785df36a95d0edc7424e55055db9eb92",
+      "identical": true
+    },
+    {
+      "path": "PRODUCT.md",
+      "previousBlob": "ee5eace55a7262fe7211ec51e734233caafb808d",
+      "currentBlob": "ee5eace55a7262fe7211ec51e734233caafb808d",
+      "identical": true
+    },
+    {
+      "path": "docs/design/AGENTS.md",
+      "previousBlob": "2cd99581cab2141d022a85d6e98f3d5cf45f7b35",
+      "currentBlob": "2cd99581cab2141d022a85d6e98f3d5cf45f7b35",
+      "identical": true
+    },
+    {
+      "path": "docs/design/DESIGN_SYSTEM.md",
+      "previousBlob": "3322729f2d1a0796a99cab9124edf34966072b77",
+      "currentBlob": "3322729f2d1a0796a99cab9124edf34966072b77",
+      "identical": true
+    },
+    {
+      "path": "docs/design/UI_WORKFLOW.md",
+      "previousBlob": "b49463fa3f939e56379ab32215d5ac91a5ab7f85",
+      "currentBlob": "b49463fa3f939e56379ab32215d5ac91a5ab7f85",
+      "identical": true
+    },
+    {
+      "path": "docs/design/proposals/amanecer-direction.md",
+      "previousBlob": "293d55cb88753b1c41cbad84dd227d983a226386",
+      "currentBlob": "293d55cb88753b1c41cbad84dd227d983a226386",
+      "identical": true
+    },
+    {
+      "path": "docs/implementation/UI_REFRESH_R1_R3_PLAN.md",
+      "previousBlob": "83de09038096128cab32f66a0053ef5940384da2",
+      "currentBlob": "83de09038096128cab32f66a0053ef5940384da2",
+      "identical": true
+    },
+    {
+      "path": "docs/implementation/UI_REFRESH_R1_R3_STATUS.md",
+      "previousBlob": "055558c4e899f1a51730ad602fd1050673c32599",
+      "currentBlob": "055558c4e899f1a51730ad602fd1050673c32599",
+      "identical": true
+    },
+    {
+      "path": "docs/qa/RELEASE_1_ACCEPTANCE.md",
+      "previousBlob": "478f6530ba2954170b1c4d7af8e7862e59990bdc",
+      "currentBlob": "478f6530ba2954170b1c4d7af8e7862e59990bdc",
+      "identical": true
+    },
+    {
+      "path": "docs/qa/RELEASE_1_TEST_REPORT.md",
+      "previousBlob": "d6ecae802ae938da52b649cedae5a8879b898b3f",
+      "currentBlob": "d6ecae802ae938da52b649cedae5a8879b898b3f",
+      "identical": true
+    },
+    {
+      "path": "docs/qa/RELEASE_2_ACCEPTANCE.md",
+      "previousBlob": "b5f951295579da7e410502687201ac2f9e9d8913",
+      "currentBlob": "b5f951295579da7e410502687201ac2f9e9d8913",
+      "identical": true
+    },
+    {
+      "path": "docs/qa/RELEASE_2_TEST_REPORT.md",
+      "previousBlob": "9ce7b9bb7b423017599394178c3e1db560c8129a",
+      "currentBlob": "9ce7b9bb7b423017599394178c3e1db560c8129a",
+      "identical": true
+    },
+    {
+      "path": "docs/qa/RELEASE_3_ACCEPTANCE.md",
+      "previousBlob": "8aa300d4ff33046f5eae0105ad84f976f6109402",
+      "currentBlob": "8aa300d4ff33046f5eae0105ad84f976f6109402",
+      "identical": true
+    },
+    {
+      "path": "docs/qa/RELEASE_3_TEST_REPORT.md",
+      "previousBlob": "80d4dd4bc66865d447aa9f6ac85f35db43acafa0",
+      "currentBlob": "80d4dd4bc66865d447aa9f6ac85f35db43acafa0",
+      "identical": true
+    },
+    {
+      "path": "index.html",
+      "previousBlob": "8ae1348d56833a69fc0193d08c1004f93c246435",
+      "currentBlob": "8ae1348d56833a69fc0193d08c1004f93c246435",
+      "identical": true
+    },
+    {
+      "path": "package-lock.json",
+      "previousBlob": "9d553e0daae51282a92053a6e8f80fe82f7bf192",
+      "currentBlob": "9d553e0daae51282a92053a6e8f80fe82f7bf192",
+      "identical": true
+    },
+    {
+      "path": "package.json",
+      "previousBlob": "6163598477edbd42e44f88ecadfbe7493c8309b2",
+      "currentBlob": "6163598477edbd42e44f88ecadfbe7493c8309b2",
+      "identical": true
+    },
+    {
+      "path": "public/favicon.svg",
+      "previousBlob": "8651550ef90dd9baac8b45c99823f166eb36d835",
+      "currentBlob": "8651550ef90dd9baac8b45c99823f166eb36d835",
+      "identical": true
+    },
+    {
+      "path": "public/icons.svg",
+      "previousBlob": "e9522193d9f796a9748e9ad8c952a5df73c87db9",
+      "currentBlob": "e9522193d9f796a9748e9ad8c952a5df73c87db9",
+      "identical": true
+    },
+    {
+      "path": "public/icons/pwa-192.png",
+      "previousBlob": "9c00814ae85b68f7db84b5451e44ca406b4f6123",
+      "currentBlob": "9c00814ae85b68f7db84b5451e44ca406b4f6123",
+      "identical": true
+    },
+    {
+      "path": "public/icons/pwa-512.png",
+      "previousBlob": "9a833e570a0f79fa88feefc62250b45ed0d362cc",
+      "currentBlob": "9a833e570a0f79fa88feefc62250b45ed0d362cc",
+      "identical": true
+    },
+    {
+      "path": "public/icons/pwa-maskable.png",
+      "previousBlob": "9a833e570a0f79fa88feefc62250b45ed0d362cc",
+      "currentBlob": "9a833e570a0f79fa88feefc62250b45ed0d362cc",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-actions-refresh-ui.mjs",
+      "previousBlob": "14ee8266ee222671e1032784dcbcead9e1dfc6f8",
+      "currentBlob": "14ee8266ee222671e1032784dcbcead9e1dfc6f8",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-amanecer-auth-ui.mjs",
+      "previousBlob": "9d063106794efc779aed3b22138086e8a8b1d205",
+      "currentBlob": "9d063106794efc779aed3b22138086e8a8b1d205",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-amanecer-tokens.mjs",
+      "previousBlob": "0db0a8cb63003fef785ef8d29eb5c15deee915af",
+      "currentBlob": "0db0a8cb63003fef785ef8d29eb5c15deee915af",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-attendees-ui.mjs",
+      "previousBlob": "2a6166aa8184f8d813a9b460b6b78c7d3248dc84",
+      "currentBlob": "2a6166aa8184f8d813a9b460b6b78c7d3248dc84",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-attendees.mjs",
+      "previousBlob": "352fdb6284c5f5ef2450a19d76db9669d556754a",
+      "currentBlob": "352fdb6284c5f5ef2450a19d76db9669d556754a",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-auth.mjs",
+      "previousBlob": "716bce440075c7ab65a7864fbffaacd534c7be21",
+      "currentBlob": "716bce440075c7ab65a7864fbffaacd534c7be21",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-block-5-regressions.mjs",
+      "previousBlob": "9037d396f92b53655d2ed81b058ac151219a477e",
+      "currentBlob": "9037d396f92b53655d2ed81b058ac151219a477e",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-block-6-regressions.mjs",
+      "previousBlob": "4157d63270e0162c334d8629799d9a4fb625022b",
+      "currentBlob": "4157d63270e0162c334d8629799d9a4fb625022b",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-chat-layout-ui.mjs",
+      "previousBlob": "da4ecc26ce8f481e3ffa37a91c7befff92f19776",
+      "currentBlob": "da4ecc26ce8f481e3ffa37a91c7befff92f19776",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-chat-ui.mjs",
+      "previousBlob": "da34fa09a2ab6e15b55bcf0d07b6c989d3a5c6d9",
+      "currentBlob": "da34fa09a2ab6e15b55bcf0d07b6c989d3a5c6d9",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-chat.mjs",
+      "previousBlob": "9e8d8116cde1352d2d07c627a876f81e692a7587",
+      "currentBlob": "9e8d8116cde1352d2d07c627a876f81e692a7587",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-discovery-refresh-ui.mjs",
+      "previousBlob": "866797da7701565eeddbfb6c3c5e83ea101dfd28",
+      "currentBlob": "866797da7701565eeddbfb6c3c5e83ea101dfd28",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-discovery-ui.mjs",
+      "previousBlob": "891952c06fb694d6eea0eb1c51f67b37e1f5b8ed",
+      "currentBlob": "891952c06fb694d6eea0eb1c51f67b37e1f5b8ed",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-discovery.mjs",
+      "previousBlob": "cc83ae96687f9f60edc8d39a94d0d7709a690506",
+      "currentBlob": "cc83ae96687f9f60edc8d39a94d0d7709a690506",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-edit-event-ui.mjs",
+      "previousBlob": "3f32cadb67e2f4b2919ef4a123e1b85e5f3c75ac",
+      "currentBlob": "3f32cadb67e2f4b2919ef4a123e1b85e5f3c75ac",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-edit-event.mjs",
+      "previousBlob": "417eb29d2c9e188afc0a0dd8e394d7d25169d5af",
+      "currentBlob": "417eb29d2c9e188afc0a0dd8e394d7d25169d5af",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-event-actions-ui.mjs",
+      "previousBlob": "a13284249bdf23a905983d75805925bbd2ed4699",
+      "currentBlob": "a13284249bdf23a905983d75805925bbd2ed4699",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-event-actions.mjs",
+      "previousBlob": "48a4155b2f25f251a9267c6d446227b31e9c36f9",
+      "currentBlob": "48a4155b2f25f251a9267c6d446227b31e9c36f9",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-events-ui.mjs",
+      "previousBlob": "61b90c52dcc999334ad24b391442c10d5b4ff315",
+      "currentBlob": "61b90c52dcc999334ad24b391442c10d5b4ff315",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-events.mjs",
+      "previousBlob": "96ffdd749be0e6a7e6628f8afc886a1dd1797382",
+      "currentBlob": "96ffdd749be0e6a7e6628f8afc886a1dd1797382",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-foundation.mjs",
+      "previousBlob": "1786b3375733b6fe48f2861ee16d68963a8ab3f8",
+      "currentBlob": "1786b3375733b6fe48f2861ee16d68963a8ab3f8",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-gallery-ui.mjs",
+      "previousBlob": "98b4f5ef7cb5695563fe184289528c3f7b094206",
+      "currentBlob": "98b4f5ef7cb5695563fe184289528c3f7b094206",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-gallery.mjs",
+      "previousBlob": "3a493aadd1f0af3da764616c8ddf2f255cc1f7d0",
+      "currentBlob": "3a493aadd1f0af3da764616c8ddf2f255cc1f7d0",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-home-events.mjs",
+      "previousBlob": "1fb5526a1cfbf22af66ca8a04ba8e7b78c43ded2",
+      "currentBlob": "1fb5526a1cfbf22af66ca8a04ba8e7b78c43ded2",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-home-ui.mjs",
+      "previousBlob": "e7417e5fbf69afb2357d599f10b6cbbbc7938509",
+      "currentBlob": "e7417e5fbf69afb2357d599f10b6cbbbc7938509",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-mapbox.mjs",
+      "previousBlob": "c03b18f787bd408802a1d08b75ef084c65560a4b",
+      "currentBlob": "c03b18f787bd408802a1d08b75ef084c65560a4b",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-my-events-refresh-ui.mjs",
+      "previousBlob": "b74112267d50dce23ee5098cc051b43e303288ed",
+      "currentBlob": "b74112267d50dce23ee5098cc051b43e303288ed",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-my-events-ui.mjs",
+      "previousBlob": "c1fcbce37bf55109da5e52786c924e09f74ac7c2",
+      "currentBlob": "c1fcbce37bf55109da5e52786c924e09f74ac7c2",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-my-events.mjs",
+      "previousBlob": "bfd9746373c8c8d613a8ddb7d5eb723969dd57fb",
+      "currentBlob": "bfd9746373c8c8d613a8ddb7d5eb723969dd57fb",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-notifications-ui.mjs",
+      "previousBlob": "1104e6ed7350dca78619574dbd7e1e9542fe66ef",
+      "currentBlob": "1104e6ed7350dca78619574dbd7e1e9542fe66ef",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-notifications.mjs",
+      "previousBlob": "b3751dd738ab4db862580f05407e9e121a47e458",
+      "currentBlob": "b3751dd738ab4db862580f05407e9e121a47e458",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-participations-ui.mjs",
+      "previousBlob": "37c6c191f3479067c5cb97c4a7367131862f0266",
+      "currentBlob": "37c6c191f3479067c5cb97c4a7367131862f0266",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-participations.mjs",
+      "previousBlob": "6e9ad548449096eb0091ed2a8582753e9dc89120",
+      "currentBlob": "6e9ad548449096eb0091ed2a8582753e9dc89120",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-profile-ui.mjs",
+      "previousBlob": "f422fd2df642a3de31ece097695dbb5e6a17908f",
+      "currentBlob": "f422fd2df642a3de31ece097695dbb5e6a17908f",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-profile.mjs",
+      "previousBlob": "4046f4054f500906875c4e83d38db2ad237b45e3",
+      "currentBlob": "4046f4054f500906875c4e83d38db2ad237b45e3",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-r3-contrast.mjs",
+      "previousBlob": "ae03d4ec9683c4ef2eb78e69089fa271523c80b1",
+      "currentBlob": "ae03d4ec9683c4ef2eb78e69089fa271523c80b1",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-realtime-ui.mjs",
+      "previousBlob": "0b62a19239401c23ba3c12be379b49048f13bc73",
+      "currentBlob": "0b62a19239401c23ba3c12be379b49048f13bc73",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-realtime.mjs",
+      "previousBlob": "32da1267b34bfbc185370fa0ff134573f56fda53",
+      "currentBlob": "32da1267b34bfbc185370fa0ff134573f56fda53",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-rejoin-ui.mjs",
+      "previousBlob": "91904d46337886666a1ec9cde203c9a0ea476c29",
+      "currentBlob": "91904d46337886666a1ec9cde203c9a0ea476c29",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-rejoin.mjs",
+      "previousBlob": "157349d8c6f027ce5cc350a75677f7f42e651d1a",
+      "currentBlob": "157349d8c6f027ce5cc350a75677f7f42e651d1a",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-release-2-live.mjs",
+      "previousBlob": "09e58ed6f4ec9170486d32f03163a97c8511f8a2",
+      "currentBlob": "09e58ed6f4ec9170486d32f03163a97c8511f8a2",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-release-3-metadata.mjs",
+      "previousBlob": "1802ae70040c559c7ff792038ea5d3b3b305d10d",
+      "currentBlob": "1802ae70040c559c7ff792038ea5d3b3b305d10d",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-release-3.mjs",
+      "previousBlob": "0740821e043f93b9b8f4712237653086dcca8cc1",
+      "currentBlob": "0740821e043f93b9b8f4712237653086dcca8cc1",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-screen-shell-ui.mjs",
+      "previousBlob": "3fe258037afe9c83a4119a98a58bec65ad826489",
+      "currentBlob": "3fe258037afe9c83a4119a98a58bec65ad826489",
+      "identical": true
+    },
+    {
+      "path": "scripts/check-social-refresh-ui.mjs",
+      "previousBlob": "7139aacc88d7682e1460a5be25acc75364e3a1d4",
+      "currentBlob": "7139aacc88d7682e1460a5be25acc75364e3a1d4",
+      "identical": true
+    },
+    {
+      "path": "scripts/compare-amanecer-captures.py",
+      "previousBlob": "a148e328268096484fdfa3fa87843f505b788b27",
+      "currentBlob": "a148e328268096484fdfa3fa87843f505b788b27",
+      "identical": true
+    },
+    {
+      "path": "scripts/compare-auth-captures.py",
+      "previousBlob": "96f9e0bc8ad3c59e95d4a3043f9a07378044d63b",
+      "currentBlob": "96f9e0bc8ad3c59e95d4a3043f9a07378044d63b",
+      "identical": true
+    },
+    {
+      "path": "scripts/generate-icons.py",
+      "previousBlob": "5d3006ba6e06cee8a7952ab8134b469f711765fc",
+      "currentBlob": "5d3006ba6e06cee8a7952ab8134b469f711765fc",
+      "identical": true
+    },
+    {
+      "path": "scripts/management-ui-audit.mjs",
+      "previousBlob": "d934c8b90dbc707e813c5da9f11ea9b00a416535",
+      "currentBlob": "d934c8b90dbc707e813c5da9f11ea9b00a416535",
+      "identical": true
+    },
+    {
+      "path": "src/AGENTS.md",
+      "previousBlob": "b929a8c63ea9014f0d54ff49f0cbff14376ddd3d",
+      "currentBlob": "b929a8c63ea9014f0d54ff49f0cbff14376ddd3d",
+      "identical": true
+    },
+    {
+      "path": "src/App.css",
+      "previousBlob": "1f8ec6200d7f0c92c83c574d9dbfdeb839f32cd2",
+      "currentBlob": "1f8ec6200d7f0c92c83c574d9dbfdeb839f32cd2",
+      "identical": true
+    },
+    {
+      "path": "src/App.tsx",
+      "previousBlob": "bd94ef2e98f8a371cd71a28105ca70b1b6997d38",
+      "currentBlob": "bd94ef2e98f8a371cd71a28105ca70b1b6997d38",
+      "identical": true
+    },
+    {
+      "path": "src/assets/fonts/bricolage-grotesque-OFL.txt",
+      "previousBlob": "49135ef7afae97fd0746177f0975d23c125f5637",
+      "currentBlob": "49135ef7afae97fd0746177f0975d23c125f5637",
+      "identical": true
+    },
+    {
+      "path": "src/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2",
+      "previousBlob": "82152a40802e0646b7a732744394a02c8c72772f",
+      "currentBlob": "82152a40802e0646b7a732744394a02c8c72772f",
+      "identical": true
+    },
+    {
+      "path": "src/assets/hero.png",
+      "previousBlob": "02251f4b956c55af2d76fd0788124d7eee2b45eb",
+      "currentBlob": "02251f4b956c55af2d76fd0788124d7eee2b45eb",
+      "identical": true
+    },
+    {
+      "path": "src/assets/react.svg",
+      "previousBlob": "6c87de9bb3358469122cc991d5cf578927246184",
+      "currentBlob": "6c87de9bb3358469122cc991d5cf578927246184",
+      "identical": true
+    },
+    {
+      "path": "src/assets/vite.svg",
+      "previousBlob": "5101b674df391399da71c767aa5c976426c9dc7a",
+      "currentBlob": "5101b674df391399da71c767aa5c976426c9dc7a",
+      "identical": true
+    },
+    {
+      "path": "src/components/AccountMenu.tsx",
+      "previousBlob": "2c0f1bc5272521dad0bf98b0bd4888e814e95acc",
+      "currentBlob": "2c0f1bc5272521dad0bf98b0bd4888e814e95acc",
+      "identical": true
+    },
+    {
+      "path": "src/components/AppLayout.tsx",
+      "previousBlob": "3a7cf9acbdc8e08921e8518ec42ef55b1808fbef",
+      "currentBlob": "3a7cf9acbdc8e08921e8518ec42ef55b1808fbef",
+      "identical": true
+    },
+    {
+      "path": "src/components/EventActionDialog.tsx",
+      "previousBlob": "b55dd4221fa4a0abb211ff2a03758e8d4b3c4bed",
+      "currentBlob": "b55dd4221fa4a0abb211ff2a03758e8d4b3c4bed",
+      "identical": true
+    },
+    {
+      "path": "src/components/EventCard.tsx",
+      "previousBlob": "60cc817c83f62a5f3b8c6e3f10dd0e327cc0d596",
+      "currentBlob": "60cc817c83f62a5f3b8c6e3f10dd0e327cc0d596",
+      "identical": true
+    },
+    {
+      "path": "src/components/EventFields.tsx",
+      "previousBlob": "e72f0b43e6ee481c4a60f6d0943123fd76677637",
+      "currentBlob": "e72f0b43e6ee481c4a60f6d0943123fd76677637",
+      "identical": true
+    },
+    {
+      "path": "src/components/EventManagement.tsx",
+      "previousBlob": "04475ec768a6bd7a9462a1b059ded6c7abe34623",
+      "currentBlob": "04475ec768a6bd7a9462a1b059ded6c7abe34623",
+      "identical": true
+    },
+    {
+      "path": "src/components/EventParticipation.tsx",
+      "previousBlob": "add8c16db97b43e8278f5dbe94ca2db53637c491",
+      "currentBlob": "add8c16db97b43e8278f5dbe94ca2db53637c491",
+      "identical": true
+    },
+    {
+      "path": "src/components/FormField.tsx",
+      "previousBlob": "653ad43401188737f34ac4439a119fb981807fbc",
+      "currentBlob": "653ad43401188737f34ac4439a119fb981807fbc",
+      "identical": true
+    },
+    {
+      "path": "src/components/GradientButton.tsx",
+      "previousBlob": "13989f59d78f3d691cc845a827e4fedc6200fd6b",
+      "currentBlob": "13989f59d78f3d691cc845a827e4fedc6200fd6b",
+      "identical": true
+    },
+    {
+      "path": "src/components/Icon.tsx",
+      "previousBlob": "2ef1c37de4a89046cfed89fbb5bb72a387ccdfe4",
+      "currentBlob": "2ef1c37de4a89046cfed89fbb5bb72a387ccdfe4",
+      "identical": true
+    },
+    {
+      "path": "src/components/ScreenHeader.tsx",
+      "previousBlob": "fbd9c9878db15455f855c32b8c2ca85196b438a4",
+      "currentBlob": "fbd9c9878db15455f855c32b8c2ca85196b438a4",
+      "identical": true
+    },
+    {
+      "path": "src/components/StatusMessage.tsx",
+      "previousBlob": "763bbbc26d0c73af226c70920fade7176496967b",
+      "currentBlob": "763bbbc26d0c73af226c70920fade7176496967b",
+      "identical": true
+    },
+    {
+      "path": "src/components/account-menu.css",
+      "previousBlob": "e3155776d79a7aff7b4a6e73a897efae1832fb84",
+      "currentBlob": "e3155776d79a7aff7b4a6e73a897efae1832fb84",
+      "identical": true
+    },
+    {
+      "path": "src/components/event-actions.css",
+      "previousBlob": "a39634d758aa4ded48b5be2cf3839786a26bd6e3",
+      "currentBlob": "a39634d758aa4ded48b5be2cf3839786a26bd6e3",
+      "identical": true
+    },
+    {
+      "path": "src/components/maps/EventMap.tsx",
+      "previousBlob": "eb658468bf7aae112b85b981c92f8e6500e9eb5a",
+      "currentBlob": "eb658468bf7aae112b85b981c92f8e6500e9eb5a",
+      "identical": true
+    },
+    {
+      "path": "src/components/maps/map.css",
+      "previousBlob": "d44bf51f36d1ec3693c31f68abc241a0cfd7adfa",
+      "currentBlob": "d44bf51f36d1ec3693c31f68abc241a0cfd7adfa",
+      "identical": true
+    },
+    {
+      "path": "src/components/maps/provider.ts",
+      "previousBlob": "d20445ed4b7696e27f17b60e5005983ce7bc1933",
+      "currentBlob": "d20445ed4b7696e27f17b60e5005983ce7bc1933",
+      "identical": true
+    },
+    {
+      "path": "src/features/auth/AuthProvider.tsx",
+      "previousBlob": "5fc1afe92fa61e69bfb7ed4cb68e21e8b72a327b",
+      "currentBlob": "5fc1afe92fa61e69bfb7ed4cb68e21e8b72a327b",
+      "identical": true
+    },
+    {
+      "path": "src/features/auth/RequireAuth.tsx",
+      "previousBlob": "caf143fd812517171d57d561f5422cc883090dd2",
+      "currentBlob": "caf143fd812517171d57d561f5422cc883090dd2",
+      "identical": true
+    },
+    {
+      "path": "src/features/auth/useAuth.ts",
+      "previousBlob": "53225f7b0a3cf6c0aa485a4bbb2cc9e0a3184bdc",
+      "currentBlob": "53225f7b0a3cf6c0aa485a4bbb2cc9e0a3184bdc",
+      "identical": true
+    },
+    {
+      "path": "src/features/auth/validation.ts",
+      "previousBlob": "2e4ca8cafb481beb28a18884dc7f8a26f99f9346",
+      "currentBlob": "2e4ca8cafb481beb28a18884dc7f8a26f99f9346",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/actions.ts",
+      "previousBlob": "b624dac44e44e5933000ff904668cc22b60bfafd",
+      "currentBlob": "b624dac44e44e5933000ff904668cc22b60bfafd",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/api.ts",
+      "previousBlob": "53d68423f00dd8a2c993e0a8801ee3f0f2acbaa8",
+      "currentBlob": "53d68423f00dd8a2c993e0a8801ee3f0f2acbaa8",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/attendees.ts",
+      "previousBlob": "8f961dfca06ffdd9cfb445d5518016ec630fe40b",
+      "currentBlob": "8f961dfca06ffdd9cfb445d5518016ec630fe40b",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/chat.ts",
+      "previousBlob": "0b16ffb6aeb1816ae88fcce5fdbef2e78f726d90",
+      "currentBlob": "0b16ffb6aeb1816ae88fcce5fdbef2e78f726d90",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/discovery.ts",
+      "previousBlob": "9cf4fe64da01f38c8fb698d914b32315e82cb43c",
+      "currentBlob": "9cf4fe64da01f38c8fb698d914b32315e82cb43c",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/edit.ts",
+      "previousBlob": "9ece58f97e39441009ad8935a42f1891061d5171",
+      "currentBlob": "9ece58f97e39441009ad8935a42f1891061d5171",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/gallery.ts",
+      "previousBlob": "2eb82fcec9431787468e1d06d5ab6d45da84bde3",
+      "currentBlob": "2eb82fcec9431787468e1d06d5ab6d45da84bde3",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/home.ts",
+      "previousBlob": "8d3526108abc7be65b3b4446a4b1585facfa0914",
+      "currentBlob": "8d3526108abc7be65b3b4446a4b1585facfa0914",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/my-events.ts",
+      "previousBlob": "1a8e9dce151326906dd6b7596c81c5ee4593ac34",
+      "currentBlob": "1a8e9dce151326906dd6b7596c81c5ee4593ac34",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/participation.ts",
+      "previousBlob": "8ca865a7e03c7eef46c656760b95b13a16b128a7",
+      "currentBlob": "8ca865a7e03c7eef46c656760b95b13a16b128a7",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/rejoin.ts",
+      "previousBlob": "98e5cb8c2283c3057048f8f1e350e4435425b0c4",
+      "currentBlob": "98e5cb8c2283c3057048f8f1e350e4435425b0c4",
+      "identical": true
+    },
+    {
+      "path": "src/features/events/validation.ts",
+      "previousBlob": "808705345bb1c3a521b5d0ba6231a7495c817bf7",
+      "currentBlob": "808705345bb1c3a521b5d0ba6231a7495c817bf7",
+      "identical": true
+    },
+    {
+      "path": "src/features/location/geolocation.ts",
+      "previousBlob": "be3978b4efd19c654643dff8467e49ef80222374",
+      "currentBlob": "be3978b4efd19c654643dff8467e49ef80222374",
+      "identical": true
+    },
+    {
+      "path": "src/features/notifications/NotificationsProvider.tsx",
+      "previousBlob": "c6cb8b79132211b918c3a085387b63dbddc22e25",
+      "currentBlob": "c6cb8b79132211b918c3a085387b63dbddc22e25",
+      "identical": true
+    },
+    {
+      "path": "src/features/notifications/api.ts",
+      "previousBlob": "313a6ac2e069617005b18228f8e2485dc15ef36b",
+      "currentBlob": "313a6ac2e069617005b18228f8e2485dc15ef36b",
+      "identical": true
+    },
+    {
+      "path": "src/features/notifications/realtime-context.ts",
+      "previousBlob": "0c25403724f141054fa03641ac5ef888c51bc49f",
+      "currentBlob": "0c25403724f141054fa03641ac5ef888c51bc49f",
+      "identical": true
+    },
+    {
+      "path": "src/index.css",
+      "previousBlob": "7506d1dd11be414f159b7b088dbab773f2a8a4f0",
+      "currentBlob": "7506d1dd11be414f159b7b088dbab773f2a8a4f0",
+      "identical": true
+    },
+    {
+      "path": "src/lib/realtime.ts",
+      "previousBlob": "f7ea768be77dcdc94e93976be8e9e367ce8e817b",
+      "currentBlob": "f7ea768be77dcdc94e93976be8e9e367ce8e817b",
+      "identical": true
+    },
+    {
+      "path": "src/lib/reconciliation.ts",
+      "previousBlob": "8d96c6b4adc2647a7c0e1625b4f17045665d9583",
+      "currentBlob": "8d96c6b4adc2647a7c0e1625b4f17045665d9583",
+      "identical": true
+    },
+    {
+      "path": "src/lib/supabase-config.ts",
+      "previousBlob": "3f6a797af9356a3af3c28dd69404bf327664b5fc",
+      "currentBlob": "3f6a797af9356a3af3c28dd69404bf327664b5fc",
+      "identical": true
+    },
+    {
+      "path": "src/lib/supabase.ts",
+      "previousBlob": "2cdd8de295d7f09cfd4ee576254eeb116afe7074",
+      "currentBlob": "2cdd8de295d7f09cfd4ee576254eeb116afe7074",
+      "identical": true
+    },
+    {
+      "path": "src/main.tsx",
+      "previousBlob": "bef5202a32cbd0632c43de40f6e908532903fd42",
+      "currentBlob": "bef5202a32cbd0632c43de40f6e908532903fd42",
+      "identical": true
+    },
+    {
+      "path": "src/pages/AuthPage.tsx",
+      "previousBlob": "b864e6cde8ba2c87e350e29b63a2c2790e149686",
+      "currentBlob": "b864e6cde8ba2c87e350e29b63a2c2790e149686",
+      "identical": true
+    },
+    {
+      "path": "src/pages/CreateEventPage.tsx",
+      "previousBlob": "e8ee5a770f354806ee6e47d8385cea488875ad79",
+      "currentBlob": "e8ee5a770f354806ee6e47d8385cea488875ad79",
+      "identical": true
+    },
+    {
+      "path": "src/pages/EditEventPage.tsx",
+      "previousBlob": "1d10ac1ce5a33e119165bc9dffa68069e1563f5b",
+      "currentBlob": "1d10ac1ce5a33e119165bc9dffa68069e1563f5b",
+      "identical": true
+    },
+    {
+      "path": "src/pages/EventAttendeesPage.tsx",
+      "previousBlob": "a67aca748f9d0809c5b367ce51c2fa9c4158f9ae",
+      "currentBlob": "a67aca748f9d0809c5b367ce51c2fa9c4158f9ae",
+      "identical": true
+    },
+    {
+      "path": "src/pages/EventChatPage.tsx",
+      "previousBlob": "3ca9a055a0c957dffc27e6eb1fc91bcdd2611d40",
+      "currentBlob": "3ca9a055a0c957dffc27e6eb1fc91bcdd2611d40",
+      "identical": true
+    },
+    {
+      "path": "src/pages/EventDetailPage.tsx",
+      "previousBlob": "542e9717aee460c78b86c8e116c7d59a7c814efd",
+      "currentBlob": "542e9717aee460c78b86c8e116c7d59a7c814efd",
+      "identical": true
+    },
+    {
+      "path": "src/pages/EventGalleryPage.tsx",
+      "previousBlob": "5fe780bef50f3f616a19688546587cc9e3cbbeee",
+      "currentBlob": "5fe780bef50f3f616a19688546587cc9e3cbbeee",
+      "identical": true
+    },
+    {
+      "path": "src/pages/EventRejoinRequestsPage.tsx",
+      "previousBlob": "8852bf3bde24ec340d8118d356453772eabbf298",
+      "currentBlob": "8852bf3bde24ec340d8118d356453772eabbf298",
+      "identical": true
+    },
+    {
+      "path": "src/pages/FoundationPage.tsx",
+      "previousBlob": "3de6fd7cb3b36967662fc2c07c16368e68f713ff",
+      "currentBlob": "3de6fd7cb3b36967662fc2c07c16368e68f713ff",
+      "identical": true
+    },
+    {
+      "path": "src/pages/HomePage.tsx",
+      "previousBlob": "4fb71765f853f6d7e99bc29b1bbd03dbf30a0669",
+      "currentBlob": "4fb71765f853f6d7e99bc29b1bbd03dbf30a0669",
+      "identical": true
+    },
+    {
+      "path": "src/pages/MapPage.tsx",
+      "previousBlob": "c32f521945d495d870504c3a2ec01d4b8e009376",
+      "currentBlob": "c32f521945d495d870504c3a2ec01d4b8e009376",
+      "identical": true
+    },
+    {
+      "path": "src/pages/MyEventsPage.tsx",
+      "previousBlob": "ae6a0fcc39509ceca1125af2ac80daa57ea487c6",
+      "currentBlob": "ae6a0fcc39509ceca1125af2ac80daa57ea487c6",
+      "identical": true
+    },
+    {
+      "path": "src/pages/NotificationsPage.tsx",
+      "previousBlob": "75bbf0f1ba6568b18a99095a529e1938b701044d",
+      "currentBlob": "75bbf0f1ba6568b18a99095a529e1938b701044d",
+      "identical": true
+    },
+    {
+      "path": "src/pages/ProfilePage.tsx",
+      "previousBlob": "a804fd510affbb7ed0ed8007c81eceaabfc41d03",
+      "currentBlob": "a804fd510affbb7ed0ed8007c81eceaabfc41d03",
+      "identical": true
+    },
+    {
+      "path": "src/pages/auth.css",
+      "previousBlob": "51a61200cc837f22b5c42f302534b797583fdf30",
+      "currentBlob": "51a61200cc837f22b5c42f302534b797583fdf30",
+      "identical": true
+    },
+    {
+      "path": "src/pages/chat.css",
+      "previousBlob": "af536f3647cc7fe11f8493bc686d226e06f50aaa",
+      "currentBlob": "af536f3647cc7fe11f8493bc686d226e06f50aaa",
+      "identical": true
+    },
+    {
+      "path": "src/pages/discovery.css",
+      "previousBlob": "5572296de8e9b03294a6802a28adb837c1a2d878",
+      "currentBlob": "5572296de8e9b03294a6802a28adb837c1a2d878",
+      "identical": true
+    },
+    {
+      "path": "src/pages/edit-event.css",
+      "previousBlob": "2576e01c89343488e68dc81d2add0fe862ed7c27",
+      "currentBlob": "2576e01c89343488e68dc81d2add0fe862ed7c27",
+      "identical": true
+    },
+    {
+      "path": "src/pages/event-attendees.css",
+      "previousBlob": "6664541ccc121d8489f507b405cf0fddfa3c450d",
+      "currentBlob": "6664541ccc121d8489f507b405cf0fddfa3c450d",
+      "identical": true
+    },
+    {
+      "path": "src/pages/event-forms.css",
+      "previousBlob": "efb94357c105982071eefa4a2c10a9e74415cba9",
+      "currentBlob": "efb94357c105982071eefa4a2c10a9e74415cba9",
+      "identical": true
+    },
+    {
+      "path": "src/pages/event-gallery.css",
+      "previousBlob": "15acf1b02953b915322e549f48fbe64d8254e845",
+      "currentBlob": "15acf1b02953b915322e549f48fbe64d8254e845",
+      "identical": true
+    },
+    {
+      "path": "src/pages/event-rejoin.css",
+      "previousBlob": "5c0d4096edf191c3dbace009fe644af683cdee92",
+      "currentBlob": "5c0d4096edf191c3dbace009fe644af683cdee92",
+      "identical": true
+    },
+    {
+      "path": "src/pages/home.css",
+      "previousBlob": "4467897b5c732cb9c2074ceecaab5a3ca3332984",
+      "currentBlob": "4467897b5c732cb9c2074ceecaab5a3ca3332984",
+      "identical": true
+    },
+    {
+      "path": "src/pages/my-events.css",
+      "previousBlob": "01a488ddc8c1d170130849e3bdbd65032494fe4e",
+      "currentBlob": "01a488ddc8c1d170130849e3bdbd65032494fe4e",
+      "identical": true
+    },
+    {
+      "path": "src/pages/notifications.css",
+      "previousBlob": "d88331245d16ac7fea9e5e08b4e2e6e9e06fdcd1",
+      "currentBlob": "d88331245d16ac7fea9e5e08b4e2e6e9e06fdcd1",
+      "identical": true
+    },
+    {
+      "path": "src/pages/profile.css",
+      "previousBlob": "990e7ce867adaefb28ddf0557775fcfb85f474b7",
+      "currentBlob": "990e7ce867adaefb28ddf0557775fcfb85f474b7",
+      "identical": true
+    },
+    {
+      "path": "src/styles/amanecer.css",
+      "previousBlob": "98d22826f1023a08108bdf3cfeca1598632fe13a",
+      "currentBlob": "98d22826f1023a08108bdf3cfeca1598632fe13a",
+      "identical": true
+    },
+    {
+      "path": "src/styles/event-management.css",
+      "previousBlob": "56fb79650a3d66882d960dd756c95acf70b63c0a",
+      "currentBlob": "56fb79650a3d66882d960dd756c95acf70b63c0a",
+      "identical": true
+    },
+    {
+      "path": "src/styles/screen-entrance.css",
+      "previousBlob": "4e2d31949ff279bbf8fc765a8ccdfab18c06c152",
+      "currentBlob": "4e2d31949ff279bbf8fc765a8ccdfab18c06c152",
+      "identical": true
+    },
+    {
+      "path": "src/styles/social.css",
+      "previousBlob": "3305aa6675836404f34a85a61981f0c2ec3f15a3",
+      "currentBlob": "3305aa6675836404f34a85a61981f0c2ec3f15a3",
+      "identical": true
+    },
+    {
+      "path": "src/styles/tokens.css",
+      "previousBlob": "32c4a384ff8bc4768b95c819467bf3f333927d8b",
+      "currentBlob": "32c4a384ff8bc4768b95c819467bf3f333927d8b",
+      "identical": true
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "previousBlob": "10d351e6fb854aa9f52d6dcbb07da5f61186340e",
+      "currentBlob": "10d351e6fb854aa9f52d6dcbb07da5f61186340e",
+      "identical": true
+    },
+    {
+      "path": "supabase/.temp/cli-latest",
+      "previousBlob": "290d82f617b59ada1cd485da7077d69618f85faa",
+      "currentBlob": "290d82f617b59ada1cd485da7077d69618f85faa",
+      "identical": true
+    },
+    {
+      "path": "supabase/.temp/gotrue-version",
+      "previousBlob": "5db673362e9964d3a6b8500db180319ba6df8ea7",
+      "currentBlob": "5db673362e9964d3a6b8500db180319ba6df8ea7",
+      "identical": true
+    },
+    {
+      "path": "supabase/.temp/linked-project.json",
+      "previousBlob": "4ff2691ac74f49880249222a97c80e319a6151c5",
+      "currentBlob": "4ff2691ac74f49880249222a97c80e319a6151c5",
+      "identical": true
+    },
+    {
+      "path": "supabase/.temp/pooler-url",
+      "previousBlob": "05bc9eae49e742aeadf598f733149a39823d2498",
+      "currentBlob": "05bc9eae49e742aeadf598f733149a39823d2498",
+      "identical": true
+    },
+    {
+      "path": "supabase/.temp/postgres-version",
+      "previousBlob": "fc313441be5d48f614672ff15bdd9d9a2fccd46b",
+      "currentBlob": "fc313441be5d48f614672ff15bdd9d9a2fccd46b",
+      "identical": true
+    },
+    {
+      "path": "supabase/.temp/project-ref",
+      "previousBlob": "50da9b231b2c0bfddd375edf24fbe59dbb441f74",
+      "currentBlob": "50da9b231b2c0bfddd375edf24fbe59dbb441f74",
+      "identical": true
+    },
+    {
+      "path": "supabase/.temp/rest-version",
+      "previousBlob": "2f6fbab55c368412b1cdd60a177e394a7296cf18",
+      "currentBlob": "2f6fbab55c368412b1cdd60a177e394a7296cf18",
+      "identical": true
+    },
+    {
+      "path": "supabase/.temp/storage-migration",
+      "previousBlob": "4cbed717149f18d9ddedaeca73db7c91dee459e9",
+      "currentBlob": "4cbed717149f18d9ddedaeca73db7c91dee459e9",
+      "identical": true
+    },
+    {
+      "path": "supabase/.temp/storage-version",
+      "previousBlob": "88c55b78e8f4cc2c06f8f81f8003a0f877d1eece",
+      "currentBlob": "88c55b78e8f4cc2c06f8f81f8003a0f877d1eece",
+      "identical": true
+    },
+    {
+      "path": "supabase/AGENTS.md",
+      "previousBlob": "b3bf3ce2ef38999bee14bc7883f438efb50c2633",
+      "currentBlob": "b3bf3ce2ef38999bee14bc7883f438efb50c2633",
+      "identical": true
+    },
+    {
+      "path": "supabase/config.toml",
+      "previousBlob": "37fd800c6f652c6894a89e758f8f1d6f0eb831c2",
+      "currentBlob": "37fd800c6f652c6894a89e758f8f1d6f0eb831c2",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261010011204_create_profiles_and_categories.sql",
+      "previousBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "currentBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "previousBlob": "654e081de2d9d94d6d536d7213d1cf02a1365927",
+      "currentBlob": "654e081de2d9d94d6d536d7213d1cf02a1365927",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261010023448_restrict_rls_auto_enable_execute.sql",
+      "previousBlob": "347a7f3c191156f1c514be936d52f50274739ac6",
+      "currentBlob": "347a7f3c191156f1c514be936d52f50274739ac6",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "previousBlob": "9a4ed329e2d29b4a7f6bee0dded9a86f6c620ddd",
+      "currentBlob": "9a4ed329e2d29b4a7f6bee0dded9a86f6c620ddd",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261010052653_public_event_discovery.sql",
+      "previousBlob": "66a5ea023138701b4f7785691a14868b5a6e3eb8",
+      "currentBlob": "66a5ea023138701b4f7785691a14868b5a6e3eb8",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261010150232_event_participations.sql",
+      "previousBlob": "d7aa4fd50df61f645854819adf49f3cbdd46594a",
+      "currentBlob": "d7aa4fd50df61f645854819adf49f3cbdd46594a",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261010154930_my_events_read.sql",
+      "previousBlob": "7af78226ba381418766037e0f0f01b3b0680b05f",
+      "currentBlob": "7af78226ba381418766037e0f0f01b3b0680b05f",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+      "previousBlob": "c35d257b3c3fa74c64af314e12ca81cb7dcc688b",
+      "currentBlob": "c35d257b3c3fa74c64af314e12ca81cb7dcc688b",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261010214526_event_chat.sql",
+      "previousBlob": "59ceb2e277cf1157560c6f6678ffeb465e1ed38e",
+      "currentBlob": "59ceb2e277cf1157560c6f6678ffeb465e1ed38e",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "previousBlob": "a6a871d080ffacb30009d77c8a245ffa6bb135f7",
+      "currentBlob": "a6a871d080ffacb30009d77c8a245ffa6bb135f7",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql",
+      "previousBlob": "c6fe49f21f33e0c3b456c982e793c9f2d4f887aa",
+      "currentBlob": "c6fe49f21f33e0c3b456c982e793c9f2d4f887aa",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+      "previousBlob": "d999434f9900d69ed00ec4b94bf897c26bb4798c",
+      "currentBlob": "d999434f9900d69ed00ec4b94bf897c26bb4798c",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261012001058_edit_own_event.sql",
+      "previousBlob": "08df444ab49de07e145237419e85ff2182c7d438",
+      "currentBlob": "08df444ab49de07e145237419e85ff2182c7d438",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "previousBlob": "48a75ea333a0cab038f7123efc9a2a46d9348297",
+      "currentBlob": "48a75ea333a0cab038f7123efc9a2a46d9348297",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+      "previousBlob": "7ef567fdde4bbce26a598904627a21efeb155053",
+      "currentBlob": "7ef567fdde4bbce26a598904627a21efeb155053",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+      "previousBlob": "6ab0fce7aef781b85439c2636e9f2e920cfb3d8b",
+      "currentBlob": "6ab0fce7aef781b85439c2636e9f2e920cfb3d8b",
+      "identical": true
+    },
+    {
+      "path": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "previousBlob": "289039eb6bd417d353531b808134f0e9d909409c",
+      "currentBlob": "289039eb6bd417d353531b808134f0e9d909409c",
+      "identical": true
+    },
+    {
+      "path": "tsconfig.app.json",
+      "previousBlob": "6830b6f759f55aec32f0a2fd367ee63cf68db8b7",
+      "currentBlob": "6830b6f759f55aec32f0a2fd367ee63cf68db8b7",
+      "identical": true
+    },
+    {
+      "path": "tsconfig.json",
+      "previousBlob": "1ffef600d959ec9e396d5a260bd3f5b927b2cef8",
+      "currentBlob": "1ffef600d959ec9e396d5a260bd3f5b927b2cef8",
+      "identical": true
+    },
+    {
+      "path": "tsconfig.node.json",
+      "previousBlob": "8455dcbc2c947322adef8783a42741878edaea9c",
+      "currentBlob": "8455dcbc2c947322adef8783a42741878edaea9c",
+      "identical": true
+    },
+    {
+      "path": "vite.config.ts",
+      "previousBlob": "e32a73b447426ba3636d3d86152239babb4e4f3c",
+      "currentBlob": "e32a73b447426ba3636d3d86152239babb4e4f3c",
+      "identical": true
+    }
+  ],
+  "commandsReexecuted": [],
+  "newVerification": [
+    "Git blob comparison for runtime/assets/scripts/lockfiles/configs/normative R1-R3 docs",
+    "review new R4 integration/status/README; R4 remains documentary with no added routes",
+    "link and preservation checks"
+  ],
+  "scope": "R1-R3 visual/functional local audit; no R4 implementation audit",
+  "reuseDoesNotMean": "commands rerun, current HTTP/JWT validation, device acceptance, closing previous FAIL",
+  "sourceResults": "../a378259/commands.json",
+  "sourceR3": "../a378259/check-r3/results.json"
+}
