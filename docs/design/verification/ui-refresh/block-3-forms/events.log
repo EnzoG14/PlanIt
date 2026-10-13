@@ -1,0 +1,5 @@
+
+> planit@0.0.0 check:events
+> node scripts/check-events.mjs
+
+PASS: required fields, future/end dates, Argentina time, category, coordinates, cupo, 10-image/type/size limits.

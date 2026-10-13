@@ -13,6 +13,7 @@ import { emptyEvent, validateEvent, type Category, type EventErrors, type EventV
 import { getCurrentLocation } from '../features/location/geolocation'
 import './discovery.css'
 import './edit-event.css'
+import './event-forms.css'
 
 export function EditEventPage() {
   const { id = '' } = useParams()
@@ -120,6 +121,7 @@ function EditEventForm({ id, userId }: { id: string; userId: string }) {
   if (event.organizer_id !== userId) return <>{back}<StatusMessage title="No autorizado" tone="error">Sólo el organizador puede editar este evento.</StatusMessage></>
   if (!isEventEditable(event)) return <>{back}<StatusMessage title="Evento no editable">Sólo podés editar antes del inicio, sin cancelar ni archivar el evento.</StatusMessage></>
   return <div className="create-event-page edit-event-page">
+    <div className="event-form-wash" aria-hidden="true" />
     {back}<header><h1>Editar evento</h1><p>Modificá la información de tu evento.</p></header>
     <div className="edit-event-cover">{photo && !photoError ? <img src={photo} alt={`Portada de ${event.title}`} onError={() => setPhotoError(true)} /> : <><Icon name="calendar" /><span>{photoError ? 'No pudimos cargar la portada.' : 'Sin foto de portada'}</span></>}</div>
     <form ref={form} className="event-form" onSubmit={submit} noValidate aria-busy={busy}>

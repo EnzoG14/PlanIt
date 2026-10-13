@@ -6,7 +6,7 @@ import { pathToFileURL } from 'node:url'
 const runtime = process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs'
 const { chromium } = await import(pathToFileURL(runtime).href)
 const browser = await chromium.launch({ headless: true, channel: process.env.PLANIT_BROWSER_CHANNEL ?? 'msedge' })
-const output = 'docs/design/verification/create-event-r1'
+const output = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/create-event-r1'
 await mkdir(output, { recursive: true })
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4181'
 const user = { id: '20000000-0000-4000-8000-000000000001', email: 'fixture@example.invalid', aud: 'authenticated', role: 'authenticated', app_metadata: { provider: 'email' }, user_metadata: { display_name: 'Prueba' }, identities: [], created_at: '2026-10-10T12:00:00Z' }
@@ -66,7 +66,7 @@ async function fill(page) {
 }
 const photo = { name: 'fixture.png', mimeType: 'image/png', buffer: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jrXkAAAAASUVORK5CYII=', 'base64') }
 try {
-  for (const [width, height] of [[360, 800], [375, 812], [390, 844], [768, 1024], [1280, 800]]) {
+  for (const [width, height] of [[320, 800], [360, 800], [375, 812], [390, 844], [768, 1024], [1280, 800]]) {
     const { context, page, state, errors } = await fixture(width, height)
     await page.getByRole('button', { name: 'Publicar evento', exact: true }).isEnabled()
     await page.screenshot({ path: `${output}/form-${width}x${height}.png`, fullPage: true })
@@ -149,7 +149,7 @@ try {
   }
   {
     const { context, page } = await fixture(390, 844, false)
-    await page.getByRole('heading', { name: 'Bienvenido a PlanIt' }).waitFor()
+    await page.getByRole('heading', { name: 'Ingresá a PlanIt' }).waitFor()
     assert.match(page.url(), /login\?next=/)
     await context.close()
   }

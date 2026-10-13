@@ -18,6 +18,7 @@
     "check:foundation": "node scripts/check-foundation.mjs",
     "check:auth": "node scripts/check-auth.mjs",
     "check:events": "node scripts/check-events.mjs",
+    "check:events:ui": "node scripts/check-events-ui.mjs",
     "check:event-actions": "node scripts/check-event-actions.mjs",
     "check:event-actions:ui": "node scripts/check-event-actions-ui.mjs",
     "check:r3-block-5:regressions": "node scripts/check-block-5-regressions.mjs",

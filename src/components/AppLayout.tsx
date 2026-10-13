@@ -18,6 +18,7 @@ function LayoutContent() {
   const { count } = useNotificationsRealtime()
   const { pathname } = useLocation()
   const isAuth = pathname === '/login' || pathname === '/register'
+  const isEventForm = pathname === '/events/new' || Boolean(matchPath('/events/:id/edit', pathname))
   const isChat = Boolean(matchPath('/events/:id/chat', pathname))
   const shell = useRef<HTMLDivElement>(null)
   const { session, loading, error, retry } = useAuth()
@@ -62,7 +63,7 @@ function LayoutContent() {
     }
   }, [isChat])
   return (
-    <div ref={shell} className={`app-shell ${isChat ? 'chat-shell' : isAuth ? 'auth-shell' : 'product-shell'}${pathname === '/my-events' ? ' amanecer-shell my-events-shell' : isAuth ? ' amanecer-shell' : ''}`}>
+    <div ref={shell} className={`app-shell ${isChat ? 'chat-shell' : isAuth ? 'auth-shell' : 'product-shell'}${pathname === '/my-events' ? ' amanecer-shell my-events-shell' : isEventForm ? ' amanecer-shell event-form-shell' : isAuth ? ' amanecer-shell' : ''}`}>
       {isAuth && <div className="auth-wash" aria-hidden="true" />}
       <a className="skip-link" href="#main-content">Saltar al contenido</a>
       {!isChat && (isAuth ? <div className="auth-topbar">

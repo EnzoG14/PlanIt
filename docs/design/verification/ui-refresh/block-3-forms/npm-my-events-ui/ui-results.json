@@ -1,0 +1,63 @@
+{
+  "environment": "Real Edge browser; intercepted Supabase Auth/REST/Storage fixtures, not remote E2E",
+  "results": [
+    {
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "result": "PASS",
+      "scenarios": [
+        "R3 five server filters before pagination; ongoing and empty states",
+        "R3 stale filter response; invalid filter; missing RPC",
+        "R3 organizing menu: detail only, Escape/outside/focus",
+        "R3 filtered return and owner direct fallback",
+        "R3 data update/cancellation/manual refresh",
+        "R3 append failure retains 30 and retries same offset",
+        "two fixture accounts; role separation",
+        "keyboard tabs",
+        "create/detail/list",
+        "join/leave/rejoin/browser back",
+        "history/removed",
+        "network/RLS/missing migration/retry",
+        "image fallback/batch signing",
+        "Organizo/Participo pagination/reset/deduplication",
+        "stale tab response",
+        "focus/visibility",
+        "account change",
+        "invalid session/direct route",
+        "44px create target/no overflow"
+      ],
+      "rpcCalls": 81
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "result": "PASS",
+      "scenarios": [
+        "R3 five server filters before pagination; ongoing and empty states",
+        "R3 stale filter response; invalid filter; missing RPC",
+        "R3 organizing menu: detail only, Escape/outside/focus",
+        "R3 filtered return and owner direct fallback",
+        "R3 data update/cancellation/manual refresh",
+        "R3 append failure retains 30 and retries same offset",
+        "two fixture accounts; role separation",
+        "keyboard tabs",
+        "create/detail/list",
+        "join/leave/rejoin/browser back",
+        "history/removed",
+        "network/RLS/missing migration/retry",
+        "image fallback/batch signing",
+        "Organizo/Participo pagination/reset/deduplication",
+        "stale tab response",
+        "focus/visibility",
+        "account change",
+        "invalid session/direct route",
+        "44px create target/no overflow"
+      ],
+      "rpcCalls": 81
+    }
+  ]
+}
