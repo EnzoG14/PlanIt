@@ -1,0 +1,12 @@
+
+> planit@0.0.0 check:profile:ui
+> node scripts/check-profile-ui.mjs
+
+PASS: mobile: CA-01/02 navigation, own identity/email/bio/avatar and account link; no horizontal overflow
+PASS: mobile: CA-03 persisted fixture changes reload, reopen and focus
+PASS: mobile: CA-04 error clears profile, retry works; absent/inaccessible/foreign/broken avatar falls back
+PASS: mobile: CA-02/04 session B replaces A, ignores late A response, logout protects /me; no browser errors
+PASS: desktop: CA-01/02 navigation, own identity/email/bio/avatar and account link; no horizontal overflow
+PASS: desktop: CA-03 persisted fixture changes reload, reopen and focus
+PASS: desktop: CA-04 error clears profile, retry works; absent/inaccessible/foreign/broken avatar falls back
+PASS: desktop: CA-02/04 session B replaces A, ignores late A response, logout protects /me; no browser errors

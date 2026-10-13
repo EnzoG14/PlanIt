@@ -5,7 +5,7 @@ import { pathToFileURL } from 'node:url'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/USUARIO/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
 const browser = await chromium.launch({ headless: true, channel: 'msedge' })
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4180'
-const output = 'docs/design/verification/own-profile'
+const output = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/own-profile'
 await mkdir(output, { recursive: true })
 const a = '20000000-0000-4000-8000-000000000001'
 const b = '20000000-0000-4000-8000-000000000002'
@@ -61,8 +61,8 @@ try {
     await page.getByAltText('Tu avatar').waitFor()
     assert.equal(await page.getByText('ana@example.invalid', { exact: true }).count(), 1)
     assert.equal(await page.locator('.primary-nav a[aria-current="page"]').textContent(), 'Perfil')
-    assert.equal(await page.locator('.profile-account a').getAttribute('href'), '/my-events')
-    await page.locator('.profile-account a').click()
+    assert.equal(await page.locator('.profile-account').getByRole('link', { name: 'Mis eventos', exact: true }).getAttribute('href'), '/my-events')
+    await page.locator('.profile-account').getByRole('link', { name: 'Mis eventos', exact: true }).click()
     await page.waitForURL('**/my-events')
     await page.getByRole('navigation', { name: 'Navegación principal' }).getByRole('link', { name: 'Perfil', exact: true }).click()
     await page.getByRole('heading', { name: displayName }).waitFor()
@@ -112,7 +112,8 @@ try {
     assert.equal(await page.getByText(displayName, { exact: true }).count(), 0)
     assert.equal(await page.getByText('ana@example.invalid', { exact: true }).count(), 0)
     await page.getByText('bruno@example.invalid', { exact: true }).waitFor()
-    await page.getByRole('button', { name: 'Salir', exact: true }).click()
+    await page.getByRole('button', { name: 'Cuenta', exact: true }).click()
+    await page.getByRole('button', { name: 'Cerrar sesión', exact: true }).click()
     await page.waitForURL('**/login**')
     assert.equal(await page.locator('.profile-identity').count(), 0)
     assert.deepEqual(errors, [])

@@ -111,7 +111,7 @@ try {
   await b.query('set role authenticated')
   await assert.rejects(b.query('select * from public.get_notifications()'),/authentication_required/)
   check('RLS enabled; all new RPCs SECURITY INVOKER, empty search_path; anon and missing identity denied')
-  const out='docs/design/verification/notifications'
+  const out=process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/notifications'
   await mkdir(out,{recursive:true});await writeFile(out+'/postgres-results.json',JSON.stringify({version,environment:'Local PostgreSQL with Auth/Storage scaffolding; no Supabase HTTP/JWT',results},null,2))
 } finally {
   for (const client of clients) { try { await client.end() } catch { /* Release every local connection. */ } }

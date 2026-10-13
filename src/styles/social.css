@@ -1,0 +1,11 @@
+/* Block 6 composition, only enabled on its three routes. */
+.social-shell .social-wash { position: absolute; z-index: -1; inset: 0 0 auto; height: 360px; pointer-events: none; background: radial-gradient(ellipse at 10% 0%, color-mix(in srgb, var(--pi-color-violet) 40%, transparent), transparent 65%), radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--pi-color-primary) 20%, transparent), transparent 65%); mask-image: linear-gradient(#000, transparent); }
+.social-shell:not(.chat-shell) main { position: relative; max-width: 600px; padding-top: 20px; }
+.social-shell main:focus-visible { outline: none; box-shadow: none; }
+.social-shell :is(.profile-heading, .notifications-heading) { flex-wrap: wrap; align-items: flex-start; gap: 12px; margin-bottom: var(--pi-space-section); }
+.social-shell :is(.profile-heading, .notifications-heading) h1 { font-size: var(--pi-font-headline-size); line-height: var(--pi-font-headline-line-height); letter-spacing: var(--pi-font-headline-tracking); overflow-wrap: anywhere; }
+.social-shell .text-button { min-height: 44px; color: var(--pi-color-violet-deep); border-radius: var(--pi-radius-pill); font-size: var(--pi-font-meta-size); }
+.social-shell ::selection { background: var(--pi-color-lavender); color: var(--pi-color-ink); }
+.social-shell :is(textarea, input) { caret-color: var(--pi-color-violet-deep); }
+.social-shell .field-error { color: var(--pi-color-danger-on-bg); background: var(--pi-color-danger-bg); padding: 10px 12px; border-radius: var(--pi-radius-notice); font-size: var(--pi-font-meta-size); }
+@media (max-width: 359px) { .social-shell .primary-nav a { min-width: 46px; padding-inline: 11px; } .social-shell .primary-nav a.active { padding-inline: 14px; } }

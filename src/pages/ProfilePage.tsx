@@ -85,6 +85,7 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
       </>}
     <nav className="profile-account" aria-label="Información de tu cuenta">
       <Link to="/my-events"><Icon name="calendar" /><span>Mis eventos</span><span aria-hidden="true">›</span></Link>
+      <Link to="/notifications"><Icon name="bell" /><span>Notificaciones</span><span aria-hidden="true">›</span></Link>
     </nav>
   </div>
 }
