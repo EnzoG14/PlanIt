@@ -28,7 +28,7 @@ export async function loadGallery(eventId: string): Promise<GalleryImage[]> {
     return file ? [{ id: row.id, file_id: row.file_id, sort_order: row.sort_order, path: file.storage_path }] : []
   })
   if (!rows.length) return []
-  const signed = await supabase.storage.from('event_media').createSignedUrls(rows.map(row => row.path), 300)
+  const signed = await supabase.storage.from('event_media').createSignedUrls(rows.map(row => row.path), 60)
   if (signed.error) throw new Error('No se pudieron renovar las fotos. Reintentá.')
   return rows.map(row => ({ ...row, url: signed.data?.find(file => file.path === row.path)?.signedUrl ?? '' }))
 }

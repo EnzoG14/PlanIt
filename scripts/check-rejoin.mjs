@@ -106,11 +106,15 @@ try {
   check('A new removal after approval allows a new immediate request')
   const hidden=await create(), hiddenP=await removed(hidden)
   await admin.query("update public.events set visibility='unlisted' where id=$1",[hidden])
+  await assert.rejects(own(b,hidden),/event_unavailable/)
+  await assert.rejects(request(b,hidden),/event_unavailable/)
+  assert.equal((await b.query('select id from public.events where id=$1',[hidden])).rowCount,0)
+  await admin.query('insert into public.event_access_grants(event_id,user_id) values($1,$2)',[hidden,guest])
   assert.equal((await own(b,hidden)).can_request,true); await request(b,hidden)
   await assert.rejects(own(c,hidden),/event_unavailable/)
   assert.equal((await b.query('select id from public.events where id=$1',[hidden])).rowCount,1)
   assert.equal((await snapshot(hiddenP)).status,'removed')
-  check('Historical holder retains access to unlisted detail; no grant is fabricated for strangers')
+  check('R4: historical holder needs active grant for hidden detail/rejoin; history alone never grants access')
   for (const state of ['ended','cancelled','archived']) {
     const closed = await create(), cp = await removed(closed), cr = await request(b,closed)
     const assignments = { ended: "starts_at='2020-01-01',ends_at='2020-01-02'", cancelled: "cancelled_at=clock_timestamp() at time zone 'America/Argentina/Buenos_Aires'", archived: "archived_at=clock_timestamp() at time zone 'America/Argentina/Buenos_Aires'" }

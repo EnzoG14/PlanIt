@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:hidden-access": "node scripts/check-hidden-access.mjs",
+    "check:hidden-access:ui": "node scripts/check-hidden-access-ui.mjs",
     "check:suggestions": "node scripts/check-suggestions.mjs",
     "check:suggestions:ui": "node scripts/check-suggestions-ui.mjs",
     "check:interests": "node scripts/check-interests.mjs",

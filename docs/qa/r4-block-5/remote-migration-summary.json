@@ -1,0 +1,35 @@
+{
+  "project": "iepeqmvzjguwlhnecsdq",
+  "applied_at_argentina": "2026-10-13T19:28:46.651433-03:00",
+  "authorization": "Explicit user request: aplica las migraciones a la base remota",
+  "migration": "20261014120003_hidden_event_access.sql",
+  "applied": true,
+  "migration_count": 22,
+  "dry_run_after": "up to date; no pending migrations",
+  "remote_function_sources_identical_to_git": 11,
+  "function_source_hashes": {
+    "planit_private.can_view_event": "1e666b06a0bf30f5c05a9aaaa5323365",
+    "planit_private.protect_event_visibility": "0b0fbe4ed7c8b692f96e3de16cb03952",
+    "planit_private.can_read_event_chat": "79ba09792d44cb6e0099a911bf8ecf59",
+    "public.get_event_participation_summary": "ef8dccca594bbd8288cc5ebfe9619d85",
+    "public.get_event_organizer": "55cca631b4325cc8cb0a6c42be5f390c",
+    "public.register_for_event": "261a6367ac44b196b733757e1836d9e6",
+    "public.send_event_chat_message": "b04603be9605ade4df18fb276dcd9c0e",
+    "public.get_my_rejoin_status": "0ccc9d2b6b2f3f788d15c6118e9500b2",
+    "public.request_rejoin": "c1205c9adcc085c253434ef9848cd20b",
+    "public.resolve_rejoin": "293ed799516f9c085e870b68017e0a4b",
+    "public.leave_event": "a115dcdd22dbc01a1243162c0a7812b6"
+  },
+  "rls_privileges_policies_indexes_constraints_triggers": "PASS",
+  "advisors": {
+    "before": 23,
+    "after": 23,
+    "new_findings": 0,
+    "errors": 0,
+    "known_warnings": "22 intentional authenticated SECURITY DEFINER RPCs; leaked password protection disabled (pre-existing)"
+  },
+  "http_jwt_storage_realtime": "NOT RUN",
+  "business_fixture_writes": "NONE",
+  "historical_project_touched": false,
+  "remote_sql_smoke": "PASS: authenticated without identity denied events/grants/hash/summary; synthetic identity reads one public event and summary/organizer; read-only rollback, no real JWT"
+}

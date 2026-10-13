@@ -69,7 +69,7 @@ export async function loadMyEvents(section: MyEventsSection, offset = 0, filter:
   let imageError = false
   if (paths.length) {
     try {
-      const signed = await supabase.storage.from('event_media').createSignedUrls(paths, 300)
+      const signed = await supabase.storage.from('event_media').createSignedUrls(paths, 60)
       imageError = Boolean(signed.error || signed.data?.some(item => item.error))
       signed.data?.forEach(item => { if (item.signedUrl && item.path) urls.set(item.path, item.signedUrl) })
     } catch { imageError = true }

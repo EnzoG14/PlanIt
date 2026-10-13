@@ -1,5 +1,11 @@
 # PlanIt — Arquitectura
 
+## R4 Bloque 5 — Autorización de ocultos
+
+Base de seguridad local, sin UX de links todavía. `planit_private.can_view_event(event_id)` deriva identidad de auth.uid y exige dueño o grant active en unlisted; histórico sólo conserva lectura de públicos. RLS de events y lecturas DEFINER comparten la decisión; chat agrega dueño/confirmed y aprobación R3 comprueba grant del destinatario. Media/Storage y listas invoker heredan RLS; no se amplía lectura de perfiles ni asistentes. Un trigger privado impone A04/A05/D12 bajo lock del evento sin exponer una nueva operación al cliente. [Contrato, pruebas y límites](qa/r4-block-5/README.md).
+
+APIs de detalle/galería/Mis eventos solicitan firmas de 60 s; SW sin runtime cache privada. URLs ya emitidas/bytes descargados no se invalidan; el frontend revalida en retorno/foco. Migración B5 **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior**, 22 versiones sincronizadas, funciones/ACL/RLS verificadas y smoke SQL read-only PASS; HTTP/JWT real y aceptación humana pendientes. [Acta](qa/r4-block-5/remote-migration-summary.json).
+
 ## R4 Bloque 4 — Sugerencias
 
 Inicio incorpora «Para vos» independiente con EventCard y motivos, preservando filtros/agrupación/paginación públicos. `get_suggested_events` calcula afinidad/cercanía/fecha antes de LIMIT con intereses auth.uid() bajo RLS; sólo públicos vigentes. GPS autorizado/mapa identificado en memoria, sin pedir ubicación automáticamente. Estado por cuenta, abort/revisión, foco/visibilidad/origen y polling visible 30s; timer retira finalizados. Migración creada/probada local y aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior; JWT real pendiente. [Contrato, fórmula, pruebas y límites](design/verification/r4-block-4/README.md).
