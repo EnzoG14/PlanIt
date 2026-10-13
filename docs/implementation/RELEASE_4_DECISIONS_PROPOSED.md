@@ -1,6 +1,6 @@
 # Release 4 — Registro de decisiones: aprobadas y propuestas pendientes
 
-**Estado:** versión 1.1, 12/10/2026. **Siete decisiones de producto confirmadas por el responsable** (A01–A07); el resto sigue siendo propuesta técnica, no aprobación implícita. Este archivo NO es una auditoría de Bloque 0 ejecutada. Las alternativas se deducen de RF/CA/especificación y del código visible de `main` el 12/10/2026. No se han probado permisos reales con JWT ni consultado el remoto Supabase para confirmar el esquema efectivo de R4.
+**Estado:** versión 1.2, actualizada por BLOQUE 0 el 13/10/2026; acta original 12/10/2026. **Siete decisiones de producto confirmadas por el responsable** (A01–A07); D12 y el TTL objetivo D14 fueron elegidos el 13/10/2026; las demás opciones siguen siendo propuestas técnicas, no aprobación implícita. La auditoría ejecutada del Bloque 0 se registra por separado en [RELEASE_4_BLOCK_0_DECISIONS.md](RELEASE_4_BLOCK_0_DECISIONS.md); este archivo conserva decisiones y propuestas. Las alternativas se deducen de RF/CA/especificación y del código visible de `main` el 12/10/2026. No se han probado permisos reales con JWT ni consultado el remoto Supabase para confirmar el esquema efectivo de R4.
 
 ## Hechos respaldados por fuentes
 
@@ -42,9 +42,9 @@ Estas opciones se consideran **CERRADAS** y son vinculantes para Codex. No reabr
 | D09 | Evento unlisted→public | Al regresar a public, visible a todos por regla pública; revocados preservados para el próximo estado oculto | Prohibir conversión a público si existe revocado | **Aprobada** |
 | D10 | Link de invitación | **Aprobado:** secreto aleatorio de 256 bits, hash persistido, no recuperable. **Propuesto:** URL con fragmento y retención efímera durante login | `/invite/:token` más sencillo, pero aparece en logs/referrers | **Hash aprobado; formato propuesto** |
 | D11 | Link perdido | Mostrarlo en generación/rotación solamente; regenerar si se pierde, invalidando el anterior | Guardarlo descifrable requeriría custodia de clave adicional | **Aprobada** |
-| D12 | Al volver a `public` | **Propuesta:** revocar enlace activo atómicamente, conservar grants, exigir nuevo enlace al reocultar | Si no se revoca, podría reaparecer tras reocultar | **Propuesta crítica** |
+| D12 | Al volver a `public` | Revocar enlace activo atómicamente, conservar grants, exigir nuevo enlace al reocultar | Evita que el enlace anterior vuelva a servir tras reocultar | **Elegido por usuario 13/10/2026** |
 | D13 | Eventos propios / inscritos en sugerencias | Por defecto no excluir participantes (no exigido), pero marcar «Ya participás» si la tarjeta ya lo soporta | Excluir evento propio o confirmed para mejorar UX | Pendiente |
-| D14 | Multimedia tras revocación | Reducir TTL de signed URLs privadas de 300 s a 60–120 s cuando sea viable y limpiar caché; documentar ventana residual | Mantener 300 s es más eficiente pero expone material ya firmado | **Crítica** |
+| D14 | Multimedia tras revocación | TTL objetivo **60 s** en media oculta; renovar con permiso vigente y limpiar al denegar/cambiar cuenta; documentar ventana residual | Actual = 300 s; viabilidad/renovación se verifican al implementar bloque 5 | **Opción elegida por usuario 13/10/2026; propuesta técnica pendiente de implementación** |
 | D15 | Cadencia de trabajo | Un bloque/PR, bloque 5 seguridad antes del 6–8; R3 aceptada como dependencia funcional, auditar únicamente sus contratos técnicos | Saltarse seguridad aumenta riesgos | Propuesta técnica |
 
 ## Contratos técnicos propuestos a confirmar mediante Bloque 0
@@ -63,9 +63,9 @@ Estas opciones se consideran **CERRADAS** y son vinculantes para Codex. No reabr
 - **D06:** ruta de intereses propuesta `/me/interests`; ajustar al patrón de navegación validado en Bloque 0.
 - **D07:** scoring y pesos 100/30/20 sólo propuesta, documentar elección reproducible antes de programar.
 - **D10 (parte URL):** fragmento `#token=` sugerido para reducir exposición en logs/referrers; asegurar que el flujo real de Auth conserva el secreto sin `localStorage` y sin registrarlo en telemetría.
-- **D12:** propuesta segura: al pasar `unlisted→public`, revocar automáticamente el enlace activo para que no resucite tras una nueva transición a oculto; **no** revocar grants activos ni borrar grants revocados. En el próximo cambio a oculto, crear otro enlace. Revisar UX de confirmación antes de implementar.
+- **D12 (elegido el 13/10/2026):** al pasar `unlisted→public`, revocar automáticamente el enlace activo para que no resucite tras una nueva transición a oculto; **no** revocar grants activos ni borrar grants revocados. En el próximo cambio a oculto, crear otro enlace. Documentar esta consecuencia en la confirmación al implementar.
 - **D13:** mantener por defecto el universo de sugerencias general público; si se excluyen propios/inscritos, documentar nuevo criterio antes de codificar.
-- **D14:** TTL de URLs firmadas actuales y política de Storage. Proponer 60–120 s para media de ocultos, según factibilidad, dejando constancia de la ventana residual que RLS no puede invalidar.
+- **D14 (opción elegida el 13/10/2026):** TTL objetivo **60 s** para media de ocultos. Actual = 300 s; revisar renovación y asociaciones compartidas al implementar, dejando constancia de la ventana residual que RLS no puede invalidar.
 
 ### Invariante especial al alternar visibilidad repetidamente
 
@@ -81,6 +81,12 @@ En Bloque 0, **aplicar directamente A01–A07**, registrar la aprobación del 12
 
 **D06 / D10 / rutas a revisar:** `/me/interests`, `/invite`, `/events/:id/access` siguen siendo propuestas de implementación; si se adoptan, actualizar clasificación de rutas en `AppLayout.tsx`, scopes `.amanecer-shell` y navegación/retorno/foco; sin quinta pestaña.
 
-**D02 / D05 / D07 / D12 / D13 / D14** permanecen en estado anterior (propuestas técnicas pendientes); este documento no convierte sus defaults en decisiones del usuario. Al comenzar bloque 0 resolverlas documentadamente si no alteran RF/CA; consultar al responsable si cambian política sensible.
+**D02 / D05 / D07 / D13** conservan naturaleza de propuestas técnicas; D12 y la opción de TTL D14 se eligieron expresamente en el chat del 13/10/2026. El resto de defaults no se convierte en decisión del usuario. Al comenzar bloque 0 resolverlas documentadamente si no alteran RF/CA; consultar al responsable si cambian política sensible.
 
 **Desfase de evidencias R3:** responsable declara R3 integrada y validada (A07), `RELEASE_3_TEST_REPORT.md` persiste `NO-GO` por E2E JWT reales y aceptación humana no documentada. Codex debe registrar esa divergencia, verificar dependencias R4 y nunca afirmar que pruebas remotas no documentadas fueron ejecutadas.
+
+## Acta BLOQUE 0 — 13/10/2026
+
+Usuario eligió **revocar enlace al volver público** y **60 segundos** como TTL objetivo de multimedia oculta; luego autorizó implementar el plan documental que contiene ambas elecciones. No reabrir A01–A07. Defaults adoptados como propuestas de ingeniería: radios 5/10/25/50/100 km y Sin límite inicial, filtros no secretos en URL, /me/interests con guardado atómico, pesos 100/30/20, candidatos sin exclusión automática de propios/confirmed y /invite#token= con memoria sólo de sesión SPA. La fórmula del ranking y el rendimiento de renovación se verifican en sus bloques; no son funcionalidades implementadas ni nuevos acuerdos de producto.
+
+[Auditoría](RELEASE_4_BLOCK_0_DECISIONS.md) comprobó contratos del main 42af4e4, ausencia de tablas R4 en Git y limitación de retorno Auth: safeReturnPath aún no admite /invite y la confirmación de correo redirige a /map. Propuesta técnica: memoria que sobreviva rutas, destino interno exacto /invite, limpiar fragmento; tras recarga/confirmación externa, reabrir enlace original. No persistir secreto en localStorage/sessionStorage, no afirmar soporte de canje ya implementado.

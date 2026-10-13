@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-13",
+  "base": "42af4e42d032637b1363e207714e86c297d8c3b1",
+  "kind": "Documentation / static inspection / local UI fixture",
+  "checks": [
+    {
+      "test": "Diff limited to R4 documentation and new evidence; application/SQL/config/history unchanged",
+      "result": "PASS",
+      "changed": [
+        "docs/design/verification/r4-block-0/README.md",
+        "docs/design/verification/r4-block-0/authorization-matrix.csv",
+        "docs/design/verification/r4-block-0/baseline/detail-1280x900.png",
+        "docs/design/verification/r4-block-0/baseline/detail-375x812.png",
+        "docs/design/verification/r4-block-0/baseline/detail-no-photo-375x812.png",
+        "docs/design/verification/r4-block-0/baseline/home-1280x900.png",
+        "docs/design/verification/r4-block-0/baseline/home-375x812.png",
+        "docs/design/verification/r4-block-0/baseline/home-error-375x812.png",
+        "docs/design/verification/r4-block-0/baseline/map-1280x900.png",
+        "docs/design/verification/r4-block-0/baseline/map-375x812.png",
+        "docs/design/verification/r4-block-0/baseline/profile-1280x900.png",
+        "docs/design/verification/r4-block-0/baseline/profile-375x812.png",
+        "docs/design/verification/r4-block-0/capture-baseline.mjs",
+        "docs/design/verification/r4-block-0/capture-results.json",
+        "docs/design/verification/r4-block-0/documentation-results.json",
+        "docs/design/verification/r4-block-0/inspect-contracts.mjs",
+        "docs/design/verification/r4-block-0/lab/event-375x812.png",
+        "docs/design/verification/r4-block-0/lab/home-375x812.png",
+        "docs/design/verification/r4-block-0/lab/map-375x812.png",
+        "docs/design/verification/r4-block-0/lab/profile-375x812.png",
+        "docs/design/verification/r4-block-0/original-source-comparison.json",
+        "docs/design/verification/r4-block-0/source-manifest.json",
+        "docs/design/verification/r4-block-0/sql-inventory.json",
+        "docs/design/verification/r4-block-0/traceability.csv",
+        "docs/design/verification/r4-block-0/verify-documentation.mjs",
+        "docs/implementation/RELEASE_4_BLOCK_0_DECISIONS.md",
+        "docs/implementation/RELEASE_4_DECISIONS_PROPOSED.md",
+        "docs/implementation/RELEASE_4_STATUS.md",
+        "docs/qa/RELEASE_4_ACCEPTANCE.md"
+      ],
+      "added_count": 0
+    },
+    {
+      "test": "Local links resolve in edited documentation",
+      "result": "PASS",
+      "links": 86
+    },
+    {
+      "test": "39 official texts, suggested tests and functional states preserved exactly",
+      "result": "PASS"
+    },
+    {
+      "test": "39 unique criteria mapped to route/service/component/CSS/policy/future test",
+      "result": "PASS"
+    },
+    {
+      "test": "288 authorization combinations documented as static inference / target, not test results",
+      "result": "PASS"
+    },
+    {
+      "test": "Source hashes match immutable Git base",
+      "result": "PASS",
+      "sources": 76
+    },
+    {
+      "test": "Static SQL definitions/signatures/search_path/authenticated EXECUTE verified against source",
+      "result": "PASS",
+      "migrations": 17,
+      "tables": 11,
+      "public_functions": 31,
+      "private_functions": 12,
+      "declared_policies": 20,
+      "remote": "NOT INSPECTED",
+      "sql_replay": "NOT RUN"
+    },
+    {
+      "test": "10 baseline plus 4 lab PNG captured with local fixtures; no business mutation/page errors",
+      "result": "PASS",
+      "browser": "155.0.4283.45",
+      "map": "fallback only; real Mapbox NOT RUN"
+    },
+    {
+      "test": "Original connected criteria compared: 39/39",
+      "result": "PASS",
+      "source": "https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit",
+      "kind": "Document comparison, not functional QA"
+    },
+    {
+      "test": "Evidence helper syntax: node --check",
+      "result": "PASS"
+    },
+    {
+      "test": "git diff base --check",
+      "result": "PASS"
+    },
+    {
+      "test": "New and edited textual artifacts contain no trailing whitespace",
+      "result": "PASS"
+    }
+  ],
+  "not_run": [
+    "npm run build",
+    "npm run lint",
+    "SQL replay / functional checks",
+    "Supabase metadata / advisors",
+    "HTTP JWT A/B / Storage / Realtime real",
+    "Real Mapbox / physical devices / assistive technology",
+    "39 R4 functional acceptance criteria"
+  ],
+  "limits": "No functional implementation, no security correction or human acceptance."
+}
