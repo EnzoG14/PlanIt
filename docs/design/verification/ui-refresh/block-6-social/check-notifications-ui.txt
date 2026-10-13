@@ -1,0 +1,21 @@
+
+> planit@0.0.0 check:notifications:ui
+> node scripts/check-notifications-ui.mjs
+
+PASS: mobile: CA-01/02 navigation, 30 persisted fixtures, full Argentina date/time even with Tokyo device, read/unread and absent body/target
+PASS: mobile: keyset next page and no duplicates
+PASS: mobile: failed marking stays unread; success and reload reflect persisted read state
+PASS: mobile: access revoked after listing prevents navigation and removes stale action
+PASS: mobile: authorized target opens existing event detail
+PASS: mobile: CA-04 honest empty state without generated notices
+PASS: mobile: loading, network error, missing migration and retry recovery
+PASS: mobile: focus refresh and cross-tab account change discard old account rows and late A response
+PASS: desktop: CA-01/02 navigation, 30 persisted fixtures, full Argentina date/time even with Tokyo device, read/unread and absent body/target
+PASS: desktop: keyset next page and no duplicates
+PASS: desktop: failed marking stays unread; success and reload reflect persisted read state
+PASS: desktop: access revoked after listing prevents navigation and removes stale action
+PASS: desktop: authorized target opens existing event detail
+PASS: desktop: CA-04 honest empty state without generated notices
+PASS: desktop: loading, network error, missing migration and retry recovery
+PASS: desktop: focus refresh and cross-tab account change discard old account rows and late A response
+PASS: Anonymous direct route redirects to login

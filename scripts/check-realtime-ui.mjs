@@ -100,7 +100,7 @@ try {
  denied=true;await A.page.evaluate(()=>window.dispatchEvent(new Event('focus')));await A.page.getByRole('heading',{name:'Chat no disponible'}).waitFor();assert.equal(await A.page.locator('.chat-messages').count(),0);denied=false
  check('closed event is read only; detected membership denial clears private history and channel')
  await A.page.goto(origin+'/me');await A.page.getByRole('link',{name:/Notificaciones, 35 no leídas/}).waitFor()
- await A.page.getByRole('link',{name:/Notificaciones/}).click();await A.page.getByRole('heading',{name:'Aviso 34',exact:true}).waitFor()
+ await A.page.locator('.notifications-bell').click();await A.page.getByRole('heading',{name:'Aviso 34',exact:true}).waitFor()
  await A.page.getByRole('button',{name:'Ver más avisos'}).click();await A.page.getByRole('heading',{name:'Aviso 0',exact:true}).waitFor()
  const A2=await setup(a,{width:1280,height:900});await A2.page.goto(origin+'/notifications');await A2.page.getByRole('heading',{name:'Aviso 34',exact:true}).waitFor()
  const notice={...notices[0],id:'80000000-0000-4000-8000-000000000001',title:'Aviso nuevo',created_at:'2026-10-11T15:00:00'};notices.push(notice);emit('notifications','INSERT',notice)
@@ -114,7 +114,7 @@ try {
  await A.page.evaluate(({key,value})=>{const oldValue=localStorage.getItem(key),newValue=JSON.stringify(value);localStorage.setItem(key,newValue);window.dispatchEvent(new StorageEvent('storage',{key,oldValue,newValue,storageArea:localStorage}));const channel=new BroadcastChannel(key);channel.postMessage({event:'SIGNED_IN',session:value});channel.close()},{key,value:session(b)})
  await A.page.getByRole('heading',{name:'Todavía no tenés notificaciones'}).waitFor();assert.equal(await A.page.locator('.notification-row').count(),0)
  assert.equal(await A.page.locator('.notifications-badge').count(),0)
- await A.page.getByRole('button',{name:'Salir',exact:true}).click();await A.page.waitForURL('**/login**')
+ await A.page.getByRole('button',{name:'Cuenta',exact:true}).click();await A.page.getByRole('button',{name:'Cerrar sesión',exact:true}).click();await A.page.waitForURL('**/login**')
  check('account change isolates rows/count/channels; logout clears private UI')
  for(const fixture of [A,B,A2]) {assert.equal(await fixture.page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await fixture.context.close()}
  assert.deepEqual(errors,[]);assert.ok(listCalls>1);await writeFile(output+'/ui-results.json',JSON.stringify({results},null,2))

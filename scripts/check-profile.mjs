@@ -78,7 +78,7 @@ try {
   await role(b,null)
   await assert.rejects(b.query('select '+projection+' from public.profiles where id=$1',[owner]),/permission denied/)
   check('Anonymous role cannot SELECT profiles')
-  const out='docs/design/verification/own-profile'
+  const out=process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/own-profile'
   await mkdir(out,{recursive:true})
   await writeFile(out+'/postgres-results.json',JSON.stringify({version,environment:'Local PostgreSQL with Auth/Storage scaffolding, no real Supabase HTTP or JWT',results},null,2))
 } finally {

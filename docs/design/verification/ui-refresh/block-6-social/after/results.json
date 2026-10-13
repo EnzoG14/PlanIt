@@ -1,0 +1,425 @@
+{
+  "environment": "Edge Playwright; intercepted Auth/REST/WebSocket fixtures; no remote E2E",
+  "results": [
+    {
+      "name": "chat",
+      "width": 320,
+      "height": 800,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "composer": {
+        "x": 16,
+        "y": 666.40625,
+        "width": 288,
+        "height": 133.59375,
+        "top": 666.40625,
+        "right": 304,
+        "bottom": 800,
+        "left": 16
+      },
+      "viewport": 800
+    },
+    {
+      "name": "profile",
+      "width": 320,
+      "height": 800,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 800
+    },
+    {
+      "name": "notifications",
+      "width": 320,
+      "height": 800,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 800
+    },
+    {
+      "name": "chat",
+      "width": 360,
+      "height": 800,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "composer": {
+        "x": 16,
+        "y": 666.40625,
+        "width": 328,
+        "height": 133.59375,
+        "top": 666.40625,
+        "right": 344,
+        "bottom": 800,
+        "left": 16
+      },
+      "viewport": 800
+    },
+    {
+      "name": "profile",
+      "width": 360,
+      "height": 800,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 800
+    },
+    {
+      "name": "notifications",
+      "width": 360,
+      "height": 800,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 800
+    },
+    {
+      "name": "chat",
+      "width": 375,
+      "height": 812,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "composer": {
+        "x": 16,
+        "y": 678.40625,
+        "width": 343,
+        "height": 133.59375,
+        "top": 678.40625,
+        "right": 359,
+        "bottom": 812,
+        "left": 16
+      },
+      "viewport": 812
+    },
+    {
+      "name": "profile",
+      "width": 375,
+      "height": 812,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 812
+    },
+    {
+      "name": "notifications",
+      "width": 375,
+      "height": 812,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 812
+    },
+    {
+      "name": "chat",
+      "width": 390,
+      "height": 844,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "composer": {
+        "x": 16,
+        "y": 710.40625,
+        "width": 358,
+        "height": 133.59375,
+        "top": 710.40625,
+        "right": 374,
+        "bottom": 844,
+        "left": 16
+      },
+      "viewport": 844
+    },
+    {
+      "name": "profile",
+      "width": 390,
+      "height": 844,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "notifications",
+      "width": 390,
+      "height": 844,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "chat",
+      "width": 768,
+      "height": 1024,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "composer": {
+        "x": 20,
+        "y": 890.40625,
+        "width": 728,
+        "height": 133.59375,
+        "top": 890.40625,
+        "right": 748,
+        "bottom": 1024,
+        "left": 20
+      },
+      "viewport": 1024
+    },
+    {
+      "name": "profile",
+      "width": 768,
+      "height": 1024,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 1024
+    },
+    {
+      "name": "notifications",
+      "width": 768,
+      "height": 1024,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 1024
+    },
+    {
+      "name": "chat",
+      "width": 1280,
+      "height": 900,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "composer": {
+        "x": 276,
+        "y": 766.40625,
+        "width": 728,
+        "height": 133.59375,
+        "top": 766.40625,
+        "right": 1004,
+        "bottom": 900,
+        "left": 276
+      },
+      "viewport": 900
+    },
+    {
+      "name": "profile",
+      "width": 1280,
+      "height": 900,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 900
+    },
+    {
+      "name": "notifications",
+      "width": 1280,
+      "height": 900,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 900
+    },
+    {
+      "name": "chat",
+      "width": 390,
+      "height": 844,
+      "state": "empty",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "composer": {
+        "x": 16,
+        "y": 710.40625,
+        "width": 358,
+        "height": 133.59375,
+        "top": 710.40625,
+        "right": 374,
+        "bottom": 844,
+        "left": 16
+      },
+      "viewport": 844
+    },
+    {
+      "name": "chat",
+      "width": 390,
+      "height": 844,
+      "state": "long",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "composer": {
+        "x": 16,
+        "y": 710.40625,
+        "width": 358,
+        "height": 133.59375,
+        "top": 710.40625,
+        "right": 374,
+        "bottom": 844,
+        "left": 16
+      },
+      "viewport": 844
+    },
+    {
+      "name": "chat",
+      "width": 390,
+      "height": 844,
+      "state": "error",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "chat",
+      "width": 390,
+      "height": 844,
+      "state": "loading",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "profile",
+      "width": 390,
+      "height": 844,
+      "state": "empty",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "profile",
+      "width": 390,
+      "height": 844,
+      "state": "long",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "profile",
+      "width": 390,
+      "height": 844,
+      "state": "error",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "profile",
+      "width": 390,
+      "height": 844,
+      "state": "loading",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "notifications",
+      "width": 390,
+      "height": 844,
+      "state": "empty",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "notifications",
+      "width": 390,
+      "height": 844,
+      "state": "long",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "notifications",
+      "width": 390,
+      "height": 844,
+      "state": "error",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "notifications",
+      "width": 390,
+      "height": 844,
+      "state": "loading",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "chat",
+      "width": 390,
+      "height": 844,
+      "state": "readonly",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 844
+    },
+    {
+      "name": "chat",
+      "width": 320,
+      "height": 400,
+      "state": "long",
+      "overflow": false,
+      "shell": "app-shell chat-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "composer": {
+        "x": 16,
+        "y": 270.40625,
+        "width": 288,
+        "height": 129.59375,
+        "top": 270.40625,
+        "right": 304,
+        "bottom": 400,
+        "left": 16
+      },
+      "viewport": 400
+    },
+    {
+      "name": "profile-reduced",
+      "width": 375,
+      "height": 812,
+      "state": "full",
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "viewport": 812
+    }
+  ]
+}

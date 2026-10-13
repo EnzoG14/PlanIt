@@ -1,0 +1,5 @@
+
+> planit@0.0.0 check:amanecer:auth:ui
+> node scripts/check-amanecer-auth-ui.mjs
+
+PASS: Amanecer Auth styles, accessibility, state fixtures, responsive and isolation at six viewports; no remote requests

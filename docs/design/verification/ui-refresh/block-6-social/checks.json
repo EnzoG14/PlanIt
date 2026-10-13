@@ -1,0 +1,62 @@
+[
+  {
+    "check": "build",
+    "exitCode": 0
+  },
+  {
+    "check": "lint",
+    "exitCode": 0
+  },
+  {
+    "check": "check:amanecer",
+    "exitCode": 0
+  },
+  {
+    "check": "check:realtime",
+    "exitCode": 0
+  },
+  {
+    "check": "check:profile",
+    "exitCode": 0
+  },
+  {
+    "check": "check:notifications",
+    "exitCode": 0
+  },
+  {
+    "check": "check:notifications:ui",
+    "exitCode": 0,
+    "rerun": "Passed after updating ambiguous notification and obsolete logout selectors"
+  },
+  {
+    "check": "check:my-events:ui",
+    "exitCode": 0
+  },
+  {
+    "check": "check:auth",
+    "exitCode": 0
+  },
+  {
+    "check": "check:amanecer:auth:ui",
+    "exitCode": 0
+  },
+  {
+    "check": "check:realtime:ui",
+    "exitCode": 0,
+    "rerun": "Passed after updating ambiguous notification and obsolete logout selectors"
+  },
+  {
+    "check": "check:profile:ui",
+    "exitCode": 0,
+    "rerun": "Passed after selecting account links explicitly and using Cuenta > Cerrar sesión"
+  },
+  {
+    "check": "check:chat:layout",
+    "exitCode": 0
+  },
+  {
+    "check": "check:social:ui before/after",
+    "exitCode": 0,
+    "captures": "32 base + 33 final + 3 lab references"
+  }
+]

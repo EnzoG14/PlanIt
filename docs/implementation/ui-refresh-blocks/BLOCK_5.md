@@ -55,3 +55,11 @@ Run notes: targets concretos = ambos TSX; evaluación independiente; detector CL
 Fixtures de Auth/REST/Storage y Realtime bloqueado; PostgreSQL real efímero con scaffolding SQL de Auth/Storage. **No es E2E contra Supabase remoto, no usa JWT real y no prueba su gateway HTTP ni Storage real.** No se aplicaron migraciones remotas. Emulación de viewport y texto duplicado en DOM no equivalen a zoom nativo, teclado iOS/Android, safe areas físicas, lector de pantalla, gestos reales, rendimiento del blur o fotografías reales. La carga de la fuente se espera; no se ensayó su descarga fallida. El fallback sin soporte de backdrop-filter se conserva en los patrones centrales y no se ejercitó en un motor antiguo.
 
 Evidencia exclusiva: [block-5-management](../../design/verification/ui-refresh/block-5-management/README.md), con `before/`, `after/`, resultados, geometría, detector y logs técnicos. PR draft requerida: `design: migrate gallery and attendees to Amanecer`. No fusionar ni comenzar otros bloques.
+
+## Integración con main — 13/10/2026
+
+Se integra `origin/main` en `0b8a1b3c34cc04ed926952bc6c5cec09aa384e27` (Bloque 6 social). Único conflicto: la condición de clases en AppLayout. La resolución conserva el import de social.css, isSocial y social-wash de main junto a isEventManagement de esta PR. Chat/perfil/notificaciones y galería/asistentes mantienen sus scopes Amanecer separados.
+
+Validación posterior: build, lint y check:amanecer PASS; galería 84/84 y asistentes 72/72 con audit en seis tamaños; runner social de main: 33 capturas PASS. Se usó el build de producción local tras un timeout del optimizador de Vite dev. Fixtures interceptados, sin escrituras remotas. El runner de galería ahora espera a que termine la operación anterior antes de seleccionar otro archivo; esta espera elimina una carrera de prueba visible con el build rápido, sin cambiar lógica de la aplicación. Se retiró espacio sobrante de dos logs propios. Las capturas históricas se conservan y la regresión adicional se registra como JSON en `block-5-management/merge-main/`.
+
+Este commit integra main en la rama de la PR; no fusiona la PR hacia main.
