@@ -1,6 +1,6 @@
 # R4 bloque 6 — Visibilidad y enlaces
 
-13/10/2026, Argentina. Rama `codex/r4-block-6`, base `origin/main` **0428d4ff601056fa60d61788087ff352c310e070** después del fetch; PR #44/B5 integrado. [PR #45 en borrador](https://github.com/EnzoG14/PlanIt/pull/45). Checkout aislado; cambios anteriores del checkout raíz preservados. **Implementado; QA humana/remota pendiente.** SQL exclusivamente local; sin merge/deploy ni bloque 7.
+13/10/2026, Argentina. Rama `codex/r4-block-6`, base `origin/main` **0428d4ff601056fa60d61788087ff352c310e070** después del fetch; PR #44/B5 integrado. [PR #45 en borrador](https://github.com/EnzoG14/PlanIt/pull/45). Checkout aislado; cambios anteriores del checkout raíz preservados. **Implementado; QA humana/remota pendiente.** Migración aplicada/verificada posteriormente en planit-v2 el 13/10/2026 con autorización expresa; sin merge/despliegue frontend ni bloque 7.
 
 ## Contrato y cambios
 
@@ -19,7 +19,7 @@ Referencias técnicas: [funciones y privilegios Supabase](https://supabase.com/d
 
 ## Migración y compatibilidad
 
-`20261014120004_event_visibility_links.sql`: creada con CLI como `20261013223733`, renombrada después de B5; ninguna migración aplicada editada. Reemplazo sin CASCADE, sin dependientes SQL encontrados en migraciones; único overload de create/update con parámetros finales por defecto (llamadas R1–R3 siguen funcionando). Creación invoker bajo RLS; mutaciones de dueño DEFINER/search_path vacío/EXECUTE authenticated. UPDATE/DELETE de eventos y hashes/grants siguen inaccesibles. pgcrypto en extensions, sin tablas/fechas nuevas ni secretos cliente. Aplicación remota, dependency check remoto, dry-run y advisors **NOT RUN**; autorización separada requerida.
+`20261014120004_event_visibility_links.sql`: creada con CLI como `20261013223733`, renombrada después de B5; ninguna migración aplicada editada. Reemplazo sin CASCADE, sin dependientes SQL encontrados en migraciones; único overload de create/update con parámetros finales por defecto (llamadas R1–R3 siguen funcionando). Creación invoker bajo RLS; mutaciones de dueño DEFINER/search_path vacío/EXECUTE authenticated. UPDATE/DELETE de eventos y hashes/grants siguen inaccesibles. pgcrypto en extensions, sin tablas/fechas nuevas ni secretos cliente. **Aplicada/verificada remotamente el 13/10/2026 con autorización expresa posterior**: dependencias inspeccionadas, pgcrypto en extensions, 23 versiones sincronizadas, dry-run sin pendientes, 5 cuerpos idénticos a Git, RLS/ACL/defaults/índice y guardas sin identidad PASS. [Acta remota](remote-migration-summary.json). Asesores: 23→26 avisos, ningún error; tres nuevas RPC de dueño DEFINER son intencionales y la edición sustituye el aviso anterior por su nueva firma. Smoke con rol SQL sin identidad y ROLLBACK; no fixtures de negocio ni HTTP/JWT real.
 
 ## Evidencia clasificada
 

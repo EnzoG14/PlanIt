@@ -63,7 +63,7 @@
       "notes": ""
     }
   ],
-  "remote": "NOT RUN",
+  "remote": "PASS: migration applied by explicit authorization; 23 versions, 5 function sources/ACL/RLS/index/identity guards; no real JWT",
   "redemption": "NOT RUN: B7",
   "humanAcceptance": "PENDING"
 }

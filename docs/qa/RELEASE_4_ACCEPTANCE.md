@@ -74,3 +74,8 @@ Los **39 CA anteriores permanecen textualmente intactos**. La presentación de U
 Los 39 textos oficiales coinciden con la pestaña vigente del documento original mediante comparación normalizada de Unicode/espacios. [Resultado de fuente](../design/verification/r4-block-0/original-source-comparison.json), [39 contratos por criterio](../design/verification/r4-block-0/traceability.csv), [auditoría completa](../implementation/RELEASE_4_BLOCK_0_DECISIONS.md) y [matriz objetivo de seguridad](../design/verification/r4-block-0/authorization-matrix.csv). Los enlaces en Evidencia señalan contratos y pruebas futuras, **no PASS**. Los 39 estados siguen Pendiente; SQL/JWT/Storage/Realtime y funcionalidad R4 no se ejecutaron en este bloque.
 
 D12 elegido por usuario: al volver público se revoca enlace activo sin alterar grants. D14: TTL objetivo 60 s de media oculta, con renovación autorizada y ventana residual explícita. Pruebas futuras H12/H20/H25/H26 y carreras documentadas; no constituyen nuevos CA ni modifican sus textos.
+
+
+## Aplicación B6 autorizada posterior — 13/10/2026
+
+[Migración y verificación remota](r4-block-6/remote-migration-summary.json): planit-v2, 23 versiones sincronizadas, 5 funciones idénticas a Git, RLS/ACL/índice/defaults y guardas sin identidad PASS; dry-run sin pendientes. Asesores sin errores, con avisos intencionales por RPC de dueño DEFINER. No modifica estados de aceptación ni acredita JWT real/canje B7. Sin fixtures de negocio remotos, merge o bloque siguiente.
