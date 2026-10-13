@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { EventCard } from '../components/EventCard'
 import { Icon } from '../components/Icon'
@@ -21,6 +21,22 @@ export function MapPage() {
   const [attempt, setAttempt] = useState(0)
   const [truncated, setTruncated] = useState(false)
   const [imageError, setImageError] = useState(false)
+  const preview = useRef<HTMLElement>(null)
+  const results = useRef<HTMLElement>(null)
+  const selectionSource = useRef<string | null>(null)
+  const markerSource = useRef<string | null>(null)
+  function selectFromList(id: string) { selectionSource.current = id; markerSource.current = null; setSelectedId(id) }
+  function selectFromMarker(id: string) { selectionSource.current = null; markerSource.current = id; setSelectedId(id || null) }
+  useLayoutEffect(() => {
+    if (selectedId && selectionSource.current) preview.current?.querySelector<HTMLAnchorElement>('a')?.focus()
+    if (!selectedId) {
+      const card = selectionSource.current ? results.current?.querySelector<HTMLElement>(`[data-event-id="${selectionSource.current}"]`) : null
+      const marker = markerSource.current && document.querySelector<HTMLButtonElement>(`.planit-marker[data-event-id="${markerSource.current}"]`)
+      if (selectionSource.current) (card?.querySelector<HTMLButtonElement>('button') ?? results.current?.querySelector<HTMLButtonElement>('.results-heading button'))?.focus()
+      else if (marker) marker.focus()
+      selectionSource.current = null; markerSource.current = null
+    }
+  }, [selectedId])
   const reportBounds = useCallback((next: MapBounds) => setBounds(current => JSON.stringify(current) === JSON.stringify(next) ? current : next), [])
   useEffect(() => { document.title = 'Mapa · PlanIt' }, [])
   useEffect(() => {
@@ -53,13 +69,13 @@ export function MapPage() {
     <header className="map-heading"><div><h1>Encontrá tu próximo plan</h1><p>Eventos públicos en el mapa</p></div><button className="secondary-button location-button" onClick={locate} disabled={locating}><Icon name="pin" />{locating ? 'Buscando…' : 'Mi ubicación'}</button></header>
     <p className="location-notice" role="status">{locationNotice}</p>
     <button className="text-button" onClick={() => { setCenter({ ...defaultLocation }); setLocationNotice('Ubicación predeterminada: Buenos Aires.') }}>Usar Buenos Aires</button>
-    <Suspense fallback={<StatusMessage title="Cargando mapa">Esperá un momento.</StatusMessage>}><EventMap events={events} center={center} selectedId={selectedId} onSelect={id => setSelectedId(id || null)} onBoundsChange={reportBounds} /></Suspense>
-    {selected && <section className="map-preview" aria-label="Evento seleccionado"><EventCard event={selected} selected /><button className="text-button" onClick={() => setSelectedId(null)}>Cerrar vista previa</button></section>}
-    <section className="map-results" aria-busy={loading} aria-label="Eventos en esta zona"><div className="results-heading"><h2>En esta zona</h2><button className="text-button" onClick={() => setAttempt(value => value + 1)} disabled={loading}>Actualizar eventos</button></div>
+    <Suspense fallback={<StatusMessage title="Cargando mapa">Esperá un momento.</StatusMessage>}><EventMap events={events} center={center} selectedId={selectedId} onSelect={selectFromMarker} onBoundsChange={reportBounds} /></Suspense>
+    {selected && <section ref={preview} className="map-preview" aria-label="Evento seleccionado"><EventCard event={selected} selected returnTo="/map" /><button className="text-button" onClick={() => setSelectedId(null)}>Cerrar vista previa</button></section>}
+    <section ref={results} className="map-results" aria-busy={loading} aria-label="Eventos en esta zona"><div className="results-heading"><h2>En esta zona</h2><button className="text-button" onClick={() => setAttempt(value => value + 1)} disabled={loading}>Actualizar eventos</button></div>
       {loading ? <StatusMessage title="Buscando eventos">Consultando esta zona…</StatusMessage> : error ? <><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage><button className="secondary-button" onClick={() => setAttempt(value => value + 1)}>Reintentar</button></> : !events.length ? <StatusMessage title="No hay eventos en esta zona">Mové el mapa para explorar otros lugares o <Link to="/events/new">creá un evento</Link>.</StatusMessage> : <>
         {truncated && <p role="status">Mostramos los primeros 100 eventos. Acercá el mapa para consultar una zona menor.</p>}
         {imageError && <p role="status">Algunas fotos no pudieron cargarse. Podés consultar los eventos igualmente.</p>}
-        <div className="event-card-list">{events.map(event => <EventCard key={event.id} event={event} selected={event.id === selectedId} onSelect={setSelectedId} />)}</div>
+        <div className="event-card-list">{events.filter(event => event.id !== selectedId).map(event => <EventCard key={event.id} event={event} selected={event.id === selectedId} onSelect={selectFromList} returnTo="/map" />)}</div>
       </>}
     </section>
   </div>

@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
 const browser = await chromium.launch({ headless:true,channel:'msedge' })
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4184'
-const output = 'docs/design/verification/participations-r1'
+const output = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/participations-r1'
 await mkdir(output,{recursive:true})
 const user = { id:'20000000-0000-4000-8000-000000000001', email:'fixture@example.invalid',aud:'authenticated',role:'authenticated',app_metadata:{provider:'email'},user_metadata:{},identities:[],created_at:'2026-10-10T12:00:00Z' }
 const event = { id:'30000000-0000-4000-8000-000000000001',organizer_id:'20000000-0000-4000-8000-000000000002',title:'Encuentro de música — prueba',description:'Compartimos música con la comunidad. Datos de prueba para verificar la interfaz.',starts_at:'2099-10-11T20:00:00',ends_at:'2099-10-11T22:00:00',address:'Av. Corrientes 123, Buenos Aires',location_name:'Centro cultural',latitude:-34.6037,longitude:-58.3816,capacity:20,category_id:'10000000-0000-4000-8000-000000000001',visibility:'public',cancelled_at:null,archived_at:null }

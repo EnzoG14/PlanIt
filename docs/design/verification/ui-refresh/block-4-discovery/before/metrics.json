@@ -1,0 +1,1357 @@
+{
+  "phase": "before",
+  "environment": "Edge/Playwright; intercepted Auth/REST/Storage; real Mapbox GL engine with empty local style, no remote service validation",
+  "photo": "flat media fixture; no natural photograph",
+  "metrics": [
+    {
+      "name": "home",
+      "width": 320,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 320,
+      "mode": "empty",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 320,
+      "mode": "error",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 320,
+      "mode": "loading",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 320,
+      "mode": "markers",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 320,
+      "mode": "selection",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 320,
+      "mode": "map-failure",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1162.171875,
+        "bottom": 1214.171875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "photo",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1162.171875,
+        "bottom": 1214.171875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "dark",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1162.171875,
+        "bottom": 1214.171875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "broken",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1214.171875,
+        "bottom": 1266.171875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "full",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 532.171875,
+        "bottom": 584.171875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "confirmed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 478.96875,
+        "bottom": 530.96875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "removed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 479.171875,
+        "bottom": 531.171875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "organizer",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 420.765625,
+        "bottom": 472.765625,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "ended",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 471.171875,
+        "bottom": 523.171875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "cancelled",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 471.171875,
+        "bottom": 523.171875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "archived",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 471.171875,
+        "bottom": 523.171875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "long",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 6204.140625,
+        "bottom": 6256.140625,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "mode": "short-height",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 356.140625,
+        "bottom": 408.140625,
+        "height": 52
+      }
+    },
+    {
+      "name": "home",
+      "width": 360,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 360,
+      "mode": "empty",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 360,
+      "mode": "error",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 360,
+      "mode": "loading",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 360,
+      "mode": "markers",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 360,
+      "mode": "selection",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 360,
+      "mode": "map-failure",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1136.578125,
+        "bottom": 1188.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "photo",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1136.578125,
+        "bottom": 1188.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "dark",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1136.578125,
+        "bottom": 1188.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "broken",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1188.578125,
+        "bottom": 1240.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "full",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 531.578125,
+        "bottom": 583.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "confirmed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 479.375,
+        "bottom": 531.375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "removed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 479.578125,
+        "bottom": 531.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "organizer",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 421.171875,
+        "bottom": 473.171875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "ended",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 471.578125,
+        "bottom": 523.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "cancelled",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 471.578125,
+        "bottom": 523.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "archived",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 471.578125,
+        "bottom": 523.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "long",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 5205.984375,
+        "bottom": 5257.984375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "mode": "short-height",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 356.984375,
+        "bottom": 408.984375,
+        "height": 52
+      }
+    },
+    {
+      "name": "home",
+      "width": 375,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 375,
+      "mode": "empty",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 375,
+      "mode": "error",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 375,
+      "mode": "loading",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 375,
+      "mode": "markers",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 375,
+      "mode": "selection",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 375,
+      "mode": "map-failure",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1136.578125,
+        "bottom": 1188.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "photo",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1136.578125,
+        "bottom": 1188.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "dark",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1136.578125,
+        "bottom": 1188.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "broken",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1188.578125,
+        "bottom": 1240.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "full",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 543.578125,
+        "bottom": 595.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "confirmed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 491.375,
+        "bottom": 543.375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "removed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 491.578125,
+        "bottom": 543.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "organizer",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 427.171875,
+        "bottom": 479.171875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "ended",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 483.578125,
+        "bottom": 535.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "cancelled",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 483.578125,
+        "bottom": 535.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "archived",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 483.578125,
+        "bottom": 535.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "long",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 5205.984375,
+        "bottom": 5257.984375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "mode": "short-height",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 356.984375,
+        "bottom": 408.984375,
+        "height": 52
+      }
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "mode": "empty",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "mode": "error",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "mode": "loading",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 390,
+      "mode": "markers",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 390,
+      "mode": "selection",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 390,
+      "mode": "map-failure",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1136.578125,
+        "bottom": 1188.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "photo",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1136.578125,
+        "bottom": 1188.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "dark",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1136.578125,
+        "bottom": 1188.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "broken",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1188.578125,
+        "bottom": 1240.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "full",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 575.578125,
+        "bottom": 627.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "confirmed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 523.375,
+        "bottom": 575.375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "removed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 523.578125,
+        "bottom": 575.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "organizer",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 432.375,
+        "bottom": 484.375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "ended",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 515.578125,
+        "bottom": 567.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "cancelled",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 515.578125,
+        "bottom": 567.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "archived",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 515.578125,
+        "bottom": 567.578125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "long",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 5154.796875,
+        "bottom": 5206.796875,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "mode": "short-height",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 356.796875,
+        "bottom": 408.796875,
+        "height": 52
+      }
+    },
+    {
+      "name": "home",
+      "width": 768,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 768,
+      "mode": "empty",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 768,
+      "mode": "error",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 768,
+      "mode": "loading",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 768,
+      "mode": "markers",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 768,
+      "mode": "selection",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 768,
+      "mode": "map-failure",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1102.484375,
+        "bottom": 1154.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "photo",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1102.484375,
+        "bottom": 1154.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "dark",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1102.484375,
+        "bottom": 1154.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "broken",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1154.484375,
+        "bottom": 1206.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "full",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 756.484375,
+        "bottom": 808.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "confirmed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 725.28125,
+        "bottom": 777.28125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "removed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 725.484375,
+        "bottom": 777.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "organizer",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 522.28125,
+        "bottom": 574.28125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "ended",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 695.484375,
+        "bottom": 747.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "cancelled",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 695.484375,
+        "bottom": 747.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "archived",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 695.484375,
+        "bottom": 747.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "long",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 3124.390625,
+        "bottom": 3176.390625,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "mode": "short-height",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 356.390625,
+        "bottom": 408.390625,
+        "height": 52
+      }
+    },
+    {
+      "name": "home",
+      "width": 1280,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 1280,
+      "mode": "empty",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 1280,
+      "mode": "error",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "home",
+      "width": 1280,
+      "mode": "loading",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 1280,
+      "mode": "markers",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 1280,
+      "mode": "selection",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "map",
+      "width": 1280,
+      "mode": "map-failure",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": null
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "success",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1182.484375,
+        "bottom": 1234.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "photo",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1182.484375,
+        "bottom": 1234.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "dark",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1182.484375,
+        "bottom": 1234.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "broken",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 1234.484375,
+        "bottom": 1286.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "full",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 632.484375,
+        "bottom": 684.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "confirmed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 601.28125,
+        "bottom": 653.28125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "removed",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 601.484375,
+        "bottom": 653.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "organizer",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 460.28125,
+        "bottom": 512.28125,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "ended",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 571.484375,
+        "bottom": 623.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "cancelled",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 571.484375,
+        "bottom": 623.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "archived",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 571.484375,
+        "bottom": 623.484375,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "long",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 3204.390625,
+        "bottom": 3256.390625,
+        "height": 52
+      }
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "mode": "short-height",
+      "overflow": false,
+      "font": "\"Segoe UI\", system-ui, sans-serif",
+      "action": {
+        "position": "static",
+        "top": 356.390625,
+        "bottom": 408.390625,
+        "height": 52
+      }
+    }
+  ]
+}

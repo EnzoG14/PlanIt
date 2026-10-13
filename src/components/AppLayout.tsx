@@ -19,6 +19,7 @@ function LayoutContent() {
   const { pathname } = useLocation()
   const isAuth = pathname === '/login' || pathname === '/register'
   const isChat = Boolean(matchPath('/events/:id/chat', pathname))
+  const isDiscovery = pathname === '/home' || pathname === '/map' || (Boolean(matchPath('/events/:id', pathname)) && pathname !== '/events/new')
   const shell = useRef<HTMLDivElement>(null)
   const { session, loading, error, retry } = useAuth()
   const [signingOut, setSigningOut] = useState(false)
@@ -62,7 +63,7 @@ function LayoutContent() {
     }
   }, [isChat])
   return (
-    <div ref={shell} className={`app-shell ${isChat ? 'chat-shell' : isAuth ? 'auth-shell' : 'product-shell'}${pathname === '/my-events' ? ' amanecer-shell my-events-shell' : isAuth ? ' amanecer-shell' : ''}`}>
+    <div ref={shell} className={`app-shell ${isChat ? 'chat-shell' : isAuth ? 'auth-shell' : 'product-shell'}${pathname === '/my-events' ? ' amanecer-shell my-events-shell' : isAuth ? ' amanecer-shell' : isDiscovery ? ' amanecer-shell discovery-shell' : ''}`}>
       {isAuth && <div className="auth-wash" aria-hidden="true" />}
       <a className="skip-link" href="#main-content">Saltar al contenido</a>
       {!isChat && (isAuth ? <div className="auth-topbar">
