@@ -1,0 +1,22 @@
+[
+  {
+    "command": "npm run build",
+    "exit_code": 0
+  },
+  {
+    "command": "npm run lint",
+    "exit_code": 0
+  },
+  {
+    "command": "npm run check:amanecer",
+    "exit_code": 0
+  },
+  {
+    "command": "npm run check:auth",
+    "exit_code": 0
+  },
+  {
+    "command": "npm run check:foundation",
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,38 @@
+/* Authentication composition only; controls and feedback reuse the Foundation. */
+.app-shell.amanecer-shell.auth-shell { background: var(--pi-color-bg); }
+.auth-shell.amanecer-shell .auth-wash {
+  position: absolute; z-index: -1; inset: 0 0 auto; height: 220px; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 15% 0%, color-mix(in srgb, var(--pi-color-violet) 40%, transparent), transparent 65%),
+    radial-gradient(ellipse at 95% 0%, color-mix(in srgb, var(--pi-color-primary) 20%, transparent), transparent 60%),
+    radial-gradient(ellipse at 45% 0%, color-mix(in srgb, var(--pi-color-lavender) 60%, transparent), transparent 70%);
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+.auth-shell.amanecer-shell .auth-topbar {
+  max-width: 480px; padding-inline: max(var(--pi-space-page-inline), env(safe-area-inset-left)) max(var(--pi-space-page-inline), env(safe-area-inset-right));
+}
+.auth-shell.amanecer-shell .auth-topbar .icon-link { border-radius: var(--pi-radius-pill); color: var(--pi-color-ink); }
+.auth-shell.amanecer-shell .auth-topbar .icon-link:hover { background: var(--pi-color-surface); }
+.auth-shell.amanecer-shell main { max-width: 480px; padding-top: var(--pi-space-section); padding-bottom: calc(var(--pi-space-section) + env(safe-area-inset-bottom)); }
+.auth-shell.amanecer-shell main:focus-visible { outline: none; box-shadow: none; }
+.auth-shell.amanecer-shell .auth-page .screen-header { text-align: left; margin-bottom: var(--pi-space-section); }
+.auth-shell.amanecer-shell .auth-page .screen-emblem { display: none; }
+.auth-shell.amanecer-shell .screen-header h1 { max-width: 12ch; text-wrap: balance; margin-bottom: var(--pi-space-compact); }
+.auth-shell.amanecer-shell .screen-header p { color: var(--pi-color-text-on-wash); font-size: var(--pi-font-body-size); line-height: var(--pi-font-body-line-height); }
+.auth-shell.amanecer-shell .auth-form { gap: var(--pi-space-page-inline); }
+.auth-shell.amanecer-shell .field-control input { min-width: 0; caret-color: var(--pi-color-violet-deep); }
+.auth-shell.amanecer-shell .field-control > .icon { color: var(--pi-color-text-muted); }
+.auth-shell.amanecer-shell .password-toggle { border-radius: var(--pi-radius-pill); color: var(--pi-color-text-muted); }
+.auth-shell.amanecer-shell .password-toggle:hover { background: var(--pi-color-surface-soft); }
+.auth-shell.amanecer-shell .password-toggle:disabled { color: var(--pi-color-disabled-text); cursor: wait; }
+.auth-shell.amanecer-shell .auth-form > .gradient-button { min-height: 52px; margin-top: var(--pi-space-tight); }
+.auth-shell.amanecer-shell .auth-switch { gap: 0 var(--pi-space-micro); font-size: var(--pi-font-body-size); text-align: center; }
+.auth-shell.amanecer-shell .auth-switch a { border-radius: var(--pi-radius-pill); font-weight: var(--pi-font-action-weight); }
+.auth-shell.amanecer-shell .auth-switch a:hover { color: var(--pi-color-violet-deep); }
+.auth-shell.amanecer-shell .auth-feedback .secondary-link { margin-top: var(--pi-space-base); }
+.auth-shell.amanecer-shell .auth-field-hint { margin: var(--pi-space-tight) 0 0; color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); line-height: var(--pi-font-meta-line-height); }
+.auth-shell.amanecer-shell .auth-confirmation-line { display: block; }
+.auth-shell.amanecer-shell .auth-confirmation-line + .auth-confirmation-line { margin-top: var(--pi-space-compact); }
+.auth-shell.amanecer-shell ::selection { color: var(--pi-color-ink); background: var(--pi-color-lavender); }
+@media (min-width: 768px) { .auth-shell.amanecer-shell main { padding-top: 64px; } }
+@media (max-height: 500px) { .auth-shell.amanecer-shell main { padding-top: var(--pi-space-base); } }

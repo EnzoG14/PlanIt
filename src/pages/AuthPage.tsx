@@ -8,6 +8,7 @@ import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
 import { authErrorMessage, safeReturnPath, validateAuth, type FieldErrors } from '../features/auth/validation'
 import { supabase } from '../lib/supabase'
+import './auth.css'
 
 export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
   const register = mode === 'register'
@@ -61,14 +62,17 @@ export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
   if (sessionError) return null
   if (session) return <Navigate to={next} replace />
   return <div className="auth-page">
-    <ScreenHeader title={register ? 'Creá tu cuenta' : 'Bienvenido a PlanIt'} description={register ? 'Completá tus datos para empezar.' : 'Ingresá para descubrir eventos cerca tuyo.'} icon={register ? 'user' : 'login'} />
+    <ScreenHeader title={register ? 'Creá tu cuenta' : 'Ingresá a PlanIt'} description={register ? 'Completá tus datos para empezar.' : 'Ingresá para descubrir eventos cerca tuyo.'} icon={register ? 'user' : 'login'} />
     {confirmation ? <div ref={feedbackRef} tabIndex={-1} className="auth-feedback">
-      <StatusMessage title="Revisá tu correo">Si el email admite el registro, recibirás un enlace para confirmar tu cuenta. Si ya tenés una cuenta, ingresá con tus credenciales. No se inició una sesión todavía.</StatusMessage>
+      <StatusMessage title="Revisá tu correo"><span className="auth-confirmation-line">Si el email admite el registro, recibirás un enlace para confirmar tu cuenta.</span><span className="auth-confirmation-line">Si ya tenés una cuenta, ingresá con tus credenciales.</span><span className="auth-confirmation-line">No se inició una sesión todavía.</span></StatusMessage>
       <Link className="secondary-link" to="/login">Ir a ingresar</Link>
     </div> : <form onSubmit={submit} noValidate aria-busy={busy} className="auth-form">
       {register && <FormField id="display-name" label="Nombre visible" icon="user" name="display_name" autoComplete="nickname" placeholder="Cómo querés que te llamen" value={values.display_name} inputRef={nameRef} required disabled={busy} error={errors.display_name} onChange={event => setValues({ ...values, display_name: event.target.value })} />}
       <FormField id="email" label="Email" icon="email" name="email" type="email" inputMode="email" autoComplete="email" autoCapitalize="none" spellCheck={false} placeholder="tu@email.com" value={values.email} inputRef={emailRef} required disabled={busy} error={errors.email} onChange={event => setValues({ ...values, email: event.target.value })} />
-      <FormField id="password" label="Contraseña" icon="lock" name="password" type={showPassword ? 'text' : 'password'} autoComplete={register ? 'new-password' : 'current-password'} placeholder={register ? 'Al menos 6 caracteres' : 'Tu contraseña'} value={values.password} inputRef={passwordRef} required disabled={busy} error={errors.password} onChange={event => setValues({ ...values, password: event.target.value })} trailing={<button type="button" className="password-toggle" aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'} aria-pressed={showPassword} disabled={busy} onClick={() => setShowPassword(value => !value)}><Icon name={showPassword ? 'eyeOff' : 'eye'} /></button>} />
+      <div className="auth-password-field">
+        <FormField id="password" label="Contraseña" icon="lock" name="password" type={showPassword ? 'text' : 'password'} autoComplete={register ? 'new-password' : 'current-password'} placeholder={register ? 'Al menos 6 caracteres' : 'Tu contraseña'} aria-describedby={register ? 'password-hint' : undefined} value={values.password} inputRef={passwordRef} required disabled={busy} error={errors.password} onChange={event => setValues({ ...values, password: event.target.value })} trailing={<button type="button" className="password-toggle" aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'} aria-pressed={showPassword} disabled={busy} onClick={() => setShowPassword(value => !value)}><Icon name={showPassword ? 'eyeOff' : 'eye'} /></button>} />
+        {register && <p className="auth-field-hint" id="password-hint">Al menos 6 caracteres.</p>}
+      </div>
       {error && <div ref={feedbackRef} tabIndex={-1} className="auth-feedback"><StatusMessage title={register ? 'No se pudo crear la cuenta' : 'No se pudo ingresar'} tone="error">{error}</StatusMessage></div>}
       <GradientButton type="submit" disabled={busy || !supabase}>{busy ? (register ? 'Creando cuenta…' : 'Ingresando…') : (register ? 'Crear cuenta' : 'Continuar')}</GradientButton>
       <p className="auth-switch">{register ? '¿Ya tenés una cuenta?' : '¿Todavía no tenés cuenta?'} <Link to={`/${register ? 'login' : 'register'}${next !== '/map' ? `?next=${encodeURIComponent(next)}` : ''}`}>{register ? 'Ingresar' : 'Crear cuenta'}</Link></p>

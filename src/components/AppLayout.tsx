@@ -62,7 +62,8 @@ function LayoutContent() {
     }
   }, [isChat])
   return (
-    <div ref={shell} className={`app-shell ${isChat ? 'chat-shell' : isAuth ? 'auth-shell' : 'product-shell'}${pathname === '/my-events' ? ' amanecer-shell my-events-shell' : ''}`}>
+    <div ref={shell} className={`app-shell ${isChat ? 'chat-shell' : isAuth ? 'auth-shell' : 'product-shell'}${pathname === '/my-events' ? ' amanecer-shell my-events-shell' : isAuth ? ' amanecer-shell' : ''}`}>
+      {isAuth && <div className="auth-wash" aria-hidden="true" />}
       <a className="skip-link" href="#main-content">Saltar al contenido</a>
       {!isChat && (isAuth ? <div className="auth-topbar">
         <Link className="icon-link" to="/map" aria-label="Volver al mapa"><Icon name="back" /></Link>

@@ -1,0 +1,214 @@
+{
+  "computed_records": 36,
+  "differences": [],
+  "images": [
+    {
+      "file": "empty-1280x900.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "empty-320x800.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "empty-360x800.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "empty-375x812.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "empty-390x844.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "empty-768x1024.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "loading-1280x900.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "loading-320x800.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "loading-360x800.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "loading-375x812.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "loading-390x844.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "loading-768x1024.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "long-broken-photo-1280x900.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "long-broken-photo-320x800.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "long-broken-photo-360x800.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "long-broken-photo-375x812.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "long-broken-photo-390x844.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "long-broken-photo-768x1024.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "many-menu-1280x900.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "many-menu-320x800.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "many-menu-360x800.png",
+      "difference_bbox": [
+        0,
+        191,
+        360,
+        6208
+      ]
+    },
+    {
+      "file": "many-menu-375x812.png",
+      "difference_bbox": [
+        268,
+        12,
+        355,
+        56
+      ]
+    },
+    {
+      "file": "many-menu-390x844.png",
+      "difference_bbox": [
+        283,
+        12,
+        370,
+        56
+      ]
+    },
+    {
+      "file": "many-menu-768x1024.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "network-error-1280x900.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "network-error-320x800.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "network-error-360x800.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "network-error-375x812.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "network-error-390x844.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "network-error-768x1024.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "organizing-1280x900.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "organizing-320x800.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "organizing-360x800.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "organizing-375x812.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "organizing-390x844.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "organizing-768x1024.png",
+      "difference_bbox": null
+    },
+    {
+      "file": "participating-1280x900.png",
+      "difference_bbox": [
+        833,
+        12,
+        920,
+        56
+      ]
+    },
+    {
+      "file": "participating-320x800.png",
+      "difference_bbox": [
+        0,
+        255,
+        213,
+        315
+      ]
+    },
+    {
+      "file": "participating-360x800.png",
+      "difference_bbox": [
+        253,
+        12,
+        340,
+        56
+      ]
+    },
+    {
+      "file": "participating-375x812.png",
+      "difference_bbox": [
+        268,
+        12,
+        355,
+        56
+      ]
+    },
+    {
+      "file": "participating-390x844.png",
+      "difference_bbox": [
+        283,
+        12,
+        370,
+        56
+      ]
+    },
+    {
+      "file": "participating-768x1024.png",
+      "difference_bbox": null
+    }
+  ]
+}

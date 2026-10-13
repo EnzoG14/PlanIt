@@ -1,0 +1,60 @@
+{
+  "method": "WCAG relative luminance from CSS tokens; all three Auth wash layers at maximum alpha before mask; glass at .72 over that conservative bound",
+  "results": [
+    {
+      "pair": "ink/surface",
+      "ratio": 19.356,
+      "minimum": 4.5
+    },
+    {
+      "pair": "placeholder/surface",
+      "ratio": 4.628,
+      "minimum": 4.5
+    },
+    {
+      "pair": "muted/bg",
+      "ratio": 5.706,
+      "minimum": 4.5
+    },
+    {
+      "pair": "border/surface",
+      "ratio": 3.759,
+      "minimum": 3
+    },
+    {
+      "pair": "border/bg",
+      "ratio": 3.473,
+      "minimum": 3
+    },
+    {
+      "pair": "focus/surface",
+      "ratio": 7.224,
+      "minimum": 3
+    },
+    {
+      "pair": "danger/danger-bg",
+      "ratio": 7.816,
+      "minimum": 4.5
+    },
+    {
+      "pair": "disabled-text/bg",
+      "ratio": 5.487,
+      "minimum": 4.5
+    },
+    {
+      "pair": "muted/glass-over-auth-wash",
+      "ratio": 4.88,
+      "minimum": 4.5
+    },
+    {
+      "pair": "heading/auth-wash",
+      "ratio": 7.642,
+      "minimum": 3
+    },
+    {
+      "pair": "description/auth-wash",
+      "ratio": 4.524,
+      "minimum": 4.5
+    }
+  ]
+}

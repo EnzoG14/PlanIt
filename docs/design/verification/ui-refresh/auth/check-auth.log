@@ -1,0 +1,5 @@
+
+> planit@0.0.0 check:auth
+> node scripts/check-auth.mjs
+
+PASS: required fields, Unicode name limits, registration/login password validation and safe internal return paths.
