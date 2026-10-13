@@ -1,0 +1,181 @@
+RUN check-events-ui.mjs (after)
+FAIL check-events-ui.mjs: locator.fill: Error: strict mode violation: locator('[name="description"]') resolved to 2 elements:
+    1) <meta name="description" content="Descubrí, organizá y participá en eventos con PlanIt."/> aka locator('meta[name="description"]')
+    2) <textarea rows="3" required="" name="description" aria-invalid="false" id="event-description" placeholder="Contá de qué se trata">Compartimos una noche de música con la comunidad.</textarea> aka getByRole('textbox', { name: 'Descripción del evento' })
+
+Call log:
+  - waiting for locator('[name="description"]')
+
+RUN check-edit-event-ui.mjs (after)
+PASS 320: Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive
+PASS 320: Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error
+PASS 320: Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle
+PASS 320: Respuesta perdida tras commit se reconcilia por lectura sin segunda operación
+PASS 320: Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE
+PASS 320: Menú integrado y cancelación preservan origen/filtro; listado muestra edición
+PASS 320: Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable
+PASS 320: Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio
+PASS 360: Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive
+PASS 360: Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error
+PASS 360: Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle
+PASS 360: Respuesta perdida tras commit se reconcilia por lectura sin segunda operación
+PASS 360: Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE
+PASS 360: Menú integrado y cancelación preservan origen/filtro; listado muestra edición
+PASS 360: Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable
+PASS 360: Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio
+PASS 375: Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive
+PASS 375: Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error
+PASS 375: Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle
+PASS 375: Respuesta perdida tras commit se reconcilia por lectura sin segunda operación
+PASS 375: Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE
+PASS 375: Menú integrado y cancelación preservan origen/filtro; listado muestra edición
+PASS 375: Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable
+PASS 375: Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio
+PASS 390: Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive
+PASS 390: Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error
+PASS 390: Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle
+PASS 390: Respuesta perdida tras commit se reconcilia por lectura sin segunda operación
+PASS 390: Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE
+PASS 390: Menú integrado y cancelación preservan origen/filtro; listado muestra edición
+PASS 390: Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable
+PASS 390: Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio
+PASS 768: Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive
+PASS 768: Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error
+PASS 768: Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle
+PASS 768: Respuesta perdida tras commit se reconcilia por lectura sin segunda operación
+PASS 768: Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE
+PASS 768: Menú integrado y cancelación preservan origen/filtro; listado muestra edición
+PASS 768: Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable
+PASS 768: Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio
+PASS 1280: Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive
+PASS 1280: Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error
+PASS 1280: Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle
+PASS 1280: Respuesta perdida tras commit se reconcilia por lectura sin segunda operación
+PASS 1280: Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE
+PASS 1280: Menú integrado y cancelación preservan origen/filtro; listado muestra edición
+PASS 1280: Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable
+PASS 1280: Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio
+RUN check-event-actions-ui.mjs (after)
+PASS 320: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 320: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 320: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 320: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 320: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 320: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 320: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 320: Changing source discards late source response and local form data
+PASS 320: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 320: Archived chat keeps historical messages and removes composer
+PASS 360: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 360: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 360: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 360: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 360: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 360: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 360: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 360: Auth token renewal preserves edits without source refetch; new account clears form and reauthorizes source; original account gets fresh data
+PASS 360: Changing source discards late source response and local form data
+PASS 360: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 360: Archived chat keeps historical messages and removes composer
+PASS 360: Late publication response from previous account cannot navigate or expose success in new account; logout clears form
+PASS 375: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 375: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 375: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 375: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 375: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 375: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 375: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 375: Changing source discards late source response and local form data
+PASS 375: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 375: Archived chat keeps historical messages and removes composer
+PASS 390: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 390: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 390: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 390: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 390: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 390: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 390: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 390: Changing source discards late source response and local form data
+PASS 390: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 390: Archived chat keeps historical messages and removes composer
+PASS 768: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 768: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 768: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 768: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 768: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 768: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 768: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 768: Changing source discards late source response and local form data
+PASS 768: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 768: Archived chat keeps historical messages and removes composer
+PASS 1280: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 1280: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 1280: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 1280: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 1280: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 1280: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 1280: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 1280: Changing source discards late source response and local form data
+PASS 1280: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 1280: Archived chat keeps historical messages and removes composer
+RUN check-my-events-ui.mjs (after)
+[
+  {
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "result": "PASS",
+    "scenarios": [
+      "R3 five server filters before pagination; ongoing and empty states",
+      "R3 stale filter response; invalid filter; missing RPC",
+      "R3 organizing menu: detail only, Escape/outside/focus",
+      "R3 filtered return and owner direct fallback",
+      "R3 data update/cancellation/manual refresh",
+      "R3 append failure retains 30 and retries same offset",
+      "two fixture accounts; role separation",
+      "keyboard tabs",
+      "create/detail/list",
+      "join/leave/rejoin/browser back",
+      "history/removed",
+      "network/RLS/missing migration/retry",
+      "image fallback/batch signing",
+      "Organizo/Participo pagination/reset/deduplication",
+      "stale tab response",
+      "focus/visibility",
+      "account change",
+      "invalid session/direct route",
+      "44px create target/no overflow"
+    ],
+    "rpcCalls": 81
+  },
+  {
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "result": "PASS",
+    "scenarios": [
+      "R3 five server filters before pagination; ongoing and empty states",
+      "R3 stale filter response; invalid filter; missing RPC",
+      "R3 organizing menu: detail only, Escape/outside/focus",
+      "R3 filtered return and owner direct fallback",
+      "R3 data update/cancellation/manual refresh",
+      "R3 append failure retains 30 and retries same offset",
+      "two fixture accounts; role separation",
+      "keyboard tabs",
+      "create/detail/list",
+      "join/leave/rejoin/browser back",
+      "history/removed",
+      "network/RLS/missing migration/retry",
+      "image fallback/batch signing",
+      "Organizo/Participo pagination/reset/deduplication",
+      "stale tab response",
+      "focus/visibility",
+      "account change",
+      "invalid session/direct route",
+      "44px create target/no overflow"
+    ],
+    "rpcCalls": 81
+  }
+]

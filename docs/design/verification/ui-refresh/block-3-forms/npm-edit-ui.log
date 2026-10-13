@@ -1,0 +1,44 @@
+
+> planit@0.0.0 check:edit-event:ui
+> node scripts/check-edit-event-ui.mjs
+
+PASS 360: Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive
+PASS 360: Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error
+PASS 360: Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle
+PASS 360: Respuesta perdida tras commit se reconcilia por lectura sin segunda operación
+PASS 360: Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE
+PASS 360: Menú integrado y cancelación preservan origen/filtro; listado muestra edición
+PASS 360: Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable
+PASS 360: Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio
+PASS 375: Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive
+PASS 375: Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error
+PASS 375: Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle
+PASS 375: Respuesta perdida tras commit se reconcilia por lectura sin segunda operación
+PASS 375: Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE
+PASS 375: Menú integrado y cancelación preservan origen/filtro; listado muestra edición
+PASS 375: Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable
+PASS 375: Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio
+PASS 390: Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive
+PASS 390: Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error
+PASS 390: Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle
+PASS 390: Respuesta perdida tras commit se reconcilia por lectura sin segunda operación
+PASS 390: Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE
+PASS 390: Menú integrado y cancelación preservan origen/filtro; listado muestra edición
+PASS 390: Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable
+PASS 390: Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio
+PASS 768: Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive
+PASS 768: Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error
+PASS 768: Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle
+PASS 768: Respuesta perdida tras commit se reconcilia por lectura sin segunda operación
+PASS 768: Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE
+PASS 768: Menú integrado y cancelación preservan origen/filtro; listado muestra edición
+PASS 768: Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable
+PASS 768: Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio
+PASS 1280: Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive
+PASS 1280: Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error
+PASS 1280: Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle
+PASS 1280: Respuesta perdida tras commit se reconcilia por lectura sin segunda operación
+PASS 1280: Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE
+PASS 1280: Menú integrado y cancelación preservan origen/filtro; listado muestra edición
+PASS 1280: Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable
+PASS 1280: Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio
