@@ -1,0 +1,3626 @@
+{
+  "sha": "a378259a60106ddd07b111080a24677ad509bc49",
+  "environment": "read-only action fixtures; computed font sizes doubled once; DOM emulation, no native zoom",
+  "measurements": [
+    {
+      "name": "create",
+      "width": 320,
+      "height": 800,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 288,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 288,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 288,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 288,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 288,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 66
+        },
+        {
+          "name": "Publicar evento",
+          "width": 288,
+          "height": 56
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 320,
+      "height": 800,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 288,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 288,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 72
+        },
+        {
+          "name": "Publicar evento",
+          "width": 288,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 320,
+      "height": 240,
+      "state": "text200-short",
+      "reach": {
+        "rect": {
+          "x": 16,
+          "y": 31.5,
+          "width": 288,
+          "height": 64,
+          "top": 31.5,
+          "right": 304,
+          "bottom": 95.5,
+          "left": 16
+        },
+        "hit": true
+      },
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 240
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 288,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 288,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 72
+        },
+        {
+          "name": "Publicar evento",
+          "width": 288,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 320,
+      "height": 800,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 288,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 288,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 288,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 288,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 190.359375,
+          "height": 50
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 288,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 52
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 288,
+          "height": 56
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 164.3125,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 320,
+      "height": 800,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 288,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 288,
+          "height": 98
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 288,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 288,
+          "height": 64
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 286.625,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 320,
+      "height": 240,
+      "state": "text200-short",
+      "reach": {
+        "rect": {
+          "x": 16,
+          "y": 32.140625,
+          "width": 288,
+          "height": 64,
+          "top": 32.140625,
+          "right": 304,
+          "bottom": 96.140625,
+          "left": 16
+        },
+        "hit": true
+      },
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 240
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 288,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 288,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 288,
+          "height": 98
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 288,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 288,
+          "height": 65
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 288,
+          "height": 64
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 286.625,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 320,
+      "height": 800,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 194.265625,
+          "height": 48
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 180.578125,
+          "height": 44
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 248,
+          "height": 48
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 248,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 320,
+      "height": 800,
+      "state": "text200",
+      "overflow": true,
+      "scrollWidth": 397,
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 288,
+          "height": 72
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 288,
+          "height": 88
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 248,
+          "height": 60
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 248,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 320,
+      "height": 240,
+      "state": "text200-short",
+      "reach": {
+        "rect": {
+          "x": 16,
+          "y": 19.75,
+          "width": 288,
+          "height": 88,
+          "top": 19.75,
+          "right": 304,
+          "bottom": 107.75,
+          "left": 16
+        },
+        "hit": true
+      },
+      "overflow": true,
+      "scrollWidth": 397,
+      "viewport": {
+        "width": 320,
+        "height": 240
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 288,
+          "height": 72
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 288,
+          "height": 88
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 248,
+          "height": 60
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 248,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 360,
+      "height": 800,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 360,
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 320,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 154,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 154,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 66
+        },
+        {
+          "name": "Publicar evento",
+          "width": 320,
+          "height": 56
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 360,
+      "height": 800,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 360,
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 320,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 320,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 320,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 320,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 320,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 320,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 154,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 154,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 72
+        },
+        {
+          "name": "Publicar evento",
+          "width": 320,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 360,
+      "height": 800,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 360,
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 190.359375,
+          "height": 50
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 320,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 154,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 154,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 52
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 320,
+          "height": 56
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 164.3125,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 360,
+      "height": 800,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 360,
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 320,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 320,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 320,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 320,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 306.703125,
+          "height": 62
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 320,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 154,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 154,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 320,
+          "height": 65
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 320,
+          "height": 64
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 286.625,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 360,
+      "height": 800,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 360,
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 194.265625,
+          "height": 48
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 180.578125,
+          "height": 44
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 136,
+          "height": 50
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 136,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 360,
+      "height": 800,
+      "state": "text200",
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 320,
+          "height": 72
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 320,
+          "height": 88
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 280,
+          "height": 60
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 280,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 375,
+      "height": 812,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 335,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 335,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 335,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 335,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 335,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 161.5,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 161.5,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 66
+        },
+        {
+          "name": "Publicar evento",
+          "width": 335,
+          "height": 56
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 375,
+      "height": 812,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 335,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 335,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 335,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 335,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 335,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 335,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 161.5,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 161.5,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 72
+        },
+        {
+          "name": "Publicar evento",
+          "width": 335,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 375,
+      "height": 812,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 335,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 335,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 335,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 335,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 190.359375,
+          "height": 50
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 335,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 161.5,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 161.5,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 52
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 335,
+          "height": 56
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 164.3125,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 375,
+      "height": 812,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 335,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 335,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 335,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 335,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 306.703125,
+          "height": 62
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 335,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 161.5,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 161.5,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 335,
+          "height": 65
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 335,
+          "height": 64
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 286.625,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 375,
+      "height": 812,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 194.265625,
+          "height": 48
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 180.578125,
+          "height": 44
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 143.5,
+          "height": 50
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 143.5,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 375,
+      "height": 812,
+      "state": "text200",
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 332.53125,
+          "height": 48
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 335,
+          "height": 88
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 295,
+          "height": 60
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 295,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 390,
+      "height": 844,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 350,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 66
+        },
+        {
+          "name": "Publicar evento",
+          "width": 350,
+          "height": 56
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 390,
+      "height": 844,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 350,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 350,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 72
+        },
+        {
+          "name": "Publicar evento",
+          "width": 350,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 390,
+      "height": 240,
+      "state": "text200-short",
+      "reach": {
+        "rect": {
+          "x": 20,
+          "y": 32.3125,
+          "width": 350,
+          "height": 64,
+          "top": 32.3125,
+          "right": 370,
+          "bottom": 96.3125,
+          "left": 20
+        },
+        "hit": true
+      },
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 240
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 350,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 350,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 72
+        },
+        {
+          "name": "Publicar evento",
+          "width": 350,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 390,
+      "height": 844,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 190.359375,
+          "height": 50
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 350,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 52
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 350,
+          "height": 56
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 164.3125,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 390,
+      "height": 844,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 350,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 306.703125,
+          "height": 62
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 350,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 350,
+          "height": 64
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 286.625,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 390,
+      "height": 240,
+      "state": "text200-short",
+      "reach": {
+        "rect": {
+          "x": 20,
+          "y": 31.515625,
+          "width": 350,
+          "height": 64,
+          "top": 31.515625,
+          "right": 370,
+          "bottom": 95.515625,
+          "left": 20
+        },
+        "hit": true
+      },
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 240
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 350,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 350,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 306.703125,
+          "height": 62
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 350,
+          "height": 74
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 169,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 350,
+          "height": 65
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 350,
+          "height": 64
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 286.625,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 390,
+      "height": 844,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 194.265625,
+          "height": 48
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 180.578125,
+          "height": 44
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 151,
+          "height": 50
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 151,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 390,
+      "height": 844,
+      "state": "text200",
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 332.53125,
+          "height": 48
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 337.140625,
+          "height": 52
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 310,
+          "height": 60
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 310,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 390,
+      "height": 240,
+      "state": "text200-short",
+      "reach": {
+        "rect": {
+          "x": 32.859375,
+          "y": 37.75,
+          "width": 337.140625,
+          "height": 52,
+          "top": 37.75,
+          "right": 370,
+          "bottom": 89.75,
+          "left": 32.859375
+        },
+        "hit": true
+      },
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 390,
+        "height": 240
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 332.53125,
+          "height": 48
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 337.140625,
+          "height": 52
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 310,
+          "height": 60
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 310,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 768,
+      "height": 1024,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 314,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 640,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 66
+        },
+        {
+          "name": "Publicar evento",
+          "width": 640,
+          "height": 56
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 768,
+      "height": 1024,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 314,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 640,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 72
+        },
+        {
+          "name": "Publicar evento",
+          "width": 640,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 768,
+      "height": 1024,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 314,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 190.359375,
+          "height": 50
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 640,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 640,
+          "height": 56
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 164.3125,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 768,
+      "height": 1024,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 314,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 306.703125,
+          "height": 62
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 640,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 640,
+          "height": 64
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 286.625,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 768,
+      "height": 1024,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 194.265625,
+          "height": 48
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 180.578125,
+          "height": 44
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 316,
+          "height": 50
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 316,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 768,
+      "height": 1024,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 332.53125,
+          "height": 48
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 337.140625,
+          "height": 52
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 316,
+          "height": 62
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 316,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 1280,
+      "height": 900,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 314,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 640,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 66
+        },
+        {
+          "name": "Publicar evento",
+          "width": 640,
+          "height": 56
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "width": 1280,
+      "height": 900,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "",
+          "width": 314,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 640,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 72
+        },
+        {
+          "name": "Publicar evento",
+          "width": 640,
+          "height": 64
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 1280,
+      "height": 900,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 314,
+          "fontSize": "16px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 314,
+          "fontSize": "16px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 190.359375,
+          "height": 50
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 640,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 52
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 52
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 640,
+          "height": 56
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 164.3125,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "name": "edit",
+      "width": 1280,
+      "height": 900,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "shell": "app-shell product-shell amanecer-shell event-form-shell",
+      "fields": [
+        {
+          "name": "start_date",
+          "value": "2099-10-12",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "start_time",
+          "value": "22:00",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_date",
+          "value": "2099-10-13",
+          "width": 314,
+          "fontSize": "32px"
+        },
+        {
+          "name": "end_time",
+          "value": "03:00",
+          "width": 314,
+          "fontSize": "32px"
+        }
+      ],
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "width": 306.703125,
+          "height": 62
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 67
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 68.390625
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "Usar mi ubicación actual",
+          "width": 640,
+          "height": 48
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 314,
+          "height": 65
+        },
+        {
+          "name": "",
+          "width": 640,
+          "height": 65
+        },
+        {
+          "name": "Guardar cambios",
+          "width": 640,
+          "height": 64
+        },
+        {
+          "name": "Cancelar edición",
+          "width": 286.625,
+          "height": 62
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 1280,
+      "height": 900,
+      "state": "normal",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 194.265625,
+          "height": 48
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 180.578125,
+          "height": 44
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 316,
+          "height": 50
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 316,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "name": "rejoin",
+      "width": 1280,
+      "height": 900,
+      "state": "text200",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "shell": "app-shell product-shell amanecer-shell event-management-shell",
+      "fields": [],
+      "controls": [
+        {
+          "name": "Volver a asistentes",
+          "width": 332.53125,
+          "height": 48
+        },
+        {
+          "name": "Actualizar solicitudes",
+          "width": 337.140625,
+          "height": 52
+        },
+        {
+          "name": "Aprobar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 316,
+          "height": 62
+        },
+        {
+          "name": "Rechazar solicitud de SofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofíaSofía",
+          "width": 316,
+          "height": 62
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "sha": "a378259a60106ddd07b111080a24677ad509bc49",
+  "purpose": "stable visual normal samples after fonts and 850ms entrance completion; earlier transient captures remain recorded",
+  "results": [
+    {
+      "name": "home",
+      "width": 320,
+      "height": 800,
+      "scrollWidth": 320,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Inicio",
+      "transparent": []
+    },
+    {
+      "name": "map",
+      "width": 320,
+      "height": 800,
+      "scrollWidth": 320,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encontrá tu próximo plan",
+      "transparent": []
+    },
+    {
+      "name": "detail",
+      "width": 320,
+      "height": 800,
+      "scrollWidth": 320,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encuentro de música — prueba",
+      "transparent": []
+    },
+    {
+      "name": "home",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Inicio",
+      "transparent": []
+    },
+    {
+      "name": "map",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encontrá tu próximo plan",
+      "transparent": []
+    },
+    {
+      "name": "detail",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encuentro de música — prueba",
+      "transparent": []
+    },
+    {
+      "name": "home",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Inicio",
+      "transparent": []
+    },
+    {
+      "name": "map",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encontrá tu próximo plan",
+      "transparent": []
+    },
+    {
+      "name": "detail",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encuentro de música — prueba",
+      "transparent": []
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Inicio",
+      "transparent": []
+    },
+    {
+      "name": "map",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encontrá tu próximo plan",
+      "transparent": []
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encuentro de música — prueba",
+      "transparent": []
+    },
+    {
+      "name": "home",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Inicio",
+      "transparent": []
+    },
+    {
+      "name": "map",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encontrá tu próximo plan",
+      "transparent": []
+    },
+    {
+      "name": "detail",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encuentro de música — prueba",
+      "transparent": []
+    },
+    {
+      "name": "home",
+      "width": 1280,
+      "height": 900,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Inicio",
+      "transparent": []
+    },
+    {
+      "name": "map",
+      "width": 1280,
+      "height": 900,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encontrá tu próximo plan",
+      "transparent": []
+    },
+    {
+      "name": "detail",
+      "width": 1280,
+      "height": 900,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "title": "Encuentro de música — prueba",
+      "transparent": []
+    }
+  ]
+}

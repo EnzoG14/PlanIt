@@ -1,0 +1,45 @@
+{
+  "sha": "a378259a60106ddd07b111080a24677ad509bc49",
+  "dateArgentina": "2026-10-13",
+  "branch": "test/amanecer-block-8-audit",
+  "initialOpenPullRequests": [],
+  "initialFetch": "completed",
+  "existingBlock8RunForSHA": false,
+  "tooling": {
+    "node": "24.19.0",
+    "npm": "11.17.0",
+    "impeccableSkill": "4.5.2",
+    "impeccableEngine": "0.1.14",
+    "codegraph": "independent index initialized; no reused index"
+  },
+  "critique": {
+    "target": "src/App.tsx",
+    "slug": "src-app-tsx",
+    "ignoreList": "not present",
+    "independentAssessments": [
+      "/root/assessment_a",
+      "/root/assessment_b"
+    ],
+    "aFinishedBeforeBInSynthesis": true,
+    "detectorRuns": 1,
+    "overlay": "not run: documented browser evaluate is read-only; no mutable injection API",
+    "tabs": "A and B own tabs closed",
+    "snapshot": "versioned IMPECCABLE.md + ignored local snapshot 2026-10-13T14-28-58Z__src-app-tsx.md; temporary body removed",
+    "trend": "one entry only, no comparable history"
+  },
+  "temporarySources": "generated under .audit-tools.local or existing runner *.local.mjs; no tracked test edits; wrappers removed by runners",
+  "remote": "no real credentials; no business mutation or migration remote; no HTTP/JWT E2E",
+  "servers": "initial Vite stopped; short second capture server stop confirmed before delivery",
+  "warnings": [
+    "npm glob11.1.0 deprecated",
+    "Mapbox large chunk",
+    "failed runners preserved",
+    "transient entrance captures not evidence of blank product"
+  ],
+  "critiqueClose": "Questions skipped: audit scope and delivery defined by user",
+  "logs": "only trailing whitespace/extra EOF lines normalized in current run logs; stdout/stderr content and original failure codes retained",
+  "finalFetch": {
+    "originMain": "89f32d5c83a0f91477863fb3b1b4dcf904f55f9b",
+    "change": "documentation R4 only; new SHA execution recorded separately"
+  }
+}

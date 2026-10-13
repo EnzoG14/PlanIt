@@ -1,0 +1,5 @@
+{
+  "reason": "single isolated rerun after detached-element timeout in original runner; original failure preserved",
+  "command": "npm run check:notifications:ui",
+  "exitCode": 1
+}

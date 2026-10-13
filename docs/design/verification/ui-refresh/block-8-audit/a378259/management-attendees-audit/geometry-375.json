@@ -1,0 +1,901 @@
+{
+  "normal": {
+    "overflow": false,
+    "scoped": true,
+    "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+    "controls": [
+      {
+        "name": "Volver al evento",
+        "width": 172.359375,
+        "height": 48,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Confirmados34",
+        "width": 149.453125,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(7, 83, 255)"
+      },
+      {
+        "name": "Removidos0",
+        "width": 127.5625,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      {
+        "name": "Solicitudes",
+        "width": 111.046875,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      {
+        "name": "",
+        "width": 265,
+        "height": 52,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Actualizar asistentes",
+        "width": 176.734375,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Camila Rodríguez",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Mateo Torres",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 02",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 03",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 04",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 05",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 06",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 07",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 08",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 09",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 10",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 11",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 12",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 13",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 14",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 15",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 16",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 17",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 18",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 19",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 20",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 21",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 22",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 23",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 24",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 25",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 26",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 27",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 28",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Asistente 29",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Cargar más asistentes",
+        "width": 206.046875,
+        "height": 48,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "headline": "32px"
+  },
+  "outline": {
+    "width": "3px",
+    "color": "rgb(91, 52, 214)"
+  },
+  "enlarged": {
+    "overflow": false,
+    "scoped": true,
+    "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+    "controls": [
+      {
+        "name": "Volver al evento",
+        "width": 288.703125,
+        "height": 48,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Confirmados34",
+        "width": 260.90625,
+        "height": 58,
+        "font": 30,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(7, 83, 255)"
+      },
+      {
+        "name": "Removidos0",
+        "width": 217.125,
+        "height": 58,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      {
+        "name": "Solicitudes",
+        "width": 192.09375,
+        "height": 58,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(255, 255, 255, 0.72)"
+      },
+      {
+        "name": "",
+        "width": 265,
+        "height": 52,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Actualizar asistentes",
+        "width": 329.453125,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Acciones de Camila Rodríguez",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Mateo Torres",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 02",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 03",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 04",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 05",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 06",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 07",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 08",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 09",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 10",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 11",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 12",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 13",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 14",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 15",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 16",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 17",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 18",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 19",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 20",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 21",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 22",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 23",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 24",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 25",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 26",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 27",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 28",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Acciones de Asistente 29",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Remover",
+        "width": 181.25,
+        "height": 65,
+        "font": 32,
+        "color": "rgb(192, 21, 58)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Cargar más asistentes",
+        "width": 335,
+        "height": 74,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "headline": "64px"
+  },
+  "clearPath": [
+    "Volver al evento",
+    "Confirmados\n34",
+    "Removidos\n0",
+    "Solicitudes",
+    "file picker",
+    "Actualizar asistentes",
+    "Acciones de Camila Rodríguez",
+    "Acciones de Mateo Torres",
+    "Acciones de Asistente 02",
+    "Acciones de Asistente 03",
+    "Acciones de Asistente 04",
+    "Acciones de Asistente 05",
+    "Acciones de Asistente 06",
+    "Acciones de Asistente 07",
+    "Acciones de Asistente 08",
+    "Acciones de Asistente 09",
+    "Acciones de Asistente 10",
+    "Acciones de Asistente 11",
+    "Acciones de Asistente 12",
+    "Acciones de Asistente 13",
+    "Acciones de Asistente 14",
+    "Acciones de Asistente 15",
+    "Acciones de Asistente 16",
+    "Acciones de Asistente 17",
+    "Acciones de Asistente 18",
+    "Acciones de Asistente 19",
+    "Acciones de Asistente 20",
+    "Acciones de Asistente 21",
+    "Acciones de Asistente 22",
+    "Acciones de Asistente 23",
+    "Acciones de Asistente 24",
+    "Acciones de Asistente 25",
+    "Acciones de Asistente 26",
+    "Acciones de Asistente 27",
+    "Acciones de Asistente 28",
+    "Acciones de Asistente 29",
+    "Cargar más asistentes"
+  ],
+  "reducedMotion": [
+    "none"
+  ],
+  "reducedTransparency": {
+    "active": true,
+    "blur": "none"
+  },
+  "limits": "Text sizes doubled in DOM, not native zoom. Physical device and screen reader untested."
+}

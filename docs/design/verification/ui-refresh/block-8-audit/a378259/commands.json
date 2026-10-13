@@ -1,0 +1,139 @@
+{
+  "sha": "a378259a60106ddd07b111080a24677ad509bc49",
+  "date": "2026-10-13",
+  "origin": "http://127.0.0.1:4198",
+  "environment": "fixtures + local PostgreSQL/PGlite, no remote mutations",
+  "entries": [
+    {
+      "name": "build",
+      "command": "npm run build",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T13:49:13.222Z",
+      "finishedAt": "2026-10-13T13:49:36.694Z"
+    },
+    {
+      "name": "lint",
+      "command": "npm run lint",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T13:49:36.695Z",
+      "finishedAt": "2026-10-13T13:49:39.248Z"
+    },
+    {
+      "name": "check:amanecer",
+      "command": "npm run check:amanecer",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T13:49:39.249Z",
+      "finishedAt": "2026-10-13T13:49:39.319Z"
+    },
+    {
+      "name": "check:foundation",
+      "command": "npm run check:foundation",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T13:49:39.321Z",
+      "finishedAt": "2026-10-13T13:49:39.789Z"
+    },
+    {
+      "name": "check:auth",
+      "command": "npm run check:auth",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T13:49:39.790Z",
+      "finishedAt": "2026-10-13T13:49:40.880Z"
+    },
+    {
+      "name": "check:r3",
+      "command": "npm run check:r3",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T13:49:40.881Z",
+      "finishedAt": "2026-10-13T14:09:56.522Z"
+    },
+    {
+      "name": "check:events:postgres",
+      "command": "npm run check:events -- --postgres",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T14:09:56.523Z",
+      "finishedAt": "2026-10-13T14:09:58.319Z"
+    },
+    {
+      "name": "check:amanecer:auth:ui",
+      "command": "npm run check:amanecer:auth:ui",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T14:09:58.320Z",
+      "finishedAt": "2026-10-13T14:10:33.412Z"
+    },
+    {
+      "name": "check:events:ui",
+      "command": "npm run check:events:ui",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T14:10:33.413Z",
+      "finishedAt": "2026-10-13T14:10:48.316Z"
+    },
+    {
+      "name": "check:chat:layout",
+      "command": "npm run check:chat:layout",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T14:10:48.318Z",
+      "finishedAt": "2026-10-13T14:10:58.556Z"
+    },
+    {
+      "name": "check:profile:ui",
+      "command": "npm run check:profile:ui",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T14:10:58.557Z",
+      "finishedAt": "2026-10-13T14:11:06.911Z"
+    },
+    {
+      "name": "check:notifications:ui",
+      "result": "FAIL",
+      "exitCode": 1,
+      "signal": null,
+      "startedAt": "2026-10-13T14:11:06.913Z",
+      "finishedAt": "2026-10-13T14:11:24.117Z",
+      "message": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/check-notifications-ui.mjs\nnode:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nlocator.click: Timeout 10000ms exceeded.\r\nCall log:\r\n\u001b[2m  - waiting for locator('.notification-row').first().getByRole('button', { name: 'V"
+    },
+    {
+      "name": "runner:my-events-refresh",
+      "result": "FAIL",
+      "exitCode": 1,
+      "signal": null,
+      "startedAt": "2026-10-13T14:11:24.118Z",
+      "finishedAt": "2026-10-13T14:11:26.630Z",
+      "message": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/check-my-events-refresh-ui.mjs after\nnode:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: other routes preserve the current header\r\n\r\n1 !== 0\r\n\r\n    at file:///C:/Users/enzog/planit-worktr"
+    },
+    {
+      "name": "runner:discovery-refresh",
+      "result": "FAIL",
+      "exitCode": 1,
+      "signal": null,
+      "startedAt": "2026-10-13T14:11:26.631Z",
+      "finishedAt": "2026-10-13T14:11:34.853Z",
+      "message": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/check-discovery-refresh-ui.mjs after\nnode:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: detail 320: horizontal overflow\r\n\r\ntrue !== false\r\n\r\n    at capture (file:///C:/Users/enzog/planit"
+    },
+    {
+      "name": "runner:screen-shell",
+      "command": "node scripts/check-screen-shell-ui.mjs ",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T14:11:34.854Z",
+      "finishedAt": "2026-10-13T14:12:47.095Z"
+    },
+    {
+      "name": "check:social:ui",
+      "command": "npm run check:social:ui",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T14:12:47.098Z",
+      "finishedAt": "2026-10-13T14:13:19.627Z"
+    }
+  ]
+}

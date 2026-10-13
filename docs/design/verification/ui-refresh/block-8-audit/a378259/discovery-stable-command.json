@@ -1,0 +1,5 @@
+{
+  "reason": "normal screenshots after 850ms entry completion, not rerunning passed functional assertions",
+  "exitCode": 0,
+  "command": "node probes/discovery-stable.mjs"
+}

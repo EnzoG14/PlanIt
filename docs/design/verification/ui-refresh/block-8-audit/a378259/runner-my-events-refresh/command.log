@@ -1,0 +1,39 @@
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: other routes preserve the current header
+
+1 !== 0
+
+    at file:///C:/Users/enzog/planit-worktrees/amanecer-block-8-audit/scripts/check-my-events-refresh-ui.mjs:96:14 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+
+Command failed: C:\Program Files\nodejs\node.exe scripts/check-my-events-refresh-ui.mjs after
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: other routes preserve the current header
+
+1 !== 0
+
+    at file:///C:/Users/enzog/planit-worktrees/amanecer-block-8-audit/scripts/check-my-events-refresh-ui.mjs:96:14 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

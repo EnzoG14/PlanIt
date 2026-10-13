@@ -1,0 +1,6 @@
+{
+  "exitCode": 0,
+  "environment": "fixtures only",
+  "command": "node probes/social-stress.mjs",
+  "earlierAttempt": "ERR_MODULE_NOT_FOUND: default Playwright path uses USUARIO; repeated with PLANIT_PLAYWRIGHT_PATH set to installed runtime"
+}

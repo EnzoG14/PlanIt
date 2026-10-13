@@ -1,0 +1,72 @@
+PASS 320: Protected list, minimal identity, counts and no overflow
+PASS 320: Pagination and search reset; empty search results distinguished from empty list
+PASS 320: Late response from previous name search discarded
+PASS 320: Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored
+PASS 320: Rejected transition and lost response reconcile without false success or automatic resend
+PASS 320: External registration and removal visible on refresh
+PASS 320: Historical read-only lists, load failure/retry and absent migration handled
+PASS 320: Organizo menu/detail entry and original list filter preserved on return
+PASS 320: Foreign/anonymous/direct other-event routes deny administrative identities
+PASS 320: Long authorized identity and empty list captured without overflow
+PASS 320: Session logout clears administrative data
+PASS 320: Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal
+PASS 360: Protected list, minimal identity, counts and no overflow
+PASS 360: Pagination and search reset; empty search results distinguished from empty list
+PASS 360: Late response from previous name search discarded
+PASS 360: Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored
+PASS 360: Rejected transition and lost response reconcile without false success or automatic resend
+PASS 360: External registration and removal visible on refresh
+PASS 360: Historical read-only lists, load failure/retry and absent migration handled
+PASS 360: Organizo menu/detail entry and original list filter preserved on return
+PASS 360: Foreign/anonymous/direct other-event routes deny administrative identities
+PASS 360: Long authorized identity and empty list captured without overflow
+PASS 360: Session logout clears administrative data
+PASS 360: Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal
+PASS 375: Protected list, minimal identity, counts and no overflow
+PASS 375: Pagination and search reset; empty search results distinguished from empty list
+PASS 375: Late response from previous name search discarded
+PASS 375: Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored
+PASS 375: Rejected transition and lost response reconcile without false success or automatic resend
+PASS 375: External registration and removal visible on refresh
+PASS 375: Historical read-only lists, load failure/retry and absent migration handled
+PASS 375: Organizo menu/detail entry and original list filter preserved on return
+PASS 375: Foreign/anonymous/direct other-event routes deny administrative identities
+PASS 375: Long authorized identity and empty list captured without overflow
+PASS 375: Session logout clears administrative data
+PASS 375: Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal
+PASS 390: Protected list, minimal identity, counts and no overflow
+PASS 390: Pagination and search reset; empty search results distinguished from empty list
+PASS 390: Late response from previous name search discarded
+PASS 390: Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored
+PASS 390: Rejected transition and lost response reconcile without false success or automatic resend
+PASS 390: External registration and removal visible on refresh
+PASS 390: Historical read-only lists, load failure/retry and absent migration handled
+PASS 390: Organizo menu/detail entry and original list filter preserved on return
+PASS 390: Foreign/anonymous/direct other-event routes deny administrative identities
+PASS 390: Long authorized identity and empty list captured without overflow
+PASS 390: Session logout clears administrative data
+PASS 390: Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal
+PASS 768: Protected list, minimal identity, counts and no overflow
+PASS 768: Pagination and search reset; empty search results distinguished from empty list
+PASS 768: Late response from previous name search discarded
+PASS 768: Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored
+PASS 768: Rejected transition and lost response reconcile without false success or automatic resend
+PASS 768: External registration and removal visible on refresh
+PASS 768: Historical read-only lists, load failure/retry and absent migration handled
+PASS 768: Organizo menu/detail entry and original list filter preserved on return
+PASS 768: Foreign/anonymous/direct other-event routes deny administrative identities
+PASS 768: Long authorized identity and empty list captured without overflow
+PASS 768: Session logout clears administrative data
+PASS 768: Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal
+PASS 1280: Protected list, minimal identity, counts and no overflow
+PASS 1280: Pagination and search reset; empty search results distinguished from empty list
+PASS 1280: Late response from previous name search discarded
+PASS 1280: Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored
+PASS 1280: Rejected transition and lost response reconcile without false success or automatic resend
+PASS 1280: External registration and removal visible on refresh
+PASS 1280: Historical read-only lists, load failure/retry and absent migration handled
+PASS 1280: Organizo menu/detail entry and original list filter preserved on return
+PASS 1280: Foreign/anonymous/direct other-event routes deny administrative identities
+PASS 1280: Long authorized identity and empty list captured without overflow
+PASS 1280: Session logout clears administrative data
+PASS 1280: Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal

@@ -1,0 +1,56 @@
+{
+  "sha": "a378259a60106ddd07b111080a24677ad509bc49",
+  "environment": "Edge fixtures; aborted local Vite modules; simulated clock; no remote service",
+  "results": [
+    {
+      "route": "/home",
+      "aborted": "HomePage",
+      "errors": [
+        "Failed to fetch dynamically imported module: http://127.0.0.1:4198/src/pages/HomePage.tsx"
+      ],
+      "state": {
+        "rootText": "",
+        "rootChildren": 0,
+        "bodyText": "",
+        "retryButtons": 0
+      }
+    },
+    {
+      "route": "/map",
+      "aborted": "MapPage",
+      "errors": [
+        "Failed to fetch dynamically imported module: http://127.0.0.1:4198/src/pages/MapPage.tsx"
+      ],
+      "state": {
+        "rootText": "",
+        "rootChildren": 0,
+        "bodyText": "",
+        "retryButtons": 0
+      }
+    },
+    {
+      "route": "/events/30000000-0000-4000-8000-000000000001",
+      "aborted": "EventDetailPage",
+      "errors": [
+        "Failed to fetch dynamically imported module: http://127.0.0.1:4198/src/pages/EventDetailPage.tsx"
+      ],
+      "state": {
+        "rootText": "",
+        "rootChildren": 0,
+        "bodyText": "",
+        "retryButtons": 0
+      }
+    },
+    {
+      "check": "participation-periodic-focus",
+      "before": {
+        "tag": "BUTTON",
+        "text": "Unirme"
+      },
+      "after": {
+        "tag": "BUTTON",
+        "text": "Unirme"
+      }
+    }
+  ]
+}

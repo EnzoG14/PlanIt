@@ -1,0 +1,62 @@
+PASS: mobile: CA-01/02 navigation, 30 persisted fixtures, full Argentina date/time even with Tokyo device, read/unread and absent body/target
+PASS: mobile: keyset next page and no duplicates
+PASS: mobile: failed marking stays unread; success and reload reflect persisted read state
+PASS: mobile: access revoked after listing prevents navigation and removes stale action
+PASS: mobile: authorized target opens existing event detail
+PASS: mobile: CA-04 honest empty state without generated notices
+PASS: mobile: loading, network error, missing migration and retry recovery
+PASS: mobile: focus refresh and cross-tab account change discard old account rows and late A response
+PASS: desktop: CA-01/02 navigation, 30 persisted fixtures, full Argentina date/time even with Tokyo device, read/unread and absent body/target
+PASS: desktop: keyset next page and no duplicates
+PASS: desktop: failed marking stays unread; success and reload reflect persisted read state
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('.notification-row').first().getByRole('button', { name: 'Ver evento' })[22m
+[2m    - locator resolved to <button type="button" class="text-button">Ver evento</button>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+    at C:\Users\enzog\planit-worktrees\amanecer-block-8-audit\scripts\check-notifications-ui.mjs:67:68 {
+  log: [
+    "  - waiting for locator('.notification-row').first().getByRole('button', { name: 'Ver evento' })",
+    '    - locator resolved to <button type="button" class="text-button">Ver evento</button>',
+    '  - attempting click action',
+    '    - waiting for element to be visible, enabled and stable',
+    '  - element was detached from the DOM, retrying'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.19.0
+
+Command failed: C:\Program Files\nodejs\node.exe scripts/check-notifications-ui.mjs
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('.notification-row').first().getByRole('button', { name: 'Ver evento' })[22m
+[2m    - locator resolved to <button type="button" class="text-button">Ver evento</button>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+    at C:\Users\enzog\planit-worktrees\amanecer-block-8-audit\scripts\check-notifications-ui.mjs:67:68 {
+  log: [
+    "  - waiting for locator('.notification-row').first().getByRole('button', { name: 'Ver evento' })",
+    '    - locator resolved to <button type="button" class="text-button">Ver evento</button>',
+    '  - attempting click action',
+    '    - waiting for element to be visible, enabled and stable',
+    '  - element was detached from the DOM, retrying'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.19.0

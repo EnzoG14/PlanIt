@@ -1,0 +1,6 @@
+{
+  "command": "npm run check:gallery:ui",
+  "reason": "initial default Playwright path used USUARIO; explicitly set installed runtime",
+  "PLANIT_MANAGEMENT_AUDIT": "1",
+  "exitCode": 0
+}

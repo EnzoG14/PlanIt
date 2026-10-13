@@ -1,0 +1,2 @@
+PASS: required fields, future/end dates, Argentina time, category, coordinates, cupo, 10-image/type/size limits.
+PASS: real PostgreSQL migration, rollback, identity/grants/RLS, public geographic query, idempotency, active categories, private Storage, 10-image limit, read permissions and staged cleanup.

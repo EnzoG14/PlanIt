@@ -1,0 +1,2 @@
+PASS: configuration accepts only planit-v2 and publishable keys; errors do not echo keys.
+PASS: manifest, PNG dimensions/opacity, icon precache and service worker registration.
