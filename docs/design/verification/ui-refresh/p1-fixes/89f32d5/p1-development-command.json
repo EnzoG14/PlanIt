@@ -1,0 +1,5 @@
+{
+  "exitCode": 0,
+  "earlierAttempt": "test selector used Archivar instead of Archivar evento for opening management, corrected only new check; partial initial results/log preserved",
+  "command": "npm run check:ui:p1"
+}

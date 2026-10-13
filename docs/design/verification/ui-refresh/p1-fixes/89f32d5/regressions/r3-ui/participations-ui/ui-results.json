@@ -1,0 +1,27 @@
+{
+  "environment": "Browser with intercepted Supabase fixtures; not live Auth/HTTP",
+  "results": [
+    {
+      "width": 375,
+      "height": 812,
+      "doubleClickCalls": 1,
+      "lostResponseReconciled": true,
+      "summaryFailureClearsCount": true,
+      "serverFullReconciled": true,
+      "closedRemovedOrganizer": true,
+      "overflow": false,
+      "pageErrors": []
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "doubleClickCalls": 1,
+      "lostResponseReconciled": true,
+      "summaryFailureClearsCount": true,
+      "serverFullReconciled": true,
+      "closedRemovedOrganizer": true,
+      "overflow": false,
+      "pageErrors": []
+    }
+  ]
+}

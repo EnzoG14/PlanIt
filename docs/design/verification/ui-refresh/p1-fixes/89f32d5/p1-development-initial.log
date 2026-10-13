@@ -1,0 +1,58 @@
+PASS: HomePage: keyboard exit, healthy route, back to rejected cached module
+PASS: HomePage: handled rejection, focused accessible fallback and successful manual reload
+PASS: MapPage: keyboard exit, healthy route, back to rejected cached module
+PASS: MapPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventDetailPage: keyboard exit, healthy route, back to rejected cached module
+PASS: EventDetailPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: MyEventsPage: keyboard exit, healthy route, back to rejected cached module
+PASS: MyEventsPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: CreateEventPage: keyboard exit, healthy route, back to rejected cached module
+PASS: CreateEventPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EditEventPage: keyboard exit, healthy route, back to rejected cached module
+PASS: EditEventPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventGalleryPage: keyboard exit, healthy route, back to rejected cached module
+PASS: EventGalleryPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventAttendeesPage: keyboard exit, healthy route, back to rejected cached module
+PASS: EventAttendeesPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventRejoinRequestsPage: keyboard exit, healthy route, back to rejected cached module
+PASS: EventRejoinRequestsPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventChatPage: keyboard exit, healthy route, back to rejected cached module
+PASS: EventChatPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: NotificationsPage: keyboard exit, healthy route, back to rejected cached module
+PASS: NotificationsPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: HomePage: handled rejection, focused accessible fallback and successful manual reload
+PASS: MapPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventDetailPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: HomePage: handled rejection, focused accessible fallback and successful manual reload
+PASS: MapPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventDetailPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: HomePage: handled rejection, focused accessible fallback and successful manual reload
+PASS: MapPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventDetailPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: HomePage: handled rejection, focused accessible fallback and successful manual reload
+PASS: MapPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventDetailPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: HomePage: handled rejection, focused accessible fallback and successful manual reload
+PASS: MapPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventDetailPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventChatPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: EventChatPage: handled rejection, focused accessible fallback and successful manual reload
+PASS: healthy My events keeps DOM identity when its query filter changes
+PASS: cancel: readable announced success, one intercepted mutation
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'Archivar', exact: true })
+
+    at success (C:\Users\enzog\planit-worktrees\fix-ui-refresh-p1\scripts\check-ui-p1.mjs:131:115)
+    at async file:///C:/Users/enzog/planit-worktrees/fix-ui-refresh-p1/scripts/check-ui-p1.mjs:167:88 {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Archivar', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,5 @@
+{
+  "command": "npm run check:r3 -- my-events-ui edit-event-ui gallery-ui attendees-ui event-actions-ui rejoin-ui participations-ui home-ui chat-ui realtime-ui discovery-ui",
+  "exitCode": 0,
+  "environment": "existing UI regression suites only; no SQL changes or replay"
+}

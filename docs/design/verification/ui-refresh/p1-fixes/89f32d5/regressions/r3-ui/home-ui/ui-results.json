@@ -1,0 +1,50 @@
+{
+  "environment": "Playwright against local Vite with fixture Supabase Auth/REST responses; no real users or remote writes",
+  "results": [
+    {
+      "test": "mobile: categorized home card opens matching detail, shows real organizer projection, placeholder media, and returns to home",
+      "result": "PASS",
+      "evidence": "Playwright fixture; not a real Supabase Auth/REST request"
+    },
+    {
+      "test": "desktop: categorized home card opens matching detail, shows real organizer projection, placeholder media, and returns to home",
+      "result": "PASS",
+      "evidence": "Playwright fixture; not a real Supabase Auth/REST request"
+    },
+    {
+      "test": "Empty home state is informative and contains no sample cards",
+      "result": "PASS",
+      "evidence": "Playwright fixture; not a real Supabase Auth/REST request"
+    },
+    {
+      "test": "Keyset pagination appends the next page and merges repeated category groups",
+      "result": "PASS",
+      "evidence": "Playwright fixture; not a real Supabase Auth/REST request"
+    },
+    {
+      "test": "Available signed photos render as a hero and a detail gallery",
+      "result": "PASS",
+      "evidence": "Playwright fixture; not a real Supabase Auth/REST request"
+    },
+    {
+      "test": "Home query failure gives an explicit error with retry",
+      "result": "PASS",
+      "evidence": "Playwright fixture; not a real Supabase Auth/REST request"
+    },
+    {
+      "test": "Detail revalidates on focus and clears an event whose access was revoked (CA-04)",
+      "result": "PASS",
+      "evidence": "Playwright fixture; not a real Supabase Auth/REST request"
+    },
+    {
+      "test": "Detail clears stale data on network failure and recovers on retry/online",
+      "result": "PASS",
+      "evidence": "Playwright fixture; not a real Supabase Auth/REST request"
+    },
+    {
+      "test": "A late successful detail response cannot restore an event after newer access denial",
+      "result": "PASS",
+      "evidence": "Playwright fixture; not a real Supabase Auth/REST request"
+    }
+  ]
+}

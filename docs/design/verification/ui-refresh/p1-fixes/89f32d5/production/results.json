@@ -1,0 +1,450 @@
+{
+  "environment": "local production build, blocked assets chunks, service workers disabled; intercepted services",
+  "remoteMutations": false,
+  "results": [
+    {
+      "test": "HomePage: keyboard exit, healthy route, back to rejected cached module",
+      "result": "PASS"
+    },
+    {
+      "test": "HomePage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "enlarged": false,
+      "path": "/home?audit=p1#plans",
+      "blocked": 1
+    },
+    {
+      "test": "MapPage: keyboard exit, healthy route, back to rejected cached module",
+      "result": "PASS"
+    },
+    {
+      "test": "MapPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "enlarged": false,
+      "path": "/map?audit=p1#events",
+      "blocked": 1
+    },
+    {
+      "test": "EventDetailPage: keyboard exit, healthy route, back to rejected cached module",
+      "result": "PASS"
+    },
+    {
+      "test": "EventDetailPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "enlarged": false,
+      "path": "/events/30000000-0000-4000-8000-000000000001?audit=p1#details",
+      "blocked": 1
+    },
+    {
+      "test": "MyEventsPage: keyboard exit, healthy route, back to rejected cached module",
+      "result": "PASS"
+    },
+    {
+      "test": "MyEventsPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "enlarged": false,
+      "path": "/my-events?section=organizing&filter=upcoming#audit",
+      "blocked": 1
+    },
+    {
+      "test": "CreateEventPage: keyboard exit, healthy route, back to rejected cached module",
+      "result": "PASS"
+    },
+    {
+      "test": "CreateEventPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "enlarged": false,
+      "path": "/events/new?audit=p1#form",
+      "blocked": 1
+    },
+    {
+      "test": "EditEventPage: keyboard exit, healthy route, back to rejected cached module",
+      "result": "PASS"
+    },
+    {
+      "test": "EditEventPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "enlarged": false,
+      "path": "/events/30000000-0000-4000-8000-000000000001/edit?audit=p1#form",
+      "blocked": 1
+    },
+    {
+      "test": "EventGalleryPage: keyboard exit, healthy route, back to rejected cached module",
+      "result": "PASS"
+    },
+    {
+      "test": "EventGalleryPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "enlarged": false,
+      "path": "/events/30000000-0000-4000-8000-000000000001/gallery?audit=p1#gallery",
+      "blocked": 1
+    },
+    {
+      "test": "EventAttendeesPage: keyboard exit, healthy route, back to rejected cached module",
+      "result": "PASS"
+    },
+    {
+      "test": "EventAttendeesPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "enlarged": false,
+      "path": "/events/30000000-0000-4000-8000-000000000001/attendees?audit=p1#attendees",
+      "blocked": 1
+    },
+    {
+      "test": "EventRejoinRequestsPage: keyboard exit, healthy route, back to rejected cached module",
+      "result": "PASS"
+    },
+    {
+      "test": "EventRejoinRequestsPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "enlarged": false,
+      "path": "/events/30000000-0000-4000-8000-000000000001/rejoin-requests?audit=p1#requests",
+      "blocked": 1
+    },
+    {
+      "test": "EventChatPage: keyboard exit, healthy route, back to rejected cached module",
+      "result": "PASS"
+    },
+    {
+      "test": "EventChatPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "enlarged": false,
+      "path": "/events/30000000-0000-4000-8000-000000000001/chat?audit=p1#messages",
+      "blocked": 1
+    },
+    {
+      "test": "NotificationsPage: keyboard exit, healthy route, back to rejected cached module",
+      "result": "PASS"
+    },
+    {
+      "test": "NotificationsPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "enlarged": false,
+      "path": "/notifications?audit=p1#inbox",
+      "blocked": 1
+    },
+    {
+      "test": "HomePage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 320,
+      "height": 800,
+      "enlarged": false,
+      "path": "/home?audit=p1#plans",
+      "blocked": 1
+    },
+    {
+      "test": "MapPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 320,
+      "height": 800,
+      "enlarged": false,
+      "path": "/map?audit=p1#events",
+      "blocked": 1
+    },
+    {
+      "test": "EventDetailPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 320,
+      "height": 800,
+      "enlarged": false,
+      "path": "/events/30000000-0000-4000-8000-000000000001?audit=p1#details",
+      "blocked": 1
+    },
+    {
+      "test": "HomePage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 360,
+      "height": 800,
+      "enlarged": false,
+      "path": "/home?audit=p1#plans",
+      "blocked": 1
+    },
+    {
+      "test": "MapPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 360,
+      "height": 800,
+      "enlarged": false,
+      "path": "/map?audit=p1#events",
+      "blocked": 1
+    },
+    {
+      "test": "EventDetailPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 360,
+      "height": 800,
+      "enlarged": false,
+      "path": "/events/30000000-0000-4000-8000-000000000001?audit=p1#details",
+      "blocked": 1
+    },
+    {
+      "test": "HomePage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 375,
+      "height": 812,
+      "enlarged": false,
+      "path": "/home?audit=p1#plans",
+      "blocked": 1
+    },
+    {
+      "test": "MapPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 375,
+      "height": 812,
+      "enlarged": false,
+      "path": "/map?audit=p1#events",
+      "blocked": 1
+    },
+    {
+      "test": "EventDetailPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 375,
+      "height": 812,
+      "enlarged": false,
+      "path": "/events/30000000-0000-4000-8000-000000000001?audit=p1#details",
+      "blocked": 1
+    },
+    {
+      "test": "HomePage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 768,
+      "height": 1024,
+      "enlarged": false,
+      "path": "/home?audit=p1#plans",
+      "blocked": 1
+    },
+    {
+      "test": "MapPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 768,
+      "height": 1024,
+      "enlarged": false,
+      "path": "/map?audit=p1#events",
+      "blocked": 1
+    },
+    {
+      "test": "EventDetailPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 768,
+      "height": 1024,
+      "enlarged": false,
+      "path": "/events/30000000-0000-4000-8000-000000000001?audit=p1#details",
+      "blocked": 1
+    },
+    {
+      "test": "HomePage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 1280,
+      "height": 900,
+      "enlarged": false,
+      "path": "/home?audit=p1#plans",
+      "blocked": 1
+    },
+    {
+      "test": "MapPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 1280,
+      "height": 900,
+      "enlarged": false,
+      "path": "/map?audit=p1#events",
+      "blocked": 1
+    },
+    {
+      "test": "EventDetailPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 1280,
+      "height": 900,
+      "enlarged": false,
+      "path": "/events/30000000-0000-4000-8000-000000000001?audit=p1#details",
+      "blocked": 1
+    },
+    {
+      "test": "EventChatPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 320,
+      "height": 240,
+      "enlarged": true,
+      "path": "/events/30000000-0000-4000-8000-000000000001/chat?audit=p1#messages",
+      "blocked": 1
+    },
+    {
+      "test": "EventChatPage: handled rejection, focused accessible fallback and successful manual reload",
+      "result": "PASS",
+      "width": 390,
+      "height": 240,
+      "enlarged": true,
+      "path": "/events/30000000-0000-4000-8000-000000000001/chat?audit=p1#messages",
+      "blocked": 1
+    },
+    {
+      "test": "healthy My events keeps DOM identity when its query filter changes",
+      "result": "PASS"
+    },
+    {
+      "test": "cancel: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 320,
+      "height": 800,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue cancelado. Sus datos e historial se conservan."
+    },
+    {
+      "test": "archive: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 320,
+      "height": 800,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue archivado. Podés consultarlo en Archivados."
+    },
+    {
+      "test": "cancel: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 360,
+      "height": 800,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue cancelado. Sus datos e historial se conservan."
+    },
+    {
+      "test": "archive: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 360,
+      "height": 800,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue archivado. Podés consultarlo en Archivados."
+    },
+    {
+      "test": "cancel: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 375,
+      "height": 812,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue cancelado. Sus datos e historial se conservan."
+    },
+    {
+      "test": "archive: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 375,
+      "height": 812,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue archivado. Podés consultarlo en Archivados."
+    },
+    {
+      "test": "cancel: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue cancelado. Sus datos e historial se conservan."
+    },
+    {
+      "test": "archive: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 390,
+      "height": 844,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue archivado. Podés consultarlo en Archivados."
+    },
+    {
+      "test": "cancel: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 768,
+      "height": 1024,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue cancelado. Sus datos e historial se conservan."
+    },
+    {
+      "test": "archive: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 768,
+      "height": 1024,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue archivado. Podés consultarlo en Archivados."
+    },
+    {
+      "test": "cancel: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 1280,
+      "height": 900,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue cancelado. Sus datos e historial se conservan."
+    },
+    {
+      "test": "archive: readable announced success, one intercepted mutation",
+      "result": "PASS",
+      "width": 1280,
+      "height": 900,
+      "ratio": 8.550842715320668,
+      "color": "rgb(6, 77, 57)",
+      "background": "rgb(217, 245, 234)",
+      "fontSize": "13.5px",
+      "radius": "18px",
+      "text": "El evento fue archivado. Podés consultarlo en Archivados."
+    }
+  ]
+}

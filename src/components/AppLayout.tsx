@@ -8,6 +8,7 @@ import { NotificationsProvider } from '../features/notifications/NotificationsPr
 import { useNotificationsRealtime } from '../features/notifications/realtime-context'
 import { StatusMessage } from './StatusMessage'
 import { AccountMenu } from './AccountMenu'
+import { RouteErrorBoundary } from './RouteErrorBoundary'
 import '../styles/social.css'
 
 export function AppLayout() {
@@ -39,7 +40,8 @@ function LayoutContent() {
     finally { setSigningOut(false) }
   }
   useEffect(() => {
-    document.getElementById('main-content')?.focus({ preventScroll: true })
+    const focusTarget = document.querySelector<HTMLElement>('.route-error') ?? document.getElementById('main-content')
+    focusTarget?.focus({ preventScroll: true })
     window.scrollTo(0, 0)
   }, [pathname])
   useLayoutEffect(() => {
@@ -82,7 +84,7 @@ function LayoutContent() {
         {supabaseConfigError && <StatusMessage title="Configuración pendiente" tone="error">{supabaseConfigError}</StatusMessage>}
         {error && <div className="session-error"><StatusMessage title="No se pudo recuperar la sesión" tone="error">{error}</StatusMessage><GradientButton type="button" onClick={retry}>Reintentar</GradientButton></div>}
         {logoutError && <StatusMessage title="No se pudo cerrar la sesión" tone="error">Revisá la conexión y volvé a elegir Cerrar sesión en Cuenta.</StatusMessage>}
-        <Outlet />
+        <RouteErrorBoundary><Outlet /></RouteErrorBoundary>
       </main>
       {!isAuth && !isChat && <nav className="primary-nav" aria-label="Navegación principal">
         <NavLink to="/home"><Icon name="home" /><span>Inicio</span></NavLink>

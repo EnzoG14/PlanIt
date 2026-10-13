@@ -1,0 +1,1 @@
+PASS: mobile/tablet/desktop screenshots, no overflow, 44px targets, field focus/errors, no drafts, geolocation denial, image limit, publish/readback, backend/upload failures, cleanup, lost-response retry and auth guard. All Supabase requests mocked; no remote writes.

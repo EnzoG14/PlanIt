@@ -1,0 +1,77 @@
+{
+  "environment": "existing browser regression scripts, fixtures only; known audit failures remain explicitly classified",
+  "results": [
+    {
+      "name": "amanecer-auth-ui",
+      "command": "node scripts/check-amanecer-auth-ui.mjs",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T15:55:27.933Z",
+      "finishedAt": "2026-10-13T15:56:06.285Z"
+    },
+    {
+      "name": "events-ui",
+      "command": "node scripts/check-events-ui.mjs",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T15:56:06.286Z",
+      "finishedAt": "2026-10-13T15:56:22.472Z"
+    },
+    {
+      "name": "chat-layout",
+      "command": "node scripts/check-chat-layout-ui.mjs",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T15:56:22.473Z",
+      "finishedAt": "2026-10-13T15:56:33.222Z"
+    },
+    {
+      "name": "profile-ui",
+      "command": "node scripts/check-profile-ui.mjs",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T15:56:33.223Z",
+      "finishedAt": "2026-10-13T15:56:42.037Z"
+    },
+    {
+      "name": "notifications-ui",
+      "command": "node scripts/check-notifications-ui.mjs",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T15:56:42.038Z",
+      "finishedAt": "2026-10-13T15:56:52.449Z"
+    },
+    {
+      "name": "social-ui",
+      "command": "node scripts/check-social-refresh-ui.mjs",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T15:56:52.452Z",
+      "finishedAt": "2026-10-13T15:57:26.145Z"
+    },
+    {
+      "name": "screen-shell",
+      "command": "node scripts/check-screen-shell-ui.mjs",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-13T15:57:26.148Z",
+      "finishedAt": "2026-10-13T15:58:40.843Z"
+    },
+    {
+      "name": "my-events-refresh",
+      "result": "FAIL",
+      "exitCode": 1,
+      "startedAt": "2026-10-13T15:58:40.845Z",
+      "finishedAt": "2026-10-13T15:58:44.394Z",
+      "message": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/check-my-events-refresh-ui.mjs after\nnode:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: other routes preserve the current header\r\n\r\n1 !="
+    },
+    {
+      "name": "discovery-refresh",
+      "result": "FAIL",
+      "exitCode": 1,
+      "startedAt": "2026-10-13T15:58:44.396Z",
+      "finishedAt": "2026-10-13T15:58:54.933Z",
+      "message": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/check-discovery-refresh-ui.mjs after\nnode:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: detail 320: horizontal overflow\r\n\r\ntrue !== fals"
+    }
+  ]
+}

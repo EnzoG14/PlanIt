@@ -1,0 +1,5 @@
+{
+  "environment": "dev fixtures",
+  "exitCode": 1,
+  "command": "npm run check:ui:p1"
+}

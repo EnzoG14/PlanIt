@@ -1,0 +1,150 @@
+[
+  {
+    "width": 360,
+    "height": 800,
+    "result": "PASS",
+    "geometry": {
+      "pageHeight": 800,
+      "viewport": 800,
+      "pageScroll": 0,
+      "list": {
+        "top": 173.59375,
+        "bottom": 658.40625,
+        "height": 484.8125
+      },
+      "composer": {
+        "top": 666.40625,
+        "bottom": 800,
+        "height": 133.59375
+      },
+      "last": {
+        "top": 528.59375,
+        "bottom": 646.59375,
+        "height": 118
+      },
+      "bottomGap": 0
+    },
+    "scenarios": [
+      "single scroll",
+      "last message",
+      "send",
+      "pagination anchor",
+      "incoming reader position",
+      "keyboard height and bottom pinning",
+      "visual viewport offset",
+      "read only",
+      "route cleanup"
+    ]
+  },
+  {
+    "width": 375,
+    "height": 812,
+    "result": "PASS",
+    "geometry": {
+      "pageHeight": 812,
+      "viewport": 812,
+      "pageScroll": 0,
+      "list": {
+        "top": 172,
+        "bottom": 670.40625,
+        "height": 498.40625
+      },
+      "composer": {
+        "top": 678.40625,
+        "bottom": 812,
+        "height": 133.59375
+      },
+      "last": {
+        "top": 540,
+        "bottom": 658,
+        "height": 118
+      },
+      "bottomGap": 0
+    },
+    "scenarios": [
+      "single scroll",
+      "last message",
+      "send",
+      "pagination anchor",
+      "incoming reader position",
+      "keyboard height and bottom pinning",
+      "visual viewport offset",
+      "read only",
+      "route cleanup"
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "result": "PASS",
+    "geometry": {
+      "pageHeight": 844,
+      "viewport": 844,
+      "pageScroll": 0,
+      "list": {
+        "top": 172,
+        "bottom": 702.40625,
+        "height": 530.40625
+      },
+      "composer": {
+        "top": 710.40625,
+        "bottom": 844,
+        "height": 133.59375
+      },
+      "last": {
+        "top": 572,
+        "bottom": 690,
+        "height": 118
+      },
+      "bottomGap": 0
+    },
+    "scenarios": [
+      "single scroll",
+      "last message",
+      "send",
+      "pagination anchor",
+      "incoming reader position",
+      "keyboard height and bottom pinning",
+      "visual viewport offset",
+      "read only",
+      "route cleanup"
+    ]
+  },
+  {
+    "width": 1280,
+    "height": 900,
+    "result": "PASS",
+    "geometry": {
+      "pageHeight": 900,
+      "viewport": 900,
+      "pageScroll": 0,
+      "list": {
+        "top": 172,
+        "bottom": 758.40625,
+        "height": 586.40625
+      },
+      "composer": {
+        "top": 766.40625,
+        "bottom": 900,
+        "height": 133.59375
+      },
+      "last": {
+        "top": 652,
+        "bottom": 746,
+        "height": 94
+      },
+      "bottomGap": 0
+    },
+    "scenarios": [
+      "single scroll",
+      "last message",
+      "send",
+      "pagination anchor",
+      "incoming reader position",
+      "keyboard height and bottom pinning",
+      "visual viewport offset",
+      "read only",
+      "route cleanup"
+    ]
+  }
+]

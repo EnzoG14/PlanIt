@@ -1,0 +1,5 @@
+{
+  "exitCode": 1,
+  "environment": "local production chunks; service workers blocked; fixtures",
+  "command": "npm run check:ui:p1 -- --production"
+}

@@ -1,0 +1,37 @@
+{
+  "environment": "Playwright intercepted Auth/REST/Storage fixtures; no remote writes or real accounts",
+  "results": [
+    {
+      "test": "mobile: CA-01/02 navigation, own identity/email/bio/avatar and account link; no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "mobile: CA-03 persisted fixture changes reload, reopen and focus",
+      "result": "PASS"
+    },
+    {
+      "test": "mobile: CA-04 error clears profile, retry works; absent/inaccessible/foreign/broken avatar falls back",
+      "result": "PASS"
+    },
+    {
+      "test": "mobile: CA-02/04 session B replaces A, ignores late A response, logout protects /me; no browser errors",
+      "result": "PASS"
+    },
+    {
+      "test": "desktop: CA-01/02 navigation, own identity/email/bio/avatar and account link; no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "desktop: CA-03 persisted fixture changes reload, reopen and focus",
+      "result": "PASS"
+    },
+    {
+      "test": "desktop: CA-04 error clears profile, retry works; absent/inaccessible/foreign/broken avatar falls back",
+      "result": "PASS"
+    },
+    {
+      "test": "desktop: CA-02/04 session B replaces A, ignores late A response, logout protects /me; no browser errors",
+      "result": "PASS"
+    }
+  ]
+}

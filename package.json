@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:ui:p1": "node scripts/check-ui-p1.mjs",
     "check:social:ui": "node scripts/check-social-refresh-ui.mjs",
     "check:profile": "node scripts/check-profile.mjs",
     "check:profile:ui": "node scripts/check-profile-ui.mjs",
