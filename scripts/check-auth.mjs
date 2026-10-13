@@ -23,7 +23,7 @@ assert.deepEqual(validateAuth({ ...valid, password: '123456' }, true), {})
 assert.deepEqual(validateAuth({ ...valid, display_name: '', password: 'old' }, false), {})
 assert.ok(validateAuth({ ...valid, password: '' }, false).password)
 for (const next of [null, '//evil.example', 'https://evil.example', '/me?next=https://evil.example', '/map/../me', '/unknown']) assert.equal(safeReturnPath(next), '/map')
-for (const next of ['/map', '/my-events', '/events/new', '/me']) assert.equal(safeReturnPath(next), next)
+for (const next of ['/map', '/my-events', '/events/new', '/me', '/me/interests']) assert.equal(safeReturnPath(next), next)
 assert.equal(authErrorMessage('server error containing secret'), authErrorMessage())
 console.log('PASS: required fields, Unicode name limits, registration/login password validation and safe internal return paths.')
 

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
@@ -16,6 +16,9 @@ export function ProfilePage() {
 }
 
 function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
+  const location = useLocation()
+  const interestsLink = useRef<HTMLAnchorElement>(null)
+  useEffect(() => { if (location.state?.focusInterests) interestsLink.current?.focus() }, [location.key, location.state])
   const [result, setResult] = useState<ProfileResult | null>(null)
   const [attempt, setAttempt] = useState(0)
   const [avatarFailed, setAvatarFailed] = useState(false)
@@ -84,6 +87,7 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
         <dl className="profile-email"><dt><Icon name="email" />Correo de tu cuenta</dt><dd>{email || 'Correo no disponible'}</dd></dl>
       </>}
     <nav className="profile-account" aria-label="Información de tu cuenta">
+      <Link ref={interestsLink} to="/me/interests"><Icon name="category" /><span>Mis intereses</span><span aria-hidden="true">›</span></Link>
       <Link to="/my-events"><Icon name="calendar" /><span>Mis eventos</span><span aria-hidden="true">›</span></Link>
       <Link to="/notifications"><Icon name="bell" /><span>Notificaciones</span><span aria-hidden="true">›</span></Link>
     </nav>

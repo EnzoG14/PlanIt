@@ -11,7 +11,7 @@ export function validateAuth(values: AuthValues, register: boolean): FieldErrors
 }
 
 export function safeReturnPath(value: string | null): string {
-  return value && ['/map', '/my-events', '/events/new', '/me'].includes(value) ? value : '/map'
+  return value && ['/map', '/my-events', '/events/new', '/me', '/me/interests'].includes(value) ? value : '/map'
 }
 
 export function authErrorMessage(code?: string): string {

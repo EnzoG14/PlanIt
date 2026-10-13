@@ -1,5 +1,9 @@
 # PlanIt — Modelo de datos y migraciones
 
+## R4 Bloque 3 — Preferencias privadas (aplicada)
+
+`20261014120001_user_category_interests.sql` crea la relación PK user/category, FKs RESTRICT y created_at Argentina sin zona. RLS/grants permiten sólo SELECT propio; la RPC `set_my_category_interests(uuid[])` deriva auth.uid y reemplaza atómicamente bajo locks de perfil/categorías. DEFINER restringido, search_path vacío; conserva inactivas guardadas hasta quitarlas, rechaza nuevas/realtas inactivas. Creada/probada con replay local y **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior del usuario**; historial al día, RLS/grants y cuerpo RPC idéntico a Git. HTTP/JWT real pendiente. [Pruebas, contrato y límites](design/verification/r4-block-3/README.md).
+
 ## R3 Bloque 5 — Cancelación, archivo y origen de duplicación
 
 `20261012044919_close_and_duplicate_events.sql`: **aplicada y verificada en planit-v2 el 12/10/2026 con autorización explícita posterior del usuario**. `cancel_event(uuid)` y `archive_event(uuid)` devuelven el ID y autorizan dueño desde auth.uid(), bajo READ COMMITTED y lock del evento compartido con inscripción/chat. Cancelar sólo antes/durante; archivo cancela primero si no finalizó, dentro de la misma transacción; reintentos conservan marcas. SECURITY DEFINER para evitar UPDATE genérico, search_path vacío y EXECUTE authenticated sin PUBLIC/anon. `get_event_duplicate_source(uuid)` invoker autoriza propietario y sólo proyecta contenido/categoría/ubicación/cupo. Sin fotos/fechas/relaciones ni borradores; creación normal guarda nuevo UUID/dueño y conversación vacía. No nuevas tablas, políticas ampliadas, timezone ni DELETE. Replay, rollback y doce carreras locales PASS; HTTP/JWT y aceptación humana pendientes. [Ocho CA y evidencia](design/verification/r3-block-5/README.md).

@@ -7,7 +7,7 @@ const before = process.argv.includes('--before')
 const output = process.env.PLANIT_UI_OUTPUT ?? `docs/design/verification/ui-refresh/auth/${before ? 'before' : 'after'}`
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4186'
 await mkdir(output, { recursive: true })
-const browser = await chromium.launch({ headless: true, channel: 'msedge' })
+const browser = await chromium.launch({ headless: true, channel: 'msedge', args: process.env.PLANIT_UI_NO_PROXY ? ['--no-proxy-server'] : [] })
 const results = [], unexpected = [], pageErrors = []
 const user = { id: '20000000-0000-4000-8000-000000000001', email: 'auth@fixture.example.invalid', aud: 'authenticated', role: 'authenticated', app_metadata: {}, user_metadata: {}, identities: [{ id: 'fixture' }], created_at: '2026-10-12T12:00:00Z' }
 try {

@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:interests": "node scripts/check-interests.mjs",
+    "check:interests:ui": "node scripts/check-interests-ui.mjs",
     "check:ui:p1": "node scripts/check-ui-p1.mjs",
     "check:social:ui": "node scripts/check-social-refresh-ui.mjs",
     "check:profile": "node scripts/check-profile.mjs",

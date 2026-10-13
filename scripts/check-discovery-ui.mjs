@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url'
 import { homedir } from 'node:os'
 import { join } from 'node:path'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? join(homedir(), '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs')).href)
-const browser = await chromium.launch({ headless: true, channel: 'msedge', args: ['--enable-unsafe-swiftshader'] })
+const browser = await chromium.launch({ headless: true, channel: 'msedge', args: ['--enable-unsafe-swiftshader', ...(process.env.PLANIT_UI_NO_PROXY ? ['--no-proxy-server'] : [])] })
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4182'
 const output = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/mapbox-migration'
 await mkdir(output, { recursive: true })

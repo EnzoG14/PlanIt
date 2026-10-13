@@ -1,0 +1,22 @@
+.interests-page { display: grid; gap: var(--pi-space-section); }
+.interests-back { justify-self: start; }
+.interests-page .screen-header { margin: 0; }
+.interests-page .screen-header h1 { outline-offset: 6px; }
+.interests-categories { border: 0; padding: 0; margin: 0; min-width: 0; }
+.interests-categories legend { font-size: var(--pi-font-title-size); font-weight: 700; margin-bottom: var(--pi-space-base); }
+.interests-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--pi-space-compact); }
+.interests-grid button { padding: 14px 16px; min-height: 56px; border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-pill); background: var(--pi-color-surface); color: var(--pi-color-ink); font-size: var(--pi-font-label-size); text-align: left; }
+.interests-grid button:hover { background: var(--pi-color-surface-soft); }
+.interests-grid button[aria-pressed="true"] { background: var(--pi-color-primary); color: var(--pi-color-surface); border-color: var(--pi-color-primary); }
+.interests-grid button:disabled { background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); }
+.interests-option-name { display: flex; align-items: center; justify-content: space-between; gap: 8px; overflow-wrap: anywhere; }
+.interests-option-name .icon { flex-shrink: 0; }
+.interests-unavailable { display: block; font-size: var(--pi-font-meta-size); margin-top: 8px; }
+.interests-actions { display: grid; gap: var(--pi-space-compact); }
+.interests-actions p { margin: 0; color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); }
+.interests-dialog { width: min(480px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; border: 0; border-radius: var(--pi-radius-sheet); padding: 26px 22px; background: var(--pi-color-surface); color: var(--pi-color-ink); box-shadow: var(--pi-shadow-card); }
+.interests-dialog::backdrop { background: var(--pi-color-scrim); }
+.interests-dialog h2 { font-size: var(--pi-font-title-lg-size); }
+.interests-dialog > div { display: flex; flex-wrap: wrap; gap: 12px; }
+.interests-dialog button { min-height: 48px; flex: 1; }
+@media (max-width: 359px) { .interests-grid { grid-template-columns: 1fr; } }

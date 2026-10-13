@@ -1,5 +1,9 @@
 # PlanIt — Arquitectura
 
+## R4 Bloque 3 — Intereses privados
+
+`/me/interests` mantiene selección local por cuenta y reemplaza preferencias mediante `set_my_category_interests(uuid[])`, confirmando por respuesta y relectura. Distingue resultado incierto y descarta respuestas de identidades anteriores. Ruta social Amanecer desde Perfil; router de datos conserva las rutas y habilita confirmación de salida sucia. Sin consumir intereses en Inicio (bloque 4). Migración aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior; HTTP/JWT real pendiente; [contrato, pruebas y límites](design/verification/r4-block-3/README.md).
+
 PlanIt es una PWA universitaria para descubrir, organizar y participar en eventos. No se utiliza React Native ni Expo.
 
 ## R3 Bloque 5 — Acciones del organizador
