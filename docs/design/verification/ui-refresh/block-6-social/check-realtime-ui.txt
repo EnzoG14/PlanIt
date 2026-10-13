@@ -1,0 +1,12 @@
+
+> planit@0.0.0 check:realtime:ui
+> node scripts/check-realtime-ui.mjs
+
+PASS fixture: two authorized fixture sessions receive persisted RPC message via WebSocket without refresh; own echo deduplicates; textarea preserved
+PASS fixture: bursts preserve order, UUID uniqueness, loaded older history and reader scroll position
+PASS fixture: events during delayed query reconcile again; reconnect recovers 120 persisted messages across multiple pages
+PASS fixture: StrictMode retains one channel per scope; changing event unsubscribes previous conversation; account change remounts private chat state
+PASS fixture: closed event is read only; detected membership denial clears private history and channel
+PASS fixture: notification INSERT and read UPDATE sync two tabs; retained pagination; exact badge includes rows beyond first page and works outside inbox
+PASS fixture: reconnect revalidates loaded read states and recovers notifications absent from WebSocket history
+PASS fixture: account change isolates rows/count/channels; logout clears private UI

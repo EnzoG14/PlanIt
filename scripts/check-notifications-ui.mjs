@@ -5,7 +5,7 @@ import { pathToFileURL } from 'node:url'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
 const browser = await chromium.launch({ headless: true, channel: 'msedge' })
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4180'
-const output = 'docs/design/verification/notifications'
+const output = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/notifications'
 await mkdir(output, { recursive: true })
 const a = '20000000-0000-4000-8000-000000000001', b = '20000000-0000-4000-8000-000000000002'
 const event = '30000000-0000-4000-8000-000000000001'
@@ -48,7 +48,7 @@ try {
       return reply([])
     })
     const page = await context.newPage(); page.setDefaultTimeout(10000); page.on('pageerror',error=>errors.push(error.message))
-    await page.goto(origin+'/me'); await page.getByRole('link',{name:/^Notificaciones/}).click()
+    await page.goto(origin+'/me'); await page.locator('.profile-account').getByRole('link',{name:'Notificaciones',exact:true}).click()
     await page.getByRole('heading',{name:'Actualización del evento',exact:true}).waitFor()
     assert.equal(await page.locator('.notification-row').count(),30)
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false)

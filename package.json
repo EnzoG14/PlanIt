@@ -4,6 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:social:ui": "node scripts/check-social-refresh-ui.mjs",
+    "check:profile": "node scripts/check-profile.mjs",
+    "check:profile:ui": "node scripts/check-profile-ui.mjs",
+    "check:notifications": "node scripts/check-notifications.mjs",
+    "check:notifications:ui": "node scripts/check-notifications-ui.mjs",
     "check:amanecer": "node scripts/check-amanecer-tokens.mjs",
     "check:amanecer:auth:ui": "node scripts/check-amanecer-auth-ui.mjs",
     "check:r3": "node scripts/check-release-3.mjs",
