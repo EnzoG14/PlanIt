@@ -14,22 +14,42 @@
 @media (prefers-reduced-transparency: reduce) { .amanecer-shell { --pi-color-surface-glass: var(--pi-glass-opaque); --pi-glass-blur: none; --pi-color-surface-card: var(--pi-card-opaque); } }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .amanecer-shell { --pi-color-surface-glass: var(--pi-glass-opaque); --pi-color-surface-card: var(--pi-card-opaque); } }
 
+/* Shared product header; independent of the remaining page migrations. */
+.app-shell .app-header {
+  --color-field: var(--pi-color-surface-soft);
+  position: relative; z-index: 4; max-width: 600px; margin-inline: auto;
+  padding-inline: max(20px, env(safe-area-inset-left)) max(20px, env(safe-area-inset-right));
+  border-bottom: 0; color: var(--pi-color-ink); font-family: var(--pi-font-family);
+}
+.app-shell:not(.amanecer-shell) .app-header { background: var(--pi-color-bg); }
+.app-header .brand { color: var(--pi-color-ink); white-space: nowrap; flex-shrink: 0; }
+.app-header .account-menu-trigger { white-space: nowrap; }
+@media (max-width: 359px) {
+  .app-shell .app-header { gap: 8px; padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right)); }
+  .app-header .brand { font-size: 22px; }
+  .app-header .brand img { width: 28px; height: 28px; margin-right: 6px; }
+  .app-header .account-menu-trigger { gap: 6px; padding-inline: 10px; }
+}
+.app-header .account-nav > a:not(.notifications-bell) { color: var(--pi-color-ink); font-size: var(--pi-font-meta-size); }
+.app-header :focus-visible { outline: var(--pi-focus-width) solid var(--pi-color-focus); outline-offset: 3px; }
+@media (prefers-reduced-transparency: reduce) { .app-header { --pi-color-surface-glass: var(--pi-glass-opaque); --pi-glass-blur: none; } }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .app-header { --pi-color-surface-glass: var(--pi-glass-opaque); } }
 /* Header (brand, notifications, account) */
-.amanecer-shell .brand span { color: var(--pi-color-violet-deep); }
-.amanecer-shell .account-nav { align-items: center; gap: 8px; }
-.amanecer-shell .notifications-bell { width: 44px; height: 44px; border: 1px solid var(--pi-color-divider); border-radius: 50%; background: var(--pi-color-surface); color: var(--pi-color-ink); }
-.amanecer-shell .notifications-bell:hover { background: var(--pi-color-chip-bg); }
-.amanecer-shell .notifications-bell.active { background: var(--pi-color-ink); color: #fff; }
-.amanecer-shell .notifications-badge { top: -4px; right: -4px; background: var(--pi-color-ink); color: #fff; border-color: var(--pi-color-bg); }
-.amanecer-shell .account-menu-trigger { min-height: 44px; border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-pill); background: var(--pi-color-surface-glass); -webkit-backdrop-filter: var(--pi-glass-blur); backdrop-filter: var(--pi-glass-blur); color: var(--pi-color-ink); font-weight: 650; }
-.amanecer-shell .account-menu-trigger:hover, .amanecer-shell .account-menu-trigger[aria-expanded="true"] { background: var(--pi-color-surface); }
-.amanecer-shell .account-menu-trigger .icon:last-child { color: var(--pi-color-text-muted); }
-.amanecer-shell .account-menu-panel { width: min(224px, calc(100vw - 32px)); padding: 6px; border: 0; border-radius: 22px; background: var(--pi-color-surface); box-shadow: var(--pi-shadow-menu); }
-.amanecer-shell .account-menu-panel a, .amanecer-shell .account-menu-panel button { border-radius: 16px; font-weight: 650; }
-.amanecer-shell .account-menu-panel a:hover, .amanecer-shell .account-menu-panel button:hover { background: var(--pi-color-surface-soft); }
-.amanecer-shell .account-menu-panel button { border-top: 1px solid var(--pi-color-divider); border-radius: 0 0 16px 16px; }
-.amanecer-shell .account-menu-panel button:disabled { color: var(--pi-color-disabled-text); }
-.amanecer-shell .account-menu-panel :focus-visible { outline-offset: -3px; }
+.app-header .brand span { color: var(--pi-color-violet-deep); }
+.app-header .account-nav { align-items: center; gap: 8px; }
+.app-header .notifications-bell { width: 44px; height: 44px; border: 1px solid var(--pi-color-divider); border-radius: 50%; background: var(--pi-color-surface); color: var(--pi-color-ink); }
+.app-header .notifications-bell:hover { background: var(--pi-color-chip-bg); }
+.app-header .notifications-bell.active { background: var(--pi-color-ink); color: #fff; }
+.app-header .notifications-badge { top: -4px; right: -4px; background: var(--pi-color-ink); color: #fff; border-color: var(--pi-color-bg); }
+.app-header .account-menu-trigger { min-height: 44px; border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-pill); background: var(--pi-color-surface-glass); -webkit-backdrop-filter: var(--pi-glass-blur); backdrop-filter: var(--pi-glass-blur); color: var(--pi-color-ink); font-weight: 650; }
+.app-header .account-menu-trigger:hover, .app-header .account-menu-trigger[aria-expanded="true"] { background: var(--pi-color-surface); }
+.app-header .account-menu-trigger .icon:last-child { color: var(--pi-color-text-muted); }
+.app-header .account-menu-panel { width: min(224px, calc(100vw - 32px)); padding: 6px; border: 0; border-radius: 22px; background: var(--pi-color-surface); box-shadow: var(--pi-shadow-menu); }
+.app-header .account-menu-panel a, .app-header .account-menu-panel button { border-radius: 16px; color: var(--pi-color-ink); font-weight: 650; }
+.app-header .account-menu-panel a:hover, .app-header .account-menu-panel button:hover { background: var(--pi-color-surface-soft); }
+.app-header .account-menu-panel button { border-top: 1px solid var(--pi-color-divider); border-radius: 0 0 16px 16px; }
+.app-header .account-menu-panel button:disabled { color: var(--pi-color-disabled-text); }
+.app-header .account-menu-panel :focus-visible { outline-offset: -3px; }
 
 /* Dock: floating ink pill; only the active destination shows its label (the others keep an accessible name). */
 .amanecer-shell .primary-nav { inset-inline: auto; left: 50%; right: auto; bottom: calc(18px + env(safe-area-inset-bottom)); transform: translateX(-50%); width: max-content; max-width: calc(100% - 16px); height: 64px; gap: 4px; padding: 6px; border: 0; border-radius: var(--pi-radius-pill); background: var(--pi-color-ink); box-shadow: var(--pi-shadow-dock); }

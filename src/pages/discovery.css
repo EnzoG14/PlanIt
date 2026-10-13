@@ -55,3 +55,89 @@
 @media (max-width: 420px) { .map-heading { align-items: flex-start; } .map-heading h1 { font-size: 21px; } .location-button { flex-direction: column; font-size: 12px; padding: 8px; } }
 @media (min-width: 900px) { main:has(.map-page) { max-width: 1080px; } .event-card-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } .event-card-photo { height: 180px; } .event-hero { height: 300px; } }
 @media (prefers-reduced-motion: reduce) { .event-map * { transition: none !important; } }
+/* Block 4 composition only. The shared tokens and other routes remain owned by their blocks. */
+.discovery-shell::before {
+  content: ''; position: absolute; z-index: -1; inset: 0 0 auto; height: 520px; pointer-events: none;
+  background: radial-gradient(circle 250px at 8% 4%, color-mix(in srgb, var(--pi-color-violet) 58%, transparent), transparent 72%), radial-gradient(circle 220px at 98% 12%, color-mix(in srgb, var(--pi-color-primary) 36%, transparent), transparent 72%), radial-gradient(ellipse 230px 140px at 30% 46%, color-mix(in srgb, var(--pi-color-lavender) 75%, transparent), transparent 72%);
+  mask-image: linear-gradient(#000 55%, transparent);
+}
+.discovery-shell main { max-width: 1080px; padding-top: var(--pi-space-base); }
+.discovery-shell :is(h1, h2, h3, p, dd, strong, a, button) { overflow-wrap: anywhere; }
+.discovery-shell ::selection { background: var(--pi-color-chip-bg); color: var(--pi-color-ink); }
+.discovery-shell .text-button { font-size: var(--pi-font-meta-size); border-radius: var(--pi-radius-pill); }
+.discovery-shell .field-error { color: var(--pi-color-danger-text); font-size: var(--pi-font-meta-size); }
+.discovery-shell .category-chip { border: 0; background: var(--pi-color-chip-bg); color: var(--pi-color-chip-text); font-size: var(--pi-font-caption-size); font-weight: 600; line-height: 1.4; }
+
+/* A single opening link per event; marker selection remains a separate control. */
+.discovery-shell .event-card { border: 0; border-radius: var(--pi-radius-card); background: var(--pi-color-surface-card); box-shadow: var(--pi-shadow-card); content-visibility: auto; contain-intrinsic-size: auto 210px; }
+.discovery-shell .event-card.is-selected { background: var(--pi-color-surface-soft); outline: 2px solid var(--pi-color-violet-deep); outline-offset: 2px; }
+.discovery-shell .event-card-open { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--pi-space-compact); padding: var(--pi-space-compact); color: var(--pi-color-text); text-decoration: none; border-radius: inherit; min-height: 44px; }
+.discovery-shell .event-card.has-photo .event-card-open { grid-template-columns: 100px minmax(0, 1fr); }
+.discovery-shell .event-card-open:hover { background: var(--pi-color-surface-soft); }
+.discovery-shell .event-card-open:focus-visible { outline-offset: -3px; }
+.discovery-shell .event-card-photo { height: 100%; min-height: 124px; border-radius: var(--pi-radius-media); background: var(--pi-color-surface-soft); }
+.discovery-shell .event-card-photo::after { content: none; }
+.discovery-shell .event-card-body { padding: 4px; min-width: 0; }
+.discovery-shell .event-card h3 { font-size: var(--pi-font-title-size); font-weight: 700; line-height: var(--pi-font-title-line-height); letter-spacing: var(--pi-font-title-tracking); margin: 10px 0; }
+.discovery-shell .event-card p { display: flex; align-items: flex-start; gap: 6px; color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); line-height: var(--pi-font-meta-line-height); margin: 8px 0; }
+.discovery-shell .event-card-time { font-variant-numeric: tabular-nums; }
+.discovery-shell .event-card p .icon, .discovery-shell .event-card-no-photo .icon { width: 16px; height: 18px; }
+.discovery-shell .event-card-detail { display: flex; align-items: center; gap: 4px; margin-top: 12px; font-size: var(--pi-font-meta-size); font-weight: 700; color: var(--pi-color-violet-deep); }
+.discovery-shell .event-card-detail .icon { width: 16px; height: 16px; }
+.discovery-shell .event-card-no-photo { display: flex; align-items: center; gap: 6px; font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); }
+.discovery-shell .event-card-actions { margin: 0; padding: 0 16px 8px; }
+.discovery-shell .event-card-actions > * { font-size: var(--pi-font-meta-size); }
+
+/* Map remains in normal flow so attribution, feedback and the list stay reachable. */
+.discovery-shell .map-heading { flex-wrap: wrap; align-items: flex-start; margin-bottom: 12px; }
+.discovery-shell .map-heading > div { flex: 1 1 220px; }
+.discovery-shell .map-heading h1 { margin: 0 0 10px; font-size: var(--pi-font-headline-size); line-height: var(--pi-font-headline-line-height); letter-spacing: var(--pi-font-headline-tracking); }
+.discovery-shell .map-heading p { margin: 0; color: var(--pi-color-text-on-wash); font-size: 15px; }
+.discovery-shell .location-button { flex-direction: row; font-size: var(--pi-font-action-size); padding-inline: 16px; }
+.discovery-shell .location-notice { font-size: var(--pi-font-meta-size); color: var(--pi-color-text-on-wash); }
+.discovery-shell .map-preview { position: relative; max-width: 640px; margin: var(--pi-space-base) auto 0; }
+.discovery-shell .map-preview .event-card { display: block; }
+.discovery-shell .map-preview > .text-button { display: block; margin: 8px 0 0 auto; }
+.discovery-shell .map-results { margin-top: var(--pi-space-section); }
+.discovery-shell .results-heading { flex-wrap: wrap; }
+.discovery-shell .results-heading h2 { font-size: var(--pi-font-title-lg-size); letter-spacing: var(--pi-font-title-lg-tracking); }
+.discovery-shell .event-card-list { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+
+/* Detail: a real photograph or compact absence message, never a fictitious cover. */
+.discovery-shell:has(.event-detail-page) main { max-width: 680px; padding-bottom: calc(220px + env(safe-area-inset-bottom)); }
+.discovery-shell .detail-back { display: inline-flex; padding-inline: 16px; margin-bottom: 20px; }
+.discovery-shell .event-hero { height: 300px; border-radius: var(--pi-radius-hero); background: var(--pi-color-surface-soft); box-shadow: var(--pi-shadow-hero); margin-bottom: 24px; }
+.discovery-shell .event-hero-overlay { display: none; }
+.discovery-shell .event-hero.without-photo { height: auto; min-height: 60px; border-radius: var(--pi-radius-notice); box-shadow: none; }
+.discovery-shell .event-hero-placeholder { flex-direction: row; justify-content: flex-start; gap: 10px; padding: 16px; font-size: var(--pi-font-meta-size); }
+.discovery-shell .event-hero-placeholder .icon { width: 24px; height: 24px; }
+.discovery-shell .event-detail-page h1 { margin: 0 0 16px; font-size: var(--pi-font-headline-size); line-height: var(--pi-font-headline-line-height); letter-spacing: var(--pi-font-headline-tracking); text-wrap: balance; }
+.discovery-shell .detail-metadata { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 16px 12px; padding-block: 24px; border-bottom: 1px solid var(--pi-color-divider); }
+.discovery-shell .detail-metadata dt { font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); }
+.discovery-shell .detail-metadata dd { margin: 0; font-size: 16px; font-variant-numeric: tabular-nums; }
+.discovery-shell :is(.event-about h2, .event-organizer h2) { font-size: var(--pi-font-title-lg-size); letter-spacing: var(--pi-font-title-lg-tracking); margin: 0 0 12px; }
+.discovery-shell .event-description { font-size: var(--pi-font-body-size); line-height: var(--pi-font-body-line-height); max-width: 65ch; white-space: pre-wrap; }
+.discovery-shell .event-gallery img { border: 0; border-radius: var(--pi-radius-media); }
+.discovery-shell .event-organizer { border: 0; border-top: 1px solid var(--pi-color-divider); border-radius: 0; padding: 24px 0 0; background: transparent; }
+.discovery-shell .event-organizer strong { font-size: 16px; }
+.discovery-shell .event-organizer p { font-size: var(--pi-font-meta-size); }
+.discovery-shell .event-capacity { border: 0; border-radius: var(--pi-radius-notice); background: var(--pi-color-surface); padding: 18px; }
+.discovery-shell :is(.event-capacity p, .participation-notice, .field-hint) { font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); }
+.discovery-shell .capacity-bar, .discovery-shell .capacity-bar::-webkit-progress-bar { background: var(--pi-color-disabled-bg); }
+.discovery-shell .capacity-bar::-webkit-progress-value { background: var(--pi-color-primary); }
+.discovery-shell .capacity-bar::-moz-progress-bar { background: var(--pi-color-primary); }
+.discovery-shell .event-detail-page::after { content: ''; position: fixed; z-index: 2; bottom: calc(82px + env(safe-area-inset-bottom)); inset-inline: 0; height: 96px; background: linear-gradient(transparent, var(--pi-color-bg) 45%); pointer-events: none; }
+.discovery-shell .participation-action { position: fixed; z-index: 3; left: 50%; transform: translateX(-50%); bottom: calc(98px + env(safe-area-inset-bottom)); width: min(640px, calc(100% - 40px - env(safe-area-inset-left) - env(safe-area-inset-right))); min-height: 56px; max-height: calc(100dvh - 150px); overflow: auto; margin: 0; padding: 12px 20px; font-size: 16px; line-height: 1.4; }
+.discovery-shell .event-participation { padding-bottom: 16px; }
+.discovery-shell .event-participation > .field-error { padding: 12px; border-radius: var(--pi-radius-notice); background: var(--pi-color-danger-bg); color: var(--pi-color-danger-on-bg); }
+.discovery-shell .event-action-notice:empty { display: none; }
+@media (min-width: 768px) { .discovery-shell .event-card-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 360px) { .discovery-shell .event-card.has-photo .event-card-open { grid-template-columns: 80px minmax(0, 1fr); } .discovery-shell .detail-metadata { grid-template-columns: minmax(0, 1fr); gap: 8px; } .discovery-shell .detail-metadata dd { margin-bottom: 12px; } }
+.discovery-shell .event-card-detail .icon { transform: rotate(180deg); }
+
+.discovery-shell main:focus-visible { box-shadow: none; outline: none; }
+.discovery-shell .account-nav > a { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--pi-font-meta-size); }
+
+@media (max-width: 420px) { .discovery-shell .event-hero.has-photo { height: 220px; } }
+
+:root:has(.discovery-shell .event-detail-page) { scroll-padding-bottom: calc(190px + env(safe-area-inset-bottom)); }

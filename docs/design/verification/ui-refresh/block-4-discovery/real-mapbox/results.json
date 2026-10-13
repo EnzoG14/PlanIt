@@ -1,0 +1,8 @@
+{
+  "environment": "Real Mapbox service, Edge software WebGL; isolated EventMap mount; no Auth or Supabase data",
+  "failures": 0,
+  "error": [],
+  "canvas": 1,
+  "attribution": "© Mapbox © OpenStreetMap Improve this map",
+  "selected": 1
+}

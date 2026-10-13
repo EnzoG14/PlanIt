@@ -36,7 +36,7 @@ export function EventMap({ events, center, selectedId, onSelect, onBoundsChange 
     try {
       if (!mapboxgl.supported()) throw new Error('WebGL unavailable')
       instance = new mapboxgl.Map({ container: container.current, accessToken: token, style: mapProvider.style,
-        config: { basemap: { lightPreset: 'night' } }, center: [initialCenter.current.longitude, initialCenter.current.latitude],
+        config: { basemap: { lightPreset: 'day' } }, center: [initialCenter.current.longitude, initialCenter.current.latitude],
         zoom: mapProvider.initialZoom, minZoom: mapProvider.minZoom, maxZoom: mapProvider.maxZoom,
         projection: 'mercator', attributionControl: false,
         locale: { 'NavigationControl.ZoomIn': 'Acercar', 'NavigationControl.ZoomOut': 'Alejar', 'NavigationControl.ResetBearing': 'Orientar al norte' },
@@ -77,7 +77,7 @@ export function EventMap({ events, center, selectedId, onSelect, onBoundsChange 
       let marker = markers.current.get(event.id)
       if (!marker) {
         const button = document.createElement('button')
-        button.type = 'button'; button.className = 'planit-marker'
+        button.type = 'button'; button.className = 'planit-marker'; button.dataset.eventId = event.id
         button.appendChild(document.createElement('span'))
         button.addEventListener('click', input => { input.stopPropagation(); callbacks.current.onSelect(event.id) })
         marker = new mapboxgl.Marker({ element: button, anchor: 'bottom' }).setLngLat([event.longitude, event.latitude]).addTo(instance)
@@ -90,7 +90,7 @@ export function EventMap({ events, center, selectedId, onSelect, onBoundsChange 
       button.setAttribute('aria-pressed', String(event.id === selectedId)); button.title = event.title
     }
   }, [events, selectedId])
-  return <div className="event-map-frame" role="region" aria-label="Mapa de eventos públicos">
+  return <div className={`event-map-frame ${error ? 'has-error' : ''}`} role="region" aria-label="Mapa de eventos públicos">
     <div ref={container} className="event-map" />
     {error ? <p className="map-tile-error" role="status">{error}</p> : !ready && <p className="map-tile-error" role="status">Cargando mapa… Podés consultar las tarjetas mientras tanto.</p>}
   </div>

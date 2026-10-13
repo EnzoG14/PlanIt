@@ -1,0 +1,14 @@
+/* The pilot's staggered entrance, shared by route content. Never transform a
+   container around viewport-fixed actions or dialogs: they keep their geometry. */
+@keyframes screen-rise { from { opacity: 0; transform: translateY(12px); } }
+@media (prefers-reduced-motion: no-preference) {
+  .screen-entrance > :last-child:not(.chat-page) > :not(.sr-only, dialog, .participation-action):not(:has(.participation-action, dialog)),
+  .screen-entrance > .chat-page > header {
+    animation: screen-rise var(--pi-duration-enter) var(--pi-ease-out) backwards;
+    animation-delay: var(--screen-delay, 0ms);
+  }
+  .screen-entrance > :last-child > :nth-child(2) { --screen-delay: 70ms; }
+  .screen-entrance > :last-child > :nth-child(3) { --screen-delay: 140ms; }
+  .screen-entrance > :last-child > :nth-child(4) { --screen-delay: 210ms; }
+  .screen-entrance > :last-child > :nth-child(n + 5) { --screen-delay: 280ms; }
+}

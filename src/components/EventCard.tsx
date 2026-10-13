@@ -68,14 +68,18 @@ export function CompactEventCard({ event, returnTo, showMenu = false, onChanged 
 
 export function EventCard({ event, selected, onSelect, returnTo }: { event: EventPreview; selected?: boolean; onSelect?: (id: string) => void; returnTo?: string }) {
   const state = returnTo ? { returnTo } : undefined
-  return <article className={`event-card ${selected ? 'is-selected' : ''}`}>
-    <Link to={`/events/${event.id}`} state={state} className="event-card-photo" aria-label={`Ver detalle de ${event.title}`}>
-      <Icon name="calendar" />
-      {event.imageUrl && <img src={event.imageUrl} alt="" width="480" height="320" loading="lazy" onError={e => { e.currentTarget.hidden = true }} />}
+  const [failedImage, setFailedImage] = useState<string | null>(null)
+  const hasPhoto = Boolean(event.imageUrl && failedImage !== event.imageUrl)
+  return <article data-event-id={event.id} className={`event-card ${selected ? 'is-selected' : ''} ${hasPhoto ? 'has-photo' : 'without-photo'}`}>
+    <Link to={`/events/${event.id}`} state={state} className="event-card-open" aria-label={`Ver detalle de ${event.title}`}>
+      {hasPhoto && <div className="event-card-photo"><img src={event.imageUrl ?? undefined} alt="" width="480" height="320" loading="lazy" onError={() => setFailedImage(event.imageUrl ?? null)} /></div>}
+      <div className="event-card-body"><span className="category-chip">{event.categoryName}</span><h3>{event.title}</h3>
+        <p className="event-card-time"><Icon name="clock" />{formatEventTime(event.starts_at)}</p>
+        <p><Icon name="pin" />{event.location_name ?? event.address}</p>
+        {!hasPhoto && <span className="event-card-no-photo"><Icon name="calendar" />Sin foto</span>}
+        <span className="event-card-detail">Ver detalle <Icon name="back" /></span>
+      </div>
     </Link>
-    <div className="event-card-body"><span className="category-chip">{event.categoryName}</span><h3><Link to={`/events/${event.id}`} state={state}>{event.title}</Link></h3>
-      <p>{formatEventTime(event.starts_at)}</p><p>{event.location_name ?? event.address}</p>
-      <div className="event-card-actions">{onSelect && <button className="text-button" onClick={() => onSelect(event.id)} aria-pressed={Boolean(selected)}>Ver marcador</button>}<Link to={`/events/${event.id}`} state={state} className="secondary-link">Ver detalle</Link></div>
-    </div>
+    {onSelect && <div className="event-card-actions"><button className="text-button" onClick={() => onSelect(event.id)} aria-pressed={Boolean(selected)}>Ver marcador</button></div>}
   </article>
 }

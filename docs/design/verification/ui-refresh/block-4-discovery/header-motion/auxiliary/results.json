@@ -1,0 +1,4 @@
+{
+  "environment": "Edge, local Vite, intercepted Auth/REST/Mapbox fixtures; no remote writes",
+  "metrics": []
+}

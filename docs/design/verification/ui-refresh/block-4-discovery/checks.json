@@ -1,0 +1,65 @@
+{
+  "base": "123962f63cf7048495652031081f2d143d027685",
+  "checks": [
+    {
+      "command": "npm run build",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run lint",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check:amanecer",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check:home-events",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check:home:ui",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check:discovery",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check:discovery:ui",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check:mapbox",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check:participations:ui",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check:my-events:ui",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check:event-actions:ui",
+      "result": "PASS"
+    }
+  ],
+  "matrix": {
+    "before": 120,
+    "after": 126,
+    "widths": [
+      320,
+      360,
+      375,
+      390,
+      768,
+      1280
+    ],
+    "result": "PASS"
+  },
+  "supplemental": "PASS: font/fallback, media fallback, reduced transparency/motion, route scope",
+  "mapboxLive": "PASS: isolated component, real Standard day, 390/1280, no Supabase requests",
+  "warning": "Mapbox chunk 518.63kB gzip, precache 2619.10KiB; physical performance unmeasured"
+}

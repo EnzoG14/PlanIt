@@ -12,3 +12,20 @@
 .planit-marker span::after { content: ''; position: absolute; width: 8px; height: 8px; left: 8px; top: 8px; border-radius: 50%; background: white; }
 .planit-marker.is-selected span { background: #8d66fa; box-shadow: 0 0 0 5px #8d66fa70; }
 .map-tile-error { margin: 0; padding: 12px; background: var(--color-bg-elevated); font-size: 13px; }
+
+/* Amanecer is opt-in to discovery; provider, bounds and marker behavior are unchanged. */
+.discovery-shell .event-map-frame { border: 0; border-radius: var(--pi-radius-card); box-shadow: var(--pi-shadow-card); background: var(--pi-color-surface); }
+.discovery-shell .event-map { background: var(--pi-color-surface-soft); }
+.discovery-shell .event-map .mapboxgl-ctrl-group { background: var(--pi-color-surface); }
+.discovery-shell .event-map .mapboxgl-ctrl-group button:hover { background: var(--pi-color-chip-bg); }
+.discovery-shell .event-map .mapboxgl-ctrl-icon { filter: none; }
+.discovery-shell .event-map button:focus-visible, .discovery-shell .event-map canvas:focus-visible { outline: 3px solid var(--pi-color-focus); outline-offset: -3px; }
+.discovery-shell .planit-marker span { background: var(--pi-color-primary); border-color: var(--pi-color-ink); box-shadow: var(--pi-shadow-card); }
+.discovery-shell .planit-marker span::after { background: var(--pi-color-surface); }
+.discovery-shell .planit-marker.is-selected span { background: var(--pi-color-violet); outline: 3px solid var(--pi-color-surface); outline-offset: 2px; }
+.discovery-shell .map-tile-error { font-size: var(--pi-font-meta-size); line-height: 1.5; background: var(--pi-color-warn-bg); color: var(--pi-color-warn-on-bg); }
+
+.discovery-shell .event-map-frame.has-error .event-map { height: 180px; }
+
+.discovery-shell .event-map .mapboxgl-ctrl-attrib { font-size: var(--pi-font-meta-size); line-height: 1.5; }
+.discovery-shell .event-map .mapboxgl-ctrl-attrib a { display: inline-flex; align-items: center; min-height: 44px; }

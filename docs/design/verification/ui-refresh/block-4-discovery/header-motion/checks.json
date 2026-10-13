@@ -1,0 +1,55 @@
+{
+  "baseIntegrated": "31c1ac2",
+  "checks": [
+    {
+      "command": "build",
+      "result": "PASS"
+    },
+    {
+      "command": "lint",
+      "result": "PASS"
+    },
+    {
+      "command": "check:amanecer",
+      "result": "PASS"
+    },
+    {
+      "command": "check:home:ui",
+      "result": "PASS"
+    },
+    {
+      "command": "check:discovery:ui",
+      "result": "PASS"
+    },
+    {
+      "command": "check:my-events:ui",
+      "result": "PASS"
+    },
+    {
+      "command": "check:amanecer:auth:ui",
+      "result": "PASS"
+    },
+    {
+      "command": "check:chat:layout",
+      "result": "PASS"
+    },
+    {
+      "command": "node scripts/check-events-ui.mjs",
+      "result": "PASS"
+    },
+    {
+      "command": "check:edit-event:ui",
+      "result": "PASS"
+    },
+    {
+      "command": "node scripts/check-screen-shell-ui.mjs",
+      "result": "PASS"
+    },
+    {
+      "command": "node scripts/check-screen-shell-ui.mjs --aux-only",
+      "result": "PASS"
+    }
+  ],
+  "environment": "Local Edge fixtures, no remote writes",
+  "physicalDeviceValidation": "pending"
+}

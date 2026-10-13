@@ -84,12 +84,12 @@ function EventDetailContent({ id }: { id: string }) {
     {location.state?.published && <StatusMessage title="Evento publicado">Tu evento ya está disponible para la comunidad.</StatusMessage>}
     {location.state?.edited && <StatusMessage title="Cambios guardados">La información del evento se actualizó.</StatusMessage>}
     <Link className="detail-back secondary-link" to={returnTo}><Icon name="back" />{returnTo.startsWith('/my-events') ? 'Volver a Mis eventos' : returnTo === '/home' ? 'Volver al inicio' : 'Volver al mapa'}</Link>
-    <div className="event-hero">{images[0] && !imageError ? <img src={images[0]} width="960" height="600" alt={`Foto de ${event.title}`} onError={() => setImageError(true)} /> : <div className="event-hero-placeholder"><Icon name="calendar" /><span>Sin foto de portada</span></div>}<div className="event-hero-overlay" /></div>
+    <div className={`event-hero ${images[0] && !imageError ? 'has-photo' : 'without-photo'}`}>{images[0] && !imageError ? <img src={images[0]} width="960" height="600" alt={`Foto de ${event.title}`} onError={() => setImageError(true)} /> : <div className="event-hero-placeholder"><Icon name="calendar" /><span>Sin foto de portada</span></div>}<div className="event-hero-overlay" /></div>
     <h1>{event.title}</h1>
     <span className="category-chip">{category}</span>
     {imageError && <p role="status" className="field-error">No pudimos cargar las fotos. <button className="text-button" onClick={retry}>Reintentar</button></p>}
     <dl className="detail-metadata"><dt><Icon name="calendar" />Inicio</dt><dd>{formatEventTime(event.starts_at)}</dd><dt><Icon name="clock" />Fin</dt><dd>{formatEventTime(event.ends_at)}</dd><dt><Icon name="pin" />Lugar</dt><dd>{event.location_name ?? event.address}</dd>{event.location_name && <><dt>Dirección</dt><dd>{event.address}</dd></>}</dl>
-    <p className="event-description">{event.description}</p>
+    <section className="event-about" aria-labelledby="event-about-title"><h2 id="event-about-title">Acerca del evento</h2><p className="event-description">{event.description}</p></section>
     {images.length > 1 && <section className="event-gallery" aria-label="Fotos del evento">{images.slice(1).map((url, index) => <img key={`${url}-${index}`} src={url} width="360" height="240" alt={`Foto ${index + 2} de ${event.title}`} loading="lazy" onError={e => { e.currentTarget.hidden = true }} />)}</section>}
     <section className="event-organizer" aria-labelledby="event-organizer-title">
       <h2 id="event-organizer-title">Organizador</h2>

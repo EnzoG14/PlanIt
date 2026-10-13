@@ -22,3 +22,15 @@
   .home-event-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
   .home-event-list .event-card-photo { height: 190px; }
 }
+
+/* Block 4 Inicio: preserve category grouping and keyset pagination. */
+.discovery-shell .home-page { max-width: 1000px; }
+.discovery-shell .home-heading { margin: 4px 0 var(--pi-space-section); padding-inline: 4px; }
+.discovery-shell .home-heading h1 { margin: 0 0 12px; font-size: var(--pi-font-display-size); line-height: var(--pi-font-display-line-height); letter-spacing: var(--pi-font-display-tracking); }
+.discovery-shell .home-heading p { color: var(--pi-color-text-on-wash); font-size: 16px; }
+.discovery-shell .home-category-groups { gap: var(--pi-space-section); }
+.discovery-shell .home-category h2 { font-size: var(--pi-font-title-lg-size); line-height: var(--pi-font-title-lg-line-height); letter-spacing: var(--pi-font-title-lg-tracking); }
+.discovery-shell .home-event-list { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.discovery-shell .home-map-link { display: inline-flex; padding-inline: 20px; margin-top: 16px; }
+@media (min-width: 768px) { .discovery-shell .home-event-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.discovery-shell .home-event-list .event-card-photo { height: 100%; }

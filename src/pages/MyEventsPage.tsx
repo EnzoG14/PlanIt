@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react'
+import { useEffect, useRef, useState, type KeyboardEvent } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { CompactEventCard } from '../components/EventCard'
 import { Icon } from '../components/Icon'
@@ -15,8 +15,8 @@ export function MyEventsPage() {
   const filter = organizedFilter(params.get('filter'))
   function select(value: MyEventsSection) { setParams(value === 'organizing' ? { section: value, filter } : { section: value }, { replace: true }) }
   return <div className="my-events-page">
-    <header className="my-events-heading my-events-rise"><div><h1>Mis eventos</h1><p>{section === 'organizing' ? 'Eventos que organizás' : 'Tus planes y tu participación.'}</p></div><Link to="/events/new" className="my-events-create" aria-label="Crear evento"><Icon name="plus" /><span>Crear<span className="my-events-create-extra"> evento</span></span></Link></header>
-    <div className="my-events-tabs my-events-rise" style={{ '--i': 1 } as CSSProperties} role="tablist" aria-label="Tu relación con los eventos">
+    <header className="my-events-heading"><div><h1>Mis eventos</h1><p>{section === 'organizing' ? 'Eventos que organizás' : 'Tus planes y tu participación.'}</p></div><Link to="/events/new" className="my-events-create" aria-label="Crear evento"><Icon name="plus" /><span>Crear<span className="my-events-create-extra"> evento</span></span></Link></header>
+    <div className="my-events-tabs" role="tablist" aria-label="Tu relación con los eventos">
       {(['organizing', 'participating'] as const).map(value => <button key={value} id={`tab-${value}`} type="button" role="tab" aria-selected={section === value} aria-controls={section === value ? `panel-${value}` : undefined} tabIndex={section === value ? 0 : -1} onClick={() => select(value)} onKeyDown={(event: KeyboardEvent<HTMLButtonElement>) => {
         if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return
         event.preventDefault()
@@ -25,7 +25,7 @@ export function MyEventsPage() {
       }}>{value === 'organizing' ? 'Organizo' : 'Participo'}</button>)}
     </div>
     {section === 'organizing' && <>
-      <div className="my-events-filters my-events-rise" style={{ '--i': 2 } as CSSProperties} role="group" aria-label="Filtrar eventos organizados">
+      <div className="my-events-filters" role="group" aria-label="Filtrar eventos organizados">
         {Object.entries(organizedFilters).map(([value, label]) => <button key={value} type="button" aria-pressed={filter === value} onClick={() => setParams({ section, filter: value }, { replace: true })}>{label}</button>)}
       </div>
       {filter === 'upcoming' && <p className="field-hint my-events-filter-hint">Próximos incluye eventos en curso que todavía no finalizaron.</p>}
