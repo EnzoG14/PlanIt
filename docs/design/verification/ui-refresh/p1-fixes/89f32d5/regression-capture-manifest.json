@@ -1,0 +1,2867 @@
+{
+  "policy": "Dedicated P1 captures retained in full. Existing regression suites retain first two and last two captures by name per directory; hashes record all generated captures.",
+  "captures": [
+    {
+      "path": "regressions/amanecer-auth-ui/login-auth-error-1280x900.png",
+      "sha256": "7ffb5d07d547310188906d9904a61d63b61aac965aa75104316dbd870b116b1f",
+      "bytes": 170948,
+      "retained": true
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-auth-error-320x800.png",
+      "sha256": "6d37e7fb0c62a90de949f5bbebcd558dfd4af7af58d69ee98f05482801d967fa",
+      "bytes": 85747,
+      "retained": true
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-auth-error-360x800.png",
+      "sha256": "b565aecfaaec80aa1e9bf20d7cc88286cc1c18a5b54346c6ac936969f8a5acee",
+      "bytes": 91155,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-auth-error-375x812.png",
+      "sha256": "aa0d419a58a5783f7f44929f1fa5a2b39b7535205140449096a91621c2d2d3bb",
+      "bytes": 93225,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-auth-error-390x844.png",
+      "sha256": "29e74f4fb84cb617f818fef9632072634671735989a28a0817a0e3ccc0738226",
+      "bytes": 93852,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-auth-error-768x1024.png",
+      "sha256": "d4643e062eba08b07b57bc6e288e4e6f337679c24acf80fd8fab5d9c5fca51de",
+      "bytes": 132169,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-font-fallback-1280x900.png",
+      "sha256": "eb3349420a3fcda6a8533e00f9c4e3071b722f7f9c084e9738d5fa113683a0e8",
+      "bytes": 135346,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-font-fallback-320x800.png",
+      "sha256": "1613a9922b420e41743b6f6c0762819bc81987a9eb581ad6fb99c36168eca14c",
+      "bytes": 53672,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-font-fallback-360x800.png",
+      "sha256": "e3ad72f0a9244b2be88fcae4de971f22f5e261faef82c5fa4100277f5664ccec",
+      "bytes": 58712,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-font-fallback-375x812.png",
+      "sha256": "89ce1ddaea73e13f04ebd5cbb85d333fffbcc4e2290a6b12528cd7bf70591f11",
+      "bytes": 60683,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-font-fallback-390x844.png",
+      "sha256": "c0bb732453cecd17f950f5dd685f0550f48fdf9e3e124f7e8dbb09934842b701",
+      "bytes": 61407,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-font-fallback-768x1024.png",
+      "sha256": "ab2aa52bb0a4d44fca7354372511c0ca267efa0b14a4568dcda304fd857da518",
+      "bytes": 97027,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-initial-1280x900.png",
+      "sha256": "07d369a615080b5ee2b0a1dccb748d25e2629f881fc7c3657e75717c1b9cad7e",
+      "bytes": 154772,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-initial-320x800.png",
+      "sha256": "a2d18850e98873c058a27e0e415842760a2113db0176be8959b3a6b64d1f5d93",
+      "bytes": 72573,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-initial-360x800.png",
+      "sha256": "cef81dac06050de83559f78e5cc2460e71c51631f133fcbe7a076615666691d5",
+      "bytes": 77021,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-initial-375x812.png",
+      "sha256": "81280948da0baeefd749299c846e9b47d5d06993125b2817048761068e5d9c83",
+      "bytes": 79078,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-initial-390x844.png",
+      "sha256": "aac8719b8b3da83e988c7b1796b8c28539cf3bb3e18c94c5cef530edf40da74b",
+      "bytes": 80607,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-initial-768x1024.png",
+      "sha256": "b09a3748d1383a724ee31e6257b22dd978d7cfe5308e36e1bd8087e122c545cb",
+      "bytes": 116516,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-hidden-1280x900.png",
+      "sha256": "ce2583a04be15227640c124f4214353fcd085318d3d06e4cf0c017f5eeed8e2f",
+      "bytes": 160519,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-hidden-320x800.png",
+      "sha256": "d1fca532297c81cb998cfe1cbb2770d07d7c034913901e0f8c79ae84ad4813b7",
+      "bytes": 77602,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-hidden-360x800.png",
+      "sha256": "8a496a6f0649032e3f927e2e0f0af4cdecdf8acceec3cbe2e58da4892641302c",
+      "bytes": 82317,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-hidden-375x812.png",
+      "sha256": "db29e8bf802c1fbe4827a211398703dc00de649ac38b39c996069edd208217e6",
+      "bytes": 84329,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-hidden-390x844.png",
+      "sha256": "fcc13e9afd395de5e0f798c969e28feb3da50d323560c9e3341120f49a93e433",
+      "bytes": 85879,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-hidden-768x1024.png",
+      "sha256": "6a5573f3ce0cb9fd616fe65124f26b5ec7cad411ef99e1f54db4fda7b45ed7a1",
+      "bytes": 122007,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-visible-1280x900.png",
+      "sha256": "79d4d058fbfd8ac1d2b9ff53ff3a66e62fbb70b1c6a159c97a762bc07923f58b",
+      "bytes": 163139,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-visible-320x800.png",
+      "sha256": "1c8b3a016d4bc55964f483b739e952e7a3b6ba74313a2841a5a092796b855e51",
+      "bytes": 80098,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-visible-360x800.png",
+      "sha256": "f3ed9fbef38796563d5ed88956e8c24b1790604141da665483332b39726014be",
+      "bytes": 84819,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-visible-375x812.png",
+      "sha256": "76e9fe497272730b0adce6419475380070ec4551ba184721ba7c6d24317db68b",
+      "bytes": 86625,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-visible-390x844.png",
+      "sha256": "f7f5fb030b896ac5c166e96848a0ff174afafbc6001cb644b5da4a36c6829112",
+      "bytes": 88113,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-password-visible-768x1024.png",
+      "sha256": "c0d8266d21f5f88c12e659d98fffd8004b09e8bb6784c46f695bdc31fa793b5a",
+      "bytes": 124618,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-sending-1280x900.png",
+      "sha256": "c017b2b20ffc5cf08baaeb4ce8616142b933feccd9b3438a0579f7f571a34b7b",
+      "bytes": 155459,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-sending-320x800.png",
+      "sha256": "6c3fa4ab0ed6cb73da3f06ba5d78b604cb9891f496c4df8de85139d44d3cd8da",
+      "bytes": 73145,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-sending-360x800.png",
+      "sha256": "c7fd1955408260eb5253ae6fe25e965b0a79dec30c977f53ec70767bcae92641",
+      "bytes": 77772,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-sending-375x812.png",
+      "sha256": "71992c1d169a31e7dd31774ee4b8afbf2fbd3d1728c4ce9979492078cf596324",
+      "bytes": 79805,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-sending-390x844.png",
+      "sha256": "914b1faf52601fa8106b3812e9d1054c8181d6765fac977382cb4f8c3c0ae9fb",
+      "bytes": 81322,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-sending-768x1024.png",
+      "sha256": "fa0ec11817a0e12dd2cef467cf7f3c5f8418403ec266f7965767af44d69e6991",
+      "bytes": 117251,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-error-1280x900.png",
+      "sha256": "c99e0b25e70fd11d886eb55384fd849446f50715d4055eb7735bc0effd9bc723",
+      "bytes": 138222,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-error-320x800.png",
+      "sha256": "e0d36bff21ef5c0bf30896e6c351242716f3f9dfe916fc33a512c855bd314a3e",
+      "bytes": 56932,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-error-360x800.png",
+      "sha256": "5bfc9a07d0663bd918e70e63f56d3896d5f553e5658cd84304812c595c8eec06",
+      "bytes": 63724,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-error-375x812.png",
+      "sha256": "3149ef1956bcf2fd17937c18035aaaf0480bdaf3672e61ab87a45ab42477bed4",
+      "bytes": 65669,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-error-390x844.png",
+      "sha256": "cecd230dcd95ad9aa333aa3e9b8752e6d9b41bfeadbf01f1ce2eab8f1b0c3d06",
+      "bytes": 66149,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-error-768x1024.png",
+      "sha256": "8d9615d592b72e2af4a07fa1e71d67f4d103a134738d51810fd3c1ac984c3460",
+      "bytes": 102276,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-loading-1280x900.png",
+      "sha256": "fa7324e7226a3466051432a18effe19eae71ec2b0f2feee679c44e7ad5d8c1e4",
+      "bytes": 130577,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-loading-320x800.png",
+      "sha256": "fff1ef83942f2c1288a3d6c7f6388c8e7344f5a44ba539a971204b8b0856900c",
+      "bytes": 44506,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-loading-360x800.png",
+      "sha256": "760512fefd41585b9247cb090f2f374f386e1b0a168995f3463b22a449afb32c",
+      "bytes": 46885,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-loading-375x812.png",
+      "sha256": "b65f7e84ea85e5ddac119b072ab53406bc3afc0327a6202071642ea79ef3eb53",
+      "bytes": 47681,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-loading-390x844.png",
+      "sha256": "83c4cbd18f6271ed81af7da9217188be9a7a76cc2cee4549d8e92666fcd6a80a",
+      "bytes": 48458,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-session-loading-768x1024.png",
+      "sha256": "e1b2ebd0e6944822187890600840a4dbd3e03432bd334d1f8471d8e14a782ec4",
+      "bytes": 91561,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-short-text-200-1280x900.png",
+      "sha256": "926c253064336cd3c594dc34c3e153128583318a063921d21e27fd19ad2debb9",
+      "bytes": 192520,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-short-text-200-320x800.png",
+      "sha256": "08f79553e773425f563c3562c84d96d676971c220d6b74146f8789f219fb2ac3",
+      "bytes": 98600,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-short-text-200-360x800.png",
+      "sha256": "c0de9e7365fde2da855c3540ae0918877c32377d52d0346b1a09e8824d572f5b",
+      "bytes": 104620,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-short-text-200-375x812.png",
+      "sha256": "9fdf04bfef5752b0537a87c491e80a8b271ad947fe40f1e7aeb31eb7e7419716",
+      "bytes": 106996,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-short-text-200-390x844.png",
+      "sha256": "ef55667dd67a7989c9edf2f53611c780ea41e8076313e3655447a362d11d463b",
+      "bytes": 107595,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-short-text-200-768x1024.png",
+      "sha256": "fb9fae8f4833a4f348c5d55f04da8bea4fabec99fccd8b9e79ebbe6d4ca05156",
+      "bytes": 147719,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-text-200-1280x900.png",
+      "sha256": "75a871c95be8b32ccb388681ae5972e713cc0279ad7f61b548e2c167ad34427a",
+      "bytes": 184586,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-text-200-320x800.png",
+      "sha256": "8c52a643c770309457bf4d4528c29bed1051aa562dbd5deae7e5f095ef09667e",
+      "bytes": 96674,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-text-200-360x800.png",
+      "sha256": "21844fc8df0220af39e176eaa0427cd79c97e5c5be974fb3d4859e77bb024561",
+      "bytes": 91567,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-text-200-375x812.png",
+      "sha256": "540f8ab799f4260413fe80c1913fde384bd86c93cb392dc8f406c8fb43c6519c",
+      "bytes": 97015,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-text-200-390x844.png",
+      "sha256": "eae5faccc14d809dc5b4be2d2cc782969213379405c34a40f9b774fcf72f68b0",
+      "bytes": 100788,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-text-200-768x1024.png",
+      "sha256": "3097345a11cca8cf34bd5b685ff59dd7f17595e85bba65f00dee6aecee6989b6",
+      "bytes": 143157,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-validation-1280x900.png",
+      "sha256": "822cd8377524f76fc2c0e44ff63fd159304ae9fc72751fb30fae3aaab530b28c",
+      "bytes": 160602,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-validation-320x800.png",
+      "sha256": "25fb603934bfb6a551142f03e717ed44fe36cb97570749828e3b0b73936e4f89",
+      "bytes": 77843,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-validation-360x800.png",
+      "sha256": "953f46063ad2bbb585eb780ff7d2b80b35530dcc1d6fcb204e3edfda36ecd222",
+      "bytes": 82455,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-validation-375x812.png",
+      "sha256": "3452d4913bec4fb10eec128b2edf01363c4d6a6601f51b5a5cfcb575b2480a1c",
+      "bytes": 84251,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-validation-390x844.png",
+      "sha256": "97e5ca45314a39a156e267103f7d8cc3cfbee290902f6f6e07dd607dd658ebbd",
+      "bytes": 85718,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/login-validation-768x1024.png",
+      "sha256": "2760994a8d3d56ebb108455fef2ac345fe4cba2c74b2eedbb5cc0e056d834fac",
+      "bytes": 122558,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-auth-error-1280x900.png",
+      "sha256": "ed7539545e673551c87f099e24efd44abe1175821d8cb7ae522e1c1286c7653b",
+      "bytes": 176441,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-auth-error-320x800.png",
+      "sha256": "9276f33d0f497c7564f127286659feb480207fc664ceeea02a50376d4aa2d43c",
+      "bytes": 91504,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-auth-error-360x800.png",
+      "sha256": "a94daa0b97cc7d6e419fd1cbf19c42938157415bb9c6d52d86a3d6ae93be4ea5",
+      "bytes": 96641,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-auth-error-375x812.png",
+      "sha256": "f65e71041599840cb75e9c52ce154bfae191327f6002ab9e2d2decae6f2effd5",
+      "bytes": 98565,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-auth-error-390x844.png",
+      "sha256": "942d3a71e85073818a96ec5418bff70c552914d0a33258f13776b51f04810fc8",
+      "bytes": 99449,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-auth-error-768x1024.png",
+      "sha256": "1e7d883afba30fe695ff320842218e3abd34e04989f5949a07433ab16b7662d8",
+      "bytes": 137526,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-confirmation-1280x900.png",
+      "sha256": "c36a8a9501bda12700782c4bc0a7fcf88532e46909fac35a7590faef215fdf5f",
+      "bytes": 163360,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-confirmation-320x800.png",
+      "sha256": "a20015661b714ed9259e319a1eb33f238dd74d70fdc83834bda4739a8b0985c6",
+      "bytes": 79452,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-confirmation-360x800.png",
+      "sha256": "580b031d21134d439386145673a5730c4be380f33775ee14e8e2d18ef7ad027f",
+      "bytes": 83663,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-confirmation-375x812.png",
+      "sha256": "00a36b9fc016db00b17d8201fbbfa9126ff7052658018597affa01f8c7f57628",
+      "bytes": 85628,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-confirmation-390x844.png",
+      "sha256": "a3b62e5ae4cc5bf76919d9292496663b8d952e4f477610eaccaf0badbab8d2c3",
+      "bytes": 87283,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-confirmation-768x1024.png",
+      "sha256": "9ff2b0d15f7e76e647281d1924bcc88c31c7e5cd097d142cd0245d4a4c716fbd",
+      "bytes": 125282,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-duplicate-1280x900.png",
+      "sha256": "65c6613156e70b8256a9dbe4309858dce6de4b7d926b8d331ef1b2ca22a47531",
+      "bytes": 175494,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-duplicate-320x800.png",
+      "sha256": "d88d80b3e93b8eee328588f82dd9a592d130d772c3f0750f083ad20ff4e816b7",
+      "bytes": 91738,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-duplicate-360x800.png",
+      "sha256": "04600fc2f8c20b9726da754d7a4d2a78a42c87e935238d16caaae710d57282e8",
+      "bytes": 95752,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-duplicate-375x812.png",
+      "sha256": "b345e7a1bc7af051afc594c50600a4d872219baf99271fe25a651ba4248d329a",
+      "bytes": 97279,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-duplicate-390x844.png",
+      "sha256": "aa9a175bfa5c150e7c1d7b52f641f7b72823e9acbe67ae879614e2802913d505",
+      "bytes": 98830,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-duplicate-768x1024.png",
+      "sha256": "bcc5b21b827174315bce7f5e32bfc7256f4dbb306857dea673f261e58be6a402",
+      "bytes": 136834,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-font-fallback-1280x900.png",
+      "sha256": "83c78a5f59be146425620d10f6a569b7cf4d21bf1df18f27ed581a72156f71ef",
+      "bytes": 134246,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-font-fallback-320x800.png",
+      "sha256": "5df2931ab1bbc3a9205fa551fcd5b23a71802d672b10019a6ae5d4ac7484354a",
+      "bytes": 52204,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-font-fallback-360x800.png",
+      "sha256": "386ffe6c6bb750bfde86981d28cfc16d5cb0427f085fdd4f39ea1e09ba45144b",
+      "bytes": 57859,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-font-fallback-375x812.png",
+      "sha256": "69896e2587ad768c4b3c4a441803566fca5181b1ffa8354dc4d948304d7f64c3",
+      "bytes": 59163,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-font-fallback-390x844.png",
+      "sha256": "37f8e2ba564ff63bdea55816ea9f025653fbf00a15ba44530bcc29f25b22d605",
+      "bytes": 61769,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-font-fallback-768x1024.png",
+      "sha256": "1d425461521519bdc87d00b117dfe46996473f656edc8d374f2b6f0363827bed",
+      "bytes": 95949,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-initial-1280x900.png",
+      "sha256": "8b61cfbe27c4339e8026fb291c6811bb48040eb6f56e1ecd66d10918f1b05efc",
+      "bytes": 161885,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-initial-320x800.png",
+      "sha256": "dbfc0dede64b4125c08fc5c225f91968d7a8ddf700d81ee233efa88246dcbb93",
+      "bytes": 78997,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-initial-360x800.png",
+      "sha256": "5c7f65fa5bdeea8ceef00de3714cdac857aa29b299a4b385f29842929fd046cf",
+      "bytes": 83806,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-initial-375x812.png",
+      "sha256": "a4fa45692f26d331489ffa12239f9fa562b079f091e5da3c820482bc4ef182cd",
+      "bytes": 85839,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-initial-390x844.png",
+      "sha256": "37c9e31d7e2a0868ea4352193c1e9c1a75fe103ba328808a8adb04703a4ab619",
+      "bytes": 87493,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-initial-768x1024.png",
+      "sha256": "a1c2ef010bb65b3999faf86e35006832ff89ec66998f1e64ad519f93bb15c0b7",
+      "bytes": 123699,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-invalid-values-1280x900.png",
+      "sha256": "92b838b13436f7d869da57ad0b8f0e019fde4dc9419f65148f3ec41cda93a3a8",
+      "bytes": 170133,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-invalid-values-320x800.png",
+      "sha256": "61ebf0c3e37afc3c6be4e62497a6636ab83cabe91cf6f2c1e46a870e530d56ed",
+      "bytes": 86123,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-invalid-values-360x800.png",
+      "sha256": "32f88a77af6cdcc508d6ec46118d0dd444497c51aed2e1897baabb9a2d4f2925",
+      "bytes": 91073,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-invalid-values-375x812.png",
+      "sha256": "58660f6f889071aea3407287d5c3dfa3fdf33041ec7c43e1c40fc5ee0a3b0702",
+      "bytes": 93466,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-invalid-values-390x844.png",
+      "sha256": "0eb9b97f73ad8062ccc6ff9264dfa421681a205b0132b0cb7ead722b93f2dd5f",
+      "bytes": 94853,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-invalid-values-768x1024.png",
+      "sha256": "2c397df8ab77793339558093e4c1cba7cb08bdbf74ef628713ec2ffd802003f2",
+      "bytes": 132200,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-hidden-1280x900.png",
+      "sha256": "9d3d93f8ca9df07b206a5dc5b7698c22cf34ad4cde89bbf2a1eec4e7529e3b27",
+      "bytes": 174038,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-hidden-320x800.png",
+      "sha256": "75f047215bb22ebc022ffa4a07792fa1dd7b7435578cf4b310d56b289e5ced3c",
+      "bytes": 89634,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-hidden-360x800.png",
+      "sha256": "b62ab0df9bb7c7cbcfb158c371e9cb8859c6f59360480d7d4cf1de80fcaa5d1c",
+      "bytes": 94910,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-hidden-375x812.png",
+      "sha256": "2b348d0f9be90a856439279f456cf1e85b06c9f15562fde99da8c2c995a478a2",
+      "bytes": 96851,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-hidden-390x844.png",
+      "sha256": "69a556444fdff0fc52fa4095d0e5417b1bcd2d65a8d83c829cecfafd14cd45db",
+      "bytes": 98729,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-hidden-768x1024.png",
+      "sha256": "956eec6800c0c429ca4ca36118ec2f1cd171096d789eccfb1f91577e104dd339",
+      "bytes": 135623,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-visible-1280x900.png",
+      "sha256": "77e08614fda018772e05c019e655e82ffa460dd78001c8436cf3be85bd5c0963",
+      "bytes": 176731,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-visible-320x800.png",
+      "sha256": "15d56cab96ac2d6dcc382af7b47a29b48944e639d34b7470398e78a63af5db9c",
+      "bytes": 92196,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-visible-360x800.png",
+      "sha256": "0a1ecefcadd94935a5e7c3b2f1ff5d67e68fa683e169e27dd5a890918a99ec09",
+      "bytes": 97454,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-visible-375x812.png",
+      "sha256": "d9bf868eefbf9021265a6227d6acd716b8811aefa053660d3e181432af69067b",
+      "bytes": 99278,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-visible-390x844.png",
+      "sha256": "21619b817f1c892a3ccbb12533160997efad7e61e9965f9e745eae253680ad3c",
+      "bytes": 100978,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-password-visible-768x1024.png",
+      "sha256": "a5b4994dd31b6b33db60adcef2e12e26686d6c658a98b1f702d33b2bff70c0e6",
+      "bytes": 138003,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-reduced-transparency-1280x900.png",
+      "sha256": "ceefccfa3d029c7e6e753dd0ef3b6c81b3047c1378bf1ad94a88c5d0101b9f3d",
+      "bytes": 162153,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-reduced-transparency-320x800.png",
+      "sha256": "dbfc0dede64b4125c08fc5c225f91968d7a8ddf700d81ee233efa88246dcbb93",
+      "bytes": 78997,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-reduced-transparency-360x800.png",
+      "sha256": "7650c6bded0a2093d61eeeb5e9e989c9e9279729a5929f6ac443f5a07cda435c",
+      "bytes": 83805,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-reduced-transparency-375x812.png",
+      "sha256": "a4fa45692f26d331489ffa12239f9fa562b079f091e5da3c820482bc4ef182cd",
+      "bytes": 85839,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-reduced-transparency-390x844.png",
+      "sha256": "a49f952f437f25e46de54f0441fc7b5693fac6c11eee0f4ae55aacaf81830a2a",
+      "bytes": 87594,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-reduced-transparency-768x1024.png",
+      "sha256": "8be546f2e0779a8a0cf88b2de2998b976f532d24c49d0a97ad91b6a2df96e24e",
+      "bytes": 123949,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-sending-1280x900.png",
+      "sha256": "a8bd824971d88b0343366fe56d604de829b5baa57338111e5037203032aa3303",
+      "bytes": 160638,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-sending-320x800.png",
+      "sha256": "1e382be226e38dd4360baffd3a846056b6ede129426f0cddab712125f392e835",
+      "bytes": 77638,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-sending-360x800.png",
+      "sha256": "8218c0375c599609ff5772afcbab1f08dfbb284eebd5a5941fd5201ea6e48bb4",
+      "bytes": 82486,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-sending-375x812.png",
+      "sha256": "66fc1bad1fcb505a87a1832fab3032b7ab5b397b2ff8aa647c265f7870559cf4",
+      "bytes": 84502,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-sending-390x844.png",
+      "sha256": "fc66e16cb1ca1ab9d573e373b22c1c0dcf7402ebc2d78a7979e2580c9d2a012b",
+      "bytes": 86143,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-sending-768x1024.png",
+      "sha256": "63d828f69f46132ae5750158a85ea45e7dbdfdf8058587c5ec14f93639840cfa",
+      "bytes": 122327,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-error-1280x900.png",
+      "sha256": "3cb46a0004f3e0b171aa7b37c576b8d5e659819e396d79db622e6e55b37ebc10",
+      "bytes": 138702,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-error-320x800.png",
+      "sha256": "8b480fc52449c1889b96858629b7dcfd9046a0e48100fdf57097edaccdc7f185",
+      "bytes": 59154,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-error-360x800.png",
+      "sha256": "d42cf5478f42b1bca0823d0ce881ebba99e61f59aeb7035c65cdbfa924b756e5",
+      "bytes": 64193,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-error-375x812.png",
+      "sha256": "58047c45aef03e7aa4c2b390219d62904eb2b0a8d5e38fcfc75c4b124dd57673",
+      "bytes": 64850,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-error-390x844.png",
+      "sha256": "cf3307b1a00eb4e2eb388d911d9392bc6fbd74cb204f15023cf881f5355cdfff",
+      "bytes": 66181,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-error-768x1024.png",
+      "sha256": "d6ff8a7f7269b1ef4a3e45f6da7058544473d72afe3108b8f31b2e4701f3ee61",
+      "bytes": 100171,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-loading-1280x900.png",
+      "sha256": "d2c6393cc77d0594648e7ba04450b0ae3e73d4aea099befe5eebcbbb44532d60",
+      "bytes": 130337,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-loading-320x800.png",
+      "sha256": "71ed4179b1bf5aba4f08115870284766f433ba3f5105c89e83bd47eaad61ab61",
+      "bytes": 44484,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-loading-360x800.png",
+      "sha256": "ee964fe937218fdbab51cfb7b1ef0f9813cacf3ce42e34ba49a46f11ad7e4796",
+      "bytes": 47060,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-loading-375x812.png",
+      "sha256": "b65f7e84ea85e5ddac119b072ab53406bc3afc0327a6202071642ea79ef3eb53",
+      "bytes": 47681,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-loading-390x844.png",
+      "sha256": "51475c7cb6b0f7443bd0087c3e0d7f389e52bd04254278f54ed5c13548f984c0",
+      "bytes": 48191,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-session-loading-768x1024.png",
+      "sha256": "e1b2ebd0e6944822187890600840a4dbd3e03432bd334d1f8471d8e14a782ec4",
+      "bytes": 91561,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-short-text-200-1280x900.png",
+      "sha256": "00e2ec46c5fe5802d069828ad7eaff00dc647a93b08f73ecf187914fcb82988b",
+      "bytes": 204167,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-short-text-200-320x800.png",
+      "sha256": "5312f24cc04e416628956db2fcd0f34a2e22f27f420427de307378975ab88907",
+      "bytes": 110921,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-short-text-200-360x800.png",
+      "sha256": "2cb3743f6e4bcaf0093866a67efa12c1f590128d94168245c0dca0130024ed4e",
+      "bytes": 115059,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-short-text-200-375x812.png",
+      "sha256": "c139f5c7b000aab8af3738f16ff4fd5086f899b961874abf4c277ee2ebf4c000",
+      "bytes": 115072,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-short-text-200-390x844.png",
+      "sha256": "40ec73fb81478e115c35b249168be9e3252badcb99aa533bee58b83051682334",
+      "bytes": 117197,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-short-text-200-768x1024.png",
+      "sha256": "60cc2bb6cb7d2513f56419ee0ae0a1eed2e638d1acf697dfe5f96b23624b6ecd",
+      "bytes": 158899,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-text-200-1280x900.png",
+      "sha256": "d246780d1decd4eca0d851af040ba0e0d4c868aa05c8c9bae82975d94cbc3750",
+      "bytes": 198465,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-text-200-320x800.png",
+      "sha256": "8a09f1093290931d052c1a09e33ccbb268a2942d2cf6cfb3dd57415b51838d75",
+      "bytes": 89384,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-text-200-360x800.png",
+      "sha256": "85350dd7b88da151ff0c536c27f18e4e93900d3377114ad7ab3177231b6236d8",
+      "bytes": 99523,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-text-200-375x812.png",
+      "sha256": "90c0352154aecf23b4d0bd8b6e9e7143cbe0290e27e5dfdbcc5b8faeaa5396a1",
+      "bytes": 101754,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-text-200-390x844.png",
+      "sha256": "0844be32b818d01479820ebd99cfb9356c98b5ada0f94a30e5310f283d63f5cd",
+      "bytes": 104348,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-text-200-768x1024.png",
+      "sha256": "77886c241531fed32fc09ff175ba0e26aa676a959238b6f7c093876b0c270470",
+      "bytes": 156518,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-validation-1280x900.png",
+      "sha256": "64e237e7b575e260601a057f765c44021f278f9a00125807b396b6fee1bde1c9",
+      "bytes": 171296,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-validation-320x800.png",
+      "sha256": "96b294e003993a676402b48fe00df3c1c9bf5119bdf8e2d3756ca36549907043",
+      "bytes": 87922,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-validation-360x800.png",
+      "sha256": "1b12876a649a75f3045029f6ec4c27d76469cf3b31329a125ab6865b40f250f3",
+      "bytes": 92962,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-validation-375x812.png",
+      "sha256": "9f0226acddeab8aa9b8657aba9860dc0ef7ca648e878398ac3aa36fea7e6a738",
+      "bytes": 94821,
+      "retained": false
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-validation-390x844.png",
+      "sha256": "21301461ef97cb94a38eaf70b4ad7b73ddbd4e8b28412f322e19b804c4dc6cc1",
+      "bytes": 96469,
+      "retained": true
+    },
+    {
+      "path": "regressions/amanecer-auth-ui/register-validation-768x1024.png",
+      "sha256": "165f7666baf31a05e706e9c59b94d0c36423d694ed2f7b41db44e21fe3e64f42",
+      "bytes": 133106,
+      "retained": true
+    },
+    {
+      "path": "regressions/chat-layout/after-1280x900.png",
+      "sha256": "22d40ec3b051a5cdacf35726f3a88abf8439385788794a932ce3ddaee1fd4401",
+      "bytes": 206049,
+      "retained": true
+    },
+    {
+      "path": "regressions/chat-layout/after-360x800.png",
+      "sha256": "24281a4ac237993f89e01ae1a701835de4895cd12cc18be24f9abf7b58c37e3b",
+      "bytes": 114684,
+      "retained": true
+    },
+    {
+      "path": "regressions/chat-layout/after-375x812.png",
+      "sha256": "ce9edef573224897306eb7122b141eba1e5311353be853017c2469a45a8be810",
+      "bytes": 117023,
+      "retained": false
+    },
+    {
+      "path": "regressions/chat-layout/after-390x844.png",
+      "sha256": "f9ba13e4ef81fb01663e2168655b069b3c8de16e892e70905dd812bb02aadbcf",
+      "bytes": 119668,
+      "retained": false
+    },
+    {
+      "path": "regressions/chat-layout/keyboard-height-1280.png",
+      "sha256": "6d9f2c1b3f935fb4e3dc46278c4ebe0e509074111a8693ab14fb2f7ecbf6b292",
+      "bytes": 165470,
+      "retained": false
+    },
+    {
+      "path": "regressions/chat-layout/keyboard-height-360.png",
+      "sha256": "9da52273dc5caf0fb9cbee1ee6efacd66a0bfcb92168c2d1c9ddd7c5eeb9f582",
+      "bytes": 84645,
+      "retained": false
+    },
+    {
+      "path": "regressions/chat-layout/keyboard-height-375.png",
+      "sha256": "e882919112fe51a2f8a3aa798dc71c2fad34f711d2a10560055116b3fe09036f",
+      "bytes": 86297,
+      "retained": true
+    },
+    {
+      "path": "regressions/chat-layout/keyboard-height-390.png",
+      "sha256": "9788e8eb0dc8ca71882fc70d8ca21e37f832ee7ca5b6c892daf699cdcf446b14",
+      "bytes": 87618,
+      "retained": true
+    },
+    {
+      "path": "regressions/events-ui/backend-error-390x844.png",
+      "sha256": "c3fdcaf227b446c2074af8de65892ce55de982c1ba3b5edb899f5d3b5da4d708",
+      "bytes": 216642,
+      "retained": true
+    },
+    {
+      "path": "regressions/events-ui/filled-390x844.png",
+      "sha256": "f9368c5f4405ac45bfdc45ad3f46e1dc481b4d4d5a98bec0ad28d65ff27127b1",
+      "bytes": 214633,
+      "retained": true
+    },
+    {
+      "path": "regressions/events-ui/form-1280x800.png",
+      "sha256": "af62e6616e2dafa595dbf3d47be58b541864e05e9a31041a1dc04d86c513c2ff",
+      "bytes": 176902,
+      "retained": false
+    },
+    {
+      "path": "regressions/events-ui/form-320x800.png",
+      "sha256": "0fb2122c9a450f84db88c97408c6837c87df6709a7b65b0990938d8134479ce4",
+      "bytes": 220742,
+      "retained": false
+    },
+    {
+      "path": "regressions/events-ui/form-360x800.png",
+      "sha256": "b517bfaec0d91383239947910e455b91ee5a93b959fc7579f395fd58f27140a2",
+      "bytes": 65445,
+      "retained": false
+    },
+    {
+      "path": "regressions/events-ui/form-375x812.png",
+      "sha256": "251059ee427d1969bda941cb476f1080f782bac6dfbd7f772f874ea258a25ef6",
+      "bytes": 66902,
+      "retained": false
+    },
+    {
+      "path": "regressions/events-ui/form-390x844.png",
+      "sha256": "fe634c59687a5a523c8b3010f6e628d98d0cd1ba5a36017db0ee61bd457ab747",
+      "bytes": 68610,
+      "retained": false
+    },
+    {
+      "path": "regressions/events-ui/form-768x1024.png",
+      "sha256": "5bfd60b7be27bc734e82a4710378e210b6b680e8fc534f4535af99d011aaaaef",
+      "bytes": 103747,
+      "retained": false
+    },
+    {
+      "path": "regressions/events-ui/publish-viewport-390x844.png",
+      "sha256": "f08f56f2638d0bee8a83035eb39a453582cd569290403dae216603857416e6a9",
+      "bytes": 42618,
+      "retained": false
+    },
+    {
+      "path": "regressions/events-ui/success-390x844.png",
+      "sha256": "e0d413db4c8c509c344851dbd3f1c665582250f3e9bf99d7e8a29cc4dc691d9f",
+      "bytes": 136180,
+      "retained": true
+    },
+    {
+      "path": "regressions/events-ui/validation-390x844.png",
+      "sha256": "062053530169bf0526fdcf71e02f02aeed57ade352f62d98ec2e768d5f8c7c80",
+      "bytes": 254721,
+      "retained": true
+    },
+    {
+      "path": "regressions/my-events-refresh/account-menu-320x800.png",
+      "sha256": "0efed648f06405d407627021e8e9d2265c52dec7f9109bebcdb849f6b5a74cb1",
+      "bytes": 115377,
+      "retained": true
+    },
+    {
+      "path": "regressions/my-events-refresh/organizing-320x800.png",
+      "sha256": "21f7d535484213fee554ecb3e582085851363c78ffa4f07a9ef641a7e2d6c906",
+      "bytes": 125646,
+      "retained": true
+    },
+    {
+      "path": "regressions/notifications-ui/desktop-empty.png",
+      "sha256": "0dd8f16e3efa4b09ab0689c663744c2354ec56810ae393f9f592d7f5e5f3e1dd",
+      "bytes": 143887,
+      "retained": true
+    },
+    {
+      "path": "regressions/notifications-ui/desktop-error.png",
+      "sha256": "35d1f7ce9849e0d78ea603f3306bad564e9cd12ad06400d870b1fdae31165b45",
+      "bytes": 150958,
+      "retained": true
+    },
+    {
+      "path": "regressions/notifications-ui/desktop-inbox.png",
+      "sha256": "22f3c835efe502f41497066679fef37f2b4a79a49235f8e15efd8a0a422e0643",
+      "bytes": 209345,
+      "retained": false
+    },
+    {
+      "path": "regressions/notifications-ui/mobile-empty.png",
+      "sha256": "c4023adb9d05202ac492f0a92405b9d24ffe94e608c5581addac57742a064c71",
+      "bytes": 74067,
+      "retained": false
+    },
+    {
+      "path": "regressions/notifications-ui/mobile-error.png",
+      "sha256": "92f131194602368b11c2751e2cd8f55073da6cefd9cddb4ae63510f90ed98dbe",
+      "bytes": 78681,
+      "retained": true
+    },
+    {
+      "path": "regressions/notifications-ui/mobile-inbox.png",
+      "sha256": "01ca8fcafe90229e5c063b82555bce2ed94d2dd8a3ac9962aab14b0e2894bc7e",
+      "bytes": 116713,
+      "retained": true
+    },
+    {
+      "path": "regressions/profile-ui/profile-avatar-desktop.png",
+      "sha256": "840c5e78aaea543b0b1426ddbd1b0b59d09aa02337e1853271614093dfbecca8",
+      "bytes": 138858,
+      "retained": true
+    },
+    {
+      "path": "regressions/profile-ui/profile-avatar-mobile.png",
+      "sha256": "15841e86e42825e572efd75b7e2ca55a9ff3a776a68e339fcea8b956819b9437",
+      "bytes": 70030,
+      "retained": true
+    },
+    {
+      "path": "regressions/profile-ui/profile-error-desktop.png",
+      "sha256": "6c2c2182972d80386f9901f3b48dc4b70ccd344e9efd6f7fcb680f84f5fd8f4f",
+      "bytes": 144788,
+      "retained": false
+    },
+    {
+      "path": "regressions/profile-ui/profile-error-mobile.png",
+      "sha256": "f379ed375ed178a774287e2c81b01172f63854f5e024d69cf863ad9d948d2c77",
+      "bytes": 74948,
+      "retained": false
+    },
+    {
+      "path": "regressions/profile-ui/profile-placeholder-desktop.png",
+      "sha256": "8109e598e593387ed588ee2e5348a29d40241bc82084e456ed7cb6802182fa16",
+      "bytes": 144783,
+      "retained": true
+    },
+    {
+      "path": "regressions/profile-ui/profile-placeholder-mobile.png",
+      "sha256": "68b610c914e2a8493ffb59fc9071c23bedbeb89e9358dafedcf808966d1afaea",
+      "bytes": 74936,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/chat-denied-1280.png",
+      "sha256": "b86c2a6a01274acc42a2de286635887abfd477056ff2f33b2fd180b04dca347b",
+      "bytes": 125015,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/chat-denied-320.png",
+      "sha256": "1734ed74c8438150cdaf899eea1bcfed8992399747ac759f3d67b3b5d3ebc7c4",
+      "bytes": 64314,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/chat-denied-360.png",
+      "sha256": "2c274490833164b72432956b1b3b07a373a2ae45713f5a8d497923388bb64072",
+      "bytes": 68905,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/chat-denied-375.png",
+      "sha256": "f89c028a00963ebe83fe03ccf4650aae7072b7a31f8d90276e474eb61290e9f2",
+      "bytes": 69667,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/chat-denied-390.png",
+      "sha256": "0247ebb7318713b924b71f4ae791b9212a85aa08536c1b432395fae4cca55fa1",
+      "bytes": 71482,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/chat-denied-768.png",
+      "sha256": "df4c3f128c3bedac9a29d306a574caeaae055320a62981f7666f568d9d4186f8",
+      "bytes": 95514,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/confirmed-1280.png",
+      "sha256": "bc5e65d14922bb38299dff5eaf0b6b664761c7a8792039bb1e8b3b6ec4cf4f30",
+      "bytes": 176468,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/confirmed-320.png",
+      "sha256": "8a8dd5dadd8bd07f7dbc646d0a55e21404adc65bd781422f22793ecc9c1a61ee",
+      "bytes": 96402,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/confirmed-360.png",
+      "sha256": "32ab49a214472542064269cf822f93e8eb47097fa6864fad65a8a9909ec4bd43",
+      "bytes": 103834,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/confirmed-375.png",
+      "sha256": "b9e34fb930d6a6c58635381a65e88c903d39a0117d04daf43539343be552d72c",
+      "bytes": 107126,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/confirmed-390.png",
+      "sha256": "9934a3fd84423ef6460c13d6e41320c087d15568ca0047525689205fd126d9cb",
+      "bytes": 113999,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/confirmed-768.png",
+      "sha256": "24da5a3458916263706b950e50dadfcf6a4132fa1d8af8549299d8483b8a13f2",
+      "bytes": 184880,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/denied-1280.png",
+      "sha256": "7b1f3f13c113dc952ed0eccd312ce9ec151febcda1bdfd3be99f4c813babff50",
+      "bytes": 131406,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/denied-320.png",
+      "sha256": "c844dabfe04a006ea744efc44fea2d646d362adb0eaab13723503a1c7e31851c",
+      "bytes": 84883,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/denied-360.png",
+      "sha256": "898ffb18ffe95f0a145df5e874af661a0d71f0f8183a8f75a8f07e7f34ce4130",
+      "bytes": 92013,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/denied-375.png",
+      "sha256": "b1fd8fa0089178bbc4bd22807f7d4af44f884384a4545e29d92e720367510b92",
+      "bytes": 92347,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/denied-390.png",
+      "sha256": "c4e8a8257dffd275a6d72ef7861d278a8e94079e3b89967d6edc1757f57964d4",
+      "bytes": 90932,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/denied-768.png",
+      "sha256": "1306c773b64253e570335183a0652ff56651400799cfaf7ac4d39a85a601cf6f",
+      "bytes": 125747,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/dialog-1280.png",
+      "sha256": "7d4bf35d64c8ef55c4b4b3dfc3915a06f20612b43572afae400dfbef08a3d652",
+      "bytes": 189085,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/dialog-320.png",
+      "sha256": "d256b312c5d933399774d9bcfeff6e0f513fabcb6cdb421f5a3682fbccfbcb54",
+      "bytes": 85060,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/dialog-360.png",
+      "sha256": "99d84c32083dcc70661eb12ee91646608ea005a54c117f5916f0a1ecc045bf49",
+      "bytes": 88442,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/dialog-375.png",
+      "sha256": "6aac35f057552711e1d0a75a6ca24570b3171ce954cbcfff9f0064dbaf48bc27",
+      "bytes": 94851,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/dialog-390.png",
+      "sha256": "93ddb5244885930b15e2a9e62e144551d027441d5e7a9ea9ab5c78970d683cae",
+      "bytes": 101454,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/dialog-768.png",
+      "sha256": "cc70ce3ae32dcea3e6b45fbf405b430700e9e2a3b3e19f5f9e497e34e5ba5406",
+      "bytes": 206304,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/empty-1280.png",
+      "sha256": "40c3eb8bd46c6b1fa339a4ae1f57244ac96fa0417d29e52cad0634eada5bacae",
+      "bytes": 146145,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/empty-320.png",
+      "sha256": "22320969076a5584778f857d030cb26378f35cf868c7b52e319efe7f6c062c76",
+      "bytes": 95088,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/empty-360.png",
+      "sha256": "3873bf859427a9f1b3faacdb6ffbaaecbb79796cc9ef24d9c938e56245e11d97",
+      "bytes": 102008,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/empty-375.png",
+      "sha256": "e279f78aa57fc11bcb9609c49f899c2c7c25689017d6256d5e4f622f5e7f33f1",
+      "bytes": 104120,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/empty-390.png",
+      "sha256": "35bcdec9b41e63233e08bdac5cd9beecfc1daf7db5474a694b720548198e1bb1",
+      "bytes": 106186,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/empty-768.png",
+      "sha256": "b34cea372e66dc501070437e7e11a78b7dc7d69dc4e5afa8037b035ef5893dba",
+      "bytes": 142163,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/long-identity-1280.png",
+      "sha256": "6a55cb16a97c7c7cb1972bb42489a6b2556d8cef3009a329d1c029e4aaaa1ac0",
+      "bytes": 166811,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/long-identity-320.png",
+      "sha256": "22751cb8cb51074aff044be900b2e9a5a7cc7410cbc499dbb67bd8c1b6a81809",
+      "bytes": 111046,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/long-identity-360.png",
+      "sha256": "07e0a606e0edd102307adc25ddedc5f44c999bf162b5a8bae712c3d1c2ffb1f6",
+      "bytes": 123852,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/long-identity-375.png",
+      "sha256": "2d9cc45759013a7c7694bc5c8ebed162e773700eeb2e68e2bcdbf0fdac7b1fe4",
+      "bytes": 126980,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/long-identity-390.png",
+      "sha256": "82d4bdf13b29f88be12f36d1263087c6cddf2cd8dbb3335f8b8824fb7f848114",
+      "bytes": 125578,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/long-identity-768.png",
+      "sha256": "00bcaa5f98e98ad73abacce7ec4d124edd3e21cf399854d10ec7a9e58fe4e943",
+      "bytes": 161743,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/removed-1280.png",
+      "sha256": "9dc09946ec790d6ec0216f882e713f33f5eafb1882e566fac82adab3716ca55c",
+      "bytes": 143287,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/removed-320.png",
+      "sha256": "6451d4a5a3041dbb8ff78a146af1213a77b495fac769393c911f425314304b32",
+      "bytes": 93249,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/removed-360.png",
+      "sha256": "159c5822b66bd4ecec3e51febea094734950c7aced218f42ca56674a2b0c94b8",
+      "bytes": 99849,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/removed-375.png",
+      "sha256": "ad98f7c0546f0a5cd6d03099b509752e09ff4cb162fffcf8d72fc8ded3d6e269",
+      "bytes": 101327,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/removed-390.png",
+      "sha256": "06447ce0d9213f8ab949d4ac34ca266aa5eb63475ea55e60793aacb4f53bc495",
+      "bytes": 103345,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/removed-768.png",
+      "sha256": "9dde47ae72dba40f85f71f7296093248c8a1bc9ccbcb4cd157a52d9769b4aae9",
+      "bytes": 139131,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/search-empty-1280.png",
+      "sha256": "89ab52d389d9b3600d2b34afbdc1a880f3bc472370f04283fc4e72bf0d89f40d",
+      "bytes": 142310,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/search-empty-320.png",
+      "sha256": "6af6b0512de1f01692712c9af6c3bf83f8347613ede792fc96d8e2a22386f94a",
+      "bytes": 91157,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/search-empty-360.png",
+      "sha256": "56e21ffd64a6274a0a8c03e87496b472ba7b8993e3cb6f64ec16bacd77d891f0",
+      "bytes": 97958,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/search-empty-375.png",
+      "sha256": "e560b4f83493ca658219cf5187a500bcc5be77a1d5b472b8eb7f9bee962e1250",
+      "bytes": 99749,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/search-empty-390.png",
+      "sha256": "69983bc07f67157823ddfe298c83d46e03540b8b1508c6506138267af5b113bd",
+      "bytes": 101710,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/attendees-ui/search-empty-768.png",
+      "sha256": "1dd5cd4d15bbd4515ca2749224860e9fa28e97a2151c9287c24312257cdd5a1d",
+      "bytes": 138214,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/chat-ui/chat-desktop.png",
+      "sha256": "10c659e1f4415158f3effd4780e5b8df2d6e4327a866791aeb91f6eac8df174d",
+      "bytes": 159515,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/chat-ui/chat-mobile.png",
+      "sha256": "11470e21a066b0d57cc8d33deca3b238ff825f191ec0037d3382dc28b5f6eee2",
+      "bytes": 88258,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/chat-ui/chat-read-only-desktop.png",
+      "sha256": "6a43bd918078cf07cb884cfc191245e97af1b7bea8dec5f155e83f41b8352509",
+      "bytes": 144155,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/chat-ui/chat-read-only-mobile.png",
+      "sha256": "8c542f535f2cdfcc4e480692055ab65c2df25e7a4dfa7989f8bc44b00556487c",
+      "bytes": 78353,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/discovery-ui/detail-1280x900.png",
+      "sha256": "07e441f7a1445a31cef43c5cb2484b0cc16ce6da08270b345f9399022ce1ed39",
+      "bytes": 125424,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/discovery-ui/detail-375x812.png",
+      "sha256": "266e05df6d2981084710d08eeb99d42f2daf76312634230bcf80a15e3d287256",
+      "bytes": 99185,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/discovery-ui/detail-768x1024.png",
+      "sha256": "5feb978afced95b9841a549e869e788df5d35860116a0584dd003c5a22c1cdd9",
+      "bytes": 113266,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/discovery-ui/empty-375x812.png",
+      "sha256": "043913bcf49cf017e7e6d3c09bbdfbc3d982bd852c8dbec701147e8ae23c81a1",
+      "bytes": 126304,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/discovery-ui/error-375x812.png",
+      "sha256": "1e391f3e516a501604eeb0c435906c0cfce168fefeefe27f68e2b2f5a7e6cc7e",
+      "bytes": 126232,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/discovery-ui/map-1280x900.png",
+      "sha256": "ef8d247f369795c973364dfeb648713a6d87e3ea9015ab78b17db9c15fc20242",
+      "bytes": 135593,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/discovery-ui/map-375x812.png",
+      "sha256": "ab61afc8353673176b9474022931902c18a7fd50410ef37ac983afd477a23789",
+      "bytes": 121106,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/discovery-ui/map-768x1024.png",
+      "sha256": "77a51b4b05598a508ae342c6413deb3917f00f45e7e8397aa7ffd4fda5c221ad",
+      "bytes": 120382,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/discovery-ui/mapbox-error-375x812.png",
+      "sha256": "b08b00834d7acdfe23c66cea1fcd295bed093d6bca913b520b762c88c5494968",
+      "bytes": 140307,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/edit-event-ui/edit-1280x900.png",
+      "sha256": "6a23f1e22ec6e75f73ed4a9f4482b24d7347a816083d07fb9dfce47998c51e27",
+      "bytes": 172310,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/edit-event-ui/edit-360x800.png",
+      "sha256": "483682ed91896fa0d235c9e21806d165121ca9a539d5c4ef016d3f3fddbfdba1",
+      "bytes": 95738,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/edit-event-ui/edit-375x812.png",
+      "sha256": "da89956977234fb5487698caaf88a393467cf59d6c1a37def87850ac7699f42a",
+      "bytes": 85916,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/edit-event-ui/edit-390x844.png",
+      "sha256": "6b536219aa1c0971ba8a4ec407120247d732dd8709c90f2b1dea991b9a09fae0",
+      "bytes": 68867,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/edit-event-ui/edit-768x1024.png",
+      "sha256": "0c77d571eec944ac72c04b90b2944a498f9902ddae4072914403a1bef84f2d33",
+      "bytes": 138158,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/edit-event-ui/error-1280x900.png",
+      "sha256": "a139e38d83f89b73e839eefe3f62563ff6425bfe33d51e735385f4110d8c6b57",
+      "bytes": 349411,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/edit-event-ui/error-360x800.png",
+      "sha256": "ae5d34cb43d29bc58ab9537c4ccf8cf92f138570435393678de213940d593c21",
+      "bytes": 201318,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/edit-event-ui/error-375x812.png",
+      "sha256": "6d267ac67070613d8f3410da42228c0b0727581e3a7bf1ab7ccfaba869d8c1dd",
+      "bytes": 204222,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/edit-event-ui/error-390x844.png",
+      "sha256": "abac75c7c5b57e0723a373724d4699833126f628dbd6e7fd33b44c87bd62bfa1",
+      "bytes": 206381,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/edit-event-ui/error-768x1024.png",
+      "sha256": "03721eade40de55d7dab9282b99cd802ce80c5e7077fedd81acfe5e4f0b0a0b6",
+      "bytes": 268931,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/actions-1280.png",
+      "sha256": "0bc65fd09ce6fe1721b8df6ea2c998bc922abe16cd1139d40987eada1f78e1ac",
+      "bytes": 205021,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/actions-320.png",
+      "sha256": "e8a3eca5b8c9336d6c194e76c19bc1a6cd371ca88d3bc8df19438f3f1474e3eb",
+      "bytes": 156610,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/actions-360.png",
+      "sha256": "b36c39d8ea69dbfcfa821465f73460e1beab08031455c00e2a8fdd23f80905aa",
+      "bytes": 159805,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/actions-375.png",
+      "sha256": "8b622bf82edd7d94666dc9211405058518f6a6286d1e23ee386e56248bd35e14",
+      "bytes": 159995,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/actions-390.png",
+      "sha256": "634a8d201bbca8a6319ec2714ae8e485eb17a47d68f970e652efe10081e8f9ef",
+      "bytes": 159593,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/actions-768.png",
+      "sha256": "938e729cf30edb3d4e8d4b0427a0b5f32bb9299bddeaff81621bca23d6f20b6d",
+      "bytes": 179460,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/cancel-dialog-1280.png",
+      "sha256": "c82d66e5c565fcb212f309ae98399f2f8a4ee58ce7668dc008e58176cae627a9",
+      "bytes": 117376,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/cancel-dialog-320.png",
+      "sha256": "db983746a55a44edbc852de43bc1fa24effbd8808319ed81430d3f1309770e8f",
+      "bytes": 70486,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/cancel-dialog-360.png",
+      "sha256": "351002d0cf0f3a8d888af85fc87bc19755af75ec75eaec187cb58b4d89dd8ac8",
+      "bytes": 72158,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/cancel-dialog-375.png",
+      "sha256": "06249e7ee337d386aedfb67e80ce92fc880b3edd0fc61a8ed910bd23d0ddc41b",
+      "bytes": 72961,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/cancel-dialog-390.png",
+      "sha256": "c10d57e4dc1f0ac7e27422f0a4acd5a84fd6bffd4d06645f81eec33adc1ee0d1",
+      "bytes": 74183,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/cancel-dialog-768.png",
+      "sha256": "89f7f3f7081bf13085bb83e0e283b145327642a409e247596e9ffb9d69520f21",
+      "bytes": 120075,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-dialog-1280.png",
+      "sha256": "b39f7765f11a76901e6969b9c8d7168ba464b5a05a6e6934616c808cf7aeae4d",
+      "bytes": 109318,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-dialog-320.png",
+      "sha256": "b5658cb64b848477f3564a55d67f3ca584e98424743b656b662ddb2f1569ef69",
+      "bytes": 65271,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-dialog-360.png",
+      "sha256": "2fbd09bbad501b3cd01f63dffe09f530bdfaba70bb3ebadbfe36040db738352c",
+      "bytes": 65941,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-dialog-375.png",
+      "sha256": "be1f48c29a77e7ccbffd6b18a2831ea94951838b5071115a7d9ece88632df1c4",
+      "bytes": 67156,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-dialog-390.png",
+      "sha256": "d5380bde46561de9f76133f4f71df3509bbcf41d642b052b6eab82ab8ef045d7",
+      "bytes": 69844,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-dialog-768.png",
+      "sha256": "78524e50c343bfa1153d248cd4deaed7af555ab6d55cfc79d7e7238bca5f98ee",
+      "bytes": 112985,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-form-1280.png",
+      "sha256": "59a25b4ef563ec58a20aebad4de921f6a02d98ea6a9e2e28bf7c53a4e4292479",
+      "bytes": 361729,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-form-320.png",
+      "sha256": "32c020c060ea62aecac998011b134de167e702688f9085c12bf90fa5ce39a29f",
+      "bytes": 205676,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-form-360.png",
+      "sha256": "2bd007cb0439447817ef5eca661b39160d074bffb2a2faba040fcdd7e858e72e",
+      "bytes": 213424,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-form-375.png",
+      "sha256": "cccd7e7a22c8fa59ae16662adb6720fa5ea9e9085a95eb96962268b4e3f87f7a",
+      "bytes": 217187,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-form-390.png",
+      "sha256": "e20bfa47a0f12dd4a9cdca7a407ccc2227bb9990b0fae918fc37dd93e4e6c995",
+      "bytes": 219508,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/event-actions-ui/duplicate-form-768.png",
+      "sha256": "df670ca80891859b59dd9a488a6099af23b130c99fdbd0b4a8d537c0ce6b687b",
+      "bytes": 286280,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/confirm-1280.png",
+      "sha256": "304bde8acd4515ac489c7a4ca0493f00993ddda8c2deaf5f497a45554a25012f",
+      "bytes": 253621,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/confirm-320.png",
+      "sha256": "7e3912e30ac252a05ad28d40385db7fc7bb1fd7de9084f91e3c8ecfe61970bd3",
+      "bytes": 175034,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/confirm-360.png",
+      "sha256": "06bf7bac884eec956a9c1e54f6cd38a0b0b745825752f3844be528dd16af004c",
+      "bytes": 189662,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/confirm-375.png",
+      "sha256": "cf70ab3a530c443c5d75340b435b434ca6d021737f571c378f45a3ce5e061806",
+      "bytes": 194020,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/confirm-390.png",
+      "sha256": "b7427fe345e264ad757cad971e7b146056601eadbd5a489f105b1ad543099fa6",
+      "bytes": 201805,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/confirm-768.png",
+      "sha256": "d77e38e7c372c61df327346afd6bfb0c5decd6bd8ce6461724eed45fa34f027e",
+      "bytes": 246372,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/empty-1280.png",
+      "sha256": "1a504dcf61a242a2a98200ab4c1340a7c713d731c252a9cc46de1ce3694c8453",
+      "bytes": 191161,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/empty-320.png",
+      "sha256": "ea73cfbde094b49b5c59223067883c120c1a29976888fb76f7bf2040c9c058e7",
+      "bytes": 129871,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/empty-360.png",
+      "sha256": "27c0c44ad176b867b112ebcc999cd46ef8161e3194dc7e4cc5ca21fda106b43f",
+      "bytes": 130718,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/empty-375.png",
+      "sha256": "67f2d611e68ef7dc9dbb30e7ad29be03a1820d726f8eeb28c251152d0e928098",
+      "bytes": 134778,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/empty-390.png",
+      "sha256": "09758b79951620636b4cf50acc978c8cf251e1ed257ee2d612eb8054a1450a55",
+      "bytes": 134138,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/empty-768.png",
+      "sha256": "5bbda91a83d7b4625105ce0925ae0ae358e76652f7775c06a1fe1816dc62cfc8",
+      "bytes": 174220,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/gallery-1280.png",
+      "sha256": "d709979cada1bdb9ad596b0e22671c4f937a09ac55cf32d7828c31d299ab9f37",
+      "bytes": 234611,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/gallery-320.png",
+      "sha256": "8e497ea02a8af71a62f574bfe98d497a50531077d833c8e5cb0d0dd3dec61d05",
+      "bytes": 189915,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/gallery-360.png",
+      "sha256": "da46ae935811fba47178f2f62dcb8346cb10c76b6d15fff5384f0ed5ee795b8a",
+      "bytes": 197128,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/gallery-375.png",
+      "sha256": "600982750398a94c459461d5be327166258080681f8803c865198e818ccd6ce9",
+      "bytes": 200809,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/gallery-390.png",
+      "sha256": "48baeac184bdbd6d2092317e5f0d5d3d1231d84519b5925df2afde4d6262b5ba",
+      "bytes": 205458,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/gallery-768.png",
+      "sha256": "d87be8df6a9021dbc6af54143847f54d405c11ae946a2164167cc11724ae3474",
+      "bytes": 226420,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/invalid-1280.png",
+      "sha256": "eab8cd4fc5c632cfc6a2dbe88619663397b499fb8c6e322dcd1c97dd2df31833",
+      "bytes": 242593,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/invalid-320.png",
+      "sha256": "a9ddeb75b4714ad6e0fcb0dcb3f53bf01c2d7772c28c2d4913971c78edf8d944",
+      "bytes": 186687,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/invalid-360.png",
+      "sha256": "9fe468ac13652d8e3ac76efa9e2e41d3b36103e62c8d13db192eb9630c2c0b02",
+      "bytes": 193658,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/invalid-375.png",
+      "sha256": "4ca8123af153b91ab51b0428d4eb7fc54a0b76217609a0cd36a240ba73447bce",
+      "bytes": 198916,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/invalid-390.png",
+      "sha256": "108b2ff56378223e750dfcd88a142383f187f4ae9ff60bf8834f42338e6f08c0",
+      "bytes": 200969,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/invalid-768.png",
+      "sha256": "252c229cc90ba0129da02997810352de362e1e341ae3000f7908781e48dd203f",
+      "bytes": 232517,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/one-1280.png",
+      "sha256": "ffbaa2a14a3e6997c319a4e193361b6b21ff25a6de14b10840488a5363105887",
+      "bytes": 187317,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/one-320.png",
+      "sha256": "dac9fc1946c83c27b229e25c51eb8e1009832b70d717c073fa4afa293f1a926c",
+      "bytes": 129150,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/one-360.png",
+      "sha256": "9bcaa219552cd01d5583e0aa6de84305192bcb17ca5bc1457a0b2035a272ea9e",
+      "bytes": 131604,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/one-375.png",
+      "sha256": "776e3c7d403dfbbd57d1f2840e451fca2955d9c83b2b7e255037615503ba1ace",
+      "bytes": 135266,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/one-390.png",
+      "sha256": "4d5c3b8e54ae1fde93b7a0afeb34b3c0695ec12cf77cbea50c0a587ba000af0e",
+      "bytes": 138609,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/one-768.png",
+      "sha256": "e3371822aa2c560f65c06814f5b950e2c53b5fbc0aa23e669053981f168a086f",
+      "bytes": 171719,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/reordered-1280.png",
+      "sha256": "98f994e35abecf72bb4ed1cd41686e9b49b4f9e06c19f4f25b791381ad0ef83e",
+      "bytes": 232229,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/reordered-320.png",
+      "sha256": "188a8c48896ef68d79880528fd739dab0b99cb4cbdda27b37d4206caef82de73",
+      "bytes": 180696,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/reordered-360.png",
+      "sha256": "1d54bfa9305c38f0f640e1044fe724c50b1bf7331140ecdbe16e5ccf57c5f44f",
+      "bytes": 189493,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/reordered-375.png",
+      "sha256": "34d1a19353322a2754361b4143f9cfa6771416b489b5e6d9d5b3fdebec3eccdf",
+      "bytes": 192819,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/reordered-390.png",
+      "sha256": "e0a3a09bd74e7d1e801151a5b35209f7eba9e6b250ff70a8ce31317da84dc35d",
+      "bytes": 195587,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/reordered-768.png",
+      "sha256": "b44badf9949e2984579db333c9cc9205bcc6b2ab8952eb3d89b6353bf7a4c3ef",
+      "bytes": 222455,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/ten-1280.png",
+      "sha256": "86b98ba8bf87ecd566a24ad6ed9f63f729f37fd2ae2f641bf356346a8578423b",
+      "bytes": 271858,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/ten-320.png",
+      "sha256": "5e08375c960db7d5ad469205512802bb61a827159107c12121fbd2149f31c8e4",
+      "bytes": 233925,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/ten-360.png",
+      "sha256": "2b7b501c6d462033fca7da35cd47c837a169a097af6e89e09002e3bc44b96bcc",
+      "bytes": 244759,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/ten-375.png",
+      "sha256": "ac4a01e475c9e0fc4d31dffc99b9d4f359029d93951dd9159da2ccf889de47af",
+      "bytes": 249640,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/ten-390.png",
+      "sha256": "cfefaa973cb6b9013b3b2da869667abedbc1e3b318199996c16d7358016b1744",
+      "bytes": 254018,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/ten-768.png",
+      "sha256": "1cd9617b61824a662c7e068cf2dd697c653c939709d5d0370f17289879a0b270",
+      "bytes": 258186,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/upload-failure-1280.png",
+      "sha256": "6144d89f4718139077df5bdcc1ec6cc87282568980d86c61340ff3c4a36ae16a",
+      "bytes": 273843,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/upload-failure-320.png",
+      "sha256": "603db45f3a3d22918b4eea6ea78e9960a5807ad5019d04508a256e4f8e6c9f1a",
+      "bytes": 221016,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/upload-failure-360.png",
+      "sha256": "d48bf23d4490b8b5bf6533a67da5fc526c0288648812efd12ef93c07e6ae2d15",
+      "bytes": 231920,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/upload-failure-375.png",
+      "sha256": "f4ab230933550b841960fd46c9f7909e7805da1b07f4a6b143e928133a9458d2",
+      "bytes": 235526,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/upload-failure-390.png",
+      "sha256": "bdc37afcdc3dd18c94c8108b00065d1a0d84975b3763dc4767d6575ca1dfe223",
+      "bytes": 239948,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/gallery-ui/upload-failure-768.png",
+      "sha256": "4ff8b632e9195af66bc535b0305cc501c5eaad23feceb46ad8c3be4cb6ddcbb3",
+      "bytes": 262840,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/home-ui/detail-desktop.png",
+      "sha256": "e73f68bd1034bf772fd9dee33ac51a64e44704ba337bc128661e96b065f32b81",
+      "bytes": 119167,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/home-ui/detail-gallery-mobile.png",
+      "sha256": "048da06309645bc5c226fe50e3755bf9eda959b64d386cd79cd7f1e32271e657",
+      "bytes": 87929,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/home-ui/detail-mobile.png",
+      "sha256": "92148237f8490bd80b6999af7d540968b98b94c693853e9b5b58e05e90d26259",
+      "bytes": 87003,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/home-ui/detail-organizer-desktop.png",
+      "sha256": "d46a008a8bd73e72055e721ec106f014af6a02ecde2ae0df45d34d9f006c48eb",
+      "bytes": 27479,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/home-ui/detail-organizer-mobile.png",
+      "sha256": "0ae38352c5e33ed8a0ed495ee7d91e4a0b6eeee497c3f15f56bdb75a0ade9e04",
+      "bytes": 21356,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/home-ui/home-desktop.png",
+      "sha256": "c9fd0707149c62ba9b85ca43ef93421276bef0dc3bc7568ac66fdd8dc46385d2",
+      "bytes": 129772,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/home-ui/home-mobile.png",
+      "sha256": "ea258de5b8e091b98eb27116687d8b83edf428f32e49ecbe9d61dc34cab0516c",
+      "bytes": 87509,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/detail-filtered-1280x900.png",
+      "sha256": "0b741ec84d72ebf5e703b19dba4d772a5541f2fcaadd9f4730a1d9d03daf2e12",
+      "bytes": 167902,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/detail-filtered-360x800.png",
+      "sha256": "902b250e927684ca014ee167ebb044ef243d1a03af6992b38a771833f1934259",
+      "bytes": 136883,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/detail-filtered-375x812.png",
+      "sha256": "ebde0217ae6a38b4ba09e6d61f7c1992f6b18618220b720c3f1d6a49681f669c",
+      "bytes": 137895,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/detail-filtered-390x844.png",
+      "sha256": "9765ac7f463603e6d03e7bf7e30a739c5e987d451e2dbbf1241f226bf6035a6c",
+      "bytes": 138715,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/detail-filtered-768x1024.png",
+      "sha256": "a5834c0d112de3d577c18df1ce102193e4bff8696577320bcf88c2326a27da11",
+      "bytes": 146595,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/empty-1280x900.png",
+      "sha256": "046ee23cb34bf1f11f95d8e66b7f6b5ccffcb65e7d57855996ed473fa565b0c2",
+      "bytes": 131755,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/empty-360x800.png",
+      "sha256": "22f5c786bd18156af9d493b3bae99644a7752f6c60fbea1c9b4050eb5335af11",
+      "bytes": 90788,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/empty-375x812.png",
+      "sha256": "1091068419fdcf8ab777f801be7636ab4a9c57105ce6a17023e5fe3c142b6233",
+      "bytes": 92304,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/empty-390x844.png",
+      "sha256": "1906abb4649503792677b438a8d78e4f96b38d4242ff27ca8c66df399ad2dd80",
+      "bytes": 95615,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/empty-768x1024.png",
+      "sha256": "3fd5e9fbacc415772886763c6db33887e174871ad38a4f61c7795be2fa5de016",
+      "bytes": 113412,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/error-1280x900.png",
+      "sha256": "0e4d6177e2aac4f325fa40abae46360f0c6a722d33615e33ccb621f6fac2e721",
+      "bytes": 137791,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/error-360x800.png",
+      "sha256": "0f13b1172ec87a5fcbdbb43770078bf1b30c3d0a3af34449a01db134697665b1",
+      "bytes": 92848,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/error-375x812.png",
+      "sha256": "75959296aaca445bfc4dddb0d08477d4aa4f5f9531ba99589a3c27d2e1b04b78",
+      "bytes": 94312,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/error-390x844.png",
+      "sha256": "e341c6d8c58bc79a599bb8caa254a31992c87a34fdcb5980735bb63f808332eb",
+      "bytes": 96611,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/error-768x1024.png",
+      "sha256": "617f32026cff085d2722f5ae8c25b57cd851e8034106beb96cfc9703464d826e",
+      "bytes": 117376,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Archivados-1280x900.png",
+      "sha256": "d667b8ae99e64b9fa09fa5e8eaf357a5eef55360d215793326da5712d4271c9f",
+      "bytes": 152239,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Archivados-360x800.png",
+      "sha256": "140e3f349dd0e029af989d7d4dc4c16d4ea0a9150175694323db175216f851b4",
+      "bytes": 104514,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Archivados-375x812.png",
+      "sha256": "c95c64dc715dd48394f3e237b49bf315304ec41e50f8a389f2a988d4619d4aed",
+      "bytes": 105996,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Archivados-390x844.png",
+      "sha256": "6e5914ccf6fb2739f3c1c059c04ff3951b06600a0a7fece5fb52d4b99b3604d8",
+      "bytes": 107450,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Archivados-768x1024.png",
+      "sha256": "d8cb4870cc701d37a15d4ca37d6b79bd75bcf7c8cf2b6cf912fc6826cd4ef339",
+      "bytes": 131799,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Cancelados-1280x900.png",
+      "sha256": "d8ff372d8a5100b58a28261e5c41cdc831d00fd5e24b64591a1b64f541efd1c6",
+      "bytes": 151979,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Cancelados-360x800.png",
+      "sha256": "85dcda32a0bf1c3503e17d6b4f8c33ca5aef5fc2fa2c72ef4b9e60be7735dbc0",
+      "bytes": 104875,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Cancelados-375x812.png",
+      "sha256": "9a95eef795cb4d30907ac677537741bcb2eea8c416243ec5b279ba3be9352ba8",
+      "bytes": 106494,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Cancelados-390x844.png",
+      "sha256": "2a5a379094a5ccfe0c288e928977e2b95a982856c6fe17b4cb9de68c67489689",
+      "bytes": 108158,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Cancelados-768x1024.png",
+      "sha256": "cebe721013eb13f773de80204cc7870169d8f7053c14d013c6904fe767854a2c",
+      "bytes": 131677,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Pasados-1280x900.png",
+      "sha256": "f9f54b44c183c0e25138aba9046503248bac5de6fefa8a71b7bb857c7839ee5d",
+      "bytes": 152592,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Pasados-360x800.png",
+      "sha256": "8b816a50e89ce6b6ed72386f60e33204e724c3a659e11928b45ea9bd5de2c658",
+      "bytes": 105250,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Pasados-375x812.png",
+      "sha256": "8694e3978809ad53af6117765c6e20a70a13bc2490c08b41fed3ccdf0819684d",
+      "bytes": 107191,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Pasados-390x844.png",
+      "sha256": "735295aa41ca27fe686ff9eb40487eab8c4320c987c462647c0c7b43c42b0da1",
+      "bytes": 109258,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/filter-Pasados-768x1024.png",
+      "sha256": "4e9a76dce3aedc6cbc68b851ac6451dda447eaae8289082ef2f8229979ae566e",
+      "bytes": 132516,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/history-1280x900.png",
+      "sha256": "31842e7a2a97fb5da52ca244c9f89f76d7b964d270254e1a352dbde7fd493c32",
+      "bytes": 132739,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/history-360x800.png",
+      "sha256": "5e2751fb1cdf1626c4d4de945f22aaba35f33e03f6c4fcbdf205de1da8fe9430",
+      "bytes": 95713,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/history-375x812.png",
+      "sha256": "c86720ab96e3bbc323ff1833599cd8d37aa436276a5c02283d07a72b83c73eb3",
+      "bytes": 96059,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/history-390x844.png",
+      "sha256": "990798973d6ae13fce2b1d6a5c9fd323fd295909adbd8ddd9d5a4d5c75e5523b",
+      "bytes": 99656,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/history-768x1024.png",
+      "sha256": "b57c442df2f13454ff2f5689ae1df45ea569e78abce748e29682d7cdd7532937",
+      "bytes": 116369,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/menu-1280x900.png",
+      "sha256": "332631b882fcb12552652a241007a0fd58532fdcfadd7ba32406645096c50e06",
+      "bytes": 171091,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/menu-360x800.png",
+      "sha256": "4e7038154613ab8a992ea70083857d6f27c359d16ba24b5482066aaa29ac5d3f",
+      "bytes": 115228,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/menu-375x812.png",
+      "sha256": "4ca20b25e87fff8d68f838c7ae45330f64e4f182b4ca6beeddbd4fbf73875050",
+      "bytes": 118321,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/menu-390x844.png",
+      "sha256": "e6586a197c366ba01477dfe41d25d10f43d897425f05bbc5dca1a8e80307e004",
+      "bytes": 122729,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/menu-768x1024.png",
+      "sha256": "3927afddf7cdcf9220e9c57d488b5928ea6a28fe1c58819c6dc13a3136da2fe3",
+      "bytes": 152563,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/organizing-1280x900.png",
+      "sha256": "a923b0ada205ee6f27120c572f660ac9bfa9602c30408b02954a33361f4c976c",
+      "bytes": 147916,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/organizing-360x800.png",
+      "sha256": "19a11c7e52b9cf8760ccd370ea590525dec078ad551e94870aca21cdd5e03785",
+      "bytes": 113839,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/organizing-375x812.png",
+      "sha256": "f99d89c506c8e80dddc292ffe60cec4d5274c164522f1cbae36511aea53d052f",
+      "bytes": 112648,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/organizing-390x844.png",
+      "sha256": "8cd2aa91af464824944f273b8da4ce4c48d74b7d3cc2feaeaccee7ac5f8dcdb4",
+      "bytes": 114640,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/organizing-768x1024.png",
+      "sha256": "ad702fc7c49e7e8fdaeb60d039b64a9b39bec84035f2151153c51aae66ac7e0c",
+      "bytes": 137330,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/participating-1280x900.png",
+      "sha256": "db6a78e6059f955ca5b323db46db4cee1df1eccb6f2b9050f199c1defc37bbf0",
+      "bytes": 131912,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/participating-360x800.png",
+      "sha256": "e28226fe3b4421ad4f14ef36b9e5a0708e297300b825ac3a19ea6142ab042bc7",
+      "bytes": 94741,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/participating-375x812.png",
+      "sha256": "039d68799d061fca040797290cc62f034623433d59014cc017e1f509a8207b0a",
+      "bytes": 96923,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/participating-390x844.png",
+      "sha256": "063645d069995d11dbec30c1022d11db0b9b33bdf4ef5ee2ec4ecc3920156a8e",
+      "bytes": 96374,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/participating-768x1024.png",
+      "sha256": "773e2370605585038731439a31a72cd69a0f9bb8bcf4985eff51a890f2c28717",
+      "bytes": 117374,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/permissions-1280x900.png",
+      "sha256": "b15b115db09420e26fa845e2e83451c12789432e3b1f4dc9c5005367b1db0dfe",
+      "bytes": 139184,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/permissions-360x800.png",
+      "sha256": "e22900f2badb999f8efde132c126009650a1ab8c85e9e34c8e85386785ba6413",
+      "bytes": 94005,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/permissions-375x812.png",
+      "sha256": "3bf6054e6448ac453cc0e92dd51cbaeed16cd9f40170ee1f594eea3e6d464924",
+      "bytes": 95439,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/permissions-390x844.png",
+      "sha256": "624fe3e17d29862b195ebfa2308c65e549926a0497a968c8eec049b54a4429bc",
+      "bytes": 97286,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/my-events-ui/permissions-768x1024.png",
+      "sha256": "ae040a53644719fd7361d836aca6b2789b3cd1c4750e014898149eab8e76e135",
+      "bytes": 118717,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/participations-ui/action-1280x900.png",
+      "sha256": "32fa13c31b59a73b11651183abd0e449a3d2aed21990a847dce1f25948ea2ba0",
+      "bytes": 131846,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/participations-ui/action-375x812.png",
+      "sha256": "53d8fa572f639d71b57964e9e54f1408cf1c2f5534b8e61b865078596ebc74fb",
+      "bytes": 125525,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/participations-ui/confirmed-1280x900.png",
+      "sha256": "59f3cac6a638cbd3a49f79fc7f33c480989d273fe12f064df37b36ae92a86b85",
+      "bytes": 196988,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/participations-ui/confirmed-375x812.png",
+      "sha256": "39cc68954a0fff67cb96cb75f433a4d729c9beae3eb20ce14b09702b6d89322c",
+      "bytes": 143436,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/participations-ui/detail-1280x900.png",
+      "sha256": "f2f885e422cfc04c324351cd4392d06f84665b04981985173633ef702b308a21",
+      "bytes": 133098,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/participations-ui/detail-375x812.png",
+      "sha256": "7812c871b258e5f733d8d8e4bcf1bd3f446dc9aa9a4236a7f304480b8dc193de",
+      "bytes": 142544,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/participations-ui/full-1280x900.png",
+      "sha256": "35d3a3696e8b2d3c0728fc224f36dbed091a66e30428e1d1b17744d4c2bb7bf9",
+      "bytes": 176594,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/participations-ui/full-375x812.png",
+      "sha256": "489cb394eeb150a39bcc81203b67a91663d9914c04b693ea5c5a0b7917118a0e",
+      "bytes": 136811,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/realtime-ui/chat-desktop.png",
+      "sha256": "7d92ac1ff5e8fa90fc0ab2237df4500edc383163b52fe3f0d1e5588d91a4d35d",
+      "bytes": 186053,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/realtime-ui/chat-mobile.png",
+      "sha256": "17fa7e34eee1b71407eeef9be7fc6394f778ee14049691705c77affefd1733fd",
+      "bytes": 111267,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/realtime-ui/notifications-desktop.png",
+      "sha256": "bdd8a6aed699cff63288f8d5e05fa4c01be2e6a3683ec97b47813a0ddad75cfe",
+      "bytes": 175343,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/realtime-ui/notifications-mobile.png",
+      "sha256": "251e3f90a200965f9f6c6f3c7e077bdaaf27db380f33bfccf89c6fe3f2d5bdd2",
+      "bytes": 94314,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/approve-dialog-1280.png",
+      "sha256": "5e20e5e86d988f31f7945a572fa3055aa2770319af7b5a583462654f99a56ccd",
+      "bytes": 193935,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/approve-dialog-320.png",
+      "sha256": "1ba54fefe5bebfbea2ab89bcd00353c3892526ab5ddb7695dc44122a3d3b0a84",
+      "bytes": 72872,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/approve-dialog-360.png",
+      "sha256": "7dd438dbd0a2939e04c565afaf3b239b94198b1353905bc93f586e56b9b4607f",
+      "bytes": 79907,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/approve-dialog-375.png",
+      "sha256": "b606252a4c2918d1d99bf1bf2ee20a3af266552fc0beafc599d9a6835d5131b8",
+      "bytes": 83173,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/approve-dialog-390.png",
+      "sha256": "23e609141d1ea6f467ec2b15bdd1dfc57674f848cf531312c6a740d37e1b35b7",
+      "bytes": 95000,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/approve-dialog-768.png",
+      "sha256": "551f8a82148693c719003389a198fad9631ec0897c80fb492b60821a9dcd15a3",
+      "bytes": 208614,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/pending-1280.png",
+      "sha256": "f1e6906d1d165f32aaa7ed40de9aba38ad0962dfa5687d2eaaf664d36d1a288f",
+      "bytes": 176425,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/pending-320.png",
+      "sha256": "0feaa58d9a668ef930e6acaf21f8c91eace0797185c27b0b8e09277b79cfeb22",
+      "bytes": 130735,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/pending-360.png",
+      "sha256": "7b99b8e95b92fa92d26c637ac59e37c20018c2285d762b4a5743e3d114eed71e",
+      "bytes": 135769,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/pending-375.png",
+      "sha256": "0570e925080c424fa9361fd8febe824c702de624beca11ce6ed6edd55aba03c2",
+      "bytes": 139840,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/pending-390.png",
+      "sha256": "1d7a95ffb91452e852520e82d7ac45d1bf358e106064873afaf9b21ba0e829b0",
+      "bytes": 138271,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/pending-768.png",
+      "sha256": "eadfeda10ee1adb4578b418c8eff740d5c1b074a1742bfc8db1ad2406760701e",
+      "bytes": 154336,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/reject-dialog-1280.png",
+      "sha256": "f4b18f60744e1bd5819e8b19cbaad53bf15edd3ebb3ae3075806fd07a239bb3b",
+      "bytes": 202692,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/reject-dialog-320.png",
+      "sha256": "c39c447dd2ec35c235e64a84f7b4d332ac93192cdd43c697983db4dbdf0a113a",
+      "bytes": 67184,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/reject-dialog-360.png",
+      "sha256": "9f47e939811f36abf5f922e5b7de795afc9cedef62d8e50cd0925916fbde1586",
+      "bytes": 73243,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/reject-dialog-375.png",
+      "sha256": "74fdbe19aa6812f1134de880fd7ced66e6329d816af6527f2dbb1b196976ab74",
+      "bytes": 75194,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/reject-dialog-390.png",
+      "sha256": "0a5bb23de2c6de0de264276262743730cd27071de30b2f440e2e025cefdbd9c9",
+      "bytes": 76458,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/reject-dialog-768.png",
+      "sha256": "dda54b323f2518589746cfea842cd1c2ae25cca069e2fe96bd8523714be61c41",
+      "bytes": 211278,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/rejected-1280.png",
+      "sha256": "c08748c74048a47532e933b8f87d1d5dd2ef99172cd932679eff29777b05045a",
+      "bytes": 180153,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/rejected-320.png",
+      "sha256": "3171b5107db0f84e432fb302d83e7e4efa2841abec8ba2ddcf3cddafae7e410a",
+      "bytes": 137964,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/rejected-360.png",
+      "sha256": "c89e19189733d07e80e4e7075205890071b3037270cb07049beebd482f6af755",
+      "bytes": 142189,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/rejected-375.png",
+      "sha256": "e25cf5edd1c4122c859b94a2791774d88b6f82f06344432da3efe4432e5db234",
+      "bytes": 141162,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/rejected-390.png",
+      "sha256": "06625098594d271e392da85fd45d5fbeeb225c2e8aa02ebb32e29abd092e7e74",
+      "bytes": 140131,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/rejected-768.png",
+      "sha256": "10de8487db1b20a52ac9280c969687f22ccb625ac04aadf175a670990d7e13a9",
+      "bytes": 152573,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/removed-1280.png",
+      "sha256": "b99a87463a73834de70b40f3b081014e2bb4a689b9b353f61ee75e431e36706f",
+      "bytes": 185482,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/removed-320.png",
+      "sha256": "bc05aeefc8495dc3ff6723dbf88a7f5c573c179c21df0c3a050de886b28472a9",
+      "bytes": 138453,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/removed-360.png",
+      "sha256": "8f79fa6a6460df4773fbb3df5b86fa978b4caae743555baada6185f927c704f3",
+      "bytes": 142537,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/removed-375.png",
+      "sha256": "ab425c08a3095683287134ed0c041e50187a59c6b7894a8b3ba0f381e0dba330",
+      "bytes": 146827,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/removed-390.png",
+      "sha256": "a4eb9af1b6e73b1325eaf608ca0cf06fc07f48cf7d347937b7eb95b3f90dba5c",
+      "bytes": 145283,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/removed-768.png",
+      "sha256": "b3c461ff97b50bef0bf174e33379555c03af30d957897b4220ee8e5971724ad7",
+      "bytes": 161176,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/requests-1280.png",
+      "sha256": "56f131ec5ca1983be12ed86a40dd3f8f3dce9d855ce7142f4487b9f4fb1b3c1c",
+      "bytes": 192843,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/requests-320.png",
+      "sha256": "ff7beadd188acbe8be960c4c8c2fef6ca154b9a752695f93bd2e3fcd05b7f457",
+      "bytes": 109037,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/requests-360.png",
+      "sha256": "5d6e6de7eed1253930c58075ebd0b533ca03ace3afcc6f2b3b57a3d7daec714d",
+      "bytes": 120978,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/requests-375.png",
+      "sha256": "7745edd5b09a7173acb3bec0158f994a595180a26ce6eebf36cc20a938d4b1e8",
+      "bytes": 122670,
+      "retained": false
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/requests-390.png",
+      "sha256": "14372943b2e922d1bf867eec773aa2cb3b3c48c6add1167f4d49e9951e4e561d",
+      "bytes": 127649,
+      "retained": true
+    },
+    {
+      "path": "regressions/r3-ui/rejoin-ui/requests-768.png",
+      "sha256": "1c1dfdb24f51501c2c055fc9df06b77da649f7fa5550fa2834206fe216ebe728",
+      "bytes": 198805,
+      "retained": true
+    },
+    {
+      "path": "regressions/social-ui/chat-empty-390.png",
+      "sha256": "9016858b56da26f925cd5572d087ea4ad19d52e0d21ed44743e00bddf5e22e5c",
+      "bytes": 74649,
+      "retained": true
+    },
+    {
+      "path": "regressions/social-ui/chat-error-390.png",
+      "sha256": "f5556f6ab8c2680816ff87189be6f5453b326b0bfa97b105ff75702839e04472",
+      "bytes": 61672,
+      "retained": true
+    },
+    {
+      "path": "regressions/social-ui/chat-full-1280.png",
+      "sha256": "1339198abf809eed37c69310d60653113d40fc84c421206cdb06b8d732e4c3dc",
+      "bytes": 206148,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/chat-full-320.png",
+      "sha256": "1e7ebf83440da38b7faadc9c0ae0ebe5e138dd7e58e2a07c8b8ea772664a0714",
+      "bytes": 106746,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/chat-full-360.png",
+      "sha256": "a9b8948f510325a1945e0f35fc4692656c25db42e25f6860f981dcaa35874bf7",
+      "bytes": 115997,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/chat-full-375.png",
+      "sha256": "d894e223ab3c1fcd0b3b903c473826a8e8933687704d0d9501c672acd6b0c814",
+      "bytes": 118869,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/chat-full-390.png",
+      "sha256": "d1709df36a8425ce4c907784e73495000e439573889be78c7812e9204f27280c",
+      "bytes": 121127,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/chat-full-768.png",
+      "sha256": "00b5176001aaad3d93dd630ea0e6e4c56564b81fe48e1f40286512db7065ea97",
+      "bytes": 189684,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/chat-keyboard-simulated-320.png",
+      "sha256": "8a3390b041bedce091c63bc9454880ecde501a3030f3d4b2d95947e0ec73add6",
+      "bytes": 64848,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/chat-loading-390.png",
+      "sha256": "8308c14d8ec3bc1c13b39b6cf1d91c260212294b340284cb8e26d939f6bf7a34",
+      "bytes": 42346,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/chat-long-320.png",
+      "sha256": "2d9ca41ce0c8e9895a768da20b04d5b326f32788fbdc146c9f4e5a3441cb4a0b",
+      "bytes": 66713,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/chat-long-390.png",
+      "sha256": "a4c984be0a44472f00c0d676b2eb1a62b9b52d336e1757cdca82f96b517f0992",
+      "bytes": 106029,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/chat-readonly-390.png",
+      "sha256": "89d6efa94cab1bcef01a43664f56cc6b9f549b02b8e5b9a9802cdf0d2f12a9ff",
+      "bytes": 121755,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/notifications-empty-390.png",
+      "sha256": "c58275c895a96b7df21508bc506354251d24379959024a57c4a3e8b756f92e1b",
+      "bytes": 82096,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/notifications-error-390.png",
+      "sha256": "d4fa42da7a4a6eca95252f010cd3e6a88888507fecffe4bb13fb3dd89f90774c",
+      "bytes": 77729,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/notifications-full-1280.png",
+      "sha256": "60d5919a77640e5242423aa5ab38474e8a23c401a2b8ccf6fe765e5d69191e79",
+      "bytes": 255399,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/notifications-full-320.png",
+      "sha256": "b692ec0424e19b73b89a79a21a5905763c3624076f7b1e8cd08dfc2b68ea4b39",
+      "bytes": 174669,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/notifications-full-360.png",
+      "sha256": "48978cb3ac9dc030741a2ea6f84e9e88cf932e3edc93e3983121fa73d3f48514",
+      "bytes": 176313,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/notifications-full-375.png",
+      "sha256": "af0dbd947a24fa14beef8b2ea340898d17d324b1821429f97dcfb7a919d5c3b1",
+      "bytes": 175487,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/notifications-full-390.png",
+      "sha256": "a0d2d907603281a73f9680830f43591fce34f055c3e06177fb09ec3814b6ff6f",
+      "bytes": 182683,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/notifications-full-768.png",
+      "sha256": "3e243dc0552393b6720c86ae419065fe6247d35d72d528571619ce04d31dfc3f",
+      "bytes": 219755,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/notifications-loading-390.png",
+      "sha256": "5575d2842dde70fc73af81d09069ec295d869e1951f27a95a7b918f454386a58",
+      "bytes": 59981,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/notifications-long-390.png",
+      "sha256": "d41a3a0076f289c97eab906bf8bce628b42b08f042cd1f94096cbf50a763e856",
+      "bytes": 238457,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/profile-empty-390.png",
+      "sha256": "818d119bf287d4fd3b93325236cacadba85830e3668ec2b317588b3134f24b90",
+      "bytes": 99835,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/profile-error-390.png",
+      "sha256": "bdb66e070aaddb277ec9fe7d04adf172d8234ed40762a7697ff3819f725ddae2",
+      "bytes": 83899,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/profile-full-1280.png",
+      "sha256": "65302f0fcf45e4986f05db74a4c6e75e96329234631fc1ff76cd39aba8de9f7c",
+      "bytes": 175789,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/profile-full-320.png",
+      "sha256": "22d7fafb3da5203db12bbabc1c81c4a32996ae7ee6fd8ebe65b275deb22f29ed",
+      "bytes": 90418,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/profile-full-360.png",
+      "sha256": "d75daa03944fc48d684b327de4b08882e4a48e2488715c16a98f52ef13b12855",
+      "bytes": 97275,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/profile-full-375.png",
+      "sha256": "9e9301b9bd6982ba5cb8bc33a745896700620cec2070376169cf9cf51ec86c59",
+      "bytes": 98978,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/profile-full-390.png",
+      "sha256": "111c005cfb1e77389d7e82ff7b83d64058df72c8c8dd8cb244b327c6937740ae",
+      "bytes": 101324,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/profile-full-768.png",
+      "sha256": "a209adb5c555fb48c97e8932d61a593d3f9eea9941571db75f0b1ef822a1bdf3",
+      "bytes": 139047,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/profile-loading-390.png",
+      "sha256": "b3fd6b9a96d2ac7ff913d0c7a2a30b4c94e0bde42c06fd104e7105af8cd9a447",
+      "bytes": 83344,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/profile-long-390.png",
+      "sha256": "1d0a567436af76be7170ed1d501000b023752fbd36d330ed5697716761102553",
+      "bytes": 171231,
+      "retained": false
+    },
+    {
+      "path": "regressions/social-ui/profile-reduced-full-375.png",
+      "sha256": "3ce37200f5082b2fa1c845b25988e3b96b4ee007dedc6ab4881444f9354b1ef6",
+      "bytes": 98147,
+      "retained": true
+    },
+    {
+      "path": "regressions/social-ui/profile-text-enlarged-375.png",
+      "sha256": "3cbd1dc40e70ef61a9d95137b8f4d9b5af37eae1bdf19d2a389d9e419421883a",
+      "bytes": 98947,
+      "retained": true
+    }
+  ]
+}

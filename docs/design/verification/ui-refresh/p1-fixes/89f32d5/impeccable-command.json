@@ -1,0 +1,4 @@
+{
+  "scope": "RouteErrorBoundary.tsx and AppLayout.tsx; one deterministic scan, not acceptance",
+  "exitCode": 0
+}

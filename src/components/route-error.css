@@ -1,0 +1,6 @@
+.route-error { min-width: 0; margin-block: var(--pi-space-base); }
+.route-error-actions { display: flex; flex-wrap: wrap; gap: var(--pi-space-compact); }
+.route-error-actions > * { flex: 1 1 180px; min-width: 0; padding-block: var(--pi-space-compact); white-space: normal; overflow-wrap: anywhere; }
+/* Recovery is immediately readable, including when the page entrance was interrupted. */
+.app-shell #main-content > .route-error > * { animation: none; }
+.app-shell.chat-shell main > .route-error { flex: 1; min-height: 0; overflow-y: auto; padding-block: var(--pi-space-base); }

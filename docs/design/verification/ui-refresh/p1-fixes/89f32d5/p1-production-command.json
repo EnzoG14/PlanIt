@@ -1,0 +1,5 @@
+{
+  "command": "npm run check:ui:p1 -- --production",
+  "earlierAttempt": "same initial archive opener selector error; corrected in new check, no product change",
+  "exitCode": 0
+}

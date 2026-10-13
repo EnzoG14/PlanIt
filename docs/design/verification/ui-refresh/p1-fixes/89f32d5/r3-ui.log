@@ -1,0 +1,12 @@
+PASS: legacy cancel stops and Amanecer destructive actions meet 4.5:1
+PASS my-events-ui
+PASS edit-event-ui
+PASS gallery-ui
+PASS attendees-ui
+PASS event-actions-ui
+PASS rejoin-ui
+PASS participations-ui
+PASS home-ui
+PASS chat-ui
+PASS realtime-ui
+PASS discovery-ui
