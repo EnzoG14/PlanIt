@@ -21,7 +21,7 @@
 
 - Acuerdos A01–A07: **aprobados como decisiones de producto, NO verificados por ejecución R4**. R3 integrada/validada según confirmación del responsable; esta plantilla no certifica tests de regresión de R4.
 
-- Bloque 1 (14/10/2026): `npm run build` OK; `oxlint` sin errores; `check:search` (SQL local), `check:search:ui`, `check:home:ui`, `check:home-events`, `check:discovery`, `check:amanecer` PASS con fixtures. `check:discovery:ui` falla en el paso `.planit-marker` también en `main` sin cambios (entorno de mapa). Migración `20261013160000_search_public_events.sql` creada y probada localmente; **NO aplicada al remoto**. Sin HTTP/JWT real. Ver [evidencia](../design/verification/r4-block-1/README.md).
+- Bloque 1 (14/10/2026): `npm run build` OK; `oxlint` sin errores; `check:search` (SQL local), `check:search:ui`, `check:home:ui`, `check:home-events`, `check:discovery`, `check:amanecer` PASS con fixtures. `check:discovery:ui` falla en el paso `.planit-marker` también en `main` sin cambios (entorno de mapa). Migración `20261013160000_search_public_events.sql` creada, probada localmente y **aplicada a `planit-v2`** (verificada: registro, search_path, EXECUTE). Sin HTTP/JWT real. Ver [evidencia](../design/verification/r4-block-1/README.md).
 - `npm ci`: NO EJECUTADO.
 - Migraciones locales: NO EJECUTADO.
 - SQL JWT A/B/cross-account: NO EJECUTADO.

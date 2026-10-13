@@ -12,7 +12,7 @@
 
 ## Migración
 
-`supabase/migrations/20261013160000_search_public_events.sql`: **creada y probada localmente; NO aplicada** a `planit-v2` ni a ningún remoto. Hasta aplicarla con autorización, Inicio y Mapa responden con el error de consulta (PGRST202).
+`supabase/migrations/20261013160000_search_public_events.sql`: creada, probada localmente y **aplicada a `planit-v2`** (`iepeqmvzjguwlhnecsdq`) el 14/10/2026 con `supabase db push` por autorización expresa del responsable; era la única migración pendiente. Verificación remota de sólo lectura: migración registrada, `prosecdef=false`, `search_path=""`, EXECUTE `anon`=false / `authenticated`=true. No se ejecutaron consultas HTTP con JWT reales ni se tocó el proyecto histórico.
 
 ## Criterios de aceptación (8 CA)
 
