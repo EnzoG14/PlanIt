@@ -1,6 +1,6 @@
 # R4 BLOQUE 0 — evidencia documental
 
-**Fecha:** 13/10/2026, Argentina. **Base inmutable:** `42af4e42d032637b1363e207714e86c297d8c3b1`. [Auditoría y contratos](../../../implementation/RELEASE_4_BLOCK_0_DECISIONS.md), [seguimiento](../../../implementation/RELEASE_4_STATUS.md).
+**Fecha:** 13/10/2026, Argentina. **Entrega:** [PR #38](https://github.com/EnzoG14/PlanIt/pull/38) en borrador. **Base inmutable:** `42af4e42d032637b1363e207714e86c297d8c3b1`. [Auditoría y contratos](../../../implementation/RELEASE_4_BLOCK_0_DECISIONS.md), [seguimiento](../../../implementation/RELEASE_4_STATUS.md).
 
 La carpeta contiene evidencia **nueva de inspección**, no implementación ni aceptación funcional R4. Ninguna captura/regresión histórica se sobrescribió. El código servido fue el de ese SHA; sólo se editaron documentos y herramientas de evidencia bajo docs.
 

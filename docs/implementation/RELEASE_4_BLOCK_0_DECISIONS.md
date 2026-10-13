@@ -1,6 +1,6 @@
 # PlanIt — Release 4, BLOQUE 0: auditoría y contrato de navegación
 
-**Corte:** 13/10/2026, Argentina. **Estado:** Implementado; QA pendiente (entrega documental, revisión humana pendiente). **Base auditada:** `42af4e42d032637b1363e207714e86c297d8c3b1`, `origin/main` después de `git fetch origin`. Rama `codex/r4-block-0`, checkout aislado bajo el home con índice CodeGraph propio. Cambio de `D:/planit/vite.config.ts` preservado fuera de la rama.
+**Corte:** 13/10/2026, Argentina. **Estado:** Implementado; QA pendiente (entrega documental, revisión humana pendiente). **Base auditada:** `42af4e42d032637b1363e207714e86c297d8c3b1`, `origin/main` después de `git fetch origin`. [PR #38](https://github.com/EnzoG14/PlanIt/pull/38) en borrador. Rama `codex/r4-block-0`, checkout aislado bajo el home con índice CodeGraph propio. Cambio de `D:/planit/vite.config.ts` preservado fuera de la rama.
 
 Este documento reemplaza la plantilla con inspección verificable. **Verificado** significa código/SQL versionado o navegador con fixtures, según la evidencia indicada; **propuesto** describe contratos futuros; **no inspeccionado** aplica al remoto. No hay implementación funcional R4, corrección de seguridad ni CA funcional aprobado por esta entrega.
 

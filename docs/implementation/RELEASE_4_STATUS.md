@@ -11,7 +11,7 @@
 
 | Bloque | Alcance | RF / CA | Estado | Rama/PR | Evidencias | Migración local/remota | Pendientes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | Auditoría y contratos | transversal | Implementado; QA pendiente | `codex/r4-block-0`; PR por abrir | [Auditoría](RELEASE_4_BLOCK_0_DECISIONS.md), [evidencia nueva](../design/verification/r4-block-0/README.md) | Ninguna creada/aplicada; remoto no inspeccionado | Revisión humana de contratos; seguridad/CA funcionales en bloques posteriores |
+| 0 | Auditoría y contratos | transversal | Implementado; QA pendiente | `codex/r4-block-0`; [PR #38](https://github.com/EnzoG14/PlanIt/pull/38) en borrador | [Auditoría](RELEASE_4_BLOCK_0_DECISIONS.md), [evidencia nueva](../design/verification/r4-block-0/README.md) | Ninguna creada/aplicada; remoto no inspeccionado | Revisión humana de contratos; seguridad/CA funcionales en bloques posteriores |
 | 1 | Texto + categorías | 01/02, 8 CA | Pendiente | — | — | — | API y UI |
 | 2 | Fecha + radio | 03/04, 8 CA | Pendiente | — | — | — | TZ y mapa/lista |
 | 3 | Intereses | 05, 4 CA | Pendiente | — | — | — | Tabla y RLS |
@@ -36,7 +36,7 @@
 
 ### Bloque 0 — Implementado; QA pendiente
 
-- **Base/rama:** fetch de origin; `main` `42af4e42d032637b1363e207714e86c297d8c3b1` → `codex/r4-block-0`, checkout independiente bajo home e índice CodeGraph propio. Cambio previo de `vite.config.ts` en D:/planit preservado/excluido. PR documental por abrir.
+- **Base/rama:** fetch de origin; `main` `42af4e42d032637b1363e207714e86c297d8c3b1` → `codex/r4-block-0`, checkout independiente bajo home e índice CodeGraph propio. Cambio previo de `vite.config.ts` en D:/planit preservado/excluido. [PR #38](https://github.com/EnzoG14/PlanIt/pull/38) documental en borrador; base/head verificados al crearla.
 - **Entrega:** decisiones verificadas/propuestas/no inspeccionadas diferenciadas; rutas/scopes/props, contratos Auth y retorno, inventario estático SQL/RLS/EXECUTE, 39 filas de trazabilidad y 288 combinaciones de autorización objetivo. Sin rutas vacías ni SQL nuevo.
 - **Dependencias:** Git acredita R3 #18–#25 y refresh #27–#34 integrados; base también incluye #35–#37. RPC/migraciones de cierre/duplicación/reincorporación presentes. A07 mantiene aceptación confirmada; STATUS/TEST_REPORT R3 conservan NO-GO/E2E pendiente como brecha documental, sin afirmar nuevas pruebas remotas ni reabrir aceptación.
 - **Esquema inspeccionado:** 17 migraciones, 11 tablas públicas con RLS declarado, 31 funciones públicas de negocio, 12 privadas y 20 políticas finales declaradas. Tablas R4 ausentes en Git. Firmas, dependencias, search_path/EXECUTE y hashes en [inventario](../design/verification/r4-block-0/sql-inventory.json). Catálogos remotos, drift efectivo, roles/advisors y replay no inspeccionados/ejecutados.
