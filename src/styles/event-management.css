@@ -1,0 +1,30 @@
+/* Composition shared only by gallery and attendees; shared controls remain in amanecer.css. */
+.event-management-shell main { position: relative; max-width: 920px; padding-top: var(--pi-space-base); }
+.event-management-shell:has(.attendees-page) main { max-width: 720px; }
+.management-wash { position: absolute; z-index: -1; inset: 0 0 auto; height: 300px; pointer-events: none; background: radial-gradient(ellipse at 20% 0%, var(--pi-color-lavender), transparent 70%); }
+.management-page { min-width: 0; padding-bottom: var(--pi-space-base); }
+.management-page .management-back { justify-content: flex-start; gap: var(--pi-space-tight); width: fit-content; min-height: 48px; padding: 0; border: 0; }
+.management-back .icon { width: 48px; height: 48px; padding: 12px; border-radius: 50%; background: var(--pi-color-surface); box-shadow: var(--pi-shadow-card); }
+.management-header { margin: var(--pi-space-base) 0 var(--pi-space-section); }
+.management-header h1 { margin: 0 0 var(--pi-space-compact); font-size: var(--pi-font-headline-size); line-height: var(--pi-font-headline-line-height); letter-spacing: var(--pi-font-headline-tracking); text-wrap: balance; }
+.management-header p { margin: var(--pi-space-tight) 0 0; color: var(--pi-color-text-on-wash); line-height: 1.5; }
+.management-header .management-event-title { color: var(--pi-color-ink); font-size: var(--pi-font-title-size); font-weight: 650; overflow-wrap: anywhere; }
+.management-page h2 { font-size: var(--pi-font-title-size); letter-spacing: var(--pi-font-title-tracking); }
+.management-page .field-hint { color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); line-height: 1.5; }
+.management-page .field-error { padding: var(--pi-space-base); border-radius: var(--pi-radius-notice); background: var(--pi-color-danger-bg); color: var(--pi-color-danger-on-bg); font-size: var(--pi-font-meta-size); overflow-wrap: anywhere; }
+.management-page .text-button { display: inline-flex; align-items: center; justify-content: center; gap: var(--pi-space-micro); min-height: 44px; border-radius: var(--pi-radius-pill); padding: 8px 12px; color: var(--pi-color-ink); font-size: var(--pi-font-action-size); font-weight: 650; white-space: normal; }
+.management-page :is(button,input,summary) { font-family: inherit; }
+.management-page .text-button:disabled { background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); }
+.management-page :is(button,a,label)::selection, .management-page ::selection { background: var(--pi-color-lavender); color: var(--pi-color-ink); }
+.management-page :is(input,button) { caret-color: var(--pi-color-violet-deep); }
+.management-dialog { width: min(440px, calc(100% - 32px)); max-height: calc(100dvh - 32px); box-sizing: border-box; overflow: auto; padding: 28px 24px 24px; border: 0; border-radius: var(--pi-radius-sheet); background: var(--pi-color-surface); color: var(--pi-color-ink); box-shadow: var(--pi-shadow-dialog); }
+.management-dialog::backdrop { background: var(--pi-color-scrim); }
+.management-dialog h2 { margin: 12px 0; font-size: var(--pi-font-title-lg-size); }
+.management-dialog p { overflow-wrap: anywhere; line-height: 1.5; }
+.management-dialog > div { display: flex; flex-wrap: wrap; gap: var(--pi-space-tight); margin-top: 24px; }
+.management-dialog > div button { flex: 1 1 150px; min-height: 48px; }
+.management-dialog .management-danger { border: 0; border-radius: var(--pi-radius-pill); padding: 12px 20px; background: var(--pi-color-danger-action); color: var(--pi-color-surface); font: inherit; font-weight: 700; cursor: pointer; }
+.management-dialog .management-danger:hover { filter: brightness(.92); }
+.management-dialog button:disabled { background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); border-color: transparent; cursor: default; }
+@media (max-width: 359px) { .event-management-shell main { padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right)); } }
+.event-management-shell main:focus-visible { outline: none; box-shadow: none; }

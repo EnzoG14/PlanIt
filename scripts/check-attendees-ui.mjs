@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict'
+import { auditManagement, auditManagementDialog, settleManagement } from './management-ui-audit.mjs'
 import { mkdir, writeFile } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
-const browser = await chromium.launch({ headless: true, channel: 'msedge' })
-const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4186', out = 'docs/design/verification/r3-block-4'
+const browser = await chromium.launch({ headless: true, channel: 'msedge', args: process.env.PLANIT_UI_NO_PROXY ? ['--no-proxy-server'] : [] })
+const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4186', out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/r3-block-4'
 await mkdir(out, { recursive: true })
 const owner = '20000000-0000-4000-8000-000000000001', guest = '20000000-0000-4000-8000-000000000002'
 const id = '30000000-0000-4000-8000-000000000001', other = '30000000-0000-4000-8000-000000000002'
@@ -11,7 +12,7 @@ const key = 'sb-iepeqmvzjguwlhnecsdq-auth-token', results = []
 const user = id => ({ id, email: 'fixture@example.invalid', aud: 'authenticated', role: 'authenticated', app_metadata: { provider: 'email' }, user_metadata: {}, identities: [], created_at: '2026-10-10T12:00:00Z' })
 const session = identity => ({ access_token: `fixture-${identity}`, refresh_token: 'fixture-refresh', expires_at: Math.floor(Date.now() / 1000) + 3600, expires_in: 3600, token_type: 'bearer', user: user(identity) })
 try {
-  for (const [width, height] of [[360,800], [375,812], [390,844], [768,1024], [1280,900]]) {
+  for (const [width, height] of [[320,800],[360,800], [375,812], [390,844], [768,1024], [1280,900]]) {
     let rows = Array.from({ length: 34 }, (_, i) => ({ participation_id: `40000000-0000-4000-8000-${String(i).padStart(12,'0')}`, user_id: guest, status: 'confirmed', display_name: i === 0 ? 'Camila Rodríguez' : i === 1 ? 'Mateo Torres' : `Asistente ${String(i).padStart(2,'0')}`, username: `asistente_${i}` }))
     let eventState = 'open', loadFailure = '', mutationFailure = '', slow = false, writes = 0, listReads = 0, removedChat = false
     let releaseSearch, searchRequested
@@ -68,14 +69,14 @@ try {
     assert.equal(await list().count(), 30); assert.equal(await page.getByText('34 / 80 asistentes', { exact: true }).count(), 1)
     assert.equal(await page.getByText('@asistente_0', { exact: true }).count(), 1); assert.equal(await page.locator('.attendees-page').getByText(/@gmail|fixture@example|CSV/).count(), 0)
     assert.equal(await page.getByRole('link', { name: 'Solicitudes', exact: true }).count(), 1)
-    await page.screenshot({ path: `${out}/confirmed-${width}.png` })
+    await page.evaluate(() => document.fonts.ready); await settleManagement(page); await page.screenshot({ path: `${out}/confirmed-${width}.png` })
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true)
-    check('Protected list, minimal identity, real fixture counts, original dark composition and no overflow')
+    check('Protected list, minimal identity, counts and no overflow');await auditManagement(page,out,'attendees',width)
     loadFailure = 'network'; await page.getByRole('button', { name: 'Cargar más asistentes' }).click(); await page.getByRole('alert').waitFor(); assert.equal(await list().count(), 30)
     loadFailure = ''; await page.getByRole('button', { name: 'Cargar más asistentes' }).click(); await page.getByText('Asistente 33', { exact: true }).waitFor(); assert.equal(await list().count(), 34)
     await page.getByRole('searchbox').fill('Mateo'); await page.waitForFunction(() => document.querySelectorAll('.attendees-list > li').length === 1); assert.equal(await page.getByText('Mateo Torres', { exact: true }).count(), 1)
     await page.getByRole('searchbox').fill('inexistente'); await page.getByRole('heading', { name: 'Sin resultados' }).waitFor()
-    await page.getByRole('searchbox').fill(''); await page.waitForFunction(() => document.querySelectorAll('.attendees-list > li').length === 30)
+    await settleManagement(page); await page.screenshot({path:`${out}/search-empty-${width}.png`}); await page.getByRole('searchbox').fill(''); await page.waitForFunction(() => document.querySelectorAll('.attendees-list > li').length === 30)
     check('Pagination and search reset; empty search results distinguished from empty list')
     const readStarted = new Promise(resolve => { searchRequested = resolve }); releaseSearch = () => {}
     await page.getByRole('searchbox').fill('Camila'); await readStarted
@@ -85,8 +86,8 @@ try {
     check('Late response from previous name search discarded')
     await open('Camila Rodríguez'); assert.equal(await page.getByRole('button', { name: 'Cancelar', exact: true }).evaluate(el => el === document.activeElement), true)
     for (let i = 0; i < 5; i++) { await page.keyboard.press('Tab'); assert.equal(await page.getByRole('dialog').evaluate(el => el.contains(document.activeElement)), true) }
-    await page.screenshot({ path: `${out}/dialog-${width}.png` })
-    await page.keyboard.press('Escape'); await page.getByRole('dialog').waitFor({ state: 'hidden' }); assert.equal(writes, 0)
+    await settleManagement(page); await page.screenshot({ path: `${out}/dialog-${width}.png` })
+    await auditManagementDialog(page,out,'attendees',width);await page.keyboard.press('Escape'); await page.getByRole('dialog').waitFor({ state: 'hidden' }); assert.equal(writes, 0)
     await open('Camila Rodríguez'); await page.getByRole('button', { name: 'Cancelar', exact: true }).click(); assert.equal(writes, 0)
     await open('Camila Rodríguez'); slow = true
     const before = writes; await page.getByRole('dialog').getByRole('button', { name: 'Remover', exact: true }).dblclick()
@@ -94,7 +95,7 @@ try {
     assert.equal(await page.getByText('33 / 80 asistentes', { exact: true }).count(), 1); assert.equal(await page.getByText('Camila Rodríguez', { exact: true }).count(), 0)
     await page.waitForFunction(() => document.activeElement?.textContent === 'Actualizar asistentes')
     await page.getByRole('button', { name: /Removidos/ }).click(); await page.getByText('Camila Rodríguez', { exact: true }).waitFor(); assert.equal(await page.locator('.attendee-actions').count(), 0)
-    await page.screenshot({ path: `${out}/removed-${width}.png` })
+    await settleManagement(page); await page.screenshot({ path: `${out}/removed-${width}.png` })
     check('Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored')
     await page.getByRole('button', { name: /Confirmados/ }).click(); await page.getByText('Mateo Torres', { exact: true }).waitFor()
     mutationFailure = 'attendee_not_confirmed'; await open('Mateo Torres'); await page.getByRole('dialog').getByRole('button', { name: 'Remover', exact: true }).click()
@@ -115,12 +116,12 @@ try {
     await page.goto(`${origin}/my-events?section=organizing&filter=upcoming`); await page.getByRole('button', { name: `Acciones de ${event.title}`, exact: true }).click(); await page.getByRole('link', { name: 'Ver asistentes', exact: true }).click(); await list().last().waitFor()
     await page.getByRole('link', { name: 'Volver al evento' }).click(); await page.getByRole('link', { name: 'Ver asistentes', exact: true }).waitFor(); await page.getByRole('link', { name: 'Volver a Mis eventos', exact: true }).click(); assert.ok(page.url().endsWith('/my-events?section=organizing&filter=upcoming'))
     check('Organizo menu/detail entry and original list filter preserved on return')
-    const foreign = await pageFor(guest); await foreign.goto(`${origin}/events/${id}/attendees`); await foreign.getByRole('heading', { name: 'Asistentes no disponibles' }).waitFor(); assert.equal(await foreign.locator('.attendees-list').count(), 0)
-    const anonymous = await pageFor(null); await anonymous.goto(`${origin}/events/${id}/attendees`); await anonymous.getByRole('heading', { name: 'Bienvenido a PlanIt', exact: true }).waitFor()
+    const foreign = await pageFor(guest); await foreign.goto(`${origin}/events/${id}/attendees`); await foreign.getByRole('heading', { name: 'Asistentes no disponibles' }).waitFor(); assert.equal(await foreign.locator('.attendees-list').count(), 0);await foreign.screenshot({path:`${out}/denied-${width}.png`})
+    const anonymous = await pageFor(null); await anonymous.goto(`${origin}/events/${id}/attendees`); await anonymous.getByRole('heading', { name: 'Ingresá a PlanIt', exact: true }).waitFor()
     await page.goto(`${origin}/events/${other}/attendees`); await page.getByRole('heading', { name: 'Asistentes no disponibles' }).waitFor(); assert.equal(await page.getByText('Asistente 02', { exact: true }).count(), 0)
     check('Foreign/anonymous/direct other-event routes deny administrative identities')
     await page.goto(`${origin}/events/${id}/attendees`); await list().last().waitFor()
-    await page.getByRole('button', { name: 'Salir', exact: true }).click(); await page.getByRole('heading', { name: 'Bienvenido a PlanIt', exact: true }).waitFor(); assert.equal(await page.locator('.attendees-list').count(), 0)
+    rows=[{participation_id:other,user_id:guest,status:'confirmed',display_name:'María de los Ángeles Fernández '.repeat(5),username:'identidad_autorizada_'.repeat(8)}];await page.getByRole('button',{name:'Actualizar asistentes',exact:true}).click();await list().last().waitFor();await ready();await settleManagement(page); await page.screenshot({path:`${out}/long-identity-${width}.png`,fullPage:true});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));rows=[];await page.getByRole('button',{name:'Actualizar asistentes',exact:true}).click();await page.getByRole('heading',{name:'Todavía no hay asistentes confirmados',exact:true}).waitFor();await settleManagement(page); await page.screenshot({path:`${out}/empty-${width}.png`});check('Long authorized identity and empty list captured without overflow');await page.getByRole('button',{name:'Cuenta',exact:true}).click();await page.getByRole('button', { name: 'Cerrar sesión', exact: true }).click(); await page.getByRole('heading', { name: 'Ingresá a PlanIt', exact: true }).waitFor(); assert.equal(await page.locator('.attendees-list').count(), 0)
     check('Session logout clears administrative data')
     await foreign.clock.install()
     await foreign.goto(`${origin}/events/${id}/chat`); await foreign.getByText('Mensaje privado de prueba', { exact: true }).waitFor()

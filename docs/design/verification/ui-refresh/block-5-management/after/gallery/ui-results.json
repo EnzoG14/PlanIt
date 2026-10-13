@@ -1,0 +1,425 @@
+{
+  "environment": "Edge headless; Auth/REST/Storage fixtures; Asia/Tokyo; no real HTTP/JWT",
+  "results": [
+    {
+      "viewport": "320x800",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Invalid file rejected before upload; preview is local; successful upload registers after Storage",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Interrupted upload displays error, retains path and retries explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Lost commit reconciles on retry without duplicate upload/association",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "RPC absent and failed cleanup retain explicit recovery, no false success",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Tenth image saved, eleventh selection/drop rejected, persisted on reopen",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Expired signed URL offers explicit renewal",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Detail reload uses new first cover and ordered remaining images",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Foreign account direct route denied in fixture UI",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Load failure recovers explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Reloaded abandoned upload discovered and cleaned explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Zero/one images, cover and empty state captured",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Invalid file rejected before upload; preview is local; successful upload registers after Storage",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Interrupted upload displays error, retains path and retries explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Lost commit reconciles on retry without duplicate upload/association",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "RPC absent and failed cleanup retain explicit recovery, no false success",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Tenth image saved, eleventh selection/drop rejected, persisted on reopen",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Expired signed URL offers explicit renewal",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Detail reload uses new first cover and ordered remaining images",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Foreign account direct route denied in fixture UI",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Load failure recovers explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Reloaded abandoned upload discovered and cleaned explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Zero/one images, cover and empty state captured",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Invalid file rejected before upload; preview is local; successful upload registers after Storage",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Interrupted upload displays error, retains path and retries explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Lost commit reconciles on retry without duplicate upload/association",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "RPC absent and failed cleanup retain explicit recovery, no false success",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Tenth image saved, eleventh selection/drop rejected, persisted on reopen",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Expired signed URL offers explicit renewal",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Detail reload uses new first cover and ordered remaining images",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Foreign account direct route denied in fixture UI",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Load failure recovers explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Reloaded abandoned upload discovered and cleaned explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Zero/one images, cover and empty state captured",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Invalid file rejected before upload; preview is local; successful upload registers after Storage",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Interrupted upload displays error, retains path and retries explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Lost commit reconciles on retry without duplicate upload/association",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "RPC absent and failed cleanup retain explicit recovery, no false success",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Tenth image saved, eleventh selection/drop rejected, persisted on reopen",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Expired signed URL offers explicit renewal",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Detail reload uses new first cover and ordered remaining images",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Foreign account direct route denied in fixture UI",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Load failure recovers explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Reloaded abandoned upload discovered and cleaned explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Zero/one images, cover and empty state captured",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Invalid file rejected before upload; preview is local; successful upload registers after Storage",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Interrupted upload displays error, retains path and retries explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Lost commit reconciles on retry without duplicate upload/association",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "RPC absent and failed cleanup retain explicit recovery, no false success",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Tenth image saved, eleventh selection/drop rejected, persisted on reopen",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Expired signed URL offers explicit renewal",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Detail reload uses new first cover and ordered remaining images",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Foreign account direct route denied in fixture UI",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Load failure recovers explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Reloaded abandoned upload discovered and cleaned explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Zero/one images, cover and empty state captured",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Invalid file rejected before upload; preview is local; successful upload registers after Storage",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Interrupted upload displays error, retains path and retries explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Lost commit reconciles on retry without duplicate upload/association",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "RPC absent and failed cleanup retain explicit recovery, no false success",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Tenth image saved, eleventh selection/drop rejected, persisted on reopen",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Expired signed URL offers explicit renewal",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Detail reload uses new first cover and ordered remaining images",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Foreign account direct route denied in fixture UI",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Load failure recovers explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Reloaded abandoned upload discovered and cleaned explicitly",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Zero/one images, cover and empty state captured",
+      "result": "PASS"
+    }
+  ]
+}

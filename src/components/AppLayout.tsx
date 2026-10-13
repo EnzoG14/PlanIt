@@ -20,6 +20,7 @@ function LayoutContent() {
   const { pathname } = useLocation()
   const isAuth = pathname === '/login' || pathname === '/register'
   const isEventForm = pathname === '/events/new' || Boolean(matchPath('/events/:id/edit', pathname))
+  const isEventManagement = Boolean(matchPath('/events/:id/gallery', pathname) || matchPath('/events/:id/attendees', pathname))
   const isChat = Boolean(matchPath('/events/:id/chat', pathname))
   const isSocial = isChat || pathname === '/me' || pathname === '/notifications'
   const isDiscovery = pathname === '/home' || pathname === '/map' || (Boolean(matchPath('/events/:id', pathname)) && pathname !== '/events/new')
@@ -66,7 +67,7 @@ function LayoutContent() {
     }
   }, [isChat])
   return (
-    <div ref={shell} className={`app-shell ${isChat ? 'chat-shell' : isAuth ? 'auth-shell' : 'product-shell'}${pathname === '/my-events' ? ' amanecer-shell my-events-shell' : isEventForm ? ' amanecer-shell event-form-shell' : isAuth ? ' amanecer-shell' : isDiscovery ? ' amanecer-shell discovery-shell' : isSocial ? ' amanecer-shell social-shell' : ''}`}>
+    <div ref={shell} className={`app-shell ${isChat ? 'chat-shell' : isAuth ? 'auth-shell' : 'product-shell'}${pathname === '/my-events' ? ' amanecer-shell my-events-shell' : isEventForm ? ' amanecer-shell event-form-shell' : isAuth ? ' amanecer-shell' : isEventManagement ? ' amanecer-shell event-management-shell' : isDiscovery ? ' amanecer-shell discovery-shell' : isSocial ? ' amanecer-shell social-shell' : ''}`}>
       {isAuth && <div className="auth-wash" aria-hidden="true" />}
       {isSocial && <div className="social-wash" aria-hidden="true" />}
       <a className="skip-link" href="#main-content">Saltar al contenido</a>

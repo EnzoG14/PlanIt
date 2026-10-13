@@ -91,5 +91,5 @@ try {
   await a.query("select set_config('request.jwt.claim.sub','',false)");await assert.rejects(add(a,paths[0]),/authentication_required/)
   await b.query('reset role');await b.query('set role anon');await assert.rejects(add(b,paths[0]),/permission denied/)
   check('Missing identity and anonymous execution denied')
-  const out='docs/design/verification/r3-block-3';await mkdir(out,{recursive:true});await writeFile(`${out}/postgres-results.json`,JSON.stringify({version,environment:'Isolated PostgreSQL; Auth/Storage SQL scaffolding, no HTTP/JWT or remote writes',results},null,2))
+  const out=process.env.PLANIT_UI_OUTPUT??'docs/design/verification/r3-block-3';await mkdir(out,{recursive:true});await writeFile(`${out}/postgres-results.json`,JSON.stringify({version,environment:'Isolated PostgreSQL; Auth/Storage SQL scaffolding, no HTTP/JWT or remote writes',results},null,2))
 } finally {for(const c of clients){try{await c.end()}catch{}}if(started)await run(pg_ctl,['-D',directory,'-m','fast','-w','stop'],{windowsHide:true})}

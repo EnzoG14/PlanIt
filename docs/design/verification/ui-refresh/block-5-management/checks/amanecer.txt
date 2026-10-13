@@ -1,0 +1,5 @@
+
+> planit@0.0.0 check:amanecer
+> node scripts/check-amanecer-tokens.mjs
+
+PASS: 83 normative token values, font family, all shared/pilot references

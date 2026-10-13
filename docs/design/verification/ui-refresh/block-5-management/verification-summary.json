@@ -1,0 +1,165 @@
+{
+  "base": "da90d985865d9c9f681bbda0e011fa484d39040e",
+  "checks": {
+    "galleryBefore": {
+      "total": 84,
+      "passed": 84
+    },
+    "galleryAfter": {
+      "total": 84,
+      "passed": 84
+    },
+    "attendeesBefore": {
+      "total": 72,
+      "passed": 72
+    },
+    "attendeesAfter": {
+      "total": 72,
+      "passed": 72
+    },
+    "gallerySql": {
+      "total": 10,
+      "passed": 10
+    },
+    "attendeesSql": {
+      "total": 7,
+      "passed": 7
+    }
+  },
+  "geometry": [
+    {
+      "surface": "gallery",
+      "width": 320,
+      "clearPathControls": 21,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    },
+    {
+      "surface": "gallery",
+      "width": 360,
+      "clearPathControls": 21,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    },
+    {
+      "surface": "gallery",
+      "width": 375,
+      "clearPathControls": 21,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    },
+    {
+      "surface": "gallery",
+      "width": 390,
+      "clearPathControls": 21,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    },
+    {
+      "surface": "gallery",
+      "width": 768,
+      "clearPathControls": 21,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    },
+    {
+      "surface": "gallery",
+      "width": 1280,
+      "clearPathControls": 21,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    },
+    {
+      "surface": "attendees",
+      "width": 320,
+      "clearPathControls": 37,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    },
+    {
+      "surface": "attendees",
+      "width": 360,
+      "clearPathControls": 37,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    },
+    {
+      "surface": "attendees",
+      "width": 375,
+      "clearPathControls": 37,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    },
+    {
+      "surface": "attendees",
+      "width": 390,
+      "clearPathControls": 37,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    },
+    {
+      "surface": "attendees",
+      "width": 768,
+      "clearPathControls": 37,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    },
+    {
+      "surface": "attendees",
+      "width": 1280,
+      "clearPathControls": 37,
+      "minControlHeight": 44,
+      "minControlWidth": 44,
+      "reducedTransparency": {
+        "active": true,
+        "blur": "none"
+      }
+    }
+  ],
+  "links": "PASS",
+  "notes": "Build/lint/token outputs in checks/*.txt; SQL local; UI intercepted; no remote writes"
+}

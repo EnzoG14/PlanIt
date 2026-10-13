@@ -1,0 +1,125 @@
+{
+  "environment": "Edge headless; Auth/REST/Storage fixtures; Asia/Tokyo; no real HTTP/JWT",
+  "results": [
+    {
+      "viewport": "320x800",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Invalid image alert captured without upload",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Invalid image alert captured without upload",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Invalid image alert captured without upload",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Invalid image alert captured without upload",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Invalid image alert captured without upload",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Gallery cover, upload area and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Accessible order persisted after reopen; first image remains cover",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Confirmation cancel leaves data; confirm removes and refreshes",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Invalid image alert captured without upload",
+      "result": "PASS"
+    }
+  ]
+}

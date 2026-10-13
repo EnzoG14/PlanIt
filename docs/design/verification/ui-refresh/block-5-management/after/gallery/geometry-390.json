@@ -1,0 +1,421 @@
+{
+  "normal": {
+    "overflow": false,
+    "scoped": true,
+    "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+    "controls": [
+      {
+        "name": "Volver al evento",
+        "width": 172.359375,
+        "height": 48,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Agregar fotos",
+        "width": 174.78125,
+        "height": 48,
+        "font": 15,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(6, 11, 39)"
+      },
+      {
+        "name": "Quitar imagen 1",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 1 antes",
+        "width": 88.453125,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(74, 82, 122)",
+        "background": "rgb(217, 219, 232)"
+      },
+      {
+        "name": "Mover imagen 1 después",
+        "width": 109.046875,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Quitar imagen 2",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 2 antes",
+        "width": 88.453125,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Mover imagen 2 después",
+        "width": 109.046875,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Quitar imagen 3",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 3 antes",
+        "width": 88.453125,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Mover imagen 3 después",
+        "width": 109.046875,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Quitar imagen 4",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 4 antes",
+        "width": 88.453125,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Mover imagen 4 después",
+        "width": 109.046875,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Quitar imagen 5",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 5 antes",
+        "width": 88.453125,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Mover imagen 5 después",
+        "width": 109.046875,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Quitar imagen 6",
+        "width": 44,
+        "height": 44,
+        "font": 16,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 6 antes",
+        "width": 88.453125,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Mover imagen 6 después",
+        "width": 109.046875,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(74, 82, 122)",
+        "background": "rgb(217, 219, 232)"
+      },
+      {
+        "name": "Seleccionar imágenes",
+        "width": 201.015625,
+        "height": 52,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(241, 238, 255)"
+      },
+      {
+        "name": "Actualizar galería y renovar fotos",
+        "width": 265.265625,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Revisar cargas interrumpidas",
+        "width": 239.078125,
+        "height": 44,
+        "font": 15,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "headline": "32px"
+  },
+  "outline": {
+    "width": "3px",
+    "color": "rgb(91, 52, 214)"
+  },
+  "enlarged": {
+    "overflow": false,
+    "scoped": true,
+    "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+    "controls": [
+      {
+        "name": "Volver al evento",
+        "width": 288.703125,
+        "height": 48,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Agregar fotos",
+        "width": 275.5625,
+        "height": 48,
+        "font": 30,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(6, 11, 39)"
+      },
+      {
+        "name": "Quitar imagen 1",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 1 antes",
+        "width": 130.90625,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(74, 82, 122)",
+        "background": "rgb(217, 219, 232)"
+      },
+      {
+        "name": "Mover imagen 1 después",
+        "width": 172.078125,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Quitar imagen 2",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 2 antes",
+        "width": 130.90625,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Mover imagen 2 después",
+        "width": 172.078125,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Quitar imagen 3",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 3 antes",
+        "width": 130.90625,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Mover imagen 3 después",
+        "width": 172.078125,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Quitar imagen 4",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 4 antes",
+        "width": 130.90625,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Mover imagen 4 después",
+        "width": 172.078125,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Quitar imagen 5",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 5 antes",
+        "width": 130.90625,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Mover imagen 5 después",
+        "width": 172.078125,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Quitar imagen 6",
+        "width": 44,
+        "height": 44,
+        "font": 32,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(255, 255, 255)"
+      },
+      {
+        "name": "Mover imagen 6 antes",
+        "width": 130.90625,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Mover imagen 6 después",
+        "width": 172.078125,
+        "height": 52,
+        "font": 30,
+        "color": "rgb(74, 82, 122)",
+        "background": "rgb(217, 219, 232)"
+      },
+      {
+        "name": "Seleccionar imágenes",
+        "width": 308,
+        "height": 92,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgb(241, 238, 255)"
+      },
+      {
+        "name": "Actualizar galería y renovar fotos",
+        "width": 350,
+        "height": 88,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "name": "Revisar cargas interrumpidas",
+        "width": 350,
+        "height": 88,
+        "font": 30,
+        "color": "rgb(6, 11, 39)",
+        "background": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "headline": "64px"
+  },
+  "clearPath": [
+    "Volver al evento",
+    "Agregar fotos",
+    "Quitar imagen 1",
+    "Mover imagen 1 después",
+    "Quitar imagen 2",
+    "Mover imagen 2 antes",
+    "Mover imagen 2 después",
+    "Quitar imagen 3",
+    "Mover imagen 3 antes",
+    "Mover imagen 3 después",
+    "Quitar imagen 4",
+    "Mover imagen 4 antes",
+    "Mover imagen 4 después",
+    "Quitar imagen 5",
+    "Mover imagen 5 antes",
+    "Mover imagen 5 después",
+    "Quitar imagen 6",
+    "Mover imagen 6 antes",
+    "Seleccionar imágenes",
+    "Actualizar galería y renovar fotos",
+    "Revisar cargas interrumpidas"
+  ],
+  "reducedMotion": [
+    "none"
+  ],
+  "reducedTransparency": {
+    "active": true,
+    "blur": "none"
+  },
+  "limits": "Text sizes doubled in DOM, not native zoom. Physical device and screen reader untested."
+}
