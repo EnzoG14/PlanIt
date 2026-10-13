@@ -1,6 +1,6 @@
 # R4 · Bloque 5 — Seguridad de eventos ocultos
 
-13/10/2026 (Argentina). Base inmutable `dacd893` (`origin/main`, PR #43 integrada), rama `codex/r4-block-5`. Implementado; QA humana y HTTP/JWT pendientes. Sin SQL remoto, merge, deploy, canje, generación de enlaces ni UX de visibilidad/autorizaciones. Bloques 6–9 pendientes.
+13/10/2026 (Argentina). Base inmutable `dacd893` (`origin/main`, PR #43 integrada), rama `codex/r4-block-5`, [PR #44](https://github.com/EnzoG14/PlanIt/pull/44) en borrador. Implementado; QA humana y HTTP/JWT pendientes. Sin SQL remoto, merge, deploy, canje, generación de enlaces ni UX de visibilidad/autorizaciones. Bloques 6–9 pendientes.
 
 ## Contrato y fuentes inspeccionadas
 
