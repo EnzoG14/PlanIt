@@ -46,7 +46,7 @@ try {
           return reply(id)
         }
         if(path==='/rest/v1/rpc/get_my_organized_events')return reply([{...event,category_name:'Música',event_state:'open',participation_status:null,image_path:null}])
-        if(path==='/rest/v1/rpc/get_home_events' || path==='/rest/v1/rpc/discover_public_events')return reply([{...event,category_name:'Música',image_path:null}])
+        if(path==='/rest/v1/rpc/search_public_events')return reply([{...event,category_name:'Música',image_path:null}])
         return reply([])
       })
       const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message));return page

@@ -30,7 +30,7 @@ async function context(viewport) {
     const path = new URL(route.request().url()).pathname
     const reply = (data,status=200) => route.fulfill({ status, contentType:'application/json',body:JSON.stringify(data) })
     if (path === '/auth/v1/user') return reply(user)
-    if (path === '/rest/v1/rpc/get_home_events') {
+    if (path === '/rest/v1/rpc/search_public_events') {
       if (mode === 'error') return reply({ code:'XX000',message:'fixture failure' },500)
       if (mode === 'pagination') {
         const body = route.request().postDataJSON()

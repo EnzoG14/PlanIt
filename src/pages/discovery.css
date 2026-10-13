@@ -142,3 +142,18 @@
 @media (max-width: 420px) { .discovery-shell .event-hero.has-photo { height: 220px; } }
 
 :root:has(.discovery-shell .event-detail-page) { scroll-padding-bottom: calc(190px + env(safe-area-inset-bottom)); }
+
+/* R4 block 1: shared search + category filters for Inicio and Mapa. */
+.discovery-shell .discovery-filters { display: grid; gap: 12px; margin: 0 0 var(--pi-space-section); }
+.discovery-shell .discovery-filters .field-control input { min-height: 52px; caret-color: var(--pi-color-ink); }
+.discovery-shell .discovery-filters .password-toggle { border-radius: var(--pi-radius-pill); color: var(--pi-color-text-muted); }
+.discovery-shell .discovery-filters .password-toggle:hover { background: var(--pi-color-surface-soft); }
+.discovery-shell .discovery-filters .password-toggle:focus-visible { outline: 3px solid var(--pi-color-violet-deep); outline-offset: 1px; }
+.discovery-category-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.discovery-category-filters button { min-height: 44px; padding: 0 16px; border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-pill); background: var(--pi-color-surface); color: var(--pi-color-text-muted); font: inherit; font-size: 15px; font-weight: 650; cursor: pointer; transition: background-color .25s, color .25s, border-color .25s; }
+.discovery-category-filters button:hover { color: var(--pi-color-ink); }
+.discovery-category-filters button[aria-pressed="true"] { background: var(--pi-color-primary); border-color: var(--pi-color-primary); color: #fff; }
+.discovery-category-filters button:focus-visible { outline: 3px solid var(--pi-color-violet-deep); outline-offset: 2px; }
+.discovery-applied { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.discovery-applied p { margin: 0; color: var(--pi-color-text-on-wash); font-size: 14px; line-height: 1.4; overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: reduce) { .discovery-category-filters button { transition: none; } }

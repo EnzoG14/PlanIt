@@ -42,7 +42,7 @@ async function fixture(width, height) {
     if (path === '/rest/v1/categories') return reply([{ id: event.category_id, name: 'Música', is_active: true }])
     if (path.endsWith('/get_event_participation_summary')) return reply([{ confirmed_count: 3, capacity: 20, available_spots: 17, own_status: null, is_organizer: true, event_state: currentEvent.archived_at ? 'archived' : currentEvent.cancelled_at ? 'cancelled' : 'open' }])
     if (path.endsWith('/get_event_organizer')) return reply([{ display_name: 'Perfil de prueba', username: 'fixture' }])
-    if (path.endsWith('/get_home_events') || path.endsWith('/discover_public_events') || path.endsWith('/get_my_organized_events')) return reply([{ ...currentEvent, category_name: 'Música', event_state: 'open', participation_status: null, image_path: null }])
+    if (path.endsWith('/search_public_events') || path.endsWith('/get_my_organized_events')) return reply([{ ...currentEvent, category_name: 'Música', event_state: 'open', participation_status: null, image_path: null }])
     if (path.endsWith('/get_event_chat')) return reply([{ conversation_id: id, title: event.title, event_state: 'open' }])
     if (path.endsWith('/get_event_attendees')) return reply({ title: event.title, capacity: 20, confirmed_count: 3, removed_count: 0, event_state: 'open', participants: [], has_more: false })
     if (path.endsWith('/get_event_rejoin_requests')) return reply({ title: event.title, capacity: 20, confirmed_count: 3, pending_count: 0, event_state: 'open', requests: [], has_more: false })

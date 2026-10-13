@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { EventCard } from '../components/EventCard'
 import { StatusMessage } from '../components/StatusMessage'
+import { DiscoveryFilters } from '../components/DiscoveryFilters'
+import { useDiscoveryFilters } from '../features/events/useDiscoveryFilters'
+import { hasActiveFilters } from '../features/events/search'
 import { loadHomeEvents, type HomeEventsCursor } from '../features/events/home'
 import type { EventPreview } from '../features/events/discovery'
 import './discovery.css'
@@ -16,17 +19,20 @@ export function HomePage() {
   const [hasMore, setHasMore] = useState(false)
   const [error, setError] = useState('')
   const [imageError, setImageError] = useState(false)
+  const { filters, filtersKey, search, setFilters } = useDiscoveryFilters()
+  const filtersRef = useRef(filters)
+  useEffect(() => { filtersRef.current = filters })
   const cursor = useRef<HomeEventsCursor | null>(null)
   const busy = useRef(false)
   const revision = useRef(0)
   const reload = useRef<() => void>(() => {})
   const more = useRef<() => void>(() => {})
 
+  useEffect(() => { document.title = 'Inicio · PlanIt' }, [])
   useEffect(() => {
-    document.title = 'Inicio · PlanIt'
     let active = true
     async function fetchPage(append = false) {
-      if (busy.current) return
+      if (append && busy.current) return
       const request = ++revision.current
       busy.current = true
       setError('')
@@ -40,7 +46,7 @@ export function HomePage() {
         setLoadingMore(false)
       }
       try {
-        const result = await loadHomeEvents(append ? cursor.current : null)
+        const result = await loadHomeEvents(append ? cursor.current : null, filtersRef.current)
         if (!active || revision.current !== request) return
         setEvents(previous => append
           ? [...new Map([...previous, ...result.events].map(event => [event.id, event])).values()]
@@ -73,7 +79,7 @@ export function HomePage() {
       window.removeEventListener('focus', refresh)
       document.removeEventListener('visibilitychange', refresh)
     }
-  }, [])
+  }, [filtersKey])
 
   const groups = new Map<string, CategoryGroup>()
   for (const event of events) {
@@ -85,19 +91,23 @@ export function HomePage() {
     group.events.push(event)
   }
 
+  const filtered = hasActiveFilters(filters)
   return <div className="home-page">
     <header className="home-heading">
       <div><h1>Inicio</h1><p>Próximos eventos para compartir.</p></div>
     </header>
+    <DiscoveryFilters filters={filters} onChange={setFilters} idPrefix="home" />
     <div aria-busy={loading || loadingMore}>
       {loading ? <div role="status"><StatusMessage title="Buscando eventos">Esperá un momento.</StatusMessage></div> : <>
         {error && <div><StatusMessage title="No se pudo cargar Inicio" tone="error">{error}</StatusMessage><button type="button" className="secondary-button" onClick={() => reload.current()}>Reintentar</button></div>}
         {imageError && <p className="field-hint" role="status">No pudimos cargar algunas fotos. <button className="text-button" type="button" onClick={() => reload.current()}>Reintentar fotos</button></p>}
-        {!error && !events.length && <><StatusMessage title="Todavía no hay eventos próximos">Cuando haya eventos públicos disponibles, los vas a encontrar acá.</StatusMessage><Link className="secondary-link home-map-link" to="/map">Explorar el mapa</Link></>}
+        {!error && !events.length && (filtered
+          ? <StatusMessage title="Ningún evento coincide con tu búsqueda">Probá con otro texto, quitá una categoría o limpiá los filtros.</StatusMessage>
+          : <><StatusMessage title="Todavía no hay eventos próximos">Cuando haya eventos públicos disponibles, los vas a encontrar acá.</StatusMessage><Link className="secondary-link home-map-link" to={`/map${search}`}>Explorar el mapa</Link></>)}
         {groups.size > 0 && <div className="home-category-groups">
           {[...groups.values()].map(group => <section className="home-category" key={group.id} aria-labelledby={`home-category-${group.id}`}>
             <h2 id={`home-category-${group.id}`}>{group.name}</h2>
-            <ul className="home-event-list">{group.events.map(event => <li key={event.id}><EventCard event={event} returnTo="/home" /></li>)}</ul>
+            <ul className="home-event-list">{group.events.map(event => <li key={event.id}><EventCard event={event} returnTo={`/home${search}`} /></li>)}</ul>
           </section>)}
         </div>}
         {hasMore && !error && <button className="secondary-button home-load-more" type="button" disabled={loadingMore} onClick={() => more.current()}>{loadingMore ? 'Cargando más…' : 'Cargar más'}</button>}
