@@ -13,6 +13,9 @@ export default defineConfig(({ mode }) => {
     throw new Error('VITE_SUPABASE_PUBLISHABLE_KEY debe ser una clave publishable. No se generará un bundle con claves no públicas.')
   }
   return {
+    server: {
+      allowedHosts: ['celibate-relapse-snowdrift.ngrok-free.dev'],
+    },
     plugins: [
       react(),
       VitePWA({
