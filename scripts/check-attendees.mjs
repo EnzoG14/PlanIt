@@ -141,8 +141,9 @@ try {
   await race(b, () => b.query('select public.send_event_chat_message($1,$2,$3)', [raceId, randomUUID(), 'Before removal']), a, () => remove(a, raceId, raceP))
   assert.equal((await a.query('select * from public.get_event_chat_messages($1)', [raceId])).rowCount, 1)
   check('Real lock races: duplicate removal, withdrawal in both orders, released last seat, chat send before/after removal')
-  await mkdir('docs/design/verification/r3-block-4', { recursive: true })
-  await writeFile('docs/design/verification/r3-block-4/postgres-results.json', JSON.stringify({ version, environment: 'Isolated real PostgreSQL; Auth/Storage SQL scaffolding; no remote HTTP/JWT', results }, null, 2))
+  const out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/r3-block-4'
+  await mkdir(out, { recursive: true })
+  await writeFile(`${out}/postgres-results.json`, JSON.stringify({ version, environment: 'Isolated real PostgreSQL; Auth/Storage SQL scaffolding; no remote HTTP/JWT', results }, null, 2))
 } finally {
   await Promise.allSettled(clients.map(c => c.end()))
   if (started) await run(pg_ctl, ['-D', directory, '-m', 'fast', '-w', 'stop'], { windowsHide: true, timeout: 30000 })

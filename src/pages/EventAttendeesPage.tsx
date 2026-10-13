@@ -5,12 +5,13 @@ import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
 import { attendeesDenied, attendeesError, attendeesPageSize, loadAttendees, removeAttendee, type Attendee, type AttendeesPage, type AttendeeStatus } from '../features/events/attendees'
 import { validatedMyEventsReturn } from '../features/events/my-events'
+import '../styles/event-management.css'
 import './event-attendees.css'
 
 export function EventAttendeesPage() {
   const { id = '' } = useParams()
   const { session } = useAuth()
-  return <AttendeesContent key={`${id}:${session?.user.id}`} eventId={id} />
+  return <><div className="management-wash" aria-hidden="true" /><AttendeesContent key={`${id}:${session?.user.id}`} eventId={id} /></>
 }
 function AttendeesContent({ eventId }: { eventId: string }) {
   const location = useLocation()
@@ -97,15 +98,15 @@ function AttendeesContent({ eventId }: { eventId: string }) {
     locked.current = false
     if (lifetime.current.mounted) { setRemoving(false); closeDialog() }
   }
-  return <section className="attendees-page" aria-label="Administración de asistentes">
-    <Link className="secondary-link attendees-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
-    <header><h1>Asistentes</h1>{page && <><p className="attendees-capacity">{page.confirmed_count} / {page.capacity} asistentes</p><p className="attendees-event-title">{page.title}</p></>}</header>
+  return <section className="attendees-page management-page" aria-label="Administración de asistentes">
+    <Link className="secondary-link management-back attendees-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
+    <header className="management-header"><h1>Asistentes</h1>{page && <><p className="attendees-capacity">{page.confirmed_count} / {page.capacity} asistentes</p><p className="attendees-event-title management-event-title">{page.title}</p></>}</header>
     {!denied && <>
       <div className="attendees-filters" role="group" aria-label="Estado de inscripción">
         {(['confirmed', 'removed'] as const).map(value => <button key={value} type="button" aria-pressed={status === value} disabled={removing} onClick={() => { setStatus(value); setNotice('') }}>{value === 'confirmed' ? 'Confirmados' : 'Removidos'}{page && <span>{value === 'confirmed' ? page.confirmed_count : page.removed_count}</span>}</button>)}
         {page && <Link className="requests-filter" to={`/events/${eventId}/rejoin-requests`} state={origin}>Solicitudes{page.pending_count !== undefined && <span>{page.pending_count}</span>}</Link>}
       </div>
-      <label className="attendees-search"><Icon name="search" /><span className="visually-hidden">Buscar asistentes por nombre</span><input type="search" placeholder="Buscar asistentes…" maxLength={120} value={search} disabled={removing} onChange={e => { setSearch(e.target.value); setNotice('') }} /></label>
+      <span className="attendees-search-label" id="attendees-search-label">Buscar por nombre</span><label className="attendees-search"><Icon name="search" /><span className="visually-hidden">Buscar asistentes por nombre</span><input aria-labelledby="attendees-search-label" type="search" placeholder="Buscar asistentes…" maxLength={120} value={search} disabled={removing} onChange={e => { setSearch(e.target.value); setNotice('') }} /></label>
     </>}
     <div className="attendees-update"><button ref={update} className="text-button" disabled={pending || removing} onClick={() => void fetchPage()}>Actualizar asistentes</button></div>
     <p className="attendees-notice" role="status">{notice}</p>
@@ -128,7 +129,7 @@ function AttendeesContent({ eventId }: { eventId: string }) {
         {page.has_more && <button className="secondary-button" disabled={pending || removing} onClick={() => void fetchPage(true)}>Cargar más asistentes</button>}
       </>}
     </div>}
-    <dialog className="attendees-dialog" ref={dialog} tabIndex={-1} aria-labelledby="remove-attendee-title" aria-describedby="remove-attendee-description" onCancel={e => { e.preventDefault(); closeDialog() }} onKeyDown={e => {
+    <dialog className="attendees-dialog management-dialog" ref={dialog} tabIndex={-1} aria-labelledby="remove-attendee-title" aria-describedby="remove-attendee-description" onCancel={e => { e.preventDefault(); closeDialog() }} onKeyDown={e => {
       if (e.key !== 'Tab') return
       e.preventDefault()
       const buttons = [...e.currentTarget.querySelectorAll<HTMLButtonElement>('button:not(:disabled)')]
@@ -136,12 +137,12 @@ function AttendeesContent({ eventId }: { eventId: string }) {
       if (!buttons.length) e.currentTarget.focus()
       else buttons[(current + (e.shiftKey ? -1 : 1) + buttons.length) % buttons.length].focus()
     }}>
-      <button className="attendees-dialog-close" aria-label="Cerrar confirmación" disabled={removing} onClick={closeDialog}>×</button>
+      <button className="attendees-dialog-close" aria-label="Cerrar confirmación" disabled={removing} onClick={closeDialog}><Icon name="close" /></button>
       <span className="attendees-danger-icon"><Icon name="userRemove" /></span>
       <h2 id="remove-attendee-title">Remover asistente</h2>
       <p id="remove-attendee-description">¿Estás seguro de que querés remover a {confirm?.display_name} de este evento?</p>
       <p className="field-hint">Dejará de ocupar cupo y de acceder al chat. Su inscripción e historial se conservan.</p>
-      <div><button ref={cancel} className="secondary-button" disabled={removing} onClick={closeDialog}>Cancelar</button><button className="attendees-remove" disabled={removing} onClick={() => void remove()}>{removing ? 'Removiendo…' : 'Remover'}</button></div>
+      <div><button ref={cancel} className="secondary-button" disabled={removing} onClick={closeDialog}>Cancelar</button><button className="attendees-remove management-danger" disabled={removing} onClick={() => void remove()}>{removing ? 'Removiendo…' : 'Remover'}</button></div>
     </dialog>
   </section>
 }
