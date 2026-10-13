@@ -1,0 +1,34 @@
+{
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "environment": "Real isolated PostgreSQL; Auth/Storage SQL scaffolding; no remote HTTP/JWT",
+  "results": [
+    {
+      "test": "Full migration replay; RLS and direct grants preserved; controlled writes and invoker source; authenticated-only EXECUTE and empty search_path",
+      "result": "PASS"
+    },
+    {
+      "test": "Owner-only RPC including public foreign source, nonexistent source, anon, missing identity, frozen snapshots; REST-equivalent UPDATE/DELETE denied",
+      "result": "PASS"
+    },
+    {
+      "test": "Cancellation idempotent; all data retained unchanged; closed registration/chat writes rejected; historical owner/member reads and stranger isolation",
+      "result": "PASS"
+    },
+    {
+      "test": "Archive cancels only unfinished events atomically; cancelled mark preserved; ended only archive/duplicate; ongoing cancellation; active lists exclude archive and own historical filter retains it",
+      "result": "PASS"
+    },
+    {
+      "test": "Injected second-write archive failure rolls back cancellation, archive and updated_at; no partial state",
+      "result": "PASS"
+    },
+    {
+      "test": "Owner-only minimal duplicate source reads create nothing; dates enforced by create_event; fresh ID/owner/empty conversation, no photos/relations; idempotent publish and original unchanged in all historical states",
+      "result": "PASS"
+    },
+    {
+      "test": "Twelve real lock races: cancel/archive versus registration, chat and same close in both orders; cancel versus archive in both orders",
+      "result": "PASS"
+    }
+  ]
+}

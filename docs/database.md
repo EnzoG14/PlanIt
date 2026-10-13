@@ -1,5 +1,16 @@
 # PlanIt — Modelo de datos y migraciones
 
+## R4 Bloque 5 — Accesos ocultos (sólo local)
+
+`20261014120003_hidden_event_access.sql` creada/probada por replay local, **no aplicada remotamente**. Modelo del dominio H de Planificación:
+
+- `event_access_links`: id UUID PK, event_id FK events RESTRICT, created_by FK profiles RESTRICT, token_hash text UNIQUE (SHA-256 hexadecimal), created_at timestamp NOT NULL Argentina, revoked_at timestamp nullable. Sin expires_at. UNIQUE parcial event_id WHERE revoked_at IS NULL. RLS activa y sin SELECT/mutaciones cliente: tampoco el dueño obtiene hashes.
+- `event_access_grants`: id UUID PK, event_id/user_id FKs RESTRICT y UNIQUE, source_link_id nullable con FK compuesta al mismo evento, status active/revoked, granted_at y updated_at obligatorios, revoked_at/restored_at opcionales, todos timestamp sin zona Argentina. Checks de estado/cronología, trigger updated_at, índices de FKs. RLS SELECT propio/dueño; sin mutaciones cliente.
+- `planit_private.can_view_event(uuid)` centraliza dueño/grant active para ocultos y conserva lectura pública/histórica autorizada. Reemplaza la política permisiva por participación histórica; summary/organizer/rejoin/chat/registro/retiro se endurecen sin cambiar firmas. RLS media/Storage y listas invoker heredan la barrera; propiedad legítima y asociaciones compartidas se conservan.
+- Trigger privado de visibilidad impone A04/A05/D12 atómicamente: preserva confirmed con grants faltantes, bloquea confirmed+revoked sin restaurarlo y al hacer público invalida links conservando grants/participación. No habilita RPC/UX de visibilidad, generación/canje ni revocación/restauración (bloques 6–8).
+
+Pruebas locales A/B/C/D/anon, locks/rollback, inventario completo, límites de signed URLs y pendientes HTTP/JWT/Storage real en [auditoría B5](qa/r4-block-5/README.md). TTL solicitado por APIs privadas 60 s; no es un límite impuesto al API de Storage ni invalida URLs anteriores.
+
 ## R4 Bloque 4 — Ranking público (aplicado)
 
 `20261014120002_get_suggested_events.sql` agrega RPC invoker `get_suggested_events(double precision,double precision,integer)`, search_path vacío, EXECUTE authenticated. Sin tablas/RLS nuevas; intereses auth.uid(), públicos sin cancelar/archivar y ends_at vigente Argentina. 100 afinidad + hasta30 dentro50km + hasta20 dentro7d; ranking antes de LIMIT (default6, máximo20), empate starts_at/id y fallback general cronológico. Creada/probada por replay local y **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior**: versión registrada, dry-run al día, invoker/search_path/EXECUTE y hash del cuerpo idéntico a Git. Guard sin identidad probado con ROLLBACK; JWT real pendiente. [Evidencia](design/verification/r4-block-4/README.md).

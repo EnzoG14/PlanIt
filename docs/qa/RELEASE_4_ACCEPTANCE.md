@@ -1,6 +1,6 @@
 # PlanIt — Release 4: matriz de aceptación
 
-**Decisiones aplicables:** A01–A07 aprobadas 12/10/2026. Fecha por inicio; fallback al centro del mapa; filtros en Inicio/Mapa; confirmados preservados al ocultar; público visible para todos; hash secreto no recuperable; R3 integrada y validada. El texto de los 39 CA oficiales se mantiene **literal**. **Estado funcional:** bloques 1–3 implementados; 20 CA con evidencia local/fixture, ninguno con JWT real ni «Validado». BLOQUE 0 auditó trazabilidad/fuente el 13/10/2026, sin pruebas funcionales. «Validado» requiere aceptación humana.
+**Decisiones aplicables:** A01–A07 aprobadas 12/10/2026. Fecha por inicio; fallback al centro del mapa; filtros en Inicio/Mapa; confirmados preservados al ocultar; público visible para todos; hash secreto no recuperable; R3 integrada y validada. El texto de los 39 CA oficiales se mantiene **literal**. **Estado funcional:** bloques 1–5 implementados; 24 CA de bloques 1–4 con evidencia local/fixture, ninguno con JWT real ni «Validado». Bloque 5 aporta prerrequisitos SQL de seguridad para los 15 CA de RF07–09; sus flujos siguen pendientes. BLOQUE 0 auditó trazabilidad/fuente el 13/10/2026. «Validado» requiere aceptación humana.
 
 | Criterio | Texto oficial | Prueba mínima sugerida | Estado | Evidencia |
 | --- | --- | --- | --- | --- |
@@ -45,6 +45,8 @@
 | RF-R4-09.CA-05 | Sólo el organizador puede restituir expresamente un acceso revocado; invalidar un enlace compartido no anula por sí solo accesos individuales vigentes. | Restitución expresa | Pendiente | [Contrato B0; sin prueba funcional](../design/verification/r4-block-0/traceability.csv) |
 
 ## Estados aceptados
+
+**Base de seguridad B5:** [96 combinaciones SQL, locks/rollback, inventario y límites](r4-block-5/README.md), [resultados SQL](r4-block-5/postgres-results.json) y [comparación visual fixture](r4-block-5/visual/results.json). Evidencia parcial para RF-R4-07.CA-02, RF-R4-08.CA-02/03/04 y RF-R4-09.CA-02/03/04/05, junto con A04/A05/D12/D14; no canje/rotación/revocación/restauración funcional ni historias R7. Los 15 estados oficiales RF07–09 se mantienen Pendiente. HTTP/JWT/Storage real NOT RUN; ningún CA adicional completo ni Validado.
 
 Pendiente · En curso · Implementado; QA pendiente · Bloqueado · Validado. No marcar «Validado» por capturas de mocks, SQL sin JWT, tests falsos o implementación sin aprobación humana.
 

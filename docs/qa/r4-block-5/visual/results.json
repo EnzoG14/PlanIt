@@ -1,0 +1,178 @@
+{
+  "base": "dacd893",
+  "environment": "Edge browser, intercepted Auth/REST/Storage, WebSocket blocked; not real JWT",
+  "results": [
+    {
+      "label": "baseline",
+      "state": "public",
+      "viewport": "375x812",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [
+        300
+      ],
+      "hash": "26694e6146b26b9b3c9e0a6a2e52bed3f788a98aca3ffeb5570bc5c6137b16fe",
+      "result": "PASS"
+    },
+    {
+      "label": "baseline",
+      "state": "active",
+      "viewport": "375x812",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [
+        300
+      ],
+      "hash": "26694e6146b26b9b3c9e0a6a2e52bed3f788a98aca3ffeb5570bc5c6137b16fe",
+      "result": "PASS"
+    },
+    {
+      "label": "baseline",
+      "state": "revoked",
+      "viewport": "375x812",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [],
+      "hash": "489b526b689bd5d9a16e7cbffc50b4cf81936368f8e5af7946a2a1536a48512c",
+      "result": "PASS"
+    },
+    {
+      "label": "baseline",
+      "state": "public",
+      "viewport": "1280x900",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [
+        300
+      ],
+      "hash": "f934a2636d54e90f0712621828570c9afb51803fb8ea1231421abe3f4c45ef12",
+      "result": "PASS"
+    },
+    {
+      "label": "baseline",
+      "state": "active",
+      "viewport": "1280x900",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [
+        300
+      ],
+      "hash": "f934a2636d54e90f0712621828570c9afb51803fb8ea1231421abe3f4c45ef12",
+      "result": "PASS"
+    },
+    {
+      "label": "baseline",
+      "state": "revoked",
+      "viewport": "1280x900",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [],
+      "hash": "14448e19fad3194721ba3c18e03a0c39f74f0a41581ce5e2c81960c86d0552a6",
+      "result": "PASS"
+    },
+    {
+      "label": "implementation",
+      "state": "public",
+      "viewport": "375x812",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [
+        60
+      ],
+      "hash": "26694e6146b26b9b3c9e0a6a2e52bed3f788a98aca3ffeb5570bc5c6137b16fe",
+      "result": "PASS"
+    },
+    {
+      "label": "implementation",
+      "state": "active",
+      "viewport": "375x812",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [
+        60
+      ],
+      "hash": "26694e6146b26b9b3c9e0a6a2e52bed3f788a98aca3ffeb5570bc5c6137b16fe",
+      "result": "PASS"
+    },
+    {
+      "label": "implementation",
+      "state": "revoked",
+      "viewport": "375x812",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [],
+      "hash": "489b526b689bd5d9a16e7cbffc50b4cf81936368f8e5af7946a2a1536a48512c",
+      "result": "PASS"
+    },
+    {
+      "label": "implementation",
+      "state": "public",
+      "viewport": "1280x900",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [
+        60
+      ],
+      "hash": "f934a2636d54e90f0712621828570c9afb51803fb8ea1231421abe3f4c45ef12",
+      "result": "PASS"
+    },
+    {
+      "label": "implementation",
+      "state": "active",
+      "viewport": "1280x900",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [
+        60
+      ],
+      "hash": "f934a2636d54e90f0712621828570c9afb51803fb8ea1231421abe3f4c45ef12",
+      "result": "PASS"
+    },
+    {
+      "label": "implementation",
+      "state": "revoked",
+      "viewport": "1280x900",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 0
+      },
+      "signatures": [],
+      "hash": "14448e19fad3194721ba3c18e03a0c39f74f0a41581ce5e2c81960c86d0552a6",
+      "result": "PASS"
+    }
+  ]
+}
