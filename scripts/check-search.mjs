@@ -24,8 +24,8 @@ const check = test => { results.push({ test, result: 'PASS' }); console.log(`PAS
 async function connect() { const client = new pg.Client({ host: '127.0.0.1', port, user: 'postgres', database: 'postgres', connectionTimeoutMillis: 5000 }); await client.connect(); clients.push(client); return client }
 async function role(client, id) { await client.query('reset role'); await client.query("select set_config('request.jwt.claim.sub',$1,false)", [id ?? '']); await client.query(`set role ${id ? 'authenticated' : 'anon'}`) }
 const search = async (client, args = {}) => {
-  const a = { q: null, cats: null, at: null, id: null, limit: 30, b: [null, null, null, null], ...args }
-  return (await client.query('select * from public.search_public_events($1,$2,$3,$4,$5,$6,$7,$8,$9)', [a.q, a.cats, a.at, a.id, a.limit, ...a.b])).rows
+  const a = { q: null, cats: null, at: null, id: null, limit: 30, b: [null, null, null, null], d: [null, null], o: [null, null, null], ...args }
+  return (await client.query('select * from public.search_public_events($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)', [a.q, a.cats, a.at, a.id, a.limit, ...a.b, ...a.d, ...a.o])).rows
 }
 const titles = rows => rows.map(row => row.title).sort()
 const ids = rows => rows.map(row => row.id)
@@ -50,7 +50,7 @@ try {
     const sql = await readFile(`supabase/migrations/${file}`, 'utf8')
     if (sql.trim()) await admin.query(sql)
   }
-  const fn = (await admin.query("select prosecdef,proconfig from pg_proc where oid='public.search_public_events(text,uuid[],timestamp,uuid,integer,double precision,double precision,double precision,double precision)'::regprocedure")).rows[0]
+  const fn = (await admin.query("select prosecdef,proconfig from pg_proc where oid='public.search_public_events(text,uuid[],timestamp,uuid,integer,double precision,double precision,double precision,double precision,date,date,double precision,double precision,double precision)'::regprocedure")).rows[0]
   assert.equal(fn.prosecdef, false); assert.ok(fn.proconfig.includes('search_path=""'))
   check('Replay migrations; search_public_events is SECURITY INVOKER with empty search_path')
 
@@ -130,6 +130,69 @@ try {
   await assert.rejects(search(a, { b: [1, 2, null, null] }), /search_invalid_bounds/)
   await assert.rejects(search(a, { b: [50, 10, 0, 1] }), /search_invalid_bounds/)
   check('Keyset cursor is stable with no duplicates; invalid cursor/bounds are rejected')
+
+  // ---- Block 2: Argentina date/range (starts_at) and great-circle radius ----
+  const day = (title, starts, ends) => add(title, 'R4 bloque 2', cat1, { starts, ends })
+  const d1 = await day('Día 1 noche', '2098-03-10 23:30', '2098-03-11 02:00')   // crosses midnight
+  const d1b = await day('Día 1 inicio', '2098-03-10 00:00', '2098-03-10 01:00')  // first instant of the day
+  const d2 = await day('Día 2 inicio', '2098-03-11 00:00', '2098-03-11 01:00')   // exclusive upper edge of day 1
+  const d0 = await day('Día 0 largo', '2098-03-09 20:00', '2098-03-12 20:00')    // starts before, ends inside the range
+  const dates = async (from, to, extra = {}) => ids(await search(a, { d: [from, to], q: 'R4 bloque 2', ...extra }))
+  assert.deepEqual((await dates('2098-03-10', '2098-03-10')).sort(), [d1, d1b].sort())
+  assert.deepEqual((await dates('2098-03-10', null)).sort(), [d1, d1b].sort())
+  check('CA R4-03.01: a single day is complete [00:00, next 00:00) in Argentina; a midnight-crossing event counts on its start day')
+  assert.deepEqual((await dates('2098-03-10', '2098-03-11')).sort(), [d1, d1b, d2].sort())
+  assert.ok(!(await dates('2098-03-10', '2098-03-12')).includes(d0))
+  assert.ok((await dates('2098-03-09', '2098-03-09')).includes(d0))
+  check('CA R4-03.01/02: inclusive range by starts_at only; an event that started before the range is excluded even if it ends inside')
+  assert.deepEqual(await dates('2098-04-01', '2098-04-30'), [])
+  assert.deepEqual(await dates('2098-03-10', '2098-03-10', { q: 'inexistente' }), [])
+  check('CA R4-03.02: events outside the period are not returned (empty list, not an error)')
+  await assert.rejects(search(a, { d: ['2098-03-11', '2098-03-10'] }), /search_invalid_dates/)
+  await assert.rejects(search(a, { d: [null, '2098-03-10'] }), /search_invalid_dates/)
+  await assert.rejects(search(a, { d: ['1900-01-01', null] }), /search_invalid_dates/)
+  check('CA R4-03.03: inverted range, "to" without "from" and absurd years are rejected in SQL')
+  const withDates = await dates('2098-03-10', '2098-03-10')
+  const cleared = await dates(null, null)
+  assert.ok(cleared.length > withDates.length && cleared.includes(d0) && cleared.includes(d2))
+  check('CA R4-03.04: clearing the dates restores other days and keeps the remaining criteria (text)')
+  const tokyo = await connect(); await role(tokyo, owner); await tokyo.query("set timezone='Asia/Tokyo'")
+  assert.deepEqual(ids(await search(tokyo, { d: ['2098-03-10', '2098-03-10'], q: 'R4 bloque 2' })).sort(), [d1, d1b].sort())
+  check('Day boundaries do not depend on the session/browser time zone (Tokyo session returns the same Argentina day)')
+
+  const org = [-34.6037, -58.3816]
+  const km = 111.195
+  const near = await add('Radio cerca', 'R4 radio', cat1, { starts: '2098-05-01 20:00', ends: '2098-05-01 22:00', lat: org[0], lng: org[1] })
+  const mid = await add('Radio medio', 'R4 radio', cat2, { starts: '2098-05-02 20:00', ends: '2098-05-02 22:00', lat: org[0] + 20 / km, lng: org[1] })
+  const edge = await add('Radio borde', 'R4 radio', cat1, { starts: '2098-05-03 20:00', ends: '2098-05-03 22:00', lat: org[0] + 24.9 / km, lng: org[1] })
+  const over = await add('Radio fuera', 'R4 radio', cat1, { starts: '2098-05-04 20:00', ends: '2098-05-04 22:00', lat: org[0] + 25.1 / km, lng: org[1] })
+  const radius = async (r, extra = {}) => ids(await search(a, { q: 'R4 radio', o: [...org, r], ...extra })).sort()
+  assert.deepEqual(await radius(5), [near])
+  assert.deepEqual(await radius(25), [near, mid, edge].sort())
+  assert.deepEqual(await radius(100), [near, mid, edge, over].sort())
+  check('CA R4-04.01/02: 5 vs 25 vs 100 km return progressively larger sets; points just inside/outside 25 km are classified correctly')
+  assert.deepEqual(await radius(100, { cats: [cat2] }), [mid])
+  assert.deepEqual(await radius(100, { d: ['2098-05-02', '2098-05-03'] }), [mid, edge].sort())
+  assert.deepEqual(await radius(25, { b: [-34.8, -34.3, -58.5, -58.3], cats: [cat1], d: ['2098-05-01', '2098-05-04'] }), [near, edge].sort())
+  assert.deepEqual(await radius(5, { cats: [cat2] }), [])
+  check('CA R4-04.03 / R4-02.02: radius AND category AND dates AND bounds AND text; empty intersection is an empty list')
+  for (const bad of [[...org, 0], [...org, -5], [...org, NaN], [...org, 20001], [...org, null], [null, org[1], 10], [95, 0, 10], [0, 181, 10]])
+    await assert.rejects(search(a, { o: bad }), /search_invalid_radius/)
+  check('CA R4-04.04: zero, negative, NaN, huge, partial and out-of-range origin/radius are rejected in SQL (never silently ignored)')
+  const anti = await add('Antimeridiano este', 'R4 anti', cat1, { starts: '2098-06-01 20:00', ends: '2098-06-01 22:00', lat: 0, lng: -179.9 })
+  const anti2 = await add('Antimeridiano oeste', 'R4 anti', cat1, { starts: '2098-06-02 20:00', ends: '2098-06-02 22:00', lat: 0, lng: 179.9 })
+  assert.deepEqual(ids(await search(a, { q: 'R4 anti', o: [0, 179.95, 50] })).sort(), [anti, anti2].sort())
+  assert.deepEqual(ids(await search(a, { q: 'R4 anti', o: [0, -179.95, 50] })).sort(), [anti, anti2].sort())
+  assert.deepEqual(ids(await search(a, { q: 'R4 anti', o: [0, 170, 50] })), [])
+  check('Radius crosses the antimeridian in both directions')
+  const polar = await add('Polo', 'R4 polo', cat1, { starts: '2098-07-01 20:00', ends: '2098-07-01 22:00', lat: 89.9, lng: 120 })
+  assert.deepEqual(ids(await search(a, { q: 'R4 polo', o: [89.9, -60, 10] })), [])
+  assert.deepEqual(ids(await search(a, { q: 'R4 polo', o: [89.9, -60, 50] })), [polar])
+  check('Radius near the pole falls back to latitude + Haversine (no division by zero)')
+  await admin.query('update public.events set latitude=$1, longitude=$2 where id = any($3)', [org[0], org[1], [hidden, cancelled, archived, ended]])
+  const closed = ids(await search(a, { o: [...org, 5], d: ['2020-01-01', '2100-12-31'] }))
+  assert.ok(![hidden, cancelled, archived, ended].some(id => closed.includes(id)))
+  check('Hidden/cancelled/archived/finished events never appear with date and radius filters')
 
   const out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/r4-block-1'
   await mkdir(out, { recursive: true })

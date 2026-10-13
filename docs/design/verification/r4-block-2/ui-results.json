@@ -1,0 +1,70 @@
+{
+  "environment": "Playwright (Edge, timezone Asia/Tokyo) against local Vite with fixture Supabase Auth/REST responses; no real users, JWT or remote writes. Mapbox token absent: bounds come from the fallback viewport.",
+  "results": [
+    {
+      "test": "CA R4-03.01/02: a single date sends the plain Argentina day (browser in Tokyo) and only that day is listed; it lives in the URL",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "CA R4-03.01: a valid range is applied (both ends included)",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "CA R4-03.03: an inverted range shows an error and is NOT applied (no request, URL and results unchanged)",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "CA R4-03.04: removing the dates restores other days",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "No matches (empty state with applied dates) vs failed request (error with retry) are distinct",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "CA R4-04.04: with GPS denied and no map centre, the limit is stated, nothing is queried and no list is shown as if distance were computed",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "A01: GPS denied → \"Centro del mapa\" (initial Buenos Aires labelled as a map position, never \"Tu ubicación\"); radius is sent together with the bounds",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "Inicio ↔ Mapa share the same non-secret state (radius in the URL, origin in memory); the Inicio query reuses the map centre",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "Choosing \"Sin límite\" removes only the radius",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "CA R4-04.01/02/03: with consented GPS, 5 km vs 50 km change the list and combine (AND) with category and date range",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "The user can switch from GPS to the map centre once the map has one (the option is not offered on Inicio before that)",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "Mapa: radius + dates + bounds in one query; consented GPS is the origin and recentres the map",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    },
+    {
+      "test": "Date/radius panel renders at 320/360/375/390/768/1280 px without horizontal overflow and with >=44px targets",
+      "result": "PASS",
+      "evidence": "Playwright fixture; the fixture server mirrors the SQL filter semantics; not a real Supabase Auth/REST/JWT request"
+    }
+  ]
+}

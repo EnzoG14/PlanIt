@@ -169,7 +169,7 @@ try {
     await shotPage.goto(`${origin}/home?q=rock&categories=${music}`)
     await shotPage.getByRole('heading', { name: 'Música', level: 2 }).waitFor()
     assert.equal(await shotPage.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `no horizontal overflow at ${width}`)
-    const small = await shotPage.evaluate(() => [...document.querySelectorAll('.discovery-category-filters button, .discovery-filters input')].filter(node => node.getBoundingClientRect().height < 44).length)
+    const small = await shotPage.evaluate(() => [...document.querySelectorAll('.discovery-category-filters button, .discovery-filters input')].filter(node => node.offsetParent && node.getBoundingClientRect().height < 44).length)
     assert.equal(small, 0, `touch targets >= 44px at ${width}`)
     await shotPage.waitForTimeout(900)
     await shotPage.screenshot({ path: `${output}/home-filters-${width}.png` })

@@ -38,6 +38,7 @@
     "check:home:ui": "node scripts/check-home-ui.mjs",
     "check:search": "node scripts/check-search.mjs",
     "check:search:ui": "node scripts/check-search-ui.mjs",
+    "check:filters:ui": "node scripts/check-filters-ui.mjs",
     "check:participations": "node scripts/check-participations.mjs",
     "check:attendees": "node scripts/check-attendees.mjs",
     "check:attendees:ui": "node scripts/check-attendees-ui.mjs",

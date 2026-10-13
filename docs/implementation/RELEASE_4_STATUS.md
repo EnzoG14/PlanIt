@@ -3,7 +3,7 @@
 **Actualización de planificación R4 v1.2 (13/10/2026):** esta edición documental parte del `main` `a378259a6010`, con Amanecer v3.0 integrado (PR #27–#34). La línea de base anterior del 12/10 y los pasos del bloque 0 son históricos/propuestos: **no** acreditan ejecución ni QA R4. Leer `RELEASE_4_VISUAL_INTEGRATION.md`, `DESIGN.md`, `docs/design/UI_WORKFLOW.md`. R3 confirmada validada por el responsable; informe QA versionado conserva NO-GO por falta de E2E/aceptación humana documentada; reportar esa brecha de evidencia sin reabrir A07.
 
 
-**Corte de ejecución:** 13/10/2026 (Argentina). **Estado:** Bloques 0 (documental) y 1 implementados; QA/revisión humana pendiente. **7/39 CA con PASS local/fixture (bloque 1), ninguna con JWT real ni Validado**; 39/39 trazadas y comparadas con la fuente original. Bloques 1–9 pendientes. La auditoría no implementa funcionalidades ni corrige seguridad R4.
+**Corte de ejecución:** 13/10/2026 (Argentina). **Estado:** Bloques 0 (documental), 1 y 2 implementados; QA/revisión humana pendiente. **15/39 CA con PASS local/fixture (bloques 1–2), ninguna con JWT real ni Validado**; 39/39 trazadas y comparadas con la fuente original. Bloques 3–9 pendientes. La auditoría no implementa funcionalidades ni corrige seguridad R4.
 
 **Decisiones del responsable (12/10/2026):** A01–A07 aprobadas; **R3 integrada y validada por confirmación expresa**, sujeto únicamente a comprobación técnica de dependencias en `main`. **Fuentes:** `RELEASE_4_PLAN.md`, `../requirements/RELEASE_4_REQUIREMENTS.md`, `RELEASE_4_DECISIONS_PROPOSED.md`, `../qa/RELEASE_4_ACCEPTANCE.md`.
 
@@ -13,7 +13,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 0 | Auditoría y contratos | transversal | Implementado; QA pendiente | `codex/r4-block-0`; [PR #38](https://github.com/EnzoG14/PlanIt/pull/38) en borrador | [Auditoría](RELEASE_4_BLOCK_0_DECISIONS.md), [evidencia nueva](../design/verification/r4-block-0/README.md) | Ninguna creada/aplicada; remoto no inspeccionado | Revisión humana de contratos; seguridad/CA funcionales en bloques posteriores |
 | 1 | Texto + categorías | 01/02, 8 CA | Implementado; QA pendiente | `codex/r4-block-1`; PR en borrador | [Evidencia](../design/verification/r4-block-1/README.md) | `20261013160000_search_public_events.sql` creada, probada local y **aplicada a `planit-v2` (14/10/2026, autorizada por el responsable)**; verificada: lista de migraciones, `search_path=""`, invoker, EXECUTE sólo `authenticated` | Revisión humana; fecha/radio (CA R4-02.02 completo) en bloque 2; JWT real |
-| 2 | Fecha + radio | 03/04, 8 CA | Pendiente | — | — | — | TZ y mapa/lista |
+| 2 | Fecha + radio | 03/04, 8 CA | Implementado; QA pendiente | `codex/r4-block-2`; PR en borrador | [Evidencia](../design/verification/r4-block-2/README.md) | `20261014120000_search_public_events_date_radius.sql` creada y probada local; **NO aplicada a ningún remoto** (debe aplicarse a `planit-v2` con autorización antes de desplegar el frontend) | Revisión humana; JWT real; medición de rendimiento caja vs Haversine con volumen |
 | 3 | Intereses | 05, 4 CA | Pendiente | — | — | — | Tabla y RLS |
 | 4 | Sugerencias | 06, 4 CA | Pendiente | — | — | — | Ranking |
 | 5 | Seguridad ocultos | transversal 07–09 | Pendiente | — | — | — | RLS, RPC, media |
@@ -56,5 +56,14 @@
 - **Riesgos/límites:** migración aplicada sólo a `planit-v2` (sin HTTP/JWT A/B reales sobre el remoto; historial no tocado); `check:discovery:ui` ya fallaba en `main` (marcador del mapa) por entorno; Mapa con filtros verificado sólo vía lista; falta fecha/radio (bloque 2); búsqueda sensible a acentos.
 - **Fin:** detenerse con esta PR; sin merge, deploy ni Validado.
 
-### Bloques 2–9 — Pendientes
+### Bloque 2 — Implementado; QA pendiente
+
+- **Base/rama:** `main` `a76247d` → `codex/r4-block-2`; PR en borrador.
+- **SQL:** `search_public_events` pasa de 9 a 14 argumentos (`p_date_from`, `p_date_to` date; `p_origin_lat`, `p_origin_lng`, `p_radius_km`); invoker, `search_path=''`, EXECUTE sólo `authenticated`; la firma anterior se elimina en la nueva migración. Fecha A02 `[desde 00:00, día posterior a hasta 00:00)` sobre `starts_at`; radio con caja (antimeridiano/polos) + Haversine antes del limit; validación en SQL de fechas y radio. Sin PostGIS.
+- **Frontend:** filtros `from`/`to`/`radius` en query params compartidos por Inicio y Mapa (mismo `DiscoveryFilters`, mismo RPC); origen (GPS consentido o centro del mapa rotulado, A01) sólo en memoria (`features/location/origin.ts`); sin consulta ni lista engañosa si no hay origen; sin ruta nueva ni cambios en dock.
+- **Pruebas:** local SQL (`check:search`, 25 PASS) y UI con fixtures (`check:filters:ui`); regresiones `check:search:ui`, `check:home-events`, `check:home:ui`, `check:discovery`, `check:discovery:ui`, `check:amanecer`, `check:mapbox`, build y lint. **No** HTTP JWT real, no dispositivos, no pan manual real del mapa.
+- **Riesgos/límites:** migración sin aplicar al remoto (el frontend de la rama exige la firma nueva); medición de rendimiento no ejecutada; búsqueda sensible a acentos; el GPS se pide de nuevo tras recargar.
+- **Fin:** detenerse con esta PR; sin merge, deploy ni Validado.
+
+### Bloques 3–9 — Pendientes
 - Sin actas, pruebas ni PR de R4.
