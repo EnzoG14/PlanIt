@@ -3,7 +3,7 @@
 **Actualización de planificación R4 v1.2 (13/10/2026):** esta edición documental parte del `main` `a378259a6010`, con Amanecer v3.0 integrado (PR #27–#34). La línea de base anterior del 12/10 y los pasos del bloque 0 son históricos/propuestos: **no** acreditan ejecución ni QA R4. Leer `RELEASE_4_VISUAL_INTEGRATION.md`, `DESIGN.md`, `docs/design/UI_WORKFLOW.md`. R3 confirmada validada por el responsable; informe QA versionado conserva NO-GO por falta de E2E/aceptación humana documentada; reportar esa brecha de evidencia sin reabrir A07.
 
 
-**Corte de ejecución:** 13/10/2026 (Argentina). **Estado:** Bloques 0 (documental), 1–5 implementados; QA/revisión humana pendiente. **24/39 CA con evidencia PASS local/fixture en la matriz (bloques 1–4), ninguna con JWT real ni Validado**; bloque 5 agrega prerrequisitos de seguridad SQL/fixture, sin completar CA de links/canje/revocación. 39/39 trazadas. Bloques 6–9 pendientes.
+**Corte de ejecución:** 13/10/2026 (Argentina). **Estado:** Bloques 0 (documental), 1–6 implementados; QA/revisión humana pendiente. **28/39 CA con evidencia PASS local/fixture (bloques 1–4 y R4-07.CA-01..04), ninguna con JWT real ni Validado**. CA-04 todavía requiere comprobar canje del token anterior en B7; CA-05 tiene evidencia parcial de sin expires_at/cierre de generación, sin canje. 39/39 trazadas. Bloques 7–9 pendientes; enlaces B6 no se pueden canjear hasta B7.
 
 **Decisiones del responsable (12/10/2026):** A01–A07 aprobadas; **R3 integrada y validada por confirmación expresa**, sujeto únicamente a comprobación técnica de dependencias en `main`. **Fuentes:** `RELEASE_4_PLAN.md`, `../requirements/RELEASE_4_REQUIREMENTS.md`, `RELEASE_4_DECISIONS_PROPOSED.md`, `../qa/RELEASE_4_ACCEPTANCE.md`.
 
@@ -17,7 +17,7 @@
 | 3 | Intereses | 05, 4 CA | Implementado; QA pendiente | `codex/r4-block-3`; [PR #42](https://github.com/EnzoG14/PlanIt/pull/42) en borrador | [Evidencia](../design/verification/r4-block-3/README.md) | `20261014120001_user_category_interests.sql` creada/probada local y **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior** | HTTP/JWT A/B/anon real y revisión humana |
 | 4 | Sugerencias | 06, 4 CA | Implementado; QA pendiente | `codex/r4-block-4`; [PR #43](https://github.com/EnzoG14/PlanIt/pull/43) en borrador | [Evidencia](../design/verification/r4-block-4/README.md) | `20261014120002_get_suggested_events.sql` creada/probada local y **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior** | HTTP/JWT real y revisión humana |
 | 5 | Seguridad ocultos | transversal 07–09 | Implementado; QA pendiente | `codex/r4-block-5`; [PR #44](https://github.com/EnzoG14/PlanIt/pull/44) en borrador | [Auditoría y evidencia](../qa/r4-block-5/README.md) | `20261014120003_hidden_event_access.sql` **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior**; 22 versiones, dry-run al día, RLS/ACL/11 funciones verificadas | HTTP/JWT/Storage/Realtime real, revisión humana; links/UX en bloques 6–8 |
-| 6 | Visibilidad y links | 07, 5 CA | Pendiente | — | — | — | Token y create/edit |
+| 6 | Visibilidad y links | 07, 5 CA | Implementado; QA pendiente | `codex/r4-block-6`; PR preparada | [Pruebas y límites](../qa/r4-block-6/README.md) | `20261014120004_event_visibility_links.sql` creada/probada local; **NO aplicada remotamente** | HTTP/JWT real, revisión humana, canje viejo/cerrado CA-04/05 en B7 |
 | 7 | Canje y detalle | 08, 5 CA | Pendiente | — | — | — | Grant y login |
 | 8 | Revocación | 09, 5 CA | Pendiente | — | — | — | Historial y cupo |
 | 9 | QA / cierre | todos, 39 CA | Pendiente | — | — | — | Casos real/fixture y aceptación |
@@ -33,6 +33,13 @@
 7. No pasar a «Validado» sin la revisión de 39 CA y aceptación humana; cada PR debe detenerse para revisión.
 
 ## Actas de ejecución
+
+### Bloque 6 — Implementado; QA pendiente
+
+- **Base/rama:** `origin/main` 0428d4ff601056fa60d61788087ff352c310e070 después de fetch, PR #44/B5 integrada; rama nueva `codex/r4-block-6`, checkout aislado. R3 aceptada según A07; brecha histórica de JWT real no se presenta como resuelta.
+- **Entrega:** create/update con parámetros finales compatibles, creación oculta desde el INSERT y edición contenido/visibility atómica; RPC set_event_visibility y trigger B5 A04/A05/D12. Links 256 bits CSPRNG server-side, SHA-256 persistido, uno activo, rotación/rollback bajo lock, owner-only boolean de existencia. Selector y panel/dialog Amanecer con copia/fallback/foco/resultado incierto; token sólo en memoria hasta cerrar, sin recuperación/persistencia/logs. Duplicación no hereda vínculos.
+- **Verificación:** build/lint/tokens PASS (avisos previos), 7 grupos SQL de links, regresión B5 96 combinaciones, edición/acciones SQL con carreras, 36 grupos UI en seis anchos más stress, creación/edición/acciones UI PASS. [Evidencia clasificada y composición](../qa/r4-block-6/README.md). CA-01..04 PASS local/fixture con límites; CA-05 parcial: sin expires_at y bloqueo de generación al cierre, **canje NOT RUN**.
+- **SQL/fin:** migración nueva creada con CLI y ordenada detrás de B5; local replay PASS, sin aplicación/metadata/DDL remoto. /invite y redeem_event_link son B7, por lo que enlaces aún no permiten obtener acceso en esta versión. Sin JWT real, aceptación humana, merge ni deploy; detenerse antes de B7.
 
 ### Bloque 5 — Implementado; QA pendiente
 
@@ -97,5 +104,5 @@
 - **Evidencia:** 8 grupos SQL locales y 19 grupos UI con fixtures en cinco tamaños; baseline inmutable before y capturas after nuevas. Incluye ranking más allá de35 candidatos, dos intereses, límites, empate, A/B/anon, ocultos propios/cerrados, confirmados/inactivos, cambio de cuenta/respuesta tardía y polling/expiración. [Pruebas, composición/foco/scopes y límites](../design/verification/r4-block-4/README.md). Build/lint/Amanecer y regresiones registradas en evidencia. Check de filtros ajusta precisión centesimal ante 43.999969px de Chromium para control CSS44px, sin modificar controles.
 - **Límites/fin:** metadata pública previa puede durar hasta reconsulta visible30s más latencia tras cambio externo; detalle revalida. Sin JWT real, dispositivos, lector de pantalla o aceptación humana; no Validado, merge/deploy ni bloque5. Aplicación remota autorizada después de crear PR #43 y registrada; asesores sin avisos nuevos, guard sin identidad probado con ROLLBACK; sin cambios de datos de usuarios ni acceso al proyecto histórico.
 
-### Bloques 5–9 — Pendientes
+### Bloques 7–9 — Pendientes
 - Sin actas, pruebas ni PR de esos bloques.

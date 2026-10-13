@@ -12,6 +12,15 @@ export function EventFields({ values, errors, categories, locked, change, locati
     return <FormField id={`event-${name}`} name={name} label={label} icon={icon} type={type} value={values[name]} onFocus={() => setNow(new Date())} onChange={event => change(name, event.target.value)} error={errors[name]} required={required} disabled={locked} min={name in minimums ? minimums[name as keyof typeof minimums] : name === 'capacity' ? Math.max(1, confirmedCount ?? 0) : undefined} placeholder={placeholder} inputMode={name === 'capacity' ? 'numeric' : name === 'latitude' || name === 'longitude' ? 'decimal' : undefined} step={name === 'capacity' ? 1 : name === 'latitude' || name === 'longitude' ? 'any' : undefined} />
   }
   return <>
+      <section className="event-form-section" aria-labelledby="event-visibility-heading"><h2 id="event-visibility-heading">Visibilidad</h2>
+        <div className="form-field"><label htmlFor="event-visibility">¿Quién puede descubrir el evento?</label>
+          <div className="field-control"><Icon name="people" /><select id="event-visibility" name="visibility" value={values.visibility ?? 'public'} disabled={locked} onChange={event => change('visibility', event.target.value)} aria-describedby="event-visibility-help" required>
+            <option value="public">Público</option><option value="unlisted">Oculto</option>
+          </select></div>
+          <p className="field-hint" id="event-visibility-help">{values.visibility === 'unlisted' ? 'No aparece en Inicio, Mapa ni búsquedas. Compartí un enlace desde la gestión del evento una vez publicado. Los confirmados conservan su acceso; los revocados requieren resolución expresa.' : 'Aparece en Inicio, Mapa y búsquedas. Si lo hacés público, todos podrán verlo y el enlace oculto anterior dejará de funcionar.'}</p>
+          {errors.visibility && <p className="field-error" role="alert">{errors.visibility}</p>}
+        </div>
+      </section>
       <section className="event-form-section" aria-labelledby="event-information-heading"><h2 id="event-information-heading">Información principal</h2>
       {field('title', 'Título del evento', 'title', 'text', true, '¿Cuál es el plan?')}
       <div className="form-field">

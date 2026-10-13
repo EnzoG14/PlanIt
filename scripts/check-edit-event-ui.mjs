@@ -38,10 +38,10 @@ try {
         if(path==='/rest/v1/rpc/get_event_participation_summary')return summaryFailure?reply({code:'42501',message:'fixture'},403):reply([{confirmed_count:confirmed,capacity:event.capacity,available_spots:event.capacity-confirmed,own_status:null,is_organizer:identity===owner,event_state:'open'}])
         if(path==='/rest/v1/rpc/get_event_organizer')return reply([{display_name:'Organizador de prueba',username:'fixture'}])
         if(path==='/rest/v1/rpc/update_event') {
-          writes++;const body=req.postDataJSON();assert.equal(body.p_event_id,id);assert.equal(Object.keys(body).length,11)
+          writes++;const body=req.postDataJSON();assert.equal(body.p_event_id,id);assert.equal(Object.keys(body).length,12)
           if(slow)await new Promise(resolve=>setTimeout(resolve,400))
           if(failure && failure!=='lost')return reply({code:failure==='missing'?'PGRST202':'P0001',message:failure},400)
-          event={...event,title:body.p_title,description:body.p_description,starts_at:body.p_starts_at,ends_at:body.p_ends_at,category_id:body.p_category_id,capacity:body.p_capacity,address:body.p_address,latitude:body.p_latitude,longitude:body.p_longitude,location_name:body.p_location_name}
+          event={...event,title:body.p_title,description:body.p_description,starts_at:body.p_starts_at,ends_at:body.p_ends_at,category_id:body.p_category_id,capacity:body.p_capacity,address:body.p_address,latitude:body.p_latitude,longitude:body.p_longitude,location_name:body.p_location_name,visibility:body.p_visibility}
           if(failure==='lost')return route.abort('failed')
           return reply(id)
         }

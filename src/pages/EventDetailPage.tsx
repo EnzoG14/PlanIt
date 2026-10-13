@@ -82,7 +82,7 @@ function EventDetailContent({ id }: { id: string }) {
   const myEventsReturnTo = listOrigin ?? (event.organizer_id === session?.user.id ? myEventsPath('organizing') : '/my-events')
   const returnTo = listOrigin ?? discoveryOrigin ?? (event.organizer_id === session?.user.id ? myEventsReturnTo : '/map')
   return <div className="event-detail-page">
-    {location.state?.published && <StatusMessage title="Evento publicado">Tu evento ya está disponible para la comunidad.</StatusMessage>}
+    {location.state?.published && <StatusMessage title="Evento publicado">{event.visibility === 'unlisted' ? 'Tu evento oculto fue publicado. Generá un enlace desde la gestión para compartirlo.' : 'Tu evento ya está disponible para la comunidad.'}</StatusMessage>}
     {location.state?.edited && <StatusMessage title="Cambios guardados">La información del evento se actualizó.</StatusMessage>}
     <Link className="detail-back secondary-link" to={returnTo}><Icon name="back" />{returnTo.startsWith('/my-events') ? 'Volver a Mis eventos' : returnTo.startsWith('/home') ? 'Volver al inicio' : 'Volver al mapa'}</Link>
     <div className={`event-hero ${images[0] && !imageError ? 'has-photo' : 'without-photo'}`}>{images[0] && !imageError ? <img src={images[0]} width="960" height="600" alt={`Foto de ${event.title}`} onError={() => setImageError(true)} /> : <div className="event-hero-placeholder"><Icon name="calendar" /><span>Sin foto de portada</span></div>}<div className="event-hero-overlay" /></div>

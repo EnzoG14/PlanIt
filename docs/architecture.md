@@ -1,5 +1,11 @@
 # PlanIt — Arquitectura
 
+## R4 Bloque 6 — Visibilidad y enlaces del organizador
+
+Crear/editar reutiliza EventFields Amanecer con Público/Oculto. `create_event` recibe `p_visibility` desde el INSERT completo; `update_event` guarda contenido y visibilidad juntos. Los parámetros finales opcionales conservan llamadas R1–R3; `set_event_visibility` comparte lock de evento e invariantes A04/A05/D12 del trigger B5, sin UPDATE cliente. Un conflicto confirmed+revoked revierte el guardado íntegro.
+
+`create_or_rotate_event_link` genera 32 bytes CSPRNG en PostgreSQL, persiste sólo SHA-256 y revoca el anterior en la misma transacción. `get_event_link_status` devuelve únicamente un booleano al dueño. El panel embebido conserva el enlace `/invite#token=…` sólo durante el diálogo, permite copiar/fallback manual y lo borra al cerrar/cambiar cuenta/salir. No hay recuperación, almacenamiento del token ni nuevas rutas de producción. **El canje y la ruta /invite corresponden al bloque 7 y todavía no están implementados.** SQL B6 preparado/probado localmente, sin aplicación remota; [evidencia y límites](qa/r4-block-6/README.md).
+
 ## R4 Bloque 5 — Autorización de ocultos
 
 Base de seguridad local, sin UX de links todavía. `planit_private.can_view_event(event_id)` deriva identidad de auth.uid y exige dueño o grant active en unlisted; histórico sólo conserva lectura de públicos. RLS de events y lecturas DEFINER comparten la decisión; chat agrega dueño/confirmed y aprobación R3 comprueba grant del destinatario. Media/Storage y listas invoker heredan RLS; no se amplía lectura de perfiles ni asistentes. Un trigger privado impone A04/A05/D12 bajo lock del evento sin exponer una nueva operación al cliente. [Contrato, pruebas y límites](qa/r4-block-5/README.md).

@@ -67,7 +67,7 @@ try {
   const values = [id,'Título editado','Descripción editada','2099-10-12 23:30','2099-10-13 03:00',category,10,'Dirección nueva',-34.5,-58.4,'Lugar nuevo']
   const edit = (client, override={}) => { const args=[...values]; for(const [key,value] of Object.entries(override)) args[Number(key)]=value; return client.query(sql,args) }
   const state = async () => (await admin.query('select * from public.events where id=$1',[id])).rows[0]
-  const signature = 'public.update_event(uuid,text,text,timestamp,timestamp,uuid,integer,text,double precision,double precision,text)'
+  const signature = 'public.update_event(uuid,text,text,timestamp,timestamp,uuid,integer,text,double precision,double precision,text,text)'
   const security = (await admin.query('select prosecdef,proconfig from pg_proc where oid=$1::regprocedure',[signature])).rows[0]
   assert.equal(security.prosecdef,true); assert.ok(security.proconfig.includes('search_path=""'))
   assert.equal((await admin.query("select has_function_privilege('anon',$1,'EXECUTE') allowed",[signature])).rows[0].allowed,false)
