@@ -1,0 +1,84 @@
+{
+  "project": "iepeqmvzjguwlhnecsdq",
+  "applied_at_date_argentina": "2026-10-13",
+  "authorization": "User requested remote migrations after PR #42 creation",
+  "applied_by": "Supabase CLI db push --project-ref iepeqmvzjguwlhnecsdq --skip-vault --yes",
+  "pending_before": [
+    "20261014120001_user_category_interests.sql"
+  ],
+  "pending_after": [],
+  "local_function_body_md5": "39eeea0f0b2ab0876564629cf4f2d1d1",
+  "verification": {
+    "rls": true,
+    "columns": [
+      {
+        "name": "user_id",
+        "type": "uuid",
+        "nullable": "NO"
+      },
+      {
+        "name": "category_id",
+        "type": "uuid",
+        "nullable": "NO"
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp without time zone",
+        "nullable": "NO"
+      }
+    ],
+    "version": "20261014120001",
+    "function": {
+      "acl": [
+        "postgres=X/postgres",
+        "service_role=X/postgres",
+        "authenticated=X/postgres"
+      ],
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "body_md5": "39eeea0f0b2ab0876564629cf4f2d1d1"
+    },
+    "policies": [
+      {
+        "name": "user_category_interests_select_own",
+        "roles": [
+          "authenticated"
+        ],
+        "using": "(( SELECT auth.uid() AS uid) = user_id)",
+        "command": "SELECT"
+      }
+    ],
+    "privileges": [
+      {
+        "role": "anon",
+        "delete": false,
+        "insert": false,
+        "select": false,
+        "update": false,
+        "execute": false
+      },
+      {
+        "role": "authenticated",
+        "delete": false,
+        "insert": false,
+        "select": true,
+        "update": false,
+        "execute": true
+      }
+    ],
+    "constraints": [
+      "FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE RESTRICT",
+      "PRIMARY KEY (user_id, category_id)",
+      "FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE RESTRICT"
+    ]
+  },
+  "evidence_limits": "Remote metadata and no-identity SQL guards only; no real HTTP JWT A/B tests, no real user preferences mutated; no frontend deploy or merge.",
+  "security_advisors": {
+    "authenticated_definer_before": 21,
+    "authenticated_definer_after": 22,
+    "new_finding": "set_my_category_interests intentionally authenticated SECURITY DEFINER; restricts all mutations to auth.uid()",
+    "leaked_password_protection": "Existing warning unchanged"
+  }
+}

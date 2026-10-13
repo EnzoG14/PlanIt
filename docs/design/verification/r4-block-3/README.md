@@ -1,16 +1,16 @@
 # R4 · Bloque 3 — intereses privados
 
-13/10/2026, Argentina. Rama `codex/r4-block-3`, base `main` **cff3e6b41c9473690d40573cc4d17f14609ca72f**, con bloque 2 integrado. **Implementado; QA pendiente**. Sin aceptación humana, JWT real, metadata remota, aplicación SQL remota, merge ni deploy.
+13/10/2026, Argentina. Rama `codex/r4-block-3`, base `main` **cff3e6b41c9473690d40573cc4d17f14609ca72f**, con bloque 2 integrado. **Implementado; QA pendiente**. Sin aceptación humana, JWT real, merge ni deploy. Migración aplicada y metadata verificada el 13/10/2026 con autorización posterior del usuario; ver actualización remota al pie.
 
 ## Contrato y seguridad
 
 Se consultó la especificación vigente de RF-R4-05 en [Planificación](https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit): intereses múltiples sin límite obligatorio, propiedad privada, inactivas no se agregan nuevamente, sugerencias en bloque 4. Los cuatro textos oficiales permanecen literales. A01–A07 intactas; la brecha documental de evidencia R3 no reabre A07.
 
-- Tabla `public.user_category_interests(user_id, category_id, created_at)`, PK compuesta, FKs RESTRICT a profiles/categories y fecha sin zona con reloj Argentina. Ausente en migraciones de la base; creada por replay real local. Existencia efectiva en remoto **no inspeccionada**.
+- Tabla `public.user_category_interests(user_id, category_id, created_at)`, PK compuesta, FKs RESTRICT a profiles/categories y fecha sin zona con reloj Argentina. Ausente en migraciones de la base; creada por replay real local. Existencia efectiva remota verificada tras la aplicación autorizada; ver actualización remota.
 - RLS SELECT propio y grants de tabla sólo SELECT authenticated. PUBLIC/anon sin acceso; sin escrituras REST, incluso propias.
 - `set_my_category_interests(p_category_ids uuid[]) returns table(category_id uuid)`: auth.uid autoritativo, sin user_id de cliente. Array no nulo, sin nulos/duplicados; UUIDs y categorías existentes. `[]` limpia; inactivas guardadas se conservan hasta quitarlas, sin nuevas altas/realtas inactivas.
 - DEFINER necesario sólo para escrituras controladas sin DML de cliente: search_path vacío, referencias calificadas, EXECUTE authenticated y guards de Auth/perfil. Locks perfil propio → categorías ordenadas FOR SHARE, compatibles con desactivación concurrente. Reemplazo atómico; filas retenidas conservan created_at. No amplía grants de profiles.
-- **20261014120001_user_category_interests.sql**, generada con CLI y renumerada inmediatamente después del máximo versionado porque bloque 2 tenía un prefijo posterior al reloj actual. Nueva, probada local, **no aplicada remotamente**. No se modificaron migraciones anteriores.
+- **20261014120001_user_category_interests.sql**, generada con CLI y renumerada inmediatamente después del máximo versionado porque bloque 2 tenía un prefijo posterior al reloj actual. Nueva, probada local y **aplicada a planit-v2 el 13/10/2026 con autorización posterior**. No se modificaron migraciones anteriores.
 
 ## Composición, foco y estados
 
@@ -58,4 +58,12 @@ Baseline definitiva: `git archive cff3e6b` servido separado en 4182, sin editar 
 
 Resultado: [390px](ui/390-interests.png), [1280px](ui/1280-interests.png), [error](ui/390-save-error.png), [vacío](ui/390-empty.png), [diálogo con poca altura](ui/390-leave-short.png) y Perfil en `regressions/profile-ui/`. Mockup R4 sólo inventario funcional; lab B referencia de composición, nunca fuente de tokens. Inspección propia de móvil/escritorio, estados/grid/etiquetas/CTA/dock; sin evaluación independiente ni aceptación humana. El aviso previo del hook sobre sidecar más antiguo queda registrado, sin regenerarlo.
 
-NOT RUN: metadata/advisors y migración remotos; HTTP/JWT A/B/anon real, Storage/Realtime real, dispositivo/PWA físico, teclado móvil/lector de pantalla/zoom nativo, rendimiento blur y motor sin backdrop-filter. Texto aumentado no acredita zoom nativo. Antes de autorizar SQL remoto comprobar drift/historial/grants y seguridad de planit-v2; el proyecto histórico no se consultó ni modificó. Ningún CA pasa a «Validado».
+NOT RUN: HTTP/JWT A/B/anon real, Storage/Realtime real, dispositivo/PWA físico, teclado móvil/lector de pantalla/zoom nativo, rendimiento blur y motor sin backdrop-filter. Texto aumentado no acredita zoom nativo. Historial, grants y seguridad de planit-v2 verificados tras aplicar; el proyecto histórico no se consultó ni modificó. Ningún CA pasa a «Validado».
+
+## Aplicación remota autorizada — 13/10/2026
+
+El usuario solicitó aplicar las migraciones después de crear PR #42. Dry-run mostró únicamente `20261014120001_user_category_interests.sql`; tabla/RPC ausentes antes de aplicar. CLI `db push --project-ref iepeqmvzjguwlhnecsdq --skip-vault --yes` aplicó esa versión, sin seeds/roles/Vault. Dry-run posterior al día y versión registrada.
+
+[Metadata verificada](remote-migration.json): RLS activada, SELECT sólo propio, PK/FKs RESTRICT y tipos correctos; anon sin SELECT/DML/EXECUTE y authenticated con SELECT/EXECUTE, sin DML. Cuerpo RPC normalizado idéntico a Git (`39eeea0f0b2ab0876564629cf4f2d1d1`), DEFINER/search_path vacío. Owner/service_role conservan grants de plataforma. En transacción con ROLLBACK y rol authenticated sin identidad, RPC rechaza con 42501 y SELECT no expone filas; no se modificaron intereses reales.
+
+Advisors: un nuevo [aviso de DEFINER ejecutable por authenticated](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable), intencional por escritura RPC exclusiva y autorización auth.uid; avisos de funciones anteriores intactos. [Protección de contraseñas filtradas desactivada](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection), aviso previo sin cambios de Auth. No se encontraron nuevos avisos de acceso anon o falta de RLS. No HTTP/JWT A/B real, aceptación humana, merge ni deploy. Cambios de seguimiento únicamente; build/lint no repetidos por esta actualización documental.
