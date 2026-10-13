@@ -1,0 +1,355 @@
+{
+  "environment": "Edge headless fixtures; Argentina formatting in Tokyo; emulated text enlargement/height, not native zoom or physical accessibility acceptance",
+  "baseOrigin": "http://127.0.0.1:4196",
+  "origin": "http://127.0.0.1:4197",
+  "results": [
+    {
+      "test": "requests: defaults, full, closed, empty, recovery, long text at 200%, targets",
+      "width": 320,
+      "result": "PASS",
+      "boxes": [
+        {
+          "width": 248,
+          "height": 48
+        },
+        {
+          "width": 248,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "test": "request dialog: 240px height, doubled text, internal scroll, reachable actions, Escape/return focus",
+      "width": 320,
+      "result": "PASS"
+    },
+    {
+      "test": "embedded management: standalone light sheet, solid red archive, 240px/200% text actions",
+      "width": 320,
+      "result": "PASS"
+    },
+    {
+      "test": "own request states with approved participation kept separate; autonomous font",
+      "width": 320,
+      "result": "PASS"
+    },
+    {
+      "test": "Mis eventos: three dialogs match immutable base, geometry/focus identical; perimeter raster deltas recorded",
+      "width": 320,
+      "result": "PASS"
+    },
+    {
+      "test": "requests: defaults, full, closed, empty, recovery, long text at 200%, targets",
+      "width": 360,
+      "result": "PASS",
+      "boxes": [
+        {
+          "width": 136,
+          "height": 50
+        },
+        {
+          "width": 136,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "test": "request dialog: 240px height, doubled text, internal scroll, reachable actions, Escape/return focus",
+      "width": 360,
+      "result": "PASS"
+    },
+    {
+      "test": "embedded management: standalone light sheet, solid red archive, 240px/200% text actions",
+      "width": 360,
+      "result": "PASS"
+    },
+    {
+      "test": "own request states with approved participation kept separate; autonomous font",
+      "width": 360,
+      "result": "PASS"
+    },
+    {
+      "test": "Mis eventos: three dialogs match immutable base, geometry/focus identical; perimeter raster deltas recorded",
+      "width": 360,
+      "result": "PASS"
+    },
+    {
+      "test": "requests: defaults, full, closed, empty, recovery, long text at 200%, targets",
+      "width": 375,
+      "result": "PASS",
+      "boxes": [
+        {
+          "width": 143.5,
+          "height": 50
+        },
+        {
+          "width": 143.5,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "test": "request dialog: 240px height, doubled text, internal scroll, reachable actions, Escape/return focus",
+      "width": 375,
+      "result": "PASS"
+    },
+    {
+      "test": "embedded management: standalone light sheet, solid red archive, 240px/200% text actions",
+      "width": 375,
+      "result": "PASS"
+    },
+    {
+      "test": "own request states with approved participation kept separate; autonomous font",
+      "width": 375,
+      "result": "PASS"
+    },
+    {
+      "test": "Mis eventos: three dialogs match immutable base, geometry/focus identical; perimeter raster deltas recorded",
+      "width": 375,
+      "result": "PASS"
+    },
+    {
+      "test": "requests: defaults, full, closed, empty, recovery, long text at 200%, targets",
+      "width": 390,
+      "result": "PASS",
+      "boxes": [
+        {
+          "width": 151,
+          "height": 50
+        },
+        {
+          "width": 151,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "test": "request dialog: 240px height, doubled text, internal scroll, reachable actions, Escape/return focus",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "test": "embedded management: standalone light sheet, solid red archive, 240px/200% text actions",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "test": "own request states with approved participation kept separate; autonomous font",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "test": "Mis eventos: three dialogs match immutable base, geometry/focus identical; perimeter raster deltas recorded",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "test": "requests: defaults, full, closed, empty, recovery, long text at 200%, targets",
+      "width": 768,
+      "result": "PASS",
+      "boxes": [
+        {
+          "width": 316,
+          "height": 50
+        },
+        {
+          "width": 316,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "test": "request dialog: 240px height, doubled text, internal scroll, reachable actions, Escape/return focus",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "test": "embedded management: standalone light sheet, solid red archive, 240px/200% text actions",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "test": "own request states with approved participation kept separate; autonomous font",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "test": "Mis eventos: three dialogs match immutable base, geometry/focus identical; perimeter raster deltas recorded",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "test": "requests: defaults, full, closed, empty, recovery, long text at 200%, targets",
+      "width": 1280,
+      "result": "PASS",
+      "boxes": [
+        {
+          "width": 316,
+          "height": 50
+        },
+        {
+          "width": 316,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "test": "request dialog: 240px height, doubled text, internal scroll, reachable actions, Escape/return focus",
+      "width": 1280,
+      "result": "PASS"
+    },
+    {
+      "test": "embedded management: standalone light sheet, solid red archive, 240px/200% text actions",
+      "width": 1280,
+      "result": "PASS"
+    },
+    {
+      "test": "own request states with approved participation kept separate; autonomous font",
+      "width": 1280,
+      "result": "PASS"
+    },
+    {
+      "test": "Mis eventos: three dialogs match immutable base, geometry/focus identical; perimeter raster deltas recorded",
+      "width": 1280,
+      "result": "PASS"
+    },
+    {
+      "test": "self-hosted font loaded; failed font fallback; emulated reduced transparency/motion",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "test": "self-hosted font loaded; failed font fallback; emulated reduced transparency/motion",
+      "width": 1280,
+      "result": "PASS"
+    }
+  ],
+  "pixelComparisons": [
+    {
+      "width": 320,
+      "action": "Duplicar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 320,
+      "action": "Cancelar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 320,
+      "action": "Archivar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 360,
+      "action": "Duplicar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 360,
+      "action": "Cancelar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 360,
+      "action": "Archivar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 375,
+      "action": "Duplicar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 375,
+      "action": "Cancelar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 375,
+      "action": "Archivar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 390,
+      "action": "Duplicar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 390,
+      "action": "Cancelar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 390,
+      "action": "Archivar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 768,
+      "action": "Duplicar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 768,
+      "action": "Cancelar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 768,
+      "action": "Archivar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 1280,
+      "action": "Duplicar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 1280,
+      "action": "Cancelar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "width": 1280,
+      "action": "Archivar",
+      "identical": true,
+      "changedPixels": 0,
+      "maxChannelDelta": 0
+    }
+  ]
+}

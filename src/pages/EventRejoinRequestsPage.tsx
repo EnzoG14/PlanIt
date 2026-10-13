@@ -7,13 +7,14 @@ import { attendeesDenied } from '../features/events/attendees'
 import { validatedMyEventsReturn } from '../features/events/my-events'
 import { loadRejoinRequests, loadRejoinResolution, resolveRejoin, rejoinError, type RejoinDecision, type RejoinPage, type RejoinRequest } from '../features/events/rejoin'
 import { formatEventTime } from '../features/events/validation'
+import '../styles/event-management.css'
 import './event-attendees.css'
 import './event-rejoin.css'
 
 export function EventRejoinRequestsPage() {
   const { id = '' } = useParams()
   const { session } = useAuth()
-  return <RequestsContent key={`${id}:${session?.user.id}`} eventId={id} />
+  return <><div className="management-wash" aria-hidden="true" /><RequestsContent key={`${id}:${session?.user.id}`} eventId={id} /></>
 }
 function RequestsContent({ eventId }: { eventId: string }) {
   const location = useLocation()
@@ -89,9 +90,9 @@ function RequestsContent({ eventId }: { eventId: string }) {
     } finally { locked.current = false; if (life.current.active) setSaving(false) }
   }
   const approve = selection?.decision === 'approved'
-  return <section className="attendees-page rejoin-page" aria-label="Solicitudes de reincorporación">
-    <Link className="secondary-link attendees-back" to={`/events/${eventId}/attendees`} state={origin}><Icon name="back" />Volver a asistentes</Link>
-    <header><h1>Solicitudes de reincorporación</h1><p className="attendees-event-title">Usuarios removidos que solicitaron volver a participar del evento</p>{page && <><p>{page.title}</p><p className="attendees-capacity">{page.confirmed_count} / {page.capacity} asistentes · {page.pending_count} solicitudes pendientes</p></>}</header>
+  return <section className="attendees-page management-page rejoin-page" aria-label="Solicitudes de reincorporación">
+    <Link className="secondary-link attendees-back management-back" to={`/events/${eventId}/attendees`} state={origin}><Icon name="back" />Volver a asistentes</Link>
+    <header className="management-header"><h1>Solicitudes de reincorporación</h1><p className="attendees-event-title">Usuarios removidos que solicitaron volver a participar del evento</p>{page && <><p className="management-event-title">{page.title}</p><p className="attendees-capacity">{page.confirmed_count} / {page.capacity} asistentes · {page.pending_count} solicitudes pendientes</p></>}</header>
     <div className="attendees-update"><button ref={update} className="text-button" disabled={loading || saving || !!selection} onClick={() => void refresh()}>Actualizar solicitudes</button></div>
     <p className="attendees-notice" role="status">{notice}</p>
     {!selection && error && <p role="alert" className="field-error">{error}</p>}
@@ -99,6 +100,7 @@ function RequestsContent({ eventId }: { eventId: string }) {
       {loading && <p role="status">Cargando solicitudes…</p>}
       {!loading && !page && error && <button className="secondary-button" onClick={() => void refresh()}>Reintentar</button>}
       {page && <>
+        {page.event_state === 'open' && page.confirmed_count >= page.capacity && <p className="rejoin-full" role="status"><Icon name="people" />Sin cupo disponible. Las solicitudes siguen pendientes y no reservan plaza.</p>}
         {page.event_state !== 'open' && <p className="participation-notice">El evento está cerrado. Podés rechazar solicitudes pendientes; no aprobarlas.</p>}
         {!page.requests.length && <StatusMessage title="No hay solicitudes pendientes">Los pedidos y resoluciones se reflejan al actualizar.</StatusMessage>}
         <ul className="rejoin-list">{page.requests.map(row => <li key={row.request_id}>
@@ -110,7 +112,7 @@ function RequestsContent({ eventId }: { eventId: string }) {
         <p className="rejoin-info">Luego de rechazar, el usuario deberá esperar siete días desde la resolución para realizar una nueva solicitud.</p>
       </>}
     </div>}
-    <dialog ref={dialog} className="attendees-dialog" aria-labelledby="rejoin-title" aria-describedby="rejoin-description" tabIndex={-1} onCancel={e => { e.preventDefault(); close() }} onKeyDown={e => {
+    <dialog ref={dialog} className="attendees-dialog management-dialog rejoin-dialog" aria-labelledby="rejoin-title" aria-describedby="rejoin-description" tabIndex={-1} onCancel={e => { e.preventDefault(); close() }} onKeyDown={e => {
       if (e.key !== 'Tab') return
       e.preventDefault()
       const buttons = [...e.currentTarget.querySelectorAll<HTMLButtonElement>('button:not(:disabled)')]
@@ -118,12 +120,12 @@ function RequestsContent({ eventId }: { eventId: string }) {
       if (!buttons.length) e.currentTarget.focus()
       else buttons[(index + (e.shiftKey ? -1 : 1) + buttons.length) % buttons.length].focus()
     }}>
-      <button className="attendees-dialog-close" disabled={saving} aria-label="Cerrar confirmación" onClick={close}>×</button>
+      <button className="attendees-dialog-close" disabled={saving} aria-label="Cerrar confirmación" onClick={close}><Icon name="close" /></button>
       <h2 id="rejoin-title">{approve ? 'Aprobar' : 'Rechazar'} solicitud</h2>
       <p id="rejoin-description">¿Querés {approve ? 'aprobar' : 'rechazar'} la reincorporación de {selection?.request.display_name}?</p>
       <p className="field-hint">{approve ? 'Volverá a participar si el evento sigue vigente y hay cupo. Sin plaza, la solicitud seguirá pendiente.' : 'Su participación seguirá removida. Deberá esperar siete días desde este rechazo para volver a solicitar.'}</p>
       {selection && error && <p className="field-error" role="alert">{error}</p>}
-      <div><button ref={cancel} className="secondary-button" disabled={saving} onClick={close}>Cancelar</button><button className={approve ? 'gradient-button gradient-link' : 'attendees-remove'} disabled={saving} onClick={() => void resolve(uncertain)}>{saving ? 'Comprobando…' : uncertain ? 'Comprobar estado' : approve ? 'Aprobar' : 'Rechazar'}</button></div>
+      <div><button ref={cancel} className="secondary-button" disabled={saving} onClick={close}>Cancelar</button><button className={approve ? 'gradient-button gradient-link' : 'attendees-remove management-danger'} disabled={saving} onClick={() => void resolve(uncertain)}>{saving ? 'Comprobando…' : uncertain ? 'Comprobar estado' : approve ? 'Aprobar' : 'Rechazar'}</button></div>
     </dialog>
   </section>
 }

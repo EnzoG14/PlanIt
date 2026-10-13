@@ -4,7 +4,7 @@ import { promisify } from 'node:util'
 
 const run = promisify(execFile)
 await import('./check-r3-contrast.mjs')
-const out = 'docs/design/verification/r3-block-7'
+const out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/r3-block-7'
 const defaults = ['foundation', 'auth', 'events', 'discovery', 'home-events', 'participations', 'my-events', 'edit-event', 'gallery', 'attendees', 'event-actions', 'rejoin', 'chat', 'profile', 'notifications', 'realtime', 'mapbox', 'my-events-ui', 'edit-event-ui', 'gallery-ui', 'attendees-ui', 'event-actions-ui', 'rejoin-ui', 'participations-ui', 'home-ui', 'chat-ui', 'realtime-ui', 'discovery-ui']
 const requested = process.argv.slice(2)
 const checks = requested.length ? requested : defaults
@@ -25,13 +25,13 @@ for (const name of checks) {
   await writeFile(target, source)
   const startedAt = new Date().toISOString()
   try {
-    const { stdout, stderr } = await run(process.execPath, [target], { windowsHide: true, timeout: 300000, maxBuffer: 4 * 1024 * 1024, env: process.env })
+    const { stdout, stderr } = await run(process.execPath, [target], { windowsHide: true, timeout: 300000, maxBuffer: 4 * 1024 * 1024, env: { ...process.env, PLANIT_UI_OUTPUT: `${out}/${name}` } })
     results.push({ check: name, result: 'PASS', startedAt, finishedAt: new Date().toISOString(), output: stdout, stderr })
     console.log(`PASS ${name}`)
   } catch (error) {
     results.push({ check: name, result: 'FAIL', startedAt, finishedAt: new Date().toISOString(), output: error.stdout ?? '', stderr: error.stderr ?? '', message: error.message })
     console.error(`FAIL ${name}: ${error.stderr || error.message}`)
   } finally { await unlink(target) }
-  await writeFile(`${out}/results.json`, JSON.stringify({ base: 'd9c0a69', environment: 'Local PostgreSQL/PGlite with Auth/Storage scaffolding; browser fixtures; no remote business writes or real JWT E2E', results }, null, 2))
+  await writeFile(`${out}/results.json`, JSON.stringify({ base: process.env.PLANIT_BASE_SHA ?? 'd9c0a69', environment: 'Local PostgreSQL/PGlite with Auth/Storage scaffolding; browser fixtures; no remote business writes or real JWT E2E', results }, null, 2))
 }
 if (results.some(x => x.result === 'FAIL')) process.exitCode = 1

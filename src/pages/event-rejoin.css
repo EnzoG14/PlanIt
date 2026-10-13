@@ -1,13 +1,39 @@
-.rejoin-page h1 { font-size: clamp(1.35rem, 4.5vw, 1.8rem); overflow-wrap: anywhere; }
-.rejoin-list { list-style: none; padding: 0; display: grid; gap: 1rem; }
-.rejoin-list > li { padding: 1rem; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-card); }
-.rejoin-identity { display: grid; grid-template-columns: 48px minmax(0,1fr) auto; gap: .75rem; align-items: center; }
-.rejoin-pending { color: #171125; background: #ffc448; border-radius: var(--radius-pill); padding: .4rem .65rem; font-size: .8rem; font-weight: 650; }
-.rejoin-date { display: flex; align-items: center; gap: .6rem; color: var(--color-text-muted); font-size: .9rem; }
-.rejoin-actions { display: flex; gap: .75rem; }
-.rejoin-actions button { flex: 1; display: flex; align-items: center; justify-content: center; gap: .4rem; min-height: 48px; padding: .6rem .8rem; font: inherit; font-weight: 650; cursor: pointer; }
-.rejoin-reject { color: var(--color-danger); border: 1px solid var(--color-danger); border-radius: var(--radius-control); background: #ff526c0a; }
-.rejoin-info { padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-card); color: var(--color-text-muted); line-height: 1.5; }
-.rejoin-own-state { margin: 1rem 0; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-card); background: var(--color-bg-elevated); }
-.rejoin-own-state p { color: var(--color-text-muted); line-height: 1.5; }
-@media (max-width: 480px) { .rejoin-identity { grid-template-columns: 44px minmax(0,1fr); gap: .5rem; } .rejoin-pending { grid-column: 2; justify-self: start; } .rejoin-identity .attendee-avatar { grid-row: 1 / 3; } }
+/* Requests route uses shared management composition; embedded states are self-contained. */
+.rejoin-page h1 { overflow-wrap: anywhere; }
+.rejoin-list { list-style: none; padding: 0; margin: 16px 0 24px; display: grid; gap: var(--pi-space-base); }
+.rejoin-list > li { padding: 20px; background: var(--pi-color-surface-card); color: var(--pi-color-ink); border-radius: var(--pi-radius-card); box-shadow: var(--pi-shadow-card); }
+.rejoin-identity { display: grid; grid-template-columns: 48px minmax(0,1fr) auto; gap: var(--pi-space-compact); align-items: center; }
+.rejoin-identity .attendee-avatar { grid-row: 1; }
+.rejoin-pending { color: var(--pi-color-warn-on-bg); background: var(--pi-color-warn-bg); border-radius: var(--pi-radius-pill); padding: 6px 10px; font-size: var(--pi-font-meta-size); font-weight: 650; }
+.rejoin-date { display: flex; align-items: flex-start; gap: var(--pi-space-tight); color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); line-height: 1.5; font-variant-numeric: tabular-nums; }
+.rejoin-date .icon { flex-shrink: 0; }
+.rejoin-actions { display: flex; flex-wrap: wrap; gap: var(--pi-space-tight); }
+.rejoin-actions button { flex: 1 1 120px; display: flex; align-items: center; justify-content: center; gap: var(--pi-space-tight); min-height: 48px; padding: 12px 16px; font: inherit; font-size: var(--pi-font-action-size); font-weight: 700; white-space: normal; cursor: pointer; }
+.rejoin-reject { color: var(--pi-color-danger-text); border: 1.5px solid var(--pi-color-danger-text); border-radius: var(--pi-radius-pill); background: transparent; }
+.rejoin-reject:hover { background: var(--pi-color-danger-bg); }
+.rejoin-actions button:disabled { border-color: transparent; background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); cursor: default; }
+.rejoin-info { margin-top: 24px; color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); line-height: 1.5; }
+.rejoin-full { display: flex; align-items: flex-start; gap: var(--pi-space-tight); padding: var(--pi-space-base); border-radius: var(--pi-radius-notice); background: var(--pi-color-warn-bg); color: var(--pi-color-warn-on-bg); font-size: var(--pi-font-meta-size); line-height: 1.5; }
+.rejoin-full .icon { flex-shrink: 0; }
+.rejoin-dialog h2 { padding-inline: 24px; }
+.rejoin-dialog .field-hint { color: var(--pi-color-text-muted); }
+.rejoin-own-state { margin: 1rem 0; padding: 20px; border: 0; border-radius: var(--pi-radius-notice); background: var(--pi-color-info-bg); color: var(--pi-color-info-on-bg); font-family: var(--pi-font-family); color-scheme: light; overflow-wrap: anywhere; }
+.rejoin-own-state strong { font-size: var(--pi-font-body-size); }
+.rejoin-own-state p { color: inherit; font-size: var(--pi-font-body-size); line-height: 1.5; }
+.rejoin-state-rejected { background: var(--pi-color-warn-bg); color: var(--pi-color-warn-on-bg); }
+.rejoin-own-state .gradient-button { width: 100%; min-height: 48px; padding: 12px 16px; border: 0; border-radius: var(--pi-radius-pill); background: var(--pi-color-ink); color: var(--pi-color-surface); font: inherit; font-weight: 700; white-space: normal; cursor: pointer; }
+.rejoin-own-state .gradient-button:hover { background: var(--pi-color-ink-hover); box-shadow: none; }
+.rejoin-own-state .gradient-button:disabled { opacity: 1; background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); cursor: default; }
+.rejoin-own-state :focus-visible { outline: var(--pi-focus-width) solid var(--pi-color-focus); outline-offset: 3px; }
+.event-participation .rejoin-approved { padding: var(--pi-space-base); border-radius: var(--pi-radius-notice); background: var(--pi-color-success-bg); color: var(--pi-color-success-on-bg); font: var(--pi-font-body-size)/1.5 var(--pi-font-family); }
+@media (max-width: 480px) { .rejoin-identity { grid-template-columns: 44px minmax(0,1fr); gap: var(--pi-space-tight); } .rejoin-pending { grid-column: 2; justify-self: start; } .rejoin-identity .attendee-avatar { grid-row: 1 / 3; } }
+@media (prefers-reduced-transparency: reduce) { .rejoin-list > li { background: var(--pi-card-opaque); } }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .rejoin-list > li { background: var(--pi-card-opaque); } }
+
+/* Recovery and unavailable action stay legible even in the legacy detail. */
+.event-participation:has(.rejoin-own-state) > .field-error { padding: var(--pi-space-base); border-radius: var(--pi-radius-notice); background: var(--pi-color-danger-bg); color: var(--pi-color-danger-on-bg); font: var(--pi-font-meta-size)/1.5 var(--pi-font-family); overflow-wrap: anywhere; }
+.event-participation:has(.rejoin-own-state) > .text-button { min-height: 44px; padding: 10px 16px; border-radius: var(--pi-radius-pill); color: var(--pi-color-ink); font-family: var(--pi-font-family); }
+.event-participation:has(.rejoin-own-state) > .text-button:hover { background: var(--pi-color-chip-bg); }
+.event-participation:has(.rejoin-own-state) > :is(.participation-action,.text-button):disabled { opacity: 1; background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); border-color: transparent; }
+.event-participation:has(.rejoin-own-state) > .participation-action { min-height: 48px; border-radius: var(--pi-radius-pill); font-family: var(--pi-font-family); white-space: normal; }
+.event-participation:has(.rejoin-own-state) > :focus-visible { outline: var(--pi-focus-width) solid var(--pi-color-focus); outline-offset: 3px; }
