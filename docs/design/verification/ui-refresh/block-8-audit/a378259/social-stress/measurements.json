@@ -1,0 +1,1895 @@
+{
+  "sha": "a378259a60106ddd07b111080a24677ad509bc49",
+  "environment": "Edge fixture; computed text sizes collected once then doubled, long fixtures; no native zoom or mobile keyboard",
+  "measurements": [
+    {
+      "name": "chat",
+      "state": "long-text-200",
+      "width": 320,
+      "height": 800,
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "composer": {
+        "left": 16,
+        "top": 603.8125,
+        "width": 288,
+        "height": 196.1875,
+        "bottom": 800
+      },
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "left": 16,
+          "top": 77.1875,
+          "width": 44,
+          "height": 44,
+          "bottom": 121.1875,
+          "scrollWidth": 44,
+          "clientWidth": 44
+        },
+        {
+          "name": "Actualizar chat",
+          "left": 99.625,
+          "top": 295.765625,
+          "width": 204.375,
+          "height": 48,
+          "bottom": 343.765625,
+          "scrollWidth": 204,
+          "clientWidth": 204
+        },
+        {
+          "name": "Cargar mensajes anteriores",
+          "left": 16,
+          "top": 441.15625,
+          "width": 288,
+          "height": 80,
+          "bottom": 521.15625,
+          "scrollWidth": 288,
+          "clientWidth": 288
+        },
+        {
+          "name": "",
+          "left": 16,
+          "top": 654.8125,
+          "width": 192.859375,
+          "height": 88,
+          "bottom": 742.8125,
+          "scrollWidth": 191,
+          "clientWidth": 191
+        },
+        {
+          "name": "Enviar",
+          "left": 216.859375,
+          "top": 666.8125,
+          "width": 87.140625,
+          "height": 64,
+          "bottom": 730.8125,
+          "scrollWidth": 90,
+          "clientWidth": 87
+        }
+      ],
+      "clipped": [
+        {
+          "tag": "SECTION",
+          "className": "chat-page",
+          "scrollWidth": 291,
+          "clientWidth": 288,
+          "text": "Encuentro de la comunidad fixtureMensajes en tiempo real.Act"
+        }
+      ]
+    },
+    {
+      "name": "chat",
+      "state": "long-text-200-height240",
+      "width": 320,
+      "height": 240,
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": {
+        "width": 320,
+        "height": 240
+      },
+      "composer": {
+        "left": 16,
+        "top": 537.15625,
+        "width": 288,
+        "height": 168.1875,
+        "bottom": 705.34375
+      },
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "left": 16,
+          "top": 73.1875,
+          "width": 44,
+          "height": 44,
+          "bottom": 117.1875,
+          "scrollWidth": 44,
+          "clientWidth": 44
+        },
+        {
+          "name": "Actualizar chat",
+          "left": 99.625,
+          "top": 283.765625,
+          "width": 204.375,
+          "height": 48,
+          "bottom": 331.765625,
+          "scrollWidth": 204,
+          "clientWidth": 204
+        },
+        {
+          "name": "Cargar mensajes anteriores",
+          "left": 16,
+          "top": 425.15625,
+          "width": 288,
+          "height": 80,
+          "bottom": 505.15625,
+          "scrollWidth": 288,
+          "clientWidth": 288
+        },
+        {
+          "name": "",
+          "left": 16,
+          "top": 584.15625,
+          "width": 192.859375,
+          "height": 64,
+          "bottom": 648.15625,
+          "scrollWidth": 191,
+          "clientWidth": 191
+        },
+        {
+          "name": "Enviar",
+          "left": 216.859375,
+          "top": 584.15625,
+          "width": 87.140625,
+          "height": 64,
+          "bottom": 648.15625,
+          "scrollWidth": 90,
+          "clientWidth": 87
+        }
+      ],
+      "clipped": [
+        {
+          "tag": "SECTION",
+          "className": "chat-page",
+          "scrollWidth": 291,
+          "clientWidth": 288,
+          "text": "Encuentro de la comunidad fixtureMensajes en tiempo real.Act"
+        }
+      ]
+    },
+    {
+      "name": "profile",
+      "state": "long-text-200",
+      "width": 320,
+      "height": 800,
+      "overflow": true,
+      "scrollWidth": 397,
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar perfil",
+          "left": 20,
+          "top": 176.1875,
+          "width": 214.5625,
+          "height": 48,
+          "bottom": 224.1875,
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "name": "Mis eventos›",
+          "left": 26,
+          "top": 6017.875,
+          "width": 268,
+          "height": 86,
+          "bottom": 6103.875,
+          "scrollWidth": 268,
+          "clientWidth": 268
+        },
+        {
+          "name": "Notificaciones›",
+          "left": 26,
+          "top": 6103.875,
+          "width": 268,
+          "height": 86,
+          "bottom": 6189.875,
+          "scrollWidth": 287,
+          "clientWidth": 268
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "profile",
+      "state": "long-text-200-height240",
+      "width": 320,
+      "height": 240,
+      "overflow": true,
+      "scrollWidth": 397,
+      "viewport": {
+        "width": 320,
+        "height": 240
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar perfil",
+          "left": 20,
+          "top": 176.1875,
+          "width": 214.5625,
+          "height": 48,
+          "bottom": 224.1875,
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "name": "Mis eventos›",
+          "left": 26,
+          "top": 6017.875,
+          "width": 268,
+          "height": 86,
+          "bottom": 6103.875,
+          "scrollWidth": 268,
+          "clientWidth": 268
+        },
+        {
+          "name": "Notificaciones›",
+          "left": 26,
+          "top": 6103.875,
+          "width": 268,
+          "height": 86,
+          "bottom": 6189.875,
+          "scrollWidth": 287,
+          "clientWidth": 268
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "notifications",
+      "state": "long-text-200",
+      "width": 320,
+      "height": 800,
+      "overflow": true,
+      "scrollWidth": 397,
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar",
+          "left": 20,
+          "top": 243.375,
+          "width": 141.515625,
+          "height": 48,
+          "bottom": 291.375,
+          "scrollWidth": 142,
+          "clientWidth": 142
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 4380.75,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 4428.75,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 86,
+          "top": 8516.125,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 8564.125,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 8568.125,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 8616.125,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 12703.5,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 12751.5,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 86,
+          "top": 16838.875,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 16886.875,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 16890.875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 16938.875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 21026.25,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 21074.25,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 86,
+          "top": 25161.625,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 25209.625,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 25213.625,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 25261.625,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "notifications",
+      "state": "long-text-200-height240",
+      "width": 320,
+      "height": 240,
+      "overflow": true,
+      "scrollWidth": 397,
+      "viewport": {
+        "width": 320,
+        "height": 240
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar",
+          "left": 20,
+          "top": 243.375,
+          "width": 141.515625,
+          "height": 48,
+          "bottom": 291.375,
+          "scrollWidth": 142,
+          "clientWidth": 142
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 4380.75,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 4428.75,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 86,
+          "top": 8516.125,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 8564.125,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 8568.125,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 8616.125,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 12703.5,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 12751.5,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 86,
+          "top": 16838.875,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 16886.875,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 16890.875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 16938.875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 21026.25,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 21074.25,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 86,
+          "top": 25161.625,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 25209.625,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 86,
+          "top": 25213.625,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 25261.625,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "chat",
+      "state": "long-text-200",
+      "width": 360,
+      "height": 800,
+      "overflow": false,
+      "scrollWidth": 360,
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "composer": {
+        "left": 16,
+        "top": 603.8125,
+        "width": 328,
+        "height": 196.1875,
+        "bottom": 800
+      },
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "left": 16,
+          "top": 54.390625,
+          "width": 44,
+          "height": 44,
+          "bottom": 98.390625,
+          "scrollWidth": 44,
+          "clientWidth": 44
+        },
+        {
+          "name": "Actualizar chat",
+          "left": 139.625,
+          "top": 212.375,
+          "width": 204.375,
+          "height": 48,
+          "bottom": 260.375,
+          "scrollWidth": 204,
+          "clientWidth": 204
+        },
+        {
+          "name": "Cargar mensajes anteriores",
+          "left": 16,
+          "top": 319.96875,
+          "width": 328,
+          "height": 80,
+          "bottom": 399.96875,
+          "scrollWidth": 328,
+          "clientWidth": 328
+        },
+        {
+          "name": "",
+          "left": 16,
+          "top": 654.8125,
+          "width": 229.4375,
+          "height": 88,
+          "bottom": 742.8125,
+          "scrollWidth": 227,
+          "clientWidth": 227
+        },
+        {
+          "name": "Enviar",
+          "left": 253.4375,
+          "top": 666.8125,
+          "width": 90.5625,
+          "height": 64,
+          "bottom": 730.8125,
+          "scrollWidth": 92,
+          "clientWidth": 91
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "profile",
+      "state": "long-text-200",
+      "width": 360,
+      "height": 800,
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar perfil",
+          "left": 20,
+          "top": 181.1875,
+          "width": 214.5625,
+          "height": 48,
+          "bottom": 229.1875,
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "name": "Mis eventos›",
+          "left": 26,
+          "top": 4707.34375,
+          "width": 308,
+          "height": 86,
+          "bottom": 4793.34375,
+          "scrollWidth": 308,
+          "clientWidth": 308
+        },
+        {
+          "name": "Notificaciones›",
+          "left": 26,
+          "top": 4793.34375,
+          "width": 308,
+          "height": 86,
+          "bottom": 4879.34375,
+          "scrollWidth": 308,
+          "clientWidth": 308
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "notifications",
+      "state": "long-text-200",
+      "width": 360,
+      "height": 800,
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar",
+          "left": 20,
+          "top": 248.375,
+          "width": 141.515625,
+          "height": 48,
+          "bottom": 296.375,
+          "scrollWidth": 142,
+          "clientWidth": 142
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 4351.75,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 4399.75,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 8491.125,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 8539.125,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 8543.125,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 8591.125,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 12646.5,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 12694.5,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 16785.875,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 16833.875,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 16837.875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 16885.875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 20941.25,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 20989.25,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 25080.625,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 25128.625,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 25132.625,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 25180.625,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "chat",
+      "state": "long-text-200",
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "scrollWidth": 375,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "composer": {
+        "left": 16,
+        "top": 615.8125,
+        "width": 343,
+        "height": 196.1875,
+        "bottom": 812
+      },
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "left": 16,
+          "top": 54.390625,
+          "width": 44,
+          "height": 44,
+          "bottom": 98.390625,
+          "scrollWidth": 44,
+          "clientWidth": 44
+        },
+        {
+          "name": "Actualizar chat",
+          "left": 154.625,
+          "top": 212.375,
+          "width": 204.375,
+          "height": 48,
+          "bottom": 260.375,
+          "scrollWidth": 204,
+          "clientWidth": 204
+        },
+        {
+          "name": "Cargar mensajes anteriores",
+          "left": 16,
+          "top": 319.96875,
+          "width": 343,
+          "height": 80,
+          "bottom": 399.96875,
+          "scrollWidth": 343,
+          "clientWidth": 343
+        },
+        {
+          "name": "",
+          "left": 16,
+          "top": 666.8125,
+          "width": 243.328125,
+          "height": 88,
+          "bottom": 754.8125,
+          "scrollWidth": 241,
+          "clientWidth": 241
+        },
+        {
+          "name": "Enviar",
+          "left": 267.328125,
+          "top": 678.8125,
+          "width": 91.671875,
+          "height": 64,
+          "bottom": 742.8125,
+          "scrollWidth": 92,
+          "clientWidth": 92
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "profile",
+      "state": "long-text-200",
+      "width": 375,
+      "height": 812,
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar perfil",
+          "left": 20,
+          "top": 181.1875,
+          "width": 214.5625,
+          "height": 48,
+          "bottom": 229.1875,
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "name": "Mis eventos›",
+          "left": 26,
+          "top": 4707.34375,
+          "width": 323,
+          "height": 86,
+          "bottom": 4793.34375,
+          "scrollWidth": 323,
+          "clientWidth": 323
+        },
+        {
+          "name": "Notificaciones›",
+          "left": 26,
+          "top": 4793.34375,
+          "width": 323,
+          "height": 86,
+          "bottom": 4879.34375,
+          "scrollWidth": 323,
+          "clientWidth": 323
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "notifications",
+      "state": "long-text-200",
+      "width": 375,
+      "height": 812,
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar",
+          "left": 20,
+          "top": 248.375,
+          "width": 141.515625,
+          "height": 48,
+          "bottom": 296.375,
+          "scrollWidth": 142,
+          "clientWidth": 142
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 3956.625,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 4004.625,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 7700.875,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 7748.875,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 7752.875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 7800.875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 11461.125,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 11509.125,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 15205.375,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 15253.375,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 15257.375,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 15305.375,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 18965.625,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 19013.625,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 22709.875,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 22757.875,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 22761.875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 22809.875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "chat",
+      "state": "long-text-200",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "composer": {
+        "left": 16,
+        "top": 647.8125,
+        "width": 358,
+        "height": 196.1875,
+        "bottom": 844
+      },
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "left": 16,
+          "top": 54.390625,
+          "width": 44,
+          "height": 44,
+          "bottom": 98.390625,
+          "scrollWidth": 44,
+          "clientWidth": 44
+        },
+        {
+          "name": "Actualizar chat",
+          "left": 169.625,
+          "top": 193.46875,
+          "width": 204.375,
+          "height": 48,
+          "bottom": 241.46875,
+          "scrollWidth": 204,
+          "clientWidth": 204
+        },
+        {
+          "name": "Cargar mensajes anteriores",
+          "left": 16,
+          "top": 282.171875,
+          "width": 358,
+          "height": 80,
+          "bottom": 362.171875,
+          "scrollWidth": 358,
+          "clientWidth": 358
+        },
+        {
+          "name": "",
+          "left": 16,
+          "top": 698.8125,
+          "width": 257.296875,
+          "height": 88,
+          "bottom": 786.8125,
+          "scrollWidth": 255,
+          "clientWidth": 255
+        },
+        {
+          "name": "Enviar",
+          "left": 281.296875,
+          "top": 710.8125,
+          "width": 92.703125,
+          "height": 64,
+          "bottom": 774.8125,
+          "scrollWidth": 93,
+          "clientWidth": 93
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "chat",
+      "state": "long-text-200-height240",
+      "width": 390,
+      "height": 240,
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": {
+        "width": 390,
+        "height": 240
+      },
+      "composer": {
+        "left": 16,
+        "top": 378.171875,
+        "width": 358,
+        "height": 168.1875,
+        "bottom": 546.359375
+      },
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "left": 16,
+          "top": 50.390625,
+          "width": 44,
+          "height": 44,
+          "bottom": 94.390625,
+          "scrollWidth": 44,
+          "clientWidth": 44
+        },
+        {
+          "name": "Actualizar chat",
+          "left": 169.625,
+          "top": 181.46875,
+          "width": 204.375,
+          "height": 48,
+          "bottom": 229.46875,
+          "scrollWidth": 204,
+          "clientWidth": 204
+        },
+        {
+          "name": "Cargar mensajes anteriores",
+          "left": 16,
+          "top": 266.171875,
+          "width": 358,
+          "height": 80,
+          "bottom": 346.171875,
+          "scrollWidth": 358,
+          "clientWidth": 358
+        },
+        {
+          "name": "",
+          "left": 16,
+          "top": 425.171875,
+          "width": 257.296875,
+          "height": 64,
+          "bottom": 489.171875,
+          "scrollWidth": 255,
+          "clientWidth": 255
+        },
+        {
+          "name": "Enviar",
+          "left": 281.296875,
+          "top": 425.171875,
+          "width": 92.703125,
+          "height": 64,
+          "bottom": 489.171875,
+          "scrollWidth": 93,
+          "clientWidth": 93
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "profile",
+      "state": "long-text-200",
+      "width": 390,
+      "height": 844,
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar perfil",
+          "left": 20,
+          "top": 181.1875,
+          "width": 214.5625,
+          "height": 48,
+          "bottom": 229.1875,
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "name": "Mis eventos›",
+          "left": 26,
+          "top": 4707.34375,
+          "width": 338,
+          "height": 86,
+          "bottom": 4793.34375,
+          "scrollWidth": 338,
+          "clientWidth": 338
+        },
+        {
+          "name": "Notificaciones›",
+          "left": 26,
+          "top": 4793.34375,
+          "width": 338,
+          "height": 86,
+          "bottom": 4879.34375,
+          "scrollWidth": 338,
+          "clientWidth": 338
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "profile",
+      "state": "long-text-200-height240",
+      "width": 390,
+      "height": 240,
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 390,
+        "height": 240
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar perfil",
+          "left": 20,
+          "top": 181.1875,
+          "width": 214.5625,
+          "height": 48,
+          "bottom": 229.1875,
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "name": "Mis eventos›",
+          "left": 26,
+          "top": 4707.34375,
+          "width": 338,
+          "height": 86,
+          "bottom": 4793.34375,
+          "scrollWidth": 338,
+          "clientWidth": 338
+        },
+        {
+          "name": "Notificaciones›",
+          "left": 26,
+          "top": 4793.34375,
+          "width": 338,
+          "height": 86,
+          "bottom": 4879.34375,
+          "scrollWidth": 338,
+          "clientWidth": 338
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "notifications",
+      "state": "long-text-200",
+      "width": 390,
+      "height": 844,
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar",
+          "left": 20,
+          "top": 248.375,
+          "width": 141.515625,
+          "height": 48,
+          "bottom": 296.375,
+          "scrollWidth": 142,
+          "clientWidth": 142
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 3101.625,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 3149.625,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 5990.875,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 6038.875,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 6042.875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 6090.875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 8896.125,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 8944.125,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 11785.375,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 11833.375,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 11837.375,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 11885.375,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 14690.625,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 14738.625,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 17579.875,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 17627.875,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 17631.875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 17679.875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "notifications",
+      "state": "long-text-200-height240",
+      "width": 390,
+      "height": 240,
+      "overflow": true,
+      "scrollWidth": 430,
+      "viewport": {
+        "width": 390,
+        "height": 240
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar",
+          "left": 20,
+          "top": 248.375,
+          "width": 141.515625,
+          "height": 48,
+          "bottom": 296.375,
+          "scrollWidth": 142,
+          "clientWidth": 142
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 3101.625,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 3149.625,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 5990.875,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 6038.875,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 6042.875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 6090.875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 8896.125,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 8944.125,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 11785.375,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 11833.375,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 11837.375,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 11885.375,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 169.9375,
+          "top": 14690.625,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 14738.625,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 92,
+          "top": 17579.875,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 17627.875,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 92,
+          "top": 17631.875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 17679.875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "chat",
+      "state": "long-text-200",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "composer": {
+        "left": 20,
+        "top": 827.8125,
+        "width": 728,
+        "height": 196.1875,
+        "bottom": 1024
+      },
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "left": 20,
+          "top": 8.796875,
+          "width": 44,
+          "height": 44,
+          "bottom": 52.796875,
+          "scrollWidth": 44,
+          "clientWidth": 44
+        },
+        {
+          "name": "Actualizar chat",
+          "left": 543.625,
+          "top": 69.59375,
+          "width": 204.375,
+          "height": 48,
+          "bottom": 117.59375,
+          "scrollWidth": 204,
+          "clientWidth": 204
+        },
+        {
+          "name": "Cargar mensajes anteriores",
+          "left": 20,
+          "top": 125.59375,
+          "width": 728,
+          "height": 48,
+          "bottom": 173.59375,
+          "scrollWidth": 728,
+          "clientWidth": 728
+        },
+        {
+          "name": "",
+          "left": 20,
+          "top": 878.8125,
+          "width": 614.1875,
+          "height": 88,
+          "bottom": 966.8125,
+          "scrollWidth": 612,
+          "clientWidth": 612
+        },
+        {
+          "name": "Enviar",
+          "left": 642.1875,
+          "top": 890.8125,
+          "width": 105.8125,
+          "height": 64,
+          "bottom": 954.8125,
+          "scrollWidth": 106,
+          "clientWidth": 106
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "profile",
+      "state": "long-text-200",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar perfil",
+          "left": 449.4375,
+          "top": 102,
+          "width": 214.5625,
+          "height": 48,
+          "bottom": 150,
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "name": "Mis eventos›",
+          "left": 110,
+          "top": 3355.203125,
+          "width": 548,
+          "height": 86,
+          "bottom": 3441.203125,
+          "scrollWidth": 548,
+          "clientWidth": 548
+        },
+        {
+          "name": "Notificaciones›",
+          "left": 110,
+          "top": 3441.203125,
+          "width": 548,
+          "height": 86,
+          "bottom": 3527.203125,
+          "scrollWidth": 548,
+          "clientWidth": 548
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "notifications",
+      "state": "long-text-200",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar",
+          "left": 104,
+          "top": 181.1875,
+          "width": 141.515625,
+          "height": 48,
+          "bottom": 229.1875,
+          "scrollWidth": 142,
+          "clientWidth": 142
+        },
+        {
+          "name": "Ver evento",
+          "left": 263.9375,
+          "top": 1814.484375,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 1862.484375,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 316.3125,
+          "top": 3451.78125,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 3499.78125,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 186,
+          "top": 3503.78125,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 3551.78125,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 263.9375,
+          "top": 5141.078125,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 5189.078125,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 316.3125,
+          "top": 6778.375,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 6826.375,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 186,
+          "top": 6830.375,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 6878.375,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 263.9375,
+          "top": 8467.671875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 8515.671875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 316.3125,
+          "top": 10104.96875,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 10152.96875,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 186,
+          "top": 10156.96875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 10204.96875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "chat",
+      "state": "long-text-200",
+      "width": 1280,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "composer": {
+        "left": 276,
+        "top": 703.8125,
+        "width": 728,
+        "height": 196.1875,
+        "bottom": 900
+      },
+      "controls": [
+        {
+          "name": "Volver al evento",
+          "left": 276,
+          "top": 8.796875,
+          "width": 44,
+          "height": 44,
+          "bottom": 52.796875,
+          "scrollWidth": 44,
+          "clientWidth": 44
+        },
+        {
+          "name": "Actualizar chat",
+          "left": 799.625,
+          "top": 69.59375,
+          "width": 204.375,
+          "height": 48,
+          "bottom": 117.59375,
+          "scrollWidth": 204,
+          "clientWidth": 204
+        },
+        {
+          "name": "Cargar mensajes anteriores",
+          "left": 276,
+          "top": 125.59375,
+          "width": 728,
+          "height": 48,
+          "bottom": 173.59375,
+          "scrollWidth": 728,
+          "clientWidth": 728
+        },
+        {
+          "name": "",
+          "left": 276,
+          "top": 754.8125,
+          "width": 614.1875,
+          "height": 88,
+          "bottom": 842.8125,
+          "scrollWidth": 612,
+          "clientWidth": 612
+        },
+        {
+          "name": "Enviar",
+          "left": 898.1875,
+          "top": 766.8125,
+          "width": 105.8125,
+          "height": 64,
+          "bottom": 830.8125,
+          "scrollWidth": 106,
+          "clientWidth": 106
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "profile",
+      "state": "long-text-200",
+      "width": 1280,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar perfil",
+          "left": 705.4375,
+          "top": 102,
+          "width": 214.5625,
+          "height": 48,
+          "bottom": 150,
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "name": "Mis eventos›",
+          "left": 366,
+          "top": 3355.203125,
+          "width": 548,
+          "height": 86,
+          "bottom": 3441.203125,
+          "scrollWidth": 548,
+          "clientWidth": 548
+        },
+        {
+          "name": "Notificaciones›",
+          "left": 366,
+          "top": 3441.203125,
+          "width": 548,
+          "height": 86,
+          "bottom": 3527.203125,
+          "scrollWidth": 548,
+          "clientWidth": 548
+        }
+      ],
+      "clipped": []
+    },
+    {
+      "name": "notifications",
+      "state": "long-text-200",
+      "width": 1280,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "composer": null,
+      "controls": [
+        {
+          "name": "Actualizar",
+          "left": 360,
+          "top": 181.1875,
+          "width": 141.515625,
+          "height": 48,
+          "bottom": 229.1875,
+          "scrollWidth": 142,
+          "clientWidth": 142
+        },
+        {
+          "name": "Ver evento",
+          "left": 519.9375,
+          "top": 1814.484375,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 1862.484375,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 572.3125,
+          "top": 3451.78125,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 3499.78125,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 442,
+          "top": 3503.78125,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 3551.78125,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 519.9375,
+          "top": 5141.078125,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 5189.078125,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 572.3125,
+          "top": 6778.375,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 6826.375,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 442,
+          "top": 6830.375,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 6878.375,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Ver evento",
+          "left": 519.9375,
+          "top": 8467.671875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 8515.671875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        },
+        {
+          "name": "Marcar leído",
+          "left": 572.3125,
+          "top": 10104.96875,
+          "width": 174.78125,
+          "height": 48,
+          "bottom": 10152.96875,
+          "scrollWidth": 175,
+          "clientWidth": 175
+        },
+        {
+          "name": "Ver evento",
+          "left": 442,
+          "top": 10156.96875,
+          "width": 151.703125,
+          "height": 48,
+          "bottom": 10204.96875,
+          "scrollWidth": 152,
+          "clientWidth": 152
+        }
+      ],
+      "clipped": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,5 @@
+{
+  "purpose": "isolated fixture experiment: wait 350ms and aria-busy=false after reload before click; original runner remains FAIL twice",
+  "exitCode": 0,
+  "command": "node probes/notif-synchronized.mjs"
+}

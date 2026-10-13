@@ -1,0 +1,5 @@
+{
+  "exitCode": 0,
+  "command": "node probes/forms-rejoin.mjs",
+  "environment": "read-only fixtures"
+}

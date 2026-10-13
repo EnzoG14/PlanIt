@@ -1,0 +1,5 @@
+{
+  "exitCode": 0,
+  "command": "node probes/social-confirm.mjs",
+  "reason": "confirm overflow owner, normal low-height chat and input reachability after stress findings"
+}

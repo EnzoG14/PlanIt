@@ -1,0 +1,15 @@
+import {execFile} from 'node:child_process';
+import {promisify} from 'node:util';
+import {mkdir,writeFile,readFile,unlink} from 'node:fs/promises';
+const run=promisify(execFile), root='docs/design/verification/ui-refresh/block-8-audit/a378259';
+const env={...process.env,PLANIT_UI_ORIGIN:'http://127.0.0.1:4198',PLANIT_PLAYWRIGHT_PATH:'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs',PLANIT_UI_NO_PROXY:'1',PLANIT_BASE_SHA:'a378259a60106ddd07b111080a24677ad509bc49'};
+const entries=[];
+const jobs=[['build',null],['lint',null],['check:amanecer','check-amanecer-tokens'],['check:foundation','check-foundation'],['check:auth','check-auth'],['check:r3','check-release-3'],['check:events:postgres','check-events',['--postgres']],['check:amanecer:auth:ui','check-amanecer-auth-ui'],['check:events:ui','check-events-ui'],['check:chat:layout','check-chat-layout-ui'],['check:profile:ui','check-profile-ui'],['check:notifications:ui','check-notifications-ui'],['runner:my-events-refresh','check-my-events-refresh-ui',['after']],['runner:discovery-refresh','check-discovery-refresh-ui',['after']],['runner:screen-shell','check-screen-shell-ui'],['check:social:ui','check-social-refresh-ui',['after']]];
+for(const [name,script,args=[]] of jobs){
+ const slug=name.replaceAll(':','-'), out=`${root}/${slug}`; await mkdir(out,{recursive:true});
+ let target=script?`scripts/${script}.mjs`:null, temp=null;
+ if(script==='check-social-refresh-ui'){temp='scripts/check-social-refresh-ui.block-8.local.mjs'; await writeFile(temp,(await readFile(target,'utf8')).replace('`docs/design/verification/ui-refresh/block-6-social/${phase}`','process.env.PLANIT_UI_OUTPUT'));target=temp;}
+ const startedAt=new Date().toISOString(); console.log(`START ${name}`);
+ try {const result=await run(script?process.execPath:'cmd.exe',script?[target,...args]:['/d','/s','/c',`npm run ${name}`],{env:{...env,PLANIT_UI_OUTPUT:out,PLANIT_CHAT_UI_OUTPUT:out},windowsHide:true,timeout:script==='check-release-3'?1800000:300000,maxBuffer:8*1024*1024}); await writeFile(`${out}/command.log`,result.stdout+'\n'+result.stderr); entries.push({name,command:script&&name.startsWith('runner')?`node ${target} ${args.join(' ')}`:name==='check:events:postgres'?'npm run check:events -- --postgres':`npm run ${name}`,result:'PASS',exitCode:0,startedAt,finishedAt:new Date().toISOString()});console.log(`PASS ${name}`);}catch(e){await writeFile(`${out}/command.log`,(e.stdout??'')+'\n'+(e.stderr??'')+'\n'+e.message);entries.push({name,result:'FAIL',exitCode:e.code??null,signal:e.signal??null,startedAt,finishedAt:new Date().toISOString(),message:e.message.slice(0,300)});console.log(`FAIL ${name}: ${String(e.stderr??e.message).slice(0,200)}`);}finally{if(temp)await unlink(temp);}
+ await writeFile(`${root}/commands.json`,JSON.stringify({sha:env.PLANIT_BASE_SHA,date:'2026-10-13',origin:env.PLANIT_UI_ORIGIN,environment:'fixtures + local PostgreSQL/PGlite, no remote mutations',entries},null,2));
+}

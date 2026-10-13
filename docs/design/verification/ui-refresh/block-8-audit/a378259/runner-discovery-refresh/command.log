@@ -1,0 +1,41 @@
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: detail 320: horizontal overflow
+
+true !== false
+
+    at capture (file:///C:/Users/enzog/planit-worktrees/amanecer-block-8-audit/scripts/check-discovery-refresh-ui.mjs:47:10)
+    at async file:///C:/Users/enzog/planit-worktrees/amanecer-block-8-audit/scripts/check-discovery-refresh-ui.mjs:116:5 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: true,
+  expected: false,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+
+Command failed: C:\Program Files\nodejs\node.exe scripts/check-discovery-refresh-ui.mjs after
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: detail 320: horizontal overflow
+
+true !== false
+
+    at capture (file:///C:/Users/enzog/planit-worktrees/amanecer-block-8-audit/scripts/check-discovery-refresh-ui.mjs:47:10)
+    at async file:///C:/Users/enzog/planit-worktrees/amanecer-block-8-audit/scripts/check-discovery-refresh-ui.mjs:116:5 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: true,
+  expected: false,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

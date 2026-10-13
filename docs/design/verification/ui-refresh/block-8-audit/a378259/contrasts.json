@@ -1,0 +1,229 @@
+{
+  "method": "sRGB WCAG relative luminance; token/compositing probes are not WCAG certification; notice foreground and transparent surface measured in integration/results.json",
+  "rows": [
+    {
+      "foreground": "ink",
+      "background": "bg",
+      "foregroundHex": "#060b27",
+      "backgroundHex": "#f6f5fd",
+      "ratio": 17.87974562103215,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "text-muted",
+      "background": "bg",
+      "foregroundHex": "#565f8a",
+      "backgroundHex": "#f6f5fd",
+      "ratio": 5.705992885850819,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "text-on-wash",
+      "background": "bg",
+      "foregroundHex": "#2f3664",
+      "backgroundHex": "#f6f5fd",
+      "ratio": 10.585170498765322,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "white",
+      "background": "primary",
+      "foregroundHex": "#ffffff",
+      "backgroundHex": "#0753ff",
+      "ratio": 5.6905375355025525,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "white",
+      "background": "danger-action",
+      "foregroundHex": "#ffffff",
+      "backgroundHex": "#ce103d",
+      "ratio": 5.576410885284644,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "success-on-bg",
+      "background": "success-bg",
+      "foregroundHex": "#064d39",
+      "backgroundHex": "#d9f5ea",
+      "ratio": 8.550842715320668,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "info-on-bg",
+      "background": "info-bg",
+      "foregroundHex": "#2a1a73",
+      "backgroundHex": "#e7e0ff",
+      "ratio": 11.048609522667428,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "warn-on-bg",
+      "background": "warn-bg",
+      "foregroundHex": "#6b4300",
+      "backgroundHex": "#fff1d6",
+      "ratio": 7.745040109684541,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "danger-on-bg",
+      "background": "danger-bg",
+      "foregroundHex": "#8a1030",
+      "backgroundHex": "#ffe1e7",
+      "ratio": 7.816323706738127,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "disabled-text",
+      "background": "disabled-bg",
+      "foregroundHex": "#4a527a",
+      "backgroundHex": "#d9dbe8",
+      "ratio": 5.486707400063248,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "chip-text",
+      "background": "chip-bg",
+      "foregroundHex": "#4a2bc0",
+      "backgroundHex": "#ece8ff",
+      "ratio": 7.3203250336403745,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "dock-text",
+      "background": "ink",
+      "foregroundHex": "#adb7d8",
+      "backgroundHex": "#060b27",
+      "ratio": 9.716772867647471,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "foreground": "control-border",
+      "background": "white",
+      "foregroundHex": "#7a82a8",
+      "backgroundHex": "#ffffff",
+      "ratio": 3.759399590297349,
+      "threshold": 3,
+      "result": "PASS"
+    },
+    {
+      "foreground": "control-border",
+      "background": "bg",
+      "foregroundHex": "#7a82a8",
+      "backgroundHex": "#f6f5fd",
+      "ratio": 3.4725930196892487,
+      "threshold": 3,
+      "result": "PASS"
+    },
+    {
+      "foreground": "placeholder",
+      "background": "white",
+      "foregroundHex": "#6b7399",
+      "backgroundHex": "#ffffff",
+      "ratio": 4.628165482907257,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "scenario": "white alpha 0.72 over pure violet (conservative token probe, not measured whole-page backdrop)",
+      "foreground": "text-muted",
+      "foregroundHex": "#565f8a",
+      "backgroundHex": "#dfd4fe",
+      "ratio": 4.408250999959496,
+      "threshold": 4.5,
+      "result": "FAIL"
+    },
+    {
+      "scenario": "white alpha 0.72 over pure violet (conservative token probe, not measured whole-page backdrop)",
+      "foreground": "text-on-wash",
+      "foregroundHex": "#2f3664",
+      "backgroundHex": "#dfd4fe",
+      "ratio": 8.17773337075695,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "scenario": "white alpha 0.72 over pure violet (conservative token probe, not measured whole-page backdrop)",
+      "foreground": "text",
+      "foregroundHex": "#060b27",
+      "backgroundHex": "#dfd4fe",
+      "ratio": 13.813267574935615,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "scenario": "white alpha 0.9 over pure violet (conservative token probe, not measured whole-page backdrop)",
+      "foreground": "text-muted",
+      "foregroundHex": "#565f8a",
+      "backgroundHex": "#f4f0ff",
+      "ratio": 5.516779206470733,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "scenario": "white alpha 0.9 over pure violet (conservative token probe, not measured whole-page backdrop)",
+      "foreground": "text-on-wash",
+      "foregroundHex": "#2f3664",
+      "backgroundHex": "#f4f0ff",
+      "ratio": 10.23416076268531,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "scenario": "white alpha 0.9 over pure violet (conservative token probe, not measured whole-page backdrop)",
+      "foreground": "text",
+      "foregroundHex": "#060b27",
+      "backgroundHex": "#f4f0ff",
+      "ratio": 17.286843995843565,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "scenario": "white alpha 0.96 over pure violet (conservative token probe, not measured whole-page backdrop)",
+      "foreground": "text-muted",
+      "foregroundHex": "#565f8a",
+      "backgroundHex": "#faf9ff",
+      "ratio": 5.900480197436405,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "scenario": "white alpha 0.96 over pure violet (conservative token probe, not measured whole-page backdrop)",
+      "foreground": "text-on-wash",
+      "foregroundHex": "#2f3664",
+      "backgroundHex": "#faf9ff",
+      "ratio": 10.945963334326834,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "scenario": "white alpha 0.96 over pure violet (conservative token probe, not measured whole-page backdrop)",
+      "foreground": "text",
+      "foregroundHex": "#060b27",
+      "backgroundHex": "#faf9ff",
+      "ratio": 18.489172188368325,
+      "threshold": 4.5,
+      "result": "PASS"
+    },
+    {
+      "scenario": "measured success notice in Detail, six viewports",
+      "foregroundHex": "#83f3c9",
+      "backgroundHex": "#f6f5fd",
+      "ratio": 1.2411712302550169,
+      "threshold": 4.5,
+      "result": "FAIL"
+    }
+  ]
+}

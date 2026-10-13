@@ -1,0 +1,130 @@
+{
+  "sha": "a378259a60106ddd07b111080a24677ad509bc49",
+  "environment": "Edge fixtures, six viewports; stable scrollbar gutter probe only; no remote writes",
+  "results": [
+    {
+      "check": "notice-success",
+      "width": 320,
+      "height": 800,
+      "writes": 1,
+      "text": "El evento fue cancelado. Sus datos e historial se conservan.",
+      "color": "rgb(131, 243, 201)",
+      "background": "rgba(0, 0, 0, 0)",
+      "fontSize": "16px",
+      "bgToken": "#f6f5fd",
+      "rect": {
+        "top": 163.689208984375,
+        "bottom": 214.876708984375,
+        "width": 280,
+        "height": 51.1875
+      },
+      "accessibleStatus": "status"
+    },
+    {
+      "check": "notice-success",
+      "width": 360,
+      "height": 800,
+      "writes": 1,
+      "text": "El evento fue cancelado. Sus datos e historial se conservan.",
+      "color": "rgb(131, 243, 201)",
+      "background": "rgba(0, 0, 0, 0)",
+      "fontSize": "16px",
+      "bgToken": "#f6f5fd",
+      "rect": {
+        "top": 163.7066650390625,
+        "bottom": 214.8941650390625,
+        "width": 320,
+        "height": 51.1875
+      },
+      "accessibleStatus": "status"
+    },
+    {
+      "check": "notice-success",
+      "width": 375,
+      "height": 812,
+      "writes": 1,
+      "text": "El evento fue cancelado. Sus datos e historial se conservan.",
+      "color": "rgb(131, 243, 201)",
+      "background": "rgba(0, 0, 0, 0)",
+      "fontSize": "16px",
+      "bgToken": "#f6f5fd",
+      "rect": {
+        "top": 233.7066650390625,
+        "bottom": 284.8941650390625,
+        "width": 335,
+        "height": 51.1875
+      },
+      "accessibleStatus": "status"
+    },
+    {
+      "check": "notice-success",
+      "width": 390,
+      "height": 844,
+      "writes": 1,
+      "text": "El evento fue cancelado. Sus datos e historial se conservan.",
+      "color": "rgb(131, 243, 201)",
+      "background": "rgba(0, 0, 0, 0)",
+      "fontSize": "16px",
+      "bgToken": "#f6f5fd",
+      "rect": {
+        "top": 265.6943359375,
+        "bottom": 316.8818359375,
+        "width": 350,
+        "height": 51.1875
+      },
+      "accessibleStatus": "status"
+    },
+    {
+      "check": "notice-success",
+      "width": 768,
+      "height": 1024,
+      "writes": 1,
+      "text": "El evento fue cancelado. Sus datos e historial se conservan.",
+      "color": "rgb(131, 243, 201)",
+      "background": "rgba(0, 0, 0, 0)",
+      "fontSize": "16px",
+      "bgToken": "#f6f5fd",
+      "rect": {
+        "top": 449.53082275390625,
+        "bottom": 475.12457275390625,
+        "width": 640,
+        "height": 25.59375
+      },
+      "accessibleStatus": "status"
+    },
+    {
+      "check": "notice-success",
+      "width": 1280,
+      "height": 900,
+      "writes": 1,
+      "text": "El evento fue cancelado. Sus datos e historial se conservan.",
+      "color": "rgb(131, 243, 201)",
+      "background": "rgba(0, 0, 0, 0)",
+      "fontSize": "16px",
+      "bgToken": "#f6f5fd",
+      "rect": {
+        "top": 325.51263427734375,
+        "bottom": 351.10638427734375,
+        "width": 640,
+        "height": 25.59375
+      },
+      "accessibleStatus": "status"
+    },
+    {
+      "check": "classic-scrollbar",
+      "path": "/login",
+      "innerWidth": 320,
+      "clientWidth": 320,
+      "scrollWidth": 320,
+      "bodyWidth": 320
+    },
+    {
+      "check": "classic-scrollbar",
+      "path": "/register",
+      "innerWidth": 320,
+      "clientWidth": 320,
+      "scrollWidth": 320,
+      "bodyWidth": 320
+    }
+  ]
+}

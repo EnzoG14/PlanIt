@@ -1,0 +1,5 @@
+OBSERVED overflow: detail 320 large-text
+OBSERVED overflow: detail 360 large-text
+OBSERVED overflow: detail 375 large-text
+OBSERVED overflow: detail 390 large-text
+OBSERVATION COMPLETE: 126 captures; overflow=4; original suite FAIL is preserved

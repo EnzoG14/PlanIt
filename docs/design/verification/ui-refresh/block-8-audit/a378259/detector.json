@@ -1,0 +1,1086 @@
+[
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 4,
+    "snippet": "Undocumented color #0a1956 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#0a1956",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 13,
+    "snippet": "Undocumented color #b49aff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#b49aff",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 15,
+    "snippet": "border-radius: 8px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "8px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 21,
+    "snippet": "font-size: 26px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "26px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 24,
+    "snippet": "Undocumented color #33375c is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#33375c",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 24,
+    "snippet": "Undocumented color #252152 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#252152",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 24,
+    "snippet": "Undocumented color #10162f is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#10162f",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 27,
+    "snippet": "font-size: 17px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "17px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 29,
+    "snippet": "Undocumented color #78405b is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#78405b",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 29,
+    "snippet": "Undocumented color #25182f is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#25182f",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 30,
+    "snippet": "Undocumented color #ffb9c7 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ffb9c7",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 33,
+    "snippet": "Undocumented color #b49aff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#b49aff",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 43,
+    "snippet": "Undocumented color #ffb9c7 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ffb9c7",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 45,
+    "snippet": "border-radius: 8px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "8px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 51,
+    "snippet": "border-radius: 8px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "8px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 58,
+    "snippet": "font-size: 18px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "18px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 65,
+    "snippet": "Undocumented color #14328b is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#14328b",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 65,
+    "snippet": "Undocumented color #0d1638 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#0d1638",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 65,
+    "snippet": "Undocumented color #c5d5ff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#c5d5ff",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 66,
+    "snippet": "Undocumented color #87adff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#87adff",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 68,
+    "snippet": "Undocumented color #0a1956 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#0a1956",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 77,
+    "snippet": "border-radius: 8px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "8px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 92,
+    "snippet": "Undocumented color #ffb9c7 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ffb9c7",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 98,
+    "snippet": "border-radius: 8px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "8px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 119,
+    "snippet": "Undocumented color #7651df is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#7651df",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\App.css",
+    "line": 119,
+    "snippet": "font-size: 11px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "11px",
+    "importedBy": [
+      "App.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\account-menu.css",
+    "line": 7,
+    "snippet": "Undocumented color #0006 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#0006",
+    "importedBy": [
+      "AccountMenu.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\account-menu.css",
+    "line": 8,
+    "snippet": "border-radius: 8px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "8px",
+    "importedBy": [
+      "AccountMenu.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\account-menu.css",
+    "line": 11,
+    "snippet": "border-radius: 8px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "8px",
+    "importedBy": [
+      "AccountMenu.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\event-actions.css",
+    "line": 16,
+    "snippet": "font-size: 1.25rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.25rem",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\event-actions.css",
+    "line": 18,
+    "snippet": "Undocumented color #ffb9c7 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ffb9c7",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\event-actions.css",
+    "line": 19,
+    "snippet": "font-size: 1.7rem is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "1.7rem",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\event-actions.css",
+    "line": 22,
+    "snippet": "Undocumented color #ff526c is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ff526c",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\event-actions.css",
+    "line": 22,
+    "snippet": "Undocumented color #ff526c18 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ff526c18",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\event-actions.css",
+    "line": 25,
+    "snippet": "Undocumented color #dc1743 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#dc1743",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\event-actions.css",
+    "line": 27,
+    "snippet": "border-radius: 12px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "12px",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\event-actions.css",
+    "line": 30,
+    "snippet": "Undocumented color #ff526c is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#ff526c",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\event-actions.css",
+    "line": 31,
+    "snippet": "Undocumented color #83f3c9 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#83f3c9",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\event-actions.css",
+    "line": 37,
+    "snippet": "font-size: 22px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "22px",
+    "importedBy": [
+      "EventActionDialog.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\maps\\map.css",
+    "line": 2,
+    "snippet": "Undocumented color #0d1638 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#0d1638",
+    "importedBy": [
+      "EventMap.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\maps\\map.css",
+    "line": 3,
+    "snippet": "font-size: 11px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "11px",
+    "importedBy": [
+      "EventMap.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\components\\maps\\map.css",
+    "line": 5,
+    "snippet": "Undocumented color #0d1638 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#0d1638",
+    "importedBy": [
+      "EventMap.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\index.css",
+    "line": 19,
+    "snippet": "Undocumented color #7651df is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#7651df"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\index.css",
+    "line": 36,
+    "snippet": "Undocumented color #5340a2 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#5340a2"
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\chat.css",
+    "line": 19,
+    "snippet": "border-radius: 8px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "8px",
+    "importedBy": [
+      "EventChatPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 9,
+    "snippet": "font-size: 18px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "18px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 13,
+    "snippet": "Undocumented color #14328b is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#14328b",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 13,
+    "snippet": "Undocumented color #292054 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#292054",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 14,
+    "snippet": "Undocumented color #0d1638 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#0d1638",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 18,
+    "snippet": "font-size: 17px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "17px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 20,
+    "snippet": "Undocumented color #c5d5ff is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#c5d5ff",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 28,
+    "snippet": "border-radius: 12px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "12px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 34,
+    "snippet": "Undocumented color #14328b is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#14328b",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 34,
+    "snippet": "Undocumented color #292054 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#292054",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 39,
+    "snippet": "font-size: 26px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "26px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 50,
+    "snippet": "Undocumented color #414860 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#414860",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 55,
+    "snippet": "font-size: 21px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "21px",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\discovery.css",
+    "line": 62,
+    "snippet": "Undocumented color #000 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#000",
+    "importedBy": [
+      "EditEventPage.tsx",
+      "EventDetailPage.tsx",
+      "HomePage.tsx",
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\event-forms.css",
+    "line": 15,
+    "snippet": "font-size: 22px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "22px",
+    "importedBy": [
+      "CreateEventPage.tsx",
+      "EditEventPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\home.css",
+    "line": 3,
+    "snippet": "font-size: 26px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "26px",
+    "importedBy": [
+      "HomePage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\my-events.css",
+    "line": 9,
+    "snippet": "Undocumented color #000 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#000",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\my-events.css",
+    "line": 19,
+    "snippet": "font-size: clamp(32px, 9.6vw, 38px) has fluid endpoint 38px off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "38px",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\my-events.css",
+    "line": 54,
+    "snippet": "border-radius: 4px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "4px",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\my-events.css",
+    "line": 56,
+    "snippet": "Undocumented color #adb2cf is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#adb2cf",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\my-events.css",
+    "line": 66,
+    "snippet": "font-size: 17px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "17px",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\my-events.css",
+    "line": 92,
+    "snippet": "border-radius: 8px is outside the DESIGN.md rounded scale",
+    "advisory": true,
+    "ignoreValue": "8px",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\pages\\my-events.css",
+    "line": 123,
+    "snippet": "font-size: 18px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "18px",
+    "importedBy": [
+      "MyEventsPage.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\styles\\amanecer.css",
+    "line": 29,
+    "snippet": "font-size: 22px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "22px",
+    "importedBy": [
+      "App.css"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\styles\\amanecer.css",
+    "line": 83,
+    "snippet": "font-size: 22px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "22px",
+    "importedBy": [
+      "App.css"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\Users\\enzog\\planit-worktrees\\amanecer-block-8-audit\\src\\styles\\social.css",
+    "line": 2,
+    "snippet": "Undocumented color #000 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#000",
+    "importedBy": [
+      "AppLayout.tsx"
+    ]
+  }
+]

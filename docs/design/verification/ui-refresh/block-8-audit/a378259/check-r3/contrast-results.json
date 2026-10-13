@@ -1,0 +1,38 @@
+{
+  "method": "sRGB relative luminance against white; legacy stops and Amanecer solid action token, not full-page WCAG certification",
+  "results": [
+    {
+      "surface": "Legacy shared cancel dialog",
+      "color": "dc1743",
+      "ratio": 4.944973311122906,
+      "result": "PASS"
+    },
+    {
+      "surface": "Legacy shared cancel dialog",
+      "color": "ce103d",
+      "ratio": 5.576410885284644,
+      "result": "PASS"
+    },
+    {
+      "file": "src/components/event-actions.css",
+      "selector": ".event-management .event-action-dialog .event-action-danger",
+      "color": "ce103d",
+      "ratio": 5.576410885284644,
+      "result": "PASS"
+    },
+    {
+      "file": "src/styles/event-management.css",
+      "selector": ".management-dialog .management-danger",
+      "color": "ce103d",
+      "ratio": 5.576410885284644,
+      "result": "PASS"
+    },
+    {
+      "file": "src/styles/amanecer.css",
+      "selector": ".amanecer-shell .event-action-danger",
+      "color": "ce103d",
+      "ratio": 5.576410885284644,
+      "result": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "purpose": "observation only: replaces overflow assertion with explicit finding collection, not a PASS replacement for failed suite",
+  "exitCode": 0,
+  "command": "node probes/discovery-observe.mjs after"
+}
