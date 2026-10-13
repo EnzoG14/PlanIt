@@ -1,0 +1,2 @@
+RUN check-events-ui.mjs (confirm)
+RUN check-edit-event-ui.mjs (confirm)

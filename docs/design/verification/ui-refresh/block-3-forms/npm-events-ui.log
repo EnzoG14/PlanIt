@@ -1,0 +1,5 @@
+
+> planit@0.0.0 check:events:ui
+> node scripts/check-events-ui.mjs
+
+PASS: mobile/tablet/desktop screenshots, no overflow, 44px targets, field focus/errors, no drafts, geolocation denial, image limit, publish/readback, backend/upload failures, cleanup, lost-response retry and auth guard. All Supabase requests mocked; no remote writes.

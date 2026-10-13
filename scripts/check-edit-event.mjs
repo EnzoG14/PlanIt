@@ -119,7 +119,7 @@ try {
   await blocked('edit-owner');await c.query('commit');assert.match((await reduction).message,/capacity_below_confirmed/)
   assert.equal((await state()).capacity,2)
   check('Race: registration locks first; reduction waits then sees committed confirmed count and fails')
-  const out='docs/design/verification/r3-block-2';await mkdir(out,{recursive:true});await writeFile(`${out}/postgres-results.json`,JSON.stringify({version,environment:'Isolated local PostgreSQL, Auth/Storage scaffolding; no remote business writes or HTTP/JWT',results},null,2))
+  const out=process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/r3-block-2';await mkdir(out,{recursive:true});await writeFile(`${out}/postgres-results.json`,JSON.stringify({version,environment:'Isolated local PostgreSQL, Auth/Storage scaffolding; no remote business writes or HTTP/JWT',results},null,2))
 } finally {
   for (const client of clients) { try { await client.end() } catch { /* Release connections. */ } }
   if (started) await run(pg_ctl, ['-D', directory, '-m', 'fast', '-w', 'stop'], { windowsHide: true, timeout: 30000 })

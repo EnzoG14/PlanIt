@@ -9,3 +9,5 @@ Pedido adicional del usuario (2026-10-12, Argentina): usar la entrada y el heade
 Capturas locales con fixtures interceptados, sin escrituras remotas: baseline suplementario en before/; matriz de diez rutas a 320/375/390/768/1280 en after/. Las fotos/Mapbox son fixtures de geometría. Regresiones en auth/, chat/, home/, discovery/ y my-events/. El stress físico de teclado/lector de pantalla sigue pendiente.
 
 Reproducción: node scripts/check-screen-shell-ui.mjs (Vite local en 4194; PLANIT_UI_ORIGIN/PLANIT_UI_OUTPUT opcionales).
+
+Integración: origin/main 31c1ac2 (Bloque 3 de formularios) reconciliado conservando event-form-shell y discovery-shell. Se retira su override local de header para usar el patrón compartido.

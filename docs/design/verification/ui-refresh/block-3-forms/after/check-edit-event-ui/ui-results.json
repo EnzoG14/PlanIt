@@ -1,0 +1,245 @@
+{
+  "environment": "Edge headless; Auth/REST/Storage fixtures; timezone Asia/Tokyo; no remote HTTP/JWT",
+  "results": [
+    {
+      "viewport": "320x800",
+      "test": "Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Respuesta perdida tras commit se reconcilia por lectura sin segunda operación",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Menú integrado y cancelación preservan origen/filtro; listado muestra edición",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Respuesta perdida tras commit se reconcilia por lectura sin segunda operación",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Menú integrado y cancelación preservan origen/filtro; listado muestra edición",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Respuesta perdida tras commit se reconcilia por lectura sin segunda operación",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Menú integrado y cancelación preservan origen/filtro; listado muestra edición",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Respuesta perdida tras commit se reconcilia por lectura sin segunda operación",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Menú integrado y cancelación preservan origen/filtro; listado muestra edición",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Respuesta perdida tras commit se reconcilia por lectura sin segunda operación",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Menú integrado y cancelación preservan origen/filtro; listado muestra edición",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Error de servidor conserva cambios; doble envío bloqueado; mismo ID y éxito en detalle",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Respuesta perdida tras commit se reconcilia por lectura sin segunda operación",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Estado incierto bloquea edición y comprobar reconsulta sin enviar UPDATE",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Menú integrado y cancelación preservan origen/filtro; listado muestra edición",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Ruta B/inexistente/cancelado/archivado/en curso denegados; carga fallida reintentable",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Resumen/catálogo requeridos; RPC ausente produce error claro sin éxito ficticio",
+      "result": "PASS"
+    }
+  ]
+}
