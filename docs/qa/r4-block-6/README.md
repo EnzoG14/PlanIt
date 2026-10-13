@@ -1,6 +1,6 @@
 # R4 bloque 6 — Visibilidad y enlaces
 
-13/10/2026, Argentina. Rama `codex/r4-block-6`, base `origin/main` **0428d4ff601056fa60d61788087ff352c310e070** después del fetch; PR #44/B5 integrado. Checkout aislado; cambios anteriores del checkout raíz preservados. **Implementado; QA humana/remota pendiente.** SQL exclusivamente local; sin merge/deploy ni bloque 7.
+13/10/2026, Argentina. Rama `codex/r4-block-6`, base `origin/main` **0428d4ff601056fa60d61788087ff352c310e070** después del fetch; PR #44/B5 integrado. [PR #45 en borrador](https://github.com/EnzoG14/PlanIt/pull/45). Checkout aislado; cambios anteriores del checkout raíz preservados. **Implementado; QA humana/remota pendiente.** SQL exclusivamente local; sin merge/deploy ni bloque 7.
 
 ## Contrato y cambios
 
