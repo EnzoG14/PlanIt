@@ -1,0 +1,12 @@
+{
+  "project": "iepeqmvzjguwlhnecsdq",
+  "authorization": "Explicit user request after PR #46: hace las migraciones a la db remota",
+  "migration": "20261014120005_redeem_event_link.sql",
+  "applied": true,
+  "dry_run_before": "only this migration pending",
+  "dry_run_after": "Remote database is up to date",
+  "function": { "security_definer": true, "search_path": "empty", "anon_execute": false, "authenticated_execute": true, "body_md5": "aef5f0a1073369fb1c2b4f7b9d81aef2" },
+  "smoke": "anonymous-identity call wrapped in a ROLLBACK transaction; the guard message was not captured in the CLI output; event_access_grants count afterwards = 0 (no rows written)",
+  "not_run": ["HTTP/JWT real", "advisors comparison", "real redemption"],
+  "historic_project": "not accessed"
+}

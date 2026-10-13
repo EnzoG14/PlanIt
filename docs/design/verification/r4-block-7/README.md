@@ -6,7 +6,7 @@
 
 | Pieza | Detalle |
 | --- | --- |
-| SQL | `supabase/migrations/20261014120005_redeem_event_link.sql`: `redeem_event_link(p_token text) returns uuid` (DEFINER, `search_path=''`, EXECUTE sólo `authenticated`). **Creada y probada localmente; NO aplicada a `planit-v2`** (requiere autorización expresa). |
+| SQL | `supabase/migrations/20261014120005_redeem_event_link.sql`: `redeem_event_link(p_token text) returns uuid` (DEFINER, `search_path=''`, EXECUTE sólo `authenticated`). **Creada y probada localmente; aplicada a `planit-v2` el 13/10/2026 con autorización expresa posterior** ([acta](remote-migration-summary.json)). |
 | Ruta | `/invite#token=…` (`src/pages/InvitePage.tsx`, `invite.css`), fuera de `RequireAuth`; scope `amanecer-shell invite-shell` en `AppLayout`. |
 | Secreto | `src/features/events/invite.ts`: memoria del módulo, ligado a identidad, descartado al cerrar sesión/cambiar de cuenta/consumir/cancelar. `safeReturnPath` admite sólo `/invite` exacto además de los destinos previos. |
 | Pruebas | `scripts/check-invite.mjs` (SQL), `scripts/check-invite-ui.mjs` (navegador, fixtures), `scripts/check-invite-http.mjs` (REST/RPC con JWT de fixture, **NOT RUN**). |
@@ -45,5 +45,5 @@ UI: el fragmento desaparece de la URL; el token no aparece en URL de ninguna sol
 
 - **No se declara el token seguro de extremo a extremo.** El fragmento no se envía al servidor, pero existe en la barra/historial hasta ser limpiado y es legible por extensiones; el secreto se pega por el usuario en el portapapeles al compartirlo (B6). Sin telemetría/analytics en el proyecto.
 - Confirmar el correo de registro redirige a `/map` (`emailRedirectTo`), por lo que ese camino exige reabrir el enlace original (D10). Recargar también.
-- La migración no está aplicada: hasta entonces `/invite` responderá «Invitación no disponible» (`PGRST202`) contra `planit-v2`.
+- La migración ya está aplicada en `planit-v2`, pero ningún canje real se probó con JWT.
 - Todo lo ejecutado es SQL local o fixtures de navegador; ningún CA está validado con JWT real.

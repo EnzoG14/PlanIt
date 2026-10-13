@@ -1,8 +1,8 @@
 # PlanIt — Modelo de datos y migraciones
 
-## R4 Bloque 7 — Canje de enlace (creada y probada localmente; NO aplicada)
+## R4 Bloque 7 — Canje de enlace (creada, probada localmente y aplicada a planit-v2 con autorización posterior)
 
-`20261014120005_redeem_event_link.sql` agrega `public.redeem_event_link(p_token text) returns uuid`: DEFINER, `search_path=''`, EXECUTE sólo `authenticated`, identidad `auth.uid()`. Compara SHA-256 (`extensions.digest`) del token recibido con `event_access_links.token_hash`; toma el lock del evento (el mismo de rotación, visibilidad, cierre y registro) y relee el link bajo lock. Requiere `visibility='unlisted'`, evento no finalizado/cancelado/archivado y link activo; con `grant revoked` falla siempre (nunca se reactiva); con `active` es idempotente; si no existe, inserta el grant con `source_link_id`. No escribe `event_participations` ni consume cupo. Cualquier fallo devuelve el mismo error `invite_unavailable` (P0001). El organizador no crea grant. Sin migraciones remotas aplicadas: requiere autorización expresa.
+`20261014120005_redeem_event_link.sql` agrega `public.redeem_event_link(p_token text) returns uuid`: DEFINER, `search_path=''`, EXECUTE sólo `authenticated`, identidad `auth.uid()`. Compara SHA-256 (`extensions.digest`) del token recibido con `event_access_links.token_hash`; toma el lock del evento (el mismo de rotación, visibilidad, cierre y registro) y relee el link bajo lock. Requiere `visibility='unlisted'`, evento no finalizado/cancelado/archivado y link activo; con `grant revoked` falla siempre (nunca se reactiva); con `active` es idempotente; si no existe, inserta el grant con `source_link_id`. No escribe `event_participations` ni consume cupo. Cualquier fallo devuelve el mismo error `invite_unavailable` (P0001). El organizador no crea grant. Aplicada a planit-v2 el 13/10/2026 con autorización expresa posterior.
 
 ## R4 Bloque 6 — Visibilidad/rotación (aplicada)
 
