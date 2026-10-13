@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-13",
+  "base": "bdba68af06e1462f8250dc6200b8a2009b682cc6",
+  "build": "PASS",
+  "lint": "PASS",
+  "amanecer_normative_tokens": 83,
+  "r3_checks": 28,
+  "r3_result": "PASS",
+  "pilot_dialogs_identical": 18,
+  "viewports": [
+    320,
+    360,
+    375,
+    390,
+    768,
+    1280
+  ],
+  "remote_writes": false,
+  "checks": {
+    "actions_ui": {
+      "result": "PASS",
+      "cases": 62
+    },
+    "rejoin_ui": {
+      "result": "PASS",
+      "cases": 42
+    },
+    "actions_postgres": {
+      "result": "PASS",
+      "cases": 7
+    },
+    "rejoin_postgres": {
+      "result": "PASS",
+      "cases": 10
+    }
+  }
+}

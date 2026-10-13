@@ -1,0 +1,17 @@
+{
+  "environment": "Edge headless fixtures; Argentina formatting in Tokyo; emulated text enlargement/height, not native zoom or physical accessibility acceptance",
+  "baseOrigin": "http://127.0.0.1:4196",
+  "origin": "http://127.0.0.1:4197",
+  "results": [
+    {
+      "test": "self-hosted font loaded; failed font fallback; emulated reduced transparency/motion",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "test": "self-hosted font loaded; failed font fallback; emulated reduced transparency/motion",
+      "width": 1280,
+      "result": "PASS"
+    }
+  ]
+}

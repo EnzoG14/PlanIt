@@ -1,12 +1,16 @@
-.event-management { margin: 1.25rem 0; display: grid; gap: .8rem; }
-.event-management-rows { border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: 0 .8rem; background: var(--color-bg-elevated); }
-.event-management-rows a, .event-management-rows button { display: flex; align-items: center; gap: 1rem; width: 100%; min-height: 56px; padding: .8rem .3rem; border: 0; background: transparent; color: var(--color-text); font: inherit; text-align: left; cursor: pointer; }
-.event-management-rows > :not(:last-child) { border-bottom: 1px solid var(--color-border); }
-.event-management-rows span:first-of-type { flex: 1; overflow-wrap: anywhere; }
+/* Embedded organizer controls: autonomous Amanecer, no route theme activation. */
+.event-management { margin: 1.25rem 0; display: grid; gap: var(--pi-space-base); color: var(--pi-color-ink); font-family: var(--pi-font-family); color-scheme: light; }
+.event-management h2 { margin: 0; font-size: var(--pi-font-title-size); line-height: var(--pi-font-title-line-height); letter-spacing: var(--pi-font-title-tracking); }
+.event-management-rows { border: 0; border-radius: var(--pi-radius-card); padding: 0 var(--pi-space-base); background: var(--pi-color-surface); box-shadow: var(--pi-shadow-card); }
+.event-management-rows :is(a,button) { display: flex; align-items: center; gap: var(--pi-space-base); width: 100%; min-height: 56px; padding: 14px 4px; border: 0; background: transparent; color: var(--pi-color-ink); font: inherit; text-align: start; text-decoration: none; cursor: pointer; }
+.event-management-rows > :not(:last-child) { border-bottom: 1px solid var(--pi-color-divider); }
+.event-management-rows span:first-of-type { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .event-management-rows .icon { width: 24px; height: 24px; flex-shrink: 0; }
-.event-management-rows a:hover, .event-management-rows button:hover { background: var(--color-field); }
-.event-management-danger { border-color: #78405b; background: #331b3533; }
-.event-management-danger button { color: #ff526c; }
+.event-management-rows :is(a,button):hover { background: var(--pi-color-surface-soft); }
+.event-management-danger { background: var(--pi-color-surface); }
+.event-management-danger button { color: var(--pi-color-danger-text); }
+.event-management-rows button:disabled { background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); cursor: default; }
+.event-management :focus-visible { outline: var(--pi-focus-width) solid var(--pi-color-focus); outline-offset: 3px; }
 .event-action-dialog { box-sizing: border-box; width: min(440px,calc(100% - 2rem)); max-height: calc(100dvh - 2rem); overflow-y: auto; overscroll-behavior: contain; padding: 1.5rem; border: 1px solid var(--color-purple); border-radius: var(--radius-card); background: var(--color-bg-elevated); color: var(--color-text); text-align: center; }
 .event-action-dialog::backdrop { background: #02051bcc; }
 .event-action-dialog h2 { font-size: 1.25rem; }
@@ -26,3 +30,24 @@
 .compact-event-menu-panel button.event-menu-danger { color: #ff526c; }
 .event-action-notice { color: #83f3c9; overflow-wrap: anywhere; }
 .duplicate-back { margin-bottom: 1rem; }
+
+/* Deliberately scoped: the dialog in Mis eventos keeps its existing pixels and behavior. */
+.event-management .event-action-dialog { padding: 26px 22px 22px; border: 0; border-radius: var(--pi-radius-sheet); background: var(--pi-color-surface); color: var(--pi-color-ink); box-shadow: var(--pi-shadow-dialog); font-family: var(--pi-font-family); }
+.event-management .event-action-dialog::backdrop { background: var(--pi-color-scrim); }
+.event-management .event-action-dialog h2 { font-size: 22px; letter-spacing: -.025em; }
+.event-management .event-action-dialog p { color: var(--pi-color-text-muted); }
+.event-management .event-action-dialog .field-error { padding: var(--pi-space-base); border-radius: var(--pi-radius-notice); background: var(--pi-color-danger-bg); color: var(--pi-color-danger-on-bg); font-size: var(--pi-font-meta-size); }
+.event-management .event-action-close { border-radius: 50%; color: var(--pi-color-text-muted); }
+.event-management .event-action-close:hover { background: var(--pi-color-chip-bg); }
+.event-management .event-action-symbol { border: 0; background: var(--pi-color-chip-bg); color: var(--pi-color-chip-text); }
+.event-management :is(.action-cancel,.action-archive) .event-action-symbol { background: var(--pi-color-danger-bg); color: var(--pi-color-danger-text); }
+.event-management .event-action-dialog-buttons { flex-wrap: wrap; }
+.event-management .event-action-dialog-buttons button { flex: 1 1 150px; padding: 12px 16px; border-radius: var(--pi-radius-pill); font-weight: 700; white-space: normal; }
+.event-management .event-action-dialog .secondary-button { border: 1.5px solid var(--pi-color-ink); background: transparent; color: var(--pi-color-ink); }
+.event-management .event-action-dialog .gradient-link { border: 0; background: var(--pi-color-ink); color: var(--pi-color-surface); }
+.event-management .event-action-dialog .gradient-link:hover:not(:disabled) { background: var(--pi-color-ink-hover); }
+.event-management .event-action-dialog .event-action-danger { background: var(--pi-color-danger-action); color: var(--pi-color-surface); }
+.event-management .event-action-dialog.action-archive .gradient-link:not(:disabled), .event-management .event-action-dialog.action-archive .gradient-link:hover:not(:disabled) { background: var(--pi-color-danger-action); }
+.event-management :is(.event-action-danger,.action-archive .gradient-link):hover:not(:disabled) { filter: brightness(.92); }
+.event-management .event-action-dialog button:disabled { opacity: 1; background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); border-color: transparent; }
+.event-management ::selection { background: var(--pi-color-lavender); color: var(--pi-color-ink); }

@@ -4,9 +4,9 @@ import { actionLabels, checkEventAction, closeEvent, EventActionError, type Even
 import { Icon } from './Icon'
 import './event-actions.css'
 
-export function EventActionDialog({ event, action, onClose, onChanged, restoreFocus, origin }: {
+export function EventActionDialog({ event, action, onClose, onChanged, restoreFocus, origin, dismissLabel = 'Cancelar' }: {
   event: ManagedEvent; action: EventAction | null; onClose: () => void; onChanged: (message: string) => void
-  restoreFocus?: () => void; origin: { myEventsReturnTo?: string; returnTo?: string }
+  dismissLabel?: string; restoreFocus?: () => void; origin: { myEventsReturnTo?: string; returnTo?: string }
 }) {
   const navigate = useNavigate()
   const dialog = useRef<HTMLDialogElement>(null), cancel = useRef<HTMLButtonElement>(null)
@@ -74,6 +74,6 @@ export function EventActionDialog({ event, action, onClose, onChanged, restoreFo
     <h2 id={labelId}>{action ? actionLabels[action] : ''}</h2>
     <p id={descriptionId}>{action === 'cancel' ? `¿Querés cancelar “${event.title}”? No se puede deshacer. Se detendrán nuevas inscripciones y mensajes; los datos y el historial se conservan.` : action === 'archive' ? `¿Querés archivar “${event.title}”? Quedará fuera de los listados activos y seguirá en Archivados.${event.event_state === 'open' ? ' Como todavía no finalizó, también se cancelará.' : ''}` : 'Se abrirá un formulario editable con los datos de este evento, sin fechas ni fotos. Todavía no se guardará ningún evento nuevo.'}</p>
     {error && <p role="alert" className="field-error">{error}{uncertain && ' Comprobá el estado antes de intentar otra operación.'}</p>}
-    <div className="event-action-dialog-buttons"><button type="button" ref={cancel} className="secondary-button" disabled={busy} onClick={close}>Cancelar</button><button type="button" className={action === 'cancel' ? 'event-action-danger' : 'gradient-link'} disabled={busy} onClick={() => void confirm()}>{busy ? uncertain ? 'Comprobando…' : 'Procesando…' : uncertain ? 'Comprobar estado' : action === 'duplicate' ? 'Abrir formulario' : action === 'archive' ? 'Archivar' : 'Cancelar evento'}</button></div>
+    <div className="event-action-dialog-buttons"><button type="button" ref={cancel} className="secondary-button" disabled={busy} onClick={close}>{dismissLabel}</button><button type="button" className={action === 'cancel' ? 'event-action-danger' : 'gradient-link'} disabled={busy} onClick={() => void confirm()}>{busy ? uncertain ? 'Comprobando…' : 'Procesando…' : uncertain ? 'Comprobar estado' : action === 'duplicate' ? 'Abrir formulario' : action === 'archive' ? 'Archivar' : 'Cancelar evento'}</button></div>
   </dialog>
 }

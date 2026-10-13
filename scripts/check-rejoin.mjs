@@ -178,8 +178,9 @@ try {
   assert.equal(new Set([...first.requests,...second.requests].map(r=>r.request_id)).size,34)
   assert.equal(first.pending_count,34)
   check('R3-09 CA01: pending-only pagination with stable date/UUID order, counts and minimal social projection')
-  await mkdir('docs/design/verification/r3-block-6',{recursive:true})
-  await writeFile('docs/design/verification/r3-block-6/postgres-results.json',JSON.stringify({version,environment:'Isolated real PostgreSQL; Auth/Storage SQL scaffolding; no remote HTTP/JWT',results},null,2))
+  const out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/r3-block-6'
+  await mkdir(out,{recursive:true})
+  await writeFile(`${out}/postgres-results.json`,JSON.stringify({version,environment:'Isolated real PostgreSQL; Auth/Storage SQL scaffolding; no remote HTTP/JWT',results},null,2))
 } finally {
   await Promise.allSettled(clients.map(c=>c.end()))
   if (started) await run(pg_ctl,['-D',directory,'-m','fast','-w','stop'],{windowsHide:true,timeout:30000})

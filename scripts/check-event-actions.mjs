@@ -137,8 +137,9 @@ try {
   let raceId = await create(); await race(a, () => action(a, raceId), a2, () => action(a2, raceId, 'archive')); assert.ok((await row(raceId)).archived_at)
   raceId = await create(); await race(a, () => action(a, raceId, 'archive'), a2, () => action(a2, raceId), /event_archived/)
   check('Twelve real lock races: cancel/archive versus registration, chat and same close in both orders; cancel versus archive in both orders')
-  await mkdir('docs/design/verification/r3-block-5', { recursive: true })
-  await writeFile('docs/design/verification/r3-block-5/postgres-results.json', JSON.stringify({ version, environment: 'Real isolated PostgreSQL; Auth/Storage SQL scaffolding; no remote HTTP/JWT', results }, null, 2))
+  const out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/r3-block-5'
+  await mkdir(out, { recursive: true })
+  await writeFile(`${out}/postgres-results.json`, JSON.stringify({ version, environment: 'Real isolated PostgreSQL; Auth/Storage SQL scaffolding; no remote HTTP/JWT', results }, null, 2))
 } finally {
   await Promise.allSettled(clients.map(c => c.end()))
   if (started) await run(pg_ctl, ['-D', directory, '-m', 'fast', '-w', 'stop'], { windowsHide: true, timeout: 30000 })

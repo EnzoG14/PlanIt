@@ -16,7 +16,7 @@ if (requestedWidth) {
 const user = id => ({ id, email: 'fixture@example.invalid', aud: 'authenticated', role: 'authenticated', app_metadata: { provider: 'email' }, user_metadata: {}, identities: [], created_at: '2026-10-10T12:00:00Z' })
 const session = identity => ({ access_token: `fixture-${identity}`, refresh_token: 'fixture-refresh', expires_at: Math.floor(Date.now() / 1000) + 3600, expires_in: 3600, token_type: 'bearer', user: user(identity) })
 try {
-  for (const [width, height] of [[360,800], [375,812], [390,844], [768,1024], [1280,900]].filter(([width]) => !requestedWidth || requestedWidth === width)) {
+  for (const [width, height] of [[320,800], [360,800], [375,812], [390,844], [768,1024], [1280,900]].filter(([width]) => !requestedWidth || requestedWidth === width)) {
     let event = { id, organizer_id: owner, title: 'After primaveral Vol. 1', description: 'Jazz fusión, DJ set y coctelería. Datos ficticios.', starts_at: '2099-10-12T22:00:00', ends_at: '2099-10-13T03:00:00', address: 'Buenos Aires', location_name: 'Centro cultural', latitude: -34.6, longitude: -58.38, capacity: 80, category_id: category, visibility: 'public', cancelled_at: null, archived_at: null }
     const contexts = [], errors = [], saved = new Map()
     let writes = 0, publications = 0, uploads = 0, failure = '', slow = false, sourceFailure = '', readFailure = false, activeCategory = true, losePublish = false, sourceReads = 0
@@ -24,7 +24,7 @@ try {
     const check = test => { results.push({ viewport: `${width}x${height}`, test, result: 'PASS' }); console.log(`PASS ${width}: ${test}`) }
     const state = () => event.archived_at ? 'archived' : event.cancelled_at ? 'cancelled' : event.ends_at < '2026' ? 'ended' : 'open'
     async function pageFor(identity) {
-      const context = await browser.newContext({ viewport: { width, height }, timezoneId: 'Asia/Tokyo' }); contexts.push(context)
+      const context = await browser.newContext({ viewport: { width, height }, timezoneId: 'Asia/Tokyo', reducedMotion: 'reduce' }); contexts.push(context)
       if (identity) await context.addInitScript(({ key, value }) => localStorage.setItem(key, JSON.stringify(value)), { key, value: session(identity) })
       await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**', async route => {
         const req = route.request(), url = new URL(req.url()), path = url.pathname
@@ -83,14 +83,14 @@ try {
     const open = async name => { await page.getByRole('button', { name, exact: true }).click(); await page.getByRole('dialog').waitFor() }
     await page.goto(`${origin}/events/${id}`); await ready()
     await page.screenshot({ path: `${out}/actions-${width}.png`, fullPage: true }); assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true)
-    await open('Cancelar evento'); assert.equal(await page.getByRole('dialog').getByRole('button', { name: 'Cancelar', exact: true }).evaluate(e => e === document.activeElement), true)
+    await open('Cancelar evento'); assert.equal(await page.getByRole('dialog').getByRole('button', { name: /^(Cancelar|Volver|Conservar evento)$/ }).evaluate(e => e === document.activeElement), true)
     for (let i = 0; i < 6; i++) { await page.keyboard.press('Tab'); assert.equal(await page.getByRole('dialog').evaluate(e => e.contains(document.activeElement)), true) }
     await page.screenshot({ path: `${out}/cancel-dialog-${width}.png` }); await page.keyboard.press('Escape'); assert.equal(writes, 0)
     await page.waitForFunction(() => document.activeElement?.textContent?.includes('Cancelar evento'))
-    await open('Archivar evento'); await page.getByRole('dialog').getByRole('button', { name: 'Cancelar', exact: true }).click(); assert.equal(writes, 0)
+    await open('Archivar evento'); await page.getByRole('dialog').getByRole('button', { name: /^(Cancelar|Volver|Conservar evento)$/ }).click(); assert.equal(writes, 0)
     check('Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing')
     failure = 'fixture_rejection'; await open('Cancelar evento'); await page.getByRole('dialog').getByRole('button', { name: 'Cancelar evento', exact: true }).click(); await page.getByRole('alert').waitFor(); assert.equal(event.cancelled_at, null); assert.equal(await page.locator('.event-action-notice').innerText(), '')
-    await page.getByRole('dialog').getByRole('button', { name: 'Cancelar', exact: true }).click()
+    await page.getByRole('dialog').getByRole('button', { name: /^(Cancelar|Volver|Conservar evento)$/ }).click()
     failure = ''; slow = true; await open('Cancelar evento'); const before = writes
     await page.getByRole('dialog').getByRole('button', { name: 'Cancelar evento', exact: true }).dblclick(); await page.locator('.event-action-notice').filter({ hasText: 'fue cancelado' }).waitFor(); assert.equal(writes, before + 1); slow = false
     await page.waitForFunction(() => !document.querySelector('.event-management button')?.textContent?.includes('Cancelar evento'))
@@ -173,7 +173,7 @@ try {
       await page.evaluate(({ key, value }) => { const channel = new BroadcastChannel(key); channel.postMessage({ event: 'SIGNED_IN', session: value }); channel.close() }, { key, value: session(guest) })
       await page.getByRole('heading', { name: 'No se pudo duplicar' }).waitFor(); releasePublication(); releasePublication = null
       await page.waitForTimeout(150); assert.ok(page.url().includes('duplicateFrom=')); assert.equal(await page.getByRole('heading', { name: 'Evento publicado' }).count(), 0)
-      await page.getByRole('button', { name: 'Salir', exact: true }).click(); await page.waitForURL(url => url.pathname === '/login'); assert.equal(await page.locator('.event-form').count(), 0)
+      await page.getByRole('button', { name: 'Cuenta', exact: true }).click(); await page.getByRole('button', { name: 'Cerrar sesión', exact: true }).click(); await page.waitForURL(url => url.pathname === '/login'); assert.equal(await page.locator('.event-form').count(), 0)
       check('Late publication response from previous account cannot navigate or expose success in new account; logout clears form')
     }
     assert.deepEqual(errors, []); assert.ok(sourceReads > 0)

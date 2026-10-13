@@ -3,7 +3,7 @@ import { mkdir, writeFile } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
 const browser = await chromium.launch({ headless:true, channel:'msedge' })
-const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4188', out='docs/design/verification/r3-block-6'
+const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4188', out=process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/r3-block-6'
 await mkdir(out,{recursive:true})
 const owner='20000000-0000-4000-8000-000000000001', guest='20000000-0000-4000-8000-000000000002'
 const id='30000000-0000-4000-8000-000000000001', other='30000000-0000-4000-8000-000000000002'
@@ -11,7 +11,7 @@ const key='sb-iepeqmvzjguwlhnecsdq-auth-token', results=[]
 const user=identity=>({id:identity,email:'fixture@example.invalid',aud:'authenticated',role:'authenticated',app_metadata:{provider:'email'},user_metadata:{},identities:[],created_at:'2026-10-10T12:00:00Z'})
 const session=identity=>({access_token:`fixture-${identity}`,refresh_token:'fixture-refresh',expires_at:Math.floor(Date.now()/1000)+3600,expires_in:3600,token_type:'bearer',user:user(identity)})
 try {
-  for (const [width,height] of [[360,800],[375,812],[390,844],[768,1024],[1280,900]]) {
+  for (const [width,height] of [[320,800],[360,800],[375,812],[390,844],[768,1024],[1280,900]]) {
     let rows=Array.from({length:34},(_,i)=>({request_id:`40000000-0000-4000-8000-${String(i).padStart(12,'0')}`,participation_id:`50000000-0000-4000-8000-${String(i).padStart(12,'0')}`,status:'pending',requested_at:'2026-10-12T12:00:00',display_name:i===0?'Sofía Herrera':i===1?'Nicolás Pérez':`Solicitante ${i}`,username:`solicitante_${i}`}))
     let eventState='open', full=false, listFailure=false, mutationFailure='', resolutionFailure=false, slow=false, writes=0, ownStatus='removed', ownRequest={request_id:null,status:null,requested_at:null,resolved_at:null,next_eligible_at:null,can_request:true}, requestCalls=0, requestLost=false, ownFailure=false
     let releaseList, listStarted, listReads=0
@@ -19,7 +19,7 @@ try {
     const event={id,organizer_id:owner,title:'After primaveral — prueba',description:'Datos ficticios para verificar reincorporación.',starts_at:'2099-10-12T22:00:00',ends_at:'2099-10-13T03:00:00',address:'Buenos Aires',location_name:'Centro cultural',latitude:-34.6,longitude:-58.38,capacity:80,category_id:'10000000-0000-4000-8000-000000000001',visibility:'public',cancelled_at:null,archived_at:null}
     const check=test=>{results.push({viewport:`${width}x${height}`,test,result:'PASS'});console.log(`PASS ${width}: ${test}`)}
     async function pageFor(identity) {
-      const context=await browser.newContext({viewport:{width,height},timezoneId:'Asia/Tokyo'});contexts.push(context)
+      const context=await browser.newContext({viewport:{width,height},timezoneId:'Asia/Tokyo',reducedMotion:'reduce'});contexts.push(context)
       if(identity) await context.addInitScript(({key,value})=>localStorage.setItem(key,JSON.stringify(value)),{key,value:session(identity)})
       await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**',async route=>{
         const req=route.request(), path=new URL(req.url()).pathname
@@ -72,7 +72,7 @@ try {
     assert.equal(await list().count(),30);assert.equal(await page.getByText('@solicitante_0',{exact:true}).count(),1);assert.equal(await page.locator('.rejoin-page').getByText(/@gmail|fixture@example|motivo|Te avisaremos/).count(),0)
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true)
     await page.screenshot({path:`${out}/requests-${width}.png`})
-    check('Asistentes navigation, 30 pending requests, safe identity, Argentina dates, original dark cards and no overflow')
+    check('Asistentes navigation, 30 pending requests, safe identity, Argentina dates, request cards and no overflow')
     listFailure=true;await page.getByRole('button',{name:'Cargar más solicitudes'}).click();await page.getByRole('alert').waitFor();assert.equal(await list().count(),30)
     listFailure=false;await page.getByRole('button',{name:'Cargar más solicitudes'}).click();await page.getByText('Solicitante 33',{exact:true}).waitFor();assert.equal(await list().count(),34)
     await open('Sofía Herrera');assert.equal(await page.getByRole('button',{name:'Cancelar',exact:true}).evaluate(e=>e===document.activeElement),true)

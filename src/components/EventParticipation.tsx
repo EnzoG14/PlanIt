@@ -82,12 +82,12 @@ export function EventParticipation({ eventId }: { eventId: string }) {
     {summary?.own_status === 'confirmed' && <p className="participation-notice" role="status">Ya participás.</p>}
     {summary && (summary.is_organizer || summary.own_status === 'confirmed') && <Link className="secondary-link" to={`/events/${eventId}/chat`}>Abrir chat del evento</Link>}
     {summary?.own_status === 'cancelled' && <p className="participation-notice" role="status">Tu participación está cancelada.</p>}
-    {summary?.own_status === 'removed' && <div className="rejoin-own-state" role="status">
+    {summary?.own_status === 'removed' && <div className={`rejoin-own-state rejoin-state-${rejoin?.status ?? 'eligible'}`} role="status">
       <strong>{rejoin?.status === 'pending' ? 'Solicitud en revisión' : rejoin?.status === 'rejected' ? 'Solicitud rechazada' : 'Solicitud de reincorporación'}</strong>
       <p>{rejoin?.status === 'pending' ? 'Tu solicitud fue enviada al organizador. Sigue pendiente de resolución.' : rejoin?.status === 'rejected' && rejoin.next_eligible_at ? `Podés volver a solicitar desde el ${formatEventTime(rejoin.next_eligible_at)} (hora de Argentina).` : 'Tu inscripción fue removida. Podés pedir al organizador volver a participar si el evento sigue vigente.'}</p>
       {!closed && rejoin?.can_request && <button className="gradient-button gradient-link" disabled={pending || uncertain} onClick={() => void refresh('rejoin')}>Solicitar reincorporación</button>}
     </div>}
-    {summary?.own_status === 'confirmed' && rejoin?.status === 'approved' && <p className="participation-notice" role="status">Solicitud aprobada. Volvés a participar del evento.</p>}
+    {summary?.own_status === 'confirmed' && rejoin?.status === 'approved' && <p className="participation-notice rejoin-approved" role="status">Solicitud aprobada. Volvés a participar del evento.</p>}
     <button className="gradient-link gradient-button participation-action" disabled={pending || !(canLeave || canJoin)} onClick={() => void refresh(canLeave ? 'leave' : 'register')}>
       {pending ? 'Consultando participación…' : canLeave ? 'Retirarme' : label}
     </button>
