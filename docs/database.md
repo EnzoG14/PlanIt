@@ -1,8 +1,8 @@
 # PlanIt — Modelo de datos y migraciones
 
-## R4 Bloque 4 — Ranking público (no aplicado)
+## R4 Bloque 4 — Ranking público (aplicado)
 
-`20261014120002_get_suggested_events.sql` agrega RPC invoker `get_suggested_events(double precision,double precision,integer)`, search_path vacío, EXECUTE authenticated. Sin tablas/RLS nuevas; intereses auth.uid(), públicos sin cancelar/archivar y ends_at vigente Argentina. 100 afinidad + hasta30 dentro50km + hasta20 dentro7d; ranking antes de LIMIT (default6, máximo20), empate starts_at/id y fallback general cronológico. Creada/probada por replay local; **no aplicada/inspeccionada remotamente**. [Evidencia](design/verification/r4-block-4/README.md).
+`20261014120002_get_suggested_events.sql` agrega RPC invoker `get_suggested_events(double precision,double precision,integer)`, search_path vacío, EXECUTE authenticated. Sin tablas/RLS nuevas; intereses auth.uid(), públicos sin cancelar/archivar y ends_at vigente Argentina. 100 afinidad + hasta30 dentro50km + hasta20 dentro7d; ranking antes de LIMIT (default6, máximo20), empate starts_at/id y fallback general cronológico. Creada/probada por replay local y **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior**: versión registrada, dry-run al día, invoker/search_path/EXECUTE y hash del cuerpo idéntico a Git. Guard sin identidad probado con ROLLBACK; JWT real pendiente. [Evidencia](design/verification/r4-block-4/README.md).
 
 ## R4 Bloque 3 — Preferencias privadas (aplicada)
 

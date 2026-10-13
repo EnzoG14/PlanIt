@@ -19,7 +19,7 @@
   "regression_filters_ui": "PASS after Chromium rounding correction",
   "regression_discovery_ui": "PASS fixture",
   "regression_interests_ui": "PASS isolated rerun; two concurrent runs timed out",
-  "remote_migration": "NOT RUN",
+  "remote_migration": "APPLIED AND VERIFIED planit-v2 2026-10-13; separately authorized after PR #43",
   "http_jwt_real": "NOT RUN",
   "human_acceptance": "NOT RUN"
 }
