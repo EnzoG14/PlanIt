@@ -1,0 +1,420 @@
+{
+  "sha": "42af4e42d032637b1363e207714e86c297d8c3b1",
+  "browser": "155.0.4283.45",
+  "kind": "read-only UI fixtures; not remote JWT",
+  "map": "Mapbox unavailable fallback; day preset inspected in code only",
+  "labFonts": "External requests blocked; prototype font fallback",
+  "results": [
+    {
+      "name": "home-375x812",
+      "kind": "baseline",
+      "route": "/home",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(246, 245, 253)",
+      "overflow": false,
+      "dock": [
+        {
+          "name": "Inicio",
+          "active": "page"
+        },
+        {
+          "name": "Mapa",
+          "active": null
+        },
+        {
+          "name": "Mis eventos",
+          "active": null
+        },
+        {
+          "name": "Perfil",
+          "active": null
+        }
+      ],
+      "focus": "main-content",
+      "heading": "Inicio"
+    },
+    {
+      "name": "map-375x812",
+      "kind": "baseline",
+      "route": "/map",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(246, 245, 253)",
+      "overflow": false,
+      "dock": [
+        {
+          "name": "Inicio",
+          "active": null
+        },
+        {
+          "name": "Mapa",
+          "active": "page"
+        },
+        {
+          "name": "Mis eventos",
+          "active": null
+        },
+        {
+          "name": "Perfil",
+          "active": null
+        }
+      ],
+      "focus": "main-content",
+      "heading": "Encontrá tu próximo plan"
+    },
+    {
+      "name": "profile-375x812",
+      "kind": "baseline",
+      "route": "/me",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(246, 245, 253)",
+      "overflow": false,
+      "dock": [
+        {
+          "name": "Inicio",
+          "active": null
+        },
+        {
+          "name": "Mapa",
+          "active": null
+        },
+        {
+          "name": "Mis eventos",
+          "active": null
+        },
+        {
+          "name": "Perfil",
+          "active": "page"
+        }
+      ],
+      "focus": "main-content",
+      "heading": "Mi perfil"
+    },
+    {
+      "name": "detail-375x812",
+      "kind": "baseline",
+      "route": "/events/30000000-0000-4000-8000-000000000001",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(246, 245, 253)",
+      "overflow": false,
+      "dock": [
+        {
+          "name": "Inicio",
+          "active": null
+        },
+        {
+          "name": "Mapa",
+          "active": null
+        },
+        {
+          "name": "Mis eventos",
+          "active": null
+        },
+        {
+          "name": "Perfil",
+          "active": null
+        }
+      ],
+      "focus": "main-content",
+      "heading": "Encuentro de música — fixture"
+    },
+    {
+      "name": "home-1280x900",
+      "kind": "baseline",
+      "route": "/home",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(246, 245, 253)",
+      "overflow": false,
+      "dock": [
+        {
+          "name": "Inicio",
+          "active": "page"
+        },
+        {
+          "name": "Mapa",
+          "active": null
+        },
+        {
+          "name": "Mis eventos",
+          "active": null
+        },
+        {
+          "name": "Perfil",
+          "active": null
+        }
+      ],
+      "focus": "main-content",
+      "heading": "Inicio"
+    },
+    {
+      "name": "map-1280x900",
+      "kind": "baseline",
+      "route": "/map",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(246, 245, 253)",
+      "overflow": false,
+      "dock": [
+        {
+          "name": "Inicio",
+          "active": null
+        },
+        {
+          "name": "Mapa",
+          "active": "page"
+        },
+        {
+          "name": "Mis eventos",
+          "active": null
+        },
+        {
+          "name": "Perfil",
+          "active": null
+        }
+      ],
+      "focus": "main-content",
+      "heading": "Encontrá tu próximo plan"
+    },
+    {
+      "name": "profile-1280x900",
+      "kind": "baseline",
+      "route": "/me",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "shell": "app-shell product-shell amanecer-shell social-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(246, 245, 253)",
+      "overflow": false,
+      "dock": [
+        {
+          "name": "Inicio",
+          "active": null
+        },
+        {
+          "name": "Mapa",
+          "active": null
+        },
+        {
+          "name": "Mis eventos",
+          "active": null
+        },
+        {
+          "name": "Perfil",
+          "active": "page"
+        }
+      ],
+      "focus": "main-content",
+      "heading": "Mi perfil"
+    },
+    {
+      "name": "detail-1280x900",
+      "kind": "baseline",
+      "route": "/events/30000000-0000-4000-8000-000000000001",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(246, 245, 253)",
+      "overflow": false,
+      "dock": [
+        {
+          "name": "Inicio",
+          "active": null
+        },
+        {
+          "name": "Mapa",
+          "active": null
+        },
+        {
+          "name": "Mis eventos",
+          "active": null
+        },
+        {
+          "name": "Perfil",
+          "active": null
+        }
+      ],
+      "focus": "main-content",
+      "heading": "Encuentro de música — fixture"
+    },
+    {
+      "name": "detail-no-photo-375x812",
+      "kind": "baseline",
+      "route": "/events/30000000-0000-4000-8000-000000000001",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(246, 245, 253)",
+      "overflow": false,
+      "dock": [
+        {
+          "name": "Inicio",
+          "active": null
+        },
+        {
+          "name": "Mapa",
+          "active": null
+        },
+        {
+          "name": "Mis eventos",
+          "active": null
+        },
+        {
+          "name": "Perfil",
+          "active": null
+        }
+      ],
+      "focus": "main-content",
+      "heading": "Encuentro de música — fixture"
+    },
+    {
+      "name": "home-error-375x812",
+      "kind": "baseline",
+      "route": "/home",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": "app-shell product-shell amanecer-shell discovery-shell",
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(246, 245, 253)",
+      "overflow": false,
+      "dock": [
+        {
+          "name": "Inicio",
+          "active": "page"
+        },
+        {
+          "name": "Mapa",
+          "active": null
+        },
+        {
+          "name": "Mis eventos",
+          "active": null
+        },
+        {
+          "name": "Perfil",
+          "active": null
+        }
+      ],
+      "focus": "main-content",
+      "heading": "Inicio"
+    },
+    {
+      "name": "home-375x812",
+      "kind": "lab",
+      "route": "/b/home",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": null,
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(5, 8, 31)",
+      "overflow": false,
+      "dock": [],
+      "focus": "",
+      "heading": "¿Qué plan armamos esta semana?"
+    },
+    {
+      "name": "map-375x812",
+      "kind": "lab",
+      "route": "/b/map",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": null,
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(5, 8, 31)",
+      "overflow": false,
+      "dock": [],
+      "focus": "",
+      "heading": "Encontrá tu próximo plan"
+    },
+    {
+      "name": "profile-375x812",
+      "kind": "lab",
+      "route": "/b/profile",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": null,
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(5, 8, 31)",
+      "overflow": false,
+      "dock": [],
+      "focus": "",
+      "heading": "Lucía Benítez"
+    },
+    {
+      "name": "event-375x812",
+      "kind": "lab",
+      "route": "/b/event",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "shell": null,
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "fontLoaded": true,
+      "background": "rgb(5, 8, 31)",
+      "overflow": false,
+      "dock": [],
+      "focus": "",
+      "heading": "Encuentro de música — prueba"
+    }
+  ],
+  "writes": 0,
+  "unexpected": [],
+  "pageErrors": []
+}

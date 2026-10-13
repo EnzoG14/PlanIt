@@ -1,0 +1,386 @@
+{
+  "sha": "42af4e42d032637b1363e207714e86c297d8c3b1",
+  "method": "Hashes of immutable Git bytes, not working-tree CRLF; source access and static inspection, not functional acceptance.",
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "git_blob": "a343578226e78d630127b341ceba212125e696f7",
+      "sha256_git_bytes": "dcd90395dbad2d5f2af40686cf02ce59413f3fb06087767928e64aa1bdddea31"
+    },
+    {
+      "path": "src/AGENTS.md",
+      "git_blob": "b929a8c63ea9014f0d54ff49f0cbff14376ddd3d",
+      "sha256_git_bytes": "907b9f79440edd8d6b1b2e9016c8d846d41c99e283de917e10df994aa644574d"
+    },
+    {
+      "path": "supabase/AGENTS.md",
+      "git_blob": "b3bf3ce2ef38999bee14bc7883f438efb50c2633",
+      "sha256_git_bytes": "280bc832bbd3bb0ac76c89c4893b96ef1a6983bb34309338cb3ef6d319779f8d"
+    },
+    {
+      "path": "docs/design/AGENTS.md",
+      "git_blob": "2cd99581cab2141d022a85d6e98f3d5cf45f7b35",
+      "sha256_git_bytes": "a9297b42b3664e4cee6809ee5f5d80fbfc4552c26f81678b712d915745d037d9"
+    },
+    {
+      "path": "PRODUCT.md",
+      "git_blob": "ee5eace55a7262fe7211ec51e734233caafb808d",
+      "sha256_git_bytes": "b1cf31e130afa79f82f36676c097c7d08596371edbc7c9cec2c3b84817276b47"
+    },
+    {
+      "path": "DESIGN.md",
+      "git_blob": "4eea68f1785df36a95d0edc7424e55055db9eb92",
+      "sha256_git_bytes": "25ca7e42322c658ae3bfb162a5da82b761f19cc6cc9e55262f8bb7964e4485a7"
+    },
+    {
+      "path": ".impeccable/design.json",
+      "git_blob": "db33662cb2900a1a94a38dc184c8c2f356c8815f",
+      "sha256_git_bytes": "8bb8220caea23cdbe094c192598d5d4055944fc257f1328fa51cbd28dd1a8992"
+    },
+    {
+      "path": "docs/architecture.md",
+      "git_blob": "2d0f0005bd65c5c542b0769b9504e6a0db8d80c3",
+      "sha256_git_bytes": "85811e73b15eb4499140278329434c142b77f7fd9098c02644f12b926601ffc3"
+    },
+    {
+      "path": "docs/database.md",
+      "git_blob": "673ac0c0feb214f297a1fc0619aeef78ac713ca3",
+      "sha256_git_bytes": "8007a0d03a366517d736353a3eab6972d4dd5a8483c8e1cb1b82f9fe40a877f4"
+    },
+    {
+      "path": "docs/requirements/RELEASE_4_REQUIREMENTS.md",
+      "git_blob": "64a6c733596ac1924e2f2b2ef6402864261a580f",
+      "sha256_git_bytes": "24fed77aeb82a22ec4dee2c8520b312a5fb19bec3da7631b9f84647fc9e64464"
+    },
+    {
+      "path": "docs/implementation/RELEASE_3_PLAN.md",
+      "git_blob": "715402b48aad4e552b8aee3380d2004166eb7dda",
+      "sha256_git_bytes": "7029607e91d098e33020f8c698d8b8d24cd04264797a718c9859852418fb78fc"
+    },
+    {
+      "path": "docs/implementation/RELEASE_3_STATUS.md",
+      "git_blob": "ad40ed6854bf42b6eb9ccb0b917375233df5f47e",
+      "sha256_git_bytes": "234d853e60bf80d522b3eea57a12907cf67ad9a24973be3a68291fe034919871"
+    },
+    {
+      "path": "docs/qa/RELEASE_3_TEST_REPORT.md",
+      "git_blob": "80d4dd4bc66865d447aa9f6ac85f35db43acafa0",
+      "sha256_git_bytes": "c43671c8daa536fa76eb6e7f433f722b330e76e38aefc103206773cb4dd970ef"
+    },
+    {
+      "path": "docs/implementation/RELEASE_4_PLAN.md",
+      "git_blob": "ca143c5d2f202c58880a85fb4d53b38536d89f17",
+      "sha256_git_bytes": "a55c1503771cc986c0c5411199ea66d829a49115b4303acac6e5e5fa80dd5fc9"
+    },
+    {
+      "path": "docs/implementation/RELEASE_4_STATUS.md",
+      "git_blob": "d243364ecbd8e5c0466017964cc55b3ce88b9e16",
+      "sha256_git_bytes": "8036f4f30431073074ebce77c5db218cb72b4d14440b67ad8c259f241b6ddb69"
+    },
+    {
+      "path": "docs/implementation/RELEASE_4_DECISIONS_PROPOSED.md",
+      "git_blob": "21a9519d6bdfcabc73ef571884b35da0516aa190",
+      "sha256_git_bytes": "eb021f58bbf4669ed9e9622acb8975d38f4ce75bddeab4ccba279d5cae45794f"
+    },
+    {
+      "path": "docs/implementation/RELEASE_4_VISUAL_INTEGRATION.md",
+      "git_blob": "fdc34bb28d93aacd60d81c650a7917fca8f2fdfe",
+      "sha256_git_bytes": "dd04d1a9c999507feef74e2f00ae6fe49d187fd10b2c3ea8a93b8b2a9088329b"
+    },
+    {
+      "path": "docs/implementation/prompts/RELEASE_4_BLOCK_0.md",
+      "git_blob": "78f30cbb6620ce1f66702f97d35219e5fd99eec4",
+      "sha256_git_bytes": "f41ebafe111c57ed8dd66e3d6fab7584f75782fdc993cd033e7a75d8f4963117"
+    },
+    {
+      "path": "docs/qa/RELEASE_4_ACCEPTANCE.md",
+      "git_blob": "4b45691ecc90b7355e2a6d5fb71468fce75b8240",
+      "sha256_git_bytes": "e6ee448c7b359a1597330ddc56073dff75e1c68811c1cc348569e145a3a4d40a"
+    },
+    {
+      "path": "docs/qa/RELEASE_4_TEST_PLAN.md",
+      "git_blob": "fe6d4e5ee3b5df09387449e11d2b7fe841a7e278",
+      "sha256_git_bytes": "784a64d65ef8dc4600912c669c94444b9bb6725117260885297de2f5134441a7"
+    },
+    {
+      "path": "docs/design/DESIGN_SYSTEM.md",
+      "git_blob": "3322729f2d1a0796a99cab9124edf34966072b77",
+      "sha256_git_bytes": "4ab3e973baf91267c043182bd5a0dd8324a1c9c211522a4bf74ab56a4b1dcdff"
+    },
+    {
+      "path": "docs/design/UI_WORKFLOW.md",
+      "git_blob": "b49463fa3f939e56379ab32215d5ac91a5ab7f85",
+      "sha256_git_bytes": "7137d512d23e560e2b745fbc8d0bdb533fc0a78e7fbafb34c15b17c427b0dab5"
+    },
+    {
+      "path": "docs/design/SCREENS.md",
+      "git_blob": "4482e7a0bd1e61511366e29dcc8cd74eb410b838",
+      "sha256_git_bytes": "6d9365e7b9051dd5965d1f8149b14bfef27a0b7c151c02811820b81cfc82dd66"
+    },
+    {
+      "path": "docs/design/DESIGN_GAPS.md",
+      "git_blob": "52b865aec30c203ac22ae69d7c2a45c4a1ffcab1",
+      "sha256_git_bytes": "05441df813961c9de47b6be061cb6797df599bf3c7bd7a5e36386323e1f4c0fd"
+    },
+    {
+      "path": "docs/design/proposals/amanecer-direction.md",
+      "git_blob": "293d55cb88753b1c41cbad84dd227d983a226386",
+      "sha256_git_bytes": "fa39021fbce22ca9675886e8aef9191649a72422c0107e54a8a2d791e98d143a"
+    },
+    {
+      "path": "docs/implementation/UI_REFRESH_R1_R3_PLAN.md",
+      "git_blob": "83de09038096128cab32f66a0053ef5940384da2",
+      "sha256_git_bytes": "fd8680e8339c7b1a0c7c913603f6738e366736fb5a34ca50ad0c0a0dfb012828"
+    },
+    {
+      "path": "docs/implementation/UI_REFRESH_R1_R3_STATUS.md",
+      "git_blob": "055558c4e899f1a51730ad602fd1050673c32599",
+      "sha256_git_bytes": "b4e34f2ca2ad00feabec135c4902a5808f2408e05ffcc994a0950d764282dc50"
+    },
+    {
+      "path": "docs/implementation/ui-refresh-blocks/BLOCK_3.md",
+      "git_blob": "dcd979e1a5a2e5c794ed5341056008e97629ccdc",
+      "sha256_git_bytes": "35092cd6158e52b26be96a35a4caf3805eeadc1ad2beb504a24b2991bfe53b03"
+    },
+    {
+      "path": "docs/implementation/ui-refresh-blocks/BLOCK_4.md",
+      "git_blob": "8679e5560f9ba428dec71663a54f29d649ad38dd",
+      "sha256_git_bytes": "a706be11ef8ca0a5c41fb36f33567f030dbf90995a7e903e6796da3da3851e0f"
+    },
+    {
+      "path": "docs/implementation/ui-refresh-blocks/BLOCK_5.md",
+      "git_blob": "18750962febcecf230a0ba5cd4489ca9ed2e4d01",
+      "sha256_git_bytes": "31a4e041ae72ae382323ff16f7b24f8ac873a9f5cf6b6f73ef3273c5df5174ca"
+    },
+    {
+      "path": "docs/implementation/ui-refresh-blocks/BLOCK_6.md",
+      "git_blob": "68711f8be1310df63a7351ed7f5ccdee5eddac02",
+      "sha256_git_bytes": "091d559a3300eb0021f2673cd95792af129ba99d443a3363f13c26ba1b587c42"
+    },
+    {
+      "path": "docs/implementation/ui-refresh-blocks/BLOCK_7.md",
+      "git_blob": "4de499533aa568c8bd4f371ce0f3ee646a86379d",
+      "sha256_git_bytes": "b9935422d63c898a724765674cc03f4bf6e8882719e27d6c55d69dd0b23732c7"
+    },
+    {
+      "path": "docs/design/mockups/release-4.png",
+      "git_blob": "d24a1865e1fb35bc104abf55f57ec6618ca154ac",
+      "sha256_git_bytes": "b5ab5b783df1f1698e5165c894be3d5f04662576898780f7e86b020cb77fa3f5"
+    },
+    {
+      "path": "design-lab/README.md",
+      "git_blob": "7c18fc70bef4c01aca7613ce0e5c5317cfadae83",
+      "sha256_git_bytes": "bf09f54874fb17f88d0d80d05286efe4829d1c427cba87bd79385928f1c2054b"
+    },
+    {
+      "path": "src/App.tsx",
+      "git_blob": "bd94ef2e98f8a371cd71a28105ca70b1b6997d38",
+      "sha256_git_bytes": "974e35b7f76f74be8103b5c78523425dafbb00686538a3caec3e8aa3560f7791"
+    },
+    {
+      "path": "src/components/AppLayout.tsx",
+      "git_blob": "fc845798d3501ec592c97142e5c1ead188ee623e",
+      "sha256_git_bytes": "c049491836312a587036a369da02a2483f02ca0318fb78127dfd06d600950af3"
+    },
+    {
+      "path": "src/components/EventCard.tsx",
+      "git_blob": "60cc817c83f62a5f3b8c6e3f10dd0e327cc0d596",
+      "sha256_git_bytes": "0cf64e042c94a45a6993bb7836a13c4241f2d7b5e1a56e6cca3e9864a6cd6d59"
+    },
+    {
+      "path": "src/components/ScreenHeader.tsx",
+      "git_blob": "fbd9c9878db15455f855c32b8c2ca85196b438a4",
+      "sha256_git_bytes": "8ee4421c4590cd6384cda281d6df84e44052a52396b5d92c802577440db717e3"
+    },
+    {
+      "path": "src/components/FormField.tsx",
+      "git_blob": "653ad43401188737f34ac4439a119fb981807fbc",
+      "sha256_git_bytes": "f398d73289ff206c2a881ebad91ed7a9b3b147ebf41b36d775aa34b35d48e959"
+    },
+    {
+      "path": "src/components/StatusMessage.tsx",
+      "git_blob": "763bbbc26d0c73af226c70920fade7176496967b",
+      "sha256_git_bytes": "9b0620eadcfa032273f3d8d403e63a74d97b72d575957f0502848331e4e69c38"
+    },
+    {
+      "path": "src/components/AccountMenu.tsx",
+      "git_blob": "2c0f1bc5272521dad0bf98b0bd4888e814e95acc",
+      "sha256_git_bytes": "d4d9598a9561594489f1b8660fd2933ea7d03b4c36f99a0d367e49de7686316f"
+    },
+    {
+      "path": "src/components/EventParticipation.tsx",
+      "git_blob": "add8c16db97b43e8278f5dbe94ca2db53637c491",
+      "sha256_git_bytes": "a84a2ba02b6105f5c2a0ec82b0586b20fed69535cee553528f75437ad02cdf9b"
+    },
+    {
+      "path": "src/components/EventActionDialog.tsx",
+      "git_blob": "b55dd4221fa4a0abb211ff2a03758e8d4b3c4bed",
+      "sha256_git_bytes": "27eb4b1a6efef4c3644a81bd124c221237c77e14cea4435cd3280e6de6e2a9c5"
+    },
+    {
+      "path": "src/components/EventManagement.tsx",
+      "git_blob": "04475ec768a6bd7a9462a1b059ded6c7abe34623",
+      "sha256_git_bytes": "546fe5b2022caaf3c9fa6aae74fa1246d407bdfbf98d6ffcf7d3ebce04904a44"
+    },
+    {
+      "path": "src/pages/HomePage.tsx",
+      "git_blob": "4fb71765f853f6d7e99bc29b1bbd03dbf30a0669",
+      "sha256_git_bytes": "48c0c9d2069a9ec536b9a2c191f9cff540f79b53d71d0f86204a781d1317d0fe"
+    },
+    {
+      "path": "src/pages/MapPage.tsx",
+      "git_blob": "c32f521945d495d870504c3a2ec01d4b8e009376",
+      "sha256_git_bytes": "210fdc4d159062bd24c0f132edb418a7fce84bf9e5f0831a506e675762dbe28b"
+    },
+    {
+      "path": "src/pages/ProfilePage.tsx",
+      "git_blob": "a804fd510affbb7ed0ed8007c81eceaabfc41d03",
+      "sha256_git_bytes": "7c104e9c091b74268b1324181d8c1d1fc127dfbba9961e3c11e6aed3f143db3d"
+    },
+    {
+      "path": "src/pages/CreateEventPage.tsx",
+      "git_blob": "e8ee5a770f354806ee6e47d8385cea488875ad79",
+      "sha256_git_bytes": "f9914b9fb2c005f8e47e61ec2b3e189a00213ffd6a1efa5e5c46ab87042e7ac8"
+    },
+    {
+      "path": "src/pages/EditEventPage.tsx",
+      "git_blob": "1d10ac1ce5a33e119165bc9dffa68069e1563f5b",
+      "sha256_git_bytes": "95f6457f7875352d229209d0dddda4d71d9902a81ad75daeeff44c571bb4b990"
+    },
+    {
+      "path": "src/pages/EventDetailPage.tsx",
+      "git_blob": "542e9717aee460c78b86c8e116c7d59a7c814efd",
+      "sha256_git_bytes": "43aa4fb9312e8ffff604e5f43ad924d0d8b0a4a413c996bb99656a22342e9456"
+    },
+    {
+      "path": "src/pages/EventAttendeesPage.tsx",
+      "git_blob": "a67aca748f9d0809c5b367ce51c2fa9c4158f9ae",
+      "sha256_git_bytes": "78063164e2f5c1d4972087fc62348ed046dd53d82a760e28314064b5e2741958"
+    },
+    {
+      "path": "src/pages/EventRejoinRequestsPage.tsx",
+      "git_blob": "8852bf3bde24ec340d8118d356453772eabbf298",
+      "sha256_git_bytes": "1585ad905b4a6cad0a650d7a21381b97218c48d721f48019fe3ef5aa876c9b62"
+    },
+    {
+      "path": "src/pages/EventChatPage.tsx",
+      "git_blob": "3ca9a055a0c957dffc27e6eb1fc91bcdd2611d40",
+      "sha256_git_bytes": "9fa6d885eeec147c956147b93603fe9df8f04cd2ec8a8f4d27bffce7a0b81e95"
+    },
+    {
+      "path": "src/features/events/api.ts",
+      "git_blob": "53d68423f00dd8a2c993e0a8801ee3f0f2acbaa8",
+      "sha256_git_bytes": "4199fded838159a166e6f0f8b63f86baf42ad506194e1c03e2b3a6959bab421c"
+    },
+    {
+      "path": "src/features/events/discovery.ts",
+      "git_blob": "9cf4fe64da01f38c8fb698d914b32315e82cb43c",
+      "sha256_git_bytes": "bdb9d0dfffb799c217f73ecdf62342f8565e8ddc210b772330ca147dca3cd5ac"
+    },
+    {
+      "path": "src/features/events/home.ts",
+      "git_blob": "8d3526108abc7be65b3b4446a4b1585facfa0914",
+      "sha256_git_bytes": "ff4fca90a193c2dbb4c2c0815e7686513a5f687a99efa62cad3ce543278779cd"
+    },
+    {
+      "path": "src/features/events/participation.ts",
+      "git_blob": "8ca865a7e03c7eef46c656760b95b13a16b128a7",
+      "sha256_git_bytes": "01fa17b4afee07b65b2dc549caa181c1b3ee22e2b951594585f8118bab06fb68"
+    },
+    {
+      "path": "src/features/events/actions.ts",
+      "git_blob": "b624dac44e44e5933000ff904668cc22b60bfafd",
+      "sha256_git_bytes": "8177099261df1dd1203562208c9c34d0ee86b1c8db07c8482ab3ecf52d831939"
+    },
+    {
+      "path": "src/features/events/edit.ts",
+      "git_blob": "9ece58f97e39441009ad8935a42f1891061d5171",
+      "sha256_git_bytes": "bcdc13c343705e8d26bbde9a6f089729214bd00bfd1a4be1c550304d23f7ad36"
+    },
+    {
+      "path": "src/features/events/rejoin.ts",
+      "git_blob": "98e5cb8c2283c3057048f8f1e350e4435425b0c4",
+      "sha256_git_bytes": "ec8f6d7c4ee88f99fa114a5f8d5d5d1387b037b0998a6e8c37e9fb054235021b"
+    },
+    {
+      "path": "src/features/auth/RequireAuth.tsx",
+      "git_blob": "caf143fd812517171d57d561f5422cc883090dd2",
+      "sha256_git_bytes": "a90194927d4284120d50103448f7593a78a4791c6f66b6f60d8c8290dd1cbfdb"
+    },
+    {
+      "path": "src/features/auth/AuthProvider.tsx",
+      "git_blob": "5fc1afe92fa61e69bfb7ed4cb68e21e8b72a327b",
+      "sha256_git_bytes": "a53060a1d57016b297aa62079f077fb6dc2a17d6d32bff8d50ee753cb5a6512b"
+    },
+    {
+      "path": "src/features/auth/validation.ts",
+      "git_blob": "2e4ca8cafb481beb28a18884dc7f8a26f99f9346",
+      "sha256_git_bytes": "273292055949eaba51393db26533fd2f377e77a15c9aff688c1c853eb2c1b977"
+    },
+    {
+      "path": "src/pages/AuthPage.tsx",
+      "git_blob": "b864e6cde8ba2c87e350e29b63a2c2790e149686",
+      "sha256_git_bytes": "8d23150c739317633a6c6e916e63f03eee9c0b7a0094ef5b1a084a9c24134bd7"
+    },
+    {
+      "path": "src/components/maps/EventMap.tsx",
+      "git_blob": "eb658468bf7aae112b85b981c92f8e6500e9eb5a",
+      "sha256_git_bytes": "952336e211609bdd573ff5114c7962f4779b1bc410ce1fa4b7be7cbf1d670c79"
+    },
+    {
+      "path": "src/components/maps/provider.ts",
+      "git_blob": "d20445ed4b7696e27f17b60e5005983ce7bc1933",
+      "sha256_git_bytes": "e3009c860dc0892205c59ca8cacf68a01580419ca6369463f64330d0063df644"
+    },
+    {
+      "path": "src/styles/tokens.css",
+      "git_blob": "32c4a384ff8bc4768b95c819467bf3f333927d8b",
+      "sha256_git_bytes": "62f921b052af18026a39811a39a590b619ef600f476a3693396da239013f1fc4"
+    },
+    {
+      "path": "src/styles/amanecer.css",
+      "git_blob": "98d22826f1023a08108bdf3cfeca1598632fe13a",
+      "sha256_git_bytes": "a8220c67e732a072fb237c06bd2d2e742a270da6c890a0a4684515f48d85f7c6"
+    },
+    {
+      "path": "src/styles/social.css",
+      "git_blob": "3305aa6675836404f34a85a61981f0c2ec3f15a3",
+      "sha256_git_bytes": "ff0c683084508e21ac9aeb43d9755169605a6164459238ded1cf600cf9db3a8e"
+    },
+    {
+      "path": "src/pages/discovery.css",
+      "git_blob": "ecaada233d54f42d26dcb068657b9111708c2a77",
+      "sha256_git_bytes": "8588eae572ed5d71fe81ee75f297c4c0799630a1971b13ba206cc9abedecb328"
+    },
+    {
+      "path": "src/pages/home.css",
+      "git_blob": "4467897b5c732cb9c2074ceecaab5a3ca3332984",
+      "sha256_git_bytes": "f659f5d0659343c803a3193f96356a9e07af9dc7104e74fc9204f49e4ea0156a"
+    },
+    {
+      "path": "src/pages/event-forms.css",
+      "git_blob": "efb94357c105982071eefa4a2c10a9e74415cba9",
+      "sha256_git_bytes": "bcf926fade4f2e6ad49d40fe25d5e2ce8d6d686cc300dfb7857e68a87f85f269"
+    },
+    {
+      "path": "src/pages/profile.css",
+      "git_blob": "990e7ce867adaefb28ddf0557775fcfb85f474b7",
+      "sha256_git_bytes": "3e9e95939826633db3b4edc78f8bf86e9af85f292c7e43f26c3f4a14dd070cd7"
+    },
+    {
+      "path": "vite.config.ts",
+      "git_blob": "e32a73b447426ba3636d3d86152239babb4e4f3c",
+      "sha256_git_bytes": "808171203bcf25e7e5729490538e64012b3c58ed1dfb110f2c59e02ac2c4be2b"
+    },
+    {
+      "path": "package.json",
+      "git_blob": "3ecb7d9327bf368eb9772198a8bba2d8ab969d3e",
+      "sha256_git_bytes": "32212217931d44abb916b87a0a322175b13150ecc26dc24c213f254340dcc44e"
+    },
+    {
+      "path": "package-lock.json",
+      "git_blob": "9d553e0daae51282a92053a6e8f80fe82f7bf192",
+      "sha256_git_bytes": "631bc95a33c4bce94c2a1cdb1f0dcf3dba7e04585c3432f1fea75a9f7fc41dca"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 **Actualización de planificación R4 v1.2 (13/10/2026):** esta edición documental parte del `main` `a378259a6010`, con Amanecer v3.0 integrado (PR #27–#34). La línea de base anterior del 12/10 y los pasos del bloque 0 son históricos/propuestos: **no** acreditan ejecución ni QA R4. Leer `RELEASE_4_VISUAL_INTEGRATION.md`, `DESIGN.md`, `docs/design/UI_WORKFLOW.md`. R3 confirmada validada por el responsable; informe QA versionado conserva NO-GO por falta de E2E/aceptación humana documentada; reportar esa brecha de evidencia sin reabrir A07.
 
 
-**Corte inicial:** 12/10/2026 (Argentina). **Estado:** planificación documental preparada; **0/39 CA verificadas**, ningún bloque R4 implementado ni aprobado según esta entrega. No confundir diseño, artefactos preparados o SQL de ejemplo con implementación.
+**Corte de ejecución:** 13/10/2026 (Argentina). **Estado:** BLOQUE 0 documental implementado; QA/revisión humana pendiente. **0/39 CA funcionales verificadas**; 39/39 trazadas y comparadas con la fuente original. Bloques 1–9 pendientes. La auditoría no implementa funcionalidades ni corrige seguridad R4.
 
 **Decisiones del responsable (12/10/2026):** A01–A07 aprobadas; **R3 integrada y validada por confirmación expresa**, sujeto únicamente a comprobación técnica de dependencias en `main`. **Fuentes:** `RELEASE_4_PLAN.md`, `../requirements/RELEASE_4_REQUIREMENTS.md`, `RELEASE_4_DECISIONS_PROPOSED.md`, `../qa/RELEASE_4_ACCEPTANCE.md`.
 
@@ -11,7 +11,7 @@
 
 | Bloque | Alcance | RF / CA | Estado | Rama/PR | Evidencias | Migración local/remota | Pendientes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | Auditoría y contratos | transversal | Pendiente | — | — | — | Verificar dependencias técnicas R3/main/SQL/PNG; no reabrir aceptación R3 |
+| 0 | Auditoría y contratos | transversal | Implementado; QA pendiente | `codex/r4-block-0`; PR por abrir | [Auditoría](RELEASE_4_BLOCK_0_DECISIONS.md), [evidencia nueva](../design/verification/r4-block-0/README.md) | Ninguna creada/aplicada; remoto no inspeccionado | Revisión humana de contratos; seguridad/CA funcionales en bloques posteriores |
 | 1 | Texto + categorías | 01/02, 8 CA | Pendiente | — | — | — | API y UI |
 | 2 | Fecha + radio | 03/04, 8 CA | Pendiente | — | — | — | TZ y mapa/lista |
 | 3 | Intereses | 05, 4 CA | Pendiente | — | — | — | Tabla y RLS |
@@ -34,11 +34,18 @@
 
 ## Actas de ejecución
 
-### Bloque 0 — Pendiente
-- SHA base: —
-- Auditoría de esquema y RLS real: no ejecutada.
-- Mockup R4 revisado visualmente: no ejecutado.
-- Contratos/decisiones aprobadas: **A01–A07 cerradas 12/10/2026;** demás detalles técnicos pendientes de Bloque 0.
+### Bloque 0 — Implementado; QA pendiente
+
+- **Base/rama:** fetch de origin; `main` `42af4e42d032637b1363e207714e86c297d8c3b1` → `codex/r4-block-0`, checkout independiente bajo home e índice CodeGraph propio. Cambio previo de `vite.config.ts` en D:/planit preservado/excluido. PR documental por abrir.
+- **Entrega:** decisiones verificadas/propuestas/no inspeccionadas diferenciadas; rutas/scopes/props, contratos Auth y retorno, inventario estático SQL/RLS/EXECUTE, 39 filas de trazabilidad y 288 combinaciones de autorización objetivo. Sin rutas vacías ni SQL nuevo.
+- **Dependencias:** Git acredita R3 #18–#25 y refresh #27–#34 integrados; base también incluye #35–#37. RPC/migraciones de cierre/duplicación/reincorporación presentes. A07 mantiene aceptación confirmada; STATUS/TEST_REPORT R3 conservan NO-GO/E2E pendiente como brecha documental, sin afirmar nuevas pruebas remotas ni reabrir aceptación.
+- **Esquema inspeccionado:** 17 migraciones, 11 tablas públicas con RLS declarado, 31 funciones públicas de negocio, 12 privadas y 20 políticas finales declaradas. Tablas R4 ausentes en Git. Firmas, dependencias, search_path/EXECUTE y hashes en [inventario](../design/verification/r4-block-0/sql-inventory.json). Catálogos remotos, drift efectivo, roles/advisors y replay no inspeccionados/ejecutados.
+- **Riesgos priorizados:** events_select_participating y RPC summary/organizer/rejoin admiten histórico sin grant; chat confirmed no verifica grant oculto; media hereda autorización transitoria y URLs actuales de 300 s. Registrar reparación obligatoria en bloque 5 antes de habilitar ocultos. No vulnerabilidad remota explotada ni seguridad corregida por esta documentación.
+- **Decisiones:** A01–A07 preservadas. Usuario eligió el 13/10 D12 revocar enlace al volver público, conservando grants, y D14 TTL objetivo 60 s para multimedia oculta. Defaults restantes se registran como propuestas técnicas, no aprobaciones funcionales adicionales. Login SPA con token sólo en memoria; confirmar email/recargar exige reabrir enlace.
+- **Fuente original:** Google Drive read-only, pestañas vigentes de RF/CA/especificación/modelo consultadas; 39/39 textos de CA coinciden tras normalizar sólo Unicode/espacios. Contrato literal y estados Pendiente intactos.
+- **Visual:** release-4.png abierto (1491×1055), cinco experiencias históricas contrastadas con Amanecer y lab /b/home/map/profile/event; paneles de enlaces/grants no están en collage. Base inmutable: 10 PNG app en móvil/escritorio y 4 lab; SVG de prueba identificados, mapa fallback sin proveedor real. Fondo/fuente/scopes/dock/overflow medidos. Sin cambios a DESIGN, sidecar, tokens, reportes ni QA histórica; desfases de documentación visual registrados.
+- **Verificación:** comparación original, trazabilidad, inventario estático, capturas Edge con Auth/REST/Storage interceptados y WebSocket bloqueado, enlaces/hashes/alcance, sintaxis de herramientas de evidencia y git diff --check. Build/lint NO EJECUTADOS: diff exclusivamente documental. SQL local, HTTP/JWT A/B, Storage/Realtime reales, dispositivos físicos y 39 CA funcionales NO EJECUTADOS.
+- **Pendientes/fin:** revisión humana de la auditoría; sin cambios remotos, proyecto antiguo, merge, deploy ni Validado. Detenerse con esta PR, sin iniciar bloque 1.
 
 ### Bloques 1–9 — Pendientes
 - Sin actas, pruebas ni PR de R4 en esta entrega documental.

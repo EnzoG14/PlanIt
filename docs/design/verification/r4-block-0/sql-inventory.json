@@ -1,0 +1,1388 @@
+{
+  "sha": "42af4e42d032637b1363e207714e86c297d8c3b1",
+  "method": "Static extraction of committed migrations, not SQL replay nor remote catalog. Last definition per name; no overloads added in this base.",
+  "migrations": [
+    {
+      "path": "supabase/migrations/20261010011204_create_profiles_and_categories.sql",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "bytes": 6878,
+      "sha256": "bd841f3a38375bc38015c52d1eda79ff4d5c967ccd415682e919ce2964472f44"
+    },
+    {
+      "path": "supabase/migrations/20261010023448_restrict_rls_auto_enable_execute.sql",
+      "bytes": 224,
+      "sha256": "5355c41a3268c7af4aff6d0757d7a49aeef3240404f10c713092ccc65bc805a5"
+    },
+    {
+      "path": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "bytes": 13133,
+      "sha256": "37c37dede9fe8806aa09900eb1c85f08d5ce6a7c91007d96d20e109f890362da"
+    },
+    {
+      "path": "supabase/migrations/20261010052653_public_event_discovery.sql",
+      "bytes": 2245,
+      "sha256": "629cd2517acc9f3648d878c876564702ceb6084c0a5a7c867ccd6cc12caec3d6"
+    },
+    {
+      "path": "supabase/migrations/20261010150232_event_participations.sql",
+      "bytes": 9315,
+      "sha256": "9257b2ffcf2aa4e49e09c43998d79632e0f78f256ac22eec8185fc396b23f270"
+    },
+    {
+      "path": "supabase/migrations/20261010154930_my_events_read.sql",
+      "bytes": 2126,
+      "sha256": "4173b61139f8dc12fc9fc468f7ea7d06b487904e06553450fddea61a95c0f117"
+    },
+    {
+      "path": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+      "bytes": 3794,
+      "sha256": "003c000d0a05ff697010b99ff6ba7afd3f61e701db375cc393d6afc0839f8809"
+    },
+    {
+      "path": "supabase/migrations/20261010214526_event_chat.sql",
+      "bytes": 7801,
+      "sha256": "94d98da90aa4387db7ed8545d99f04e826c1b671a48e0cf40203260dc6fe1e9b"
+    },
+    {
+      "path": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "bytes": 4938,
+      "sha256": "11f8c6ae6f319c72aa7e0aff2693edc7ff043ecc8d854becf3e88fa67ee8422a"
+    },
+    {
+      "path": "supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql",
+      "bytes": 1987,
+      "sha256": "fe04e70a5685a1a992f26b20732906d50e4a3f41ecedbaa092aaa2cf34ba9bbc"
+    },
+    {
+      "path": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+      "bytes": 2574,
+      "sha256": "543489f573c9515323ce7900a83d466f33a55c04d2ae47aeea817d136e1a96fe"
+    },
+    {
+      "path": "supabase/migrations/20261012001058_edit_own_event.sql",
+      "bytes": 3553,
+      "sha256": "d338a67ef07596a66c7e6fba037d2621e5cbe5fa890ae7d6c081cac2c7e817c4"
+    },
+    {
+      "path": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "bytes": 9581,
+      "sha256": "91c2e52a21dd167b6facb6d42274ad865d492e86e0fe77c37eeec811a8d09d0f"
+    },
+    {
+      "path": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+      "bytes": 4733,
+      "sha256": "a632435496a1a7d6cb0652ea2132c994bdd62ab609c4772c9c30f9252aa07049"
+    },
+    {
+      "path": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+      "bytes": 3888,
+      "sha256": "24fc802941a8b034173602f7b96b8ebd959cf522e9e1553722dbb46354834e2a"
+    },
+    {
+      "path": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "bytes": 15228,
+      "sha256": "f8f39c232ab97f130eb015bbefec98354f1b58861540c7f4cc2029775ad1583e"
+    }
+  ],
+  "tables": [
+    "public.categories",
+    "public.conversations",
+    "public.event_images",
+    "public.event_participations",
+    "public.event_rejoin_requests",
+    "public.events",
+    "public.files",
+    "public.messages",
+    "public.notifications",
+    "public.participation_history",
+    "public.profiles"
+  ],
+  "r4_tables_present": [],
+  "functions": [
+    {
+      "name": "planit_private.touch_updated_at",
+      "parameters": "",
+      "returns": "trigger",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "line": 89,
+      "dependencies": [],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+          "statement": "revoke all on function planit_private.touch_updated_at() from public, anon, authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "planit_private.validate_birth_date",
+      "parameters": "",
+      "returns": "trigger",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "line": 106,
+      "dependencies": [],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+          "statement": "revoke all on function planit_private.validate_birth_date() from public, anon, authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "planit_private.handle_new_auth_user",
+      "parameters": "",
+      "returns": "trigger",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "line": 128,
+      "dependencies": [
+        "public.profiles"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+          "statement": "revoke all on function planit_private.handle_new_auth_user() from public, anon, authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "planit_private.validate_new_event",
+      "parameters": "",
+      "returns": "trigger",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "line": 57,
+      "dependencies": [
+        "public.categories"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+          "statement": "revoke all on function planit_private.validate_new_event() from public, anon, authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "planit_private.validate_event_file",
+      "parameters": "",
+      "returns": "trigger",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "line": 42,
+      "dependencies": [
+        "storage.objects"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+          "statement": "revoke all on function planit_private.validate_event_file() from public, anon, authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "planit_private.validate_event_image",
+      "parameters": "",
+      "returns": "trigger",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "line": 59,
+      "dependencies": [
+        "planit_private.lock_gallery",
+        "public.files"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+          "statement": "revoke all on function planit_private.validate_event_image() from public, anon, authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.create_event",
+      "parameters": "p_id uuid, p_title text, p_description text, p_starts_at timestamp, p_ends_at timestamp, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text default null, p_image_paths text[] default '{}'",
+      "returns": "uuid",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "line": 171,
+      "dependencies": [
+        "public.event_images",
+        "public.events",
+        "public.files",
+        "storage.objects"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+          "statement": "revoke all on function public.create_event(uuid,text,text,timestamp,timestamp,uuid,integer,text,double precision,double precision,text,text[]) from public, anon;"
+        },
+        {
+          "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+          "statement": "grant execute on function public.create_event(uuid,text,text,timestamp,timestamp,uuid,integer,text,double precision,double precision,text,text[]) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.discover_public_events",
+      "parameters": "p_south double precision, p_north double precision, p_west double precision, p_east double precision",
+      "returns": "table ( id uuid, organizer_id uuid, title text, description text, starts_at timestamp, ends_at timestamp, address text, location_name text, latitude double precision, longitude double precision, capacity integer, category_id uuid, visibility text, cancelled_at timestamp, archived_at timestamp, category_name text, image_path text )",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010052653_public_event_discovery.sql",
+      "line": 6,
+      "dependencies": [
+        "public.categories",
+        "public.event_images",
+        "public.events",
+        "public.files"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010052653_public_event_discovery.sql",
+          "statement": "revoke all on function public.discover_public_events(double precision,double precision,double precision,double precision) from public, anon;"
+        },
+        {
+          "source": "supabase/migrations/20261010052653_public_event_discovery.sql",
+          "statement": "grant execute on function public.discover_public_events(double precision,double precision,double precision,double precision) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "planit_private.record_participation_history",
+      "parameters": "",
+      "returns": "trigger",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "line": 24,
+      "dependencies": [
+        "public.participation_history"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010150232_event_participations.sql",
+          "statement": "revoke all on function planit_private.record_participation_history() from public, anon, authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_event_participation_summary",
+      "parameters": "p_event_id uuid",
+      "returns": "table (confirmed_count bigint, capacity integer, available_spots bigint, own_status text, is_organizer boolean, event_state text)",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010150232_event_participations.sql",
+      "line": 66,
+      "dependencies": [
+        "public.event_participations",
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010150232_event_participations.sql",
+          "statement": "revoke all on function public.register_for_event(uuid), public.leave_event(uuid), public.get_event_participation_summary(uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261010150232_event_participations.sql",
+          "statement": "grant execute on function public.register_for_event(uuid), public.leave_event(uuid), public.get_event_participation_summary(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.register_for_event",
+      "parameters": "p_event_id uuid",
+      "returns": "void",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010150232_event_participations.sql",
+      "line": 85,
+      "dependencies": [
+        "public.event_participations",
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010150232_event_participations.sql",
+          "statement": "revoke all on function public.register_for_event(uuid), public.leave_event(uuid), public.get_event_participation_summary(uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261010150232_event_participations.sql",
+          "statement": "grant execute on function public.register_for_event(uuid), public.leave_event(uuid), public.get_event_participation_summary(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.leave_event",
+      "parameters": "p_event_id uuid",
+      "returns": "void",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010150232_event_participations.sql",
+      "line": 120,
+      "dependencies": [
+        "public.event_participations",
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010150232_event_participations.sql",
+          "statement": "revoke all on function public.register_for_event(uuid), public.leave_event(uuid), public.get_event_participation_summary(uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261010150232_event_participations.sql",
+          "statement": "grant execute on function public.register_for_event(uuid), public.leave_event(uuid), public.get_event_participation_summary(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_my_events",
+      "parameters": "p_section text, p_offset integer default 0",
+      "returns": "table ( id uuid, title text, starts_at timestamp, ends_at timestamp, location_name text, address text, category_name text, event_state text, participation_status text, image_path text )",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010154930_my_events_read.sql",
+      "line": 4,
+      "dependencies": [
+        "public.categories",
+        "public.event_images",
+        "public.event_participations",
+        "public.events",
+        "public.files"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010154930_my_events_read.sql",
+          "statement": "revoke all on function public.get_my_events(text, integer) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261010154930_my_events_read.sql",
+          "statement": "grant execute on function public.get_my_events(text, integer) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_home_events",
+      "parameters": "p_before_starts_at timestamp default null, p_before_id uuid default null, p_limit integer default 30",
+      "returns": "table ( id uuid, organizer_id uuid, title text, description text, starts_at timestamp, ends_at timestamp, address text, location_name text, latitude double precision, longitude double precision, capacity integer, category_id uuid, visibility text, cancelled_at timestamp, archived_at timestamp, category_name text, image_path text )",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+      "line": 7,
+      "dependencies": [
+        "public.categories",
+        "public.event_images",
+        "public.events",
+        "public.files"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+          "statement": "revoke all on function public.get_home_events(timestamp, uuid, integer) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+          "statement": "grant execute on function public.get_home_events(timestamp, uuid, integer) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_event_organizer",
+      "parameters": "p_event_id uuid",
+      "returns": "table (display_name text, username text)",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+      "line": 51,
+      "dependencies": [
+        "public.event_participations",
+        "public.events",
+        "public.profiles"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+          "statement": "revoke all on function public.get_event_organizer(uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+          "statement": "grant execute on function public.get_event_organizer(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "planit_private.can_read_event_chat",
+      "parameters": "p_event_id uuid",
+      "returns": "boolean",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "line": 13,
+      "dependencies": [
+        "public.event_participations",
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010214526_event_chat.sql",
+          "statement": "revoke all on function planit_private.can_read_event_chat(uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261010214526_event_chat.sql",
+          "statement": "grant execute on function planit_private.can_read_event_chat(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "planit_private.create_event_conversation",
+      "parameters": "",
+      "returns": "trigger",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "line": 41,
+      "dependencies": [
+        "public.conversations"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010214526_event_chat.sql",
+          "statement": "revoke all on function planit_private.create_event_conversation() from public, anon, authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_event_chat",
+      "parameters": "p_event_id uuid",
+      "returns": "table (conversation_id uuid, title text, event_state text)",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "line": 54,
+      "dependencies": [
+        "planit_private.can_read_event_chat",
+        "public.conversations",
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010214526_event_chat.sql",
+          "statement": "revoke all on function public.get_event_chat(uuid), public.get_event_chat_messages(uuid,timestamp,uuid), public.send_event_chat_message(uuid,uuid,text) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261010214526_event_chat.sql",
+          "statement": "grant execute on function public.get_event_chat(uuid), public.get_event_chat_messages(uuid,timestamp,uuid), public.send_event_chat_message(uuid,uuid,text) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_event_chat_messages",
+      "parameters": "p_event_id uuid, p_before_at timestamp default null, p_before_id uuid default null",
+      "returns": "table (id uuid, sender_id uuid, body text, created_at timestamp, display_name text, username text)",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "line": 66,
+      "dependencies": [
+        "planit_private.can_read_event_chat",
+        "public.conversations",
+        "public.messages",
+        "public.profiles"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010214526_event_chat.sql",
+          "statement": "revoke all on function public.get_event_chat(uuid), public.get_event_chat_messages(uuid,timestamp,uuid), public.send_event_chat_message(uuid,uuid,text) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261010214526_event_chat.sql",
+          "statement": "grant execute on function public.get_event_chat(uuid), public.get_event_chat_messages(uuid,timestamp,uuid), public.send_event_chat_message(uuid,uuid,text) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.send_event_chat_message",
+      "parameters": "p_event_id uuid, p_message_id uuid, p_body text",
+      "returns": "uuid",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "line": 80,
+      "dependencies": [
+        "public.conversations",
+        "public.event_participations",
+        "public.events",
+        "public.messages"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261010214526_event_chat.sql",
+          "statement": "revoke all on function public.get_event_chat(uuid), public.get_event_chat_messages(uuid,timestamp,uuid), public.send_event_chat_message(uuid,uuid,text) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261010214526_event_chat.sql",
+          "statement": "grant execute on function public.get_event_chat(uuid), public.get_event_chat_messages(uuid,timestamp,uuid), public.send_event_chat_message(uuid,uuid,text) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "planit_private.stamp_notification_read",
+      "parameters": "",
+      "returns": "trigger",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "line": 29,
+      "dependencies": [],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+          "statement": "revoke all on function planit_private.stamp_notification_read() from public, anon, authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_notification_target",
+      "parameters": "p_id uuid",
+      "returns": "text",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "line": 41,
+      "dependencies": [
+        "public.conversations",
+        "public.events",
+        "public.notifications"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+          "statement": "revoke all on function public.get_notifications(timestamp,uuid), public.get_notification_target(uuid), public.mark_notification_read(uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+          "statement": "grant execute on function public.get_notifications(timestamp,uuid), public.get_notification_target(uuid), public.mark_notification_read(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_notifications",
+      "parameters": "p_before_at timestamp default null, p_before_id uuid default null",
+      "returns": "table (id uuid, type text, title text, body text, read_at timestamp, created_at timestamp, target text)",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "line": 50,
+      "dependencies": [
+        "public.get_notification_target",
+        "public.notifications"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+          "statement": "revoke all on function public.get_notifications(timestamp,uuid), public.get_notification_target(uuid), public.mark_notification_read(uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+          "statement": "grant execute on function public.get_notifications(timestamp,uuid), public.get_notification_target(uuid), public.mark_notification_read(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.mark_notification_read",
+      "parameters": "p_id uuid",
+      "returns": "timestamp",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "line": 62,
+      "dependencies": [
+        "public.notifications"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+          "statement": "revoke all on function public.get_notifications(timestamp,uuid), public.get_notification_target(uuid), public.mark_notification_read(uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+          "statement": "grant execute on function public.get_notifications(timestamp,uuid), public.get_notification_target(uuid), public.mark_notification_read(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_notification_changes",
+      "parameters": "p_ids uuid[]",
+      "returns": "table (id uuid, type text, title text, body text, read_at timestamp, created_at timestamp, target text)",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql",
+      "line": 18,
+      "dependencies": [
+        "public.get_notification_target",
+        "public.notifications"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql",
+          "statement": "revoke all on function public.get_notification_changes(uuid[]) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql",
+          "statement": "grant execute on function public.get_notification_changes(uuid[]) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_my_organized_events",
+      "parameters": "p_filter text default 'all', p_offset integer default 0",
+      "returns": "table ( id uuid, title text, starts_at timestamp, ends_at timestamp, location_name text, address text, category_name text, event_state text, participation_status text, image_path text )",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+      "line": 4,
+      "dependencies": [
+        "public.categories",
+        "public.event_images",
+        "public.events",
+        "public.files"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+          "statement": "revoke all on function public.get_my_organized_events(text, integer) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+          "statement": "revoke all on function public.get_my_organized_events(text, integer) from service_role;"
+        },
+        {
+          "source": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+          "statement": "grant execute on function public.get_my_organized_events(text, integer) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.update_event",
+      "parameters": "p_event_id uuid, p_title text, p_description text, p_starts_at timestamp, p_ends_at timestamp, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text default null",
+      "returns": "uuid",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012001058_edit_own_event.sql",
+      "line": 6,
+      "dependencies": [
+        "public.categories",
+        "public.event_participations",
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012001058_edit_own_event.sql",
+          "statement": "revoke all on function public.update_event(uuid,text,text,timestamp,timestamp,uuid,integer,text,double precision,double precision,text) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012001058_edit_own_event.sql",
+          "statement": "grant execute on function public.update_event(uuid,text,text,timestamp,timestamp,uuid,integer,text,double precision,double precision,text) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "planit_private.lock_gallery",
+      "parameters": "p_event_id uuid",
+      "returns": "void",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "line": 9,
+      "dependencies": [
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+          "statement": "revoke all on function planit_private.lock_gallery(uuid) from public, anon, authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "planit_private.can_delete_event_upload",
+      "parameters": "p_path text",
+      "returns": "boolean",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "line": 25,
+      "dependencies": [
+        "public.files"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+          "statement": "revoke all on function planit_private.can_delete_event_upload(text) from public,anon,authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+          "statement": "grant execute on function planit_private.can_delete_event_upload(text) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.add_event_image",
+      "parameters": "p_event_id uuid, p_storage_path text",
+      "returns": "uuid",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "line": 70,
+      "dependencies": [
+        "planit_private.lock_gallery",
+        "public.event_images",
+        "public.files",
+        "storage.objects"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+          "statement": "revoke all on function public.add_event_image(uuid,text), public.remove_event_image(uuid,uuid), public.reorder_event_images(uuid,uuid[],uuid[]), public.get_event_unregistered_uploads(uuid) from public,anon,authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+          "statement": "grant execute on function public.add_event_image(uuid,text), public.remove_event_image(uuid,uuid), public.reorder_event_images(uuid,uuid[],uuid[]), public.get_event_unregistered_uploads(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.remove_event_image",
+      "parameters": "p_event_id uuid, p_image_id uuid",
+      "returns": "void",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "line": 101,
+      "dependencies": [
+        "planit_private.lock_gallery",
+        "public.event_images",
+        "public.event_images_event_id_sort_order_key"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+          "statement": "revoke all on function public.add_event_image(uuid,text), public.remove_event_image(uuid,uuid), public.reorder_event_images(uuid,uuid[],uuid[]), public.get_event_unregistered_uploads(uuid) from public,anon,authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+          "statement": "grant execute on function public.add_event_image(uuid,text), public.remove_event_image(uuid,uuid), public.reorder_event_images(uuid,uuid[],uuid[]), public.get_event_unregistered_uploads(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.reorder_event_images",
+      "parameters": "p_event_id uuid, p_image_ids uuid[], p_expected_ids uuid[]",
+      "returns": "void",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "line": 115,
+      "dependencies": [
+        "planit_private.lock_gallery",
+        "public.event_images",
+        "public.event_images_event_id_sort_order_key"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+          "statement": "revoke all on function public.add_event_image(uuid,text), public.remove_event_image(uuid,uuid), public.reorder_event_images(uuid,uuid[],uuid[]), public.get_event_unregistered_uploads(uuid) from public,anon,authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+          "statement": "grant execute on function public.add_event_image(uuid,text), public.remove_event_image(uuid,uuid), public.reorder_event_images(uuid,uuid[],uuid[]), public.get_event_unregistered_uploads(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_event_unregistered_uploads",
+      "parameters": "p_event_id uuid",
+      "returns": "table(storage_path text)",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "line": 134,
+      "dependencies": [
+        "public.events",
+        "public.files",
+        "storage.objects"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+          "statement": "revoke all on function public.add_event_image(uuid,text), public.remove_event_image(uuid,uuid), public.reorder_event_images(uuid,uuid[],uuid[]), public.get_event_unregistered_uploads(uuid) from public,anon,authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+          "statement": "grant execute on function public.add_event_image(uuid,text), public.remove_event_image(uuid,uuid), public.reorder_event_images(uuid,uuid[],uuid[]), public.get_event_unregistered_uploads(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_event_attendees",
+      "parameters": "p_event_id uuid, p_status text default 'confirmed', p_search text default '', p_offset integer default 0",
+      "returns": "jsonb",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "line": 152,
+      "dependencies": [
+        "public.event_participations",
+        "public.event_rejoin_requests",
+        "public.events",
+        "public.profiles"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+          "statement": "revoke all on function public.get_event_attendees(uuid,text,text,integer), public.remove_participant(uuid,uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+          "statement": "grant execute on function public.get_event_attendees(uuid,text,text,integer), public.remove_participant(uuid,uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.remove_participant",
+      "parameters": "p_event_id uuid, p_participation_id uuid",
+      "returns": "void",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+      "line": 47,
+      "dependencies": [
+        "public.event_participations",
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+          "statement": "revoke all on function public.get_event_attendees(uuid,text,text,integer), public.remove_participant(uuid,uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+          "statement": "grant execute on function public.get_event_attendees(uuid,text,text,integer), public.remove_participant(uuid,uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.cancel_event",
+      "parameters": "p_event_id uuid",
+      "returns": "uuid",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+      "line": 5,
+      "dependencies": [
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+          "statement": "revoke all on function public.cancel_event(uuid), public.archive_event(uuid), public.get_event_duplicate_source(uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+          "statement": "grant execute on function public.cancel_event(uuid), public.archive_event(uuid), public.get_event_duplicate_source(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.archive_event",
+      "parameters": "p_event_id uuid",
+      "returns": "uuid",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+      "line": 29,
+      "dependencies": [
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+          "statement": "revoke all on function public.cancel_event(uuid), public.archive_event(uuid), public.get_event_duplicate_source(uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+          "statement": "grant execute on function public.cancel_event(uuid), public.archive_event(uuid), public.get_event_duplicate_source(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_event_duplicate_source",
+      "parameters": "p_event_id uuid",
+      "returns": "table (title text, description text, category_id uuid, location_name text, address text, latitude double precision, longitude double precision, capacity integer)",
+      "security": "invoker",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+      "line": 57,
+      "dependencies": [
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+          "statement": "revoke all on function public.cancel_event(uuid), public.archive_event(uuid), public.get_event_duplicate_source(uuid) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+          "statement": "grant execute on function public.cancel_event(uuid), public.archive_event(uuid), public.get_event_duplicate_source(uuid) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_my_rejoin_status",
+      "parameters": "p_event_id uuid",
+      "returns": "jsonb",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "line": 42,
+      "dependencies": [
+        "public.event_participations",
+        "public.event_rejoin_requests",
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+          "statement": "revoke all on function public.get_my_rejoin_status(uuid), public.get_event_rejoin_requests(uuid,integer), public.request_rejoin(uuid), public.resolve_rejoin(uuid,uuid,text) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+          "statement": "grant execute on function public.get_my_rejoin_status(uuid), public.get_event_rejoin_requests(uuid,integer), public.request_rejoin(uuid), public.resolve_rejoin(uuid,uuid,text) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.request_rejoin",
+      "parameters": "p_event_id uuid",
+      "returns": "uuid",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "line": 68,
+      "dependencies": [
+        "public.event_participations",
+        "public.event_rejoin_requests",
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+          "statement": "revoke all on function public.get_my_rejoin_status(uuid), public.get_event_rejoin_requests(uuid,integer), public.request_rejoin(uuid), public.resolve_rejoin(uuid,uuid,text) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+          "statement": "grant execute on function public.get_my_rejoin_status(uuid), public.get_event_rejoin_requests(uuid,integer), public.request_rejoin(uuid), public.resolve_rejoin(uuid,uuid,text) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_event_rejoin_requests",
+      "parameters": "p_event_id uuid, p_offset integer default 0",
+      "returns": "jsonb",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "line": 94,
+      "dependencies": [
+        "public.event_participations",
+        "public.event_rejoin_requests",
+        "public.events",
+        "public.profiles"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+          "statement": "revoke all on function public.get_my_rejoin_status(uuid), public.get_event_rejoin_requests(uuid,integer), public.request_rejoin(uuid), public.resolve_rejoin(uuid,uuid,text) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+          "statement": "grant execute on function public.get_my_rejoin_status(uuid), public.get_event_rejoin_requests(uuid,integer), public.request_rejoin(uuid), public.resolve_rejoin(uuid,uuid,text) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.resolve_rejoin",
+      "parameters": "p_event_id uuid, p_request_id uuid, p_decision text",
+      "returns": "void",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "line": 121,
+      "dependencies": [
+        "public.event_participations",
+        "public.event_rejoin_requests",
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+          "statement": "revoke all on function public.get_my_rejoin_status(uuid), public.get_event_rejoin_requests(uuid,integer), public.request_rejoin(uuid), public.resolve_rejoin(uuid,uuid,text) from public, anon, authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+          "statement": "grant execute on function public.get_my_rejoin_status(uuid), public.get_event_rejoin_requests(uuid,integer), public.request_rejoin(uuid), public.resolve_rejoin(uuid,uuid,text) to authenticated;"
+        }
+      ]
+    },
+    {
+      "name": "public.get_event_rejoin_resolution",
+      "parameters": "p_event_id uuid, p_request_id uuid",
+      "returns": "text",
+      "security": "definer",
+      "empty_search_path": true,
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "line": 193,
+      "dependencies": [
+        "public.event_participations",
+        "public.event_rejoin_requests",
+        "public.events"
+      ],
+      "execute_statements": [
+        {
+          "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+          "statement": "revoke all on function public.get_event_rejoin_resolution(uuid,uuid) from public,anon,authenticated;"
+        },
+        {
+          "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+          "statement": "grant execute on function public.get_event_rejoin_resolution(uuid,uuid) to authenticated;"
+        }
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "name": "profiles_select_own",
+      "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "line": 64,
+      "statement": "create policy profiles_select_own on public.profiles for select to authenticated using ((select auth.uid()) = id);"
+    },
+    {
+      "name": "profiles_update_own",
+      "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "line": 68,
+      "statement": "create policy profiles_update_own on public.profiles for update to authenticated using ((select auth.uid()) = id) with check ((select auth.uid()) = id);"
+    },
+    {
+      "name": "categories_select_authenticated",
+      "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "line": 75,
+      "statement": "create policy categories_select_authenticated on public.categories for select to authenticated using (true);"
+    },
+    {
+      "name": "events_select_authenticated",
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "line": 46,
+      "statement": "create policy events_select_authenticated on public.events for select to authenticated using (organizer_id = (select auth.uid()) or (visibility = 'public' and cancelled_at is null and archived_at is null));"
+    },
+    {
+      "name": "events_insert_own",
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "line": 48,
+      "statement": "create policy events_insert_own on public.events for insert to authenticated with check (organizer_id = (select auth.uid()) and visibility = 'public' and cancelled_at is null and archived_at is null);"
+    },
+    {
+      "name": "event_images_select_visible",
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "line": 107,
+      "statement": "create policy event_images_select_visible on public.event_images for select to authenticated using (exists (select 1 from public.events where id = event_id));"
+    },
+    {
+      "name": "files_select_visible",
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "line": 109,
+      "statement": "create policy files_select_visible on public.files for select to authenticated using (uploaded_by = (select auth.uid()) or exists (select 1 from public.event_images where file_id = files.id));"
+    },
+    {
+      "name": "files_insert_own",
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "line": 111,
+      "statement": "create policy files_insert_own on public.files for insert to authenticated with check (uploaded_by = (select auth.uid()));"
+    },
+    {
+      "name": "event_images_insert_own",
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "line": 113,
+      "statement": "create policy event_images_insert_own on public.event_images for insert to authenticated with check ( exists (select 1 from public.events where id = event_id and organizer_id = (select auth.uid())) );"
+    },
+    {
+      "name": "event_media_select_visible",
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "line": 128,
+      "statement": "create policy event_media_select_visible on storage.objects for select to authenticated using (bucket_id = 'event_media' and ( split_part(name, '/', 1) = (select auth.uid())::text or exists (select 1 from public.files where bucket_name = bucket_id and storage_path = name) ));"
+    },
+    {
+      "name": "participations_select_own",
+      "source": "supabase/migrations/20261010150232_event_participations.sql",
+      "line": 16,
+      "statement": "create policy participations_select_own on public.event_participations for select to authenticated using (user_id = (select auth.uid()));"
+    },
+    {
+      "name": "participation_history_select_own",
+      "source": "supabase/migrations/20261010150232_event_participations.sql",
+      "line": 35,
+      "statement": "create policy participation_history_select_own on public.participation_history for select to authenticated using (exists (select 1 from public.event_participations p where p.id = participation_id));"
+    },
+    {
+      "name": "events_select_participating",
+      "source": "supabase/migrations/20261010150232_event_participations.sql",
+      "line": 59,
+      "statement": "create policy events_select_participating on public.events for select to authenticated using (exists (select 1 from public.event_participations p where p.event_id = events.id));"
+    },
+    {
+      "name": "conversations_read_member",
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "line": 23,
+      "statement": "create policy conversations_read_member on public.conversations for select to authenticated using (planit_private.can_read_event_chat(event_id));"
+    },
+    {
+      "name": "messages_read_member",
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "line": 36,
+      "statement": "create policy messages_read_member on public.messages for select to authenticated using (exists (select 1 from public.conversations c where c.id = conversation_id));"
+    },
+    {
+      "name": "notifications_read_own",
+      "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "line": 19,
+      "statement": "create policy notifications_read_own on public.notifications for select to authenticated using (recipient_id = (select auth.uid()));"
+    },
+    {
+      "name": "notifications_mark_own",
+      "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "line": 21,
+      "statement": "create policy notifications_mark_own on public.notifications for update to authenticated using (recipient_id = (select auth.uid())) with check (recipient_id = (select auth.uid()));"
+    },
+    {
+      "name": "event_media_delete_unlinked",
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "line": 39,
+      "statement": "create policy event_media_delete_unlinked on storage.objects for delete to authenticated using (bucket_id = 'event_media' and planit_private.can_delete_event_upload(name));"
+    },
+    {
+      "name": "event_media_insert_own",
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "line": 154,
+      "statement": "create policy event_media_insert_own on storage.objects for insert to authenticated with check ( bucket_id = 'event_media' and split_part(name,'/',1) = (select auth.uid())::text and split_part(name,'/',2) ~ '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$' and not exists(select 1 from public.events where id::text = split_part(name,'/',2) and organizer_id <> (select auth.uid())) );"
+    },
+    {
+      "name": "rejoin_requests_select_own",
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "line": 17,
+      "statement": "create policy rejoin_requests_select_own on public.event_rejoin_requests for select to authenticated using (exists (select 1 from public.event_participations p where p.id = participation_id and p.user_id = (select auth.uid())));"
+    }
+  ],
+  "function_grants": [
+    {
+      "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "statement": "revoke all on function planit_private.touch_updated_at() from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "statement": "revoke all on function planit_private.validate_birth_date() from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "statement": "revoke all on function planit_private.handle_new_auth_user() from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010023448_restrict_rls_auto_enable_execute.sql",
+      "statement": "revoke execute on function public.rls_auto_enable() from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "statement": "revoke all on function planit_private.validate_new_event() from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "statement": "revoke all on function planit_private.validate_event_file() from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "statement": "revoke all on function planit_private.validate_event_image() from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "statement": "revoke all on function public.create_event(uuid,text,text,timestamp,timestamp,uuid,integer,text,double precision,double precision,text,text[]) from public, anon;"
+    },
+    {
+      "source": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "statement": "grant execute on function public.create_event(uuid,text,text,timestamp,timestamp,uuid,integer,text,double precision,double precision,text,text[]) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010052653_public_event_discovery.sql",
+      "statement": "revoke all on function public.discover_public_events(double precision,double precision,double precision,double precision) from public, anon;"
+    },
+    {
+      "source": "supabase/migrations/20261010052653_public_event_discovery.sql",
+      "statement": "grant execute on function public.discover_public_events(double precision,double precision,double precision,double precision) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010150232_event_participations.sql",
+      "statement": "revoke all on function planit_private.record_participation_history() from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010150232_event_participations.sql",
+      "statement": "revoke all on function public.register_for_event(uuid), public.leave_event(uuid), public.get_event_participation_summary(uuid) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010150232_event_participations.sql",
+      "statement": "grant execute on function public.register_for_event(uuid), public.leave_event(uuid), public.get_event_participation_summary(uuid) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010154930_my_events_read.sql",
+      "statement": "revoke all on function public.get_my_events(text, integer) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010154930_my_events_read.sql",
+      "statement": "grant execute on function public.get_my_events(text, integer) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+      "statement": "revoke all on function public.get_home_events(timestamp, uuid, integer) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+      "statement": "grant execute on function public.get_home_events(timestamp, uuid, integer) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+      "statement": "revoke all on function public.get_event_organizer(uuid) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+      "statement": "grant execute on function public.get_event_organizer(uuid) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "statement": "revoke all on function planit_private.can_read_event_chat(uuid) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "statement": "grant execute on function planit_private.can_read_event_chat(uuid) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "statement": "revoke all on function planit_private.create_event_conversation() from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "statement": "revoke all on function public.get_event_chat(uuid), public.get_event_chat_messages(uuid,timestamp,uuid), public.send_event_chat_message(uuid,uuid,text) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261010214526_event_chat.sql",
+      "statement": "grant execute on function public.get_event_chat(uuid), public.get_event_chat_messages(uuid,timestamp,uuid), public.send_event_chat_message(uuid,uuid,text) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "statement": "revoke all on function planit_private.stamp_notification_read() from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "statement": "revoke all on function public.get_notifications(timestamp,uuid), public.get_notification_target(uuid), public.mark_notification_read(uuid) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "statement": "grant execute on function public.get_notifications(timestamp,uuid), public.get_notification_target(uuid), public.mark_notification_read(uuid) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql",
+      "statement": "revoke all on function public.get_notification_changes(uuid[]) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql",
+      "statement": "grant execute on function public.get_notification_changes(uuid[]) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+      "statement": "revoke all on function public.get_my_organized_events(text, integer) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+      "statement": "revoke all on function public.get_my_organized_events(text, integer) from service_role;"
+    },
+    {
+      "source": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+      "statement": "grant execute on function public.get_my_organized_events(text, integer) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012001058_edit_own_event.sql",
+      "statement": "revoke all on function public.update_event(uuid,text,text,timestamp,timestamp,uuid,integer,text,double precision,double precision,text) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012001058_edit_own_event.sql",
+      "statement": "grant execute on function public.update_event(uuid,text,text,timestamp,timestamp,uuid,integer,text,double precision,double precision,text) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "statement": "revoke all on function planit_private.lock_gallery(uuid) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "statement": "revoke all on function planit_private.can_delete_event_upload(text) from public,anon,authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "statement": "grant execute on function planit_private.can_delete_event_upload(text) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "statement": "revoke all on function public.add_event_image(uuid,text), public.remove_event_image(uuid,uuid), public.reorder_event_images(uuid,uuid[],uuid[]), public.get_event_unregistered_uploads(uuid) from public,anon,authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "statement": "grant execute on function public.add_event_image(uuid,text), public.remove_event_image(uuid,uuid), public.reorder_event_images(uuid,uuid[],uuid[]), public.get_event_unregistered_uploads(uuid) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+      "statement": "revoke all on function public.get_event_attendees(uuid,text,text,integer), public.remove_participant(uuid,uuid) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+      "statement": "grant execute on function public.get_event_attendees(uuid,text,text,integer), public.remove_participant(uuid,uuid) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+      "statement": "revoke all on function public.cancel_event(uuid), public.archive_event(uuid), public.get_event_duplicate_source(uuid) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+      "statement": "grant execute on function public.cancel_event(uuid), public.archive_event(uuid), public.get_event_duplicate_source(uuid) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "statement": "revoke all on function public.get_my_rejoin_status(uuid), public.get_event_rejoin_requests(uuid,integer), public.request_rejoin(uuid), public.resolve_rejoin(uuid,uuid,text) from public, anon, authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "statement": "grant execute on function public.get_my_rejoin_status(uuid), public.get_event_rejoin_requests(uuid,integer), public.request_rejoin(uuid), public.resolve_rejoin(uuid,uuid,text) to authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "statement": "revoke all on function public.get_event_rejoin_resolution(uuid,uuid) from public,anon,authenticated;"
+    },
+    {
+      "source": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "statement": "grant execute on function public.get_event_rejoin_resolution(uuid,uuid) to authenticated;"
+    }
+  ]
+}
