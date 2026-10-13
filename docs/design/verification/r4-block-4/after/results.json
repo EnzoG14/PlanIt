@@ -1,0 +1,81 @@
+{
+  "environment": "Playwright fixtures; simulated Auth/REST, no HTTP JWT or remote writes",
+  "results": [
+    {
+      "test": "320: CA-01/02, dedicated section, honest reason, no automatic GPS or search filters, no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "320: CA-04 suggestion opens detail and returns to Inicio",
+      "result": "PASS"
+    },
+    {
+      "test": "320: empty/error/retry independent of discovery; interests failure is not general fallback",
+      "result": "PASS"
+    },
+    {
+      "test": "375: CA-01/02, dedicated section, honest reason, no automatic GPS or search filters, no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "375: CA-04 suggestion opens detail and returns to Inicio",
+      "result": "PASS"
+    },
+    {
+      "test": "375: empty/error/retry independent of discovery; interests failure is not general fallback",
+      "result": "PASS"
+    },
+    {
+      "test": "390: CA-01/02, dedicated section, honest reason, no automatic GPS or search filters, no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "390: CA-04 suggestion opens detail and returns to Inicio",
+      "result": "PASS"
+    },
+    {
+      "test": "390: empty/error/retry independent of discovery; interests failure is not general fallback",
+      "result": "PASS"
+    },
+    {
+      "test": "Explicit map center triggers recomputation and is never called user location",
+      "result": "PASS"
+    },
+    {
+      "test": "A/B identity switch clears old content and ignores late A response",
+      "result": "PASS"
+    },
+    {
+      "test": "Expiry removes event in browser Argentina time even in Tokyo; visible 30s polling requeries",
+      "result": "PASS"
+    },
+    {
+      "test": "Expanded text, reduced motion and keyboard focus",
+      "result": "PASS"
+    },
+    {
+      "test": "768: CA-01/02, dedicated section, honest reason, no automatic GPS or search filters, no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "768: CA-04 suggestion opens detail and returns to Inicio",
+      "result": "PASS"
+    },
+    {
+      "test": "768: empty/error/retry independent of discovery; interests failure is not general fallback",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: CA-01/02, dedicated section, honest reason, no automatic GPS or search filters, no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: CA-04 suggestion opens detail and returns to Inicio",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: empty/error/retry independent of discovery; interests failure is not general fallback",
+      "result": "PASS"
+    }
+  ]
+}

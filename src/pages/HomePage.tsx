@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { EventCard } from '../components/EventCard'
+import { HomeSuggestions } from '../components/HomeSuggestions'
 import { StatusMessage } from '../components/StatusMessage'
 import { DiscoveryFilters } from '../components/DiscoveryFilters'
 import { useDiscoveryFilters } from '../features/events/useDiscoveryFilters'
@@ -108,6 +109,7 @@ export function HomePage() {
     <header className="home-heading">
       <div><h1>Inicio</h1><p>Próximos eventos para compartir.</p></div>
     </header>
+    <HomeSuggestions returnTo={`/home${search}`} />
     <DiscoveryFilters filters={filters} onChange={setFilters} idPrefix="home" origin={origin} />
     <div aria-busy={loading || loadingMore}>
       {loading ? <div role="status"><StatusMessage title="Buscando eventos">Esperá un momento.</StatusMessage></div> : <>

@@ -194,7 +194,8 @@ try {
     await openPanel(shotPage)
     await shotPage.getByLabel('Fecha o inicio del rango').waitFor()
     assert.equal(await shotPage.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `no horizontal overflow at ${width}`)
-    const small = await shotPage.evaluate(() => [...document.querySelectorAll('.discovery-filters button, .discovery-filters input')].filter(node => node.offsetParent && node.getBoundingClientRect().height < 44).length)
+    // Fractional vertical positions can report 43.999969px for a CSS 44px target.
+    const small = await shotPage.evaluate(() => [...document.querySelectorAll('.discovery-filters button, .discovery-filters input')].filter(node => node.offsetParent && Math.round(node.getBoundingClientRect().height * 100) / 100 < 44).length)
     assert.equal(small, 0, `touch targets >= 44px at ${width}`)
     await shotPage.waitForTimeout(900)
     await shotPage.screenshot({ path: `${output}/home-date-radius-${width}.png` })

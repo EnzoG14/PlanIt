@@ -1,5 +1,9 @@
 # PlanIt — Modelo de datos y migraciones
 
+## R4 Bloque 4 — Ranking público (no aplicado)
+
+`20261014120002_get_suggested_events.sql` agrega RPC invoker `get_suggested_events(double precision,double precision,integer)`, search_path vacío, EXECUTE authenticated. Sin tablas/RLS nuevas; intereses auth.uid(), públicos sin cancelar/archivar y ends_at vigente Argentina. 100 afinidad + hasta30 dentro50km + hasta20 dentro7d; ranking antes de LIMIT (default6, máximo20), empate starts_at/id y fallback general cronológico. Creada/probada por replay local; **no aplicada/inspeccionada remotamente**. [Evidencia](design/verification/r4-block-4/README.md).
+
 ## R4 Bloque 3 — Preferencias privadas (aplicada)
 
 `20261014120001_user_category_interests.sql` crea la relación PK user/category, FKs RESTRICT y created_at Argentina sin zona. RLS/grants permiten sólo SELECT propio; la RPC `set_my_category_interests(uuid[])` deriva auth.uid y reemplaza atómicamente bajo locks de perfil/categorías. DEFINER restringido, search_path vacío; conserva inactivas guardadas hasta quitarlas, rechaza nuevas/realtas inactivas. Creada/probada con replay local y **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior del usuario**; historial al día, RLS/grants y cuerpo RPC idéntico a Git. HTTP/JWT real pendiente. [Pruebas, contrato y límites](design/verification/r4-block-3/README.md).

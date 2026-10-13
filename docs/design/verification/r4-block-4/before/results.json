@@ -1,0 +1,25 @@
+{
+  "environment": "Playwright fixtures; simulated Auth/REST, no HTTP JWT or remote writes",
+  "results": [
+    {
+      "test": "320: immutable main baseline",
+      "result": "PASS"
+    },
+    {
+      "test": "375: immutable main baseline",
+      "result": "PASS"
+    },
+    {
+      "test": "390: immutable main baseline",
+      "result": "PASS"
+    },
+    {
+      "test": "768: immutable main baseline",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: immutable main baseline",
+      "result": "PASS"
+    }
+  ]
+}

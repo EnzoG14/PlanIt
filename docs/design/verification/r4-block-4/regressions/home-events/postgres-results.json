@@ -1,0 +1,26 @@
+{
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "environment": "Local PostgreSQL; test Auth/Storage scaffolding only, no real Supabase Auth/REST",
+  "results": [
+    {
+      "test": "Replay migrations; home invoker and organizer projection definer use empty search_path",
+      "result": "PASS"
+    },
+    {
+      "test": "Upcoming events are deterministically ordered, grouped with their stored categories, and keyset-paginated without gaps",
+      "result": "PASS"
+    },
+    {
+      "test": "Past, cancelled, and archived events are excluded; authenticated access is required",
+      "result": "PASS"
+    },
+    {
+      "test": "Organizer projection exposes only social name/username to an event participant; strangers cannot resolve unlisted organizers or read private profile fields",
+      "result": "PASS"
+    },
+    {
+      "test": "Incomplete page cursor returns no data",
+      "result": "PASS"
+    }
+  ]
+}
