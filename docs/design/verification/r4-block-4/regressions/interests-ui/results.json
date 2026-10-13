@@ -1,0 +1,385 @@
+{
+  "environment": "Edge with intercepted Auth/REST and blocked WebSocket; fixtures, no real JWT or remote writes",
+  "results": [
+    {
+      "test": "320: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "320: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus",
+      "result": "PASS"
+    },
+    {
+      "test": "320: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection",
+      "result": "PASS"
+    },
+    {
+      "test": "320: CA-04 rejected save shows error, preserves draft and retries without false confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "320: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending",
+      "result": "PASS"
+    },
+    {
+      "test": "320: inactive unsaved category cannot be retained invisibly after catalog refresh",
+      "result": "PASS"
+    },
+    {
+      "test": "320: zero categories selection persists; empty catalog and initial read failure/retry",
+      "result": "PASS"
+    },
+    {
+      "test": "320: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "320: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog",
+      "result": "PASS"
+    },
+    {
+      "test": "360: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "360: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus",
+      "result": "PASS"
+    },
+    {
+      "test": "360: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection",
+      "result": "PASS"
+    },
+    {
+      "test": "360: CA-04 rejected save shows error, preserves draft and retries without false confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "360: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending",
+      "result": "PASS"
+    },
+    {
+      "test": "360: inactive unsaved category cannot be retained invisibly after catalog refresh",
+      "result": "PASS"
+    },
+    {
+      "test": "360: zero categories selection persists; empty catalog and initial read failure/retry",
+      "result": "PASS"
+    },
+    {
+      "test": "360: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "360: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog",
+      "result": "PASS"
+    },
+    {
+      "test": "375: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "375: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus",
+      "result": "PASS"
+    },
+    {
+      "test": "375: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection",
+      "result": "PASS"
+    },
+    {
+      "test": "375: CA-04 rejected save shows error, preserves draft and retries without false confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "375: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending",
+      "result": "PASS"
+    },
+    {
+      "test": "375: inactive unsaved category cannot be retained invisibly after catalog refresh",
+      "result": "PASS"
+    },
+    {
+      "test": "375: zero categories selection persists; empty catalog and initial read failure/retry",
+      "result": "PASS"
+    },
+    {
+      "test": "375: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "375: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog",
+      "result": "PASS"
+    },
+    {
+      "test": "390: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "390: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus",
+      "result": "PASS"
+    },
+    {
+      "test": "390: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection",
+      "result": "PASS"
+    },
+    {
+      "test": "390: CA-04 rejected save shows error, preserves draft and retries without false confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "390: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending",
+      "result": "PASS"
+    },
+    {
+      "test": "390: inactive unsaved category cannot be retained invisibly after catalog refresh",
+      "result": "PASS"
+    },
+    {
+      "test": "390: zero categories selection persists; empty catalog and initial read failure/retry",
+      "result": "PASS"
+    },
+    {
+      "test": "390: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "390: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog",
+      "result": "PASS"
+    },
+    {
+      "test": "768: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "768: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus",
+      "result": "PASS"
+    },
+    {
+      "test": "768: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection",
+      "result": "PASS"
+    },
+    {
+      "test": "768: CA-04 rejected save shows error, preserves draft and retries without false confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "768: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending",
+      "result": "PASS"
+    },
+    {
+      "test": "768: inactive unsaved category cannot be retained invisibly after catalog refresh",
+      "result": "PASS"
+    },
+    {
+      "test": "768: zero categories selection persists; empty catalog and initial read failure/retry",
+      "result": "PASS"
+    },
+    {
+      "test": "768: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "768: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: CA-04 rejected save shows error, preserves draft and retries without false confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: inactive unsaved category cannot be retained invisibly after catalog refresh",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: zero categories selection persists; empty catalog and initial read failure/retry",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog",
+      "result": "PASS"
+    }
+  ],
+  "geometry": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "options": [
+        {
+          "width": 280,
+          "height": 56
+        },
+        {
+          "width": 280,
+          "height": 96
+        },
+        {
+          "width": 280,
+          "height": 56
+        },
+        {
+          "width": 280,
+          "height": 56
+        },
+        {
+          "width": 280,
+          "height": 56
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "scrollWidth": 360,
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "options": [
+        {
+          "width": 154,
+          "height": 123
+        },
+        {
+          "width": 154,
+          "height": 123
+        },
+        {
+          "width": 154,
+          "height": 56
+        },
+        {
+          "width": 154,
+          "height": 56
+        },
+        {
+          "width": 154,
+          "height": 56
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375,
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "options": [
+        {
+          "width": 161.5,
+          "height": 106
+        },
+        {
+          "width": 161.5,
+          "height": 106
+        },
+        {
+          "width": 161.5,
+          "height": 56
+        },
+        {
+          "width": 161.5,
+          "height": 56
+        },
+        {
+          "width": 161.5,
+          "height": 56
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "options": [
+        {
+          "width": 169,
+          "height": 106
+        },
+        {
+          "width": 169,
+          "height": 106
+        },
+        {
+          "width": 169,
+          "height": 56
+        },
+        {
+          "width": 169,
+          "height": 56
+        },
+        {
+          "width": 169,
+          "height": 56
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "options": [
+        {
+          "width": 274,
+          "height": 96
+        },
+        {
+          "width": 274,
+          "height": 96
+        },
+        {
+          "width": 274,
+          "height": 56
+        },
+        {
+          "width": 274,
+          "height": 56
+        },
+        {
+          "width": 274,
+          "height": 56
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "scrollWidth": 1280,
+      "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+      "options": [
+        {
+          "width": 274,
+          "height": 96
+        },
+        {
+          "width": 274,
+          "height": 96
+        },
+        {
+          "width": 274,
+          "height": 56
+        },
+        {
+          "width": 274,
+          "height": 56
+        },
+        {
+          "width": 274,
+          "height": 56
+        }
+      ]
+    }
+  ]
+}

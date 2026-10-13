@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:suggestions": "node scripts/check-suggestions.mjs",
+    "check:suggestions:ui": "node scripts/check-suggestions-ui.mjs",
     "check:interests": "node scripts/check-interests.mjs",
     "check:interests:ui": "node scripts/check-interests-ui.mjs",
     "check:ui:p1": "node scripts/check-ui-p1.mjs",

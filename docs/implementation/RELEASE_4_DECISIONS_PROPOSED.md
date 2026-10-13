@@ -1,5 +1,9 @@
 # Release 4 — Registro de decisiones: aprobadas y propuestas pendientes
 
+## Acta BLOQUE 4 — 13/10/2026
+
+Usuario eligió «Cerca o pronto» y autorizó implementar el plan: pesos D07 100/30/20, cercanía lineal dentro de50km y prontitud lineal dentro de7d; con intereses y sin señales positivas, vacío, permitiendo otras categorías por esas señales. Sin intereses, generales próximos claramente rotulados. Ranking PostgreSQL antes de LIMIT (seis default, máximo20), desempate starts_at/id; D13 conserva propios/confirmed. Afinidad sobre intereses guardados incluye inactivos conservados. GPS autorizado o mapa identificado, sin GPS automático. Implementado/probado local y con fixtures, sin JWT real ni aceptación humana. [Contrato/evidencia](../design/verification/r4-block-4/README.md). A01–A07 preservadas; no modifica decisiones de visibilidad/grants/TTL.
+
 **Estado:** versión 1.2, actualizada por BLOQUE 0 el 13/10/2026; acta original 12/10/2026. **Siete decisiones de producto confirmadas por el responsable** (A01–A07); D12 y el TTL objetivo D14 fueron elegidos el 13/10/2026; las demás opciones siguen siendo propuestas técnicas, no aprobación implícita. La auditoría ejecutada del Bloque 0 se registra por separado en [RELEASE_4_BLOCK_0_DECISIONS.md](RELEASE_4_BLOCK_0_DECISIONS.md); este archivo conserva decisiones y propuestas. Las alternativas se deducen de RF/CA/especificación y del código visible de `main` el 12/10/2026. No se han probado permisos reales con JWT ni consultado el remoto Supabase para confirmar el esquema efectivo de R4.
 
 ## Hechos respaldados por fuentes

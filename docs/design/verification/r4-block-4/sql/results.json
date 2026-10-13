@@ -1,0 +1,76 @@
+{
+  "environment": "Real local embedded PostgreSQL; simulated Auth/Storage and JWT claims; no HTTP JWT or remote writes",
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "migrations": [
+    "20261010011204_create_profiles_and_categories.sql",
+    "20261010013449_create_profiles_and_categories.sql",
+    "20261010023448_restrict_rls_auto_enable_execute.sql",
+    "20261010042701_create_events_and_event_media.sql",
+    "20261010052653_public_event_discovery.sql",
+    "20261010150232_event_participations.sql",
+    "20261010154930_my_events_read.sql",
+    "20261010212819_home_and_event_organizer_read.sql",
+    "20261010214526_event_chat.sql",
+    "20261011163653_notifications_inbox.sql",
+    "20261011193316_r2_realtime_chat_notifications.sql",
+    "20261011232326_my_organized_events_read.sql",
+    "20261012001058_edit_own_event.sql",
+    "20261012013634_manage_event_gallery.sql",
+    "20261012031717_manage_event_attendees.sql",
+    "20261012044919_close_and_duplicate_events.sql",
+    "20261012155501_event_rejoin_requests.sql",
+    "20261013160000_search_public_events.sql",
+    "20261014120000_search_public_events_date_radius.sql",
+    "20261014120001_user_category_interests.sql",
+    "20261014120002_get_suggested_events.sql"
+  ],
+  "fixtureTime": "2026-10-13T21:28:32.191Z",
+  "plan": [
+    {
+      "QUERY PLAN": "Function Scan on get_suggested_events  (cost=0.25..10.25 rows=1000 width=335) (actual time=0.850..0.850 rows=0 loops=1)"
+    },
+    {
+      "QUERY PLAN": "  Buffers: shared hit=6"
+    },
+    {
+      "QUERY PLAN": "Planning Time: 0.040 ms"
+    },
+    {
+      "QUERY PLAN": "Execution Time: 0.872 ms"
+    }
+  ],
+  "results": [
+    {
+      "test": "Full replay; invoker/empty search_path, anon denied, missing identity returns nothing",
+      "result": "PASS"
+    },
+    {
+      "test": "Origin is optional, finite and all-or-nothing; output limit 1..20",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-02/03: two interests; affinity, proximity, date, 50km/7-day boundaries; deterministic starts_at/id ties; exclude hidden owned/closed",
+      "result": "PASS"
+    },
+    {
+      "test": "No GPS means no distance; ongoing eligible; reproducible ordering; interests recompute; B cannot change A results",
+      "result": "PASS"
+    },
+    {
+      "test": "Own and confirmed events stay eligible; saved inactive interests still provide affinity",
+      "result": "PASS"
+    },
+    {
+      "test": "No-interest fallback is chronological and explicitly general, default six; GPS does not disguise personalization",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-04: no available events is an empty list",
+      "result": "PASS"
+    },
+    {
+      "test": "Ranking precedes LIMIT: relevant event beyond first 30; no arbitrary fallback with interests, cancellation disappears on requery",
+      "result": "PASS"
+    }
+  ]
+}

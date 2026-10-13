@@ -1,5 +1,10 @@
 .home-page { max-width: 1080px; margin-inline: auto; }
 .home-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
+.amanecer-shell .home-suggestions { margin-block: var(--pi-space-section); }
+.amanecer-shell .home-suggestions-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.amanecer-shell .home-suggestions-heading h2 { margin: 0; }
+.amanecer-shell .home-suggestions-heading .text-button { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--pi-space-compact); }
+.amanecer-shell .home-suggestion-reason { margin: 12px 4px 0; font-size: 14px; line-height: 1.5; color: var(--pi-color-text); }
 .home-heading h1 { margin: 0 0 8px; font-size: 26px; letter-spacing: -.5px; }
 .home-heading p { margin: 0; color: var(--color-text-muted); font-size: 14px; }
 .home-category-groups { display: grid; gap: 28px; }

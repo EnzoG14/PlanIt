@@ -1,0 +1,60 @@
+{
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "project_name": "planit-v2",
+  "date_argentina": "2026-10-13",
+  "authorization": "User explicitly requested remote migration after PR #43 implementation.",
+  "migration": "20261014120002_get_suggested_events.sql",
+  "before": {
+    "pending_only": [
+      "20261014120002_get_suggested_events.sql"
+    ],
+    "function_absent": true,
+    "interests_rpc_present": true,
+    "interests_rls": true
+  },
+  "applied": {
+    "cli_exit_code": 0,
+    "migrations": [
+      "20261014120002_get_suggested_events.sql"
+    ],
+    "seeds": [],
+    "roles": [],
+    "skip_vault": true
+  },
+  "after": {
+    "migration_registered": true,
+    "dry_run_up_to_date": true,
+    "pending": [],
+    "signature": "get_suggested_events(double precision,double precision,integer)",
+    "security_definer": false,
+    "search_path": "",
+    "default_arguments": 3,
+    "body_md5_local": "bb30d269f107655dd1400e561dc0a17b",
+    "body_md5_remote": "bb30d269f107655dd1400e561dc0a17b",
+    "authenticated_execute": true,
+    "anon_execute": false,
+    "public_execute": false,
+    "guard_without_identity": "ASSERT passed under SET LOCAL ROLE authenticated and empty JWT claims; ROLLBACK; no user data modified"
+  },
+  "advisors": {
+    "new_notices": [],
+    "unchanged": [
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "count": 22,
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable"
+      },
+      {
+        "name": "auth_leaked_password_protection",
+        "count": 1,
+        "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection"
+      }
+    ]
+  },
+  "not_run": [
+    "Real HTTP/JWT A/B/anon acceptance",
+    "Deploy frontend",
+    "Merge PR"
+  ],
+  "historical_project": "Not accessed or modified"
+}
