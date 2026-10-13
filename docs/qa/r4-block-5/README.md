@@ -1,6 +1,16 @@
 # R4 · Bloque 5 — Seguridad de eventos ocultos
 
-13/10/2026 (Argentina). Base inmutable `dacd893` (`origin/main`, PR #43 integrada), rama `codex/r4-block-5`, [PR #44](https://github.com/EnzoG14/PlanIt/pull/44) en borrador. Implementado; QA humana y HTTP/JWT pendientes. Sin SQL remoto, merge, deploy, canje, generación de enlaces ni UX de visibilidad/autorizaciones. Bloques 6–9 pendientes.
+13/10/2026 (Argentina). Base inmutable `dacd893` (`origin/main`, PR #43 integrada), rama `codex/r4-block-5`, [PR #44](https://github.com/EnzoG14/PlanIt/pull/44) en borrador. Implementado; QA humana y HTTP/JWT pendientes. Migración aplicada después de la autorización explícita del usuario (acta siguiente); sin merge, deploy de frontend, canje, generación de enlaces ni UX de visibilidad/autorizaciones. Bloques 6–9 pendientes. Las secciones originales conservan el alcance/evidencia de la entrega inicial local y quedan actualizadas por esta acta.
+
+## Aplicación remota autorizada — 13/10/2026
+
+El usuario solicitó «aplica las migraciones a la base remota». Se aplicó exclusivamente `20261014120003_hidden_event_access.sql` a `planit-v2` (`iepeqmvzjguwlhnecsdq`), con `--skip-vault`, sin seeds/roles ni proyecto histórico. Preflight: 21 versiones previas sincronizadas, una pendiente, cero eventos ocultos/confirmados ocultos existentes; dry-run y asesores revisados antes de aplicar.
+
+**Verificación PASS:** 22 versiones sincronizadas y dry-run sin pendientes, RLS de ambas tablas nuevas/events, ACL sin hash SELECT ni mutaciones cliente, eliminación de la política histórica permisiva, índices/constraints/triggers y bucket privado inspeccionados. Los **11 cuerpos de funciones coinciden por hash con Git**, search_path vacío, sin EXECUTE anon; el trigger no tiene EXECUTE authenticated. Asesores antes/después: mismos 23 WARN, cero nuevos/ERROR (22 RPC DEFINER authenticated intencionales y protección de contraseñas filtradas deshabilitada preexistente).
+
+Smoke remoto en transacciones read-only con ROLLBACK: authenticated sin identidad no lee events/grants/hashes ni summary; identidad SQL sintética lee una fila pública y sus RPC summary/organizer. **No JWT real ni datos persistidos de prueba**. Una primera versión del smoke llamó directamente a un helper privado y falló por USAGE intencionalmente revocado; se corrigió el test para usar las tablas/RPC públicas, sin ampliar permisos ni crear otra migración.
+
+[Resumen](remote-migration-summary.json), [historial](remote-migrations.json), [metadata](remote-metadata.json), [consulta reproducible](remote-metadata.sql), [smoke sin identidad](remote-no-identity-results.json), [smoke público](remote-public-role-results.json), [asesores antes](remote-advisors-before.json) y [después](remote-advisors-after.json). Metadata/drift de objetos afectados, historial/dry-run y asesores ya no están NOT RUN; HTTP/JWT/Storage/Realtime reales y aceptación humana **siguen pendientes**. No se avanzó a bloque 6 ni se fusionó la PR.
 
 ## Contrato y fuentes inspeccionadas
 

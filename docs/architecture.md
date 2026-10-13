@@ -4,7 +4,7 @@
 
 Base de seguridad local, sin UX de links todavía. `planit_private.can_view_event(event_id)` deriva identidad de auth.uid y exige dueño o grant active en unlisted; histórico sólo conserva lectura de públicos. RLS de events y lecturas DEFINER comparten la decisión; chat agrega dueño/confirmed y aprobación R3 comprueba grant del destinatario. Media/Storage y listas invoker heredan RLS; no se amplía lectura de perfiles ni asistentes. Un trigger privado impone A04/A05/D12 bajo lock del evento sin exponer una nueva operación al cliente. [Contrato, pruebas y límites](qa/r4-block-5/README.md).
 
-APIs de detalle/galería/Mis eventos solicitan firmas de 60 s; SW sin runtime cache privada. URLs ya emitidas/bytes descargados no se invalidan; el frontend revalida en retorno/foco. Migración B5 sólo creada/probada localmente, sin aplicación remota, JWT real ni aceptación humana.
+APIs de detalle/galería/Mis eventos solicitan firmas de 60 s; SW sin runtime cache privada. URLs ya emitidas/bytes descargados no se invalidan; el frontend revalida en retorno/foco. Migración B5 **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior**, 22 versiones sincronizadas, funciones/ACL/RLS verificadas y smoke SQL read-only PASS; HTTP/JWT real y aceptación humana pendientes. [Acta](qa/r4-block-5/remote-migration-summary.json).
 
 ## R4 Bloque 4 — Sugerencias
 

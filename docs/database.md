@@ -1,8 +1,8 @@
 # PlanIt — Modelo de datos y migraciones
 
-## R4 Bloque 5 — Accesos ocultos (sólo local)
+## R4 Bloque 5 — Accesos ocultos (aplicada)
 
-`20261014120003_hidden_event_access.sql` creada/probada por replay local, **no aplicada remotamente**. Modelo del dominio H de Planificación:
+`20261014120003_hidden_event_access.sql` creada/probada por replay local y **aplicada/verificada en planit-v2 el 13/10/2026 con autorización explícita posterior**. 22 versiones sincronizadas, dry-run sin pendientes, 11 cuerpos de funciones idénticos a Git, RLS/ACL/índices/constraints/triggers inspeccionados y asesores sin hallazgos nuevos. Smoke SQL read-only con rol sin identidad e identidad sintética PASS; no equivale a HTTP/JWT real. [Acta remota](qa/r4-block-5/remote-migration-summary.json). Modelo del dominio H de Planificación:
 
 - `event_access_links`: id UUID PK, event_id FK events RESTRICT, created_by FK profiles RESTRICT, token_hash text UNIQUE (SHA-256 hexadecimal), created_at timestamp NOT NULL Argentina, revoked_at timestamp nullable. Sin expires_at. UNIQUE parcial event_id WHERE revoked_at IS NULL. RLS activa y sin SELECT/mutaciones cliente: tampoco el dueño obtiene hashes.
 - `event_access_grants`: id UUID PK, event_id/user_id FKs RESTRICT y UNIQUE, source_link_id nullable con FK compuesta al mismo evento, status active/revoked, granted_at y updated_at obligatorios, revoked_at/restored_at opcionales, todos timestamp sin zona Argentina. Checks de estado/cronología, trigger updated_at, índices de FKs. RLS SELECT propio/dueño; sin mutaciones cliente.
