@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, Navigate, Route, RouterProvider } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import { AppLayout } from './components/AppLayout'
 import { NotFoundPage } from './pages/FoundationPage'
@@ -20,34 +20,33 @@ const MyEventsPage = lazy(() => import('./pages/MyEventsPage').then(module => ({
 const HomePage = lazy(() => import('./pages/HomePage').then(module => ({ default: module.HomePage })))
 const EventChatPage = lazy(() => import('./pages/EventChatPage').then(module => ({ default: module.EventChatPage })))
 const NotificationsPage = lazy(() => import('./pages/NotificationsPage').then(module => ({ default: module.NotificationsPage })))
+const InterestsPage = lazy(() => import('./pages/InterestsPage').then(module => ({ default: module.InterestsPage })))
 
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route element={<AppLayout />}>
+    <Route index element={<Navigate to="/map" replace />} />
+    <Route path="register" element={<AuthPage key="register" mode="register" />} />
+    <Route path="login" element={<AuthPage key="login" mode="login" />} />
+    <Route element={<RequireAuth />}>
+      <Route path="notifications" element={<Suspense fallback={<StatusMessage title="Cargando notificaciones">Esperá un momento.</StatusMessage>}><NotificationsPage /></Suspense>} />
+      <Route path="events/:id/chat" element={<Suspense fallback={<StatusMessage title="Cargando chat">Esperá un momento.</StatusMessage>}><EventChatPage /></Suspense>} />
+      <Route path="home" element={<Suspense fallback={<StatusMessage title="Cargando Inicio">Esperá un momento.</StatusMessage>}><HomePage /></Suspense>} />
+      <Route path="map" element={<Suspense fallback={<StatusMessage title="Cargando mapa">Esperá un momento.</StatusMessage>}><MapPage /></Suspense>} />
+      <Route path="events/new" element={<Suspense fallback={<StatusMessage title="Cargando formulario">Esperá un momento.</StatusMessage>}><CreateEventPage /></Suspense>} />
+      <Route path="events/:id/edit" element={<Suspense fallback={<StatusMessage title="Cargando formulario">Esperá un momento.</StatusMessage>}><EditEventPage /></Suspense>} />
+      <Route path="events/:id/gallery" element={<Suspense fallback={<StatusMessage title="Cargando galería">Esperá un momento.</StatusMessage>}><EventGalleryPage /></Suspense>} />
+      <Route path="events/:id/attendees" element={<Suspense fallback={<StatusMessage title="Cargando asistentes">Esperá un momento.</StatusMessage>}><EventAttendeesPage /></Suspense>} />
+      <Route path="events/:id/rejoin-requests" element={<Suspense fallback={<StatusMessage title="Cargando solicitudes">Esperá un momento.</StatusMessage>}><EventRejoinRequestsPage /></Suspense>} />
+      <Route path="events/:id" element={<Suspense fallback={<StatusMessage title="Cargando evento">Esperá un momento.</StatusMessage>}><EventDetailPage /></Suspense>} />
+      <Route path="my-events" element={<Suspense fallback={<StatusMessage title="Cargando Mis eventos">Esperá un momento.</StatusMessage>}><MyEventsPage /></Suspense>} />
+      <Route path="me" element={<ProfilePage />} />
+      <Route path="me/interests" element={<Suspense fallback={<StatusMessage title="Cargando intereses">Esperá un momento.</StatusMessage>}><InterestsPage /></Suspense>} />
+    </Route>
+    <Route path="*" element={<NotFoundPage />} />
+  </Route>
+))
 function App() {
-  return (
-    <AuthProvider><BrowserRouter>
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route index element={<Navigate to="/map" replace />} />
-          <Route path="register" element={<AuthPage key="register" mode="register" />} />
-          <Route path="login" element={<AuthPage key="login" mode="login" />} />
-          <Route element={<RequireAuth />}>
-            <Route path="notifications" element={<Suspense fallback={<StatusMessage title="Cargando notificaciones">Esperá un momento.</StatusMessage>}><NotificationsPage /></Suspense>} />
-            <Route path="events/:id/chat" element={<Suspense fallback={<StatusMessage title="Cargando chat">Esperá un momento.</StatusMessage>}><EventChatPage /></Suspense>} />
-            <Route path="home" element={<Suspense fallback={<StatusMessage title="Cargando Inicio">Esperá un momento.</StatusMessage>}><HomePage /></Suspense>} />
-            <Route path="map" element={<Suspense fallback={<StatusMessage title="Cargando mapa">Esperá un momento.</StatusMessage>}><MapPage /></Suspense>} />
-            <Route path="events/new" element={<Suspense fallback={<StatusMessage title="Cargando formulario">Esperá un momento.</StatusMessage>}><CreateEventPage /></Suspense>} />
-            <Route path="events/:id/edit" element={<Suspense fallback={<StatusMessage title="Cargando formulario">Esperá un momento.</StatusMessage>}><EditEventPage /></Suspense>} />
-            <Route path="events/:id/gallery" element={<Suspense fallback={<StatusMessage title="Cargando galería">Esperá un momento.</StatusMessage>}><EventGalleryPage /></Suspense>} />
-            <Route path="events/:id/attendees" element={<Suspense fallback={<StatusMessage title="Cargando asistentes">Esperá un momento.</StatusMessage>}><EventAttendeesPage /></Suspense>} />
-            <Route path="events/:id/rejoin-requests" element={<Suspense fallback={<StatusMessage title="Cargando solicitudes">Esperá un momento.</StatusMessage>}><EventRejoinRequestsPage /></Suspense>} />
-            <Route path="events/:id" element={<Suspense fallback={<StatusMessage title="Cargando evento">Esperá un momento.</StatusMessage>}><EventDetailPage /></Suspense>} />
-            <Route path="my-events" element={<Suspense fallback={<StatusMessage title="Cargando Mis eventos">Esperá un momento.</StatusMessage>}><MyEventsPage /></Suspense>} />
-            <Route path="me" element={<ProfilePage />} />
-          </Route>
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter></AuthProvider>
-  )
+  return <AuthProvider><RouterProvider router={router} /></AuthProvider>
 }
 
 export default App
