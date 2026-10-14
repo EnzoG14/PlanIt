@@ -1,6 +1,6 @@
 # R4 · Bloque 8: accesos, revocación y restitución
 
-13/10/2026 (Argentina). Base `origin/main` **818e892b172deacb8504245abf308aa9801de117**, PR #46/B7 integrada tras fetch. Rama `codex/r4-block-8`; estado **Implementado; QA pendiente**, sin aceptación humana. `.env.local` de main copiado/preservado en archivos ignorados, nunca versionado ni mostrado.
+13/10/2026 (Argentina). Base `origin/main` **818e892b172deacb8504245abf308aa9801de117**, PR #46/B7 integrada tras fetch. Rama `codex/r4-block-8`; [PR #47](https://github.com/EnzoG14/PlanIt/pull/47) en borrador; estado **Implementado; QA pendiente**, sin aceptación humana. `.env.local` de main copiado/preservado en archivos ignorados, nunca versionado ni mostrado.
 
 ## Contrato e implementación
 
