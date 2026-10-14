@@ -1,6 +1,6 @@
 # R5 · Bloque 3 — Perfil y eventos públicos
 
-14/10/2026, Argentina. Base `4ef0b34a789082352f8b1ca831f75761fb6e6b17`, rama `codex/r5-block-3`. PR #50/#51/#52 integradas y autorización expresa del responsable para B3. **Implementado; QA pendiente**. Sólo RF-R5-02.CA-01..04; B4 y aceptación humana pendientes. PR en borrador hacia main, sin merge.
+14/10/2026, Argentina. Base `4ef0b34a789082352f8b1ca831f75761fb6e6b17`, rama `codex/r5-block-3`. PR #50/#51/#52 integradas y autorización expresa del responsable para B3. **Implementado; QA pendiente**. Sólo RF-R5-02.CA-01..04; B4 y aceptación humana pendientes. [PR #53 en borrador](https://github.com/EnzoG14/PlanIt/pull/53) hacia main, sin merge. Código/evidencias verificadas en `56c2b4df0e9a7e4465b4f2ec1366a5adcfeab717`; commit posterior sólo vincula PR/seguimiento. [Hashes de código e integridad de tokens/mockup/migraciones](editorial.json).
 
 ## Alcance y contrato
 
