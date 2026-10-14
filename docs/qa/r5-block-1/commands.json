@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-14",
+  "base": "da4379f58ba60ddfa4c3d03970103b381856996b",
+  "branch": "codex/r5-block-1",
+  "scope": "Original implementation commands below; later authorized remote application recorded in remote_follow_up. No deploy or merge.",
+  "commands": [
+    {"command": "git fetch origin", "result": "PASS", "note": "Initial sandbox FETCH_HEAD denial; permitted retry passed"},
+    {"command": "git worktree add -b codex/r5-block-1 C:/Users/USUARIO/Desktop/PlanIt/r5-block-1-worktree origin/main", "result": "PASS"},
+    {"command": "Copy-Item main checkout .env.local to new worktree; git check-ignore .env.local", "result": "PASS", "note": "No contents or keys printed/versioned"},
+    {"command": "supabase db query --help; supabase migration new social_security_model; supabase migration new social_projections_and_avatars; supabase migration new social_legacy_projections", "result": "PASS", "note": "CLI telemetry sandbox denial initially; permitted retry; local files only"},
+    {"command": "supabase db query --linked --project-ref iepeqmvzjguwlhnecsdq --file docs/qa/r5-block-0/catalog-readonly.sql --output json", "result": "PASS", "note": "BEGIN READ ONLY/ROLLBACK, metadata only; no business rows"},
+    {"command": "npm ci", "exit_code": 0, "result": "PASS", "note": "372 packages installed, 373 audited, zero vulnerabilities; existing glob deprecation warning"},
+    {"command": "node scripts/check-r5-social.mjs", "exit_code": 0, "result": "PASS", "evidence": "sql-results.json", "note": "Final complete run after cacheControl validation; initial missing schema USAGE fixed and retested"},
+    {"command": "node scripts/check-r5-avatar.mjs", "exit_code": 0, "result": "PASS", "evidence": "avatar-unit.json", "note": "Five groups, actual handler with mocked fetch, no deployed Edge/Auth/Storage"},
+    {"command": "node scripts/check-r5-regressions.mjs; node scripts/check-r5-regressions.mjs profile", "exit_code": 0, "result": "PASS", "evidence": "regressions.json", "note": "13/13 existing suites; profile rerun after avatar cache metadata guard"},
+    {"command": "npm run build", "exit_code": 0, "result": "PASS", "note": "Vite/PWA production build; existing large-chunk warning; no frontend changes"},
+    {"command": "npm run lint", "exit_code": 0, "result": "PASS", "note": "Zero errors; existing warnings in historical probes and DiscoveryFilters"},
+    {"command": "node node_modules/typescript/bin/tsc --noEmit --ignoreConfig --target es2022 --module esnext --lib es2022,dom --strict --skipLibCheck supabase/functions/social-avatar/handler.ts", "exit_code": 0, "result": "PASS", "note": "Handler strict typecheck only; Deno runtime NOT RUN"},
+    {"command": "node --check scripts/check-r5-social.mjs; node --check scripts/check-r5-avatar.mjs; git diff --check", "exit_code": 0, "result": "PASS"},
+    {"command": "Compare fresh 33 literal Google Docs CA with B0 snapshot", "result": "PASS", "note": "All literal texts equal; no normative source write"}
+  ],
+  "remote_follow_up": {
+    "authorization": "hace las migraciones a la base remota",
+    "project_ref": "iepeqmvzjguwlhnecsdq",
+    "date": "2026-10-14",
+    "result": "PASS",
+    "evidence": "remote-migration-summary.json",
+    "commands": [
+      "supabase migration list --linked --project-ref iepeqmvzjguwlhnecsdq",
+      "supabase db push --linked --project-ref iepeqmvzjguwlhnecsdq --skip-vault --dry-run",
+      "supabase db query --linked --project-ref iepeqmvzjguwlhnecsdq --file docs/qa/r5-block-1/remote-preflight.sql --output json",
+      "supabase db advisors --linked --project-ref iepeqmvzjguwlhnecsdq --output json",
+      "supabase db push --linked --project-ref iepeqmvzjguwlhnecsdq --skip-vault --yes",
+      "supabase db query --linked --project-ref iepeqmvzjguwlhnecsdq --file docs/qa/r5-block-0/catalog-readonly.sql --output json",
+      "supabase db query --linked --project-ref iepeqmvzjguwlhnecsdq --file docs/qa/r5-block-1/remote-smoke.sql --output json",
+      "supabase db advisors --linked --project-ref iepeqmvzjguwlhnecsdq --type security --output json",
+      "node .r5-check.local/remote-audit.mjs (existing B0 replay adapter: 16 tables, B1 output)",
+      "node .r5-check.local/remote-finalize.mjs"
+    ]
+  },
+  "not_run": ["Supabase full-stack reset", "PostgreSQL17 local replay", "HTTP real JWT A/B/C/D", "Storage/CDN transport and expiry", "Realtime transport", "Deno/deployed Edge", "social UI/PWA/accessibility", "human acceptance"]
+}

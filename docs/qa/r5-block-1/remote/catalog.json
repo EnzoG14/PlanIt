@@ -1,0 +1,4930 @@
+{
+  "audited_at": "2026-10-14T14:20:05.040472+00:00",
+  "buckets": [
+    {
+      "allowed_mime_types": [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+      ],
+      "file_size_limit": 5242880,
+      "id": "event_media",
+      "public": false
+    },
+    {
+      "allowed_mime_types": [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+      ],
+      "file_size_limit": 5242880,
+      "id": "avatars",
+      "public": false
+    }
+  ],
+  "column_grants": [
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "categories",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "description",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "categories",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "categories",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "is_active",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "categories",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "name",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "categories",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "slug",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "categories",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "conversations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "event_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "conversations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "conversations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "kind",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "conversations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "user_high_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "conversations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "user_low_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "conversations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "event_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_access_grants",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "granted_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_access_grants",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_access_grants",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "restored_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_access_grants",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "revoked_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_access_grants",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "source_link_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_access_grants",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "status",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_access_grants",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "updated_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_access_grants",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "user_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_access_grants",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_images",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "event_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "event_images",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "event_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_images",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "file_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "event_images",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "file_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_images",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_images",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "sort_order",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "event_images",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "sort_order",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_images",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_participations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "event_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_participations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_participations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "status",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_participations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "updated_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_participations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "user_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_participations",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_rejoin_requests",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "participation_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_rejoin_requests",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "requested_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_rejoin_requests",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "resolved_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_rejoin_requests",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "reviewed_by",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_rejoin_requests",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "status",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_rejoin_requests",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "address",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "address",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "archived_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "cancelled_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "capacity",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "capacity",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "category_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "category_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "description",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "description",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "ends_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "ends_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "latitude",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "latitude",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "location_name",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "location_name",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "longitude",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "longitude",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "organizer_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "starts_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "starts_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "title",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "title",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "updated_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "visibility",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "visibility",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "bucket_name",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "bucket_name",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "mime_type",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "mime_type",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "size_bytes",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "size_bytes",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "storage_path",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "INSERT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "storage_path",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "uploaded_by",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "body",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "messages",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "conversation_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "messages",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "messages",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "messages",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "sender_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "messages",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "actor_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "body",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "conversation_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "event_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "read_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "read_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "UPDATE",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "recipient_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "title",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "type",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "changed_by",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "participation_history",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "participation_history",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "participation_history",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "new_status",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "participation_history",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "participation_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "participation_history",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "previous_status",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "participation_history",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "reason",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "participation_history",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "avatar_file_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "bio",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "bio",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "UPDATE",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "birth_date",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "birth_date",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "UPDATE",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "display_name",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "display_name",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "UPDATE",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "first_name",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "first_name",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "UPDATE",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "last_name",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "last_name",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "UPDATE",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "sex",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "sex",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "UPDATE",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "updated_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "username",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "username",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "UPDATE",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "visibility",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "blocked_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_blocks",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "blocker_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_blocks",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_blocks",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "category_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_category_interests",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "created_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_category_interests",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "user_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_category_interests",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "followed_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_follows",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "follower_id",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_follows",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "request_version",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_follows",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "requested_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_follows",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "responded_at",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_follows",
+      "table_schema": "public"
+    },
+    {
+      "column_name": "status",
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_follows",
+      "table_schema": "public"
+    }
+  ],
+  "columns": [
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "categories",
+      "type": "uuid"
+    },
+    {
+      "column": "name",
+      "nullable": "NO",
+      "table": "categories",
+      "type": "text"
+    },
+    {
+      "column": "slug",
+      "nullable": "NO",
+      "table": "categories",
+      "type": "text"
+    },
+    {
+      "column": "description",
+      "nullable": "YES",
+      "table": "categories",
+      "type": "text"
+    },
+    {
+      "column": "is_active",
+      "nullable": "NO",
+      "table": "categories",
+      "type": "boolean"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "categories",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "conversations",
+      "type": "uuid"
+    },
+    {
+      "column": "kind",
+      "nullable": "NO",
+      "table": "conversations",
+      "type": "text"
+    },
+    {
+      "column": "event_id",
+      "nullable": "YES",
+      "table": "conversations",
+      "type": "uuid"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "conversations",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "user_low_id",
+      "nullable": "YES",
+      "table": "conversations",
+      "type": "uuid"
+    },
+    {
+      "column": "user_high_id",
+      "nullable": "YES",
+      "table": "conversations",
+      "type": "uuid"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "event_access_grants",
+      "type": "uuid"
+    },
+    {
+      "column": "event_id",
+      "nullable": "NO",
+      "table": "event_access_grants",
+      "type": "uuid"
+    },
+    {
+      "column": "user_id",
+      "nullable": "NO",
+      "table": "event_access_grants",
+      "type": "uuid"
+    },
+    {
+      "column": "source_link_id",
+      "nullable": "YES",
+      "table": "event_access_grants",
+      "type": "uuid"
+    },
+    {
+      "column": "status",
+      "nullable": "NO",
+      "table": "event_access_grants",
+      "type": "text"
+    },
+    {
+      "column": "granted_at",
+      "nullable": "NO",
+      "table": "event_access_grants",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "revoked_at",
+      "nullable": "YES",
+      "table": "event_access_grants",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "restored_at",
+      "nullable": "YES",
+      "table": "event_access_grants",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "updated_at",
+      "nullable": "NO",
+      "table": "event_access_grants",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "event_access_links",
+      "type": "uuid"
+    },
+    {
+      "column": "event_id",
+      "nullable": "NO",
+      "table": "event_access_links",
+      "type": "uuid"
+    },
+    {
+      "column": "created_by",
+      "nullable": "NO",
+      "table": "event_access_links",
+      "type": "uuid"
+    },
+    {
+      "column": "token_hash",
+      "nullable": "NO",
+      "table": "event_access_links",
+      "type": "text"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "event_access_links",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "revoked_at",
+      "nullable": "YES",
+      "table": "event_access_links",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "event_images",
+      "type": "uuid"
+    },
+    {
+      "column": "event_id",
+      "nullable": "NO",
+      "table": "event_images",
+      "type": "uuid"
+    },
+    {
+      "column": "file_id",
+      "nullable": "NO",
+      "table": "event_images",
+      "type": "uuid"
+    },
+    {
+      "column": "sort_order",
+      "nullable": "NO",
+      "table": "event_images",
+      "type": "integer"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "event_images",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "event_participations",
+      "type": "uuid"
+    },
+    {
+      "column": "event_id",
+      "nullable": "NO",
+      "table": "event_participations",
+      "type": "uuid"
+    },
+    {
+      "column": "user_id",
+      "nullable": "NO",
+      "table": "event_participations",
+      "type": "uuid"
+    },
+    {
+      "column": "status",
+      "nullable": "NO",
+      "table": "event_participations",
+      "type": "text"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "event_participations",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "updated_at",
+      "nullable": "NO",
+      "table": "event_participations",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "event_rejoin_requests",
+      "type": "uuid"
+    },
+    {
+      "column": "participation_id",
+      "nullable": "NO",
+      "table": "event_rejoin_requests",
+      "type": "uuid"
+    },
+    {
+      "column": "status",
+      "nullable": "NO",
+      "table": "event_rejoin_requests",
+      "type": "text"
+    },
+    {
+      "column": "requested_at",
+      "nullable": "NO",
+      "table": "event_rejoin_requests",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "resolved_at",
+      "nullable": "YES",
+      "table": "event_rejoin_requests",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "reviewed_by",
+      "nullable": "YES",
+      "table": "event_rejoin_requests",
+      "type": "uuid"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "events",
+      "type": "uuid"
+    },
+    {
+      "column": "organizer_id",
+      "nullable": "NO",
+      "table": "events",
+      "type": "uuid"
+    },
+    {
+      "column": "category_id",
+      "nullable": "NO",
+      "table": "events",
+      "type": "uuid"
+    },
+    {
+      "column": "title",
+      "nullable": "NO",
+      "table": "events",
+      "type": "text"
+    },
+    {
+      "column": "description",
+      "nullable": "NO",
+      "table": "events",
+      "type": "text"
+    },
+    {
+      "column": "starts_at",
+      "nullable": "NO",
+      "table": "events",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "ends_at",
+      "nullable": "NO",
+      "table": "events",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "location_name",
+      "nullable": "YES",
+      "table": "events",
+      "type": "text"
+    },
+    {
+      "column": "address",
+      "nullable": "NO",
+      "table": "events",
+      "type": "text"
+    },
+    {
+      "column": "latitude",
+      "nullable": "NO",
+      "table": "events",
+      "type": "double precision"
+    },
+    {
+      "column": "longitude",
+      "nullable": "NO",
+      "table": "events",
+      "type": "double precision"
+    },
+    {
+      "column": "capacity",
+      "nullable": "NO",
+      "table": "events",
+      "type": "integer"
+    },
+    {
+      "column": "visibility",
+      "nullable": "NO",
+      "table": "events",
+      "type": "text"
+    },
+    {
+      "column": "cancelled_at",
+      "nullable": "YES",
+      "table": "events",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "archived_at",
+      "nullable": "YES",
+      "table": "events",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "events",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "updated_at",
+      "nullable": "NO",
+      "table": "events",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "files",
+      "type": "uuid"
+    },
+    {
+      "column": "uploaded_by",
+      "nullable": "NO",
+      "table": "files",
+      "type": "uuid"
+    },
+    {
+      "column": "bucket_name",
+      "nullable": "NO",
+      "table": "files",
+      "type": "text"
+    },
+    {
+      "column": "storage_path",
+      "nullable": "NO",
+      "table": "files",
+      "type": "text"
+    },
+    {
+      "column": "mime_type",
+      "nullable": "NO",
+      "table": "files",
+      "type": "text"
+    },
+    {
+      "column": "size_bytes",
+      "nullable": "NO",
+      "table": "files",
+      "type": "bigint"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "files",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "messages",
+      "type": "uuid"
+    },
+    {
+      "column": "conversation_id",
+      "nullable": "NO",
+      "table": "messages",
+      "type": "uuid"
+    },
+    {
+      "column": "sender_id",
+      "nullable": "NO",
+      "table": "messages",
+      "type": "uuid"
+    },
+    {
+      "column": "body",
+      "nullable": "NO",
+      "table": "messages",
+      "type": "text"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "messages",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "notifications",
+      "type": "uuid"
+    },
+    {
+      "column": "recipient_id",
+      "nullable": "NO",
+      "table": "notifications",
+      "type": "uuid"
+    },
+    {
+      "column": "actor_id",
+      "nullable": "YES",
+      "table": "notifications",
+      "type": "uuid"
+    },
+    {
+      "column": "event_id",
+      "nullable": "YES",
+      "table": "notifications",
+      "type": "uuid"
+    },
+    {
+      "column": "conversation_id",
+      "nullable": "YES",
+      "table": "notifications",
+      "type": "uuid"
+    },
+    {
+      "column": "type",
+      "nullable": "NO",
+      "table": "notifications",
+      "type": "text"
+    },
+    {
+      "column": "title",
+      "nullable": "NO",
+      "table": "notifications",
+      "type": "text"
+    },
+    {
+      "column": "body",
+      "nullable": "YES",
+      "table": "notifications",
+      "type": "text"
+    },
+    {
+      "column": "read_at",
+      "nullable": "YES",
+      "table": "notifications",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "notifications",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "participation_history",
+      "type": "uuid"
+    },
+    {
+      "column": "participation_id",
+      "nullable": "NO",
+      "table": "participation_history",
+      "type": "uuid"
+    },
+    {
+      "column": "previous_status",
+      "nullable": "YES",
+      "table": "participation_history",
+      "type": "text"
+    },
+    {
+      "column": "new_status",
+      "nullable": "NO",
+      "table": "participation_history",
+      "type": "text"
+    },
+    {
+      "column": "changed_by",
+      "nullable": "NO",
+      "table": "participation_history",
+      "type": "uuid"
+    },
+    {
+      "column": "reason",
+      "nullable": "NO",
+      "table": "participation_history",
+      "type": "text"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "participation_history",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "id",
+      "nullable": "NO",
+      "table": "profiles",
+      "type": "uuid"
+    },
+    {
+      "column": "username",
+      "nullable": "NO",
+      "table": "profiles",
+      "type": "text"
+    },
+    {
+      "column": "display_name",
+      "nullable": "NO",
+      "table": "profiles",
+      "type": "text"
+    },
+    {
+      "column": "first_name",
+      "nullable": "YES",
+      "table": "profiles",
+      "type": "text"
+    },
+    {
+      "column": "last_name",
+      "nullable": "YES",
+      "table": "profiles",
+      "type": "text"
+    },
+    {
+      "column": "birth_date",
+      "nullable": "YES",
+      "table": "profiles",
+      "type": "date"
+    },
+    {
+      "column": "sex",
+      "nullable": "YES",
+      "table": "profiles",
+      "type": "text"
+    },
+    {
+      "column": "bio",
+      "nullable": "YES",
+      "table": "profiles",
+      "type": "text"
+    },
+    {
+      "column": "visibility",
+      "nullable": "NO",
+      "table": "profiles",
+      "type": "text"
+    },
+    {
+      "column": "avatar_file_id",
+      "nullable": "YES",
+      "table": "profiles",
+      "type": "uuid"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "profiles",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "updated_at",
+      "nullable": "NO",
+      "table": "profiles",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "blocker_id",
+      "nullable": "NO",
+      "table": "user_blocks",
+      "type": "uuid"
+    },
+    {
+      "column": "blocked_id",
+      "nullable": "NO",
+      "table": "user_blocks",
+      "type": "uuid"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "user_blocks",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "user_id",
+      "nullable": "NO",
+      "table": "user_category_interests",
+      "type": "uuid"
+    },
+    {
+      "column": "category_id",
+      "nullable": "NO",
+      "table": "user_category_interests",
+      "type": "uuid"
+    },
+    {
+      "column": "created_at",
+      "nullable": "NO",
+      "table": "user_category_interests",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "follower_id",
+      "nullable": "NO",
+      "table": "user_follows",
+      "type": "uuid"
+    },
+    {
+      "column": "followed_id",
+      "nullable": "NO",
+      "table": "user_follows",
+      "type": "uuid"
+    },
+    {
+      "column": "status",
+      "nullable": "NO",
+      "table": "user_follows",
+      "type": "text"
+    },
+    {
+      "column": "request_version",
+      "nullable": "NO",
+      "table": "user_follows",
+      "type": "uuid"
+    },
+    {
+      "column": "requested_at",
+      "nullable": "NO",
+      "table": "user_follows",
+      "type": "timestamp without time zone"
+    },
+    {
+      "column": "responded_at",
+      "nullable": "YES",
+      "table": "user_follows",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "constraints": [
+    {
+      "definition": "CHECK (((description IS NULL) OR (char_length(description) <= 500)))",
+      "name": "categories_description_length",
+      "table": "categories"
+    },
+    {
+      "definition": "CHECK (((name = btrim(name)) AND ((char_length(name) >= 2) AND (char_length(name) <= 60))))",
+      "name": "categories_name_valid",
+      "table": "categories"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "categories_pkey",
+      "table": "categories"
+    },
+    {
+      "definition": "UNIQUE (slug)",
+      "name": "categories_slug_key",
+      "table": "categories"
+    },
+    {
+      "definition": "CHECK ((slug ~ '^[a-z0-9]+(-[a-z0-9]+)*$'::text))",
+      "name": "categories_slug_valid",
+      "table": "categories"
+    },
+    {
+      "definition": "UNIQUE (user_low_id, user_high_id)",
+      "name": "conversations_direct_pair_key",
+      "table": "conversations"
+    },
+    {
+      "definition": "FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE RESTRICT",
+      "name": "conversations_event_id_fkey",
+      "table": "conversations"
+    },
+    {
+      "definition": "UNIQUE (event_id)",
+      "name": "conversations_event_id_key",
+      "table": "conversations"
+    },
+    {
+      "definition": "CHECK ((((kind = 'event'::text) AND (event_id IS NOT NULL) AND (user_low_id IS NULL) AND (user_high_id IS NULL)) OR ((kind = 'direct'::text) AND (event_id IS NULL) AND (user_low_id IS NOT NULL) AND (user_high_id IS NOT NULL) AND (user_low_id < user_high_id))))",
+      "name": "conversations_kind_members_valid",
+      "table": "conversations"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "conversations_pkey",
+      "table": "conversations"
+    },
+    {
+      "definition": "FOREIGN KEY (user_high_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "conversations_user_high_id_fkey",
+      "table": "conversations"
+    },
+    {
+      "definition": "FOREIGN KEY (user_low_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "conversations_user_low_id_fkey",
+      "table": "conversations"
+    },
+    {
+      "definition": "CHECK ((((status = 'active'::text) AND (revoked_at IS NULL)) OR ((status = 'revoked'::text) AND (revoked_at IS NOT NULL))))",
+      "name": "event_access_grants_check",
+      "table": "event_access_grants"
+    },
+    {
+      "definition": "CHECK (((revoked_at IS NULL) OR (revoked_at >= granted_at)))",
+      "name": "event_access_grants_check1",
+      "table": "event_access_grants"
+    },
+    {
+      "definition": "CHECK (((restored_at IS NULL) OR (restored_at >= granted_at)))",
+      "name": "event_access_grants_check2",
+      "table": "event_access_grants"
+    },
+    {
+      "definition": "CHECK ((updated_at >= granted_at))",
+      "name": "event_access_grants_check3",
+      "table": "event_access_grants"
+    },
+    {
+      "definition": "FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE RESTRICT",
+      "name": "event_access_grants_event_id_fkey",
+      "table": "event_access_grants"
+    },
+    {
+      "definition": "UNIQUE (event_id, user_id)",
+      "name": "event_access_grants_event_id_user_id_key",
+      "table": "event_access_grants"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "event_access_grants_pkey",
+      "table": "event_access_grants"
+    },
+    {
+      "definition": "FOREIGN KEY (source_link_id, event_id) REFERENCES event_access_links(id, event_id) ON DELETE RESTRICT",
+      "name": "event_access_grants_source_link_id_event_id_fkey",
+      "table": "event_access_grants"
+    },
+    {
+      "definition": "CHECK ((status = ANY (ARRAY['active'::text, 'revoked'::text])))",
+      "name": "event_access_grants_status_check",
+      "table": "event_access_grants"
+    },
+    {
+      "definition": "FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "event_access_grants_user_id_fkey",
+      "table": "event_access_grants"
+    },
+    {
+      "definition": "CHECK (((revoked_at IS NULL) OR (revoked_at >= created_at)))",
+      "name": "event_access_links_check",
+      "table": "event_access_links"
+    },
+    {
+      "definition": "FOREIGN KEY (created_by) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "event_access_links_created_by_fkey",
+      "table": "event_access_links"
+    },
+    {
+      "definition": "FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE RESTRICT",
+      "name": "event_access_links_event_id_fkey",
+      "table": "event_access_links"
+    },
+    {
+      "definition": "UNIQUE (id, event_id)",
+      "name": "event_access_links_id_event_id_key",
+      "table": "event_access_links"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "event_access_links_pkey",
+      "table": "event_access_links"
+    },
+    {
+      "definition": "CHECK ((token_hash ~ '^[0-9a-f]{64}$'::text))",
+      "name": "event_access_links_token_hash_check",
+      "table": "event_access_links"
+    },
+    {
+      "definition": "UNIQUE (token_hash)",
+      "name": "event_access_links_token_hash_key",
+      "table": "event_access_links"
+    },
+    {
+      "definition": "UNIQUE (event_id, file_id)",
+      "name": "event_images_event_id_file_id_key",
+      "table": "event_images"
+    },
+    {
+      "definition": "FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE RESTRICT",
+      "name": "event_images_event_id_fkey",
+      "table": "event_images"
+    },
+    {
+      "definition": "UNIQUE (event_id, sort_order) DEFERRABLE",
+      "name": "event_images_event_id_sort_order_key",
+      "table": "event_images"
+    },
+    {
+      "definition": "FOREIGN KEY (file_id) REFERENCES files(id) ON DELETE RESTRICT",
+      "name": "event_images_file_id_fkey",
+      "table": "event_images"
+    },
+    {
+      "definition": "CHECK (((sort_order >= 0) AND (sort_order <= 9)))",
+      "name": "event_images_order_valid",
+      "table": "event_images"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "event_images_pkey",
+      "table": "event_images"
+    },
+    {
+      "definition": "FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE RESTRICT",
+      "name": "event_participations_event_id_fkey",
+      "table": "event_participations"
+    },
+    {
+      "definition": "UNIQUE (event_id, user_id)",
+      "name": "event_participations_event_id_user_id_key",
+      "table": "event_participations"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "event_participations_pkey",
+      "table": "event_participations"
+    },
+    {
+      "definition": "CHECK ((status = ANY (ARRAY['confirmed'::text, 'cancelled'::text, 'removed'::text])))",
+      "name": "event_participations_status_check",
+      "table": "event_participations"
+    },
+    {
+      "definition": "FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "event_participations_user_id_fkey",
+      "table": "event_participations"
+    },
+    {
+      "definition": "CHECK ((((status = 'pending'::text) AND (resolved_at IS NULL) AND (reviewed_by IS NULL)) OR ((status = ANY (ARRAY['approved'::text, 'rejected'::text])) AND (resolved_at IS NOT NULL) AND (reviewed_by IS NOT NULL))))",
+      "name": "event_rejoin_requests_check",
+      "table": "event_rejoin_requests"
+    },
+    {
+      "definition": "CHECK (((resolved_at IS NULL) OR (resolved_at >= requested_at)))",
+      "name": "event_rejoin_requests_check1",
+      "table": "event_rejoin_requests"
+    },
+    {
+      "definition": "FOREIGN KEY (participation_id) REFERENCES event_participations(id) ON DELETE RESTRICT",
+      "name": "event_rejoin_requests_participation_id_fkey",
+      "table": "event_rejoin_requests"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "event_rejoin_requests_pkey",
+      "table": "event_rejoin_requests"
+    },
+    {
+      "definition": "FOREIGN KEY (reviewed_by) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "event_rejoin_requests_reviewed_by_fkey",
+      "table": "event_rejoin_requests"
+    },
+    {
+      "definition": "CHECK ((status = ANY (ARRAY['pending'::text, 'approved'::text, 'rejected'::text])))",
+      "name": "event_rejoin_requests_status_check",
+      "table": "event_rejoin_requests"
+    },
+    {
+      "definition": "CHECK ((char_length(btrim(address)) > 0))",
+      "name": "events_address_valid",
+      "table": "events"
+    },
+    {
+      "definition": "CHECK (((archived_at IS NULL) OR (archived_at >= ends_at) OR (cancelled_at IS NOT NULL)))",
+      "name": "events_archive_valid",
+      "table": "events"
+    },
+    {
+      "definition": "CHECK ((capacity > 0))",
+      "name": "events_capacity_valid",
+      "table": "events"
+    },
+    {
+      "definition": "FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE RESTRICT",
+      "name": "events_category_id_fkey",
+      "table": "events"
+    },
+    {
+      "definition": "CHECK ((((latitude >= ('-90'::integer)::double precision) AND (latitude <= (90)::double precision)) AND ((longitude >= ('-180'::integer)::double precision) AND (longitude <= (180)::double precision))))",
+      "name": "events_coordinates_valid",
+      "table": "events"
+    },
+    {
+      "definition": "CHECK ((isfinite(starts_at) AND isfinite(ends_at) AND (ends_at > starts_at)))",
+      "name": "events_dates_valid",
+      "table": "events"
+    },
+    {
+      "definition": "CHECK (((description = btrim(description)) AND ((char_length(description) >= 1) AND (char_length(description) <= 3000))))",
+      "name": "events_description_valid",
+      "table": "events"
+    },
+    {
+      "definition": "FOREIGN KEY (organizer_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "events_organizer_id_fkey",
+      "table": "events"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "events_pkey",
+      "table": "events"
+    },
+    {
+      "definition": "CHECK (((title = btrim(title)) AND ((char_length(title) >= 1) AND (char_length(title) <= 120))))",
+      "name": "events_title_valid",
+      "table": "events"
+    },
+    {
+      "definition": "CHECK ((visibility = ANY (ARRAY['public'::text, 'unlisted'::text])))",
+      "name": "events_visibility_valid",
+      "table": "events"
+    },
+    {
+      "definition": "UNIQUE (bucket_name, storage_path)",
+      "name": "files_bucket_name_storage_path_key",
+      "table": "files"
+    },
+    {
+      "definition": "CHECK ((bucket_name = ANY (ARRAY['event_media'::text, 'avatars'::text])))",
+      "name": "files_bucket_valid",
+      "table": "files"
+    },
+    {
+      "definition": "CHECK (((size_bytes >= 1) AND (size_bytes <= 5242880)))",
+      "name": "files_image_size_valid",
+      "table": "files"
+    },
+    {
+      "definition": "CHECK ((mime_type = ANY (ARRAY['image/jpeg'::text, 'image/png'::text, 'image/webp'::text])))",
+      "name": "files_image_type_valid",
+      "table": "files"
+    },
+    {
+      "definition": "CHECK ((split_part(storage_path, '/'::text, 1) = (uploaded_by)::text))",
+      "name": "files_path_valid",
+      "table": "files"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "files_pkey",
+      "table": "files"
+    },
+    {
+      "definition": "FOREIGN KEY (uploaded_by) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "files_uploaded_by_fkey",
+      "table": "files"
+    },
+    {
+      "definition": "CHECK ((((char_length(body) >= 1) AND (char_length(body) <= 2000)) AND (body ~ '[^[:space:]]'::text)))",
+      "name": "messages_body_check",
+      "table": "messages"
+    },
+    {
+      "definition": "FOREIGN KEY (conversation_id) REFERENCES conversations(id) ON DELETE RESTRICT",
+      "name": "messages_conversation_id_fkey",
+      "table": "messages"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "messages_pkey",
+      "table": "messages"
+    },
+    {
+      "definition": "FOREIGN KEY (sender_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "messages_sender_id_fkey",
+      "table": "messages"
+    },
+    {
+      "definition": "FOREIGN KEY (actor_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "notifications_actor_id_fkey",
+      "table": "notifications"
+    },
+    {
+      "definition": "CHECK ((char_length(body) <= 3000))",
+      "name": "notifications_body_check",
+      "table": "notifications"
+    },
+    {
+      "definition": "FOREIGN KEY (conversation_id) REFERENCES conversations(id) ON DELETE RESTRICT",
+      "name": "notifications_conversation_id_fkey",
+      "table": "notifications"
+    },
+    {
+      "definition": "FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE RESTRICT",
+      "name": "notifications_event_id_fkey",
+      "table": "notifications"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "notifications_pkey",
+      "table": "notifications"
+    },
+    {
+      "definition": "FOREIGN KEY (recipient_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "notifications_recipient_id_fkey",
+      "table": "notifications"
+    },
+    {
+      "definition": "CHECK ((((char_length(title) >= 1) AND (char_length(title) <= 160)) AND (title ~ '[^[:space:]]'::text)))",
+      "name": "notifications_title_check",
+      "table": "notifications"
+    },
+    {
+      "definition": "CHECK ((((char_length(type) >= 1) AND (char_length(type) <= 60)) AND (type ~ '[^[:space:]]'::text)))",
+      "name": "notifications_type_check",
+      "table": "notifications"
+    },
+    {
+      "definition": "FOREIGN KEY (changed_by) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "participation_history_changed_by_fkey",
+      "table": "participation_history"
+    },
+    {
+      "definition": "CHECK ((previous_status IS DISTINCT FROM new_status))",
+      "name": "participation_history_check",
+      "table": "participation_history"
+    },
+    {
+      "definition": "CHECK ((new_status = ANY (ARRAY['confirmed'::text, 'cancelled'::text, 'removed'::text])))",
+      "name": "participation_history_new_status_check",
+      "table": "participation_history"
+    },
+    {
+      "definition": "FOREIGN KEY (participation_id) REFERENCES event_participations(id) ON DELETE RESTRICT",
+      "name": "participation_history_participation_id_fkey",
+      "table": "participation_history"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "participation_history_pkey",
+      "table": "participation_history"
+    },
+    {
+      "definition": "CHECK ((previous_status = ANY (ARRAY['confirmed'::text, 'cancelled'::text, 'removed'::text])))",
+      "name": "participation_history_previous_status_check",
+      "table": "participation_history"
+    },
+    {
+      "definition": "FOREIGN KEY (avatar_file_id) REFERENCES files(id) ON DELETE RESTRICT",
+      "name": "profiles_avatar_file_fk",
+      "table": "profiles"
+    },
+    {
+      "definition": "CHECK (((bio IS NULL) OR (char_length(bio) <= 500)))",
+      "name": "profiles_bio_length",
+      "table": "profiles"
+    },
+    {
+      "definition": "CHECK (((display_name = btrim(display_name)) AND ((char_length(display_name) >= 2) AND (char_length(display_name) <= 60))))",
+      "name": "profiles_display_name_valid",
+      "table": "profiles"
+    },
+    {
+      "definition": "FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE RESTRICT",
+      "name": "profiles_id_fkey",
+      "table": "profiles"
+    },
+    {
+      "definition": "PRIMARY KEY (id)",
+      "name": "profiles_pkey",
+      "table": "profiles"
+    },
+    {
+      "definition": "CHECK (((sex IS NULL) OR (sex = ANY (ARRAY['female'::text, 'male'::text, 'other'::text]))))",
+      "name": "profiles_sex_valid",
+      "table": "profiles"
+    },
+    {
+      "definition": "CHECK ((username ~ '^[a-z0-9_]{3,24}$'::text))",
+      "name": "profiles_username_format",
+      "table": "profiles"
+    },
+    {
+      "definition": "UNIQUE (username)",
+      "name": "profiles_username_key",
+      "table": "profiles"
+    },
+    {
+      "definition": "CHECK ((visibility = ANY (ARRAY['public'::text, 'private'::text])))",
+      "name": "profiles_visibility_valid",
+      "table": "profiles"
+    },
+    {
+      "definition": "FOREIGN KEY (blocked_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "user_blocks_blocked_id_fkey",
+      "table": "user_blocks"
+    },
+    {
+      "definition": "FOREIGN KEY (blocker_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "user_blocks_blocker_id_fkey",
+      "table": "user_blocks"
+    },
+    {
+      "definition": "CHECK ((blocker_id <> blocked_id))",
+      "name": "user_blocks_check",
+      "table": "user_blocks"
+    },
+    {
+      "definition": "PRIMARY KEY (blocker_id, blocked_id)",
+      "name": "user_blocks_pkey",
+      "table": "user_blocks"
+    },
+    {
+      "definition": "FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE RESTRICT",
+      "name": "user_category_interests_category_id_fkey",
+      "table": "user_category_interests"
+    },
+    {
+      "definition": "PRIMARY KEY (user_id, category_id)",
+      "name": "user_category_interests_pkey",
+      "table": "user_category_interests"
+    },
+    {
+      "definition": "FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "user_category_interests_user_id_fkey",
+      "table": "user_category_interests"
+    },
+    {
+      "definition": "CHECK ((follower_id <> followed_id))",
+      "name": "user_follows_check",
+      "table": "user_follows"
+    },
+    {
+      "definition": "CHECK ((((status = 'pending'::text) AND (responded_at IS NULL)) OR ((status = ANY (ARRAY['accepted'::text, 'rejected'::text])) AND (responded_at IS NOT NULL))))",
+      "name": "user_follows_check1",
+      "table": "user_follows"
+    },
+    {
+      "definition": "CHECK (((responded_at IS NULL) OR (responded_at >= requested_at)))",
+      "name": "user_follows_check2",
+      "table": "user_follows"
+    },
+    {
+      "definition": "FOREIGN KEY (followed_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "user_follows_followed_id_fkey",
+      "table": "user_follows"
+    },
+    {
+      "definition": "FOREIGN KEY (follower_id) REFERENCES profiles(id) ON DELETE RESTRICT",
+      "name": "user_follows_follower_id_fkey",
+      "table": "user_follows"
+    },
+    {
+      "definition": "PRIMARY KEY (follower_id, followed_id)",
+      "name": "user_follows_pkey",
+      "table": "user_follows"
+    },
+    {
+      "definition": "CHECK ((status = ANY (ARRAY['pending'::text, 'accepted'::text, 'rejected'::text])))",
+      "name": "user_follows_status_check",
+      "table": "user_follows"
+    }
+  ],
+  "functions": [
+    {
+      "anon_execute": false,
+      "arguments": "p_path text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_path text",
+      "name": "can_delete_avatar_upload",
+      "result": "boolean",
+      "schema": "planit_private",
+      "definition_sha256_lf": "3167aa69c066fad622b1b42c010c7ab48ad451e57295934bc485319ed50aaab4"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_path text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_path text",
+      "name": "can_delete_event_upload",
+      "result": "boolean",
+      "schema": "planit_private",
+      "definition_sha256_lf": "76287cfac3ef01db91fa43d617efabf00927ca4c02ffa6f614a36df6dcf5bd3b"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "can_read_event_chat",
+      "result": "boolean",
+      "schema": "planit_private",
+      "definition_sha256_lf": "fb16117a5b4314b1cc7b32432ca73a028e872ba934afd432335aad8c72312f54"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_user_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_user_id uuid",
+      "name": "can_read_social_content",
+      "result": "boolean",
+      "schema": "planit_private",
+      "definition_sha256_lf": "fafc73290da65237bff9fb98b18db8d25bfa351eb2fb3c637d79c404578ae3ba"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "can_view_event",
+      "result": "boolean",
+      "schema": "planit_private",
+      "definition_sha256_lf": "c7e5840986ff25166fd198f4b725e446d28e0c339e9565ab2615cc796633c4ff"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "",
+      "name": "create_event_conversation",
+      "result": "trigger",
+      "schema": "planit_private",
+      "definition_sha256_lf": "8a9d7822d5539b32548fecc580c597a50a190eaa00151f9fe13d44b3c58a7bb4"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "",
+      "name": "handle_new_auth_user",
+      "result": "trigger",
+      "schema": "planit_private",
+      "definition_sha256_lf": "dce2051ffb589652b7ac06677bebe12c5c3a0c5d635adaf1efe5b4793013893b"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "lock_gallery",
+      "result": "void",
+      "schema": "planit_private",
+      "definition_sha256_lf": "94470b116c6bfe45ac223eb6b65e25f89eb5ecb88e0cee3451f87bec8f88ac75"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_target_id uuid",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_target_id uuid",
+      "name": "lock_social_pair",
+      "result": "void",
+      "schema": "planit_private",
+      "definition_sha256_lf": "afb697434cb02e64499dd4e2a90f20db8768297d88a2d381ab81930febb6f142"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "",
+      "name": "protect_event_visibility",
+      "result": "trigger",
+      "schema": "planit_private",
+      "definition_sha256_lf": "2fc06b641e22f9351d147a13c90906822b1c2660b1ac1e355edfea4fbe3c29ef"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "",
+      "name": "record_participation_history",
+      "result": "trigger",
+      "schema": "planit_private",
+      "definition_sha256_lf": "cd233920f6043d0ba4a3c8e62368ad77f7ce400155fe2c579d82c79ad04b587b"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_target_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_target_id uuid",
+      "name": "social_blocked",
+      "result": "boolean",
+      "schema": "planit_private",
+      "definition_sha256_lf": "cc7accbc9eb97637962c31a28a141c69a9c373a82e033305bea050b0e0f49a3d"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "",
+      "name": "stamp_notification_read",
+      "result": "trigger",
+      "schema": "planit_private",
+      "definition_sha256_lf": "f3be0c6781ff2695bb60382232a8d29db07aca8d1f5cdc95f5cae30183667c96"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "",
+      "name": "touch_updated_at",
+      "result": "trigger",
+      "schema": "planit_private",
+      "definition_sha256_lf": "9dc2a66e99958aec6b5b98b7ca732deb356fe6ad1344ba38ed0b636ee94ba990"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "",
+      "name": "validate_birth_date",
+      "result": "trigger",
+      "schema": "planit_private",
+      "definition_sha256_lf": "060f27769f9621e9f5b81507cd8f20260be8e04b4344c0d79cec5e139ee620e4"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "",
+      "name": "validate_event_file",
+      "result": "trigger",
+      "schema": "planit_private",
+      "definition_sha256_lf": "6ce2ddac092955fabf95d37f5a01b51d0fe595965f7002a2b53abf4bebc02e1f"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "",
+      "name": "validate_event_image",
+      "result": "trigger",
+      "schema": "planit_private",
+      "definition_sha256_lf": "3b703919192ecd99a600739e32329950f272da3016ff3c5cdc6b7964143bf17c"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "",
+      "name": "validate_new_event",
+      "result": "trigger",
+      "schema": "planit_private",
+      "definition_sha256_lf": "bdae0761c17166b736d76c51fb8d739314c62832d3f597b28e1d6a6a36770a5b"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "",
+      "name": "validate_profile_avatar",
+      "result": "trigger",
+      "schema": "planit_private",
+      "definition_sha256_lf": "0319fb207ade6cbd9286d27cd638c98e292e023a8d6cb2a672e5b80e5e55c05d"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_storage_path text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_storage_path text",
+      "name": "add_event_image",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "4d047f6022681f67ff208e7222f7774bb4249eeb069f5a4c18432cc11454fb13"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "archive_event",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "226b9a9ed8bde767209d201eeb8d93af2881c6bccaf1224d3c4833c21507c288"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_target_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_target_id uuid",
+      "name": "block_user",
+      "result": "void",
+      "schema": "public",
+      "definition_sha256_lf": "092cfa23a7d7fe9af44c6ebb7a624511bb38f879d2eff44376c30cb1cf69e3f2"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "cancel_event",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "c8152bf09769161801f6998f009eb42ca7ee4b82a130fdd7c11601321f096a75"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text DEFAULT NULL::text, p_image_paths text[] DEFAULT '{}'::text[], p_visibility text DEFAULT 'public'::text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text, p_image_paths text[], p_visibility text",
+      "name": "create_event",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "fc3a4a5de92700a30b8d7a275dbf8d8eebf0c958e5f6f07af040ed975b4956ad"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "create_or_rotate_event_link",
+      "result": "text",
+      "schema": "public",
+      "definition_sha256_lf": "9bcf29fc1b85523588ab415a46e854a2760803a4478d3dfe0d1f72dddc6c064b"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_south double precision, p_north double precision, p_west double precision, p_east double precision",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_south double precision, p_north double precision, p_west double precision, p_east double precision",
+      "name": "discover_public_events",
+      "result": "TABLE(id uuid, organizer_id uuid, title text, description text, starts_at timestamp without time zone, ends_at timestamp without time zone, address text, location_name text, latitude double precision, longitude double precision, capacity integer, category_id uuid, visibility text, cancelled_at timestamp without time zone, archived_at timestamp without time zone, category_name text, image_path text)",
+      "schema": "public",
+      "definition_sha256_lf": "c4aa8deedc99abaff59ab388f3169d486da6640eb9ec88df076df21d93a6ffda"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_target_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_target_id uuid",
+      "name": "follow_user",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "4dab6faa20f88ebc489f969eada2a5a9143f671508da3cf6dc35775e9614246f"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_conversation_id uuid, p_before_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_conversation_id uuid, p_before_at timestamp without time zone, p_before_id uuid, p_limit integer",
+      "name": "get_direct_messages",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "e5d26059e0cc4cd894f62e5eb4667923ae5a7fcf1a87e7650a0d723fef70c9e1"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_status text DEFAULT 'active'::text, p_after_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_status text, p_after_id uuid, p_limit integer",
+      "name": "get_event_access_grants",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "d6e14589132f2a630b6a608cbcfa2c7ca4792c04b73fcebaa396b43ca89de144"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_status text DEFAULT 'confirmed'::text, p_search text DEFAULT ''::text, p_offset integer DEFAULT 0",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_status text, p_search text, p_offset integer",
+      "name": "get_event_attendees",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "2682d268406569ea8c3a754d7a9c4fc0cb2ec52d86cbbc8979904b2a5e52df1f"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "get_event_chat",
+      "result": "TABLE(conversation_id uuid, title text, event_state text)",
+      "schema": "public",
+      "definition_sha256_lf": "0f43d3464f80ad69681843bede3bf940ab673089d5573399cd32812a4fe0f103"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_before_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_before_at timestamp without time zone, p_before_id uuid",
+      "name": "get_event_chat_messages",
+      "result": "TABLE(id uuid, sender_id uuid, body text, created_at timestamp without time zone, display_name text, username text)",
+      "schema": "public",
+      "definition_sha256_lf": "b960196756cb80913733f016da39d76ebdc5765a3e775acf946f05fac37fe0d5"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_event_id uuid",
+      "name": "get_event_duplicate_source",
+      "result": "TABLE(title text, description text, category_id uuid, location_name text, address text, latitude double precision, longitude double precision, capacity integer)",
+      "schema": "public",
+      "definition_sha256_lf": "53e48e61b80d548cd65e83140eea43198ddb45a6e3c4196deab9b8a8ebf29c61"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "get_event_link_status",
+      "result": "boolean",
+      "schema": "public",
+      "definition_sha256_lf": "d9e1741252f36aa4dfd7186afe70b10f3131250219942f28b7c193a04ec91c97"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "get_event_organizer",
+      "result": "TABLE(display_name text, username text)",
+      "schema": "public",
+      "definition_sha256_lf": "b8bcd8d762373d0b08edc97f624c8a2e9754f7b16e9cd93ac43c35b23939bf5c"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "get_event_participation_summary",
+      "result": "TABLE(confirmed_count bigint, capacity integer, available_spots bigint, own_status text, is_organizer boolean, event_state text)",
+      "schema": "public",
+      "definition_sha256_lf": "eddb55071d0222e69529da2aa9c566cb686fdcf9be2d6d762fd35e0b434c66a1"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_offset integer DEFAULT 0",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_offset integer",
+      "name": "get_event_rejoin_requests",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "e4ce79ad2b0457eb8223421b69595b1e760e98a3c9cfbb60407624780bd1b0b8"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_request_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_request_id uuid",
+      "name": "get_event_rejoin_resolution",
+      "result": "text",
+      "schema": "public",
+      "definition_sha256_lf": "b8b17bc7bc1aa609529e0adb41fc390454d57567369557d59a60c7424fa9bd24"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_after_user_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_after_user_id uuid, p_limit integer",
+      "name": "get_event_social_participants",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "f6a365f0ea6935ef22cea65b3f0d7970fa4b8e977373876e4a5daa2a44a37df0"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "get_event_unregistered_uploads",
+      "result": "TABLE(storage_path text)",
+      "schema": "public",
+      "definition_sha256_lf": "6d304c67ccf72f80df9cfc6689e10a9948adac1a789cf98df68a788f103d6ea6"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_before_starts_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_before_starts_at timestamp without time zone, p_before_id uuid, p_limit integer",
+      "name": "get_home_events",
+      "result": "TABLE(id uuid, organizer_id uuid, title text, description text, starts_at timestamp without time zone, ends_at timestamp without time zone, address text, location_name text, latitude double precision, longitude double precision, capacity integer, category_id uuid, visibility text, cancelled_at timestamp without time zone, archived_at timestamp without time zone, category_name text, image_path text)",
+      "schema": "public",
+      "definition_sha256_lf": "3a86075f12c61c19dd31075b27b62ce3eb1a1db07cc1bcfa54af41444c46963b"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_section text, p_offset integer DEFAULT 0",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_section text, p_offset integer",
+      "name": "get_my_events",
+      "result": "TABLE(id uuid, title text, starts_at timestamp without time zone, ends_at timestamp without time zone, location_name text, address text, category_name text, event_state text, participation_status text, image_path text)",
+      "schema": "public",
+      "definition_sha256_lf": "e2da035da3baf910a3fa8f093affe5e877138bda3adc53bb46867aaaa61b4266"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_filter text DEFAULT 'all'::text, p_offset integer DEFAULT 0",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_filter text, p_offset integer",
+      "name": "get_my_organized_events",
+      "result": "TABLE(id uuid, title text, starts_at timestamp without time zone, ends_at timestamp without time zone, location_name text, address text, category_name text, event_state text, participation_status text, image_path text)",
+      "schema": "public",
+      "definition_sha256_lf": "2ed3befed7bfdaa9c93070d980c691511e91523a6f12f2fcca558406700a4e47"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "get_my_rejoin_status",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "13742d2781c51b4218b3a00c71be737526081c1a171246eb82ed33c7904603ab"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_ids uuid[]",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_ids uuid[]",
+      "name": "get_notification_changes",
+      "result": "TABLE(id uuid, type text, title text, body text, read_at timestamp without time zone, created_at timestamp without time zone, target text)",
+      "schema": "public",
+      "definition_sha256_lf": "43405c53e43b60095a3ac95b96763a399973f95dddbda6a8538e2e45d53f65a7"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_id uuid",
+      "name": "get_notification_target",
+      "result": "text",
+      "schema": "public",
+      "definition_sha256_lf": "d42bd97851ffa7aa5c37a98ebb085b15db01a6ec5ec10c599189348a658f7ea7"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_before_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_before_at timestamp without time zone, p_before_id uuid",
+      "name": "get_notifications",
+      "result": "TABLE(id uuid, type text, title text, body text, read_at timestamp without time zone, created_at timestamp without time zone, target text)",
+      "schema": "public",
+      "definition_sha256_lf": "5de4b34748ee1d101e8cc307fc9e6182ed47b8d7543cc760905e25ae7a28581b"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_target_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_target_id uuid",
+      "name": "get_or_create_direct_conversation",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "505488f1df68e53a4ce6b870746f3ba9fb3c28d703ea5f97cf932ac8cfc55c8a"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_viewer_id uuid, p_user_id uuid",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_viewer_id uuid, p_user_id uuid",
+      "name": "get_social_avatar_for_signing",
+      "result": "text",
+      "schema": "public",
+      "definition_sha256_lf": "8a4e499a34e8882d2d72be4334e91d86067809f755b331f88d6d1b022b2a0be6"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_user_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_user_id uuid",
+      "name": "get_social_counts",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "9b9c1ebed7129ed415cafc5c3c1f36fda2156a99a227fd5e60a27d8db806840b"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_user_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_user_id uuid",
+      "name": "get_social_profile",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "895eaf417539c2fde5c8cc74ffebf6ab04bc85596c75dde30d3bde1bb47bd61c"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_user_id uuid, p_before_starts_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_user_id uuid, p_before_starts_at timestamp without time zone, p_before_id uuid, p_limit integer",
+      "name": "get_social_profile_events",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "d2799f45340ee077b15d42c41e711fd049455c121b7cdd13aa1dba7c375f417d"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_user_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_user_id uuid",
+      "name": "get_social_relationship",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "17830bbabce275064ee4f1da5a9ae933cd6b25cd4c4ad0be7b9e70b0a7721a9f"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_origin_lat double precision DEFAULT NULL::double precision, p_origin_lng double precision DEFAULT NULL::double precision, p_limit integer DEFAULT 6",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_origin_lat double precision, p_origin_lng double precision, p_limit integer",
+      "name": "get_suggested_events",
+      "result": "TABLE(id uuid, organizer_id uuid, title text, description text, starts_at timestamp without time zone, ends_at timestamp without time zone, address text, location_name text, latitude double precision, longitude double precision, capacity integer, category_id uuid, visibility text, cancelled_at timestamp without time zone, archived_at timestamp without time zone, category_name text, image_path text, has_interests boolean, matches_interest boolean, distance_km double precision, starts_soon boolean)",
+      "schema": "public",
+      "definition_sha256_lf": "3d146f3ca3d0eb0bc16596c98704e8fe0c6f7ed94264f43b561365195314a825"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "leave_event",
+      "result": "void",
+      "schema": "public",
+      "definition_sha256_lf": "64ce22d2673ef9500727dd8da65414e8219176af5bd1f37875b65422c024d609"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_before_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_before_at timestamp without time zone, p_before_id uuid, p_limit integer",
+      "name": "list_direct_conversations",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "d2fae8e76a2bbc00fd45d90a5ac0cc7707b1830b0bf440757bb74258fa505a68"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_after_requested_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_after_follower_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_after_requested_at timestamp without time zone, p_after_follower_id uuid, p_limit integer",
+      "name": "list_follow_requests",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "f968751b209ed3711f5bca45ae6b8aa1c50da246e9b3eb9ee4ade1bb8dad6127"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_user_id uuid, p_direction text, p_after_user_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_user_id uuid, p_direction text, p_after_user_id uuid, p_limit integer",
+      "name": "list_social_follows",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "4be69f37aa954acd8753ab902910c22c44b3e993cd561bb2d33114ae4bdd9ba6"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_id uuid",
+      "name": "mark_notification_read",
+      "result": "timestamp without time zone",
+      "schema": "public",
+      "definition_sha256_lf": "74e145e2a596257b3d073638c691afb4e794c113653cb156263de0b8c140efc6"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_token text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_token text",
+      "name": "redeem_event_link",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "915ce41962f63f72f346f12043b9b1a92542d0895c21eb2cbb1427b2574b6c4e"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "register_for_event",
+      "result": "void",
+      "schema": "public",
+      "definition_sha256_lf": "bb5a21f064ab47145b986ad981b361f7523ba36282e8da49f939b21c0c5ad04e"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_image_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_image_id uuid",
+      "name": "remove_event_image",
+      "result": "void",
+      "schema": "public",
+      "definition_sha256_lf": "5553880f4f03ae32bec1231ad8c758e775f39f4bd3a479a379f0fdd6af2e5638"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_participation_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_participation_id uuid",
+      "name": "remove_participant",
+      "result": "void",
+      "schema": "public",
+      "definition_sha256_lf": "667c784f288cf25c87f7ca27c7c44455c085566f12f1d897eeb6ea4c4ee0b594"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_image_ids uuid[], p_expected_ids uuid[]",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_image_ids uuid[], p_expected_ids uuid[]",
+      "name": "reorder_event_images",
+      "result": "void",
+      "schema": "public",
+      "definition_sha256_lf": "d065df21fb2780ece5f9c73dfa32586dd809fe57a898eab2b4d53fa872088f47"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid",
+      "name": "request_rejoin",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "0fbb8cb01cd338d614602791139ce5018c8dc17cf5f5625942cb91a23fe0150a"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_follower_id uuid, p_request_version uuid, p_decision text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_follower_id uuid, p_request_version uuid, p_decision text",
+      "name": "resolve_follow_request",
+      "result": "text",
+      "schema": "public",
+      "definition_sha256_lf": "1cc5318d74bb18152b74efb055a8c4e4d98de6b4a92c00890b21f3c895f179e3"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_request_id uuid, p_decision text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_request_id uuid, p_decision text",
+      "name": "resolve_rejoin",
+      "result": "void",
+      "schema": "public",
+      "definition_sha256_lf": "349fd26e8e10e686b1bc947db4e392e099c6f033cb9ac35a6fd5fc3812ef7383"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_user_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_user_id uuid",
+      "name": "restore_event_access",
+      "result": "void",
+      "schema": "public",
+      "definition_sha256_lf": "6c0c305253fa438f53b00f8659cfc542f5d2339d8072cc0614fc76bdb5c1b0ae"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_user_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_user_id uuid",
+      "name": "revoke_event_access",
+      "result": "void",
+      "schema": "public",
+      "definition_sha256_lf": "55de2da2e5fed6b07d86ee6994349aa2247ed67fc6ac2ea0151ad9a6e1b81ca6"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "",
+      "authenticated_execute": false,
+      "config": [
+        "search_path=pg_catalog"
+      ],
+      "definer": true,
+      "identity_arguments": "",
+      "name": "rls_auto_enable",
+      "result": "event_trigger",
+      "schema": "public",
+      "definition_sha256_lf": "b21d88816c445d14cef5032c3cd4abaebc1db2001fcb3435022ab6b496182ca4"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_query text DEFAULT NULL::text, p_category_ids uuid[] DEFAULT NULL::uuid[], p_before_starts_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30, p_south double precision DEFAULT NULL::double precision, p_north double precision DEFAULT NULL::double precision, p_west double precision DEFAULT NULL::double precision, p_east double precision DEFAULT NULL::double precision, p_date_from date DEFAULT NULL::date, p_date_to date DEFAULT NULL::date, p_origin_lat double precision DEFAULT NULL::double precision, p_origin_lng double precision DEFAULT NULL::double precision, p_radius_km double precision DEFAULT NULL::double precision",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": false,
+      "identity_arguments": "p_query text, p_category_ids uuid[], p_before_starts_at timestamp without time zone, p_before_id uuid, p_limit integer, p_south double precision, p_north double precision, p_west double precision, p_east double precision, p_date_from date, p_date_to date, p_origin_lat double precision, p_origin_lng double precision, p_radius_km double precision",
+      "name": "search_public_events",
+      "result": "TABLE(id uuid, organizer_id uuid, title text, description text, starts_at timestamp without time zone, ends_at timestamp without time zone, address text, location_name text, latitude double precision, longitude double precision, capacity integer, category_id uuid, visibility text, cancelled_at timestamp without time zone, archived_at timestamp without time zone, category_name text, image_path text)",
+      "schema": "public",
+      "definition_sha256_lf": "d9083cf85906417e8c4018ee6d0a739129efd52499a0ef4eb10649063b172f42"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_conversation_id uuid, p_message_id uuid, p_body text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_conversation_id uuid, p_message_id uuid, p_body text",
+      "name": "send_direct_message",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "bc24a0b4b7d41e5953cb33cb8c246313d5cd1bf8cf295e083fe9b82592ba5175"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_message_id uuid, p_body text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_message_id uuid, p_body text",
+      "name": "send_event_chat_message",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "13b47cb1f3f0e8eaba4147419fca3f90a23d4aefe24019a2b3bfff58fbb80ab4"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_visibility text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_visibility text",
+      "name": "set_event_visibility",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "afc5b8d4f9db50af0accc13046a9cbb85b5fc21379bb46b9b6399524bc73c7cd"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_storage_path text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_storage_path text",
+      "name": "set_my_avatar",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "b1097cbc5a6772f7ae82a9e5deb4ee3e4b432e9d877f432b41ca27ac451a2770"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_category_ids uuid[]",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_category_ids uuid[]",
+      "name": "set_my_category_interests",
+      "result": "TABLE(category_id uuid)",
+      "schema": "public",
+      "definition_sha256_lf": "6163133c0b010ed38e8f9c31f617a48a1952624782704d7c54b690588b7a741e"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_target_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_target_id uuid",
+      "name": "unblock_user",
+      "result": "void",
+      "schema": "public",
+      "definition_sha256_lf": "364b4dd6f5ab21c2c5ec5c9af2be59d085fb540fb1bacc084ff2c4012751776f"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_target_id uuid",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_target_id uuid",
+      "name": "unfollow_user",
+      "result": "void",
+      "schema": "public",
+      "definition_sha256_lf": "6e9c8126b8ed02f3e729932dbf3fa0aeb59fb28c57e6969e085a75c7bade2dee"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_event_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text DEFAULT NULL::text, p_visibility text DEFAULT NULL::text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_event_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text, p_visibility text",
+      "name": "update_event",
+      "result": "uuid",
+      "schema": "public",
+      "definition_sha256_lf": "5774b4d5cdee194909ec870f61f8e3aec91d2b43977d10c6566fdb215f41bcab"
+    },
+    {
+      "anon_execute": false,
+      "arguments": "p_username text, p_display_name text, p_first_name text, p_last_name text, p_birth_date date, p_sex text, p_bio text, p_visibility text",
+      "authenticated_execute": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "identity_arguments": "p_username text, p_display_name text, p_first_name text, p_last_name text, p_birth_date date, p_sex text, p_bio text, p_visibility text",
+      "name": "update_my_social_profile",
+      "result": "jsonb",
+      "schema": "public",
+      "definition_sha256_lf": "4aed65b98bdf24f48dac85b04d55dab5b61bb7723ca36afbe74441016a416d00"
+    }
+  ],
+  "indexes": [
+    {
+      "indexdef": "CREATE UNIQUE INDEX categories_name_lower_unique ON public.categories USING btree (lower(name))",
+      "indexname": "categories_name_lower_unique",
+      "schemaname": "public",
+      "tablename": "categories",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX categories_pkey ON public.categories USING btree (id)",
+      "indexname": "categories_pkey",
+      "schemaname": "public",
+      "tablename": "categories",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX categories_slug_key ON public.categories USING btree (slug)",
+      "indexname": "categories_slug_key",
+      "schemaname": "public",
+      "tablename": "categories",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX conversations_direct_high_idx ON public.conversations USING btree (user_high_id, created_at DESC, id DESC) WHERE (kind = 'direct'::text)",
+      "indexname": "conversations_direct_high_idx",
+      "schemaname": "public",
+      "tablename": "conversations",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX conversations_direct_low_idx ON public.conversations USING btree (user_low_id, created_at DESC, id DESC) WHERE (kind = 'direct'::text)",
+      "indexname": "conversations_direct_low_idx",
+      "schemaname": "public",
+      "tablename": "conversations",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX conversations_direct_pair_key ON public.conversations USING btree (user_low_id, user_high_id)",
+      "indexname": "conversations_direct_pair_key",
+      "schemaname": "public",
+      "tablename": "conversations",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX conversations_event_id_key ON public.conversations USING btree (event_id)",
+      "indexname": "conversations_event_id_key",
+      "schemaname": "public",
+      "tablename": "conversations",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX conversations_pkey ON public.conversations USING btree (id)",
+      "indexname": "conversations_pkey",
+      "schemaname": "public",
+      "tablename": "conversations",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_access_grants_event_id_user_id_key ON public.event_access_grants USING btree (event_id, user_id)",
+      "indexname": "event_access_grants_event_id_user_id_key",
+      "schemaname": "public",
+      "tablename": "event_access_grants",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX event_access_grants_link_idx ON public.event_access_grants USING btree (source_link_id, event_id) WHERE (source_link_id IS NOT NULL)",
+      "indexname": "event_access_grants_link_idx",
+      "schemaname": "public",
+      "tablename": "event_access_grants",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_access_grants_pkey ON public.event_access_grants USING btree (id)",
+      "indexname": "event_access_grants_pkey",
+      "schemaname": "public",
+      "tablename": "event_access_grants",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX event_access_grants_user_idx ON public.event_access_grants USING btree (user_id, event_id)",
+      "indexname": "event_access_grants_user_idx",
+      "schemaname": "public",
+      "tablename": "event_access_grants",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX event_access_links_creator_idx ON public.event_access_links USING btree (created_by)",
+      "indexname": "event_access_links_creator_idx",
+      "schemaname": "public",
+      "tablename": "event_access_links",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX event_access_links_event_idx ON public.event_access_links USING btree (event_id)",
+      "indexname": "event_access_links_event_idx",
+      "schemaname": "public",
+      "tablename": "event_access_links",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_access_links_id_event_id_key ON public.event_access_links USING btree (id, event_id)",
+      "indexname": "event_access_links_id_event_id_key",
+      "schemaname": "public",
+      "tablename": "event_access_links",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_access_links_one_active_idx ON public.event_access_links USING btree (event_id) WHERE (revoked_at IS NULL)",
+      "indexname": "event_access_links_one_active_idx",
+      "schemaname": "public",
+      "tablename": "event_access_links",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_access_links_pkey ON public.event_access_links USING btree (id)",
+      "indexname": "event_access_links_pkey",
+      "schemaname": "public",
+      "tablename": "event_access_links",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_access_links_token_hash_key ON public.event_access_links USING btree (token_hash)",
+      "indexname": "event_access_links_token_hash_key",
+      "schemaname": "public",
+      "tablename": "event_access_links",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_images_event_id_file_id_key ON public.event_images USING btree (event_id, file_id)",
+      "indexname": "event_images_event_id_file_id_key",
+      "schemaname": "public",
+      "tablename": "event_images",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_images_event_id_sort_order_key ON public.event_images USING btree (event_id, sort_order)",
+      "indexname": "event_images_event_id_sort_order_key",
+      "schemaname": "public",
+      "tablename": "event_images",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX event_images_file_idx ON public.event_images USING btree (file_id)",
+      "indexname": "event_images_file_idx",
+      "schemaname": "public",
+      "tablename": "event_images",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_images_pkey ON public.event_images USING btree (id)",
+      "indexname": "event_images_pkey",
+      "schemaname": "public",
+      "tablename": "event_images",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_participations_event_id_user_id_key ON public.event_participations USING btree (event_id, user_id)",
+      "indexname": "event_participations_event_id_user_id_key",
+      "schemaname": "public",
+      "tablename": "event_participations",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_participations_pkey ON public.event_participations USING btree (id)",
+      "indexname": "event_participations_pkey",
+      "schemaname": "public",
+      "tablename": "event_participations",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX participations_event_status_idx ON public.event_participations USING btree (event_id, status)",
+      "indexname": "participations_event_status_idx",
+      "schemaname": "public",
+      "tablename": "event_participations",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX participations_user_status_idx ON public.event_participations USING btree (user_id, status)",
+      "indexname": "participations_user_status_idx",
+      "schemaname": "public",
+      "tablename": "event_participations",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX event_rejoin_requests_pkey ON public.event_rejoin_requests USING btree (id)",
+      "indexname": "event_rejoin_requests_pkey",
+      "schemaname": "public",
+      "tablename": "event_rejoin_requests",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX rejoin_requests_one_pending_idx ON public.event_rejoin_requests USING btree (participation_id) WHERE (status = 'pending'::text)",
+      "indexname": "rejoin_requests_one_pending_idx",
+      "schemaname": "public",
+      "tablename": "event_rejoin_requests",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX rejoin_requests_participation_date_idx ON public.event_rejoin_requests USING btree (participation_id, requested_at DESC, id DESC)",
+      "indexname": "rejoin_requests_participation_date_idx",
+      "schemaname": "public",
+      "tablename": "event_rejoin_requests",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX rejoin_requests_reviewer_idx ON public.event_rejoin_requests USING btree (reviewed_by) WHERE (reviewed_by IS NOT NULL)",
+      "indexname": "rejoin_requests_reviewer_idx",
+      "schemaname": "public",
+      "tablename": "event_rejoin_requests",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX events_category_start_idx ON public.events USING btree (category_id, starts_at)",
+      "indexname": "events_category_start_idx",
+      "schemaname": "public",
+      "tablename": "events",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX events_organizer_idx ON public.events USING btree (organizer_id)",
+      "indexname": "events_organizer_idx",
+      "schemaname": "public",
+      "tablename": "events",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX events_pkey ON public.events USING btree (id)",
+      "indexname": "events_pkey",
+      "schemaname": "public",
+      "tablename": "events",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX events_public_location_idx ON public.events USING btree (latitude, longitude, starts_at) WHERE ((visibility = 'public'::text) AND (cancelled_at IS NULL) AND (archived_at IS NULL))",
+      "indexname": "events_public_location_idx",
+      "schemaname": "public",
+      "tablename": "events",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX files_bucket_name_storage_path_key ON public.files USING btree (bucket_name, storage_path)",
+      "indexname": "files_bucket_name_storage_path_key",
+      "schemaname": "public",
+      "tablename": "files",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX files_pkey ON public.files USING btree (id)",
+      "indexname": "files_pkey",
+      "schemaname": "public",
+      "tablename": "files",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX files_uploaded_by_idx ON public.files USING btree (uploaded_by)",
+      "indexname": "files_uploaded_by_idx",
+      "schemaname": "public",
+      "tablename": "files",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX messages_conversation_created_idx ON public.messages USING btree (conversation_id, created_at DESC, id DESC)",
+      "indexname": "messages_conversation_created_idx",
+      "schemaname": "public",
+      "tablename": "messages",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX messages_pkey ON public.messages USING btree (id)",
+      "indexname": "messages_pkey",
+      "schemaname": "public",
+      "tablename": "messages",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX messages_sender_idx ON public.messages USING btree (sender_id)",
+      "indexname": "messages_sender_idx",
+      "schemaname": "public",
+      "tablename": "messages",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX notifications_actor_idx ON public.notifications USING btree (actor_id) WHERE (actor_id IS NOT NULL)",
+      "indexname": "notifications_actor_idx",
+      "schemaname": "public",
+      "tablename": "notifications",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX notifications_conversation_idx ON public.notifications USING btree (conversation_id) WHERE (conversation_id IS NOT NULL)",
+      "indexname": "notifications_conversation_idx",
+      "schemaname": "public",
+      "tablename": "notifications",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX notifications_event_idx ON public.notifications USING btree (event_id) WHERE (event_id IS NOT NULL)",
+      "indexname": "notifications_event_idx",
+      "schemaname": "public",
+      "tablename": "notifications",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX notifications_pkey ON public.notifications USING btree (id)",
+      "indexname": "notifications_pkey",
+      "schemaname": "public",
+      "tablename": "notifications",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX notifications_recipient_created_idx ON public.notifications USING btree (recipient_id, created_at DESC, id DESC)",
+      "indexname": "notifications_recipient_created_idx",
+      "schemaname": "public",
+      "tablename": "notifications",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX notifications_recipient_unread_idx ON public.notifications USING btree (recipient_id) WHERE (read_at IS NULL)",
+      "indexname": "notifications_recipient_unread_idx",
+      "schemaname": "public",
+      "tablename": "notifications",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX participation_history_changed_by_idx ON public.participation_history USING btree (changed_by)",
+      "indexname": "participation_history_changed_by_idx",
+      "schemaname": "public",
+      "tablename": "participation_history",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX participation_history_participation_created_idx ON public.participation_history USING btree (participation_id, created_at)",
+      "indexname": "participation_history_participation_created_idx",
+      "schemaname": "public",
+      "tablename": "participation_history",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX participation_history_pkey ON public.participation_history USING btree (id)",
+      "indexname": "participation_history_pkey",
+      "schemaname": "public",
+      "tablename": "participation_history",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX profiles_avatar_file_idx ON public.profiles USING btree (avatar_file_id) WHERE (avatar_file_id IS NOT NULL)",
+      "indexname": "profiles_avatar_file_idx",
+      "schemaname": "public",
+      "tablename": "profiles",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX profiles_pkey ON public.profiles USING btree (id)",
+      "indexname": "profiles_pkey",
+      "schemaname": "public",
+      "tablename": "profiles",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX profiles_username_key ON public.profiles USING btree (username)",
+      "indexname": "profiles_username_key",
+      "schemaname": "public",
+      "tablename": "profiles",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX user_blocks_blocked_idx ON public.user_blocks USING btree (blocked_id, blocker_id)",
+      "indexname": "user_blocks_blocked_idx",
+      "schemaname": "public",
+      "tablename": "user_blocks",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX user_blocks_pkey ON public.user_blocks USING btree (blocker_id, blocked_id)",
+      "indexname": "user_blocks_pkey",
+      "schemaname": "public",
+      "tablename": "user_blocks",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX user_category_interests_pkey ON public.user_category_interests USING btree (user_id, category_id)",
+      "indexname": "user_category_interests_pkey",
+      "schemaname": "public",
+      "tablename": "user_category_interests",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX user_follows_followed_idx ON public.user_follows USING btree (followed_id, follower_id)",
+      "indexname": "user_follows_followed_idx",
+      "schemaname": "public",
+      "tablename": "user_follows",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE INDEX user_follows_pending_idx ON public.user_follows USING btree (followed_id, requested_at, follower_id) WHERE (status = 'pending'::text)",
+      "indexname": "user_follows_pending_idx",
+      "schemaname": "public",
+      "tablename": "user_follows",
+      "tablespace": null
+    },
+    {
+      "indexdef": "CREATE UNIQUE INDEX user_follows_pkey ON public.user_follows USING btree (follower_id, followed_id)",
+      "indexname": "user_follows_pkey",
+      "schemaname": "public",
+      "tablename": "user_follows",
+      "tablespace": null
+    }
+  ],
+  "migrations": [
+    {
+      "name": "create_profiles_and_categories",
+      "version": "20261010011204"
+    },
+    {
+      "name": "create_profiles_and_categories",
+      "version": "20261010013449"
+    },
+    {
+      "name": "restrict_rls_auto_enable_execute",
+      "version": "20261010023448"
+    },
+    {
+      "name": "create_events_and_event_media",
+      "version": "20261010042701"
+    },
+    {
+      "name": "public_event_discovery",
+      "version": "20261010052653"
+    },
+    {
+      "name": "event_participations",
+      "version": "20261010150232"
+    },
+    {
+      "name": "my_events_read",
+      "version": "20261010154930"
+    },
+    {
+      "name": "home_and_event_organizer_read",
+      "version": "20261010212819"
+    },
+    {
+      "name": "event_chat",
+      "version": "20261010214526"
+    },
+    {
+      "name": "notifications_inbox",
+      "version": "20261011163653"
+    },
+    {
+      "name": "r2_realtime_chat_notifications",
+      "version": "20261011193316"
+    },
+    {
+      "name": "my_organized_events_read",
+      "version": "20261011232326"
+    },
+    {
+      "name": "edit_own_event",
+      "version": "20261012001058"
+    },
+    {
+      "name": "manage_event_gallery",
+      "version": "20261012013634"
+    },
+    {
+      "name": "manage_event_attendees",
+      "version": "20261012031717"
+    },
+    {
+      "name": "close_and_duplicate_events",
+      "version": "20261012044919"
+    },
+    {
+      "name": "event_rejoin_requests",
+      "version": "20261012155501"
+    },
+    {
+      "name": "search_public_events",
+      "version": "20261013160000"
+    },
+    {
+      "name": "search_public_events_date_radius",
+      "version": "20261014120000"
+    },
+    {
+      "name": "user_category_interests",
+      "version": "20261014120001"
+    },
+    {
+      "name": "get_suggested_events",
+      "version": "20261014120002"
+    },
+    {
+      "name": "hidden_event_access",
+      "version": "20261014120003"
+    },
+    {
+      "name": "event_visibility_links",
+      "version": "20261014120004"
+    },
+    {
+      "name": "redeem_event_link",
+      "version": "20261014120005"
+    },
+    {
+      "name": "event_access_management",
+      "version": "20261014120006"
+    },
+    {
+      "name": "social_security_model",
+      "version": "20261014133225"
+    },
+    {
+      "name": "social_projections_and_avatars",
+      "version": "20261014133547"
+    },
+    {
+      "name": "social_legacy_projections",
+      "version": "20261014133847"
+    }
+  ],
+  "policies": [
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "categories_select_authenticated",
+      "qual": "true",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "categories",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "conversations_read_member",
+      "qual": "(((kind = 'event'::text) AND planit_private.can_read_event_chat(event_id)) OR ((kind = 'direct'::text) AND ((( SELECT auth.uid() AS uid) = user_low_id) OR (( SELECT auth.uid() AS uid) = user_high_id))))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "conversations",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "event_access_grants_select_own",
+      "qual": "((user_id = ( SELECT auth.uid() AS uid)) OR (EXISTS ( SELECT 1\n   FROM events e\n  WHERE ((e.id = event_access_grants.event_id) AND (e.organizer_id = ( SELECT auth.uid() AS uid))))))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "event_access_grants",
+      "with_check": null
+    },
+    {
+      "cmd": "INSERT",
+      "permissive": "PERMISSIVE",
+      "policyname": "event_images_insert_own",
+      "qual": null,
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "event_images",
+      "with_check": "(EXISTS ( SELECT 1\n   FROM events\n  WHERE ((events.id = event_images.event_id) AND (events.organizer_id = ( SELECT auth.uid() AS uid)))))"
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "event_images_select_visible",
+      "qual": "(EXISTS ( SELECT 1\n   FROM events\n  WHERE (events.id = event_images.event_id)))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "event_images",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "participations_select_own",
+      "qual": "(user_id = ( SELECT auth.uid() AS uid))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "event_participations",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "rejoin_requests_select_own",
+      "qual": "(EXISTS ( SELECT 1\n   FROM event_participations p\n  WHERE ((p.id = event_rejoin_requests.participation_id) AND (p.user_id = ( SELECT auth.uid() AS uid)))))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "event_rejoin_requests",
+      "with_check": null
+    },
+    {
+      "cmd": "INSERT",
+      "permissive": "PERMISSIVE",
+      "policyname": "events_insert_own",
+      "qual": null,
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "events",
+      "with_check": "((organizer_id = ( SELECT auth.uid() AS uid)) AND (visibility = ANY (ARRAY['public'::text, 'unlisted'::text])) AND (cancelled_at IS NULL) AND (archived_at IS NULL))"
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "events_select_authenticated",
+      "qual": "((organizer_id = ( SELECT auth.uid() AS uid)) OR planit_private.can_view_event(id))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "events",
+      "with_check": null
+    },
+    {
+      "cmd": "INSERT",
+      "permissive": "PERMISSIVE",
+      "policyname": "files_insert_own",
+      "qual": null,
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "files",
+      "with_check": "(uploaded_by = ( SELECT auth.uid() AS uid))"
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "files_select_visible",
+      "qual": "((uploaded_by = ( SELECT auth.uid() AS uid)) OR (EXISTS ( SELECT 1\n   FROM event_images\n  WHERE (event_images.file_id = files.id))))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "files",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "messages_read_member",
+      "qual": "(EXISTS ( SELECT 1\n   FROM conversations c\n  WHERE (c.id = messages.conversation_id)))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "messages",
+      "with_check": null
+    },
+    {
+      "cmd": "UPDATE",
+      "permissive": "PERMISSIVE",
+      "policyname": "notifications_mark_own",
+      "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "notifications",
+      "with_check": "(recipient_id = ( SELECT auth.uid() AS uid))"
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "notifications_read_own",
+      "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "notifications",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "participation_history_select_own",
+      "qual": "(EXISTS ( SELECT 1\n   FROM event_participations p\n  WHERE (p.id = participation_history.participation_id)))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "participation_history",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "profiles_select_own",
+      "qual": "(( SELECT auth.uid() AS uid) = id)",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "profiles",
+      "with_check": null
+    },
+    {
+      "cmd": "UPDATE",
+      "permissive": "PERMISSIVE",
+      "policyname": "profiles_update_own",
+      "qual": "(( SELECT auth.uid() AS uid) = id)",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "profiles",
+      "with_check": "(( SELECT auth.uid() AS uid) = id)"
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "user_blocks_read_own",
+      "qual": "(blocker_id = ( SELECT auth.uid() AS uid))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "user_blocks",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "user_category_interests_select_own",
+      "qual": "(( SELECT auth.uid() AS uid) = user_id)",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "user_category_interests",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "user_follows_read_own",
+      "qual": "((( SELECT auth.uid() AS uid) = follower_id) OR (( SELECT auth.uid() AS uid) = followed_id))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "public",
+      "tablename": "user_follows",
+      "with_check": null
+    },
+    {
+      "cmd": "DELETE",
+      "permissive": "PERMISSIVE",
+      "policyname": "avatars_delete_unlinked",
+      "qual": "((bucket_id = 'avatars'::text) AND planit_private.can_delete_avatar_upload(name))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "storage",
+      "tablename": "objects",
+      "with_check": null
+    },
+    {
+      "cmd": "INSERT",
+      "permissive": "PERMISSIVE",
+      "policyname": "avatars_insert_own",
+      "qual": null,
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "storage",
+      "tablename": "objects",
+      "with_check": "((bucket_id = 'avatars'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text))"
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "avatars_select_own",
+      "qual": "((bucket_id = 'avatars'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "storage",
+      "tablename": "objects",
+      "with_check": null
+    },
+    {
+      "cmd": "DELETE",
+      "permissive": "PERMISSIVE",
+      "policyname": "event_media_delete_unlinked",
+      "qual": "((bucket_id = 'event_media'::text) AND planit_private.can_delete_event_upload(name))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "storage",
+      "tablename": "objects",
+      "with_check": null
+    },
+    {
+      "cmd": "INSERT",
+      "permissive": "PERMISSIVE",
+      "policyname": "event_media_insert_own",
+      "qual": null,
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "storage",
+      "tablename": "objects",
+      "with_check": "((bucket_id = 'event_media'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text) AND (split_part(name, '/'::text, 2) ~ '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'::text) AND (NOT (EXISTS ( SELECT 1\n   FROM events\n  WHERE (((events.id)::text = split_part(objects.name, '/'::text, 2)) AND (events.organizer_id <> ( SELECT auth.uid() AS uid)))))))"
+    },
+    {
+      "cmd": "SELECT",
+      "permissive": "PERMISSIVE",
+      "policyname": "event_media_select_visible",
+      "qual": "((bucket_id = 'event_media'::text) AND ((split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text) OR (EXISTS ( SELECT 1\n   FROM files\n  WHERE ((files.bucket_name = objects.bucket_id) AND (files.storage_path = objects.name))))))",
+      "roles": [
+        "authenticated"
+      ],
+      "schemaname": "storage",
+      "tablename": "objects",
+      "with_check": null
+    }
+  ],
+  "publications": [
+    {
+      "attnames": [
+        "id",
+        "conversation_id",
+        "sender_id",
+        "body",
+        "created_at"
+      ],
+      "pubname": "supabase_realtime",
+      "rowfilter": null,
+      "schemaname": "public",
+      "tablename": "messages"
+    },
+    {
+      "attnames": [
+        "id",
+        "recipient_id",
+        "actor_id",
+        "event_id",
+        "conversation_id",
+        "type",
+        "title",
+        "body",
+        "read_at",
+        "created_at"
+      ],
+      "pubname": "supabase_realtime",
+      "rowfilter": null,
+      "schemaname": "public",
+      "tablename": "notifications"
+    }
+  ],
+  "schema_usage": [
+    {
+      "anon": true,
+      "authenticated": true,
+      "schema": "public"
+    },
+    {
+      "anon": false,
+      "authenticated": true,
+      "schema": "planit_private"
+    }
+  ],
+  "server_version": "17.11",
+  "table_grants": [
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "categories",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "conversations",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_access_grants",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_images",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_participations",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "event_rejoin_requests",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "events",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "files",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "messages",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "notifications",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "participation_history",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "profiles",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_blocks",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_category_interests",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    },
+    {
+      "grantee": "authenticated",
+      "grantor": "postgres",
+      "is_grantable": "NO",
+      "privilege_type": "SELECT",
+      "table_catalog": "postgres",
+      "table_name": "user_follows",
+      "table_schema": "public",
+      "with_hierarchy": "YES"
+    }
+  ],
+  "tables": [
+    {
+      "kind": "r",
+      "name": "categories",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "conversations",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "event_access_grants",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "event_access_links",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "event_images",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "event_participations",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "event_rejoin_requests",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "events",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "files",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "messages",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "notifications",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "participation_history",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "profiles",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "user_blocks",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "user_category_interests",
+      "rls": true,
+      "schema": "public"
+    },
+    {
+      "kind": "r",
+      "name": "user_follows",
+      "rls": true,
+      "schema": "public"
+    }
+  ],
+  "triggers": [
+    {
+      "definition": "CREATE TRIGGER on_planit_auth_user_created AFTER INSERT ON auth.users FOR EACH ROW EXECUTE FUNCTION planit_private.handle_new_auth_user()",
+      "name": "on_planit_auth_user_created",
+      "schema": "auth",
+      "table": "users"
+    },
+    {
+      "definition": "CREATE TRIGGER event_access_grants_touch_updated_at BEFORE UPDATE ON public.event_access_grants FOR EACH ROW EXECUTE FUNCTION planit_private.touch_updated_at()",
+      "name": "event_access_grants_touch_updated_at",
+      "schema": "public",
+      "table": "event_access_grants"
+    },
+    {
+      "definition": "CREATE TRIGGER event_images_validate_insert BEFORE INSERT ON public.event_images FOR EACH ROW EXECUTE FUNCTION planit_private.validate_event_image()",
+      "name": "event_images_validate_insert",
+      "schema": "public",
+      "table": "event_images"
+    },
+    {
+      "definition": "CREATE TRIGGER participations_record_history AFTER INSERT OR UPDATE OF status ON public.event_participations FOR EACH ROW EXECUTE FUNCTION planit_private.record_participation_history()",
+      "name": "participations_record_history",
+      "schema": "public",
+      "table": "event_participations"
+    },
+    {
+      "definition": "CREATE TRIGGER participations_touch_updated_at BEFORE UPDATE ON public.event_participations FOR EACH ROW EXECUTE FUNCTION planit_private.touch_updated_at()",
+      "name": "participations_touch_updated_at",
+      "schema": "public",
+      "table": "event_participations"
+    },
+    {
+      "definition": "CREATE TRIGGER events_create_conversation AFTER INSERT ON public.events FOR EACH ROW EXECUTE FUNCTION planit_private.create_event_conversation()",
+      "name": "events_create_conversation",
+      "schema": "public",
+      "table": "events"
+    },
+    {
+      "definition": "CREATE TRIGGER events_protect_visibility BEFORE UPDATE OF visibility ON public.events FOR EACH ROW EXECUTE FUNCTION planit_private.protect_event_visibility()",
+      "name": "events_protect_visibility",
+      "schema": "public",
+      "table": "events"
+    },
+    {
+      "definition": "CREATE TRIGGER events_touch_updated_at BEFORE UPDATE ON public.events FOR EACH ROW EXECUTE FUNCTION planit_private.touch_updated_at()",
+      "name": "events_touch_updated_at",
+      "schema": "public",
+      "table": "events"
+    },
+    {
+      "definition": "CREATE TRIGGER events_validate_insert BEFORE INSERT ON public.events FOR EACH ROW EXECUTE FUNCTION planit_private.validate_new_event()",
+      "name": "events_validate_insert",
+      "schema": "public",
+      "table": "events"
+    },
+    {
+      "definition": "CREATE TRIGGER files_validate_insert BEFORE INSERT ON public.files FOR EACH ROW EXECUTE FUNCTION planit_private.validate_event_file()",
+      "name": "files_validate_insert",
+      "schema": "public",
+      "table": "files"
+    },
+    {
+      "definition": "CREATE TRIGGER notifications_stamp_read BEFORE UPDATE OF read_at ON public.notifications FOR EACH ROW EXECUTE FUNCTION planit_private.stamp_notification_read()",
+      "name": "notifications_stamp_read",
+      "schema": "public",
+      "table": "notifications"
+    },
+    {
+      "definition": "CREATE TRIGGER profiles_touch_updated_at BEFORE UPDATE ON public.profiles FOR EACH ROW EXECUTE FUNCTION planit_private.touch_updated_at()",
+      "name": "profiles_touch_updated_at",
+      "schema": "public",
+      "table": "profiles"
+    },
+    {
+      "definition": "CREATE TRIGGER profiles_validate_avatar BEFORE INSERT OR UPDATE OF avatar_file_id ON public.profiles FOR EACH ROW EXECUTE FUNCTION planit_private.validate_profile_avatar()",
+      "name": "profiles_validate_avatar",
+      "schema": "public",
+      "table": "profiles"
+    },
+    {
+      "definition": "CREATE TRIGGER profiles_validate_birth_date BEFORE INSERT OR UPDATE OF birth_date ON public.profiles FOR EACH ROW EXECUTE FUNCTION planit_private.validate_birth_date()",
+      "name": "profiles_validate_birth_date",
+      "schema": "public",
+      "table": "profiles"
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "remote_version": "17.11",
+  "migrations": [
+    {
+      "name": "create_profiles_and_categories",
+      "version": "20261010011204"
+    },
+    {
+      "name": "create_profiles_and_categories",
+      "version": "20261010013449"
+    },
+    {
+      "name": "restrict_rls_auto_enable_execute",
+      "version": "20261010023448"
+    },
+    {
+      "name": "create_events_and_event_media",
+      "version": "20261010042701"
+    },
+    {
+      "name": "public_event_discovery",
+      "version": "20261010052653"
+    },
+    {
+      "name": "event_participations",
+      "version": "20261010150232"
+    },
+    {
+      "name": "my_events_read",
+      "version": "20261010154930"
+    },
+    {
+      "name": "home_and_event_organizer_read",
+      "version": "20261010212819"
+    },
+    {
+      "name": "event_chat",
+      "version": "20261010214526"
+    },
+    {
+      "name": "notifications_inbox",
+      "version": "20261011163653"
+    },
+    {
+      "name": "r2_realtime_chat_notifications",
+      "version": "20261011193316"
+    },
+    {
+      "name": "my_organized_events_read",
+      "version": "20261011232326"
+    },
+    {
+      "name": "edit_own_event",
+      "version": "20261012001058"
+    },
+    {
+      "name": "manage_event_gallery",
+      "version": "20261012013634"
+    },
+    {
+      "name": "manage_event_attendees",
+      "version": "20261012031717"
+    },
+    {
+      "name": "close_and_duplicate_events",
+      "version": "20261012044919"
+    },
+    {
+      "name": "event_rejoin_requests",
+      "version": "20261012155501"
+    },
+    {
+      "name": "search_public_events",
+      "version": "20261013160000"
+    },
+    {
+      "name": "search_public_events_date_radius",
+      "version": "20261014120000"
+    },
+    {
+      "name": "user_category_interests",
+      "version": "20261014120001"
+    },
+    {
+      "name": "get_suggested_events",
+      "version": "20261014120002"
+    },
+    {
+      "name": "hidden_event_access",
+      "version": "20261014120003"
+    },
+    {
+      "name": "event_visibility_links",
+      "version": "20261014120004"
+    },
+    {
+      "name": "redeem_event_link",
+      "version": "20261014120005"
+    },
+    {
+      "name": "event_access_management",
+      "version": "20261014120006"
+    }
+  ],
+  "tables": [
+    {
+      "name": "categories",
+      "rls": true
+    },
+    {
+      "name": "conversations",
+      "rls": true
+    },
+    {
+      "name": "event_access_grants",
+      "rls": true
+    },
+    {
+      "name": "event_access_links",
+      "rls": true
+    },
+    {
+      "name": "event_images",
+      "rls": true
+    },
+    {
+      "name": "event_participations",
+      "rls": true
+    },
+    {
+      "name": "event_rejoin_requests",
+      "rls": true
+    },
+    {
+      "name": "events",
+      "rls": true
+    },
+    {
+      "name": "files",
+      "rls": true
+    },
+    {
+      "name": "messages",
+      "rls": true
+    },
+    {
+      "name": "notifications",
+      "rls": true
+    },
+    {
+      "name": "participation_history",
+      "rls": true
+    },
+    {
+      "name": "profiles",
+      "rls": true
+    },
+    {
+      "name": "user_category_interests",
+      "rls": true
+    }
+  ],
+  "functions": [
+    {
+      "name": "planit_private.can_delete_event_upload",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.can_read_event_chat",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.can_view_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.create_event_conversation",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.handle_new_auth_user",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.lock_gallery",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.protect_event_visibility",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.record_participation_history",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.stamp_notification_read",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.touch_updated_at",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.validate_birth_date",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.validate_event_file",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.validate_event_image",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.validate_new_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.add_event_image",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.archive_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.cancel_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.create_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.create_or_rotate_event_link",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.discover_public_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_access_grants",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_attendees",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_chat",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_chat_messages",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_duplicate_source",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_link_status",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_organizer",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_participation_summary",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_rejoin_requests",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_rejoin_resolution",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_unregistered_uploads",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_home_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_my_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_my_organized_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_my_rejoin_status",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_notification_changes",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_notification_target",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_notifications",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_suggested_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.leave_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.mark_notification_read",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.redeem_event_link",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.register_for_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.remove_event_image",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.remove_participant",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.reorder_event_images",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.request_rejoin",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.resolve_rejoin",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.restore_event_access",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.revoke_event_access",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.search_public_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.send_event_chat_message",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.set_event_visibility",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.set_my_category_interests",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.update_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    }
+  ],
+  "result": "PASS"
+}

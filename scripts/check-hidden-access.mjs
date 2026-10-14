@@ -31,7 +31,7 @@ try {
   await run(pg_ctl, ['-D', directory, '-l', `${directory}/server.log`, '-o', `-h 127.0.0.1 -p ${port}`, '-w', 'start'], { windowsHide: true, timeout: 30000 }); started = true
   const admin = await connect()
   const version = (await admin.query('select version()')).rows[0].version
-  await admin.query(`create role anon; create role authenticated;
+  await admin.query(`create role anon; create role authenticated; create role service_role;
     create schema auth; create schema storage;
     create table auth.users(id uuid primary key,raw_user_meta_data jsonb);
     create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;

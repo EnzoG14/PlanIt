@@ -27,7 +27,7 @@ try {
   await run(initdb, ['-D', directory, '-U', 'postgres', '-A', 'trust', '--encoding=UTF8', '--locale=C'], { windowsHide: true, timeout: 30000 })
   await run(pg_ctl, ['-D', directory, '-l', `${directory}/server.log`, '-o', `-h 127.0.0.1 -p ${port}`, '-w', 'start'], { windowsHide: true, timeout: 30000 }); started = true
   const admin = await connect()
-  await admin.query(`create role anon; create role authenticated; create schema auth; create schema storage;
+  await admin.query(`create role anon; create role authenticated; create role service_role; create schema auth; create schema storage;
     create table auth.users(id uuid primary key,raw_user_meta_data jsonb);
     create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
     grant usage on schema auth,storage to anon,authenticated; grant execute on function auth.uid() to anon,authenticated;
