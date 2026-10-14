@@ -1,6 +1,6 @@
 # R5 · Bloque 6 — Seguimientos y listas
 
-14/10/2026, Argentina. Base `54b4749b1c12775e0d6c800b15d82aeb8ecdafbc`, rama `codex/r5-block-6`, worktree `C:/Users/USUARIO/Desktop/PlanIt/r5-block-6-worktree`. B0–B5 integrados (#50–#55), B5 aprobado por QA humana. Alcance RF-R5-05.CA-01..04, D01/D02/D04. **Implementado; QA pendiente.** PR en preparación. Sin autorización para B7, merge, deploy o DDL remoto.
+14/10/2026, Argentina. Base `54b4749b1c12775e0d6c800b15d82aeb8ecdafbc`, rama `codex/r5-block-6`, worktree `C:/Users/USUARIO/Desktop/PlanIt/r5-block-6-worktree`. B0–B5 integrados (#50–#55), B5 aprobado por QA humana. Alcance RF-R5-05.CA-01..04, D01/D02/D04. **Implementado; QA pendiente.** [PR #56 en borrador](https://github.com/EnzoG14/PlanIt/pull/56). Sin autorización para B7, merge, deploy o DDL remoto.
 
 ## Comportamiento y archivos
 
