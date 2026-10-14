@@ -1,0 +1,284 @@
+{
+  "base": "65b46ab69d6f7b75a0f9996b0d091395c0bffab6",
+  "branch": "codex/r5-block-9",
+  "environment": "Actual Vite build + Edge headless; explicit Auth/REST/WebSocket fixtures; NOT real JWT/RLS transport or physical mobile",
+  "results": [
+    {
+      "width": 320,
+      "test": "Confirmation initial focus,Escape,cancel restore focus without writing",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Block and reload neutral profile without identity,follow,DM;owner can unblock without projection",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Same canonical DM/history after unblock;read-only during block;no follow restore",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Lost committed response hides identity;close/reopen checks state without duplicate write",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Uncommitted response reconciles before explicit retry",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Counterparty block never offers unblock or identity",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Network failure clears options and retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Text200%,short viewport,scrollable dialog,no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Self redirects to own profile,no block control,allowlisted payload",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Confirmation initial focus,Escape,cancel restore focus without writing",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Block and reload neutral profile without identity,follow,DM;owner can unblock without projection",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Same canonical DM/history after unblock;read-only during block;no follow restore",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Lost committed response hides identity;close/reopen checks state without duplicate write",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Uncommitted response reconciles before explicit retry",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Counterparty block never offers unblock or identity",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Network failure clears options and retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Text200%,short viewport,scrollable dialog,no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Self redirects to own profile,no block control,allowlisted payload",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Confirmation initial focus,Escape,cancel restore focus without writing",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Block and reload neutral profile without identity,follow,DM;owner can unblock without projection",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Same canonical DM/history after unblock;read-only during block;no follow restore",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Lost committed response hides identity;close/reopen checks state without duplicate write",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Uncommitted response reconciles before explicit retry",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Counterparty block never offers unblock or identity",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Network failure clears options and retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Text200%,short viewport,scrollable dialog,no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Self redirects to own profile,no block control,allowlisted payload",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Confirmation initial focus,Escape,cancel restore focus without writing",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Block and reload neutral profile without identity,follow,DM;owner can unblock without projection",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Same canonical DM/history after unblock;read-only during block;no follow restore",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Lost committed response hides identity;close/reopen checks state without duplicate write",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Uncommitted response reconciles before explicit retry",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Counterparty block never offers unblock or identity",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Network failure clears options and retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Real10s timeout,double confirm suppressed,pending Escape safe,reconcile committed block without retry",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Text200%,short viewport,scrollable dialog,no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Self redirects to own profile,no block control,allowlisted payload",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Confirmation initial focus,Escape,cancel restore focus without writing",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Block and reload neutral profile without identity,follow,DM;owner can unblock without projection",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Same canonical DM/history after unblock;read-only during block;no follow restore",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Lost committed response hides identity;close/reopen checks state without duplicate write",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Uncommitted response reconciles before explicit retry",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Counterparty block never offers unblock or identity",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Network failure clears options and retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Text200%,short viewport,scrollable dialog,no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Self redirects to own profile,no block control,allowlisted payload",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Confirmation initial focus,Escape,cancel restore focus without writing",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Block and reload neutral profile without identity,follow,DM;owner can unblock without projection",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Same canonical DM/history after unblock;read-only during block;no follow restore",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Lost committed response hides identity;close/reopen checks state without duplicate write",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Uncommitted response reconciles before explicit retry",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Counterparty block never offers unblock or identity",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Network failure clears options and retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Text200%,short viewport,scrollable dialog,no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Self redirects to own profile,no block control,allowlisted payload",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

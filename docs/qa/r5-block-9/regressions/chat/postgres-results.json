@@ -1,0 +1,42 @@
+{
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "environment": "Local PostgreSQL with Auth/Storage scaffolding; no real Supabase REST/Auth",
+  "results": [
+    {
+      "test": "Realtime publication contains only messages/notifications; incremental migration reapplication is safe",
+      "result": "PASS"
+    },
+    {
+      "test": "Chat tables enable RLS; public definer endpoints have empty search_path and deny anonymous execution",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R2-04.01/04: backfill idempotent, new-event trigger and empty history; organizer and confirmed user share exactly one chat",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R2-04.02/R2-05.01/02: persisted sender/event, social-only projection, reopen history and concurrent idempotent retry",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R2-05.03/04: blank and oversized text denied, 2000 allowed; direct mutations and sender spoofing denied",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R2-04.03/R2-05.04: stranger, anonymous, cancelled participation and removed user cannot access by event/conversation ID",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R2-04.02/R2-05.02: deterministic chronological history, keyset pagination and reopen across users",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R2-04.01/R2-05.04: ended/cancelled/archived preserve authorized history; no new writes, prior retry remains idempotent",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R2-05.04: real two-connection race waits on event lock and rejects send after cancellation commits",
+      "result": "PASS"
+    }
+  ]
+}

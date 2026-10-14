@@ -1,0 +1,534 @@
+{
+  "base": "65b46ab69d6f7b75a0f9996b0d091395c0bffab6",
+  "branch": "codex/r5-block-9",
+  "date": "2026-10-14T23:28:03.033Z",
+  "dependencies": "B0–B8 integrated PR50..58; branch based on fetched origin/main",
+  "env": {
+    "copied_from": "main checkout mapbox-worktree",
+    "byte_equal": true,
+    "ignored": true,
+    "versioned": false
+  },
+  "migration_states": {
+    "created": 0,
+    "tested_new_local": 0,
+    "applied_remote": 0,
+    "verified_new_remote": 0
+  },
+  "evidence": {
+    "sql_migrations": 30,
+    "sql_groups": 28,
+    "ui_groups": 55,
+    "r1_r4_regression_suites": 13,
+    "jwt_authenticated": "NOT RUN",
+    "realtime_real": "NOT RUN",
+    "physical_devices": "NOT RUN",
+    "human_qa": "NOT RUN"
+  },
+  "files": [
+    {
+      "path": "docs/implementation/RELEASE_5_PLAN.md",
+      "sha256": "1978800063a48a03e5ed075241882e69172c1ab22c49231d3e911a58c247ffbc"
+    },
+    {
+      "path": "docs/implementation/RELEASE_5_README.md",
+      "sha256": "b0fa548770dd58ea11a1a4d61052b84f2f291216aabb6cd5bee5870a1f8c045e"
+    },
+    {
+      "path": "docs/implementation/RELEASE_5_STATUS.md",
+      "sha256": "23c80f82a738117dc1ee88501c24488bdbbda60b4152f711a8667f8db12ed835"
+    },
+    {
+      "path": "docs/implementation/UI_REFRESH_R1_R3_STATUS.md",
+      "sha256": "f47da10b9b743da6a49994fa61bcef48995ea3c2d1dbec12074e371c40dc3d39"
+    },
+    {
+      "path": "docs/qa/RELEASE_5_ACCEPTANCE.md",
+      "sha256": "468adaf1e46a2cbcd97f3d18cf1e1838fc2da36755f431d98d0cde2ff826d009"
+    },
+    {
+      "path": "package.json",
+      "sha256": "26c33aab6c79f3ce2536cf2e78316dd991e3d3510625eed32753638c1f41fc14"
+    },
+    {
+      "path": "src/pages/DirectChatPage.tsx",
+      "sha256": "9cdd28f6bc6501fa6503bd69c8c0d5dc62f4caa7b9efa9d217184de670ed7a72"
+    },
+    {
+      "path": "src/pages/SocialIdentityPage.tsx",
+      "sha256": "8779941d6f78cf3ac6ca475061dee4e9fbf24ffd9f5be692e338fc1bca1ddba1"
+    },
+    {
+      "path": "docs/qa/r5-block-9/README.md",
+      "sha256": "50a64cfd0476370475da4cbad82f37333fba4321bb24e72eed737c55c4000409"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before-desktop/blocked-1280.png",
+      "sha256": "f12f773394ccf8900120d4eb289ab46936159516fa72588a5ee6d7911455e381"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before-desktop/denied-1280.png",
+      "sha256": "446ee6d41af36bf8dea1627380080a39758d3c47727cee68e643bfd68ec7ae52"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before-desktop/empty-1280.png",
+      "sha256": "2f77518c945d8661c1a451bec4829f7b62202408ab503b566534a3de55b4b892"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before-desktop/history-1280.png",
+      "sha256": "50e737c688fe4b5c413a6abbc3530e978a47ac00396b736fc1c567150d38b840"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before-desktop/inbox-1280.png",
+      "sha256": "eb697246c9fec9b11d7be032962174e57276fc7f7a3f4bc392fe43d3162617bb"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before-desktop/ui-results.json",
+      "sha256": "7bd558be258196326e82a487576afe0dbe5c0040ff5f8f7f26958565d0a8fa31"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before-desktop/uncertain-1280.png",
+      "sha256": "f7eb355af6856928393648fde3914b6f6057f0d6eeee9dc63425794ac2fd299a"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before/blocked-390.png",
+      "sha256": "5871c598b6889e8933d0e337462e528f6b872d65bcd9479ff5e49f10f52d14c0"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before/denied-390.png",
+      "sha256": "4fa372aa6824431edcb2ebc6d84b72967262e5d79a25f441deeee1d175b04618"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before/empty-390.png",
+      "sha256": "9159c0b35a0fad85972c63ca4c8e098681119b6f9c16c56cfbb5434029564afa"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before/history-390.png",
+      "sha256": "4e31ce17006b0114f05da427081d4fce1a60dde3a21d1839cc22200f52ce9778"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before/inbox-390.png",
+      "sha256": "0e3d6ad29ba85d6320764cc9544daee2ada6623146bb84b4c951a0b1b5bdb3dc"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before/ui-results.json",
+      "sha256": "15d5c35c00399b777bff181b32440feceb19f3885ea8416e69571c365f19e0cb"
+    },
+    {
+      "path": "docs/qa/r5-block-9/before/uncertain-390.png",
+      "sha256": "967fd52c330a3e10d3dc22fbaba98a24b5d96bc292a5d27acc8978ddb240e401"
+    },
+    {
+      "path": "docs/qa/r5-block-9/build.txt",
+      "sha256": "994bc4f6863ff6aed8b3bdccbeb1e68756c0c1c360848ae2220d73c197e28f49"
+    },
+    {
+      "path": "docs/qa/r5-block-9/design-documentation.md",
+      "sha256": "94af619e7a0fdeab64c63ee409cfa598169b96fc31beee44e4c881beb6b41507"
+    },
+    {
+      "path": "docs/qa/r5-block-9/design-review.md",
+      "sha256": "febc5a8d5e211866319a0792f176ad8d3f53c177df06d16f2fb6778930e66954"
+    },
+    {
+      "path": "docs/qa/r5-block-9/lint.txt",
+      "sha256": "98447f83aa134c22891d45444a316d407c28518cf1dc55d736719fb3e273efeb"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/blocked-1280.png",
+      "sha256": "b964c6a7ba1779579825179bc401d5eeb53080a5d544b353d14bd7a5930ec001"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/blocked-390.png",
+      "sha256": "86e96e6a0f02f3c43b03a8ebec9fcb2c09bbc2ee76cdd27f350182b9faacce24"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/denied-1280.png",
+      "sha256": "4277fd91f4409571de078e956f39111bbf8b8e4f1c1ebea59a476e4ff5f4f2ac"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/denied-390.png",
+      "sha256": "4fa372aa6824431edcb2ebc6d84b72967262e5d79a25f441deeee1d175b04618"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/empty-1280.png",
+      "sha256": "f61eefd84e1fd130e75f80f7b9784696fcfefea204a4d906c0219f2f861dff86"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/empty-390.png",
+      "sha256": "0a2985f03f9fa356d639c68bfccded4599d895a8f9ac501080c723891df15a1c"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/history-1280.png",
+      "sha256": "96d6686ef59a4969ea79101fa4b78280af626da2536890782f1fd79c6101026b"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/history-390.png",
+      "sha256": "ab234af7060a2d76a19f3ef87f5caf4f7a0c2ed985155a1bb8350550e3faa41f"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/inbox-1280.png",
+      "sha256": "12e80d6dd1f69b82717435cc19c3689560b84cfcf1c87066e428ae2eeaa1b443"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/inbox-390.png",
+      "sha256": "86fd0afdb32103325336651781f7c42823885a847ab2db62dab8a20154960df9"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/ui-results.json",
+      "sha256": "7e7f6f874a6148a45db731ade85c7b8d8235caccb376fc285e49195a831261c9"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/uncertain-1280.png",
+      "sha256": "911a166a14a4742bf60d822707f1225cc4183897aed7ae33512f0054c9fd4a6d"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/messages/uncertain-390.png",
+      "sha256": "95aca974da8947abf1d4d353cb70b25f4a65e2f1f67d37d2eeea2c0d27d918f5"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/empty-1280.png",
+      "sha256": "a6077ce9b1ecf85864b06d76b2365d2090c77f549236ffb1aac63cf2c4c90f0c"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/empty-320.png",
+      "sha256": "0fa6b14a1d616ae8075dcf9a2bdd905f6a31b198fe6241c686bac8866ee9a85a"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/empty-360.png",
+      "sha256": "13165862ddd4d7e18f27cace51148e823089dafd29a7652d77293478e869d3e0"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/empty-375.png",
+      "sha256": "6423d59e22e8030d535c58cc2ca2a0b4d583d489fcf02a128e8b50bca4b2fc3d"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/empty-390.png",
+      "sha256": "4ac59c063adec5ac4b307e2f43bd29b61909e73d0ce5567016f101d65db57885"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/empty-768.png",
+      "sha256": "cf3817bcc4c4ab17e196827ad1af0bc61c6ec4d8a3d8a494056b19961d433fc5"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/error-1280.png",
+      "sha256": "9e613b5273f39f501573265dfcc0e391f7f5bb57c453ea28498cc1e05c6dba98"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/error-320.png",
+      "sha256": "5e4a8d32ff9eda7c0b3698c7a6332b97cc801f8a713e6e089aed607925316e83"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/error-360.png",
+      "sha256": "95fd81148877bad5fced80c4f75ab28f52ddf3995e3bf97d7132472b67b6c138"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/error-375.png",
+      "sha256": "f4bba8715567cd6dad9766159239452cfda3fc75d6a045f538777534c3dad4ba"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/error-390.png",
+      "sha256": "4e85411e3ecf696d7003910d6c875616c4bc9a5fcc859dce38ee9cd588302270"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/error-768.png",
+      "sha256": "9a877d5a228b53bfc5a66fa6153ee146a4ef4c7ac914183a7dfa8b6438774a63"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/focus-1280.png",
+      "sha256": "ecbe9250e0b3e13993720bdea1d151f7cc79098ceee06422cd727919c4289d6b"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/focus-320.png",
+      "sha256": "bf8bfb49c21f94eb1a35ea62c3c505526697a8763a741d821ec15676dbaf4211"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/focus-360.png",
+      "sha256": "2998982b00ac0af57b12b832b87824dd34e2852b9a34ea5b26b7144471b4c01c"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/focus-375.png",
+      "sha256": "3f78107a0c06e339da1d80209af5426f68928b56ce7d6d055e9f525e409ddbb1"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/focus-390.png",
+      "sha256": "250f34ea3ae3b5e5852edb22966da5eb2baa4e3f7f62ea88167ae21db9a9cb81"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/focus-768.png",
+      "sha256": "6fa3c6d57ac98bf993365e13a9d33e653c8670d85f61f0d5b75aaa63e2bb7a6e"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/long-1280.png",
+      "sha256": "d21dab8948aa880488b05557f711ebde785a164bc5906a6a828945c8d82ebce4"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/long-320.png",
+      "sha256": "f8f844c8cbc82c31140eaab468e7d8f242b5b54cffdd422fc8c6f252a7309a67"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/long-360.png",
+      "sha256": "93d6cd0af1e371df79667daa1e969b38e5567d159aa91020ccba1734275f40c4"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/long-375.png",
+      "sha256": "051e24423e9f9366813f488e95ae6ee613a7d579cc9469ff11d01a497ec0776c"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/long-390.png",
+      "sha256": "681f77e4f456e291d8adbea9852f8e76495ba139ba70bdf9f9a6bf05ca70f5fa"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/long-768.png",
+      "sha256": "79c43340462ceb65cd4895c8a0e871d47620a305ed87e06ff65b5eea519255a9"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/profile-1280.png",
+      "sha256": "6cafe162a9345858a848ff201378910f346c124bef482213efa453722d95b4ef"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/profile-320.png",
+      "sha256": "beff3d80131928c182cb7a713f90ba06006f1315cb05be7ed7df131938006a2b"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/profile-360.png",
+      "sha256": "943995c9a59eda83fcf85c1d94f98bd5a3c385904f64c4d2c280cbe86c2fe783"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/profile-375.png",
+      "sha256": "5d20f2d053027d0246fee0578a1641044c08246a0e6be054aa9a4948d99c8487"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/profile-390.png",
+      "sha256": "e82135d525254c0ed00ca68c5c0f23f47573bd45ab87241acc58435da48a5c25"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/profile-768.png",
+      "sha256": "88c4fe3d3afc6e1540aecd985f136a779ba802e6338fc4183154f689d4e0d05f"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/text-200-1280.png",
+      "sha256": "c7a5914859a070416b8d40970ab0fe9b20c7151e409b819ae3012b08a93cdc2d"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/text-200-320.png",
+      "sha256": "06e13d438649c34b1ff2c6abf0dbc2b69fa678aab626893940c57e72c997a7bd"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/text-200-360.png",
+      "sha256": "d0d774f0463b8fa2acbaa24e641c145b7df0011987761b736045cabe044a7e11"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/text-200-375.png",
+      "sha256": "af36c8073bec2c5e7f2b4bab7583adf1bfd9ebb30e8160667d3a5ee71b6e220a"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/text-200-390.png",
+      "sha256": "2c97215ca0ab8ad3b5f8693be8b96492e6373ab557914ac0acd76cf5ce5ba738"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/text-200-768.png",
+      "sha256": "61721b8018844967ece8b5e15b696209537f3e9a561ebe90d66d88f9b7e7f290"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/ui-results.json",
+      "sha256": "4d9fc227fc43ecd160cc5d8177b3db19a49b7e302bc214ff82e09e7948198661"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/unavailable-1280.png",
+      "sha256": "f1a42202e6663ef379228d67c3f2fe104c243d6b283cd445f3140153b3643061"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/unavailable-320.png",
+      "sha256": "32a8fb4f36c187818982b2dbb8f9e915ce5c4b9778e285c7840070d109d5badc"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/unavailable-360.png",
+      "sha256": "02dd6a71e5f82302d3e80deb4cb515da3ec097a4f77d5f6272bc337a7c720c8c"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/unavailable-375.png",
+      "sha256": "425fe95657f425483b89536ce2d280cb8b6dbc0bde15a92d1d761d798f1b4b9d"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/unavailable-390.png",
+      "sha256": "2e96796e40098b1843cf93188a9ce1841077687e4e3ea21fde1bab69bf4ee45e"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regression-ui/profile/unavailable-768.png",
+      "sha256": "64b9885550aa4c6597e61d6fb06153e2c8f91346ebceb669aac0550936e37421"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions.json",
+      "sha256": "ebc88e2f1ee1922dcd470b364476e221b607f6a7e2009205df9bf543b7f4be6f"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/attendees/postgres-results.json",
+      "sha256": "03b4049e7b85eaba101d75362d10827780edb86afba7577fb9eaac985feccf47"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/chat/postgres-results.json",
+      "sha256": "96689ecc5d7ec86bd8a2a590fd99431b60891c65eb002801f3faee6bbdad080e"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/edit-event/postgres-results.json",
+      "sha256": "17f0bc4e438ee0347d161cf442e84a914233b69334a7702651a1d0b73fba1f03"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/event-access/postgres-results.json",
+      "sha256": "a093883c195817d02b679a9bbab0d48345210d71dbc7eed976a749cb24fd5aa0"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/event-actions/postgres-results.json",
+      "sha256": "fbdf82547a7ad875f67dfd229db479164566879831cb71186f3b6b90e54c3df5"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/event-links/postgres-results.json",
+      "sha256": "2256caa3a976b25fb34bf8d5eb9bb93d5444d73bee9ec494adcb701c8eebb1b4"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/gallery/postgres-results.json",
+      "sha256": "d8b558d2245b375c3cb2f79c298a9a50db88d7980eaad4f345eaca1c0288f19f"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/hidden-access/postgres-results.json",
+      "sha256": "ef6dcfd2148fce4204a8bb1a4d2f548323da37c33f98935aa0a9bddc643c1085"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/interests/results.json",
+      "sha256": "4b345b47c0a1234a622a1e15840c2a2246a412391ba9521c0ac997f79534fca9"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/invite/postgres-results.json",
+      "sha256": "a1101ad4081c6f82dbec93d38b9d11bd1cec3c5f4c3ff26bf659c510dc752efb"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/notifications/postgres-results.json",
+      "sha256": "3089e45d29ab1bf2a3df73586f3c31b31628d170086e78558ae4965cb570d8a7"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/profile/postgres-results.json",
+      "sha256": "ad59791caa1e2ac5e3895588a76190a539926ea36e17d8f2b65bff54d82377ee"
+    },
+    {
+      "path": "docs/qa/r5-block-9/regressions/rejoin/postgres-results.json",
+      "sha256": "74cff7a191e838b0cf8d0da5b5769e5a12a3769fbcfe277a0a35e765e0b5a356"
+    },
+    {
+      "path": "docs/qa/r5-block-9/remote/http-anon.json",
+      "sha256": "1d1673fdb3b3de7aad2acfc53b2769b8e6ed0d4c2fa5b605d2b186c9b4a2a139"
+    },
+    {
+      "path": "docs/qa/r5-block-9/source.json",
+      "sha256": "bf910a4e8fcf7759f98a2bfae602e63ab9bf96cf28cc5a289d5a112ce70c3f03"
+    },
+    {
+      "path": "docs/qa/r5-block-9/sql/explain.json",
+      "sha256": "c692fe92a4b51a389f2d40677f6ab62649ad76ea67875a6519c16dab35152534"
+    },
+    {
+      "path": "docs/qa/r5-block-9/sql/harness.json",
+      "sha256": "20483c75b9378f19644ce6eacfc50ab70946f1bcf6f94efcafdd6fb442fbdaf6"
+    },
+    {
+      "path": "docs/qa/r5-block-9/sql/sql-results.json",
+      "sha256": "c17dd3f1b88e0b835ea4c08498df21364860e754777019e0606fe0dce6768089"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/block-confirm-1280.png",
+      "sha256": "e323df251c89e4b011133dab57024418ad25a69516cda85c1264b43ad8b7a4f0"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/block-confirm-390.png",
+      "sha256": "9afbe8903d4f1d990aa58e188fa2cb50749f1c0eac961a2ea9eab2093942d8f6"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/chat-blocked-1280.png",
+      "sha256": "0ad5d1188466680a158364f3eff663e209e7bcdda6bcf1668732c136b87d2041"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/chat-blocked-390.png",
+      "sha256": "933578ec32d557777b58684368c749d5482d37adcd420ccb80abcf5dfbac637e"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/failure.png",
+      "sha256": "1ccbb4df5f99f6db9a66a10b65cb13f1f7bfc7df0d3b6dfd68cf030805ac3364"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/profile-before-1280.png",
+      "sha256": "9b7f7c9424877b35a27abaf013724369b674b37bfe671e12d5a3b110fc1fe27b"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/profile-before-390.png",
+      "sha256": "6b30f747de35445de9e177389412a4137257ffe840cd650eca0fa709e89362b0"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/profile-blocked-1280.png",
+      "sha256": "7365e50380889f88af86b163468d1ad98e05ebfde82a6acff1cf5ed1dda4d16b"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/profile-blocked-390.png",
+      "sha256": "37304d96ac687d41dd82333ed1f6419e5bccdb4ed30fdac7bd6bab74c9c1b2bf"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/recovered-1280.png",
+      "sha256": "a997745a876f244c8bc86fa33d15c1f85d7e49e4cf671bab2e70c048508d83eb"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/recovered-390.png",
+      "sha256": "940eefac4570ae96a186cee482c57b51f2ab694d06329d8bb4c4da20c0f2ca02"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/short-text-1280.png",
+      "sha256": "3c9f5a0aca02fe24bb8fd4a73496d779437af8455dc1c9fbb3608d727b4f9e29"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/short-text-390.png",
+      "sha256": "4465f47b683109a16b41912638f32015fb16e050eb1513e15457739276082e0e"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/ui-results.json",
+      "sha256": "53c24234a160f67afc549f4aeb9aaee7a55cb5bd2a9727009c998bfd82ffc99b"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/unblock-confirm-1280.png",
+      "sha256": "bc42b3d3d891de55dd8dd3594f90213bd888f4862a024dfba5c07984ab310d95"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/unblock-confirm-390.png",
+      "sha256": "7885f98b399a0dccd30027d2e27c4be5929d73caf2698ca0aab7d616f6d74ccc"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/uncertain-1280.png",
+      "sha256": "36f449ae0c6b3f4a176e7c0e8611ec2ed1029af956f7a29979914fd494b0cd04"
+    },
+    {
+      "path": "docs/qa/r5-block-9/ui/uncertain-390.png",
+      "sha256": "b1587a08f1e0c73238896a49a6edf8c2b2c4fb14909999a83f8ee398bba814e7"
+    },
+    {
+      "path": "scripts/check-r5-blocks-http.mjs",
+      "sha256": "ff3ffa0d7c661f3dcc3ab5aa0358d56779e051669b4b88a60948ea08e7daf863"
+    },
+    {
+      "path": "scripts/check-r5-blocks-ui.mjs",
+      "sha256": "1acf99ecdc1670ca43d1d73e083860697118b7c17bf46eb8b9298d80180f9029"
+    },
+    {
+      "path": "scripts/check-r5-blocks.mjs",
+      "sha256": "940470bbe9f9a207be08dff5ba353cba2efc601ae1851c3604488a82df74ef47"
+    },
+    {
+      "path": "src/components/BlockUserAction.tsx",
+      "sha256": "c1754f8ea481f829c29c63c544fdacb8d0f0b584df9b3de9d94d4b8ec72912eb"
+    },
+    {
+      "path": "src/components/block-user-action.css",
+      "sha256": "9ce4fc1aad04f3ea8c6d7a1c49d88335a7d3f04095ad29bd9e6d19e39a9fe138"
+    },
+    {
+      "path": "src/features/social/blocks.ts",
+      "sha256": "d166337c97b3dc178a4b726c275631d9c9c04b327bfb369dbb93609c8b6f76a0"
+    }
+  ]
+}

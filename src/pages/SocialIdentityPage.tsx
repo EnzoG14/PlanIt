@@ -11,6 +11,7 @@ import { validatedDiscoveryReturn } from '../features/events/search'
 import { useSocialRead } from '../features/social/useSocialRead'
 import { followsReturn, loadSocialRelationship, loadSocialCounts } from '../features/social/follows'
 import { requestsReturn } from '../features/social/requests'
+import { BlockUserAction } from '../components/BlockUserAction'
 import { DirectMessageButton } from '../components/DirectMessageButton'
 import { FollowButton } from '../components/FollowButton'
 import { SocialCountsLinks } from '../components/SocialCounts'
@@ -32,6 +33,7 @@ function IdentityContent({ userId }: { userId: string }) {
   const [pages, setPages] = useState(1)
   const [unsafeSnapshot, setUnsafeSnapshot] = useState<unknown>(null)
   const [revision, setRevision] = useState(0)
+  const [blockUnsafe, setBlockUnsafe] = useState(false)
   const load = useCallback(async (signal: AbortSignal) => {
     const profile = await loadSocialProfile(userId, signal)
     if (!profile) return null
@@ -80,7 +82,7 @@ function IdentityContent({ userId }: { userId: string }) {
   return <><div className="management-wash" aria-hidden="true" /><section className="management-page social-identity-page">
     <Link className="secondary-link management-back" to={back ?? '/home'} state={listBack ? location.state?.followsOrigin : back ? location.state : undefined}><Icon name="back" />{listBack ? 'Volver a la lista' : back ? 'Volver a participantes' : 'Volver al inicio'}</Link>
     <header className="management-header"><h1>Perfil</h1></header>
-    <div aria-busy={loading}>{loading ? <p role="status">Consultando perfil…</p> : denied || (!error && !data) ? <StatusMessage title="Perfil no disponible">No se puede consultar este perfil.</StatusMessage> : error ? <><p className="field-error" role="alert">{error}</p><button className="secondary-button" onClick={() => void refresh()}>Reintentar</button></> : data && <>
+    <div aria-busy={loading}>{blockUnsafe ? <StatusMessage title="Perfil no disponible">Consultá el estado del bloqueo para actualizar este perfil.</StatusMessage> : loading ? <p role="status">Consultando perfil…</p> : denied || (!error && !data) ? <StatusMessage title="Perfil no disponible">No se puede consultar este perfil.</StatusMessage> : error ? <><p className="field-error" role="alert">{error}</p><button className="secondary-button" onClick={() => void refresh()}>Reintentar</button></> : data && <>
       <div className="social-identity"><SocialAvatar key={data.profile.avatar} avatar={data.profile.avatar} /><h2>{data.profile.display_name}</h2><p>@{data.profile.username}</p></div>
       <FollowButton key={revision} userId={userId} relationship={data.relationship} onSafetyChange={() => setUnsafeSnapshot(data)} onChanged={() => { setRevision(value => value + 1); void refresh() }} />
       {!mutating && <DirectMessageButton userId={userId} origin={location.state} />}
@@ -98,6 +100,7 @@ function IdentityContent({ userId }: { userId: string }) {
         </section>
       </>}
     </>}</div>
-    <button className="text-button" disabled={loading || mutating} onClick={() => void refresh()}>Actualizar perfil</button>
+    <BlockUserAction userId={userId} revision={revision} disabled={mutating} onSafetyChange={() => setBlockUnsafe(true)} onChanged={() => { setRevision(value => value + 1); void refresh(); setBlockUnsafe(false) }} />
+    <button className="text-button" disabled={loading || mutating} onClick={() => { setRevision(value => value + 1); void refresh(); setBlockUnsafe(false) }}>Actualizar perfil</button>
   </section></>
 }

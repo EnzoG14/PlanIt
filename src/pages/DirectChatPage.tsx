@@ -8,6 +8,7 @@ import { compareRows, createReconciler, mergeRows } from '../lib/reconciliation'
 import { subscribeToChanges, type ConnectionState } from '../lib/realtime'
 import { supabase } from '../lib/supabase'
 import { StatusMessage } from '../components/StatusMessage'
+import { BlockUserAction } from '../components/BlockUserAction'
 import { GradientButton } from '../components/GradientButton'
 import './chat.css'
 import './direct-messages.css'
@@ -24,6 +25,8 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
   const [connection, setConnection] = useState<ConnectionState>('connecting'), [text, setText] = useState('')
   const [operation, setOperation] = useState<{ id: string; body: string; status: 'pending' | 'uncertain' } | null>(null)
   const [notice, setNotice] = useState(''), [checking, setChecking] = useState(false)
+  const [blockUnsafe, setBlockUnsafe] = useState(false), [blockRevision, setBlockRevision] = useState(0)
+  const [peer, setPeer] = useState<string | null>(null)
   const list = useRef<HTMLOListElement>(null), scroll = useRef<{ height: number; top: number; bottom: boolean; anchor: string | null; offset: number } | null>(null)
   const refresh = useRef<(older?: boolean) => void>(() => {}), alive = useRef(false), writing = useRef(false), writeRequest = useRef<AbortController | null>(null)
   useEffect(() => { document.title = 'Conversación privada · PlanIt' }, [])
@@ -77,6 +80,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
         scroll.current = element ? { height: element.scrollHeight, top: element.scrollTop, bottom: !includeOlder && element.scrollHeight - element.scrollTop - element.clientHeight < 64, anchor: anchor?.getAttribute('data-message-id') ?? null, offset: anchor ? anchor.getBoundingClientRect().top - element.getBoundingClientRect().top : 0 } : { height: 0, top: 0, bottom: true, anchor: null, offset: 0 }
         const sorted = mergeRows([], rows)
         boundary = sorted[0] ?? null
+        setPeer(finalHeader.peer_id)
         setHeader({ ...current, ...finalHeader }); setMessages(sorted); setHasOlder(more); setLoading(false)
       } catch {
         if (active && generation === revision) { clear(); setError(true) }
@@ -95,7 +99,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
   async function send(event: FormEvent) {
     event.preventDefault()
     const body = trimDirectText(text)
-    if (writing.current || operation || !header || header.read_only || !body || [...body].length > 2000) return
+    if (blockUnsafe || writing.current || operation || !header || header.read_only || !body || [...body].length > 2000) return
     writing.current = true
     const item = { id: crypto.randomUUID(), body, status: 'pending' as const }, controller = new AbortController()
     writeRequest.current = controller; setOperation(item); setNotice('')
@@ -123,7 +127,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
     finally { clearTimeout(timer); writing.current = false; writeRequest.current = null; if (alive.current) setChecking(false) }
   }
   async function retry() {
-    if (!operation || writing.current || !header || header.read_only) return
+    if (blockUnsafe || !operation || writing.current || !header || header.read_only) return
     writing.current = true; setOperation({ ...operation, status: 'pending' }); setNotice('')
     const controller = new AbortController(); writeRequest.current = controller
     const timer = window.setTimeout(() => controller.abort(), 10000)
@@ -137,16 +141,17 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
     finally { clearTimeout(timer); writing.current = false; writeRequest.current = null }
   }
   return <section className="chat-page direct-chat">
-    <header className="chat-header"><Link className="text-button" to={back} state={back === '/messages' ? { focusConversation: id } : { ...location.state?.profileOrigin, focusMessage: true }}>Volver</Link><h1>{header?.profile?.display_name ?? 'Conversación privada'}</h1><Link className="text-button" to="/messages">Bandeja</Link></header>
-    <div className="chat-refresh"><p role="status">{connection === 'connected' ? 'Actualizaciones en tiempo real' : 'Reconectando · actualización de respaldo cada 30 s'}</p><button className="text-button" disabled={loading} onClick={() => refresh.current()}>Actualizar chat</button></div>
+    <header className="chat-header"><Link className="text-button" to={back} state={back === '/messages' ? { focusConversation: id } : { ...location.state?.profileOrigin, focusMessage: true }}>Volver</Link><h1>{(!blockUnsafe && header?.profile?.display_name) || 'Conversación privada'}</h1><Link className="text-button" to="/messages">Bandeja</Link></header>
+    <div className="chat-refresh"><p role="status">{connection === 'connected' ? 'Actualizaciones en tiempo real' : 'Reconectando · actualización de respaldo cada 30 s'}</p><button className="text-button" disabled={loading} onClick={() => { setBlockRevision(value => value + 1); refresh.current() }}>Actualizar chat</button></div>
     {error ? <div className="chat-state"><StatusMessage title="Conversación no disponible" tone="error">No pudimos consultar este chat. Revisá tu acceso y conexión.</StatusMessage><button className="text-button" onClick={() => refresh.current()}>Reintentar</button></div> : !header ? <div className="chat-state" role="status">{navigator.onLine ? 'Consultando conversación…' : 'Estás sin conexión. Reconectate para consultar el historial.'}</div> : <>
-      {header.read_only && <p className="chat-read-only" role="status">Perfil no disponible · Conversación de sólo lectura. El historial permanece disponible.</p>}
+      {(blockUnsafe || header.read_only) && <p className="chat-read-only" role="status">Perfil no disponible · Conversación de sólo lectura. El historial permanece disponible.</p>}
       {hasOlder && <button className="text-button" disabled={loading} onClick={() => refresh.current(true)}>Cargar mensajes anteriores</button>}
-      <ol className="chat-messages" ref={list} tabIndex={0} aria-label="Historial de mensajes privados" aria-busy={loading}>{!messages.length && <li>Todavía no hay mensajes. Iniciá la conversación con un texto.</li>}{messages.map(row => <li key={row.id} data-message-id={row.id} className={row.sender_id === viewer ? 'chat-own' : 'chat-incoming'}><div className="chat-message-meta"><strong>{row.sender_id === viewer ? 'Vos' : header.profile?.display_name ?? 'Perfil no disponible'}</strong></div><p className="chat-bubble">{row.body}</p><time dateTime={`${row.created_at}-03:00`}>{formatEventTime(row.created_at)}</time></li>)}</ol>
-      <form className="chat-composer" onSubmit={send}><label htmlFor="direct-text">Mensaje privado</label><div><textarea id="direct-text" rows={2} value={text} onChange={event => setText(event.target.value)} disabled={header.read_only || !!operation} aria-describedby="direct-limit" /><GradientButton type="submit" disabled={header.read_only || !!operation || !trimDirectText(text) || [...trimDirectText(text)].length > 2000}>Enviar</GradientButton></div><p id="direct-limit">{[...trimDirectText(text)].length}/2000 caracteres · Sólo texto</p>
+      <ol className="chat-messages" ref={list} tabIndex={0} aria-label="Historial de mensajes privados" aria-busy={loading}>{!messages.length && <li>Todavía no hay mensajes. Iniciá la conversación con un texto.</li>}{messages.map(row => <li key={row.id} data-message-id={row.id} className={row.sender_id === viewer ? 'chat-own' : 'chat-incoming'}><div className="chat-message-meta"><strong>{row.sender_id === viewer ? 'Vos' : (!blockUnsafe && header.profile?.display_name) || 'Perfil no disponible'}</strong></div><p className="chat-bubble">{row.body}</p><time dateTime={`${row.created_at}-03:00`}>{formatEventTime(row.created_at)}</time></li>)}</ol>
+      <form className="chat-composer" onSubmit={send}><label htmlFor="direct-text">Mensaje privado</label><div><textarea id="direct-text" rows={2} value={text} onChange={event => setText(event.target.value)} disabled={blockUnsafe || header.read_only || !!operation} aria-describedby="direct-limit" /><GradientButton type="submit" disabled={blockUnsafe || header.read_only || !!operation || !trimDirectText(text) || [...trimDirectText(text)].length > 2000}>Enviar</GradientButton></div><p id="direct-limit">{[...trimDirectText(text)].length}/2000 caracteres · Sólo texto</p>
       </form>
     </>}
-    {operation && <div className="direct-send-state" role="status">{operation.status === 'pending' ? 'Enviando mensaje…' : <>No pudimos confirmar el envío.<button className="text-button" disabled={checking} onClick={() => void reconcile()}>Consultar estado</button>{notice.startsWith('Todavía') && <button className="text-button" disabled={!header || header.read_only || checking} onClick={() => void retry()}>Reintentar mismo mensaje</button>}</>}</div>}
+    {peer && <BlockUserAction userId={peer} revision={blockRevision} disabled={!!operation} onSafetyChange={() => { setBlockUnsafe(true); setText(''); writeRequest.current?.abort() }} onChanged={() => { setBlockRevision(value => value + 1); setHeader(null); refresh.current(); setBlockUnsafe(false) }} />}
+    {operation && <div className="direct-send-state" role="status">{operation.status === 'pending' ? 'Enviando mensaje…' : <>No pudimos confirmar el envío.<button className="text-button" disabled={checking} onClick={() => void reconcile()}>Consultar estado</button>{notice.startsWith('Todavía') && <button className="text-button" disabled={blockUnsafe || !header || header.read_only || checking} onClick={() => void retry()}>Reintentar mismo mensaje</button>}</>}</div>}
     {notice && <p className="direct-send-state" role="status">{notice}</p>}
   </section>
 }

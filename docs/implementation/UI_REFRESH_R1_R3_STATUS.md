@@ -98,3 +98,7 @@ Migrar las restantes pantallas sólo en sus bloques autorizados. El piloto ya es
 Para actualizar: registrar por bloque cambios, evidencia, validaciones, límites y aceptación humana por separado; no convertir una mejora de un componente compartido en cierre automático de otras pantallas.
 
 **Ajuste R5/B4 — selector de galería:** filtro de fotos ampliado para Android/Chrome; composición/tokens sin cambios. [Capturas y18 grupos de apertura del selector](../qa/r5-block-4/gallery-picker/README.md). No equivale a validación de galería nativa Android ni modifica aceptación R1–R3.
+
+## Extensión funcional R5 · B9 — 14/10/2026
+
+Controles de bloqueo/desbloqueo en perfil social y DM sobre Amanecer existente; sin rediseñar R1–R3 ni modificar su aceptación. [Evidencia y límites](../qa/r5-block-9/README.md), [revisión](../qa/r5-block-9/design-review.md), [documentación](../qa/r5-block-9/design-documentation.md). Capturas reales antes/después mobile390/desktop1280, fixtures explícitos; seis anchos, texto200%,poca altura,foco y estados de error/resultado incierto. Contraste de confirmar desbloqueo corregido; revisión puntuó el hallazgo resuelto. Sistema y mockups originales intactos. Dispositivos/teclado móvil/lector reales NOT RUN. Estado funcional únicamente en R5 STATUS; B10 sin aprobación.
