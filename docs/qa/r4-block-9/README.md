@@ -1,6 +1,6 @@
 # Release 4 · Bloque 9
 
-14/10/2026. Base `090fbab`, rama `codex/r4-block-9`. **52/52 comandos/suites finales PASS; 39/39 CA y 47/47 escenarios D/P/H con evidencia local/fixture. NO-GO para cierre global:** JWT funcional real, Storage/Realtime remotos, dispositivos y aceptación humana pendientes. Ningún Validado.
+14/10/2026. Base `090fbab`, rama `codex/r4-block-9`; [PR #48](https://github.com/EnzoG14/PlanIt/pull/48) en borrador. **52/52 comandos/suites finales PASS; 39/39 CA y 47/47 escenarios D/P/H con evidencia local/fixture. NO-GO para cierre global:** JWT funcional real, Storage/Realtime remotos, dispositivos y aceptación humana pendientes. Ningún Validado.
 
 - [Informe de cierre](../RELEASE_4_TEST_REPORT.md), [matriz legible](TRACEABILITY.md), [39 textos y escenarios](traceability.json).
 - [Comandos y todos los intentos](commands.json), [primer corte con cinco fallos](commands-initial.json), [artefactos SHA256](artifacts.json), [archivo local de capturas adicionales](local-capture-archive.json).

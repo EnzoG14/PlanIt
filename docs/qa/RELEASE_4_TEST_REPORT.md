@@ -70,4 +70,4 @@ Los fallos iniciales y el error de nombre duplicado durante ampliación del test
 - Emulación no acredita dispositivos, blur/WebGL/gestos físicos, teclado móvil ni lector de pantalla. El fallo Mapbox se inyecta y la suite discovery usa engine con estilo local; no se acredita proveedor real end-to-end.
 - A01–A07 no tienen decisiones abiertas. Lo pendiente es evidencia funcional remota, revisión física y aceptación; no una nueva aprobación global de R3.
 
-**Salida:** PR exclusiva B9, seguimiento/matriz actualizados y artefactos verificables. Detenerse para revisión y aceptación humana; no merge ni deploy.
+**Salida:** [PR #48](https://github.com/EnzoG14/PlanIt/pull/48) exclusiva B9 en borrador, seguimiento/matriz actualizados y artefactos verificables. Detenerse para revisión y aceptación humana; no merge ni deploy.
