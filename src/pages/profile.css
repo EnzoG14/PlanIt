@@ -18,3 +18,4 @@
 .profile-account a .icon { color: var(--pi-color-violet-deep); }
 .profile-account a > span:last-child { margin-left: auto; font-size: 24px; color: var(--pi-color-text-muted); }
 @media (min-width: 760px) { .profile-identity { margin-top: 36px; } }
+.profile-visibility { text-align: center; color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); margin-bottom: 24px; }

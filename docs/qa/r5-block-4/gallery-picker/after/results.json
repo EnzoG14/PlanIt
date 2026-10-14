@@ -1,0 +1,136 @@
+{
+  "environment": "Edge production build; synthetic Auth/REST/Storage fixtures, no real JWT or Storage transport",
+  "baseline": false,
+  "pickerOnly": true,
+  "results": [
+    {
+      "width": 320,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Native filechooser opened by click, keyboard and touch; cancel safe, selected photo previews with no upload",
+      "attributes": {
+        "accept": "image/*",
+        "capture": null,
+        "multiple": false,
+        "disabled": false
+      },
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Picker choice still enforces JPEG/PNG/WebP validation before any upload",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Native filechooser opened by click, keyboard and touch; cancel safe, selected photo previews with no upload",
+      "attributes": {
+        "accept": "image/*",
+        "capture": null,
+        "multiple": false,
+        "disabled": false
+      },
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Picker choice still enforces JPEG/PNG/WebP validation before any upload",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Native filechooser opened by click, keyboard and touch; cancel safe, selected photo previews with no upload",
+      "attributes": {
+        "accept": "image/*",
+        "capture": null,
+        "multiple": false,
+        "disabled": false
+      },
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Picker choice still enforces JPEG/PNG/WebP validation before any upload",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Native filechooser opened by click, keyboard and touch; cancel safe, selected photo previews with no upload",
+      "attributes": {
+        "accept": "image/*",
+        "capture": null,
+        "multiple": false,
+        "disabled": false
+      },
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Picker choice still enforces JPEG/PNG/WebP validation before any upload",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Native filechooser opened by click, keyboard and touch; cancel safe, selected photo previews with no upload",
+      "attributes": {
+        "accept": "image/*",
+        "capture": null,
+        "multiple": false,
+        "disabled": false
+      },
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Picker choice still enforces JPEG/PNG/WebP validation before any upload",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Native filechooser opened by click, keyboard and touch; cancel safe, selected photo previews with no upload",
+      "attributes": {
+        "accept": "image/*",
+        "capture": null,
+        "multiple": false,
+        "disabled": false
+      },
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Picker choice still enforces JPEG/PNG/WebP validation before any upload",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "failure": null,
+  "result": "PASS"
+}

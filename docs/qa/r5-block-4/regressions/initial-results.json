@@ -1,0 +1,118 @@
+{
+  "environment": "Existing suites; all 28 migrations; real local PostgreSQL with SQL Auth/Storage scaffolds; redirected evidence only",
+  "results": [
+    {
+      "suite": "profile",
+      "result": "PASS",
+      "startedAt": "2026-10-14T16:55:33.381Z",
+      "finishedAt": "2026-10-14T16:56:15.707Z",
+      "stdout": "PASS: CA-02/04: two SQL identities read only own profile; direct ID, unfiltered SELECT and cross-account UPDATE cannot expose/change private data\nPASS: CA-03: subsequent read reflects persisted profile updates; absent optional values stay null\nPASS: R5 private avatar fixture: own file/Storage RLS permits owner and hides object metadata from another account\nPASS: Anonymous role cannot SELECT profiles\n",
+      "stderr": "",
+      "source_sha256": "4a06786e8d87dfcd964d296ef4f09fa7ef2e57f1110de842486f504603a6ca80"
+    },
+    {
+      "suite": "notifications",
+      "result": "PASS",
+      "startedAt": "2026-10-14T16:55:33.388Z",
+      "finishedAt": "2026-10-14T16:56:16.256Z",
+      "stdout": "PASS: CA-04: fresh inbox is empty; migrations generate no notifications\nPASS: Realtime batch RPC isolates recipients, rejects anon and oversized batches; exact unread count exceeds page size; migration idempotent\nPASS: CA-01/02/03: persisted content/time, A/B isolation including direct and unfiltered SELECT\nPASS: Keyset pagination with tied timestamps, lookahead and concurrent newer insertion stays stable\nPASS: Only own read_at can change; server timestamp, immutable first read, idempotent retries; forged INSERT/DELETE/content/identity updates denied\nPASS: Targets inherit event/chat RLS; nonmember, removed access, hidden event and foreign notification never grant navigation\nPASS: RLS enabled; all new RPCs SECURITY INVOKER, empty search_path; anon and missing identity denied\n",
+      "stderr": "",
+      "source_sha256": "fc432765a4c477a6f7ae69bfa3395ce89ed90b9e9529f28b9d876ea9b35d3aec"
+    },
+    {
+      "suite": "chat",
+      "result": "PASS",
+      "startedAt": "2026-10-14T16:55:33.373Z",
+      "finishedAt": "2026-10-14T16:56:16.359Z",
+      "stdout": "PASS: Realtime publication contains only messages/notifications; incremental migration reapplication is safe\nPASS: Chat tables enable RLS; public definer endpoints have empty search_path and deny anonymous execution\nPASS: CA R2-04.01/04: backfill idempotent, new-event trigger and empty history; organizer and confirmed user share exactly one chat\nPASS: CA R2-04.02/R2-05.01/02: persisted sender/event, social-only projection, reopen history and concurrent idempotent retry\nPASS: CA R2-05.03/04: blank and oversized text denied, 2000 allowed; direct mutations and sender spoofing denied\nPASS: CA R2-04.03/R2-05.04: stranger, anonymous, cancelled participation and removed user cannot access by event/conversation ID\nPASS: CA R2-04.02/R2-05.02: deterministic chronological history, keyset pagination and reopen across users\nPASS: CA R2-04.01/R2-05.04: ended/cancelled/archived preserve authorized history; no new writes, prior retry remains idempotent\nPASS: CA R2-05.04: real two-connection race waits on event lock and rejects send after cancellation commits\n",
+      "stderr": "",
+      "source_sha256": "53dea6acf0fce99eb0d21fea195e319dbcf2de7a3c749b5f711209ab2aef8f6d"
+    },
+    {
+      "suite": "interests",
+      "result": "PASS",
+      "startedAt": "2026-10-14T16:56:16.361Z",
+      "finishedAt": "2026-10-14T16:56:59.099Z",
+      "stdout": "PASS: Complete migration replay, including blocks 1/2 and new interests table\nPASS: CA-01/02: 0/1/N selection, repeated save has no duplicates and preserves created_at\nPASS: CA-03: A/B own-only RLS; cross-account SELECT returns zero; all REST writes and anon denied; auth/profile guards\nPASS: CA-04: null/duplicate/unknown/malformed IDs fail without partial changes\nPASS: Inactive saved interest retained until removal; inactive new/re-added selection rejected atomically\nPASS: CA-04: forced INSERT failure after DELETE rolls back the entire replacement\nPASS: Concurrent replacements of an initially empty account serialize; last completed replacement wins without a union\nPASS: Category deactivation waits for a validated save; saved inactive preference remains valid\nPASS: CA-02/03: fresh authenticated connection recovers persisted preference; clear does not affect B\nPASS: created_at follows Argentina timestamp convention; table/FKs/PK replay successfully\n",
+      "stderr": "",
+      "source_sha256": "3b9ca4843c7732a69b82be8ce6eb33dca3f49be6d264365f3792cb80d6a032bb"
+    },
+    {
+      "suite": "event-links",
+      "result": "PASS",
+      "startedAt": "2026-10-14T16:56:16.372Z",
+      "finishedAt": "2026-10-14T16:56:59.969Z",
+      "stdout": "PASS: Atomic unlisted creation, idempotent UUID/chat, invalid media rollback, legacy public defaults\nPASS: Only owner RPCs, no direct UPDATE or hash SELECT, anon and stranger denied\nPASS: 256-bit CSPRNG and SHA-256 only, old hash revoked, rotation rollback preserves prior link\nPASS: Two real concurrent rotations serialize on event lock, exactly one active hash\nPASS: A04/A05/D12: confirmed preserved, conflict rolls back content/grants/visibility, revoked remains revoked and removed\nPASS: Authorized duplicate source, new events inherit no grants/links; owner hidden events excluded from public search\nPASS: No calendar expiry; end/cancel/archive prohibit generation/rotation without mutating active hash (redemption B7 pending)\nPASS: Distinct D stranger and E historical: A04 preserves confirmed E; revoked E cannot use history; restore preserves cancelled state/history without chat\n",
+      "stderr": "",
+      "source_sha256": "30c89aacbd7bab1aa8567979dc480c0cfc735eb9931c79436c37deae590892fa"
+    },
+    {
+      "suite": "hidden-access",
+      "result": "PASS",
+      "startedAt": "2026-10-14T16:56:16.366Z",
+      "finishedAt": "2026-10-14T16:57:02.956Z",
+      "stdout": "PASS: Full ordered migration replay; RLS, definer ACL/search_path, no hash SELECT or direct grant mutation\nPASS: 96 combinations: UUID SELECT, summary/organizer/rejoin, own list, images/files/Storage, chat header/messages/send, owner and stranger/anon\nPASS: Public-only home/map/search/suggestions even for owner or active grantee\nPASS: A04/A05/D12 round trips: confirmed grants, conflict rollback, revoked preserved, public read, rehide deny; R3 pending approval cannot bypass revoke\nPASS: Public registration ignores revoked without restoring it; forced failure after grant inserts rolls visibility/grants back together\nPASS: Cross-event source FK, hash shape, cross-account owner RPCs; legitimate shared public file stays readable without hidden association\nPASS: Real last-seat serialization, revoke/rollback vs register, visibility vs register both orders; event-first locks\n",
+      "stderr": "",
+      "source_sha256": "66046f5b859c59f2e3f728819a133afaa38ff4c5c6dd16857c6bccbcb5f2e9c8"
+    },
+    {
+      "suite": "gallery",
+      "result": "FAIL",
+      "startedAt": "2026-10-14T16:57:02.969Z",
+      "finishedAt": "2026-10-14T16:57:03.050Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:271\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\enzog\\planit-worktrees\\r5-block-4\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\enzog\\planit-worktrees\\r5-block-4\\scripts\\check-gallery.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:271:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:865:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:992:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)\r\n    at #resolve (node:internal/modules/esm/loader:683:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)\r\n    at ModuleJob.link (node:internal/modules/esm/module_job:253:17) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/enzog/planit-worktrees/r5-block-4/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.19.0\r\n"
+    },
+    {
+      "suite": "event-access",
+      "result": "PASS",
+      "startedAt": "2026-10-14T16:57:02.957Z",
+      "finishedAt": "2026-10-14T16:57:46.819Z",
+      "stdout": "PASS: Authenticated-only empty-search_path definers; A owns; B/C/D/anon cannot list/mutate; no private profile read\nPASS: CA-01 safe profile projection, active/revoked filters, stable keyset pagination, bounded arguments\nPASS: CA-02/03/04 confirmed revocation is atomic, unique history, derived free seat, detail/Storage/chat denied; repeated revoke and regenerated link cannot restore\nPASS: CA-05 restore changes only grant; no seat/chat/participation restoration; duplicate restore stable; rotation preserves other active grants; missing grants never created\nPASS: R3 pending rejoin/cooldown untouched; approval denied while revoked, restoration alone does not approve\nPASS: History failure rolls back all state; other event participation, grant and seats unaffected\nPASS: Closed hidden events are read-only; A05 public detail permitted with revoked grant; A04 rehide conflict blocked\nPASS: Seven real-lock races: revoke/register both orders, revoke/chat, revoke/rejoin both orders, double revoke/restore; zero deadlocks\n",
+      "stderr": "",
+      "source_sha256": "8a93d9fd1a7c545c0404d1f8051e197b9c0888b12134abac83417d0a5d2b7764"
+    },
+    {
+      "suite": "invite",
+      "result": "PASS",
+      "startedAt": "2026-10-14T16:57:02.964Z",
+      "finishedAt": "2026-10-14T16:57:46.971Z",
+      "stdout": "PASS: Migration replay; redeem_event_link is DEFINER with empty search_path, EXECUTE authenticated only; anon denied\nPASS: CA-01: B redeems and gets an active grant, no participation, no capacity used; detail and organizer readable\nPASS: CA-02: repeated redeem is idempotent (one grant); a fresh session keeps access without the link\nPASS: CA-04: grant alone cannot read chat/attendees; Inscribirse is a separate action that needs the grant\nPASS: CA-03: stranger and anon denied by direct UUID (SELECT, RPC) without redeem\nPASS: CA-05/R4-09.CA-04: altered/malformed/rotated/revoked all fail with one identical error; revoked is never reactivated, even by a new link\nPASS: Revoked C: sees the public event, loses it again on rehide, and no new link recovers it; D redeems the fresh link\nPASS: Organizer redeeming own link creates no grant\nPASS: Ended/cancelled/archived events and non-hidden events grant no new access\nPASS: Races: rotate-first denies old token; redeem-first keeps grant and kills the old token; concurrent same-user redeem is one grant; revoke-first and publish-first deny redeem\n",
+      "stderr": "",
+      "source_sha256": "9af15f794faffa1eb4de4f8ed08dc727a9ef096076611d7859d23c41c3675ec8"
+    },
+    {
+      "suite": "attendees",
+      "result": "FAIL",
+      "startedAt": "2026-10-14T16:57:46.973Z",
+      "finishedAt": "2026-10-14T16:57:47.073Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:271\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\enzog\\planit-worktrees\\r5-block-4\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\enzog\\planit-worktrees\\r5-block-4\\scripts\\check-attendees.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:271:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:865:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:992:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)\r\n    at #resolve (node:internal/modules/esm/loader:683:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)\r\n    at ModuleJob.link (node:internal/modules/esm/module_job:253:17) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/enzog/planit-worktrees/r5-block-4/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.19.0\r\n"
+    },
+    {
+      "suite": "rejoin",
+      "result": "FAIL",
+      "startedAt": "2026-10-14T16:57:46.978Z",
+      "finishedAt": "2026-10-14T16:57:47.075Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:271\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\enzog\\planit-worktrees\\r5-block-4\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\enzog\\planit-worktrees\\r5-block-4\\scripts\\check-rejoin.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:271:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:865:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:992:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)\r\n    at #resolve (node:internal/modules/esm/loader:683:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)\r\n    at ModuleJob.link (node:internal/modules/esm/module_job:253:17) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/enzog/planit-worktrees/r5-block-4/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.19.0\r\n"
+    },
+    {
+      "suite": "event-actions",
+      "result": "FAIL",
+      "startedAt": "2026-10-14T16:57:46.985Z",
+      "finishedAt": "2026-10-14T16:57:47.077Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:271\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\enzog\\planit-worktrees\\r5-block-4\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\enzog\\planit-worktrees\\r5-block-4\\scripts\\check-event-actions.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:271:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:865:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:992:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)\r\n    at #resolve (node:internal/modules/esm/loader:683:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)\r\n    at ModuleJob.link (node:internal/modules/esm/module_job:253:17) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/enzog/planit-worktrees/r5-block-4/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.19.0\r\n"
+    },
+    {
+      "suite": "edit-event",
+      "result": "FAIL",
+      "startedAt": "2026-10-14T16:57:47.079Z",
+      "finishedAt": "2026-10-14T16:57:47.166Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:271\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\enzog\\planit-worktrees\\r5-block-4\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\enzog\\planit-worktrees\\r5-block-4\\scripts\\check-edit-event.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:271:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:865:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:992:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)\r\n    at #resolve (node:internal/modules/esm/loader:683:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)\r\n    at ModuleJob.link (node:internal/modules/esm/module_job:253:17) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/enzog/planit-worktrees/r5-block-4/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.19.0\r\n"
+    }
+  ],
+  "result": "FAIL"
+}

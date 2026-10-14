@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:r5:edit-profile": "node scripts/check-r5-edit-profile.mjs",
+    "check:r5:edit-profile:ui": "node scripts/check-r5-edit-profile-ui.mjs",
+    "check:r5:edit-profile:http": "node scripts/check-r5-edit-profile-http.mjs",
     "check:r5:profile": "node scripts/check-r5-profile.mjs",
     "check:r5:profile:ui": "node scripts/check-r5-profile-ui.mjs",
     "check:r5:profile:http": "node scripts/check-r5-profile-http.mjs",

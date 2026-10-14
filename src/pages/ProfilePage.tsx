@@ -3,11 +3,10 @@ import { Link, useLocation } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
-import { supabase } from '../lib/supabase'
+import { loadMyProfile, loadMyAvatar, type OwnProfile } from '../features/profile/api'
 import './profile.css'
 import { participantsReturn } from '../features/social/api'
 
-type OwnProfile = { display_name: string; username: string; bio: string | null; avatar_file_id: string | null }
 type ProfileResult = { profile: OwnProfile; avatarUrl: string | null } | { error: true }
 
 export function ProfilePage() {
@@ -18,11 +17,11 @@ export function ProfilePage() {
 
 function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
   const location = useLocation()
-  const interestsLink = useRef<HTMLAnchorElement>(null)
+  const interestsLink = useRef<HTMLAnchorElement>(null), editLink = useRef<HTMLAnchorElement>(null)
   useEffect(() => {
-    if (!location.state?.focusInterests) return
+    if (!location.state?.focusInterests && !location.state?.focusEdit) return
     // Restore the trigger after AppLayout applies its route-level main focus.
-    const frame = window.requestAnimationFrame(() => interestsLink.current?.focus())
+    const frame = window.requestAnimationFrame(() => (location.state?.focusEdit ? editLink : interestsLink).current?.focus())
     return () => window.cancelAnimationFrame(frame)
   }, [location.key, location.state])
   const [result, setResult] = useState<ProfileResult | null>(null)
@@ -33,46 +32,30 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
   useEffect(() => {
     let active = true
     let revision = 0
-    const client = supabase
+    let controller = new AbortController()
+    let avatarExpiry: number | undefined
     async function load() {
       const request = ++revision
-      setResult(null)
-      setAvatarFailed(false)
+      controller.abort(); controller = new AbortController()
+      const signal = controller.signal
+      window.clearTimeout(avatarExpiry)
+      setResult(null); setAvatarFailed(false)
       try {
-        if (!client) throw new Error('Session unavailable')
-        const { data, error } = await client.from('profiles')
-          .select('display_name, username, bio, avatar_file_id').eq('id', userId).single()
-        if (error || !data || typeof data.display_name !== 'string' || typeof data.username !== 'string'
-          || (data.bio !== null && typeof data.bio !== 'string')
-          || (data.avatar_file_id !== null && typeof data.avatar_file_id !== 'string')) throw new Error('Profile unavailable')
-        if (!active || request !== revision) return
+        const data = await loadMyProfile(userId, signal)
         let avatarUrl: string | null = null
-        if (data.avatar_file_id) {
-          // Optional media failures never hide the basic profile. RLS authorizes both reads.
-          try {
-            const { data: file, error: fileError } = await client.from('files')
-              .select('bucket_name, storage_path, uploaded_by, mime_type')
-              .eq('id', data.avatar_file_id).eq('uploaded_by', userId).single()
-            if (!active || request !== revision) return
-            if (!fileError && file?.uploaded_by === userId && file.bucket_name === 'event_media'
-              && typeof file.storage_path === 'string' && file.storage_path.startsWith(`${userId}/`)
-              && ['image/jpeg', 'image/png', 'image/webp'].includes(file.mime_type)) {
-              const { data: signed, error: signError } = await client.storage.from(file.bucket_name).createSignedUrl(file.storage_path, 300)
-              if (!signError && signed?.signedUrl) avatarUrl = signed.signedUrl
-            }
-          } catch { /* Use the placeholder for inaccessible media. */ }
+        try { avatarUrl = await loadMyAvatar(userId, data.avatar_file_id, signal) } catch { /* Optional media fallback. */ }
+        if (active && request === revision && !signal.aborted) {
+          setResult({ profile: data, avatarUrl })
+          avatarExpiry = window.setTimeout(() => { if (active && request === revision) setAvatarFailed(true) }, 55000)
         }
-        if (active && request === revision) setResult({ profile: data, avatarUrl })
-      } catch {
-        if (active && request === revision) setResult({ error: true })
-      }
+      } catch { if (active && request === revision && !signal.aborted) setResult({ error: true }) }
     }
-    const onVisible = () => { if (document.visibilityState === 'visible') void load() }
+    const onVisible = () => { if (document.visibilityState === 'visible') void load(); else { controller.abort(); setResult(null) } }
     void load()
     window.addEventListener('focus', onVisible)
     document.addEventListener('visibilitychange', onVisible)
     return () => {
-      active = false
+      active = false; controller.abort(); window.clearTimeout(avatarExpiry)
       window.removeEventListener('focus', onVisible)
       document.removeEventListener('visibilitychange', onVisible)
     }
@@ -91,9 +74,11 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
           <p className="profile-username">@{result.profile.username}</p>
           <p className={result.profile.bio?.trim() ? 'profile-bio' : 'profile-bio profile-missing'}>{result.profile.bio?.trim() || 'Todavía no agregaste una biografía.'}</p>
         </section>
+        <p className="profile-visibility">Perfil {result.profile.visibility === 'private' ? 'privado' : 'público'}</p>
         <dl className="profile-email"><dt><Icon name="email" />Correo de tu cuenta</dt><dd>{email || 'Correo no disponible'}</dd></dl>
       </>}
     <nav className="profile-account" aria-label="Información de tu cuenta">
+      <Link ref={editLink} to="/me/edit"><Icon name="user" /><span>Editar perfil y privacidad</span><span aria-hidden="true">›</span></Link>
       <Link ref={interestsLink} to="/me/interests"><Icon name="category" /><span>Mis intereses</span><span aria-hidden="true">›</span></Link>
       <Link to="/my-events"><Icon name="calendar" /><span>Mis eventos</span><span aria-hidden="true">›</span></Link>
       <Link to="/notifications"><Icon name="bell" /><span>Notificaciones</span><span aria-hidden="true">›</span></Link>

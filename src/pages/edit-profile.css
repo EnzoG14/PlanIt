@@ -1,0 +1,43 @@
+.edit-profile-page { display: grid; gap: var(--pi-space-section); }
+.edit-profile-back { justify-self: start; }
+.edit-profile-page h1 { margin: 0 0 12px; font-size: var(--pi-font-headline-size); line-height: 1.08; letter-spacing: var(--pi-font-headline-tracking); }
+.edit-profile-page h2 { margin: 0 0 8px; font-size: var(--pi-font-title-size); }
+.edit-profile-page header p, .edit-profile-page fieldset > p, .edit-profile-photo p { color: var(--pi-color-text-muted); margin: 0 0 16px; font-size: var(--pi-font-meta-size); }
+.edit-profile-photo { display: flex; align-items: flex-start; gap: 22px; padding-block: 12px 28px; border-bottom: 1px solid var(--pi-color-divider); }
+.edit-profile-photo > div:last-child { flex: 1; min-width: 0; }
+.edit-profile-photo .profile-avatar { flex: 0 0 108px; margin: 0; }
+.profile-photo-picker { position: relative; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; overflow: hidden; }
+.profile-photo-picker input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; cursor: pointer; }
+.profile-photo-picker:has(input:disabled) { opacity: .6; }
+.profile-photo-picker:focus-within { outline: 3px solid var(--pi-color-focus); outline-offset: 3px; }
+.profile-photo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 12px; }
+.profile-photo-filename { overflow-wrap: anywhere; }
+.edit-profile-page form, .profile-fields, .profile-private-fields { display: grid; gap: 20px; min-width: 0; }
+.edit-profile-page fieldset { padding: 0; margin: 0; border: 0; min-width: 0; }
+.edit-profile-page legend { padding: 0; margin-bottom: 20px; font-size: var(--pi-font-title-size); font-weight: 700; }
+.edit-profile-page .form-field { margin: 0; }
+.edit-profile-page small { font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); line-height: 1.5; }
+.profile-fields > small { margin-top: -12px; }
+.profile-text-field { display: grid; gap: 8px; }
+.profile-text-field label { font-weight: 650; font-size: var(--pi-font-label-size); }
+.profile-text-field :is(textarea,select) { width: 100%; min-width: 0; min-height: 48px; border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-field); padding: 14px; background: var(--pi-color-surface); color: var(--pi-color-ink); font: inherit; }
+.profile-text-field textarea { resize: vertical; line-height: 1.5; }
+.profile-text-field :disabled { background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); }
+.profile-privacy { padding-block: 16px !important; }
+.profile-privacy label { display: flex; align-items: flex-start; gap: 12px; min-height: 64px; margin-top: 12px; padding: 16px; border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-notice); background: var(--pi-color-surface); cursor: pointer; }
+.profile-privacy label:has(input:checked) { border-color: var(--pi-color-ink); background: var(--pi-color-lavender); }
+.profile-privacy input { width: 20px; height: 20px; margin: 3px 0 0; flex-shrink: 0; accent-color: var(--pi-color-ink); }
+.profile-privacy span { display: grid; gap: 6px; }
+.profile-private-fields { padding-top: 24px !important; border-top: 1px solid var(--pi-color-divider) !important; }
+.profile-name-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.profile-save-actions { display: grid; gap: 14px; margin-top: 24px; }
+.profile-save-actions p { margin: 0; font-size: var(--pi-font-meta-size); overflow-wrap: anywhere; }
+.profile-edit-dialog { width: min(480px,calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; padding: 26px 22px; border: 0; border-radius: var(--pi-radius-sheet); background: var(--pi-color-surface); color: var(--pi-color-ink); box-shadow: var(--pi-shadow-card); }
+.profile-edit-dialog::backdrop { background: var(--pi-color-scrim); }
+.profile-edit-dialog h2 { font-size: var(--pi-font-title-lg-size); }
+.profile-edit-dialog p { line-height: 1.5; }
+.profile-edit-dialog > div { display: flex; flex-wrap: wrap; gap: 12px; }
+.profile-edit-dialog button { flex: 1 1 150px; min-height: 48px; white-space: normal; }
+@media (max-width: 389px) { .edit-profile-photo { flex-direction: column; } .profile-name-fields { grid-template-columns: 1fr; } }
+.profile-upload-recovery { font-size: var(--pi-font-meta-size); }
+.profile-upload-recovery p { color: var(--pi-color-text-muted); line-height: 1.5; }

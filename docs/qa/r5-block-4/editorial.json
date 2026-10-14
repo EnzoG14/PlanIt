@@ -1,0 +1,217 @@
+{
+  "base": "286d38ecf7e461ebd9218a6f71e8ff10a41e0bae",
+  "branch": "codex/r5-block-4",
+  "dependencies": [
+    "#50",
+    "#51",
+    "#52",
+    "#53 integrated in main"
+  ],
+  "files": [
+    {
+      "path": "package.json",
+      "sha256_lf": "e07efcd231bfd7e4b594ce80a531f929cb2c75c10059dcc6cf235dfb897ec243"
+    },
+    {
+      "path": "scripts/check-profile-ui.mjs",
+      "sha256_lf": "28642c134ab32af01993bc28965b12a55befc28bed3aa3749b21c568032a814d"
+    },
+    {
+      "path": "scripts/check-r5-edit-profile.mjs",
+      "sha256_lf": "c3a6640fde351b61b5bbdecdb16f80c8f7849022e286de8a8bfd67077fe3e237"
+    },
+    {
+      "path": "scripts/check-r5-edit-profile-ui.mjs",
+      "sha256_lf": "226d151a1f271c9594ab97ab81acf39892333ea8ceb7ed81daec31b9f73ae2b7"
+    },
+    {
+      "path": "scripts/check-r5-edit-profile-http.mjs",
+      "sha256_lf": "bf50d347fbe407ae6a91092e2064d002aed56ef7b87e902744226bb35033afb8"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256_lf": "dc949d9cd9e95fffe7fa14b56f737a301161b53adf94ae1b76d46ed552e1a6ae"
+    },
+    {
+      "path": "src/components/AppLayout.tsx",
+      "sha256_lf": "f8fc57019427c65cde86799de06cea0799f914887ef3f97c3585ee7ae626537c"
+    },
+    {
+      "path": "src/features/auth/validation.ts",
+      "sha256_lf": "22b5e77a094bb4e4e70b473560184068d19f1af53d31d14bbf7aaac18caf3522"
+    },
+    {
+      "path": "src/features/profile/api.ts",
+      "sha256_lf": "337f76f2cb3e9d01b2c2b6b77b966735e4970ea71b58f1da00d7e0bb5251c6cb"
+    },
+    {
+      "path": "src/features/profile/validation.ts",
+      "sha256_lf": "94ebc5f8aaa57ba47d5ebeea347ae6e862c41884a1baf44670723943b3b482e3"
+    },
+    {
+      "path": "src/pages/EditProfilePage.tsx",
+      "sha256_lf": "5d1fbeacfae563d332864eee9ab4727fc89aaef27c06f5f50314b580cfe390b7"
+    },
+    {
+      "path": "src/pages/edit-profile.css",
+      "sha256_lf": "6315bb8e5ec3505f53cb6b703f39980e6e84d44abd91c3d93bcc5e60df42b9bf"
+    },
+    {
+      "path": "src/pages/ProfilePage.tsx",
+      "sha256_lf": "300cb4faf1182a21c6c27f1f8f4949bb49bc90cb46ad49a3978c7b81d7d8deef"
+    },
+    {
+      "path": "src/pages/profile.css",
+      "sha256_lf": "772f0cfa9b48a141a3e01e4ad90855621342b1b8e5611cb3748ab2013ec273f8"
+    }
+  ],
+  "preserved": [
+    {
+      "path": "DESIGN.md",
+      "unchanged": true
+    },
+    {
+      "path": "PRODUCT.md",
+      "unchanged": true
+    },
+    {
+      "path": "src/styles/tokens.css",
+      "unchanged": true
+    },
+    {
+      "path": "docs/design/mockups/release-5.png",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261010011204_create_profiles_and_categories.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261010023448_restrict_rls_auto_enable_execute.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261010052653_public_event_discovery.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261010150232_event_participations.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261010154930_my_events_read.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261010214526_event_chat.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261012001058_edit_own_event.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261013160000_search_public_events.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261014120000_search_public_events_date_radius.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261014120001_user_category_interests.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261014120002_get_suggested_events.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261014120003_hidden_event_access.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261014120004_event_visibility_links.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261014120005_redeem_event_link.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261014120006_event_access_management.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261014133225_social_security_model.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261014133547_social_projections_and_avatars.sql",
+      "unchanged": true
+    },
+    {
+      "path": "supabase/migrations/20261014133847_social_legacy_projections.sql",
+      "unchanged": true
+    }
+  ],
+  "migrations": {
+    "created": 0,
+    "tested_new_local": 0,
+    "applied_remote": 0,
+    "verified_new_remote": 0,
+    "replayed_existing": 28
+  },
+  "env": {
+    "source": "D:/planit/.env.local; existing local main configuration documented in B3",
+    "identical": true,
+    "ignored": true,
+    "tracked": false
+  },
+  "baseline": {
+    "build": "D:/planit/dist",
+    "source_branch": "codex/r5-block-3",
+    "profile_source_matches_main": true,
+    "synthetic_fixture": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "environment": "Actual handler TypeScript transpiled in Node; mocked fetch; no Deno runtime, real Auth, Storage or deployed Edge",
+  "results": [
+    {
+      "test": "Method/CORS, missing bearer, malformed JSON and invalid target rejected before privileged fetch",
+      "result": "PASS"
+    },
+    {
+      "test": "Viewer from verified Auth response; client cannot choose viewer/path/bucket/TTL; privileged signature exactly 60 seconds",
+      "result": "PASS"
+    },
+    {
+      "test": "Blocked/nonexistent/no-avatar neutral response never reveals a storage path",
+      "result": "PASS"
+    },
+    {
+      "test": "Block committed while signing: final authorization recheck withholds newly signed URL",
+      "result": "PASS"
+    },
+    {
+      "test": "Expired/rejected identity, network failure and malformed signing response fail closed without backend payloads or secrets",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

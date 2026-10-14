@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-14",
+  "base": "286d38ecf7e461ebd9218a6f71e8ff10a41e0bae",
+  "branch": "codex/r5-block-4",
+  "node": "v24.19.0",
+  "build": {
+    "command": "npm run build",
+    "result": "PASS",
+    "exitCode": 0,
+    "output": "\r\n> planit@0.0.0 build\r\n> tsc -b && vite build\r\n\r\nvite v8.3.4 building client environment for production...\r\ntransforming...\r\n✓ 170 modules transformed.\r\nrendering chunks...\r\ncomputing gzip size...\r\ndist/registerSW.js                                                    0.13 kB\r\ndist/manifest.webmanifest                                             0.45 kB\r\ndist/index.html                                                       0.96 kB │ gzip:   0.51 kB\r\ndist/assets/bricolage-grotesque-latin-wght-normal-DLoelf7F.woff2     41.34 kB\r\ndist/assets/EventAccessPage-BeGsKfAb.css                              0.48 kB │ gzip:   0.24 kB\r\ndist/assets/EditEventPage-C6-wzkKq.css                                0.59 kB │ gzip:   0.31 kB\r\ndist/assets/EventDetailPage-BbVrzJ0G.css                              0.91 kB │ gzip:   0.40 kB\r\ndist/assets/social-participants-aRHlihRl.css                          1.06 kB │ gzip:   0.45 kB\r\ndist/assets/SocialIdentityPage-QJlu3sMr.css                           1.10 kB │ gzip:   0.42 kB\r\ndist/assets/InvitePage-DjKK25Qp.css                                   1.61 kB │ gzip:   0.64 kB\r\ndist/assets/InterestsPage-M1hJwhQD.css                                1.98 kB │ gzip:   0.73 kB\r\ndist/assets/NotificationsPage-CAH3WiNg.css                            2.08 kB │ gzip:   0.70 kB\r\ndist/assets/HomePage-BHFJQBKd.css                                     2.65 kB │ gzip:   0.75 kB\r\ndist/assets/event-management-CcyhFY58.css                             3.67 kB │ gzip:   1.13 kB\r\ndist/assets/EditProfilePage-BUZOgfIW.css                              3.95 kB │ gzip:   1.20 kB\r\ndist/assets/EventChatPage-svdyR_PM.css                                3.97 kB │ gzip:   1.16 kB\r\ndist/assets/event-forms-C7Iivlt7.css                                  4.48 kB │ gzip:   1.23 kB\r\ndist/assets/EventGalleryPage-B65VEpO7.css                             4.83 kB │ gzip:   1.35 kB\r\ndist/assets/event-rejoin-CN93N2a9.css                                 4.90 kB │ gzip:   1.20 kB\r\ndist/assets/event-attendees-QCB2rwCX.css                              5.19 kB │ gzip:   1.40 kB\r\ndist/assets/EventActionDialog-DqYOnHgA.css                            5.86 kB │ gzip:   1.47 kB\r\ndist/assets/MyEventsPage-DMgET5X9.css                                11.42 kB │ gzip:   2.62 kB\r\ndist/assets/discovery-CYFQEXaF.css                                   16.75 kB │ gzip:   3.46 kB\r\ndist/assets/index-BLujYjWr.css                                       34.45 kB │ gzip:   7.08 kB\r\ndist/assets/EventMap-DdcgI_dU.css                                    51.50 kB │ gzip:   6.43 kB\r\ndist/assets/geolocation-DXgn9iGR.js                                   0.56 kB │ gzip:   0.37 kB\r\ndist/assets/participation-Du4oArlD.js                                 1.15 kB │ gzip:   0.64 kB\r\ndist/assets/attendees-kTZN0tdF.js                                     1.20 kB │ gzip:   0.66 kB\r\ndist/assets/api-CVqPGe3t.js                                           1.93 kB │ gzip:   0.98 kB\r\ndist/assets/event-rejoin-jr7XwO1M.js                                  2.12 kB │ gzip:   0.91 kB\r\ndist/assets/actions-DSSspvay.js                                       2.13 kB │ gzip:   1.02 kB\r\ndist/assets/social-participants-DcNCdVZX.js                           2.14 kB │ gzip:   0.85 kB\r\ndist/assets/my-events-DpzAx4na.js                                     2.56 kB │ gzip:   1.39 kB\r\ndist/assets/validation-DH1mSUXy.js                                    3.00 kB │ gzip:   1.37 kB\r\ndist/assets/search-CfFYVi23.js                                        3.00 kB │ gzip:   1.44 kB\r\ndist/assets/edit-DeRRyz__.js                                          3.15 kB │ gzip:   1.48 kB\r\ndist/assets/EventActionDialog-Kko8awVv.js                             3.38 kB │ gzip:   1.61 kB\r\ndist/assets/InvitePage-BPOE7OvY.js                                    3.86 kB │ gzip:   1.55 kB\r\ndist/assets/SocialIdentityPage-CLAeaxqs.js                            4.17 kB │ gzip:   1.69 kB\r\ndist/assets/api-D5tGuYho.js                                           4.65 kB │ gzip:   1.90 kB\r\ndist/assets/NotificationsPage-sPnRZjys.js                             4.92 kB │ gzip:   2.05 kB\r\ndist/assets/EventCard-CL5CtrAc.js                                     5.48 kB │ gzip:   1.87 kB\r\ndist/assets/EditEventPage-D3ziOk-z.js                                 5.59 kB │ gzip:   2.46 kB\r\ndist/assets/InterestsPage-Cs-5FJIJ.js                                 5.62 kB │ gzip:   2.31 kB\r\ndist/assets/MyEventsPage-CnXHrZNE.js                                  5.89 kB │ gzip:   2.27 kB\r\ndist/assets/MapPage-Cc6TWkGu.js                                       6.10 kB │ gzip:   2.67 kB\r\ndist/assets/event-forms-B5I20BTu.js                                   6.19 kB │ gzip:   2.04 kB\r\ndist/assets/CreateEventPage-B1lAv3LA.js                               6.56 kB │ gzip:   2.76 kB\r\ndist/assets/useDiscoveryFilters-XsOqTvVy.js                           7.32 kB │ gzip:   2.95 kB\r\ndist/assets/EventChatPage-C0IewhRy.js                                 7.43 kB │ gzip:   3.01 kB\r\ndist/assets/EventRejoinRequestsPage-CYmfFFu_.js                       8.69 kB │ gzip:   3.12 kB\r\ndist/assets/HomePage-Dm66K5wJ.js                                      9.39 kB │ gzip:   3.47 kB\r\ndist/assets/EventAccessPage-Dt3oAh6s.js                               9.65 kB │ gzip:   3.60 kB\r\ndist/assets/jsx-runtime-TSwjJPAg.js                                  10.40 kB │ gzip:   4.03 kB\r\ndist/assets/EventAttendeesPage-BaNGzXIa.js                           12.70 kB │ gzip:   3.96 kB\r\ndist/assets/EventGalleryPage-iWdLFT_K.js                             13.83 kB │ gzip:   4.83 kB\r\ndist/assets/EditProfilePage-C_2X1yzo.js                              14.42 kB │ gzip:   4.65 kB\r\ndist/assets/EventDetailPage-C4-Fo_YA.js                              18.42 kB │ gzip:   6.00 kB\r\ndist/assets/index-aCKjKX4F.js                                       258.29 kB │ gzip:  80.19 kB\r\ndist/assets/StatusMessage-C5W76xAe.js                               309.50 kB │ gzip:  86.08 kB\r\ndist/assets/EventMap-XqVSlkql.js                                  1,865.13 kB │ gzip: 518.63 kB\r\n\r\n[plugin builtin:vite-reporter] \r\n(!) Some chunks are larger than 500 kB after minification. Consider:\r\n- Using dynamic import() to code-split the application\r\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\r\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\r\n✓ built in 2.38s\r\n\r\nPWA v2.0.0\r\nmode      generateSW\r\nprecache  69 entries (2797.80 KiB)\r\nfiles generated\r\n  dist/sw.js\r\n  dist/workbox-9c191d2f.js\r\n"
+  },
+  "lint": {
+    "command": "npm run lint",
+    "result": "PASS",
+    "exitCode": 0,
+    "output": "\r\n> planit@0.0.0 lint\r\n> oxlint\r\n\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-confirm.mjs:1:8: warning eslint(no-unused-vars): Identifier 'assert' is imported but never used. help: Consider removing this import.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-confirm.mjs:7:7: warning eslint(no-unused-vars): Variable 'phase' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-confirm.mjs:13:7: warning eslint(no-unused-vars): Variable 'results' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/integration.mjs:43:16: warning eslint(no-unused-vars): Function 'capture' is declared but never used. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:4:10: warning eslint(no-unused-vars): Identifier 'execFileSync' is imported but never used. help: Consider removing this import.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:7:7: warning eslint(no-unused-vars): Variable 'base' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:11:52: warning eslint(no-unused-vars): Variable 'guest' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:14:19: warning eslint(no-unused-vars): Variable 'pixelComparisons' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:15:7: warning eslint(no-unused-vars): Variable 'check' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:41:16: warning eslint(no-unused-vars): Function 'capture' is declared but never used. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:42:16: warning eslint(no-unused-vars): Function 'noOverflow' is declared but never used. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:44:16: warning eslint(no-unused-vars): Function 'reachButtons' is declared but never used. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/targeted.mjs:43:16: warning eslint(no-unused-vars): Function 'capture' is declared but never used. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/discovery-stable.mjs:43:16: warning eslint(no-unused-vars): Function 'capture' is declared but never used. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-stress.mjs:1:8: warning eslint(no-unused-vars): Identifier 'assert' is imported but never used. help: Consider removing this import.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-stress.mjs:7:7: warning eslint(no-unused-vars): Variable 'phase' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.\r\ndocs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-stress.mjs:13:7: warning eslint(no-unused-vars): Variable 'results' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.\r\nsrc/components/DiscoveryFilters.tsx:30:21: warning react(set-state-in-effect): Calling setState synchronously within an effect can trigger cascading renders help: Effects should synchronize React with external systems. Calling setState synchronously inside an effect starts another render and is usually unnecessary. Derive the value during render, initialize state directly, or update it from the event that caused the change. Use an effect only when synchronizing with an external system.\r\n"
+  },
+  "installation": {
+    "command": "npm ci",
+    "result": "PASS",
+    "packages": 372,
+    "audit_vulnerabilities": 0
+  },
+  "commands": [
+    {
+      "command": "node scripts/check-r5-edit-profile.mjs",
+      "result": "PASS",
+      "evidence": "sql/sql-results.json"
+    },
+    {
+      "command": "node scripts/check-r5-edit-profile-ui.mjs",
+      "result": "PASS",
+      "evidence": "ui/results.json"
+    },
+    {
+      "command": "node scripts/check-r5-regressions.mjs",
+      "result": "PASS",
+      "evidence": "regressions/regressions.json"
+    },
+    {
+      "command": "node scripts/check-profile-ui.mjs",
+      "result": "PASS",
+      "evidence": "own-profile-ui/ui-results.json"
+    },
+    {
+      "command": "node scripts/check-r5-profile-ui.mjs",
+      "result": "PASS",
+      "evidence": "social-regression-ui/ui-results.json"
+    },
+    {
+      "command": "node scripts/check-r5-avatar.mjs",
+      "result": "PASS",
+      "evidence": "avatar-unit.json"
+    },
+    {
+      "command": "node scripts/check-r5-edit-profile-http.mjs",
+      "result": "PASS",
+      "evidence": "remote/http-anon.json"
+    }
+  ],
+  "initial_failures": [
+    "TypeScript parameter property/abortSignal ordering corrected before successful build",
+    "Privacy dialog return focus fixed and verified",
+    "Invalid PNG fixture replaced with canvas-generated synthetic PNG",
+    "Five legacy SQL runners needed ignored node_modules path; passed after tool configuration",
+    "Concurrent build removed sw.js during first B3 regression; repeated against stable preview"
+  ],
+  "not_run": [
+    "Authenticated remote JWT mutations",
+    "Actual Storage upload/sign/CDN/expiry",
+    "Realtime transport",
+    "Physical devices/mobile keyboards/screen reader/human acceptance"
+  ],
+  "blocked": [
+    "Automatic approval review rejected anonymous live POST to mutation RPCs; no POST sent; replaced with GET-only transport checks"
+  ]
+}

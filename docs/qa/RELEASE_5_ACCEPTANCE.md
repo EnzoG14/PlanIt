@@ -1,5 +1,7 @@
 # PlanIt — R5 matriz de aceptación (33 CA oficiales)
 
+**Corte B4 (14/10/2026):** RF-R5-03.CA01..04 con PASS parcial SQL/UI y GET HTTP anónimo; **NOT RUN integral** hasta JWT autenticado, Storage/CDN reales y aceptación humana. B0–B3 integrados; B4 autorizado. [Fuente literal](r5-block-4/source.json), [entrega/evidencia](r5-block-4/README.md). POST remoto de escritura BLOCKED por revisión automática; sin migraciones nuevas/deploy/merge.
+
 **Corte B3 (14/10/2026):** RF-R5-02.CA01..04 con PASS parcial SQL/UI y HTTP anónimo; **NOT RUN integral** hasta JWT autenticado, avatar real y aceptación humana. B0–B2 integrados (#50–#52), B3 autorizado. [Fuente literal nueva](r5-block-3/source.json), [entrega/evidencia](r5-block-3/README.md). No modifica CA históricos ni acepta B4.
 
 **Corte B2 (14/10/2026):** R5-01.CA01..04 tienen PASS parcial SQL/UI y HTTP anónimo; continúan NOT RUN integral hasta JWT autenticado, avatar real y aceptación humana. B1 integrado por PR #51. [Lectura literal nueva](r5-block-2/source.json), [entrega B2](r5-block-2/README.md). Cortes anteriores conservados como antecedentes.
@@ -18,10 +20,10 @@
 | RF-R5-02.CA-02 | sólo eventos públicos accesibles | NOT RUN integral; PASS parcial SQL/UI | [B3](r5-block-3/README.md) |
 | RF-R5-02.CA-03 | REST/RPC sin datos sensibles o credenciales | NOT RUN integral; PASS parcial SQL/UI/HTTP anon | [B3](r5-block-3/README.md) |
 | RF-R5-02.CA-04 | sin foto/eventos estado legible | NOT RUN integral; PASS parcial SQL/UI | [B3](r5-block-3/README.md) |
-| RF-R5-03.CA-01 | edición propia + foto persisten | NOT RUN | — |
-| RF-R5-03.CA-02 | public/private persiste entre sesiones | NOT RUN | — |
-| RF-R5-03.CA-03 | otras vistas reflejan visibilidad | NOT RUN | — |
-| RF-R5-03.CA-04 | no editar ajeno ni simular éxito inválido | NOT RUN | — |
+| RF-R5-03.CA-01 | edición propia + foto persisten | PASS parcial SQL/UI; NOT RUN integral | [B4: evidencia y límites](r5-block-4/README.md) |
+| RF-R5-03.CA-02 | public/private persiste entre sesiones | PASS parcial SQL/UI; NOT RUN integral | [B4: evidencia y límites](r5-block-4/README.md) |
+| RF-R5-03.CA-03 | otras vistas reflejan visibilidad | PASS parcial SQL/UI; NOT RUN integral | [B4: evidencia y límites](r5-block-4/README.md) |
+| RF-R5-03.CA-04 | no editar ajeno ni simular éxito inválido | PASS parcial SQL/UI; NOT RUN integral | [B4: evidencia y límites](r5-block-4/README.md) |
 | RF-R5-04.CA-01 | privado sin approved muestra exactamente nombre username avatar | NOT RUN | — |
 | RF-R5-04.CA-02 | sin datos/eventos privados no autorizados | NOT RUN | — |
 | RF-R5-04.CA-03 | approved ve sólo campos seguidores | NOT RUN | — |

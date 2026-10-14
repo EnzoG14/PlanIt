@@ -1,0 +1,289 @@
+{
+  "environment": "Edge production build; synthetic Auth/REST/Storage fixtures, no real JWT or Storage transport",
+  "baseline": false,
+  "results": [
+    {
+      "width": 320,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Public→private keeps accepted, return and reload persist all editable values in fixture backend",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Invalid username prevented before write; backend duplicate shown without false success",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Lost response locks edits, navigation warns, check-only reconciles late commit without another write",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Avatar selection detects a concurrent reference change before upload and preserves the other session",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Public→private keeps accepted, return and reload persist all editable values in fixture backend",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Invalid username prevented before write; backend duplicate shown without false success",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Lost response locks edits, navigation warns, check-only reconciles late commit without another write",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Avatar selection detects a concurrent reference change before upload and preserves the other session",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Public→private keeps accepted, return and reload persist all editable values in fixture backend",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Invalid username prevented before write; backend duplicate shown without false success",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Lost response locks edits, navigation warns, check-only reconciles late commit without another write",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Avatar selection detects a concurrent reference change before upload and preserves the other session",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Public→private keeps accepted, return and reload persist all editable values in fixture backend",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Invalid username prevented before write; backend duplicate shown without false success",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Lost response locks edits, navigation warns, check-only reconciles late commit without another write",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Avatar selection detects a concurrent reference change before upload and preserves the other session",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Actual 10s RPC deadline remains uncertain; late commit reconciled without repeating mutation",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Account/token change discards old editor and ignores late save response; short viewport emulation",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Public→private keeps accepted, return and reload persist all editable values in fixture backend",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Invalid username prevented before write; backend duplicate shown without false success",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Lost response locks edits, navigation warns, check-only reconciles late commit without another write",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Avatar selection detects a concurrent reference change before upload and preserves the other session",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Public→private keeps accepted, return and reload persist all editable values in fixture backend",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Invalid username prevented before write; backend duplicate shown without false success",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Lost response locks edits, navigation warns, check-only reconciles late commit without another write",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Avatar selection detects a concurrent reference change before upload and preserves the other session",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "failure": null,
+  "result": "PASS"
+}

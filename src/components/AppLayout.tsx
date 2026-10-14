@@ -24,7 +24,7 @@ function LayoutContent() {
   const isEventManagement = Boolean(matchPath('/users/:id', pathname) || matchPath('/events/:id/gallery', pathname) || matchPath('/events/:id/attendees', pathname) || matchPath('/events/:id/rejoin-requests', pathname) || matchPath('/events/:id/access', pathname))
   const isChat = Boolean(matchPath('/events/:id/chat', pathname))
   const isInvite = pathname === '/invite'
-  const isSocial = isChat || pathname === '/me' || pathname === '/me/interests' || pathname === '/notifications'
+  const isSocial = isChat || pathname === '/me' || pathname === '/me/edit' || pathname === '/me/interests' || pathname === '/notifications'
   const isDiscovery = pathname === '/home' || pathname === '/map' || (Boolean(matchPath('/events/:id', pathname)) && pathname !== '/events/new')
   const shell = useRef<HTMLDivElement>(null)
   const { session, loading, error, retry } = useAuth()

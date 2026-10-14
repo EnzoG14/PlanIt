@@ -1,0 +1,19 @@
+{
+  "environment": "Edge production build; synthetic Auth/REST/Storage fixtures, no real JWT or Storage transport",
+  "baseline": true,
+  "results": [
+    {
+      "width": 390,
+      "test": "Baseline own profile executed with synthetic fixture",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Baseline own profile executed with synthetic fixture",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "failure": null,
+  "result": "PASS"
+}

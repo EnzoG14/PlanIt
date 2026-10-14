@@ -1,5 +1,7 @@
 # PlanIt — Estado visual UI Refresh R1–R3
 
+**Adición R5/B4 · 14/10/2026:** edición propia y privacidad en Amanecer, conservando perfil R2 y dock; foto independiente. [Capturas antes/después y evidencia](../qa/r5-block-4/README.md):56 grupos UI en320/360/375/390/768/1280, texto200%, foco y estados. DESIGN/tokens/mockups intactos; sin nueva aceptación funcional R1–R3. Dispositivos/lector/Storage real y aceptación visual pendientes.
+
 **Adición R5/B3 · 14/10/2026:** perfil/bio autorizada y eventos públicos implementados con tokens Amanecer y navegación existente. [Capturas antes/después y evidencia](../qa/r5-block-3/README.md):54 grupos UI en320/360/375/390/768/1280, texto200%, foco/targets y estados; build real con fixtures. DESIGN/tokens/mockups intactos. No nueva aceptación R1–R3; dispositivos/lector/avatar real/aceptación visual pendientes.
 
 **Adición R5/B2 · 14/10/2026:** lista de participantes sociales y destino de identidad mínima implementados en Amanecer, conservando administración R3. [Evidencia antes/después](../qa/r5-block-2/README.md), fixtures de app ejecutada en320/360/375/390/768/1280, texto200%, estados y navegación/foco. Mockup original R5 y tokens intactos. Sin nueva aceptación R1–R3; teclado móvil/lector/dispositivos reales y aceptación visual pendientes. El registro siguiente es histórico del refresh.
@@ -84,3 +86,5 @@ Fecha: 12/10/2026. Registro independiente; no modifica estados funcionales R1/R2
 Migrar las restantes pantallas sólo en sus bloques autorizados. El piloto ya está integrado y el bloque 0.5 preserva su apariencia. Los hallazgos históricos sin cierre necesitan comprobación futura; gestos de mapa, teclado real, safe areas, lector de pantalla y perfilado móvil siguen pendientes. La dirección visual está aprobada; las decisiones funcionales del lab siguen abiertas.
 
 Para actualizar: registrar por bloque cambios, evidencia, validaciones, límites y aceptación humana por separado; no convertir una mejora de un componente compartido en cierre automático de otras pantallas.
+
+**Ajuste R5/B4 — selector de galería:** filtro de fotos ampliado para Android/Chrome; composición/tokens sin cambios. [Capturas y18 grupos de apertura del selector](../qa/r5-block-4/gallery-picker/README.md). No equivale a validación de galería nativa Android ni modifica aceptación R1–R3.

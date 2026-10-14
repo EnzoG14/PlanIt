@@ -1,5 +1,9 @@
 # PlanIt — Arquitectura
 
+## Release 5 — Bloque 4: edición propia (QA pendiente)
+
+`/me/edit` protegido por sesión reutiliza el shell Amanecer. Servicios `features/profile` centralizan allowlist propia, validación y RPC B1: datos/privacidad juntos con confirmación D04; foto independiente en avatars con ruta inmutable, firma propia60, reconciliación y limpieza de staging. `/me` abandona lectura heredada event_media. Sin cambios SQL/deploy ni nuevas superficies de follows/DM. [Contrato, amenazas, pruebas y límites](qa/r5-block-4/README.md).
+
 ## Release 5 — Bloque 2: participantes sociales (QA pendiente)
 
 `/events/:id/attendees` conserva administración del dueño; confirmed abre sólo lectura social. `?view=social` selecciona el modo para ambos, sin conceder permisos. API B1 `get_event_social_participants` autoriza desde Auth, detalle R4 y confirmed; lista mínima paginada, sin bloqueados bilaterales. Perfil mínimo `/users/:id` reconsulta `get_social_profile`; self→`/me`, retorno validado. No habilita perfil completo, follows ni DM.
