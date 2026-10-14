@@ -1,6 +1,8 @@
 # Evidencia · R5 Bloque 0
 
-**Fecha:** 14/10/2026 Argentina. **Base:** `1b77b377e0a 335f70bb7458be74122e1de70b43f`. **Rama:** `codex/r5-block-0`. [Informe y contratos](../../implementation/RELEASE_5_BLOCK_0_DECISIONS.md). Auditoría exclusivamente: ningún CA R5 aprobado, ningún cambio funcional/migración/deploy/merge. D01–D05 aprobadas previamente; D06–D08 y conflictos C01–C03 listos para revisión humana antes de B1.
+**Fecha:** 14/10/2026 Argentina. **Base:** `1b77b377e0a335f70bb7458be74122e1de70b43f`. **Rama:** `codex/r5-block-0`. [Informe y contratos](../../implementation/RELEASE_5_BLOCK_0_DECISIONS.md). Auditoría exclusivamente: ningún CA R5 aprobado, ningún cambio funcional/migración/deploy/merge. D01–D05 aprobadas previamente; D06–D08 y conflictos C01–C03 listos para revisión humana antes de B1.
+
+**PR:** [#50, borrador para revisión](https://github.com/EnzoG14/PlanIt/pull/50). No continuar con otro bloque sin aprobación del responsable.
 
 ## Artefactos y alcance
 

@@ -1,6 +1,8 @@
 # Release 5 · Bloque 0 — Auditoría y contratos
 
-**Corte:** 14/10/2026, Argentina. **Base:** `1b77b377e0a 335f70bb7458be74122e1de70b43f` (`origin/main`, PR #49 integrada). **Rama:** `codex/r5-block-0`. **Estado:** Implementado; QA pendiente de revisión humana del informe. Entrega exclusivamente de auditoría/documentación: ninguna funcionalidad R5 habilitada, ningún CA declarado PASS y ninguna migración nueva. No avanzar a B1 sin aprobación.
+**Corte:** 14/10/2026, Argentina. **Base:** `1b77b377e0a335f70bb7458be74122e1de70b43f` (`origin/main`, PR #49 integrada). **Rama:** `codex/r5-block-0`. **Estado:** Implementado; QA pendiente de revisión humana del informe. Entrega exclusivamente de auditoría/documentación: ninguna funcionalidad R5 habilitada, ningún CA declarado PASS y ninguna migración nueva. No avanzar a B1 sin aprobación.
+
+**Entrega:** [PR #50 en borrador](https://github.com/EnzoG14/PlanIt/pull/50), sin fusionar. Revisar C01–C03 y los contratos técnicos antes de autorizar B1.
 
 ## 1. Fuentes, entorno y autorización
 
