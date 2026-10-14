@@ -1,6 +1,6 @@
 # R5 · Bloque 5 — Visibilidad de perfiles privados
 
-14/10/2026, Argentina. Base `24c24cee44725cfa2fa4c2a3668474e891417ad3`, rama `codex/r5-block-5`, worktree `C:/Users/enzog/planit-worktrees/r5-block-5`. B0–B4 integrados por #50–#54; R4/B9 integrado por #48. **Implementado; QA pendiente.** Sólo RF-R5-04.CA-01..04 y verificaciones D01/D02. PR en borrador hacia main; sin merge, migración nueva ni deploy.
+14/10/2026, Argentina. Base `24c24cee44725cfa2fa4c2a3668474e891417ad3`, rama `codex/r5-block-5`, worktree `C:/Users/enzog/planit-worktrees/r5-block-5`. B0–B4 integrados por #50–#54; R4/B9 integrado por #48. **Implementado; QA pendiente.** Sólo RF-R5-04.CA-01..04 y verificaciones D01/D02. [PR #55 en borrador](https://github.com/EnzoG14/PlanIt/pull/55) hacia main; sin merge, migración nueva ni deploy.
 
 Código y evidencia de pruebas del producto en `a32f041`; commits posteriores completan el seguimiento.
 

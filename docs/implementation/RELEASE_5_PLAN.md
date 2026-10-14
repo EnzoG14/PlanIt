@@ -1,6 +1,6 @@
 # PlanIt — Plan técnico Release 5 · Comunidad y relaciones sociales
 
-**Entrega B5 — 14/10/2026:** B0–B4 integrados (#50–#54). B5 autorizado e **Implementado; QA pendiente**, base `24c24cee44725cfa2fa4c2a3668474e891417ad3`, rama `codex/r5-block-5`. Matriz estricta privada y reconciliación entre perfil/eventos: revocación conserva sólo el mínimo vigente, bloqueo elimina toda la proyección. Sin migración nueva/deploy. [Pruebas y límites](../qa/r5-block-5/README.md). Cortes anteriores históricos; B6 requiere instrucción independiente.
+**Entrega B5 — 14/10/2026:** B0–B4 integrados (#50–#54). B5 autorizado e **Implementado; QA pendiente**, base `24c24cee44725cfa2fa4c2a3668474e891417ad3`, rama `codex/r5-block-5`. Matriz estricta privada y reconciliación entre perfil/eventos: revocación conserva sólo el mínimo vigente, bloqueo elimina toda la proyección. Sin migración nueva/deploy. [Pruebas y límites](../qa/r5-block-5/README.md), [PR #55 en borrador](https://github.com/EnzoG14/PlanIt/pull/55). Cortes anteriores históricos; B6 requiere instrucción independiente.
 
 **Entrega B4 — 14/10/2026:** B0–B3 integrados (#50–#53). B4 autorizado e **Implementado; QA pendiente**, base `286d38ecf7e461ebd9218a6f71e8ff10a41e0bae`, rama `codex/r5-block-4`. `/me/edit`, datos/privacidad por RPC B1 y avatar independiente con reconciliación/limpieza; sin migración nueva ni deploy. [Entrega, pruebas y límites](../qa/r5-block-4/README.md). Las referencias siguientes a B4 no autorizado describen cortes históricos. Detenerse para revisión de PR; B5 no autorizado.
 
