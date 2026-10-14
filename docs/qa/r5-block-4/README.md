@@ -1,6 +1,8 @@
 # R5 · Bloque 4 — Editar perfil y privacidad
 
-14/10/2026, Argentina. Base `286d38ecf7e461ebd9218a6f71e8ff10a41e0bae` (`main`, merge de PR #53/B3), rama `codex/r5-block-4`, worktree propio en el directorio del usuario. **Implementado; QA pendiente.** Sólo RF-R5-03.CA-01..04 y verificación adicional D04. PR en borrador hacia main; sin merge, migración nueva ni deploy.
+14/10/2026, Argentina. Base `286d38ecf7e461ebd9218a6f71e8ff10a41e0bae` (`main`, merge de PR #53/B3), rama `codex/r5-block-4`, worktree propio en el directorio del usuario. **Implementado; QA pendiente.** Sólo RF-R5-03.CA-01..04 y verificación adicional D04. [PR #54 en borrador](https://github.com/EnzoG14/PlanIt/pull/54) hacia main; sin merge, migración nueva ni deploy.
+
+Código y evidencias verificados en `4e112157c15b3fead38f82954152cd77f919d023`; el commit posterior sólo vincula PR y seguimiento.
 
 ## Entrega y contrato
 
