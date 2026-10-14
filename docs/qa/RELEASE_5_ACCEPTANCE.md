@@ -1,5 +1,7 @@
 # PlanIt — R5 matriz de aceptación (33 CA oficiales)
 
+**Ampliación B7 solicitada por el responsable:** prueba adicional R5-B7-NOTIF: nueva pending produce aviso para destinatario;reintento no duplica;fallo revierte solicitud;campana/bandeja reciben INSERT;Ver solicitudes abre bandeja propia. PASS SQL local/UI WebSocket simulado; **NOT RUN remoto/integral** hasta aplicar migración con permiso y probar sesiones reales. [Evidencia](r5-block-7/follow-notifications/README.md). Sin cambios de CA oficiales.
+
 **Corte B7 — 14/10/2026:** RF-R5-06.CA01..04 **PASS parcial SQL local/UI78 grupos**, HTTP anónimo real4 denegado. **NOT RUN integral** hasta JWT autenticado, dispositivos y aceptación humana. [33 CA literales](r5-block-7/source.json), [contrato/evidencias/límites](r5-block-7/README.md). D04 resolución versus conversión, bloqueos y renovación:17 carreras B7 más13 B1 PASS SQL; no nueva aprobación transversal. Se conservan las aceptaciones previas y los33 CA oficiales.
 
 **Corte B6 — 14/10/2026:** RF-R5-05.CA01..04 **PASS parcial SQL local/UI**, consultas HTTP anónimas reales denegadas; **NOT RUN integral** hasta JWT autenticado/Storage/dispositivos y aceptación humana. [Fuente literal nueva](r5-block-6/source.json), [contrato, pruebas y límites](r5-block-6/README.md). D04-A/B PASS SQL parcial con carreras/rollback B1 reproducidos; no nueva aprobación transversal. No se alteran los33 CA ni la aceptación previa de B5.

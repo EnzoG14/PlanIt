@@ -1,5 +1,7 @@
 # R5 · Bloque 7 — Solicitudes de seguimiento
 
+**Ampliación posterior autorizada — notificaciones Realtime:** [contrato, migración y evidencia nueva](follow-notifications/README.md). Aviso genérico por nueva pending, campana/bandeja existentes y Ver solicitudes. Migración creada/probada local; aplicación remota pendiente de permiso. Supera la exclusión original de productores de abajo, sin alterar evidencia histórica ni acreditar entrega Realtime remota.
+
 14/10/2026, Argentina. Base `cbb05479388d508cb910b98ca6837d0d55614d36`, rama `codex/r5-block-7`. B0–B6 integrados; B6 por PR #56. Alcance RF-R5-06.CA-01..04 y pruebas adicionales D01/D02/D04. **Implementado; QA pendiente**. [PR #57 en borrador](https://github.com/EnzoG14/PlanIt/pull/57), commit de implementación `0a3db2de293017f587aa6259e8f74b54c549a13f`; el commit posterior enlaza seguimiento y normaliza un espacio de log. Sin merge, deploy, cambios SQL remotos ni edición de Google Docs. B8 no autorizado.
 
 ## Comportamiento y contrato

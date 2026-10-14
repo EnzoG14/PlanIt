@@ -1,0 +1,81 @@
+{
+  "base": "169b904e4e951f6d77d05d83dabdebaaf261d66a",
+  "branch": "codex/r5-block-7",
+  "pr": "https://github.com/EnzoG14/PlanIt/pull/57",
+  "recorded_at": "2026-10-14T21:36:11.275Z",
+  "state": "Implementado; QA pendiente",
+  "files": [
+    {
+      "file": "supabase/migrations/20261014212935_follow_request_notifications.sql",
+      "sha256_lf": "78ca016f5135b13a595150ae769eff52387056d4595e70443bb8ec44e737ad9f"
+    },
+    {
+      "file": "src/features/notifications/api.ts",
+      "sha256_lf": "5284455c5fbf5bfa0aa8e9012e54fd79840282cb8fcb2160bb4c00585a93b945"
+    },
+    {
+      "file": "src/pages/NotificationsPage.tsx",
+      "sha256_lf": "b659f62bcd1432cc2699fd6e3d511f23c67fc6e46e41ebd8acc479786072644e"
+    },
+    {
+      "file": "scripts/check-r5-request-notifications.mjs",
+      "sha256_lf": "7b81e36df907a8df0552b2d9bbbfd8b6beac8026a574b19bbc6cc698f3ee7037"
+    },
+    {
+      "file": "scripts/check-r5-request-notifications-ui.mjs",
+      "sha256_lf": "7490fda57e7f8d59146d776d2a692d726724a6412eaa7cc2cef0866fc5e56552"
+    },
+    {
+      "file": "package.json",
+      "sha256_lf": "2baac18f6399f0477636af761b7e1c6588ae4f4948ebe83e6126179d932d8bb0"
+    }
+  ],
+  "checks": {
+    "build": {
+      "command": "npm run build",
+      "result": "PASS",
+      "warning": "Existing large chunk warning"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "result": "PASS",
+      "warning": "Existing warnings"
+    },
+    "sql": {
+      "command": "npm run check:r5:request-notifications",
+      "result": "PASS",
+      "groups": 28,
+      "migrations": 29,
+      "profile_audiences": 72,
+      "lock_races": 14,
+      "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime."
+    },
+    "ui": {
+      "command": "npm run check:r5:request-notifications:ui",
+      "result": "PASS",
+      "viewports": [
+        390,
+        1280
+      ],
+      "environment": "Actual Vite build + Supabase SDK; mocked HTTP and Phoenix WebSocket; not remote JWT or Realtime transport proof"
+    },
+    "regression": {
+      "command": "PLANIT_SQL_OUTPUT=docs/qa/r5-block-7/follow-notifications node scripts/check-r5-regressions.mjs",
+      "result": "PASS",
+      "suites": 13
+    }
+  },
+  "migration": {
+    "created": 1,
+    "tested_local": 1,
+    "applied_remote": 0,
+    "verified_remote": 0
+  },
+  "not_run": [
+    "Remote authenticated JWT flows",
+    "Real Realtime delivery",
+    "Physical devices and screen reader",
+    "Human acceptance"
+  ],
+  "remote": "READ ONLY preflight, existing notifications publication; no writes/migration/deploy/merge"
+}
