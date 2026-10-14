@@ -2,7 +2,7 @@
 
 14/10/2026 · Base `65b46ab69d6f7b75a0f9996b0d091395c0bffab6` · Rama `codex/r5-block-9` · **Implementado; QA pendiente**.
 
-B0–B8 integrados en main (#50–#58), comprobados con fetch y Git. Checkout aislado `r5-block-9-worktree`; configuración copiada byte a byte del checkout main `mapbox-worktree`, ignorada y fuera del índice. Cambios iniciales del usuario preservados. Sólo B9: **B10 requiere aprobación independiente**. PR en borrador hacia main; no merge ni deploy.
+B0–B8 integrados en main (#50–#58), comprobados con fetch y Git. Checkout aislado `r5-block-9-worktree`; configuración copiada byte a byte del checkout main `mapbox-worktree`, ignorada y fuera del índice. Cambios iniciales del usuario preservados. Sólo B9: **B10 requiere aprobación independiente**. [PR #59 en borrador](https://github.com/EnzoG14/PlanIt/pull/59) hacia main; producto/evidencia `27dd331c7247a7d0320d8013510a355245fe7758`; commits posteriores sólo seguimiento. No merge ni deploy.
 
 ## Fuentes y contrato
 

@@ -1,7 +1,7 @@
 {
   "base": "65b46ab69d6f7b75a0f9996b0d091395c0bffab6",
   "branch": "codex/r5-block-9",
-  "date": "2026-10-14T23:28:03.033Z",
+  "date": "2026-10-14T23:29:14.130Z",
   "dependencies": "B0–B8 integrated PR50..58; branch based on fetched origin/main",
   "env": {
     "copied_from": "main checkout mapbox-worktree",
@@ -28,15 +28,15 @@
   "files": [
     {
       "path": "docs/implementation/RELEASE_5_PLAN.md",
-      "sha256": "1978800063a48a03e5ed075241882e69172c1ab22c49231d3e911a58c247ffbc"
+      "sha256": "f14bafd4290e19cba2c5052cb4dc89d945cbef44a930da2d4c3936d59b3b8b43"
     },
     {
       "path": "docs/implementation/RELEASE_5_README.md",
-      "sha256": "b0fa548770dd58ea11a1a4d61052b84f2f291216aabb6cd5bee5870a1f8c045e"
+      "sha256": "e2720de476050b682f465614952272ef7539cf84d8c169bb1a59fb31ad555f95"
     },
     {
       "path": "docs/implementation/RELEASE_5_STATUS.md",
-      "sha256": "23c80f82a738117dc1ee88501c24488bdbbda60b4152f711a8667f8db12ed835"
+      "sha256": "6dfb934a998ee00f8c3e343bcbc557bb1bab286facd87f5941287744c045c69b"
     },
     {
       "path": "docs/implementation/UI_REFRESH_R1_R3_STATUS.md",
@@ -47,20 +47,8 @@
       "sha256": "468adaf1e46a2cbcd97f3d18cf1e1838fc2da36755f431d98d0cde2ff826d009"
     },
     {
-      "path": "package.json",
-      "sha256": "26c33aab6c79f3ce2536cf2e78316dd991e3d3510625eed32753638c1f41fc14"
-    },
-    {
-      "path": "src/pages/DirectChatPage.tsx",
-      "sha256": "9cdd28f6bc6501fa6503bd69c8c0d5dc62f4caa7b9efa9d217184de670ed7a72"
-    },
-    {
-      "path": "src/pages/SocialIdentityPage.tsx",
-      "sha256": "8779941d6f78cf3ac6ca475061dee4e9fbf24ffd9f5be692e338fc1bca1ddba1"
-    },
-    {
       "path": "docs/qa/r5-block-9/README.md",
-      "sha256": "50a64cfd0476370475da4cbad82f37333fba4321bb24e72eed737c55c4000409"
+      "sha256": "5acef6251991d96d43c30ae8dc2b9d92cad5902609ee4d7f9b78fd6d8e7a56bd"
     },
     {
       "path": "docs/qa/r5-block-9/before-desktop/blocked-1280.png",
@@ -507,6 +495,10 @@
       "sha256": "b1587a08f1e0c73238896a49a6edf8c2b2c4fb14909999a83f8ee398bba814e7"
     },
     {
+      "path": "package.json",
+      "sha256": "26c33aab6c79f3ce2536cf2e78316dd991e3d3510625eed32753638c1f41fc14"
+    },
+    {
       "path": "scripts/check-r5-blocks-http.mjs",
       "sha256": "ff3ffa0d7c661f3dcc3ab5aa0358d56779e051669b4b88a60948ea08e7daf863"
     },
@@ -529,6 +521,14 @@
     {
       "path": "src/features/social/blocks.ts",
       "sha256": "d166337c97b3dc178a4b726c275631d9c9c04b327bfb369dbb93609c8b6f76a0"
+    },
+    {
+      "path": "src/pages/DirectChatPage.tsx",
+      "sha256": "9cdd28f6bc6501fa6503bd69c8c0d5dc62f4caa7b9efa9d217184de670ed7a72"
+    },
+    {
+      "path": "src/pages/SocialIdentityPage.tsx",
+      "sha256": "8779941d6f78cf3ac6ca475061dee4e9fbf24ffd9f5be692e338fc1bca1ddba1"
     }
   ]
 }
