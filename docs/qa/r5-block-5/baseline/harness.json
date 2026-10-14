@@ -1,0 +1,8 @@
+{
+  "source": "scripts/check-r5-profile-ui.mjs",
+  "sha256": "bc76640ad95a1455ef4597cbbd7bfd168e1f941502380ed3e2d45d98cb2adb64",
+  "extension": "scripts/check-r5-private-profile-ui.mjs",
+  "stdout": "",
+  "stderr": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'Camila Torres', exact: true }) to be visible\u001b[22m\n\n    at loaded (C:\\Users\\enzog\\planit-worktrees\\r5-block-5\\.r5-check.local\\private-profile-ui.mjs:77:82)\n    at C:\\Users\\enzog\\planit-worktrees\\r5-block-5\\.r5-check.local\\private-profile-ui.mjs:83:177 {\n  log: [\n    \"  - waiting for getByRole('heading', { name: 'Camila Torres', exact: true }) to be visible\"\n  ],\n  name: 'TimeoutError'\n}\n",
+  "result": "FAIL"
+}

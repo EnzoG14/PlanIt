@@ -1,0 +1,9 @@
+{
+  "command": "npm ci",
+  "exitCode": 0,
+  "result": "PASS",
+  "source": "Tool output recorded during B5 setup",
+  "packages_added": 372,
+  "packages_audited": 373,
+  "vulnerabilities": 0
+}

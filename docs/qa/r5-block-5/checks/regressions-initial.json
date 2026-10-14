@@ -1,0 +1,9 @@
+{
+  "command": "npm run check:r5:regressions",
+  "startedAt": "2026-10-14T18:16:38.026Z",
+  "finishedAt": "2026-10-14T18:18:52.843Z",
+  "exitCode": 1,
+  "stdout": "\n> planit@0.0.0 check:r5:regressions\n> node scripts/check-r5-regressions.mjs\n\nPASS: existing notifications suite\nPASS: existing profile suite\nPASS: existing chat suite\nPASS: existing interests suite\nPASS: existing event-links suite\nPASS: existing hidden-access suite\nFAIL: existing gallery suite\nPASS: existing invite suite\nPASS: existing event-access suite\nFAIL: existing attendees suite\nFAIL: existing rejoin suite\nFAIL: existing event-actions suite\nFAIL: existing edit-event suite\n",
+  "stderr": "",
+  "result": "FAIL"
+}

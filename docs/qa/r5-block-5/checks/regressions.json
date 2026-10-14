@@ -1,0 +1,9 @@
+{
+  "command": "npm run check:r5:regressions -- gallery attendees rejoin event-actions edit-event",
+  "startedAt": "2026-10-14T18:20:36.086Z",
+  "finishedAt": "2026-10-14T18:22:02.331Z",
+  "exitCode": 0,
+  "stdout": "\n> planit@0.0.0 check:r5:regressions\n> node scripts/check-r5-regressions.mjs gallery attendees rejoin event-actions edit-event\n\nPASS: existing gallery suite\nPASS: existing attendees suite\nPASS: existing rejoin suite\nPASS: existing event-actions suite\nPASS: existing edit-event suite\n",
+  "stderr": "",
+  "result": "PASS"
+}

@@ -1,0 +1,277 @@
+{
+  "environment": "Real Vite build and Edge headless; Auth/RPC/gateway fixtures, no real JWT/RLS transport",
+  "results": [
+    {
+      "viewport": 320,
+      "test": "Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "30+4 equal-date cursor pagination, refetch previous pages, unique events",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Keyboard participants→profile→event→profile→participants with visible focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Denied pagination clears whole projection; private minimum issues no events query",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Null bio retains content permission; explicit bio/event empty states",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Blocked neutral state, network retry and malformed bio/event/cursor fail closed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Long names/bio/event titles, 200% text and low-height responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Visible 30s revocation and offline/reconnect clear previous content",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Late request/invalid route safe, self→me, logout clears social view",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "30+4 equal-date cursor pagination, refetch previous pages, unique events",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Keyboard participants→profile→event→profile→participants with visible focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Denied pagination clears whole projection; private minimum issues no events query",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Null bio retains content permission; explicit bio/event empty states",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Blocked neutral state, network retry and malformed bio/event/cursor fail closed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Long names/bio/event titles, 200% text and low-height responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Visible 30s revocation and offline/reconnect clear previous content",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Late request/invalid route safe, self→me, logout clears social view",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "30+4 equal-date cursor pagination, refetch previous pages, unique events",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Keyboard participants→profile→event→profile→participants with visible focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Denied pagination clears whole projection; private minimum issues no events query",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Null bio retains content permission; explicit bio/event empty states",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Blocked neutral state, network retry and malformed bio/event/cursor fail closed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Long names/bio/event titles, 200% text and low-height responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Visible 30s revocation and offline/reconnect clear previous content",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Late request/invalid route safe, self→me, logout clears social view",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "30+4 equal-date cursor pagination, refetch previous pages, unique events",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Keyboard participants→profile→event→profile→participants with visible focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Denied pagination clears whole projection; private minimum issues no events query",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Null bio retains content permission; explicit bio/event empty states",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Blocked neutral state, network retry and malformed bio/event/cursor fail closed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Long names/bio/event titles, 200% text and low-height responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Visible 30s revocation and offline/reconnect clear previous content",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Late request/invalid route safe, self→me, logout clears social view",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "30+4 equal-date cursor pagination, refetch previous pages, unique events",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Keyboard participants→profile→event→profile→participants with visible focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Denied pagination clears whole projection; private minimum issues no events query",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Null bio retains content permission; explicit bio/event empty states",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Blocked neutral state, network retry and malformed bio/event/cursor fail closed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Long names/bio/event titles, 200% text and low-height responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Visible 30s revocation and offline/reconnect clear previous content",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Late request/invalid route safe, self→me, logout clears social view",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "30+4 equal-date cursor pagination, refetch previous pages, unique events",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Keyboard participants→profile→event→profile→participants with visible focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Denied pagination clears whole projection; private minimum issues no events query",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Null bio retains content permission; explicit bio/event empty states",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Blocked neutral state, network retry and malformed bio/event/cursor fail closed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Long names/bio/event titles, 200% text and low-height responsive",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Visible 30s revocation and offline/reconnect clear previous content",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Late request/invalid route safe, self→me, logout clears social view",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

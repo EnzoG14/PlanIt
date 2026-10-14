@@ -1,0 +1,402 @@
+{
+  "environment": "Real Vite build and Edge headless; Auth/RPC/gateway fixtures, no real JWT/RLS transport",
+  "results": [
+    {
+      "viewport": 320,
+      "test": "B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 accepted bio/public events, allowlist, stable 30+4 pagination",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 mid-read minimal-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 mid-read blocked-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 mid-read blocked-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 mid-read minimal-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 failed reconciliation exposes no old data and retry recovers minimum",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 late authorized events cannot restore revoked bio or prior pages",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 accepted empty, blocked neutral, network failure and retry",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 hidden/return and offline/reconnect clear data and revalidate revoked permission",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "B5 late route request, invalid ID, self→me and logout remove prior social data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 accepted bio/public events, allowlist, stable 30+4 pagination",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 mid-read minimal-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 mid-read blocked-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 mid-read blocked-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 mid-read minimal-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 failed reconciliation exposes no old data and retry recovers minimum",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 late authorized events cannot restore revoked bio or prior pages",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 accepted empty, blocked neutral, network failure and retry",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 hidden/return and offline/reconnect clear data and revalidate revoked permission",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "B5 late route request, invalid ID, self→me and logout remove prior social data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 accepted bio/public events, allowlist, stable 30+4 pagination",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 mid-read minimal-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 mid-read blocked-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 mid-read blocked-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 mid-read minimal-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 failed reconciliation exposes no old data and retry recovers minimum",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 late authorized events cannot restore revoked bio or prior pages",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 accepted empty, blocked neutral, network failure and retry",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 hidden/return and offline/reconnect clear data and revalidate revoked permission",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "B5 late route request, invalid ID, self→me and logout remove prior social data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 accepted bio/public events, allowlist, stable 30+4 pagination",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 mid-read minimal-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 mid-read blocked-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 mid-read blocked-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 mid-read minimal-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 failed reconciliation exposes no old data and retry recovers minimum",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 late authorized events cannot restore revoked bio or prior pages",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 accepted empty, blocked neutral, network failure and retry",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 hidden/return and offline/reconnect clear data and revalidate revoked permission",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 visible30s polling and 10s deadline discard blocked/late data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "B5 late route request, invalid ID, self→me and logout remove prior social data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 accepted bio/public events, allowlist, stable 30+4 pagination",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 mid-read minimal-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 mid-read blocked-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 mid-read blocked-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 mid-read minimal-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 failed reconciliation exposes no old data and retry recovers minimum",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 late authorized events cannot restore revoked bio or prior pages",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 accepted empty, blocked neutral, network failure and retry",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 hidden/return and offline/reconnect clear data and revalidate revoked permission",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "B5 late route request, invalid ID, self→me and logout remove prior social data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 accepted bio/public events, allowlist, stable 30+4 pagination",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 mid-read minimal-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 mid-read blocked-success reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 mid-read blocked-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 mid-read minimal-denied reconciles current authorized projection",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 failed reconciliation exposes no old data and retry recovers minimum",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 late authorized events cannot restore revoked bio or prior pages",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 accepted empty, blocked neutral, network failure and retry",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 hidden/return and offline/reconnect clear data and revalidate revoked permission",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "B5 late route request, invalid ID, self→me and logout remove prior social data",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}
