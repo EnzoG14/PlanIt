@@ -2,6 +2,8 @@
 
 14/10/2026, Argentina. Base `24c24cee44725cfa2fa4c2a3668474e891417ad3`, rama `codex/r5-block-5`, worktree `C:/Users/enzog/planit-worktrees/r5-block-5`. B0–B4 integrados por #50–#54; R4/B9 integrado por #48. **Implementado; QA pendiente.** Sólo RF-R5-04.CA-01..04 y verificaciones D01/D02. PR en borrador hacia main; sin merge, migración nueva ni deploy.
 
+Código y evidencia de pruebas del producto en `a32f041`; commits posteriores completan el seguimiento.
+
 ## Cambio y contrato
 
 La frontera de seguridad B1 y la vista B3 ya implementan los niveles de privacidad. B5 agrega verificación específica y corrige una carrera reproducida en la aplicación de main: después de leer un perfil ampliado, la revocación del seguimiento puede hacer que la RPC de eventos devuelva `42501`. Antes, esto ocultaba también la identidad mínima todavía autorizada. Ahora se relee `get_social_profile` con la misma sesión y señal de cancelación; una proyección mínima elimina bio, todas las páginas de eventos y cursor. Bloqueo/inexistencia siguen devolviendo «Perfil no disponible». Si la relectura falla, se muestra error seguro/reintento; si aún autoriza contenido ampliado, se conserva la denegación original, sin inventar una lista vacía.
@@ -32,6 +34,7 @@ Fixture SQL nuevo: T perfil privado con bio/demográficos y avatar propio; A con
 | Catálogo remoto READ ONLY | PASS:28 versiones,16 tablas RLS,79 funciones comparadas (stub rls_auto_enable excluido) | [Catálogo](remote/catalog.json), [comparación de cuerpos/ACL/config](sql/remote-comparison.json). No filas de usuarios ni DDL |
 | UI B5 | PASS:79 grupos en320/360/375/390/768/1280 | [Resultados](ui/ui-results.json), [harness](ui/harness.json). Build real, Edge headless, sesiones/RPC/gateway interceptados |
 | Regresiones SQL R1–R4 | PASS:13 suites | [Resultados](regressions.json). Primera ejecución:5 imports ausentes; herramientas locales reutilizadas y sólo esas5 repetidas |
+| Regresiones UI B2/administración | PASS:66 y72 grupos | [Participantes](regressions/b2/participants-ui/ui-results.json), [administración](regressions/b2/admin-ui/ui-results.json); adaptación B3 existente |
 | Regresiones UI B3/B4 | PASS:54 y56 grupos | [B3](regressions/b3-ui/ui-results.json), [B4](regressions/b4-ui/results.json). Fixtures de build real |
 | Regresiones SQL B2/B3/B4 | PASS | [Logs](checks/), [B2](regressions/b2-sql/sql-results.json), [B3](regressions/b3-sql/sql-results.json), [B4](regressions/b4-sql/sql-results.json). Catálogo fresco de B5 es la comparación remota vigente |
 | Gateway avatar unitario | PASS:5 grupos | [Unit](avatar-unit.json); handler real transpile en Node y fetch simulado, no Deno/Storage real |
@@ -40,7 +43,7 @@ Fixture SQL nuevo: T perfil privado con bio/demográficos y avatar propio; A con
 | JWT autenticado/Storage-CDN real/Realtime | NOT RUN | No sesiones de prueba preexistentes suministradas; sin crear cuentas/relaciones remotas. No nueva publicación/caché de datos sociales |
 | Dispositivos reales/teclado móvil/lector de pantalla/aceptación | NOT RUN | Emulación y fixtures no equivalen a aceptación humana |
 
-Las regresiones UI B2–B4 se registran en `checks/` y `regressions/`; sus resultados definitivos se resumen en el seguimiento. El runner B2 histórico contiene una bio pública diferida a B3: para probar el mínimo se reutiliza la adaptación existente `check-r5-profile-regression-ui.mjs`, sin modificar expectativas históricas. La suite B3 verifica bio/contenido ampliado.
+Las regresiones UI B2–B4 pasaron en los seis tamaños; resultados definitivos en `checks/` y `regressions/`. El runner B2 histórico contiene una bio pública diferida a B3: para probar el mínimo se reutiliza la adaptación existente `check-r5-profile-regression-ui.mjs`, sin modificar expectativas históricas. La suite B3 verifica bio/contenido ampliado.
 
 Incidencias del harness resueltas: import/ruta de runtime y servidor faltantes en el runner B2 original; su fixture con bio pública diferida usa la adaptación B3 existente. Cinco suites SQL requerían imports estáticos de herramientas locales; se proporcionaron fuera de dependencias del producto. La suite UI B5 instala su reloj antes de recrear los intervalos, para probar30s/10s virtuales sin que el polling real oculte fallos. Ninguna de estas incidencias cambió autorización de servidor.
 
