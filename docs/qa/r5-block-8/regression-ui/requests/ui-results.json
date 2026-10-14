@@ -1,6 +1,6 @@
 {
-  "base": "cbb05479388d508cb910b98ca6837d0d55614d36",
-  "branch": "codex/r5-block-7",
+  "base": "0116fd30478dea8a6851b7a97cac518abded3925",
+  "branch": "codex/r5-block-8",
   "environment": "Vite build + Edge headless; REST/session fixtures; no live JWT authorization or physical keyboard",
   "results": [
     {
@@ -395,5 +395,6 @@
     }
   ],
   "errors": [],
-  "result": "PASS"
+  "result": "PASS",
+  "inherited_fixture_base": "cbb05479388d508cb910b98ca6837d0d55614d36"
 }
