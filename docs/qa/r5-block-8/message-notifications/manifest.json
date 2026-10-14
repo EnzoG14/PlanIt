@@ -1,0 +1,183 @@
+{
+  "base": "603ed63f88b77c1946554d3f2ed1b52a98ad7823",
+  "branch": "codex/r5-block-8",
+  "pr": "https://github.com/EnzoG14/PlanIt/pull/58",
+  "migration": {
+    "version": "20261014225216",
+    "created": true,
+    "tested_local": true,
+    "applied_remote": false,
+    "verified_remote": false
+  },
+  "format": "SHA256 raw workspace bytes; Git may normalize CRLF",
+  "files": [
+    {
+      "path": "docs/architecture.md",
+      "sha256": "ddfdfc982f8e5013c1d0467143a05829330dc981778318532d803267d09998fc"
+    },
+    {
+      "path": "docs/database.md",
+      "sha256": "1c1d2483d003106e9fc54bf5455c769dfaa9ac83eba34ff95caf0541fab6c799"
+    },
+    {
+      "path": "docs/implementation/RELEASE_5_PLAN.md",
+      "sha256": "4b4563183dd3179a328f9ff3838c1eff8ef656ac095b05ad58a55bbb51b411e5"
+    },
+    {
+      "path": "docs/implementation/RELEASE_5_README.md",
+      "sha256": "ae6b0e47948aa45572f96fa93b9d7a824335053a8480fac631089961768f0c55"
+    },
+    {
+      "path": "docs/implementation/RELEASE_5_STATUS.md",
+      "sha256": "6d7978f88620477dedf5447317cd63f237f4bf63f1325c37dbe2b477f1d07b46"
+    },
+    {
+      "path": "docs/implementation/UI_REFRESH_R1_R3_STATUS.md",
+      "sha256": "7ec4903e174dea9ab13992fcd5ce6a52eb328dd1a4edcde5bd04312b528e8df3"
+    },
+    {
+      "path": "docs/qa/RELEASE_5_ACCEPTANCE.md",
+      "sha256": "601ea5fd79cef798b124273af6f59f71217451fe4b71efe6780574554118aa9d"
+    },
+    {
+      "path": "docs/qa/r5-block-8/README.md",
+      "sha256": "a24f742d7cfaa81eee883e08e3d33a2a5eec7dc6251bb73c52fc4ca07e575fa5"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/README.md",
+      "sha256": "4d0dd7d58e1c1665a071f0a5e727e46092b713e8c229642f82ac9114c1edd8ca"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/commands/build.log",
+      "sha256": "29d4890333d9648ec7ec8b51dc37fb88806befd4d9532781f0b9fab431644c0e"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/commands/lint.log",
+      "sha256": "61de859d093de0eb456e8333f9b6e6876df57afae171082927b7e7907534ab0b"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/dm-regression/ui-results.json",
+      "sha256": "15d5c35c00399b777bff181b32440feceb19f3885ea8416e69571c365f19e0cb"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/follow-regression/results.json",
+      "sha256": "077121d54ae478164916a4d9719dc902bd91fe78739220f6b5b1dcedd5d93418"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions.json",
+      "sha256": "af9f6ceb3264bf8a318bae0656b78e355be158a85a5419a30a4372fe3eda6bdc"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/attendees/postgres-results.json",
+      "sha256": "d1d8772c4468aafb2621766da2a48355fda390bf5644b1c040c00869d60aa313"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/chat/postgres-results.json",
+      "sha256": "6e1549ce1496a225c3e319acfb22f0b5000e738b009b35a4c3e8f87bc7645e2a"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/edit-event/postgres-results.json",
+      "sha256": "51623180356ac9d598e77a53e85722189511015786c620ced7f8b41547d26527"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/event-access/postgres-results.json",
+      "sha256": "2246f44f4e6d7761e91f9340c2d4a96dcd912b10260222ef08f37df614abc770"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/event-actions/postgres-results.json",
+      "sha256": "bb97cd1b4b8f76f12395ce71b01b2fae7e7ff1f3713284f197a75274643e6f57"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/event-links/postgres-results.json",
+      "sha256": "2256caa3a976b25fb34bf8d5eb9bb93d5444d73bee9ec494adcb701c8eebb1b4"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/gallery/postgres-results.json",
+      "sha256": "bd2afc4c2dcca7b8c369105a56696e9bd6a7ada1bb2d4e3d5329d7b39409206b"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/hidden-access/postgres-results.json",
+      "sha256": "676ff359b6a1c8007d6a120072d015aaf70c24143589890e418df9f783668791"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/interests/results.json",
+      "sha256": "5cdd7d6ab931fe346125df79724ad65a3648105c603ceda4c24ff25bdeba89a5"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/invite/postgres-results.json",
+      "sha256": "79f7c3423dc7095099b97685b39b81ca5aae06491759fdb3356ddfad573c53f2"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/notifications/postgres-results.json",
+      "sha256": "bed3f8a87b6173a10e249881b917286a966cdbadd66e062396b2c35297987511"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/profile/postgres-results.json",
+      "sha256": "73f9d98e643ff0ca5c8ab92aac9fb471f7f688dac50ae5f8499b6d4d9c7a0ace"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/regressions/rejoin/postgres-results.json",
+      "sha256": "550ca0aa978e18b4e6b96c9bcf856d1f114a95659eb11dd5f606e1ae60877e33"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/remote-preflight.json",
+      "sha256": "904b26d9b7000a11dd9980c42f8f1f8b1238a1539f73615a1209d03416351043"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/sql/explain.json",
+      "sha256": "70ed0824132517b39a7038bd48ac93b64c61d58ae4950f9c23f70e7c0df5bce8"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/sql/harness.json",
+      "sha256": "4c1369bbb325e22424623969385b7ac4215329928182502393acaa4d821b6c9f"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/sql/sql-results.json",
+      "sha256": "754a95a2d6a9ff3854196ba09cd188aa84227259fda57e46893f897160c6d8be"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/ui/dm-notice-1280.png",
+      "sha256": "30b70f3a93812c3bc1dcc89424c8013450278f176a6a10b53f50119f4986cbf5"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/ui/dm-notice-390.png",
+      "sha256": "0b33574823887c946232cac024bb3f313ffc95e8b72fea9d871c8fac812013a4"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/ui/results.json",
+      "sha256": "5705c50dd8ab16b2d99b972e5543d8bf2f292109fd51e907bc899d7ccc4de1ad"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/ui/safe-target-1280.png",
+      "sha256": "06532f70c6a6fbc833395780ce322ac43f71ca346c9b06d4a0d51715316ddb4d"
+    },
+    {
+      "path": "docs/qa/r5-block-8/message-notifications/ui/safe-target-390.png",
+      "sha256": "1ab21b607d2d49e580cc4a8b276ce65a6e5d193ef156b331e0a716740e8353a1"
+    },
+    {
+      "path": "package.json",
+      "sha256": "30d7e4d2e1124009e41e1b3ea3cce0696cbe4edeb45ab585f8900db95ee49c9e"
+    },
+    {
+      "path": "scripts/check-r5-message-notifications-ui.mjs",
+      "sha256": "f68969768e43a130e910663d1f3435f4b94d7446b01f4643d00f9fea940454b2"
+    },
+    {
+      "path": "scripts/check-r5-message-notifications.mjs",
+      "sha256": "fee9b35edf60d32af1bb19b3346c0251e907665c391f7dc1eee5c0621825d3d5"
+    },
+    {
+      "path": "src/features/notifications/api.ts",
+      "sha256": "e80982ca983acc543e9e3a78d090710b98428ace4c88ca92962de3435ef334d5"
+    },
+    {
+      "path": "src/pages/NotificationsPage.tsx",
+      "sha256": "b1b2842bc5544a5664b87f9d3fea9e759cf8143a992c18d1c988d37749246f3e"
+    },
+    {
+      "path": "supabase/migrations/20261014225216_direct_message_notifications.sql",
+      "sha256": "11feb5c2e3e704cd0c4d31608d8298e203e7184edc65a42d4be932363f541b6a"
+    }
+  ]
+}

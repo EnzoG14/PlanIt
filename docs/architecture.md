@@ -1,5 +1,7 @@
 # PlanIt — Arquitectura
 
+**Ampliación B8 — avisos DM:** trigger privado invoker de messages(kind direct) inserta notifications con id=message.id y contraparte derivada en la misma transacción. Reintento no duplica; fallo revierte mensaje. Proveedor Realtime/RLS existente, payload genérico, get_notification_target INVOKER revalida membresía para /messages/:id. [Contrato](qa/r5-block-8/message-notifications/README.md), migración20261014225216 local/probada; remota pendiente de permiso.
+
 ## Release 5 · Bloque 8: mensajería privada (QA pendiente)
 
 Rutas protegidas `/messages` y `/messages/:conversationId`, acceso desde perfiles sin follow y sin quinto tab. RPC DM B1 y SELECT RLS para cabecera/conciliación por UUID; sólo texto. Realtime INSERT filtrado es invalidación, lectura RPC paginada30 con recuperación de gaps y deduplicación; respaldo visible30s. Oculto/offline/cambio de sesión limpia canal/historial. Bloqueo preserva historial, retira identidad y deshabilita compositor; BD autoriza envíos concurrentes. Sin cambios SQL, notificaciones ni chat grupal. [Contrato y límites](qa/r5-block-8/README.md).

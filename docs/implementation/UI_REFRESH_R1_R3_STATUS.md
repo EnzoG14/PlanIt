@@ -1,5 +1,7 @@
 # PlanIt — Estado visual UI Refresh R1–R3
 
+**Ampliación R5/B8 avisos DM:** centro existente conserva Amanecer, muestra tipo Mensaje privado/icono y Ver mensaje. [Capturas reales con fixtures390/1280](../qa/r5-block-8/message-notifications/README.md); regresiones DM/follow PASS. Sin nuevo CSS/tokens/mockups ni aceptación R1–R3.
+
 **Adición R5/B8 · 14/10/2026:** bandeja y conversación DM heredan Amanecer/chat, sin nuevo tab. [Capturas y verificación](../qa/r5-block-8/README.md): seis anchos, texto200%, altura400, foco/retorno, estados, texto largo y limpieza offline/oculto. Sin baseline preimplementación nuevo ni aceptación funcional R1–R3. Dispositivo/teclado móvil/lector reales NOT RUN; QA humana pendiente. DESIGN/tokens/mockups intactos.
 
 **Adición R5/B7 · 14/10/2026:** bandeja y confirmaciones de seguimiento mantienen Amanecer, fuente autoalojada, tokens y cuatro destinos primarios. [Capturas, verificación y límites](../qa/r5-block-7/README.md). Sin cambios de DESIGN/tokens/mockups ni aceptación nueva R1–R3. Dispositivos, teclado móvil y lector de pantalla reales NOT RUN; QA humana pendiente.

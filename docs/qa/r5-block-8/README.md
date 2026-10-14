@@ -1,5 +1,7 @@
 # R5 · Bloque 8 — Mensajería privada
 
+**Ampliación posterior autorizada — avisos de mensajes privados:** [contrato, migración y pruebas](message-notifications/README.md). Misma PR #58: cada DM nuevo genera aviso genérico para destinatario, campana/centro Realtime y Ver mensaje. Migración20261014225216 creada/probada local; no aplicada remotamente, requiere permiso. Supera las exclusiones originales de notificaciones y las cifras0 migraciones del corte inicial siguiente; su manifiesto conserva ese snapshot, y la ampliación incluye un manifiesto propio.
+
 14/10/2026, Argentina. **Implementado; QA pendiente**. Base `0116fd30478dea8a6851b7a97cac518abded3925`, rama `codex/r5-block-8`, [PR #58 en borrador](https://github.com/EnzoG14/PlanIt/pull/58), implementación `fbb38f2d0565efd96269371dfac1babb61fbca78`; B0–B7 integrados (#50–#57). Sólo RF-R5-07.CA-01..04 y comprobaciones relacionadas D01-B/D03-A/D05-A. Sin merge, deploy, DDL remoto, edición Google Docs ni controles nuevos B9.
 
 ## Contrato y decisiones

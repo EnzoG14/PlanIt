@@ -1,5 +1,7 @@
 # PlanIt — Modelo de datos y migraciones
 
+**Ampliación B8 —20261014225216:** nueva migración local/probada: trigger AFTER INSERT messages genera aviso sólo direct, ID del mensaje y recipient derivado; get_notification_target agrega DM con RLS. No cambia tablas/policies/grants/publicación. [Evidencia](qa/r5-block-8/message-notifications/README.md). Aplicación/verificación remotas pendientes de autorización; catálogo remoto sigue29.
+
 **Consumidor DM R5/B8 — 14/10/2026:** sin cambios del modelo/RPC/RLS/publicación; bandeja y chat consumen el contrato B1. Catálogo read-only confirma29 migraciones,4 RPC DM y publicación messages/notifications. Conciliación SELECT messages por conversación/UUID, miembro por RLS; nuevos envíos sólo RPC con bloqueo bilateral y locks existentes. [Evidencia y límites](qa/r5-block-8/README.md). Migraciones nuevas0/0/0/0; no DDL remoto.
 
 **Aplicación remota autorizada R5/B7 — 14/10/2026:**20261014212935_follow_request_notifications.sql aplicada/verificada en planit-v2 tras aprobación expresa posterior. Ledger29, cuerpos/trigger/ACL/RLS/publicación coincidentes y dry-run al día. [Acta](qa/r5-block-7/follow-notifications/remote/README.md). Las referencias siguientes a aplicación pendiente son históricas; JWT/Realtime real sigue pendiente.

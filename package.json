@@ -90,7 +90,9 @@
     "check:r2:live": "node scripts/check-release-2-live.mjs --readonly",
     "check:r5:messages:ui": "node scripts/check-r5-messages-ui.mjs",
     "check:r5:messages": "node scripts/check-r5-messages.mjs",
-    "check:r5:messages:http": "node scripts/check-r5-messages-http.mjs"
+    "check:r5:messages:http": "node scripts/check-r5-messages-http.mjs",
+    "check:r5:message-notifications": "node scripts/check-r5-message-notifications.mjs",
+    "check:r5:message-notifications:ui": "node scripts/check-r5-message-notifications-ui.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",
