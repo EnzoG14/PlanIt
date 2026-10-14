@@ -4,7 +4,7 @@
 
 ## Contrato e implementación
 
-- Migración nueva `20261014120006_event_access_management.sql`, generada con Supabase CLI y ordenada después de B7. **Creada y probada localmente; no aplicada remotamente.** No cambian tablas/RLS ni migraciones aplicadas.
+- Migración nueva `20261014120006_event_access_management.sql`, generada con Supabase CLI y ordenada después de B7. **Creada/probada localmente y aplicada/verificada en planit-v2 el 13/10/2026 con autorización expresa posterior.** No cambian tablas/RLS ni migraciones aplicadas previamente. [Acta remota](remote-migration-summary.json).
 - `get_event_access_grants(uuid,text,uuid,integer) returns jsonb`: dueño desde `auth.uid()`, sólo evento oculto; status active/revoked, cursor por grant ID, límite 30 por defecto y máximo 50. Devuelve `{title,event_state,grants,next_cursor}`. Filas `{id,user_id,username,display_name,avatar_url,status,is_confirmed}`; avatar `null` e iniciales, sin nueva lectura social de Storage/profiles. Ningún email, nacimiento, sexo, hash o token.
 - `revoke_event_access(uuid,uuid) returns void`: único lock evento→participación→grant. Si confirmed, UPDATE a removed y trigger R3 escribe una transición `organizer_removal` con actor dueño, antes de revocar. Falla cualquier paso → rollback total. Cupo derivado, sin DELETE ni historial manual.
 - `restore_event_access(uuid,uuid) returns void`: sólo grant existente; pone active, limpia revoked_at y fija restored_at/updated_at. No inscribe, ocupa cupo, restaura chat, aprueba solicitudes ni modifica cooldown. Retries de ambas acciones conservan timestamps e historial.
@@ -39,8 +39,14 @@ Reproducción desde raíz: `npm run build`, `npm run check:event-access`, `npm r
 
 ## Límites y pendientes
 
-**NOT RUN:** HTTP/JWT A/B/C/D reales, Storage/Realtime remotos, asesores/drift remotos B8, despliegue, dispositivos físicos/PWA, lector de pantalla, teclado móvil/safe areas físicas y aceptación humana. La prueba de chat verifica limpieza de mensajes/composer con fixtures, no transporte Realtime real. Los avatares son iniciales; no se abrió acceso social R5.
+**NOT RUN:** HTTP/JWT A/B/C/D funcionales reales, Storage/Realtime end-to-end remotos, despliegue frontend, dispositivos físicos/PWA, lector de pantalla, teclado móvil/safe areas físicas y aceptación humana. La prueba de chat verifica limpieza de mensajes/composer con fixtures, no transporte Realtime real. Los avatares son iniciales; no se abrió acceso social R5.
 
 Una URL ya firmada puede seguir sirviendo hasta su TTL de 60 s aunque RLS niegue nuevas firmas. La revalidación visible de detalle/chat es cada 30 s y al volver; no puede borrar archivos descargados ni garantiza notificación instantánea. No se añadieron grants a Realtime ni cachés privados al Service Worker. El caso de poca altura usa emulación, no teclado móvil real; el incremento de texto es CSS, no zoom nativo. `prefers-reduced-transparency` y lectores de pantalla no se acreditan por la captura.
 
-Sin cambios al proyecto histórico, aplicación SQL remota, merge ni deploy. Detenerse en PR B8; B9 sigue pendiente.
+Sin cambios al proyecto histórico, merge ni deploy frontend. Detenerse en PR B8; B9 sigue pendiente.
+
+## Aplicación remota autorizada posterior — 13/10/2026
+
+Por pedido expreso del usuario se ejecutó `db push --linked --skip-vault --yes` en **planit-v2**. Preflight: 24 versiones aplicadas, sólo B8 pendiente; dependencias R3/B7 presentes y RPC B8 ausentes. Postflight: **25 versiones sincronizadas**, dry-run sin pendientes. No seeds, roles ni cambios de Vault. Las tres funciones coinciden con el SQL versionado, son DEFINER con search_path vacío y EXECUTE sólo authenticated; tablas links/grants/participaciones conservan RLS y ningún UPDATE genérico para authenticated. Tres guardas sin identidad verificadas dentro de una transacción READ ONLY revertida, sin datos de negocio modificados.
+
+Asesores de seguridad: **sin ERROR**. Avisos [DEFINER autenticados](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable) pasan de 26 a 29 por las tres RPC intencionales con autorización de dueño. [Links con RLS sin política](https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy) conserva denegación por defecto. Aviso previo [protección de contraseñas filtradas deshabilitada](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection), sin cambio de configuración Auth. [Acta con metadata y límites](remote-migration-summary.json). Esto no acredita HTTP/JWT A/B/C/D, Storage/Realtime reales ni aceptación humana.

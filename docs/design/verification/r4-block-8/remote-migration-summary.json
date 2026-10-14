@@ -1,0 +1,104 @@
+{
+  "project": "planit-v2",
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "authorized_by": "Explicit user request in this chat: Hace las migracion a la db remota",
+  "date_argentina": "2026-10-13",
+  "migration": {
+    "version": "20261014120006",
+    "name": "event_access_management",
+    "applied": true,
+    "method": "Supabase CLI 2.120.0 db push --linked --skip-vault --yes",
+    "applied_migrations_count": 25,
+    "post_dry_run_pending": [],
+    "seeds_applied": false,
+    "roles_applied": false,
+    "vault_updated": false
+  },
+  "verification": {
+    "tables": [
+      {
+        "relname": "event_access_grants",
+        "relrowsecurity": true,
+        "authenticated_update": false
+      },
+      {
+        "relname": "event_access_links",
+        "relrowsecurity": true,
+        "authenticated_update": false
+      },
+      {
+        "relname": "event_participations",
+        "relrowsecurity": true,
+        "authenticated_update": false
+      }
+    ],
+    "functions": [
+      {
+        "args": "p_event_id uuid, p_status text, p_after_id uuid, p_limit integer",
+        "proname": "get_event_access_grants",
+        "body_md5": "0f692d1c9f9c991d1f7ecb3f99a952ee",
+        "proconfig": [
+          "search_path=\"\""
+        ],
+        "prosecdef": true,
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": true
+      },
+      {
+        "args": "p_event_id uuid, p_user_id uuid",
+        "proname": "restore_event_access",
+        "body_md5": "2efbd5a4921b7d75dfbaf3db7d324c6f",
+        "proconfig": [
+          "search_path=\"\""
+        ],
+        "prosecdef": true,
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": true
+      },
+      {
+        "args": "p_event_id uuid, p_user_id uuid",
+        "proname": "revoke_event_access",
+        "body_md5": "0510e365a051493261f18725efd1a378",
+        "proconfig": [
+          "search_path=\"\""
+        ],
+        "prosecdef": true,
+        "anon_execute": false,
+        "public_execute": false,
+        "authenticated_execute": true
+      }
+    ],
+    "body_comparison": "All three function bodies match versioned SQL (MD5 comparison, LF normalized)",
+    "missing_identity_guards": "PASS: three calls denied with SQLSTATE 42501 in READ ONLY transaction, rolled back",
+    "business_data_modified_by_verification": false
+  },
+  "security_advisors": [
+    {
+      "name": "rls_enabled_no_policy",
+      "level": "INFO",
+      "count": 1,
+      "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy"
+    },
+    {
+      "name": "authenticated_security_definer_function_executable",
+      "level": "WARN",
+      "count": 29,
+      "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable"
+    },
+    {
+      "name": "auth_leaked_password_protection",
+      "level": "WARN",
+      "count": 1,
+      "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection"
+    }
+  ],
+  "advisory_notes": "No ERROR. Three added authenticated DEFINER advisories are intended owner-only RPCs. RLS-without-policy links is intentional deny-all; leaked-password protection disabled is pre-existing and unchanged.",
+  "limits": [
+    "HTTP/JWT A/B/C/D functional tests NOT RUN",
+    "Storage/Realtime end-to-end NOT RUN",
+    "Human acceptance pending",
+    "No merge or frontend deployment"
+  ]
+}

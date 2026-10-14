@@ -2,7 +2,7 @@
 
 ## Release 4 — Bloque 8: administración de grants
 
-`20261014120006_event_access_management.sql` **creada y probada localmente, no aplicada remotamente**. Agrega `get_event_access_grants(uuid,text,uuid,integer) returns jsonb`, `revoke_event_access(uuid,uuid) returns void` y `restore_event_access(uuid,uuid) returns void`; DEFINER, `search_path=''`, EXECUTE sólo authenticated y dueño derivado de `auth.uid()`.
+`20261014120006_event_access_management.sql` **creada, probada localmente y aplicada/verificada en planit-v2 el 13/10/2026 con autorización expresa posterior**. Agrega `get_event_access_grants(uuid,text,uuid,integer) returns jsonb`, `revoke_event_access(uuid,uuid) returns void` y `restore_event_access(uuid,uuid) returns void`; DEFINER, `search_path=''`, EXECUTE sólo authenticated y dueño derivado de `auth.uid()`. [Acta remota](design/verification/r4-block-8/remote-migration-summary.json): 25 versiones sincronizadas, dry-run sin pendientes, tres cuerpos idénticos a Git, ACL/RLS y guardas sin identidad PASS. HTTP/JWT funcional sigue pendiente.
 
 Listado mínimo de ocultos por estado y cursor UUID, 30 filas por defecto/máximo 50; sin perfiles privados, hashes ni tokens. Avatar `null` hasta lectura social autorizada. Revocación bloquea evento→participación→grant, remueve confirmed mediante trigger R3 y después revoca, con rollback total. Restituir sólo activa un grant existente, sin participación/chat/cupo/reingreso. Retries no cambian historial ni timestamps. Ocultos cerrados: sólo lectura por decisión confirmada; públicos no gestionan grants y conservan A04/A05. [Pruebas y límites B8](design/verification/r4-block-8/README.md).
 
