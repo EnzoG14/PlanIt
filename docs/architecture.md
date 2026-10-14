@@ -1,5 +1,9 @@
 # PlanIt — Arquitectura
 
+## R4 Bloque 7 — Ruta `/invite`
+
+`/invite#token=<64 hex>` queda fuera de `RequireAuth`. `InvitePage` guarda el secreto sólo en memoria del módulo `features/events/invite.ts`, limpia el fragmento con `navigate(replace)` antes de renderizar, y envía el token únicamente en el cuerpo del RPC `redeem_event_link`. Sin sesión ofrece Ingresar/Crear cuenta con `next=/invite` (destino agregado al allowlist de `safeReturnPath`); el secreto sobrevive al login SPA, se liga a la identidad y se descarta al cerrar sesión o cambiar de cuenta. Tras el canje se relee `/events/:id` (autorización del servidor con grant activo) y recién entonces se navega con replace. El shell es `amanecer-shell invite-shell` con wash decorativo; el dock mantiene sus cuatro destinos. Recargar o confirmar el correo exige reabrir el enlace original.
+
 ## R4 Bloque 6 — Visibilidad y enlaces del organizador
 
 Crear/editar reutiliza EventFields Amanecer con Público/Oculto. `create_event` recibe `p_visibility` desde el INSERT completo; `update_event` guarda contenido y visibilidad juntos. Los parámetros finales opcionales conservan llamadas R1–R3; `set_event_visibility` comparte lock de evento e invariantes A04/A05/D12 del trigger B5, sin UPDATE cliente. Un conflicto confirmed+revoked revierte el guardado íntegro.

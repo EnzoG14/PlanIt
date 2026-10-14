@@ -1,0 +1,18 @@
+/* Invitation redemption composition only; cards, buttons and notices reuse the foundation. */
+.app-shell.amanecer-shell.invite-shell { background: var(--pi-color-bg); }
+.invite-shell .invite-wash {
+  position: absolute; z-index: -1; inset: 0 0 auto; height: 280px; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 12% 0%, color-mix(in srgb, var(--pi-color-violet) 40%, transparent), transparent 65%),
+    radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--pi-color-primary) 20%, transparent), transparent 65%);
+  mask-image: linear-gradient(#000, transparent);
+}
+.invite-shell main { position: relative; max-width: 520px; padding-top: var(--pi-space-section); padding-bottom: calc(var(--pi-space-dock-clearance) + env(safe-area-inset-bottom)); }
+.invite-shell main:focus-visible, .invite-shell .invite-feedback:focus-visible { outline: none; box-shadow: none; }
+.invite-header h1 { max-width: 14ch; margin-bottom: var(--pi-space-compact); font-size: var(--pi-font-headline-size); line-height: var(--pi-font-headline-line-height); letter-spacing: var(--pi-font-headline-tracking); text-wrap: balance; overflow-wrap: anywhere; }
+.invite-lead { margin: 0 0 var(--pi-space-base); color: var(--pi-color-text-on-wash); font-size: var(--pi-font-body-size); line-height: var(--pi-font-body-line-height); }
+.invite-feedback { display: grid; gap: var(--pi-space-base); }
+.invite-actions { display: grid; gap: var(--pi-space-compact); }
+.invite-actions > :is(.gradient-link, .gradient-button) { min-height: 52px; }
+.invite-shell .text-button { min-height: 44px; border-radius: var(--pi-radius-pill); color: var(--pi-color-violet-deep); font-size: var(--pi-font-meta-size); }
+.invite-shell :is(a, button):focus-visible { outline: 3px solid var(--pi-color-focus); outline-offset: 2px; }

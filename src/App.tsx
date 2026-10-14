@@ -20,6 +20,7 @@ const MyEventsPage = lazy(() => import('./pages/MyEventsPage').then(module => ({
 const HomePage = lazy(() => import('./pages/HomePage').then(module => ({ default: module.HomePage })))
 const EventChatPage = lazy(() => import('./pages/EventChatPage').then(module => ({ default: module.EventChatPage })))
 const NotificationsPage = lazy(() => import('./pages/NotificationsPage').then(module => ({ default: module.NotificationsPage })))
+const InvitePage = lazy(() => import('./pages/InvitePage').then(module => ({ default: module.InvitePage })))
 const InterestsPage = lazy(() => import('./pages/InterestsPage').then(module => ({ default: module.InterestsPage })))
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route index element={<Navigate to="/map" replace />} />
     <Route path="register" element={<AuthPage key="register" mode="register" />} />
     <Route path="login" element={<AuthPage key="login" mode="login" />} />
+    <Route path="invite" element={<Suspense fallback={<StatusMessage title="Cargando invitación">Esperá un momento.</StatusMessage>}><InvitePage /></Suspense>} />
     <Route element={<RequireAuth />}>
       <Route path="notifications" element={<Suspense fallback={<StatusMessage title="Cargando notificaciones">Esperá un momento.</StatusMessage>}><NotificationsPage /></Suspense>} />
       <Route path="events/:id/chat" element={<Suspense fallback={<StatusMessage title="Cargando chat">Esperá un momento.</StatusMessage>}><EventChatPage /></Suspense>} />
