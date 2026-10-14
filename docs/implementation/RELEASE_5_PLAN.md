@@ -1,5 +1,7 @@
 # PlanIt — Plan técnico Release 5 · Comunidad y relaciones sociales
 
+**Entrega B8 — 14/10/2026:** B0–B7 integrados (#50–#57); B8 **Implementado; QA pendiente**, base `0116fd30478dea8a6851b7a97cac518abded3925`, rama `codex/r5-block-8`. Bandeja y DM de texto con Realtime/RLS existentes, reconciliación por UUID e historial read-only bajo bloqueo. [Contrato, amenazas, pruebas y límites](../qa/r5-block-8/README.md). Sin nuevas migraciones/deploy/merge; HTTP JWT/Realtime reales y aceptación pendientes. B9 requiere instrucción independiente. Las referencias anteriores a PR #57 en borrador son cortes históricos: está integrada en esta base.
+
 **Aplicación autorizada B7 — 14/10/2026:**20261014212935 aplicada/verificada en planit-v2 tras «sí» del responsable. [Acta](../qa/r5-block-7/follow-notifications/remote/README.md),29 migraciones y catálogo/ACL/RLS/publicación PASS. Sin deploy/merge; QA JWT/Realtime real pendiente. Supera el permiso pendiente del corte siguiente.
 
 **Ampliación expresa B7 — 14/10/2026:** pedido posterior incorpora aviso Realtime genérico por nueva generación pending, transaccional/sin duplicar reintentos. Reutiliza notifications/RLS/canal existentes y abre solicitudes propias. [Contrato/migración/pruebas](../qa/r5-block-7/follow-notifications/README.md). Una migración nueva local; aplicación remota requiere permiso. Supera exclusión original de notificaciones B7 sin renumerar los33 CA.

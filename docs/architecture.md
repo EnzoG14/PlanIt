@@ -1,5 +1,9 @@
 # PlanIt — Arquitectura
 
+## Release 5 · Bloque 8: mensajería privada (QA pendiente)
+
+Rutas protegidas `/messages` y `/messages/:conversationId`, acceso desde perfiles sin follow y sin quinto tab. RPC DM B1 y SELECT RLS para cabecera/conciliación por UUID; sólo texto. Realtime INSERT filtrado es invalidación, lectura RPC paginada30 con recuperación de gaps y deduplicación; respaldo visible30s. Oculto/offline/cambio de sesión limpia canal/historial. Bloqueo preserva historial, retira identidad y deshabilita compositor; BD autoriza envíos concurrentes. Sin cambios SQL, notificaciones ni chat grupal. [Contrato y límites](qa/r5-block-8/README.md).
+
 **B7 notificaciones, aplicación remota14/10/2026:** migración20261014212935 aplicada/verificada con autorización expresa posterior en planit-v2. [Acta](qa/r5-block-7/follow-notifications/remote/README.md). Backend de avisos activo para nuevos pedidos; UI Ver solicitudes está en PR #57, sin deploy/merge en esta operación. QA de transporte real pendiente; las menciones siguientes a permiso pendiente son cortes históricos.
 
 ## Ampliación R5/B7 — notificación de seguimiento (QA pendiente)

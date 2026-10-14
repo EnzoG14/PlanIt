@@ -64,7 +64,7 @@ try {
       if(path.startsWith('/rest/v1/')) return reply([])
       return reply({})
     })
-    const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message))
+    const page=await context.newPage();await page.clock.install();page.on('pageerror',error=>errors.push(error.message))
     const check=test=>{results.push({viewport:width,test,result:'PASS'});console.log(`PASS ${width}: ${test}`)}
     const loaded=()=>page.getByRole('heading',{name:'Camila Torres',exact:true}).waitFor()
     const links=()=>page.locator('.social-profile-event')
@@ -104,7 +104,7 @@ try {
     await page.evaluate(()=>{for(const node of document.querySelectorAll('.social-identity-page *')) node.style.fontSize=`${parseFloat(getComputedStyle(node).fontSize)*2}px`})
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await screenshot('text-200')
     await page.setViewportSize({width,height:480});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));check('Long names/bio/event titles, 200% text and low-height responsive')
-    long=false;count=34;await page.reload();await loaded();await page.clock.install();blocked=true;await page.clock.fastForward(31000);await page.getByRole('heading',{name:'Perfil no disponible',exact:true}).waitFor();assert.equal(await links().count(),0);await page.clock.resume();blocked=false
+    long=false;count=34;await page.reload();await loaded();blocked=true;await page.clock.fastForward(31000);await page.getByRole('heading',{name:'Perfil no disponible',exact:true}).waitFor();assert.equal(await links().count(),0);await page.clock.resume();blocked=false
     await update();await loaded();await context.setOffline(true);await page.evaluate(()=>window.dispatchEvent(new Event('offline')));assert.equal(await links().count(),0);await context.setOffline(false);await page.evaluate(()=>window.dispatchEvent(new Event('online')));await loaded()
     check('Visible 30s revocation and offline/reconnect clear previous content')
     slow=true;await update();await page.waitForFunction(()=>document.querySelector('[aria-busy=true]'));await page.goto(`${origin}/users/not-a-uuid`);await page.getByRole('heading',{name:'Perfil no disponible',exact:true}).waitFor();release?.();assert.equal(await links().count(),0)

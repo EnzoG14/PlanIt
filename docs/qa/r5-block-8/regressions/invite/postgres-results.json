@@ -1,0 +1,77 @@
+{
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "environment": "Isolated PostgreSQL; SQL Auth/Storage scaffolding; SET ROLE; no HTTP/JWT",
+  "migrations": [
+    "20261010011204_create_profiles_and_categories.sql",
+    "20261010013449_create_profiles_and_categories.sql",
+    "20261010023448_restrict_rls_auto_enable_execute.sql",
+    "20261010042701_create_events_and_event_media.sql",
+    "20261010052653_public_event_discovery.sql",
+    "20261010150232_event_participations.sql",
+    "20261010154930_my_events_read.sql",
+    "20261010212819_home_and_event_organizer_read.sql",
+    "20261010214526_event_chat.sql",
+    "20261011163653_notifications_inbox.sql",
+    "20261011193316_r2_realtime_chat_notifications.sql",
+    "20261011232326_my_organized_events_read.sql",
+    "20261012001058_edit_own_event.sql",
+    "20261012013634_manage_event_gallery.sql",
+    "20261012031717_manage_event_attendees.sql",
+    "20261012044919_close_and_duplicate_events.sql",
+    "20261012155501_event_rejoin_requests.sql",
+    "20261013160000_search_public_events.sql",
+    "20261014120000_search_public_events_date_radius.sql",
+    "20261014120001_user_category_interests.sql",
+    "20261014120002_get_suggested_events.sql",
+    "20261014120003_hidden_event_access.sql",
+    "20261014120004_event_visibility_links.sql",
+    "20261014120005_redeem_event_link.sql",
+    "20261014120006_event_access_management.sql",
+    "20261014133225_social_security_model.sql",
+    "20261014133547_social_projections_and_avatars.sql",
+    "20261014133847_social_legacy_projections.sql",
+    "20261014212935_follow_request_notifications.sql"
+  ],
+  "results": [
+    {
+      "test": "Migration replay; redeem_event_link is DEFINER with empty search_path, EXECUTE authenticated only; anon denied",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-01: B redeems and gets an active grant, no participation, no capacity used; detail and organizer readable",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-02: repeated redeem is idempotent (one grant); a fresh session keeps access without the link",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-04: grant alone cannot read chat/attendees; Inscribirse is a separate action that needs the grant",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-03: stranger and anon denied by direct UUID (SELECT, RPC) without redeem",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-05/R4-09.CA-04: altered/malformed/rotated/revoked all fail with one identical error; revoked is never reactivated, even by a new link",
+      "result": "PASS"
+    },
+    {
+      "test": "Revoked C: sees the public event, loses it again on rehide, and no new link recovers it; D redeems the fresh link",
+      "result": "PASS"
+    },
+    {
+      "test": "Organizer redeeming own link creates no grant",
+      "result": "PASS"
+    },
+    {
+      "test": "Ended/cancelled/archived events and non-hidden events grant no new access",
+      "result": "PASS"
+    },
+    {
+      "test": "Races: rotate-first denies old token; redeem-first keeps grant and kills the old token; concurrent same-user redeem is one grant; revoke-first and publish-first deny redeem",
+      "result": "PASS"
+    }
+  ]
+}

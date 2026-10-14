@@ -87,7 +87,10 @@
     "check:realtime": "node scripts/check-realtime.mjs",
     "check:realtime:ui": "node scripts/check-realtime-ui.mjs",
     "check:mapbox": "node scripts/check-mapbox.mjs",
-    "check:r2:live": "node scripts/check-release-2-live.mjs --readonly"
+    "check:r2:live": "node scripts/check-release-2-live.mjs --readonly",
+    "check:r5:messages:ui": "node scripts/check-r5-messages-ui.mjs",
+    "check:r5:messages": "node scripts/check-r5-messages.mjs",
+    "check:r5:messages:http": "node scripts/check-r5-messages-http.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",

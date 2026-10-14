@@ -9,6 +9,8 @@ import { AuthProvider } from './features/auth/AuthProvider'
 import { RequireAuth } from './features/auth/RequireAuth'
 import './App.css'
 
+const DirectMessagesPage = lazy(() => import('./pages/DirectMessagesPage').then(module => ({ default: module.DirectMessagesPage })))
+const DirectChatPage = lazy(() => import('./pages/DirectChatPage').then(module => ({ default: module.DirectChatPage })))
 const EditProfilePage = lazy(() => import('./pages/EditProfilePage').then(module => ({ default: module.EditProfilePage })))
 const CreateEventPage = lazy(() => import('./pages/CreateEventPage').then(module => ({ default: module.CreateEventPage })))
 const EditEventPage = lazy(() => import('./pages/EditEventPage').then(module => ({ default: module.EditEventPage })))
@@ -35,6 +37,8 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="login" element={<AuthPage key="login" mode="login" />} />
     <Route path="invite" element={<Suspense fallback={<StatusMessage title="Cargando invitación">Esperá un momento.</StatusMessage>}><InvitePage /></Suspense>} />
     <Route element={<RequireAuth />}>
+      <Route path="messages" element={<Suspense fallback={<StatusMessage title="Cargando mensajes">Esperá un momento.</StatusMessage>}><DirectMessagesPage /></Suspense>} />
+      <Route path="messages/:conversationId" element={<Suspense fallback={<StatusMessage title="Cargando conversación">Esperá un momento.</StatusMessage>}><DirectChatPage /></Suspense>} />
       <Route path="notifications" element={<Suspense fallback={<StatusMessage title="Cargando notificaciones">Esperá un momento.</StatusMessage>}><NotificationsPage /></Suspense>} />
       <Route path="events/:id/chat" element={<Suspense fallback={<StatusMessage title="Cargando chat">Esperá un momento.</StatusMessage>}><EventChatPage /></Suspense>} />
       <Route path="home" element={<Suspense fallback={<StatusMessage title="Cargando Inicio">Esperá un momento.</StatusMessage>}><HomePage /></Suspense>} />
