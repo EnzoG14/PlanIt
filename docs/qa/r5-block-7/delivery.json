@@ -1,7 +1,7 @@
 {
   "base": "cbb05479388d508cb910b98ca6837d0d55614d36",
   "branch": "codex/r5-block-7",
-  "generated_at": "2026-10-14T21:04:34.413Z",
+  "generated_at": "2026-10-14T21:05:10.937Z",
   "dependencies": "B0-B6 integrated; B6 PR56 merge cbb0547",
   "state": "Implementado; QA pendiente",
   "product_and_tracking_files": [
@@ -19,7 +19,7 @@
     },
     {
       "file": "docs/implementation/RELEASE_5_STATUS.md",
-      "sha256_lf": "6f69a0608acf0af8573d5c18d15d6f576a6577763a99042b2cc58b5029404fbc"
+      "sha256_lf": "2bc9fb97f03b49a0991d5315498fc16632b423e98d6d13f1889c3f1f82dc3f7a"
     },
     {
       "file": "docs/implementation/UI_REFRESH_R1_R3_STATUS.md",
