@@ -1,6 +1,22 @@
 {
   "base": "090fbabfd68a648ca69f49c27daaedfa07d137e8",
   "criteriaCount": 39,
+  "humanApproval": {
+    "dateArgentina": "2026-10-14",
+    "scope": "Release 4 / Bloque 9",
+    "status": "approved",
+    "approvedBy": "responsable del proyecto",
+    "source": "declaración explícita del usuario en este chat",
+    "statement": "ya probé todo manualmente, asi que da por aprobado todo r9",
+    "interpretation": "r9 refiere al Bloque 9 de Release 4, objeto de la conversación y PR #48",
+    "reportedTesting": "pruebas manuales completas declaradas por el responsable",
+    "criteriaAccepted": 39,
+    "state": "Validado",
+    "decision": "GO por aceptación humana",
+    "evidenceLimit": "No se entregó desglose de dispositivos, cuentas, JWT ni artefactos por escenario; los resultados automatizados y remotos registrados por el agente no se reclasifican como ejecutados.",
+    "mergeAuthorized": false,
+    "deployAuthorized": false
+  },
   "literalSha256": "a31c9dc91df5478443b5544e9e0c0d4a67769831c4ca8c65b821173d19a71b80",
   "criteria": [
     {
@@ -23,8 +39,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-01.CA-02",
@@ -46,8 +63,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-01.CA-03",
@@ -69,8 +87,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-01.CA-04",
@@ -92,8 +111,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-02.CA-01",
@@ -121,8 +141,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-02.CA-02",
@@ -150,8 +171,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-02.CA-03",
@@ -179,8 +201,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-02.CA-04",
@@ -208,8 +231,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-03.CA-01",
@@ -237,8 +261,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-03.CA-02",
@@ -266,8 +291,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-03.CA-03",
@@ -295,8 +321,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-03.CA-04",
@@ -324,8 +351,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-04.CA-01",
@@ -353,8 +381,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-04.CA-02",
@@ -382,8 +411,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-04.CA-03",
@@ -411,8 +441,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-04.CA-04",
@@ -440,8 +471,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-05.CA-01",
@@ -463,8 +495,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-05.CA-02",
@@ -486,8 +519,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-05.CA-03",
@@ -509,8 +543,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-05.CA-04",
@@ -532,8 +567,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-06.CA-01",
@@ -555,8 +591,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-06.CA-02",
@@ -578,8 +615,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-06.CA-03",
@@ -601,8 +639,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-06.CA-04",
@@ -624,8 +663,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-07.CA-01",
@@ -653,8 +693,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-07.CA-02",
@@ -682,8 +723,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-07.CA-03",
@@ -711,8 +753,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-07.CA-04",
@@ -740,8 +783,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-07.CA-05",
@@ -769,8 +813,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-08.CA-01",
@@ -798,8 +843,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-08.CA-02",
@@ -827,8 +873,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-08.CA-03",
@@ -856,8 +903,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-08.CA-04",
@@ -885,8 +933,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-08.CA-05",
@@ -914,8 +963,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-09.CA-01",
@@ -943,8 +993,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-09.CA-02",
@@ -972,8 +1023,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-09.CA-03",
@@ -1001,8 +1053,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-09.CA-04",
@@ -1030,8 +1083,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     },
     {
       "id": "RF-R4-09.CA-05",
@@ -1059,8 +1113,9 @@
         }
       ],
       "httpJwtResult": "NOT RUN",
-      "humanAcceptance": "NOT RUN",
-      "state": "Implementado; QA pendiente"
+      "humanAcceptance": "APPROVED",
+      "humanEvidence": "docs/qa/r4-block-9/human-acceptance.json",
+      "state": "Validado"
     }
   ],
   "scenarios": [

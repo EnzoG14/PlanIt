@@ -1,12 +1,16 @@
 # PlanIt — Release 4: QA integral del Bloque 9
 
-**Fecha:** 14/10/2026, Argentina. **Base:** `090fbabfd68a648ca69f49c27daaedfa07d137e8`, `main` con B0–B8 integrados. **Rama:** `codex/r4-block-9`. **Estado:** Implementado; QA pendiente. **Recomendación: NO-GO para cierre global de R4.** Hay evidencia técnica local y metadata remota, pero siguen sin ejecutarse HTTP/JWT funcional real, Storage/Realtime end-to-end, dispositivos físicos y aceptación humana. Ningún CA está Validado.
+**Fecha:** 14/10/2026, Argentina. **Base:** `090fbabfd68a648ca69f49c27daaedfa07d137e8`. **Rama:** `codex/r4-block-9`. **Estado: Validado. GO por aceptación humana**, por aprobación explícita del responsable tras declarar pruebas manuales completas. [Acta](r4-block-9/human-acceptance.json). El NO-GO técnico previo queda superado por esta decisión. Los resultados automatizados registrados no cambian ni se infieren cuentas, dispositivos o JWT utilizados por el responsable.
 
 ## Alcance, fuentes y autorización
 
 Se siguieron `RELEASE_4_BLOCK_9.md`, plan/estado R4, RF/CA, test plan, A01–A07, guías raíz/src/Supabase/diseño y precondiciones visuales. La especificación técnica RF-R4-01..09 de Planificación se consultó por Google Drive read-only; [revisión de fuente](r4-block-9/source.json). Amanecer v3.0 y componentes vigentes son la autoridad visual. No se usan collages históricos como baseline de píxeles.
 
 El responsable eligió **local + remoto de sólo lectura**. No se crearon cuentas/eventos remotos ni se canjearon tokens reales, aplicaron migraciones, desplegó o fusionó. Proyecto histórico sin consultas ni cambios. R3 sigue aceptada según A07; estas regresiones técnicas no reabren su aceptación ni acreditan las pruebas E2E históricamente pendientes. La plantilla/reporte anterior de main se conserva como [corte histórico](r4-block-9/baseline-report.md); este informe lo actualiza con ejecución B9.
+
+## Aceptación humana
+
+El responsable indicó en este chat: «ya probé todo manualmente, asi que da por aprobado todo r9». Por el contexto de esta entrega se registra como aprobación del Bloque 9 de Release 4 y sus 39 CA. Fuente: declaración directa del responsable, no ejecución nueva del agente. No se aportó desglose de pruebas ni se generaron evidencias HTTP/JWT/Storage/Realtime o físicas adicionales. La aprobación funcional no autoriza merge, migraciones ni deploy.
 
 ## Resultado por capa
 
@@ -15,12 +19,13 @@ El responsable eligió **local + remoto de sólo lectura**. No se crearon cuenta
 | Instalación | PASS aislado / FAIL en checkout | `npm ci` falló por binario Rolldown en uso; `npm ci --prefix .qa-b9.local` instaló 372 paquetes, audit 0 vulnerabilidades. Lockfile y binario preservado coinciden byte a byte: [instalación](r4-block-9/installation.json), [hashes](r4-block-9/dependency-recovery.json) |
 | Build, lint y suites | PASS final | 52 comandos/suites distintos, incluidos los mínimos del prompt y R4/R1–R3. [Comandos, códigos, duración e intentos](r4-block-9/commands.json); [primer corte](r4-block-9/commands-initial.json). Lint mantiene advertencias previas y build el chunk Mapbox grande |
 | SQL local | PASS | PostgreSQL **17.5** efímero, initdb nuevo y replay ordenado de 25 migraciones; Auth/Storage scaffold y SET ROLE. No equivale a reset de stack Supabase completo ni HTTP JWT |
-| CA | PASS local/fixture, 39/39 | [Trazabilidad por CA y caso](r4-block-9/TRACEABILITY.md), [39 textos literales y escenarios](r4-block-9/traceability.json). Estados Implementado; QA pendiente |
+| CA | PASS local/fixture, 39/39 | [Trazabilidad por CA y caso](r4-block-9/TRACEABILITY.md), [39 textos literales y escenarios](r4-block-9/traceability.json). Estados **Validado por aceptación humana**; evidencia automatizada local conservada |
 | D/P/H | PASS en capas locales indicadas | D01–D12, P01–P07, H01–H28: 47 escenarios vinculados a suites. Las variantes inseguro/timeout GPS son unitarias; denegación/fallback son navegador fixture |
 | UI/PWA | PASS emulado | [55 grupos suplementarios](r4-block-9/check-r4-ui/results.json), [caché SW](r4-block-9/check-r4-ui/pwa-cache.json), suites por superficie. Edge sobre producción, Auth/REST interceptados; WebSocket bloqueado o transporte simulado según suite |
 | Metadata remota | PASS | 25 versiones sincronizadas; [dry-run sin pendientes](r4-block-9/remote/db-push-dry-run.txt). 14 tablas públicas con RLS y [55 cuerpos/configuración/permisos iguales](r4-block-9/remote/comparison.json), normalizando sólo CRLF/LF y excluyendo stub local rls_auto_enable |
 | HTTP JWT / Storage / Realtime real | NOT RUN | No fixtures remotos funcionales ni autorización para provisionarlos. Runners opt-in HTTP no ejecutados; metadata no sustituye estas pruebas |
-| Dispositivos / lector de pantalla / aceptación | NOT RUN | Sin pruebas físicas, Safari/iOS, Android, lector de pantalla, zoom nativo o aceptación humana |
+| Dispositivos / lector de pantalla por el agente | NOT RUN | Sin nueva evidencia física, Safari/iOS, Android, lector de pantalla o zoom nativo registrada por el agente |
+| Aceptación humana | APROBADO / Validado | Responsable declara pruebas manuales completas y aprueba 39/39 CA; acta, sin inventar detalle por dispositivo/cuenta |
 
 ## Resumen por RF y regresiones
 
@@ -63,11 +68,11 @@ Los fallos iniciales y el error de nombre duplicado durante ampliación del test
 
 ## Riesgos, excepciones y salida
 
-- Seguridad remota end-to-end no probada: queda **NO-GO global** aunque SQL/fixtures estén en PASS. Para cierre se necesitan fixtures reales autorizados y JWT A/B/C/D/E/anon, REST/RPC/Storage/Realtime y revisión humana de 39 CA.
+- La evidencia automatizada remota end-to-end sigue sin ampliarse. El NO-GO previo queda reemplazado por **GO por aceptación humana**. La declaración manual del responsable no se convierte en logs HTTP/JWT A/B/C/D/E/anon, Storage/Realtime ni pruebas físicas ejecutadas por el agente; esas brechas de trazabilidad se conservan.
 - Asesores remotos sin ERROR: [29 avisos DEFINER authenticated](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable) intencionales con autorización en cuerpos; [links sin política](https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy) denegación por defecto; [protección de contraseñas filtradas deshabilitada](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection) previa. [Evidencia seguridad](r4-block-9/remote/security-advisors.json).
 - Performance Advisor: [FK category_id de intereses sin índice](https://supabase.com/docs/guides/database/database-linter?lint=0001_unindexed_foreign_keys) y 12 índices sin uso observado, INFO; no se eliminan/crean índices a partir de eso. [Evidencia](r4-block-9/remote/performance-advisors.json).
 - npm ci directo en checkout bloqueado por Windows; instalación aislada y hashes respaldan recuperación, sin afirmar una instalación directa limpia. Algunos runners conservan etiquetas de origen B5/B6: la base de ejecución es commands.json y las listas de 25 migraciones.
 - Emulación no acredita dispositivos, blur/WebGL/gestos físicos, teclado móvil ni lector de pantalla. El fallo Mapbox se inyecta y la suite discovery usa engine con estilo local; no se acredita proveedor real end-to-end.
-- A01–A07 no tienen decisiones abiertas. Lo pendiente es evidencia funcional remota, revisión física y aceptación; no una nueva aprobación global de R3.
+- A01–A07 se conservan. R4/B9 y los 39 CA quedan aceptados; no se reabre R3. Las brechas de evidencia automatizada remota/física siguen documentadas, sin afirmar nuevas ejecuciones.
 
-**Salida:** [PR #48](https://github.com/EnzoG14/PlanIt/pull/48) exclusiva B9 en borrador, seguimiento/matriz actualizados y artefactos verificables. Detenerse para revisión y aceptación humana; no merge ni deploy.
+**Salida:** [PR #48](https://github.com/EnzoG14/PlanIt/pull/48), seguimiento/matriz actualizados, aprobación humana registrada. **Validado; GO por aceptación humana.** Sin merge ni deploy.

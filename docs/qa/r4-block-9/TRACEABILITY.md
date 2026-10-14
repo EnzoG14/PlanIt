@@ -1,48 +1,48 @@
-# R4 B9 · Trazabilidad de ejecución local
+# R4 B9 · Trazabilidad y aceptación
 
-Los resultados SQL y navegador son locales/fixtures. HTTP JWT funcional y aceptación humana: **NOT RUN** en los 39 CA.
+Los resultados SQL y navegador son locales/fixtures. Aceptación humana: **39/39 Validado**, por pruebas manuales completas declaradas por el responsable ([acta](human-acceptance.json)). HTTP JWT funcional ejecutado por el agente: **NOT RUN**; no se inventan resultados por escenario.
 
-| CA | Resultado local | Caso reproducible |
-| --- | --- | --- |
-| RF-R4-01.CA-01 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) |
-| RF-R4-01.CA-02 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) |
-| RF-R4-01.CA-03 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) |
-| RF-R4-01.CA-04 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) |
-| RF-R4-02.CA-01 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) |
-| RF-R4-02.CA-02 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) |
-| RF-R4-02.CA-03 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) |
-| RF-R4-02.CA-04 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) |
-| RF-R4-03.CA-01 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
-| RF-R4-03.CA-02 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
-| RF-R4-03.CA-03 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
-| RF-R4-03.CA-04 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
-| RF-R4-04.CA-01 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
-| RF-R4-04.CA-02 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
-| RF-R4-04.CA-03 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
-| RF-R4-04.CA-04 | PASS | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
-| RF-R4-05.CA-01 | PASS | [npm run check:interests](../../../scripts/check-interests.mjs) · [npm run check:interests:ui](../../../scripts/check-interests-ui.mjs) |
-| RF-R4-05.CA-02 | PASS | [npm run check:interests](../../../scripts/check-interests.mjs) · [npm run check:interests:ui](../../../scripts/check-interests-ui.mjs) |
-| RF-R4-05.CA-03 | PASS | [npm run check:interests](../../../scripts/check-interests.mjs) · [npm run check:interests:ui](../../../scripts/check-interests-ui.mjs) |
-| RF-R4-05.CA-04 | PASS | [npm run check:interests](../../../scripts/check-interests.mjs) · [npm run check:interests:ui](../../../scripts/check-interests-ui.mjs) |
-| RF-R4-06.CA-01 | PASS | [npm run check:suggestions](../../../scripts/check-suggestions.mjs) · [npm run check:suggestions:ui](../../../scripts/check-suggestions-ui.mjs) |
-| RF-R4-06.CA-02 | PASS | [npm run check:suggestions](../../../scripts/check-suggestions.mjs) · [npm run check:suggestions:ui](../../../scripts/check-suggestions-ui.mjs) |
-| RF-R4-06.CA-03 | PASS | [npm run check:suggestions](../../../scripts/check-suggestions.mjs) · [npm run check:suggestions:ui](../../../scripts/check-suggestions-ui.mjs) |
-| RF-R4-06.CA-04 | PASS | [npm run check:suggestions](../../../scripts/check-suggestions.mjs) · [npm run check:suggestions:ui](../../../scripts/check-suggestions-ui.mjs) |
-| RF-R4-07.CA-01 | PASS | [npm run check:event-links](../../../scripts/check-event-links.mjs) · [npm run check:event-links:ui](../../../scripts/check-event-links-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
-| RF-R4-07.CA-02 | PASS | [npm run check:event-links](../../../scripts/check-event-links.mjs) · [npm run check:event-links:ui](../../../scripts/check-event-links-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
-| RF-R4-07.CA-03 | PASS | [npm run check:event-links](../../../scripts/check-event-links.mjs) · [npm run check:event-links:ui](../../../scripts/check-event-links-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
-| RF-R4-07.CA-04 | PASS | [npm run check:event-links](../../../scripts/check-event-links.mjs) · [npm run check:event-links:ui](../../../scripts/check-event-links-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
-| RF-R4-07.CA-05 | PASS | [npm run check:event-links](../../../scripts/check-event-links.mjs) · [npm run check:event-links:ui](../../../scripts/check-event-links-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
-| RF-R4-08.CA-01 | PASS | [npm run check:invite](../../../scripts/check-invite.mjs) · [npm run check:invite:ui](../../../scripts/check-invite-ui.mjs) · [npm run check:hidden-access](../../../scripts/check-hidden-access.mjs) |
-| RF-R4-08.CA-02 | PASS | [npm run check:invite](../../../scripts/check-invite.mjs) · [npm run check:invite:ui](../../../scripts/check-invite-ui.mjs) · [npm run check:hidden-access](../../../scripts/check-hidden-access.mjs) |
-| RF-R4-08.CA-03 | PASS | [npm run check:invite](../../../scripts/check-invite.mjs) · [npm run check:invite:ui](../../../scripts/check-invite-ui.mjs) · [npm run check:hidden-access](../../../scripts/check-hidden-access.mjs) |
-| RF-R4-08.CA-04 | PASS | [npm run check:invite](../../../scripts/check-invite.mjs) · [npm run check:invite:ui](../../../scripts/check-invite-ui.mjs) · [npm run check:hidden-access](../../../scripts/check-hidden-access.mjs) |
-| RF-R4-08.CA-05 | PASS | [npm run check:invite](../../../scripts/check-invite.mjs) · [npm run check:invite:ui](../../../scripts/check-invite-ui.mjs) · [npm run check:hidden-access](../../../scripts/check-hidden-access.mjs) |
-| RF-R4-09.CA-01 | PASS | [npm run check:event-access](../../../scripts/check-event-access.mjs) · [npm run check:event-access:ui](../../../scripts/check-event-access-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
-| RF-R4-09.CA-02 | PASS | [npm run check:event-access](../../../scripts/check-event-access.mjs) · [npm run check:event-access:ui](../../../scripts/check-event-access-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
-| RF-R4-09.CA-03 | PASS | [npm run check:event-access](../../../scripts/check-event-access.mjs) · [npm run check:event-access:ui](../../../scripts/check-event-access-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
-| RF-R4-09.CA-04 | PASS | [npm run check:event-access](../../../scripts/check-event-access.mjs) · [npm run check:event-access:ui](../../../scripts/check-event-access-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
-| RF-R4-09.CA-05 | PASS | [npm run check:event-access](../../../scripts/check-event-access.mjs) · [npm run check:event-access:ui](../../../scripts/check-event-access-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
+| CA | Resultado local | Estado | Caso reproducible |
+| --- | --- | --- | --- |
+| RF-R4-01.CA-01 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) |
+| RF-R4-01.CA-02 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) |
+| RF-R4-01.CA-03 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) |
+| RF-R4-01.CA-04 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) |
+| RF-R4-02.CA-01 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) |
+| RF-R4-02.CA-02 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) |
+| RF-R4-02.CA-03 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) |
+| RF-R4-02.CA-04 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:search:ui](../../../scripts/check-search-ui.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) |
+| RF-R4-03.CA-01 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
+| RF-R4-03.CA-02 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
+| RF-R4-03.CA-03 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
+| RF-R4-03.CA-04 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
+| RF-R4-04.CA-01 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
+| RF-R4-04.CA-02 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
+| RF-R4-04.CA-03 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
+| RF-R4-04.CA-04 | PASS | Validado | [npm run check:search](../../../scripts/check-search.mjs) · [npm run check:filters:ui](../../../scripts/check-filters-ui.mjs) · [npm run check:r4:boundaries](../../../scripts/check-r4-boundaries.mjs) |
+| RF-R4-05.CA-01 | PASS | Validado | [npm run check:interests](../../../scripts/check-interests.mjs) · [npm run check:interests:ui](../../../scripts/check-interests-ui.mjs) |
+| RF-R4-05.CA-02 | PASS | Validado | [npm run check:interests](../../../scripts/check-interests.mjs) · [npm run check:interests:ui](../../../scripts/check-interests-ui.mjs) |
+| RF-R4-05.CA-03 | PASS | Validado | [npm run check:interests](../../../scripts/check-interests.mjs) · [npm run check:interests:ui](../../../scripts/check-interests-ui.mjs) |
+| RF-R4-05.CA-04 | PASS | Validado | [npm run check:interests](../../../scripts/check-interests.mjs) · [npm run check:interests:ui](../../../scripts/check-interests-ui.mjs) |
+| RF-R4-06.CA-01 | PASS | Validado | [npm run check:suggestions](../../../scripts/check-suggestions.mjs) · [npm run check:suggestions:ui](../../../scripts/check-suggestions-ui.mjs) |
+| RF-R4-06.CA-02 | PASS | Validado | [npm run check:suggestions](../../../scripts/check-suggestions.mjs) · [npm run check:suggestions:ui](../../../scripts/check-suggestions-ui.mjs) |
+| RF-R4-06.CA-03 | PASS | Validado | [npm run check:suggestions](../../../scripts/check-suggestions.mjs) · [npm run check:suggestions:ui](../../../scripts/check-suggestions-ui.mjs) |
+| RF-R4-06.CA-04 | PASS | Validado | [npm run check:suggestions](../../../scripts/check-suggestions.mjs) · [npm run check:suggestions:ui](../../../scripts/check-suggestions-ui.mjs) |
+| RF-R4-07.CA-01 | PASS | Validado | [npm run check:event-links](../../../scripts/check-event-links.mjs) · [npm run check:event-links:ui](../../../scripts/check-event-links-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
+| RF-R4-07.CA-02 | PASS | Validado | [npm run check:event-links](../../../scripts/check-event-links.mjs) · [npm run check:event-links:ui](../../../scripts/check-event-links-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
+| RF-R4-07.CA-03 | PASS | Validado | [npm run check:event-links](../../../scripts/check-event-links.mjs) · [npm run check:event-links:ui](../../../scripts/check-event-links-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
+| RF-R4-07.CA-04 | PASS | Validado | [npm run check:event-links](../../../scripts/check-event-links.mjs) · [npm run check:event-links:ui](../../../scripts/check-event-links-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
+| RF-R4-07.CA-05 | PASS | Validado | [npm run check:event-links](../../../scripts/check-event-links.mjs) · [npm run check:event-links:ui](../../../scripts/check-event-links-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
+| RF-R4-08.CA-01 | PASS | Validado | [npm run check:invite](../../../scripts/check-invite.mjs) · [npm run check:invite:ui](../../../scripts/check-invite-ui.mjs) · [npm run check:hidden-access](../../../scripts/check-hidden-access.mjs) |
+| RF-R4-08.CA-02 | PASS | Validado | [npm run check:invite](../../../scripts/check-invite.mjs) · [npm run check:invite:ui](../../../scripts/check-invite-ui.mjs) · [npm run check:hidden-access](../../../scripts/check-hidden-access.mjs) |
+| RF-R4-08.CA-03 | PASS | Validado | [npm run check:invite](../../../scripts/check-invite.mjs) · [npm run check:invite:ui](../../../scripts/check-invite-ui.mjs) · [npm run check:hidden-access](../../../scripts/check-hidden-access.mjs) |
+| RF-R4-08.CA-04 | PASS | Validado | [npm run check:invite](../../../scripts/check-invite.mjs) · [npm run check:invite:ui](../../../scripts/check-invite-ui.mjs) · [npm run check:hidden-access](../../../scripts/check-hidden-access.mjs) |
+| RF-R4-08.CA-05 | PASS | Validado | [npm run check:invite](../../../scripts/check-invite.mjs) · [npm run check:invite:ui](../../../scripts/check-invite-ui.mjs) · [npm run check:hidden-access](../../../scripts/check-hidden-access.mjs) |
+| RF-R4-09.CA-01 | PASS | Validado | [npm run check:event-access](../../../scripts/check-event-access.mjs) · [npm run check:event-access:ui](../../../scripts/check-event-access-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
+| RF-R4-09.CA-02 | PASS | Validado | [npm run check:event-access](../../../scripts/check-event-access.mjs) · [npm run check:event-access:ui](../../../scripts/check-event-access-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
+| RF-R4-09.CA-03 | PASS | Validado | [npm run check:event-access](../../../scripts/check-event-access.mjs) · [npm run check:event-access:ui](../../../scripts/check-event-access-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
+| RF-R4-09.CA-04 | PASS | Validado | [npm run check:event-access](../../../scripts/check-event-access.mjs) · [npm run check:event-access:ui](../../../scripts/check-event-access-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
+| RF-R4-09.CA-05 | PASS | Validado | [npm run check:event-access](../../../scripts/check-event-access.mjs) · [npm run check:event-access:ui](../../../scripts/check-event-access-ui.mjs) · [npm run check:invite](../../../scripts/check-invite.mjs) |
 
 ## Escenarios D/P/H
 

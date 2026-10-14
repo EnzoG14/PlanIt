@@ -1,6 +1,6 @@
 # Release 4 · Bloque 9
 
-14/10/2026. Base `090fbab`, rama `codex/r4-block-9`; [PR #48](https://github.com/EnzoG14/PlanIt/pull/48) en borrador. **52/52 comandos/suites finales PASS; 39/39 CA y 47/47 escenarios D/P/H con evidencia local/fixture. NO-GO para cierre global:** JWT funcional real, Storage/Realtime remotos, dispositivos y aceptación humana pendientes. Ningún Validado.
+14/10/2026. Base `090fbab`, rama `codex/r4-block-9`; [PR #48](https://github.com/EnzoG14/PlanIt/pull/48). **Validado; GO por aceptación humana.** El responsable declaró pruebas manuales completas y aprobó B9/R4 y los 39 CA ([acta](human-acceptance.json)). Se conservan 52/52 suites y 47 escenarios PASS local/fixture; no hay nueva evidencia automatizada remota/física. Sin merge ni deploy.
 
 - [Informe de cierre](../RELEASE_4_TEST_REPORT.md), [matriz legible](TRACEABILITY.md), [39 textos y escenarios](traceability.json).
 - [Comandos y todos los intentos](commands.json), [primer corte con cinco fallos](commands-initial.json), [artefactos SHA256](artifacts.json), [archivo local de capturas adicionales](local-capture-archive.json).
@@ -25,7 +25,7 @@ El runner inicia y detiene su preview de producción en4199, ejecuta secuencialm
 
 El fallo inicial de npm ci por binario bloqueado se recuperó mediante instalación aislada del mismo lockfile y copia de paquetes faltantes, preservando el binario idéntico. No es prueba de npm ci limpio en el checkout original. [Acta](installation.json).
 
-`node scripts/report-release-4.mjs` regenera la trazabilidad y hashes del corte B9 y comprueba que los 39 textos siguen idénticos a la base. No acepta pruebas de fixtures como JWT real. Para una corrida recheck, conservar sus resultados por separado: este generador describe el corte B9 versionado, no una carpeta configurable.
+`node scripts/report-release-4.mjs` regenera la trazabilidad y hashes del corte B9 y comprueba que los 39 textos siguen idénticos a la base. Lee el acta humana para preservar los estados Validado; no acepta pruebas de fixtures o una declaración manual como ejecución HTTP JWT del agente. Para una corrida recheck, conservar sus resultados por separado: este generador describe el corte B9 versionado, no una carpeta configurable.
 
 ## Lectura de evidencia
 
@@ -33,4 +33,4 @@ El fallo inicial de npm ci por binario bloqueado se recuperó mediante instalaci
 
 Las carpetas supplemental-ui, check-r4-ui-stress y primeras capturas check-r4-ui conservan intentos previos del mismo bloque; el JSON final identifica las aserciones exitosas. Las capturas full-page pueden no pintar contenido fuera del viewport por content-visibility:auto; map-result-visible verifica ese contenido tras scroll. No se sobrescribió QA histórica.
 
-PostgreSQL17.5 local con Auth/Storage SQL sintéticos y roles; PGlite en suites históricas acotadas. Edge con Auth/REST/Storage interceptados, Mapbox engine local/fallo inyectado y Realtime simulado/bloqueado. SW real local de producción, Auth fixture. Emulación de tamaños/texto/medias no equivale a pruebas físicas ni a aceptación humana. Remoto: sólo historial, catálogo, asesores y dry-run; ninguna mutación de negocio o aplicación SQL.
+PostgreSQL17.5 local con Auth/Storage SQL sintéticos y roles; PGlite en suites históricas acotadas. Edge con Auth/REST/Storage interceptados, Mapbox engine local/fallo inyectado y Realtime simulado/bloqueado. SW real local de producción, Auth fixture. Emulación de tamaños/texto/medias no equivale a pruebas físicas. La aceptación humana posterior consta en el acta del responsable. Remoto: sólo historial, catálogo, asesores y dry-run; ninguna mutación de negocio o aplicación SQL.

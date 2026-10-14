@@ -1328,6 +1328,11 @@
       "sha256": "9946b8ad1989e0617e09422935658a2f54a47a8842571b14acf087c289e4be88"
     },
     {
+      "path": "docs/qa/r4-block-9/human-acceptance.json",
+      "bytes": 813,
+      "sha256": "b32eb6cb2866adaa87571f0f252188cf2029ed790f6995775099ea401762a4c5"
+    },
+    {
       "path": "docs/qa/r4-block-9/impeccable-detect.json",
       "bytes": 3,
       "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
@@ -1364,8 +1369,8 @@
     },
     {
       "path": "docs/qa/r4-block-9/README.md",
-      "bytes": 4715,
-      "sha256": "bbbcf01d9c2856b6195183c8c4d7316a8470db8a4ac68589c6f0adabb4ecf05c"
+      "bytes": 4899,
+      "sha256": "94323f3d76c9913b216ef2cbd9414ec1dee8fdce0f3e8f921c6ad4892066b470"
     },
     {
       "path": "docs/qa/r4-block-9/remote/catalog.json",
@@ -1434,13 +1439,13 @@
     },
     {
       "path": "docs/qa/r4-block-9/traceability.json",
-      "bytes": 71920,
-      "sha256": "7ea3467832e6af471fac04ba2b2641fa93b9ee06a592230051d26308842baabe"
+      "bytes": 74733,
+      "sha256": "9945d331ab93bef80dd586370969cb63128f3ff4c9dcb807ef59be0200ec7da4"
     },
     {
       "path": "docs/qa/r4-block-9/TRACEABILITY.md",
-      "bytes": 11670,
-      "sha256": "45baf90931827ab8b0c27bba3e7bd30fa6a503d47215fab646990f43eeb3e483"
+      "bytes": 12273,
+      "sha256": "39cd2681f6e631fec0def9de58df2061d3d65bf9745816e5589ecc339285e606"
     }
   ]
 }
