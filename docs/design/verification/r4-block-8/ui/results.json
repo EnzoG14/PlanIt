@@ -1,0 +1,113 @@
+{
+  "environment": "Edge production build; intercepted Auth/REST/Storage; blocked WebSocket; fixtures, NOT real JWT",
+  "results": [
+    {
+      "test": "320px active/revoked, double-click protection, dialog focus/Escape/return, revoke/restore reconciliation and management link",
+      "result": "PASS"
+    },
+    {
+      "test": "375px active/revoked, double-click protection, dialog focus/Escape/return, revoke/restore reconciliation and management link",
+      "result": "PASS"
+    },
+    {
+      "test": "390px active/revoked, double-click protection, dialog focus/Escape/return, revoke/restore reconciliation and management link",
+      "result": "PASS"
+    },
+    {
+      "test": "768px active/revoked, double-click protection, dialog focus/Escape/return, revoke/restore reconciliation and management link",
+      "result": "PASS"
+    },
+    {
+      "test": "1280px active/revoked, double-click protection, dialog focus/Escape/return, revoke/restore reconciliation and management link",
+      "result": "PASS"
+    },
+    {
+      "test": "ended: read-only/unavailable/retry",
+      "result": "PASS"
+    },
+    {
+      "test": "cancelled: read-only/unavailable/retry",
+      "result": "PASS"
+    },
+    {
+      "test": "archived: read-only/unavailable/retry",
+      "result": "PASS"
+    },
+    {
+      "test": "public: read-only/unavailable/retry",
+      "result": "PASS"
+    },
+    {
+      "test": "error: read-only/unavailable/retry",
+      "result": "PASS"
+    },
+    {
+      "test": "network-before: uncertain-state reconciliation / permission or missing-grant feedback",
+      "result": "PASS"
+    },
+    {
+      "test": "network-after: uncertain-state reconciliation / permission or missing-grant feedback",
+      "result": "PASS"
+    },
+    {
+      "test": "denied: uncertain-state reconciliation / permission or missing-grant feedback",
+      "result": "PASS"
+    },
+    {
+      "test": "missing: uncertain-state reconciliation / permission or missing-grant feedback",
+      "result": "PASS"
+    },
+    {
+      "test": "Cursor append deduplicated; stale active response discarded after filter switch",
+      "result": "PASS"
+    },
+    {
+      "test": "Empty grants explain invitation without enrolment",
+      "result": "PASS"
+    },
+    {
+      "test": "Non-owner denied direct route",
+      "result": "PASS"
+    },
+    {
+      "test": "Anonymous direct route requires Auth",
+      "result": "PASS"
+    },
+    {
+      "test": "Visible hidden detail revalidates after 30s, clears signed media/data and does not renew denied media; TTL 60s",
+      "result": "PASS"
+    },
+    {
+      "test": "Existing chat revalidation clears private history and composer when permission is lost",
+      "result": "PASS"
+    },
+    {
+      "test": "320px enlarged text and low-height dialog remains scrollable",
+      "result": "PASS"
+    }
+  ],
+  "shots": [
+    "active-320",
+    "revoke-320",
+    "restore-320",
+    "active-375",
+    "revoke-375",
+    "restore-375",
+    "active-390",
+    "revoke-390",
+    "restore-390",
+    "active-768",
+    "revoke-768",
+    "restore-768",
+    "active-1280",
+    "revoke-1280",
+    "restore-1280",
+    "ended",
+    "cancelled",
+    "archived",
+    "public",
+    "error",
+    "empty",
+    "large-text-low-height"
+  ]
+}

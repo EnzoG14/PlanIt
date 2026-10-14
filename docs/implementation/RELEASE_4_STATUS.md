@@ -3,7 +3,7 @@
 **Actualización de planificación R4 v1.2 (13/10/2026):** esta edición documental parte del `main` `a378259a6010`, con Amanecer v3.0 integrado (PR #27–#34). La línea de base anterior del 12/10 y los pasos del bloque 0 son históricos/propuestos: **no** acreditan ejecución ni QA R4. Leer `RELEASE_4_VISUAL_INTEGRATION.md`, `DESIGN.md`, `docs/design/UI_WORKFLOW.md`. R3 confirmada validada por el responsable; informe QA versionado conserva NO-GO por falta de E2E/aceptación humana documentada; reportar esa brecha de evidencia sin reabrir A07.
 
 
-**Corte de ejecución:** 13/10/2026 (Argentina). **Estado:** Bloques 0 (documental), 1–7 implementados; QA/revisión humana pendiente. **34/39 CA con evidencia PASS local/fixture (bloques 1–4, R4-07.CA-01..05 y R4-08.CA-01..05), ninguna con JWT real ni Validado**. 39/39 trazadas. Bloques 8–9 pendientes. El bloque 7 agrega `redeem_event_link` y `/invite`; la migración fue probada localmente y **aplicada a planit-v2 con autorización posterior**.
+**Corte de ejecución:** 13/10/2026 (Argentina). **Estado:** Bloques 0 (documental), 1–8 implementados; QA/revisión humana pendiente. **39/39 CA con evidencia PASS local/fixture, ninguna con JWT real ni Validado**. 39/39 trazadas. Bloque 9 pendiente. B8 agrega panel y RPC de revocación/restitución; su migración está creada y probada localmente, **no aplicada remotamente**. B7 fue aplicado a planit-v2 con autorización posterior.
 
 **Decisiones del responsable (12/10/2026):** A01–A07 aprobadas; **R3 integrada y validada por confirmación expresa**, sujeto únicamente a comprobación técnica de dependencias en `main`. **Fuentes:** `RELEASE_4_PLAN.md`, `../requirements/RELEASE_4_REQUIREMENTS.md`, `RELEASE_4_DECISIONS_PROPOSED.md`, `../qa/RELEASE_4_ACCEPTANCE.md`.
 
@@ -19,7 +19,7 @@
 | 5 | Seguridad ocultos | transversal 07–09 | Implementado; QA pendiente | `codex/r4-block-5`; [PR #44](https://github.com/EnzoG14/PlanIt/pull/44) en borrador | [Auditoría y evidencia](../qa/r4-block-5/README.md) | `20261014120003_hidden_event_access.sql` **aplicada/verificada en planit-v2 el 13/10/2026 con autorización posterior**; 22 versiones, dry-run al día, RLS/ACL/11 funciones verificadas | HTTP/JWT/Storage/Realtime real, revisión humana; links/UX en bloques 6–8 |
 | 6 | Visibilidad y links | 07, 5 CA | Implementado; QA pendiente | `codex/r4-block-6`; [PR #45](https://github.com/EnzoG14/PlanIt/pull/45) en borrador | [Pruebas y límites](../qa/r4-block-6/README.md) | `20261014120004_event_visibility_links.sql` **aplicada/verificada en planit-v2 el 13/10/2026 con autorización expresa posterior**; 23 versiones sincronizadas | HTTP/JWT real, revisión humana, canje viejo/cerrado CA-04/05 en B7 |
 | 7 | Canje y detalle | 08, 5 CA | Implementado; QA pendiente | `codex/r4-block-7`; [PR #46](https://github.com/EnzoG14/PlanIt/pull/46) en borrador | [Pruebas, composición/foco/scopes y límites](../design/verification/r4-block-7/README.md) | `20261014120005_redeem_event_link.sql` creada y probada con PostgreSQL local; **aplicada a planit-v2 el 13/10/2026 con autorización expresa posterior** ([acta](../design/verification/r4-block-7/remote-migration-summary.json)) | HTTP/JWT real (`check-invite-http.mjs`, NOT RUN), revisión humana |
-| 8 | Revocación | 09, 5 CA | Pendiente | — | — | — | Historial y cupo |
+| 8 | Revocación y restitución | 09, 5 CA | Implementado; QA pendiente | `codex/r4-block-8`; PR en borrador | [Pruebas, composición/foco/scopes y límites](../design/verification/r4-block-8/README.md) | `20261014120006_event_access_management.sql` creada/probada local; **no aplicada remotamente** | HTTP/JWT/Storage/Realtime real; aceptación humana |
 | 9 | QA / cierre | todos, 39 CA | Pendiente | — | — | — | Casos real/fixture y aceptación |
 
 ## Procedimiento por bloque
@@ -33,6 +33,16 @@
 7. No pasar a «Validado» sin la revisión de 39 CA y aceptación humana; cada PR debe detenerse para revisión.
 
 ## Actas de ejecución
+
+### Bloque 8 — Implementado; QA pendiente
+
+- **Base/rama:** fetch de `origin/main` `818e892b172deacb8504245abf308aa9801de117` (PR #46/B7 integrada) → `codex/r4-block-8` en el checkout existente limpio. `.env.local` de main preservado mediante copia local ignorada; no versionado ni mostrado. Sin worktree nuevo ni índice compartido.
+- **Contrato:** tres RPC de organizador, proyección mínima paginada por ID (30, máximo 50), active/revoked y participación confirmada independientes. Avatares `null`/iniciales hasta disponer de proyección social autorizada. DEFINER justificado por tablas/perfiles sin acceso general; `search_path=''`, EXECUTE sólo authenticated y guardas de `auth.uid()`.
+- **Atomicidad:** lock evento→participación→grant; confirmed→removed con trigger R3 (`organizer_removal`, dueño como changed_by) antes de revocar. Rollback del historial conserva grant/participación/cupo. Reintentos no generan historial/timestamps nuevos. Restituir sólo modifica grant; no crea permisos inexistentes ni aprueba reingresos. A04/A05 y bloqueo de recanje B7 preservados.
+- **Decisión adicional confirmada en planificación:** ocultos finalizados/cancelados/archivados permiten listar, pero no revocar/restituir. Público rechaza administración de grants; la lectura pública continúa habilitada conforme A05.
+- **UI:** `/events/:id/access`, scope de gestión Amanecer y enlace desde detalle propio oculto. Confirmaciones, advertencia de remoción, doble envío protegido, conciliación de resultado incierto, cancelación/foco/retorno y lista paginada. Detalle oculto visible revalida cada 30 s y limpia medios/datos denegados; chat conserva su limpieza/canal. URLs ya firmadas conservan una ventana residual de hasta 60 s.
+- **Evidencia:** ocho grupos SQL locales (incluyen siete carreras con espera real de lock, cero deadlocks) y 21 grupos UI Edge con fixtures en 320/375/390/768/1280. Build/lint/tokens/auth y regresiones B5/B6/B7/asistentes/participación/reingresos; límites y resultados en [evidencia B8](../design/verification/r4-block-8/README.md). Base visual inmutable del build `818e892`, sin cambios finales a QA histórica. Fuente original consultada por Drive read-only; RF-R4-09 y dominio H consistentes con contrato local.
+- **Fin/límites:** migración local únicamente. HTTP JWT A/B/C/D, Storage/Realtime remoto, dispositivos físicos, lector de pantalla y aceptación humana NOT RUN. Sin merge/deploy ni Validado; detenerse con PR B8, no iniciar B9.
 
 ### Bloque 7 — Implementado; QA pendiente
 

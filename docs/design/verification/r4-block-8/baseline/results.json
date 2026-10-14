@@ -1,0 +1,15 @@
+{
+  "environment": "Edge production build; intercepted Auth/REST/Storage; blocked WebSocket; fixtures, NOT real JWT",
+  "results": [
+    {
+      "test": "Immutable 818e892 build baseline: detail/attendees at 375 and 1280",
+      "result": "PASS"
+    }
+  ],
+  "shots": [
+    "baseline-detail-375",
+    "baseline-attendees-375",
+    "baseline-detail-1280",
+    "baseline-attendees-1280"
+  ]
+}

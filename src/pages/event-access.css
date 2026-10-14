@@ -1,0 +1,10 @@
+.access-list > li { grid-template-columns: 44px minmax(0, 1fr); }
+.access-list .attendee-avatar { grid-row: 1 / 3; }
+.access-list .attendee-status { grid-column: 2; }
+.access-list .access-action { grid-column: 2; justify-self: start; white-space: normal; }
+.access-list .access-action[aria-label^="Revocar"] { color: var(--pi-color-danger-text); }
+@media (min-width: 600px) {
+  .access-list > li { grid-template-columns: 48px minmax(0, 1fr) auto; }
+  .access-list .attendee-status { grid-column: 2; }
+  .access-list .access-action { grid-column: 3; grid-row: 1 / 3; }
+}
