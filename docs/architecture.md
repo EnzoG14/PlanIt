@@ -1,5 +1,9 @@
 # PlanIt — Arquitectura
 
+## Release 5 — Bloque 7: solicitudes (QA pendiente)
+
+`/me/follow-requests` consume `list_follow_requests` y `resolve_follow_request` B1 con cursor compuesto y generación UUID. Confirmación inline y bloqueo de doble envío; resultado incierto exige SELECT RLS de request_version/status de la pareja entrante propia antes de otra acción. Reutiliza aislamiento por sesión/token, abort, timeout10s y revalidación visible30s/foco/online; no carga identidades al abortar en segundo plano. Actualiza bandeja y relee perfiles/listas al volver. Sin SQL nuevo, caché persistente, Realtime, tab primario ni permisos R1–R4 adicionales. [Contrato, amenazas y límites](qa/r5-block-7/README.md). B8 no autorizado; cortes siguientes históricos.
+
 ## Release 5 — Bloque 6: seguimientos y listas (QA pendiente)
 
 Perfiles consumen `get_social_relationship`, `follow_user`/`unfollow_user`, `get_social_counts` y `list_social_follows` existentes B1. `/users/:id/followers` y `/users/:id/following` usan cursor UUID, reconsulta de páginas previas y gate final; `/me` enlaza listas propias. La capa social conserva allowlists, aislamiento por cuenta/token/ruta, timeout10s y revalidación visible30s/foco/online. Mutación sin resultado confirmado oculta contenido derivado y exige lectura antes de repetir; el servidor decide accepted/pending. Sin SQL nuevo ni cambios de permisos R1–R4, dock o SW. [Contrato y límites](qa/r5-block-6/README.md). B7 no autorizado.

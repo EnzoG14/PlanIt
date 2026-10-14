@@ -37,6 +37,10 @@ try {
       const reply=(data,status=200)=>route.fulfill({status,contentType:'application/json',body:JSON.stringify(data)})
       if(path==='/auth/v1/user') return reply(user)
       if(path==='/auth/v1/logout') return reply({})
+      // B6 added relationship/count reads to the existing profile. Keep this
+      // historical harness compatible without relaxing any B3 assertions.
+      if(path==='/rest/v1/rpc/get_social_relationship') return reply(blocked?{unavailable:true,blocked_by_me:false}:{visibility:minimal?'private':'public',follow:null})
+      if(path==='/rest/v1/rpc/get_social_counts') return reply({followers:0,following:0})
       if(path==='/rest/v1/rpc/get_social_profile') {
         if(network) return route.abort('failed')
         if(slow) {slow=false;await new Promise(resolve=>{release=resolve})}

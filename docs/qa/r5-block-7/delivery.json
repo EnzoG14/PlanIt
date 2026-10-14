@@ -1,0 +1,157 @@
+{
+  "base": "cbb05479388d508cb910b98ca6837d0d55614d36",
+  "branch": "codex/r5-block-7",
+  "generated_at": "2026-10-14T21:04:34.413Z",
+  "dependencies": "B0-B6 integrated; B6 PR56 merge cbb0547",
+  "state": "Implementado; QA pendiente",
+  "product_and_tracking_files": [
+    {
+      "file": "docs/architecture.md",
+      "sha256_lf": "9a7e5633c21fd23a04282f551438be073e856945ea1629e2600fb03dbd1ad838"
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_PLAN.md",
+      "sha256_lf": "45375090d0501a91f7fd0f4ce5507f381372956dad66e1b0d121b890adc674c9"
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_README.md",
+      "sha256_lf": "c1e6e42d39b45030d53d1ae6452e137f9927efcd22e83ef72c301f13951a7609"
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_STATUS.md",
+      "sha256_lf": "6f69a0608acf0af8573d5c18d15d6f576a6577763a99042b2cc58b5029404fbc"
+    },
+    {
+      "file": "docs/implementation/UI_REFRESH_R1_R3_STATUS.md",
+      "sha256_lf": "2ec480d71bc8a02341643b0d3c285ef0e2ffa2334017eba6dadc900a7365c8e3"
+    },
+    {
+      "file": "docs/qa/RELEASE_5_ACCEPTANCE.md",
+      "sha256_lf": "6bea46422147878dc10f83055fac288fb619d60db8fe34813f2903f4e2c9f150"
+    },
+    {
+      "file": "package.json",
+      "sha256_lf": "857af5aa302a378931859ef39c7ac76069716e560f384355f4b60a65383ffda0"
+    },
+    {
+      "file": "scripts/check-r5-profile-ui.mjs",
+      "sha256_lf": "ca704fa3b28085f610054a1b19724175777c076a78531490f0d2f26711bff3cd"
+    },
+    {
+      "file": "scripts/check-r5-requests-http.mjs",
+      "sha256_lf": "8792b6f259fb67786de8d4f4d0a6ac9b9711ef1dd29234a49ebb58954d9dc964"
+    },
+    {
+      "file": "scripts/check-r5-requests-ui.mjs",
+      "sha256_lf": "fe72064e3475090aad61be1710f3a440722f206d69801543e19ddc12736f5f04"
+    },
+    {
+      "file": "scripts/check-r5-requests.mjs",
+      "sha256_lf": "2c30ee1427ef095029268d86f0fc46dfbfe8a7d024c90ccd90397593738a4c02"
+    },
+    {
+      "file": "src/App.tsx",
+      "sha256_lf": "1911f46c5b99053f5164ae8171ab4555b065a3718643683a2e1859b8e5726929"
+    },
+    {
+      "file": "src/components/AppLayout.tsx",
+      "sha256_lf": "141a21eeb3c3b8b46a1e453e1b2ceb556a013bcf08638bc0d4e18f164ddfab16"
+    },
+    {
+      "file": "src/features/social/requests.ts",
+      "sha256_lf": "45a04091c121d7423fba87c0be62e9a91be0fe09357b39300ed60544851e8a50"
+    },
+    {
+      "file": "src/pages/FollowRequestsPage.tsx",
+      "sha256_lf": "3b04a8ec55c6ad3733ad990eda90f82a10990e695c6ff2cccb2f73b5aea62f95"
+    },
+    {
+      "file": "src/pages/ProfilePage.tsx",
+      "sha256_lf": "00b413c447af400833731977084f085bc9c7855231852ebe51db79fbc9e3a2fd"
+    },
+    {
+      "file": "src/pages/SocialIdentityPage.tsx",
+      "sha256_lf": "fd431af3d884056ee9006271c2672d5f600bae55e2d6e39258baf17fba289f61"
+    },
+    {
+      "file": "src/pages/follow-requests.css",
+      "sha256_lf": "25984b5f405d42e712a9b5968d84d2c4c87325181f29cd0efff0bfce223c9a24"
+    }
+  ],
+  "verification": {
+    "sql": {
+      "command": "npm run check:r5:requests",
+      "result": "PASS",
+      "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+      "migrations": 28,
+      "groups": 45,
+      "new_lock_races": 17,
+      "inherited_lock_races": 13,
+      "profile_audiences": 72
+    },
+    "ui": {
+      "command": "PLANIT_UI_BUILD=.r5-final-build.local npm run check:r5:requests:ui",
+      "result": "PASS",
+      "groups": 78,
+      "widths": [
+        320,
+        360,
+        375,
+        390,
+        768,
+        1280
+      ]
+    },
+    "regression_sql": {
+      "command": "PLANIT_SQL_OUTPUT=docs/qa/r5-block-7 node scripts/check-r5-regressions.mjs",
+      "result": "PASS",
+      "suites": 13
+    },
+    "regression_ui": {
+      "B3": 54,
+      "B5": 79,
+      "B6": 54,
+      "result": "PASS"
+    },
+    "http_anonymous": {
+      "command": "npm run check:r5:requests:http",
+      "result": "PASS",
+      "denials": 4
+    },
+    "build": {
+      "command": "npm run build",
+      "exit_code": 0,
+      "log": "checks/build.txt"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "exit_code": 0,
+      "log": "checks/lint.txt",
+      "warnings": "18 pre-existing warnings; no new warnings"
+    },
+    "design": {
+      "detector": [],
+      "inspection": "Final mobile390/desktop1280 real build fixture screenshots inspected; contrast corrected with shared GradientButton; no design system changes"
+    }
+  },
+  "migrations": {
+    "created": 0,
+    "tested_local_new": 0,
+    "applied_remote": 0,
+    "verified_remote_new": 0
+  },
+  "env": {
+    "source": "Primary checkout local configuration retained when branching from origin/main, copied byte-for-byte",
+    "ignored": true,
+    "tracked": false,
+    "values_recorded": false
+  },
+  "not_run": [
+    "Authenticated remote JWT flows",
+    "Physical mobile keyboard/devices",
+    "Screen reader",
+    "Real Storage/CDN and Realtime",
+    "Human acceptance"
+  ],
+  "limitations": "SQL SET ROLE and SQL Auth/Storage scaffold; UI uses REST/Auth fixtures. Real HTTP only unauthenticated denials; remote catalog read only. No deploy/merge/remote DDL/Google Docs edit."
+}

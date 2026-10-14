@@ -1,0 +1,1152 @@
+{
+  "audited_at": "2026-10-14T20:47:31.580Z",
+  "environment": "Supabase planit-v2 READ ONLY catalog; no user rows or writes",
+  "rows": [
+    {
+      "metadata": {
+        "tables": [
+          {
+            "rls": true,
+            "name": "profiles"
+          },
+          {
+            "rls": true,
+            "name": "categories"
+          },
+          {
+            "rls": true,
+            "name": "events"
+          },
+          {
+            "rls": true,
+            "name": "event_participations"
+          },
+          {
+            "rls": true,
+            "name": "event_images"
+          },
+          {
+            "rls": true,
+            "name": "conversations"
+          },
+          {
+            "rls": true,
+            "name": "files"
+          },
+          {
+            "rls": true,
+            "name": "participation_history"
+          },
+          {
+            "rls": true,
+            "name": "messages"
+          },
+          {
+            "rls": true,
+            "name": "notifications"
+          },
+          {
+            "rls": true,
+            "name": "event_rejoin_requests"
+          },
+          {
+            "rls": true,
+            "name": "user_category_interests"
+          },
+          {
+            "rls": true,
+            "name": "event_access_links"
+          },
+          {
+            "rls": true,
+            "name": "event_access_grants"
+          },
+          {
+            "rls": true,
+            "name": "user_follows"
+          },
+          {
+            "rls": true,
+            "name": "user_blocks"
+          }
+        ],
+        "functions": [
+          {
+            "name": "validate_birth_date",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.validate_birth_date()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\r\nbegin\r\n    if new.birth_date is not null\r\n       and new.birth_date > (clock_timestamp() at time zone 'America/Argentina/Buenos_Aires')::date then\r\n        raise exception 'birth_date must not be in the future'\r\n            using errcode = '23514';\r\n    end if;\r\n    return new;\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "handle_new_auth_user",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.handle_new_auth_user()\n RETURNS trigger\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\ndeclare\r\n    v_display_name text;\r\n    v_username text;\r\n    v_attempt integer;\r\nbegin\r\n    v_display_name := btrim(coalesce(new.raw_user_meta_data ->> 'display_name', ''));\r\n    if char_length(v_display_name) not between 2 and 60 then\r\n        raise exception 'display_name must contain between 2 and 60 characters'\r\n            using errcode = '23514';\r\n    end if;\r\n\r\n    for v_attempt in 1..5 loop\r\n        v_username := 'user_' || substr(replace(gen_random_uuid()::text, '-', ''), 1, 12);\r\n        begin\r\n            insert into public.profiles (id, username, display_name)\r\n            values (new.id, v_username, v_display_name);\r\n            return new;\r\n        exception when unique_violation then\r\n            -- Reintentar sólo una colisión del username generado.\r\n            if exists (select 1 from public.profiles where id = new.id) then\r\n                raise;\r\n            end if;\r\n        end;\r\n    end loop;\r\n\r\n    raise exception 'could not generate a unique username after five attempts';\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "rls_auto_enable",
+            "config": [
+              "search_path=pg_catalog"
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.rls_auto_enable()\n RETURNS event_trigger\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO 'pg_catalog'\nAS $function$\nDECLARE\n  cmd record;\n  tbl name;\nBEGIN\n  FOR cmd IN\n    SELECT *\n    FROM pg_event_trigger_ddl_commands()\n    WHERE command_tag IN ('CREATE TABLE', 'CREATE TABLE AS', 'SELECT INTO')\n      AND object_type IN ('table','partitioned table')\n  LOOP\n     IF cmd.schema_name IS NOT NULL AND cmd.schema_name IN ('public') AND cmd.schema_name NOT IN ('pg_catalog','information_schema') AND cmd.schema_name NOT LIKE 'pg_toast%' AND cmd.schema_name NOT LIKE 'pg_temp%' THEN\n      BEGIN\n        SELECT c.relname INTO tbl FROM pg_catalog.pg_class c WHERE c.oid = cmd.objid;\n        EXECUTE format('alter table if exists %I.%I enable row level security', cmd.schema_name, tbl);\n        RAISE LOG 'rls_auto_enable: enabled RLS on %', cmd.object_identity;\n      EXCEPTION\n        WHEN OTHERS THEN\n          RAISE LOG 'rls_auto_enable: failed to enable RLS on %', cmd.object_identity;\n      END;\n     ELSE\n        RAISE LOG 'rls_auto_enable: skip % (either system schema or not in enforced list: %.)', cmd.object_identity, cmd.schema_name;\n     END IF;\n  END LOOP;\nEND;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "can_delete_avatar_upload",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.can_delete_avatar_upload(p_path text)\n RETURNS boolean\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null or split_part(p_path,'/',1) <> auth.uid()::text then return false; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'retry_read_committed' using errcode = '40001';\n    end if;\n    perform pg_advisory_xact_lock(hashtextextended('avatars/' || p_path,0));\n    return not exists (select 1 from public.files where bucket_name = 'avatars' and storage_path = p_path);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_path text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "validate_new_event",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.validate_new_event()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\nbegin\n    if new.starts_at <= (clock_timestamp() at time zone 'America/Argentina/Buenos_Aires') then\n        raise exception 'start_not_future' using errcode = 'P0001';\n    end if;\n    if not exists (select 1 from public.categories where id = new.category_id and is_active) then\n        raise exception 'category_inactive' using errcode = 'P0001';\n    end if;\n    return new;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "get_notification_changes",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_notification_changes(p_ids uuid[])\n RETURNS TABLE(id uuid, type text, title text, body text, read_at timestamp without time zone, created_at timestamp without time zone, target text)\n LANGUAGE plpgsql\n STABLE\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if p_ids is null or cardinality(p_ids) > 100 then raise exception 'invalid_ids' using errcode = '22023'; end if;\n    return query select n.id, n.type, n.title, n.body, n.read_at, n.created_at, public.get_notification_target(n.id)\n        from public.notifications n where n.id = any(p_ids) and n.recipient_id = (select auth.uid())\n        order by n.created_at desc, n.id desc;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_ids uuid[]",
+            "authenticated_execute": true
+          },
+          {
+            "name": "touch_updated_at",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.touch_updated_at()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\r\nbegin\r\n    new.updated_at := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\r\n    return new;\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "discover_public_events",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.discover_public_events(p_south double precision, p_north double precision, p_west double precision, p_east double precision)\n RETURNS TABLE(id uuid, organizer_id uuid, title text, description text, starts_at timestamp without time zone, ends_at timestamp without time zone, address text, location_name text, latitude double precision, longitude double precision, capacity integer, category_id uuid, visibility text, cancelled_at timestamp without time zone, archived_at timestamp without time zone, category_name text, image_path text)\n LANGUAGE sql\n STABLE\n SET search_path TO ''\nAS $function$\n    select e.id, e.organizer_id, e.title, e.description, e.starts_at, e.ends_at,\n        e.address, e.location_name, e.latitude, e.longitude, e.capacity,\n        e.category_id, e.visibility, e.cancelled_at, e.archived_at, c.name,\n        (select f.storage_path from public.event_images i\n         join public.files f on f.id = i.file_id\n         where i.event_id = e.id order by i.sort_order limit 1)\n    from public.events e join public.categories c on c.id = e.category_id\n    where (select auth.uid()) is not null\n        and e.visibility = 'public' and e.cancelled_at is null and e.archived_at is null\n        and e.ends_at > (statement_timestamp() at time zone 'America/Argentina/Buenos_Aires')\n        and p_south between -90 and 90 and p_north between p_south and 90\n        and p_west between -180 and 180 and p_east between -180 and 180\n        and e.latitude between p_south and p_north\n        and case when p_west <= p_east then e.longitude between p_west and p_east\n                 else e.longitude >= p_west or e.longitude <= p_east end\n    order by e.starts_at, e.id limit 101;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_south double precision, p_north double precision, p_west double precision, p_east double precision",
+            "authenticated_execute": true
+          },
+          {
+            "name": "record_participation_history",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.record_participation_history()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\nbegin\n    if TG_OP = 'INSERT' then\n        insert into public.participation_history(participation_id, previous_status, new_status, changed_by, reason)\n        values (new.id, null, new.status, auth.uid(),\n            case new.status when 'confirmed' then 'registration' when 'cancelled' then 'voluntary_leave' else 'organizer_removal' end);\n    elsif old.status is distinct from new.status then\n        insert into public.participation_history(participation_id, previous_status, new_status, changed_by, reason)\n        values (new.id, old.status, new.status, auth.uid(),\n            case when old.status = 'removed' and new.status = 'confirmed' then 'rejoin_approval'\n                when new.status = 'confirmed' then 'registration' when new.status = 'cancelled' then 'voluntary_leave' else 'organizer_removal' end);\n    end if;\n    return new;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "register_for_event",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.register_for_event(p_event_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\ndeclare\r\n    v_user uuid := auth.uid();\r\n    v_event public.events%rowtype;\r\n    v_status text;\r\nbegin\r\n    if v_user is null then raise exception 'authentication_required' using errcode = '42501'; end if;\r\n    -- Counts after a waited lock need a fresh snapshot. Supabase/PostgREST uses\r\n    -- READ COMMITTED; reject frozen snapshots rather than risk oversubscription.\r\n    if current_setting('transaction_isolation') <> 'read committed' then\r\n        raise exception 'retry_read_committed' using errcode = '40001';\r\n    end if;\r\n    -- Always event first, participation second. Subsequent statements see committed\r\n    -- competitors under READ COMMITTED.\r\n    select * into v_event from public.events where id = p_event_id for update;\r\n    if not found then raise exception 'event_unavailable' using errcode = '42501'; end if;\r\n    if v_event.visibility = 'unlisted' and not planit_private.can_view_event(p_event_id) then\r\n        raise exception 'event_unavailable' using errcode = '42501';\r\n    end if;\r\n    if v_event.organizer_id = v_user then raise exception 'organizer_cannot_register' using errcode = 'P0001'; end if;\r\n    if v_event.archived_at is not null or v_event.cancelled_at is not null then raise exception 'event_cancelled' using errcode = 'P0001'; end if;\r\n    if v_event.ends_at <= (clock_timestamp() at time zone 'America/Argentina/Buenos_Aires') then raise exception 'event_ended' using errcode = 'P0001'; end if;\r\n    select status into v_status from public.event_participations where event_id = p_event_id and user_id = v_user;\r\n    if v_status = 'removed' then raise exception 'rejoin_requires_approval' using errcode = 'P0001'; end if;\r\n    if v_status = 'confirmed' then return; end if;\r\n    if (select count(*) from public.event_participations where event_id = p_event_id and status = 'confirmed') >= v_event.capacity then\r\n        raise exception 'event_full' using errcode = 'P0001';\r\n    end if;\r\n    if v_status = 'cancelled' then\r\n        update public.event_participations set status = 'confirmed' where event_id = p_event_id and user_id = v_user;\r\n    else\r\n        insert into public.event_participations(event_id, user_id, status) values (p_event_id, v_user, 'confirmed');\r\n    end if;\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_my_events",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_my_events(p_section text, p_offset integer DEFAULT 0)\n RETURNS TABLE(id uuid, title text, starts_at timestamp without time zone, ends_at timestamp without time zone, location_name text, address text, category_name text, event_state text, participation_status text, image_path text)\n LANGUAGE plpgsql\n STABLE\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null then\n        raise exception 'authentication_required' using errcode = '42501';\n    end if;\n    if p_section is null or p_section not in ('organizing', 'participating')\n        or p_offset is null or p_offset < 0 then\n        raise exception 'invalid_list_parameters' using errcode = '22023';\n    end if;\n    return query\n    select e.id, e.title, e.starts_at, e.ends_at, e.location_name, e.address, c.name,\n        case when e.archived_at is not null then 'archived'\n            when e.cancelled_at is not null then 'cancelled'\n            when e.ends_at <= (statement_timestamp() at time zone 'America/Argentina/Buenos_Aires') then 'ended'\n            else 'open' end,\n        case when p_section = 'participating' then p.status else null end, photo.storage_path\n    from public.events e\n    join public.categories c on c.id = e.category_id\n    left join public.event_participations p on p.event_id = e.id and p.user_id = (select auth.uid())\n    left join lateral (\n        select f.storage_path from public.event_images i\n        join public.files f on f.id = i.file_id\n        where i.event_id = e.id\n        order by i.sort_order limit 1\n    ) photo on true\n    where (p_section = 'organizing' and e.organizer_id = (select auth.uid()))\n       or (p_section = 'participating' and p.user_id = (select auth.uid()) and e.organizer_id <> (select auth.uid()))\n    order by e.starts_at desc, e.id\n    limit 31 offset p_offset;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_section text, p_offset integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_home_events",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_home_events(p_before_starts_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30)\n RETURNS TABLE(id uuid, organizer_id uuid, title text, description text, starts_at timestamp without time zone, ends_at timestamp without time zone, address text, location_name text, latitude double precision, longitude double precision, capacity integer, category_id uuid, visibility text, cancelled_at timestamp without time zone, archived_at timestamp without time zone, category_name text, image_path text)\n LANGUAGE sql\n STABLE\n SET search_path TO ''\nAS $function$\n    select e.id, e.organizer_id, e.title, e.description,\n        e.starts_at, e.ends_at, e.address, e.location_name,\n        e.latitude, e.longitude, e.capacity, e.category_id,\n        e.visibility, e.cancelled_at, e.archived_at, c.name,\n        (select f.storage_path\n         from public.event_images i\n         join public.files f on f.id = i.file_id\n         where i.event_id = e.id\n         order by i.sort_order\n         limit 1)\n    from public.events e\n    join public.categories c on c.id = e.category_id\n    where (select auth.uid()) is not null\n        and e.visibility = 'public'\n        and e.cancelled_at is null\n        and e.archived_at is null\n        and e.starts_at > (statement_timestamp() at time zone 'America/Argentina/Buenos_Aires')\n        and (\n            (p_before_starts_at is null and p_before_id is null)\n            or (p_before_starts_at is not null and p_before_id is not null\n                and (e.starts_at, e.id) > (p_before_starts_at, p_before_id))\n        )\n    order by e.starts_at, e.id\n    limit least(greatest(coalesce(p_limit, 30), 1), 100) + 1;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_before_starts_at timestamp without time zone, p_before_id uuid, p_limit integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "can_read_event_chat",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.can_read_event_chat(p_event_id uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\n    select planit_private.can_view_event(p_event_id) and exists (\r\n        select 1 from public.events e where e.id = p_event_id and\r\n        (e.organizer_id = auth.uid() or exists (select 1 from public.event_participations p\r\n            where p.event_id = e.id and p.user_id = auth.uid() and p.status = 'confirmed'))\r\n    );\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_event_organizer",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_organizer(p_event_id uuid)\n RETURNS TABLE(display_name text, username text)\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\n    select profile.display_name, profile.username\r\n    from public.events event\r\n    join public.profiles profile on profile.id = event.organizer_id\r\n    where (select auth.uid()) is not null\r\n        and event.id = p_event_id\r\n        and planit_private.can_view_event(event.id)\n        and not planit_private.social_blocked(profile.id);\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "create_event_conversation",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.create_event_conversation()\n RETURNS trigger\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    insert into public.conversations(event_id) values (new.id) on conflict (event_id) do nothing;\n    return new;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "get_event_chat",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_chat(p_event_id uuid)\n RETURNS TABLE(conversation_id uuid, title text, event_state text)\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if not planit_private.can_read_event_chat(p_event_id) then raise exception 'chat_unavailable' using errcode = '42501'; end if;\n    return query select c.id, e.title,\n        case when e.archived_at is not null then 'archived' when e.cancelled_at is not null then 'cancelled'\n        when e.ends_at <= (clock_timestamp() at time zone 'America/Argentina/Buenos_Aires') then 'ended' else 'open' end\n        from public.events e join public.conversations c on c.event_id = e.id where e.id = p_event_id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_event_chat_messages",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_chat_messages(p_event_id uuid, p_before_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid)\n RETURNS TABLE(id uuid, sender_id uuid, body text, created_at timestamp without time zone, display_name text, username text)\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if not planit_private.can_read_event_chat(p_event_id) then raise exception 'chat_unavailable' using errcode = '42501'; end if;\n    if (p_before_at is null) <> (p_before_id is null) then raise exception 'invalid_cursor'; end if;\n    return query select m.id, m.sender_id, m.body, m.created_at, p.display_name, p.username\n        from public.messages m join public.conversations c on c.id = m.conversation_id\n        join public.profiles p on p.id = m.sender_id where c.event_id = p_event_id\n        and (p_before_at is null or (m.created_at, m.id) < (p_before_at, p_before_id))\n        order by m.created_at desc, m.id desc limit 51;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_before_at timestamp without time zone, p_before_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "stamp_notification_read",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.stamp_notification_read()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\nbegin\n    new.read_at := coalesce(old.read_at, clock_timestamp() at time zone 'America/Argentina/Buenos_Aires');\n    return new;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "send_event_chat_message",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.send_event_chat_message(p_event_id uuid, p_message_id uuid, p_body text)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\ndeclare\r\n    v_event public.events%rowtype;\r\n    v_conversation uuid;\r\n    v_existing public.messages%rowtype;\r\n    -- ASCII and Unicode whitespace (including non-breaking spaces) are not text.\r\n    v_body text := btrim(p_body, E' \\t\\n\\r\\f\\v' || U&'\\0085\\00A0\\1680\\2000\\2001\\2002\\2003\\2004\\2005\\2006\\2007\\2008\\2009\\200A\\2028\\2029\\202F\\205F\\3000\\FEFF');\r\nbegin\r\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\r\n    if current_setting('transaction_isolation') <> 'read committed' then raise exception 'retry_read_committed' using errcode = '40001'; end if;\r\n    if p_message_id is null or v_body is null or char_length(v_body) not between 1 and 2000 or v_body !~ '[^[:space:]]' then\r\n        raise exception 'invalid_message';\r\n    end if;\r\n    -- Same lock order as register/leave; locks state updates until send finishes.\r\n    select * into v_event from public.events where id = p_event_id for update;\r\n    if not found then raise exception 'chat_unavailable' using errcode = '42501'; end if;\r\n    -- Lock membership too, including future removal operations that update its row.\r\n    if v_event.organizer_id <> auth.uid() then\r\n        perform 1 from public.event_participations where event_id = p_event_id and user_id = auth.uid() and status = 'confirmed' for update;\r\n        if not found then raise exception 'chat_unavailable' using errcode = '42501'; end if;\r\n    end if;\r\n    if not planit_private.can_read_event_chat(p_event_id) then raise exception 'chat_unavailable' using errcode = '42501'; end if;\r\n    select id into v_conversation from public.conversations where event_id = p_event_id;\r\n    select * into v_existing from public.messages where id = p_message_id;\r\n    if found then\r\n        if v_existing.sender_id = auth.uid() and v_existing.conversation_id = v_conversation and v_existing.body = v_body then return v_existing.id; end if;\r\n        raise exception 'message_id_conflict';\r\n    end if;\r\n    if v_event.cancelled_at is not null or v_event.archived_at is not null\r\n        or v_event.ends_at <= (clock_timestamp() at time zone 'America/Argentina/Buenos_Aires') then raise exception 'chat_read_only'; end if;\r\n    insert into public.messages(id, conversation_id, sender_id, body) values (p_message_id, v_conversation, auth.uid(), v_body);\r\n    return p_message_id;\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_message_id uuid, p_body text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_notifications",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_notifications(p_before_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid)\n RETURNS TABLE(id uuid, type text, title text, body text, read_at timestamp without time zone, created_at timestamp without time zone, target text)\n LANGUAGE plpgsql\n STABLE\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if (p_before_at is null) <> (p_before_id is null) then raise exception 'invalid_cursor' using errcode = '22023'; end if;\n    return query select n.id, n.type, n.title, n.body, n.read_at, n.created_at, public.get_notification_target(n.id)\n        from public.notifications n where n.recipient_id = (select auth.uid())\n        and (p_before_at is null or (n.created_at, n.id) < (p_before_at, p_before_id))\n        order by n.created_at desc, n.id desc limit 31;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_before_at timestamp without time zone, p_before_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "mark_notification_read",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.mark_notification_read(p_id uuid)\n RETURNS timestamp without time zone\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\ndeclare v_read_at timestamp;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    update public.notifications set read_at = clock_timestamp() at time zone 'America/Argentina/Buenos_Aires'\n        where id = p_id and recipient_id = (select auth.uid()) returning read_at into v_read_at;\n    if not found then raise exception 'notification_unavailable' using errcode = '42501'; end if;\n    return v_read_at;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_notification_target",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_notification_target(p_id uuid)\n RETURNS text\n LANGUAGE sql\n STABLE\n SET search_path TO ''\nAS $function$\n    select case when n.conversation_id is not null then\n        case when c.kind = 'event' then '/events/' || c.event_id::text || '/chat' end\n        else '/events/' || e.id::text end\n    from public.notifications n\n    left join public.conversations c on c.id = n.conversation_id\n    left join public.events e on e.id = n.event_id\n    where n.id = p_id and n.recipient_id = (select auth.uid());\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_my_organized_events",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_my_organized_events(p_filter text DEFAULT 'all'::text, p_offset integer DEFAULT 0)\n RETURNS TABLE(id uuid, title text, starts_at timestamp without time zone, ends_at timestamp without time zone, location_name text, address text, category_name text, event_state text, participation_status text, image_path text)\n LANGUAGE plpgsql\n STABLE\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null then\n        raise exception 'authentication_required' using errcode = '42501';\n    end if;\n    if p_filter is null or p_filter not in ('all', 'upcoming', 'past', 'cancelled', 'archived')\n        or p_offset is null or p_offset < 0 then\n        raise exception 'invalid_list_parameters' using errcode = '22023';\n    end if;\n    return query\n    with own_events as (\n        select e.*, case when e.archived_at is not null then 'archived'\n            when e.cancelled_at is not null then 'cancelled'\n            when e.ends_at <= (statement_timestamp() at time zone 'America/Argentina/Buenos_Aires') then 'ended'\n            else 'open' end as state\n        from public.events e\n        where e.organizer_id = (select auth.uid())\n    )\n    select e.id, e.title, e.starts_at, e.ends_at, e.location_name, e.address, c.name,\n        e.state, null::text, photo.storage_path\n    from own_events e\n    join public.categories c on c.id = e.category_id\n    left join lateral (\n        select f.storage_path from public.event_images i\n        join public.files f on f.id = i.file_id\n        where i.event_id = e.id\n        order by i.sort_order limit 1\n    ) photo on true\n    where (p_filter = 'all' and e.state <> 'archived')\n       or (p_filter = 'upcoming' and e.state = 'open')\n       or (p_filter = 'past' and e.state = 'ended')\n       or (p_filter = 'cancelled' and e.state = 'cancelled')\n       or (p_filter = 'archived' and e.state = 'archived')\n    order by e.starts_at desc, e.id\n    limit 31 offset p_offset;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_filter text, p_offset integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "lock_gallery",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.lock_gallery(p_event_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'read_committed_required' using errcode = '25000';\n    end if;\n    perform 1 from public.events where id = p_event_id and organizer_id = auth.uid() for update;\n    if not found then raise exception 'not_event_organizer' using errcode = '42501'; end if;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": false
+          },
+          {
+            "name": "validate_event_image",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.validate_event_image()\n RETURNS trigger\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    perform planit_private.lock_gallery(new.event_id);\n    if not exists (select 1 from public.files where id = new.file_id\n        and uploaded_by = auth.uid() and bucket_name = 'event_media') then\n        raise exception 'invalid_image_owner' using errcode = '42501';\n    end if;\n    return new;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "can_delete_event_upload",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.can_delete_event_upload(p_path text)\n RETURNS boolean\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null or split_part(p_path,'/',1) <> auth.uid()::text then return false; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'read_committed_required' using errcode = '25000';\n    end if;\n    perform pg_advisory_xact_lock(hashtextextended('event_media/' || p_path,0));\n    return not exists(select 1 from public.files where bucket_name = 'event_media' and storage_path = p_path);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_path text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "validate_event_file",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.validate_event_file()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\nbegin\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'read_committed_required' using errcode = '25000';\n    end if;\n    perform pg_advisory_xact_lock(hashtextextended(new.bucket_name || '/' || new.storage_path,0));\n    if not exists(select 1 from storage.objects where bucket_id = new.bucket_name and name = new.storage_path\n        and owner_id = auth.uid()::text and metadata ->> 'mimetype' = new.mime_type\n        and (metadata ->> 'size')::bigint = new.size_bytes\n        and (new.bucket_name <> 'avatars' or metadata ->> 'cacheControl' in ('no-store','no-cache','max-age=0'))) then\n        raise exception 'invalid_image' using errcode = 'P0001';\n    end if;\n    return new;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "validate_profile_avatar",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.validate_profile_avatar()\n RETURNS trigger\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if new.avatar_file_id is not null and not exists (select 1 from public.files f\n        where f.id = new.avatar_file_id and f.uploaded_by = new.id and f.bucket_name = 'avatars') then\n        raise exception 'invalid_avatar' using errcode = '23514';\n    end if;\n    return new;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "get_social_avatar_for_signing",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_social_avatar_for_signing(p_viewer_id uuid, p_user_id uuid)\n RETURNS text\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\n    select f.storage_path from public.profiles p join public.files f on f.id = p.avatar_file_id\n    where p.id = p_user_id and f.uploaded_by = p.id and f.bucket_name = 'avatars'\n        and exists (select 1 from public.profiles where id = p_viewer_id)\n        and not exists (select 1 from public.user_blocks b where\n            (b.blocker_id = p_viewer_id and b.blocked_id = p_user_id) or\n            (b.blocker_id = p_user_id and b.blocked_id = p_viewer_id));\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_viewer_id uuid, p_user_id uuid",
+            "authenticated_execute": false
+          },
+          {
+            "name": "add_event_image",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.add_event_image(p_event_id uuid, p_storage_path text)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_file uuid; v_image uuid; v_mime text; v_size bigint; v_slot integer;\nbegin\n    perform planit_private.lock_gallery(p_event_id);\n    if p_storage_path is null or split_part(p_storage_path, '/', 1) <> auth.uid()::text\n        or split_part(p_storage_path, '/', 2) <> p_event_id::text then\n        raise exception 'invalid_image' using errcode = 'P0001';\n    end if;\n    -- Path is the idempotency key: reconcile a lost commit before checking slots.\n    select i.id into v_image from public.event_images i join public.files f on f.id = i.file_id\n        where i.event_id = p_event_id and f.bucket_name = 'event_media' and f.storage_path = p_storage_path;\n    if found then return v_image; end if;\n    select s into v_slot from generate_series(0,9) s where not exists\n        (select 1 from public.event_images where event_id = p_event_id and sort_order = s) order by s limit 1;\n    if v_slot is null then raise exception 'gallery_full' using errcode = 'P0001'; end if;\n    perform pg_advisory_xact_lock(hashtextextended('event_media/' || p_storage_path,0));\n    select metadata ->> 'mimetype', (metadata ->> 'size')::bigint into v_mime,v_size\n        from storage.objects where bucket_id = 'event_media' and name = p_storage_path\n        and owner_id = auth.uid()::text for update;\n    if not found then raise exception 'invalid_image' using errcode = 'P0001'; end if;\n    select id into v_file from public.files where bucket_name = 'event_media' and storage_path = p_storage_path;\n    if v_file is null then\n        insert into public.files(uploaded_by,bucket_name,storage_path,mime_type,size_bytes)\n            values(auth.uid(),'event_media',p_storage_path,v_mime,v_size) returning id into v_file;\n    end if;\n    insert into public.event_images(event_id,file_id,sort_order) values(p_event_id,v_file,v_slot) returning id into v_image;\n    return v_image;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_storage_path text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "remove_event_image",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.remove_event_image(p_event_id uuid, p_image_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    perform planit_private.lock_gallery(p_event_id);\n    delete from public.event_images where id = p_image_id and event_id = p_event_id;\n    -- IDs remain stable. File metadata and physical object deliberately retained.\n    set constraints public.event_images_event_id_sort_order_key deferred;\n    with ordered as (select id, row_number() over(order by sort_order,id)-1 as position\n        from public.event_images where event_id = p_event_id)\n    update public.event_images i set sort_order = o.position from ordered o where i.id = o.id;\n    set constraints public.event_images_event_id_sort_order_key immediate;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_image_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "reorder_event_images",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.reorder_event_images(p_event_id uuid, p_image_ids uuid[], p_expected_ids uuid[])\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_ids uuid[];\nbegin\n    perform planit_private.lock_gallery(p_event_id);\n    select coalesce(array_agg(id order by sort_order,id),'{}'::uuid[]) into v_ids from public.event_images where event_id = p_event_id;\n    if p_expected_ids is distinct from v_ids then raise exception 'gallery_changed' using errcode = 'P0001'; end if;\n    if p_image_ids is null or cardinality(p_image_ids) <> cardinality(v_ids)\n        or exists(select 1 from unnest(p_image_ids) x where x is null or not x = any(v_ids))\n        or (select count(distinct x) from unnest(p_image_ids) x) <> cardinality(v_ids) then\n        raise exception 'invalid_image_order' using errcode = '23514';\n    end if;\n    set constraints public.event_images_event_id_sort_order_key deferred;\n    update public.event_images i set sort_order = o.position-1\n        from unnest(p_image_ids) with ordinality o(id,position) where i.id = o.id and i.event_id = p_event_id;\n    set constraints public.event_images_event_id_sort_order_key immediate;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_image_ids uuid[], p_expected_ids uuid[]",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_event_unregistered_uploads",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_unregistered_uploads(p_event_id uuid)\n RETURNS TABLE(storage_path text)\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null or not exists(select 1 from public.events where id = p_event_id and organizer_id = auth.uid()) then\n        raise exception 'not_event_organizer' using errcode = '42501';\n    end if;\n    return query select o.name from storage.objects o where o.bucket_id = 'event_media'\n        and split_part(o.name,'/',1) = auth.uid()::text and split_part(o.name,'/',2) = p_event_id::text\n        and not exists(select 1 from public.files f where f.bucket_name = o.bucket_id and f.storage_path = o.name)\n        order by o.name limit 100;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "cancel_event",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.cancel_event(p_event_id uuid)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare\n    v_event public.events%rowtype;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'retry_read_committed' using errcode = '40001';\n    end if;\n    select * into v_event from public.events where id = p_event_id for update;\n    if not found or v_event.organizer_id <> auth.uid() then\n        raise exception 'event_unavailable' using errcode = '42501';\n    end if;\n    if v_event.archived_at is not null then raise exception 'event_archived' using errcode = 'P0001'; end if;\n    if v_event.cancelled_at is not null then return v_event.id; end if;\n    if v_event.ends_at <= (clock_timestamp() at time zone 'America/Argentina/Buenos_Aires') then\n        raise exception 'event_ended' using errcode = 'P0001';\n    end if;\n    update public.events set cancelled_at = (clock_timestamp() at time zone 'America/Argentina/Buenos_Aires')\n        where id = v_event.id;\n    return v_event.id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_event_attendees",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_attendees(p_event_id uuid, p_status text DEFAULT 'confirmed'::text, p_search text DEFAULT ''::text, p_offset integer DEFAULT 0)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if not exists (select 1 from public.events where id = p_event_id and organizer_id = auth.uid()) then\n        raise exception 'event_unavailable' using errcode = '42501';\n    end if;\n    if p_status is null or p_status not in ('confirmed', 'removed') or p_search is null\n        or char_length(p_search) > 120 or p_offset is null or p_offset < 0 then\n        raise exception 'invalid_attendees_query' using errcode = '22023';\n    end if;\n    return (\n        with page as materialized (\n            select p.id as participation_id, p.user_id, p.status, case when planit_private.social_blocked(profile.id) then 'Perfil no disponible' else profile.display_name end as display_name,\n                case when planit_private.social_blocked(profile.id) then '' else profile.username end as username,\n                lower(case when planit_private.social_blocked(profile.id) then 'Perfil no disponible' else profile.display_name end) as sort_name\n            from public.event_participations p join public.profiles profile on profile.id = p.user_id\n            where p.event_id = p_event_id and p.status = p_status\n                and (btrim(p_search) = '' or not planit_private.social_blocked(profile.id))\n                and strpos(lower(case when planit_private.social_blocked(profile.id) then 'Perfil no disponible' else profile.display_name end), lower(btrim(p_search))) > 0\n            order by lower(case when planit_private.social_blocked(profile.id) then 'Perfil no disponible' else profile.display_name end), p.id limit 31 offset p_offset\n        )\n        select jsonb_build_object(\n            'title', e.title, 'capacity', e.capacity,\n            'event_state', case when e.archived_at is not null then 'archived'\n                when e.cancelled_at is not null then 'cancelled'\n                when e.ends_at <= (statement_timestamp() at time zone 'America/Argentina/Buenos_Aires') then 'ended' else 'open' end,\n            'confirmed_count', (select count(*) from public.event_participations where event_id = e.id and status = 'confirmed'),\n            'removed_count', (select count(*) from public.event_participations where event_id = e.id and status = 'removed'),\n            'pending_count', (select count(*) from public.event_rejoin_requests r join public.event_participations p on p.id = r.participation_id where p.event_id = e.id and r.status = 'pending'),\n            'has_more', (select count(*) > 30 from page),\n            'attendees', coalesce((select jsonb_agg(to_jsonb(visible) - 'sort_name' order by sort_name, participation_id)\n                from (select * from page order by sort_name, participation_id limit 30) visible), '[]'::jsonb)\n        )\n        from public.events e\n        where e.id = p_event_id\n    );\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_status text, p_search text, p_offset integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "remove_participant",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.remove_participant(p_event_id uuid, p_participation_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare\n    v_event public.events%rowtype;\n    v_status text;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'retry_read_committed' using errcode = '40001';\n    end if;\n    select * into v_event from public.events where id = p_event_id for update;\n    if not found or v_event.organizer_id <> auth.uid() then\n        raise exception 'event_unavailable' using errcode = '42501';\n    end if;\n    if v_event.archived_at is not null or v_event.cancelled_at is not null\n        or v_event.ends_at <= (clock_timestamp() at time zone 'America/Argentina/Buenos_Aires') then\n        raise exception 'event_closed' using errcode = 'P0001';\n    end if;\n    select status into v_status from public.event_participations\n        where id = p_participation_id and event_id = p_event_id for update;\n    if not found then raise exception 'attendee_unavailable' using errcode = 'P0001'; end if;\n    if v_status = 'removed' then return; end if;\n    if v_status <> 'confirmed' then raise exception 'attendee_not_confirmed' using errcode = 'P0001'; end if;\n    update public.event_participations set status = 'removed' where id = p_participation_id;\n    -- Existing trigger records exactly one organizer_removal with auth.uid().\n    -- Any trigger failure rolls back the transition and occupancy change.\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_participation_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_event_link_status",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_link_status(p_event_id uuid)\n RETURNS boolean\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null or not exists(select 1 from public.events where id = p_event_id and organizer_id = auth.uid()) then\n        raise exception 'event_unavailable' using errcode = '42501';\n    end if;\n    return exists(select 1 from public.event_access_links where event_id = p_event_id and revoked_at is null);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "archive_event",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.archive_event(p_event_id uuid)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare\n    v_event public.events%rowtype;\n    v_now timestamp;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'retry_read_committed' using errcode = '40001';\n    end if;\n    select * into v_event from public.events where id = p_event_id for update;\n    if not found or v_event.organizer_id <> auth.uid() then\n        raise exception 'event_unavailable' using errcode = '42501';\n    end if;\n    if v_event.archived_at is not null then return v_event.id; end if;\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\n    -- Cancellation precedes archive in this transaction. Any later failure rolls\n    -- both writes back; registrations and chat share this event-row lock.\n    if v_event.cancelled_at is null and v_event.ends_at > v_now then\n        update public.events set cancelled_at = v_now where id = v_event.id;\n    end if;\n    update public.events set archived_at = v_now where id = v_event.id;\n    return v_event.id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_event_duplicate_source",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_duplicate_source(p_event_id uuid)\n RETURNS TABLE(title text, description text, category_id uuid, location_name text, address text, latitude double precision, longitude double precision, capacity integer)\n LANGUAGE plpgsql\n STABLE\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    return query select e.title, e.description, e.category_id, e.location_name,\n        e.address, e.latitude, e.longitude, e.capacity\n        from public.events e where e.id = p_event_id and e.organizer_id = auth.uid();\n    if not found then raise exception 'event_unavailable' using errcode = '42501'; end if;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_event_rejoin_requests",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_rejoin_requests(p_event_id uuid, p_offset integer DEFAULT 0)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if not exists (select 1 from public.events where id = p_event_id and organizer_id = auth.uid()) then raise exception 'event_unavailable' using errcode = '42501'; end if;\n    if p_offset is null or p_offset < 0 then raise exception 'invalid_rejoin_query' using errcode = '22023'; end if;\n    return (\n        with page as materialized (\n            select r.id as request_id, r.participation_id, r.status, r.requested_at, case when planit_private.social_blocked(profile.id) then 'Perfil no disponible' else profile.display_name end as display_name,\n                case when planit_private.social_blocked(profile.id) then '' else profile.username end as username\n            from public.event_rejoin_requests r join public.event_participations p on p.id = r.participation_id\n            join public.profiles profile on profile.id = p.user_id\n            where p.event_id = p_event_id and r.status = 'pending'\n            order by r.requested_at desc, r.id desc limit 31 offset p_offset\n        )\n        select jsonb_build_object('title', e.title, 'capacity', e.capacity,\n            'event_state', case when e.archived_at is not null then 'archived' when e.cancelled_at is not null then 'cancelled'\n                when e.ends_at <= (statement_timestamp() at time zone 'America/Argentina/Buenos_Aires') then 'ended' else 'open' end,\n            'confirmed_count', (select count(*) from public.event_participations where event_id = e.id and status = 'confirmed'),\n            'pending_count', (select count(*) from public.event_rejoin_requests r join public.event_participations p on p.id=r.participation_id where p.event_id=e.id and r.status='pending'),\n            'has_more', (select count(*) > 30 from page),\n            'requests', coalesce((select jsonb_agg(to_jsonb(visible) order by requested_at desc, request_id desc)\n                from (select * from page order by requested_at desc, request_id desc limit 30) visible), '[]'::jsonb))\n        from public.events e where e.id = p_event_id\n    );\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_offset integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_event_rejoin_resolution",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_rejoin_resolution(p_event_id uuid, p_request_id uuid)\n RETURNS text\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_status text;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if not exists (select 1 from public.events where id=p_event_id and organizer_id=auth.uid()) then raise exception 'event_unavailable' using errcode='42501'; end if;\n    select r.status into v_status from public.event_rejoin_requests r join public.event_participations p on p.id=r.participation_id where r.id=p_request_id and p.event_id=p_event_id;\n    if not found then raise exception 'rejoin_unavailable' using errcode='P0001'; end if;\n    return v_status;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_request_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "search_public_events",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.search_public_events(p_query text DEFAULT NULL::text, p_category_ids uuid[] DEFAULT NULL::uuid[], p_before_starts_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30, p_south double precision DEFAULT NULL::double precision, p_north double precision DEFAULT NULL::double precision, p_west double precision DEFAULT NULL::double precision, p_east double precision DEFAULT NULL::double precision, p_date_from date DEFAULT NULL::date, p_date_to date DEFAULT NULL::date, p_origin_lat double precision DEFAULT NULL::double precision, p_origin_lng double precision DEFAULT NULL::double precision, p_radius_km double precision DEFAULT NULL::double precision)\n RETURNS TABLE(id uuid, organizer_id uuid, title text, description text, starts_at timestamp without time zone, ends_at timestamp without time zone, address text, location_name text, latitude double precision, longitude double precision, capacity integer, category_id uuid, visibility text, cancelled_at timestamp without time zone, archived_at timestamp without time zone, category_name text, image_path text)\n LANGUAGE plpgsql\n STABLE\n SET search_path TO ''\nAS $function$\ndeclare\n    c_earth_km constant double precision := 6371;\n    v_query text := nullif(btrim(coalesce(p_query, '')), '');\n    v_pattern text;\n    v_categories uuid[] := case when coalesce(cardinality(p_category_ids), 0) = 0 then null else p_category_ids end;\n    v_bounds integer := (p_south is not null)::integer + (p_north is not null)::integer\n        + (p_west is not null)::integer + (p_east is not null)::integer;\n    v_radius integer := (p_origin_lat is not null)::integer + (p_origin_lng is not null)::integer\n        + (p_radius_km is not null)::integer;\n    v_from timestamp;\n    v_to_exclusive timestamp;\n    v_angle double precision;\n    v_dlat double precision;\n    v_dlon double precision;\n    v_lat_min double precision;\n    v_lat_max double precision;\n    v_lon_any boolean := true;\n    v_lon_w double precision;\n    v_lon_e double precision;\nbegin\n    if (select auth.uid()) is null then\n        return;\n    end if;\n    if v_query is not null and char_length(v_query) > 100 then\n        raise exception 'search_query_too_long' using errcode = '22023';\n    end if;\n    if v_categories is not null and cardinality(v_categories) > 50 then\n        raise exception 'search_too_many_categories' using errcode = '22023';\n    end if;\n    if (p_before_starts_at is null) <> (p_before_id is null) then\n        raise exception 'search_invalid_cursor' using errcode = '22023';\n    end if;\n    if v_bounds not in (0, 4) or (v_bounds = 4 and not (\n        p_south between -90 and 90 and p_north between p_south and 90\n        and p_west between -180 and 180 and p_east between -180 and 180)) then\n        raise exception 'search_invalid_bounds' using errcode = '22023';\n    end if;\n\n    -- Dates: \"to\" needs \"from\"; no inverted range; years kept in a sane window.\n    if p_date_to is not null and p_date_from is null then\n        raise exception 'search_invalid_dates' using errcode = '22023';\n    end if;\n    if p_date_from is not null then\n        if p_date_from not between date '2000-01-01' and date '2100-12-31'\n            or (p_date_to is not null and (p_date_to < p_date_from or p_date_to > date '2100-12-31')) then\n            raise exception 'search_invalid_dates' using errcode = '22023';\n        end if;\n        v_from := p_date_from::timestamp;\n        v_to_exclusive := (coalesce(p_date_to, p_date_from) + 1)::timestamp;\n    end if;\n\n    -- Radius: all-or-nothing, finite, > 0, bounded; origin on the globe.\n    if v_radius not in (0, 3) or (v_radius = 3 and not (\n        p_origin_lat between -90 and 90 and p_origin_lng between -180 and 180\n        and p_radius_km > 0 and p_radius_km <= 20000)) then\n        raise exception 'search_invalid_radius' using errcode = '22023';\n    end if;\n    if v_radius = 3 then\n        v_angle := p_radius_km / c_earth_km;\n        v_dlat := degrees(v_angle);\n        v_lat_min := p_origin_lat - v_dlat * 1.001;\n        v_lat_max := p_origin_lat + v_dlat * 1.001;\n        -- Longitude window only when the circle stays clear of the poles and\n        -- spans less than half the globe; otherwise latitude + Haversine decide.\n        if v_lat_max < 90 and v_lat_min > -90 and v_angle < pi() / 2 then\n            v_dlon := degrees(asin(least(1, sin(v_angle) / cos(radians(p_origin_lat))))) * 1.001;\n            if v_dlon < 179 then\n                v_lon_any := false;\n                v_lon_w := p_origin_lng - v_dlon;\n                v_lon_e := p_origin_lng + v_dlon;\n                if v_lon_w < -180 then v_lon_w := v_lon_w + 360; end if;\n                if v_lon_e > 180 then v_lon_e := v_lon_e - 360; end if;\n            end if;\n        end if;\n    end if;\n\n    if v_query is not null then\n        v_pattern := '%' || replace(replace(replace(v_query, '\\', '\\\\'), '%', '\\%'), '_', '\\_') || '%';\n    end if;\n\n    return query\n    select e.id, e.organizer_id, e.title, e.description,\n        e.starts_at, e.ends_at, e.address, e.location_name,\n        e.latitude, e.longitude, e.capacity, e.category_id,\n        e.visibility, e.cancelled_at, e.archived_at, c.name,\n        (select f.storage_path\n         from public.event_images i\n         join public.files f on f.id = i.file_id\n         where i.event_id = e.id\n         order by i.sort_order\n         limit 1)\n    from public.events e\n    join public.categories c on c.id = e.category_id\n    where e.visibility = 'public'\n        and e.cancelled_at is null\n        and e.archived_at is null\n        and e.ends_at > (statement_timestamp() at time zone 'America/Argentina/Buenos_Aires')\n        and (v_pattern is null\n            or e.title ilike v_pattern escape '\\'\n            or e.description ilike v_pattern escape '\\')\n        and (v_categories is null or (c.is_active and e.category_id = any(v_categories)))\n        and (v_bounds = 0 or (\n            e.latitude between p_south and p_north\n            and case when p_west <= p_east then e.longitude between p_west and p_east\n                     else e.longitude >= p_west or e.longitude <= p_east end))\n        and (v_from is null or (e.starts_at >= v_from and e.starts_at < v_to_exclusive))\n        and (v_radius = 0 or (\n            e.latitude between v_lat_min and v_lat_max\n            and (v_lon_any or case when v_lon_w <= v_lon_e then e.longitude between v_lon_w and v_lon_e\n                                   else e.longitude >= v_lon_w or e.longitude <= v_lon_e end)\n            and 2 * c_earth_km * asin(least(1, sqrt(\n                power(sin(radians(e.latitude - p_origin_lat) / 2), 2)\n                + cos(radians(p_origin_lat)) * cos(radians(e.latitude))\n                * power(sin(radians(e.longitude - p_origin_lng) / 2), 2)))) <= p_radius_km))\n        and (p_before_starts_at is null or (e.starts_at, e.id) > (p_before_starts_at, p_before_id))\n    order by e.starts_at, e.id\n    limit least(greatest(coalesce(p_limit, 30), 1), 100) + 1;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_query text, p_category_ids uuid[], p_before_starts_at timestamp without time zone, p_before_id uuid, p_limit integer, p_south double precision, p_north double precision, p_west double precision, p_east double precision, p_date_from date, p_date_to date, p_origin_lat double precision, p_origin_lng double precision, p_radius_km double precision",
+            "authenticated_execute": true
+          },
+          {
+            "name": "lock_social_pair",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.lock_social_pair(p_target_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_count integer;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'retry_read_committed' using errcode = '40001';\n    end if;\n    if p_target_id is null or p_target_id = auth.uid() then\n        raise exception 'invalid_social_target' using errcode = '22023';\n    end if;\n    perform 1 from public.profiles where id in (auth.uid(), p_target_id)\n        order by id for no key update;\n    get diagnostics v_count = row_count;\n    if v_count <> 2 then raise exception 'profile_unavailable' using errcode = '42501'; end if;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_target_id uuid",
+            "authenticated_execute": false
+          },
+          {
+            "name": "set_my_category_interests",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.set_my_category_interests(p_category_ids uuid[])\n RETURNS TABLE(category_id uuid)\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare\n    v_user_id uuid := auth.uid();\nbegin\n    if v_user_id is null then\n        raise exception 'interests_auth_required' using errcode = '42501';\n    end if;\n    if p_category_ids is null or array_position(p_category_ids, null) is not null\n       or cardinality(p_category_ids) <> (select count(distinct id) from unnest(p_category_ids) as ids(id)) then\n        raise exception 'interests_invalid_selection' using errcode = '22023';\n    end if;\n\n    -- Serialize even an initially empty selection. Lock order: own profile,\n    -- then categories ordered by id. Keep category validation stable until ACK.\n    perform 1 from public.profiles where id = v_user_id for update;\n    if not found then\n        raise exception 'interests_profile_required' using errcode = '42501';\n    end if;\n    perform 1 from public.categories c where c.id = any(p_category_ids)\n        order by c.id for share;\n    if exists (\n        select 1 from unnest(p_category_ids) as ids(id)\n        left join public.categories c on c.id = ids.id\n        where c.id is null or (not c.is_active and not exists (\n            select 1 from public.user_category_interests i\n            where i.user_id = v_user_id and i.category_id = ids.id\n        ))\n    ) then\n        raise exception 'interests_category_unavailable' using errcode = '22023';\n    end if;\n\n    delete from public.user_category_interests i\n        where i.user_id = v_user_id and not (i.category_id = any(p_category_ids));\n    insert into public.user_category_interests (user_id, category_id)\n        select v_user_id, ids.id from unnest(p_category_ids) as ids(id)\n        on conflict on constraint user_category_interests_pkey do nothing;\n    return query select i.category_id from public.user_category_interests i\n        where i.user_id = v_user_id order by i.category_id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_category_ids uuid[]",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_suggested_events",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_suggested_events(p_origin_lat double precision DEFAULT NULL::double precision, p_origin_lng double precision DEFAULT NULL::double precision, p_limit integer DEFAULT 6)\n RETURNS TABLE(id uuid, organizer_id uuid, title text, description text, starts_at timestamp without time zone, ends_at timestamp without time zone, address text, location_name text, latitude double precision, longitude double precision, capacity integer, category_id uuid, visibility text, cancelled_at timestamp without time zone, archived_at timestamp without time zone, category_name text, image_path text, has_interests boolean, matches_interest boolean, distance_km double precision, starts_soon boolean)\n LANGUAGE plpgsql\n STABLE\n SET search_path TO ''\nAS $function$\ndeclare\n    v_user_id uuid := (select auth.uid());\n    v_now timestamp := statement_timestamp() at time zone 'America/Argentina/Buenos_Aires';\n    v_has_interests boolean;\nbegin\n    if v_user_id is null then return; end if;\n    if (p_origin_lat is null) <> (p_origin_lng is null)\n        or (p_origin_lat is not null and not (\n            p_origin_lat between -90 and 90 and p_origin_lng between -180 and 180)) then\n        raise exception 'suggestions_invalid_origin' using errcode = '22023';\n    end if;\n    if p_limit is null or p_limit not between 1 and 20 then\n        raise exception 'suggestions_invalid_limit' using errcode = '22023';\n    end if;\n    select exists(select 1 from public.user_category_interests i where i.user_id = v_user_id)\n        into v_has_interests;\n\n    -- All authorized available public candidates are scored BEFORE LIMIT. Own and\n    -- confirmed events remain eligible. Saved inactive interests retain affinity.\n    -- No-interest fallback is chronological, not disguised personalization.\n    return query\n    with candidates as (\n        select e.*, c.name as category_name,\n            exists(select 1 from public.user_category_interests i\n                where i.user_id = v_user_id and i.category_id = e.category_id) as affinity,\n            case when p_origin_lat is not null then\n                2 * 6371 * asin(least(1, sqrt(\n                    power(sin(radians(e.latitude - p_origin_lat) / 2), 2)\n                    + cos(radians(p_origin_lat)) * cos(radians(e.latitude))\n                    * power(sin(radians(e.longitude - p_origin_lng) / 2), 2))))\n            end as distance,\n            greatest(0, extract(epoch from (e.starts_at - v_now)) / 86400)::double precision as days_until\n        from public.events e join public.categories c on c.id = e.category_id\n        where e.visibility = 'public' and e.cancelled_at is null and e.archived_at is null\n            and e.ends_at > v_now\n    ), ranked as (\n        select c.*, (case when c.affinity then 100 else 0 end)\n            + coalesce(30 * greatest(0, 1 - c.distance / 50), 0)\n            + 20 * greatest(0, 1 - c.days_until / 7) as score\n        from candidates c\n    ), selected as (\n        select r.* from ranked r where not v_has_interests or r.score > 0\n        order by case when v_has_interests then r.score else 0 end desc, r.starts_at, r.id\n        limit p_limit\n    )\n    select s.id, s.organizer_id, s.title, s.description, s.starts_at, s.ends_at,\n        s.address, s.location_name, s.latitude, s.longitude, s.capacity, s.category_id,\n        s.visibility, s.cancelled_at, s.archived_at, s.category_name,\n        (select f.storage_path from public.event_images i join public.files f on f.id = i.file_id\n            where i.event_id = s.id order by i.sort_order limit 1),\n        v_has_interests, s.affinity, s.distance, s.days_until < 7\n    from selected s\n    order by case when v_has_interests then s.score else 0 end desc, s.starts_at, s.id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_origin_lat double precision, p_origin_lng double precision, p_limit integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "can_view_event",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.can_view_event(p_event_id uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\n    select (select auth.uid()) is not null and exists (\r\n        select 1 from public.events e where e.id = p_event_id and (\r\n            e.organizer_id = (select auth.uid())\r\n            or (e.visibility = 'unlisted' and exists (\r\n                select 1 from public.event_access_grants g where g.event_id = e.id\r\n                    and g.user_id = (select auth.uid()) and g.status = 'active'\r\n            ))\r\n            or (e.visibility = 'public' and (\r\n                (e.cancelled_at is null and e.archived_at is null)\r\n                or exists (select 1 from public.event_participations p\r\n                    where p.event_id = e.id and p.user_id = (select auth.uid()))\r\n            ))\r\n        )\r\n    );\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "can_read_social_content",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.can_read_social_content(p_user_id uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\n    select auth.uid() is not null and not planit_private.social_blocked(p_user_id) and exists (\n        select 1 from public.profiles p where p.id = p_user_id and\n        (p.id = auth.uid() or p.visibility = 'public' or exists (\n            select 1 from public.user_follows f where f.follower_id = auth.uid()\n                and f.followed_id = p.id and f.status = 'accepted'))\n    );\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_user_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "protect_event_visibility",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.protect_event_visibility()\n RETURNS trigger\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\nbegin\r\n    if old.visibility = new.visibility then return new; end if;\r\n    if auth.uid() is null or old.organizer_id <> auth.uid() then\r\n        raise exception 'event_unavailable' using errcode = '42501';\r\n    end if;\r\n    if current_setting('transaction_isolation') <> 'read committed' then\r\n        raise exception 'retry_read_committed' using errcode = '40001';\r\n    end if;\r\n    -- UPDATE already holds event lock. Same event -> participation -> grant order.\r\n    if new.visibility = 'unlisted' then\r\n        perform 1 from public.event_participations where event_id = new.id and status = 'confirmed' order by id for update;\r\n        if exists (select 1 from public.event_participations p join public.event_access_grants g\r\n            on g.event_id = p.event_id and g.user_id = p.user_id\r\n            where p.event_id = new.id and p.status = 'confirmed' and g.status = 'revoked') then\r\n            raise exception 'confirmed_access_revoked' using errcode = 'P0001';\r\n        end if;\r\n        insert into public.event_access_grants(event_id,user_id)\r\n            select new.id,p.user_id from public.event_participations p where p.event_id = new.id and p.status = 'confirmed'\r\n            on conflict (event_id,user_id) do nothing;\r\n    else\r\n        -- D12: invalidate only links, never individual grants or participation.\r\n        update public.event_access_links set revoked_at = clock_timestamp() at time zone 'America/Argentina/Buenos_Aires'\r\n            where event_id = new.id and revoked_at is null;\r\n    end if;\r\n    return new;\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "",
+            "authenticated_execute": false
+          },
+          {
+            "name": "get_event_participation_summary",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_participation_summary(p_event_id uuid)\n RETURNS TABLE(confirmed_count bigint, capacity integer, available_spots bigint, own_status text, is_organizer boolean, event_state text)\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\nbegin\r\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\r\n    return query\r\n    select counts.total, e.capacity, greatest(e.capacity - counts.total, 0::bigint), own.status,\r\n        e.organizer_id = auth.uid(),\r\n        case when e.archived_at is not null then 'archived' when e.cancelled_at is not null then 'cancelled'\r\n            when e.ends_at <= (statement_timestamp() at time zone 'America/Argentina/Buenos_Aires') then 'ended' else 'open' end\r\n    from public.events e\r\n    left join public.event_participations own on own.event_id = e.id and own.user_id = auth.uid()\r\n    cross join lateral (select count(*) as total from public.event_participations p where p.event_id = e.id and p.status = 'confirmed') counts\r\n    where e.id = p_event_id and planit_private.can_view_event(e.id);\r\n    if not found then raise exception 'event_unavailable' using errcode = '42501'; end if;\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "leave_event",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.leave_event(p_event_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\ndeclare v_user uuid := auth.uid();\r\nbegin\r\n    if v_user is null then raise exception 'authentication_required' using errcode = '42501'; end if;\r\n    if current_setting('transaction_isolation') <> 'read committed' then\r\n        raise exception 'retry_read_committed' using errcode = '40001';\r\n    end if;\r\n    perform 1 from public.events where id = p_event_id for update;\r\n    if not found or not planit_private.can_view_event(p_event_id) then\r\n        raise exception 'event_unavailable' using errcode = '42501';\r\n    end if;\r\n    if not exists (select 1 from public.event_participations where event_id = p_event_id and user_id = v_user) then\r\n        raise exception 'not_participating' using errcode = 'P0001';\r\n    end if;\r\n    update public.event_participations set status = 'cancelled'\r\n        where event_id = p_event_id and user_id = v_user and status = 'confirmed';\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_my_rejoin_status",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_my_rejoin_status(p_event_id uuid)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\ndeclare\r\n    v_event public.events%rowtype;\r\n    v_part public.event_participations%rowtype;\r\n    v_request public.event_rejoin_requests%rowtype;\r\n    v_next timestamp;\r\n    v_now timestamp := statement_timestamp() at time zone 'America/Argentina/Buenos_Aires';\r\nbegin\r\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\r\n    select * into v_event from public.events where id = p_event_id;\r\n    select * into v_part from public.event_participations where event_id = p_event_id and user_id = auth.uid();\r\n    if not planit_private.can_view_event(p_event_id) then\r\n        raise exception 'event_unavailable' using errcode = '42501';\r\n    end if;\r\n    select * into v_request from public.event_rejoin_requests where participation_id = v_part.id order by requested_at desc, id desc limit 1;\r\n    if v_request.status = 'rejected' then v_next := v_request.resolved_at + interval '7 days'; end if;\r\n    return jsonb_build_object('request_id', v_request.id, 'status', v_request.status,\r\n        'requested_at', v_request.requested_at, 'resolved_at', v_request.resolved_at, 'next_eligible_at', v_next,\r\n        'can_request', coalesce(v_part.status = 'removed' and v_event.organizer_id <> auth.uid()\r\n            and v_event.cancelled_at is null and v_event.archived_at is null and v_event.ends_at > v_now\r\n            and v_request.status is distinct from 'pending' and (v_next is null or v_next <= v_now), false));\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "request_rejoin",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.request_rejoin(p_event_id uuid)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\ndeclare\r\n    v_event public.events%rowtype;\r\n    v_part public.event_participations%rowtype;\r\n    v_request public.event_rejoin_requests%rowtype;\r\n    v_now timestamp;\r\n    v_id uuid;\r\nbegin\r\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\r\n    if current_setting('transaction_isolation') <> 'read committed' then raise exception 'retry_read_committed' using errcode = '40001'; end if;\r\n    select * into v_event from public.events where id = p_event_id for update;\r\n    if not found then raise exception 'event_unavailable' using errcode = '42501'; end if;\r\n    if not planit_private.can_view_event(p_event_id) then raise exception 'event_unavailable' using errcode = '42501'; end if;\r\n    select * into v_part from public.event_participations where event_id = p_event_id and user_id = auth.uid() for update;\r\n    if not found or v_part.status <> 'removed' or v_event.organizer_id = auth.uid() then raise exception 'rejoin_not_removed' using errcode = 'P0001'; end if;\r\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\r\n    if v_event.cancelled_at is not null or v_event.archived_at is not null or v_event.ends_at <= v_now then raise exception 'event_closed' using errcode = 'P0001'; end if;\r\n    select * into v_request from public.event_rejoin_requests where participation_id = v_part.id order by requested_at desc, id desc limit 1 for update;\r\n    if v_request.status = 'pending' then raise exception 'rejoin_already_pending' using errcode = 'P0001'; end if;\r\n    if v_request.status = 'rejected' and v_request.resolved_at + interval '7 days' > v_now then raise exception 'rejoin_cooldown' using errcode = 'P0001'; end if;\r\n    insert into public.event_rejoin_requests(participation_id, requested_at) values(v_part.id, v_now) returning id into v_id;\r\n    return v_id;\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "resolve_rejoin",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.resolve_rejoin(p_event_id uuid, p_request_id uuid, p_decision text)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\ndeclare\r\n    v_event public.events%rowtype;\r\n    v_part public.event_participations%rowtype;\r\n    v_request public.event_rejoin_requests%rowtype;\r\n    v_now timestamp;\r\nbegin\r\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\r\n    if current_setting('transaction_isolation') <> 'read committed' then raise exception 'retry_read_committed' using errcode = '40001'; end if;\r\n    select * into v_event from public.events where id = p_event_id for update;\r\n    if not found or v_event.organizer_id <> auth.uid() then raise exception 'event_unavailable' using errcode = '42501'; end if;\r\n    if p_decision is null or p_decision not in ('approved','rejected') then raise exception 'invalid_rejoin_decision' using errcode = '22023'; end if;\r\n    select p.* into v_part from public.event_participations p join public.event_rejoin_requests r on r.participation_id = p.id\r\n        where r.id = p_request_id and p.event_id = p_event_id for update of p;\r\n    if not found then raise exception 'rejoin_unavailable' using errcode = 'P0001'; end if;\r\n    select * into v_request from public.event_rejoin_requests where id = p_request_id for update;\r\n    if v_request.status <> 'pending' then raise exception 'rejoin_already_resolved' using errcode = 'P0001'; end if;\r\n    if v_part.status <> 'removed' then raise exception 'rejoin_not_removed' using errcode = 'P0001'; end if;\r\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\r\n    if p_decision = 'approved' then\r\n        if v_event.visibility = 'unlisted' and not exists (select 1 from public.event_access_grants g\r\n            where g.event_id = p_event_id and g.user_id = v_part.user_id and g.status = 'active') then\r\n            raise exception 'event_access_required' using errcode = '42501';\r\n        end if;\r\n        if v_event.cancelled_at is not null or v_event.archived_at is not null or v_event.ends_at <= v_now then raise exception 'event_closed' using errcode = 'P0001'; end if;\r\n        if (select count(*) from public.event_participations where event_id=p_event_id and status='confirmed') >= v_event.capacity then raise exception 'event_full' using errcode = 'P0001'; end if;\r\n        update public.event_participations set status='confirmed' where id=v_part.id;\r\n    end if;\r\n    -- Human-approved exception: rejection is allowed after closure; no transition is fabricated.\r\n    update public.event_rejoin_requests set status=p_decision, resolved_at=v_now, reviewed_by=auth.uid() where id=p_request_id;\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_request_id uuid, p_decision text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "create_event",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.create_event(p_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text DEFAULT NULL::text, p_image_paths text[] DEFAULT '{}'::text[], p_visibility text DEFAULT 'public'::text)\n RETURNS uuid\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\r\ndeclare\r\n    v_event_id uuid;\r\n    v_file_id uuid;\r\n    v_path text;\r\n    v_mime text;\r\n    v_size bigint;\r\n    v_sort integer := 0;\r\nbegin\r\n    if (select auth.uid()) is null then raise exception 'authentication_required' using errcode = '42501'; end if;\r\n    if p_visibility is null or p_visibility not in ('public','unlisted') then raise exception 'invalid_visibility' using errcode = '23514'; end if;\n    if p_id is null then raise exception 'request_id_required' using errcode = '23514'; end if;\r\n    -- Serialize retries for one publication; a lost response must not duplicate it.\r\n    perform pg_advisory_xact_lock(hashtextextended(p_id::text, 0));\r\n    if exists (select 1 from public.events where id = p_id and organizer_id = (select auth.uid())) then return p_id; end if;\r\n    if p_image_paths is null or cardinality(p_image_paths) > 10 then\r\n        raise exception 'invalid_image_count' using errcode = '23514';\r\n    end if;\r\n    insert into public.events (id, category_id, title, description, starts_at, ends_at, location_name, address, latitude, longitude, capacity, visibility)\r\n    values (p_id, p_category_id, btrim(p_title), btrim(p_description), p_starts_at, p_ends_at, nullif(btrim(p_location_name), ''), btrim(p_address), p_latitude, p_longitude, p_capacity, p_visibility)\r\n    returning id into v_event_id;\r\n    foreach v_path in array p_image_paths loop\r\n        select metadata ->> 'mimetype', (metadata ->> 'size')::bigint into v_mime, v_size\r\n        from storage.objects where bucket_id = 'event_media' and name = v_path\r\n            and owner_id = (select auth.uid())::text;\r\n        if not found or v_path is null or split_part(v_path, '/', 1) <> (select auth.uid())::text then\r\n            raise exception 'invalid_image' using errcode = 'P0001';\r\n        end if;\r\n        insert into public.files (bucket_name, storage_path, mime_type, size_bytes)\r\n        values ('event_media', v_path, v_mime, v_size) returning id into v_file_id;\r\n        insert into public.event_images (event_id, file_id, sort_order) values (v_event_id, v_file_id, v_sort);\r\n        v_sort := v_sort + 1;\r\n    end loop;\r\n    return v_event_id;\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text, p_image_paths text[], p_visibility text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "update_event",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.update_event(p_event_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text DEFAULT NULL::text, p_visibility text DEFAULT NULL::text)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\r\ndeclare\r\n    v_user uuid := auth.uid();\r\n    v_event public.events%rowtype;\r\n    v_now timestamp;\r\nbegin\r\n    if v_user is null then raise exception 'authentication_required' using errcode = '42501'; end if;\r\n    if current_setting('transaction_isolation') <> 'read committed' then\r\n        raise exception 'retry_read_committed' using errcode = '40001';\r\n    end if;\r\n    if p_visibility is not null and p_visibility not in ('public','unlisted') then raise exception 'invalid_visibility' using errcode = '23514'; end if;\n    -- Same lock as registration/leave. Count AFTER lock using a fresh snapshot.\r\n    select * into v_event from public.events where id = p_event_id for update;\r\n    if not found then raise exception 'event_unavailable' using errcode = '42501'; end if;\r\n    if v_event.organizer_id <> v_user then raise exception 'not_event_organizer' using errcode = '42501'; end if;\r\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\r\n    if v_event.cancelled_at is not null or v_event.archived_at is not null or v_event.starts_at <= v_now then\r\n        raise exception 'event_not_editable' using errcode = 'P0001';\r\n    end if;\r\n    if p_starts_at is null or p_ends_at is null or not isfinite(p_starts_at) or not isfinite(p_ends_at)\r\n        or p_starts_at <= v_now then raise exception 'start_not_future' using errcode = 'P0001'; end if;\r\n    if p_ends_at <= p_starts_at then raise exception 'end_before_start' using errcode = 'P0001'; end if;\r\n    if not exists (select 1 from public.categories where id = p_category_id and is_active) then\r\n        raise exception 'category_inactive' using errcode = 'P0001';\r\n    end if;\r\n    if p_capacity is null or p_capacity < 1 then raise exception 'invalid_capacity' using errcode = '23514'; end if;\r\n    if p_capacity < (select count(*) from public.event_participations where event_id = p_event_id and status = 'confirmed') then\r\n        raise exception 'capacity_below_confirmed' using errcode = 'P0001';\r\n    end if;\r\n    -- Existing NOT NULL/CHECK/FK constraints validate remaining content atomically.\r\n    update public.events set title = btrim(p_title), description = btrim(p_description),\r\n        starts_at = p_starts_at, ends_at = p_ends_at, category_id = p_category_id,\r\n        capacity = p_capacity, address = btrim(p_address), latitude = p_latitude,\r\n        longitude = p_longitude, location_name = nullif(btrim(p_location_name), ''), visibility = coalesce(p_visibility, v_event.visibility)\r\n    where id = p_event_id;\r\n    return p_event_id;\r\nend;\r\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text, p_visibility text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "set_event_visibility",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.set_event_visibility(p_event_id uuid, p_visibility text)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_event public.events%rowtype;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then raise exception 'retry_read_committed' using errcode = '40001'; end if;\n    if p_visibility is null or p_visibility not in ('public','unlisted') then raise exception 'invalid_visibility' using errcode = '23514'; end if;\n    select * into v_event from public.events where id = p_event_id for update;\n    if not found or v_event.organizer_id <> auth.uid() then raise exception 'event_unavailable' using errcode = '42501'; end if;\n    if v_event.cancelled_at is not null or v_event.archived_at is not null\n        or v_event.starts_at <= (clock_timestamp() at time zone 'America/Argentina/Buenos_Aires') then\n        raise exception 'event_not_editable' using errcode = 'P0001';\n    end if;\n    if v_event.visibility <> p_visibility then update public.events set visibility = p_visibility where id = p_event_id; end if;\n    return p_event_id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_visibility text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "create_or_rotate_event_link",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.create_or_rotate_event_link(p_event_id uuid)\n RETURNS text\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_event public.events%rowtype; v_token text; v_now timestamp;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then raise exception 'retry_read_committed' using errcode = '40001'; end if;\n    select * into v_event from public.events where id = p_event_id for update;\n    if not found or v_event.organizer_id <> auth.uid() then raise exception 'event_unavailable' using errcode = '42501'; end if;\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\n    if v_event.visibility <> 'unlisted' then raise exception 'event_not_unlisted' using errcode = 'P0001'; end if;\n    if v_event.ends_at <= v_now or v_event.cancelled_at is not null or v_event.archived_at is not null then\n        raise exception 'event_link_closed' using errcode = 'P0001';\n    end if;\n    v_token := encode(extensions.gen_random_bytes(32), 'hex');\n    update public.event_access_links set revoked_at = v_now where event_id = p_event_id and revoked_at is null;\n    insert into public.event_access_links(event_id,created_by,token_hash,created_at)\n        values(p_event_id,auth.uid(),encode(extensions.digest(v_token,'sha256'),'hex'),v_now);\n    return v_token;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "redeem_event_link",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.redeem_event_link(p_token text)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare\n    v_user uuid := auth.uid();\n    v_hash text;\n    v_event_id uuid;\n    v_event public.events%rowtype;\n    v_link_id uuid;\n    v_grant public.event_access_grants%rowtype;\n    v_now timestamp;\nbegin\n    if v_user is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'retry_read_committed' using errcode = '40001';\n    end if;\n    -- One indistinguishable error for malformed, unknown, rotated/revoked links,\n    -- closed or public events and revoked users: no event enumeration oracle.\n    if p_token is null or p_token !~ '^[0-9a-f]{64}$' then\n        raise exception 'invite_unavailable' using errcode = 'P0001';\n    end if;\n    v_hash := encode(extensions.digest(p_token, 'sha256'), 'hex');\n    select l.event_id into v_event_id from public.event_access_links l where l.token_hash = v_hash;\n    if v_event_id is null then raise exception 'invite_unavailable' using errcode = 'P0001'; end if;\n    -- Event lock first (same as rotate/visibility/closure/register); then re-read\n    -- the link so a rotation that won the lock race invalidates this token.\n    select * into v_event from public.events where id = v_event_id for update;\n    if not found then raise exception 'invite_unavailable' using errcode = 'P0001'; end if;\n    select l.id into v_link_id from public.event_access_links l\n        where l.token_hash = v_hash and l.event_id = v_event_id and l.revoked_at is null;\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\n    if v_link_id is null or v_event.visibility <> 'unlisted' or v_event.cancelled_at is not null\n        or v_event.archived_at is not null or v_event.ends_at <= v_now then\n        raise exception 'invite_unavailable' using errcode = 'P0001';\n    end if;\n    if v_event.organizer_id = v_user then return v_event_id; end if;\n    select * into v_grant from public.event_access_grants\n        where event_id = v_event_id and user_id = v_user for update;\n    if found then\n        -- Revoked wins absolutely: no token, old or new, can resurrect it.\n        if v_grant.status <> 'active' then raise exception 'invite_unavailable' using errcode = 'P0001'; end if;\n        return v_event_id;\n    end if;\n    insert into public.event_access_grants(event_id, user_id, source_link_id, granted_at, updated_at)\n        values (v_event_id, v_user, v_link_id, v_now, v_now)\n        on conflict (event_id, user_id) do nothing;\n    -- Confirm the committed outcome before reporting success.\n    if not exists (select 1 from public.event_access_grants\n        where event_id = v_event_id and user_id = v_user and status = 'active') then\n        raise exception 'invite_unavailable' using errcode = 'P0001';\n    end if;\n    return v_event_id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_token text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "revoke_event_access",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.revoke_event_access(p_event_id uuid, p_user_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare\n    v_event public.events%rowtype;\n    v_part public.event_participations%rowtype;\n    v_grant public.event_access_grants%rowtype;\n    v_now timestamp;\nbegin\n    if auth.uid() is null then raise exception 'access_denied' using errcode = '42501'; end if;\n    select * into v_event from public.events where id = p_event_id for update;\n    if not found or v_event.organizer_id <> auth.uid() then raise exception 'access_denied' using errcode = '42501'; end if;\n    if v_event.visibility <> 'unlisted' then raise exception 'event_not_hidden'; end if;\n    if v_event.cancelled_at is not null or v_event.archived_at is not null or\n        v_event.ends_at <= clock_timestamp() at time zone 'America/Argentina/Buenos_Aires' then raise exception 'event_closed'; end if;\n    select * into v_part from public.event_participations where event_id = p_event_id and user_id = p_user_id for update;\n    select * into v_grant from public.event_access_grants where event_id = p_event_id and user_id = p_user_id for update;\n    if not found then raise exception 'access_grant_missing'; end if;\n    if v_grant.status = 'revoked' then return; end if;\n    if v_part.status = 'confirmed' then\n        -- Existing trigger records exactly one organizer_removal; no manual history INSERT.\n        update public.event_participations set status = 'removed' where id = v_part.id;\n    end if;\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\n    update public.event_access_grants set status = 'revoked', revoked_at = v_now, updated_at = v_now where id = v_grant.id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_user_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "restore_event_access",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.restore_event_access(p_event_id uuid, p_user_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare\n    v_event public.events%rowtype;\n    v_grant public.event_access_grants%rowtype;\n    v_now timestamp;\nbegin\n    if auth.uid() is null then raise exception 'access_denied' using errcode = '42501'; end if;\n    select * into v_event from public.events where id = p_event_id for update;\n    if not found or v_event.organizer_id <> auth.uid() then raise exception 'access_denied' using errcode = '42501'; end if;\n    if v_event.visibility <> 'unlisted' then raise exception 'event_not_hidden'; end if;\n    if v_event.cancelled_at is not null or v_event.archived_at is not null or\n        v_event.ends_at <= clock_timestamp() at time zone 'America/Argentina/Buenos_Aires' then raise exception 'event_closed'; end if;\n    -- Same lock order as revocation and all R3 participation operations.\n    perform 1 from public.event_participations where event_id = p_event_id and user_id = p_user_id for update;\n    select * into v_grant from public.event_access_grants where event_id = p_event_id and user_id = p_user_id for update;\n    if not found then raise exception 'access_grant_missing'; end if;\n    if v_grant.status = 'active' then return; end if;\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\n    update public.event_access_grants set status = 'active', revoked_at = null, restored_at = v_now, updated_at = v_now where id = v_grant.id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_user_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "social_blocked",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.social_blocked(p_target_id uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\n    select auth.uid() is null or exists (\n        select 1 from public.user_blocks b where\n        (b.blocker_id = auth.uid() and b.blocked_id = p_target_id) or\n        (b.blocker_id = p_target_id and b.blocked_id = auth.uid())\n    );\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_target_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "unfollow_user",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.unfollow_user(p_target_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    perform planit_private.lock_social_pair(p_target_id);\n    delete from public.user_follows where follower_id = auth.uid() and followed_id = p_target_id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_target_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "update_my_social_profile",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.update_my_social_profile(p_username text, p_display_name text, p_first_name text, p_last_name text, p_birth_date date, p_sex text, p_bio text, p_visibility text)\n RETURNS jsonb\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_old_visibility text; v_accepted integer := 0;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'retry_read_committed' using errcode = '40001';\n    end if;\n    select visibility into v_old_visibility from public.profiles\n        where id = auth.uid() for no key update;\n    if not found then raise exception 'profile_unavailable' using errcode = '42501'; end if;\n    update public.profiles set username = p_username, display_name = p_display_name,\n        first_name = p_first_name, last_name = p_last_name, birth_date = p_birth_date,\n        sex = p_sex, bio = p_bio, visibility = p_visibility where id = auth.uid();\n    if v_old_visibility = 'private' and p_visibility = 'public' then\n        update public.user_follows f set status = 'accepted',\n            responded_at = clock_timestamp() at time zone 'America/Argentina/Buenos_Aires'\n        where f.followed_id = auth.uid() and f.status = 'pending'\n            and not planit_private.social_blocked(f.follower_id);\n        get diagnostics v_accepted = row_count;\n    end if;\n    return jsonb_build_object('visibility', p_visibility, 'accepted_requests', v_accepted);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_username text, p_display_name text, p_first_name text, p_last_name text, p_birth_date date, p_sex text, p_bio text, p_visibility text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "follow_user",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.follow_user(p_target_id uuid)\n RETURNS jsonb\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_visibility text; v_status text; v_follow public.user_follows%rowtype; v_now timestamp;\nbegin\n    perform planit_private.lock_social_pair(p_target_id);\n    if planit_private.social_blocked(p_target_id) then\n        raise exception 'profile_unavailable' using errcode = '42501';\n    end if;\n    select * into v_follow from public.user_follows\n        where follower_id = auth.uid() and followed_id = p_target_id;\n    if found and v_follow.status in ('pending', 'accepted') then\n        return jsonb_build_object('status', v_follow.status, 'request_version', v_follow.request_version);\n    end if;\n    select visibility into v_visibility from public.profiles where id = p_target_id;\n    v_status := case when v_visibility = 'public' then 'accepted' else 'pending' end;\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\n    insert into public.user_follows(follower_id, followed_id, status, requested_at, responded_at)\n    values (auth.uid(), p_target_id, v_status, v_now, case when v_status = 'accepted' then v_now end)\n    on conflict (follower_id, followed_id) do update set status = excluded.status,\n        request_version = gen_random_uuid(), requested_at = excluded.requested_at,\n        responded_at = excluded.responded_at returning * into v_follow;\n    return jsonb_build_object('status', v_follow.status, 'request_version', v_follow.request_version);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_target_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "resolve_follow_request",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.resolve_follow_request(p_follower_id uuid, p_request_version uuid, p_decision text)\n RETURNS text\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_follow public.user_follows%rowtype;\nbegin\n    perform planit_private.lock_social_pair(p_follower_id);\n    if p_decision is null or p_decision not in ('accepted', 'rejected') or p_request_version is null then\n        raise exception 'invalid_follow_decision' using errcode = '22023';\n    end if;\n    if planit_private.social_blocked(p_follower_id) then\n        raise exception 'request_unavailable' using errcode = '42501';\n    end if;\n    select * into v_follow from public.user_follows\n        where follower_id = p_follower_id and followed_id = auth.uid();\n    if not found or v_follow.request_version <> p_request_version then\n        raise exception 'request_unavailable' using errcode = '42501';\n    end if;\n    if v_follow.status <> 'pending' then\n        if v_follow.status = p_decision then return v_follow.status; end if;\n        raise exception 'request_already_resolved' using errcode = '22023';\n    end if;\n    update public.user_follows set status = p_decision,\n        responded_at = clock_timestamp() at time zone 'America/Argentina/Buenos_Aires'\n        where follower_id = p_follower_id and followed_id = auth.uid();\n    return p_decision;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_follower_id uuid, p_request_version uuid, p_decision text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "block_user",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.block_user(p_target_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    perform planit_private.lock_social_pair(p_target_id);\n    insert into public.user_blocks(blocker_id, blocked_id) values (auth.uid(), p_target_id)\n        on conflict (blocker_id, blocked_id) do nothing;\n    delete from public.user_follows where\n        (follower_id = auth.uid() and followed_id = p_target_id) or\n        (follower_id = p_target_id and followed_id = auth.uid());\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_target_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "unblock_user",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.unblock_user(p_target_id uuid)\n RETURNS void\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    perform planit_private.lock_social_pair(p_target_id);\n    delete from public.user_blocks where blocker_id = auth.uid() and blocked_id = p_target_id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_target_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_or_create_direct_conversation",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_or_create_direct_conversation(p_target_id uuid)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_id uuid;\nbegin\n    perform planit_private.lock_social_pair(p_target_id);\n    if planit_private.social_blocked(p_target_id) then\n        raise exception 'profile_unavailable' using errcode = '42501';\n    end if;\n    select id into v_id from public.conversations where kind = 'direct'\n        and user_low_id = least(auth.uid(), p_target_id) and user_high_id = greatest(auth.uid(), p_target_id);\n    if found then return v_id; end if;\n    insert into public.conversations(kind, user_low_id, user_high_id)\n        values ('direct', least(auth.uid(), p_target_id), greatest(auth.uid(), p_target_id))\n        returning id into v_id;\n    return v_id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_target_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "send_direct_message",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.send_direct_message(p_conversation_id uuid, p_message_id uuid, p_body text)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare\n    v_target uuid; v_existing public.messages%rowtype;\n    v_body text := btrim(p_body, E' \\t\\n\\r\\f\\v' || U&'\\0085\\00A0\\1680\\2000\\2001\\2002\\2003\\2004\\2005\\2006\\2007\\2008\\2009\\200A\\2028\\2029\\202F\\205F\\3000\\FEFF');\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    select case when c.user_low_id = auth.uid() then c.user_high_id else c.user_low_id end\n        into v_target from public.conversations c where c.id = p_conversation_id and c.kind = 'direct'\n        and auth.uid() in (c.user_low_id, c.user_high_id);\n    if not found then raise exception 'conversation_unavailable' using errcode = '42501'; end if;\n    perform planit_private.lock_social_pair(v_target);\n    if p_message_id is null or v_body is null or char_length(v_body) not between 1 and 2000 or v_body !~ '[^[:space:]]' then\n        raise exception 'invalid_message' using errcode = '22023';\n    end if;\n    -- A successful retry is a read of an existing effect, also during a later block.\n    select * into v_existing from public.messages where id = p_message_id;\n    if found then\n        if v_existing.sender_id = auth.uid() and v_existing.conversation_id = p_conversation_id\n            and v_existing.body = v_body then return p_message_id; end if;\n        raise exception 'message_id_conflict' using errcode = '22023';\n    end if;\n    if planit_private.social_blocked(v_target) then\n        raise exception 'conversation_read_only' using errcode = '42501';\n    end if;\n    insert into public.messages(id, conversation_id, sender_id, body)\n        values (p_message_id, p_conversation_id, auth.uid(), v_body);\n    return p_message_id;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_conversation_id uuid, p_message_id uuid, p_body text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_social_profile",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_social_profile(p_user_id uuid)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_profile public.profiles%rowtype; v_result jsonb;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if planit_private.social_blocked(p_user_id) then return jsonb_build_object('unavailable', true); end if;\n    select * into v_profile from public.profiles where id = p_user_id;\n    if not found then return jsonb_build_object('unavailable', true); end if;\n    v_result := jsonb_build_object('display_name', v_profile.display_name, 'username', v_profile.username,\n        'avatar', case when v_profile.avatar_file_id is not null then p_user_id else null end);\n    if p_user_id = auth.uid() or v_profile.visibility = 'public' or exists (\n        select 1 from public.user_follows where follower_id = auth.uid() and followed_id = p_user_id and status = 'accepted'\n    ) then v_result := v_result || jsonb_build_object('bio', v_profile.bio); end if;\n    return v_result;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_user_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_social_relationship",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_social_relationship(p_user_id uuid)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if planit_private.social_blocked(p_user_id) then\n        return jsonb_build_object('unavailable', true, 'blocked_by_me', exists (\n            select 1 from public.user_blocks where blocker_id = auth.uid() and blocked_id = p_user_id));\n    end if;\n    if not exists (select 1 from public.profiles where id = p_user_id) then\n        return jsonb_build_object('unavailable', true, 'blocked_by_me', false);\n    end if;\n    return jsonb_build_object('visibility', (select visibility from public.profiles where id = p_user_id),\n        'follow', (select jsonb_build_object('status',status,'request_version',request_version)\n            from public.user_follows where follower_id = auth.uid() and followed_id = p_user_id));\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_user_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_social_profile_events",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_social_profile_events(p_user_id uuid, p_before_starts_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_rows jsonb; v_more boolean;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if not planit_private.can_read_social_content(p_user_id) then\n        raise exception 'profile_unavailable' using errcode = '42501';\n    end if;\n    if p_limit is null or p_limit not between 1 and 50 or\n        (p_before_starts_at is null) <> (p_before_id is null) then\n        raise exception 'invalid_social_query' using errcode = '22023';\n    end if;\n    with page as (\n        select e.id, e.title, e.starts_at, e.ends_at, e.category_id, e.location_name\n        from public.events e where e.organizer_id = p_user_id and e.visibility = 'public'\n            and e.cancelled_at is null and e.archived_at is null\n            and e.ends_at > statement_timestamp() at time zone 'America/Argentina/Buenos_Aires'\n            and (p_before_starts_at is null or (e.starts_at, e.id) < (p_before_starts_at, p_before_id))\n        order by e.starts_at desc, e.id desc limit p_limit + 1\n    ), numbered as (select *, row_number() over(order by starts_at desc, id desc) as n from page)\n    select coalesce(jsonb_agg(to_jsonb(numbered) - 'n' order by starts_at desc, id desc)\n        filter(where n <= p_limit), '[]'::jsonb), count(*) > p_limit into v_rows, v_more from numbered;\n    return jsonb_build_object('events', v_rows, 'next_cursor', case when v_more then\n        jsonb_build_object('starts_at', v_rows->(p_limit-1)->'starts_at', 'id', v_rows->(p_limit-1)->'id') end);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_user_id uuid, p_before_starts_at timestamp without time zone, p_before_id uuid, p_limit integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_event_social_participants",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_social_participants(p_event_id uuid, p_after_user_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_rows jsonb; v_more boolean;\nbegin\n    -- Exact R4 detail + R3 confirmed boundary; this does not grant administration.\n    if not planit_private.can_read_event_chat(p_event_id) then\n        raise exception 'participants_unavailable' using errcode = '42501';\n    end if;\n    if p_limit is null or p_limit not between 1 and 50 then\n        raise exception 'invalid_social_query' using errcode = '22023';\n    end if;\n    with page as (\n        select p.id as user_id, p.display_name, p.username,\n            case when p.avatar_file_id is not null then p.id end as avatar\n        from public.event_participations ep join public.profiles p on p.id = ep.user_id\n        where ep.event_id = p_event_id and ep.status = 'confirmed'\n            and not planit_private.social_blocked(p.id)\n            and (p_after_user_id is null or p.id > p_after_user_id)\n        order by p.id limit p_limit + 1\n    ), numbered as (select *, row_number() over(order by user_id) as n from page)\n    select coalesce(jsonb_agg(to_jsonb(numbered) - 'n' order by user_id)\n        filter(where n <= p_limit), '[]'::jsonb), count(*) > p_limit into v_rows, v_more from numbered;\n    return jsonb_build_object('participants', v_rows,\n        'next_cursor', case when v_more then v_rows->(p_limit-1)->>'user_id' end);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_after_user_id uuid, p_limit integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "set_my_avatar",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.set_my_avatar(p_storage_path text)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_file uuid; v_mime text; v_size bigint;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if current_setting('transaction_isolation') <> 'read committed' then\n        raise exception 'retry_read_committed' using errcode = '40001';\n    end if;\n    perform 1 from public.profiles where id = auth.uid() for no key update;\n    if not found then raise exception 'profile_unavailable' using errcode = '42501'; end if;\n    if p_storage_path is null then\n        update public.profiles set avatar_file_id = null where id = auth.uid(); return null;\n    end if;\n    if split_part(p_storage_path,'/',1) <> auth.uid()::text then\n        raise exception 'invalid_avatar' using errcode = '42501';\n    end if;\n    perform pg_advisory_xact_lock(hashtextextended('avatars/' || p_storage_path,0));\n    select metadata->>'mimetype',(metadata->>'size')::bigint into v_mime,v_size\n        from storage.objects where bucket_id = 'avatars' and name = p_storage_path and owner_id = auth.uid()::text\n            and metadata ->> 'cacheControl' in ('no-store','no-cache','max-age=0');\n    if not found then raise exception 'invalid_avatar' using errcode = '42501'; end if;\n    insert into public.files(uploaded_by,bucket_name,storage_path,mime_type,size_bytes)\n        values (auth.uid(),'avatars',p_storage_path,v_mime,v_size)\n        on conflict (bucket_name,storage_path) do nothing;\n    select id into v_file from public.files where bucket_name = 'avatars' and storage_path = p_storage_path and uploaded_by = auth.uid();\n    if v_file is null then raise exception 'invalid_avatar' using errcode = '42501'; end if;\n    update public.profiles set avatar_file_id = v_file where id = auth.uid();\n    return v_file;\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_storage_path text",
+            "authenticated_execute": true
+          },
+          {
+            "name": "list_follow_requests",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.list_follow_requests(p_after_requested_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_after_follower_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_rows jsonb; v_more boolean;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if p_limit is null or p_limit not between 1 and 50 or\n        (p_after_requested_at is null) <> (p_after_follower_id is null) then\n        raise exception 'invalid_social_query' using errcode = '22023';\n    end if;\n    with page as (\n        select f.follower_id, f.request_version, f.requested_at, p.display_name, p.username,\n            case when p.avatar_file_id is not null then p.id end as avatar\n        from public.user_follows f join public.profiles p on p.id = f.follower_id\n        where f.followed_id = auth.uid() and f.status = 'pending'\n            and not planit_private.social_blocked(f.follower_id)\n            and (p_after_requested_at is null or\n                (f.requested_at, f.follower_id) > (p_after_requested_at, p_after_follower_id))\n        order by f.requested_at, f.follower_id limit p_limit + 1\n    ), numbered as (select *, row_number() over(order by requested_at, follower_id) as n from page)\n    select coalesce(jsonb_agg(to_jsonb(numbered) - 'n' order by requested_at, follower_id)\n        filter(where n <= p_limit), '[]'::jsonb), count(*) > p_limit into v_rows, v_more from numbered;\n    return jsonb_build_object('requests', v_rows, 'next_cursor', case when v_more then\n        jsonb_build_object('requested_at',v_rows->(p_limit-1)->'requested_at',\n            'follower_id',v_rows->(p_limit-1)->'follower_id') end);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_after_requested_at timestamp without time zone, p_after_follower_id uuid, p_limit integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "list_social_follows",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.list_social_follows(p_user_id uuid, p_direction text, p_after_user_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_rows jsonb; v_more boolean;\nbegin\n    if not planit_private.can_read_social_content(p_user_id) then\n        raise exception 'profile_unavailable' using errcode = '42501';\n    end if;\n    if p_direction is null or p_direction not in ('followers','following') or p_limit is null or p_limit not between 1 and 50 then\n        raise exception 'invalid_social_query' using errcode = '22023';\n    end if;\n    with related as (\n        select case when p_direction = 'followers' then f.follower_id else f.followed_id end as user_id\n        from public.user_follows f where f.status = 'accepted' and\n            ((p_direction = 'followers' and f.followed_id = p_user_id) or\n             (p_direction = 'following' and f.follower_id = p_user_id))\n    ), page as (\n        select p.id as user_id, p.display_name, p.username,\n            case when p.avatar_file_id is not null then p.id end as avatar\n        from related r join public.profiles p on p.id = r.user_id\n        where not planit_private.social_blocked(p.id) and not exists (\n            select 1 from public.user_blocks b where\n            (b.blocker_id = p_user_id and b.blocked_id = p.id) or\n            (b.blocker_id = p.id and b.blocked_id = p_user_id))\n            and (p_after_user_id is null or p.id > p_after_user_id)\n        order by p.id limit p_limit + 1\n    ), numbered as (select *, row_number() over(order by user_id) as n from page)\n    select coalesce(jsonb_agg(to_jsonb(numbered) - 'n' order by user_id)\n        filter(where n <= p_limit), '[]'::jsonb), count(*) > p_limit into v_rows, v_more from numbered;\n    return jsonb_build_object('users',v_rows,'next_cursor',case when v_more then v_rows->(p_limit-1)->>'user_id' end);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_user_id uuid, p_direction text, p_after_user_id uuid, p_limit integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_social_counts",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_social_counts(p_user_id uuid)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\nbegin\n    if not planit_private.can_read_social_content(p_user_id) then\n        raise exception 'profile_unavailable' using errcode = '42501';\n    end if;\n    return (\n        select jsonb_build_object('followers', count(*) filter(where followed_id = p_user_id),\n            'following', count(*) filter(where follower_id = p_user_id))\n        from public.user_follows f where status = 'accepted' and p_user_id in (follower_id,followed_id)\n            and not planit_private.social_blocked(case when follower_id = p_user_id then followed_id else follower_id end)\n            and not exists (select 1 from public.user_blocks b where\n                (b.blocker_id = f.follower_id and b.blocked_id = f.followed_id) or\n                (b.blocker_id = f.followed_id and b.blocked_id = f.follower_id))\n    );\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_user_id uuid",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_direct_messages",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_direct_messages(p_conversation_id uuid, p_before_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE\n SET search_path TO ''\nAS $function$\ndeclare v_rows jsonb; v_more boolean;\nbegin\n    if auth.uid() is null or not exists (select 1 from public.conversations c\n        where c.id = p_conversation_id and c.kind = 'direct') then\n        raise exception 'conversation_unavailable' using errcode = '42501';\n    end if;\n    if p_limit is null or p_limit not between 1 and 50 or (p_before_at is null) <> (p_before_id is null) then\n        raise exception 'invalid_message_cursor' using errcode = '22023';\n    end if;\n    with page as (\n        select m.id, m.sender_id, m.body, m.created_at from public.messages m\n        where m.conversation_id = p_conversation_id\n            and (p_before_at is null or (m.created_at,m.id) < (p_before_at,p_before_id))\n        order by m.created_at desc, m.id desc limit p_limit + 1\n    ), numbered as (select *, row_number() over(order by created_at desc,id desc) as n from page)\n    select coalesce(jsonb_agg(to_jsonb(numbered) - 'n' order by created_at desc,id desc)\n        filter(where n <= p_limit), '[]'::jsonb), count(*) > p_limit into v_rows,v_more from numbered;\n    return jsonb_build_object('messages',v_rows,'next_cursor',case when v_more then\n        jsonb_build_object('created_at',v_rows->(p_limit-1)->'created_at','id',v_rows->(p_limit-1)->'id') end);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_conversation_id uuid, p_before_at timestamp without time zone, p_before_id uuid, p_limit integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "list_direct_conversations",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.list_direct_conversations(p_before_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE\n SET search_path TO ''\nAS $function$\ndeclare v_rows jsonb; v_more boolean;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if p_limit is null or p_limit not between 1 and 50 or (p_before_at is null) <> (p_before_id is null) then\n        raise exception 'invalid_message_cursor' using errcode = '22023';\n    end if;\n    -- No profile join: blocked peers' social identity must not leak via headers.\n    with page as (\n        select c.id, c.created_at,\n            case when c.user_low_id = auth.uid() then c.user_high_id else c.user_low_id end as peer_id,\n            planit_private.social_blocked(case when c.user_low_id = auth.uid() then c.user_high_id else c.user_low_id end) as read_only\n        from public.conversations c where c.kind = 'direct'\n            and (p_before_at is null or (c.created_at,c.id) < (p_before_at,p_before_id))\n        order by c.created_at desc,c.id desc limit p_limit + 1\n    ), numbered as (select *, row_number() over(order by created_at desc,id desc) as n from page)\n    select coalesce(jsonb_agg(to_jsonb(numbered) - 'n' order by created_at desc,id desc)\n        filter(where n <= p_limit),'[]'::jsonb),count(*) > p_limit into v_rows,v_more from numbered;\n    return jsonb_build_object('conversations',v_rows,'next_cursor',case when v_more then\n        jsonb_build_object('created_at',v_rows->(p_limit-1)->'created_at','id',v_rows->(p_limit-1)->'id') end);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_before_at timestamp without time zone, p_before_id uuid, p_limit integer",
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_event_access_grants",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_event_access_grants(p_event_id uuid, p_status text DEFAULT 'active'::text, p_after_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30)\n RETURNS jsonb\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare\n    v_event public.events%rowtype;\n    v_rows jsonb;\n    v_more boolean;\nbegin\n    if auth.uid() is null then raise exception 'access_denied' using errcode = '42501'; end if;\n    select * into v_event from public.events where id = p_event_id;\n    if not found or v_event.organizer_id <> auth.uid() then\n        raise exception 'access_denied' using errcode = '42501';\n    end if;\n    if v_event.visibility <> 'unlisted' then raise exception 'event_not_hidden'; end if;\n    if p_status is null or p_status not in ('active', 'revoked') or p_limit is null or p_limit < 1 or p_limit > 50 then\n        raise exception 'invalid_access_query' using errcode = '22023';\n    end if;\n    with candidates as (\n        select g.id, g.user_id, g.status, case when planit_private.social_blocked(p.id) then '' else p.username end as username,\n            case when planit_private.social_blocked(p.id) then 'Perfil no disponible' else p.display_name end as display_name,\n            exists(select 1 from public.event_participations ep\n                where ep.event_id = g.event_id and ep.user_id = g.user_id and ep.status = 'confirmed') as is_confirmed\n        from public.event_access_grants g join public.profiles p on p.id = g.user_id\n        where g.event_id = p_event_id and g.status = p_status and (p_after_id is null or g.id > p_after_id)\n        order by g.id limit p_limit + 1\n    ), numbered as (select *, row_number() over(order by id) as n from candidates)\n    select coalesce(jsonb_agg(jsonb_build_object('id',id,'user_id',user_id,'status',status,\n        'username',username,'display_name',display_name,'avatar_url',null,'is_confirmed',is_confirmed)\n        order by id) filter(where n <= p_limit),'[]'::jsonb), count(*) > p_limit\n    into v_rows, v_more from numbered;\n    return jsonb_build_object('title',v_event.title,'event_state',\n        case when v_event.archived_at is not null then 'archived' when v_event.cancelled_at is not null then 'cancelled'\n            when v_event.ends_at <= clock_timestamp() at time zone 'America/Argentina/Buenos_Aires' then 'ended' else 'open' end,\n        'grants',v_rows,'next_cursor',case when v_more then v_rows->(p_limit-1)->>'id' else null end);\nend;\n$function$\n",
+            "anon_execute": false,
+            "identity_arguments": "p_event_id uuid, p_status text, p_after_id uuid, p_limit integer",
+            "authenticated_execute": true
+          }
+        ],
+        "migrations": [
+          {
+            "name": "create_profiles_and_categories",
+            "version": "20261010011204"
+          },
+          {
+            "name": "create_profiles_and_categories",
+            "version": "20261010013449"
+          },
+          {
+            "name": "restrict_rls_auto_enable_execute",
+            "version": "20261010023448"
+          },
+          {
+            "name": "create_events_and_event_media",
+            "version": "20261010042701"
+          },
+          {
+            "name": "public_event_discovery",
+            "version": "20261010052653"
+          },
+          {
+            "name": "event_participations",
+            "version": "20261010150232"
+          },
+          {
+            "name": "my_events_read",
+            "version": "20261010154930"
+          },
+          {
+            "name": "home_and_event_organizer_read",
+            "version": "20261010212819"
+          },
+          {
+            "name": "event_chat",
+            "version": "20261010214526"
+          },
+          {
+            "name": "notifications_inbox",
+            "version": "20261011163653"
+          },
+          {
+            "name": "r2_realtime_chat_notifications",
+            "version": "20261011193316"
+          },
+          {
+            "name": "my_organized_events_read",
+            "version": "20261011232326"
+          },
+          {
+            "name": "edit_own_event",
+            "version": "20261012001058"
+          },
+          {
+            "name": "manage_event_gallery",
+            "version": "20261012013634"
+          },
+          {
+            "name": "manage_event_attendees",
+            "version": "20261012031717"
+          },
+          {
+            "name": "close_and_duplicate_events",
+            "version": "20261012044919"
+          },
+          {
+            "name": "event_rejoin_requests",
+            "version": "20261012155501"
+          },
+          {
+            "name": "search_public_events",
+            "version": "20261013160000"
+          },
+          {
+            "name": "search_public_events_date_radius",
+            "version": "20261014120000"
+          },
+          {
+            "name": "user_category_interests",
+            "version": "20261014120001"
+          },
+          {
+            "name": "get_suggested_events",
+            "version": "20261014120002"
+          },
+          {
+            "name": "hidden_event_access",
+            "version": "20261014120003"
+          },
+          {
+            "name": "event_visibility_links",
+            "version": "20261014120004"
+          },
+          {
+            "name": "redeem_event_link",
+            "version": "20261014120005"
+          },
+          {
+            "name": "event_access_management",
+            "version": "20261014120006"
+          },
+          {
+            "name": "social_security_model",
+            "version": "20261014133225"
+          },
+          {
+            "name": "social_projections_and_avatars",
+            "version": "20261014133547"
+          },
+          {
+            "name": "social_legacy_projections",
+            "version": "20261014133847"
+          }
+        ]
+      }
+    }
+  ]
+}

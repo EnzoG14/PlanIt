@@ -21,7 +21,7 @@ function LayoutContent() {
   const { pathname } = useLocation()
   const isAuth = pathname === '/login' || pathname === '/register'
   const isEventForm = pathname === '/events/new' || Boolean(matchPath('/events/:id/edit', pathname))
-  const isEventManagement = Boolean(matchPath('/users/:id', pathname) || matchPath('/users/:id/followers', pathname) || matchPath('/users/:id/following', pathname) || matchPath('/events/:id/gallery', pathname) || matchPath('/events/:id/attendees', pathname) || matchPath('/events/:id/rejoin-requests', pathname) || matchPath('/events/:id/access', pathname))
+  const isEventManagement = Boolean(pathname === '/me/follow-requests' || matchPath('/users/:id', pathname) || matchPath('/users/:id/followers', pathname) || matchPath('/users/:id/following', pathname) || matchPath('/events/:id/gallery', pathname) || matchPath('/events/:id/attendees', pathname) || matchPath('/events/:id/rejoin-requests', pathname) || matchPath('/events/:id/access', pathname))
   const isChat = Boolean(matchPath('/events/:id/chat', pathname))
   const isInvite = pathname === '/invite'
   const isSocial = isChat || pathname === '/me' || pathname === '/me/edit' || pathname === '/me/interests' || pathname === '/notifications'
