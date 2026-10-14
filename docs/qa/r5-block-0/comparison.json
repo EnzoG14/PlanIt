@@ -1,0 +1,552 @@
+{
+  "scope": "Replay local de migraciones existentes y comparación de catálogo; sin fixtures de negocio, HTTP JWT ni implementación R5",
+  "local_version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "remote_version": "17.11",
+  "migration_count": 25,
+  "migrations": [
+    {
+      "file": "20261010011204_create_profiles_and_categories.sql",
+      "sha256_lf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "20261010013449_create_profiles_and_categories.sql",
+      "sha256_lf": "b1bd184d670eda14ec9cc3b94dc92740e3c9ff02116d90b0f8dc9ad5efedc83c"
+    },
+    {
+      "file": "20261010023448_restrict_rls_auto_enable_execute.sql",
+      "sha256_lf": "a5198a148a192826ea1128a27d0ed1e6b94c10c23c5cf510a83e01ac8201637f"
+    },
+    {
+      "file": "20261010042701_create_events_and_event_media.sql",
+      "sha256_lf": "5ef339cb5724a90115272f42b8b6a7062b8c2876c4537cf88d453340f5543a84"
+    },
+    {
+      "file": "20261010052653_public_event_discovery.sql",
+      "sha256_lf": "663799461061a9b004d00c084422d724f380ae5851841b33f7b561d97c4401f8"
+    },
+    {
+      "file": "20261010150232_event_participations.sql",
+      "sha256_lf": "527aac17a1648a4355be009862e3f60ddfebaedeaf89cc86f9d98e075ddb5d89"
+    },
+    {
+      "file": "20261010154930_my_events_read.sql",
+      "sha256_lf": "c5d59029ec6c46794c57e3ccdd55d2e3ea19322e9e63ac42c059a0509b9b7e34"
+    },
+    {
+      "file": "20261010212819_home_and_event_organizer_read.sql",
+      "sha256_lf": "73832a98232e18363bdbb37a7dcf430a8bfdbb385d9fa77e5d0ad321e3c5d3e1"
+    },
+    {
+      "file": "20261010214526_event_chat.sql",
+      "sha256_lf": "196fad6f6518b1755ea0094b957b647020fab39b99aba274c3943cfbcb8614b3"
+    },
+    {
+      "file": "20261011163653_notifications_inbox.sql",
+      "sha256_lf": "150c0aa52d08868dccbafd27df75fe7fb2789d91809f4cc057be8e79af3d53c7"
+    },
+    {
+      "file": "20261011193316_r2_realtime_chat_notifications.sql",
+      "sha256_lf": "1aa40c90c30847bbebea307cbbada013d35c1a4b4f5dfeeb38c32b15e7c56685"
+    },
+    {
+      "file": "20261011232326_my_organized_events_read.sql",
+      "sha256_lf": "a31952af6337bc8b9abab55372b2bbdfc1a3188029117c9c4106767b20f5b503"
+    },
+    {
+      "file": "20261012001058_edit_own_event.sql",
+      "sha256_lf": "2a537f7670cc6435ddba308f67f75e5a1ec86bd87c8510f48beedcabc8ceaff7"
+    },
+    {
+      "file": "20261012013634_manage_event_gallery.sql",
+      "sha256_lf": "e1a326c145d9d430bbb6360b0ee014ebf1567f7efc61366d6a89c7bc587db365"
+    },
+    {
+      "file": "20261012031717_manage_event_attendees.sql",
+      "sha256_lf": "ff00a9c416dbe9d6d4f2a5b997077f0193a4f0ffe8d1853ae393c38681418cb3"
+    },
+    {
+      "file": "20261012044919_close_and_duplicate_events.sql",
+      "sha256_lf": "079e0606addb5bc3d834f397fb05a7a4c0d6b93afae867ceaf1c5487e9770370"
+    },
+    {
+      "file": "20261012155501_event_rejoin_requests.sql",
+      "sha256_lf": "c7790f113177730e3bb3bd062896eb4eb7d5e020995f0ae78b419ace9a5dc37d"
+    },
+    {
+      "file": "20261013160000_search_public_events.sql",
+      "sha256_lf": "6d338a970fdee8ef0450b6e7357e0f728df8aaabc3902de6d0d88a4f3de887ab"
+    },
+    {
+      "file": "20261014120000_search_public_events_date_radius.sql",
+      "sha256_lf": "748608a49c5043ffb5b9896e23dd2f2fe02adbf3600ab83ddb722bc5f4946b0d"
+    },
+    {
+      "file": "20261014120001_user_category_interests.sql",
+      "sha256_lf": "2961e04141d0da6cbb2d470f5ebb5ca9c0d018542108e78ee8aef86adb9f1050"
+    },
+    {
+      "file": "20261014120002_get_suggested_events.sql",
+      "sha256_lf": "fdaa7752c761c1b2f886990d5c9a867c711ae81e198bc1577bd1a921f0e056a3"
+    },
+    {
+      "file": "20261014120003_hidden_event_access.sql",
+      "sha256_lf": "14ab0c3dfddc7a141138277a6ba544fe3eb09c8588842fe5e5674d4e3b7e503c"
+    },
+    {
+      "file": "20261014120004_event_visibility_links.sql",
+      "sha256_lf": "5304e874af92de9d82a3c23affcd8f40c75bb9b05d167b8b21cb97de1283e606"
+    },
+    {
+      "file": "20261014120005_redeem_event_link.sql",
+      "sha256_lf": "9a5cf05db931539a5c197d53e959d3197f4452f66d431b2a47d423f513fb4a59"
+    },
+    {
+      "file": "20261014120006_event_access_management.sql",
+      "sha256_lf": "c9633d97e689d805e9dd55791fce5071f73ddeb05889575a4b142d6e018fed7b"
+    }
+  ],
+  "functions": [
+    {
+      "schema": "planit_private",
+      "name": "can_delete_event_upload",
+      "arguments": "p_path text",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "can_read_event_chat",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "can_view_event",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "create_event_conversation",
+      "arguments": "",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "handle_new_auth_user",
+      "arguments": "",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "lock_gallery",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "protect_event_visibility",
+      "arguments": "",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "record_participation_history",
+      "arguments": "",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "stamp_notification_read",
+      "arguments": "",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "touch_updated_at",
+      "arguments": "",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "validate_birth_date",
+      "arguments": "",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "validate_event_file",
+      "arguments": "",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "validate_event_image",
+      "arguments": "",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "validate_new_event",
+      "arguments": "",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "add_event_image",
+      "arguments": "p_event_id uuid, p_storage_path text",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "archive_event",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "cancel_event",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "create_event",
+      "arguments": "p_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text, p_image_paths text[], p_visibility text",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "create_or_rotate_event_link",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "discover_public_events",
+      "arguments": "p_south double precision, p_north double precision, p_west double precision, p_east double precision",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_access_grants",
+      "arguments": "p_event_id uuid, p_status text, p_after_id uuid, p_limit integer",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_attendees",
+      "arguments": "p_event_id uuid, p_status text, p_search text, p_offset integer",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_chat",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_chat_messages",
+      "arguments": "p_event_id uuid, p_before_at timestamp without time zone, p_before_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_duplicate_source",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_link_status",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_organizer",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_participation_summary",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_rejoin_requests",
+      "arguments": "p_event_id uuid, p_offset integer",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_rejoin_resolution",
+      "arguments": "p_event_id uuid, p_request_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_unregistered_uploads",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_home_events",
+      "arguments": "p_before_starts_at timestamp without time zone, p_before_id uuid, p_limit integer",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_my_events",
+      "arguments": "p_section text, p_offset integer",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_my_organized_events",
+      "arguments": "p_filter text, p_offset integer",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_my_rejoin_status",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_notification_changes",
+      "arguments": "p_ids uuid[]",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_notification_target",
+      "arguments": "p_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_notifications",
+      "arguments": "p_before_at timestamp without time zone, p_before_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "get_suggested_events",
+      "arguments": "p_origin_lat double precision, p_origin_lng double precision, p_limit integer",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "leave_event",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "mark_notification_read",
+      "arguments": "p_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "redeem_event_link",
+      "arguments": "p_token text",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "register_for_event",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "remove_event_image",
+      "arguments": "p_event_id uuid, p_image_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "remove_participant",
+      "arguments": "p_event_id uuid, p_participation_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "reorder_event_images",
+      "arguments": "p_event_id uuid, p_image_ids uuid[], p_expected_ids uuid[]",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "request_rejoin",
+      "arguments": "p_event_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "resolve_rejoin",
+      "arguments": "p_event_id uuid, p_request_id uuid, p_decision text",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "restore_event_access",
+      "arguments": "p_event_id uuid, p_user_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "revoke_event_access",
+      "arguments": "p_event_id uuid, p_user_id uuid",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "search_public_events",
+      "arguments": "p_query text, p_category_ids uuid[], p_before_starts_at timestamp without time zone, p_before_id uuid, p_limit integer, p_south double precision, p_north double precision, p_west double precision, p_east double precision, p_date_from date, p_date_to date, p_origin_lat double precision, p_origin_lng double precision, p_radius_km double precision",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "send_event_chat_message",
+      "arguments": "p_event_id uuid, p_message_id uuid, p_body text",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "set_event_visibility",
+      "arguments": "p_event_id uuid, p_visibility text",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "set_my_category_interests",
+      "arguments": "p_category_ids uuid[]",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    },
+    {
+      "schema": "public",
+      "name": "update_event",
+      "arguments": "p_event_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text, p_visibility text",
+      "body_match": true,
+      "permissions_match": true,
+      "configuration_match": true
+    }
+  ],
+  "excluded": "public.rls_auto_enable: scaffold local de plataforma, no RPC de negocio",
+  "result": "PASS"
+}

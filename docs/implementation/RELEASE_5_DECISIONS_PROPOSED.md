@@ -1,6 +1,6 @@
 # PlanIt — R5 decisiones de producto y arquitectura
 
-**Versión 1.1 — 14/10/2026.** D01–D05: **APROBADAS explícitamente por el responsable**. D06–D08 siguen **PENDIENTES de auditoría técnica del bloque 0**; no suponer aprobación. Las decisiones aprobadas complementan la especificación vigente. **D04 introduce un comportamiento que no estaba explicitado en el Google Doc**, por lo que deberá dejarse asentado en la fuente normativa antes de cerrar aceptación R5.
+**Versión 1.1 — 14/10/2026; auditoría B0 agregada.** D01–D05: **APROBADAS explícitamente por el responsable**. D06–D08: **resueltas técnicamente para revisión de PR**, según [auditoría del bloque 0](RELEASE_5_BLOCK_0_DECISIONS.md); no constituyen autorización para B1, DDL remoto ni deploy. Las decisiones aprobadas complementan la especificación vigente. **D04 introduce un comportamiento que no estaba explicitado en el Google Doc**, por lo que deberá dejarse asentado en la fuente normativa antes de cerrar aceptación R5. Conflictos C01–C03 pendientes de revisión humana.
 
 | ID | Estado | Decisión | Impacto contractual |
 |---|---|---|---|
@@ -9,9 +9,9 @@
 | D03 | **APROBADA** | Cualquier autenticado distinto de sí mismo puede iniciar DM de texto, **sin requerir seguimiento**, si no hay bloqueo mutuo. | Conversación canónica única por pareja, validación en servidor, anti-abuso simple y prueba de concurrencia; el historial existente sigue accesible bajo bloqueo. |
 | D04 | **APROBADA** | Al pasar un perfil de **privado → público**, convertir **todas las solicitudes `pending` existentes** dirigidas a ese perfil en `accepted` **atómicamente junto al cambio de visibilidad**, siempre que no haya bloqueo. | RPC transaccional y locking consistente; no dejar solicitudes pendientes tras el cambio; sin duplicados; no crear nuevas relaciones con rechazados ni restaurar las eliminadas por bloqueo; `public → private` conserva `accepted`. Declarar explícitamente la conversión en UI antes de confirmar el cambio. |
 | D05 | **APROBADA** | Mensajería privada en **bandeja accesible desde el perfil y otros accesos contextuales**, sin agregar pestaña primaria nueva. | Rutas de bandeja/conversación según router auditado; link desde perfil propio y acción desde perfil ajeno; navegación móvil y desktop Amanecer. |
-| D06 | PENDIENTE — técnica | Reutilizar `conversations/messages` si existen y es seguro hacerlo, o modelar pareja canónica en tablas nuevas sin duplicar el dominio. | Auditar migraciones, RLS y datos reales primero. |
-| D07 | PENDIENTE — técnica | Reutilizar pantalla de asistentes; separar proyección social de información de administración. | Sólo organizador/`confirmed`, con controles de R4. |
-| D08 | PENDIENTE — técnica | Verificar que dependencias efectivas de R4 estén integradas en `main` y remoto antes del bloque consumidor. | No suponer que PR abierto equivale a integrado ni exigir revalidar R3 por defecto. |
+| D06 | RESUELTA técnica; revisión pendiente | Extender `conversations/messages` existentes con kind direct, pareja canónica y autorización separada; no crear tablas DM duplicadas. | B1 debe preservar evento/UUIDs/historial/RLS y discriminar destinos de notificaciones; regresiones antes de habilitar DM. Sin DDL en B0. |
+| D07 | RESUELTA técnica; revisión pendiente | Reusar ruta/entrada asistentes con modo social y RPC nueva para organizador/confirmed; conservar RPC administrativa sólo dueño. | Proyección social mínima, sin removed/solicitudes/acciones; conflicto D01 en identidades administrativas C01 requiere revisión. |
+| D08 | VERIFICADA por catálogo/Git; revisión pendiente | R3/R4 integradas en main base 1b77b377; 25 migraciones y 55 funciones coincidentes con remoto en lectura de B0. | Reconfirmar base/catálogo en cada consumidor; no acredita HTTP JWT funcional ni nuevos CA; no reabre aceptación R3/R4. |
 
 ## Reglas transversales vinculantes
 
