@@ -1,0 +1,486 @@
+{
+  "date": "2026-10-14T20:26:44.228454+00:00",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "local_remote_migrations": 28,
+  "pending": 0,
+  "newly_applied": 0,
+  "rls_tables": 16,
+  "functions": [
+    {
+      "name": "planit_private.can_delete_avatar_upload",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.can_delete_event_upload",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.can_read_event_chat",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.can_read_social_content",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.can_view_event",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.create_event_conversation",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.handle_new_auth_user",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.lock_gallery",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.lock_social_pair",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.protect_event_visibility",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.record_participation_history",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.social_blocked",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.stamp_notification_read",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.touch_updated_at",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.validate_birth_date",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.validate_event_file",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.validate_event_image",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.validate_new_event",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "planit_private.validate_profile_avatar",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.add_event_image",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.archive_event",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.block_user",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.cancel_event",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.create_event",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.create_or_rotate_event_link",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.discover_public_events",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.follow_user",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_direct_messages",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_access_grants",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_attendees",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_chat",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_chat_messages",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_duplicate_source",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_link_status",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_organizer",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_participation_summary",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_rejoin_requests",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_rejoin_resolution",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_social_participants",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_event_unregistered_uploads",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_home_events",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_my_events",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_my_organized_events",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_my_rejoin_status",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_notification_changes",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_notification_target",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_notifications",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_or_create_direct_conversation",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_social_avatar_for_signing",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_social_counts",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_social_profile",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_social_profile_events",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_social_relationship",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.get_suggested_events",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.leave_event",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.list_direct_conversations",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.list_follow_requests",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.list_social_follows",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.mark_notification_read",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.redeem_event_link",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.register_for_event",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.remove_event_image",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.remove_participant",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.reorder_event_images",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.request_rejoin",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.resolve_follow_request",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.resolve_rejoin",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.restore_event_access",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.revoke_event_access",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.search_public_events",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.send_direct_message",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.send_event_chat_message",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.set_event_visibility",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.set_my_avatar",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.set_my_category_interests",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.unblock_user",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.unfollow_user",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.update_event",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    },
+    {
+      "name": "public.update_my_social_profile",
+      "body_matches": true,
+      "acl_matches": true,
+      "config_matches": true
+    }
+  ],
+  "result": "PASS",
+  "note": "User authorized remote migration application; history/dry-run confirmed no pending migrations. Existing B1 APIs match previously verified local replay."
+}

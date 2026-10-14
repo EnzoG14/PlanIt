@@ -55,6 +55,8 @@ Verificación320/360/375/390/768/1280, texto200%, altura480, teclado Enter/foco3
 
 ## Reproducción y revisión
 
+**Verificación remota posterior — 14/10/2026:** ante autorización expresa para migrar, `migration list` confirmó28 versiones coincidentes y `db push --dry-run --skip-vault` devolvió `upToDate:true`, sin migraciones pendientes. Catálogo READ ONLY confirma16 tablas RLS y79 funciones/ACL/config iguales a la evidencia previa. **Aplicadas nuevas0**, porque B6 no agregó SQL. [Historial, dry-run y comparación](remote/migration-check/summary.json). Esta comprobación no agrega QA JWT ni autoriza B7, deploy o merge.
+
 ```powershell
 npm ci
 npm run build
