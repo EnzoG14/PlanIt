@@ -1,0 +1,14 @@
+{
+  "rows": [
+    {
+      "metadata": {
+        "checked_at": "2026-10-14T22:09:50.199299+00:00",
+        "notifier_exists": false,
+        "notifications_rls": true,
+        "notification_target": "CREATE OR REPLACE FUNCTION public.get_notification_target(p_id uuid)\n RETURNS text\n LANGUAGE sql\n STABLE\n SET search_path TO ''\nAS $function$\n    select case when n.conversation_id is not null then\n        case when c.kind = 'event' then '/events/' || c.event_id::text || '/chat' end\n        else '/events/' || e.id::text end\n    from public.notifications n\n    left join public.conversations c on c.id = n.conversation_id\n    left join public.events e on e.id = n.event_id\n    where n.id = p_id and n.recipient_id = (select auth.uid());\n$function$\n",
+        "follow_trigger_exists": false,
+        "notifications_realtime": true
+      }
+    }
+  ]
+}

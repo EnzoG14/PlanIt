@@ -1,5 +1,7 @@
 # PlanIt — Arquitectura
 
+**B7 notificaciones, aplicación remota14/10/2026:** migración20261014212935 aplicada/verificada con autorización expresa posterior en planit-v2. [Acta](qa/r5-block-7/follow-notifications/remote/README.md). Backend de avisos activo para nuevos pedidos; UI Ver solicitudes está en PR #57, sin deploy/merge en esta operación. QA de transporte real pendiente; las menciones siguientes a permiso pendiente son cortes históricos.
+
 ## Ampliación R5/B7 — notificación de seguimiento (QA pendiente)
 
 Nueva pending inserta notifications en la misma transacción follow_user. Trigger privado invoker sin permisos nuevos;id correlaciona generación para un aviso. Texto genérico sin identidad/actor;RLS recipient-only/publicación Realtime existentes. get_notification_target agrega destino propio `/me/follow-requests`, validado por cliente y presentado como Ver solicitudes. [Migración local y pruebas](qa/r5-block-7/follow-notifications/README.md), aplicación remota pendiente de permiso. Cortes anteriores sin productor históricos.

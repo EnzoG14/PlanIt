@@ -1,5 +1,7 @@
 # PlanIt — Plan técnico Release 5 · Comunidad y relaciones sociales
 
+**Aplicación autorizada B7 — 14/10/2026:**20261014212935 aplicada/verificada en planit-v2 tras «sí» del responsable. [Acta](../qa/r5-block-7/follow-notifications/remote/README.md),29 migraciones y catálogo/ACL/RLS/publicación PASS. Sin deploy/merge; QA JWT/Realtime real pendiente. Supera el permiso pendiente del corte siguiente.
+
 **Ampliación expresa B7 — 14/10/2026:** pedido posterior incorpora aviso Realtime genérico por nueva generación pending, transaccional/sin duplicar reintentos. Reutiliza notifications/RLS/canal existentes y abre solicitudes propias. [Contrato/migración/pruebas](../qa/r5-block-7/follow-notifications/README.md). Una migración nueva local; aplicación remota requiere permiso. Supera exclusión original de notificaciones B7 sin renumerar los33 CA.
 
 **Entrega B7 — 14/10/2026:** B0–B6 integrados, incluido #56 (`cbb0547`). B7 autorizado e **Implementado; QA pendiente**, rama `codex/r5-block-7`. Bandeja `/me/follow-requests`, aceptación/rechazo versionados y conciliación por lectura ante resultado incierto, sobre RPC/RLS B1 existentes. [Contrato, pruebas y límites](../qa/r5-block-7/README.md). Sin migraciones nuevas, aplicación SQL remota, deploy ni merge. Los cortes siguientes son históricos; B8 requiere instrucción independiente.

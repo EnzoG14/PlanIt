@@ -1,5 +1,7 @@
 # Ampliación B7 — Notificación de solicitud de seguimiento
 
+**Aplicación remota autorizada — 14/10/2026:** el responsable respondió «sí» a aplicar únicamente20261014212935 en planit-v2. Aplicada mediante CLI con project-ref explícito y skip-vault, sin seeds/roles. [Acta](remote/README.md), [verificación](remote/verification.json):29 migraciones, fuentes/trigger/ACL/RLS/publicación PASS y dry-run posterior sin pendientes. Creada1/probada local1/aplicada remota1/verificada remota1. No acredita JWT ni entrega Realtime real. Las referencias siguientes a permiso pendiente son el corte anterior, superado por esta acta.
+
 14/10/2026. Pedido posterior del responsable: notificación Realtime al solicitar seguimiento. Amplía expresamente la exclusión original de productores de B7, sin cambiar los33 CA oficiales ni agregar avisos de aceptación/rechazo, follows públicos o Web Push. Rama y [PR #57](https://github.com/EnzoG14/PlanIt/pull/57) existentes. Base de la ampliación `169b904e4e951f6d77d05d83dabdebaaf261d66a`.
 
 ## Contrato y autorización
@@ -17,7 +19,7 @@
 
 | Creada | Probada local | Aplicada remota | Verificada remota |
 |---|---|---|---|
-| Sí,1 | Sí,replay29 | No,0; requiere permiso | No,0 |
+| Sí,1 | Sí,replay29 | Sí,1; autorizada14/10/2026 | Sí,1; catálogo/ACL/RLS/publicación |
 
 | Prueba | Resultado y límite |
 |---|---|
@@ -26,10 +28,10 @@
 | Dos sesiones:solicitar→INSERT WebSocket→campana sin recarga;bandeja/dedup/Ver solicitudes/lectura/reconexión | PASS390/1280 [UI](ui/results.json); build real/SDK con HTTP/Phoenix simulados, no transporte remoto |
 | Regresiones R1–R4,13 suites sobre29 migraciones | PASS [resultados](regressions.json) |
 | Build/lint | PASS,avisos previos; sin dependencias nuevas |
-| JWT autenticado,Realtime Supabase real,dispositivos/lector,aceptación humana | NOT RUN;migración remota pendiente |
+| JWT autenticado,Realtime Supabase real,dispositivos/lector,aceptación humana | NOT RUN; migración aplicada, prueba de transporte pendiente |
 
 Capturas reales con fixtures: [móvil](ui/notification-390.png), [escritorio](ui/notification-1280.png) y destino requests390/1280. Inspección conjunta sin nuevos defectos de composición. Primer intento SQL falló por sustitución $$ en generador del fixture; callback de reemplazo corregido y suite repetida PASS. No fue fallo de migración.
 
 Comandos: npm run build; npm run lint; npm run check:r5:request-notifications; npm run check:r5:request-notifications:ui. Regresiones: PLANIT_SQL_OUTPUT=docs/qa/r5-block-7/follow-notifications node scripts/check-r5-regressions.mjs. Evidencia anterior B7 se conserva como corte28; resultados nuevos corresponden a29.
 
-**Implementado; QA pendiente. Para activar en planit-v2 hace falta autorizar la aplicación de esta migración**, según AGENTS raíz y supabase/AGENTS.md. Sin DDL remoto, deploy, merge o edición de Google Docs.
+**Implementado; QA pendiente. Migración aplicada y verificada remotamente con autorización posterior**, según [acta](remote/README.md). Sin deploy de frontend, merge ni edición de Google Docs. La UI Ver solicitudes está en la PR y requiere su build actualizado; no se habilita desde esta aplicación SQL.

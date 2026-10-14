@@ -68,8 +68,8 @@
   "migration": {
     "created": 1,
     "tested_local": 1,
-    "applied_remote": 0,
-    "verified_remote": 0
+    "applied_remote": 1,
+    "verified_remote": 1
   },
   "not_run": [
     "Remote authenticated JWT flows",
@@ -77,5 +77,5 @@
     "Physical devices and screen reader",
     "Human acceptance"
   ],
-  "remote": "READ ONLY preflight, existing notifications publication; no writes/migration/deploy/merge"
+  "remote": "User-approved migration 20261014212935 applied and verified on planit-v2; see remote/verification.json and remote/README.md. Ledger29, source/trigger/ACL/RLS/publication PASS, post dry-run up to date. No user fixtures, backfill, secrets, frontend deploy or merge. Authenticated JWT/Realtime delivery still NOT RUN."
 }
