@@ -1,0 +1,55 @@
+PASS 320: CA01/03 public follow count, reload, cancel and confirmed unfollow
+PASS 320: CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation
+PASS 320: Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow
+PASS 320: CA04 double-submit disabled, allowlist args actor/status never provided
+PASS 320: 10s mutation timeout hides derived content and requery confirms server state without resend
+PASS 320: Blocking between render and mutation immediately reconciles denial and clears identity/controls
+PASS 320: Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus
+PASS 320: following route, no private payload in DOM, no primary tab added
+PASS 320: Own profile counts and follower list return to me; self has no follow action
+PASS 360: CA01/03 public follow count, reload, cancel and confirmed unfollow
+PASS 360: CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation
+PASS 360: Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow
+PASS 360: CA04 double-submit disabled, allowlist args actor/status never provided
+PASS 360: 10s mutation timeout hides derived content and requery confirms server state without resend
+PASS 360: Blocking between render and mutation immediately reconciles denial and clears identity/controls
+PASS 360: Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus
+PASS 360: following route, no private payload in DOM, no primary tab added
+PASS 360: Own profile counts and follower list return to me; self has no follow action
+PASS 375: CA01/03 public follow count, reload, cancel and confirmed unfollow
+PASS 375: CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation
+PASS 375: Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow
+PASS 375: CA04 double-submit disabled, allowlist args actor/status never provided
+PASS 375: 10s mutation timeout hides derived content and requery confirms server state without resend
+PASS 375: Blocking between render and mutation immediately reconciles denial and clears identity/controls
+PASS 375: Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus
+PASS 375: following route, no private payload in DOM, no primary tab added
+PASS 375: Own profile counts and follower list return to me; self has no follow action
+PASS 390: CA01/03 public follow count, reload, cancel and confirmed unfollow
+PASS 390: CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation
+PASS 390: Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow
+PASS 390: CA04 double-submit disabled, allowlist args actor/status never provided
+PASS 390: 10s mutation timeout hides derived content and requery confirms server state without resend
+PASS 390: Blocking between render and mutation immediately reconciles denial and clears identity/controls
+PASS 390: Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus
+PASS 390: following route, no private payload in DOM, no primary tab added
+PASS 390: Own profile counts and follower list return to me; self has no follow action
+PASS 768: CA01/03 public follow count, reload, cancel and confirmed unfollow
+PASS 768: CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation
+PASS 768: Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow
+PASS 768: CA04 double-submit disabled, allowlist args actor/status never provided
+PASS 768: 10s mutation timeout hides derived content and requery confirms server state without resend
+PASS 768: Blocking between render and mutation immediately reconciles denial and clears identity/controls
+PASS 768: Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus
+PASS 768: following route, no private payload in DOM, no primary tab added
+PASS 768: Own profile counts and follower list return to me; self has no follow action
+PASS 1280: CA01/03 public follow count, reload, cancel and confirmed unfollow
+PASS 1280: CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation
+PASS 1280: Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow
+PASS 1280: CA04 double-submit disabled, allowlist args actor/status never provided
+PASS 1280: 10s mutation timeout hides derived content and requery confirms server state without resend
+PASS 1280: Blocking between render and mutation immediately reconciles denial and clears identity/controls
+PASS 1280: Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus
+PASS 1280: following route, no private payload in DOM, no primary tab added
+PASS 1280: Own profile counts and follower list return to me; self has no follow action
+

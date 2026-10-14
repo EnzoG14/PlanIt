@@ -1,5 +1,7 @@
 # PlanIt — R5 matriz de aceptación (33 CA oficiales)
 
+**Corte B6 — 14/10/2026:** RF-R5-05.CA01..04 **PASS parcial SQL local/UI**, consultas HTTP anónimas reales denegadas; **NOT RUN integral** hasta JWT autenticado/Storage/dispositivos y aceptación humana. [Fuente literal nueva](r5-block-6/source.json), [contrato, pruebas y límites](r5-block-6/README.md). D04-A/B PASS SQL parcial con carreras/rollback B1 reproducidos; no nueva aprobación transversal. No se alteran los33 CA ni la aceptación previa de B5.
+
 **Aceptación B5 — 14/10/2026:** el responsable informa «QA realizada y aprobada». RF-R5-04.CA01..04 **Validados por QA humana**; [acta](r5-block-5/APPROVAL.md). No se alteran resultados técnicos previos ni se inventan pruebas JWT/Storage/dispositivos ejecutadas por el agente. Los cortes siguientes son antecedentes históricos.
 
 **Corte B5 (14/10/2026):** RF-R5-04.CA01..04 PASS parcial SQL/UI, CA04 HTTP anónimo real; **NOT RUN integral** hasta JWT/Storage reales y aceptación humana. D01-A/D02-A parcial SQL/UI. B0–B4 integrados; B5 autorizado. [Fuente literal nueva](r5-block-5/source.json), [contrato/evidencia](r5-block-5/README.md). Sin nuevas migraciones, deploy ni merge.
@@ -32,10 +34,10 @@
 | RF-R5-04.CA-02 | sin datos/eventos privados no autorizados | Validado por QA humana; evidencia técnica parcial | [Aceptación B5](r5-block-5/APPROVAL.md), [evidencia](r5-block-5/README.md) |
 | RF-R5-04.CA-03 | approved ve sólo campos seguidores | Validado por QA humana; evidencia técnica parcial | [Aceptación B5](r5-block-5/APPROVAL.md), [evidencia](r5-block-5/README.md) |
 | RF-R5-04.CA-04 | API directa aplica mismas restricciones | Validado por QA humana; evidencia técnica parcial | [Aceptación B5](r5-block-5/APPROVAL.md), [evidencia](r5-block-5/README.md) |
-| RF-R5-05.CA-01 | público accepted y UI/listas actualizadas | NOT RUN | — |
-| RF-R5-05.CA-02 | privado pending sin ampliar lectura | NOT RUN | — |
-| RF-R5-05.CA-03 | unfollow revoca; public→private conserva accepted | NOT RUN | — |
-| RF-R5-05.CA-04 | no auto-follow ni duplicados | NOT RUN | — |
+| RF-R5-05.CA-01 | público accepted y UI/listas actualizadas | PASS parcial SQL/UI; NOT RUN integral | [B6](r5-block-6/README.md) |
+| RF-R5-05.CA-02 | privado pending sin ampliar lectura | PASS parcial SQL/UI; NOT RUN integral | [B6](r5-block-6/README.md) |
+| RF-R5-05.CA-03 | unfollow revoca; public→private conserva accepted | PASS parcial SQL/UI; NOT RUN integral | [B6](r5-block-6/README.md) |
+| RF-R5-05.CA-04 | no auto-follow ni duplicados | PASS parcial SQL/UI; NOT RUN integral | [B6](r5-block-6/README.md) |
 | RF-R5-06.CA-01 | dueño ve pending | NOT RUN | — |
 | RF-R5-06.CA-02 | aceptar concede approved | NOT RUN | — |
 | RF-R5-06.CA-03 | rechazar no concede y permite repetir | NOT RUN | — |

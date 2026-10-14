@@ -1,0 +1,56 @@
+{
+  "base": "54b4749b1c12775e0d6c800b15d82aeb8ecdafbc",
+  "product_commit": "671113a1c739d3ee4dce6cee94b1cf962e543cd0",
+  "branch": "codex/r5-block-6",
+  "groups": {
+    "b6": 54,
+    "b3": 54,
+    "b4": 56,
+    "b5": 79,
+    "b2_participants": 66,
+    "b2_admin": 72
+  },
+  "sql_regression_suites": 13,
+  "sql_concurrency_races": 13,
+  "migrations": 28,
+  "hashes": [
+    {
+      "path": "src/App.tsx",
+      "sha256_lf": "eeb34853dbb930f5cec8f70925e332dcc83c7cc60b89d763c9702a48997327e2"
+    },
+    {
+      "path": "src/components/AppLayout.tsx",
+      "sha256_lf": "c5231143e3c1e1a679d837883ac75f27d03f7306ab4d612e1cfe2047dfa7af43"
+    },
+    {
+      "path": "src/components/FollowButton.tsx",
+      "sha256_lf": "7a5a1a063bbbd8b2c9c26c3d92faab8f86e82baa52f195c50ce153e15a4f47d0"
+    },
+    {
+      "path": "src/components/SocialCounts.tsx",
+      "sha256_lf": "d6b67de7d13d94652c804ef9c95e80cf0d14ecb91af78ac7f7ba7f48e8c42318"
+    },
+    {
+      "path": "src/features/social/follows.ts",
+      "sha256_lf": "9891a6f3536c6e7fca0e2afbfcfe9cf4925f22f31fc47df28fd7fda84873d405"
+    },
+    {
+      "path": "src/pages/ProfilePage.tsx",
+      "sha256_lf": "6f487ab9096a25da37aee304c0940dd29d4fef46e23c6a03904dea0447d2524a"
+    },
+    {
+      "path": "src/pages/SocialIdentityPage.tsx",
+      "sha256_lf": "abbf18df4810ffc3c8e4ccab51fdb958d1589f66d7a3e341496f0a40e2913e5e"
+    },
+    {
+      "path": "src/pages/SocialFollowsPage.tsx",
+      "sha256_lf": "6dcf0dc3fe814441bf2c5e0e3b8d020a21f2ef10fe0aac08aab6eda4d2502e13"
+    },
+    {
+      "path": "src/pages/social-follows.css",
+      "sha256_lf": "0cbdeab2376f556a961368c0ab7ef897125dc1c64bf49bae2c3cf6cde0279b35"
+    }
+  ],
+  "verification_note": "B6/B5/admin final build671113a; B2 participants/B3/B4 initial build before final denial/relationship corrections, which were subsequently verified in B6/B5. Local PostgreSQL and mocked browser transport are not live JWT.",
+  "status": "Implementado; QA pendiente"
+}

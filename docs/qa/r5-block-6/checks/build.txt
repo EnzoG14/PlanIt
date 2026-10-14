@@ -1,0 +1,86 @@
+
+> planit@0.0.0 build
+> tsc -b && vite build --outDir .b6-final-build.local
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 175 modules transformed.
+rendering chunks...
+computing gzip size...
+.b6-final-build.local/registerSW.js                                                    0.13 kB
+.b6-final-build.local/manifest.webmanifest                                             0.45 kB
+.b6-final-build.local/index.html                                                       1.03 kB │ gzip:   0.53 kB
+.b6-final-build.local/assets/bricolage-grotesque-latin-wght-normal-DLoelf7F.woff2     41.34 kB
+.b6-final-build.local/assets/EventAccessPage-BeGsKfAb.css                              0.48 kB │ gzip:   0.24 kB
+.b6-final-build.local/assets/EditEventPage-C6-wzkKq.css                                0.59 kB │ gzip:   0.31 kB
+.b6-final-build.local/assets/EventDetailPage-BbVrzJ0G.css                              0.91 kB │ gzip:   0.40 kB
+.b6-final-build.local/assets/social-participants-aRHlihRl.css                          1.06 kB │ gzip:   0.45 kB
+.b6-final-build.local/assets/SocialIdentityPage-QJlu3sMr.css                           1.10 kB │ gzip:   0.42 kB
+.b6-final-build.local/assets/InvitePage-DjKK25Qp.css                                   1.61 kB │ gzip:   0.64 kB
+.b6-final-build.local/assets/InterestsPage-M1hJwhQD.css                                1.98 kB │ gzip:   0.73 kB
+.b6-final-build.local/assets/NotificationsPage-CAH3WiNg.css                            2.08 kB │ gzip:   0.70 kB
+.b6-final-build.local/assets/HomePage-BHFJQBKd.css                                     2.65 kB │ gzip:   0.75 kB
+.b6-final-build.local/assets/event-management-CcyhFY58.css                             3.67 kB │ gzip:   1.13 kB
+.b6-final-build.local/assets/EditProfilePage-BUZOgfIW.css                              3.95 kB │ gzip:   1.20 kB
+.b6-final-build.local/assets/EventChatPage-svdyR_PM.css                                3.97 kB │ gzip:   1.16 kB
+.b6-final-build.local/assets/event-forms-C7Iivlt7.css                                  4.48 kB │ gzip:   1.23 kB
+.b6-final-build.local/assets/EventGalleryPage-B65VEpO7.css                             4.83 kB │ gzip:   1.35 kB
+.b6-final-build.local/assets/event-rejoin-CN93N2a9.css                                 4.90 kB │ gzip:   1.20 kB
+.b6-final-build.local/assets/event-attendees-QCB2rwCX.css                              5.19 kB │ gzip:   1.40 kB
+.b6-final-build.local/assets/EventActionDialog-DqYOnHgA.css                            5.86 kB │ gzip:   1.47 kB
+.b6-final-build.local/assets/MyEventsPage-DMgET5X9.css                                11.42 kB │ gzip:   2.62 kB
+.b6-final-build.local/assets/discovery-CYFQEXaF.css                                   16.75 kB │ gzip:   3.46 kB
+.b6-final-build.local/assets/index-sJ6g-UXM.css                                       35.10 kB │ gzip:   7.18 kB
+.b6-final-build.local/assets/EventMap-DdcgI_dU.css                                    51.50 kB │ gzip:   6.43 kB
+.b6-final-build.local/assets/geolocation-DXgn9iGR.js                                   0.56 kB │ gzip:   0.37 kB
+.b6-final-build.local/assets/social-participants-BK6eBqh0.js                           0.75 kB │ gzip:   0.45 kB
+.b6-final-build.local/assets/participation-Du4oArlD.js                                 1.15 kB │ gzip:   0.64 kB
+.b6-final-build.local/assets/attendees-kTZN0tdF.js                                     1.20 kB │ gzip:   0.66 kB
+.b6-final-build.local/assets/api-CVqPGe3t.js                                           1.93 kB │ gzip:   0.98 kB
+.b6-final-build.local/assets/event-rejoin-jr7XwO1M.js                                  2.12 kB │ gzip:   0.91 kB
+.b6-final-build.local/assets/actions-DSSspvay.js                                       2.13 kB │ gzip:   1.02 kB
+.b6-final-build.local/assets/my-events-DpzAx4na.js                                     2.56 kB │ gzip:   1.39 kB
+.b6-final-build.local/assets/SocialFollowsPage-DDEBPlKA.js                             2.95 kB │ gzip:   1.34 kB
+.b6-final-build.local/assets/validation-DH1mSUXy.js                                    3.00 kB │ gzip:   1.37 kB
+.b6-final-build.local/assets/search-CfFYVi23.js                                        3.00 kB │ gzip:   1.44 kB
+.b6-final-build.local/assets/edit-DeRRyz__.js                                          3.15 kB │ gzip:   1.48 kB
+.b6-final-build.local/assets/EventActionDialog-Cw6JTS-I.js                             3.38 kB │ gzip:   1.61 kB
+.b6-final-build.local/assets/api-CLN0_siQ.js                                           3.43 kB │ gzip:   1.31 kB
+.b6-final-build.local/assets/InvitePage-BFT9bchW.js                                    3.86 kB │ gzip:   1.55 kB
+.b6-final-build.local/assets/api-D5tGuYho.js                                           4.65 kB │ gzip:   1.90 kB
+.b6-final-build.local/assets/NotificationsPage-BeVQjaYO.js                             4.92 kB │ gzip:   2.05 kB
+.b6-final-build.local/assets/EventCard-D8pII4UL.js                                     5.48 kB │ gzip:   1.87 kB
+.b6-final-build.local/assets/EditEventPage-CbsyPWts.js                                 5.59 kB │ gzip:   2.46 kB
+.b6-final-build.local/assets/InterestsPage-DT9WgOdz.js                                 5.62 kB │ gzip:   2.31 kB
+.b6-final-build.local/assets/MyEventsPage-x_33ggwg.js                                  5.89 kB │ gzip:   2.27 kB
+.b6-final-build.local/assets/MapPage-hEHC6Cqm.js                                       6.10 kB │ gzip:   2.67 kB
+.b6-final-build.local/assets/event-forms-DGKK3lqM.js                                   6.19 kB │ gzip:   2.04 kB
+.b6-final-build.local/assets/CreateEventPage-CrcDfGem.js                               6.56 kB │ gzip:   2.76 kB
+.b6-final-build.local/assets/useDiscoveryFilters-BgXPa2-t.js                           7.32 kB │ gzip:   2.95 kB
+.b6-final-build.local/assets/SocialIdentityPage-Cc4fjm9t.js                            7.32 kB │ gzip:   2.75 kB
+.b6-final-build.local/assets/EventChatPage-CjGCcm32.js                                 7.43 kB │ gzip:   3.01 kB
+.b6-final-build.local/assets/EventRejoinRequestsPage-DKSgRYAd.js                       8.69 kB │ gzip:   3.12 kB
+.b6-final-build.local/assets/HomePage-CJB5bBOz.js                                      9.39 kB │ gzip:   3.47 kB
+.b6-final-build.local/assets/EventAccessPage-Cww7cCSX.js                               9.65 kB │ gzip:   3.60 kB
+.b6-final-build.local/assets/jsx-runtime-TSwjJPAg.js                                  10.40 kB │ gzip:   4.03 kB
+.b6-final-build.local/assets/EventAttendeesPage-CUS2ML_7.js                           12.73 kB │ gzip:   3.97 kB
+.b6-final-build.local/assets/EventGalleryPage-BiHyvFgZ.js                             13.83 kB │ gzip:   4.83 kB
+.b6-final-build.local/assets/EditProfilePage-Dx8tgffy.js                              14.40 kB │ gzip:   4.65 kB
+.b6-final-build.local/assets/EventDetailPage-BTf7ngV3.js                              18.45 kB │ gzip:   6.01 kB
+.b6-final-build.local/assets/index-_QqXl3XM.js                                       260.13 kB │ gzip:  80.48 kB
+.b6-final-build.local/assets/StatusMessage-C5W76xAe.js                               309.50 kB │ gzip:  86.08 kB
+.b6-final-build.local/assets/EventMap-BkHhf7Ao.js                                  1,865.13 kB │ gzip: 518.63 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 767ms
+
+PWA v2.0.0
+mode      generateSW
+precache  71 entries (2808.30 KiB)
+files generated
+  .b6-final-build.local/sw.js
+  .b6-final-build.local/workbox-9c191d2f.js
