@@ -35,13 +35,11 @@ function EventDetailContent({ id }: { id: string }) {
   useEffect(() => {
     let active = true
     let revision = 0
-    async function load() {
+    let hidden = false
+    async function load(background = false) {
       const request = ++revision
       const current = () => active && request === revision
-      setLoading(true)
-      setEvent(null)
-      setImages([])
-      setOrganizer(null)
+      if (!background) { setLoading(true); setEvent(null); setImages([]); setOrganizer(null) }
       setOrganizerError(false)
       setCategory('Categoría no disponible')
       setImageError(false)
@@ -50,7 +48,10 @@ function EventDetailContent({ id }: { id: string }) {
       try {
         const data = await loadEvent(id)
         if (!current()) return
+        hidden = data?.visibility === 'unlisted'
         setEvent(data)
+        setImages([])
+        setOrganizer(null)
         if (data) {
           document.title = `${data.title} · PlanIt`
           await Promise.all([
@@ -59,7 +60,7 @@ function EventDetailContent({ id }: { id: string }) {
             loadEventOrganizer(id).then(profile => { if (current()) setOrganizer(profile) }).catch(() => { if (current()) setOrganizerError(true) }),
           ])
         }
-      } catch { if (current()) setError('No pudimos consultar el evento. Revisá la conexión y reintentá.') }
+      } catch { if (current()) { setEvent(null); setImages([]); setOrganizer(null); setError('No pudimos consultar el evento. Revisá la conexión y reintentá.') } }
       finally { if (current()) setLoading(false) }
     }
     const refresh = () => { if (document.visibilityState === 'visible' && !document.querySelector('dialog[open]')) void load() }
@@ -67,8 +68,14 @@ function EventDetailContent({ id }: { id: string }) {
     window.addEventListener('focus', refresh)
     window.addEventListener('online', refresh)
     document.addEventListener('visibilitychange', refresh)
+    // Revalidate hidden detail even without Realtime events (grants have no public channel).
+    // Signed media is renewed only after authorization; expired/denied data is cleared.
+    const authorizationTimer = window.setInterval(() => {
+      if (hidden && document.visibilityState === 'visible') void load(true)
+    }, 30000)
     return () => {
       active = false
+      window.clearInterval(authorizationTimer)
       window.removeEventListener('focus', refresh)
       window.removeEventListener('online', refresh)
       document.removeEventListener('visibilitychange', refresh)

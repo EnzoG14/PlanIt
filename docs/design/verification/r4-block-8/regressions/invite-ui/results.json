@@ -1,0 +1,219 @@
+{
+  "environment": "Edge, production build, intercepted Auth/REST, WebSocket blocked; not real JWT",
+  "tokenFixture": "synthetic 64-hex",
+  "shots": [
+    "signed-out-320x640",
+    "redeemed-detail-320x640",
+    "unavailable-320x640",
+    "network-320x640",
+    "session-expired-320x640",
+    "signed-out-375x812",
+    "redeemed-detail-375x812",
+    "unavailable-375x812",
+    "network-375x812",
+    "session-expired-375x812",
+    "signed-out-1280x900",
+    "redeemed-detail-1280x900",
+    "unavailable-1280x900",
+    "network-1280x900",
+    "session-expired-1280x900",
+    "account-switch-375x812"
+  ],
+  "results": [
+    {
+      "viewport": "320x640",
+      "outline": {
+        "width": "3px",
+        "text": "Crear cuenta"
+      },
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 1,
+        "washHidden": true,
+        "h1": 1,
+        "dock": [
+          "Inicio",
+          "Mapa",
+          "Mis eventos"
+        ],
+        "interactive": [
+          {
+            "name": "Ingresar",
+            "height": 52
+          },
+          {
+            "name": "Crear cuenta",
+            "height": 48
+          },
+          {
+            "name": "Cancelar",
+            "height": 44
+          }
+        ],
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    },
+    {
+      "viewport": "320x640",
+      "unavailable": {
+        "overflow": false,
+        "shell": true,
+        "wash": 1,
+        "washHidden": true,
+        "h1": 1,
+        "dock": [
+          "Inicio",
+          "Mapa",
+          "Mis eventos",
+          "Perfil"
+        ],
+        "interactive": [
+          {
+            "name": "Ir al mapa",
+            "height": 48
+          }
+        ],
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    },
+    {
+      "test": "Signed out: fragment cleared, nothing sent; login returns to /invite, redeems once from memory, opens the detail with replace and no enrolment",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "outline": {
+        "width": "3px",
+        "text": "Crear cuenta"
+      },
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 1,
+        "washHidden": true,
+        "h1": 1,
+        "dock": [
+          "Inicio",
+          "Mapa",
+          "Mis eventos"
+        ],
+        "interactive": [
+          {
+            "name": "Ingresar",
+            "height": 52
+          },
+          {
+            "name": "Crear cuenta",
+            "height": 48
+          },
+          {
+            "name": "Cancelar",
+            "height": 44
+          }
+        ],
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    },
+    {
+      "viewport": "375x812",
+      "unavailable": {
+        "overflow": false,
+        "shell": true,
+        "wash": 1,
+        "washHidden": true,
+        "h1": 1,
+        "dock": [
+          "Inicio",
+          "Mapa",
+          "Mis eventos",
+          "Perfil"
+        ],
+        "interactive": [
+          {
+            "name": "Ir al mapa",
+            "height": 48
+          }
+        ],
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    },
+    {
+      "viewport": "1280x900",
+      "outline": {
+        "width": "3px",
+        "text": "Crear cuenta"
+      },
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "wash": 1,
+        "washHidden": true,
+        "h1": 1,
+        "dock": [
+          "Inicio",
+          "Mapa",
+          "Mis eventos"
+        ],
+        "interactive": [
+          {
+            "name": "Ingresar",
+            "height": 52
+          },
+          {
+            "name": "Crear cuenta",
+            "height": 48
+          },
+          {
+            "name": "Cancelar",
+            "height": 44
+          }
+        ],
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    },
+    {
+      "viewport": "1280x900",
+      "unavailable": {
+        "overflow": false,
+        "shell": true,
+        "wash": 1,
+        "washHidden": true,
+        "h1": 1,
+        "dock": [
+          "Inicio",
+          "Mapa",
+          "Mis eventos",
+          "Perfil"
+        ],
+        "interactive": [
+          {
+            "name": "Ir al mapa",
+            "height": 48
+          }
+        ],
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif"
+      }
+    },
+    {
+      "test": "320/375/1280: wash aria-hidden, one h1, Bricolage, no overflow, four-destination dock, targets >=44px; unavailable/network/expired states with focus on the result",
+      "result": "PASS"
+    },
+    {
+      "test": "Secret never in URL, query, storage or any request URL; sent only in the redeem RPC body; no enrolment write; reload drops it",
+      "result": "PASS"
+    },
+    {
+      "test": "Cuenta cambiada: el secreto pendiente de otra identidad se descarta; la nueva cuenta no canjea",
+      "result": "PASS"
+    },
+    {
+      "test": "Si la relectura del detalle no confirma el acceso, no se anuncia «Acceso confirmado»",
+      "result": "PASS"
+    },
+    {
+      "test": "status-message backdrop (default media)",
+      "blur": "blur(18px)"
+    }
+  ]
+}

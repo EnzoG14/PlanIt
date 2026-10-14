@@ -1,5 +1,11 @@
 # PlanIt — Arquitectura
 
+## Release 4 — Bloque 8: panel de accesos
+
+`/events/:id/access` protegida y lazy-loaded, scope Amanecer de gestión y entrada desde detalle propio oculto. `features/events/access.ts` concentra lista por cursor, revocación/restitución y comprobación de resultado incierto. El permiso active/revoked y la participación confirmed son conceptos independientes. Sólo se restituye lectura del detalle, no participación/chat. Eventos ocultos cerrados conservan consulta sin acciones.
+
+Detalle oculto visible revalida cada 30 s y al recuperar foco/conexión; autorización fallida limpia detalle/medios y descarta respuestas obsoletas. Chat conserva revalidación y limpieza de canal/historial. URLs previamente firmadas conservan ventana residual de hasta 60 s. Migración B8 **aplicada/verificada en planit-v2 el 13/10/2026 con autorización expresa posterior**, sin despliegue frontend ni HTTP/JWT funcional. [Evidencia y pendientes](design/verification/r4-block-8/README.md).
+
 ## R4 Bloque 7 — Ruta `/invite`
 
 `/invite#token=<64 hex>` queda fuera de `RequireAuth`. `InvitePage` guarda el secreto sólo en memoria del módulo `features/events/invite.ts`, limpia el fragmento con `navigate(replace)` antes de renderizar, y envía el token únicamente en el cuerpo del RPC `redeem_event_link`. Sin sesión ofrece Ingresar/Crear cuenta con `next=/invite` (destino agregado al allowlist de `safeReturnPath`); el secreto sobrevive al login SPA, se liga a la identidad y se descarta al cerrar sesión o cambiar de cuenta. Tras el canje se relee `/events/:id` (autorización del servidor con grant activo) y recién entonces se navega con replace. El shell es `amanecer-shell invite-shell` con wash decorativo; el dock mantiene sus cuatro destinos. Recargar o confirmar el correo exige reabrir el enlace original.
