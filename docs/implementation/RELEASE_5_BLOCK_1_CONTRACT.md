@@ -2,6 +2,8 @@
 
 **Fecha:** 14/10/2026 (Argentina). **Base:** `da4379f58ba60ddfa4c3d03970103b381856996b`, `origin/main` actualizado, PR #50/B0 integrada. **Rama:** `codex/r5-block-1`. **Estado:** Implementado; QA pendiente. Sólo B1, sin pantallas ni integración de los bloques 2–9. PR para revisión, sin merge, aplicación remota ni deploy.
 
+**Entrega:** [PR #51 en borrador](https://github.com/EnzoG14/PlanIt/pull/51). Commit de implementación `4e95ba247f53d7fb03917a89db76566de90df7a2`; el commit posterior sólo vincula entrega/seguimiento. Base confirmada también por snapshot GitHub de la PR. Ninguna continuación B2 autorizada.
+
 ## Fuentes y decisiones
 
 Se contrastaron plan/estado/paquete R5, auditoría B0, AGENTS raíz/src/Supabase, PRODUCT, DESIGN Amanecer, arquitectura/modelo y plan/estado/QA R3/R4. Nueva lectura de las tres secciones vigentes de [Planificación](https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit): 8 RF y [33 CA literales](../qa/r5-block-1/source.json), sin modificar Google Docs ni sus criterios. D04 sigue siendo decisión posterior pendiente de incorporación normativa con autorización separada.

@@ -2,6 +2,8 @@
 
 **Base:** `da4379f58ba60ddfa4c3d03970103b381856996b`. **Rama:** `codex/r5-block-1`. 14/10/2026 Argentina. Estado **Implementado; QA pendiente**, sin aceptación de CA integral, merge, DDL remoto ni deploy. [Contrato/amenazas/firmas/decisiones](../../implementation/RELEASE_5_BLOCK_1_CONTRACT.md).
 
+[PR #51 en borrador](https://github.com/EnzoG14/PlanIt/pull/51), implementación `4e95ba247f53d7fb03917a89db76566de90df7a2`; seguimiento posterior sólo documental.
+
 | Evidencia | Resultado y entorno |
 | --- | --- |
 | [source.json](source.json) | Nueva lectura de 33 CA literales, no modificación normativa; D04 posterior |
