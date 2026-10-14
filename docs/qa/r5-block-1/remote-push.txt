@@ -1,0 +1,1 @@
+{"upToDate":false,"dryRun":false,"migrations":["20261014133225_social_security_model.sql","20261014133547_social_projections_and_avatars.sql","20261014133847_social_legacy_projections.sql"],"seeds":[],"roles":[],"message":"Finished supabase db push."}

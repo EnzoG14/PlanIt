@@ -1,6 +1,8 @@
 # R5 Bloque 1 — Evidencia
 
-**Base:** `da4379f58ba60ddfa4c3d03970103b381856996b`. **Rama:** `codex/r5-block-1`. 14/10/2026 Argentina. Estado **Implementado; QA pendiente**, sin aceptación de CA integral, merge, DDL remoto ni deploy. [Contrato/amenazas/firmas/decisiones](../../implementation/RELEASE_5_BLOCK_1_CONTRACT.md).
+**Base:** `da4379f58ba60ddfa4c3d03970103b381856996b`. **Rama:** `codex/r5-block-1`. 14/10/2026 Argentina. Estado **Implementado; QA pendiente**, sin aceptación de CA integral, merge ni deploy. [Contrato/amenazas/firmas/decisiones](../../implementation/RELEASE_5_BLOCK_1_CONTRACT.md).
+
+**Actualización posterior autorizada:** tres migraciones aplicadas/verificadas en planit-v2 el 14/10/2026. 28 versiones al día, 16 tablas RLS, 79 funciones coincidentes y smoke read-only PASS. [Acta, comandos y límites remotos](REMOTE_MIGRATION.md). Las evidencias originales inferiores preservan el corte de implementación local; Edge/HTTP JWT/Storage/Realtime reales siguen pendientes.
 
 [PR #51 en borrador](https://github.com/EnzoG14/PlanIt/pull/51), implementación `4e95ba247f53d7fb03917a89db76566de90df7a2`; seguimiento posterior sólo documental.
 
@@ -50,4 +52,4 @@ La primera ejecución local alcanzó cinco grupos y falló en invoker list_direc
 
 **NOT RUN:** reset de stack Supabase completo, ejecución sobre PostgreSQL17, nuevos tests HTTP/JWT real A/B/C/D/anon, Storage/Realtime real, Edge Deno/deploy, frontend social/UI/PWA/responsive/accesibilidad y aceptación humana. 33 CA oficiales y casos D01–D05 permanecen NOT RUN integral, con seguridad parcialmente verificada en las capas indicadas. Ninguna captura de fixture se presenta como aplicación real.
 
-**Migraciones R5:** creadas3, probadas local3, aplicadas remotas0/no autorizadas, verificadas remotas0. Catálogo read-only histórico se informa por separado. Gateway social-avatar creado/probado unitariamente, no desplegado. Google Docs no editado. B2 no iniciado.
+**Migraciones R5 actuales:** creadas3, probadas local3, aplicadas remotas3 con autorización posterior, verificadas remotas3 ([acta](REMOTE_MIGRATION.md)). Catálogo read-only histórico original se informa por separado. Gateway social-avatar creado/probado unitariamente, no desplegado. Google Docs no editado. B2 no iniciado.

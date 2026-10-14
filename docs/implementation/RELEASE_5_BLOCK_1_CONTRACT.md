@@ -1,6 +1,6 @@
 # Release 5 · Bloque 1 — Modelo social y frontera de seguridad
 
-**Fecha:** 14/10/2026 (Argentina). **Base:** `da4379f58ba60ddfa4c3d03970103b381856996b`, `origin/main` actualizado, PR #50/B0 integrada. **Rama:** `codex/r5-block-1`. **Estado:** Implementado; QA pendiente. Sólo B1, sin pantallas ni integración de los bloques 2–9. PR para revisión, sin merge, aplicación remota ni deploy.
+**Fecha:** 14/10/2026 (Argentina). **Base:** `da4379f58ba60ddfa4c3d03970103b381856996b`, `origin/main` actualizado, PR #50/B0 integrada. **Rama:** `codex/r5-block-1`. **Estado:** Implementado; QA pendiente. Sólo B1, sin pantallas ni integración de los bloques 2–9. PR para revisión, sin merge ni deploy. Aplicación remota autorizada después y verificada el 14/10/2026: [acta](../qa/r5-block-1/REMOTE_MIGRATION.md).
 
 **Entrega:** [PR #51 en borrador](https://github.com/EnzoG14/PlanIt/pull/51). Commit de implementación `4e95ba247f53d7fb03917a89db76566de90df7a2`; el commit posterior sólo vincula entrega/seguimiento. Base confirmada también por snapshot GitHub de la PR. Ninguna continuación B2 autorizada.
 
@@ -25,9 +25,9 @@ Las tres migraciones se generaron con `supabase migration new`; las 25 históric
 
 | Migración | Cambio | Creada | Probada local | Aplicada remota | Verificada remota |
 | --- | --- | --- | --- | --- | --- |
-| `20261014133225_social_security_model.sql` | follows/blocks, constraints/FK/índices/RLS/ACL, privacidad/follow/block/DM y proyección de perfil | Sí | PASS | No, no autorizada | No |
-| `20261014133547_social_projections_and_avatars.sql` | consultas paginadas, gate social, bucket/avatar, firmas sólo servidor, destino de notificación | Sí | PASS | No, no autorizada | No |
-| `20261014133847_social_legacy_projections.sql` | C01 en cuatro proyecciones existentes, mismas firmas y permisos | Sí | PASS | No, no autorizada | No |
+| `20261014133225_social_security_model.sql` | follows/blocks, constraints/FK/índices/RLS/ACL, privacidad/follow/block/DM y proyección de perfil | Sí | PASS | Sí, autorización posterior 14/10/2026 | Sí, [acta](../qa/r5-block-1/REMOTE_MIGRATION.md) |
+| `20261014133547_social_projections_and_avatars.sql` | consultas paginadas, gate social, bucket/avatar, firmas sólo servidor, destino de notificación | Sí | PASS | Sí, autorización posterior 14/10/2026 | Sí, [acta](../qa/r5-block-1/REMOTE_MIGRATION.md) |
+| `20261014133847_social_legacy_projections.sql` | C01 en cuatro proyecciones existentes, mismas firmas y permisos | Sí | PASS | Sí, autorización posterior 14/10/2026 | Sí, [acta](../qa/r5-block-1/REMOTE_MIGRATION.md) |
 
 `user_follows`: PK dirigida follower/followed, no-self, pending/accepted/rejected, generación UUID, requested/responded con coherencia de estado/cronología. `user_blocks`: PK dirigida blocker/blocked, no-self. FK RESTRICT, fechas propias sin zona Argentina; RLS desde creación. SELECT directo follows sólo a cualquiera de sus extremos; blocks sólo al bloqueador. Sin INSERT/UPDATE/DELETE cliente.
 
@@ -93,7 +93,7 @@ Storage SELECT permite solicitar firmas con expiry elegido por cliente ([documen
 
 El [CDN de Storage](https://supabase.com/docs/guides/storage/cdn/smart-cdn) tiene TTL de caché independiente del token: registro/vinculación de avatares exige metadata cacheControl exactamente `max-age=0`, `no-cache` o `no-store`, rechazando el default SDK de una hora. B4 debe cargar con `cacheControl:'0'` (o header REST no-store), sin copy/update del objeto; verificar headers efectivos y expiración CDN en QA remoto antes de aceptación. El scaffold prueba la regla de registro, no el comportamiento del CDN. No se altera caché de event_media ni R4.
 
-**No se desplegó la función ni se configuraron secretos.** No ejecutar db push/deploy ahora. Antes de autorización remota: revisar preflight de avatares antiguos, `migration list`, dry-run y advisors; ejecutar las tres migraciones como entrega revisada y desplegar gateway con aprobación separada. Verificar SQL remoto/HTTP JWT A/B/C/D, firma/expiración/bloqueo Storage y payload Realtime. Activar consumidores de UI sólo en su bloque aprobado. El lector de avatar del perfil propio R2 aún usa su contrato heredado; su integración con avatars/gateway corresponde B4, sin habilitar cargas desde B1.
+**No se desplegó la función ni se configuraron secretos.** Las tres migraciones se aplicaron/verificaron por autorización posterior: preflight sin avatares incompatibles, 28 versiones al día, 79 funciones coincidentes, ACL/RLS y smoke remoto read-only PASS. [Acta](../qa/r5-block-1/REMOTE_MIGRATION.md). Desplegar gateway requiere aprobación separada. Verificar SQL remoto/HTTP JWT A/B/C/D, firma/expiración/bloqueo Storage y payload Realtime. Activar consumidores de UI sólo en su bloque aprobado. El lector de avatar del perfil propio R2 aún usa su contrato heredado; su integración con avatars/gateway corresponde B4, sin habilitar cargas desde B1.
 
 ## Pruebas, archivos y revisión
 

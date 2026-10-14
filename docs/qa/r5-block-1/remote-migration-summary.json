@@ -1,0 +1,154 @@
+{
+  "date": "2026-10-14",
+  "timezone": "America/Buenos_Aires",
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "authorization": "Direct user instruction: hace las migraciones a la base remota",
+  "source_commit": "951dd47818cabc13703e9bd5de73bce1d5a0e53f",
+  "created": true,
+  "local_tested": true,
+  "remotely_applied": true,
+  "remotely_verified": true,
+  "migrations": [
+    "20261014133225_social_security_model.sql",
+    "20261014133547_social_projections_and_avatars.sql",
+    "20261014133847_social_legacy_projections.sql"
+  ],
+  "preflight": {
+    "database": "postgres",
+    "legacy_invalid_avatar_count": 0,
+    "migration_count": 25,
+    "social_tables_existing": 0
+  },
+  "versions_synchronized": 28,
+  "remote_postgres": "17.11",
+  "public_rls_tables": 16,
+  "function_body_acl_configuration_matches": 79,
+  "checks": {
+    "avatar_patch_allowed": false,
+    "migration_count": 28,
+    "signing_anon_execute": false,
+    "signing_authenticated_execute": false,
+    "signing_service_execute": true,
+    "smoke": "PASS: 7 missing-identity denials under authenticated, READ ONLY",
+    "tables_without_rls": 0,
+    "visibility_patch_allowed": false
+  },
+  "avatars": {
+    "allowed_mime_types": [
+      "image/jpeg",
+      "image/png",
+      "image/webp"
+    ],
+    "file_size_limit": 5242880,
+    "id": "avatars",
+    "public": false
+  },
+  "advisors": {
+    "security_count": 46,
+    "error_count": 0,
+    "new_warnings": [
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "block_user"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "follow_user"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "get_event_social_participants"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "get_or_create_direct_conversation"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "get_social_counts"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "get_social_profile"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "get_social_profile_events"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "get_social_relationship"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "list_follow_requests"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "list_social_follows"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "resolve_follow_request"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "send_direct_message"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "set_my_avatar"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "unblock_user"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "unfollow_user"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "object": "update_my_social_profile"
+      }
+    ],
+    "explanation": "Authenticated SECURITY DEFINER RPCs are intentional field projections/transactional operations; auth.uid, allowlists, ordered locks, fixed search_path and no generic writes audited locally and matched remotely."
+  },
+  "dry_run_after": {
+    "upToDate": true,
+    "dryRun": true,
+    "migrations": [],
+    "seeds": [],
+    "roles": [],
+    "message": "Remote database is up to date."
+  },
+  "no_seeds_roles_vault_changes": true,
+  "edge_deployed": false,
+  "frontend_deployed": false,
+  "merged": false,
+  "block_2_started": false,
+  "not_run": [
+    "HTTP JWT A/B/C/D functional flows",
+    "Storage/CDN real transport and TTL",
+    "Realtime actual payload",
+    "Deno/deployed social-avatar",
+    "human acceptance"
+  ],
+  "result": "PASS"
+}
