@@ -10,6 +10,7 @@ import { validatedMyEventsReturn } from '../features/events/my-events'
 import { validatedDiscoveryReturn } from '../features/events/search'
 import { useSocialRead } from '../features/social/useSocialRead'
 import { followsReturn, loadSocialRelationship, loadSocialCounts } from '../features/social/follows'
+import { requestsReturn } from '../features/social/requests'
 import { FollowButton } from '../components/FollowButton'
 import { SocialCountsLinks } from '../components/SocialCounts'
 import '../styles/event-management.css'
@@ -25,7 +26,7 @@ export function SocialIdentityPage() {
 }
 function IdentityContent({ userId }: { userId: string }) {
   const location = useLocation()
-  const listBack = followsReturn(location.state?.followsReturnTo)
+  const listBack = requestsReturn(location.state?.requestsReturnTo) ?? followsReturn(location.state?.followsReturnTo)
   const back = listBack ?? participantsReturn(location.state?.participantsReturnTo)
   const [pages, setPages] = useState(1)
   const [unsafeSnapshot, setUnsafeSnapshot] = useState<unknown>(null)

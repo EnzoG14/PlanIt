@@ -1,5 +1,7 @@
 # PlanIt — Estado visual UI Refresh R1–R3
 
+**Adición R5/B7 · 14/10/2026:** bandeja y confirmaciones de seguimiento mantienen Amanecer, fuente autoalojada, tokens y cuatro destinos primarios. [Capturas, verificación y límites](../qa/r5-block-7/README.md). Sin cambios de DESIGN/tokens/mockups ni aceptación nueva R1–R3. Dispositivos, teclado móvil y lector de pantalla reales NOT RUN; QA humana pendiente.
+
 **Adición R5/B6 · 14/10/2026:** acciones de seguimiento y listas mantienen Amanecer, componentes sociales y los cuatro destinos primarios. [Evidencia antes/después](../qa/r5-block-6/README.md) de build real con fixtures en320/360/375/390/768/1280, estados, texto200%, foco3px, navegación y timeout. Mockups, DESIGN y tokens intactos; sin nueva aceptación R1–R3. Dispositivos, teclado móvil y lector reales NOT RUN; QA humana pendiente.
 
 **Adición R5/B5 · 14/10/2026:** perfil mínimo/accepted y bloqueo conservan Amanecer; corrección de revalidación entre RPC sin cambio CSS/tokens/mockups. [79 grupos UI/capturas](../qa/r5-block-5/README.md) en320/360/375/390/768/1280, foco3px, targets44, texto200%, estados y navegación. Fixtures de app ejecutada; dispositivos/lector/Storage reales y aceptación pendientes. Sin nueva aceptación R1–R3.

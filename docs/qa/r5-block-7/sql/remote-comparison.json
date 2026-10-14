@@ -1,0 +1,481 @@
+{
+  "migrations": 28,
+  "rls_tables": 16,
+  "functions": [
+    {
+      "name": "planit_private.validate_birth_date",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.handle_new_auth_user",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.can_delete_avatar_upload",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.validate_new_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_notification_changes",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.touch_updated_at",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.discover_public_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.record_participation_history",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.register_for_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_my_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_home_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.can_read_event_chat",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_organizer",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.create_event_conversation",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_chat",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_chat_messages",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.stamp_notification_read",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.send_event_chat_message",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_notifications",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.mark_notification_read",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_notification_target",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_my_organized_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.lock_gallery",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.validate_event_image",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.can_delete_event_upload",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.validate_event_file",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.validate_profile_avatar",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_social_avatar_for_signing",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.add_event_image",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.remove_event_image",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.reorder_event_images",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_unregistered_uploads",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.cancel_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_attendees",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.remove_participant",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_link_status",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.archive_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_duplicate_source",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_rejoin_requests",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_rejoin_resolution",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.search_public_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.lock_social_pair",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.set_my_category_interests",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_suggested_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.can_view_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.can_read_social_content",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.protect_event_visibility",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_participation_summary",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.leave_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_my_rejoin_status",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.request_rejoin",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.resolve_rejoin",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.create_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.update_event",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.set_event_visibility",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.create_or_rotate_event_link",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.redeem_event_link",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.revoke_event_access",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.restore_event_access",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "planit_private.social_blocked",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.unfollow_user",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.update_my_social_profile",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.follow_user",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.resolve_follow_request",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.block_user",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.unblock_user",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_or_create_direct_conversation",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.send_direct_message",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_social_profile",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_social_relationship",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_social_profile_events",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_social_participants",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.set_my_avatar",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.list_follow_requests",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.list_social_follows",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_social_counts",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_direct_messages",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.list_direct_conversations",
+      "body": true,
+      "acl": true,
+      "config": true
+    },
+    {
+      "name": "public.get_event_access_grants",
+      "body": true,
+      "acl": true,
+      "config": true
+    }
+  ],
+  "result": "PASS"
+}

@@ -1,0 +1,30 @@
+{
+  "audited_at": "2026-10-14T20:53:36.797Z",
+  "environment": "READ ONLY policies profiles/user_follows",
+  "rows": [
+    {
+      "tablename": "profiles",
+      "policyname": "profiles_select_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(( SELECT auth.uid() AS uid) = id)",
+      "with_check": null
+    },
+    {
+      "tablename": "profiles",
+      "policyname": "profiles_update_own",
+      "roles": "{authenticated}",
+      "cmd": "UPDATE",
+      "qual": "(( SELECT auth.uid() AS uid) = id)",
+      "with_check": "(( SELECT auth.uid() AS uid) = id)"
+    },
+    {
+      "tablename": "user_follows",
+      "policyname": "user_follows_read_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((( SELECT auth.uid() AS uid) = follower_id) OR (( SELECT auth.uid() AS uid) = followed_id))",
+      "with_check": null
+    }
+  ]
+}

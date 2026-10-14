@@ -1,5 +1,15 @@
 # PlanIt — Arquitectura
 
+**B7 notificaciones, aplicación remota14/10/2026:** migración20261014212935 aplicada/verificada con autorización expresa posterior en planit-v2. [Acta](qa/r5-block-7/follow-notifications/remote/README.md). Backend de avisos activo para nuevos pedidos; UI Ver solicitudes está en PR #57, sin deploy/merge en esta operación. QA de transporte real pendiente; las menciones siguientes a permiso pendiente son cortes históricos.
+
+## Ampliación R5/B7 — notificación de seguimiento (QA pendiente)
+
+Nueva pending inserta notifications en la misma transacción follow_user. Trigger privado invoker sin permisos nuevos;id correlaciona generación para un aviso. Texto genérico sin identidad/actor;RLS recipient-only/publicación Realtime existentes. get_notification_target agrega destino propio `/me/follow-requests`, validado por cliente y presentado como Ver solicitudes. [Migración local y pruebas](qa/r5-block-7/follow-notifications/README.md), aplicación remota pendiente de permiso. Cortes anteriores sin productor históricos.
+
+## Release 5 — Bloque 7: solicitudes (QA pendiente)
+
+`/me/follow-requests` consume `list_follow_requests` y `resolve_follow_request` B1 con cursor compuesto y generación UUID. Confirmación inline y bloqueo de doble envío; resultado incierto exige SELECT RLS de request_version/status de la pareja entrante propia antes de otra acción. Reutiliza aislamiento por sesión/token, abort, timeout10s y revalidación visible30s/foco/online; no carga identidades al abortar en segundo plano. Actualiza bandeja y relee perfiles/listas al volver. Sin SQL nuevo, caché persistente, Realtime, tab primario ni permisos R1–R4 adicionales. [Contrato, amenazas y límites](qa/r5-block-7/README.md). B8 no autorizado; cortes siguientes históricos.
+
 ## Release 5 — Bloque 6: seguimientos y listas (QA pendiente)
 
 Perfiles consumen `get_social_relationship`, `follow_user`/`unfollow_user`, `get_social_counts` y `list_social_follows` existentes B1. `/users/:id/followers` y `/users/:id/following` usan cursor UUID, reconsulta de páginas previas y gate final; `/me` enlaza listas propias. La capa social conserva allowlists, aislamiento por cuenta/token/ruta, timeout10s y revalidación visible30s/foco/online. Mutación sin resultado confirmado oculta contenido derivado y exige lectura antes de repetir; el servidor decide accepted/pending. Sin SQL nuevo ni cambios de permisos R1–R4, dock o SW. [Contrato y límites](qa/r5-block-6/README.md). B7 no autorizado.

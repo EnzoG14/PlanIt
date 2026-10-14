@@ -16,6 +16,7 @@ const EventGalleryPage = lazy(() => import('./pages/EventGalleryPage').then(modu
 const EventAttendeesPage = lazy(() => import('./pages/EventAttendeesPage').then(module => ({ default: module.EventAttendeesPage })))
 const SocialIdentityPage = lazy(() => import('./pages/SocialIdentityPage').then(module => ({ default: module.SocialIdentityPage })))
 const SocialFollowsPage = lazy(() => import('./pages/SocialFollowsPage').then(module => ({ default: module.SocialFollowsPage })))
+const FollowRequestsPage = lazy(() => import('./pages/FollowRequestsPage').then(module => ({ default: module.FollowRequestsPage })))
 const EventAccessPage = lazy(() => import('./pages/EventAccessPage').then(module => ({ default: module.EventAccessPage })))
 const EventRejoinRequestsPage = lazy(() => import('./pages/EventRejoinRequestsPage').then(module => ({ default: module.EventRejoinRequestsPage })))
 const EventDetailPage = lazy(() => import('./pages/EventDetailPage').then(module => ({ default: module.EventDetailPage })))
@@ -47,6 +48,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route path="events/:id" element={<Suspense fallback={<StatusMessage title="Cargando evento">Esperá un momento.</StatusMessage>}><EventDetailPage /></Suspense>} />
       <Route path="my-events" element={<Suspense fallback={<StatusMessage title="Cargando Mis eventos">Esperá un momento.</StatusMessage>}><MyEventsPage /></Suspense>} />
       <Route path="me" element={<ProfilePage />} />
+      <Route path="me/follow-requests" element={<Suspense fallback={<StatusMessage title="Consultando solicitudes">Esperá un momento.</StatusMessage>}><FollowRequestsPage /></Suspense>} />
       <Route path="me/edit" element={<Suspense fallback={<StatusMessage title="Cargando edición de perfil">Esperá un momento.</StatusMessage>}><EditProfilePage /></Suspense>} />
       <Route path="users/:id" element={<Suspense fallback={<StatusMessage title="Consultando perfil">Esperá un momento.</StatusMessage>}><SocialIdentityPage /></Suspense>} />
       <Route path="users/:id/followers" element={<Suspense fallback={<StatusMessage title="Consultando seguidores">Esperá un momento.</StatusMessage>}><SocialFollowsPage direction="followers" /></Suspense>} />

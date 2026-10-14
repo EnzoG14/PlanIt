@@ -1,5 +1,9 @@
 # PlanIt — Modelo de datos y migraciones
 
+**Aplicación remota autorizada R5/B7 — 14/10/2026:**20261014212935_follow_request_notifications.sql aplicada/verificada en planit-v2 tras aprobación expresa posterior. Ledger29, cuerpos/trigger/ACL/RLS/publicación coincidentes y dry-run al día. [Acta](qa/r5-block-7/follow-notifications/remote/README.md). Las referencias siguientes a aplicación pendiente son históricas; JWT/Realtime real sigue pendiente.
+
+**Ampliación R5/B7 — aviso de solicitud:** migración20261014212935_follow_request_notifications.sql creada/probada local,sin aplicación remota autorizada. Trigger privado invoker sobre nuevas generaciones pending inserta notifications para seguido en misma transacción;sin identidad/actor ni nuevos grants/RLS/publicaciones. ID aviso=request_version;pending repetida no genera nuevas filas. get_notification_target conserva permisos y agrega destino propio `/me/follow-requests`. [Contrato/evidencia](qa/r5-block-7/follow-notifications/README.md).
+
 ## Release 5 — Bloque 1: esquema social aplicado y verificado remoto
 
 `20261014133225_social_security_model.sql`, `20261014133547_social_projections_and_avatars.sql` y `20261014133847_social_legacy_projections.sql`: **creadas/probadas local y aplicadas/verificadas en planit-v2 el 14/10/2026 con autorización expresa posterior**. [Contrato y privilegios](implementation/RELEASE_5_BLOCK_1_CONTRACT.md), [evidencia](qa/r5-block-1/README.md). Las 25 migraciones históricas permanecen intactas; 28 versiones remotas sincronizadas, 16 tablas RLS y 79 funciones iguales a replay; [acta](qa/r5-block-1/REMOTE_MIGRATION.md).

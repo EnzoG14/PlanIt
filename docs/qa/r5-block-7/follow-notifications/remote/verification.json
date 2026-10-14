@@ -1,0 +1,215 @@
+{
+  "project": "planit-v2",
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "authorized_by": "User answered sí to applying migration 20261014212935",
+  "code_commit": "c0d4cdee1a71d88f00244e752d441a0f11448a23",
+  "migration": "20261014212935_follow_request_notifications.sql",
+  "checks": {
+    "ledger": true,
+    "functions": true,
+    "trigger": true,
+    "rls": true,
+    "grants": true,
+    "publication": true,
+    "missing_target": true
+  },
+  "result": "PASS",
+  "verification": "Read-only catalog/ledger/source body/trigger/ACL/RLS/publication. No authenticated JWT or real Realtime transport test.",
+  "rows": [
+    {
+      "metadata": {
+        "grants": {
+          "anon_select": false,
+          "authenticated_delete": false,
+          "authenticated_insert": false,
+          "authenticated_select": true,
+          "authenticated_update_body": false
+        },
+        "trigger": [
+          {
+            "name": "user_follows_notify_request",
+            "enabled": "O",
+            "definition": "CREATE TRIGGER user_follows_notify_request AFTER INSERT OR UPDATE OF status, request_version ON public.user_follows FOR EACH ROW EXECUTE FUNCTION planit_private.notify_follow_request()"
+          }
+        ],
+        "functions": [
+          {
+            "name": "get_notification_target",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "public",
+            "source": "\n    select case\n        when n.type = 'follow_request' and n.event_id is null and n.conversation_id is null\n            then '/me/follow-requests'\n        when n.conversation_id is not null then\n            case when c.kind = 'event' then '/events/' || c.event_id::text || '/chat' end\n        else '/events/' || e.id::text end\n    from public.notifications n\n    left join public.conversations c on c.id = n.conversation_id\n    left join public.events e on e.id = n.event_id\n    where n.id = p_id and n.recipient_id = (select auth.uid());\n",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_notification_target(p_id uuid)\n RETURNS text\n LANGUAGE sql\n STABLE\n SET search_path TO ''\nAS $function$\n    select case\n        when n.type = 'follow_request' and n.event_id is null and n.conversation_id is null\n            then '/me/follow-requests'\n        when n.conversation_id is not null then\n            case when c.kind = 'event' then '/events/' || c.event_id::text || '/chat' end\n        else '/events/' || e.id::text end\n    from public.notifications n\n    left join public.conversations c on c.id = n.conversation_id\n    left join public.events e on e.id = n.event_id\n    where n.id = p_id and n.recipient_id = (select auth.uid());\n$function$\n",
+            "anon_execute": false,
+            "authenticated_execute": true
+          },
+          {
+            "name": "notify_follow_request",
+            "config": [
+              "search_path=\"\""
+            ],
+            "schema": "planit_private",
+            "source": "\nbegin\n    if new.status <> 'pending' then return new; end if;\n    if tg_op = 'UPDATE' then\n        if old.status = 'pending' and old.request_version = new.request_version then\n            return new;\n        end if;\n    end if;\n    insert into public.notifications(id, recipient_id, type, title, body)\n    values (new.request_version, new.followed_id, 'follow_request',\n        'Nueva solicitud de seguimiento',\n        'Recibiste una solicitud de seguimiento. Revisá tus solicitudes pendientes.');\n    return new;\nend;\n",
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION planit_private.notify_follow_request()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\nbegin\n    if new.status <> 'pending' then return new; end if;\n    if tg_op = 'UPDATE' then\n        if old.status = 'pending' and old.request_version = new.request_version then\n            return new;\n        end if;\n    end if;\n    insert into public.notifications(id, recipient_id, type, title, body)\n    values (new.request_version, new.followed_id, 'follow_request',\n        'Nueva solicitud de seguimiento',\n        'Recibiste una solicitud de seguimiento. Revisá tus solicitudes pendientes.');\n    return new;\nend;\n$function$\n",
+            "anon_execute": false,
+            "authenticated_execute": false
+          }
+        ],
+        "checked_at": "2026-10-14T22:10:47.82506+00:00",
+        "migrations": [
+          {
+            "name": "create_profiles_and_categories",
+            "version": "20261010011204"
+          },
+          {
+            "name": "create_profiles_and_categories",
+            "version": "20261010013449"
+          },
+          {
+            "name": "restrict_rls_auto_enable_execute",
+            "version": "20261010023448"
+          },
+          {
+            "name": "create_events_and_event_media",
+            "version": "20261010042701"
+          },
+          {
+            "name": "public_event_discovery",
+            "version": "20261010052653"
+          },
+          {
+            "name": "event_participations",
+            "version": "20261010150232"
+          },
+          {
+            "name": "my_events_read",
+            "version": "20261010154930"
+          },
+          {
+            "name": "home_and_event_organizer_read",
+            "version": "20261010212819"
+          },
+          {
+            "name": "event_chat",
+            "version": "20261010214526"
+          },
+          {
+            "name": "notifications_inbox",
+            "version": "20261011163653"
+          },
+          {
+            "name": "r2_realtime_chat_notifications",
+            "version": "20261011193316"
+          },
+          {
+            "name": "my_organized_events_read",
+            "version": "20261011232326"
+          },
+          {
+            "name": "edit_own_event",
+            "version": "20261012001058"
+          },
+          {
+            "name": "manage_event_gallery",
+            "version": "20261012013634"
+          },
+          {
+            "name": "manage_event_attendees",
+            "version": "20261012031717"
+          },
+          {
+            "name": "close_and_duplicate_events",
+            "version": "20261012044919"
+          },
+          {
+            "name": "event_rejoin_requests",
+            "version": "20261012155501"
+          },
+          {
+            "name": "search_public_events",
+            "version": "20261013160000"
+          },
+          {
+            "name": "search_public_events_date_radius",
+            "version": "20261014120000"
+          },
+          {
+            "name": "user_category_interests",
+            "version": "20261014120001"
+          },
+          {
+            "name": "get_suggested_events",
+            "version": "20261014120002"
+          },
+          {
+            "name": "hidden_event_access",
+            "version": "20261014120003"
+          },
+          {
+            "name": "event_visibility_links",
+            "version": "20261014120004"
+          },
+          {
+            "name": "redeem_event_link",
+            "version": "20261014120005"
+          },
+          {
+            "name": "event_access_management",
+            "version": "20261014120006"
+          },
+          {
+            "name": "social_security_model",
+            "version": "20261014133225"
+          },
+          {
+            "name": "social_projections_and_avatars",
+            "version": "20261014133547"
+          },
+          {
+            "name": "social_legacy_projections",
+            "version": "20261014133847"
+          },
+          {
+            "name": "follow_request_notifications",
+            "version": "20261014212935"
+          }
+        ],
+        "publication": [
+          "messages",
+          "notifications"
+        ],
+        "missing_target": null,
+        "notifications_rls": true,
+        "notification_policies": [
+          {
+            "cmd": "UPDATE",
+            "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+            "roles": [
+              "authenticated"
+            ],
+            "tablename": "notifications",
+            "permissive": "PERMISSIVE",
+            "policyname": "notifications_mark_own",
+            "schemaname": "public",
+            "with_check": "(recipient_id = ( SELECT auth.uid() AS uid))"
+          },
+          {
+            "cmd": "SELECT",
+            "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+            "roles": [
+              "authenticated"
+            ],
+            "tablename": "notifications",
+            "permissive": "PERMISSIVE",
+            "policyname": "notifications_read_own",
+            "schemaname": "public",
+            "with_check": null
+          }
+        ]
+      }
+    }
+  ]
+}

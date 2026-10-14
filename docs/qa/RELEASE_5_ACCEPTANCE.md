@@ -1,5 +1,11 @@
 # PlanIt — R5 matriz de aceptación (33 CA oficiales)
 
+**R5-B7-NOTIF, aplicación remota14/10/2026:**20261014212935 aplicada/verificada con autorización del responsable; catálogo/ledger/ACL/RLS/publicación PASS ([acta](r5-block-7/follow-notifications/remote/README.md)). Supera el pendiente de aplicación indicado abajo. JWT/entrega Realtime real y aceptación humana siguen NOT RUN, sin elevar CA oficiales a Validados.
+
+**Ampliación B7 solicitada por el responsable:** prueba adicional R5-B7-NOTIF: nueva pending produce aviso para destinatario;reintento no duplica;fallo revierte solicitud;campana/bandeja reciben INSERT;Ver solicitudes abre bandeja propia. PASS SQL local/UI WebSocket simulado; **NOT RUN remoto/integral** hasta aplicar migración con permiso y probar sesiones reales. [Evidencia](r5-block-7/follow-notifications/README.md). Sin cambios de CA oficiales.
+
+**Corte B7 — 14/10/2026:** RF-R5-06.CA01..04 **PASS parcial SQL local/UI78 grupos**, HTTP anónimo real4 denegado. **NOT RUN integral** hasta JWT autenticado, dispositivos y aceptación humana. [33 CA literales](r5-block-7/source.json), [contrato/evidencias/límites](r5-block-7/README.md). D04 resolución versus conversión, bloqueos y renovación:17 carreras B7 más13 B1 PASS SQL; no nueva aprobación transversal. Se conservan las aceptaciones previas y los33 CA oficiales.
+
 **Corte B6 — 14/10/2026:** RF-R5-05.CA01..04 **PASS parcial SQL local/UI**, consultas HTTP anónimas reales denegadas; **NOT RUN integral** hasta JWT autenticado/Storage/dispositivos y aceptación humana. [Fuente literal nueva](r5-block-6/source.json), [contrato, pruebas y límites](r5-block-6/README.md). D04-A/B PASS SQL parcial con carreras/rollback B1 reproducidos; no nueva aprobación transversal. No se alteran los33 CA ni la aceptación previa de B5.
 
 **Aceptación B5 — 14/10/2026:** el responsable informa «QA realizada y aprobada». RF-R5-04.CA01..04 **Validados por QA humana**; [acta](r5-block-5/APPROVAL.md). No se alteran resultados técnicos previos ni se inventan pruebas JWT/Storage/dispositivos ejecutadas por el agente. Los cortes siguientes son antecedentes históricos.
@@ -38,10 +44,10 @@
 | RF-R5-05.CA-02 | privado pending sin ampliar lectura | PASS parcial SQL/UI; NOT RUN integral | [B6](r5-block-6/README.md) |
 | RF-R5-05.CA-03 | unfollow revoca; public→private conserva accepted | PASS parcial SQL/UI; NOT RUN integral | [B6](r5-block-6/README.md) |
 | RF-R5-05.CA-04 | no auto-follow ni duplicados | PASS parcial SQL/UI; NOT RUN integral | [B6](r5-block-6/README.md) |
-| RF-R5-06.CA-01 | dueño ve pending | NOT RUN | — |
-| RF-R5-06.CA-02 | aceptar concede approved | NOT RUN | — |
-| RF-R5-06.CA-03 | rechazar no concede y permite repetir | NOT RUN | — |
-| RF-R5-06.CA-04 | sólo dueño; no doble resolve | NOT RUN | — |
+| RF-R5-06.CA-01 | dueño ve pending | PASS parcial SQL/UI; NOT RUN integral | [B7](r5-block-7/README.md) |
+| RF-R5-06.CA-02 | aceptar concede approved | PASS parcial SQL/UI; NOT RUN integral | [B7](r5-block-7/README.md) |
+| RF-R5-06.CA-03 | rechazar no concede y permite repetir | PASS parcial SQL/UI; NOT RUN integral | [B7](r5-block-7/README.md) |
+| RF-R5-06.CA-04 | sólo dueño; no doble resolve | PASS parcial SQL/UI/HTTP anon; NOT RUN integral | [B7](r5-block-7/README.md) |
 | RF-R5-07.CA-01 | DM entre no seguidores; bloquear impide envío y conserva historial | NOT RUN | — |
 | RF-R5-07.CA-02 | persistencia mensaje/autor | NOT RUN | — |
 | RF-R5-07.CA-03 | orden temporal y separación de chat evento | NOT RUN | — |

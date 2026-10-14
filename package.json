@@ -4,6 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:r5:request-notifications": "node scripts/check-r5-request-notifications.mjs",
+    "check:r5:request-notifications:ui": "node scripts/check-r5-request-notifications-ui.mjs",
+    "check:r5:requests": "node scripts/check-r5-requests.mjs",
+    "check:r5:requests:ui": "node scripts/check-r5-requests-ui.mjs",
+    "check:r5:requests:http": "node scripts/check-r5-requests-http.mjs",
     "check:r5:follows": "node scripts/check-r5-follows.mjs",
     "check:r5:follows:ui": "node scripts/check-r5-follows-ui.mjs",
     "check:r5:follows:http": "node scripts/check-r5-follows-http.mjs",

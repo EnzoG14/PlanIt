@@ -1,0 +1,10 @@
+.follow-requests-page .management-header p { max-width: 65ch; color: var(--pi-color-text-muted); }
+.follow-requests-list > li { padding: var(--pi-space-base); border-radius: var(--pi-radius-card-compact); background: var(--pi-color-surface-card); box-shadow: var(--pi-shadow-card); }
+.follow-request-identity { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; gap: var(--pi-space-compact); color: var(--pi-color-ink); text-decoration: none; min-height: 48px; border-radius: var(--pi-radius-field); }
+.follow-request-identity:hover strong { text-decoration: underline; text-underline-offset: 4px; }
+.follow-request-date { font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); margin-block: var(--pi-space-compact); font-variant-numeric: tabular-nums; }
+.follow-request-actions { display: flex; flex-wrap: wrap; gap: var(--pi-space-tight); }
+.follow-request-actions > p { flex-basis: 100%; margin-block: 0 var(--pi-space-tight); }
+.follow-request-actions button { flex: 1 1 140px; }
+.follow-request-feedback:empty { display: none; }
+.follow-request-feedback { overflow-wrap: anywhere; }

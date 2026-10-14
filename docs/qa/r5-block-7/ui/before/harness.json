@@ -1,0 +1,7 @@
+{
+  "inherited": "scripts/check-r5-profile-ui.mjs",
+  "sha256": "427032a20221ccbb758683aa84d89fd88c3a435ef3f4fac26eff2b0a58c5d376",
+  "extension": "scripts/check-r5-follows-ui.mjs",
+  "stdout": "",
+  "stderr": ""
+}

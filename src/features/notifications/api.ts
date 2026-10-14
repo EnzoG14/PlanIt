@@ -25,8 +25,8 @@ export async function notificationTarget(id: string): Promise<string | null> {
   if (!supabase) throw new Error('La conexión no está configurada.')
   const { data, error } = await supabase.rpc('get_notification_target', { p_id: id })
   if (error) throw error
-  // Only internal UUID event routes are accepted, never URLs from notification text.
-  return typeof data === 'string' && /^\/events\/[\da-f-]{36}(\/chat)?$/.test(data) ? data : null
+  // Allow only known internal destinations, never notification text or arbitrary URLs.
+  return typeof data === 'string' && (data === '/me/follow-requests' || /^\/events\/[\da-f-]{36}(\/chat)?$/.test(data)) ? data : null
 }
 export function notificationsError(error: unknown): string {
   const code = typeof error === 'object' && error !== null && 'code' in error ? String(error.code) : ''

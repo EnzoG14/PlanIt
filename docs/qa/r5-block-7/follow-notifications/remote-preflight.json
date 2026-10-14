@@ -1,0 +1,93 @@
+{
+  "environment": "planit-v2 READ ONLY; no applied migration or remote fixtures",
+  "rows": [
+    {
+      "metadata": {
+        "functions": [
+          {
+            "name": "follow_user",
+            "config": [
+              "search_path=\"\""
+            ],
+            "definer": true,
+            "definition": "CREATE OR REPLACE FUNCTION public.follow_user(p_target_id uuid)\n RETURNS jsonb\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_visibility text; v_status text; v_follow public.user_follows%rowtype; v_now timestamp;\nbegin\n    perform planit_private.lock_social_pair(p_target_id);\n    if planit_private.social_blocked(p_target_id) then\n        raise exception 'profile_unavailable' using errcode = '42501';\n    end if;\n    select * into v_follow from public.user_follows\n        where follower_id = auth.uid() and followed_id = p_target_id;\n    if found and v_follow.status in ('pending', 'accepted') then\n        return jsonb_build_object('status', v_follow.status, 'request_version', v_follow.request_version);\n    end if;\n    select visibility into v_visibility from public.profiles where id = p_target_id;\n    v_status := case when v_visibility = 'public' then 'accepted' else 'pending' end;\n    v_now := clock_timestamp() at time zone 'America/Argentina/Buenos_Aires';\n    insert into public.user_follows(follower_id, followed_id, status, requested_at, responded_at)\n    values (auth.uid(), p_target_id, v_status, v_now, case when v_status = 'accepted' then v_now end)\n    on conflict (follower_id, followed_id) do update set status = excluded.status,\n        request_version = gen_random_uuid(), requested_at = excluded.requested_at,\n        responded_at = excluded.responded_at returning * into v_follow;\n    return jsonb_build_object('status', v_follow.status, 'request_version', v_follow.request_version);\nend;\n$function$\n",
+            "anon_execute": false,
+            "authenticated_execute": true
+          },
+          {
+            "name": "get_notification_target",
+            "config": [
+              "search_path=\"\""
+            ],
+            "definer": false,
+            "definition": "CREATE OR REPLACE FUNCTION public.get_notification_target(p_id uuid)\n RETURNS text\n LANGUAGE sql\n STABLE\n SET search_path TO ''\nAS $function$\n    select case when n.conversation_id is not null then\n        case when c.kind = 'event' then '/events/' || c.event_id::text || '/chat' end\n        else '/events/' || e.id::text end\n    from public.notifications n\n    left join public.conversations c on c.id = n.conversation_id\n    left join public.events e on e.id = n.event_id\n    where n.id = p_id and n.recipient_id = (select auth.uid());\n$function$\n",
+            "anon_execute": false,
+            "authenticated_execute": true
+          }
+        ],
+        "checked_at": "2026-10-14T21:32:51.175106+00:00",
+        "migrations": [
+          "20261010011204",
+          "20261010013449",
+          "20261010023448",
+          "20261010042701",
+          "20261010052653",
+          "20261010150232",
+          "20261010154930",
+          "20261010212819",
+          "20261010214526",
+          "20261011163653",
+          "20261011193316",
+          "20261011232326",
+          "20261012001058",
+          "20261012013634",
+          "20261012031717",
+          "20261012044919",
+          "20261012155501",
+          "20261013160000",
+          "20261014120000",
+          "20261014120001",
+          "20261014120002",
+          "20261014120003",
+          "20261014120004",
+          "20261014120005",
+          "20261014120006",
+          "20261014133225",
+          "20261014133547",
+          "20261014133847"
+        ],
+        "publication": [
+          "messages",
+          "notifications"
+        ],
+        "follow_triggers": null,
+        "notification_policies": [
+          {
+            "cmd": "UPDATE",
+            "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+            "roles": [
+              "authenticated"
+            ],
+            "tablename": "notifications",
+            "permissive": "PERMISSIVE",
+            "policyname": "notifications_mark_own",
+            "schemaname": "public",
+            "with_check": "(recipient_id = ( SELECT auth.uid() AS uid))"
+          },
+          {
+            "cmd": "SELECT",
+            "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+            "roles": [
+              "authenticated"
+            ],
+            "tablename": "notifications",
+            "permissive": "PERMISSIVE",
+            "policyname": "notifications_read_own",
+            "schemaname": "public",
+            "with_check": null
+          }
+        ]
+      }
+    }
+  ]
+}

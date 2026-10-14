@@ -20,10 +20,11 @@ export function ProfilePage() {
 function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
   const location = useLocation()
   const interestsLink = useRef<HTMLAnchorElement>(null), editLink = useRef<HTMLAnchorElement>(null)
+  const requestsLink = useRef<HTMLAnchorElement>(null)
   useEffect(() => {
-    if (!location.state?.focusInterests && !location.state?.focusEdit) return
+    if (!location.state?.focusInterests && !location.state?.focusEdit && !location.state?.focusRequests) return
     // Restore the trigger after AppLayout applies its route-level main focus.
-    const frame = window.requestAnimationFrame(() => (location.state?.focusEdit ? editLink : interestsLink).current?.focus())
+    const frame = window.requestAnimationFrame(() => (location.state?.focusRequests ? requestsLink : location.state?.focusEdit ? editLink : interestsLink).current?.focus())
     return () => window.cancelAnimationFrame(frame)
   }, [location.key, location.state])
   const [result, setResult] = useState<ProfileResult | null>(null)
@@ -83,6 +84,7 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
       </>}
     <nav className="profile-account" aria-label="Información de tu cuenta">
       <Link ref={editLink} to="/me/edit"><Icon name="user" /><span>Editar perfil y privacidad</span><span aria-hidden="true">›</span></Link>
+      <Link ref={requestsLink} to="/me/follow-requests"><Icon name="user" /><span>Solicitudes de seguimiento</span><span aria-hidden="true">›</span></Link>
       <Link ref={interestsLink} to="/me/interests"><Icon name="category" /><span>Mis intereses</span><span aria-hidden="true">›</span></Link>
       <Link to="/my-events"><Icon name="calendar" /><span>Mis eventos</span><span aria-hidden="true">›</span></Link>
       <Link to="/notifications"><Icon name="bell" /><span>Notificaciones</span><span aria-hidden="true">›</span></Link>
