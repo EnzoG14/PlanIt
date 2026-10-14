@@ -2,7 +2,7 @@
   "base": "1bcef5af3397b54bae8cc18e6336092639c2b964",
   "branch": "codex/r5-block-2",
   "implementation_sha": "15d14372cf27cfed00242c2161a7df7eb02774c6",
-  "generated_at": "2026-10-14T14:58:57.455Z",
+  "generated_at": "2026-10-14T15:00:55.565Z",
   "env_local_copied_and_ignored": true,
   "migrations_new": {
     "created": 0,
@@ -117,7 +117,7 @@
   "evidence": [
     {
       "path": "docs/qa/r5-block-2/admin-ui/adaptation.json",
-      "sha256": "0ac2edd21cf90536985f1e438e7183b7965b7fdabf50c0a1e0e7503e8076030b"
+      "sha256_lf": "0ac2edd21cf90536985f1e438e7183b7965b7fdabf50c0a1e0e7503e8076030b"
     },
     {
       "path": "docs/qa/r5-block-2/admin-ui/chat-denied-1280.png",
@@ -313,7 +313,7 @@
     },
     {
       "path": "docs/qa/r5-block-2/admin-ui/ui-results.json",
-      "sha256": "e595426d7534f880f164a32427dc8609279a186c01183a1e31bf461d5f89b45c"
+      "sha256_lf": "e595426d7534f880f164a32427dc8609279a186c01183a1e31bf461d5f89b45c"
     },
     {
       "path": "docs/qa/r5-block-2/before/before-1280.png",
@@ -325,11 +325,11 @@
     },
     {
       "path": "docs/qa/r5-block-2/before/ui-results.json",
-      "sha256": "a7f0ee152033234c96012ac89c407fe457e6cc459bea8f3ae15a23cf6794f39d"
+      "sha256_lf": "a7f0ee152033234c96012ac89c407fe457e6cc459bea8f3ae15a23cf6794f39d"
     },
     {
       "path": "docs/qa/r5-block-2/build.txt",
-      "sha256": "91290040cb6fad0e1ffa7b3df4768d8fae6c30d74ca6dd3eeb5c53388b26ac01"
+      "sha256_lf": "be472a9d3592832ed8f06d6c0f2207e394de984d8c6a11df389e2d831cc0fe75"
     },
     {
       "path": "docs/qa/r5-block-2/extended-ui/denied-390.png",
@@ -361,99 +361,99 @@
     },
     {
       "path": "docs/qa/r5-block-2/extended-ui/ui-results.json",
-      "sha256": "796e79a605b367cbc8610e053abe6138170bfa8a0aea7605902341a2bed8113b"
+      "sha256_lf": "796e79a605b367cbc8610e053abe6138170bfa8a0aea7605902341a2bed8113b"
     },
     {
       "path": "docs/qa/r5-block-2/http-anon.json",
-      "sha256": "63eaaa228b3d78229997deab472c047e1999a095854c0f1c8f0bff007fb7d7b0"
+      "sha256_lf": "63eaaa228b3d78229997deab472c047e1999a095854c0f1c8f0bff007fb7d7b0"
     },
     {
       "path": "docs/qa/r5-block-2/lint.txt",
-      "sha256": "98447f83aa134c22891d45444a316d407c28518cf1dc55d736719fb3e273efeb"
+      "sha256_lf": "6bc372620cabb5b7ef739b09abb4c463b1fc5f80fa4ea971d21ce229f6eea549"
     },
     {
       "path": "docs/qa/r5-block-2/README.md",
-      "sha256": "79b01bf4173262261d911bd78ef95a2d67836611e44c263359cfbb5195445985"
+      "sha256_lf": "1b22390899e8d0236d1b37979c32be480b0840a78c1a2442a52945bee9c50331"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/attendees/postgres-results.json",
-      "sha256": "03b4049e7b85eaba101d75362d10827780edb86afba7577fb9eaac985feccf47"
+      "sha256_lf": "03b4049e7b85eaba101d75362d10827780edb86afba7577fb9eaac985feccf47"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/chat/postgres-results.json",
-      "sha256": "96689ecc5d7ec86bd8a2a590fd99431b60891c65eb002801f3faee6bbdad080e"
+      "sha256_lf": "96689ecc5d7ec86bd8a2a590fd99431b60891c65eb002801f3faee6bbdad080e"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/edit-event/postgres-results.json",
-      "sha256": "17f0bc4e438ee0347d161cf442e84a914233b69334a7702651a1d0b73fba1f03"
+      "sha256_lf": "17f0bc4e438ee0347d161cf442e84a914233b69334a7702651a1d0b73fba1f03"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/event-access/postgres-results.json",
-      "sha256": "1365b0acdf7e6dc72b1e6c2bd31b5594f39e0b70b415ea5dd6b6993b9eec6213"
+      "sha256_lf": "1365b0acdf7e6dc72b1e6c2bd31b5594f39e0b70b415ea5dd6b6993b9eec6213"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/event-actions/postgres-results.json",
-      "sha256": "fbdf82547a7ad875f67dfd229db479164566879831cb71186f3b6b90e54c3df5"
+      "sha256_lf": "fbdf82547a7ad875f67dfd229db479164566879831cb71186f3b6b90e54c3df5"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/event-links/postgres-results.json",
-      "sha256": "9aaf1a0ff8af205c3ea14c4265c3f6c376f96e793ea523c29696cc9aa6f172d0"
+      "sha256_lf": "9aaf1a0ff8af205c3ea14c4265c3f6c376f96e793ea523c29696cc9aa6f172d0"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/gallery/postgres-results.json",
-      "sha256": "d8b558d2245b375c3cb2f79c298a9a50db88d7980eaad4f345eaca1c0288f19f"
+      "sha256_lf": "d8b558d2245b375c3cb2f79c298a9a50db88d7980eaad4f345eaca1c0288f19f"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/hidden-access/postgres-results.json",
-      "sha256": "8166cd9566a9500773112d51e7c4b97c3a1cb9053921a5e92ec5330ce16173de"
+      "sha256_lf": "8166cd9566a9500773112d51e7c4b97c3a1cb9053921a5e92ec5330ce16173de"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/interests/results.json",
-      "sha256": "f76fee8438e630069621b9d7c74f9dcec53d5c02dc9e17698ee097abce35d2fd"
+      "sha256_lf": "f76fee8438e630069621b9d7c74f9dcec53d5c02dc9e17698ee097abce35d2fd"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/invite/postgres-results.json",
-      "sha256": "034644ceb4a55b5f1cedc75684354a63477d6d6f3a71647115abd83b2e5498fa"
+      "sha256_lf": "034644ceb4a55b5f1cedc75684354a63477d6d6f3a71647115abd83b2e5498fa"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/notifications/postgres-results.json",
-      "sha256": "3089e45d29ab1bf2a3df73586f3c31b31628d170086e78558ae4965cb570d8a7"
+      "sha256_lf": "3089e45d29ab1bf2a3df73586f3c31b31628d170086e78558ae4965cb570d8a7"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/profile/postgres-results.json",
-      "sha256": "ad59791caa1e2ac5e3895588a76190a539926ea36e17d8f2b65bff54d82377ee"
+      "sha256_lf": "ad59791caa1e2ac5e3895588a76190a539926ea36e17d8f2b65bff54d82377ee"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions/rejoin/postgres-results.json",
-      "sha256": "74cff7a191e838b0cf8d0da5b5769e5a12a3769fbcfe277a0a35e765e0b5a356"
+      "sha256_lf": "74cff7a191e838b0cf8d0da5b5769e5a12a3769fbcfe277a0a35e765e0b5a356"
     },
     {
       "path": "docs/qa/r5-block-2/regressions/regressions.json",
-      "sha256": "1deb066e97affda077d6f8c9d7778f4401eca29b1b25264965f13a47701c6d58"
+      "sha256_lf": "1deb066e97affda077d6f8c9d7778f4401eca29b1b25264965f13a47701c6d58"
     },
     {
       "path": "docs/qa/r5-block-2/remote/catalog.json",
-      "sha256": "37e4e3a727137d01af0333af137ded22d9b9e8016b03f996bdcd863b3e04a0f2"
+      "sha256_lf": "37e4e3a727137d01af0333af137ded22d9b9e8016b03f996bdcd863b3e04a0f2"
     },
     {
       "path": "docs/qa/r5-block-2/remote/comparison.json",
-      "sha256": "da86beb45efbaab78bfc18b1467201495a1e94983ca8e403638e32e8af1714f7"
+      "sha256_lf": "da86beb45efbaab78bfc18b1467201495a1e94983ca8e403638e32e8af1714f7"
     },
     {
       "path": "docs/qa/r5-block-2/source.json",
-      "sha256": "72f978deeecd0984bad5c70223b3e67f70da17b5b563e3a96852c6c6cf5868cd"
+      "sha256_lf": "72f978deeecd0984bad5c70223b3e67f70da17b5b563e3a96852c6c6cf5868cd"
     },
     {
       "path": "docs/qa/r5-block-2/sql/explain.json",
-      "sha256": "4c441c2ff01b669d52e9ca90af95b466116df0253cb9d7730a4e169b2f829096"
+      "sha256_lf": "4c441c2ff01b669d52e9ca90af95b466116df0253cb9d7730a4e169b2f829096"
     },
     {
       "path": "docs/qa/r5-block-2/sql/harness.json",
-      "sha256": "f48171ba3b73b02ac3dd73b34ed3dbdf42bb2dd312782b06dbd1f40d5a48d224"
+      "sha256_lf": "f48171ba3b73b02ac3dd73b34ed3dbdf42bb2dd312782b06dbd1f40d5a48d224"
     },
     {
       "path": "docs/qa/r5-block-2/sql/sql-results.json",
-      "sha256": "be4a1352b8b19a579b14c15292086c22c0d5fb948a78206ec0d4056679dbfefc"
+      "sha256_lf": "be4a1352b8b19a579b14c15292086c22c0d5fb948a78206ec0d4056679dbfefc"
     },
     {
       "path": "docs/qa/r5-block-2/ui/denied-1280.png",
@@ -625,7 +625,7 @@
     },
     {
       "path": "docs/qa/r5-block-2/ui/ui-results.json",
-      "sha256": "d9293c2cb903411d74a1b61804532443c79ad60263eab90f2718003d139aca27"
+      "sha256_lf": "d9293c2cb903411d74a1b61804532443c79ad60263eab90f2718003d139aca27"
     }
   ]
 }

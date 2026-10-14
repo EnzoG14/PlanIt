@@ -2,6 +2,8 @@
 
 14/10/2026, Argentina. Base `1bcef5af3397b54bae8cc18e6336092639c2b964`, rama `codex/r5-block-2`. PR B0 #50 y B1 #51 integradas; R4/B9 #48 integrado y aceptado previamente. Estado **Implementado; QA pendiente**. Sólo RF-R5-01.CA-01..04; no continuar B3 sin autorización. `.env.local` copiado byte a byte de `mapbox-worktree` (checkout main) e ignorado, sin contenido en Git/logs.
 
+Entrega: [PR #52 en borrador](https://github.com/EnzoG14/PlanIt/pull/52), sin merge. Código verificado `15d14372cf27cfed00242c2161a7df7eb02774c6`; documentos/evidencias en commits posteriores, sin cambios de producto tras ese SHA.
+
 ## Fuente y alcance
 
 [Lectura nueva de los 33 CA literales](source.json) del Google Doc original (modificado 14/10/2026 03:30Z). Se revisaron plan/status/contratos R5, requisitos/QA R4, instrucciones raíz/src/Supabase/diseño, PRODUCT/DESIGN, arquitectura/modelo y mockup R5. La composición conserva identidad circular/nombre/username/enlace, con tokens Amanecer vigentes. No se agregaron acciones de seguir, DM, contadores, intereses, tabs ficticias, cover inventada ni buscador social sin contrato. Bio/eventos/perfil completo quedan en B3/B5.
