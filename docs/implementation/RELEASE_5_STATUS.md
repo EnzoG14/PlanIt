@@ -1,10 +1,10 @@
 # PlanIt — R5 seguimiento de ejecución
 
-**Corte:** 14/10/2026. **Decisiones D01–D05 aprobadas por el responsable**; D06–D08 requieren verificación técnica en bloque 0. **Estado inicial:** propuesta documental; **ningún bloque R5 acreditado como implementado, testeado o validado** por este trabajo. Verificar estado de main y remoto al arrancar. Los bloques son **0–10**, 33 criterios de aceptación.
+**Corte:** 14/10/2026. **D01–D05 aprobadas por el responsable**; D06–D08 auditadas técnicamente, revisión humana pendiente. **B0 Implementado; QA pendiente** como entrega documental; ninguna funcionalidad R5 habilitada ni CA aprobado. Base `1b77b377e0a 335f70bb7458be74122e1de70b43f`. Los bloques son **0–10**, 33 criterios de aceptación. No continuar B1 sin aprobación expresa.
 
 | Bloque | Alcance | Estado | PR | CA | Evidencia | SQL local | Migración remota | Riesgos/pendientes |
 |---|---|---|---|---|---|---|---|---|
-| 0 | Auditoría contratos | Pendiente | — | NOT RUN | — | No ejecutado | No autorizada | — |
+| 0 | Auditoría contratos | Implementado; QA pendiente | `codex/r5-block-0`; PR en preparación | 33/33 NOT RUN | [Decisiones](RELEASE_5_BLOCK_0_DECISIONS.md), [evidencia](../qa/r5-block-0/README.md) | Replay de 25 migraciones existentes PASS catálogo; sin SQL R5 | Ninguna R5 creada/aplicada; catálogo existente read-only | C01–C03, revisión de contratos y aprobación B1; JWT A/B/C/D, Storage/Realtime/UI NOT RUN |
 | 1 | Modelo social y RLS | Pendiente | — | NOT RUN | — | No ejecutado | No autorizada | — |
 | 2 | Participantes sociales | Pendiente | — | NOT RUN | — | No ejecutado | No autorizada | — |
 | 3 | Perfiles públicos | Pendiente | — | NOT RUN | — | No ejecutado | No autorizada | — |

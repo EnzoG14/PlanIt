@@ -60,3 +60,9 @@ Crear `docs/qa/RELEASE_5_TEST_REPORT.md` con 33 CA, regresiones R1–R4, fallas 
 | R5-D05-A | R5-07 | Bandeja accesible desde perfil/contextos; sin nuevo tab principal; foco, responsive y navegación | NOT RUN |
 
 **Nota normativa:** los CA oficiales actuales no expresan textualmente la aprobación automática por cambio a público. D04 es una decisión posterior del responsable, aquí documentada como aceptación adicional; actualizar explícitamente la fuente Google Docs cuando se autorice, sin simular que ya estaba acordada allí.
+
+## Auditoría BLOQUE 0 — 14/10/2026
+
+Base `1b77b377e0a 335f70bb7458be74122e1de70b43f`, rama `codex/r5-block-0`. Se leyeron los 8 RF y 33 CA literales de Google Docs: [snapshot limitado a CA](r5-block-0/source.json). Todos los estados oficiales y casos D01–D05 siguen **NOT RUN**: las referencias de auditoría no son PASS de aceptación.
+
+[Contratos/amenazas/decisiones](../implementation/RELEASE_5_BLOCK_0_DECISIONS.md), [matriz objetivo A/B/C/D](r5-block-0/authorization-matrix.csv), [inventario remoto read-only](r5-block-0/catalog.json), [replay/comparación de 55 funciones](r5-block-0/comparison.json) y [HTTP anon 5/5 denegado](r5-block-0/http-anon.json). SQL local de catálogo y HTTP sin sesión no equivalen a pruebas JWT reales A/B/C/D, Storage, Realtime o UI. Ninguna migración R5 creada/aplicada; conflictos C01–C03 requieren revisión antes de B1. Build/lint/regresiones de frontend no ejecutados porque el cambio es documental.

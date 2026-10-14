@@ -1,0 +1,57 @@
+{
+  "project": "iepeqmvzjguwlhnecsdq",
+  "scope": "HTTP real sin sesión: sólo denegación; sin JWT usuario, datos de negocio ni mutación",
+  "date": "2026-10-14T12:50:44.398Z",
+  "results": [
+    {
+      "name": "profiles",
+      "actor": "anon; public API key only; no user JWT",
+      "method": "GET",
+      "path": "/profiles?select=id,username,birth_date,sex&limit=1",
+      "status": 401,
+      "error_code": "42501",
+      "returned_rows": null,
+      "result": "PASS"
+    },
+    {
+      "name": "conversations",
+      "actor": "anon; public API key only; no user JWT",
+      "method": "GET",
+      "path": "/conversations?select=id&limit=1",
+      "status": 401,
+      "error_code": "42501",
+      "returned_rows": null,
+      "result": "PASS"
+    },
+    {
+      "name": "messages",
+      "actor": "anon; public API key only; no user JWT",
+      "method": "GET",
+      "path": "/messages?select=id&limit=1",
+      "status": 401,
+      "error_code": "42501",
+      "returned_rows": null,
+      "result": "PASS"
+    },
+    {
+      "name": "get_event_attendees",
+      "actor": "anon; public API key only; no user JWT",
+      "method": "POST",
+      "path": "/rpc/get_event_attendees",
+      "status": 401,
+      "error_code": "42501",
+      "returned_rows": null,
+      "result": "PASS"
+    },
+    {
+      "name": "get_event_chat",
+      "actor": "anon; public API key only; no user JWT",
+      "method": "POST",
+      "path": "/rpc/get_event_chat",
+      "status": 401,
+      "error_code": "42501",
+      "returned_rows": null,
+      "result": "PASS"
+    }
+  ]
+}

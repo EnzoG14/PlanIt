@@ -1,6 +1,6 @@
 # PlanIt — Plan técnico Release 5 · Comunidad y relaciones sociales
 
-**Versión:** propuesta 1.1 · decisiones D01–D05 aprobadas · 14/10/2026 · **Estado:** decisiones de producto D01–D05 aprobadas; contratos técnicos pendientes de bloque 0, implementación no iniciada, NO implementada/validada por este documento.  
+**Versión:** propuesta 1.1 · decisiones D01–D05 aprobadas · 14/10/2026 · **Estado:** B0 auditado; contratos técnicos D06–D08 documentados para revisión en [RELEASE_5_BLOCK_0_DECISIONS.md](RELEASE_5_BLOCK_0_DECISIONS.md). Implementación funcional R5 no iniciada; C01–C03 requieren revisión antes de B1, que necesita aprobación expresa. Ningún CA validado por esta auditoría.
 **Fuente funcional prevalente:** Google Doc «Nueva planificación — RF R1 a R7», «Criterios de aceptación — R1 a R7» y «Especificación técnica — R1 a R7» (09/10/2026). **No usar** la antigua «Pestaña 3» que llamaba R5 a descubrimiento; ahora eso es R4.  
 **Referencias de repositorio:** `AGENTS.md`, `PRODUCT.md`, `DESIGN.md`, `docs/architecture.md`, `docs/database.md`, `docs/implementation/RELEASE_4_PLAN.md`, `RELEASE_4_STATUS.md`, `docs/requirements/RELEASE_4_REQUIREMENTS.md`, `docs/qa/RELEASE_4_ACCEPTANCE.md`, `supabase/migrations`, `src/pages/ProfilePage.tsx`, `src/pages/EventAttendeesPage.tsx`. La fotografía leída de `main` es orientativa: **cada bloque debe verificar SHA, migraciones y entorno nuevamente**.
 
@@ -22,6 +22,8 @@
 **Fuera de alcance:** recomendación de eventos y buscador (R4), gestión/remoción de asistentes (R3), métricas (R6), imágenes en DM, historias, Web Push (R7), búsqueda global de personas sin vínculo con eventos, moderación de chat grupal y ML.
 
 ## 2. Estado real y riesgo de integración
+
+**Actualización B0 (14/10/2026):** la fotografía inicial del párrafo siguiente queda como antecedente. R4/B9 está integrado y aceptado por el responsable; catálogo read-only actual confirma 25 migraciones, 14 tablas con RLS y 55 funciones coincidentes con replay local. `conversations/messages` existen sólo para eventos; follows/blocks/DM R5 no existen. D06 elige extensión de las tablas existentes y D07 RPC social separada. [Contratos y conflictos C01–C03](RELEASE_5_BLOCK_0_DECISIONS.md). No se verificaron aquí operaciones funcionales con JWT A/B/C/D.
 
 La rama `main` contiene `src/pages/ProfilePage.tsx`, `EventAttendeesPage.tsx`, migraciones de perfiles y participaciones, bandeja interna y chat de eventos. **No se observaron en el árbol inspeccionado módulos de frontend dedicados a follows, blocks, direct conversations o DM**, ni migraciones con esos nombres. Esto NO demuestra ausencia de tablas remotas: validar catálogo real mediante bloque 0 antes de definir DDL. R4 `RELEASE_4_STATUS.md` documenta 0–8 implementados, pero la QA real/JWT y aceptación humana estaban pendientes y el bloque 9 también: verificar PR integradas, no tomar 'implementado local' como API estable en main.
 
@@ -48,7 +50,7 @@ La rama `main` contiene `src/pages/ProfilePage.tsx`, `EventAttendeesPage.tsx`, m
 | --- | --- | --- | --- | --- | --- |
 | Lista asistentes del evento | organizador sí | sí | no por seguir | no | sólo según permisos del evento, sin privilegio social extra |
 | Perfil público | sí | sí | sí | sí autenticado | **Perfil no disponible** para la contraparte del bloqueo |
-| Perfil privado | completo propio | mínimo | sociales autorizados | mínimo | mínimo o no accesible, decisión pendiente |
+| Perfil privado | completo propio | mínimo salvo accepted | tres mínimos + bio + eventos públicos | tres mínimos | **Perfil no disponible**, sin proyección (D01 aprobada) |
 | Datos demográficos/email | propio | NO | NO | NO | NO |
 | DM historial | participante | no por evento | no por seguir | NO | participantes leen historial |
 | DM enviar | participante sin bloqueo | — | — | NO | NO |
@@ -90,7 +92,7 @@ La rama `main` contiene `src/pages/ProfilePage.tsx`, `EventAttendeesPage.tsx`, m
 
 **D05 — Navegación DM:** bandeja `/messages` o ruta equivalente según auditoría, accesible desde `/me` y accesos contextuales; acción desde perfil ajeno para iniciar conversación. **No agregar una pestaña nueva al dock primario.**
 
-**Pendientes técnicos D06–D08:** selección real de tablas/reutilización, separación de asistentes sociales/administrativos y gate de dependencias R4. Resolver en bloque 0 y registrar justificación; no son decisiones de producto pendientes de votación.
+**D06–D08 auditadas técnicamente:** reusar conversations/messages con separación por kind; ruta asistentes con RPC social independiente; dependencias R4 confirmadas por Git/catálogo. Justificación, locks y conflictos de integración en [bloque 0](RELEASE_5_BLOCK_0_DECISIONS.md). Revisión humana pendiente, sin permiso para avanzar B1; no son decisiones de producto pendientes de votación.
 
 ### 6.1 Contrato de transición de privacidad y concurrencia
 

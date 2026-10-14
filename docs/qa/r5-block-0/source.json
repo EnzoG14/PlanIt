@@ -1,0 +1,181 @@
+{
+  "url": "https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit",
+  "read_date": "2026-10-14",
+  "full_document_sha256_lf": "8de41c2dc0d3e3fbe0a43b7ed5c1bd98df18131640b8192cfcb6140a4c241ecd",
+  "source_sections": [
+    "Nueva planificación — RF R1 a R7",
+    "Criterios de aceptación — R1 a R7",
+    "Especificación técnica — R1 a R7"
+  ],
+  "official_ca_count": 33,
+  "all_ids_present_in_operational_matrix": true,
+  "comparison": "IDs presentes; matriz del repositorio es resumen, no comparación literal de resúmenes",
+  "D04_in_original_spec": false,
+  "criteria": [
+    {
+      "id": "RF-R5-01.CA-01",
+      "text": "Sólo el organizador y los asistentes confirmados pueden abrir la lista de participantes de un evento; conocer el enlace o consultar el detalle no concede ese permiso.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-01.CA-02",
+      "text": "Cada usuario mostrado corresponde al evento seleccionado y permite abrir el perfil al que se tiene acceso.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-01.CA-03",
+      "text": "Los datos visibles respetan la privacidad configurada por cada cuenta y no revelan información restringida.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-01.CA-04",
+      "text": "Cuando un evento no tiene usuarios visibles o el usuario no tiene permiso de consulta, se informa el estado sin mostrar participantes de otros eventos.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-02.CA-01",
+      "text": "Un usuario autenticado puede abrir un perfil público y consultar su nombre o seudónimo, fotografía e información declarada pública.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-02.CA-02",
+      "text": "Cuando el perfil tiene eventos públicos asociados, se muestran únicamente esos eventos y se puede acceder a sus detalles.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-02.CA-03",
+      "text": "Los datos privados, credenciales y demás información restringida no se muestran ni quedan disponibles por consultas directas.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-02.CA-04",
+      "text": "Cuando la persona no tiene foto o eventos públicos, el perfil sigue siendo legible y presenta estados vacíos adecuados.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-03.CA-01",
+      "text": "El usuario puede modificar sus datos editables y fotografía y guardar los cambios en su propia cuenta.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-03.CA-02",
+      "text": "El usuario puede cambiar la visibilidad entre perfil público y privado, y el estado elegido persiste al volver a ingresar.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-03.CA-03",
+      "text": "Las modificaciones se reflejan en el perfil propio y en las vistas públicas o privadas según la visibilidad configurada.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-03.CA-04",
+      "text": "Un usuario no puede editar el perfil de otra persona; los valores no válidos o errores de guardado se informan sin simular éxito.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-04.CA-01",
+      "text": "Al consultar un perfil privado sin seguimiento aprobado, únicamente se muestran nombre visible, username y avatar; los datos adicionales permanecen restringidos.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-04.CA-02",
+      "text": "El sistema no presenta datos reservados ni eventos privados del perfil a usuarios sin autorización.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-04.CA-03",
+      "text": "Un seguidor aprobado puede consultar exclusivamente los datos habilitados para seguidores de ese perfil.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-04.CA-04",
+      "text": "Las mismas restricciones se aplican si se intenta consultar información privada mediante acceso directo a la capa de datos.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-05.CA-01",
+      "text": "Seguir un perfil público desde una cuenta autenticada registra la relación y actualiza el estado del botón y los contadores o listados correspondientes.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-05.CA-02",
+      "text": "Seguir un perfil privado genera una solicitud pendiente y no concede acceso a sus contenidos privados antes de su aprobación.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-05.CA-03",
+      "text": "Dejar de seguir elimina la relación y revoca el acceso derivado de ella; los seguidores ya aceptados conservan su seguimiento cuando el perfil cambia de público a privado.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-05.CA-04",
+      "text": "No se permite seguir la propia cuenta ni duplicar relaciones o solicitudes activas al repetir la operación.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-06.CA-01",
+      "text": "El propietario de un perfil privado puede consultar las solicitudes de seguimiento que tiene pendientes.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-06.CA-02",
+      "text": "Al aceptar una solicitud, se establece la relación de seguimiento y se concede la visibilidad correspondiente a un seguidor aprobado.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-06.CA-03",
+      "text": "Al rechazar una solicitud, no se concede seguimiento ni acceso adicional; el solicitante puede enviar otra inmediatamente si no existe bloqueo.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-06.CA-04",
+      "text": "Sólo el dueño del perfil puede resolver sus solicitudes; una solicitud ya resuelta no puede procesarse de nuevo como pendiente.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-07.CA-01",
+      "text": "Dos usuarios autenticados pueden iniciar una conversación privada de texto sin seguirse; si se bloquean se impiden nuevos mensajes, pero permanece accesible su historial.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-07.CA-02",
+      "text": "Los mensajes enviados quedan asociados a la conversación y a su remitente, y se recuperan al volver a abrirla.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-07.CA-03",
+      "text": "Los mensajes se muestran con un orden temporal coherente y sin mezclarse con los chats de eventos.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-07.CA-04",
+      "text": "Un tercero que no participa de la conversación no puede leer ni escribir mensajes mediante la interfaz o accesos directos a los datos.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-08.CA-01",
+      "text": "Un usuario puede bloquear y desbloquear a otro, pero no bloquear su propia cuenta.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-08.CA-02",
+      "text": "Al bloquearse dos cuentas, se eliminan los seguimientos y solicitudes en ambos sentidos y se impiden nuevos seguimientos y mensajes privados entre ellas.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-08.CA-03",
+      "text": "Las conversaciones privadas anteriores permanecen disponibles para consulta, sin permitir nuevos envíos durante el bloqueo.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-08.CA-04",
+      "text": "Si se elimina el bloqueo, se reutiliza la conversación privada existente y los seguimientos eliminados no se restauran automáticamente.",
+      "result": "NOT RUN"
+    },
+    {
+      "id": "RF-R5-08.CA-05",
+      "text": "El bloqueo no impide que ambos participen en el chat grupal de un evento para el que sigan autorizados.",
+      "result": "NOT RUN"
+    }
+  ]
+}

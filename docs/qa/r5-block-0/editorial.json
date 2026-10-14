@@ -1,0 +1,189 @@
+{
+  "base": "1b77b377e0a335f70bb7458be74122e1de70b43f",
+  "branch": "codex/r5-block-0",
+  "date": "2026-10-14T12:57:05.796Z",
+  "scope": "Verificación editorial; ninguna aceptación funcional R5",
+  "result": "PASS",
+  "diff_check": "PASS",
+  "official_ca_rows_unchanged": 33,
+  "additional_case_rows_unchanged": 7,
+  "source_unique_criteria": 33,
+  "target_matrix_rows": 102,
+  "target_matrix_results": "all NOT RUN",
+  "env_copy_equal_to_main": true,
+  "env_ignored": true,
+  "env_tracked": false,
+  "mockup_unchanged": true,
+  "mockup_sha256": "4e71bb6ab5f4f5dd9d1282c16cba1d3991eae1197ff14f799d9439d9c666170d",
+  "new_local_links": [
+    {
+      "file": "docs/implementation/RELEASE_5_DECISIONS_PROPOSED.md",
+      "href": "RELEASE_5_BLOCK_0_DECISIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_PLAN.md",
+      "href": "RELEASE_5_BLOCK_0_DECISIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_PLAN.md",
+      "href": "RELEASE_5_BLOCK_0_DECISIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_PLAN.md",
+      "href": "RELEASE_5_BLOCK_0_DECISIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_STATUS.md",
+      "href": "RELEASE_5_BLOCK_0_DECISIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_STATUS.md",
+      "href": "../qa/r5-block-0/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/RELEASE_5_ACCEPTANCE.md",
+      "href": "r5-block-0/source.json",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/RELEASE_5_ACCEPTANCE.md",
+      "href": "../implementation/RELEASE_5_BLOCK_0_DECISIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/RELEASE_5_ACCEPTANCE.md",
+      "href": "r5-block-0/authorization-matrix.csv",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/RELEASE_5_ACCEPTANCE.md",
+      "href": "r5-block-0/catalog.json",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/RELEASE_5_ACCEPTANCE.md",
+      "href": "r5-block-0/comparison.json",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/RELEASE_5_ACCEPTANCE.md",
+      "href": "r5-block-0/http-anon.json",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_BLOCK_0_DECISIONS.md",
+      "href": "../qa/r5-block-0/source.json",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_BLOCK_0_DECISIONS.md",
+      "href": "../qa/r5-block-0/catalog.json",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_BLOCK_0_DECISIONS.md",
+      "href": "../qa/r5-block-0/comparison.json",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_BLOCK_0_DECISIONS.md",
+      "href": "../qa/r5-block-0/catalog.json",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_BLOCK_0_DECISIONS.md",
+      "href": "../qa/r5-block-0/authorization-matrix.csv",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_BLOCK_0_DECISIONS.md",
+      "href": "../design/mockups/release-5.png",
+      "exists": true
+    },
+    {
+      "file": "docs/implementation/RELEASE_5_BLOCK_0_DECISIONS.md",
+      "href": "../qa/r5-block-0/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/r5-block-0/README.md",
+      "href": "../../implementation/RELEASE_5_BLOCK_0_DECISIONS.md",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/r5-block-0/README.md",
+      "href": "source.json",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/r5-block-0/README.md",
+      "href": "catalog-readonly.sql",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/r5-block-0/README.md",
+      "href": "catalog.json",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/r5-block-0/README.md",
+      "href": "comparison.json",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/r5-block-0/README.md",
+      "href": "http-anon.json",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/r5-block-0/README.md",
+      "href": "authorization-matrix.csv",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/r5-block-0/README.md",
+      "href": "audit-catalog.mjs",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/r5-block-0/README.md",
+      "href": "http-anon.mjs",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/r5-block-0/README.md",
+      "href": "editorial.json",
+      "exists": true
+    },
+    {
+      "file": "docs/qa/r5-block-0/README.md",
+      "href": "editorial.json",
+      "exists": true
+    }
+  ],
+  "scope_files": [
+    "docs/implementation/RELEASE_5_DECISIONS_PROPOSED.md",
+    "docs/implementation/RELEASE_5_PLAN.md",
+    "docs/implementation/RELEASE_5_STATUS.md",
+    "docs/qa/RELEASE_5_ACCEPTANCE.md",
+    "docs/implementation/RELEASE_5_BLOCK_0_DECISIONS.md",
+    "docs/qa/r5-block-0/README.md",
+    "docs/qa/r5-block-0/audit-catalog.mjs",
+    "docs/qa/r5-block-0/authorization-matrix.csv",
+    "docs/qa/r5-block-0/catalog-readonly.sql",
+    "docs/qa/r5-block-0/catalog.json",
+    "docs/qa/r5-block-0/comparison.json",
+    "docs/qa/r5-block-0/editorial.json",
+    "docs/qa/r5-block-0/http-anon.json",
+    "docs/qa/r5-block-0/http-anon.mjs",
+    "docs/qa/r5-block-0/source.json"
+  ],
+  "build_lint": "NOT RUN; no frontend changed",
+  "functional_R5": "NOT RUN"
+}
