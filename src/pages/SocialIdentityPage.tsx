@@ -11,6 +11,7 @@ import { validatedDiscoveryReturn } from '../features/events/search'
 import { useSocialRead } from '../features/social/useSocialRead'
 import { followsReturn, loadSocialRelationship, loadSocialCounts } from '../features/social/follows'
 import { requestsReturn } from '../features/social/requests'
+import { DirectMessageButton } from '../components/DirectMessageButton'
 import { FollowButton } from '../components/FollowButton'
 import { SocialCountsLinks } from '../components/SocialCounts'
 import '../styles/event-management.css'
@@ -82,6 +83,7 @@ function IdentityContent({ userId }: { userId: string }) {
     <div aria-busy={loading}>{loading ? <p role="status">Consultando perfil…</p> : denied || (!error && !data) ? <StatusMessage title="Perfil no disponible">No se puede consultar este perfil.</StatusMessage> : error ? <><p className="field-error" role="alert">{error}</p><button className="secondary-button" onClick={() => void refresh()}>Reintentar</button></> : data && <>
       <div className="social-identity"><SocialAvatar key={data.profile.avatar} avatar={data.profile.avatar} /><h2>{data.profile.display_name}</h2><p>@{data.profile.username}</p></div>
       <FollowButton key={revision} userId={userId} relationship={data.relationship} onSafetyChange={() => setUnsafeSnapshot(data)} onChanged={() => { setRevision(value => value + 1); void refresh() }} />
+      {!mutating && <DirectMessageButton userId={userId} origin={location.state} />}
       {!mutating && data.profile.content && <>
         {data.counts && <SocialCountsLinks userId={userId} counts={data.counts} origin={location.state} />}
         <section className="social-profile-bio" aria-labelledby="social-bio-title"><h2 id="social-bio-title">Acerca de</h2><p>{data.profile.bio?.trim() ? data.profile.bio : 'Todavía no agregó una biografía.'}</p></section>

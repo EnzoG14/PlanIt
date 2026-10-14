@@ -1,5 +1,11 @@
 # Paquete de planificación PlanIt R5
 
+**Aplicación remota B8 autorizada — 14/10/2026:** el responsable responde «si» para20261014225216. Aplicada/verificada en planit-v2:30 versiones sincronizadas, fuentes/trigger/ACL/RLS/publicación PASS, asesores sin variación y dry-run al día. [Acta y límites](../qa/r5-block-8/message-notifications/remote/README.md). Creada1/probada local1/aplicada1/verificada remota1. Sin deploy/merge; JWT/Realtime real y aceptación pendientes. Supera el permiso pendiente de los cortes siguientes.
+
+**Ampliación B8 solicitada — avisos DM,14/10/2026:** cada mensaje privado nuevo genera aviso genérico para destinatario, campana/centro Realtime y Ver mensaje con destino RLS. [Contrato y pruebas](../qa/r5-block-8/message-notifications/README.md). Migración20261014225216 creada/probada local, **aplicación remota pendiente de permiso**. Misma PR #58; supera exclusión original de avisos DM sin renumerar33 CA. Implementado; QA pendiente, sin deploy/merge.
+
+**Entrega B8 — 14/10/2026:** B0–B7 integrados (#50–#57); B8 **Implementado; QA pendiente**, base `0116fd30478dea8a6851b7a97cac518abded3925`, rama `codex/r5-block-8`, [PR #58 en borrador](https://github.com/EnzoG14/PlanIt/pull/58). Bandeja y DM de texto con Realtime/RLS existentes, reconciliación por UUID e historial read-only bajo bloqueo. [Contrato, amenazas, pruebas y límites](../qa/r5-block-8/README.md). Sin nuevas migraciones/deploy/merge; HTTP JWT/Realtime reales y aceptación pendientes. B9 requiere instrucción independiente. Las referencias anteriores a PR #57 en borrador son cortes históricos: está integrada en esta base.
+
 **Entrega B7 — 14/10/2026:** solicitudes privadas con resolución versionada, confirmación, protección de doble envío y conciliación de respuesta perdida. [Evidencia](../qa/r5-block-7/README.md), [estado](RELEASE_5_STATUS.md). **Implementado; QA pendiente**, B0–B6 integrados. Sin SQL nuevo ni deploy; detenerse para revisión de PR. B8 requiere instrucción independiente. Los cortes siguientes son históricos.
 
 **Entrega B6 — 14/10/2026:** follow/unfollow, pending cancelable, contadores y listas autorizadas implementados sobre B1. [Evidencia](../qa/r5-block-6/README.md), [estado](RELEASE_5_STATUS.md). **Implementado; QA pendiente**; detenerse para revisión de PR. B7 requiere aprobación independiente. Cortes anteriores conservados como historia.

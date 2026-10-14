@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-14T22:40:49.978Z",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "environment": "Real HTTPS, public key only; no authenticated JWT, no allowed writes",
+  "results": [
+    {
+      "path": "rpc/list_direct_conversations?p_limit=30",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_direct_messages?p_conversation_id=90000000-0000-4000-8000-000000000001",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "conversations?select=id&kind=eq.direct",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "messages?select=id,sender_id,body,created_at&conversation_id=eq.90000000-0000-4000-8000-000000000001",
+      "status": 401,
+      "result": "PASS"
+    }
+  ]
+}

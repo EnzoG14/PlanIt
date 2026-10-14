@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "checked_at": "2026-10-14T23:04:58.997Z",
+  "source_commit": "565ca523d96159126c3c2bc7c803f364f39e950b",
+  "checks": [
+    "30 migrations synchronized; authorized version present",
+    "Two remote function bodies equal versioned SQL",
+    "Invoker/search_path/ACL correct",
+    "Enabled AFTER INSERT trigger correct",
+    "Conversations/messages/notifications RLS and policies present",
+    "Realtime publication intact",
+    "Security advisor groups/counts unchanged",
+    "No pending migrations"
+  ],
+  "limits": "Catalog/ACL/source verification only; no authenticated HTTP JWT, user messages, remote fixtures or Realtime delivery tested."
+}

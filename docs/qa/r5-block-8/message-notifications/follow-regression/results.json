@@ -1,0 +1,17 @@
+{
+  "environment": "Actual Vite build + Supabase SDK; mocked HTTP and Phoenix WebSocket; not remote JWT or Realtime transport proof",
+  "results": [
+    {
+      "width": 390,
+      "result": "PASS",
+      "test": "Two fixture sessions:follow mutation→notification INSERT WebSocket→badge without reload;recipient-only UI;dedup;mark read and safe requests target;reconnect catch-up"
+    },
+    {
+      "width": 1280,
+      "result": "PASS",
+      "test": "Two fixture sessions:follow mutation→notification INSERT WebSocket→badge without reload;recipient-only UI;dedup;mark read and safe requests target;reconnect catch-up"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

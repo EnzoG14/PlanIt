@@ -1,5 +1,11 @@
 # PlanIt — R5 matriz de aceptación (33 CA oficiales)
 
+**R5-B8-NOTIF, aplicación remota14/10/2026:**20261014225216 aplicada/verificada con autorización específica del responsable; fuentes/trigger/ACL/RLS/publicación PASS y30 versiones sincronizadas. [Acta](r5-block-8/message-notifications/remote/README.md). Supera el pendiente de aplicación señalado abajo; entrega JWT/Realtime real y aceptación siguen NOT RUN.
+
+**Prueba adicional R5-B8-NOTIF — 14/10/2026:** mensaje nuevo→aviso sólo para destinatario, sin duplicación por retry, rollback atómico, genérico bajo bloqueo y Ver mensaje autorizado. PASS SQL local/UI REST-WebSocket fixture; NOT RUN entrega remota/JWT y aceptación. [Evidencia](r5-block-8/message-notifications/README.md). Migración creada/probada local, no aplicada. Sin cambios a33 CA oficiales.
+
+**Corte B8 — 14/10/2026:** RF-R5-07.CA01..04 y D01-B/D03-A/D05-A PASS parcial SQL local/UI fixture; HTTP anónimo real4/4 denegado. **NOT RUN integral**, sin aceptación humana. [Contrato,33 CA originales,evidencias y límites](r5-block-8/README.md). No cambios de CA históricos ni migraciones nuevas; B9 pendiente.
+
 **R5-B7-NOTIF, aplicación remota14/10/2026:**20261014212935 aplicada/verificada con autorización del responsable; catálogo/ledger/ACL/RLS/publicación PASS ([acta](r5-block-7/follow-notifications/remote/README.md)). Supera el pendiente de aplicación indicado abajo. JWT/entrega Realtime real y aceptación humana siguen NOT RUN, sin elevar CA oficiales a Validados.
 
 **Ampliación B7 solicitada por el responsable:** prueba adicional R5-B7-NOTIF: nueva pending produce aviso para destinatario;reintento no duplica;fallo revierte solicitud;campana/bandeja reciben INSERT;Ver solicitudes abre bandeja propia. PASS SQL local/UI WebSocket simulado; **NOT RUN remoto/integral** hasta aplicar migración con permiso y probar sesiones reales. [Evidencia](r5-block-7/follow-notifications/README.md). Sin cambios de CA oficiales.
@@ -48,10 +54,10 @@
 | RF-R5-06.CA-02 | aceptar concede approved | PASS parcial SQL/UI; NOT RUN integral | [B7](r5-block-7/README.md) |
 | RF-R5-06.CA-03 | rechazar no concede y permite repetir | PASS parcial SQL/UI; NOT RUN integral | [B7](r5-block-7/README.md) |
 | RF-R5-06.CA-04 | sólo dueño; no doble resolve | PASS parcial SQL/UI/HTTP anon; NOT RUN integral | [B7](r5-block-7/README.md) |
-| RF-R5-07.CA-01 | DM entre no seguidores; bloquear impide envío y conserva historial | NOT RUN | — |
-| RF-R5-07.CA-02 | persistencia mensaje/autor | NOT RUN | — |
-| RF-R5-07.CA-03 | orden temporal y separación de chat evento | NOT RUN | — |
-| RF-R5-07.CA-04 | tercero no lee ni escribe | NOT RUN | — |
+| RF-R5-07.CA-01 | DM entre no seguidores; bloquear impide envío y conserva historial | PASS parcial; NOT RUN integral | [B8 SQL/UI/HTTP anon](r5-block-8/README.md) |
+| RF-R5-07.CA-02 | persistencia mensaje/autor | PASS parcial; NOT RUN integral | [B8 SQL/UI/HTTP anon](r5-block-8/README.md) |
+| RF-R5-07.CA-03 | orden temporal y separación de chat evento | PASS parcial; NOT RUN integral | [B8 SQL/UI/HTTP anon](r5-block-8/README.md) |
+| RF-R5-07.CA-04 | tercero no lee ni escribe | PASS parcial; NOT RUN integral | [B8 SQL/UI/HTTP anon](r5-block-8/README.md) |
 | RF-R5-08.CA-01 | block/unblock tercero, nunca self | NOT RUN | — |
 | RF-R5-08.CA-02 | limpia follows bilaterales e impide DM/follow | NOT RUN | — |
 | RF-R5-08.CA-03 | historial visible, envío deshabilitado | NOT RUN | — |

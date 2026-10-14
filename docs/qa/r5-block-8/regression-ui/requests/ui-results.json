@@ -1,0 +1,400 @@
+{
+  "base": "0116fd30478dea8a6851b7a97cac518abded3925",
+  "branch": "codex/r5-block-8",
+  "environment": "Vite build + Edge headless; REST/session fixtures; no live JWT authorization or physical keyboard",
+  "results": [
+    {
+      "viewport": 320,
+      "test": "CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Lost committed response: status/version RLS read only,never resends or claims uncertain success",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "CA04 stale generation:reconciliation sees replacement,never resolves new request",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Double submit locked;10s write timeout reconciles without duplicate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Mutation aborted on hide never reloads identities in background;visible return requires reconciliation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "D04 external conversion empties pending at30s/focus;no residual cached identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Network/invalid cursor/denied clear rows;real retry recovers",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Offline/hidden clear identities;online/visible revalidate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Lost committed response: status/version RLS read only,never resends or claims uncertain success",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "CA04 stale generation:reconciliation sees replacement,never resolves new request",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Double submit locked;10s write timeout reconciles without duplicate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Mutation aborted on hide never reloads identities in background;visible return requires reconciliation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "D04 external conversion empties pending at30s/focus;no residual cached identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Network/invalid cursor/denied clear rows;real retry recovers",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Offline/hidden clear identities;online/visible revalidate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Lost committed response: status/version RLS read only,never resends or claims uncertain success",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "CA04 stale generation:reconciliation sees replacement,never resolves new request",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Double submit locked;10s write timeout reconciles without duplicate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Mutation aborted on hide never reloads identities in background;visible return requires reconciliation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "D04 external conversion empties pending at30s/focus;no residual cached identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Network/invalid cursor/denied clear rows;real retry recovers",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Offline/hidden clear identities;online/visible revalidate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Lost committed response: status/version RLS read only,never resends or claims uncertain success",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "CA04 stale generation:reconciliation sees replacement,never resolves new request",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Double submit locked;10s write timeout reconciles without duplicate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Mutation aborted on hide never reloads identities in background;visible return requires reconciliation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "D04 external conversion empties pending at30s/focus;no residual cached identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Network/invalid cursor/denied clear rows;real retry recovers",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Offline/hidden clear identities;online/visible revalidate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Lost committed response: status/version RLS read only,never resends or claims uncertain success",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "CA04 stale generation:reconciliation sees replacement,never resolves new request",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Double submit locked;10s write timeout reconciles without duplicate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Mutation aborted on hide never reloads identities in background;visible return requires reconciliation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "D04 external conversion empties pending at30s/focus;no residual cached identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Network/invalid cursor/denied clear rows;real retry recovers",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Offline/hidden clear identities;online/visible revalidate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Lost committed response: status/version RLS read only,never resends or claims uncertain success",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "CA04 stale generation:reconciliation sees replacement,never resolves new request",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Double submit locked;10s write timeout reconciles without duplicate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Mutation aborted on hide never reloads identities in background;visible return requires reconciliation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "D04 external conversion empties pending at30s/focus;no residual cached identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Network/invalid cursor/denied clear rows;real retry recovers",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Offline/hidden clear identities;online/visible revalidate",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS",
+  "inherited_fixture_base": "cbb05479388d508cb910b98ca6837d0d55614d36"
+}

@@ -1,4 +1,5 @@
 import { supabase } from '../../lib/supabase'
+import { directReturn } from '../social/messages'
 
 export type NotificationItem = {
   id: string; type: string; title: string; body: string | null
@@ -26,7 +27,7 @@ export async function notificationTarget(id: string): Promise<string | null> {
   const { data, error } = await supabase.rpc('get_notification_target', { p_id: id })
   if (error) throw error
   // Allow only known internal destinations, never notification text or arbitrary URLs.
-  return typeof data === 'string' && (data === '/me/follow-requests' || /^\/events\/[\da-f-]{36}(\/chat)?$/.test(data)) ? data : null
+  return typeof data === 'string' && (data === '/me/follow-requests' || (data.startsWith('/messages/') && directReturn(data) !== null) || /^\/events\/[\da-f-]{36}(\/chat)?$/.test(data)) ? data : null
 }
 export function notificationsError(error: unknown): string {
   const code = typeof error === 'object' && error !== null && 'code' in error ? String(error.code) : ''

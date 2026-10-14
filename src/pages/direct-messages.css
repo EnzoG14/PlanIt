@@ -1,0 +1,14 @@
+.direct-inbox { min-width: 0; }
+.direct-inbox header { margin-block: 24px; }
+.direct-inbox h1 { font-size: var(--pi-font-headline-size); overflow-wrap: anywhere; }
+.direct-inbox ul { list-style: none; padding: 0; display: grid; gap: 14px; }
+.direct-inbox li > a { display: flex; align-items: center; gap: 14px; padding: 18px; background: var(--pi-color-surface); color: var(--pi-color-ink); border-radius: var(--pi-radius-card-compact); box-shadow: var(--pi-shadow-card); text-decoration: none; }
+.direct-inbox li > a > span { min-width: 0; overflow-wrap: anywhere; }
+.direct-inbox li > a > span:nth-child(2) { flex: 1; display: grid; gap: 6px; }
+.direct-inbox li span span { font-size: var(--pi-font-meta-size); }
+.direct-start { margin-block: 16px; }
+.direct-chat .chat-header { flex-wrap: wrap; }
+.direct-chat .chat-header h1 { flex: 1; font-size: 24px; }
+.direct-chat .chat-composer { max-height: 48%; overflow-y: auto; }
+.direct-chat .direct-send-state { margin: 0; font-size: var(--pi-font-meta-size); overflow-wrap: anywhere; }
+.direct-chat .chat-refresh { flex-wrap: wrap; }
