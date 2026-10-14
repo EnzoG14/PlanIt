@@ -1,5 +1,7 @@
 # PlanIt — Arquitectura
 
+**Avisos DM B8 activos en backend — 14/10/2026:**20261014225216 aplicada/verificada en planit-v2 con autorización expresa posterior. [Acta](qa/r5-block-8/message-notifications/remote/README.md),30 migraciones; fuentes/ACL/RLS/trigger/publicación PASS, sin deploy/merge. Las referencias inferiores a aplicación pendiente son históricas; QA de transporte real pendiente.
+
 **Ampliación B8 — avisos DM:** trigger privado invoker de messages(kind direct) inserta notifications con id=message.id y contraparte derivada en la misma transacción. Reintento no duplica; fallo revierte mensaje. Proveedor Realtime/RLS existente, payload genérico, get_notification_target INVOKER revalida membresía para /messages/:id. [Contrato](qa/r5-block-8/message-notifications/README.md), migración20261014225216 local/probada; remota pendiente de permiso.
 
 ## Release 5 · Bloque 8: mensajería privada (QA pendiente)

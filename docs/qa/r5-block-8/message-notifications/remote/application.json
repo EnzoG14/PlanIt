@@ -1,0 +1,142 @@
+{
+  "authorized": "User replied si to application of migration 20261014225216 in planit-v2",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "migration": "20261014225216",
+  "source_commit": "565ca523d96159126c3c2bc7c803f364f39e950b",
+  "observed_at": "2026-10-14T23:04:41.417Z",
+  "application": {
+    "command": "npx supabase db push --linked --skip-vault --yes",
+    "exit_code": 0,
+    "migrations": [
+      "20261014225216_direct_message_notifications.sql"
+    ],
+    "seeds": [],
+    "roles": []
+  },
+  "post_dry_run": {
+    "upToDate": true,
+    "migrations": []
+  },
+  "catalog": {
+    "rls": [
+      {
+        "table": "conversations",
+        "enabled": true
+      },
+      {
+        "table": "messages",
+        "enabled": true
+      },
+      {
+        "table": "notifications",
+        "enabled": true
+      }
+    ],
+    "applied": 1,
+    "trigger": [
+      {
+        "name": "messages_notify_direct_message",
+        "enabled": "O",
+        "definition": "CREATE TRIGGER messages_notify_direct_message AFTER INSERT ON public.messages FOR EACH ROW EXECUTE FUNCTION planit_private.notify_direct_message()"
+      }
+    ],
+    "policies": [
+      {
+        "name": "conversations_read_member",
+        "check": null,
+        "table": "conversations",
+        "using": "(((kind = 'event'::text) AND planit_private.can_read_event_chat(event_id)) OR ((kind = 'direct'::text) AND ((( SELECT auth.uid() AS uid) = user_low_id) OR (( SELECT auth.uid() AS uid) = user_high_id))))"
+      },
+      {
+        "name": "messages_read_member",
+        "check": null,
+        "table": "messages",
+        "using": "(EXISTS ( SELECT 1\n   FROM conversations c\n  WHERE (c.id = messages.conversation_id)))"
+      },
+      {
+        "name": "notifications_mark_own",
+        "check": "(recipient_id = ( SELECT auth.uid() AS uid))",
+        "table": "notifications",
+        "using": "(recipient_id = ( SELECT auth.uid() AS uid))"
+      },
+      {
+        "name": "notifications_read_own",
+        "check": null,
+        "table": "notifications",
+        "using": "(recipient_id = ( SELECT auth.uid() AS uid))"
+      }
+    ],
+    "functions": [
+      {
+        "body": "\n    select case\n        when n.type = 'follow_request' and n.event_id is null and n.conversation_id is null\n            then '/me/follow-requests'\n        when n.conversation_id is not null then\n            case when c.kind = 'event' then '/events/' || c.event_id::text || '/chat'\n                when c.kind = 'direct' and n.type = 'direct_message' then '/messages/' || c.id::text end\n        else '/events/' || e.id::text end\n    from public.notifications n\n    left join public.conversations c on c.id = n.conversation_id\n    left join public.events e on e.id = n.event_id\n    where n.id = p_id and n.recipient_id = (select auth.uid());\n",
+        "name": "get_notification_target",
+        "config": [
+          "search_path=\"\""
+        ],
+        "schema": "public",
+        "definer": false,
+        "anon_execute": false,
+        "authenticated_execute": true
+      },
+      {
+        "body": "\ndeclare v_recipient uuid;\nbegin\n    select case when c.user_low_id = new.sender_id then c.user_high_id else c.user_low_id end\n        into v_recipient from public.conversations c\n        where c.id = new.conversation_id and c.kind = 'direct'\n            and new.sender_id in (c.user_low_id, c.user_high_id);\n    if not found then return new; end if;\n    insert into public.notifications(id, recipient_id, conversation_id, type, title, body)\n    values (new.id, v_recipient, new.conversation_id, 'direct_message',\n        'Nuevo mensaje privado', 'Recibiste un mensaje privado. Abrí la conversación para leerlo.');\n    return new;\nend;\n",
+        "name": "notify_direct_message",
+        "config": [
+          "search_path=\"\""
+        ],
+        "schema": "planit_private",
+        "definer": false,
+        "anon_execute": false,
+        "authenticated_execute": false
+      }
+    ],
+    "publication": [
+      "messages",
+      "notifications"
+    ],
+    "migration_count": 30
+  },
+  "advisors": {
+    "before": [
+      {
+        "name": "auth_leaked_password_protection",
+        "level": "WARN",
+        "count": 1,
+        "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "count": 45,
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable"
+      },
+      {
+        "name": "rls_enabled_no_policy",
+        "level": "INFO",
+        "count": 1,
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy"
+      }
+    ],
+    "after": [
+      {
+        "name": "auth_leaked_password_protection",
+        "level": "WARN",
+        "count": 1,
+        "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "count": 45,
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable"
+      },
+      {
+        "name": "rls_enabled_no_policy",
+        "level": "INFO",
+        "count": 1,
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy"
+      }
+    ],
+    "unchanged": true
+  }
+}

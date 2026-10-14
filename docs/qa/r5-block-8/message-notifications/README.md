@@ -1,5 +1,7 @@
 # Ampliación B8 — Avisos de mensajes privados
 
+**Aplicada/verificada en planit-v2 — 14/10/2026:** autorización posterior «si», ejecución exclusiva de20261014225216 y postflight PASS con30 migraciones. [Acta y evidencia](remote/README.md). Creada1/probada local1/aplicada remota1/verificada remota1; QA JWT/Realtime real y aceptación pendientes, sin deploy/merge. Supera las menciones a permiso pendiente del corte histórico siguiente; el manifiesto de ampliación conserva su snapshot preaplicación.
+
 14/10/2026, Argentina. Pedido expreso del responsable: que los mensajes también aparezcan en el centro de notificaciones. Se incorpora a [PR #58](https://github.com/EnzoG14/PlanIt/pull/58), rama `codex/r5-block-8`, base de ampliación `603ed63f88b77c1946554d3f2ed1b52a98ad7823`. **Implementado; QA pendiente**. Supera la exclusión original de productores de avisos DM de B8, sin modificar ni renumerar los33 CA oficiales.
 
 ## Comportamiento y autorización

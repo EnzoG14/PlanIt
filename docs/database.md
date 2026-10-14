@@ -1,5 +1,7 @@
 # PlanIt — Modelo de datos y migraciones
 
+**Aplicación remota B8 autorizada — 14/10/2026:**20261014225216 aplicada/verificada en planit-v2;30 versiones locales/remotas, fuentes y ACL/RLS/publicación verificadas. [Acta](qa/r5-block-8/message-notifications/remote/README.md). Nuevo estado creada1/probada1/aplicada1/verificada1; sin datos remotos de prueba, deploy o merge. Cortes inferiores previos conservados.
+
 **Ampliación B8 —20261014225216:** nueva migración local/probada: trigger AFTER INSERT messages genera aviso sólo direct, ID del mensaje y recipient derivado; get_notification_target agrega DM con RLS. No cambia tablas/policies/grants/publicación. [Evidencia](qa/r5-block-8/message-notifications/README.md). Aplicación/verificación remotas pendientes de autorización; catálogo remoto sigue29.
 
 **Consumidor DM R5/B8 — 14/10/2026:** sin cambios del modelo/RPC/RLS/publicación; bandeja y chat consumen el contrato B1. Catálogo read-only confirma29 migraciones,4 RPC DM y publicación messages/notifications. Conciliación SELECT messages por conversación/UUID, miembro por RLS; nuevos envíos sólo RPC con bloqueo bilateral y locks existentes. [Evidencia y límites](qa/r5-block-8/README.md). Migraciones nuevas0/0/0/0; no DDL remoto.
