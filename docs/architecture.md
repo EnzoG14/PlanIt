@@ -1,5 +1,11 @@
 # PlanIt — Arquitectura
 
+## Release 5 — Bloque 2: participantes sociales (QA pendiente)
+
+`/events/:id/attendees` conserva administración del dueño; confirmed abre sólo lectura social. `?view=social` selecciona el modo para ambos, sin conceder permisos. API B1 `get_event_social_participants` autoriza desde Auth, detalle R4 y confirmed; lista mínima paginada, sin bloqueados bilaterales. Perfil mínimo `/users/:id` reconsulta `get_social_profile`; self→`/me`, retorno validado. No habilita perfil completo, follows ni DM.
+
+Servicios en `features/social`, allowlist explícita, abort/timeout10s, limpieza por sesión/token/ruta, al ocultar y durante revalidación visible30s/foco/online. Paginación vuelve a consultar páginas anteriores. Avatar consume gateway B1 con TTL60 y fallback, sin firma Storage directa ni caché privada. Gateway pendiente de deploy autorizado. Sin SQL/migraciones nuevas; [amenazas, evidencia y límites](qa/r5-block-2/README.md). B3 requiere aprobación.
+
 ## Release 5 — Bloque 1: frontera social (aplicada remota, QA pendiente)
 
 Tres migraciones incrementales extienden conversations/messages con DM canónico y RLS de miembro independiente del bloqueo histórico, agregan follows/blocks y RPC transaccionales con locks de profiles ordenados. Lecturas sociales usan allowlists y bloqueo bilateral; private sin accepted retorna sólo nombre/username/avatar. Visibility propia sólo por RPC con conversión pending→accepted atómica; avatar por RPC independiente. [Firmas/amenazas/compatibilidad y estado](implementation/RELEASE_5_BLOCK_1_CONTRACT.md).

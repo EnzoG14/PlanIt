@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-14T14:48:48.767Z",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "environment": "Real HTTPS, publishable key only, no authenticated JWT or business writes",
+  "results": [
+    {
+      "path": "rpc/get_event_social_participants",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_social_profile",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_event_attendees",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "profiles?select=id,birth_date,sex",
+      "status": 401,
+      "result": "PASS"
+    }
+  ]
+}

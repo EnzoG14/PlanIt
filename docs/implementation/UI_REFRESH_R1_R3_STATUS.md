@@ -1,5 +1,7 @@
 # PlanIt — Estado visual UI Refresh R1–R3
 
+**Adición R5/B2 · 14/10/2026:** lista de participantes sociales y destino de identidad mínima implementados en Amanecer, conservando administración R3. [Evidencia antes/después](../qa/r5-block-2/README.md), fixtures de app ejecutada en320/360/375/390/768/1280, texto200%, estados y navegación/foco. Mockup original R5 y tokens intactos. Sin nueva aceptación R1–R3; teclado móvil/lector/dispositivos reales y aceptación visual pendientes. El registro siguiente es histórico del refresh.
+
 Fecha: 12/10/2026. Registro independiente; no modifica estados funcionales R1/R2/R3. [Plan](UI_REFRESH_R1_R3_PLAN.md), [sistema aprobado](../../DESIGN.md), [decisión de dirección](../design/proposals/amanecer-direction.md) y [auditoría consolidada](../design/audits/UI_REFRESH_R1_R3.md).
 
 > **Dirección vigente — 12/10/2026: B · Amanecer.** Los bloques 0 y 1 se completaron con la dirección marina oscura v2.0, que fue reemplazada. Su evidencia sigue siendo válida como registro histórico y funcional, no como aceptación visual de Amanecer.
