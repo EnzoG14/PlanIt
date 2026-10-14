@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:r5:participants": "node scripts/check-r5-participants.mjs",
+    "check:r5:participants:ui": "node scripts/check-r5-participants-ui.mjs",
     "check:r5:social": "node scripts/check-r5-social.mjs",
     "check:r5:avatar": "node scripts/check-r5-avatar.mjs",
     "check:r5:regressions": "node scripts/check-r5-regressions.mjs",

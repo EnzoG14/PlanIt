@@ -1,15 +1,17 @@
 # PlanIt — R5 matriz de aceptación (33 CA oficiales)
 
+**Corte B2 (14/10/2026):** R5-01.CA01..04 tienen PASS parcial SQL/UI y HTTP anónimo; continúan NOT RUN integral hasta JWT autenticado, avatar real y aceptación humana. B1 integrado por PR #51. [Lectura literal nueva](r5-block-2/source.json), [entrega B2](r5-block-2/README.md). Cortes anteriores conservados como antecedentes.
+
 **Estado inicial:** todas `NOT RUN`; texto aquí es **resumen operativo**, el texto literal normativo permanece en Google Doc «Criterios de aceptación — R1 a R7». No sustituirlo.
 
 **Corte B1 (14/10/2026):** las 33 filas siguen NOT RUN **integral** porque no hay UI social, HTTP JWT/transporte remoto ni aceptación humana. Hay verificaciones parciales de seguridad SQL y unit gateway PASS, vinculadas más abajo; no equivalen a aprobar un CA completo. [Fuente literal nueva](r5-block-1/source.json), [contrato B1](../implementation/RELEASE_5_BLOCK_1_CONTRACT.md).
 
 | CA | Validación indispensable | Estado | Evidencia |
 |---|---|---|---|
-| RF-R5-01.CA-01 | lista sólo organizador y confirmed, nunca link-only | NOT RUN | — |
-| RF-R5-01.CA-02 | identidad y pertenencia al evento, navegación | NOT RUN | — |
-| RF-R5-01.CA-03 | proyección social sin datos restringidos | NOT RUN | — |
-| RF-R5-01.CA-04 | vacío o denegado sin mezclar otros eventos | NOT RUN | — |
+| RF-R5-01.CA-01 | lista sólo organizador y confirmed, nunca link-only | NOT RUN integral; PASS parcial SQL/UI | [B2](r5-block-2/README.md) |
+| RF-R5-01.CA-02 | identidad y pertenencia al evento, navegación | NOT RUN integral; PASS parcial SQL/UI | [B2](r5-block-2/README.md) |
+| RF-R5-01.CA-03 | proyección social sin datos restringidos | NOT RUN integral; PASS parcial SQL/UI | [B2](r5-block-2/README.md) |
+| RF-R5-01.CA-04 | vacío o denegado sin mezclar otros eventos | NOT RUN integral; PASS parcial SQL/UI | [B2](r5-block-2/README.md) |
 | RF-R5-02.CA-01 | público autenticado lee perfil autorizado | NOT RUN | — |
 | RF-R5-02.CA-02 | sólo eventos públicos accesibles | NOT RUN | — |
 | RF-R5-02.CA-03 | REST/RPC sin datos sensibles o credenciales | NOT RUN | — |
@@ -41,6 +43,23 @@
 | RF-R5-08.CA-05 | chat de evento permanece autorizado | NOT RUN | — |
 
 ## Identidades de prueba
+
+### Cobertura nueva de B2
+
+Base `1bcef5af3397b54bae8cc18e6336092639c2b964`; `codex/r5-block-2`. Estado Implementado; QA pendiente. [Resultados/capturas/reproducción](r5-block-2/README.md).
+
+| CA | Resultado/capa | Cobertura nueva | Pendiente integral |
+| --- | --- | --- | --- |
+| R5-01.CA-01 | PASS SQL local/UI + HTTP anon | Dueño/confirmed; grant-only/ajeno/anon/removido/retirado/revocado denegados; administración separada | JWT autenticado y revisión humana |
+| R5-01.CA-02 | PASS SQL local/UI | 34 identidades mismo evento; páginas30+4; perfil mínimo/regreso validado; respuesta tardía descartada | Cuentas reales/fotos y aceptación |
+| R5-01.CA-03; D01-A parcial | PASS SQL local/UI | Allowlist4 campos, privado mínimo; bloqueo bilateral filtrado antes de cursor; enlace directo neutro; fallback avatar | Gateway/Storage TTL/CDN/JWT reales y D01 transversal |
+| R5-01.CA-04 | PASS SQL local/UI | Vacío/denegado/error/retry, limpiar al revalidar/paginar/cambiar ruta/sesión | Transporte autenticado real/aceptación |
+| R1–R4 | PASS regresión local | 13 suites SQL;72 grupos UI administrativos, sólo fixture confirmed adaptado al acceso B2 | No nueva aceptación histórica |
+| Diseño/accesibilidad B2 | PASS parcial UI | 66 grupos sociales; seis anchos, texto200%, Enter/foco3px, capturas reales antes/después Amanecer, mockup intacto | Dispositivo/teclado móvil/lector reales |
+
+No migraciones nuevas en los cuatro estados. Catálogo remoto READ ONLY28/16RLS/79 funciones coincide; HTTP anon4/4 rechazos. No gateway desplegado ni33 CA aprobados. **B3 requiere autorización expresa.**
+
+### Fixtures
 A dueño de evento, B confirmed, C lector únicamente de evento oculto por enlace, D ajeno; P perfil público, Q privado, F accepted, R rejected; X/Y DM, Z tercero; K blocker. Usar usuarios ficticios, no exponer tokens reales.
 
 ## Resultado por prueba

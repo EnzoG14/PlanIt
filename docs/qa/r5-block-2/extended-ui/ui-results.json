@@ -1,0 +1,80 @@
+{
+  "base": "1bcef5af3397b54bae8cc18e6336092639c2b964",
+  "branch": "codex/r5-block-2",
+  "environment": "Edge headless; running Vite app; Auth/REST/gateway fixtures, no remote JWT/RLS proof",
+  "baseline": false,
+  "results": [
+    {
+      "viewport": 390,
+      "test": "Confirmed default route uses social RPC only; no administration",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Cursor pagination refetches previous pages, 34 unique identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Keyboard profile navigation, minimal identity, validated return to event list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Bilateral-block fixture removed from refreshed list; direct profile neutral with no avatar",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Revoked access on pagination clears all earlier identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Network/invalid response fails closed, retry restores list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Long text at 200%, 44px targets/focus, gateway failure avatar fallback",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "30s visible permission revalidation clears revoked identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Empty, grant-only/third-party and other event route expose no cross-event data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Organizer administration preserved, social link, anonymous guard and logout",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Stale in-flight response from old event cannot populate new route",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Offline message clears identities, reconnect and foreground revalidate; targets measured at least44px",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Own identity route redirects to existing own profile",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Logout from populated social list clears all identities",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

@@ -1,0 +1,20 @@
+{
+  "base": "1bcef5af3397b54bae8cc18e6336092639c2b964",
+  "branch": "codex/r5-block-2",
+  "environment": "Edge headless; running Vite app; Auth/REST/gateway fixtures, no remote JWT/RLS proof",
+  "baseline": true,
+  "results": [
+    {
+      "viewport": 390,
+      "test": "Baseline B1 administration capture",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Baseline B1 administration capture",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}
