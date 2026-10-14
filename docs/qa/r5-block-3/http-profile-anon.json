@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-14T15:55:57.011Z",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "environment": "Real HTTPS, public key only, no authenticated JWT or writes",
+  "results": [
+    {
+      "path": "rpc/get_social_profile",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_social_profile_events",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "profiles?select=id,birth_date,sex",
+      "status": 401,
+      "result": "PASS"
+    }
+  ]
+}

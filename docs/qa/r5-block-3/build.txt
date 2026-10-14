@@ -1,0 +1,81 @@
+
+> planit@0.0.0 build
+> tsc -b && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 166 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/registerSW.js                                                    0.13 kB
+dist/manifest.webmanifest                                             0.45 kB
+dist/index.html                                                       0.87 kB │ gzip:   0.49 kB
+dist/assets/bricolage-grotesque-latin-wght-normal-DLoelf7F.woff2     41.34 kB
+dist/assets/EventAccessPage-BeGsKfAb.css                              0.48 kB │ gzip:   0.24 kB
+dist/assets/EditEventPage-C6-wzkKq.css                                0.59 kB │ gzip:   0.31 kB
+dist/assets/EventDetailPage-BbVrzJ0G.css                              0.91 kB │ gzip:   0.40 kB
+dist/assets/social-participants-aRHlihRl.css                          1.06 kB │ gzip:   0.45 kB
+dist/assets/SocialIdentityPage-QJlu3sMr.css                           1.10 kB │ gzip:   0.42 kB
+dist/assets/InvitePage-DjKK25Qp.css                                   1.61 kB │ gzip:   0.64 kB
+dist/assets/InterestsPage-M1hJwhQD.css                                1.98 kB │ gzip:   0.73 kB
+dist/assets/NotificationsPage-CAH3WiNg.css                            2.08 kB │ gzip:   0.70 kB
+dist/assets/HomePage-BHFJQBKd.css                                     2.65 kB │ gzip:   0.75 kB
+dist/assets/event-management-CcyhFY58.css                             3.67 kB │ gzip:   1.13 kB
+dist/assets/EventChatPage-svdyR_PM.css                                3.97 kB │ gzip:   1.16 kB
+dist/assets/event-forms-C7Iivlt7.css                                  4.48 kB │ gzip:   1.23 kB
+dist/assets/EventGalleryPage-B65VEpO7.css                             4.83 kB │ gzip:   1.35 kB
+dist/assets/event-rejoin-CN93N2a9.css                                 4.90 kB │ gzip:   1.20 kB
+dist/assets/event-attendees-QCB2rwCX.css                              5.19 kB │ gzip:   1.40 kB
+dist/assets/EventActionDialog-DqYOnHgA.css                            5.86 kB │ gzip:   1.47 kB
+dist/assets/MyEventsPage-DMgET5X9.css                                11.42 kB │ gzip:   2.62 kB
+dist/assets/discovery-CYFQEXaF.css                                   16.75 kB │ gzip:   3.46 kB
+dist/assets/index-BjnwvzdP.css                                       34.33 kB │ gzip:   7.06 kB
+dist/assets/EventMap-DdcgI_dU.css                                    51.50 kB │ gzip:   6.43 kB
+dist/assets/geolocation-DXgn9iGR.js                                   0.56 kB │ gzip:   0.37 kB
+dist/assets/participation-b-rjvcSc.js                                 1.14 kB │ gzip:   0.63 kB
+dist/assets/attendees-RFu8Oh2r.js                                     1.20 kB │ gzip:   0.66 kB
+dist/assets/api-CN70kXI5.js                                           1.93 kB │ gzip:   0.98 kB
+dist/assets/event-rejoin-BfA9OIWT.js                                  2.11 kB │ gzip:   0.90 kB
+dist/assets/actions-NW5QFkdT.js                                       2.12 kB │ gzip:   1.02 kB
+dist/assets/social-participants-BTRd1GT5.js                           2.13 kB │ gzip:   0.85 kB
+dist/assets/my-events-DeyYN4Dm.js                                     2.55 kB │ gzip:   1.38 kB
+dist/assets/search-C_YbKvM2.js                                        3.00 kB │ gzip:   1.43 kB
+dist/assets/validation-DH1mSUXy.js                                    3.00 kB │ gzip:   1.37 kB
+dist/assets/edit-DZJJo8BS.js                                          3.14 kB │ gzip:   1.48 kB
+dist/assets/EventActionDialog-Cv5Sv8vF.js                             3.34 kB │ gzip:   1.59 kB
+dist/assets/InvitePage-xBOUm5Yu.js                                    3.82 kB │ gzip:   1.53 kB
+dist/assets/SocialIdentityPage-u-sgkKxY.js                            4.14 kB │ gzip:   1.68 kB
+dist/assets/api-DJecRQ6s.js                                           4.64 kB │ gzip:   1.90 kB
+dist/assets/NotificationsPage-nbGE6zwJ.js                             4.88 kB │ gzip:   2.02 kB
+dist/assets/EventCard-DkEM4ggI.js                                     5.44 kB │ gzip:   1.85 kB
+dist/assets/EditEventPage-Dll7wiTt.js                                 5.55 kB │ gzip:   2.44 kB
+dist/assets/InterestsPage-Csh21_GN.js                                 5.59 kB │ gzip:   2.29 kB
+dist/assets/MyEventsPage-D1mssDjx.js                                  5.85 kB │ gzip:   2.25 kB
+dist/assets/MapPage-BNUfWjls.js                                       6.06 kB │ gzip:   2.65 kB
+dist/assets/event-forms-r13SSBWX.js                                   6.15 kB │ gzip:   2.02 kB
+dist/assets/CreateEventPage-DXMtSv0o.js                               6.52 kB │ gzip:   2.74 kB
+dist/assets/useDiscoveryFilters-Bt-ge6cc.js                           7.28 kB │ gzip:   2.93 kB
+dist/assets/EventChatPage-DtMApw6C.js                                 7.39 kB │ gzip:   2.99 kB
+dist/assets/EventRejoinRequestsPage-CedxqZ2k.js                       8.66 kB │ gzip:   3.11 kB
+dist/assets/HomePage-D6nzZaXY.js                                      9.35 kB │ gzip:   3.45 kB
+dist/assets/EventAccessPage-C4WSYwlu.js                               9.62 kB │ gzip:   3.58 kB
+dist/assets/jsx-runtime-TSwjJPAg.js                                  10.40 kB │ gzip:   4.03 kB
+dist/assets/EventAttendeesPage-CPdlfEr0.js                           12.66 kB │ gzip:   3.94 kB
+dist/assets/EventGalleryPage-BnJ_xu17.js                             13.79 kB │ gzip:   4.81 kB
+dist/assets/EventDetailPage-DLDrwVz8.js                              18.39 kB │ gzip:   6.00 kB
+dist/assets/index-nwmXKLwi.js                                       560.52 kB │ gzip: 163.06 kB
+dist/assets/EventMap-DDNV0uR2.js                                  1,865.13 kB │ gzip: 518.63 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 904ms
+
+PWA v2.0.0
+mode      generateSW
+precache  66 entries (2771.72 KiB)
+files generated
+  dist/sw.js
+  dist/workbox-9c191d2f.js

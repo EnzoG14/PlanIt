@@ -1,5 +1,7 @@
 # PlanIt — R5 matriz de aceptación (33 CA oficiales)
 
+**Corte B3 (14/10/2026):** RF-R5-02.CA01..04 con PASS parcial SQL/UI y HTTP anónimo; **NOT RUN integral** hasta JWT autenticado, avatar real y aceptación humana. B0–B2 integrados (#50–#52), B3 autorizado. [Fuente literal nueva](r5-block-3/source.json), [entrega/evidencia](r5-block-3/README.md). No modifica CA históricos ni acepta B4.
+
 **Corte B2 (14/10/2026):** R5-01.CA01..04 tienen PASS parcial SQL/UI y HTTP anónimo; continúan NOT RUN integral hasta JWT autenticado, avatar real y aceptación humana. B1 integrado por PR #51. [Lectura literal nueva](r5-block-2/source.json), [entrega B2](r5-block-2/README.md). Cortes anteriores conservados como antecedentes.
 
 **Estado inicial:** todas `NOT RUN`; texto aquí es **resumen operativo**, el texto literal normativo permanece en Google Doc «Criterios de aceptación — R1 a R7». No sustituirlo.
@@ -12,10 +14,10 @@
 | RF-R5-01.CA-02 | identidad y pertenencia al evento, navegación | NOT RUN integral; PASS parcial SQL/UI | [B2](r5-block-2/README.md) |
 | RF-R5-01.CA-03 | proyección social sin datos restringidos | NOT RUN integral; PASS parcial SQL/UI | [B2](r5-block-2/README.md) |
 | RF-R5-01.CA-04 | vacío o denegado sin mezclar otros eventos | NOT RUN integral; PASS parcial SQL/UI | [B2](r5-block-2/README.md) |
-| RF-R5-02.CA-01 | público autenticado lee perfil autorizado | NOT RUN | — |
-| RF-R5-02.CA-02 | sólo eventos públicos accesibles | NOT RUN | — |
-| RF-R5-02.CA-03 | REST/RPC sin datos sensibles o credenciales | NOT RUN | — |
-| RF-R5-02.CA-04 | sin foto/eventos estado legible | NOT RUN | — |
+| RF-R5-02.CA-01 | público autenticado lee perfil autorizado | NOT RUN integral; PASS parcial SQL/UI | [B3](r5-block-3/README.md) |
+| RF-R5-02.CA-02 | sólo eventos públicos accesibles | NOT RUN integral; PASS parcial SQL/UI | [B3](r5-block-3/README.md) |
+| RF-R5-02.CA-03 | REST/RPC sin datos sensibles o credenciales | NOT RUN integral; PASS parcial SQL/UI/HTTP anon | [B3](r5-block-3/README.md) |
+| RF-R5-02.CA-04 | sin foto/eventos estado legible | NOT RUN integral; PASS parcial SQL/UI | [B3](r5-block-3/README.md) |
 | RF-R5-03.CA-01 | edición propia + foto persisten | NOT RUN | — |
 | RF-R5-03.CA-02 | public/private persiste entre sesiones | NOT RUN | — |
 | RF-R5-03.CA-03 | otras vistas reflejan visibilidad | NOT RUN | — |

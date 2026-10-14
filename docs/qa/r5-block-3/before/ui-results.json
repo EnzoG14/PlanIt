@@ -1,0 +1,17 @@
+{
+  "environment": "Real Vite build and Edge headless; Auth/RPC/gateway fixtures, no real JWT/RLS transport",
+  "results": [
+    {
+      "viewport": 390,
+      "test": "Actual B2 minimal profile baseline",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Actual B2 minimal profile baseline",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

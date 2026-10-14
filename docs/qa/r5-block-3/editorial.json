@@ -1,0 +1,168 @@
+{
+  "base": "4ef0b34a789082352f8b1ca831f75761fb6e6b17",
+  "product": [
+    {
+      "file": "src/features/social/api.ts",
+      "sha256": "11759f4e0f585a0036a34a04d4321c39b93dfaa863b28e39572d4037ff7766b5"
+    },
+    {
+      "file": "src/pages/SocialIdentityPage.tsx",
+      "sha256": "da330f46b8874ca793e4fd8bf973728ea4b540944dae07ec6a7628f13ec909da"
+    },
+    {
+      "file": "src/pages/EventDetailPage.tsx",
+      "sha256": "50a096c5c497c9f1b087011c9109ff0731dda945ad337fb51cee7fbb202f83f5"
+    },
+    {
+      "file": "src/pages/social-profile.css",
+      "sha256": "71f358f1730f7deb64811d8da9fa6ee957efda8a483cba3f6ec60ed469873df1"
+    },
+    {
+      "file": "scripts/check-r5-profile.mjs",
+      "sha256": "1f7db54375a61e436b637f911ed9221c8157de23e8941a8cb94a1979448fd749"
+    },
+    {
+      "file": "scripts/check-r5-profile-ui.mjs",
+      "sha256": "427032a20221ccbb758683aa84d89fd88c3a435ef3f4fac26eff2b0a58c5d376"
+    },
+    {
+      "file": "scripts/check-r5-profile-regression-ui.mjs",
+      "sha256": "2534101e210de569ca006384fbbba16564e66d0a335fa2945bfc0bf502f4c8cb"
+    },
+    {
+      "file": "scripts/check-r5-profile-http.mjs",
+      "sha256": "f5ff883836793360787ce61d2928240349de87a08fe0e515fb08fb00a918d613"
+    }
+  ],
+  "preserved": [
+    {
+      "file": "PRODUCT.md",
+      "unchanged": true
+    },
+    {
+      "file": "DESIGN.md",
+      "unchanged": true
+    },
+    {
+      "file": "src/styles/tokens.css",
+      "unchanged": true
+    },
+    {
+      "file": "docs/design/mockups/release-5.png",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261010011204_create_profiles_and_categories.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261010023448_restrict_rls_auto_enable_execute.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261010052653_public_event_discovery.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261010150232_event_participations.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261010154930_my_events_read.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261010214526_event_chat.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261012001058_edit_own_event.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261013160000_search_public_events.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261014120000_search_public_events_date_radius.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261014120001_user_category_interests.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261014120002_get_suggested_events.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261014120003_hidden_event_access.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261014120004_event_visibility_links.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261014120005_redeem_event_link.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261014120006_event_access_management.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261014133225_social_security_model.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261014133547_social_projections_and_avatars.sql",
+      "unchanged": true
+    },
+    {
+      "file": "supabase/migrations/20261014133847_social_legacy_projections.sql",
+      "unchanged": true
+    }
+  ],
+  "note": "Product SHA256 raw bytes; preserved text compared with normalized LF, PNG binary"
+}

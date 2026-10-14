@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:r5:profile": "node scripts/check-r5-profile.mjs",
+    "check:r5:profile:ui": "node scripts/check-r5-profile-ui.mjs",
+    "check:r5:profile:http": "node scripts/check-r5-profile-http.mjs",
     "check:r5:participants": "node scripts/check-r5-participants.mjs",
     "check:r5:participants:ui": "node scripts/check-r5-participants-ui.mjs",
     "check:r5:social": "node scripts/check-r5-social.mjs",
