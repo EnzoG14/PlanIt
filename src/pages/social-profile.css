@@ -1,0 +1,11 @@
+.social-profile-bio, .social-profile-events { margin-block: var(--pi-space-section); }
+.social-profile-bio h2, .social-profile-events h2 { margin-bottom: var(--pi-space-base); }
+.social-profile-bio p { white-space: pre-wrap; overflow-wrap: anywhere; max-width: 70ch; }
+.social-profile-event-list { list-style: none; padding: 0; margin: var(--pi-space-base) 0; display: grid; gap: var(--pi-space-base); }
+.social-profile-event { display: block; padding: var(--pi-space-base); border-radius: var(--pi-radius-card-compact); background: var(--pi-color-surface-card); box-shadow: var(--pi-shadow-card); color: var(--pi-color-ink); text-decoration: none; overflow-wrap: anywhere; }
+.social-profile-event:hover { background: var(--pi-color-surface-soft); }
+.social-profile-event h3 { margin: 0 0 var(--pi-space-compact); }
+.social-profile-event p { display: flex; align-items: flex-start; gap: var(--pi-space-tight); margin-block: var(--pi-space-compact); color: var(--pi-color-text-muted); }
+.social-profile-event .icon { flex-shrink: 0; }
+.social-profile-event > span { display: flex; align-items: center; justify-content: space-between; min-height: 44px; }
+.social-profile-event > span .icon { transform: rotate(180deg); }

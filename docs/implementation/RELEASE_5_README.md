@@ -1,5 +1,7 @@
 # Paquete de planificación PlanIt R5
 
+**Entrega B3 — 14/10/2026:** B0–B2 integrados; B3 autorizado e Implementado; QA pendiente. Perfil/bio autorizada y lista paginada de eventos públicos vigentes sobre RPC B1, sin SQL nuevo/deploy. [Evidencia](../qa/r5-block-3/README.md), [estado](RELEASE_5_STATUS.md). Detenerse para revisión de PR; B4 requiere autorización. Los cortes siguientes se conservan como antecedentes.
+
 **Es la R5 vigente «Comunidad y relaciones sociales»** (8 RF, 33 CA), no la antigua R5 de descubrimiento que pasó a R4.
 
 Archivos: `RELEASE_5_PLAN.md` (arquitectura, alcance, seguridad, secuencia, DoD), `RELEASE_5_DECISIONS_PROPOSED.md` (D01–D05 aprobadas, D06–D08 pendientes técnicos), `RELEASE_5_ACCEPTANCE.md` (matriz de 33 CA), `RELEASE_5_STATUS.md` (tracking) y 11 prompts autocontenidos `prompts/RELEASE_5_BLOCK_0.md` a `BLOCK_10.md`.

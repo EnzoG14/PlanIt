@@ -1,0 +1,46 @@
+{
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "environment": "Isolated PostgreSQL; Auth/Storage SQL scaffolding, no HTTP/JWT or remote writes",
+  "results": [
+    {
+      "test": "Full migration replay; RLS, minimal grants, authenticated-only RPC and empty search_path",
+      "result": "PASS"
+    },
+    {
+      "test": "Image 10 accepted, 11 rejected; immutable path retry returns same association at full capacity",
+      "result": "PASS"
+    },
+    {
+      "test": "Account B denied RPC, REST-equivalent INSERT/DELETE, Storage insert/delete/overwrite and orphan listing",
+      "result": "PASS"
+    },
+    {
+      "test": "Order persists; list cover follows sort_order; stale session and duplicate IDs rejected atomically",
+      "result": "PASS"
+    },
+    {
+      "test": "Unlink is idempotent; compact order, shared file metadata and physical object retained",
+      "result": "PASS"
+    },
+    {
+      "test": "Invalid MIME, size, empty and interrupted uploads create no false record; unregistered cleanup/recovery works",
+      "result": "PASS"
+    },
+    {
+      "test": "Concurrent last image slot accepts exactly one upload",
+      "result": "PASS"
+    },
+    {
+      "test": "Concurrent Storage DELETE waits for registration and cannot delete committed media",
+      "result": "PASS"
+    },
+    {
+      "test": "Deletion winning the race leaves no false image; frozen snapshots rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "Missing identity and anonymous execution denied",
+      "result": "PASS"
+    }
+  ]
+}

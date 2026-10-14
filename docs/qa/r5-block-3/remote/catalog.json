@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-14",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "mode": "READ ONLY; schema metadata only",
+  "catalog": [
+    {
+      "server_version": "17.11",
+      "migration_count": 28,
+      "rls_tables": 16,
+      "functions": [
+        {
+          "acl": [
+            "postgres=X/postgres",
+            "service_role=X/postgres",
+            "authenticated=X/postgres"
+          ],
+          "args": "p_user_id uuid",
+          "name": "get_social_profile",
+          "config": [
+            "search_path=\"\""
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.get_social_profile(p_user_id uuid)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_profile public.profiles%rowtype; v_result jsonb;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if planit_private.social_blocked(p_user_id) then return jsonb_build_object('unavailable', true); end if;\n    select * into v_profile from public.profiles where id = p_user_id;\n    if not found then return jsonb_build_object('unavailable', true); end if;\n    v_result := jsonb_build_object('display_name', v_profile.display_name, 'username', v_profile.username,\n        'avatar', case when v_profile.avatar_file_id is not null then p_user_id else null end);\n    if p_user_id = auth.uid() or v_profile.visibility = 'public' or exists (\n        select 1 from public.user_follows where follower_id = auth.uid() and followed_id = p_user_id and status = 'accepted'\n    ) then v_result := v_result || jsonb_build_object('bio', v_profile.bio); end if;\n    return v_result;\nend;\n$function$\n"
+        },
+        {
+          "acl": [
+            "postgres=X/postgres",
+            "service_role=X/postgres",
+            "authenticated=X/postgres"
+          ],
+          "args": "p_user_id uuid, p_before_starts_at timestamp without time zone, p_before_id uuid, p_limit integer",
+          "name": "get_social_profile_events",
+          "config": [
+            "search_path=\"\""
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.get_social_profile_events(p_user_id uuid, p_before_starts_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid, p_limit integer DEFAULT 30)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare v_rows jsonb; v_more boolean;\nbegin\n    if auth.uid() is null then raise exception 'authentication_required' using errcode = '42501'; end if;\n    if not planit_private.can_read_social_content(p_user_id) then\n        raise exception 'profile_unavailable' using errcode = '42501';\n    end if;\n    if p_limit is null or p_limit not between 1 and 50 or\n        (p_before_starts_at is null) <> (p_before_id is null) then\n        raise exception 'invalid_social_query' using errcode = '22023';\n    end if;\n    with page as (\n        select e.id, e.title, e.starts_at, e.ends_at, e.category_id, e.location_name\n        from public.events e where e.organizer_id = p_user_id and e.visibility = 'public'\n            and e.cancelled_at is null and e.archived_at is null\n            and e.ends_at > statement_timestamp() at time zone 'America/Argentina/Buenos_Aires'\n            and (p_before_starts_at is null or (e.starts_at, e.id) < (p_before_starts_at, p_before_id))\n        order by e.starts_at desc, e.id desc limit p_limit + 1\n    ), numbered as (select *, row_number() over(order by starts_at desc, id desc) as n from page)\n    select coalesce(jsonb_agg(to_jsonb(numbered) - 'n' order by starts_at desc, id desc)\n        filter(where n <= p_limit), '[]'::jsonb), count(*) > p_limit into v_rows, v_more from numbered;\n    return jsonb_build_object('events', v_rows, 'next_cursor', case when v_more then\n        jsonb_build_object('starts_at', v_rows->(p_limit-1)->'starts_at', 'id', v_rows->(p_limit-1)->'id') end);\nend;\n$function$\n"
+        }
+      ]
+    }
+  ]
+}

@@ -9,6 +9,7 @@ import { loadCategories, loadEvent, loadEventImages, loadEventOrganizer, type Ev
 import { formatEventTime } from '../features/events/validation'
 import { EventManagement } from '../components/EventManagement'
 import { validatedMyEventsReturn, myEventsPath } from '../features/events/my-events'
+import { socialProfileReturn, participantsReturn } from '../features/social/api'
 import './discovery.css'
 
 export function EventDetailPage() {
@@ -20,6 +21,12 @@ export function EventDetailPage() {
 function EventDetailContent({ id }: { id: string }) {
   const location = useLocation()
   const listOrigin = validatedMyEventsReturn(location.state?.myEventsReturnTo)
+  const profileOrigin = socialProfileReturn(location.state?.socialProfileReturnTo)
+  const profileBackState = profileOrigin ? {
+    participantsReturnTo: participantsReturn(location.state?.socialProfileOrigin?.participantsReturnTo),
+    myEventsReturnTo: validatedMyEventsReturn(location.state?.socialProfileOrigin?.myEventsReturnTo),
+    returnTo: validatedDiscoveryReturn(location.state?.socialProfileOrigin?.returnTo),
+  } : undefined
   const { session } = useAuth()
   const [category, setCategory] = useState('Categoría no disponible')
   const [event, setEvent] = useState<EventRecord | null>(null)
@@ -87,11 +94,11 @@ function EventDetailContent({ id }: { id: string }) {
   if (!event) return <StatusMessage title="Evento no disponible">No encontramos el evento o no tenés permiso para consultarlo.</StatusMessage>
   const discoveryOrigin = validatedDiscoveryReturn(location.state?.returnTo)
   const myEventsReturnTo = listOrigin ?? (event.organizer_id === session?.user.id ? myEventsPath('organizing') : '/my-events')
-  const returnTo = listOrigin ?? discoveryOrigin ?? (event.organizer_id === session?.user.id ? myEventsReturnTo : '/map')
+  const returnTo = profileOrigin ?? listOrigin ?? discoveryOrigin ?? (event.organizer_id === session?.user.id ? myEventsReturnTo : '/map')
   return <div className="event-detail-page">
     {location.state?.published && <StatusMessage title="Evento publicado">{event.visibility === 'unlisted' ? 'Tu evento oculto fue publicado. Generá un enlace desde la gestión para compartirlo.' : 'Tu evento ya está disponible para la comunidad.'}</StatusMessage>}
     {location.state?.edited && <StatusMessage title="Cambios guardados">La información del evento se actualizó.</StatusMessage>}
-    <Link className="detail-back secondary-link" to={returnTo}><Icon name="back" />{returnTo.startsWith('/my-events') ? 'Volver a Mis eventos' : returnTo.startsWith('/home') ? 'Volver al inicio' : 'Volver al mapa'}</Link>
+    <Link className="detail-back secondary-link" to={returnTo} state={profileBackState}><Icon name="back" />{profileOrigin ? 'Volver al perfil' : returnTo.startsWith('/my-events') ? 'Volver a Mis eventos' : returnTo.startsWith('/home') ? 'Volver al inicio' : 'Volver al mapa'}</Link>
     <div className={`event-hero ${images[0] && !imageError ? 'has-photo' : 'without-photo'}`}>{images[0] && !imageError ? <img src={images[0]} width="960" height="600" alt={`Foto de ${event.title}`} onError={() => setImageError(true)} /> : <div className="event-hero-placeholder"><Icon name="calendar" /><span>Sin foto de portada</span></div>}<div className="event-hero-overlay" /></div>
     <h1>{event.title}</h1>
     <span className="category-chip">{category}</span>
