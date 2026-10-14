@@ -17,6 +17,7 @@
     "docs/implementation/RELEASE_5_STATUS.md",
     "docs/implementation/UI_REFRESH_R1_R3_STATUS.md",
     "docs/qa/RELEASE_5_ACCEPTANCE.md",
+    "docs/qa/r5-block-5/APPROVAL.md",
     "docs/qa/r5-block-5/README.md",
     "docs/qa/r5-block-5/avatar-unit.json",
     "docs/qa/r5-block-5/baseline/empty-390.png",
@@ -374,6 +375,13 @@
     "b3": 54,
     "b4": 56
   },
-  "state": "Implementado; QA pendiente",
-  "result": "PASS"
+  "state": "Validado",
+  "result": "PASS",
+  "human_qa_approval": {
+    "date": "2026-10-14",
+    "source": "Direct user message in this chat: QA realizada y aprobada",
+    "delivery_sha": "3e59091273a5c15f2d2c1968fe0cf1c4e5fd3fd4",
+    "record": "docs/qa/r5-block-5/APPROVAL.md",
+    "new_agent_tests_run": false
+  }
 }

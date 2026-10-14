@@ -1,6 +1,6 @@
 # R5 · Bloque 5 — Visibilidad de perfiles privados
 
-14/10/2026, Argentina. Base `24c24cee44725cfa2fa4c2a3668474e891417ad3`, rama `codex/r5-block-5`, worktree `C:/Users/enzog/planit-worktrees/r5-block-5`. B0–B4 integrados por #50–#54; R4/B9 integrado por #48. **Implementado; QA pendiente.** Sólo RF-R5-04.CA-01..04 y verificaciones D01/D02. [PR #55 en borrador](https://github.com/EnzoG14/PlanIt/pull/55) hacia main; sin merge, migración nueva ni deploy.
+14/10/2026, Argentina. Base `24c24cee44725cfa2fa4c2a3668474e891417ad3`, rama `codex/r5-block-5`, worktree `C:/Users/enzog/planit-worktrees/r5-block-5`. B0–B4 integrados por #50–#54; R4/B9 integrado por #48. **Validado: QA humana aprobada el 14/10/2026.** [Acta](APPROVAL.md). Sólo RF-R5-04.CA-01..04 y verificaciones D01/D02. [PR #55 en borrador](https://github.com/EnzoG14/PlanIt/pull/55) hacia main; sin merge, migración nueva ni deploy.
 
 Código y evidencia de pruebas del producto en `a32f041`; commits posteriores completan el seguimiento.
 
@@ -47,7 +47,7 @@ Las regresiones UI B2–B4 pasaron en los seis tamaños; resultados definitivos 
 
 Incidencias del harness resueltas: import/ruta de runtime y servidor faltantes en el runner B2 original; su fixture con bio pública diferida usa la adaptación B3 existente. Cinco suites SQL requerían imports estáticos de herramientas locales; se proporcionaron fuera de dependencias del producto. La suite UI B5 instala su reloj antes de recrear los intervalos, para probar30s/10s virtuales sin que el polling real oculte fallos. Ninguna de estas incidencias cambió autorización de servidor.
 
-Los cuatro CA tienen **PASS parcial SQL/UI**, CA-04 agrega HTTP anónimo real; todos **NOT RUN integral** hasta pruebas autenticadas reales y aceptación humana. D01-A/D02-A tienen evidencia parcial SQL/UI, sin aprobar los casos integrales de otros bloques. No renumerar ni alterar los33 CA [literales de Google Docs](source.json).
+Los cuatro CA fueron **Validados por QA humana** el 14/10/2026, por confirmación expresa del responsable ([acta](APPROVAL.md)). La evidencia técnica del agente conserva **PASS parcial SQL/UI**, HTTP anónimo real y escenarios JWT/Storage/dispositivos **NOT RUN**; no se atribuyen ejecuciones adicionales al agente. D01-A/D02-A tienen evidencia parcial SQL/UI, sin aprobar los casos integrales de otros bloques. No renumerar ni alterar los33 CA [literales de Google Docs](source.json).
 
 ## Diseño y accesibilidad
 
@@ -76,4 +76,4 @@ Producto: `src/pages/SocialIdentityPage.tsx`. Verificación: `scripts/check-r5-p
 
 Migraciones nuevas: **creadas0 / probadas nuevas0 / aplicadas remotas0 / verificadas nuevas0**. Replay28 existente y catálogo son comprobaciones distintas. Sin DDL remoto, deploy, secrets, merge ni edición Google Docs. D04 sigue posterior al documento original y pendiente de incorporación documental separada.
 
-Revisión: contrastar rama/base, matriz mínima/accepted/bloqueado, captura del fallo previo, reconciliación de permiso durante ambas páginas, y límites de fixtures/JWT. **Implementado; QA pendiente.** Siguiente bloque B6 requiere instrucción independiente; esta entrega termina en revisión de PR.
+Revisión: contrastar rama/base, matriz mínima/accepted/bloqueado, captura del fallo previo, reconciliación de permiso durante ambas páginas, y límites de fixtures/JWT. **Validado por QA humana** ([acta](APPROVAL.md)). Siguiente bloque B6 requiere instrucción independiente; esta entrega termina en revisión de PR.

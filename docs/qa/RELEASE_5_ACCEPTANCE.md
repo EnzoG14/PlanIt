@@ -1,5 +1,7 @@
 # PlanIt — R5 matriz de aceptación (33 CA oficiales)
 
+**Aceptación B5 — 14/10/2026:** el responsable informa «QA realizada y aprobada». RF-R5-04.CA01..04 **Validados por QA humana**; [acta](r5-block-5/APPROVAL.md). No se alteran resultados técnicos previos ni se inventan pruebas JWT/Storage/dispositivos ejecutadas por el agente. Los cortes siguientes son antecedentes históricos.
+
 **Corte B5 (14/10/2026):** RF-R5-04.CA01..04 PASS parcial SQL/UI, CA04 HTTP anónimo real; **NOT RUN integral** hasta JWT/Storage reales y aceptación humana. D01-A/D02-A parcial SQL/UI. B0–B4 integrados; B5 autorizado. [Fuente literal nueva](r5-block-5/source.json), [contrato/evidencia](r5-block-5/README.md). Sin nuevas migraciones, deploy ni merge.
 
 **Corte B4 (14/10/2026):** RF-R5-03.CA01..04 con PASS parcial SQL/UI y GET HTTP anónimo; **NOT RUN integral** hasta JWT autenticado, Storage/CDN reales y aceptación humana. B0–B3 integrados; B4 autorizado. [Fuente literal](r5-block-4/source.json), [entrega/evidencia](r5-block-4/README.md). POST remoto de escritura BLOCKED por revisión automática; sin migraciones nuevas/deploy/merge.
@@ -26,10 +28,10 @@
 | RF-R5-03.CA-02 | public/private persiste entre sesiones | PASS parcial SQL/UI; NOT RUN integral | [B4: evidencia y límites](r5-block-4/README.md) |
 | RF-R5-03.CA-03 | otras vistas reflejan visibilidad | PASS parcial SQL/UI; NOT RUN integral | [B4: evidencia y límites](r5-block-4/README.md) |
 | RF-R5-03.CA-04 | no editar ajeno ni simular éxito inválido | PASS parcial SQL/UI; NOT RUN integral | [B4: evidencia y límites](r5-block-4/README.md) |
-| RF-R5-04.CA-01 | privado sin approved muestra exactamente nombre username avatar | PASS parcial SQL/UI; NOT RUN integral | [B5: evidencia y límites](r5-block-5/README.md) |
-| RF-R5-04.CA-02 | sin datos/eventos privados no autorizados | PASS parcial SQL/UI; NOT RUN integral | [B5: evidencia y límites](r5-block-5/README.md) |
-| RF-R5-04.CA-03 | approved ve sólo campos seguidores | PASS parcial SQL/UI; NOT RUN integral | [B5: evidencia y límites](r5-block-5/README.md) |
-| RF-R5-04.CA-04 | API directa aplica mismas restricciones | PASS parcial SQL/UI/HTTP anon; NOT RUN integral | [B5: evidencia y límites](r5-block-5/README.md) |
+| RF-R5-04.CA-01 | privado sin approved muestra exactamente nombre username avatar | Validado por QA humana; evidencia técnica parcial | [Aceptación B5](r5-block-5/APPROVAL.md), [evidencia](r5-block-5/README.md) |
+| RF-R5-04.CA-02 | sin datos/eventos privados no autorizados | Validado por QA humana; evidencia técnica parcial | [Aceptación B5](r5-block-5/APPROVAL.md), [evidencia](r5-block-5/README.md) |
+| RF-R5-04.CA-03 | approved ve sólo campos seguidores | Validado por QA humana; evidencia técnica parcial | [Aceptación B5](r5-block-5/APPROVAL.md), [evidencia](r5-block-5/README.md) |
+| RF-R5-04.CA-04 | API directa aplica mismas restricciones | Validado por QA humana; evidencia técnica parcial | [Aceptación B5](r5-block-5/APPROVAL.md), [evidencia](r5-block-5/README.md) |
 | RF-R5-05.CA-01 | público accepted y UI/listas actualizadas | NOT RUN | — |
 | RF-R5-05.CA-02 | privado pending sin ampliar lectura | NOT RUN | — |
 | RF-R5-05.CA-03 | unfollow revoca; public→private conserva accepted | NOT RUN | — |
