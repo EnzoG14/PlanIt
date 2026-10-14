@@ -9,6 +9,7 @@ import { AuthProvider } from './features/auth/AuthProvider'
 import { RequireAuth } from './features/auth/RequireAuth'
 import './App.css'
 
+const EditProfilePage = lazy(() => import('./pages/EditProfilePage').then(module => ({ default: module.EditProfilePage })))
 const CreateEventPage = lazy(() => import('./pages/CreateEventPage').then(module => ({ default: module.CreateEventPage })))
 const EditEventPage = lazy(() => import('./pages/EditEventPage').then(module => ({ default: module.EditEventPage })))
 const EventGalleryPage = lazy(() => import('./pages/EventGalleryPage').then(module => ({ default: module.EventGalleryPage })))
@@ -45,6 +46,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route path="events/:id" element={<Suspense fallback={<StatusMessage title="Cargando evento">Esperá un momento.</StatusMessage>}><EventDetailPage /></Suspense>} />
       <Route path="my-events" element={<Suspense fallback={<StatusMessage title="Cargando Mis eventos">Esperá un momento.</StatusMessage>}><MyEventsPage /></Suspense>} />
       <Route path="me" element={<ProfilePage />} />
+      <Route path="me/edit" element={<Suspense fallback={<StatusMessage title="Cargando edición de perfil">Esperá un momento.</StatusMessage>}><EditProfilePage /></Suspense>} />
       <Route path="users/:id" element={<Suspense fallback={<StatusMessage title="Consultando perfil">Esperá un momento.</StatusMessage>}><SocialIdentityPage /></Suspense>} />
       <Route path="me/interests" element={<Suspense fallback={<StatusMessage title="Cargando intereses">Esperá un momento.</StatusMessage>}><InterestsPage /></Suspense>} />
     </Route>

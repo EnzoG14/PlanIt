@@ -31,27 +31,27 @@ try {
         // A request built just before a cross-tab switch can acquire B's token;
         // existing RLS denies the old A filter instead of returning A's data.
         if (url.searchParams.get('id') !== `eq.${id}`) return reply({ message: 'fixture RLS denied stale identity' }, 403)
-        assert.equal(url.searchParams.get('select'), 'display_name,username,bio,avatar_file_id')
-        const response = { display_name: id === a ? displayName : 'Bruno de prueba', username: id === a ? 'ana_fixture' : 'bruno_fixture', bio: mode === 'missing' ? null : 'Biografía guardada de prueba.', avatar_file_id: mode === 'missing' || id === b ? null : fileId }
+        assert.equal(url.searchParams.get('select'), 'username,display_name,first_name,last_name,birth_date,sex,bio,visibility,avatar_file_id')
+        const response = { first_name: null, last_name: null, birth_date: null, sex: null, visibility: 'public', display_name: id === a ? displayName : 'Bruno de prueba', username: id === a ? 'ana_fixture' : 'bruno_fixture', bio: mode === 'missing' ? null : 'Biografía guardada de prueba.', avatar_file_id: mode === 'missing' || id === b ? null : fileId }
         if (mode === 'delay') await new Promise(resolve => { delay = resolve })
         if (mode === 'error') return reply({ message: 'fixture failure' }, 500)
         return reply(response)
       }
       if (url.pathname === '/rest/v1/files') {
         assert.equal(url.searchParams.get('uploaded_by'), `eq.${id}`)
-        return reply({ bucket_name: 'event_media', storage_path: `${a}/avatar.png`, uploaded_by: mode === 'foreign-avatar' ? b : a, mime_type: 'image/png' })
+        return reply({ bucket_name: 'avatars', storage_path: `${a}/avatar.png`, uploaded_by: mode === 'foreign-avatar' ? b : a, mime_type: 'image/png' })
       }
       if (url.pathname.startsWith('/storage/v1/object/sign/')) {
         signed++
-        assert.equal(route.request().postDataJSON().expiresIn, 300)
+        assert.equal(route.request().postDataJSON().expiresIn, 60)
         if (mode === 'denied-avatar') return reply({ message: 'not allowed' }, 403)
-        return reply({ signedURL: `/object/sign/event_media/${a}/avatar.png?token=fixture-${mode}` })
+        return reply({ signedURL: `/object/sign/avatars/${a}/avatar.png?token=fixture-${mode}` })
       }
       if (url.pathname.startsWith('/storage/v1/object/sign')) return reply({})
       return reply([])
     })
     // Small synthetic image fixture, never copied from the mockup or remote Storage.
-    await context.route('**/storage/v1/object/sign/event_media/**?token=fixture-*', route => mode === 'broken-avatar'
+    await context.route('**/storage/v1/object/sign/avatars/**?token=fixture-*', route => mode === 'broken-avatar'
       ? route.fulfill({ status: 404 })
       : route.fulfill({ contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+j4uoAAAAASUVORK5CYII=', 'base64') }))
     const page = await context.newPage(); page.setDefaultTimeout(10000)
