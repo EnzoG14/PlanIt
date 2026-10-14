@@ -40,6 +40,8 @@ PASS: SQL local B2+B1, 13 regresiones SQL, 66 grupos UI sociales en seis tamaño
 
 ## Entrega B3 — 14/10/2026
 
+**Verificación posterior de gateway:** autorización del responsable para desplegar sólo `social-avatar`; preflight encuentra ACTIVE v1 ya existente y fuentes iguales a Git. No se creó otra versión. CORS204/sin sesión/JWT inválido/clave pública como bearer401 PASS HTTP real; firma autenticada/expiración/Storage/CDN NOT RUN. [Acta y pruebas](../qa/r5-block-3/avatar-remote/deployment.json), [HTTP](../qa/r5-block-3/avatar-remote/http.json). Corrige las referencias históricas a gateway no desplegado; no acredita aceptación integral.
+
 [PR #53 en borrador](https://github.com/EnzoG14/PlanIt/pull/53), código/evidencias `56c2b4df0e9a7e4465b4f2ec1366a5adcfeab717`. Sin merge; commit posterior únicamente de seguimiento.
 
 Base `4ef0b34a789082352f8b1ca831f75761fb6e6b17`, rama nueva `codex/r5-block-3`, B0–B2 integrados por #50–#52 y B3 autorizado expresamente. `.env.local` copiado del checkout temporal de origin/main, comparado byte a byte e ignorado; sin claves versionadas. Perfil existente ampliado con bio autorizada y eventos públicos vigentes paginados30+cursor inicio/UUID. Reutiliza RPC B1, avatar con fallback y revalidación30s/timeout10s; regreso validado participantes→perfil→evento→perfil→participantes. Sin acciones de futuros bloques.

@@ -1,0 +1,24 @@
+{
+  "project": "iepeqmvzjguwlhnecsdq",
+  "checked_at": "2026-10-14T16:13:09.201Z",
+  "authorization": "User authorized only social-avatar deployment; found already active, identical source; no duplicate version published",
+  "function": {
+    "id": "33dcb4cc-ef86-4240-81e3-c0115bc0aba3",
+    "name": "social-avatar",
+    "status": "ACTIVE",
+    "version": 1,
+    "verify_jwt": true,
+    "created_at": "2026-10-14T14:31:41.820Z",
+    "bundle_sha256": "b66c057d4d0a26cb71680182690255e03354d0b488e2efee0548a86698c1b2bf"
+  },
+  "files": [
+    {
+      "name": "index.ts",
+      "matches": true
+    },
+    {
+      "name": "handler.ts",
+      "matches": true
+    }
+  ]
+}

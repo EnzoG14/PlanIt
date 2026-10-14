@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-14T16:13:15.683Z",
+  "environment": "Actual remote endpoint; anonymous/invalid credentials only, no accounts, uploads or signed URLs",
+  "results": [
+    {
+      "test": "CORS preflight",
+      "status": 204,
+      "expected": 204,
+      "result": "PASS"
+    },
+    {
+      "test": "No user JWT",
+      "status": 401,
+      "expected": 401,
+      "result": "PASS"
+    },
+    {
+      "test": "Invalid user JWT",
+      "status": 401,
+      "expected": 401,
+      "result": "PASS"
+    },
+    {
+      "test": "Public API key is not a user JWT",
+      "status": 401,
+      "expected": 401,
+      "result": "PASS"
+    }
+  ],
+  "authenticated_avatar": "NOT RUN",
+  "result": "PASS"
+}
