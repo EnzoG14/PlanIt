@@ -1,5 +1,9 @@
 # PlanIt — R5 matriz de aceptación (33 CA oficiales)
 
+**Aceptación B5 — 14/10/2026:** el responsable informa «QA realizada y aprobada». RF-R5-04.CA01..04 **Validados por QA humana**; [acta](r5-block-5/APPROVAL.md). No se alteran resultados técnicos previos ni se inventan pruebas JWT/Storage/dispositivos ejecutadas por el agente. Los cortes siguientes son antecedentes históricos.
+
+**Corte B5 (14/10/2026):** RF-R5-04.CA01..04 PASS parcial SQL/UI, CA04 HTTP anónimo real; **NOT RUN integral** hasta JWT/Storage reales y aceptación humana. D01-A/D02-A parcial SQL/UI. B0–B4 integrados; B5 autorizado. [Fuente literal nueva](r5-block-5/source.json), [contrato/evidencia](r5-block-5/README.md). Sin nuevas migraciones, deploy ni merge.
+
 **Corte B4 (14/10/2026):** RF-R5-03.CA01..04 con PASS parcial SQL/UI y GET HTTP anónimo; **NOT RUN integral** hasta JWT autenticado, Storage/CDN reales y aceptación humana. B0–B3 integrados; B4 autorizado. [Fuente literal](r5-block-4/source.json), [entrega/evidencia](r5-block-4/README.md). POST remoto de escritura BLOCKED por revisión automática; sin migraciones nuevas/deploy/merge.
 
 **Corte B3 (14/10/2026):** RF-R5-02.CA01..04 con PASS parcial SQL/UI y HTTP anónimo; **NOT RUN integral** hasta JWT autenticado, avatar real y aceptación humana. B0–B2 integrados (#50–#52), B3 autorizado. [Fuente literal nueva](r5-block-3/source.json), [entrega/evidencia](r5-block-3/README.md). No modifica CA históricos ni acepta B4.
@@ -24,10 +28,10 @@
 | RF-R5-03.CA-02 | public/private persiste entre sesiones | PASS parcial SQL/UI; NOT RUN integral | [B4: evidencia y límites](r5-block-4/README.md) |
 | RF-R5-03.CA-03 | otras vistas reflejan visibilidad | PASS parcial SQL/UI; NOT RUN integral | [B4: evidencia y límites](r5-block-4/README.md) |
 | RF-R5-03.CA-04 | no editar ajeno ni simular éxito inválido | PASS parcial SQL/UI; NOT RUN integral | [B4: evidencia y límites](r5-block-4/README.md) |
-| RF-R5-04.CA-01 | privado sin approved muestra exactamente nombre username avatar | NOT RUN | — |
-| RF-R5-04.CA-02 | sin datos/eventos privados no autorizados | NOT RUN | — |
-| RF-R5-04.CA-03 | approved ve sólo campos seguidores | NOT RUN | — |
-| RF-R5-04.CA-04 | API directa aplica mismas restricciones | NOT RUN | — |
+| RF-R5-04.CA-01 | privado sin approved muestra exactamente nombre username avatar | Validado por QA humana; evidencia técnica parcial | [Aceptación B5](r5-block-5/APPROVAL.md), [evidencia](r5-block-5/README.md) |
+| RF-R5-04.CA-02 | sin datos/eventos privados no autorizados | Validado por QA humana; evidencia técnica parcial | [Aceptación B5](r5-block-5/APPROVAL.md), [evidencia](r5-block-5/README.md) |
+| RF-R5-04.CA-03 | approved ve sólo campos seguidores | Validado por QA humana; evidencia técnica parcial | [Aceptación B5](r5-block-5/APPROVAL.md), [evidencia](r5-block-5/README.md) |
+| RF-R5-04.CA-04 | API directa aplica mismas restricciones | Validado por QA humana; evidencia técnica parcial | [Aceptación B5](r5-block-5/APPROVAL.md), [evidencia](r5-block-5/README.md) |
 | RF-R5-05.CA-01 | público accepted y UI/listas actualizadas | NOT RUN | — |
 | RF-R5-05.CA-02 | privado pending sin ampliar lectura | NOT RUN | — |
 | RF-R5-05.CA-03 | unfollow revoca; public→private conserva accepted | NOT RUN | — |
@@ -108,3 +112,7 @@ Base `da4379f58ba60ddfa4c3d03970103b381856996b`, rama `codex/r5-block-1`. [SQL l
 | D05-A; diseño/accesibilidad | B1 sin pantallas ni tab primario nuevo; mockup intacto | NOT RUN UI; integridad editorial PASS | UI de consumidores, responsive/foco/retorno y aceptación |
 
 C02/C03 aprobados por el responsable durante B1 y registrados en contrato; C01 aplicado según D01 sin alterar facultades de administración. D04 Google Docs pendiente de autorización separada. Migraciones R5 creadas3/probadas local3/**aplicadas3/verificadas remotas3** con autorización posterior del 14/10/2026: [acta](r5-block-1/REMOTE_MIGRATION.md). Catálogo/ACL/RLS/79 funciones/smoke READ ONLY PASS; no prueba funcional HTTP JWT ni aceptación de CA. No continuar B2 sin aprobación.
+
+## BLOQUE 5 — verificación específica de privacidad
+
+[Entrega B5](r5-block-5/README.md):36 audiencias privadas SQL nuevas +72 B1/13 carreras,79 grupos UI de build real con fixtures y5 rechazos HTTP anónimos. CA-01 mínimo sin eventos; CA-02 demográficos/ocultos excluidos; CA-03 accepted sólo bio/públicos; CA-04 mismas restricciones en SQL directo/RPC y denegación HTTP anónima. D01-A/D02-A PASS parcial SQL/UI, NOT RUN integral. Reconciliación de revocación entre RPC y páginas verificada; no equivale a JWT autenticado/Storage/Realtime real ni aceptación humana. Migraciones nuevas0 en los cuatro estados.

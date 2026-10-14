@@ -4,7 +4,7 @@ import { Icon } from '../components/Icon'
 import { SocialAvatar } from '../components/SocialAvatar'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
-import { loadSocialProfile, loadSocialEvents, participantsReturn, type SocialEvents } from '../features/social/api'
+import { loadSocialProfile, loadSocialEvents, socialDenied, participantsReturn, type SocialEvents } from '../features/social/api'
 import { formatEventTime } from '../features/events/validation'
 import { validatedMyEventsReturn } from '../features/events/my-events'
 import { validatedDiscoveryReturn } from '../features/events/search'
@@ -30,13 +30,23 @@ function IdentityContent({ userId }: { userId: string }) {
     let result: SocialEvents = { events: [], next_cursor: null }
     if (!profile.content) return { profile, ...result }
     const cursors = new Set<string>()
-    for (let index = 0; index < pages; index++) {
-      const next = await loadSocialEvents(userId, result.next_cursor, signal)
-      result = { events: [...new Map([...result.events, ...next.events].map(row => [row.id, row])).values()], next_cursor: next.next_cursor }
-      if (!result.next_cursor) break
-      const key = `${result.next_cursor.starts_at}:${result.next_cursor.id}`
-      if (cursors.has(key)) throw new Error('invalid_social_response')
-      cursors.add(key)
+    try {
+      for (let index = 0; index < pages; index++) {
+        const next = await loadSocialEvents(userId, result.next_cursor, signal)
+        result = { events: [...new Map([...result.events, ...next.events].map(row => [row.id, row])).values()], next_cursor: next.next_cursor }
+        if (!result.next_cursor) break
+        const key = `${result.next_cursor.starts_at}:${result.next_cursor.id}`
+        if (cursors.has(key)) throw new Error('invalid_social_response')
+        cursors.add(key)
+      }
+    } catch (error) {
+      if (!socialDenied(error)) throw error
+      // A follow can be revoked between the profile and events RPCs. Read the
+      // current projection instead of treating an allowed minimum as blocked.
+      const current = await loadSocialProfile(userId, signal)
+      if (!current) return null
+      if (current.content) throw error
+      return { profile: current, events: [], next_cursor: null }
     }
     // Events and profile are separate RPC snapshots. Recheck the gate before
     // publishing the combined view; a revoked audience must not keep old rows.

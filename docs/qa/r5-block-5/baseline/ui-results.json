@@ -1,0 +1,7 @@
+{
+  "environment": "Real Vite build and Edge headless; Auth/RPC/gateway fixtures, no real JWT/RLS transport",
+  "results": [],
+  "errors": [],
+  "failure": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'Camila Torres', exact: true }) to be visible\u001b[22m\n\n    at loaded (C:\\Users\\enzog\\planit-worktrees\\r5-block-5\\.r5-check.local\\private-profile-ui.mjs:77:82)\n    at C:\\Users\\enzog\\planit-worktrees\\r5-block-5\\.r5-check.local\\private-profile-ui.mjs:83:177",
+  "result": "FAIL"
+}

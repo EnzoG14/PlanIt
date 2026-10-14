@@ -1,0 +1,9 @@
+{
+  "command": "npm run check:r5:private-profile:http",
+  "startedAt": "2026-10-14T18:27:56.267Z",
+  "finishedAt": "2026-10-14T18:27:57.825Z",
+  "exitCode": 0,
+  "stdout": "\n> planit@0.0.0 check:r5:private-profile:http\n> node scripts/check-r5-private-profile-http.mjs\n\n[{\"case\":\"anonymous\",\"path\":\"/rest/v1/rpc/get_social_profile\",\"status\":401,\"result\":\"PASS\"},{\"case\":\"anonymous\",\"path\":\"/rest/v1/rpc/get_social_profile_events\",\"status\":401,\"result\":\"PASS\"},{\"case\":\"anonymous\",\"path\":\"/rest/v1/profiles?select=id,birth_date,sex\",\"status\":401,\"result\":\"PASS\"},{\"case\":\"anonymous\",\"path\":\"/rest/v1/files?select=id&bucket_name=eq.avatars\",\"status\":401,\"result\":\"PASS\"},{\"case\":\"anonymous\",\"path\":\"/functions/v1/social-avatar\",\"status\":401,\"result\":\"PASS\"},{\"case\":\"authenticated audiences + avatar/Storage\",\"result\":\"NOT RUN\",\"reason\":\"No authorized pre-existing session fixture file supplied; no remote data provisioned\"}]\n",
+  "stderr": "",
+  "result": "PASS"
+}

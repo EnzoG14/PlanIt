@@ -1,0 +1,9 @@
+{
+  "command": "npm run check:r5:avatar",
+  "startedAt": "2026-10-14T18:23:52.771Z",
+  "finishedAt": "2026-10-14T18:23:53.470Z",
+  "exitCode": 0,
+  "stdout": "\n> planit@0.0.0 check:r5:avatar\n> node scripts/check-r5-avatar.mjs\n\nPASS: Method/CORS, missing bearer, malformed JSON and invalid target rejected before privileged fetch\nPASS: Viewer from verified Auth response; client cannot choose viewer/path/bucket/TTL; privileged signature exactly 60 seconds\nPASS: Blocked/nonexistent/no-avatar neutral response never reveals a storage path\nPASS: Block committed while signing: final authorization recheck withholds newly signed URL\nPASS: Expired/rejected identity, network failure and malformed signing response fail closed without backend payloads or secrets\n",
+  "stderr": "",
+  "result": "PASS"
+}
