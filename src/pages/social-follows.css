@@ -1,0 +1,8 @@
+.social-follow-counts { display: flex; flex-wrap: wrap; gap: var(--pi-space-base); margin-block: var(--pi-space-base); }
+.social-follow-counts a { display: inline-flex; align-items: center; min-height: 44px; color: var(--pi-color-ink); font-weight: 650; text-underline-offset: 4px; }
+.social-follow-action { margin-block: var(--pi-space-base); }
+.social-follow-action p { max-width: 65ch; }
+.social-follow-confirm { margin-block: var(--pi-space-base); }
+.social-follow-confirm button { margin: var(--pi-space-tight) var(--pi-space-tight) 0 0; }
+.social-follow-name { min-width: 0; display: grid; gap: var(--pi-space-micro); overflow-wrap: anywhere; }
+.social-follow-name > span { color: var(--pi-color-text-muted); }

@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:r5:follows": "node scripts/check-r5-follows.mjs",
+    "check:r5:follows:ui": "node scripts/check-r5-follows-ui.mjs",
+    "check:r5:follows:http": "node scripts/check-r5-follows-http.mjs",
     "check:r5:private-profile": "node scripts/check-r5-private-profile.mjs",
     "check:r5:private-profile:ui": "node scripts/check-r5-private-profile-ui.mjs",
     "check:r5:private-profile:http": "node scripts/check-r5-private-profile-http.mjs",

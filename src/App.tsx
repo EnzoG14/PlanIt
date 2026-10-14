@@ -15,6 +15,7 @@ const EditEventPage = lazy(() => import('./pages/EditEventPage').then(module => 
 const EventGalleryPage = lazy(() => import('./pages/EventGalleryPage').then(module => ({ default: module.EventGalleryPage })))
 const EventAttendeesPage = lazy(() => import('./pages/EventAttendeesPage').then(module => ({ default: module.EventAttendeesPage })))
 const SocialIdentityPage = lazy(() => import('./pages/SocialIdentityPage').then(module => ({ default: module.SocialIdentityPage })))
+const SocialFollowsPage = lazy(() => import('./pages/SocialFollowsPage').then(module => ({ default: module.SocialFollowsPage })))
 const EventAccessPage = lazy(() => import('./pages/EventAccessPage').then(module => ({ default: module.EventAccessPage })))
 const EventRejoinRequestsPage = lazy(() => import('./pages/EventRejoinRequestsPage').then(module => ({ default: module.EventRejoinRequestsPage })))
 const EventDetailPage = lazy(() => import('./pages/EventDetailPage').then(module => ({ default: module.EventDetailPage })))
@@ -48,6 +49,8 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route path="me" element={<ProfilePage />} />
       <Route path="me/edit" element={<Suspense fallback={<StatusMessage title="Cargando edición de perfil">Esperá un momento.</StatusMessage>}><EditProfilePage /></Suspense>} />
       <Route path="users/:id" element={<Suspense fallback={<StatusMessage title="Consultando perfil">Esperá un momento.</StatusMessage>}><SocialIdentityPage /></Suspense>} />
+      <Route path="users/:id/followers" element={<Suspense fallback={<StatusMessage title="Consultando seguidores">Esperá un momento.</StatusMessage>}><SocialFollowsPage direction="followers" /></Suspense>} />
+      <Route path="users/:id/following" element={<Suspense fallback={<StatusMessage title="Consultando seguimientos">Esperá un momento.</StatusMessage>}><SocialFollowsPage direction="following" /></Suspense>} />
       <Route path="me/interests" element={<Suspense fallback={<StatusMessage title="Cargando intereses">Esperá un momento.</StatusMessage>}><InterestsPage /></Suspense>} />
     </Route>
     <Route path="*" element={<NotFoundPage />} />
