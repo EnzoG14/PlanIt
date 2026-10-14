@@ -1,5 +1,7 @@
 # Paquete de planificación PlanIt R5
 
+**Entrega B6 — 14/10/2026:** follow/unfollow, pending cancelable, contadores y listas autorizadas implementados sobre B1. [Evidencia](../qa/r5-block-6/README.md), [estado](RELEASE_5_STATUS.md). **Implementado; QA pendiente**; detenerse para revisión de PR. B7 requiere aprobación independiente. Cortes anteriores conservados como historia.
+
 **Entrega B4 — 14/10/2026:** B0–B3 integrados (#50–#53). B4 autorizado e **Implementado; QA pendiente**, base `286d38ecf7e461ebd9218a6f71e8ff10a41e0bae`, rama `codex/r5-block-4`. `/me/edit`, datos/privacidad por RPC B1 y avatar independiente con reconciliación/limpieza; sin migración nueva ni deploy. [Entrega, pruebas y límites](../qa/r5-block-4/README.md). Las referencias siguientes a B4 no autorizado describen cortes históricos. Detenerse para revisión de PR; B5 no autorizado.
 
 **Entrega B3 — 14/10/2026:** B0–B2 integrados; B3 autorizado e Implementado; QA pendiente. Perfil/bio autorizada y lista paginada de eventos públicos vigentes sobre RPC B1, sin SQL nuevo/deploy. [Evidencia](../qa/r5-block-3/README.md), [estado](RELEASE_5_STATUS.md). Detenerse para revisión de PR; B4 requiere autorización. Los cortes siguientes se conservan como antecedentes.

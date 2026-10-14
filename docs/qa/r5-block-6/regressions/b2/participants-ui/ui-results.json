@@ -1,0 +1,340 @@
+{
+  "base": "1bcef5af3397b54bae8cc18e6336092639c2b964",
+  "branch": "codex/r5-block-2",
+  "environment": "Edge headless; running Vite app; Auth/REST/gateway fixtures, no remote JWT/RLS proof",
+  "baseline": false,
+  "results": [
+    {
+      "viewport": 320,
+      "test": "Confirmed default route uses social RPC only; no administration",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Cursor pagination refetches previous pages, 34 unique identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Keyboard profile navigation, minimal identity, validated return to event list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Bilateral-block fixture removed from refreshed list; direct profile neutral with no avatar",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Revoked access on pagination clears all earlier identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Network/invalid response fails closed, retry restores list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Long text at 200%, 44px targets/focus, gateway failure avatar fallback",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "30s visible permission revalidation clears revoked identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Empty, grant-only/third-party and other event route expose no cross-event data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Organizer administration preserved, social link, anonymous guard and logout",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Stale in-flight response from old event cannot populate new route",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Confirmed default route uses social RPC only; no administration",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Cursor pagination refetches previous pages, 34 unique identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Keyboard profile navigation, minimal identity, validated return to event list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Bilateral-block fixture removed from refreshed list; direct profile neutral with no avatar",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Revoked access on pagination clears all earlier identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Network/invalid response fails closed, retry restores list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Long text at 200%, 44px targets/focus, gateway failure avatar fallback",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "30s visible permission revalidation clears revoked identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Empty, grant-only/third-party and other event route expose no cross-event data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Organizer administration preserved, social link, anonymous guard and logout",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Stale in-flight response from old event cannot populate new route",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Confirmed default route uses social RPC only; no administration",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Cursor pagination refetches previous pages, 34 unique identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Keyboard profile navigation, minimal identity, validated return to event list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Bilateral-block fixture removed from refreshed list; direct profile neutral with no avatar",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Revoked access on pagination clears all earlier identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Network/invalid response fails closed, retry restores list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Long text at 200%, 44px targets/focus, gateway failure avatar fallback",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "30s visible permission revalidation clears revoked identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Empty, grant-only/third-party and other event route expose no cross-event data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Organizer administration preserved, social link, anonymous guard and logout",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Stale in-flight response from old event cannot populate new route",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Confirmed default route uses social RPC only; no administration",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Cursor pagination refetches previous pages, 34 unique identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Keyboard profile navigation, minimal identity, validated return to event list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Bilateral-block fixture removed from refreshed list; direct profile neutral with no avatar",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Revoked access on pagination clears all earlier identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Network/invalid response fails closed, retry restores list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Long text at 200%, 44px targets/focus, gateway failure avatar fallback",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "30s visible permission revalidation clears revoked identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Empty, grant-only/third-party and other event route expose no cross-event data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Organizer administration preserved, social link, anonymous guard and logout",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Stale in-flight response from old event cannot populate new route",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Confirmed default route uses social RPC only; no administration",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Cursor pagination refetches previous pages, 34 unique identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Keyboard profile navigation, minimal identity, validated return to event list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Bilateral-block fixture removed from refreshed list; direct profile neutral with no avatar",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Revoked access on pagination clears all earlier identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Network/invalid response fails closed, retry restores list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Long text at 200%, 44px targets/focus, gateway failure avatar fallback",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "30s visible permission revalidation clears revoked identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Empty, grant-only/third-party and other event route expose no cross-event data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Organizer administration preserved, social link, anonymous guard and logout",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Stale in-flight response from old event cannot populate new route",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Confirmed default route uses social RPC only; no administration",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Cursor pagination refetches previous pages, 34 unique identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Keyboard profile navigation, minimal identity, validated return to event list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Bilateral-block fixture removed from refreshed list; direct profile neutral with no avatar",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Revoked access on pagination clears all earlier identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Network/invalid response fails closed, retry restores list",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Long text at 200%, 44px targets/focus, gateway failure avatar fallback",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "30s visible permission revalidation clears revoked identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Empty, grant-only/third-party and other event route expose no cross-event data",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Organizer administration preserved, social link, anonymous guard and logout",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Stale in-flight response from old event cannot populate new route",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

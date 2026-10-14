@@ -1,5 +1,9 @@
 # PlanIt — Arquitectura
 
+## Release 5 — Bloque 6: seguimientos y listas (QA pendiente)
+
+Perfiles consumen `get_social_relationship`, `follow_user`/`unfollow_user`, `get_social_counts` y `list_social_follows` existentes B1. `/users/:id/followers` y `/users/:id/following` usan cursor UUID, reconsulta de páginas previas y gate final; `/me` enlaza listas propias. La capa social conserva allowlists, aislamiento por cuenta/token/ruta, timeout10s y revalidación visible30s/foco/online. Mutación sin resultado confirmado oculta contenido derivado y exige lectura antes de repetir; el servidor decide accepted/pending. Sin SQL nuevo ni cambios de permisos R1–R4, dock o SW. [Contrato y límites](qa/r5-block-6/README.md). B7 no autorizado.
+
 ## Release 5 — Bloque 4: edición propia (QA pendiente)
 
 `/me/edit` protegido por sesión reutiliza el shell Amanecer. Servicios `features/profile` centralizan allowlist propia, validación y RPC B1: datos/privacidad juntos con confirmación D04; foto independiente en avatars con ruta inmutable, firma propia60, reconciliación y limpieza de staging. `/me` abandona lectura heredada event_media. Sin cambios SQL/deploy ni nuevas superficies de follows/DM. [Contrato, amenazas, pruebas y límites](qa/r5-block-4/README.md).

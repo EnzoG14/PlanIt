@@ -1,0 +1,173 @@
+{
+  "base": "54b4749b1c12775e0d6c800b15d82aeb8ecdafbc",
+  "branch": "codex/r5-block-6",
+  "env_copied_byte_for_byte": true,
+  "env_ignored": true,
+  "integrity": [
+    {
+      "path": "PRODUCT.md",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "DESIGN.md",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "docs/design/mockups/release-5.png",
+      "unchanged_from_main": true,
+      "comparison": "binary"
+    },
+    {
+      "path": "src/styles/tokens.css",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "package-lock.json",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261010011204_create_profiles_and_categories.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261010013449_create_profiles_and_categories.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261010023448_restrict_rls_auto_enable_execute.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261010042701_create_events_and_event_media.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261010052653_public_event_discovery.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261010150232_event_participations.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261010154930_my_events_read.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261010212819_home_and_event_organizer_read.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261010214526_event_chat.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261011163653_notifications_inbox.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261011193316_r2_realtime_chat_notifications.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261011232326_my_organized_events_read.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261012001058_edit_own_event.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261012013634_manage_event_gallery.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261012031717_manage_event_attendees.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261012044919_close_and_duplicate_events.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261012155501_event_rejoin_requests.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261013160000_search_public_events.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261014120000_search_public_events_date_radius.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261014120001_user_category_interests.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261014120002_get_suggested_events.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261014120003_hidden_event_access.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261014120004_event_visibility_links.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261014120005_redeem_event_link.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261014120006_event_access_management.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261014133225_social_security_model.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261014133547_social_projections_and_avatars.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    },
+    {
+      "path": "supabase/migrations/20261014133847_social_legacy_projections.sql",
+      "unchanged_from_main": true,
+      "comparison": "LF normalized"
+    }
+  ]
+}

@@ -6,6 +6,8 @@ import { useAuth } from '../features/auth/useAuth'
 import { loadMyProfile, loadMyAvatar, type OwnProfile } from '../features/profile/api'
 import './profile.css'
 import { participantsReturn } from '../features/social/api'
+import { OwnSocialCounts } from '../components/SocialCounts'
+import { followsReturn } from '../features/social/follows'
 
 type ProfileResult = { profile: OwnProfile; avatarUrl: string | null } | { error: true }
 
@@ -61,6 +63,7 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
     }
   }, [userId, attempt])
   return <div className="profile-page">
+    {followsReturn(location.state?.followsReturnTo) && <Link className="secondary-link" to={followsReturn(location.state.followsReturnTo)!} state={location.state?.followsOrigin}><Icon name="back" />Volver a la lista</Link>}
     {participantsReturn(location.state?.participantsReturnTo) && <Link className="secondary-link" to={participantsReturn(location.state.participantsReturnTo)!} state={location.state}><Icon name="back" />Volver a participantes</Link>}
     <header className="profile-heading"><h1>Mi perfil</h1><button className="text-button" type="button" onClick={refresh} disabled={!result}>Actualizar perfil</button></header>
     {!result ? <div role="status"><StatusMessage title="Cargando perfil">Consultando los datos de tu cuenta…</StatusMessage></div>
@@ -72,6 +75,7 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
             : <span role="img" aria-label="Sin avatar disponible"><Icon name="user" /></span>}</div>
           <h2>{result.profile.display_name}</h2>
           <p className="profile-username">@{result.profile.username}</p>
+          <OwnSocialCounts userId={userId} />
           <p className={result.profile.bio?.trim() ? 'profile-bio' : 'profile-bio profile-missing'}>{result.profile.bio?.trim() || 'Todavía no agregaste una biografía.'}</p>
         </section>
         <p className="profile-visibility">Perfil {result.profile.visibility === 'private' ? 'privado' : 'público'}</p>
