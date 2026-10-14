@@ -1,0 +1,2441 @@
+{
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "base": "dacd893",
+  "environment": "Isolated PostgreSQL; SQL Auth/Storage scaffolding; SET ROLE; no HTTP/JWT",
+  "migrations": [
+    "20261010011204_create_profiles_and_categories.sql",
+    "20261010013449_create_profiles_and_categories.sql",
+    "20261010023448_restrict_rls_auto_enable_execute.sql",
+    "20261010042701_create_events_and_event_media.sql",
+    "20261010052653_public_event_discovery.sql",
+    "20261010150232_event_participations.sql",
+    "20261010154930_my_events_read.sql",
+    "20261010212819_home_and_event_organizer_read.sql",
+    "20261010214526_event_chat.sql",
+    "20261011163653_notifications_inbox.sql",
+    "20261011193316_r2_realtime_chat_notifications.sql",
+    "20261011232326_my_organized_events_read.sql",
+    "20261012001058_edit_own_event.sql",
+    "20261012013634_manage_event_gallery.sql",
+    "20261012031717_manage_event_attendees.sql",
+    "20261012044919_close_and_duplicate_events.sql",
+    "20261012155501_event_rejoin_requests.sql",
+    "20261013160000_search_public_events.sql",
+    "20261014120000_search_public_events_date_radius.sql",
+    "20261014120001_user_category_interests.sql",
+    "20261014120002_get_suggested_events.sql",
+    "20261014120003_hidden_event_access.sql",
+    "20261014120004_event_visibility_links.sql",
+    "20261014120005_redeem_event_link.sql",
+    "20261014120006_event_access_management.sql",
+    "20261014133225_social_security_model.sql",
+    "20261014133547_social_projections_and_avatars.sql",
+    "20261014133847_social_legacy_projections.sql"
+  ],
+  "functions": [
+    {
+      "signature": "planit_private.handle_new_auth_user()",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.validate_event_image()",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "remove_event_image(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "reorder_event_images(uuid,uuid[],uuid[])",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_unregistered_uploads(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_chat(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_organizer(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.can_read_event_chat(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.create_event_conversation()",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_chat_messages(uuid,timestamp without time zone,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "send_event_chat_message(uuid,uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.lock_gallery(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.can_delete_event_upload(text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "add_event_image(uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "remove_participant(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "cancel_event(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "archive_event(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_rejoin_requests(uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_rejoin_resolution(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "set_my_category_interests(uuid[])",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.can_view_event(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "request_rejoin(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.protect_event_visibility()",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_participation_summary(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "register_for_event(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "leave_event(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_my_rejoin_status(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "resolve_rejoin(uuid,uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "update_event(uuid,text,text,timestamp without time zone,timestamp without time zone,uuid,integer,text,double precision,double precision,text,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "set_event_visibility(uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "create_or_rotate_event_link(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_link_status(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "update_my_social_profile(text,text,text,text,date,text,text,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "follow_user(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "redeem_event_link(text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "unfollow_user(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.validate_profile_avatar()",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_social_avatar_for_signing(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "revoke_event_access(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "restore_event_access(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.social_blocked(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.lock_social_pair(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.can_read_social_content(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "block_user(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "resolve_follow_request(uuid,uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "unblock_user(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_or_create_direct_conversation(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "send_direct_message(uuid,uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_social_profile(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_social_relationship(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "planit_private.can_delete_avatar_upload(text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_social_profile_events(uuid,timestamp without time zone,uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_social_participants(uuid,uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "list_follow_requests(timestamp without time zone,uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "list_social_follows(uuid,text,uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_social_counts(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "set_my_avatar(text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_attendees(uuid,text,text,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_access_grants(uuid,text,uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    }
+  ],
+  "inventory": [
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.can_delete_avatar_upload(text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.can_delete_event_upload(text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.can_read_event_chat(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.can_read_social_content(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.can_view_event(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.create_event_conversation()",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.handle_new_auth_user()",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.lock_gallery(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.lock_social_pair(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.protect_event_visibility()",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.record_participation_history()",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.social_blocked(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.stamp_notification_read()",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.touch_updated_at()",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.validate_birth_date()",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.validate_event_file()",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.validate_event_image()",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.validate_new_event()",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "planit_private",
+      "signature": "planit_private.validate_profile_avatar()",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "public",
+      "signature": "add_event_image(uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "archive_event(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "block_user(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "cancel_event(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "create_event(uuid,text,text,timestamp without time zone,timestamp without time zone,uuid,integer,text,double precision,double precision,text,text[],text)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "create_or_rotate_event_link(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "discover_public_events(double precision,double precision,double precision,double precision)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "follow_user(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_direct_messages(uuid,timestamp without time zone,uuid,integer)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_access_grants(uuid,text,uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_attendees(uuid,text,text,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_chat(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_chat_messages(uuid,timestamp without time zone,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_duplicate_source(uuid)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_link_status(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_organizer(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_participation_summary(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_rejoin_requests(uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_rejoin_resolution(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_social_participants(uuid,uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_event_unregistered_uploads(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_home_events(timestamp without time zone,uuid,integer)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_my_events(text,integer)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_my_organized_events(text,integer)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_my_rejoin_status(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_notification_changes(uuid[])",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_notification_target(uuid)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_notifications(timestamp without time zone,uuid)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_or_create_direct_conversation(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_social_avatar_for_signing(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "public",
+      "signature": "get_social_counts(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_social_profile(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_social_profile_events(uuid,timestamp without time zone,uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_social_relationship(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "get_suggested_events(double precision,double precision,integer)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "leave_event(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "list_direct_conversations(timestamp without time zone,uuid,integer)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "list_follow_requests(timestamp without time zone,uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "list_social_follows(uuid,text,uuid,integer)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "mark_notification_read(uuid)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "redeem_event_link(text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "register_for_event(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "remove_event_image(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "remove_participant(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "reorder_event_images(uuid,uuid[],uuid[])",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "request_rejoin(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "resolve_follow_request(uuid,uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "resolve_rejoin(uuid,uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "restore_event_access(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "revoke_event_access(uuid,uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "rls_auto_enable()",
+      "prosecdef": false,
+      "proconfig": null,
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "schema": "public",
+      "signature": "search_public_events(text,uuid[],timestamp without time zone,uuid,integer,double precision,double precision,double precision,double precision,date,date,double precision,double precision,double precision)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "send_direct_message(uuid,uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "send_event_chat_message(uuid,uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "set_event_visibility(uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "set_my_avatar(text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "set_my_category_interests(uuid[])",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "unblock_user(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "unfollow_user(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "update_event(uuid,text,text,timestamp without time zone,timestamp without time zone,uuid,integer,text,double precision,double precision,text,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "schema": "public",
+      "signature": "update_my_social_profile(text,text,text,text,date,text,text,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false,
+      "authenticated_execute": true
+    }
+  ],
+  "policies": [
+    {
+      "schemaname": "public",
+      "tablename": "categories",
+      "policyname": "categories_select_authenticated",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "true",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "conversations",
+      "policyname": "conversations_read_member",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(((kind = 'event'::text) AND planit_private.can_read_event_chat(event_id)) OR ((kind = 'direct'::text) AND ((( SELECT auth.uid() AS uid) = user_low_id) OR (( SELECT auth.uid() AS uid) = user_high_id))))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "event_access_grants",
+      "policyname": "event_access_grants_select_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((user_id = ( SELECT auth.uid() AS uid)) OR (EXISTS ( SELECT 1\n   FROM events e\n  WHERE ((e.id = event_access_grants.event_id) AND (e.organizer_id = ( SELECT auth.uid() AS uid))))))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "event_images",
+      "policyname": "event_images_insert_own",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "(EXISTS ( SELECT 1\n   FROM events\n  WHERE ((events.id = event_images.event_id) AND (events.organizer_id = ( SELECT auth.uid() AS uid)))))"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "event_images",
+      "policyname": "event_images_select_visible",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(EXISTS ( SELECT 1\n   FROM events\n  WHERE (events.id = event_images.event_id)))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "event_participations",
+      "policyname": "participations_select_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(user_id = ( SELECT auth.uid() AS uid))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "event_rejoin_requests",
+      "policyname": "rejoin_requests_select_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(EXISTS ( SELECT 1\n   FROM event_participations p\n  WHERE ((p.id = event_rejoin_requests.participation_id) AND (p.user_id = ( SELECT auth.uid() AS uid)))))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "events",
+      "policyname": "events_insert_own",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "((organizer_id = ( SELECT auth.uid() AS uid)) AND (visibility = ANY (ARRAY['public'::text, 'unlisted'::text])) AND (cancelled_at IS NULL) AND (archived_at IS NULL))"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "events",
+      "policyname": "events_select_authenticated",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((organizer_id = ( SELECT auth.uid() AS uid)) OR planit_private.can_view_event(id))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "files",
+      "policyname": "files_insert_own",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "(uploaded_by = ( SELECT auth.uid() AS uid))"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "files",
+      "policyname": "files_select_visible",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((uploaded_by = ( SELECT auth.uid() AS uid)) OR (EXISTS ( SELECT 1\n   FROM event_images\n  WHERE (event_images.file_id = files.id))))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "messages",
+      "policyname": "messages_read_member",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(EXISTS ( SELECT 1\n   FROM conversations c\n  WHERE (c.id = messages.conversation_id)))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "notifications",
+      "policyname": "notifications_mark_own",
+      "roles": "{authenticated}",
+      "cmd": "UPDATE",
+      "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+      "with_check": "(recipient_id = ( SELECT auth.uid() AS uid))"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "notifications",
+      "policyname": "notifications_read_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "participation_history",
+      "policyname": "participation_history_select_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(EXISTS ( SELECT 1\n   FROM event_participations p\n  WHERE (p.id = participation_history.participation_id)))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "profiles",
+      "policyname": "profiles_select_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(( SELECT auth.uid() AS uid) = id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "profiles",
+      "policyname": "profiles_update_own",
+      "roles": "{authenticated}",
+      "cmd": "UPDATE",
+      "qual": "(( SELECT auth.uid() AS uid) = id)",
+      "with_check": "(( SELECT auth.uid() AS uid) = id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "user_blocks",
+      "policyname": "user_blocks_read_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(blocker_id = ( SELECT auth.uid() AS uid))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "user_category_interests",
+      "policyname": "user_category_interests_select_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(( SELECT auth.uid() AS uid) = user_id)",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "user_follows",
+      "policyname": "user_follows_read_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((( SELECT auth.uid() AS uid) = follower_id) OR (( SELECT auth.uid() AS uid) = followed_id))",
+      "with_check": null
+    },
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "avatars_delete_unlinked",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "((bucket_id = 'avatars'::text) AND planit_private.can_delete_avatar_upload(name))",
+      "with_check": null
+    },
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "avatars_insert_own",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "((bucket_id = 'avatars'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text))"
+    },
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "avatars_select_own",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((bucket_id = 'avatars'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text))",
+      "with_check": null
+    },
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "event_media_delete_unlinked",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "((bucket_id = 'event_media'::text) AND planit_private.can_delete_event_upload(name))",
+      "with_check": null
+    },
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "event_media_insert_own",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "((bucket_id = 'event_media'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text) AND (split_part(name, '/'::text, 2) ~ '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'::text) AND (NOT (EXISTS ( SELECT 1\n   FROM events\n  WHERE (((events.id)::text = split_part(objects.name, '/'::text, 2)) AND (events.organizer_id <> ( SELECT auth.uid() AS uid)))))))"
+    },
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "event_media_select_visible",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((bucket_id = 'event_media'::text) AND ((split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text) OR (EXISTS ( SELECT 1\n   FROM files\n  WHERE ((files.bucket_name = objects.bucket_id) AND (files.storage_path = objects.name))))))",
+      "with_check": null
+    }
+  ],
+  "matrix": [
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "none",
+      "participation": "none",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "none",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "none",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "none",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "active",
+      "participation": "none",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "active",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "active",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "active",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "revoked",
+      "participation": "none",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "revoked",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "revoked",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "open",
+      "access": "revoked",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "none",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "none",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "none",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "none",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "active",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "active",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "active",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "active",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "revoked",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "revoked",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "revoked",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "cancelled",
+      "access": "revoked",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "none",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "none",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "none",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "none",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "active",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "active",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "active",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "active",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "revoked",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "revoked",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "revoked",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "archived",
+      "access": "revoked",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "none",
+      "participation": "none",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "none",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "none",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "none",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "active",
+      "participation": "none",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "active",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "active",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "active",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "revoked",
+      "participation": "none",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "revoked",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "revoked",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "public",
+      "state": "ended",
+      "access": "revoked",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "none",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "none",
+      "participation": "confirmed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "none",
+      "participation": "cancelled",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "none",
+      "participation": "removed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "active",
+      "participation": "none",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "active",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "active",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "active",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "revoked",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "revoked",
+      "participation": "confirmed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "revoked",
+      "participation": "cancelled",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "open",
+      "access": "revoked",
+      "participation": "removed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "none",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "none",
+      "participation": "confirmed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "none",
+      "participation": "cancelled",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "none",
+      "participation": "removed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "active",
+      "participation": "none",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "active",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "active",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "active",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "revoked",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "revoked",
+      "participation": "confirmed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "revoked",
+      "participation": "cancelled",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "cancelled",
+      "access": "revoked",
+      "participation": "removed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "none",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "none",
+      "participation": "confirmed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "none",
+      "participation": "cancelled",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "none",
+      "participation": "removed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "active",
+      "participation": "none",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "active",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "active",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "active",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "revoked",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "revoked",
+      "participation": "confirmed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "revoked",
+      "participation": "cancelled",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "archived",
+      "access": "revoked",
+      "participation": "removed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "none",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "none",
+      "participation": "confirmed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "none",
+      "participation": "cancelled",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "none",
+      "participation": "removed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "active",
+      "participation": "none",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "active",
+      "participation": "confirmed",
+      "detail": true,
+      "chat": true,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "active",
+      "participation": "cancelled",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "active",
+      "participation": "removed",
+      "detail": true,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "revoked",
+      "participation": "none",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "revoked",
+      "participation": "confirmed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "revoked",
+      "participation": "cancelled",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    },
+    {
+      "visibility": "unlisted",
+      "state": "ended",
+      "access": "revoked",
+      "participation": "removed",
+      "detail": false,
+      "chat": false,
+      "result": "PASS"
+    }
+  ],
+  "results": [
+    {
+      "test": "Full ordered migration replay; RLS, definer ACL/search_path, no hash SELECT or direct grant mutation",
+      "result": "PASS"
+    },
+    {
+      "test": "96 combinations: UUID SELECT, summary/organizer/rejoin, own list, images/files/Storage, chat header/messages/send, owner and stranger/anon",
+      "result": "PASS"
+    },
+    {
+      "test": "Public-only home/map/search/suggestions even for owner or active grantee",
+      "result": "PASS"
+    },
+    {
+      "test": "A04/A05/D12 round trips: confirmed grants, conflict rollback, revoked preserved, public read, rehide deny; R3 pending approval cannot bypass revoke",
+      "result": "PASS"
+    },
+    {
+      "test": "Public registration ignores revoked without restoring it; forced failure after grant inserts rolls visibility/grants back together",
+      "result": "PASS"
+    },
+    {
+      "test": "Cross-event source FK, hash shape, cross-account owner RPCs; legitimate shared public file stays readable without hidden association",
+      "result": "PASS"
+    },
+    {
+      "test": "Real last-seat serialization, revoke/rollback vs register, visibility vs register both orders; event-first locks",
+      "result": "PASS"
+    }
+  ]
+}

@@ -29,7 +29,7 @@ try {
   started = true
   const admin = await connect()
   const version = (await admin.query('select version()')).rows[0].version
-  await admin.query(`create role anon; create role authenticated;
+  await admin.query(`create role anon; create role authenticated; create role service_role;
     create schema auth; create schema storage;
     create table auth.users(id uuid primary key,raw_user_meta_data jsonb);
     create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
@@ -67,14 +67,13 @@ try {
   check('CA-03: subsequent read reflects persisted profile updates; absent optional values stay null')
   const path=owner+'/avatar.png'
   await admin.query("select set_config('request.jwt.claim.sub',$1,false)",[owner])
-  await admin.query("insert into storage.objects(bucket_id,name,owner_id,metadata) values ('event_media',$1,$2,$3)",[path,owner,{mimetype:'image/png',size:10}])
-  const fileId=(await admin.query("insert into public.files(uploaded_by,bucket_name,storage_path,mime_type,size_bytes) values ($1,'event_media',$2,'image/png',10) returning id",[owner,path])).rows[0].id
-  await admin.query('update public.profiles set avatar_file_id=$1 where id=$2',[fileId,owner])
+  await admin.query("insert into storage.objects(bucket_id,name,owner_id,metadata) values ('avatars',$1,$2,$3)",[path,owner,{mimetype:'image/png',size:10,cacheControl:'max-age=0'}])
+  const fileId=(await a.query('select public.set_my_avatar($1) as id',[path])).rows[0].id
   assert.equal((await a.query('select bucket_name,storage_path,uploaded_by,mime_type from public.files where id=$1 and uploaded_by=$2',[fileId,owner])).rows.length,1)
   assert.equal((await a.query('select name from storage.objects where name=$1',[path])).rows.length,1)
   assert.deepEqual((await b.query('select id from public.files where id=$1',[fileId])).rows,[])
   assert.deepEqual((await b.query('select name from storage.objects where name=$1',[path])).rows,[])
-  check('Existing file/Storage RLS permits own unlinked avatar object and hides it from another account; no permission changes')
+  check('R5 private avatar fixture: own file/Storage RLS permits owner and hides object metadata from another account')
   await role(b,null)
   await assert.rejects(b.query('select '+projection+' from public.profiles where id=$1',[owner]),/permission denied/)
   check('Anonymous role cannot SELECT profiles')

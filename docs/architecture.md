@@ -1,5 +1,11 @@
 # PlanIt — Arquitectura
 
+## Release 5 — Bloque 1: frontera social (local, QA pendiente)
+
+Tres migraciones incrementales extienden conversations/messages con DM canónico y RLS de miembro independiente del bloqueo histórico, agregan follows/blocks y RPC transaccionales con locks de profiles ordenados. Lecturas sociales usan allowlists y bloqueo bilateral; private sin accepted retorna sólo nombre/username/avatar. Visibility propia sólo por RPC con conversión pending→accepted atómica; avatar por RPC independiente. [Firmas/amenazas/compatibilidad y estado](implementation/RELEASE_5_BLOCK_1_CONTRACT.md).
+
+Permisos de evento R4 y lectura/envío de chat grupal no cambian por bloqueo (C02 aprobado). Proyecciones administrativas neutralizan nombres bloqueados manteniendo IDs/facultades. No pantallas/rutas/servicios frontend nuevos en B1; se conserva Amanecer y dock. Avatar social usa bucket privado independiente, metadata sin caché larga, gateway Edge social-avatar server-only con Auth verificado, firma60s y revalidación posterior; terceros sin SELECT Storage ni paths. No secrets configurados, migraciones aplicadas ni gateway desplegado. Integración del perfil propio/avatar corresponde B4; B2 requiere aprobación.
+
 ## Release 4 — Bloque 8: panel de accesos
 
 `/events/:id/access` protegida y lazy-loaded, scope Amanecer de gestión y entrada desde detalle propio oculto. `features/events/access.ts` concentra lista por cursor, revocación/restitución y comprobación de resultado incierto. El permiso active/revoked y la participación confirmed son conceptos independientes. Sólo se restituye lectura del detalle, no participación/chat. Eventos ocultos cerrados conservan consulta sin acciones.

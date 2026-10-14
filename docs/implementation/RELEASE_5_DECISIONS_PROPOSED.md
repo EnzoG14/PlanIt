@@ -1,6 +1,6 @@
 # PlanIt — R5 decisiones de producto y arquitectura
 
-**Versión 1.1 — 14/10/2026; auditoría B0 agregada.** D01–D05: **APROBADAS explícitamente por el responsable**. D06–D08: **resueltas técnicamente para revisión de PR**, según [auditoría del bloque 0](RELEASE_5_BLOCK_0_DECISIONS.md); no constituyen autorización para B1, DDL remoto ni deploy. Las decisiones aprobadas complementan la especificación vigente. **D04 introduce un comportamiento que no estaba explicitado en el Google Doc**, por lo que deberá dejarse asentado en la fuente normativa antes de cerrar aceptación R5. Conflictos C01–C03 pendientes de revisión humana.
+**Versión 1.1 — 14/10/2026; entrega B1 agregada.** D01–D05: **APROBADAS explícitamente**. B1 autorizado e implementado localmente conforme a los contratos técnicos D06–D08 de [B0](RELEASE_5_BLOCK_0_DECISIONS.md), sin permiso de DDL remoto/deploy/merge ni continuación B2. [Contrato final B1](RELEASE_5_BLOCK_1_CONTRACT.md): C01 neutraliza identidades administrativas; **C02 aprobado** conserva permisos R4 y oculta eventos sólo en perfiles/listas sociales; **C03 aprobado** acepta firmas sociales hasta60s, con gateway server-only y registro de avatar sin caché larga. **D04 sigue siendo posterior al Google Doc** y requiere incorporación normativa separada antes de aceptación R5.
 
 | ID | Estado | Decisión | Impacto contractual |
 |---|---|---|---|

@@ -1,5 +1,13 @@
 # PlanIt — Modelo de datos y migraciones
 
+## Release 5 — Bloque 1: esquema social creado/probado local, no aplicado remoto
+
+`20261014133225_social_security_model.sql`, `20261014133547_social_projections_and_avatars.sql` y `20261014133847_social_legacy_projections.sql`: **creadas/probadas local; no aplicadas/verificadas remotas, no autorizadas**. [Contrato y privilegios](implementation/RELEASE_5_BLOCK_1_CONTRACT.md), [evidencia](qa/r5-block-1/README.md). Las 25 migraciones históricas permanecen intactas; remoto todavía tiene sólo el esquema previo.
+
+user_follows PK dirigida/status/generación/cronología y user_blocks PK dirigida, no-self, FK RESTRICT/RLS/SELECT propio sin mutaciones genéricas. Conversations event/direct excluyentes, pareja ordenada UNIQUE, event_id UNIQUE conservado; messages/historial/notifications FK/realtime sin duplicar. Lectura DM sólo miembro aun bloqueado; nuevos DM/follow/envío por RPC auth.uid y lock profiles UUID ascendente antes de relaciones. Privacidad bloquea self y autoacepta pending válidos en misma transacción; PATCH visibility revocado. Perfiles íntegros siguen sólo self; proyección mínima/ampliada y eventos sólo públicos/grants no sociales. Proyecciones administrativas bajo bloqueo sólo identidad neutra, permisos R3/R4 intactos.
+
+Bucket avatars privado e inmutable separado de event_media. files acepta ambas finalidades pero trigger de galería exige event_media y avatar propio exige avatars; sin UPDATE avatar_file_id cliente. Registro de avatar exige metadata cacheControl no-store/no-cache/max-age=0; firmas sociales sólo gateway con TTL fijo60 y RPC de servicio protegida. Guard preflight niega referencias antiguas incompatibles, sin reparación automática. Tres estados remotos pendientes de autorización/revisión; SQL local PostgreSQL18.4 con scaffold no equivale a HTTP JWT/Storage/CDN/Realtime real. Tipos propios timestamp sin zona Argentina, sin events.timezone ni borradores.
+
 ## Release 4 — Bloque 8: administración de grants
 
 `20261014120006_event_access_management.sql` **creada, probada localmente y aplicada/verificada en planit-v2 el 13/10/2026 con autorización expresa posterior**. Agrega `get_event_access_grants(uuid,text,uuid,integer) returns jsonb`, `revoke_event_access(uuid,uuid) returns void` y `restore_event_access(uuid,uuid) returns void`; DEFINER, `search_path=''`, EXECUTE sólo authenticated y dueño derivado de `auth.uid()`. [Acta remota](design/verification/r4-block-8/remote-migration-summary.json): 25 versiones sincronizadas, dry-run sin pendientes, tres cuerpos idénticos a Git, ACL/RLS y guardas sin identidad PASS. HTTP/JWT funcional sigue pendiente.

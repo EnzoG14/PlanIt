@@ -2,6 +2,8 @@
 
 **Estado inicial:** todas `NOT RUN`; texto aquí es **resumen operativo**, el texto literal normativo permanece en Google Doc «Criterios de aceptación — R1 a R7». No sustituirlo.
 
+**Corte B1 (14/10/2026):** las 33 filas siguen NOT RUN **integral** porque no hay UI social, HTTP JWT/transporte remoto ni aceptación humana. Hay verificaciones parciales de seguridad SQL y unit gateway PASS, vinculadas más abajo; no equivalen a aprobar un CA completo. [Fuente literal nueva](r5-block-1/source.json), [contrato B1](../implementation/RELEASE_5_BLOCK_1_CONTRACT.md).
+
 | CA | Validación indispensable | Estado | Evidencia |
 |---|---|---|---|
 | RF-R5-01.CA-01 | lista sólo organizador y confirmed, nunca link-only | NOT RUN | — |
@@ -66,3 +68,20 @@ Crear `docs/qa/RELEASE_5_TEST_REPORT.md` con 33 CA, regresiones R1–R4, fallas 
 Base `1b77b377e0a335f70bb7458be74122e1de70b43f`, rama `codex/r5-block-0`. Se leyeron los 8 RF y 33 CA literales de Google Docs: [snapshot limitado a CA](r5-block-0/source.json). Todos los estados oficiales y casos D01–D05 siguen **NOT RUN**: las referencias de auditoría no son PASS de aceptación.
 
 [Contratos/amenazas/decisiones](../implementation/RELEASE_5_BLOCK_0_DECISIONS.md), [matriz objetivo A/B/C/D](r5-block-0/authorization-matrix.csv), [inventario remoto read-only](r5-block-0/catalog.json), [replay/comparación de 55 funciones](r5-block-0/comparison.json) y [HTTP anon 5/5 denegado](r5-block-0/http-anon.json). SQL local de catálogo y HTTP sin sesión no equivalen a pruebas JWT reales A/B/C/D, Storage, Realtime o UI. Ninguna migración R5 creada/aplicada; conflictos C01–C03 requieren revisión antes de B1. Build/lint/regresiones de frontend no ejecutados porque el cambio es documental.
+
+## BLOQUE 1 — pruebas parciales de seguridad nuevas
+
+Base `da4379f58ba60ddfa4c3d03970103b381856996b`, rama `codex/r5-block-1`. [SQL local](r5-block-1/sql-results.json), [unit gateway](r5-block-1/avatar-unit.json), [13 regresiones](r5-block-1/regressions.json), [comandos/límites](r5-block-1/README.md). Fixtures A/B/C/D +anon con SET ROLE en PostgreSQL18.4 y Auth/Storage scaffold; no JWT real ni transporte. Nuevo catálogo read-only histórico25/55 PASS; no DDL remoto. Estado Implementado; QA pendiente.
+
+| CA/casos relacionados | Parte verificada | Resultado/capa | Parte pendiente para aceptación |
+| --- | --- | --- | --- |
+| R5-01.CA-01/03/04 | dueño/confirmed + detalle; grant-only/removido/revocado negados; proyección paginada sin bloqueados | PASS SQL local | UI/navegación, HTTP JWT y casos integrales B2 |
+| R5-02.CA-01/02/03; R5-04.CA-01..04; D01-A/D02-A | allowlist tres mínimos/bio sólo public/accepted, ocultos excluidos, SELECT íntegro negado, 72 audiencias, bloqueo bilateral | PASS SQL local | UI/perfiles/Storage real y aceptación B3/B5 |
+| R5-03.CA-02/03/04; D04-A/B | owner, PATCH visibility/avatar negado, 0/1/N pendientes, rejected intacto, conservación accepted, rollback inyectado y carreras | PASS SQL local | aviso/formulario/UI/persistencia entre sesiones, foto/transporte B4 |
+| R5-05.CA-01..04; R5-06.CA-01..04 | public/accepted, private/pending, generación renovada tras rechazo, stale resolve negado, unfollow/idempotencia/listas/contadores filtrados | PASS SQL local | interfaz/botones, timeout/reconciliación y JWT B6/B7 |
+| R5-07.CA-01..04; R5-08.CA-01..05; D01-B/D03-A | DM canónico, cuerpo/autor/clock/cursor/UUID retry, tercero negado, bloqueo/cleanup bilateral, historial/grupo intactos, unlock sin restore, carreras | PASS SQL local | PWA/Realtime/HTTP JWT e interfaces B8/B9 |
+| R5-02/03/04; C03 | owner/purpose/metadata/cacheControl/avatar, firma socialTTL60 fija, Auth y recheck bloqueo, sin SELECT/path tercero | PASS SQL local + unit fetch simulado | headers/expiración CDN/Storage, Edge Deno y deploy autorizados |
+| R1–R4 | 13 suites existentes con todas las migraciones; C01 names neutros y C02 permisos evento independientes | PASS local | no nueva aceptación R1–R4 ni E2E real por estas suites |
+| D05-A; diseño/accesibilidad | B1 sin pantallas ni tab primario nuevo; mockup intacto | NOT RUN UI; integridad editorial PASS | UI de consumidores, responsive/foco/retorno y aceptación |
+
+C02/C03 aprobados por el responsable durante B1 y registrados en contrato; C01 aplicado según D01 sin alterar facultades de administración. D04 Google Docs pendiente de autorización separada. Migraciones R5 creadas3/probadas local3/aplicadas0/verificadas remotas0. No continuar B2 sin aprobación.
