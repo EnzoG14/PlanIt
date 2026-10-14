@@ -1,5 +1,6 @@
 {
   "base": "090fbabfd68a648ca69f49c27daaedfa07d137e8",
+  "textNormalization": "LF per this directory .gitattributes; PNG bytes unchanged",
   "files": [
     {
       "path": "docs/qa/r4-block-9/.gitattributes",
@@ -1353,8 +1354,8 @@
     },
     {
       "path": "docs/qa/r4-block-9/lint-post-report.txt",
-      "bytes": 4444,
-      "sha256": "98447f83aa134c22891d45444a316d407c28518cf1dc55d736719fb3e273efeb"
+      "bytes": 4422,
+      "sha256": "6bc372620cabb5b7ef739b09abb4c463b1fc5f80fa4ea971d21ce229f6eea549"
     },
     {
       "path": "docs/qa/r4-block-9/local-capture-archive.json",
