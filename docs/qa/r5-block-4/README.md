@@ -59,3 +59,7 @@ Foco visible3px, labels/fieldset/legend, radios nativos, diálogos nativos con E
 Migraciones nuevas: **creadas0 / probadas nuevas0 / aplicadas remotas0 / verificadas nuevas0**. Replay de las28 existentes y catálogo remoto de sólo lectura son verificaciones distintas; no implican aplicación SQL. Gateway existente sin deploy. Proyecto histórico no accedido. Google Docs leído mediante Drive, sin editar; [CA literales/especificación](source.json). D04 sigue siendo decisión posterior pendiente de incorporación documental con autorización separada.
 
 Revisar confirmación D04, allowlists/identidad, estado incierto, foto concurrente, retención y limpieza antes de aceptar. Concurrencia extrema entre pestañas no tiene compare-and-swap de avatar en el contrato SQL actual; la UI detecta cambios en su preflight, y las operaciones autorizadas del mismo dueño siguen el orden de locks B1. La limpieza de recuperación está acotada a100 objetos y no es un proceso automático de borrado. No avanzar B5 ni fusionar esta PR sin revisión humana.
+
+## Corrección posterior: galería Android/Chrome
+
+Filtro del selector cambiado a `image/*`, sin forzar cámara, manteniendo validaciones de formato/tamaño. Build/lint y18 grupos de apertura real de filechooser por clic/teclado/toque emulado PASS; la galería del sistema Android aún requiere confirmación física. [Detalle y evidencia](gallery-picker/README.md). Sin SQL/deploy.

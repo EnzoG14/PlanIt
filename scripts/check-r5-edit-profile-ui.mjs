@@ -16,10 +16,11 @@ const session={access_token:'fixture-token',refresh_token:'fixture-refresh',expi
 const canvasPage=await browser.newPage()
 const png=Buffer.from(await canvasPage.evaluate(()=>{const canvas=document.createElement('canvas');canvas.width=32;canvas.height=32;const ctx=canvas.getContext('2d');ctx.fillStyle='#5b34d6';ctx.fillRect(0,0,32,32);return canvas.toDataURL('image/png').split(',')[1]}),'base64')
 await canvasPage.close()
+const pickerOnly=process.env.PLANIT_R5_PICKER_ONLY==='1'
 const results=[],errors=[];let failure
 try {
 for(const width of baseline?[390,1280]:[320,360,375,390,768,1280]) {
- const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'})
+ const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',...(pickerOnly&&width<768?{isMobile:true,hasTouch:true}:{})})
  await context.addInitScript(s=>localStorage.setItem('sb-iepeqmvzjguwlhnecsdq-auth-token',JSON.stringify(s)),session)
  await context.routeWebSocket('**',ws=>ws.close())
  let profile={username:'ana_fixture',display_name:'Ana Fixture',bio:'Biografía fixture',first_name:null,last_name:null,birth_date:null,sex:null,visibility:'private',avatar_file_id:null}
@@ -87,6 +88,30 @@ for(const width of baseline?[390,1280]:[320,360,375,390,768,1280]) {
  assert.equal(await page.getByRole('heading',{level:1}).count(),1);assert.equal(await page.locator('.social-wash[aria-hidden=true]').count(),1)
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.equal((await page.locator('body').innerText()).includes('PRIVATE_SENTINEL'),false)
  await shot('editor');check('Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save')
+
+ if(pickerOnly) {
+  const input=page.getByLabel('Elegir foto',{exact:true})
+  const attributes=await input.evaluate(node=>({accept:node.accept,capture:node.getAttribute('capture'),multiple:node.multiple,disabled:node.disabled}))
+  assert.equal(attributes.capture,null);assert.equal(attributes.multiple,false);assert.equal(attributes.disabled,false)
+  if(process.env.PLANIT_R5_PICKER_EXPECT_IMAGES==='1')assert.equal(attributes.accept,'image/*')
+  const [cancelled]=await Promise.all([page.waitForEvent('filechooser'),page.locator('.profile-photo-picker').click()])
+  assert.equal(cancelled.isMultiple(),false);await cancelled.setFiles([])
+  assert.equal(await page.getByRole('button',{name:'Guardar foto',exact:true}).count(),0)
+  await input.focus()
+  const [keyboard]=await Promise.all([page.waitForEvent('filechooser'),page.keyboard.press('Space')]);await keyboard.setFiles([])
+  const [chosen]=await Promise.all([page.waitForEvent('filechooser'),width<768?page.locator('.profile-photo-picker').tap():page.locator('.profile-photo-picker').click()])
+  await chosen.setFiles({name:'galeria.png',mimeType:'image/png',buffer:png})
+  await page.getByRole('button',{name:'Guardar foto',exact:true}).waitFor()
+  assert.ok((await page.getByAltText('Vista previa de tu foto').getAttribute('src')).startsWith('blob:'));assert.equal(uploads,0);assert.equal(writes,0)
+  await shot('picker-preview');results.push({width,test:'Native filechooser opened by click, keyboard and touch; cancel safe, selected photo previews with no upload',attributes,result:'PASS'})
+  await page.getByRole('button',{name:'Descartar foto y limpiar carga'}).click()
+  await page.getByText('Selección descartada; los archivos ya registrados se conservan.',{exact:true}).waitFor()
+  const [invalid]=await Promise.all([page.waitForEvent('filechooser'),page.locator('.profile-photo-picker').click()])
+  await invalid.setFiles({name:'galeria.gif',mimeType:'image/gif',buffer:png})
+  await page.getByRole('alert').filter({hasText:'Elegí JPEG, PNG o WebP'}).waitFor();assert.equal(uploads,0)
+  check('Picker choice still enforces JPEG/PNG/WebP validation before any upload')
+  await context.close();continue
+ }
  await page.getByLabel('Nombre visible',{exact:true}).fill('Ana Editada')
  await page.getByLabel('Username',{exact:true}).fill('ANA_EDITADA')
  await page.getByLabel('Biografía',{exact:true}).fill('Biografía actualizada')
@@ -163,4 +188,4 @@ for(const width of baseline?[390,1280]:[320,360,375,390,768,1280]) {
 }
 assert.deepEqual(errors,[])
 } catch(error){failure=error.message;throw error}
-finally {await writeFile(out+'/results.json',JSON.stringify({environment:'Edge production build; synthetic Auth/REST/Storage fixtures, no real JWT or Storage transport',baseline,results,errors,failure:failure??null,result:failure?'FAIL':'PASS'},null,2)+'\n');await browser.close();await new Promise(r=>server.close(r))}
+finally {await writeFile(out+'/results.json',JSON.stringify({environment:'Edge production build; synthetic Auth/REST/Storage fixtures, no real JWT or Storage transport',baseline,pickerOnly,results,errors,failure:failure??null,result:failure?'FAIL':'PASS'},null,2)+'\n');await browser.close();await new Promise(r=>server.close(r))}

@@ -186,7 +186,7 @@ function ProfileEditor({ userId }: { userId: string }) {
       <section className="edit-profile-photo" aria-labelledby="profile-photo-title">
         <div className="profile-avatar">{preview || avatarUrl ? <img src={preview ?? avatarUrl!} alt={preview ? 'Vista previa de tu foto' : 'Tu foto actual'} onError={() => setAvatarUrl(null)} /> : <span><Icon name="user" /></span>}</div>
         <div><h2 id="profile-photo-title">Tu foto</h2><p id="profile-photo-hint">JPEG, PNG o WebP · hasta 5 MiB.<br />La foto se guarda por separado.</p>
-          {!pending && <label className="secondary-button profile-photo-picker">Elegir foto<input aria-label="Elegir foto" aria-describedby="profile-photo-hint" type="file" accept="image/jpeg,image/png,image/webp" disabled={disabled} onChange={event => { void choose(event.target.files?.[0]); event.target.value = '' }} /></label>}
+          {!pending && <label className="secondary-button profile-photo-picker">Elegir foto<input aria-label="Elegir foto" aria-describedby="profile-photo-hint" type="file" accept="image/*" disabled={disabled} onChange={event => { void choose(event.target.files?.[0]); event.target.value = '' }} /></label>}
           {pending && <p className="profile-photo-filename">{pending.file.name}</p>}
           <div className="profile-photo-actions">
             {pending && !avatarUncertain && <GradientButton disabled={disabled} onClick={() => void photo('save')}>Guardar foto</GradientButton>}

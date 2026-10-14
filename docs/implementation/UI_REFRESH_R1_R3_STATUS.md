@@ -86,3 +86,5 @@ Fecha: 12/10/2026. Registro independiente; no modifica estados funcionales R1/R2
 Migrar las restantes pantallas sólo en sus bloques autorizados. El piloto ya está integrado y el bloque 0.5 preserva su apariencia. Los hallazgos históricos sin cierre necesitan comprobación futura; gestos de mapa, teclado real, safe areas, lector de pantalla y perfilado móvil siguen pendientes. La dirección visual está aprobada; las decisiones funcionales del lab siguen abiertas.
 
 Para actualizar: registrar por bloque cambios, evidencia, validaciones, límites y aceptación humana por separado; no convertir una mejora de un componente compartido en cierre automático de otras pantallas.
+
+**Ajuste R5/B4 — selector de galería:** filtro de fotos ampliado para Android/Chrome; composición/tokens sin cambios. [Capturas y18 grupos de apertura del selector](../qa/r5-block-4/gallery-picker/README.md). No equivale a validación de galería nativa Android ni modifica aceptación R1–R3.
