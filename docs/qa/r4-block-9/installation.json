@@ -1,0 +1,11 @@
+{
+  "dateArgentina": "2026-10-14",
+  "node": "24.19.0",
+  "npm": "11.17.0",
+  "attempts": [
+    { "command": "npm ci", "cwd": "D:/planit", "exitCode": 1, "result": "FAIL", "reason": "Windows EPERM unlink on in-use @rolldown/binding-win32-x64-msvc binary; no unrelated process stopped" },
+    { "command": "npm ci --prefix .qa-b9.local", "exitCode": 0, "result": "PASS", "installedPackages": 372, "auditVulnerabilities": 0, "warning": "glob@11.1.0 deprecation", "source": "Unchanged package-lock.json; isolated ignored directory" }
+  ],
+  "recovery": "Copied missing packages from isolated installation to node_modules with robocopy /E /XC /XN /XO, preserving existing in-use binaries. Build and checks run in repo; direct clean install in repo remains an environment limitation.",
+  "remoteMutations": false
+}

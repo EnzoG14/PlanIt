@@ -3,7 +3,7 @@
 **Actualización de planificación R4 v1.2 (13/10/2026):** esta edición documental parte del `main` `a378259a6010`, con Amanecer v3.0 integrado (PR #27–#34). La línea de base anterior del 12/10 y los pasos del bloque 0 son históricos/propuestos: **no** acreditan ejecución ni QA R4. Leer `RELEASE_4_VISUAL_INTEGRATION.md`, `DESIGN.md`, `docs/design/UI_WORKFLOW.md`. R3 confirmada validada por el responsable; informe QA versionado conserva NO-GO por falta de E2E/aceptación humana documentada; reportar esa brecha de evidencia sin reabrir A07.
 
 
-**Corte de ejecución:** 13/10/2026 (Argentina). **Estado:** Bloques 0 (documental), 1–8 implementados; QA/revisión humana pendiente. **39/39 CA con evidencia PASS local/fixture, ninguna con JWT funcional real ni Validado**. 39/39 trazadas. Bloque 9 pendiente. B8 agrega panel y RPC de revocación/restitución; su migración está creada/probada localmente y **aplicada/verificada en planit-v2 con autorización expresa posterior el 13/10/2026**. B7 también fue aplicado con autorización posterior.
+**Corte de ejecución B9:** 14/10/2026 (Argentina). **Estado:** B0–B8 integrados en main `090fbab`; B9 implementado, QA/aceptación humana pendiente. **52/52 comandos/suites finales PASS, 39/39 CA y 47/47 escenarios D/P/H con evidencia local/fixture; ningún JWT funcional real ni Validado**. [Informe](../qa/RELEASE_4_TEST_REPORT.md). **NO-GO para cierre global** por pruebas reales y aceptación pendientes. B9 verifica en sólo lectura 25 migraciones sincronizadas y 55 cuerpos/ACL/configuración coincidentes; sin migración nueva, aplicación SQL, merge o deploy. Las aplicaciones autorizadas previas B1–B8 conservan sus actas y fechas históricas.
 
 **Decisiones del responsable (12/10/2026):** A01–A07 aprobadas; **R3 integrada y validada por confirmación expresa**, sujeto únicamente a comprobación técnica de dependencias en `main`. **Fuentes:** `RELEASE_4_PLAN.md`, `../requirements/RELEASE_4_REQUIREMENTS.md`, `RELEASE_4_DECISIONS_PROPOSED.md`, `../qa/RELEASE_4_ACCEPTANCE.md`.
 
@@ -20,7 +20,7 @@
 | 6 | Visibilidad y links | 07, 5 CA | Implementado; QA pendiente | `codex/r4-block-6`; [PR #45](https://github.com/EnzoG14/PlanIt/pull/45) en borrador | [Pruebas y límites](../qa/r4-block-6/README.md) | `20261014120004_event_visibility_links.sql` **aplicada/verificada en planit-v2 el 13/10/2026 con autorización expresa posterior**; 23 versiones sincronizadas | HTTP/JWT real, revisión humana, canje viejo/cerrado CA-04/05 en B7 |
 | 7 | Canje y detalle | 08, 5 CA | Implementado; QA pendiente | `codex/r4-block-7`; [PR #46](https://github.com/EnzoG14/PlanIt/pull/46) en borrador | [Pruebas, composición/foco/scopes y límites](../design/verification/r4-block-7/README.md) | `20261014120005_redeem_event_link.sql` creada y probada con PostgreSQL local; **aplicada a planit-v2 el 13/10/2026 con autorización expresa posterior** ([acta](../design/verification/r4-block-7/remote-migration-summary.json)) | HTTP/JWT real (`check-invite-http.mjs`, NOT RUN), revisión humana |
 | 8 | Revocación y restitución | 09, 5 CA | Implementado; QA pendiente | `codex/r4-block-8`; [PR #47](https://github.com/EnzoG14/PlanIt/pull/47) en borrador | [Pruebas, composición/foco/scopes y límites](../design/verification/r4-block-8/README.md) | `20261014120006_event_access_management.sql` **aplicada/verificada en planit-v2 el 13/10/2026 con autorización expresa posterior**; [acta](../design/verification/r4-block-8/remote-migration-summary.json), 25 versiones sincronizadas | HTTP/JWT/Storage/Realtime real; aceptación humana |
-| 9 | QA / cierre | todos, 39 CA | Pendiente | — | — | — | Casos real/fixture y aceptación |
+| 9 | QA / cierre | todos, 39 CA | Implementado; QA pendiente | `codex/r4-block-9`; PR de QA en preparación | [Informe](../qa/RELEASE_4_TEST_REPORT.md), [52 suites, trazabilidad y capturas](../qa/r4-block-9/README.md) | Ninguna nueva/aplicada; 25 versiones al día y 55 cuerpos/ACL/config coincidentes, remoto read-only | HTTP JWT/Storage/Realtime real, dispositivos y aceptación; NO-GO global |
 
 ## Procedimiento por bloque
 
@@ -33,6 +33,16 @@
 7. No pasar a «Validado» sin la revisión de 39 CA y aceptación humana; cada PR debe detenerse para revisión.
 
 ## Actas de ejecución
+
+### Bloque 9 — Implementado; QA pendiente · 14/10/2026
+
+- **Base/rama:** fetch de origin/main `090fbabfd68a648ca69f49c27daaedfa07d137e8`, PR #47/B8 integrada y dependencias B0–B7 presentes. Rama exclusiva `codex/r4-block-9`; working tree inicial limpio. Baseline del build main fijado antes de reparar foco, [SHA/assets](../qa/r4-block-9/baseline.json).
+- **Entrega:** runner `check:r4` con códigos/duración/salida/intentos y destinos propios; nuevas pruebas de calendario/GPS, rendimiento/EXPLAIN y UI/PWA. [Informe](../qa/RELEASE_4_TEST_REPORT.md), [39 textos literales y 47 escenarios](../qa/r4-block-9/traceability.json), capturas y hashes sin sobrescribir QA histórica. A01–A07 intactas; R3 no se reabre.
+- **Corrección mínima:** ProfilePage restaura foco al volver de intereses después del efecto de AppLayout. Runners corrigen precisión subpíxel, navegación real en sugerencias, carrera de polling en fixture de notificaciones y color computado de Auth minificado. Sin cambios de apariencia/tokens/scopes ni contratos de negocio.
+- **Pruebas:** 52/52 comandos/suites finales PASS; primer corte 44/49 PASS y cinco fallos luego corregidos/retesteados, conservados en intentos. PostgreSQL17.5 efímero con Auth/Storage SQL scaffold, PGlite histórico y Edge fixtures; 96 combinaciones de seguridad, carreras reales de locks/rollback y caso E histórico distinto. Siete tamaños, baja altura/texto ampliado, foco, reduced-preferences, Mapbox fallido, SW local sin caché privada tras logout/A→B. [Evidencia](../qa/r4-block-9/README.md).
+- **Instalación/rendimiento:** npm ci en checkout falló EPERM por binario en uso; instalación aislada del mismo lockfile PASS, audit0 y binario/hash idénticos; sin cerrar procesos ajenos. Dataset5000: p95 texto6,77ms, fecha/radio2,27ms, ranking26,44ms; comparación de caja/Haversine y EXPLAIN local, no SLA remoto.
+- **Remoto autorizado read-only:** planit-v2, 25 versiones sincronizadas/dry-run sin pendientes, 14 tablas con RLS y 55 cuerpos/ACL/config iguales tras normalizar CRLF/LF. Asesores sin ERROR; avisos DEFINER, protección de contraseñas previa, FK de intereses y unused indexes documentados. Sin usuarios/fixtures de negocio, canjes reales o DDL.
+- **Fin/límites:** **NO-GO para cierre global**. HTTP/JWT/Storage/Realtime funcional real, dispositivos físicos/lector de pantalla y aceptación humana NOT RUN. Detenerse con PR B9; no Validado, merge o deploy. [Auditoría Amanecer acotada](../qa/r4-block-9/IMPECCABLE.md), sin critique formal dual ni regeneración de sidecar.
 
 ### Bloque 8 — Implementado; QA pendiente
 
@@ -123,5 +133,5 @@
 - **Evidencia:** 8 grupos SQL locales y 19 grupos UI con fixtures en cinco tamaños; baseline inmutable before y capturas after nuevas. Incluye ranking más allá de35 candidatos, dos intereses, límites, empate, A/B/anon, ocultos propios/cerrados, confirmados/inactivos, cambio de cuenta/respuesta tardía y polling/expiración. [Pruebas, composición/foco/scopes y límites](../design/verification/r4-block-4/README.md). Build/lint/Amanecer y regresiones registradas en evidencia. Check de filtros ajusta precisión centesimal ante 43.999969px de Chromium para control CSS44px, sin modificar controles.
 - **Límites/fin:** metadata pública previa puede durar hasta reconsulta visible30s más latencia tras cambio externo; detalle revalida. Sin JWT real, dispositivos, lector de pantalla o aceptación humana; no Validado, merge/deploy ni bloque5. Aplicación remota autorizada después de crear PR #43 y registrada; asesores sin avisos nuevos, guard sin identidad probado con ROLLBACK; sin cambios de datos de usuarios ni acceso al proyecto histórico.
 
-### Bloques 8–9 — Pendientes
-- Sin actas, pruebas ni PR de esos bloques.
+### Nota de corte histórico
+- La antigua entrada «Bloques 8–9 pendientes» quedó superada por las actas B8/B9 y la tabla actual. Las entregas y límites de bloques anteriores se conservan como historia, sin acreditar nuevas pruebas remotas o aceptación.

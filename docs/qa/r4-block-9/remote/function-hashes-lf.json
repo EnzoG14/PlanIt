@@ -1,0 +1,226 @@
+[
+  {
+    "signature": "planit_private.validate_birth_date()",
+    "body_md5_lf": "02a4814f4f6a00cbd3dff17363d4b853"
+  },
+  {
+    "signature": "planit_private.handle_new_auth_user()",
+    "body_md5_lf": "cf71db175a455bda5de9a247964fe2c0"
+  },
+  {
+    "signature": "rls_auto_enable()",
+    "body_md5_lf": "c44fb229ea8a6b0afd04a0a33261c16c"
+  },
+  {
+    "signature": "planit_private.validate_new_event()",
+    "body_md5_lf": "64da83f89ce3617d8dbb85633fce066d"
+  },
+  {
+    "signature": "get_notification_changes(uuid[])",
+    "body_md5_lf": "07d146ad8fcf719180b93867f8d50b0a"
+  },
+  {
+    "signature": "planit_private.validate_event_file()",
+    "body_md5_lf": "f9082113cc9d743671779a5c7e847039"
+  },
+  {
+    "signature": "planit_private.touch_updated_at()",
+    "body_md5_lf": "705c5901896faa680a2dc6808e4ef708"
+  },
+  {
+    "signature": "discover_public_events(double precision,double precision,double precision,double precision)",
+    "body_md5_lf": "5c54fadbde586c33fcddc70ea2187c25"
+  },
+  {
+    "signature": "planit_private.record_participation_history()",
+    "body_md5_lf": "95a47dadc17c20868c1b5eac3d9ccf3a"
+  },
+  {
+    "signature": "register_for_event(uuid)",
+    "body_md5_lf": "261a6367ac44b196b733757e1836d9e6"
+  },
+  {
+    "signature": "get_my_events(text,integer)",
+    "body_md5_lf": "4ebc2576cb6a7f0efbd00d6e66d7599a"
+  },
+  {
+    "signature": "get_home_events(timestamp without time zone,uuid,integer)",
+    "body_md5_lf": "9034653103e31b084cf323cfa274ff96"
+  },
+  {
+    "signature": "planit_private.can_read_event_chat(uuid)",
+    "body_md5_lf": "79ba09792d44cb6e0099a911bf8ecf59"
+  },
+  {
+    "signature": "planit_private.create_event_conversation()",
+    "body_md5_lf": "1e5ce32b9dc5501cbbf5f73de43c6299"
+  },
+  {
+    "signature": "get_event_organizer(uuid)",
+    "body_md5_lf": "55cca631b4325cc8cb0a6c42be5f390c"
+  },
+  {
+    "signature": "get_event_chat(uuid)",
+    "body_md5_lf": "0dfbefb9598289a00e5e50e527d4d601"
+  },
+  {
+    "signature": "get_event_chat_messages(uuid,timestamp without time zone,uuid)",
+    "body_md5_lf": "7db6f8586a2c2aab9fa5f35c3ca1571b"
+  },
+  {
+    "signature": "planit_private.stamp_notification_read()",
+    "body_md5_lf": "48aa1182f71acb1b4b2d5b1fd658d84f"
+  },
+  {
+    "signature": "send_event_chat_message(uuid,uuid,text)",
+    "body_md5_lf": "b04603be9605ade4df18fb276dcd9c0e"
+  },
+  {
+    "signature": "get_notifications(timestamp without time zone,uuid)",
+    "body_md5_lf": "9356b70b350c7490451cbcabcf3e22b1"
+  },
+  {
+    "signature": "get_notification_target(uuid)",
+    "body_md5_lf": "a040b58229e55c7559b6fd626b209fd7"
+  },
+  {
+    "signature": "mark_notification_read(uuid)",
+    "body_md5_lf": "871eb7180258beb03c4ef003d3828978"
+  },
+  {
+    "signature": "get_my_organized_events(text,integer)",
+    "body_md5_lf": "ef387103f4f0503bf2402cc8a663c401"
+  },
+  {
+    "signature": "planit_private.lock_gallery(uuid)",
+    "body_md5_lf": "24b1878bc70f6108f6d8a8c57c989dfd"
+  },
+  {
+    "signature": "planit_private.can_delete_event_upload(text)",
+    "body_md5_lf": "aebfb3bfa4c9170f7f418c992577cb90"
+  },
+  {
+    "signature": "planit_private.validate_event_image()",
+    "body_md5_lf": "789203b58d1b5435e61d245a53e3cf88"
+  },
+  {
+    "signature": "add_event_image(uuid,text)",
+    "body_md5_lf": "e6a7ebe0368a32c175ac4c4c86e13bf2"
+  },
+  {
+    "signature": "remove_event_image(uuid,uuid)",
+    "body_md5_lf": "e649da3063522c71fcceed5547508aae"
+  },
+  {
+    "signature": "reorder_event_images(uuid,uuid[],uuid[])",
+    "body_md5_lf": "ae4c0b260d85928da62d512ef11d4f81"
+  },
+  {
+    "signature": "get_event_unregistered_uploads(uuid)",
+    "body_md5_lf": "0751a5f90e0d60d51b211bb03cf458cf"
+  },
+  {
+    "signature": "cancel_event(uuid)",
+    "body_md5_lf": "a8bbc3047b33214971842d6cda8d8601"
+  },
+  {
+    "signature": "get_event_attendees(uuid,text,text,integer)",
+    "body_md5_lf": "fc0dc5171303f99a9a38bc44d31baee9"
+  },
+  {
+    "signature": "remove_participant(uuid,uuid)",
+    "body_md5_lf": "beecd75399b9d7604cb66b2df5e88e6c"
+  },
+  {
+    "signature": "get_event_link_status(uuid)",
+    "body_md5_lf": "5319879ed59ae09b0df65a3d5e69f449"
+  },
+  {
+    "signature": "archive_event(uuid)",
+    "body_md5_lf": "b331b4149ea18e219d91da8ed011c2ea"
+  },
+  {
+    "signature": "get_event_duplicate_source(uuid)",
+    "body_md5_lf": "0b469c754b6571981729772662ae38b4"
+  },
+  {
+    "signature": "get_event_rejoin_requests(uuid,integer)",
+    "body_md5_lf": "0378ceece44a04cf63c3360f48227ca5"
+  },
+  {
+    "signature": "get_event_rejoin_resolution(uuid,uuid)",
+    "body_md5_lf": "30f4d05f4d80c72395218c1c6749bde7"
+  },
+  {
+    "signature": "search_public_events(text,uuid[],timestamp without time zone,uuid,integer,double precision,double precision,double precision,double precision,date,date,double precision,double precision,double precision)",
+    "body_md5_lf": "4e4e48bb7864c9ad76e6ebd553c63927"
+  },
+  {
+    "signature": "set_my_category_interests(uuid[])",
+    "body_md5_lf": "39eeea0f0b2ab0876564629cf4f2d1d1"
+  },
+  {
+    "signature": "get_suggested_events(double precision,double precision,integer)",
+    "body_md5_lf": "bb30d269f107655dd1400e561dc0a17b"
+  },
+  {
+    "signature": "planit_private.can_view_event(uuid)",
+    "body_md5_lf": "1e666b06a0bf30f5c05a9aaaa5323365"
+  },
+  {
+    "signature": "planit_private.protect_event_visibility()",
+    "body_md5_lf": "0b0fbe4ed7c8b692f96e3de16cb03952"
+  },
+  {
+    "signature": "get_event_participation_summary(uuid)",
+    "body_md5_lf": "ef8dccca594bbd8288cc5ebfe9619d85"
+  },
+  {
+    "signature": "leave_event(uuid)",
+    "body_md5_lf": "a115dcdd22dbc01a1243162c0a7812b6"
+  },
+  {
+    "signature": "get_my_rejoin_status(uuid)",
+    "body_md5_lf": "0ccc9d2b6b2f3f788d15c6118e9500b2"
+  },
+  {
+    "signature": "request_rejoin(uuid)",
+    "body_md5_lf": "c1205c9adcc085c253434ef9848cd20b"
+  },
+  {
+    "signature": "resolve_rejoin(uuid,uuid,text)",
+    "body_md5_lf": "293ed799516f9c085e870b68017e0a4b"
+  },
+  {
+    "signature": "create_event(uuid,text,text,timestamp without time zone,timestamp without time zone,uuid,integer,text,double precision,double precision,text,text[],text)",
+    "body_md5_lf": "79c3611d5194aaff84eea1793ca4edcb"
+  },
+  {
+    "signature": "update_event(uuid,text,text,timestamp without time zone,timestamp without time zone,uuid,integer,text,double precision,double precision,text,text)",
+    "body_md5_lf": "432520635c291ca5556ddc3087003fec"
+  },
+  {
+    "signature": "set_event_visibility(uuid,text)",
+    "body_md5_lf": "915d4e0e8d3fe638f5cbaa0e6047bea8"
+  },
+  {
+    "signature": "create_or_rotate_event_link(uuid)",
+    "body_md5_lf": "f6309cb8d696b40ca42737098263410c"
+  },
+  {
+    "signature": "redeem_event_link(text)",
+    "body_md5_lf": "aef5f0a1073369fb1c2b4f7b9d81aef2"
+  },
+  {
+    "signature": "get_event_access_grants(uuid,text,uuid,integer)",
+    "body_md5_lf": "0f692d1c9f9c991d1f7ecb3f99a952ee"
+  },
+  {
+    "signature": "revoke_event_access(uuid,uuid)",
+    "body_md5_lf": "0510e365a051493261f18725efd1a378"
+  },
+  {
+    "signature": "restore_event_access(uuid,uuid)",
+    "body_md5_lf": "2efbd5a4921b7d75dfbaf3db7d324c6f"
+  }
+]

@@ -1,0 +1,5 @@
+
+> planit@0.0.0 check:discovery
+> node scripts/check-discovery.mjs
+
+PASS: SQL real local, RLS invoker, public/active/time/area filters, owner exclusions, antimeridian, invalid bounds, empty, anonymous denial.

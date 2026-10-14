@@ -1,0 +1,12 @@
+
+> planit@0.0.0 check:edit-event
+> node scripts/check-edit-event.mjs
+
+PASS: Native date/time minima use Argentina and roll over midnight; end follows start
+PASS: Replay migrations; invoker function, empty search_path
+PASS: Organizer edits same ID; Argentina overnight timestamps, detail/list readback; retries retain one event/chat
+PASS: Invalid fields/dates/category rollback; capacity equals confirmed allowed, smaller denied; participation/history unchanged
+PASS: B/anon/missing identity/nonexistent event/direct UPDATE and DELETE denied; frozen snapshot rejected
+PASS: Cancelled/archived/ongoing/ended cannot be edited or reopened
+PASS: Race: reduction locks first; registration waits then fails full
+PASS: Race: registration locks first; reduction waits then sees committed confirmed count and fails

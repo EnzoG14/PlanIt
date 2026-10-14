@@ -1,0 +1,548 @@
+[
+  {
+    "viewport": 320,
+    "scrollWidth": 320,
+    "controls": [
+      {
+        "name": "Cuenta",
+        "width": 118.546875,
+        "height": 44
+      },
+      {
+        "name": "visibility",
+        "width": 288,
+        "height": 52
+      },
+      {
+        "name": "title",
+        "width": 288,
+        "height": 52
+      },
+      {
+        "name": "description",
+        "width": 288,
+        "height": 120
+      },
+      {
+        "name": "start_date",
+        "width": 288,
+        "height": 52
+      },
+      {
+        "name": "start_time",
+        "width": 288,
+        "height": 51.99993896484375
+      },
+      {
+        "name": "end_date",
+        "width": 288,
+        "height": 52
+      },
+      {
+        "name": "end_time",
+        "width": 288,
+        "height": 52
+      },
+      {
+        "name": "address",
+        "width": 288,
+        "height": 52
+      },
+      {
+        "name": "location_name",
+        "width": 288,
+        "height": 52
+      },
+      {
+        "name": "Usar mi ubicación actual",
+        "width": 288,
+        "height": 48
+      },
+      {
+        "name": "latitude",
+        "width": 288,
+        "height": 52
+      },
+      {
+        "name": "longitude",
+        "width": 288,
+        "height": 52
+      },
+      {
+        "name": "category_id",
+        "width": 288,
+        "height": 52
+      },
+      {
+        "name": "capacity",
+        "width": 288,
+        "height": 52
+      },
+      {
+        "name": "images",
+        "width": 288,
+        "height": 66
+      },
+      {
+        "name": "Publicar evento",
+        "width": 288,
+        "height": 56
+      }
+    ]
+  },
+  {
+    "viewport": 360,
+    "scrollWidth": 360,
+    "controls": [
+      {
+        "name": "Cuenta",
+        "width": 126.546875,
+        "height": 44
+      },
+      {
+        "name": "visibility",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "title",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "description",
+        "width": 320,
+        "height": 120
+      },
+      {
+        "name": "start_date",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "start_time",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "end_date",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "end_time",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "address",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "location_name",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "Usar mi ubicación actual",
+        "width": 320,
+        "height": 48
+      },
+      {
+        "name": "latitude",
+        "width": 154,
+        "height": 52
+      },
+      {
+        "name": "longitude",
+        "width": 154,
+        "height": 52
+      },
+      {
+        "name": "category_id",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "capacity",
+        "width": 320,
+        "height": 52
+      },
+      {
+        "name": "images",
+        "width": 320,
+        "height": 66
+      },
+      {
+        "name": "Publicar evento",
+        "width": 320,
+        "height": 56
+      }
+    ]
+  },
+  {
+    "viewport": 375,
+    "scrollWidth": 375,
+    "controls": [
+      {
+        "name": "Cuenta",
+        "width": 126.546875,
+        "height": 44
+      },
+      {
+        "name": "visibility",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "title",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "description",
+        "width": 335,
+        "height": 120
+      },
+      {
+        "name": "start_date",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "start_time",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "end_date",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "end_time",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "address",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "location_name",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "Usar mi ubicación actual",
+        "width": 335,
+        "height": 48
+      },
+      {
+        "name": "latitude",
+        "width": 161.5,
+        "height": 52
+      },
+      {
+        "name": "longitude",
+        "width": 161.5,
+        "height": 52
+      },
+      {
+        "name": "category_id",
+        "width": 335,
+        "height": 52
+      },
+      {
+        "name": "capacity",
+        "width": 335,
+        "height": 52.0001220703125
+      },
+      {
+        "name": "images",
+        "width": 335,
+        "height": 66
+      },
+      {
+        "name": "Publicar evento",
+        "width": 335,
+        "height": 56
+      }
+    ]
+  },
+  {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "controls": [
+      {
+        "name": "Cuenta",
+        "width": 126.546875,
+        "height": 44
+      },
+      {
+        "name": "visibility",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "title",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "description",
+        "width": 350,
+        "height": 120
+      },
+      {
+        "name": "start_date",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "start_time",
+        "width": 350,
+        "height": 51.99993896484375
+      },
+      {
+        "name": "end_date",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "end_time",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "address",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "location_name",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "Usar mi ubicación actual",
+        "width": 350,
+        "height": 48
+      },
+      {
+        "name": "latitude",
+        "width": 169,
+        "height": 52
+      },
+      {
+        "name": "longitude",
+        "width": 169,
+        "height": 52
+      },
+      {
+        "name": "category_id",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "capacity",
+        "width": 350,
+        "height": 52
+      },
+      {
+        "name": "images",
+        "width": 350,
+        "height": 66
+      },
+      {
+        "name": "Publicar evento",
+        "width": 350,
+        "height": 56
+      }
+    ]
+  },
+  {
+    "viewport": 768,
+    "scrollWidth": 768,
+    "controls": [
+      {
+        "name": "Cuenta",
+        "width": 126.546875,
+        "height": 44
+      },
+      {
+        "name": "visibility",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "title",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "description",
+        "width": 640,
+        "height": 120
+      },
+      {
+        "name": "start_date",
+        "width": 314,
+        "height": 52
+      },
+      {
+        "name": "start_time",
+        "width": 314,
+        "height": 52
+      },
+      {
+        "name": "end_date",
+        "width": 314,
+        "height": 52
+      },
+      {
+        "name": "end_time",
+        "width": 314,
+        "height": 52
+      },
+      {
+        "name": "address",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "location_name",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "Usar mi ubicación actual",
+        "width": 640,
+        "height": 48
+      },
+      {
+        "name": "latitude",
+        "width": 314,
+        "height": 52
+      },
+      {
+        "name": "longitude",
+        "width": 314,
+        "height": 52
+      },
+      {
+        "name": "category_id",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "capacity",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "images",
+        "width": 640,
+        "height": 66
+      },
+      {
+        "name": "Publicar evento",
+        "width": 640,
+        "height": 56
+      }
+    ]
+  },
+  {
+    "viewport": 1280,
+    "scrollWidth": 1280,
+    "controls": [
+      {
+        "name": "Cuenta",
+        "width": 126.546875,
+        "height": 44
+      },
+      {
+        "name": "visibility",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "title",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "description",
+        "width": 640,
+        "height": 120
+      },
+      {
+        "name": "start_date",
+        "width": 314,
+        "height": 52
+      },
+      {
+        "name": "start_time",
+        "width": 314,
+        "height": 52
+      },
+      {
+        "name": "end_date",
+        "width": 314,
+        "height": 51.99993896484375
+      },
+      {
+        "name": "end_time",
+        "width": 314,
+        "height": 51.99993896484375
+      },
+      {
+        "name": "address",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "location_name",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "Usar mi ubicación actual",
+        "width": 640,
+        "height": 48
+      },
+      {
+        "name": "latitude",
+        "width": 314,
+        "height": 52
+      },
+      {
+        "name": "longitude",
+        "width": 314,
+        "height": 52
+      },
+      {
+        "name": "category_id",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "capacity",
+        "width": 640,
+        "height": 52
+      },
+      {
+        "name": "images",
+        "width": 640,
+        "height": 66
+      },
+      {
+        "name": "Publicar evento",
+        "width": 640,
+        "height": 56
+      }
+    ]
+  }
+]

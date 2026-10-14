@@ -1,0 +1,14 @@
+
+> planit@0.0.0 check:interests
+> node scripts/check-interests.mjs
+
+PASS: Complete migration replay, including blocks 1/2 and new interests table
+PASS: CA-01/02: 0/1/N selection, repeated save has no duplicates and preserves created_at
+PASS: CA-03: A/B own-only RLS; cross-account SELECT returns zero; all REST writes and anon denied; auth/profile guards
+PASS: CA-04: null/duplicate/unknown/malformed IDs fail without partial changes
+PASS: Inactive saved interest retained until removal; inactive new/re-added selection rejected atomically
+PASS: CA-04: forced INSERT failure after DELETE rolls back the entire replacement
+PASS: Concurrent replacements of an initially empty account serialize; last completed replacement wins without a union
+PASS: Category deactivation waits for a validated save; saved inactive preference remains valid
+PASS: CA-02/03: fresh authenticated connection recovers persisted preference; clear does not affect B
+PASS: created_at follows Argentina timestamp convention; table/FKs/PK replay successfully

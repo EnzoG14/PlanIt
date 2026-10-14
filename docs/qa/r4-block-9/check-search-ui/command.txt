@@ -1,0 +1,17 @@
+
+> planit@0.0.0 check:search:ui
+> node scripts/check-search-ui.mjs
+
+PASS: Inicio loads neutral (no text, no categories) with labelled search field and category toggle group
+PASS: CA R4-01.01/02/03: text matches title or description case-insensitively; non-matching events are not listed; query lives in the URL
+PASS: CA R4-02.01/02: several categories are OR-ed and combined with the text
+PASS: CA R4-02.03: removing a category updates results and sends a neutral filter when none remain
+PASS: CA R4-01.04 / R4-02.04: no matches shows an empty state and keeps the applied criteria visible
+PASS: Clearing the field restores results and keeps keyboard focus on the search input
+PASS: A slow earlier search cannot overwrite the results of the latest search (rapid double change)
+PASS: CA R4-01.04: HTTP failure shows a distinct error with retry, never an empty-result message
+PASS: Detail returns to Inicio preserving the sanitized filters
+PASS: URL parameters are sanitized: invalid category ids are dropped and text is sent as an inert parameter
+PASS: A failed signed-URL request does not remove results; a retry notice is shown
+PASS: Mapa uses the same shared filters (text + categories) and the same RPC with bounds
+PASS: Filters render at 320/375/390/768/1280 px without horizontal overflow and with >=44px targets

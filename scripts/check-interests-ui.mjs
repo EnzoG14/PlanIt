@@ -84,6 +84,7 @@ try {
     assert.equal(await sports().getAttribute('aria-pressed'), 'true')
     await page.getByRole('link', { name: 'Volver a mi perfil' }).click(); await page.getByRole('button', { name: 'Descartar cambios' }).click()
     await page.getByRole('link', { name: 'Mis intereses', exact: true }).waitFor()
+    await page.waitForFunction(() => document.activeElement?.getAttribute('href') === '/me/interests')
     assert.ok(await page.getByRole('link', { name: 'Mis intereses', exact: true }).evaluate(el => el === document.activeElement))
     await page.getByRole('link', { name: 'Mis intereses', exact: true }).click(); await ready()
     await page.waitForFunction(() => document.activeElement?.tagName === 'H1' && document.activeElement.textContent === 'Mis intereses')

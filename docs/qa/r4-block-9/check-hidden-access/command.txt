@@ -1,0 +1,11 @@
+
+> planit@0.0.0 check:hidden-access
+> node scripts/check-hidden-access.mjs
+
+PASS: Full ordered migration replay; RLS, definer ACL/search_path, no hash SELECT or direct grant mutation
+PASS: 96 combinations: UUID SELECT, summary/organizer/rejoin, own list, images/files/Storage, chat header/messages/send, owner and stranger/anon
+PASS: Public-only home/map/search/suggestions even for owner or active grantee
+PASS: A04/A05/D12 round trips: confirmed grants, conflict rollback, revoked preserved, public read, rehide deny; R3 pending approval cannot bypass revoke
+PASS: Public registration ignores revoked without restoring it; forced failure after grant inserts rolls visibility/grants back together
+PASS: Cross-event source FK, hash shape, cross-account owner RPCs; legitimate shared public file stays readable without hidden association
+PASS: Real last-seat serialization, revoke/rollback vs register, visibility vs register both orders; event-first locks

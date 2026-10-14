@@ -167,7 +167,16 @@ try {
       await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-transparency', value: 'reduce' }, { name: 'prefers-reduced-motion', value: 'reduce' }] })
       assert.equal(await page.evaluate(() => matchMedia('(prefers-reduced-transparency: reduce)').matches), true)
       assert.equal(await page.locator('.app-shell').evaluate(el => getComputedStyle(el).getPropertyValue('--pi-glass-blur').trim()), 'none')
-      assert.equal(await page.locator('.app-shell').evaluate(el => getComputedStyle(el).getPropertyValue('--pi-color-surface-glass').trim()), 'rgba(255, 255, 255, .96)')
+      const reducedGlass = await page.locator('.app-shell').evaluate(el => {
+        const probe = document.createElement('span')
+        probe.style.backgroundColor = 'var(--pi-color-surface-glass)'; el.append(probe)
+        const color = getComputedStyle(probe).backgroundColor; probe.remove()
+        return color.match(/[\d.]+/g).map(Number)
+      })
+      // Production minification serializes rgba(.96) as #fffffff5; compare its
+      // computed white color/alpha with tolerance for 8-bit alpha quantization.
+      assert.deepEqual(reducedGlass.slice(0, 3), [255, 255, 255])
+      assert.ok(Math.abs(reducedGlass[3] - .96) <= 1 / 255)
       assert.equal(await page.locator('.auth-wash').evaluate(el => getComputedStyle(el).animationName), 'none')
       await shot('register-reduced-transparency')
       await cdp.detach()

@@ -1,0 +1,58 @@
+
+> planit@0.0.0 check:interests:ui
+> node scripts/check-interests-ui.mjs
+
+PASS: 320: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow
+PASS: 320: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus
+PASS: 320: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection
+PASS: 320: CA-04 rejected save shows error, preserves draft and retries without false confirmation
+PASS: 320: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending
+PASS: 320: inactive unsaved category cannot be retained invisibly after catalog refresh
+PASS: 320: zero categories selection persists; empty catalog and initial read failure/retry
+PASS: 320: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation
+PASS: 320: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog
+PASS: 360: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow
+PASS: 360: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus
+PASS: 360: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection
+PASS: 360: CA-04 rejected save shows error, preserves draft and retries without false confirmation
+PASS: 360: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending
+PASS: 360: inactive unsaved category cannot be retained invisibly after catalog refresh
+PASS: 360: zero categories selection persists; empty catalog and initial read failure/retry
+PASS: 360: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation
+PASS: 360: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog
+PASS: 375: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow
+PASS: 375: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus
+PASS: 375: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection
+PASS: 375: CA-04 rejected save shows error, preserves draft and retries without false confirmation
+PASS: 375: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending
+PASS: 375: inactive unsaved category cannot be retained invisibly after catalog refresh
+PASS: 375: zero categories selection persists; empty catalog and initial read failure/retry
+PASS: 375: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation
+PASS: 375: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog
+PASS: 390: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow
+PASS: 390: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus
+PASS: 390: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection
+PASS: 390: CA-04 rejected save shows error, preserves draft and retries without false confirmation
+PASS: 390: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending
+PASS: 390: inactive unsaved category cannot be retained invisibly after catalog refresh
+PASS: 390: zero categories selection persists; empty catalog and initial read failure/retry
+PASS: 390: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation
+PASS: 390: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog
+PASS: 768: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow
+PASS: 768: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus
+PASS: 768: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection
+PASS: 768: CA-04 rejected save shows error, preserves draft and retries without false confirmation
+PASS: 768: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending
+PASS: 768: inactive unsaved category cannot be retained invisibly after catalog refresh
+PASS: 768: zero categories selection persists; empty catalog and initial read failure/retry
+PASS: 768: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation
+PASS: 768: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog
+PASS: 1280: CA-01 active categories and retained inactive; explicit Amanecer shell, 4 dock links, own preferences, targets and no overflow
+PASS: 1280: dirty navigation via back link, browser Back and dock; cancel/Escape preserves edits, discard restores profile focus
+PASS: 1280: CA-02 save ACK plus read reconciliation; busy locks editing/double send, reload recovers selection
+PASS: 1280: CA-04 rejected save shows error, preserves draft and retries without false confirmation
+PASS: 1280: CA-04 uncertain committed/uncommitted response and failed reconciliation checked by read before resending
+PASS: 1280: inactive unsaved category cannot be retained invisibly after catalog refresh
+PASS: 1280: zero categories selection persists; empty catalog and initial read failure/retry
+PASS: 1280: switching identity during a pending write aborts/ignores its response; A does not inherit B edits or confirmation
+PASS: 1280: CA-03 isolated A/B and stale read cleanup; refresh preserves edits; logout clears private state; enlarged text and short dialog

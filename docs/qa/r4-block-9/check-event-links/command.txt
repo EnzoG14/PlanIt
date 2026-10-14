@@ -1,0 +1,12 @@
+
+> planit@0.0.0 check:event-links
+> node scripts/check-event-links.mjs
+
+PASS: Atomic unlisted creation, idempotent UUID/chat, invalid media rollback, legacy public defaults
+PASS: Only owner RPCs, no direct UPDATE or hash SELECT, anon and stranger denied
+PASS: 256-bit CSPRNG and SHA-256 only, old hash revoked, rotation rollback preserves prior link
+PASS: Two real concurrent rotations serialize on event lock, exactly one active hash
+PASS: A04/A05/D12: confirmed preserved, conflict rolls back content/grants/visibility, revoked remains revoked and removed
+PASS: Authorized duplicate source, new events inherit no grants/links; owner hidden events excluded from public search
+PASS: No calendar expiry; end/cancel/archive prohibit generation/rotation without mutating active hash (redemption B7 pending)
+PASS: Distinct D stranger and E historical: A04 preserves confirmed E; revoked E cannot use history; restore preserves cancelled state/history without chat

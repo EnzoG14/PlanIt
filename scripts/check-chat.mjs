@@ -140,7 +140,7 @@ try {
   assert.match((await blockedSend).error.message,/chat_read_only/)
   assert.equal((await history(a,newEvent)).length,0)
   check('CA R2-05.04: real two-connection race waits on event lock and rejects send after cancellation commits')
-  const out = 'docs/design/verification/event-chat'
+  const out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/event-chat'
   await mkdir(out,{recursive:true})
   await writeFile(`${out}/postgres-results.json`,JSON.stringify({version,environment:'Local PostgreSQL with Auth/Storage scaffolding; no real Supabase REST/Auth',results},null,2))
 } finally {

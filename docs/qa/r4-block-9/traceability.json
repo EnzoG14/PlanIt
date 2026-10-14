@@ -1,0 +1,2024 @@
+{
+  "base": "090fbabfd68a648ca69f49c27daaedfa07d137e8",
+  "criteriaCount": 39,
+  "literalSha256": "a31c9dc91df5478443b5544e9e0c0d4a67769831c4ca8c65b821173d19a71b80",
+  "criteria": [
+    {
+      "id": "RF-R4-01.CA-01",
+      "literal": "Cuando el usuario ingresa un término de búsqueda, el sistema muestra eventos disponibles cuyo nombre o descripción contiene el término consultado.",
+      "scenario": "Título o descripción coincide",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-01.CA-02",
+      "literal": "La búsqueda no distingue entre mayúsculas y minúsculas y puede repetirse al cambiar el texto.",
+      "scenario": "Búsqueda en mayúsculas/minúsculas",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-01.CA-03",
+      "literal": "Los eventos que no coinciden con la búsqueda no se muestran como resultados.",
+      "scenario": "Excluir resultado no coincidente",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-01.CA-04",
+      "literal": "Si no existen coincidencias, se muestra un estado sin resultados; si falla la consulta, se presenta un mensaje de error diferenciado.",
+      "scenario": "Sin coincidencias vs falla de red",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-02.CA-01",
+      "literal": "El usuario puede seleccionar una o más categorías y ver eventos disponibles que pertenezcan a cualquiera de las categorías seleccionadas.",
+      "scenario": "Multiselección OR",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-02.CA-02",
+      "literal": "Al combinar categorías con los filtros de fecha, distancia o texto, sólo aparecen eventos que cumplen todos los grupos de filtros activos.",
+      "scenario": "Cruce AND categoría+texto+fecha+radio",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-02.CA-03",
+      "literal": "Al quitar una categoría seleccionada, los resultados se actualizan sin mantener la restricción anterior.",
+      "scenario": "Quitar chip actualiza",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-02.CA-04",
+      "literal": "Si no hay coincidencias, se muestra un estado sin resultados y quedan visibles los criterios aplicados.",
+      "scenario": "Vacío conserva chips",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-03.CA-01",
+      "literal": "El usuario puede indicar una fecha o rango válido para limitar los eventos mostrados a ese período.",
+      "scenario": "Fecha única y rango",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        },
+        {
+          "command": "npm run check:r4:boundaries",
+          "source": "scripts/check-r4-boundaries.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-r4-boundaries"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-03.CA-02",
+      "literal": "Los eventos cuya fecha programada queda fuera del período no aparecen en los resultados.",
+      "scenario": "Evento fuera del rango",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        },
+        {
+          "command": "npm run check:r4:boundaries",
+          "source": "scripts/check-r4-boundaries.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-r4-boundaries"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-03.CA-03",
+      "literal": "El sistema impide aplicar un rango cuyo inicio sea posterior a su final, informando el problema.",
+      "scenario": "Rango invertido inválido",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        },
+        {
+          "command": "npm run check:r4:boundaries",
+          "source": "scripts/check-r4-boundaries.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-r4-boundaries"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-03.CA-04",
+      "literal": "Al limpiar el filtro, vuelven a considerarse eventos de otras fechas según los demás criterios activos.",
+      "scenario": "Limpiar fechas",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        },
+        {
+          "command": "npm run check:r4:boundaries",
+          "source": "scripts/check-r4-boundaries.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-r4-boundaries"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-04.CA-01",
+      "literal": "El usuario puede elegir un radio de búsqueda válido con respecto a su ubicación de referencia.",
+      "scenario": "Radio válido con origen",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        },
+        {
+          "command": "npm run check:r4:boundaries",
+          "source": "scripts/check-r4-boundaries.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-r4-boundaries"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-04.CA-02",
+      "literal": "Al aplicar un radio menor o mayor, la lista y/o el mapa se actualizan para incluir únicamente eventos dentro de esa distancia.",
+      "scenario": "Diferencia radio 5/25 km",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        },
+        {
+          "command": "npm run check:r4:boundaries",
+          "source": "scripts/check-r4-boundaries.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-r4-boundaries"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-04.CA-03",
+      "literal": "Los cambios de radio se combinan con los filtros de categoría, fecha o texto que permanezcan activos.",
+      "scenario": "Radio+otros filtros",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        },
+        {
+          "command": "npm run check:r4:boundaries",
+          "source": "scripts/check-r4-boundaries.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-r4-boundaries"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-04.CA-04",
+      "literal": "Si no puede determinarse la ubicación de referencia, el sistema informa la limitación y no presenta resultados como si la distancia hubiera sido calculada correctamente.",
+      "scenario": "Ubicación denegada",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        },
+        {
+          "command": "npm run check:r4:boundaries",
+          "source": "scripts/check-r4-boundaries.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-r4-boundaries"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-05.CA-01",
+      "literal": "El usuario autenticado puede visualizar las categorías disponibles y seleccionar o deseleccionar sus intereses.",
+      "scenario": "Seleccionar/deseleccionar",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:interests",
+          "source": "scripts/check-interests.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests"
+        },
+        {
+          "command": "npm run check:interests:ui",
+          "source": "scripts/check-interests-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-05.CA-02",
+      "literal": "Al guardar, las preferencias quedan asociadas a la cuenta y se recuperan al volver a abrir la sección.",
+      "scenario": "Persistir tras reingresar",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:interests",
+          "source": "scripts/check-interests.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests"
+        },
+        {
+          "command": "npm run check:interests:ui",
+          "source": "scripts/check-interests-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-05.CA-03",
+      "literal": "Modificar los intereses reemplaza o actualiza la selección persistida sin afectar las preferencias de otras personas.",
+      "scenario": "A/B privacidad",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:interests",
+          "source": "scripts/check-interests.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests"
+        },
+        {
+          "command": "npm run check:interests:ui",
+          "source": "scripts/check-interests-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-05.CA-04",
+      "literal": "Si el guardado falla, se informa el error y no se presenta como confirmada una preferencia que no quedó persistida.",
+      "scenario": "Fallo de guardado",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:interests",
+          "source": "scripts/check-interests.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests"
+        },
+        {
+          "command": "npm run check:interests:ui",
+          "source": "scripts/check-interests-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-06.CA-01",
+      "literal": "La aplicación presenta una sección de eventos sugeridos para el usuario autenticado.",
+      "scenario": "Sección personal",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:suggestions",
+          "source": "scripts/check-suggestions.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions"
+        },
+        {
+          "command": "npm run check:suggestions:ui",
+          "source": "scripts/check-suggestions-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-06.CA-02",
+      "literal": "Las sugerencias se obtienen mediante criterios explícitos relacionados con las categorías de interés, la distancia o la fecha de los eventos.",
+      "scenario": "Ranking categorías+fecha+distancia",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:suggestions",
+          "source": "scripts/check-suggestions.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions"
+        },
+        {
+          "command": "npm run check:suggestions:ui",
+          "source": "scripts/check-suggestions-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-06.CA-03",
+      "literal": "No se sugieren eventos que el usuario no tenga autorización para ver o que ya no estén disponibles.",
+      "scenario": "Sin ocultos/cerrados",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:suggestions",
+          "source": "scripts/check-suggestions.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions"
+        },
+        {
+          "command": "npm run check:suggestions:ui",
+          "source": "scripts/check-suggestions-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-06.CA-04",
+      "literal": "Al seleccionar una sugerencia se abre su detalle; si no existen coincidencias relevantes, se muestra un estado informativo en lugar de elementos arbitrarios.",
+      "scenario": "Detalle y estado vacío",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:suggestions",
+          "source": "scripts/check-suggestions.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions"
+        },
+        {
+          "command": "npm run check:suggestions:ui",
+          "source": "scripts/check-suggestions-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-07.CA-01",
+      "literal": "El organizador puede elegir entre visibilidad pública u oculta al crear o editar un evento propio.",
+      "scenario": "Public/unlisted en crear y editar",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        },
+        {
+          "command": "npm run check:event-links:ui",
+          "source": "scripts/check-event-links-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links-ui"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-07.CA-02",
+      "literal": "Un evento oculto no aparece en búsquedas, mapas, listados públicos ni recomendaciones generales.",
+      "scenario": "Oculto ausente en feeds/mapa",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        },
+        {
+          "command": "npm run check:event-links:ui",
+          "source": "scripts/check-event-links-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links-ui"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-07.CA-03",
+      "literal": "El organizador puede generar y compartir un enlace de acceso a su evento oculto; sólo puede existir un enlace activo a la vez.",
+      "scenario": "Un token activo",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        },
+        {
+          "command": "npm run check:event-links:ui",
+          "source": "scripts/check-event-links-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links-ui"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-07.CA-04",
+      "literal": "Puede invalidar ese enlace y generar otro; el enlace anterior deja de conceder nuevos accesos, sin anular permisos individuales ya otorgados.",
+      "scenario": "Rotación y grants preservados",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        },
+        {
+          "command": "npm run check:event-links:ui",
+          "source": "scripts/check-event-links-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links-ui"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-07.CA-05",
+      "literal": "El enlace no vence por una cantidad de días, pero no admite nuevos canjes cuando el evento terminó, fue cancelado o archivado.",
+      "scenario": "Fin/cierre impide nuevo canje",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        },
+        {
+          "command": "npm run check:event-links:ui",
+          "source": "scripts/check-event-links-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links-ui"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-08.CA-01",
+      "literal": "Un usuario autenticado que abre un enlace válido de un evento oculto puede consultar su detalle sin quedar inscripto automáticamente.",
+      "scenario": "Canje no inscribe",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        },
+        {
+          "command": "npm run check:invite:ui",
+          "source": "scripts/check-invite-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite-ui"
+        },
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-08.CA-02",
+      "literal": "Después del primer acceso conserva la autorización y puede volver a consultar el evento sin utilizar otra vez el enlace, mientras su permiso siga activo.",
+      "scenario": "Grant persistente",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        },
+        {
+          "command": "npm run check:invite:ui",
+          "source": "scripts/check-invite-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite-ui"
+        },
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-08.CA-03",
+      "literal": "Un usuario sin autorización no puede consultar un evento oculto por búsqueda ni por URL directa sin un canje válido.",
+      "scenario": "Acceso directo sin grant denegado",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        },
+        {
+          "command": "npm run check:invite:ui",
+          "source": "scripts/check-invite-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite-ui"
+        },
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-08.CA-04",
+      "literal": "Conocer el enlace o tener autorización para ver el evento no habilita a consultar asistentes, participar en el chat o ver historias hasta estar confirmado.",
+      "scenario": "Chat/asistentes protegidos",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        },
+        {
+          "command": "npm run check:invite:ui",
+          "source": "scripts/check-invite-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite-ui"
+        },
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-08.CA-05",
+      "literal": "No se concede acceso usando un enlace invalidado ni se otorgan nuevos accesos mediante enlaces de eventos finalizados, cancelados o archivados.",
+      "scenario": "Token viejo y evento cerrado denegados",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        },
+        {
+          "command": "npm run check:invite:ui",
+          "source": "scripts/check-invite-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite-ui"
+        },
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-09.CA-01",
+      "literal": "El organizador puede consultar los usuarios con autorización persistente en uno de sus eventos ocultos y distinguir permisos activos de revocados.",
+      "scenario": "Panel activo/revocado",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        },
+        {
+          "command": "npm run check:event-access:ui",
+          "source": "scripts/check-event-access-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access-ui"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-09.CA-02",
+      "literal": "El organizador puede revocar un acceso individual y la persona deja de consultar el evento oculto, aunque conserve el enlace.",
+      "scenario": "Revocación quita detalle",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        },
+        {
+          "command": "npm run check:event-access:ui",
+          "source": "scripts/check-event-access-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access-ui"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-09.CA-03",
+      "literal": "Si esa persona está confirmada como asistente, primero se registra su remoción y luego se revoca el acceso, conservando el historial.",
+      "scenario": "Remoción atómica e historia",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        },
+        {
+          "command": "npm run check:event-access:ui",
+          "source": "scripts/check-event-access-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access-ui"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-09.CA-04",
+      "literal": "El usuario revocado no puede recuperar el permiso utilizando ningún enlace, incluso uno regenerado.",
+      "scenario": "Revocado no recanjea",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        },
+        {
+          "command": "npm run check:event-access:ui",
+          "source": "scripts/check-event-access-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access-ui"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    },
+    {
+      "id": "RF-R4-09.CA-05",
+      "literal": "Sólo el organizador puede restituir expresamente un acceso revocado; invalidar un enlace compartido no anula por sí solo accesos individuales vigentes.",
+      "scenario": "Restitución expresa",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        },
+        {
+          "command": "npm run check:event-access:ui",
+          "source": "scripts/check-event-access-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access-ui"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "humanAcceptance": "NOT RUN",
+      "state": "Implementado; QA pendiente"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "D01",
+      "scenario": "Buscar título y sólo descripción; mayúsculas/minúsculas",
+      "expected": "Coincidencias correctas sin falsos positivos",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "D02",
+      "scenario": "Literal `%`, `_`, `\\\\`, comillas, cadenas vacías y texto muy largo",
+      "expected": "Escaping correcto, sin wildcard libre ni SQL injection",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "D03",
+      "scenario": "Dos categorías elegidas",
+      "expected": "Unión OR sólo dentro de categorías",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "D04",
+      "scenario": "Texto + categorías + fecha + radio",
+      "expected": "Intersección AND entre grupos; no inconsistencias mapa/lista",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "D05",
+      "scenario": "Limpiar categoría o fecha únicamente",
+      "expected": "Mantener otros filtros sin estado obsoleto",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "D06",
+      "scenario": "Fechas inicio/fin invertidas, 29/02 inválido, rango de un día",
+      "expected": "Validación y límites completos AR",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:r4:boundaries",
+          "source": "scripts/check-r4-boundaries.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-r4-boundaries"
+        },
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "D07",
+      "scenario": "Evento cruza medianoche; navegador en UTC/u otra zona",
+      "expected": "Coincide si **starts_at** cae en rango AR; si comenzó antes queda fuera aunque finalice dentro (A02)",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "D08",
+      "scenario": "GPS denegado, timeout o HTTP sin HTTPS",
+      "expected": "Fallback automático **centro del mapa**, etiqueta clara; centro inicial Buenos Aires no se llama GPS ni ubicación del usuario (A01)",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:r4:boundaries",
+          "source": "scripts/check-r4-boundaries.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-r4-boundaries"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Insecure context/timeout unit; denied-GPS fallback browser fixture; not physical GPS"
+    },
+    {
+      "id": "D09",
+      "scenario": "Radio en el borde, 0, negativo, NaN, 1e12, lon ±180",
+      "expected": "Distancia válida/bounded; parámetros inválidos rechazados",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "D10",
+      "scenario": "Cambio rápido de filtros, mapa movido, paginación con cursor",
+      "expected": "Respuestas viejas descartadas, resultados deduplicados",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search",
+          "source": "scripts/check-search.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        },
+        {
+          "command": "npm run check:discovery:ui",
+          "source": "scripts/check-discovery-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-discovery-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "D11",
+      "scenario": "Red interrumpida/error RPC y lista vacía legítima",
+      "expected": "Mensajes separados, reintento sin pérdida de criterios",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        },
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "D12",
+      "scenario": "Búsqueda y filtros integrados en Inicio y Mapa",
+      "expected": "Ambos preservan filtros, no existe nueva ruta `/search`, mismo universo público autorizado (A03)",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:filters:ui",
+          "source": "scripts/check-filters-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-filters-ui"
+        },
+        {
+          "command": "npm run check:search:ui",
+          "source": "scripts/check-search-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-search-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "P01",
+      "scenario": "A guarda 0, 1, varias categorías y reabre",
+      "expected": "Estado persistido correcto; sin duplicados",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:interests",
+          "source": "scripts/check-interests.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests"
+        },
+        {
+          "command": "npm run check:interests:ui",
+          "source": "scripts/check-interests-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "P02",
+      "scenario": "A guarda intereses y B consulta/escribe A por REST/RPC",
+      "expected": "Denegado; aislamiento A/B",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:interests",
+          "source": "scripts/check-interests.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests"
+        },
+        {
+          "command": "npm run check:interests:ui",
+          "source": "scripts/check-interests-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "P03",
+      "scenario": "Categoría inactiva y selección concurrente/cambio de catálogo",
+      "expected": "No agregar nuevo interés inactivo; error sin guardado parcial",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:interests",
+          "source": "scripts/check-interests.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "P04",
+      "scenario": "Falla de red a mitad de guardado",
+      "expected": "Estado confirmado se conserva o se reconcilia, sin falso éxito",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:interests:ui",
+          "source": "scripts/check-interests-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "P05",
+      "scenario": "Ranking con igual score y candidatos permutados",
+      "expected": "Desempate reproducible y misma prioridad",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:suggestions",
+          "source": "scripts/check-suggestions.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "P06",
+      "scenario": "Sin intereses, sin GPS, sin eventos o evento ya cerrado",
+      "expected": "Fallback explicado o vacío real; no inventar resultados",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:suggestions",
+          "source": "scripts/check-suggestions.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions"
+        },
+        {
+          "command": "npm run check:suggestions:ui",
+          "source": "scripts/check-suggestions-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "P07",
+      "scenario": "Evento `unlisted` con grant `active`",
+      "expected": "Jamás aparece en «Para vos» general",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:suggestions",
+          "source": "scripts/check-suggestions.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions"
+        },
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "Local SQL or UI fixture"
+    },
+    {
+      "id": "H01",
+      "scenario": "A publica directamente `unlisted`",
+      "expected": "Jamás existe estado `public` intermedio",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H02",
+      "scenario": "D conoce UUID de evento oculto pero no token/grant",
+      "expected": "SELECT, RPC, detalle, medias y listas denegados",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H03",
+      "scenario": "D obtiene texto/token de invitación sin canje",
+      "expected": "No habilita chat, asistentes ni lectura libre por URL normal",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        },
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H04",
+      "scenario": "B canjea token y abre detalle",
+      "expected": "`grant active` persistente; sin inscripción/cupo consumido",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H05",
+      "scenario": "B repite canje; dos peticiones simultáneas",
+      "expected": "Un único grant por pareja; ninguna violación de integridad",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H06",
+      "scenario": "A rota token dos veces simultáneamente",
+      "expected": "Un solo link activo; anteriores inutilizados para nuevos canjes",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H07",
+      "scenario": "A rota token luego de conceder B",
+      "expected": "Grant `active` B permanece vigente",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H08",
+      "scenario": "C está `revoked`, abre token antiguo/nuevo",
+      "expected": "Denegado; nunca pasa a active por canje",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        },
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H09",
+      "scenario": "Token con un byte alterado/inválido/ausente",
+      "expected": "Error controlado sin revelar si evento existe",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H10",
+      "scenario": "Canje con evento terminado/cancelado/archivado",
+      "expected": "Nuevos accesos denegados; grants previos conservados salvo revocación",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H11",
+      "scenario": "A convierte public→unlisted con E confirmed sin revoked",
+      "expected": "Crear grant active a E dentro de la misma transacción; E conserva acceso y chat por confirmed (A04)",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        },
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H12",
+      "scenario": "A convierte unlisted→public con C revoked",
+      "expected": "C ve detalle por política pública sin recibir grant active ni reingreso; al reocultar C vuelve a quedar excluido (A05)",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        },
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H13",
+      "scenario": "Usuario B no confirmed con grant active",
+      "expected": "Detalle permitido; chat/participantes denegados por RPC/REST",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        },
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H14",
+      "scenario": "C confirmed; A revoca",
+      "expected": "Transacción remueve a C, historia exactamente una vez, libera cupo, grant revoked",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H15",
+      "scenario": "Fallo inyectado en historial/cambio de grant",
+      "expected": "Rollback total sin parcialidad ni cupo falso",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        },
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H16",
+      "scenario": "Concurrencia revocación vs inscripción/reingreso",
+      "expected": "Sin deadlock persistente ni sobrecupo; locks consistentes",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        },
+        {
+          "command": "npm run check:rejoin",
+          "source": "scripts/check-rejoin.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-rejoin"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H17",
+      "scenario": "A restituye a C",
+      "expected": "Grant active; C no vuelve a confirmed ni chat automáticamente",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H18",
+      "scenario": "Usuario B intenta revocar a D / llamar RPC de A",
+      "expected": "Denegación 42501/RLS sin efectos",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H19",
+      "scenario": "C revocado tenía participación histórica",
+      "expected": "`events_select_participating`, summary, rejoin, organizer, dup source, gallery NO filtran datos ocultos",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H20",
+      "scenario": "C conoce storage_path y pide nueva URL firmada",
+      "expected": "Denegación a `files`/`event_images`/Storage; documentar URL vieja hasta TTL",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-access",
+          "source": "scripts/check-event-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-access"
+        },
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H21",
+      "scenario": "Vence Auth durante canje; login y retoma",
+      "expected": "Token no termina en logs/referrer, canje sólo tras auth; limpieza de URL",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:invite:ui",
+          "source": "scripts/check-invite-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H22",
+      "scenario": "Se cambia de usuario B→D con pestaña abierta",
+      "expected": "No persisten datos privados en estado, media firmada ni SW cache",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:interests:ui",
+          "source": "scripts/check-interests-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-interests-ui"
+        },
+        {
+          "command": "npm run check:suggestions:ui",
+          "source": "scripts/check-suggestions-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-suggestions-ui"
+        },
+        {
+          "command": "npm run check:r4:ui",
+          "source": "scripts/check-r4-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-r4-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H23",
+      "scenario": "Evento oculto con dueño A, grant B, no invitado D",
+      "expected": "RLS `SELECT` sobre tablas links/grants no revela token_hash ni otras personas",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        },
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H24",
+      "scenario": "A duplica evento oculto",
+      "expected": "No copia token, grants, historial, chat; visibilidad se decide conscientemente",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        },
+        {
+          "command": "npm run check:event-actions",
+          "source": "scripts/check-event-actions.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-actions"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H25",
+      "scenario": "Convertir public→unlisted con C `confirmed` + grant `revoked`",
+      "expected": "Abort transaccional completo, mensaje de conflicto, no reinscribir ni expulsar silenciosamente (A04/A05)",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        },
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H26",
+      "scenario": "Reabrir como unlisted después de etapa public",
+      "expected": "Grants `revoked` históricos siguen revocados; el enlace viejo no vuelve a admitir canjes si se adopta D12",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H27",
+      "scenario": "Hash solamente y enlace perdido",
+      "expected": "No existen tokens claros persistidos ni mecanismos de recuperación; al regenerar, token anterior inválido, grants activos conservados (A06)",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:event-links",
+          "source": "scripts/check-event-links.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links"
+        },
+        {
+          "command": "npm run check:event-links:ui",
+          "source": "scripts/check-event-links-ui.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-event-links-ui"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    },
+    {
+      "id": "H28",
+      "scenario": "Carrera entre inscripción y public→unlisted",
+      "expected": "Bloquear evento evita confirmed sin grant; completar grant o fallar atómicamente",
+      "localResult": "PASS",
+      "evidence": [
+        {
+          "command": "npm run check:hidden-access",
+          "source": "scripts/check-hidden-access.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-hidden-access"
+        },
+        {
+          "command": "npm run check:invite",
+          "source": "scripts/check-invite.mjs",
+          "result": "PASS",
+          "directory": "docs/qa/r4-block-9/check-invite"
+        }
+      ],
+      "httpJwtResult": "NOT RUN",
+      "limit": "SQL Auth/Storage scaffolding or intercepted UI; not HTTP JWT/Storage/Realtime end-to-end"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "path": "package-lock.json",
+    "identical": true,
+    "sha256": "7770689624d654f6568e545c7ef2c7312158655f8007c7379446e379d8d55db0"
+  },
+  {
+    "path": "node_modules/@rolldown/binding-win32-x64-msvc/rolldown-binding.win32-x64-msvc.node",
+    "identical": true,
+    "sha256": "ad8ce881caacbd746362552136cc5fd3c6fbdec9ef00e6c97ff1fb1750c32a47"
+  }
+]

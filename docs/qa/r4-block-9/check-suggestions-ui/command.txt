@@ -1,0 +1,24 @@
+
+> planit@0.0.0 check:suggestions:ui
+> node scripts/check-suggestions-ui.mjs
+
+PASS: 320: CA-01/02, dedicated section, honest reason, no automatic GPS or search filters, no overflow
+PASS: 320: CA-04 suggestion opens detail and returns to Inicio
+PASS: 320: empty/error/retry independent of discovery; interests failure is not general fallback
+PASS: 375: CA-01/02, dedicated section, honest reason, no automatic GPS or search filters, no overflow
+PASS: 375: CA-04 suggestion opens detail and returns to Inicio
+PASS: 375: empty/error/retry independent of discovery; interests failure is not general fallback
+PASS: 390: CA-01/02, dedicated section, honest reason, no automatic GPS or search filters, no overflow
+PASS: 390: CA-04 suggestion opens detail and returns to Inicio
+PASS: 390: empty/error/retry independent of discovery; interests failure is not general fallback
+PASS: Public preview signing, image failure fallback and independent photo retry
+PASS: Explicit map center triggers recomputation and is never called user location
+PASS: A/B identity switch clears old content and ignores late A response
+PASS: Expiry removes event in browser Argentina time even in Tokyo; visible 30s polling requeries
+PASS: Expanded text, reduced motion and keyboard focus
+PASS: 768: CA-01/02, dedicated section, honest reason, no automatic GPS or search filters, no overflow
+PASS: 768: CA-04 suggestion opens detail and returns to Inicio
+PASS: 768: empty/error/retry independent of discovery; interests failure is not general fallback
+PASS: 1280: CA-01/02, dedicated section, honest reason, no automatic GPS or search filters, no overflow
+PASS: 1280: CA-04 suggestion opens detail and returns to Inicio
+PASS: 1280: empty/error/retry independent of discovery; interests failure is not general fallback

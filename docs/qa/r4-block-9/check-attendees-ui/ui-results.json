@@ -1,0 +1,365 @@
+{
+  "environment": "Edge headless; Auth/REST fixtures; Asia/Tokyo; no remote HTTP/JWT",
+  "results": [
+    {
+      "viewport": "320x800",
+      "test": "Protected list, minimal identity, counts and no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Pagination and search reset; empty search results distinguished from empty list",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Late response from previous name search discarded",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Rejected transition and lost response reconcile without false success or automatic resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "External registration and removal visible on refresh",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Historical read-only lists, load failure/retry and absent migration handled",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Organizo menu/detail entry and original list filter preserved on return",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Foreign/anonymous/direct other-event routes deny administrative identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Long authorized identity and empty list captured without overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Session logout clears administrative data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "320x800",
+      "test": "Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Protected list, minimal identity, counts and no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Pagination and search reset; empty search results distinguished from empty list",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Late response from previous name search discarded",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Rejected transition and lost response reconcile without false success or automatic resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "External registration and removal visible on refresh",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Historical read-only lists, load failure/retry and absent migration handled",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Organizo menu/detail entry and original list filter preserved on return",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Foreign/anonymous/direct other-event routes deny administrative identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Long authorized identity and empty list captured without overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Session logout clears administrative data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "360x800",
+      "test": "Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Protected list, minimal identity, counts and no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Pagination and search reset; empty search results distinguished from empty list",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Late response from previous name search discarded",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Rejected transition and lost response reconcile without false success or automatic resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "External registration and removal visible on refresh",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Historical read-only lists, load failure/retry and absent migration handled",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Organizo menu/detail entry and original list filter preserved on return",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Foreign/anonymous/direct other-event routes deny administrative identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Long authorized identity and empty list captured without overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Session logout clears administrative data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "375x812",
+      "test": "Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Protected list, minimal identity, counts and no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Pagination and search reset; empty search results distinguished from empty list",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Late response from previous name search discarded",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Rejected transition and lost response reconcile without false success or automatic resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "External registration and removal visible on refresh",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Historical read-only lists, load failure/retry and absent migration handled",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Organizo menu/detail entry and original list filter preserved on return",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Foreign/anonymous/direct other-event routes deny administrative identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Long authorized identity and empty list captured without overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Session logout clears administrative data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "390x844",
+      "test": "Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Protected list, minimal identity, counts and no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Pagination and search reset; empty search results distinguished from empty list",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Late response from previous name search discarded",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Rejected transition and lost response reconcile without false success or automatic resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "External registration and removal visible on refresh",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Historical read-only lists, load failure/retry and absent migration handled",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Organizo menu/detail entry and original list filter preserved on return",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Foreign/anonymous/direct other-event routes deny administrative identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Long authorized identity and empty list captured without overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Session logout clears administrative data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "768x1024",
+      "test": "Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Protected list, minimal identity, counts and no overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Pagination and search reset; empty search results distinguished from empty list",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Late response from previous name search discarded",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Cancel/Escape leave participation intact; confirm once, refresh counts and removed tab; focus restored",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Rejected transition and lost response reconcile without false success or automatic resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "External registration and removal visible on refresh",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Historical read-only lists, load failure/retry and absent migration handled",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Organizo menu/detail entry and original list filter preserved on return",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Foreign/anonymous/direct other-event routes deny administrative identities",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Long authorized identity and empty list captured without overflow",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Session logout clears administrative data",
+      "result": "PASS"
+    },
+    {
+      "viewport": "1280x900",
+      "test": "Visible open chat revalidates at 30 seconds, clears cached messages/channel and composer on removal",
+      "result": "PASS"
+    }
+  ]
+}

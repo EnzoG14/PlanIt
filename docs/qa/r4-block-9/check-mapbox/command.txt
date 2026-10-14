@@ -1,0 +1,7 @@
+
+> planit@0.0.0 check:mapbox
+> node scripts/check-mapbox.mjs
+
+PASS: wrapped/world/antimeridian/polar bounds, missing/public/secret tokens, build rejects secrets before bundling.
+
+failed to load config from D:\planit\vite.config.ts

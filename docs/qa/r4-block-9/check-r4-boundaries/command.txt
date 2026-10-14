@@ -1,0 +1,5 @@
+
+> planit@0.0.0 check:r4:boundaries
+> node scripts/check-r4-boundaries.mjs
+
+PASS: D06 calendar boundaries and D08 geolocation failure modes

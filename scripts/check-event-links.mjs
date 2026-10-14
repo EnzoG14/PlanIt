@@ -16,8 +16,8 @@ const run = promisify(execFile), directory = resolve(`.participation-test-tools.
 const probe = createServer(); await new Promise(r => probe.listen(0, '127.0.0.1', r))
 const port = probe.address().port; await new Promise(r => probe.close(r))
 const clients = [], results = []; let started = false
-const users = Array.from({ length: 3 }, (_, i) => `20000000-0000-4000-8000-00000000000${i + 1}`)
-const [owner, confirmed, revoked] = users
+const users = Array.from({ length: 5 }, (_, i) => `20000000-0000-4000-8000-00000000000${i + 1}`)
+const [owner, confirmed, revoked, stranger, historical] = users
 const check = name => { results.push({ name, result: 'PASS' }); console.log(`PASS: ${name}`) }
 async function connect() { const c = new pg.Client({ host: '127.0.0.1', port, user: 'postgres', database: 'postgres' }); await c.connect(); clients.push(c); return c }
 async function role(c, uid) { await c.query('reset role'); await c.query("select set_config('request.jwt.claim.sub',$1,false)", [uid ?? '']); await c.query(`set role ${uid ? 'authenticated' : 'anon'}`) }
@@ -122,6 +122,29 @@ try {
   }
   assert.equal((await admin.query("select count(*) from information_schema.columns where table_name='event_access_links' and column_name='expires_at'")).rows[0].count, '0')
   check('No calendar expiry; end/cancel/archive prohibit generation/rotation without mutating active hash (redemption B7 pending)')
+  // B9: keep D and historical E distinct from B/C, rather than relying solely
+  // on the same participant moving through the 96-state matrix in B5.
+  const d = await connect(), e = await connect()
+  await role(d, stranger); await role(e, historical)
+  const historicalEvent = await create('public')
+  await e.query('select public.register_for_event($1)', [historicalEvent])
+  await set(a, historicalEvent, 'unlisted')
+  assert.equal(await visible(e, historicalEvent), true)
+  assert.equal((await grants(historicalEvent)).find(g => g.user_id === historical).status, 'active')
+  assert.equal(await visible(d, historicalEvent), false)
+  assert.equal((await e.query('select * from public.get_event_chat($1)', [historicalEvent])).rowCount, 1)
+  await e.query('select public.leave_event($1)', [historicalEvent])
+  const historicalParticipation = (await admin.query('select * from public.event_participations where event_id=$1 and user_id=$2', [historicalEvent, historical])).rows[0]
+  const historyBefore = (await admin.query('select * from public.participation_history where participation_id=$1 order by id', [historicalParticipation.id])).rows
+  await a.query('select public.revoke_event_access($1,$2)', [historicalEvent, historical])
+  assert.equal(await visible(e, historicalEvent), false)
+  await assert.rejects(e.query('select * from public.get_event_participation_summary($1)', [historicalEvent]), error => error.code === '42501')
+  await a.query('select public.restore_event_access($1,$2)', [historicalEvent, historical])
+  assert.equal(await visible(e, historicalEvent), true)
+  assert.equal((await admin.query('select status from public.event_participations where id=$1', [historicalParticipation.id])).rows[0].status, 'cancelled')
+  await assert.rejects(e.query('select * from public.get_event_chat($1)', [historicalEvent]), error => error.code === '42501')
+  assert.deepEqual((await admin.query('select * from public.participation_history where participation_id=$1 order by id', [historicalParticipation.id])).rows, historyBefore)
+  check('Distinct D stranger and E historical: A04 preserves confirmed E; revoked E cannot use history; restore preserves cancelled state/history without chat')
   const inventory = (await admin.query(`select p.oid::regprocedure::text as signature,p.prosecdef,p.proconfig,
     has_function_privilege('anon',p.oid,'EXECUTE') as anon_execute
     from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public'

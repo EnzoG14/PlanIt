@@ -1,0 +1,3077 @@
+{
+  "purpose": "Additional raw B9 captures kept locally in an ignored directory; representative and required viewport/state captures are versioned",
+  "files": [
+    {
+      "original": "chat-ui/chat-read-only-desktop.png",
+      "localArchive": ".r4-b9-captures.local/chat-ui/chat-read-only-desktop.png",
+      "bytes": 144155,
+      "sha256": "6a43bd918078cf07cb884cfc191245e97af1b7bea8dec5f155e83f41b8352509"
+    },
+    {
+      "original": "chat-ui/chat-read-only-mobile.png",
+      "localArchive": ".r4-b9-captures.local/chat-ui/chat-read-only-mobile.png",
+      "bytes": 78353,
+      "sha256": "8c542f535f2cdfcc4e480692055ab65c2df25e7a4dfa7989f8bc44b00556487c"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-auth-error-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-auth-error-1280x900.png",
+      "bytes": 170865,
+      "sha256": "15d6096ca0f7cef0bcdd29018ed3744b6d453040a1066a5768f8e74da22bf76e"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-auth-error-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-auth-error-320x800.png",
+      "bytes": 85747,
+      "sha256": "6d37e7fb0c62a90de949f5bbebcd558dfd4af7af58d69ee98f05482801d967fa"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-auth-error-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-auth-error-360x800.png",
+      "bytes": 91155,
+      "sha256": "b565aecfaaec80aa1e9bf20d7cc88286cc1c18a5b54346c6ac936969f8a5acee"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-auth-error-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-auth-error-375x812.png",
+      "bytes": 93225,
+      "sha256": "aa0d419a58a5783f7f44929f1fa5a2b39b7535205140449096a91621c2d2d3bb"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-auth-error-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-auth-error-390x844.png",
+      "bytes": 94145,
+      "sha256": "f9fa9f00fd8ffe3908fd525588a84b9a47b888f2aa619f91d9fb842830d330b5"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-auth-error-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-auth-error-768x1024.png",
+      "bytes": 132169,
+      "sha256": "d4643e062eba08b07b57bc6e288e4e6f337679c24acf80fd8fab5d9c5fca51de"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-hidden-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-hidden-1280x900.png",
+      "bytes": 160438,
+      "sha256": "dfcab5672b4c549eb725f4dd58d1baf35ed4b76b8f9230f457a617aa52099901"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-hidden-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-hidden-320x800.png",
+      "bytes": 77602,
+      "sha256": "d1fca532297c81cb998cfe1cbb2770d07d7c034913901e0f8c79ae84ad4813b7"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-hidden-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-hidden-360x800.png",
+      "bytes": 82317,
+      "sha256": "8a496a6f0649032e3f927e2e0f0af4cdecdf8acceec3cbe2e58da4892641302c"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-hidden-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-hidden-375x812.png",
+      "bytes": 84329,
+      "sha256": "db29e8bf802c1fbe4827a211398703dc00de649ac38b39c996069edd208217e6"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-hidden-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-hidden-390x844.png",
+      "bytes": 85589,
+      "sha256": "32e73393e9c63e6e2712a79e5090413b25614b08733abebbad4be436fa7cf2f5"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-hidden-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-hidden-768x1024.png",
+      "bytes": 122007,
+      "sha256": "6a5573f3ce0cb9fd616fe65124f26b5ec7cad411ef99e1f54db4fda7b45ed7a1"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-visible-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-visible-1280x900.png",
+      "bytes": 163059,
+      "sha256": "0bd6eeb1c263dc277aa83efb911b5c4110dbc4d8b51bd1674b5b86bd50d3cc5a"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-visible-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-visible-320x800.png",
+      "bytes": 80098,
+      "sha256": "1c8b3a016d4bc55964f483b739e952e7a3b6ba74313a2841a5a092796b855e51"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-visible-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-visible-360x800.png",
+      "bytes": 84819,
+      "sha256": "f3ed9fbef38796563d5ed88956e8c24b1790604141da665483332b39726014be"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-visible-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-visible-375x812.png",
+      "bytes": 86859,
+      "sha256": "60f893b47c0ffefa010accbe5d5ada2e31ebec4cbfce27e7b83247d85f1ba623"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-visible-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-visible-390x844.png",
+      "bytes": 88407,
+      "sha256": "4088a7ccbc407c8a7ac0fe3e013a7c68b96769498503d79d461c97c7737d18ff"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-password-visible-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-password-visible-768x1024.png",
+      "bytes": 124618,
+      "sha256": "c0d8266d21f5f88c12e659d98fffd8004b09e8bb6784c46f695bdc31fa793b5a"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-sending-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-sending-1280x900.png",
+      "bytes": 155377,
+      "sha256": "901d2856365791ba5ba10b10baf120e91b63b93a39e9c8e32488e766cf2dde75"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-sending-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-sending-320x800.png",
+      "bytes": 73145,
+      "sha256": "6c3fa4ab0ed6cb73da3f06ba5d78b604cb9891f496c4df8de85139d44d3cd8da"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-sending-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-sending-360x800.png",
+      "bytes": 77772,
+      "sha256": "c7fd1955408260eb5253ae6fe25e965b0a79dec30c977f53ec70767bcae92641"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-sending-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-sending-375x812.png",
+      "bytes": 79585,
+      "sha256": "8dea268c92038503cbdc6af5e07f4ab0a73f235d7b09941cee60cc629d6a701e"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-sending-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-sending-390x844.png",
+      "bytes": 81032,
+      "sha256": "bf1e0b448a6edb68a3dd48229084df59a3a5f6e4cf65704d946b2ae20329e30f"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-sending-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-sending-768x1024.png",
+      "bytes": 117251,
+      "sha256": "fa0ec11817a0e12dd2cef467cf7f3c5f8418403ec266f7965767af44d69e6991"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-error-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-error-1280x900.png",
+      "bytes": 138222,
+      "sha256": "c99e0b25e70fd11d886eb55384fd849446f50715d4055eb7735bc0effd9bc723"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-error-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-error-320x800.png",
+      "bytes": 59164,
+      "sha256": "b5b5355319c8323b265599ec4e9b158d7053ac1ed1d8a6f3bc84798c081eb6ef"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-error-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-error-360x800.png",
+      "bytes": 63724,
+      "sha256": "5bfc9a07d0663bd918e70e63f56d3896d5f553e5658cd84304812c595c8eec06"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-error-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-error-375x812.png",
+      "bytes": 65373,
+      "sha256": "ca9374e05155570c5d96f68b10312c676f52c8489cc2704f2666af6fa1acabc5"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-error-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-error-390x844.png",
+      "bytes": 66594,
+      "sha256": "b403c828c22e7c2f66d076d80c0aea17e7b0c75cd3bcc3222588c78786c8caa0"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-error-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-error-768x1024.png",
+      "bytes": 102320,
+      "sha256": "c432f0296e441f624028ad619e57975fcfe65d3f5463860915d726c30c503810"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-loading-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-loading-1280x900.png",
+      "bytes": 130202,
+      "sha256": "aa950671dd9ffa794ef2d0e6092da4a4956249264519313b138c9d1602e5e8a1"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-loading-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-loading-320x800.png",
+      "bytes": 44280,
+      "sha256": "c96ae7a28c196325973d8afe5630a91654e3db681549cd44a1c1479902a06a68"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-loading-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-loading-360x800.png",
+      "bytes": 46715,
+      "sha256": "c07aa51cb27fcc0d20d87f730dc117a94eeba2ef2c3500a26cf37028bb125700"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-loading-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-loading-375x812.png",
+      "bytes": 47681,
+      "sha256": "b65f7e84ea85e5ddac119b072ab53406bc3afc0327a6202071642ea79ef3eb53"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-loading-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-loading-390x844.png",
+      "bytes": 48200,
+      "sha256": "79aeb6d04ac043688d962bc68e2a95945c14064ee8b608590987542a2ae377c7"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-session-loading-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-session-loading-768x1024.png",
+      "bytes": 91352,
+      "sha256": "fff5ba774a0c769a8e4188269b7a46c1bac6e89677465b20e7a28df0ed59fad4"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-short-text-200-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-short-text-200-1280x900.png",
+      "bytes": 192520,
+      "sha256": "926c253064336cd3c594dc34c3e153128583318a063921d21e27fd19ad2debb9"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-short-text-200-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-short-text-200-320x800.png",
+      "bytes": 98600,
+      "sha256": "08f79553e773425f563c3562c84d96d676971c220d6b74146f8789f219fb2ac3"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-short-text-200-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-short-text-200-360x800.png",
+      "bytes": 104620,
+      "sha256": "c0de9e7365fde2da855c3540ae0918877c32377d52d0346b1a09e8824d572f5b"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-short-text-200-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-short-text-200-375x812.png",
+      "bytes": 106996,
+      "sha256": "9fdf04bfef5752b0537a87c491e80a8b271ad947fe40f1e7aeb31eb7e7419716"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-short-text-200-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-short-text-200-390x844.png",
+      "bytes": 107595,
+      "sha256": "ef55667dd67a7989c9edf2f53611c780ea41e8076313e3655447a362d11d463b"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-short-text-200-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-short-text-200-768x1024.png",
+      "bytes": 147719,
+      "sha256": "fb9fae8f4833a4f348c5d55f04da8bea4fabec99fccd8b9e79ebbe6d4ca05156"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-text-200-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-text-200-1280x900.png",
+      "bytes": 184586,
+      "sha256": "75a871c95be8b32ccb388681ae5972e713cc0279ad7f61b548e2c167ad34427a"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-text-200-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-text-200-320x800.png",
+      "bytes": 86464,
+      "sha256": "bafd5a0a84b85a5d22a3cf55fedb3c2461f0eeba6f53fa8d48e5f1aed008b4ae"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-text-200-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-text-200-360x800.png",
+      "bytes": 91965,
+      "sha256": "d9afdeb38ab27b10efd3519321351ee48ced660d4fafe908a70f45a10cd4dc0d"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-text-200-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-text-200-375x812.png",
+      "bytes": 97015,
+      "sha256": "540f8ab799f4260413fe80c1913fde384bd86c93cb392dc8f406c8fb43c6519c"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-text-200-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-text-200-390x844.png",
+      "bytes": 101091,
+      "sha256": "b917e682e6af049f89e6667cc3ee75e1296477beb6ecc112718021107c5aeb08"
+    },
+    {
+      "original": "check-amanecer-auth-ui/login-text-200-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/login-text-200-768x1024.png",
+      "bytes": 143157,
+      "sha256": "3097345a11cca8cf34bd5b685ff59dd7f17595e85bba65f00dee6aecee6989b6"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-auth-error-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-auth-error-1280x900.png",
+      "bytes": 176441,
+      "sha256": "ed7539545e673551c87f099e24efd44abe1175821d8cb7ae522e1c1286c7653b"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-auth-error-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-auth-error-320x800.png",
+      "bytes": 91504,
+      "sha256": "9276f33d0f497c7564f127286659feb480207fc664ceeea02a50376d4aa2d43c"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-auth-error-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-auth-error-360x800.png",
+      "bytes": 96641,
+      "sha256": "a94daa0b97cc7d6e419fd1cbf19c42938157415bb9c6d52d86a3d6ae93be4ea5"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-auth-error-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-auth-error-375x812.png",
+      "bytes": 98565,
+      "sha256": "f65e71041599840cb75e9c52ce154bfae191327f6002ab9e2d2decae6f2effd5"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-auth-error-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-auth-error-390x844.png",
+      "bytes": 99833,
+      "sha256": "d6748f43c5eb6c6cd88d1d1ac683d555f0b7c30cc61e50c89c13d6653d039fbf"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-auth-error-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-auth-error-768x1024.png",
+      "bytes": 137526,
+      "sha256": "1e7d883afba30fe695ff320842218e3abd34e04989f5949a07433ab16b7662d8"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-confirmation-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-confirmation-1280x900.png",
+      "bytes": 163360,
+      "sha256": "c36a8a9501bda12700782c4bc0a7fcf88532e46909fac35a7590faef215fdf5f"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-confirmation-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-confirmation-320x800.png",
+      "bytes": 79452,
+      "sha256": "a20015661b714ed9259e319a1eb33f238dd74d70fdc83834bda4739a8b0985c6"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-confirmation-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-confirmation-360x800.png",
+      "bytes": 83663,
+      "sha256": "580b031d21134d439386145673a5730c4be380f33775ee14e8e2d18ef7ad027f"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-confirmation-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-confirmation-375x812.png",
+      "bytes": 85628,
+      "sha256": "00a36b9fc016db00b17d8201fbbfa9126ff7052658018597affa01f8c7f57628"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-confirmation-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-confirmation-390x844.png",
+      "bytes": 87283,
+      "sha256": "a3b62e5ae4cc5bf76919d9292496663b8d952e4f477610eaccaf0badbab8d2c3"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-confirmation-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-confirmation-768x1024.png",
+      "bytes": 125619,
+      "sha256": "bf6d77a7e9a523bba7f5c1eeec2979debf6973c9f8d34095eac445b621d1180e"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-duplicate-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-duplicate-1280x900.png",
+      "bytes": 175494,
+      "sha256": "65c6613156e70b8256a9dbe4309858dce6de4b7d926b8d331ef1b2ca22a47531"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-duplicate-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-duplicate-320x800.png",
+      "bytes": 91738,
+      "sha256": "d88d80b3e93b8eee328588f82dd9a592d130d772c3f0750f083ad20ff4e816b7"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-duplicate-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-duplicate-360x800.png",
+      "bytes": 95752,
+      "sha256": "04600fc2f8c20b9726da754d7a4d2a78a42c87e935238d16caaae710d57282e8"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-duplicate-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-duplicate-375x812.png",
+      "bytes": 97279,
+      "sha256": "b345e7a1bc7af051afc594c50600a4d872219baf99271fe25a651ba4248d329a"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-duplicate-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-duplicate-390x844.png",
+      "bytes": 98830,
+      "sha256": "aa9a175bfa5c150e7c1d7b52f641f7b72823e9acbe67ae879614e2802913d505"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-duplicate-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-duplicate-768x1024.png",
+      "bytes": 137106,
+      "sha256": "ce54eb425f708c3a10c132280702e43bf926ccbd71cd1bd020a2789c811c8996"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-invalid-values-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-invalid-values-1280x900.png",
+      "bytes": 170141,
+      "sha256": "26519b17a14e897ee7eb4aa63180344b8c7d10d2ae2096ef0af14946114c47a4"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-invalid-values-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-invalid-values-320x800.png",
+      "bytes": 86123,
+      "sha256": "61ebf0c3e37afc3c6be4e62497a6636ab83cabe91cf6f2c1e46a870e530d56ed"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-invalid-values-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-invalid-values-360x800.png",
+      "bytes": 91067,
+      "sha256": "91a762b869ea48f50eac2e04a81831580bdf0947faf821edff007e64c71ac5ae"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-invalid-values-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-invalid-values-375x812.png",
+      "bytes": 93466,
+      "sha256": "58660f6f889071aea3407287d5c3dfa3fdf33041ec7c43e1c40fc5ee0a3b0702"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-invalid-values-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-invalid-values-390x844.png",
+      "bytes": 94863,
+      "sha256": "92f74e34c41d21f0f30b7790cea7cdb7dd4394d498bd6fd0d3791e982508803f"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-invalid-values-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-invalid-values-768x1024.png",
+      "bytes": 131872,
+      "sha256": "29a288218ded19c5309b5b4a88eeb01e389f4fc93b608dd91c89edfc7379408d"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-hidden-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-hidden-1280x900.png",
+      "bytes": 174038,
+      "sha256": "9d3d93f8ca9df07b206a5dc5b7698c22cf34ad4cde89bbf2a1eec4e7529e3b27"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-hidden-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-hidden-320x800.png",
+      "bytes": 89634,
+      "sha256": "75f047215bb22ebc022ffa4a07792fa1dd7b7435578cf4b310d56b289e5ced3c"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-hidden-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-hidden-360x800.png",
+      "bytes": 94727,
+      "sha256": "d172711993e590102001e3b5a89b1e4849c3283adefc51a9c7b51a2b4027c38b"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-hidden-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-hidden-375x812.png",
+      "bytes": 96851,
+      "sha256": "2b348d0f9be90a856439279f456cf1e85b06c9f15562fde99da8c2c995a478a2"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-hidden-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-hidden-390x844.png",
+      "bytes": 98452,
+      "sha256": "3f4db765c7bf95ccdf87d7055c618c1955fa092d409dd843bfeaa67c6f4d123a"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-hidden-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-hidden-768x1024.png",
+      "bytes": 135949,
+      "sha256": "fe950e51e63f508eca41449cb7fb2e325c103228226bdccaeb9a499c88b6e795"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-visible-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-visible-1280x900.png",
+      "bytes": 176731,
+      "sha256": "77e08614fda018772e05c019e655e82ffa460dd78001c8436cf3be85bd5c0963"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-visible-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-visible-320x800.png",
+      "bytes": 92165,
+      "sha256": "b644a0f1e5b6d3e38946232969c4434a40ef3b76137cb8b7cf529daa29e3b4fe"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-visible-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-visible-360x800.png",
+      "bytes": 97271,
+      "sha256": "7d1b2a1d68fecb00ad79bcac39fa122e571c5bcf2146539075c88f9cb9056077"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-visible-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-visible-375x812.png",
+      "bytes": 99496,
+      "sha256": "9389e2d071ae6d9bbb6dc19f1938ceeeb9a37d7619a3ce52fdb4da711ab4856b"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-visible-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-visible-390x844.png",
+      "bytes": 100978,
+      "sha256": "21619b817f1c892a3ccbb12533160997efad7e61e9965f9e745eae253680ad3c"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-password-visible-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-password-visible-768x1024.png",
+      "bytes": 138275,
+      "sha256": "d349874428e6959bd77fc12e70a2594aca9e48329a6533bb10436342ddd98ae7"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-sending-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-sending-1280x900.png",
+      "bytes": 160638,
+      "sha256": "a8bd824971d88b0343366fe56d604de829b5baa57338111e5037203032aa3303"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-sending-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-sending-320x800.png",
+      "bytes": 77606,
+      "sha256": "8582be9405486957e840b3d3edc9bc9fa20212d2c4105e3e793a41155eea201d"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-sending-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-sending-360x800.png",
+      "bytes": 82486,
+      "sha256": "8218c0375c599609ff5772afcbab1f08dfbb284eebd5a5941fd5201ea6e48bb4"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-sending-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-sending-375x812.png",
+      "bytes": 84502,
+      "sha256": "66fc1bad1fcb505a87a1832fab3032b7ab5b397b2ff8aa647c265f7870559cf4"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-sending-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-sending-390x844.png",
+      "bytes": 86507,
+      "sha256": "2c432387c23dd2bd03786297dbea2c85235b7b5946c152f2c605ffc73fa7c1af"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-sending-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-sending-768x1024.png",
+      "bytes": 122664,
+      "sha256": "ea42cc2b996909ec40ab9d2aad031d928e48f10e0c978c377e43d31cde333ef0"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-error-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-error-1280x900.png",
+      "bytes": 138671,
+      "sha256": "5edb764454bad1cf31a59d9bd5bfdd4cb0a102a2b07b10e7431a4bb868cd5a98"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-error-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-error-320x800.png",
+      "bytes": 58741,
+      "sha256": "5f21fad692e5ce5e14ae66b2d9eb5e2baf65e38531224b247f025afd41e54b69"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-error-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-error-360x800.png",
+      "bytes": 63847,
+      "sha256": "f8536c964c4deea373e7405a4f29fb4f7f348446dd4fc4adcf0ca49d1993937f"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-error-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-error-375x812.png",
+      "bytes": 64875,
+      "sha256": "d88d285d16c1d16b341a55d15bccac2f33ee9f2e350336778907a19b3a90402b"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-error-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-error-390x844.png",
+      "bytes": 66565,
+      "sha256": "7e95d1c784dc302b49ee868e2c94bfa916af9920658be7f01f73387471aebc2e"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-error-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-error-768x1024.png",
+      "bytes": 101731,
+      "sha256": "807438faaf2f117d63c400024e0d3f9c70a47d5f1db0f42579d201aaea50674b"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-loading-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-loading-1280x900.png",
+      "bytes": 130202,
+      "sha256": "aa950671dd9ffa794ef2d0e6092da4a4956249264519313b138c9d1602e5e8a1"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-loading-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-loading-320x800.png",
+      "bytes": 44037,
+      "sha256": "9db0e70b71b736b522a5eba41d9865c21fb0fdd918a0a1b166dda9e649c8a86f"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-loading-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-loading-360x800.png",
+      "bytes": 46384,
+      "sha256": "a3c498d906121945fb552af642a96146bf73bb058e3ac04e354eed4519cc0126"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-loading-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-loading-375x812.png",
+      "bytes": 47501,
+      "sha256": "dc3ba8f5a8ba751d845dfe482aad739471573542546fc941652cb7582b0cc614"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-loading-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-loading-390x844.png",
+      "bytes": 48462,
+      "sha256": "5c8fa1570a2d0071053f1b06c568505abfa117ac128aa5534a854f36e3620f60"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-session-loading-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-session-loading-768x1024.png",
+      "bytes": 91729,
+      "sha256": "9f5f781e506cc665226156edb1d28d4a2886525f7ca822ed1588a3c79fe358ab"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-short-text-200-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-short-text-200-1280x900.png",
+      "bytes": 204167,
+      "sha256": "00e2ec46c5fe5802d069828ad7eaff00dc647a93b08f73ecf187914fcb82988b"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-short-text-200-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-short-text-200-320x800.png",
+      "bytes": 110921,
+      "sha256": "5312f24cc04e416628956db2fcd0f34a2e22f27f420427de307378975ab88907"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-short-text-200-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-short-text-200-360x800.png",
+      "bytes": 115059,
+      "sha256": "2cb3743f6e4bcaf0093866a67efa12c1f590128d94168245c0dca0130024ed4e"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-short-text-200-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-short-text-200-375x812.png",
+      "bytes": 115072,
+      "sha256": "c139f5c7b000aab8af3738f16ff4fd5086f899b961874abf4c277ee2ebf4c000"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-short-text-200-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-short-text-200-390x844.png",
+      "bytes": 117197,
+      "sha256": "40ec73fb81478e115c35b249168be9e3252badcb99aa533bee58b83051682334"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-short-text-200-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-short-text-200-768x1024.png",
+      "bytes": 158899,
+      "sha256": "60cc2bb6cb7d2513f56419ee0ae0a1eed2e638d1acf697dfe5f96b23624b6ecd"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-text-200-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-text-200-1280x900.png",
+      "bytes": 192930,
+      "sha256": "a974bafa63c46d32c88a261d843a4d25705a060d795b8f9b889addf5d8edb06b"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-text-200-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-text-200-320x800.png",
+      "bytes": 109272,
+      "sha256": "2170fd40f04a2afcbb2bcf37c6e6ee347465865d6992859f18e57ed8aee28325"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-text-200-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-text-200-360x800.png",
+      "bytes": 99133,
+      "sha256": "4f05efacbfea419467b5c35cb498d0e22b5f6e9d0a7782a0492300b6b80006af"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-text-200-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-text-200-375x812.png",
+      "bytes": 101754,
+      "sha256": "90c0352154aecf23b4d0bd8b6e9e7143cbe0290e27e5dfdbcc5b8faeaa5396a1"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-text-200-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-text-200-390x844.png",
+      "bytes": 104348,
+      "sha256": "0844be32b818d01479820ebd99cfb9356c98b5ada0f94a30e5310f283d63f5cd"
+    },
+    {
+      "original": "check-amanecer-auth-ui/register-text-200-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-amanecer-auth-ui/register-text-200-768x1024.png",
+      "bytes": 156518,
+      "sha256": "77886c241531fed32fc09ff175ba0e26aa676a959238b6f7c093876b0c270470"
+    },
+    {
+      "original": "check-attendees-ui/chat-denied-320.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/chat-denied-320.png",
+      "bytes": 64075,
+      "sha256": "9c02866197b1f5c20da14984f8ac478054fb962d394ee2049c85a7488496c568"
+    },
+    {
+      "original": "check-attendees-ui/chat-denied-360.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/chat-denied-360.png",
+      "bytes": 68471,
+      "sha256": "15f21013865276b98d0b843b30327bf389669ffd43b868e7b830844d3fa1b556"
+    },
+    {
+      "original": "check-attendees-ui/chat-denied-390.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/chat-denied-390.png",
+      "bytes": 71482,
+      "sha256": "0247ebb7318713b924b71f4ae791b9212a85aa08536c1b432395fae4cca55fa1"
+    },
+    {
+      "original": "check-attendees-ui/chat-denied-768.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/chat-denied-768.png",
+      "bytes": 95514,
+      "sha256": "df4c3f128c3bedac9a29d306a574caeaae055320a62981f7666f568d9d4186f8"
+    },
+    {
+      "original": "check-attendees-ui/confirmed-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/confirmed-1280.png",
+      "bytes": 176468,
+      "sha256": "bc5e65d14922bb38299dff5eaf0b6b664761c7a8792039bb1e8b3b6ec4cf4f30"
+    },
+    {
+      "original": "check-attendees-ui/confirmed-320.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/confirmed-320.png",
+      "bytes": 96402,
+      "sha256": "8a8dd5dadd8bd07f7dbc646d0a55e21404adc65bd781422f22793ecc9c1a61ee"
+    },
+    {
+      "original": "check-attendees-ui/confirmed-360.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/confirmed-360.png",
+      "bytes": 103834,
+      "sha256": "32ab49a214472542064269cf822f93e8eb47097fa6864fad65a8a9909ec4bd43"
+    },
+    {
+      "original": "check-attendees-ui/confirmed-375.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/confirmed-375.png",
+      "bytes": 107126,
+      "sha256": "b9e34fb930d6a6c58635381a65e88c903d39a0117d04daf43539343be552d72c"
+    },
+    {
+      "original": "check-attendees-ui/confirmed-390.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/confirmed-390.png",
+      "bytes": 113999,
+      "sha256": "9934a3fd84423ef6460c13d6e41320c087d15568ca0047525689205fd126d9cb"
+    },
+    {
+      "original": "check-attendees-ui/confirmed-768.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/confirmed-768.png",
+      "bytes": 184880,
+      "sha256": "24da5a3458916263706b950e50dadfcf6a4132fa1d8af8549299d8483b8a13f2"
+    },
+    {
+      "original": "check-attendees-ui/denied-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/denied-1280.png",
+      "bytes": 130545,
+      "sha256": "0b46a9ff7aeb7f04637d301c6e6b9077c27f24a9666a397fefecdc04fbd7d4f3"
+    },
+    {
+      "original": "check-attendees-ui/denied-320.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/denied-320.png",
+      "bytes": 85975,
+      "sha256": "7ab7f8eb6910a2fe30856cea338a3d8182aab44218168163053dfe607653e336"
+    },
+    {
+      "original": "check-attendees-ui/denied-360.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/denied-360.png",
+      "bytes": 92113,
+      "sha256": "ee353b0d211ebaaab0d21d3e4cfc7b52d7126cb90c669c6936940e73ad9d79a1"
+    },
+    {
+      "original": "check-attendees-ui/denied-375.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/denied-375.png",
+      "bytes": 92639,
+      "sha256": "ce529f286fc7181ef4357251143fa2cec46cddab148d05d53f6193ff3cd877b9"
+    },
+    {
+      "original": "check-attendees-ui/denied-390.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/denied-390.png",
+      "bytes": 94106,
+      "sha256": "db6dfe2a8264e4a4f35ebf3b5ac8d0a643a0b7661599368c12f8bf1a460c1e88"
+    },
+    {
+      "original": "check-attendees-ui/denied-768.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/denied-768.png",
+      "bytes": 101464,
+      "sha256": "4d23a7af223c37e2e7cc7c5da217e1eb6ddacef6f63cade81875d168b8d07668"
+    },
+    {
+      "original": "check-attendees-ui/dialog-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/dialog-1280.png",
+      "bytes": 189085,
+      "sha256": "7d4bf35d64c8ef55c4b4b3dfc3915a06f20612b43572afae400dfbef08a3d652"
+    },
+    {
+      "original": "check-attendees-ui/dialog-320.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/dialog-320.png",
+      "bytes": 85060,
+      "sha256": "d256b312c5d933399774d9bcfeff6e0f513fabcb6cdb421f5a3682fbccfbcb54"
+    },
+    {
+      "original": "check-attendees-ui/dialog-360.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/dialog-360.png",
+      "bytes": 88442,
+      "sha256": "99d84c32083dcc70661eb12ee91646608ea005a54c117f5916f0a1ecc045bf49"
+    },
+    {
+      "original": "check-attendees-ui/dialog-375.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/dialog-375.png",
+      "bytes": 94851,
+      "sha256": "6aac35f057552711e1d0a75a6ca24570b3171ce954cbcfff9f0064dbaf48bc27"
+    },
+    {
+      "original": "check-attendees-ui/dialog-390.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/dialog-390.png",
+      "bytes": 101454,
+      "sha256": "93ddb5244885930b15e2a9e62e144551d027441d5e7a9ea9ab5c78970d683cae"
+    },
+    {
+      "original": "check-attendees-ui/dialog-768.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/dialog-768.png",
+      "bytes": 206304,
+      "sha256": "cc70ce3ae32dcea3e6b45fbf405b430700e9e2a3b3e19f5f9e497e34e5ba5406"
+    },
+    {
+      "original": "check-attendees-ui/empty-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/empty-1280.png",
+      "bytes": 146145,
+      "sha256": "40c3eb8bd46c6b1fa339a4ae1f57244ac96fa0417d29e52cad0634eada5bacae"
+    },
+    {
+      "original": "check-attendees-ui/empty-320.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/empty-320.png",
+      "bytes": 95088,
+      "sha256": "22320969076a5584778f857d030cb26378f35cf868c7b52e319efe7f6c062c76"
+    },
+    {
+      "original": "check-attendees-ui/empty-360.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/empty-360.png",
+      "bytes": 102008,
+      "sha256": "3873bf859427a9f1b3faacdb6ffbaaecbb79796cc9ef24d9c938e56245e11d97"
+    },
+    {
+      "original": "check-attendees-ui/empty-375.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/empty-375.png",
+      "bytes": 104120,
+      "sha256": "e279f78aa57fc11bcb9609c49f899c2c7c25689017d6256d5e4f622f5e7f33f1"
+    },
+    {
+      "original": "check-attendees-ui/empty-390.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/empty-390.png",
+      "bytes": 106186,
+      "sha256": "35bcdec9b41e63233e08bdac5cd9beecfc1daf7db5474a694b720548198e1bb1"
+    },
+    {
+      "original": "check-attendees-ui/empty-768.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/empty-768.png",
+      "bytes": 142168,
+      "sha256": "ddd16e344ed09ac7c7168bb7458b71b8c81271e0b41e765e81cba967741f39b7"
+    },
+    {
+      "original": "check-attendees-ui/long-identity-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/long-identity-1280.png",
+      "bytes": 166811,
+      "sha256": "6a55cb16a97c7c7cb1972bb42489a6b2556d8cef3009a329d1c029e4aaaa1ac0"
+    },
+    {
+      "original": "check-attendees-ui/long-identity-320.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/long-identity-320.png",
+      "bytes": 111046,
+      "sha256": "22751cb8cb51074aff044be900b2e9a5a7cc7410cbc499dbb67bd8c1b6a81809"
+    },
+    {
+      "original": "check-attendees-ui/long-identity-360.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/long-identity-360.png",
+      "bytes": 123852,
+      "sha256": "07e0a606e0edd102307adc25ddedc5f44c999bf162b5a8bae712c3d1c2ffb1f6"
+    },
+    {
+      "original": "check-attendees-ui/long-identity-375.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/long-identity-375.png",
+      "bytes": 126980,
+      "sha256": "2d9cc45759013a7c7694bc5c8ebed162e773700eeb2e68e2bcdbf0fdac7b1fe4"
+    },
+    {
+      "original": "check-attendees-ui/long-identity-390.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/long-identity-390.png",
+      "bytes": 125578,
+      "sha256": "82d4bdf13b29f88be12f36d1263087c6cddf2cd8dbb3335f8b8824fb7f848114"
+    },
+    {
+      "original": "check-attendees-ui/long-identity-768.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/long-identity-768.png",
+      "bytes": 161743,
+      "sha256": "00bcaa5f98e98ad73abacce7ec4d124edd3e21cf399854d10ec7a9e58fe4e943"
+    },
+    {
+      "original": "check-attendees-ui/removed-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/removed-1280.png",
+      "bytes": 143287,
+      "sha256": "9dc09946ec790d6ec0216f882e713f33f5eafb1882e566fac82adab3716ca55c"
+    },
+    {
+      "original": "check-attendees-ui/removed-320.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/removed-320.png",
+      "bytes": 93249,
+      "sha256": "6451d4a5a3041dbb8ff78a146af1213a77b495fac769393c911f425314304b32"
+    },
+    {
+      "original": "check-attendees-ui/removed-360.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/removed-360.png",
+      "bytes": 99849,
+      "sha256": "159c5822b66bd4ecec3e51febea094734950c7aced218f42ca56674a2b0c94b8"
+    },
+    {
+      "original": "check-attendees-ui/removed-375.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/removed-375.png",
+      "bytes": 101327,
+      "sha256": "ad98f7c0546f0a5cd6d03099b509752e09ff4cb162fffcf8d72fc8ded3d6e269"
+    },
+    {
+      "original": "check-attendees-ui/removed-390.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/removed-390.png",
+      "bytes": 103345,
+      "sha256": "06447ce0d9213f8ab949d4ac34ca266aa5eb63475ea55e60793aacb4f53bc495"
+    },
+    {
+      "original": "check-attendees-ui/removed-768.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/removed-768.png",
+      "bytes": 139131,
+      "sha256": "9dde47ae72dba40f85f71f7296093248c8a1bc9ccbcb4cd157a52d9769b4aae9"
+    },
+    {
+      "original": "check-attendees-ui/search-empty-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/search-empty-1280.png",
+      "bytes": 142310,
+      "sha256": "d36172f6ea250a8ba590594708fe874e4cf039bff29281869856d564abc86ec6"
+    },
+    {
+      "original": "check-attendees-ui/search-empty-320.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/search-empty-320.png",
+      "bytes": 91157,
+      "sha256": "6af6b0512de1f01692712c9af6c3bf83f8347613ede792fc96d8e2a22386f94a"
+    },
+    {
+      "original": "check-attendees-ui/search-empty-360.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/search-empty-360.png",
+      "bytes": 97958,
+      "sha256": "56e21ffd64a6274a0a8c03e87496b472ba7b8993e3cb6f64ec16bacd77d891f0"
+    },
+    {
+      "original": "check-attendees-ui/search-empty-375.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/search-empty-375.png",
+      "bytes": 99749,
+      "sha256": "e560b4f83493ca658219cf5187a500bcc5be77a1d5b472b8eb7f9bee962e1250"
+    },
+    {
+      "original": "check-attendees-ui/search-empty-390.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/search-empty-390.png",
+      "bytes": 101710,
+      "sha256": "69983bc07f67157823ddfe298c83d46e03540b8b1508c6506138267af5b113bd"
+    },
+    {
+      "original": "check-attendees-ui/search-empty-768.png",
+      "localArchive": ".r4-b9-captures.local/check-attendees-ui/search-empty-768.png",
+      "bytes": 138214,
+      "sha256": "1bcb50502871a170bedd4782ea34e504b3967aa93e675f7b1faa14765faddfbc"
+    },
+    {
+      "original": "check-discovery-ui/detail-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-discovery-ui/detail-768x1024.png",
+      "bytes": 111613,
+      "sha256": "1b7289f4a14cdfa53b301f5014f275bd1937f7f98c8fb7877901b665814e568d"
+    },
+    {
+      "original": "check-discovery-ui/empty-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-discovery-ui/empty-375x812.png",
+      "bytes": 132723,
+      "sha256": "e2cb359da30e7cc57508520985e9a826eb699c5513c399d5d69f75a750c916a9"
+    },
+    {
+      "original": "check-discovery-ui/error-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-discovery-ui/error-375x812.png",
+      "bytes": 135242,
+      "sha256": "382663d6e14864cd07a82ec22bfe915cad5de7c4045c379f22374c2461fd0f70"
+    },
+    {
+      "original": "check-discovery-ui/map-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-discovery-ui/map-1280x900.png",
+      "bytes": 161417,
+      "sha256": "4c7e24f34602951ff5c0ed408949d5d1637aef827682b6fe784273534e5f3514"
+    },
+    {
+      "original": "check-discovery-ui/map-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-discovery-ui/map-375x812.png",
+      "bytes": 136951,
+      "sha256": "bffc6d210ed6ba4e06e2d2fc187044904073d2dfba25bb50fab3d8c5eb9159c7"
+    },
+    {
+      "original": "check-discovery-ui/map-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-discovery-ui/map-768x1024.png",
+      "bytes": 144599,
+      "sha256": "c564854dcfde1f23afbe7614a96f196578ade952635b624cb02ae1871267efba"
+    },
+    {
+      "original": "check-discovery-ui/mapbox-error-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-discovery-ui/mapbox-error-375x812.png",
+      "bytes": 145897,
+      "sha256": "740db1a6db14ff2d86992728eaee5b4c7acd4c98a5cff96426601d891cab8e2a"
+    },
+    {
+      "original": "check-edit-event-ui/edit-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-edit-event-ui/edit-360x800.png",
+      "bytes": 240566,
+      "sha256": "96a80882963453deba43d7a25879774b5bfcf6eed2d03f218ad63fb8d4d630d3"
+    },
+    {
+      "original": "check-edit-event-ui/edit-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-edit-event-ui/edit-390x844.png",
+      "bytes": 249122,
+      "sha256": "2e9d981ea3be67d1b1f830f40075cbbb1710cfd9574b902edab8112ad4984314"
+    },
+    {
+      "original": "check-edit-event-ui/edit-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-edit-event-ui/edit-768x1024.png",
+      "bytes": 321327,
+      "sha256": "650dae51f2174d078138114ecc0e3901fa421f953c865adc2df1aff46406b9ae"
+    },
+    {
+      "original": "check-edit-event-ui/error-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-edit-event-ui/error-1280x900.png",
+      "bytes": 368900,
+      "sha256": "96d3edcb51b1e01bbaf283a00bb377b8f5d6cdb1056584d37b250a8c8b8df006"
+    },
+    {
+      "original": "check-edit-event-ui/error-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-edit-event-ui/error-360x800.png",
+      "bytes": 218212,
+      "sha256": "59a63c65e503d8930427c955e7db7d22fb339a5f20b9b43d1b451017cda1dc23"
+    },
+    {
+      "original": "check-edit-event-ui/error-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-edit-event-ui/error-375x812.png",
+      "bytes": 221195,
+      "sha256": "44a54f55be2d63d04528baace8d26b9f0fe9bb21075f6f0fd48956ae0be2e1dd"
+    },
+    {
+      "original": "check-edit-event-ui/error-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-edit-event-ui/error-390x844.png",
+      "bytes": 223542,
+      "sha256": "08939cb47a510e3b2c1d7bb9dac822a732b768474ffd2718c9f03dd44c844622"
+    },
+    {
+      "original": "check-edit-event-ui/error-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-edit-event-ui/error-768x1024.png",
+      "bytes": 287860,
+      "sha256": "fb3d68275b0eab6f2c7ff3952a211706ef0647b4668513685a66cc8cd8d8023f"
+    },
+    {
+      "original": "check-event-access-ui/active-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/active-320.png",
+      "bytes": 104790,
+      "sha256": "7d8739cfef5f8a306a8c620b8744a71bed883556bb5eed7928555889e3c73b88"
+    },
+    {
+      "original": "check-event-access-ui/active-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/active-390.png",
+      "bytes": 117514,
+      "sha256": "3a6d1a630aa4e7fab5edc881e0691c1b72b86fc49f22d4ff339a45b2068546d0"
+    },
+    {
+      "original": "check-event-access-ui/active-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/active-768.png",
+      "bytes": 153328,
+      "sha256": "0cf43faa4a4d055e6b37948c06a61b090cce116447a7b8726e3369c6c9d631f8"
+    },
+    {
+      "original": "check-event-access-ui/archived.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/archived.png",
+      "bytes": 117036,
+      "sha256": "e8a4a06b09992c427f9935ef73c77d0a63b5cb24ccaddee5a4dc130f66e673c2"
+    },
+    {
+      "original": "check-event-access-ui/cancelled.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/cancelled.png",
+      "bytes": 116986,
+      "sha256": "1d1fb8e03b24024773edfb0061f11ce314a27b4fbcaef1e32fbc3e4e09e95e9c"
+    },
+    {
+      "original": "check-event-access-ui/empty.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/empty.png",
+      "bytes": 90916,
+      "sha256": "c9a3b5bea047b706f7b417730f8a98e1fec3fadc95359d189e3e925b3fb816da"
+    },
+    {
+      "original": "check-event-access-ui/ended.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/ended.png",
+      "bytes": 116938,
+      "sha256": "63820125f0f28be7b08f9c60c9e4b533aa694e045cc9f3f64825900a936cb172"
+    },
+    {
+      "original": "check-event-access-ui/error.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/error.png",
+      "bytes": 113709,
+      "sha256": "7176757444e7080137a7563315b369a29203ffe6c77064193f58d5cb0aa25850"
+    },
+    {
+      "original": "check-event-access-ui/large-text-low-height.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/large-text-low-height.png",
+      "bytes": 156780,
+      "sha256": "a273693d6e95e68e5f5322fc8ef8a605a56ed49c53caf62e4aa32c7a03533b66"
+    },
+    {
+      "original": "check-event-access-ui/public.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/public.png",
+      "bytes": 100015,
+      "sha256": "60d3dea40e8bcc074db3e73133b672ba110a831c4b169f74f4ef1939d879311b"
+    },
+    {
+      "original": "check-event-access-ui/restore-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/restore-1280.png",
+      "bytes": 166011,
+      "sha256": "978358de1fc807ee03874d021e9d7c066236c916426b9d2134c89c8e18557019"
+    },
+    {
+      "original": "check-event-access-ui/restore-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/restore-320.png",
+      "bytes": 87031,
+      "sha256": "e627ee3b42b4c6ef228341909187e9e33052686f269d58da843250083ea85596"
+    },
+    {
+      "original": "check-event-access-ui/restore-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/restore-375.png",
+      "bytes": 95571,
+      "sha256": "24e43c88f13c3cc11e715bb6ca37200ed746ed665e537df74e173e6ee2355979"
+    },
+    {
+      "original": "check-event-access-ui/restore-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/restore-390.png",
+      "bytes": 99212,
+      "sha256": "211e40949c972d46cef7acde1cf64dfabfb71a0df9607a7b5ad948b174643474"
+    },
+    {
+      "original": "check-event-access-ui/restore-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/restore-768.png",
+      "bytes": 162812,
+      "sha256": "6e4e2d6a563e2e4a2d49e0eed30cfdbd253f3de34049e62a2f27b6af7bc9d268"
+    },
+    {
+      "original": "check-event-access-ui/revoke-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/revoke-1280.png",
+      "bytes": 186820,
+      "sha256": "b85747f646a5382e7b94daaf5b1cf338a4c9ad8a5e1881c37ac3756bc437979a"
+    },
+    {
+      "original": "check-event-access-ui/revoke-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/revoke-320.png",
+      "bytes": 97260,
+      "sha256": "f9bc28cfa6a9139c1ca065cac493cc751a70ed207c0d50ce5a2f387f72c2dcf9"
+    },
+    {
+      "original": "check-event-access-ui/revoke-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/revoke-375.png",
+      "bytes": 106117,
+      "sha256": "657883ac6b169f18a188b0c5dfc33741a6d3f1f505157b962332dfcc2c245fad"
+    },
+    {
+      "original": "check-event-access-ui/revoke-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/revoke-390.png",
+      "bytes": 113798,
+      "sha256": "dfff1b56ba88cc3027ee7a210dbf55953cbe33dbafcd438a4069786b75477f12"
+    },
+    {
+      "original": "check-event-access-ui/revoke-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-access-ui/revoke-768.png",
+      "bytes": 182867,
+      "sha256": "c332d1cc148447145c7c21078ae6b973e1093b29428735f8611fca08face6852"
+    },
+    {
+      "original": "check-event-actions-ui/actions-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/actions-320.png",
+      "bytes": 156624,
+      "sha256": "b5b78048a57e15dc093dc01a86fe1903374f45a9e9ddd25397a208973edd07cf"
+    },
+    {
+      "original": "check-event-actions-ui/actions-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/actions-360.png",
+      "bytes": 159805,
+      "sha256": "b36c39d8ea69dbfcfa821465f73460e1beab08031455c00e2a8fdd23f80905aa"
+    },
+    {
+      "original": "check-event-actions-ui/actions-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/actions-390.png",
+      "bytes": 159593,
+      "sha256": "634a8d201bbca8a6319ec2714ae8e485eb17a47d68f970e652efe10081e8f9ef"
+    },
+    {
+      "original": "check-event-actions-ui/actions-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/actions-768.png",
+      "bytes": 179460,
+      "sha256": "938e729cf30edb3d4e8d4b0427a0b5f32bb9299bddeaff81621bca23d6f20b6d"
+    },
+    {
+      "original": "check-event-actions-ui/cancel-dialog-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/cancel-dialog-1280.png",
+      "bytes": 117376,
+      "sha256": "c82d66e5c565fcb212f309ae98399f2f8a4ee58ce7668dc008e58176cae627a9"
+    },
+    {
+      "original": "check-event-actions-ui/cancel-dialog-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/cancel-dialog-320.png",
+      "bytes": 70486,
+      "sha256": "db983746a55a44edbc852de43bc1fa24effbd8808319ed81430d3f1309770e8f"
+    },
+    {
+      "original": "check-event-actions-ui/cancel-dialog-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/cancel-dialog-360.png",
+      "bytes": 72158,
+      "sha256": "351002d0cf0f3a8d888af85fc87bc19755af75ec75eaec187cb58b4d89dd8ac8"
+    },
+    {
+      "original": "check-event-actions-ui/cancel-dialog-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/cancel-dialog-375.png",
+      "bytes": 72961,
+      "sha256": "06249e7ee337d386aedfb67e80ce92fc880b3edd0fc61a8ed910bd23d0ddc41b"
+    },
+    {
+      "original": "check-event-actions-ui/cancel-dialog-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/cancel-dialog-390.png",
+      "bytes": 74183,
+      "sha256": "c10d57e4dc1f0ac7e27422f0a4acd5a84fd6bffd4d06645f81eec33adc1ee0d1"
+    },
+    {
+      "original": "check-event-actions-ui/cancel-dialog-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/cancel-dialog-768.png",
+      "bytes": 120075,
+      "sha256": "89f7f3f7081bf13085bb83e0e283b145327642a409e247596e9ffb9d69520f21"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-dialog-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-dialog-1280.png",
+      "bytes": 109318,
+      "sha256": "b39f7765f11a76901e6969b9c8d7168ba464b5a05a6e6934616c808cf7aeae4d"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-dialog-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-dialog-320.png",
+      "bytes": 65271,
+      "sha256": "b5658cb64b848477f3564a55d67f3ca584e98424743b656b662ddb2f1569ef69"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-dialog-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-dialog-360.png",
+      "bytes": 65941,
+      "sha256": "2fbd09bbad501b3cd01f63dffe09f530bdfaba70bb3ebadbfe36040db738352c"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-dialog-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-dialog-375.png",
+      "bytes": 67156,
+      "sha256": "be1f48c29a77e7ccbffd6b18a2831ea94951838b5071115a7d9ece88632df1c4"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-dialog-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-dialog-390.png",
+      "bytes": 69844,
+      "sha256": "d5380bde46561de9f76133f4f71df3509bbcf41d642b052b6eab82ab8ef045d7"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-dialog-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-dialog-768.png",
+      "bytes": 112985,
+      "sha256": "78524e50c343bfa1153d248cd4deaed7af555ab6d55cfc79d7e7238bca5f98ee"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-form-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-form-1280.png",
+      "bytes": 380748,
+      "sha256": "8970d4edf607b570742ebdc5602f7162e2fa1d9a14065328d549b04fddf07227"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-form-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-form-320.png",
+      "bytes": 220469,
+      "sha256": "50d4afa77e36bb70c8770d44f8e4bbb8debd6e71e28c933494d8e5c568c41a37"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-form-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-form-360.png",
+      "bytes": 227855,
+      "sha256": "e0df6ad0f46afb3ca3f4c0877268f806266d58a833dd909212895fd6af2e51fb"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-form-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-form-375.png",
+      "bytes": 231120,
+      "sha256": "c2858026959553d8e4ab385670247f2fed922a984d7c52d6e745d934874591c2"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-form-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-form-390.png",
+      "bytes": 238073,
+      "sha256": "1f3633a2ac819550995eb623b5f91385fe62aad7836a05783dee582db0a7401c"
+    },
+    {
+      "original": "check-event-actions-ui/duplicate-form-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-actions-ui/duplicate-form-768.png",
+      "bytes": 303461,
+      "sha256": "12c69b86ba542ab2b1dfb09e4c7874fd1bdf7d52a7d4a3aff1710b156b93e3ac"
+    },
+    {
+      "original": "check-event-links-ui/after-create-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-create-320.png",
+      "bytes": 206588,
+      "sha256": "415b2043083e2f9d7aab0f266e533b3b103cb1e159df9297d767f55b48a41af9"
+    },
+    {
+      "original": "check-event-links-ui/after-create-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-create-360.png",
+      "bytes": 216004,
+      "sha256": "32f8776e79d05632ac58daf9a15be0a9223151490e9dd180fe8e45e6b87512b1"
+    },
+    {
+      "original": "check-event-links-ui/after-create-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-create-390.png",
+      "bytes": 216632,
+      "sha256": "d1ec871e0273873a92a95b8985614ea872bfeca6895ae398537f222234499a9e"
+    },
+    {
+      "original": "check-event-links-ui/after-create-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-create-768.png",
+      "bytes": 280964,
+      "sha256": "1b0523fc896f20efd7580c76a27a3d5b540b7883ce9a2624772d3323489c547f"
+    },
+    {
+      "original": "check-event-links-ui/after-edit-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-edit-1280.png",
+      "bytes": 348298,
+      "sha256": "71152d5eb8b9f93c6b8eb85e03060e64cf41cd9cd6fb9b944199c36830be9335"
+    },
+    {
+      "original": "check-event-links-ui/after-edit-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-edit-320.png",
+      "bytes": 195873,
+      "sha256": "ccdad6a577033c7b37f5cc38d43de0ff956df023149164d897563eeb7cd19034"
+    },
+    {
+      "original": "check-event-links-ui/after-edit-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-edit-360.png",
+      "bytes": 201394,
+      "sha256": "e7c1ce6937126522f42d6e6b0d38348c47d99d989d7c9e639c15dfdf04f97fe9"
+    },
+    {
+      "original": "check-event-links-ui/after-edit-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-edit-375.png",
+      "bytes": 204885,
+      "sha256": "8499d36fa4f8f546cbe3c750e77a4b39134c50dcea6a4643f8ef100494c76f8c"
+    },
+    {
+      "original": "check-event-links-ui/after-edit-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-edit-390.png",
+      "bytes": 208416,
+      "sha256": "880fba337c24b46afe9744a2af8167875708f55ee1023be3e826a71ece9818d5"
+    },
+    {
+      "original": "check-event-links-ui/after-edit-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-edit-768.png",
+      "bytes": 270433,
+      "sha256": "400d8eb68c9c0b48516934247071aec89ca3dd40ea54728bc5a6df710f1f045d"
+    },
+    {
+      "original": "check-event-links-ui/after-public-detail-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-public-detail-1280.png",
+      "bytes": 204298,
+      "sha256": "a0ba24972da2fd2d9f8777f43943ae96324fe0e46d98618b0d05da609f1063d2"
+    },
+    {
+      "original": "check-event-links-ui/after-public-detail-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-public-detail-320.png",
+      "bytes": 155309,
+      "sha256": "2be3eeca7d9fc30cd49e3332eb30c035d51dc2c5085c241eb92d1c1bc420611f"
+    },
+    {
+      "original": "check-event-links-ui/after-public-detail-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-public-detail-360.png",
+      "bytes": 160295,
+      "sha256": "8d66fff3e233a54fcef5a736ef514140703af24ffcbee0666684c321d50cbfd5"
+    },
+    {
+      "original": "check-event-links-ui/after-public-detail-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-public-detail-375.png",
+      "bytes": 160440,
+      "sha256": "c95b3bf26e64e93101c50e012b7503828b7ad4983577b38eaf1001c4423fff6a"
+    },
+    {
+      "original": "check-event-links-ui/after-public-detail-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-public-detail-390.png",
+      "bytes": 160544,
+      "sha256": "60729c2b60e4493d4db9a0f5c127422012c0c6846504dcc3ed2fa6a900f9a6b4"
+    },
+    {
+      "original": "check-event-links-ui/after-public-detail-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/after-public-detail-768.png",
+      "bytes": 178301,
+      "sha256": "83094af12925169c6133f23742aa9a07e28f58d943e9b8175cae49dde2ce8ec7"
+    },
+    {
+      "original": "check-event-links-ui/before-create-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-create-1280.png",
+      "bytes": 359903,
+      "sha256": "e0ff3992c98f5a3c11ec4938a491d4c2dd72c0ff668eabb5fe44924dc13640b3"
+    },
+    {
+      "original": "check-event-links-ui/before-create-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-create-320.png",
+      "bytes": 206588,
+      "sha256": "415b2043083e2f9d7aab0f266e533b3b103cb1e159df9297d767f55b48a41af9"
+    },
+    {
+      "original": "check-event-links-ui/before-create-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-create-360.png",
+      "bytes": 216004,
+      "sha256": "32f8776e79d05632ac58daf9a15be0a9223151490e9dd180fe8e45e6b87512b1"
+    },
+    {
+      "original": "check-event-links-ui/before-create-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-create-375.png",
+      "bytes": 216401,
+      "sha256": "137a8c6ba8ec9a90fe4b6dc20b1b5bcdbb96c39d6ff55c6da599a4b45d42450b"
+    },
+    {
+      "original": "check-event-links-ui/before-create-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-create-390.png",
+      "bytes": 216632,
+      "sha256": "d1ec871e0273873a92a95b8985614ea872bfeca6895ae398537f222234499a9e"
+    },
+    {
+      "original": "check-event-links-ui/before-create-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-create-768.png",
+      "bytes": 280964,
+      "sha256": "1b0523fc896f20efd7580c76a27a3d5b540b7883ce9a2624772d3323489c547f"
+    },
+    {
+      "original": "check-event-links-ui/before-edit-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-edit-1280.png",
+      "bytes": 348298,
+      "sha256": "71152d5eb8b9f93c6b8eb85e03060e64cf41cd9cd6fb9b944199c36830be9335"
+    },
+    {
+      "original": "check-event-links-ui/before-edit-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-edit-320.png",
+      "bytes": 195873,
+      "sha256": "ccdad6a577033c7b37f5cc38d43de0ff956df023149164d897563eeb7cd19034"
+    },
+    {
+      "original": "check-event-links-ui/before-edit-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-edit-360.png",
+      "bytes": 201394,
+      "sha256": "e7c1ce6937126522f42d6e6b0d38348c47d99d989d7c9e639c15dfdf04f97fe9"
+    },
+    {
+      "original": "check-event-links-ui/before-edit-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-edit-375.png",
+      "bytes": 204885,
+      "sha256": "8499d36fa4f8f546cbe3c750e77a4b39134c50dcea6a4643f8ef100494c76f8c"
+    },
+    {
+      "original": "check-event-links-ui/before-edit-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-edit-390.png",
+      "bytes": 208416,
+      "sha256": "880fba337c24b46afe9744a2af8167875708f55ee1023be3e826a71ece9818d5"
+    },
+    {
+      "original": "check-event-links-ui/before-edit-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-edit-768.png",
+      "bytes": 270433,
+      "sha256": "400d8eb68c9c0b48516934247071aec89ca3dd40ea54728bc5a6df710f1f045d"
+    },
+    {
+      "original": "check-event-links-ui/before-public-detail-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-public-detail-1280.png",
+      "bytes": 204298,
+      "sha256": "a0ba24972da2fd2d9f8777f43943ae96324fe0e46d98618b0d05da609f1063d2"
+    },
+    {
+      "original": "check-event-links-ui/before-public-detail-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-public-detail-320.png",
+      "bytes": 155309,
+      "sha256": "2be3eeca7d9fc30cd49e3332eb30c035d51dc2c5085c241eb92d1c1bc420611f"
+    },
+    {
+      "original": "check-event-links-ui/before-public-detail-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-public-detail-360.png",
+      "bytes": 160295,
+      "sha256": "8d66fff3e233a54fcef5a736ef514140703af24ffcbee0666684c321d50cbfd5"
+    },
+    {
+      "original": "check-event-links-ui/before-public-detail-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-public-detail-375.png",
+      "bytes": 160440,
+      "sha256": "c95b3bf26e64e93101c50e012b7503828b7ad4983577b38eaf1001c4423fff6a"
+    },
+    {
+      "original": "check-event-links-ui/before-public-detail-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-public-detail-390.png",
+      "bytes": 160544,
+      "sha256": "60729c2b60e4493d4db9a0f5c127422012c0c6846504dcc3ed2fa6a900f9a6b4"
+    },
+    {
+      "original": "check-event-links-ui/before-public-detail-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/before-public-detail-768.png",
+      "bytes": 178301,
+      "sha256": "83094af12925169c6133f23742aa9a07e28f58d943e9b8175cae49dde2ce8ec7"
+    },
+    {
+      "original": "check-event-links-ui/closed-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/closed-1280.png",
+      "bytes": 225400,
+      "sha256": "c70fb294c37be5fb9b2bafe9baada5e8a24095d3df696a8109ffc4b84e899ea8"
+    },
+    {
+      "original": "check-event-links-ui/closed-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/closed-320.png",
+      "bytes": 167437,
+      "sha256": "a11c4a94ab815efa63696a8262de13b5512d40e4821edc89a0a934467bb24872"
+    },
+    {
+      "original": "check-event-links-ui/closed-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/closed-360.png",
+      "bytes": 173495,
+      "sha256": "894e3f46cc974ede1f5ec91989e30c342b07f8c1f2725f3a65c778707f358d85"
+    },
+    {
+      "original": "check-event-links-ui/closed-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/closed-375.png",
+      "bytes": 172511,
+      "sha256": "6511e62a304f60ea957c06f57258dafb2d7bd3f29bd314c834f36ba81cd3fc02"
+    },
+    {
+      "original": "check-event-links-ui/closed-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/closed-390.png",
+      "bytes": 171175,
+      "sha256": "1f8b0f8cbf023d6761975f25b59234dfbcf08c0336cf7eed7a3a9be9a46497aa"
+    },
+    {
+      "original": "check-event-links-ui/closed-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/closed-768.png",
+      "bytes": 195481,
+      "sha256": "31bbb27ef991a0160505721967d25477efc2120a7759ece9f2ba5030ecd64bef"
+    },
+    {
+      "original": "check-event-links-ui/conflict-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/conflict-1280.png",
+      "bytes": 372286,
+      "sha256": "3ba842a1bba9baedd4726c026aa51aaa30ef5f0bf5f5d682332b51f7e7c5a299"
+    },
+    {
+      "original": "check-event-links-ui/conflict-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/conflict-320.png",
+      "bytes": 218161,
+      "sha256": "963b9e6839f152614e67793332d4f073ea236b3aab85fe0ce6e2879f3a78e31a"
+    },
+    {
+      "original": "check-event-links-ui/conflict-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/conflict-360.png",
+      "bytes": 224566,
+      "sha256": "b97bb8604dc10626296bc6f62e5825d776951cccac5691cc03f451a8cb059d1c"
+    },
+    {
+      "original": "check-event-links-ui/conflict-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/conflict-375.png",
+      "bytes": 226737,
+      "sha256": "4b17dcb9c6d737cbe857a8ede0baa5ffb6f5d054ffd6f08e246b78d34a5bbcbe"
+    },
+    {
+      "original": "check-event-links-ui/conflict-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/conflict-390.png",
+      "bytes": 230090,
+      "sha256": "ac25e3c66152eaef72b67ca776efcec9598c328bfb5eae456f520011c55859ab"
+    },
+    {
+      "original": "check-event-links-ui/conflict-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/conflict-768.png",
+      "bytes": 291140,
+      "sha256": "f4bcb5ad6bfba004af462bfd8da8a79c7170dd9106f52961a41587ed64ce101a"
+    },
+    {
+      "original": "check-event-links-ui/hidden-detail-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/hidden-detail-1280.png",
+      "bytes": 233566,
+      "sha256": "86b351160e7a1cfc1b915520367361f2329f35ad10dc7127a3034555f1334c43"
+    },
+    {
+      "original": "check-event-links-ui/hidden-detail-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/hidden-detail-320.png",
+      "bytes": 174243,
+      "sha256": "af2932948560057be964daef6e72b648079a78d30cc5336bee9a87597773e602"
+    },
+    {
+      "original": "check-event-links-ui/hidden-detail-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/hidden-detail-360.png",
+      "bytes": 180334,
+      "sha256": "5995a6a25c65d2f1bfb9a359eeac37dbd2c03e59cebc4913429675803fdec3ba"
+    },
+    {
+      "original": "check-event-links-ui/hidden-detail-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/hidden-detail-375.png",
+      "bytes": 179546,
+      "sha256": "feda59c7c5b209eb5bf0c24d9d83234c80a0c9596d3b1b40646a5b0660ef6bf3"
+    },
+    {
+      "original": "check-event-links-ui/hidden-detail-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/hidden-detail-390.png",
+      "bytes": 178049,
+      "sha256": "71e2368817ef413f480bf4413c6fa81e83e57a008f172d2de21f7d13bb4b76bd"
+    },
+    {
+      "original": "check-event-links-ui/hidden-detail-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/hidden-detail-768.png",
+      "bytes": 203514,
+      "sha256": "436ab811f6a4511cbc53cae30e9cc6e7828bd3527c4d853463fec393da8d0355"
+    },
+    {
+      "original": "check-event-links-ui/one-time-link-masked-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/one-time-link-masked-1280.png",
+      "bytes": 289357,
+      "sha256": "1b8981e3d487d74a159a9523baa6d753c7f4675fa2f61a3e3a7c76080c65fe9a"
+    },
+    {
+      "original": "check-event-links-ui/one-time-link-masked-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/one-time-link-masked-320.png",
+      "bytes": 192700,
+      "sha256": "ba942be164ba8960348f0611c3bc5c3beb23789c98bddb92a5b29f47e6181f34"
+    },
+    {
+      "original": "check-event-links-ui/one-time-link-masked-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/one-time-link-masked-360.png",
+      "bytes": 198786,
+      "sha256": "bc38efa90c909f8c5100b6b3d2208fcde5c566e75d7431051f295f85f5a7ba43"
+    },
+    {
+      "original": "check-event-links-ui/one-time-link-masked-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/one-time-link-masked-375.png",
+      "bytes": 201338,
+      "sha256": "ceed02a79326cb6b217dccc34ed7bb35221a188a25a72f6d59176e9c0f743ea7"
+    },
+    {
+      "original": "check-event-links-ui/one-time-link-masked-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/one-time-link-masked-390.png",
+      "bytes": 200641,
+      "sha256": "abe3cc83661afae3da772a3abfbeb0dc99981f11600378955aaa1709e41bf26c"
+    },
+    {
+      "original": "check-event-links-ui/one-time-link-masked-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/one-time-link-masked-768.png",
+      "bytes": 257005,
+      "sha256": "01b6c01c5cc3baf4f03e53752725c8d97f3e1a6fc85be94c1686fd9d0a4998bf"
+    },
+    {
+      "original": "check-event-links-ui/rotation-error-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/rotation-error-1280.png",
+      "bytes": 291017,
+      "sha256": "52d4baa49d50027300f95ddbc517db164e70b95a3ed4a7394eb6d78f6ebe6da7"
+    },
+    {
+      "original": "check-event-links-ui/rotation-error-320.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/rotation-error-320.png",
+      "bytes": 197247,
+      "sha256": "e743a02a96d3134df0ac79105dc59beddd9d2fc1851d656ef051447123b558dd"
+    },
+    {
+      "original": "check-event-links-ui/rotation-error-360.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/rotation-error-360.png",
+      "bytes": 203070,
+      "sha256": "8a8dc4afbbffd2ff2b889150257dd84004012c66aab42fdc1de6e94c7adf4e22"
+    },
+    {
+      "original": "check-event-links-ui/rotation-error-375.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/rotation-error-375.png",
+      "bytes": 208122,
+      "sha256": "781fe7d70ad22afbd6c1dfefea41fd9135b7867730afdcff48d9576b52ef298b"
+    },
+    {
+      "original": "check-event-links-ui/rotation-error-390.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/rotation-error-390.png",
+      "bytes": 207410,
+      "sha256": "9054e8617dc22e67a989d99a54dcb8550f1d0fb2ffb2978f0b46d00927a9c023"
+    },
+    {
+      "original": "check-event-links-ui/rotation-error-768.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/rotation-error-768.png",
+      "bytes": 258534,
+      "sha256": "1769d33765c051c5d9687d7555c582cd2833c8858cb364b282c0a6d3ea0983c6"
+    },
+    {
+      "original": "check-event-links-ui/stress-320x400-large-text.png",
+      "localArchive": ".r4-b9-captures.local/check-event-links-ui/stress-320x400-large-text.png",
+      "bytes": 211825,
+      "sha256": "e495b74798efcb54c8358c5a0399fc0d334559b1f3c8fb72181faf4c5c08e93c"
+    },
+    {
+      "original": "check-events-ui/backend-error-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-events-ui/backend-error-390x844.png",
+      "bytes": 234501,
+      "sha256": "93a24e48c81015e5d32e5b6754d482ba14c73d08406ebef9d2d564d5b77384d2"
+    },
+    {
+      "original": "check-events-ui/filled-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-events-ui/filled-390x844.png",
+      "bytes": 232706,
+      "sha256": "e65ce9195f80f53adf5a2b15f3287f259162375e7013c1c269df72490ba59ee6"
+    },
+    {
+      "original": "check-events-ui/form-320x800.png",
+      "localArchive": ".r4-b9-captures.local/check-events-ui/form-320x800.png",
+      "bytes": 244372,
+      "sha256": "cd5e393022cd6b9c5bc9d65e6f5a58e9129dbc2a14f31de5ec894662349d6c47"
+    },
+    {
+      "original": "check-events-ui/form-360x800.png",
+      "localArchive": ".r4-b9-captures.local/check-events-ui/form-360x800.png",
+      "bytes": 253816,
+      "sha256": "6d7eb74667ca0fa0e78e9b282f3fa231dc62d3bf70b8b37ddec2fb31ef2926a2"
+    },
+    {
+      "original": "check-events-ui/form-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-events-ui/form-390x844.png",
+      "bytes": 254605,
+      "sha256": "10074dd5c3feb76063d7272872f7420ce73b3eae6c5a62ca898ed6f2de0cc0cd"
+    },
+    {
+      "original": "check-events-ui/form-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/check-events-ui/form-768x1024.png",
+      "bytes": 322890,
+      "sha256": "291518dcb52f34cd516762f3e458c7f8bdb211472753a8f94c126397f43915c5"
+    },
+    {
+      "original": "check-events-ui/publish-viewport-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-events-ui/publish-viewport-390x844.png",
+      "bytes": 42665,
+      "sha256": "1a1074724177effcbb847be995c830be523df9ed2893779ada01055c200d5d38"
+    },
+    {
+      "original": "check-events-ui/success-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-events-ui/success-390x844.png",
+      "bytes": 137123,
+      "sha256": "dc0bd8fb7a0678671e53ba2c885ae662d82ff225d200c52c51c0aea8777d0282"
+    },
+    {
+      "original": "check-events-ui/validation-390x844.png",
+      "localArchive": ".r4-b9-captures.local/check-events-ui/validation-390x844.png",
+      "bytes": 251319,
+      "sha256": "a826ff658c5722ee744a5f6ea821a4253cc8e8182c5b642e6515034f80c1dfd4"
+    },
+    {
+      "original": "check-filters-ui/home-date-radius-320.png",
+      "localArchive": ".r4-b9-captures.local/check-filters-ui/home-date-radius-320.png",
+      "bytes": 122345,
+      "sha256": "f0fdfbd99d191864c5b8e07db99a38e6f8bf15eeda163fd119f97d08cd558da7"
+    },
+    {
+      "original": "check-filters-ui/home-date-radius-360.png",
+      "localArchive": ".r4-b9-captures.local/check-filters-ui/home-date-radius-360.png",
+      "bytes": 125775,
+      "sha256": "ba7e51da6bd6acf039a5483b543f2c69f5b51744a085d545b03ac6991e3fdaf8"
+    },
+    {
+      "original": "check-filters-ui/home-date-radius-390.png",
+      "localArchive": ".r4-b9-captures.local/check-filters-ui/home-date-radius-390.png",
+      "bytes": 129318,
+      "sha256": "6ef7b9143922de4bbb2fe4cb7ea6c1075522636c151e09c3e99d3b94901cbf4c"
+    },
+    {
+      "original": "check-filters-ui/home-date-radius-768.png",
+      "localArchive": ".r4-b9-captures.local/check-filters-ui/home-date-radius-768.png",
+      "bytes": 169030,
+      "sha256": "95319a3d1b5100e79ce29bbf57ad10584fc4dcf8f54f4253c8d3f7568e00e091"
+    },
+    {
+      "original": "check-filters-ui/map-date-radius-375.png",
+      "localArchive": ".r4-b9-captures.local/check-filters-ui/map-date-radius-375.png",
+      "bytes": 328353,
+      "sha256": "aebd5c7920bae0cfeabd308318d60dd396fdd0893feb6ab8a53d2ff7c0b5da49"
+    },
+    {
+      "original": "check-gallery-ui/confirm-320.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/confirm-320.png",
+      "bytes": 174899,
+      "sha256": "244bd55248db65746c8398e789ec8ae58036d7ca1a9103b0248212d982be2778"
+    },
+    {
+      "original": "check-gallery-ui/confirm-360.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/confirm-360.png",
+      "bytes": 189662,
+      "sha256": "06bf7bac884eec956a9c1e54f6cd38a0b0b745825752f3844be528dd16af004c"
+    },
+    {
+      "original": "check-gallery-ui/confirm-390.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/confirm-390.png",
+      "bytes": 201805,
+      "sha256": "b7427fe345e264ad757cad971e7b146056601eadbd5a489f105b1ad543099fa6"
+    },
+    {
+      "original": "check-gallery-ui/confirm-768.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/confirm-768.png",
+      "bytes": 246372,
+      "sha256": "d77e38e7c372c61df327346afd6bfb0c5decd6bd8ce6461724eed45fa34f027e"
+    },
+    {
+      "original": "check-gallery-ui/empty-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/empty-1280.png",
+      "bytes": 191161,
+      "sha256": "1a504dcf61a242a2a98200ab4c1340a7c713d731c252a9cc46de1ce3694c8453"
+    },
+    {
+      "original": "check-gallery-ui/empty-320.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/empty-320.png",
+      "bytes": 129871,
+      "sha256": "ea73cfbde094b49b5c59223067883c120c1a29976888fb76f7bf2040c9c058e7"
+    },
+    {
+      "original": "check-gallery-ui/empty-360.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/empty-360.png",
+      "bytes": 130718,
+      "sha256": "27c0c44ad176b867b112ebcc999cd46ef8161e3194dc7e4cc5ca21fda106b43f"
+    },
+    {
+      "original": "check-gallery-ui/empty-375.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/empty-375.png",
+      "bytes": 134778,
+      "sha256": "67f2d611e68ef7dc9dbb30e7ad29be03a1820d726f8eeb28c251152d0e928098"
+    },
+    {
+      "original": "check-gallery-ui/empty-390.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/empty-390.png",
+      "bytes": 134138,
+      "sha256": "09758b79951620636b4cf50acc978c8cf251e1ed257ee2d612eb8054a1450a55"
+    },
+    {
+      "original": "check-gallery-ui/empty-768.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/empty-768.png",
+      "bytes": 174220,
+      "sha256": "5bbda91a83d7b4625105ce0925ae0ae358e76652f7775c06a1fe1816dc62cfc8"
+    },
+    {
+      "original": "check-gallery-ui/gallery-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/gallery-1280.png",
+      "bytes": 234611,
+      "sha256": "d709979cada1bdb9ad596b0e22671c4f937a09ac55cf32d7828c31d299ab9f37"
+    },
+    {
+      "original": "check-gallery-ui/gallery-320.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/gallery-320.png",
+      "bytes": 189915,
+      "sha256": "8e497ea02a8af71a62f574bfe98d497a50531077d833c8e5cb0d0dd3dec61d05"
+    },
+    {
+      "original": "check-gallery-ui/gallery-360.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/gallery-360.png",
+      "bytes": 197128,
+      "sha256": "da46ae935811fba47178f2f62dcb8346cb10c76b6d15fff5384f0ed5ee795b8a"
+    },
+    {
+      "original": "check-gallery-ui/gallery-375.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/gallery-375.png",
+      "bytes": 200809,
+      "sha256": "600982750398a94c459461d5be327166258080681f8803c865198e818ccd6ce9"
+    },
+    {
+      "original": "check-gallery-ui/gallery-390.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/gallery-390.png",
+      "bytes": 206012,
+      "sha256": "7a73632f109aea736ff215dbfa200f63634da3800c71ea8b4287734deea8a946"
+    },
+    {
+      "original": "check-gallery-ui/gallery-768.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/gallery-768.png",
+      "bytes": 226420,
+      "sha256": "d87be8df6a9021dbc6af54143847f54d405c11ae946a2164167cc11724ae3474"
+    },
+    {
+      "original": "check-gallery-ui/invalid-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/invalid-1280.png",
+      "bytes": 242593,
+      "sha256": "eab8cd4fc5c632cfc6a2dbe88619663397b499fb8c6e322dcd1c97dd2df31833"
+    },
+    {
+      "original": "check-gallery-ui/invalid-320.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/invalid-320.png",
+      "bytes": 186687,
+      "sha256": "a9ddeb75b4714ad6e0fcb0dcb3f53bf01c2d7772c28c2d4913971c78edf8d944"
+    },
+    {
+      "original": "check-gallery-ui/invalid-360.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/invalid-360.png",
+      "bytes": 193658,
+      "sha256": "9fe468ac13652d8e3ac76efa9e2e41d3b36103e62c8d13db192eb9630c2c0b02"
+    },
+    {
+      "original": "check-gallery-ui/invalid-375.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/invalid-375.png",
+      "bytes": 198916,
+      "sha256": "4ca8123af153b91ab51b0428d4eb7fc54a0b76217609a0cd36a240ba73447bce"
+    },
+    {
+      "original": "check-gallery-ui/invalid-390.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/invalid-390.png",
+      "bytes": 200969,
+      "sha256": "108b2ff56378223e750dfcd88a142383f187f4ae9ff60bf8834f42338e6f08c0"
+    },
+    {
+      "original": "check-gallery-ui/invalid-768.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/invalid-768.png",
+      "bytes": 232517,
+      "sha256": "252c229cc90ba0129da02997810352de362e1e341ae3000f7908781e48dd203f"
+    },
+    {
+      "original": "check-gallery-ui/one-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/one-1280.png",
+      "bytes": 187317,
+      "sha256": "ffbaa2a14a3e6997c319a4e193361b6b21ff25a6de14b10840488a5363105887"
+    },
+    {
+      "original": "check-gallery-ui/one-320.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/one-320.png",
+      "bytes": 129150,
+      "sha256": "dac9fc1946c83c27b229e25c51eb8e1009832b70d717c073fa4afa293f1a926c"
+    },
+    {
+      "original": "check-gallery-ui/one-360.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/one-360.png",
+      "bytes": 131604,
+      "sha256": "9bcaa219552cd01d5583e0aa6de84305192bcb17ca5bc1457a0b2035a272ea9e"
+    },
+    {
+      "original": "check-gallery-ui/one-375.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/one-375.png",
+      "bytes": 135266,
+      "sha256": "776e3c7d403dfbbd57d1f2840e451fca2955d9c83b2b7e255037615503ba1ace"
+    },
+    {
+      "original": "check-gallery-ui/one-390.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/one-390.png",
+      "bytes": 138609,
+      "sha256": "4d5c3b8e54ae1fde93b7a0afeb34b3c0695ec12cf77cbea50c0a587ba000af0e"
+    },
+    {
+      "original": "check-gallery-ui/one-768.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/one-768.png",
+      "bytes": 171719,
+      "sha256": "e3371822aa2c560f65c06814f5b950e2c53b5fbc0aa23e669053981f168a086f"
+    },
+    {
+      "original": "check-gallery-ui/reordered-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/reordered-1280.png",
+      "bytes": 232229,
+      "sha256": "98f994e35abecf72bb4ed1cd41686e9b49b4f9e06c19f4f25b791381ad0ef83e"
+    },
+    {
+      "original": "check-gallery-ui/reordered-320.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/reordered-320.png",
+      "bytes": 180696,
+      "sha256": "188a8c48896ef68d79880528fd739dab0b99cb4cbdda27b37d4206caef82de73"
+    },
+    {
+      "original": "check-gallery-ui/reordered-360.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/reordered-360.png",
+      "bytes": 189253,
+      "sha256": "4ba832f4bda39deed681a614d7957aba9e3b44144f85793cc1cb424317d05f41"
+    },
+    {
+      "original": "check-gallery-ui/reordered-375.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/reordered-375.png",
+      "bytes": 192819,
+      "sha256": "34d1a19353322a2754361b4143f9cfa6771416b489b5e6d9d5b3fdebec3eccdf"
+    },
+    {
+      "original": "check-gallery-ui/reordered-390.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/reordered-390.png",
+      "bytes": 195587,
+      "sha256": "e0a3a09bd74e7d1e801151a5b35209f7eba9e6b250ff70a8ce31317da84dc35d"
+    },
+    {
+      "original": "check-gallery-ui/reordered-768.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/reordered-768.png",
+      "bytes": 222360,
+      "sha256": "feaa14025fb7f877523cd3e3a1a16868b901cca65f367e1f3232a3e1a456a83a"
+    },
+    {
+      "original": "check-gallery-ui/ten-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/ten-1280.png",
+      "bytes": 271858,
+      "sha256": "86b98ba8bf87ecd566a24ad6ed9f63f729f37fd2ae2f641bf356346a8578423b"
+    },
+    {
+      "original": "check-gallery-ui/ten-320.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/ten-320.png",
+      "bytes": 234381,
+      "sha256": "4fd05be49a22ac3b36d765528a051d32b94f3fb74b5a866e7057c5df637b12f3"
+    },
+    {
+      "original": "check-gallery-ui/ten-360.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/ten-360.png",
+      "bytes": 244759,
+      "sha256": "2b7b501c6d462033fca7da35cd47c837a169a097af6e89e09002e3bc44b96bcc"
+    },
+    {
+      "original": "check-gallery-ui/ten-375.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/ten-375.png",
+      "bytes": 248868,
+      "sha256": "3cd31b963f485c0601ff3a19aa0f2758e1a8e2d0031a9ef061083bf68c81131b"
+    },
+    {
+      "original": "check-gallery-ui/ten-390.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/ten-390.png",
+      "bytes": 254018,
+      "sha256": "cfefaa973cb6b9013b3b2da869667abedbc1e3b318199996c16d7358016b1744"
+    },
+    {
+      "original": "check-gallery-ui/ten-768.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/ten-768.png",
+      "bytes": 258186,
+      "sha256": "1cd9617b61824a662c7e068cf2dd697c653c939709d5d0370f17289879a0b270"
+    },
+    {
+      "original": "check-gallery-ui/upload-failure-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/upload-failure-1280.png",
+      "bytes": 273843,
+      "sha256": "6144d89f4718139077df5bdcc1ec6cc87282568980d86c61340ff3c4a36ae16a"
+    },
+    {
+      "original": "check-gallery-ui/upload-failure-320.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/upload-failure-320.png",
+      "bytes": 221016,
+      "sha256": "603db45f3a3d22918b4eea6ea78e9960a5807ad5019d04508a256e4f8e6c9f1a"
+    },
+    {
+      "original": "check-gallery-ui/upload-failure-360.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/upload-failure-360.png",
+      "bytes": 231920,
+      "sha256": "d48bf23d4490b8b5bf6533a67da5fc526c0288648812efd12ef93c07e6ae2d15"
+    },
+    {
+      "original": "check-gallery-ui/upload-failure-375.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/upload-failure-375.png",
+      "bytes": 235526,
+      "sha256": "f4ab230933550b841960fd46c9f7909e7805da1b07f4a6b143e928133a9458d2"
+    },
+    {
+      "original": "check-gallery-ui/upload-failure-390.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/upload-failure-390.png",
+      "bytes": 239948,
+      "sha256": "bdc37afcdc3dd18c94c8108b00065d1a0d84975b3763dc4767d6575ca1dfe223"
+    },
+    {
+      "original": "check-gallery-ui/upload-failure-768.png",
+      "localArchive": ".r4-b9-captures.local/check-gallery-ui/upload-failure-768.png",
+      "bytes": 262840,
+      "sha256": "4ff8b632e9195af66bc535b0305cc501c5eaad23feceb46ad8c3be4cb6ddcbb3"
+    },
+    {
+      "original": "check-home-ui/detail-mobile.png",
+      "localArchive": ".r4-b9-captures.local/check-home-ui/detail-mobile.png",
+      "bytes": 86753,
+      "sha256": "92b56208c358517c6489dcfae3f403d36b721af4ff79cc7072a5dee9d7299378"
+    },
+    {
+      "original": "check-home-ui/detail-organizer-desktop.png",
+      "localArchive": ".r4-b9-captures.local/check-home-ui/detail-organizer-desktop.png",
+      "bytes": 27659,
+      "sha256": "403c9e24750612fc3f59966bfbdaee19b13d7db8b34eb326aff243a781a4fb28"
+    },
+    {
+      "original": "check-home-ui/detail-organizer-mobile.png",
+      "localArchive": ".r4-b9-captures.local/check-home-ui/detail-organizer-mobile.png",
+      "bytes": 21359,
+      "sha256": "7edf1fad7a47e4cd4014a1ec28fc702744446cd08dbc86c8c4d6e96534bf5039"
+    },
+    {
+      "original": "check-home-ui/home-desktop.png",
+      "localArchive": ".r4-b9-captures.local/check-home-ui/home-desktop.png",
+      "bytes": 183015,
+      "sha256": "1b568d86b008e3309efc8bf4f8ff2d961b644852f704e437584286686651dc96"
+    },
+    {
+      "original": "check-home-ui/home-mobile.png",
+      "localArchive": ".r4-b9-captures.local/check-home-ui/home-mobile.png",
+      "bytes": 139302,
+      "sha256": "3c9e8da11032a050ae8d2536d936dc8432e92e60f37f21e9c60c91891e63f587"
+    },
+    {
+      "original": "check-interests-ui/1280-interests.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/1280-interests.png",
+      "bytes": 177991,
+      "sha256": "2a76659a0cb2ee26e592daabc4cd02f82b6638a078c0afe51818b5a86055282e"
+    },
+    {
+      "original": "check-interests-ui/1280-leave-short.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/1280-leave-short.png",
+      "bytes": 132597,
+      "sha256": "bd850d81990217074e7198b457b50c6e5276a3a5324fe3edc83acaeaf1b31dce"
+    },
+    {
+      "original": "check-interests-ui/1280-save-error.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/1280-save-error.png",
+      "bytes": 184117,
+      "sha256": "59cf473e0daa3d1e3640cdbb88e1ad8e49b552ecb83c4716db27532267f881b2"
+    },
+    {
+      "original": "check-interests-ui/320-account-b.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/320-account-b.png",
+      "bytes": 92080,
+      "sha256": "2fcac6c426b30d6477080860593e625c88a2ce145a2d53d3def901637cb12a53"
+    },
+    {
+      "original": "check-interests-ui/320-empty.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/320-empty.png",
+      "bytes": 99267,
+      "sha256": "7194d7aa9df5dbff9f1732df4b071c6eaa72e7c399002dbfbbf172f595045a7a"
+    },
+    {
+      "original": "check-interests-ui/320-interests.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/320-interests.png",
+      "bytes": 102424,
+      "sha256": "6009372ed4c9caac2544b023df2119902df5a92ae79b7554a7e680085f080c0f"
+    },
+    {
+      "original": "check-interests-ui/320-leave-short.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/320-leave-short.png",
+      "bytes": 71522,
+      "sha256": "34c4de233ff44bccce850800d53259f7a9a59f469bea43cc7087b63374aae1e2"
+    },
+    {
+      "original": "check-interests-ui/320-save-error.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/320-save-error.png",
+      "bytes": 106269,
+      "sha256": "9a48227b407e10cb0d23f439316782c2ea6aeadb8442034d4418e490ac46b4b4"
+    },
+    {
+      "original": "check-interests-ui/360-account-b.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/360-account-b.png",
+      "bytes": 99850,
+      "sha256": "4893ad93f62cc8e885dfa64779798614b02028502aec6ac0fe597dd8610840d5"
+    },
+    {
+      "original": "check-interests-ui/360-empty.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/360-empty.png",
+      "bytes": 103918,
+      "sha256": "d2821ab19a73e730e978f9b92889b3c022e96b7db1e1f28d578b5bd12b54c91b"
+    },
+    {
+      "original": "check-interests-ui/360-interests.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/360-interests.png",
+      "bytes": 108906,
+      "sha256": "aefd8e40be0658e13852f821f0d62c3c841d6fbb59dd61899fb0ba942217f528"
+    },
+    {
+      "original": "check-interests-ui/360-leave-short.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/360-leave-short.png",
+      "bytes": 72571,
+      "sha256": "3879f117a6dda899ad10b266c419aa468dd91349a81baca4c61766170762c6bd"
+    },
+    {
+      "original": "check-interests-ui/360-save-error.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/360-save-error.png",
+      "bytes": 109639,
+      "sha256": "347164f38570d80d14090933512bf8bbcb96e3484d5e5bddefb3b2686c06377c"
+    },
+    {
+      "original": "check-interests-ui/375-account-b.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/375-account-b.png",
+      "bytes": 101890,
+      "sha256": "a3ad158a3ab454c701afd86750b64ca90ea0434a456dcbb2a4945523e9786f3d"
+    },
+    {
+      "original": "check-interests-ui/375-empty.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/375-empty.png",
+      "bytes": 106229,
+      "sha256": "73594ac6204d926c04022d44d667ff7d8f224f4a5c70ecd787d11fdc542d1d1e"
+    },
+    {
+      "original": "check-interests-ui/375-interests.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/375-interests.png",
+      "bytes": 110695,
+      "sha256": "bebdbd4050bb1cd7001a9c5421461eddd065e02f21353facc3da9151b96884ae"
+    },
+    {
+      "original": "check-interests-ui/375-leave-short.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/375-leave-short.png",
+      "bytes": 71807,
+      "sha256": "8f2fcdc3b27b155cdfc3f36386a976988cf740d591f6255ba09e3a118f54c229"
+    },
+    {
+      "original": "check-interests-ui/375-save-error.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/375-save-error.png",
+      "bytes": 113099,
+      "sha256": "d6c091e4b949188c4e76257ad5e3c5aead47a6c6ca70879603d4b08f030980e4"
+    },
+    {
+      "original": "check-interests-ui/390-account-b.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/390-account-b.png",
+      "bytes": 102582,
+      "sha256": "b3fe629caea66b35570cd72eb0d1b8d3f2ab75bd852543010ca7d3a5f03100ce"
+    },
+    {
+      "original": "check-interests-ui/390-empty.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/390-empty.png",
+      "bytes": 106894,
+      "sha256": "2e616755c0aafb39beb31749f8f61929e6fc0c75741f5b490b964e968157a7f2"
+    },
+    {
+      "original": "check-interests-ui/390-interests.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/390-interests.png",
+      "bytes": 111500,
+      "sha256": "3879372761e9454f657c30650a944419ab1344e8a77763607622294f6e7c9c2a"
+    },
+    {
+      "original": "check-interests-ui/390-leave-short.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/390-leave-short.png",
+      "bytes": 75799,
+      "sha256": "02ae02c29154208e97307f27f6d01ce46d3b733ec0f146f205ed49a6be886868"
+    },
+    {
+      "original": "check-interests-ui/390-save-error.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/390-save-error.png",
+      "bytes": 115244,
+      "sha256": "99aeb5fbc2d3e1f2129f7b27d0c54cb4c8e4148f718227d7221ec8dc073e2ac7"
+    },
+    {
+      "original": "check-interests-ui/768-account-b.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/768-account-b.png",
+      "bytes": 136174,
+      "sha256": "40997b380f283e3c984464084f3da494438bb32be0841623a96e87a327654b98"
+    },
+    {
+      "original": "check-interests-ui/768-empty.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/768-empty.png",
+      "bytes": 141665,
+      "sha256": "e9a7221f9d18e71757f39e4bbd07231107585677cb831dfce6b8f46d89da57e7"
+    },
+    {
+      "original": "check-interests-ui/768-interests.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/768-interests.png",
+      "bytes": 144281,
+      "sha256": "aff054b0ee9fe612901ad1cab8d248dde099fe3c46beb5f596815d287217ae50"
+    },
+    {
+      "original": "check-interests-ui/768-leave-short.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/768-leave-short.png",
+      "bytes": 100450,
+      "sha256": "35200a814aa353c90858faeac124937922fcb7236b389eb85d442fed038ca8ec"
+    },
+    {
+      "original": "check-interests-ui/768-save-error.png",
+      "localArchive": ".r4-b9-captures.local/check-interests-ui/768-save-error.png",
+      "bytes": 149885,
+      "sha256": "904cbbcf4bd2b8f7606b5edb8eef9a551815d44068d4a8d98d0ad90268b01f35"
+    },
+    {
+      "original": "check-my-events-ui/empty-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/empty-1280x900.png",
+      "bytes": 150938,
+      "sha256": "bb084a1e334a9bbde9f63e3a64c96c3f472d68d6f75e2b445ad80b198e2514c7"
+    },
+    {
+      "original": "check-my-events-ui/empty-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/empty-375x812.png",
+      "bytes": 107830,
+      "sha256": "e37152853820e1e074dc9df1714ea11cdf279f26ec47a7131b4f22b3d9986ec4"
+    },
+    {
+      "original": "check-my-events-ui/error-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/error-1280x900.png",
+      "bytes": 137791,
+      "sha256": "0e4d6177e2aac4f325fa40abae46360f0c6a722d33615e33ccb621f6fac2e721"
+    },
+    {
+      "original": "check-my-events-ui/error-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/error-375x812.png",
+      "bytes": 94312,
+      "sha256": "75959296aaca445bfc4dddb0d08477d4aa4f5f9531ba99589a3c27d2e1b04b78"
+    },
+    {
+      "original": "check-my-events-ui/filter-Archivados-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/filter-Archivados-1280x900.png",
+      "bytes": 152328,
+      "sha256": "a69a9098436596e285ee86f133442cf98206111ae592895a88812aea6b62ab46"
+    },
+    {
+      "original": "check-my-events-ui/filter-Archivados-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/filter-Archivados-375x812.png",
+      "bytes": 105914,
+      "sha256": "b7587f9e0e8721af5b51afe48708400c0a9205f2c406a8025c83c17445ef7d6f"
+    },
+    {
+      "original": "check-my-events-ui/filter-Cancelados-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/filter-Cancelados-1280x900.png",
+      "bytes": 152131,
+      "sha256": "c689ed2007a468008756636ddd0172a5fc4b535f5538f2bf0ca40e7bd48db5bc"
+    },
+    {
+      "original": "check-my-events-ui/filter-Cancelados-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/filter-Cancelados-375x812.png",
+      "bytes": 106171,
+      "sha256": "334af4cd6648d94b93a2dcb3d33e5d4977a82aaef8a465f8b86c6c029ffce719"
+    },
+    {
+      "original": "check-my-events-ui/filter-Pasados-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/filter-Pasados-1280x900.png",
+      "bytes": 152501,
+      "sha256": "021a9d705cf8c8689ca776690f705fe78a773c053ffdbe1f3f409459102fdd2c"
+    },
+    {
+      "original": "check-my-events-ui/filter-Pasados-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/filter-Pasados-375x812.png",
+      "bytes": 106482,
+      "sha256": "bc9372f2c81bc48300aa064c0a75e636df847cd26289eca027114462aca2d88a"
+    },
+    {
+      "original": "check-my-events-ui/history-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/history-1280x900.png",
+      "bytes": 132834,
+      "sha256": "e031bff4468e83dc8941a6607bff1b21efca85e392004ef2eee208f00a3d9e7b"
+    },
+    {
+      "original": "check-my-events-ui/history-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/history-375x812.png",
+      "bytes": 97705,
+      "sha256": "5b5b5868f05f9ac647dc044d61ad7466a0c1fc3b2d75d08dc112dd962031b1ff"
+    },
+    {
+      "original": "check-my-events-ui/menu-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/menu-1280x900.png",
+      "bytes": 170991,
+      "sha256": "4f6b3535f81decea8a9cf48a86b4b8782fc09aae1ee27f17aa2bd5736cd2e96d"
+    },
+    {
+      "original": "check-my-events-ui/menu-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/menu-375x812.png",
+      "bytes": 118321,
+      "sha256": "4ca20b25e87fff8d68f838c7ae45330f64e4f182b4ca6beeddbd4fbf73875050"
+    },
+    {
+      "original": "check-my-events-ui/organizing-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/organizing-1280x900.png",
+      "bytes": 156473,
+      "sha256": "d417039e4d7cc6caf1125ceb9cd7f38913fd4e0ce459f857635b5849ca17eb9e"
+    },
+    {
+      "original": "check-my-events-ui/organizing-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/organizing-375x812.png",
+      "bytes": 114423,
+      "sha256": "d663bc804f775535ab211073143023fe99d5dcd0dbbc559d6d694ec919d04a45"
+    },
+    {
+      "original": "check-my-events-ui/participating-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/participating-1280x900.png",
+      "bytes": 128636,
+      "sha256": "6ab0e28e3de5011ce556b6992a68ab99f8f67527234345fc995151b70878952f"
+    },
+    {
+      "original": "check-my-events-ui/participating-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/participating-375x812.png",
+      "bytes": 96782,
+      "sha256": "c3e8bf0244057efe08630c545e0a86b7273e513cf00f2da433edab86eef22d05"
+    },
+    {
+      "original": "check-my-events-ui/permissions-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/permissions-1280x900.png",
+      "bytes": 139189,
+      "sha256": "d501bed8089a7724e64727f6c7f3df5c855ae91660179d5c6d8a700ed4489474"
+    },
+    {
+      "original": "check-my-events-ui/permissions-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-my-events-ui/permissions-375x812.png",
+      "bytes": 95439,
+      "sha256": "3bf6054e6448ac453cc0e92dd51cbaeed16cd9f40170ee1f594eea3e6d464924"
+    },
+    {
+      "original": "check-notifications-ui/desktop-inbox.png",
+      "localArchive": ".r4-b9-captures.local/check-notifications-ui/desktop-inbox.png",
+      "bytes": 210272,
+      "sha256": "6cec99759c38cacf84c71eb28bf1942a9236be4787b6cc8a784b897262a6cf96"
+    },
+    {
+      "original": "check-notifications-ui/mobile-empty.png",
+      "localArchive": ".r4-b9-captures.local/check-notifications-ui/mobile-empty.png",
+      "bytes": 85943,
+      "sha256": "873257484893d89619a75ecb35bb8ddd5412f4de75a418dedff416307570f1ba"
+    },
+    {
+      "original": "check-notifications-ui/mobile-error.png",
+      "localArchive": ".r4-b9-captures.local/check-notifications-ui/mobile-error.png",
+      "bytes": 78681,
+      "sha256": "92f131194602368b11c2751e2cd8f55073da6cefd9cddb4ae63510f90ed98dbe"
+    },
+    {
+      "original": "check-notifications-ui/mobile-inbox.png",
+      "localArchive": ".r4-b9-captures.local/check-notifications-ui/mobile-inbox.png",
+      "bytes": 116691,
+      "sha256": "e209d53b55b5d1a5eba4064e4117ab5a76304b307a1d642f94fa88673b27b454"
+    },
+    {
+      "original": "check-participations-ui/confirmed-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-participations-ui/confirmed-1280x900.png",
+      "bytes": 179674,
+      "sha256": "5953e38ecd8d32c69c194c5746dab2c87c5657f21d55050986e96a533893d0ea"
+    },
+    {
+      "original": "check-participations-ui/confirmed-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-participations-ui/confirmed-375x812.png",
+      "bytes": 143436,
+      "sha256": "39cc68954a0fff67cb96cb75f433a4d729c9beae3eb20ce14b09702b6d89322c"
+    },
+    {
+      "original": "check-participations-ui/detail-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-participations-ui/detail-1280x900.png",
+      "bytes": 184607,
+      "sha256": "8f8604acf9b24d0c233ffdc9fb2949def8797ccf9affddb8c733599e165562bf"
+    },
+    {
+      "original": "check-participations-ui/detail-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-participations-ui/detail-375x812.png",
+      "bytes": 142544,
+      "sha256": "7812c871b258e5f733d8d8e4bcf1bd3f446dc9aa9a4236a7f304480b8dc193de"
+    },
+    {
+      "original": "check-participations-ui/full-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/check-participations-ui/full-1280x900.png",
+      "bytes": 176594,
+      "sha256": "35d3a3696e8b2d3c0728fc224f36dbed091a66e30428e1d1b17744d4c2bb7bf9"
+    },
+    {
+      "original": "check-participations-ui/full-375x812.png",
+      "localArchive": ".r4-b9-captures.local/check-participations-ui/full-375x812.png",
+      "bytes": 136811,
+      "sha256": "489cb394eeb150a39bcc81203b67a91663d9914c04b693ea5c5a0b7917118a0e"
+    },
+    {
+      "original": "check-profile-ui/profile-error-desktop.png",
+      "localArchive": ".r4-b9-captures.local/check-profile-ui/profile-error-desktop.png",
+      "bytes": 146794,
+      "sha256": "b3886eb039e2c490fa7e974894788a665059d78c9d40f69cdcde622435dda171"
+    },
+    {
+      "original": "check-profile-ui/profile-error-mobile.png",
+      "localArchive": ".r4-b9-captures.local/check-profile-ui/profile-error-mobile.png",
+      "bytes": 76676,
+      "sha256": "6bdd17c9bdb82ef2ef2e9282448c600da49a4b92b40036d2b5014d722df82659"
+    },
+    {
+      "original": "check-profile-ui/profile-placeholder-desktop.png",
+      "localArchive": ".r4-b9-captures.local/check-profile-ui/profile-placeholder-desktop.png",
+      "bytes": 146809,
+      "sha256": "5cc39e2f18a15876af2f48b7a90ce2a665faa9ab20b179a245c5780c349ceabd"
+    },
+    {
+      "original": "check-profile-ui/profile-placeholder-mobile.png",
+      "localArchive": ".r4-b9-captures.local/check-profile-ui/profile-placeholder-mobile.png",
+      "bytes": 78079,
+      "sha256": "545282fbf68c1b8020f2814a62afd579ecde89e4523aef4bb0f1245b4ce71041"
+    },
+    {
+      "original": "check-r4-ui-stress/error-320x400.png",
+      "localArchive": ".r4-b9-captures.local/check-r4-ui-stress/error-320x400.png",
+      "bytes": 132855,
+      "sha256": "d44cf97f5508ba8953563e9a066cd51c98c3b15a87e13bdb2d8b037198760f2c"
+    },
+    {
+      "original": "check-r4-ui-stress/loading-320x400.png",
+      "localArchive": ".r4-b9-captures.local/check-r4-ui-stress/loading-320x400.png",
+      "bytes": 125747,
+      "sha256": "d52d3579301f7da2056a0ef4522ae7f43523ffc9b27fa35c2e6576079b22c8d2"
+    },
+    {
+      "original": "check-realtime-ui/notifications-desktop.png",
+      "localArchive": ".r4-b9-captures.local/check-realtime-ui/notifications-desktop.png",
+      "bytes": 175343,
+      "sha256": "bdd8a6aed699cff63288f8d5e05fa4c01be2e6a3683ec97b47813a0ddad75cfe"
+    },
+    {
+      "original": "check-realtime-ui/notifications-mobile.png",
+      "localArchive": ".r4-b9-captures.local/check-realtime-ui/notifications-mobile.png",
+      "bytes": 94314,
+      "sha256": "251e3f90a200965f9f6c6f3c7e077bdaaf27db380f33bfccf89c6fe3f2d5bdd2"
+    },
+    {
+      "original": "check-rejoin-ui/approve-dialog-320.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/approve-dialog-320.png",
+      "bytes": 72872,
+      "sha256": "1ba54fefe5bebfbea2ab89bcd00353c3892526ab5ddb7695dc44122a3d3b0a84"
+    },
+    {
+      "original": "check-rejoin-ui/approve-dialog-360.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/approve-dialog-360.png",
+      "bytes": 79907,
+      "sha256": "7dd438dbd0a2939e04c565afaf3b239b94198b1353905bc93f586e56b9b4607f"
+    },
+    {
+      "original": "check-rejoin-ui/approve-dialog-390.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/approve-dialog-390.png",
+      "bytes": 95000,
+      "sha256": "23e609141d1ea6f467ec2b15bdd1dfc57674f848cf531312c6a740d37e1b35b7"
+    },
+    {
+      "original": "check-rejoin-ui/approve-dialog-768.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/approve-dialog-768.png",
+      "bytes": 208614,
+      "sha256": "551f8a82148693c719003389a198fad9631ec0897c80fb492b60821a9dcd15a3"
+    },
+    {
+      "original": "check-rejoin-ui/pending-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/pending-1280.png",
+      "bytes": 176425,
+      "sha256": "f1e6906d1d165f32aaa7ed40de9aba38ad0962dfa5687d2eaaf664d36d1a288f"
+    },
+    {
+      "original": "check-rejoin-ui/pending-320.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/pending-320.png",
+      "bytes": 130747,
+      "sha256": "5f1c1ce250b7d7ea262cbd1b5a3e94f492ac405e1e70e82c138ec3ce96cb5d26"
+    },
+    {
+      "original": "check-rejoin-ui/pending-360.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/pending-360.png",
+      "bytes": 135866,
+      "sha256": "f4fe8858dd4b04043e36b97c3e8b9b007d7ea2f9f2f3a005ff60973f3d168f26"
+    },
+    {
+      "original": "check-rejoin-ui/pending-375.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/pending-375.png",
+      "bytes": 139840,
+      "sha256": "0570e925080c424fa9361fd8febe824c702de624beca11ce6ed6edd55aba03c2"
+    },
+    {
+      "original": "check-rejoin-ui/pending-390.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/pending-390.png",
+      "bytes": 138271,
+      "sha256": "1d7a95ffb91452e852520e82d7ac45d1bf358e106064873afaf9b21ba0e829b0"
+    },
+    {
+      "original": "check-rejoin-ui/pending-768.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/pending-768.png",
+      "bytes": 154336,
+      "sha256": "eadfeda10ee1adb4578b418c8eff740d5c1b074a1742bfc8db1ad2406760701e"
+    },
+    {
+      "original": "check-rejoin-ui/reject-dialog-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/reject-dialog-1280.png",
+      "bytes": 202692,
+      "sha256": "f4b18f60744e1bd5819e8b19cbaad53bf15edd3ebb3ae3075806fd07a239bb3b"
+    },
+    {
+      "original": "check-rejoin-ui/reject-dialog-320.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/reject-dialog-320.png",
+      "bytes": 67184,
+      "sha256": "c39c447dd2ec35c235e64a84f7b4d332ac93192cdd43c697983db4dbdf0a113a"
+    },
+    {
+      "original": "check-rejoin-ui/reject-dialog-360.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/reject-dialog-360.png",
+      "bytes": 73243,
+      "sha256": "9f47e939811f36abf5f922e5b7de795afc9cedef62d8e50cd0925916fbde1586"
+    },
+    {
+      "original": "check-rejoin-ui/reject-dialog-375.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/reject-dialog-375.png",
+      "bytes": 75194,
+      "sha256": "74fdbe19aa6812f1134de880fd7ced66e6329d816af6527f2dbb1b196976ab74"
+    },
+    {
+      "original": "check-rejoin-ui/reject-dialog-390.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/reject-dialog-390.png",
+      "bytes": 76458,
+      "sha256": "0a5bb23de2c6de0de264276262743730cd27071de30b2f440e2e025cefdbd9c9"
+    },
+    {
+      "original": "check-rejoin-ui/reject-dialog-768.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/reject-dialog-768.png",
+      "bytes": 211278,
+      "sha256": "dda54b323f2518589746cfea842cd1c2ae25cca069e2fe96bd8523714be61c41"
+    },
+    {
+      "original": "check-rejoin-ui/rejected-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/rejected-1280.png",
+      "bytes": 180153,
+      "sha256": "c08748c74048a47532e933b8f87d1d5dd2ef99172cd932679eff29777b05045a"
+    },
+    {
+      "original": "check-rejoin-ui/rejected-320.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/rejected-320.png",
+      "bytes": 137980,
+      "sha256": "f3d882a7f78f8d44dfb4f2e053098bcc3f8a81a762c861b6b900098e043ab378"
+    },
+    {
+      "original": "check-rejoin-ui/rejected-360.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/rejected-360.png",
+      "bytes": 142189,
+      "sha256": "c89e19189733d07e80e4e7075205890071b3037270cb07049beebd482f6af755"
+    },
+    {
+      "original": "check-rejoin-ui/rejected-375.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/rejected-375.png",
+      "bytes": 141235,
+      "sha256": "52ab61d55a04aaf9dbe224cfa24799189d2fa7309c095b12d7fbf0e74ad3df92"
+    },
+    {
+      "original": "check-rejoin-ui/rejected-390.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/rejected-390.png",
+      "bytes": 140197,
+      "sha256": "fcb1624a92623bc115f1b5ba95ba515d45cd022f8a69f24c06a43a1c6bc61089"
+    },
+    {
+      "original": "check-rejoin-ui/rejected-768.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/rejected-768.png",
+      "bytes": 152644,
+      "sha256": "57d89d5ac109c4bae0f2bc54b0f433f3044d1fa2b57ab005f083ee0cf4eaa8be"
+    },
+    {
+      "original": "check-rejoin-ui/removed-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/removed-1280.png",
+      "bytes": 185482,
+      "sha256": "b99a87463a73834de70b40f3b081014e2bb4a689b9b353f61ee75e431e36706f"
+    },
+    {
+      "original": "check-rejoin-ui/removed-320.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/removed-320.png",
+      "bytes": 138442,
+      "sha256": "4fdc5833c05924964352343bf52f4df22d2eb040598e3d02a5d405945d02cf9f"
+    },
+    {
+      "original": "check-rejoin-ui/removed-360.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/removed-360.png",
+      "bytes": 142537,
+      "sha256": "8f79fa6a6460df4773fbb3df5b86fa978b4caae743555baada6185f927c704f3"
+    },
+    {
+      "original": "check-rejoin-ui/removed-375.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/removed-375.png",
+      "bytes": 146827,
+      "sha256": "ab425c08a3095683287134ed0c041e50187a59c6b7894a8b3ba0f381e0dba330"
+    },
+    {
+      "original": "check-rejoin-ui/removed-390.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/removed-390.png",
+      "bytes": 145283,
+      "sha256": "a4eb9af1b6e73b1325eaf608ca0cf06fc07f48cf7d347937b7eb95b3f90dba5c"
+    },
+    {
+      "original": "check-rejoin-ui/removed-768.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/removed-768.png",
+      "bytes": 161176,
+      "sha256": "b3c461ff97b50bef0bf174e33379555c03af30d957897b4220ee8e5971724ad7"
+    },
+    {
+      "original": "check-rejoin-ui/requests-1280.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/requests-1280.png",
+      "bytes": 192843,
+      "sha256": "56f131ec5ca1983be12ed86a40dd3f8f3dce9d855ce7142f4487b9f4fb1b3c1c"
+    },
+    {
+      "original": "check-rejoin-ui/requests-320.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/requests-320.png",
+      "bytes": 109037,
+      "sha256": "ff7beadd188acbe8be960c4c8c2fef6ca154b9a752695f93bd2e3fcd05b7f457"
+    },
+    {
+      "original": "check-rejoin-ui/requests-360.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/requests-360.png",
+      "bytes": 120978,
+      "sha256": "5d6e6de7eed1253930c58075ebd0b533ca03ace3afcc6f2b3b57a3d7daec714d"
+    },
+    {
+      "original": "check-rejoin-ui/requests-375.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/requests-375.png",
+      "bytes": 122670,
+      "sha256": "7745edd5b09a7173acb3bec0158f994a595180a26ce6eebf36cc20a938d4b1e8"
+    },
+    {
+      "original": "check-rejoin-ui/requests-390.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/requests-390.png",
+      "bytes": 127649,
+      "sha256": "14372943b2e922d1bf867eec773aa2cb3b3c48c6add1167f4d49e9951e4e561d"
+    },
+    {
+      "original": "check-rejoin-ui/requests-768.png",
+      "localArchive": ".r4-b9-captures.local/check-rejoin-ui/requests-768.png",
+      "bytes": 198805,
+      "sha256": "1c1dfdb24f51501c2c055fc9df06b77da649f7fa5550fa2834206fe216ebe728"
+    },
+    {
+      "original": "check-search-ui/home-filters-320.png",
+      "localArchive": ".r4-b9-captures.local/check-search-ui/home-filters-320.png",
+      "bytes": 120550,
+      "sha256": "5398ada143965a1be4f3fc23a23d4182b7fc184ffdb6cda644ae8da58af6e94a"
+    },
+    {
+      "original": "check-search-ui/home-filters-390.png",
+      "localArchive": ".r4-b9-captures.local/check-search-ui/home-filters-390.png",
+      "bytes": 129044,
+      "sha256": "6ebf69b043739456e3bf55baead6a9239dcf1fe8d3f8ad9e8ca9a622f184a2ca"
+    },
+    {
+      "original": "check-search-ui/home-filters-768.png",
+      "localArchive": ".r4-b9-captures.local/check-search-ui/home-filters-768.png",
+      "bytes": 154981,
+      "sha256": "c5c2df0ace9742387000e61e191168df49a51565f3eb8496a29bd6dbd2563e98"
+    },
+    {
+      "original": "check-search-ui/home-no-match-375.png",
+      "localArchive": ".r4-b9-captures.local/check-search-ui/home-no-match-375.png",
+      "bytes": 129249,
+      "sha256": "db70be19f544f6798c1d0ab5801920142c96d88f5be098234f8bd364d97d7941"
+    },
+    {
+      "original": "check-suggestions-ui/1280-six.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/1280-six.png",
+      "bytes": 239991,
+      "sha256": "dc1cc0d3100a881a751ecd153fc3b00f4f0f7757da91563469584306f1495a87"
+    },
+    {
+      "original": "check-suggestions-ui/320-general.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/320-general.png",
+      "bytes": 134861,
+      "sha256": "333a6073eb39276ba0d9ba214a289b5957bbae1b5163026a6d00da1c433d7289"
+    },
+    {
+      "original": "check-suggestions-ui/320-home.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/320-home.png",
+      "bytes": 139067,
+      "sha256": "e5f8c149c3c6b784006cb9a79eb1031b0c60e6dd9bfe93fbc80ff6c300804ff3"
+    },
+    {
+      "original": "check-suggestions-ui/320-six.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/320-six.png",
+      "bytes": 217915,
+      "sha256": "7070d4fef785b0d1e51051fb68cbad66a54d5af5b82fba3aa0ef99ae67384878"
+    },
+    {
+      "original": "check-suggestions-ui/375-general.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/375-general.png",
+      "bytes": 141470,
+      "sha256": "d5da5a5d8eb16b4a9a26ee8482e58e422cd4eb9c745c68c4ccb4ae88b3091b3f"
+    },
+    {
+      "original": "check-suggestions-ui/375-home.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/375-home.png",
+      "bytes": 143974,
+      "sha256": "907b533d6d5205124d14ce6a892e1b4fdfb6ce11903d1d32e2e43fd7df8782d3"
+    },
+    {
+      "original": "check-suggestions-ui/375-six.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/375-six.png",
+      "bytes": 221868,
+      "sha256": "459075d0e0d7389db6cd0fa0220e5170d22e0a1e7e2f0cf6c2bf0b37250712b0"
+    },
+    {
+      "original": "check-suggestions-ui/390-expanded-text.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/390-expanded-text.png",
+      "bytes": 153492,
+      "sha256": "efa3f6957cb1a89e36076c5ace0acdab8fabb84e89a4dda4ea933a1ada612402"
+    },
+    {
+      "original": "check-suggestions-ui/390-general.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/390-general.png",
+      "bytes": 142814,
+      "sha256": "1a8df20d81b5da8a7ba6b0ca247a7cf3e88b4cc99f9101b52614a9cd425ab8a3"
+    },
+    {
+      "original": "check-suggestions-ui/390-home.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/390-home.png",
+      "bytes": 145171,
+      "sha256": "f2421081b3baa52cce70444ef5a8d600c62a8789773ac2273b83beefd7886b4b"
+    },
+    {
+      "original": "check-suggestions-ui/390-photo.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/390-photo.png",
+      "bytes": 145032,
+      "sha256": "47a22f73cf43854d34cc488a7c542840bae93e63d79d4fee74a44d1120870232"
+    },
+    {
+      "original": "check-suggestions-ui/390-six.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/390-six.png",
+      "bytes": 223540,
+      "sha256": "a3a8d30d18e3fd088bb93bf43e026f6db96adb01ba80c55f818c267fb71e4f04"
+    },
+    {
+      "original": "check-suggestions-ui/768-general.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/768-general.png",
+      "bytes": 158010,
+      "sha256": "0ec0d384832d4ed599c3be11e93ee503220453e743eade473030da2c5c408e8a"
+    },
+    {
+      "original": "check-suggestions-ui/768-home.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/768-home.png",
+      "bytes": 160552,
+      "sha256": "f27595e60446d984c6f742a35c33a6dad777e79a37a09aa049cba90e99b9de97"
+    },
+    {
+      "original": "check-suggestions-ui/768-six.png",
+      "localArchive": ".r4-b9-captures.local/check-suggestions-ui/768-six.png",
+      "bytes": 222687,
+      "sha256": "c8a149bda3338cd5b304018dd57bd3ebbecc6920f7d22ec5ab1ed67502c61c3e"
+    },
+    {
+      "original": "supplemental-ui/access-320x400.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/access-320x400.png",
+      "bytes": 90066,
+      "sha256": "5e028a482a08d0ba8fea5bbfedf7500a83efbf090c4c1410d71cc2bbf7912340"
+    },
+    {
+      "original": "supplemental-ui/access-320x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/access-320x800.png",
+      "bytes": 92336,
+      "sha256": "74569dc4b5e7a9c9f71ca603d3b619e602ce4f1476b68aab3b205f0c6bbff587"
+    },
+    {
+      "original": "supplemental-ui/access-360x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/access-360x800.png",
+      "bytes": 99635,
+      "sha256": "3fd2f86065a0debd3af3ffd6f6bbfec9c2d23a19cd2be460ab95ad367386108b"
+    },
+    {
+      "original": "supplemental-ui/access-390x844.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/access-390x844.png",
+      "bytes": 103821,
+      "sha256": "f638070ec990cd7506d91d6fa865c46d11ca205393a1604a8e4ab941985483ec"
+    },
+    {
+      "original": "supplemental-ui/access-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/access-768x1024.png",
+      "bytes": 140589,
+      "sha256": "d2dbcab4d8f269f100927741f9f4806e64c21bfb6e70b807f322be90fd5ae946"
+    },
+    {
+      "original": "supplemental-ui/dialog-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/dialog-1280x900.png",
+      "bytes": 173373,
+      "sha256": "9f2917db3c89131787eca7db5d925ad23eb19b12eda64a64f2071b50c98c0ec0"
+    },
+    {
+      "original": "supplemental-ui/dialog-320x400.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/dialog-320x400.png",
+      "bytes": 36414,
+      "sha256": "5c586b425be0c42065bf8f82fc742af771d7a1110781c07f9ce930fa27fff220"
+    },
+    {
+      "original": "supplemental-ui/dialog-320x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/dialog-320x800.png",
+      "bytes": 83542,
+      "sha256": "137c3e1845325818efca8585945be8d1c561b943eef3e3e0b88a125aab22183e"
+    },
+    {
+      "original": "supplemental-ui/dialog-360x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/dialog-360x800.png",
+      "bytes": 89781,
+      "sha256": "89b3d0314f119a86c9b2cc94e95d0b9bc29683ea4364cb6c6596be3b8c3d6ba2"
+    },
+    {
+      "original": "supplemental-ui/dialog-375x812.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/dialog-375x812.png",
+      "bytes": 93723,
+      "sha256": "6698c1ea4172cd48e0ebd43a5bd95b119479e01f0aca85a6616039b998839aa9"
+    },
+    {
+      "original": "supplemental-ui/dialog-390x844.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/dialog-390x844.png",
+      "bytes": 99916,
+      "sha256": "a3f4e8908016b241717200efd85c95662c06b4171c8d2aaf988d2c24c4f0a0e9"
+    },
+    {
+      "original": "supplemental-ui/dialog-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/dialog-768x1024.png",
+      "bytes": 173399,
+      "sha256": "668cfb724242d9d69aaea63432d9c26cf3ccc5fac6613152bf80923e74370ff6"
+    },
+    {
+      "original": "supplemental-ui/empty-320x400.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/empty-320x400.png",
+      "bytes": 137979,
+      "sha256": "ce8ceca67b92f4034b30d16a3cbdddf4f757b2f3edc65c2f70b2d886984eb414"
+    },
+    {
+      "original": "supplemental-ui/enlarged-text-320x400.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/enlarged-text-320x400.png",
+      "bytes": 134325,
+      "sha256": "e74d6b411bfa6e12702db38e673a265aa13f239f7f7a3aeffc9b762482685644"
+    },
+    {
+      "original": "supplemental-ui/error-320x400.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/error-320x400.png",
+      "bytes": 132855,
+      "sha256": "d44cf97f5508ba8953563e9a066cd51c98c3b15a87e13bdb2d8b037198760f2c"
+    },
+    {
+      "original": "supplemental-ui/home-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/home-1280x900.png",
+      "bytes": 170471,
+      "sha256": "8788c0ebaaacc7ee5bb029800581c4eadaf81a942939553eec9a7463a20ad235"
+    },
+    {
+      "original": "supplemental-ui/home-320x400.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/home-320x400.png",
+      "bytes": 133568,
+      "sha256": "8f6afba4af67ab5f326e91f4507c8dd89f6f56f027812dc027d422119333c31c"
+    },
+    {
+      "original": "supplemental-ui/home-320x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/home-320x800.png",
+      "bytes": 137762,
+      "sha256": "9370de94b3e3414f80138b4d78513b77e258d0bf6db89f1290c052e8b8ab098a"
+    },
+    {
+      "original": "supplemental-ui/home-360x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/home-360x800.png",
+      "bytes": 141554,
+      "sha256": "a45204aa9e13dc343f5fb4f23c3dd4f397b089597719accf6dbeb654bad58364"
+    },
+    {
+      "original": "supplemental-ui/home-375x812.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/home-375x812.png",
+      "bytes": 142516,
+      "sha256": "420f68d433b14b086dcc9bd13ecd5c143da8946a86331bf63fc00c6487fcb47d"
+    },
+    {
+      "original": "supplemental-ui/home-390x844.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/home-390x844.png",
+      "bytes": 139610,
+      "sha256": "5298bb9629e9abe0f3703f72320385b1129d1d02a1c57f4ae2b8653b161870ad"
+    },
+    {
+      "original": "supplemental-ui/home-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/home-768x1024.png",
+      "bytes": 154708,
+      "sha256": "2816cdab13a6409fdc644cb3cba6e0f28e633b7957d1ed91325fc99eb715373d"
+    },
+    {
+      "original": "supplemental-ui/interests-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/interests-1280x900.png",
+      "bytes": 164619,
+      "sha256": "9118624edf0dda95f8f263af33f8385c2fe4c702bfc473bed541263f800b0ccb"
+    },
+    {
+      "original": "supplemental-ui/interests-320x400.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/interests-320x400.png",
+      "bytes": 87152,
+      "sha256": "47c9d7aaf6504c38050e67593544856ad2265dea9a41d14a6f75f5c6da36f55f"
+    },
+    {
+      "original": "supplemental-ui/interests-320x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/interests-320x800.png",
+      "bytes": 86991,
+      "sha256": "b3b596dfdf47203f6e309584b7808bb47cbdc354fc2f2d69765a2348f63217d7"
+    },
+    {
+      "original": "supplemental-ui/interests-360x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/interests-360x800.png",
+      "bytes": 93078,
+      "sha256": "657a17512400ff03d58ba2c0ffe97e819b946826bd5b5b9d502b41fefa1fa1b8"
+    },
+    {
+      "original": "supplemental-ui/interests-375x812.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/interests-375x812.png",
+      "bytes": 95292,
+      "sha256": "76b53045c2bf8d2a23cfeb1845ee70d89f6ace8616e5d682a5f9a1dbd4741f2f"
+    },
+    {
+      "original": "supplemental-ui/interests-390x844.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/interests-390x844.png",
+      "bytes": 96877,
+      "sha256": "92e383c8b52d8566ddf5c335827f9dd4628b2056ebcfd94abcf733c0b73c72b4"
+    },
+    {
+      "original": "supplemental-ui/interests-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/interests-768x1024.png",
+      "bytes": 131510,
+      "sha256": "3c2695294d5b9d6b934ce64cad3e6e8a3ca170466824d319b8e9f2781e22fa0d"
+    },
+    {
+      "original": "supplemental-ui/invite-lost-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/invite-lost-1280x900.png",
+      "bytes": 134899,
+      "sha256": "c68fd9a1099dd7133a7ddc806c49ca941651026f714bc3ad3c9637d3bdfd8131"
+    },
+    {
+      "original": "supplemental-ui/invite-lost-320x400.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/invite-lost-320x400.png",
+      "bytes": 69506,
+      "sha256": "839f9a4e0b70370738d9686e51e77af834b461f73e34f8ac6d348e89d5b9b948"
+    },
+    {
+      "original": "supplemental-ui/invite-lost-320x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/invite-lost-320x800.png",
+      "bytes": 70232,
+      "sha256": "45e27c6f1b25abac5c4840c5110b800f01933e49fecc5cf2565683d17b2ffa25"
+    },
+    {
+      "original": "supplemental-ui/invite-lost-360x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/invite-lost-360x800.png",
+      "bytes": 73121,
+      "sha256": "778a767577145f1b775c2d5709c03defc68e23b2cb190ec9db5b974e8fb950b0"
+    },
+    {
+      "original": "supplemental-ui/invite-lost-375x812.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/invite-lost-375x812.png",
+      "bytes": 74819,
+      "sha256": "a44cdb4d6ef66988b4abeddf43baa330d8bb09eac2cc07706e0925957e1d3bc5"
+    },
+    {
+      "original": "supplemental-ui/invite-lost-390x844.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/invite-lost-390x844.png",
+      "bytes": 76151,
+      "sha256": "547d2ba46fd2da4de89f2b334b0fb0234d41c322efadca9bf812e477fbc04bf0"
+    },
+    {
+      "original": "supplemental-ui/invite-lost-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/invite-lost-768x1024.png",
+      "bytes": 107026,
+      "sha256": "51cd43983a955a96a7838ae761d7ee3afff9c0bd7779ce13d6497a3144561b0f"
+    },
+    {
+      "original": "supplemental-ui/loading-320x400.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/loading-320x400.png",
+      "bytes": 125747,
+      "sha256": "d52d3579301f7da2056a0ef4522ae7f43523ffc9b27fa35c2e6576079b22c8d2"
+    },
+    {
+      "original": "supplemental-ui/map-failure-1280x900.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/map-failure-1280x900.png",
+      "bytes": 224682,
+      "sha256": "fa3194fb341284cc1cb7e5e155c7e88ca236302a5cd90deacfc2fd9633c33160"
+    },
+    {
+      "original": "supplemental-ui/map-failure-320x400.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/map-failure-320x400.png",
+      "bytes": 177648,
+      "sha256": "c3082d397e1eac5bf7823b7c5ef5362953b148fe16dca1ec7ffc784c03df1911"
+    },
+    {
+      "original": "supplemental-ui/map-failure-320x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/map-failure-320x800.png",
+      "bytes": 180613,
+      "sha256": "a5479b0df204c2bf52a026b762d090ce16cf0af10cce7464fe5090c22a27f284"
+    },
+    {
+      "original": "supplemental-ui/map-failure-360x800.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/map-failure-360x800.png",
+      "bytes": 199842,
+      "sha256": "3056728927e260906407cacaf734cf9236466eed08c63b7f3919163b90c0b4f0"
+    },
+    {
+      "original": "supplemental-ui/map-failure-375x812.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/map-failure-375x812.png",
+      "bytes": 190604,
+      "sha256": "8dbaf64a1e1c94242408f6a5accd9e6bf586c19c17d30ad5713a7d2e677379f8"
+    },
+    {
+      "original": "supplemental-ui/map-failure-390x844.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/map-failure-390x844.png",
+      "bytes": 201937,
+      "sha256": "7a288586ff6933412b697a853dba0ee5325ba74bb725d9ab8672743cab617c7c"
+    },
+    {
+      "original": "supplemental-ui/map-failure-768x1024.png",
+      "localArchive": ".r4-b9-captures.local/supplemental-ui/map-failure-768x1024.png",
+      "bytes": 199875,
+      "sha256": "19b9202c327b10d0023221c956a0719241b010ae11e51171a4cd86fbab3de555"
+    }
+  ]
+}

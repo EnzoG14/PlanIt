@@ -1,0 +1,10 @@
+
+> planit@0.0.0 check:my-events
+> node scripts/check-my-events.mjs
+
+PASS: Replay migrations; invoker function, empty search_path
+PASS: Two identities: creation / registration / leave / rejoin, unique row, role separation, third-party exclusion, minimal projection
+PASS: Ended / cancelled / archived precedence; own removed history and media retained; stranger cannot read historical event/media
+PASS: 31-row lookahead, deterministic tie ordering, complete pagination without duplicates
+PASS: R3 filters precede pagination; archived-only history, ongoing/end boundary, state precedence, signed-media path, A/B isolation, invoker/minimal grants and no write privilege
+PASS: Invalid section/offset, anon, missing JWT rejected

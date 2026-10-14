@@ -1,0 +1,337 @@
+{
+  "normalization": "CRLF to LF only; local stub rls_auto_enable excluded",
+  "rows": [
+    {
+      "signature": "planit_private.validate_birth_date()",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_notification_target(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "mark_notification_read(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.touch_updated_at()",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.handle_new_auth_user()",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.validate_new_event()",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.validate_event_file()",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.validate_event_image()",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "discover_public_events(double precision,double precision,double precision,double precision)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.record_participation_history()",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_notifications(timestamp without time zone,uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_my_events(text,integer)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_home_events(timestamp without time zone,uuid,integer)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.can_read_event_chat(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.create_event_conversation()",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_event_chat(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_event_organizer(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.stamp_notification_read()",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_event_chat_messages(uuid,timestamp without time zone,uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "send_event_chat_message(uuid,uuid,text)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_notification_changes(uuid[])",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_my_organized_events(text,integer)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_event_rejoin_resolution(uuid,uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "search_public_events(text,uuid[],timestamp without time zone,uuid,integer,double precision,double precision,double precision,double precision,date,date,double precision,double precision,double precision)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.lock_gallery(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.can_delete_event_upload(text)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "add_event_image(uuid,text)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "remove_event_image(uuid,uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "reorder_event_images(uuid,uuid[],uuid[])",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_event_unregistered_uploads(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "set_my_category_interests(uuid[])",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_suggested_events(double precision,double precision,integer)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "remove_participant(uuid,uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "cancel_event(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "archive_event(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_event_duplicate_source(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_event_rejoin_requests(uuid,integer)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_event_attendees(uuid,text,text,integer)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.can_view_event(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "planit_private.protect_event_visibility()",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "set_event_visibility(uuid,text)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_event_participation_summary(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "register_for_event(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "leave_event(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_my_rejoin_status(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "request_rejoin(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "resolve_rejoin(uuid,uuid,text)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "create_event(uuid,text,text,timestamp without time zone,timestamp without time zone,uuid,integer,text,double precision,double precision,text,text[],text)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "update_event(uuid,text,text,timestamp without time zone,timestamp without time zone,uuid,integer,text,double precision,double precision,text,text)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "create_or_rotate_event_link(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_event_link_status(uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "redeem_event_link(text)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "get_event_access_grants(uuid,text,uuid,integer)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "revoke_event_access(uuid,uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    },
+    {
+      "signature": "restore_event_access(uuid,uuid)",
+      "bodyMatch": true,
+      "permissionsMatch": true,
+      "securityMatch": true
+    }
+  ],
+  "matching": 55,
+  "total": 55
+}

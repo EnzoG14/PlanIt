@@ -1,0 +1,12 @@
+
+> planit@0.0.0 check:suggestions
+> node scripts/check-suggestions.mjs
+
+PASS: Full replay; invoker/empty search_path, anon denied, missing identity returns nothing
+PASS: Origin is optional, finite and all-or-nothing; output limit 1..20
+PASS: CA-02/03: two interests; affinity, proximity, date, 50km/7-day boundaries; deterministic starts_at/id ties; exclude hidden owned/closed
+PASS: No GPS means no distance; ongoing eligible; reproducible ordering; interests recompute; B cannot change A results
+PASS: Own and confirmed events stay eligible; saved inactive interests still provide affinity
+PASS: No-interest fallback is chronological and explicitly general, default six; GPS does not disguise personalization
+PASS: CA-04: no available events is an empty list
+PASS: Ranking precedes LIMIT: relevant event beyond first 30; no arbitrary fallback with interests, cancellation disappears on requery
