@@ -7,11 +7,36 @@ import { attendeesDenied, attendeesError, attendeesPageSize, loadAttendees, remo
 import { validatedMyEventsReturn } from '../features/events/my-events'
 import '../styles/event-management.css'
 import './event-attendees.css'
+import { loadParticipationSummary } from '../features/events/participation'
+import { EventSocialParticipants } from './EventSocialParticipants'
 
 export function EventAttendeesPage() {
   const { id = '' } = useParams()
   const { session } = useAuth()
-  return <><div className="management-wash" aria-hidden="true" /><AttendeesContent key={`${id}:${session?.user.id}`} eventId={id} /></>
+  const location = useLocation()
+  return <><div className="management-wash" aria-hidden="true" /><AttendeesEntry key={`${id}:${session?.user.id}:${session?.access_token}:${location.search}`} eventId={id} /></>
+}
+function AttendeesEntry({ eventId }: { eventId: string }) {
+  const location = useLocation()
+  const social = new URLSearchParams(location.search).get('view') === 'social'
+  const [owner, setOwner] = useState<boolean | null>(null)
+  const [failed, setFailed] = useState(false)
+  const [attempt, setAttempt] = useState(0)
+  useEffect(() => {
+    if (social) return
+    let active = true
+    const controller = new AbortController()
+    const timeout = window.setTimeout(() => controller.abort(), 10000)
+    const timer = window.setTimeout(() => {
+      setOwner(null); setFailed(false)
+      void loadParticipationSummary(eventId, controller.signal).then(summary => { if (active) setOwner(summary.is_organizer) }).catch(() => { if (active) setFailed(true) }).finally(() => window.clearTimeout(timeout))
+    }, 0)
+    return () => { active = false; controller.abort(); window.clearTimeout(timer); window.clearTimeout(timeout) }
+  }, [eventId, social, attempt])
+  const origin = { myEventsReturnTo: validatedMyEventsReturn(location.state?.myEventsReturnTo) ?? undefined, returnTo: location.state?.returnTo === '/home' || location.state?.returnTo === '/map' ? location.state.returnTo : undefined }
+  if (social || owner === false) return <EventSocialParticipants eventId={eventId} origin={origin} />
+  if (owner) return <AttendeesContent eventId={eventId} />
+  return <section className="management-page"><Link className="secondary-link management-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link><StatusMessage title={failed ? 'Asistentes no disponibles' : 'Consultando asistentes'}>{failed ? 'No pudimos comprobar el evento y tus permisos.' : 'Esperá un momento.'}</StatusMessage>{failed && <button className="secondary-button" onClick={() => setAttempt(value => value + 1)}>Reintentar</button>}</section>
 }
 function AttendeesContent({ eventId }: { eventId: string }) {
   const location = useLocation()
@@ -101,6 +126,7 @@ function AttendeesContent({ eventId }: { eventId: string }) {
   return <section className="attendees-page management-page" aria-label="Administración de asistentes">
     <Link className="secondary-link management-back attendees-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
     <header className="management-header"><h1>Asistentes</h1>{page && <><p className="attendees-capacity">{page.confirmed_count} / {page.capacity} asistentes</p><p className="attendees-event-title management-event-title">{page.title}</p></>}</header>
+    {page && <Link className="secondary-link" to={`/events/${eventId}/attendees?view=social`} state={origin}>Ver participantes</Link>}
     {!denied && <>
       <div className="attendees-filters" role="group" aria-label="Estado de inscripción">
         {(['confirmed', 'removed'] as const).map(value => <button key={value} type="button" aria-pressed={status === value} disabled={removing} onClick={() => { setStatus(value); setNotice('') }}>{value === 'confirmed' ? 'Confirmados' : 'Removidos'}{page && <span>{value === 'confirmed' ? page.confirmed_count : page.removed_count}</span>}</button>)}

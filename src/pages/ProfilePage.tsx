@@ -5,6 +5,7 @@ import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
 import { supabase } from '../lib/supabase'
 import './profile.css'
+import { participantsReturn } from '../features/social/api'
 
 type OwnProfile = { display_name: string; username: string; bio: string | null; avatar_file_id: string | null }
 type ProfileResult = { profile: OwnProfile; avatarUrl: string | null } | { error: true }
@@ -77,6 +78,7 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
     }
   }, [userId, attempt])
   return <div className="profile-page">
+    {participantsReturn(location.state?.participantsReturnTo) && <Link className="secondary-link" to={participantsReturn(location.state.participantsReturnTo)!} state={location.state}><Icon name="back" />Volver a participantes</Link>}
     <header className="profile-heading"><h1>Mi perfil</h1><button className="text-button" type="button" onClick={refresh} disabled={!result}>Actualizar perfil</button></header>
     {!result ? <div role="status"><StatusMessage title="Cargando perfil">Consultando los datos de tu cuenta…</StatusMessage></div>
       : 'error' in result ? <><StatusMessage title="No se pudo consultar el perfil" tone="error">No pudimos recuperar tus datos. Revisá la conexión y volvé a intentar.</StatusMessage><button className="gradient-link gradient-button" type="button" onClick={refresh}>Reintentar</button></>

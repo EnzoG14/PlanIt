@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Icon } from './Icon'
 import { changeParticipation, loadParticipationSummary, participationError, type ParticipationSummary } from '../features/events/participation'
 import { loadRejoinStatus, requestRejoin, rejoinError, type RejoinStatus } from '../features/events/rejoin'
@@ -7,6 +7,7 @@ import { formatEventTime } from '../features/events/validation'
 import '../pages/event-rejoin.css'
 
 export function EventParticipation({ eventId }: { eventId: string }) {
+  const location = useLocation()
   const [summary, setSummary] = useState<ParticipationSummary | null>(null)
   const [pending, setPending] = useState(true)
   const [error, setError] = useState('')
@@ -81,6 +82,7 @@ export function EventParticipation({ eventId }: { eventId: string }) {
     {summary?.is_organizer && <p className="participation-notice">Organizás este evento. No ocupás cupo ni podés inscribirte.</p>}
     {summary?.own_status === 'confirmed' && <p className="participation-notice" role="status">Ya participás.</p>}
     {summary && (summary.is_organizer || summary.own_status === 'confirmed') && <Link className="secondary-link" to={`/events/${eventId}/chat`}>Abrir chat del evento</Link>}
+    {summary && (summary.is_organizer || summary.own_status === 'confirmed') && <Link className="secondary-link" to={`/events/${eventId}/attendees?view=social`} state={location.state}>Ver participantes</Link>}
     {summary?.own_status === 'cancelled' && <p className="participation-notice" role="status">Tu participación está cancelada.</p>}
     {summary?.own_status === 'removed' && <div className={`rejoin-own-state rejoin-state-${rejoin?.status ?? 'eligible'}`} role="status">
       <strong>{rejoin?.status === 'pending' ? 'Solicitud en revisión' : rejoin?.status === 'rejected' ? 'Solicitud rechazada' : 'Solicitud de reincorporación'}</strong>

@@ -7,9 +7,10 @@ export type ParticipationSummary = {
   event_state: 'open' | 'ended' | 'cancelled' | 'archived'
 }
 
-export async function loadParticipationSummary(eventId: string): Promise<ParticipationSummary> {
+export async function loadParticipationSummary(eventId: string, signal?: AbortSignal): Promise<ParticipationSummary> {
   if (!supabase) throw new Error('La conexión no está configurada.')
-  const { data, error } = await supabase.rpc('get_event_participation_summary', { p_event_id: eventId })
+  const request = supabase.rpc('get_event_participation_summary', { p_event_id: eventId })
+  const { data, error } = await (signal ? request.abortSignal(signal) : request)
   if (error) throw error
   if (!data?.[0]) throw new Error('event_unavailable')
   return data[0] as ParticipationSummary
