@@ -1,0 +1,17 @@
+
+> planit@0.0.0 check:filters:ui
+> node scripts/check-filters-ui.mjs
+
+PASS: CA R4-03.01/02: a single date sends the plain Argentina day (browser in Tokyo) and only that day is listed; it lives in the URL
+PASS: CA R4-03.01: a valid range is applied (both ends included)
+PASS: CA R4-03.03: an inverted range shows an error and is NOT applied (no request, URL and results unchanged)
+PASS: CA R4-03.04: removing the dates restores other days
+PASS: No matches (empty state with applied dates) vs failed request (error with retry) are distinct
+PASS: CA R4-04.04: with GPS denied and no map centre, the limit is stated, nothing is queried and no list is shown as if distance were computed
+PASS: A01: GPS denied → "Centro del mapa" (initial Buenos Aires labelled as a map position, never "Tu ubicación"); radius is sent together with the bounds
+PASS: Inicio ↔ Mapa share the same non-secret state (radius in the URL, origin in memory); the Inicio query reuses the map centre
+PASS: Choosing "Sin límite" removes only the radius
+PASS: CA R4-04.01/02/03: with consented GPS, 5 km vs 50 km change the list and combine (AND) with category and date range
+PASS: The user can switch from GPS to the map centre once the map has one (the option is not offered on Inicio before that)
+PASS: Mapa: radius + dates + bounds in one query; consented GPS is the origin and recentres the map
+PASS: Date/radius panel renders at 320/360/375/390/768/1280 px without horizontal overflow and with >=44px targets

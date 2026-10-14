@@ -1,0 +1,88 @@
+
+> planit@0.0.0 check:gallery:ui
+> node scripts/check-gallery-ui.mjs
+
+PASS 320: Gallery cover, upload area and no horizontal overflow
+PASS 320: Accessible order persisted after reopen; first image remains cover
+PASS 320: Confirmation cancel leaves data; confirm removes and refreshes
+PASS 320: Invalid file rejected before upload; preview is local; successful upload registers after Storage
+PASS 320: Interrupted upload displays error, retains path and retries explicitly
+PASS 320: Lost commit reconciles on retry without duplicate upload/association
+PASS 320: RPC absent and failed cleanup retain explicit recovery, no false success
+PASS 320: Tenth image saved, eleventh selection/drop rejected, persisted on reopen
+PASS 320: Expired signed URL offers explicit renewal
+PASS 320: Detail reload uses new first cover and ordered remaining images
+PASS 320: Foreign account direct route denied in fixture UI
+PASS 320: Load failure recovers explicitly
+PASS 320: Reloaded abandoned upload discovered and cleaned explicitly
+PASS 320: Zero/one images, cover and empty state captured
+PASS 360: Gallery cover, upload area and no horizontal overflow
+PASS 360: Accessible order persisted after reopen; first image remains cover
+PASS 360: Confirmation cancel leaves data; confirm removes and refreshes
+PASS 360: Invalid file rejected before upload; preview is local; successful upload registers after Storage
+PASS 360: Interrupted upload displays error, retains path and retries explicitly
+PASS 360: Lost commit reconciles on retry without duplicate upload/association
+PASS 360: RPC absent and failed cleanup retain explicit recovery, no false success
+PASS 360: Tenth image saved, eleventh selection/drop rejected, persisted on reopen
+PASS 360: Expired signed URL offers explicit renewal
+PASS 360: Detail reload uses new first cover and ordered remaining images
+PASS 360: Foreign account direct route denied in fixture UI
+PASS 360: Load failure recovers explicitly
+PASS 360: Reloaded abandoned upload discovered and cleaned explicitly
+PASS 360: Zero/one images, cover and empty state captured
+PASS 375: Gallery cover, upload area and no horizontal overflow
+PASS 375: Accessible order persisted after reopen; first image remains cover
+PASS 375: Confirmation cancel leaves data; confirm removes and refreshes
+PASS 375: Invalid file rejected before upload; preview is local; successful upload registers after Storage
+PASS 375: Interrupted upload displays error, retains path and retries explicitly
+PASS 375: Lost commit reconciles on retry without duplicate upload/association
+PASS 375: RPC absent and failed cleanup retain explicit recovery, no false success
+PASS 375: Tenth image saved, eleventh selection/drop rejected, persisted on reopen
+PASS 375: Expired signed URL offers explicit renewal
+PASS 375: Detail reload uses new first cover and ordered remaining images
+PASS 375: Foreign account direct route denied in fixture UI
+PASS 375: Load failure recovers explicitly
+PASS 375: Reloaded abandoned upload discovered and cleaned explicitly
+PASS 375: Zero/one images, cover and empty state captured
+PASS 390: Gallery cover, upload area and no horizontal overflow
+PASS 390: Accessible order persisted after reopen; first image remains cover
+PASS 390: Confirmation cancel leaves data; confirm removes and refreshes
+PASS 390: Invalid file rejected before upload; preview is local; successful upload registers after Storage
+PASS 390: Interrupted upload displays error, retains path and retries explicitly
+PASS 390: Lost commit reconciles on retry without duplicate upload/association
+PASS 390: RPC absent and failed cleanup retain explicit recovery, no false success
+PASS 390: Tenth image saved, eleventh selection/drop rejected, persisted on reopen
+PASS 390: Expired signed URL offers explicit renewal
+PASS 390: Detail reload uses new first cover and ordered remaining images
+PASS 390: Foreign account direct route denied in fixture UI
+PASS 390: Load failure recovers explicitly
+PASS 390: Reloaded abandoned upload discovered and cleaned explicitly
+PASS 390: Zero/one images, cover and empty state captured
+PASS 768: Gallery cover, upload area and no horizontal overflow
+PASS 768: Accessible order persisted after reopen; first image remains cover
+PASS 768: Confirmation cancel leaves data; confirm removes and refreshes
+PASS 768: Invalid file rejected before upload; preview is local; successful upload registers after Storage
+PASS 768: Interrupted upload displays error, retains path and retries explicitly
+PASS 768: Lost commit reconciles on retry without duplicate upload/association
+PASS 768: RPC absent and failed cleanup retain explicit recovery, no false success
+PASS 768: Tenth image saved, eleventh selection/drop rejected, persisted on reopen
+PASS 768: Expired signed URL offers explicit renewal
+PASS 768: Detail reload uses new first cover and ordered remaining images
+PASS 768: Foreign account direct route denied in fixture UI
+PASS 768: Load failure recovers explicitly
+PASS 768: Reloaded abandoned upload discovered and cleaned explicitly
+PASS 768: Zero/one images, cover and empty state captured
+PASS 1280: Gallery cover, upload area and no horizontal overflow
+PASS 1280: Accessible order persisted after reopen; first image remains cover
+PASS 1280: Confirmation cancel leaves data; confirm removes and refreshes
+PASS 1280: Invalid file rejected before upload; preview is local; successful upload registers after Storage
+PASS 1280: Interrupted upload displays error, retains path and retries explicitly
+PASS 1280: Lost commit reconciles on retry without duplicate upload/association
+PASS 1280: RPC absent and failed cleanup retain explicit recovery, no false success
+PASS 1280: Tenth image saved, eleventh selection/drop rejected, persisted on reopen
+PASS 1280: Expired signed URL offers explicit renewal
+PASS 1280: Detail reload uses new first cover and ordered remaining images
+PASS 1280: Foreign account direct route denied in fixture UI
+PASS 1280: Load failure recovers explicitly
+PASS 1280: Reloaded abandoned upload discovered and cleaned explicitly
+PASS 1280: Zero/one images, cover and empty state captured

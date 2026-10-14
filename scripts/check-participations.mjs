@@ -155,7 +155,7 @@ try {
   await assert.rejects(rpc(a,'register_for_event',dual),error=>error.code==='40001' && error.message==='retry_read_committed')
   await a.query('rollback')
   check('Frozen REPEATABLE READ snapshot explicitly rejected instead of risking stale capacity count')
-  const out = 'docs/design/verification/participations-r1'
+  const out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/participations-r1'
   await mkdir(out,{recursive:true})
   await writeFile(`${out}/postgres-results.json`,JSON.stringify({version,environment:'Local PostgreSQL; Auth/Storage scaffolding, no Supabase HTTP',results,concurrency},null,2))
 } finally {

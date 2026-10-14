@@ -6,7 +6,7 @@ import { pathToFileURL } from 'node:url'
 import { createHash } from 'node:crypto'
 
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH).href)
-const output = 'docs/qa/r4-block-5/visual'
+const output = process.env.PLANIT_UI_OUTPUT ?? 'docs/qa/r4-block-5/visual'
 await mkdir(output, { recursive: true })
 const owner = '20000000-0000-4000-8000-000000000001', guest = '20000000-0000-4000-8000-000000000002'
 const id = '30000000-0000-4000-8000-000000000001'

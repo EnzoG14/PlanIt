@@ -1,0 +1,12 @@
+
+> planit@0.0.0 check:event-access
+> node scripts/check-event-access.mjs
+
+PASS: Authenticated-only empty-search_path definers; A owns; B/C/D/anon cannot list/mutate; no private profile read
+PASS: CA-01 safe profile projection, active/revoked filters, stable keyset pagination, bounded arguments
+PASS: CA-02/03/04 confirmed revocation is atomic, unique history, derived free seat, detail/Storage/chat denied; repeated revoke and regenerated link cannot restore
+PASS: CA-05 restore changes only grant; no seat/chat/participation restoration; duplicate restore stable; rotation preserves other active grants; missing grants never created
+PASS: R3 pending rejoin/cooldown untouched; approval denied while revoked, restoration alone does not approve
+PASS: History failure rolls back all state; other event participation, grant and seats unaffected
+PASS: Closed hidden events are read-only; A05 public detail permitted with revoked grant; A04 rehide conflict blocked
+PASS: Seven real-lock races: revoke/register both orders, revoke/chat, revoke/rejoin both orders, double revoke/restore; zero deadlocks

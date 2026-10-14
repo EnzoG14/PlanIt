@@ -18,7 +18,12 @@ export function ProfilePage() {
 function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
   const location = useLocation()
   const interestsLink = useRef<HTMLAnchorElement>(null)
-  useEffect(() => { if (location.state?.focusInterests) interestsLink.current?.focus() }, [location.key, location.state])
+  useEffect(() => {
+    if (!location.state?.focusInterests) return
+    // Restore the trigger after AppLayout applies its route-level main focus.
+    const frame = window.requestAnimationFrame(() => interestsLink.current?.focus())
+    return () => window.cancelAnimationFrame(frame)
+  }, [location.key, location.state])
   const [result, setResult] = useState<ProfileResult | null>(null)
   const [attempt, setAttempt] = useState(0)
   const [avatarFailed, setAvatarFailed] = useState(false)

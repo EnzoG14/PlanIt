@@ -1,0 +1,13 @@
+
+> planit@0.0.0 check:home:ui
+> node scripts/check-home-ui.mjs
+
+PASS: mobile: categorized home card opens matching detail, shows real organizer projection, placeholder media, and returns to home
+PASS: desktop: categorized home card opens matching detail, shows real organizer projection, placeholder media, and returns to home
+PASS: Empty home state is informative and contains no sample cards
+PASS: Keyset pagination appends the next page and merges repeated category groups
+PASS: Available signed photos render as a hero and a detail gallery
+PASS: Home query failure gives an explicit error with retry
+PASS: Detail revalidates on focus and clears an event whose access was revoked (CA-04)
+PASS: Detail clears stale data on network failure and recovers on retry/online
+PASS: A late successful detail response cannot restore an event after newer access denial

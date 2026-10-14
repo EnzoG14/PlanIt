@@ -19,7 +19,7 @@ try {
     const context = await browser.newContext({ viewport, timezoneId: 'Asia/Tokyo' })
     await context.addInitScript(({ key, value }) => { if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(value)) }, { key, value: session(a) })
     const rows = Array.from({ length: 35 }, (_, i) => ({ id: `40000000-0000-4000-8000-${String(100-i).padStart(12,'0')}`, type: 'event_update', title: i === 0 ? 'Actualización del evento' : i === 1 ? 'Aviso sin destino' : `Aviso de prueba ${i}`, body: i === 1 ? null : 'Contenido registrado para esta cuenta. Datos de prueba.', created_at: '2026-10-11T12:30:00', read_at: i === 2 ? '2026-10-11T12:40:00' : null, target: i === 0 ? '/events/'+event : null }))
-    let mode = 'success', failMark = false, target = '/events/'+event, listCalls = 0, markCalls = 0, release = null
+    let mode = 'success', failMark = false, target = '/events/'+event, denyNextTarget = false, listCalls = 0, markCalls = 0, release = null
     const errors = [], requests = []
   await context.routeWebSocket('**/realtime/v1/websocket**', ws => { ws.onMessage(() => {}) })
     await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**', async route => {
@@ -43,7 +43,12 @@ try {
         if(failMark) return reply({code:'42501',message:'unavailable'},403)
         const row=rows.find(item=>item.id===params.p_id); row.read_at ??= '2026-10-11T13:00:00'; return reply(row.read_at)
       }
-      if (url.pathname === '/rest/v1/rpc/get_notification_target') return reply(target)
+      if (url.pathname === '/rest/v1/rpc/get_notification_target') {
+        // Revoke at the authoritative action check, after listing. Background
+        // polling must not race the test by removing its button before the click.
+        if (denyNextTarget) { target = null; denyNextTarget = false }
+        return reply(target)
+      }
       if (url.pathname === '/rest/v1/events') return reply({ id:event,organizer_id:a,title:'Evento de prueba',description:'Fixture',starts_at:'2099-10-11T20:00:00',ends_at:'2099-10-11T22:00:00',address:'Buenos Aires',capacity:10,category_id:'fixture',visibility:'public',cancelled_at:null,archived_at:null })
       return reply([])
     })
@@ -64,7 +69,7 @@ try {
     failMark=false; await row.getByRole('button',{name:'Marcar leído'}).focus(); await page.keyboard.press('Enter'); await row.getByText('Leído',{exact:true}).waitFor()
     await page.getByRole('button',{name:'Actualizar',exact:true}).click(); await row.getByText('Leído',{exact:true}).waitFor()
     check(`${name}: failed marking stays unread; success and reload reflect persisted read state`)
-    target=null; await row.getByRole('button',{name:'Ver evento'}).click(); await page.getByRole('alert').waitFor(); assert.equal(new URL(page.url()).pathname,'/notifications'); assert.equal(await row.getByRole('button',{name:'Ver evento'}).count(),0)
+    denyNextTarget=true; await row.getByRole('button',{name:'Ver evento'}).click(); await page.getByRole('alert').waitFor(); assert.equal(new URL(page.url()).pathname,'/notifications'); assert.equal(await row.getByRole('button',{name:'Ver evento'}).count(),0)
     check(`${name}: access revoked after listing prevents navigation and removes stale action`)
     target='/events/'+event; await page.getByRole('button',{name:'Actualizar',exact:true}).click(); await row.getByRole('button',{name:'Ver evento'}).click(); await page.waitForURL('**/events/'+event)
     check(`${name}: authorized target opens existing event detail`)

@@ -1,0 +1,2169 @@
+{
+  "environment": "Edge production app; Auth/REST fixtures, Mapbox failure injected, WebSocket blocked; browser emulation and local SW; no remote HTTP/JWT or physical device",
+  "results": [
+    {
+      "test": "home",
+      "viewport": "320x800",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "map-failure",
+      "viewport": "320x800",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia · 1 activo",
+            "height": 44,
+            "width": 266.328125
+          },
+          {
+            "name": "Sin límite",
+            "height": 44,
+            "width": 101.53125
+          },
+          {
+            "name": "5 km",
+            "height": 44,
+            "width": 69.453125
+          },
+          {
+            "name": "10 km",
+            "height": 44,
+            "width": 75.390625
+          },
+          {
+            "name": "25 km",
+            "height": 44,
+            "width": 78.421875
+          },
+          {
+            "name": "50 km",
+            "height": 44,
+            "width": 79.375
+          },
+          {
+            "name": "100 km",
+            "height": 44,
+            "width": 85.359375
+          },
+          {
+            "name": "Usar mi ubicación",
+            "height": 44,
+            "width": 129.625
+          },
+          {
+            "name": "Limpiar filtros",
+            "height": 44,
+            "width": 103.5625
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 106.46875
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Mapbox failure: scroll reaches rendered result (content-visibility auto)",
+      "viewport": "320x800",
+      "result": "PASS"
+    },
+    {
+      "test": "interests",
+      "viewport": "320x800",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 56,
+            "width": 280
+          },
+          {
+            "name": "Guardar intereses",
+            "height": 48,
+            "width": 280
+          },
+          {
+            "name": "Actualizar categorías",
+            "height": 44,
+            "width": 280
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 104.671875
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "access",
+      "viewport": "320x800",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Activos",
+            "height": 44,
+            "width": 84.265625
+          },
+          {
+            "name": "Revocados",
+            "height": 44,
+            "width": 110.21875
+          },
+          {
+            "name": "Actualizar accesos",
+            "height": 44,
+            "width": 160.96875
+          },
+          {
+            "name": "Revocar acceso de Bruno Rodríguez",
+            "height": 44,
+            "width": 83.796875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "invite-lost",
+      "viewport": "320x800",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Dialog initial focus/Escape/return",
+      "viewport": "320x800",
+      "result": "PASS"
+    },
+    {
+      "test": "home",
+      "viewport": "360x800",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "map-failure",
+      "viewport": "360x800",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia · 1 activo",
+            "height": 44,
+            "width": 266.328125
+          },
+          {
+            "name": "Sin límite",
+            "height": 44,
+            "width": 101.53125
+          },
+          {
+            "name": "5 km",
+            "height": 44,
+            "width": 69.453125
+          },
+          {
+            "name": "10 km",
+            "height": 44,
+            "width": 75.390625
+          },
+          {
+            "name": "25 km",
+            "height": 44,
+            "width": 78.421875
+          },
+          {
+            "name": "50 km",
+            "height": 44,
+            "width": 79.375
+          },
+          {
+            "name": "100 km",
+            "height": 44,
+            "width": 85.359375
+          },
+          {
+            "name": "Usar mi ubicación",
+            "height": 44,
+            "width": 129.625
+          },
+          {
+            "name": "Limpiar filtros",
+            "height": 44,
+            "width": 103.5625
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 106.46875
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Mapbox failure: scroll reaches rendered result (content-visibility auto)",
+      "viewport": "360x800",
+      "result": "PASS"
+    },
+    {
+      "test": "interests",
+      "viewport": "360x800",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 56,
+            "width": 154
+          },
+          {
+            "name": "Guardar intereses",
+            "height": 48,
+            "width": 320
+          },
+          {
+            "name": "Actualizar categorías",
+            "height": 44,
+            "width": 320
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 104.671875
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "access",
+      "viewport": "360x800",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Activos",
+            "height": 44,
+            "width": 84.265625
+          },
+          {
+            "name": "Revocados",
+            "height": 44,
+            "width": 110.21875
+          },
+          {
+            "name": "Actualizar accesos",
+            "height": 44,
+            "width": 160.96875
+          },
+          {
+            "name": "Revocar acceso de Bruno Rodríguez",
+            "height": 44,
+            "width": 83.796875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "invite-lost",
+      "viewport": "360x800",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Dialog initial focus/Escape/return",
+      "viewport": "360x800",
+      "result": "PASS"
+    },
+    {
+      "test": "home",
+      "viewport": "375x812",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "map-failure",
+      "viewport": "375x812",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia · 1 activo",
+            "height": 44,
+            "width": 266.328125
+          },
+          {
+            "name": "Sin límite",
+            "height": 44,
+            "width": 101.53125
+          },
+          {
+            "name": "5 km",
+            "height": 44,
+            "width": 69.453125
+          },
+          {
+            "name": "10 km",
+            "height": 44,
+            "width": 75.390625
+          },
+          {
+            "name": "25 km",
+            "height": 44,
+            "width": 78.421875
+          },
+          {
+            "name": "50 km",
+            "height": 44,
+            "width": 79.375
+          },
+          {
+            "name": "100 km",
+            "height": 44,
+            "width": 85.359375
+          },
+          {
+            "name": "Usar mi ubicación",
+            "height": 44,
+            "width": 129.625
+          },
+          {
+            "name": "Limpiar filtros",
+            "height": 44,
+            "width": 103.5625
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 106.46875
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Mapbox failure: scroll reaches rendered result (content-visibility auto)",
+      "viewport": "375x812",
+      "result": "PASS"
+    },
+    {
+      "test": "interests",
+      "viewport": "375x812",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 56,
+            "width": 161.5
+          },
+          {
+            "name": "Guardar intereses",
+            "height": 48,
+            "width": 335
+          },
+          {
+            "name": "Actualizar categorías",
+            "height": 44,
+            "width": 335
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 104.671875
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "access",
+      "viewport": "375x812",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Activos",
+            "height": 44,
+            "width": 84.265625
+          },
+          {
+            "name": "Revocados",
+            "height": 44,
+            "width": 110.21875
+          },
+          {
+            "name": "Actualizar accesos",
+            "height": 44,
+            "width": 160.96875
+          },
+          {
+            "name": "Revocar acceso de Bruno Rodríguez",
+            "height": 44,
+            "width": 83.796875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "invite-lost",
+      "viewport": "375x812",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Dialog initial focus/Escape/return",
+      "viewport": "375x812",
+      "result": "PASS"
+    },
+    {
+      "test": "home",
+      "viewport": "390x844",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "map-failure",
+      "viewport": "390x844",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia · 1 activo",
+            "height": 44,
+            "width": 266.328125
+          },
+          {
+            "name": "Sin límite",
+            "height": 44,
+            "width": 101.53125
+          },
+          {
+            "name": "5 km",
+            "height": 44,
+            "width": 69.453125
+          },
+          {
+            "name": "10 km",
+            "height": 44,
+            "width": 75.390625
+          },
+          {
+            "name": "25 km",
+            "height": 44,
+            "width": 78.421875
+          },
+          {
+            "name": "50 km",
+            "height": 44,
+            "width": 79.375
+          },
+          {
+            "name": "100 km",
+            "height": 44,
+            "width": 85.359375
+          },
+          {
+            "name": "Usar mi ubicación",
+            "height": 44,
+            "width": 129.625
+          },
+          {
+            "name": "Limpiar filtros",
+            "height": 44,
+            "width": 103.5625
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 106.46875
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Mapbox failure: scroll reaches rendered result (content-visibility auto)",
+      "viewport": "390x844",
+      "result": "PASS"
+    },
+    {
+      "test": "interests",
+      "viewport": "390x844",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 56,
+            "width": 169
+          },
+          {
+            "name": "Guardar intereses",
+            "height": 48,
+            "width": 350
+          },
+          {
+            "name": "Actualizar categorías",
+            "height": 44,
+            "width": 350
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 104.671875
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "access",
+      "viewport": "390x844",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Activos",
+            "height": 44,
+            "width": 84.265625
+          },
+          {
+            "name": "Revocados",
+            "height": 44,
+            "width": 110.21875
+          },
+          {
+            "name": "Actualizar accesos",
+            "height": 44,
+            "width": 160.96875
+          },
+          {
+            "name": "Revocar acceso de Bruno Rodríguez",
+            "height": 44,
+            "width": 83.796875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "invite-lost",
+      "viewport": "390x844",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Dialog initial focus/Escape/return",
+      "viewport": "390x844",
+      "result": "PASS"
+    },
+    {
+      "test": "home",
+      "viewport": "768x1024",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "map-failure",
+      "viewport": "768x1024",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia · 1 activo",
+            "height": 44,
+            "width": 266.328125
+          },
+          {
+            "name": "Sin límite",
+            "height": 44,
+            "width": 101.53125
+          },
+          {
+            "name": "5 km",
+            "height": 44,
+            "width": 69.453125
+          },
+          {
+            "name": "10 km",
+            "height": 44,
+            "width": 75.390625
+          },
+          {
+            "name": "25 km",
+            "height": 44,
+            "width": 78.421875
+          },
+          {
+            "name": "50 km",
+            "height": 44,
+            "width": 79.375
+          },
+          {
+            "name": "100 km",
+            "height": 44,
+            "width": 85.359375
+          },
+          {
+            "name": "Usar mi ubicación",
+            "height": 44,
+            "width": 129.625
+          },
+          {
+            "name": "Limpiar filtros",
+            "height": 44,
+            "width": 103.5625
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 106.46875
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Mapbox failure: scroll reaches rendered result (content-visibility auto)",
+      "viewport": "768x1024",
+      "result": "PASS"
+    },
+    {
+      "test": "interests",
+      "viewport": "768x1024",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 56,
+            "width": 274
+          },
+          {
+            "name": "Guardar intereses",
+            "height": 48,
+            "width": 560
+          },
+          {
+            "name": "Actualizar categorías",
+            "height": 44,
+            "width": 560
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 104.671875
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "access",
+      "viewport": "768x1024",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Activos",
+            "height": 44,
+            "width": 84.265625
+          },
+          {
+            "name": "Revocados",
+            "height": 44,
+            "width": 110.21875
+          },
+          {
+            "name": "Actualizar accesos",
+            "height": 44,
+            "width": 160.96875
+          },
+          {
+            "name": "Revocar acceso de Bruno Rodríguez",
+            "height": 44,
+            "width": 83.796875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "invite-lost",
+      "viewport": "768x1024",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Dialog initial focus/Escape/return",
+      "viewport": "768x1024",
+      "result": "PASS"
+    },
+    {
+      "test": "home",
+      "viewport": "1280x900",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "map-failure",
+      "viewport": "1280x900",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia · 1 activo",
+            "height": 44,
+            "width": 266.328125
+          },
+          {
+            "name": "Sin límite",
+            "height": 44,
+            "width": 101.53125
+          },
+          {
+            "name": "5 km",
+            "height": 44,
+            "width": 69.453125
+          },
+          {
+            "name": "10 km",
+            "height": 44,
+            "width": 75.390625
+          },
+          {
+            "name": "25 km",
+            "height": 44,
+            "width": 78.421875
+          },
+          {
+            "name": "50 km",
+            "height": 44,
+            "width": 79.375
+          },
+          {
+            "name": "100 km",
+            "height": 44,
+            "width": 85.359375
+          },
+          {
+            "name": "Usar mi ubicación",
+            "height": 44,
+            "width": 129.625
+          },
+          {
+            "name": "Limpiar filtros",
+            "height": 44,
+            "width": 103.5625
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 106.46875
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Mapbox failure: scroll reaches rendered result (content-visibility auto)",
+      "viewport": "1280x900",
+      "result": "PASS"
+    },
+    {
+      "test": "interests",
+      "viewport": "1280x900",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 56,
+            "width": 274
+          },
+          {
+            "name": "Guardar intereses",
+            "height": 48,
+            "width": 560
+          },
+          {
+            "name": "Actualizar categorías",
+            "height": 44,
+            "width": 560
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 104.671875
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "access",
+      "viewport": "1280x900",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Activos",
+            "height": 44,
+            "width": 84.265625
+          },
+          {
+            "name": "Revocados",
+            "height": 44,
+            "width": 110.21875
+          },
+          {
+            "name": "Actualizar accesos",
+            "height": 44,
+            "width": 160.96875
+          },
+          {
+            "name": "Revocar acceso de Bruno Rodríguez",
+            "height": 44,
+            "width": 83.796875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "invite-lost",
+      "viewport": "1280x900",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Dialog initial focus/Escape/return",
+      "viewport": "1280x900",
+      "result": "PASS"
+    },
+    {
+      "test": "home",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "map-failure",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia · 1 activo",
+            "height": 44,
+            "width": 266.328125
+          },
+          {
+            "name": "Sin límite",
+            "height": 44,
+            "width": 101.53125
+          },
+          {
+            "name": "5 km",
+            "height": 44,
+            "width": 69.453125
+          },
+          {
+            "name": "10 km",
+            "height": 44,
+            "width": 75.390625
+          },
+          {
+            "name": "25 km",
+            "height": 44,
+            "width": 78.421875
+          },
+          {
+            "name": "50 km",
+            "height": 44,
+            "width": 79.375
+          },
+          {
+            "name": "100 km",
+            "height": 44,
+            "width": 85.359375
+          },
+          {
+            "name": "Usar mi ubicación",
+            "height": 44,
+            "width": 129.625
+          },
+          {
+            "name": "Limpiar filtros",
+            "height": 44,
+            "width": 103.5625
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 106.46875
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Mapbox failure: scroll reaches rendered result (content-visibility auto)",
+      "viewport": "320x400",
+      "result": "PASS"
+    },
+    {
+      "test": "interests",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 56,
+            "width": 280
+          },
+          {
+            "name": "Guardar intereses",
+            "height": 48,
+            "width": 280
+          },
+          {
+            "name": "Actualizar categorías",
+            "height": 44,
+            "width": 280
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 104.671875
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "access",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Activos",
+            "height": 44,
+            "width": 84.265625
+          },
+          {
+            "name": "Revocados",
+            "height": 44,
+            "width": 110.21875
+          },
+          {
+            "name": "Actualizar accesos",
+            "height": 44,
+            "width": 160.96875
+          },
+          {
+            "name": "Revocar acceso de Bruno Rodríguez",
+            "height": 44,
+            "width": 83.796875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "invite-lost",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Dialog initial focus/Escape/return",
+      "viewport": "320x400",
+      "result": "PASS"
+    },
+    {
+      "test": "enlarged-text",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 101.46875
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "empty",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Borrar búsqueda",
+            "height": 44,
+            "width": 44
+          },
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Limpiar filtros",
+            "height": 44,
+            "width": 103.5625
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "error",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "loading",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Enlarged text, reduced preferences, focus 3px violet, empty/error/retry/loading",
+      "focus": {
+        "outline": "3px",
+        "color": "rgb(91, 52, 214)"
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Production service worker: logout/account B denial, no private REST/media/event/token cache",
+      "result": "PASS",
+      "evidence": "Auth/REST intercepted; real local production SW, not physical installed PWA"
+    }
+  ],
+  "errors": []
+}

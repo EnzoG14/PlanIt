@@ -1,0 +1,1216 @@
+{
+  "environment": "Isolated PostgreSQL; synthetic Auth/Storage; SET ROLE; 5000 events, 10% hidden, one category, fixed 2099 dates; 3 warmups + 20 sequential samples; no network/user SLA claim",
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "migrations": [
+    "20261010011204_create_profiles_and_categories.sql",
+    "20261010013449_create_profiles_and_categories.sql",
+    "20261010023448_restrict_rls_auto_enable_execute.sql",
+    "20261010042701_create_events_and_event_media.sql",
+    "20261010052653_public_event_discovery.sql",
+    "20261010150232_event_participations.sql",
+    "20261010154930_my_events_read.sql",
+    "20261010212819_home_and_event_organizer_read.sql",
+    "20261010214526_event_chat.sql",
+    "20261011163653_notifications_inbox.sql",
+    "20261011193316_r2_realtime_chat_notifications.sql",
+    "20261011232326_my_organized_events_read.sql",
+    "20261012001058_edit_own_event.sql",
+    "20261012013634_manage_event_gallery.sql",
+    "20261012031717_manage_event_attendees.sql",
+    "20261012044919_close_and_duplicate_events.sql",
+    "20261012155501_event_rejoin_requests.sql",
+    "20261013160000_search_public_events.sql",
+    "20261014120000_search_public_events_date_radius.sql",
+    "20261014120001_user_category_interests.sql",
+    "20261014120002_get_suggested_events.sql",
+    "20261014120003_hidden_event_access.sql",
+    "20261014120004_event_visibility_links.sql",
+    "20261014120005_redeem_event_link.sql",
+    "20261014120006_event_access_management.sql"
+  ],
+  "tables": [
+    {
+      "table": "profiles",
+      "rls": true
+    },
+    {
+      "table": "categories",
+      "rls": true
+    },
+    {
+      "table": "events",
+      "rls": true
+    },
+    {
+      "table": "files",
+      "rls": true
+    },
+    {
+      "table": "event_images",
+      "rls": true
+    },
+    {
+      "table": "event_participations",
+      "rls": true
+    },
+    {
+      "table": "conversations",
+      "rls": true
+    },
+    {
+      "table": "participation_history",
+      "rls": true
+    },
+    {
+      "table": "messages",
+      "rls": true
+    },
+    {
+      "table": "event_rejoin_requests",
+      "rls": true
+    },
+    {
+      "table": "notifications",
+      "rls": true
+    },
+    {
+      "table": "user_category_interests",
+      "rls": true
+    },
+    {
+      "table": "event_access_links",
+      "rls": true
+    },
+    {
+      "table": "event_access_grants",
+      "rls": true
+    }
+  ],
+  "functions": [
+    {
+      "signature": "rls_auto_enable()",
+      "definer": false,
+      "config": null,
+      "body_md5": "9a0019f1bbaad3984b164d333469d62d",
+      "body_md5_lf": "9a0019f1bbaad3984b164d333469d62d",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "planit_private.validate_birth_date()",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "1bf56792ee3504ae97470987a0968193",
+      "body_md5_lf": "02a4814f4f6a00cbd3dff17363d4b853",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "get_notification_target(uuid)",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "12f42bb270b54afdfde3ee9f09f4bf8f",
+      "body_md5_lf": "a040b58229e55c7559b6fd626b209fd7",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "mark_notification_read(uuid)",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "a688c429134d7c7b04eebff54074ba58",
+      "body_md5_lf": "871eb7180258beb03c4ef003d3828978",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "planit_private.touch_updated_at()",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "2d527197d611c58f6ed4b33971087c04",
+      "body_md5_lf": "705c5901896faa680a2dc6808e4ef708",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "planit_private.handle_new_auth_user()",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "f7acbc6d5d1cc58c130f1ffd8c953969",
+      "body_md5_lf": "cf71db175a455bda5de9a247964fe2c0",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "planit_private.validate_new_event()",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "dd232e52f0bc600162c5012f169d0d51",
+      "body_md5_lf": "64da83f89ce3617d8dbb85633fce066d",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "planit_private.validate_event_file()",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "4a5670dfd1f6368656c2454a5dc4d8d5",
+      "body_md5_lf": "f9082113cc9d743671779a5c7e847039",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "planit_private.validate_event_image()",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "5077c8d6901f95dcddd4247fb7dde0c5",
+      "body_md5_lf": "789203b58d1b5435e61d245a53e3cf88",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "discover_public_events(double precision,double precision,double precision,double precision)",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "cdf13786e73105eceba62d7ecd75ba68",
+      "body_md5_lf": "5c54fadbde586c33fcddc70ea2187c25",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "planit_private.record_participation_history()",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "95a47dadc17c20868c1b5eac3d9ccf3a",
+      "body_md5_lf": "95a47dadc17c20868c1b5eac3d9ccf3a",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "get_notifications(timestamp without time zone,uuid)",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "3397d34de5d41d135639c447f95ee088",
+      "body_md5_lf": "9356b70b350c7490451cbcabcf3e22b1",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_my_events(text,integer)",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "b3ebd40c1db25c0d5eb12100ff0125f5",
+      "body_md5_lf": "4ebc2576cb6a7f0efbd00d6e66d7599a",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_home_events(timestamp without time zone,uuid,integer)",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "ecaa9da1e59c001228bb38388932da20",
+      "body_md5_lf": "9034653103e31b084cf323cfa274ff96",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "planit_private.can_read_event_chat(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "1b592fd3474121aa3208cd2db10232ba",
+      "body_md5_lf": "79ba09792d44cb6e0099a911bf8ecf59",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "planit_private.create_event_conversation()",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "d029f4334e048a32c08a7c62c40bfaa4",
+      "body_md5_lf": "1e5ce32b9dc5501cbbf5f73de43c6299",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "get_event_chat(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "b169ac171423e2e6dffdc47f205df80c",
+      "body_md5_lf": "0dfbefb9598289a00e5e50e527d4d601",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_event_organizer(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "ce318e01dbde981b526386e75fc2de4a",
+      "body_md5_lf": "55cca631b4325cc8cb0a6c42be5f390c",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "planit_private.stamp_notification_read()",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "938a343aee6290cacf9fae8ca702b81f",
+      "body_md5_lf": "48aa1182f71acb1b4b2d5b1fd658d84f",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "get_event_chat_messages(uuid,timestamp without time zone,uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "5741510e8e70742ec27c9ec532cfa688",
+      "body_md5_lf": "7db6f8586a2c2aab9fa5f35c3ca1571b",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "send_event_chat_message(uuid,uuid,text)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "de9a9d91cf89b0e4e3f519cea30d7a30",
+      "body_md5_lf": "b04603be9605ade4df18fb276dcd9c0e",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_notification_changes(uuid[])",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "7e30a4c68a542f4790f402e0986f4f48",
+      "body_md5_lf": "07d146ad8fcf719180b93867f8d50b0a",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_my_organized_events(text,integer)",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "ef387103f4f0503bf2402cc8a663c401",
+      "body_md5_lf": "ef387103f4f0503bf2402cc8a663c401",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_event_rejoin_resolution(uuid,uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "30f4d05f4d80c72395218c1c6749bde7",
+      "body_md5_lf": "30f4d05f4d80c72395218c1c6749bde7",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "search_public_events(text,uuid[],timestamp without time zone,uuid,integer,double precision,double precision,double precision,double precision,date,date,double precision,double precision,double precision)",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "f1bb51d97a70bcceaad423aa844803a0",
+      "body_md5_lf": "4e4e48bb7864c9ad76e6ebd553c63927",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "planit_private.lock_gallery(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "ddd0cb3a70a011550d0614bb62ea77f2",
+      "body_md5_lf": "24b1878bc70f6108f6d8a8c57c989dfd",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "planit_private.can_delete_event_upload(text)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "a00f64b25640366aef34dc60e7baa405",
+      "body_md5_lf": "aebfb3bfa4c9170f7f418c992577cb90",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "add_event_image(uuid,text)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "ed5f567aad79da2a735f4d446b4a1e47",
+      "body_md5_lf": "e6a7ebe0368a32c175ac4c4c86e13bf2",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "remove_event_image(uuid,uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "7250ee35033269a6e25c2bd41055e237",
+      "body_md5_lf": "e649da3063522c71fcceed5547508aae",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "reorder_event_images(uuid,uuid[],uuid[])",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "301636c60a152646fc672d66a96769ba",
+      "body_md5_lf": "ae4c0b260d85928da62d512ef11d4f81",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_event_unregistered_uploads(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "9a415ade47ca548a8067c1075d10c4a3",
+      "body_md5_lf": "0751a5f90e0d60d51b211bb03cf458cf",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "set_my_category_interests(uuid[])",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "e9086cf3a69317f0d28b8f5c3cf7ec46",
+      "body_md5_lf": "39eeea0f0b2ab0876564629cf4f2d1d1",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_suggested_events(double precision,double precision,integer)",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "0603cb3c0128c62739e09cab01658984",
+      "body_md5_lf": "bb30d269f107655dd1400e561dc0a17b",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "remove_participant(uuid,uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "beecd75399b9d7604cb66b2df5e88e6c",
+      "body_md5_lf": "beecd75399b9d7604cb66b2df5e88e6c",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "cancel_event(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "a8bbc3047b33214971842d6cda8d8601",
+      "body_md5_lf": "a8bbc3047b33214971842d6cda8d8601",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "archive_event(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "b331b4149ea18e219d91da8ed011c2ea",
+      "body_md5_lf": "b331b4149ea18e219d91da8ed011c2ea",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_event_duplicate_source(uuid)",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "0b469c754b6571981729772662ae38b4",
+      "body_md5_lf": "0b469c754b6571981729772662ae38b4",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_event_rejoin_requests(uuid,integer)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "0378ceece44a04cf63c3360f48227ca5",
+      "body_md5_lf": "0378ceece44a04cf63c3360f48227ca5",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_event_attendees(uuid,text,text,integer)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "fc0dc5171303f99a9a38bc44d31baee9",
+      "body_md5_lf": "fc0dc5171303f99a9a38bc44d31baee9",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "planit_private.can_view_event(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "ec2adec12d0e4fc2fa0a4f63ae34e3ab",
+      "body_md5_lf": "1e666b06a0bf30f5c05a9aaaa5323365",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "planit_private.protect_event_visibility()",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "b38fd24854351d24ec791237b0411fe4",
+      "body_md5_lf": "0b0fbe4ed7c8b692f96e3de16cb03952",
+      "anon_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "signature": "set_event_visibility(uuid,text)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "ab4da34dc1ca97a4f3eed3bc46f3363d",
+      "body_md5_lf": "915d4e0e8d3fe638f5cbaa0e6047bea8",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_event_participation_summary(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "1bcb9f675a4d55ec99f73b8526d30451",
+      "body_md5_lf": "ef8dccca594bbd8288cc5ebfe9619d85",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "register_for_event(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "827a967f4c2b9c21ba29733c43f8df1d",
+      "body_md5_lf": "261a6367ac44b196b733757e1836d9e6",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "leave_event(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "33e9347867341aff6880e4127821e2fe",
+      "body_md5_lf": "a115dcdd22dbc01a1243162c0a7812b6",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_my_rejoin_status(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "1410bd6cb563d4969ba5e00d659a4e34",
+      "body_md5_lf": "0ccc9d2b6b2f3f788d15c6118e9500b2",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "request_rejoin(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "b2cfd5083728a356412a2410585fde26",
+      "body_md5_lf": "c1205c9adcc085c253434ef9848cd20b",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "resolve_rejoin(uuid,uuid,text)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "3cab9d3fd743ce15103fb8bb7aa35d08",
+      "body_md5_lf": "293ed799516f9c085e870b68017e0a4b",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "create_event(uuid,text,text,timestamp without time zone,timestamp without time zone,uuid,integer,text,double precision,double precision,text,text[],text)",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "abf588c167b9e9627b4158e8e10f6cba",
+      "body_md5_lf": "79c3611d5194aaff84eea1793ca4edcb",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "update_event(uuid,text,text,timestamp without time zone,timestamp without time zone,uuid,integer,text,double precision,double precision,text,text)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "8c280444185af59e2d0b5a58032c5aee",
+      "body_md5_lf": "432520635c291ca5556ddc3087003fec",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "create_or_rotate_event_link(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "e21cd8eb24c6430215a38b7e2fbe2a2d",
+      "body_md5_lf": "f6309cb8d696b40ca42737098263410c",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_event_link_status(uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "16c4bbed843b96f6dcb64fde51fb5aae",
+      "body_md5_lf": "5319879ed59ae09b0df65a3d5e69f449",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "redeem_event_link(text)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "af2ed334ee714c717d966f3ec106e818",
+      "body_md5_lf": "aef5f0a1073369fb1c2b4f7b9d81aef2",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "get_event_access_grants(uuid,text,uuid,integer)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "0f692d1c9f9c991d1f7ecb3f99a952ee",
+      "body_md5_lf": "0f692d1c9f9c991d1f7ecb3f99a952ee",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "revoke_event_access(uuid,uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "0510e365a051493261f18725efd1a378",
+      "body_md5_lf": "0510e365a051493261f18725efd1a378",
+      "anon_execute": false,
+      "authenticated_execute": true
+    },
+    {
+      "signature": "restore_event_access(uuid,uuid)",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "body_md5": "2efbd5a4921b7d75dfbaf3db7d324c6f",
+      "body_md5_lf": "2efbd5a4921b7d75dfbaf3db7d324c6f",
+      "anon_execute": false,
+      "authenticated_execute": true
+    }
+  ],
+  "benchmarks": [
+    {
+      "name": "text",
+      "samplesMs": [
+        6.414899999996123,
+        6.640299999999115,
+        7.9090999999971245,
+        6.457999999998719,
+        6.493799999996554,
+        6.198899999995774,
+        6.231500000001688,
+        6.408900000002177,
+        6.377999999996973,
+        6.4790999999968335,
+        6.52219999999943,
+        6.753700000001118,
+        6.765800000001036,
+        6.245000000002619,
+        6.319199999998091,
+        6.287700000000768,
+        6.614399999998568,
+        6.427199999998265,
+        6.520500000005995,
+        6.741099999999278
+      ],
+      "p50Ms": 6.457999999998719,
+      "p95Ms": 6.765800000001036,
+      "returnedRows": 31,
+      "matchingCount": null,
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Function Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Function Name": "search_public_events",
+            "Alias": "search_public_events",
+            "Startup Cost": 0.25,
+            "Total Cost": 10.25,
+            "Plan Rows": 1000,
+            "Plan Width": 324,
+            "Actual Startup Time": 5.621,
+            "Actual Total Time": 5.623,
+            "Actual Rows": 31,
+            "Actual Loops": 1,
+            "Shared Hit Blocks": 299,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning": {
+            "Shared Hit Blocks": 0,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.033,
+          "Triggers": [],
+          "Execution Time": 5.64
+        }
+      ]
+    },
+    {
+      "name": "date-radius",
+      "samplesMs": [
+        1.992099999995844,
+        1.8116999999983818,
+        2.4358999999967637,
+        2.2744000000020606,
+        1.8836999999984982,
+        2.1158999999970547,
+        1.9262999999991735,
+        1.8268000000025495,
+        2.243399999999383,
+        2.0648999999975786,
+        1.8742000000056578,
+        1.78349999999773,
+        1.901400000002468,
+        1.8744000000006054,
+        1.7688000000052853,
+        1.900099999998929,
+        1.8911999999982072,
+        1.8294999999998254,
+        1.7619999999951688,
+        1.956399999995483
+      ],
+      "p50Ms": 1.8911999999982072,
+      "p95Ms": 2.2744000000020606,
+      "returnedRows": 31,
+      "matchingCount": null,
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Function Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Function Name": "search_public_events",
+            "Alias": "search_public_events",
+            "Startup Cost": 0.25,
+            "Total Cost": 10.25,
+            "Plan Rows": 1000,
+            "Plan Width": 324,
+            "Actual Startup Time": 1.394,
+            "Actual Total Time": 1.395,
+            "Actual Rows": 31,
+            "Actual Loops": 1,
+            "Shared Hit Blocks": 94,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning": {
+            "Shared Hit Blocks": 0,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.022,
+          "Triggers": [],
+          "Execution Time": 1.468
+        }
+      ]
+    },
+    {
+      "name": "suggestions",
+      "samplesMs": [
+        23.603299999995215,
+        25.13090000000375,
+        31.048399999999674,
+        24.58419999999751,
+        24.374400000000605,
+        24.050499999997555,
+        22.753199999999197,
+        24.116299999994226,
+        25.12960000000021,
+        23.55750000000262,
+        25.165099999998347,
+        23.634399999995367,
+        26.44249999999738,
+        24.733899999999267,
+        26.174400000003516,
+        25.082099999999627,
+        23.927499999997963,
+        23.802499999997963,
+        23.861700000001292,
+        23.987099999998463
+      ],
+      "p50Ms": 24.116299999994226,
+      "p95Ms": 26.44249999999738,
+      "returnedRows": 6,
+      "matchingCount": null,
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Function Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Function Name": "get_suggested_events",
+            "Alias": "get_suggested_events",
+            "Startup Cost": 0.25,
+            "Total Cost": 10.25,
+            "Plan Rows": 1000,
+            "Plan Width": 335,
+            "Actual Startup Time": 22.779,
+            "Actual Total Time": 22.78,
+            "Actual Rows": 6,
+            "Actual Loops": 1,
+            "Shared Hit Blocks": 13570,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning": {
+            "Shared Hit Blocks": 0,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.022,
+          "Triggers": [],
+          "Execution Time": 22.794
+        }
+      ]
+    },
+    {
+      "name": "haversine-only-stage",
+      "samplesMs": [
+        4.2620999999999185,
+        4.212700000003679,
+        4.1600000000034925,
+        5.007600000004459,
+        4.510300000001735,
+        4.141599999995378,
+        6.053500000001804,
+        4.758200000003853,
+        4.306899999995949,
+        4.371400000003632,
+        4.263899999998102,
+        4.090599999995902,
+        4.048600000001898,
+        4.161999999996624,
+        4.40400000000227,
+        4.2167999999946915,
+        4.073500000005879,
+        4.260000000002037,
+        4.262900000001537,
+        4.249100000000908
+      ],
+      "p50Ms": 4.260000000002037,
+      "p95Ms": 5.007600000004459,
+      "returnedRows": 1,
+      "matchingCount": "104",
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Aggregate",
+            "Strategy": "Plain",
+            "Partial Mode": "Simple",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 1738.27,
+            "Total Cost": 1738.28,
+            "Plan Rows": 1,
+            "Plan Width": 8,
+            "Actual Startup Time": 3.833,
+            "Actual Total Time": 3.834,
+            "Actual Rows": 1,
+            "Actual Loops": 1,
+            "Shared Hit Blocks": 122,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Result",
+                "Parent Relationship": "InitPlan",
+                "Subplan Name": "InitPlan 1",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 0,
+                "Total Cost": 0.02,
+                "Plan Rows": 1,
+                "Plan Width": 16,
+                "Actual Startup Time": 0.004,
+                "Actual Total Time": 0.005,
+                "Actual Rows": 1,
+                "Actual Loops": 1,
+                "Shared Hit Blocks": 0,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              {
+                "Node Type": "Seq Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "events",
+                "Alias": "events",
+                "Startup Cost": 0,
+                "Total Cost": 1734.5,
+                "Plan Rows": 1500,
+                "Plan Width": 0,
+                "Actual Startup Time": 0.016,
+                "Actual Total Time": 3.825,
+                "Actual Rows": 104,
+                "Actual Loops": 1,
+                "Filter": "((cancelled_at IS NULL) AND (archived_at IS NULL) AND (visibility = 'public'::text) AND (ends_at > (statement_timestamp() AT TIME ZONE 'America/Argentina/Buenos_Aires'::text)) AND ((organizer_id = (InitPlan 1).col1) OR planit_private.can_view_event(id)) AND (('12742'::double precision * asin(LEAST('1'::double precision, sqrt((power(sin((radians((latitude + '34.6'::double precision)) / '2'::double precision)), '2'::double precision) + (('0.8231363685344418'::double precision * cos(radians(latitude))) * power(sin((radians((longitude + '58.38'::double precision)) / '2'::double precision)), '2'::double precision))))))) <= '25'::double precision))",
+                "Rows Removed by Filter": 4896,
+                "Shared Hit Blocks": 122,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 0,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.13,
+          "Triggers": [],
+          "Execution Time": 3.856
+        }
+      ]
+    },
+    {
+      "name": "box-haversine-stage",
+      "samplesMs": [
+        0.532999999995809,
+        0.5385999999998603,
+        0.5302000000010594,
+        0.553699999996752,
+        0.6114999999990687,
+        0.5576000000000931,
+        0.5495000000009895,
+        0.5587999999988824,
+        0.5298000000038883,
+        0.537400000001071,
+        0.5296999999991385,
+        0.4974000000001979,
+        0.48060000000259606,
+        0.5392999999967287,
+        0.5268999999971129,
+        0.549299999998766,
+        0.6409000000057858,
+        0.6831999999994878,
+        0.5915000000022701,
+        0.6497000000017579
+      ],
+      "p50Ms": 0.5392999999967287,
+      "p95Ms": 0.6497000000017579,
+      "returnedRows": 1,
+      "matchingCount": "104",
+      "explain": [
+        {
+          "Plan": {
+            "Node Type": "Aggregate",
+            "Strategy": "Plain",
+            "Partial Mode": "Simple",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 220.76,
+            "Total Cost": 220.77,
+            "Plan Rows": 1,
+            "Plan Width": 8,
+            "Actual Startup Time": 0.219,
+            "Actual Total Time": 0.219,
+            "Actual Rows": 1,
+            "Actual Loops": 1,
+            "Shared Hit Blocks": 22,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Result",
+                "Parent Relationship": "InitPlan",
+                "Subplan Name": "InitPlan 1",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 0,
+                "Total Cost": 0.02,
+                "Plan Rows": 1,
+                "Plan Width": 16,
+                "Actual Startup Time": 0.004,
+                "Actual Total Time": 0.004,
+                "Actual Rows": 1,
+                "Actual Loops": 1,
+                "Shared Hit Blocks": 0,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              {
+                "Node Type": "Bitmap Heap Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "events",
+                "Alias": "events",
+                "Startup Cost": 35.1,
+                "Total Cost": 220.6,
+                "Plan Rows": 57,
+                "Plan Width": 0,
+                "Actual Startup Time": 0.064,
+                "Actual Total Time": 0.214,
+                "Actual Rows": 104,
+                "Actual Loops": 1,
+                "Recheck Cond": "((latitude >= '-34.9'::double precision) AND (latitude <= '-34.3'::double precision) AND (longitude >= '-58.75'::double precision) AND (longitude <= '-58.01'::double precision) AND (visibility = 'public'::text) AND (cancelled_at IS NULL) AND (archived_at IS NULL))",
+                "Rows Removed by Index Recheck": 0,
+                "Filter": "((ends_at > (statement_timestamp() AT TIME ZONE 'America/Argentina/Buenos_Aires'::text)) AND ((organizer_id = (InitPlan 1).col1) OR planit_private.can_view_event(id)) AND (('12742'::double precision * asin(LEAST('1'::double precision, sqrt((power(sin((radians((latitude + '34.6'::double precision)) / '2'::double precision)), '2'::double precision) + (('0.8231363685344418'::double precision * cos(radians(latitude))) * power(sin((radians((longitude + '58.38'::double precision)) / '2'::double precision)), '2'::double precision))))))) <= '25'::double precision))",
+                "Rows Removed by Filter": 78,
+                "Exact Heap Blocks": 16,
+                "Lossy Heap Blocks": 0,
+                "Shared Hit Blocks": 22,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "events_public_location_idx",
+                    "Startup Cost": 0,
+                    "Total Cost": 35.08,
+                    "Plan Rows": 172,
+                    "Plan Width": 0,
+                    "Actual Startup Time": 0.049,
+                    "Actual Total Time": 0.049,
+                    "Actual Rows": 182,
+                    "Actual Loops": 1,
+                    "Index Cond": "((latitude >= '-34.9'::double precision) AND (latitude <= '-34.3'::double precision) AND (longitude >= '-58.75'::double precision) AND (longitude <= '-58.01'::double precision))",
+                    "Shared Hit Blocks": 6,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 0,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.134,
+          "Triggers": [],
+          "Execution Time": 0.241
+        }
+      ]
+    }
+  ],
+  "deadlocks": "0",
+  "result": "PASS"
+}

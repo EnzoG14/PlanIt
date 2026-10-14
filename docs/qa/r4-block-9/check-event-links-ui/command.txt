@@ -1,0 +1,41 @@
+
+> planit@0.0.0 check:event-links:ui
+> node scripts/check-event-links-ui.mjs
+
+PASS 320: Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes
+PASS 320: Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy
+PASS 320: Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content
+PASS 320: One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret
+PASS 320: Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration
+PASS 320: Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors
+PASS 360: Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes
+PASS 360: Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy
+PASS 360: Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content
+PASS 360: One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret
+PASS 360: Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration
+PASS 360: Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors
+PASS 375: Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes
+PASS 375: Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy
+PASS 375: Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content
+PASS 375: One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret
+PASS 375: Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration
+PASS 375: Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors
+PASS 390: Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes
+PASS 390: Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy
+PASS 390: Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content
+PASS 390: One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret
+PASS 390: Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration
+PASS 390: Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors
+PASS 390: Permission failure contains no secret; low-height 320x400, enlarged text, reduced motion, dialog scroll and dismiss reachable
+PASS 768: Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes
+PASS 768: Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy
+PASS 768: Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content
+PASS 768: One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret
+PASS 768: Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration
+PASS 768: Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors
+PASS 1280: Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes
+PASS 1280: Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy
+PASS 1280: Revoked-confirmed conflict preserves form; lost edit reconciles visibility as well as content
+PASS 1280: One-time fragment link, copy and manual fallback, keyboard trap/Escape/return, wiped on close, no persisted secret
+PASS 1280: Rotation explicit confirmation/cancel, lost response never recovers old token, deliberate regeneration
+PASS 1280: Closed state disables generation; status error/retry; organizer controls absent for third party; no JS errors

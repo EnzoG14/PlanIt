@@ -1,0 +1,9 @@
+
+> planit@0.0.0 check:invite:ui
+> node scripts/check-invite-ui.mjs
+
+PASS: Signed out: fragment cleared, nothing sent; login returns to /invite, redeems once from memory, opens the detail with replace and no enrolment
+PASS: 320/375/1280: wash aria-hidden, one h1, Bricolage, no overflow, four-destination dock, targets >=44px; unavailable/network/expired states with focus on the result
+PASS: Secret never in URL, query, storage or any request URL; sent only in the redeem RPC body; no enrolment write; reload drops it
+PASS: Cuenta cambiada: el secreto pendiente de otra identidad se descarta; la nueva cuenta no canjea
+PASS: Si la relectura del detalle no confirma el acceso, no se anuncia «Acceso confirmado»

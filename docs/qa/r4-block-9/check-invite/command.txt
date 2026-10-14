@@ -1,0 +1,14 @@
+
+> planit@0.0.0 check:invite
+> node scripts/check-invite.mjs
+
+PASS: Migration replay; redeem_event_link is DEFINER with empty search_path, EXECUTE authenticated only; anon denied
+PASS: CA-01: B redeems and gets an active grant, no participation, no capacity used; detail and organizer readable
+PASS: CA-02: repeated redeem is idempotent (one grant); a fresh session keeps access without the link
+PASS: CA-04: grant alone cannot read chat/attendees; Inscribirse is a separate action that needs the grant
+PASS: CA-03: stranger and anon denied by direct UUID (SELECT, RPC) without redeem
+PASS: CA-05/R4-09.CA-04: altered/malformed/rotated/revoked all fail with one identical error; revoked is never reactivated, even by a new link
+PASS: Revoked C: sees the public event, loses it again on rehide, and no new link recovers it; D redeems the fresh link
+PASS: Organizer redeeming own link creates no grant
+PASS: Ended/cancelled/archived events and non-hidden events grant no new access
+PASS: Races: rotate-first denies old token; redeem-first keeps grant and kills the old token; concurrent same-user redeem is one grant; revoke-first and publish-first deny redeem

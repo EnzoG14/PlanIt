@@ -1,0 +1,172 @@
+[
+  {
+    "width": 320,
+    "overflow": false,
+    "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+    "shell": true,
+    "wash": 1,
+    "dock": 4,
+    "controls": [
+      {
+        "name": "Volver al evento",
+        "height": 48
+      },
+      {
+        "name": "Activos",
+        "height": 44
+      },
+      {
+        "name": "Revocados",
+        "height": 44
+      },
+      {
+        "name": "Actualizar accesos",
+        "height": 44
+      },
+      {
+        "name": "Revocar",
+        "height": 44
+      },
+      {
+        "name": "Revocar",
+        "height": 44
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "overflow": false,
+    "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+    "shell": true,
+    "wash": 1,
+    "dock": 4,
+    "controls": [
+      {
+        "name": "Volver al evento",
+        "height": 48
+      },
+      {
+        "name": "Activos",
+        "height": 44
+      },
+      {
+        "name": "Revocados",
+        "height": 44
+      },
+      {
+        "name": "Actualizar accesos",
+        "height": 44
+      },
+      {
+        "name": "Revocar",
+        "height": 44
+      },
+      {
+        "name": "Revocar",
+        "height": 44
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+    "shell": true,
+    "wash": 1,
+    "dock": 4,
+    "controls": [
+      {
+        "name": "Volver al evento",
+        "height": 48
+      },
+      {
+        "name": "Activos",
+        "height": 44
+      },
+      {
+        "name": "Revocados",
+        "height": 44
+      },
+      {
+        "name": "Actualizar accesos",
+        "height": 44
+      },
+      {
+        "name": "Revocar",
+        "height": 44
+      },
+      {
+        "name": "Revocar",
+        "height": 44
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+    "shell": true,
+    "wash": 1,
+    "dock": 4,
+    "controls": [
+      {
+        "name": "Volver al evento",
+        "height": 48
+      },
+      {
+        "name": "Activos",
+        "height": 44
+      },
+      {
+        "name": "Revocados",
+        "height": 44
+      },
+      {
+        "name": "Actualizar accesos",
+        "height": 44
+      },
+      {
+        "name": "Revocar",
+        "height": 44
+      },
+      {
+        "name": "Revocar",
+        "height": 44
+      }
+    ]
+  },
+  {
+    "width": 1280,
+    "overflow": false,
+    "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+    "shell": true,
+    "wash": 1,
+    "dock": 4,
+    "controls": [
+      {
+        "name": "Volver al evento",
+        "height": 48
+      },
+      {
+        "name": "Activos",
+        "height": 44
+      },
+      {
+        "name": "Revocados",
+        "height": 44
+      },
+      {
+        "name": "Actualizar accesos",
+        "height": 44
+      },
+      {
+        "name": "Revocar",
+        "height": 44
+      },
+      {
+        "name": "Revocar",
+        "height": 44
+      }
+    ]
+  }
+]

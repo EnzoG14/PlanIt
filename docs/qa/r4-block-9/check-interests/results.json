@@ -1,0 +1,73 @@
+{
+  "environment": "Real local embedded PostgreSQL; simulated Auth/Storage and JWT claims; no HTTP JWT or remote writes",
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "migrations": [
+    "20261010011204_create_profiles_and_categories.sql",
+    "20261010013449_create_profiles_and_categories.sql",
+    "20261010023448_restrict_rls_auto_enable_execute.sql",
+    "20261010042701_create_events_and_event_media.sql",
+    "20261010052653_public_event_discovery.sql",
+    "20261010150232_event_participations.sql",
+    "20261010154930_my_events_read.sql",
+    "20261010212819_home_and_event_organizer_read.sql",
+    "20261010214526_event_chat.sql",
+    "20261011163653_notifications_inbox.sql",
+    "20261011193316_r2_realtime_chat_notifications.sql",
+    "20261011232326_my_organized_events_read.sql",
+    "20261012001058_edit_own_event.sql",
+    "20261012013634_manage_event_gallery.sql",
+    "20261012031717_manage_event_attendees.sql",
+    "20261012044919_close_and_duplicate_events.sql",
+    "20261012155501_event_rejoin_requests.sql",
+    "20261013160000_search_public_events.sql",
+    "20261014120000_search_public_events_date_radius.sql",
+    "20261014120001_user_category_interests.sql",
+    "20261014120002_get_suggested_events.sql",
+    "20261014120003_hidden_event_access.sql",
+    "20261014120004_event_visibility_links.sql",
+    "20261014120005_redeem_event_link.sql",
+    "20261014120006_event_access_management.sql"
+  ],
+  "results": [
+    {
+      "test": "Complete migration replay, including blocks 1/2 and new interests table",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-01/02: 0/1/N selection, repeated save has no duplicates and preserves created_at",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-03: A/B own-only RLS; cross-account SELECT returns zero; all REST writes and anon denied; auth/profile guards",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-04: null/duplicate/unknown/malformed IDs fail without partial changes",
+      "result": "PASS"
+    },
+    {
+      "test": "Inactive saved interest retained until removal; inactive new/re-added selection rejected atomically",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-04: forced INSERT failure after DELETE rolls back the entire replacement",
+      "result": "PASS"
+    },
+    {
+      "test": "Concurrent replacements of an initially empty account serialize; last completed replacement wins without a union",
+      "result": "PASS"
+    },
+    {
+      "test": "Category deactivation waits for a validated save; saved inactive preference remains valid",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-02/03: fresh authenticated connection recovers persisted preference; clear does not affect B",
+      "result": "PASS"
+    },
+    {
+      "test": "created_at follows Argentina timestamp convention; table/FKs/PK replay successfully",
+      "result": "PASS"
+    }
+  ]
+}

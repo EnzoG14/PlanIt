@@ -1,0 +1,5 @@
+
+> planit@0.0.0 check:participations:ui
+> node scripts/check-participations-ui.mjs
+
+PASS: mobile/desktop, double click, withdrawal/rejoin, lost response, refresh failure/retry, full/removed/closed/organizer, safe RPC arguments, Argentina time, no overflow/errors. HTTP fixtures.

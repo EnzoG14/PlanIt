@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:r4": "node scripts/check-release-4.mjs",
+    "check:r4:performance": "node scripts/check-r4-performance.mjs",
+    "check:r4:ui": "node scripts/check-r4-ui.mjs",
+    "check:r4:boundaries": "node scripts/check-r4-boundaries.mjs",
     "check:event-access": "node scripts/check-event-access.mjs",
     "check:event-access:ui": "node scripts/check-event-access-ui.mjs",
     "check:event-links": "node scripts/check-event-links.mjs",

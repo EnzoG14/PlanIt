@@ -1,0 +1,221 @@
+{
+  "base": "090fbabfd68a648ca69f49c27daaedfa07d137e8",
+  "branch": "codex/r4-block-9",
+  "commits": [
+    "090fbab Merge pull request #47 from EnzoG14/codex/r4-block-8",
+    "818e892 Merge pull request #46 from EnzoG14/codex/r4-block-7",
+    "a0ba1c3 Merge pull request #45 from EnzoG14/codex/r4-block-6",
+    "0428d4f Merge pull request #44 from EnzoG14/codex/r4-block-5",
+    "dacd893 Merge pull request #43 from EnzoG14/codex/r4-block-4",
+    "aed91ab Merge pull request #42 from EnzoG14/codex/r4-block-3",
+    "cff3e6b Merge pull request #41 from EnzoG14/codex/r4-block-2",
+    "a76247d Merge pull request #40 from EnzoG14/chore/vite-allowed-host",
+    "06e8f84 Merge pull request #39 from EnzoG14/codex/r4-block-1",
+    "ffed0ff Merge pull request #38 from EnzoG14/codex/r4-block-0",
+    "42af4e4 Merge pull request #37 from EnzoG14/codex/fix-ui-refresh-p1",
+    "4489328 Merge pull request #36 from EnzoG14/test/amanecer-block-8-audit"
+  ],
+  "productionAssets": [
+    {
+      "name": "CreateEventPage-imtHKp0k.js",
+      "sha256": "af6ed4006e5e6ab80339c48af4d0d6bbae7dc64b3e6b344d58416ec926496d30"
+    },
+    {
+      "name": "EditEventPage-BA0qa6jS.js",
+      "sha256": "9b2bc5a9380b4853cb9dede30bee2ee81419399b1772648751206b6b2976a54f"
+    },
+    {
+      "name": "EditEventPage-C6-wzkKq.css",
+      "sha256": "98d2100dcbe6a1e45bc2391fec3b0b3a714b0d616ef9503ce0fbcf25aad68fd1"
+    },
+    {
+      "name": "EventAccessPage-BE0Gmar4.js",
+      "sha256": "43d96fdca4bffea7e7695e51fb5e99565798e4cdd941b83f056d5be04ed76a37"
+    },
+    {
+      "name": "EventAccessPage-BeGsKfAb.css",
+      "sha256": "00d99405b4fb9b9a5d85951c8ed16c3b4fea2aaaea9f65d7f162dc5e68d0bf87"
+    },
+    {
+      "name": "EventActionDialog-DWkL3kW1.js",
+      "sha256": "43c4be620f9f79d2b93f35e08c012d2076880be84da1bdd224699622326ae7d0"
+    },
+    {
+      "name": "EventActionDialog-DqYOnHgA.css",
+      "sha256": "84d5b4128190e5c1742f31939c0d8689df26e36b4cd03eb23991f63d61133f2c"
+    },
+    {
+      "name": "EventAttendeesPage-CJnm9yqs.js",
+      "sha256": "135643ad503125b6c78b206d59537ca68196493009a950a6fdf0dd04aa7f91ae"
+    },
+    {
+      "name": "EventCard-CAM0TmqR.js",
+      "sha256": "6289aa692d6a70f9f7f1a3f85e276907f4d680be1c1440b840ec78233815043b"
+    },
+    {
+      "name": "EventChatPage-CVSL5OGy.js",
+      "sha256": "f77541500e8c98210ec54f317142de582f7d68a8f8c741e6a1a299466547807b"
+    },
+    {
+      "name": "EventChatPage-svdyR_PM.css",
+      "sha256": "db0fcd5f59552d80a238796c8a2db157dc8b54e94d5d903606d87c1e4076194e"
+    },
+    {
+      "name": "EventDetailPage-BbVrzJ0G.css",
+      "sha256": "151a54acf8d6334575390ffecd00fe3843b9c625b04406e66437d193a1a1f440"
+    },
+    {
+      "name": "EventDetailPage-CIWRoahY.js",
+      "sha256": "be06f9ce2ddad8255dc39c89943299ff2abd0bab8a16a26a225995ead6fcd997"
+    },
+    {
+      "name": "EventGalleryPage-B65VEpO7.css",
+      "sha256": "6dbbdbc695778c45ff726aa907ecba59cdf050971cb01b472074de18c646bd46"
+    },
+    {
+      "name": "EventGalleryPage-D2uUpeQR.js",
+      "sha256": "9b092e497630dd85f7bef957ef7834f6fc994fcf5cd560e86665fff0af79c217"
+    },
+    {
+      "name": "EventMap-B3QffNCF.js",
+      "sha256": "e7872d29a79974900055dec249e2023f380213fc6abefe47e2a0d7941684bca2"
+    },
+    {
+      "name": "EventMap-DdcgI_dU.css",
+      "sha256": "3179c8805dfa5df29d3e8a8c9568021175c459aa8567cc36916960f6a09a17ea"
+    },
+    {
+      "name": "EventRejoinRequestsPage-BrAisiqd.js",
+      "sha256": "861e9de3d1449698df6850c6f0e394abbf3104e1ed7a874433f1e0b8f4ebf51f"
+    },
+    {
+      "name": "HomePage-BHFJQBKd.css",
+      "sha256": "4fdbbac5387131e6f5d530a9d7693168a59f95ebe49ec001ce88522c793164bd"
+    },
+    {
+      "name": "HomePage-BoM4jUB5.js",
+      "sha256": "4109d33e7c0a13eba2e568543b670a25422a67c305b28190d1c273ebfc0982e7"
+    },
+    {
+      "name": "InterestsPage-DLnu0FsT.js",
+      "sha256": "41af33dd327f8119c0539b23ac008ba2ac6eb0bbe6eee5ce11dd0df27ab62e54"
+    },
+    {
+      "name": "InterestsPage-M1hJwhQD.css",
+      "sha256": "f0ced0a4c3f8c3f504296e16bc4fbfcd440af71191ef59221fde15fb4f37df3d"
+    },
+    {
+      "name": "InvitePage-DjKK25Qp.css",
+      "sha256": "e3c96d6c081ae9fec0503a6f68c1fe2182245a64b7879e6e1c5a6431b709f9a0"
+    },
+    {
+      "name": "InvitePage-rDICMNCt.js",
+      "sha256": "01074acd0a29c542a2d22ce30dfa9f0a69166a9f8b3c9d51cb0d2e07ea0438d9"
+    },
+    {
+      "name": "MapPage-QlffYf2p.js",
+      "sha256": "eb0fb58aa9dc0ec6b47582667441a4f9b96f50d882e8bc6d82d04f270c6ae42a"
+    },
+    {
+      "name": "MyEventsPage-DMgET5X9.css",
+      "sha256": "7ab40f0bc8f8745f1bdb854b2c78a6706bcd33ee29001da98ab4fa9744de7c4f"
+    },
+    {
+      "name": "MyEventsPage-DXRc-p4B.js",
+      "sha256": "5aa6702f9abf796cff1a82249f0d8414314da385ae7dcd57f781f50ec86ec881"
+    },
+    {
+      "name": "NotificationsPage-BYuC3eNx.js",
+      "sha256": "beb79c8811d239d1308aee574fad9180a8319c4e9504f3e8dfccebf6e4a3e049"
+    },
+    {
+      "name": "NotificationsPage-CAH3WiNg.css",
+      "sha256": "5c43e55f92611af790b48fb01ad92f5a43097ffc9418de68ee30e88bf913642c"
+    },
+    {
+      "name": "actions-B6hFfOr4.js",
+      "sha256": "659a62f99083f5605c3e1d5fc20f4deb069a380501fb58aa297a7c82492fdbaf"
+    },
+    {
+      "name": "api-Bo99fc6E.js",
+      "sha256": "a0571325d5ec5130f86ed922e9d0d148a7b2b3484f322e0d55a4ee8a1775473c"
+    },
+    {
+      "name": "api-D_PaJ0hU.js",
+      "sha256": "03e62e0600aa88bce65f9e1f02a8c34a408ab8b1953f545b1e59f641f693aabf"
+    },
+    {
+      "name": "attendees-Bthiw6E3.js",
+      "sha256": "8da2b63c912e9ea1bba03bccfa36a97f6f903ef680c6d1c3e37f34eb7e67c458"
+    },
+    {
+      "name": "bricolage-grotesque-latin-wght-normal-DLoelf7F.woff2",
+      "sha256": "a97804dc9fbe5fc972a08018c5eda4dab7ef2346f64c57e61419d05e6de4ea1c"
+    },
+    {
+      "name": "discovery-CYFQEXaF.css",
+      "sha256": "b3788b7ca51fbe2cfc6ebc51feb2631b05fda7a116a4e0dc75dcae6653b851a0"
+    },
+    {
+      "name": "event-attendees-QCB2rwCX.css",
+      "sha256": "fbf8b58670422342f3ed141e513d0049bd03f268ad7d3b50521627287fe6e379"
+    },
+    {
+      "name": "event-forms-B7ASf4As.js",
+      "sha256": "25b833bbaede1a3ce41d8349312354be25204b4d5c7e499eac186ed7626741b5"
+    },
+    {
+      "name": "event-forms-C7Iivlt7.css",
+      "sha256": "0ea69112161e5393424e984f42bd7930595a81212f28ba90551fa53111801aa9"
+    },
+    {
+      "name": "event-management-CcyhFY58.css",
+      "sha256": "28527574a4162788cc059cb3c36f0b0838661d480ea973322120e18b19c74759"
+    },
+    {
+      "name": "event-rejoin-CN93N2a9.css",
+      "sha256": "3312175eefce3774133319ef3537af2a2ca23830c3a826bb416297b90db0cde9"
+    },
+    {
+      "name": "event-rejoin-Ja9ZugEM.js",
+      "sha256": "fa21b513d95c92f46be55b343b514a19eb1aa326530b069b5032f8f62ff533c7"
+    },
+    {
+      "name": "geolocation-DXgn9iGR.js",
+      "sha256": "3f05bd95638d02a5808112abc3105d3d5023d09a27ebc50af718cc958841e6a5"
+    },
+    {
+      "name": "index-BLEynGX9.js",
+      "sha256": "55a6299c19654d36f8fa4a85090fe7b285ef60616294dcca268fde3c6221a951"
+    },
+    {
+      "name": "index-BjnwvzdP.css",
+      "sha256": "fead6fd3b4791ec97bfc881b2a4a8d53d2b3953fbea188ac608d79108ad46f74"
+    },
+    {
+      "name": "jsx-runtime-TSwjJPAg.js",
+      "sha256": "bf57a428d7ff5a2e14817b667b4a0c219ee9e2fcef5eb587df647c7140093aea"
+    },
+    {
+      "name": "my-events-BumgHuYC.js",
+      "sha256": "2b5223132d94215788d3524ac69cc3ae1e43c9daae3abb35cbca1b11fbfbf38b"
+    },
+    {
+      "name": "participation-C_vntLJL.js",
+      "sha256": "50b8643e639c3650d2ebafb8b9dc7d86de764a80383ccc21b54f493f951db8e9"
+    },
+    {
+      "name": "search-CsFbv2mJ.js",
+      "sha256": "417b23ada0a4e2367770045d813aca8baa96f12f82f8e476ab7b945b889cab2e"
+    },
+    {
+      "name": "useDiscoveryFilters-C8_b1uOh.js",
+      "sha256": "afdf283bd352b7359acccd6c9073a9e1f7b65d9a21282c480155b0f66b278f21"
+    },
+    {
+      "name": "validation-DH1mSUXy.js",
+      "sha256": "a86dfab5c04694c05b951150904edf5a58decc22015e271e2490a2afc3a0bd5a"
+    }
+  ],
+  "method": "First production build from clean main 090fbab; copied to ignored immutable asset directory before source focus fix; no source swapping or historical screenshots overwritten"
+}

@@ -1,0 +1,209 @@
+{
+  "environment": "Edge production app; Auth/REST fixtures, Mapbox failure injected, WebSocket blocked; browser emulation and local SW; no remote HTTP/JWT or physical device",
+  "results": [
+    {
+      "test": "enlarged-text",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 101.46875
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "empty",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Borrar búsqueda",
+            "height": 44,
+            "width": 44
+          },
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Limpiar filtros",
+            "height": 44,
+            "width": 103.5625
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "error",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "loading",
+      "viewport": "320x400",
+      "geometry": {
+        "overflow": false,
+        "shell": true,
+        "background": "rgb(246, 245, 253)",
+        "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+        "fontLoaded": true,
+        "dock": 4,
+        "controls": [
+          {
+            "name": "Arte",
+            "height": 44,
+            "width": 65.625
+          },
+          {
+            "name": "Fecha y distancia",
+            "height": 44,
+            "width": 197.71875
+          },
+          {
+            "name": "Inicio",
+            "height": 52,
+            "width": 105.15625
+          },
+          {
+            "name": "Mapa",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Mis eventos",
+            "height": 52,
+            "width": 52
+          },
+          {
+            "name": "Perfil",
+            "height": 52,
+            "width": 52
+          }
+        ]
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Enlarged text, reduced preferences, focus 3px violet, empty/error/retry/loading",
+      "focus": {
+        "outline": "3px",
+        "color": "rgb(91, 52, 214)"
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Production service worker: logout/account B denial, no private REST/media/event/token cache",
+      "result": "PASS",
+      "evidence": "Auth/REST intercepted; real local production SW, not physical installed PWA"
+    }
+  ],
+  "errors": []
+}

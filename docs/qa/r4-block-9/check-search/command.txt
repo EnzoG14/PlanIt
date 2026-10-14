@@ -1,0 +1,27 @@
+
+> planit@0.0.0 check:search
+> node scripts/check-search.mjs
+
+PASS: Replay migrations; search_public_events is SECURITY INVOKER with empty search_path
+PASS: CA R4-01.01/02: title and description match, case-insensitive, repeated with different text
+PASS: CA R4-01.03/04: non-matching events are not returned; no-match query is an empty list, not an error
+PASS: Wildcards %, _ and \ are literal; injection text is inert
+PASS: Blank/null query is neutral, trimmed, and length is bounded in SQL
+PASS: Universe: public, not cancelled/archived/finished; unlisted never returned; in-progress included
+PASS: CA R4-02.01: one or several categories (OR)
+PASS: Inactive categories are ignored; [] and null are neutral (CA R4-02.03: removing a selection restores results)
+PASS: CA R4-02.02/04: text AND categories AND bounds; empty intersection is an empty list
+PASS: A/B authenticated users see the same public result; anonymous is denied
+PASS: Keyset cursor is stable with no duplicates; invalid cursor/bounds are rejected
+PASS: CA R4-03.01: a single day is complete [00:00, next 00:00) in Argentina; a midnight-crossing event counts on its start day
+PASS: CA R4-03.01/02: inclusive range by starts_at only; an event that started before the range is excluded even if it ends inside
+PASS: CA R4-03.02: events outside the period are not returned (empty list, not an error)
+PASS: CA R4-03.03: inverted range, "to" without "from" and absurd years are rejected in SQL
+PASS: CA R4-03.04: clearing the dates restores other days and keeps the remaining criteria (text)
+PASS: Day boundaries do not depend on the session/browser time zone (Tokyo session returns the same Argentina day)
+PASS: CA R4-04.01/02: 5 vs 25 vs 100 km return progressively larger sets; points just inside/outside 25 km are classified correctly
+PASS: CA R4-04.03 / R4-02.02: radius AND category AND dates AND bounds AND text; empty intersection is an empty list
+PASS: CA R4-04.04: zero, negative, NaN, huge, partial and out-of-range origin/radius are rejected in SQL (never silently ignored)
+PASS: Radius crosses the antimeridian in both directions
+PASS: Radius near the pole falls back to latitude + Haversine (no division by zero)
+PASS: Hidden/cancelled/archived/finished events never appear with date and radius filters

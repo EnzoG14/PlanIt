@@ -1,0 +1,6 @@
+PASS: mobile: chronological sender history, Argentina time in Tokyo browser, send/reopen, blank/size validation, lost-response retry same UUID without duplicates; no horizontal overflow
+PASS: mobile: closed composer hidden, empty/error states, denied direct route and cleared cached messages
+PASS: mobile: older history prepends without duplicate or page errors
+PASS: desktop: chronological sender history, Argentina time in Tokyo browser, send/reopen, blank/size validation, lost-response retry same UUID without duplicates; no horizontal overflow
+PASS: desktop: closed composer hidden, empty/error states, denied direct route and cleared cached messages
+PASS: desktop: older history prepends without duplicate or page errors

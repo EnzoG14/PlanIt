@@ -1,0 +1,9 @@
+
+> planit@0.0.0 check:r4:performance
+> node scripts/check-r4-performance.mjs
+
+PASS text: p50=6.46ms p95=6.77ms
+PASS date-radius: p50=1.89ms p95=2.27ms
+PASS suggestions: p50=24.12ms p95=26.44ms
+PASS haversine-only-stage: p50=4.26ms p95=5.01ms
+PASS box-haversine-stage: p50=0.54ms p95=0.65ms

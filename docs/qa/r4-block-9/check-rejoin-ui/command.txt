@@ -1,0 +1,46 @@
+
+> planit@0.0.0 check:rejoin:ui
+> node scripts/check-rejoin-ui.mjs
+
+PASS 320: Asistentes navigation, 30 pending requests, safe identity, Argentina dates, request cards and no overflow
+PASS 320: Pagination retry preserves rows; confirmation cancel/Escape/focus; server full preserves pending
+PASS 320: Single submission; lost approval/rejection reconciled by exact status; failed reconciliation only reads on retry
+PASS 320: Closed approval disabled, rejection allowed; direct wrong-event and participant administration denied
+PASS 320: User first/full request, double click and lost response; pending/rejected/cooldown/eligible/approved/closed, Argentina in Tokyo, read failure blocks resend
+PASS 320: Empty list, missing migration/retry, token refresh revalidation; cancelled uncertain dialog still requires exact read
+PASS 320: Account change discards late administrative response; anonymous route redirects to login
+PASS 360: Asistentes navigation, 30 pending requests, safe identity, Argentina dates, request cards and no overflow
+PASS 360: Pagination retry preserves rows; confirmation cancel/Escape/focus; server full preserves pending
+PASS 360: Single submission; lost approval/rejection reconciled by exact status; failed reconciliation only reads on retry
+PASS 360: Closed approval disabled, rejection allowed; direct wrong-event and participant administration denied
+PASS 360: User first/full request, double click and lost response; pending/rejected/cooldown/eligible/approved/closed, Argentina in Tokyo, read failure blocks resend
+PASS 360: Empty list, missing migration/retry, token refresh revalidation; cancelled uncertain dialog still requires exact read
+PASS 360: Account change discards late administrative response; anonymous route redirects to login
+PASS 375: Asistentes navigation, 30 pending requests, safe identity, Argentina dates, request cards and no overflow
+PASS 375: Pagination retry preserves rows; confirmation cancel/Escape/focus; server full preserves pending
+PASS 375: Single submission; lost approval/rejection reconciled by exact status; failed reconciliation only reads on retry
+PASS 375: Closed approval disabled, rejection allowed; direct wrong-event and participant administration denied
+PASS 375: User first/full request, double click and lost response; pending/rejected/cooldown/eligible/approved/closed, Argentina in Tokyo, read failure blocks resend
+PASS 375: Empty list, missing migration/retry, token refresh revalidation; cancelled uncertain dialog still requires exact read
+PASS 375: Account change discards late administrative response; anonymous route redirects to login
+PASS 390: Asistentes navigation, 30 pending requests, safe identity, Argentina dates, request cards and no overflow
+PASS 390: Pagination retry preserves rows; confirmation cancel/Escape/focus; server full preserves pending
+PASS 390: Single submission; lost approval/rejection reconciled by exact status; failed reconciliation only reads on retry
+PASS 390: Closed approval disabled, rejection allowed; direct wrong-event and participant administration denied
+PASS 390: User first/full request, double click and lost response; pending/rejected/cooldown/eligible/approved/closed, Argentina in Tokyo, read failure blocks resend
+PASS 390: Empty list, missing migration/retry, token refresh revalidation; cancelled uncertain dialog still requires exact read
+PASS 390: Account change discards late administrative response; anonymous route redirects to login
+PASS 768: Asistentes navigation, 30 pending requests, safe identity, Argentina dates, request cards and no overflow
+PASS 768: Pagination retry preserves rows; confirmation cancel/Escape/focus; server full preserves pending
+PASS 768: Single submission; lost approval/rejection reconciled by exact status; failed reconciliation only reads on retry
+PASS 768: Closed approval disabled, rejection allowed; direct wrong-event and participant administration denied
+PASS 768: User first/full request, double click and lost response; pending/rejected/cooldown/eligible/approved/closed, Argentina in Tokyo, read failure blocks resend
+PASS 768: Empty list, missing migration/retry, token refresh revalidation; cancelled uncertain dialog still requires exact read
+PASS 768: Account change discards late administrative response; anonymous route redirects to login
+PASS 1280: Asistentes navigation, 30 pending requests, safe identity, Argentina dates, request cards and no overflow
+PASS 1280: Pagination retry preserves rows; confirmation cancel/Escape/focus; server full preserves pending
+PASS 1280: Single submission; lost approval/rejection reconciled by exact status; failed reconciliation only reads on retry
+PASS 1280: Closed approval disabled, rejection allowed; direct wrong-event and participant administration denied
+PASS 1280: User first/full request, double click and lost response; pending/rejected/cooldown/eligible/approved/closed, Argentina in Tokyo, read failure blocks resend
+PASS 1280: Empty list, missing migration/retry, token refresh revalidation; cancelled uncertain dialog still requires exact read
+PASS 1280: Account change discards late administrative response; anonymous route redirects to login

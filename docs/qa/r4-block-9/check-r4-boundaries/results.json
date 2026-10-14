@@ -1,0 +1,13 @@
+{
+  "environment": "Actual TypeScript validators transpiled in Node; simulated navigator/window; no browser GPS or remote service",
+  "results": [
+    {
+      "test": "D06 valid leap day vs invalid calendar date and inverted range; invalid dates never serialized",
+      "result": "PASS"
+    },
+    {
+      "test": "D08 insecure context, GPS denied/unavailable/timeout/success with actual getCurrentLocation",
+      "result": "PASS"
+    }
+  ]
+}

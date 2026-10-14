@@ -169,7 +169,8 @@ try {
     await shotPage.goto(`${origin}/home?q=rock&categories=${music}`)
     await shotPage.getByRole('heading', { name: 'Música', level: 2 }).waitFor()
     assert.equal(await shotPage.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `no horizontal overflow at ${width}`)
-    const small = await shotPage.evaluate(() => [...document.querySelectorAll('.discovery-category-filters button, .discovery-filters input')].filter(node => node.offsetParent && node.getBoundingClientRect().height < 44).length)
+    // Chromium can report a CSS 44px target as 43.999969px at fractional layout positions.
+    const small = await shotPage.evaluate(() => [...document.querySelectorAll('.discovery-category-filters button, .discovery-filters input')].filter(node => node.offsetParent && node.getBoundingClientRect().height < 43.99).length)
     assert.equal(small, 0, `touch targets >= 44px at ${width}`)
     await shotPage.waitForTimeout(900)
     await shotPage.screenshot({ path: `${output}/home-filters-${width}.png` })

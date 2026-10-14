@@ -1,0 +1,14 @@
+
+> planit@0.0.0 check:gallery
+> node scripts/check-gallery.mjs
+
+PASS: Full migration replay; RLS, minimal grants, authenticated-only RPC and empty search_path
+PASS: Image 10 accepted, 11 rejected; immutable path retry returns same association at full capacity
+PASS: Account B denied RPC, REST-equivalent INSERT/DELETE, Storage insert/delete/overwrite and orphan listing
+PASS: Order persists; list cover follows sort_order; stale session and duplicate IDs rejected atomically
+PASS: Unlink is idempotent; compact order, shared file metadata and physical object retained
+PASS: Invalid MIME, size, empty and interrupted uploads create no false record; unregistered cleanup/recovery works
+PASS: Concurrent last image slot accepts exactly one upload
+PASS: Concurrent Storage DELETE waits for registration and cannot delete committed media
+PASS: Deletion winning the race leaves no false image; frozen snapshots rejected
+PASS: Missing identity and anonymous execution denied

@@ -1,0 +1,25 @@
+
+> planit@0.0.0 check:event-access:ui
+> node scripts/check-event-access-ui.mjs
+
+PASS: 320px active/revoked, double-click protection, dialog focus/Escape/return, revoke/restore reconciliation and management link
+PASS: 375px active/revoked, double-click protection, dialog focus/Escape/return, revoke/restore reconciliation and management link
+PASS: 390px active/revoked, double-click protection, dialog focus/Escape/return, revoke/restore reconciliation and management link
+PASS: 768px active/revoked, double-click protection, dialog focus/Escape/return, revoke/restore reconciliation and management link
+PASS: 1280px active/revoked, double-click protection, dialog focus/Escape/return, revoke/restore reconciliation and management link
+PASS: ended: read-only/unavailable/retry
+PASS: cancelled: read-only/unavailable/retry
+PASS: archived: read-only/unavailable/retry
+PASS: public: read-only/unavailable/retry
+PASS: error: read-only/unavailable/retry
+PASS: network-before: uncertain-state reconciliation / permission or missing-grant feedback
+PASS: network-after: uncertain-state reconciliation / permission or missing-grant feedback
+PASS: denied: uncertain-state reconciliation / permission or missing-grant feedback
+PASS: missing: uncertain-state reconciliation / permission or missing-grant feedback
+PASS: Cursor append deduplicated; stale active response discarded after filter switch
+PASS: Empty grants explain invitation without enrolment
+PASS: Non-owner denied direct route
+PASS: Anonymous direct route requires Auth
+PASS: Visible hidden detail revalidates after 30s, clears signed media/data and does not renew denied media; TTL 60s
+PASS: Existing chat revalidation clears private history and composer when permission is lost
+PASS: 320px enlarged text and low-height dialog remains scrollable

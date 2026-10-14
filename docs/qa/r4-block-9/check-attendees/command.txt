@@ -1,0 +1,11 @@
+
+> planit@0.0.0 check:attendees
+> node scripts/check-attendees.mjs
+
+PASS: Full migration replay; RLS, unchanged direct mutation grants, authenticated-only RPC and empty search_path
+PASS: Owner-only empty/populated projection; other event, participant, stranger, anon and missing identity denied; private profiles inaccessible
+PASS: Literal case-insensitive name search before stable pagination; count unaffected by filters; invalid queries rejected
+PASS: Removal retains row, one actor/reason history transition, frees capacity; RPC/direct chat reads and sends denied; rejoin and leave cannot reset removed
+PASS: History failure rolls back state and capacity; cancelled or nonexistent participation rejected
+PASS: Upcoming/ongoing removal allowed; ended/cancelled/archived read-only; frozen isolation rejected
+PASS: Real lock races: duplicate removal, withdrawal in both orders, released last seat, chat send before/after removal

@@ -1,0 +1,66 @@
+
+> planit@0.0.0 check:event-actions:ui
+> node scripts/check-event-actions-ui.mjs
+
+PASS 320: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 320: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 320: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 320: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 320: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 320: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 320: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 320: Changing source discards late source response and local form data
+PASS 320: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 320: Archived chat keeps historical messages and removes composer
+PASS 360: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 360: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 360: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 360: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 360: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 360: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 360: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 360: Auth token renewal preserves edits without source refetch; new account clears form and reauthorizes source; original account gets fresh data
+PASS 360: Changing source discards late source response and local form data
+PASS 360: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 360: Archived chat keeps historical messages and removes composer
+PASS 360: Late publication response from previous account cannot navigate or expose success in new account; logout clears form
+PASS 375: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 375: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 375: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 375: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 375: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 375: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 375: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 375: Changing source discards late source response and local form data
+PASS 375: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 375: Archived chat keeps historical messages and removes composer
+PASS 390: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 390: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 390: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 390: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 390: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 390: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 390: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 390: Changing source discards late source response and local form data
+PASS 390: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 390: Archived chat keeps historical messages and removes composer
+PASS 768: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 768: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 768: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 768: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 768: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 768: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 768: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 768: Changing source discards late source response and local form data
+PASS 768: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 768: Archived chat keeps historical messages and removes composer
+PASS 1280: Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing
+PASS 1280: Rejected action reports no success; confirmation executes once and reconsults detail/participation
+PASS 1280: Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter
+PASS 1280: Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original
+PASS 1280: Future Argentina dates/required validation, editable fields, fresh ID, publication recovery without second INSERT; original unchanged
+PASS 1280: Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login
+PASS 1280: Missing source RPC shows retry; inactive source category requires an available selection before publish
+PASS 1280: Changing source discards late source response and local form data
+PASS 1280: Ended cancel hidden; same accessible dialog from Organizo; list reloaded after successful archive
+PASS 1280: Archived chat keeps historical messages and removes composer
