@@ -1,0 +1,15 @@
+{
+  "name": "build",
+  "stage": "checks",
+  "attempt": 2,
+  "script": null,
+  "command": "npm run build",
+  "base": "8dfbdd32e9dd6a4be7739df5c4a4be87b49f2df2",
+  "started_at": "2026-10-15T23:51:05.175Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": null,
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/followup/20261015-01/regressions/checks/build/attempt-2",
+  "finished_at": "2026-10-15T23:51:16.378Z"
+}

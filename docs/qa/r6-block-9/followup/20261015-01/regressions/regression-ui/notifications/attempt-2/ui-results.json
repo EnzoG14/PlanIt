@@ -1,0 +1,89 @@
+{
+  "results": [
+    {
+      "test": "mobile: CA-01/02 navigation, 30 persisted fixtures, full Argentina date/time even with Tokyo device, read/unread and absent body/target",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "mobile: keyset next page and no duplicates",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "mobile: failed marking stays unread; success and reload reflect persisted read state",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "mobile: access revoked after listing prevents navigation and removes stale action",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "mobile: authorized target opens existing event detail",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "mobile: CA-04 honest empty state without generated notices",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "mobile: loading, network error, missing migration and retry recovery",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "mobile: focus refresh and cross-tab account change discard old account rows and late A response",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "desktop: CA-01/02 navigation, 30 persisted fixtures, full Argentina date/time even with Tokyo device, read/unread and absent body/target",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "desktop: keyset next page and no duplicates",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "desktop: failed marking stays unread; success and reload reflect persisted read state",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "desktop: access revoked after listing prevents navigation and removes stale action",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "desktop: authorized target opens existing event detail",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "desktop: CA-04 honest empty state without generated notices",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "desktop: loading, network error, missing migration and retry recovery",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "desktop: focus refresh and cross-tab account change discard old account rows and late A response",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    },
+    {
+      "test": "Anonymous direct route redirects to login",
+      "result": "PASS",
+      "environment": "Playwright fixtures, not real Supabase HTTP/JWT"
+    }
+  ]
+}

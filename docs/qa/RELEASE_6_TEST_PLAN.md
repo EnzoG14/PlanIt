@@ -1,5 +1,8 @@
 # PlanIt — Release 6 · Plan de pruebas técnicas y de aceptación
 
+**Seguimiento B9 — 15/10/2026:** dos P2 resueltos; HTTP/JWT real, Realtime real, UI autenticada y zoom nativo Edge comprobados. [Resultados y alcance](r6-block-9/followup/summary.json). NO-GO: aceptación humana y dispositivos pendientes. El informe B9 original se conserva como antecedente.
+
+
 **Ejecución B9 — 15/10/2026:** [comandos/casos](r6-block-9/README.md), [24 CA y fuentes](r6-block-9/summary.json), [reporte](RELEASE_6_TEST_REPORT.md). Capas independientes; NO-GO. D04/D08 B3 aceptan exactitud y riesgo residual temporal/multievento: TC02-04 documenta ese límite y no exige anonimato absoluto. D05/D06 B5 sustituyen paginación por snapshot único≤5000filas/10MiB/15s; probar límites completos y ausencia de archivo parcial. Las propuestas históricas inferiores se interpretan con estas adendas.
 
 **Versión:** 0.1 — 14/10/2026. **Estado:** plan NO ejecutado. **Contrato:** [24 CA oficiales](../requirements/RELEASE_6_REQUIREMENTS.md). **Tracking:** [matriz CA](RELEASE_6_ACCEPTANCE.md).  

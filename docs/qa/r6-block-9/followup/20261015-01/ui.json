@@ -1,0 +1,1941 @@
+{
+  "run_id": "20261015-01",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "captured_at": "2026-10-15T23:35:47.971Z",
+  "environment": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures",
+  "result": "PASS",
+  "results": [
+    {
+      "test": "analytics actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 320,
+      "result": "PASS",
+      "geometry": {
+        "document": 320,
+        "viewport": 320,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 50,
+            "right": 102,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 106,
+            "right": 158,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 162,
+            "right": 214,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 218,
+            "right": 270,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "analytics actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 320,
+      "result": "PASS",
+      "geometry": {
+        "document": 320,
+        "viewport": 320,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 52,
+            "right": 156,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 164,
+            "right": 268,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 52,
+            "right": 156,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 164,
+            "right": 268,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 320,
+      "result": "PASS",
+      "geometry": {
+        "document": 320,
+        "viewport": 320,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 28.78125,
+            "right": 80.78125,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 84.78125,
+            "right": 136.78125,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 140.78125,
+            "right": 291.203125,
+            "width": 150.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 134,
+            "right": 186,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 320,
+      "result": "PASS",
+      "geometry": {
+        "document": 320,
+        "viewport": 320,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 52,
+            "right": 156,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 164,
+            "right": 268,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 28,
+            "right": 292,
+            "width": 264,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 108,
+            "right": 212,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 320,
+      "result": "PASS",
+      "geometry": {
+        "document": 320,
+        "viewport": 320,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 50,
+            "right": 102,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 106,
+            "right": 158,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 162,
+            "right": 214,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 218,
+            "right": 270,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 320,
+      "result": "PASS",
+      "geometry": {
+        "document": 320,
+        "viewport": 320,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 52,
+            "right": 156,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 164,
+            "right": 268,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 52,
+            "right": 156,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 164,
+            "right": 268,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 320,
+      "result": "PASS",
+      "geometry": {
+        "document": 320,
+        "viewport": 320,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 16.7890625,
+            "right": 62.7890625,
+            "width": 46,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 64.7890625,
+            "right": 110.7890625,
+            "width": 46,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 112.7890625,
+            "right": 255.2109375,
+            "width": 142.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 257.2109375,
+            "right": 303.2109375,
+            "width": 46,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 320,
+      "result": "PASS",
+      "geometry": {
+        "document": 320,
+        "viewport": 320,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 66,
+            "right": 158,
+            "width": 92,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 162,
+            "right": 254,
+            "width": 92,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 28,
+            "right": 292,
+            "width": 264,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 114,
+            "right": 206,
+            "width": 92,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "analytics actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 360,
+      "result": "PASS",
+      "geometry": {
+        "document": 360,
+        "viewport": 360,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 70,
+            "right": 122,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 126,
+            "right": 178,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 182,
+            "right": 234,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 238,
+            "right": 290,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "analytics actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 360,
+      "result": "PASS",
+      "geometry": {
+        "document": 360,
+        "viewport": 360,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 72,
+            "right": 176,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 184,
+            "right": 288,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 72,
+            "right": 176,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 184,
+            "right": 288,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 360,
+      "result": "PASS",
+      "geometry": {
+        "document": 360,
+        "viewport": 360,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 20.7890625,
+            "right": 72.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 76.7890625,
+            "right": 128.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 132.7890625,
+            "right": 283.2109375,
+            "width": 150.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 287.2109375,
+            "right": 339.2109375,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 360,
+      "result": "PASS",
+      "geometry": {
+        "document": 360,
+        "viewport": 360,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 72,
+            "right": 176,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 184,
+            "right": 288,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 29.578125,
+            "right": 330.40625,
+            "width": 300.828125,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 128,
+            "right": 232,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 360,
+      "result": "PASS",
+      "geometry": {
+        "document": 360,
+        "viewport": 360,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 70,
+            "right": 122,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 126,
+            "right": 178,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 182,
+            "right": 234,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 238,
+            "right": 290,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 360,
+      "result": "PASS",
+      "geometry": {
+        "document": 360,
+        "viewport": 360,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 72,
+            "right": 176,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 184,
+            "right": 288,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 72,
+            "right": 176,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 184,
+            "right": 288,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 360,
+      "result": "PASS",
+      "geometry": {
+        "document": 360,
+        "viewport": 360,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 20.7890625,
+            "right": 72.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 76.7890625,
+            "right": 128.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 132.7890625,
+            "right": 283.2109375,
+            "width": 150.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 287.2109375,
+            "right": 339.2109375,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 360,
+      "result": "PASS",
+      "geometry": {
+        "document": 360,
+        "viewport": 360,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 72,
+            "right": 176,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 184,
+            "right": 288,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 29.578125,
+            "right": 330.40625,
+            "width": 300.828125,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 128,
+            "right": 232,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "analytics actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 375,
+      "result": "PASS",
+      "geometry": {
+        "document": 375,
+        "viewport": 375,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 77.5,
+            "right": 129.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 133.5,
+            "right": 185.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 189.5,
+            "right": 241.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 245.5,
+            "right": 297.5,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "analytics actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 375,
+      "result": "PASS",
+      "geometry": {
+        "document": 375,
+        "viewport": 375,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 79.5,
+            "right": 183.5,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 191.5,
+            "right": 295.5,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 79.5,
+            "right": 183.5,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 191.5,
+            "right": 295.5,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 375,
+      "result": "PASS",
+      "geometry": {
+        "document": 375,
+        "viewport": 375,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 28.2890625,
+            "right": 80.2890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 84.2890625,
+            "right": 136.2890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 140.2890625,
+            "right": 290.7109375,
+            "width": 150.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 294.7109375,
+            "right": 346.7109375,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 375,
+      "result": "PASS",
+      "geometry": {
+        "document": 375,
+        "viewport": 375,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 79.5,
+            "right": 183.5,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 191.5,
+            "right": 295.5,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 37.078125,
+            "right": 337.90625,
+            "width": 300.828125,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 135.5,
+            "right": 239.5,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 375,
+      "result": "PASS",
+      "geometry": {
+        "document": 375,
+        "viewport": 375,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 77.5,
+            "right": 129.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 133.5,
+            "right": 185.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 189.5,
+            "right": 241.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 245.5,
+            "right": 297.5,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 375,
+      "result": "PASS",
+      "geometry": {
+        "document": 375,
+        "viewport": 375,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 79.5,
+            "right": 183.5,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 191.5,
+            "right": 295.5,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 79.5,
+            "right": 183.5,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 191.5,
+            "right": 295.5,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 375,
+      "result": "PASS",
+      "geometry": {
+        "document": 375,
+        "viewport": 375,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 28.2890625,
+            "right": 80.2890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 84.2890625,
+            "right": 136.2890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 140.2890625,
+            "right": 290.7109375,
+            "width": 150.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 294.7109375,
+            "right": 346.7109375,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 375,
+      "result": "PASS",
+      "geometry": {
+        "document": 375,
+        "viewport": 375,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 79.5,
+            "right": 183.5,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 191.5,
+            "right": 295.5,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 37.078125,
+            "right": 337.90625,
+            "width": 300.828125,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 135.5,
+            "right": 239.5,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "Actual browser downloads equal real authorized RPC serialization and visible default30 period",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "test": "analytics actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 390,
+      "result": "PASS",
+      "geometry": {
+        "document": 390,
+        "viewport": 390,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 85,
+            "right": 137,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 141,
+            "right": 193,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 197,
+            "right": 249,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 253,
+            "right": 305,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "analytics actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 390,
+      "result": "PASS",
+      "geometry": {
+        "document": 390,
+        "viewport": 390,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 31,
+            "right": 135,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 143,
+            "right": 247,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 255,
+            "right": 359,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 143,
+            "right": 247,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 390,
+      "result": "PASS",
+      "geometry": {
+        "document": 390,
+        "viewport": 390,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 35.7890625,
+            "right": 87.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 91.7890625,
+            "right": 143.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 147.7890625,
+            "right": 298.2109375,
+            "width": 150.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 302.2109375,
+            "right": 354.2109375,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 390,
+      "result": "PASS",
+      "geometry": {
+        "document": 390,
+        "viewport": 390,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 87,
+            "right": 191,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 199,
+            "right": 303,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 44.578125,
+            "right": 345.40625,
+            "width": 300.828125,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 143,
+            "right": 247,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 390,
+      "result": "PASS",
+      "geometry": {
+        "document": 390,
+        "viewport": 390,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 85,
+            "right": 137,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 141,
+            "right": 193,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 197,
+            "right": 249,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 253,
+            "right": 305,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 390,
+      "result": "PASS",
+      "geometry": {
+        "document": 390,
+        "viewport": 390,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 31,
+            "right": 135,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 143,
+            "right": 247,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 255,
+            "right": 359,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 143,
+            "right": 247,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 390,
+      "result": "PASS",
+      "geometry": {
+        "document": 390,
+        "viewport": 390,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 35.7890625,
+            "right": 87.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 91.7890625,
+            "right": 143.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 147.7890625,
+            "right": 298.2109375,
+            "width": 150.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 302.2109375,
+            "right": 354.2109375,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 390,
+      "result": "PASS",
+      "geometry": {
+        "document": 390,
+        "viewport": 390,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 87,
+            "right": 191,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 199,
+            "right": 303,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 44.578125,
+            "right": 345.40625,
+            "width": 300.828125,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 143,
+            "right": 247,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "analytics actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 768,
+      "result": "PASS",
+      "geometry": {
+        "document": 768,
+        "viewport": 768,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 274,
+            "right": 326,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 330,
+            "right": 382,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 386,
+            "right": 438,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 442,
+            "right": 494,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "analytics actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 768,
+      "result": "PASS",
+      "geometry": {
+        "document": 768,
+        "viewport": 768,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 164,
+            "right": 268,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 276,
+            "right": 380,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 388,
+            "right": 492,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 500,
+            "right": 604,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 768,
+      "result": "PASS",
+      "geometry": {
+        "document": 768,
+        "viewport": 768,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 224.7890625,
+            "right": 276.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 280.7890625,
+            "right": 332.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 336.7890625,
+            "right": 487.2109375,
+            "width": 150.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 491.2109375,
+            "right": 543.2109375,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 768,
+      "result": "PASS",
+      "geometry": {
+        "document": 768,
+        "viewport": 768,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 65.5859375,
+            "right": 169.5859375,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 177.5859375,
+            "right": 281.5859375,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 289.5859375,
+            "right": 590.4140625,
+            "width": 300.828125,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 598.4140625,
+            "right": 702.4140625,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 768,
+      "result": "PASS",
+      "geometry": {
+        "document": 768,
+        "viewport": 768,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 274,
+            "right": 326,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 330,
+            "right": 382,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 386,
+            "right": 438,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 442,
+            "right": 494,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 768,
+      "result": "PASS",
+      "geometry": {
+        "document": 768,
+        "viewport": 768,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 164,
+            "right": 268,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 276,
+            "right": 380,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 388,
+            "right": 492,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 500,
+            "right": 604,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 768,
+      "result": "PASS",
+      "geometry": {
+        "document": 768,
+        "viewport": 768,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 224.7890625,
+            "right": 276.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 280.7890625,
+            "right": 332.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 336.7890625,
+            "right": 487.2109375,
+            "width": 150.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 491.2109375,
+            "right": 543.2109375,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 768,
+      "result": "PASS",
+      "geometry": {
+        "document": 768,
+        "viewport": 768,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 65.5859375,
+            "right": 169.5859375,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 177.5859375,
+            "right": 281.5859375,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 289.5859375,
+            "right": 590.4140625,
+            "width": 300.828125,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 598.4140625,
+            "right": 702.4140625,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "analytics actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 1280,
+      "result": "PASS",
+      "geometry": {
+        "document": 1280,
+        "viewport": 1280,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 530,
+            "right": 582,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 586,
+            "right": 638,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 642,
+            "right": 694,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 698,
+            "right": 750,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "analytics actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 1280,
+      "result": "PASS",
+      "geometry": {
+        "document": 1280,
+        "viewport": 1280,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 420,
+            "right": 524,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 532,
+            "right": 636,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 644,
+            "right": 748,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 756,
+            "right": 860,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 1280,
+      "result": "PASS",
+      "geometry": {
+        "document": 1280,
+        "viewport": 1280,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 480.7890625,
+            "right": 532.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 536.7890625,
+            "right": 588.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 592.7890625,
+            "right": 743.2109375,
+            "width": 150.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 747.2109375,
+            "right": 799.2109375,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "compare actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 1280,
+      "result": "PASS",
+      "geometry": {
+        "document": 1280,
+        "viewport": 1280,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 321.5859375,
+            "right": 425.5859375,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 433.5859375,
+            "right": 537.5859375,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 545.5859375,
+            "right": 846.4140625,
+            "width": 300.828125,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 854.4140625,
+            "right": 958.4140625,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 1280,
+      "result": "PASS",
+      "geometry": {
+        "document": 1280,
+        "viewport": 1280,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 530,
+            "right": 582,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 586,
+            "right": 638,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 642,
+            "right": 694,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 698,
+            "right": 750,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "notifications actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 1280,
+      "result": "PASS",
+      "geometry": {
+        "document": 1280,
+        "viewport": 1280,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 420,
+            "right": 524,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 532,
+            "right": 636,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 644,
+            "right": 748,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 756,
+            "right": 860,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 1280,
+      "result": "PASS",
+      "geometry": {
+        "document": 1280,
+        "viewport": 1280,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 480.7890625,
+            "right": 532.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 536.7890625,
+            "right": 588.7890625,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 592.7890625,
+            "right": 743.2109375,
+            "width": 150.421875,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 747.2109375,
+            "right": 799.2109375,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "my-events actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 1280,
+      "result": "PASS",
+      "geometry": {
+        "document": 1280,
+        "viewport": 1280,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 321.5859375,
+            "right": 425.5859375,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 433.5859375,
+            "right": 537.5859375,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 545.5859375,
+            "right": 846.4140625,
+            "width": 300.828125,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 854.4140625,
+            "right": 958.4140625,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "Actual JWT A→B account switch clears analytics; unauthorized RPC cannot restore owner data",
+      "result": "PASS"
+    }
+  ],
+  "transport": "Real Auth/REST/WebSocket; no intercepted RPCs or synthetic tokens",
+  "native_browser_zoom": "NOT RUN; CSS zoom and text scaling are separate",
+  "screenshots": "docs/qa/r6-block-9/followup/20261015-01/ui-1792107301349"
+}

@@ -1,0 +1,420 @@
+{
+  "decision": "NO-GO",
+  "state": "Implementado; QA humana/dispositivos pendiente",
+  "accepted_integral": 0,
+  "criteria": [
+    {
+      "id": "RF-R6-01.CA-01",
+      "literal": "El organizador puede ver para uno de sus eventos el cupo configurado, inscripciones vigentes, lugares disponibles y porcentaje de ocupación.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-01.CA-02",
+      "literal": "Los lugares disponibles corresponden al cupo menos las inscripciones vigentes, sin mostrar valores negativos; el porcentaje es consistente con esos datos.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-01.CA-03",
+      "literal": "Las altas y bajas de participantes modifican los indicadores después de actualizar los datos.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-01.CA-04",
+      "literal": "El usuario no puede consultar el panel de gestión de eventos ajenos mediante acceso directo.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-02.CA-01",
+      "literal": "El organizador puede acceder a estadísticas de uno de sus eventos y visualizar distribuciones de asistentes por edad y sexo cuando existan datos autorizados.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-02.CA-02",
+      "literal": "El panel permite consultar la evolución de nuevas inscripciones dentro de una ventana inicial definida, de forma coherente con los registros del evento.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-02.CA-03",
+      "literal": "Las cantidades y agrupaciones son consistentes con el conjunto de asistentes considerado; se especifica cuándo faltan datos para algún grupo.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-02.CA-04",
+      "literal": "Si no hay suficientes datos se muestran indicadores vacíos o informativos, sin gráficos con valores inventados.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-03.CA-01",
+      "literal": "El organizador puede elegir entre períodos disponibles o un intervalo válido de análisis para su evento.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-03.CA-02",
+      "literal": "Al cambiar el período, se recalculan y actualizan los indicadores temporales utilizando sólo datos comprendidos en el intervalo seleccionado.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-03.CA-03",
+      "literal": "El sistema rechaza fechas de inicio posteriores a la fecha final y presenta un mensaje claro.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-03.CA-04",
+      "literal": "Los resultados de un período distinto no permanecen visibles como si correspondieran al nuevo filtro, y la consulta sólo considera eventos autorizados.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-04.CA-01",
+      "literal": "El organizador puede solicitar un archivo CSV de asistentes y estadísticas de uno de sus eventos.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-04.CA-02",
+      "literal": "El archivo generado contiene encabezados identificables y valores consistentes con los datos autorizados y los filtros aplicados.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-04.CA-03",
+      "literal": "El archivo puede abrirse con herramientas de lectura CSV y no incluye información privada que el organizador no tenga autorización para exportar.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-04.CA-04",
+      "literal": "Si no existen datos o la exportación falla, el sistema lo informa y no presenta una exportación incompleta como exitosa.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-05.CA-01",
+      "literal": "Cuando un evento alcanza su cupo máximo mediante una inscripción confirmada, se registra un aviso dirigido al organizador.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "PASS real",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/realtime.json",
+        "docs/qa/r6-block-9/followup/20261015-01/browser.json"
+      ]
+    },
+    {
+      "id": "RF-R6-05.CA-02",
+      "literal": "El aviso identifica el evento que alcanzó su capacidad y está disponible en la bandeja de notificaciones de la cuenta correspondiente.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "PASS real",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/realtime.json",
+        "docs/qa/r6-block-9/followup/20261015-01/browser.json"
+      ]
+    },
+    {
+      "id": "RF-R6-05.CA-03",
+      "literal": "No se genera un aviso de cupo completo mientras queden lugares disponibles.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "PASS real",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/realtime.json",
+        "docs/qa/r6-block-9/followup/20261015-01/browser.json"
+      ]
+    },
+    {
+      "id": "RF-R6-05.CA-04",
+      "literal": "El evento no genera avisos duplicados por reintentos del mismo cambio de estado y otras cuentas no pueden consultar el aviso privado.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "PASS real",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/realtime.json",
+        "docs/qa/r6-block-9/followup/20261015-01/browser.json"
+      ]
+    },
+    {
+      "id": "RF-R6-06.CA-01",
+      "literal": "El organizador puede seleccionar al menos dos eventos de su autoría para incluirlos en una comparación.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-06.CA-02",
+      "literal": "La comparación muestra, para cada evento seleccionado, la cantidad de inscriptos y el porcentaje de ocupación utilizando el mismo criterio de cálculo.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-06.CA-03",
+      "literal": "Al cambiar los eventos seleccionados, la vista se actualiza y permite identificar las diferencias entre sus valores.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    },
+    {
+      "id": "RF-R6-06.CA-04",
+      "literal": "No se permite incluir eventos ajenos ni presentar un porcentaje inválido cuando un evento no tiene un cupo utilizable; se informa esa situación.",
+      "http_jwt": "PASS parcial",
+      "ui": "PASS parcial; fixtures B9 + app/JWT real follow-up",
+      "realtime": "N/A; no live analytics subscription required",
+      "integral": "NOT RUN",
+      "human": "PENDIENTE",
+      "evidence": [
+        "docs/qa/r6-block-9/followup/20261015-01/http.json",
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json"
+      ]
+    }
+  ],
+  "layers": {
+    "prepare": {
+      "result": "PASS",
+      "cases": 2,
+      "evidence": "docs/qa/r6-block-9/followup/20261015-01/prepare.json",
+      "scope": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures"
+    },
+    "http": {
+      "result": "PASS",
+      "cases": 11,
+      "evidence": "docs/qa/r6-block-9/followup/20261015-01/http.json",
+      "scope": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures"
+    },
+    "realtime": {
+      "result": "PASS",
+      "cases": 4,
+      "evidence": "docs/qa/r6-block-9/followup/20261015-01/realtime.json",
+      "scope": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures"
+    },
+    "browser": {
+      "result": "PASS",
+      "cases": 2,
+      "evidence": "docs/qa/r6-block-9/followup/20261015-01/browser.json",
+      "scope": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures"
+    },
+    "ui": {
+      "result": "PASS",
+      "cases": 50,
+      "evidence": "docs/qa/r6-block-9/followup/20261015-02/ui.json",
+      "scope": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures"
+    },
+    "native": {
+      "result": "PASS",
+      "cases": 24,
+      "evidence": "docs/qa/r6-block-9/followup/20261015-02/native.json",
+      "scope": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures"
+    },
+    "close": {
+      "result": "PASS",
+      "cases": 12,
+      "evidence": "docs/qa/r6-block-9/followup/20261015-01/close.json",
+      "scope": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures"
+    },
+    "close_visual": {
+      "result": "PASS",
+      "cases": 11,
+      "evidence": "docs/qa/r6-block-9/followup/20261015-02/close.json",
+      "scope": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures"
+    },
+    "checks": {
+      "result": "PASS",
+      "cases": 5,
+      "evidence": "docs/qa/r6-block-9/followup/20261015-01/regressions/checks.json"
+    },
+    "regression-ui": {
+      "result": "PASS",
+      "cases": 5,
+      "evidence": "docs/qa/r6-block-9/followup/20261015-01/regressions/regression-ui.json"
+    }
+  },
+  "source_sha256": {
+    "src/index.css": "febe8ecbe12c8bcd1727dd413e126d0caec0576dd5c1eeabef8b291b3d20d396",
+    "src/styles/amanecer.css": "f65898c940f24f0beac14344aa5479eb6fa7455e394e878273773223d66f2fae",
+    "src/pages/event-analytics.css": "de26206649bcdf4e3c5ace38e0f6d1bc966a0513b8fa7a0808ca663e83918a42",
+    "src/pages/my-events.css": "6944533cd2657b5c68b3022cd1e974640fd1f4353641930f04fb5574790374d4",
+    "src/components/AppLayout.tsx": "26e5e6e218eb7226ad5149132e8399822adb18319a580c3789bde73505f5350c",
+    "scripts/check-my-events-refresh-ui.mjs": "084b5d76d83cefbc4acf45eb5e3a25777ae457c7cd58575bdaa2d10f12d470e9"
+  },
+  "defects": [
+    {
+      "id": "R6-B9-01",
+      "state": "RESUELTO",
+      "proof": [
+        "docs/qa/r6-block-9/followup/20261015-02/ui.json",
+        "docs/qa/r6-block-9/followup/20261015-02/native.json"
+      ],
+      "scope": "Reflow/legible event titles and reachable last controls; CSS/native200% six widths four routes"
+    },
+    {
+      "id": "R6-B9-02",
+      "state": "RESUELTO",
+      "proof": "docs/qa/r6-block-9/followup/20261015-01/regressions/regression-ui.json",
+      "scope": "Current profile keeps one closed functional Account menu; keyboard/focus/back covered"
+    }
+  ],
+  "remote_footprint": {
+    "dedicated_users_created": 14,
+    "existing_users_verified_without_profile_changes": 2,
+    "qa_users_reused_for_visual_confirmation": 14,
+    "archived_events": 23,
+    "deleted_users": 0,
+    "deleted_events": 0,
+    "ddl": 0,
+    "migrations": 0
+  },
+  "remaining": [
+    "Human acceptance of 24 CA",
+    "Physical mobile/device/assistive reader validation",
+    "Actual Excel application; CSV parser and browser bytes checked separately"
+  ],
+  "historical_evidence": "Original B9 files and their 600 hashes retained unchanged; failed follow-up attempts retained as previous snapshots"
+}

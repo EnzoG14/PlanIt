@@ -1,0 +1,56 @@
+{
+  "run_id": "20261015-02",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "captured_at": "2026-10-15T23:52:31.030Z",
+  "environment": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures",
+  "result": "PASS",
+  "results": [
+    {
+      "test": "Manifest event archived preserving history: QA R6 20261015-02 occupancy",
+      "result": "PASS"
+    },
+    {
+      "test": "Manifest event archived preserving history: QA R6 20261015-02 compare",
+      "result": "PASS"
+    },
+    {
+      "test": "Manifest event archived preserving history: QA R6 20261015-02 empty",
+      "result": "PASS"
+    },
+    {
+      "test": "Manifest event archived preserving history: QA R6 20261015-02 demo",
+      "result": "PASS"
+    },
+    {
+      "test": "Manifest event archived preserving history: QA R6 20261015-02 small",
+      "result": "PASS"
+    },
+    {
+      "test": "Manifest event archived preserving history: QA R6 20261015-02 hidden",
+      "result": "PASS"
+    },
+    {
+      "test": "Manifest event archived preserving history: QA R6 20261015-02 cancelled",
+      "result": "PASS"
+    },
+    {
+      "test": "Manifest event archived preserving history: QA R6 20261015-02 archived",
+      "result": "PASS"
+    },
+    {
+      "test": "Manifest event archived preserving history: QA R6 20261015-02 foreign",
+      "result": "PASS"
+    },
+    {
+      "test": "Manifest event archived preserving history: QA R6 20261015-02 realtime",
+      "result": "PASS"
+    },
+    {
+      "test": "Manifest event archived preserving history: QA R6 20261015-02 race",
+      "result": "PASS"
+    }
+  ],
+  "deleted_users": 0,
+  "deleted_events": 0,
+  "history_preserved": true
+}

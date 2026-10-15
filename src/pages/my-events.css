@@ -123,3 +123,17 @@
   .my-events-page .compact-event-body h3 { font-size: 18px; }
 }
 .my-events-compare-link { margin: 8px 0 0; }
+
+.my-events-page { container-type: inline-size; }
+.my-events-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.my-events-tabs button { overflow-wrap: anywhere; }
+@container (max-width: 239px) {
+  .my-events-tabs { grid-template-columns: minmax(0, 1fr); }
+  .my-events-slot { grid-template-columns: minmax(0, 1fr); }
+  .my-events-page .compact-event-main { flex-direction: column; }
+  .my-events-page .has-menu .compact-event-main { padding-right: 0; padding-top: 40px; }
+  .my-events-page .compact-event-body { width: 100%; flex: auto; }
+  .my-events-page .compact-event-body h3, .my-events-page .compact-event-location { display: block; -webkit-line-clamp: unset; }
+  .my-events-slot time { padding-top: 4px; }
+  .my-events-page .event-state, .my-events-page .category-chip { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+}

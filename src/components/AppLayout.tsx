@@ -46,6 +46,19 @@ function LayoutContent() {
     window.scrollTo(0, 0)
   }, [pathname])
   useLayoutEffect(() => {
+    const navigation = shell.current?.querySelector<HTMLElement>('.primary-nav')
+    if (!navigation) return
+    const root = document.documentElement
+    const reserve = () => {
+      root.style.setProperty('--dock-space', navigation.offsetHeight + 36 + 'px')
+      const zoom = Number.parseFloat(getComputedStyle(document.body).zoom) || 1
+      root.style.setProperty('--dock-scroll-space', navigation.getBoundingClientRect().height + 36 * zoom + 'px')
+    }
+    const observer = new ResizeObserver(reserve)
+    reserve(); observer.observe(navigation)
+    return () => { observer.disconnect(); root.style.removeProperty('--dock-space'); root.style.removeProperty('--dock-scroll-space') }
+  }, [isAuth, isChat])
+  useLayoutEffect(() => {
     if (!isChat) return
     const element = shell.current
     if (!element) return

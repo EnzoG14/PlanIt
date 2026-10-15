@@ -120,7 +120,10 @@
     "check:r6:release:audit": "node scripts/check-r6-release-audit.mjs",
     "check:r6:release:report": "node scripts/check-r6-release-report.mjs",
     "check:r6:release:ui": "node scripts/check-r6-release-ui.mjs",
-    "check:r6:release:pwa": "node scripts/check-r6-release-pwa.mjs"
+    "check:r6:release:pwa": "node scripts/check-r6-release-pwa.mjs",
+    "check:r6:live": "node scripts/check-r6-live.mjs",
+    "check:r6:followup": "node scripts/check-r6-followup.mjs",
+    "check:r6:followup:report": "node scripts/check-r6-followup-report.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",

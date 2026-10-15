@@ -1,0 +1,15 @@
+{
+  "name": "r5-request-notifications",
+  "stage": "regression-ui",
+  "attempt": 1,
+  "script": "scripts/check-r5-request-notifications-ui.mjs",
+  "command": "node scripts/check-r5-request-notifications-ui.mjs",
+  "base": "8dfbdd32e9dd6a4be7739df5c4a4be87b49f2df2",
+  "started_at": "2026-10-15T23:35:54.128Z",
+  "environment": "Compiled React app, synthetic Auth/REST/WebSocket fixtures; no real JWT/Realtime",
+  "source_sha256": "3cea57bf17c327420e2ac76d4568ba7784a8d78f76e380e63c9973eebadb79b2",
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/followup/20261015-01/regressions/regression-ui/r5-request-notifications/attempt-1",
+  "finished_at": "2026-10-15T23:36:03.471Z"
+}

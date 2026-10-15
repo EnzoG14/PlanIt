@@ -1,5 +1,8 @@
 # PlanIt — Plan técnico de implementación Release 6 · Gestión avanzada y analítica
 
+**Seguimiento B9 — 15/10/2026:** dos P2 resueltos; HTTP/JWT real, Realtime real, UI autenticada y zoom nativo Edge comprobados. [Resultados y alcance](../qa/r6-block-9/followup/summary.json). NO-GO: aceptación humana y dispositivos pendientes. El informe B9 original se conserva como antecedente.
+
+
 **B9 — 15/10/2026:** auditoría de B0–B8 integrados desde120d50a; [reporte y NO-GO](../qa/RELEASE_6_TEST_REPORT.md), [evidencia](../qa/r6-block-9/README.md). Sin funcionalidad ni migraciones nuevas; resultados parciales por capa, JWT/Realtime reales y aceptación humana pendientes. El seguimiento actual supera las fotografías de integración inferiores.
 
 **Aplicación remota B7 autorizada — 15/10/2026:** migración `20261015201034` aplicada y verificada en planit-v2 por pedido humano posterior. Marcas **1/1/1/1**, historial36/36 y dry-run sin pendientes. Cuerpos de las tres RPC coincidentes con Git, INVOKER/STABLE/search_path/ACL y RLS verificados; productor/historial/publicación preservados. [Acta](../qa/r6-block-7/remote/summary.json). Sin nuevos hallazgos de seguridad; HTTP JWT/Realtime reales y aceptación integral siguen NOT RUN. Los cortes locales siguientes conservan su fotografía original.

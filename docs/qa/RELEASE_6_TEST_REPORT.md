@@ -1,5 +1,38 @@
 # Release 6 — QA integral · Bloque 9
 
+<!-- R6-FOLLOWUP:begin -->
+## Seguimiento — correcciones y QA real, 15/10/2026
+
+**Dos P2 resueltos. JWT autenticado y Realtime reales PASS en el alcance ejecutado. R6 sigue NO-GO: aceptación humana pendiente,0/24 CA aceptados integralmente.** [Resumen actual y 24 CA](r6-block-9/followup/summary.json).
+
+Se mantuvo la PR #72 y Amanecer. Se eliminó el mínimo rígido del body; cabecera/dock se envuelven, se reserva la altura medida del dock para scroll/foco y las composiciones estrechas conservan títulos, KPI y controles. El test de Mis eventos ahora exige un menú Cuenta cerrado y funcional en /me, con apertura,Escape y retorno de foco. No se elimina la navegación válida para satisfacer una aserción histórica.
+
+| Capa | Resultado | Fuente |
+| --- | --- | --- |
+| prepare | PASS (2 casos/suites) | [evidencia](r6-block-9/followup/20261015-01/prepare.json) |
+| http | PASS (11 casos/suites) | [evidencia](r6-block-9/followup/20261015-01/http.json) |
+| realtime | PASS (4 casos/suites) | [evidencia](r6-block-9/followup/20261015-01/realtime.json) |
+| browser | PASS (2 casos/suites) | [evidencia](r6-block-9/followup/20261015-01/browser.json) |
+| ui | PASS (50 casos/suites) | [evidencia](r6-block-9/followup/20261015-02/ui.json) |
+| native | PASS (24 casos/suites) | [evidencia](r6-block-9/followup/20261015-02/native.json) |
+| close | PASS (12 casos/suites) | [evidencia](r6-block-9/followup/20261015-01/close.json) |
+| close_visual | PASS (11 casos/suites) | [evidencia](r6-block-9/followup/20261015-02/close.json) |
+| checks | PASS (5 casos/suites) | [evidencia](r6-block-9/followup/20261015-01/regressions/checks.json) |
+| regression-ui | PASS (5 casos/suites) | [evidencia](r6-block-9/followup/20261015-01/regressions/regression-ui.json) |
+
+- HTTP: A/B/C/D/anon contra cinco RPC, perfil/historial/avisos directos,owner/hidden/link-only/follow/archivados,comparación mixta,demografía5+5/supresión,series con historial real,CSV y bloqueo R5. Dos registros HTTP simultáneos compiten por una plaza. Aserciones siempre con publishable key y JWT de login normal.
+- Realtime: cuatro JWT distintos,espera SUBSCRIBED,última plaza,reintento confirmado,libre→lleno y rejoin aprobado;cuatro episodios únicos. B/C/D intentan escuchar el filtro de A y no reciben nada durante15s después de la entrega positiva. La recuperación consulta la bandeja tras reconectar. El intento inicial falló por usar id en lugar de request_id en el harness; se conservó y se repitió en un evento QA nuevo,sin cambiar la RPC.
+- App real: REST/WebSocket sin interceptar;CSV descargados coinciden byte a byte con las respuestas autorizadas y el período mostrado;A→B limpia el panel privado. Bandeja y campana se actualizan con la app abierta antes de generar el aviso,sin recarga;la interrupción de red se reconcilia sin duplicación y B no recibe el aviso ajeno.
+- UI: cuatro superficies×seis anchos,normal y CSS200%,títulos legibles y último control desplazable sobre el dock. Zoom nativo Edge200% por tabs.setZoom/getZoom:24 casos;innerWidth se reduce a la mitad,outerWidth estable,visualViewport.scale=1 y body.zoom=1. Es zoom del navegador bajo viewport emulado,no dispositivo físico ni pinch/DPR forzado. Las capturas nativas son del viewport para no alterar el ancho al capturar fullPage.
+- Datos:14 usuarios QA nuevos;las dos cuentas previas sólo se verificaron. La confirmación visual reutilizó esos14 usuarios con eventos nuevos. Se archivaron 23 eventos QA mediante RPC,comprobando cancelación+archivo;sin DELETE ni pérdida de historiales,DDL o migraciones. Credencial administrativa sólo en aprovisionador;su copia local fue retirada y las sesiones cerradas. Nada de claves,tokens o contraseñas en Git/evidencia.
+- Build/lint y cinco regresiones UI compartidas PASS;advertencias históricas conservadas. El detector marca estilos heredados fuera de paleta en archivos existentes;ninguna corrección introduce colores ni cambia DESIGN/sidecar. Fuente,contraste y reglas Amanecer conservados.
+
+Quedan aceptación humana y comprobaciones físicas/lector/Excel. No se trasladan automáticamente los PASS de estas capas a la aceptación integral. Los fallos y NOT RUN del informe inicial inferior son su fotografía histórica,superada sólo en los puntos acreditados aquí. [Reproducción y limpieza](r6-block-9/followup/README.md). Sin merge/deploy ni siguiente bloque.
+<!-- R6-FOLLOWUP:end -->
+
+## Informe B9 inicial — histórico
+
+
 **Decisión: NO-GO. Estado: Implementado; QA pendiente. 0/24 CA aceptados integralmente.**
 
 15/10/2026, Argentina. Base integrada `120d50a2ccfc9fc107b5d01e994c40b493bcbe79`, rama `codex/r6-block-9`. B0–B8 integrados: PR #63–#71, incluido B7 #70 después de la espera acordada. R5 conserva GO/Validado por aceptación humana; no se reclasifican sus NOT RUN técnicos. [Baseline](r6-block-9/git-baseline.txt), [resumen computable](r6-block-9/summary.json), [reproducción](r6-block-9/README.md). HEAD final y PR: [acta de entrega](r6-block-9/delivery.json).

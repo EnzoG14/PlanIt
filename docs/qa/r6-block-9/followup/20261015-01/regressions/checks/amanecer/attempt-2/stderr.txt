@@ -1,0 +1,15 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: src/styles/amanecer.css: unresolved --pi-dock-scroll-space
+    at file:///C:/Users/enzog/planit-worktrees/r6-block-9/.r6-check.local/release-checks-amanecer.mjs:33:70 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
