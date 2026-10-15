@@ -1,6 +1,6 @@
 # PlanIt — Release 6 · Matriz de aceptación y evidencia
 
-**Fuente literal:** `../requirements/RELEASE_6_REQUIREMENTS.md`, 24 CA. **Versión:** 0.1, 14/10/2026. **TODOS los CA: NOT RUN**. Ni documentación, ni auditoría, ni test unitario aislado otorgan aceptación integral.
+**Fuente literal:** `../requirements/RELEASE_6_REQUIREMENTS.md`, 24 CA. **Versión:** 0.1, 14/10/2026. **Aceptación integral de todos los CA: NOT RUN**. Ni documentación, ni auditoría, ni test unitario aislado otorgan aceptación integral.
 
 **B0 — 15/10/2026:** auditoría documental/catálogo entregada, sin ejecución funcional R6. [24 CA literales y traza a contratos](r6-block-0/traceability.json), [resultados baseline](r6-block-0/audit.json), [límites y pendientes](r6-block-0/README.md). Se mantienen **0/24 aceptados** y todas las capas de esta matriz NOT RUN. Riesgo D04 anti-diferencias bloquea B3/B5; revisión/firma humana B0 y aprobación de B1 pendientes.
 
@@ -12,10 +12,10 @@
 
 | CA | Verificación mínima propuesta | SQL | HTTP-JWT | UI | Realtime (si aplica) | Integral | Evidencia |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| RF-R6-01.CA-01 | evento capacity=10 con 4 confirmed/cancelled/removed; propietario y evento archivado | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-01.CA-02 | aserción capacity=10, confirmed=4, avail=6, percent=40; sin contar organizador | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-01.CA-03 | registrar/retirar/remover/reincorporar y refrescar; reconciliar | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-01.CA-04 | actor B confirmed, C link-only, D ajeno, anon contra ruta/RPC/REST | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
+| RF-R6-01.CA-01 | evento capacity=10 con 4 confirmed/cancelled/removed; propietario y evento archivado | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
+| RF-R6-01.CA-02 | aserción capacity=10, confirmed=4, avail=6, percent=40; sin contar organizador | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
+| RF-R6-01.CA-03 | registrar/retirar/remover/reincorporar y refrescar; reconciliar | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
+| RF-R6-01.CA-04 | actor B confirmed, C link-only, D ajeno, anon contra ruta/RPC/REST | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
 | RF-R6-02.CA-01 | propietario; demografía optativa mixta sin fuga, 0/1/5/10 participantes | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-02.CA-02 | historial registration y rejoin dentro de ventana inicial; bins conocidos | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-02.CA-03 | NULLs, fechas límite, sexo otros, coherencia de cohortes y privacidad | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
@@ -49,3 +49,6 @@ No reinterpretar la columna «Verificación mínima propuesta» como reemplazo d
 - Inscripciones concurrentes y duplicación de avisos; CSV formula injection y fallos parciales; coherencia de series históricas/ocupación.
 - Build/lint, SQL replay/ACL, pruebas HTTP autenticadas y UI/PWA reales cuando procedan; regresiones R1–R5 y especificación Amanecer.
 - Gate humano GO/NO-GO. Si sólo se corren fixtures/mock o se carece de despliegue autorizado, dejar integral `NOT RUN/BLOCKED`, NO-GO.
+
+
+**B2 — 15/10/2026:** panel RF-R6-01 implementado; evidencia UI con fixtures y límites en [reporte B2](r6-block-2/README.md). No modifica los 24 CA ni atribuye aceptación integral. B3 pendiente de aprobación humana.

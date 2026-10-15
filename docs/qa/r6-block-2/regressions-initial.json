@@ -1,0 +1,134 @@
+{
+  "environment": "Existing suites; 31 migrations available; real local PostgreSQL with SQL Auth/Storage scaffolds; each suite records its replay; redirected evidence only",
+  "results": [
+    {
+      "suite": "profile",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:00.723Z",
+      "finishedAt": "2026-10-15T13:53:00.809Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:272\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-profile.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at node:internal/modules/esm/loader:636:32\r\n    at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "chat",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:00.732Z",
+      "finishedAt": "2026-10-15T13:53:00.822Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:272\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-chat.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at node:internal/modules/esm/loader:636:32\r\n    at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "notifications",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:00.739Z",
+      "finishedAt": "2026-10-15T13:53:00.823Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:272\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-notifications.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at node:internal/modules/esm/loader:636:32\r\n    at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "event-links",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:00.825Z",
+      "finishedAt": "2026-10-15T13:53:00.918Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:272\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-event-links.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at node:internal/modules/esm/loader:636:32\r\n    at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "interests",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:00.831Z",
+      "finishedAt": "2026-10-15T13:53:00.919Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:272\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-interests.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at node:internal/modules/esm/loader:636:32\r\n    at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "hidden-access",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:00.837Z",
+      "finishedAt": "2026-10-15T13:53:00.928Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:272\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-hidden-access.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at node:internal/modules/esm/loader:636:32\r\n    at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "invite",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:00.930Z",
+      "finishedAt": "2026-10-15T13:53:01.019Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:272\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-invite.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at node:internal/modules/esm/loader:636:32\r\n    at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "gallery",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:00.936Z",
+      "finishedAt": "2026-10-15T13:53:01.022Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-gallery.r5.local.mjs\r\nDid you mean to import \"../../.participation-test-tools.local/node_modules/pg/lib/index.js\"?\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)\r\n    at ModuleJob.link (node:internal/modules/esm/module_job:381:17) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "event-access",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:00.943Z",
+      "finishedAt": "2026-10-15T13:53:01.030Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:272\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-event-access.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at node:internal/modules/esm/loader:636:32\r\n    at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "attendees",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:01.032Z",
+      "finishedAt": "2026-10-15T13:53:01.125Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-attendees.r5.local.mjs\r\nDid you mean to import \"../../.participation-test-tools.local/node_modules/pg/lib/index.js\"?\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)\r\n    at ModuleJob.link (node:internal/modules/esm/module_job:381:17) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "rejoin",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:01.038Z",
+      "finishedAt": "2026-10-15T13:53:01.128Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-rejoin.r5.local.mjs\r\nDid you mean to import \"../../.participation-test-tools.local/node_modules/pg/lib/index.js\"?\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)\r\n    at ModuleJob.link (node:internal/modules/esm/module_job:381:17) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "event-actions",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:01.045Z",
+      "finishedAt": "2026-10-15T13:53:01.132Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-event-actions.r5.local.mjs\r\nDid you mean to import \"../../.participation-test-tools.local/node_modules/pg/lib/index.js\"?\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)\r\n    at ModuleJob.link (node:internal/modules/esm/module_job:381:17) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "participations",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:01.134Z",
+      "finishedAt": "2026-10-15T13:53:01.216Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-participations.r5.local.mjs\r\nDid you mean to import \"../../.participation-test-tools.local/node_modules/pg/lib/index.js\"?\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)\r\n    at ModuleJob.link (node:internal/modules/esm/module_job:381:17) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "home-events",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:01.140Z",
+      "finishedAt": "2026-10-15T13:53:01.224Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:272\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-home-events.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at node:internal/modules/esm/loader:636:32\r\n    at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "edit-event",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:01.146Z",
+      "finishedAt": "2026-10-15T13:53:01.233Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-edit-event.r5.local.mjs\r\nDid you mean to import \"../../.participation-test-tools.local/node_modules/pg/lib/index.js\"?\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)\r\n    at ModuleJob.link (node:internal/modules/esm/module_job:381:17) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    },
+    {
+      "suite": "search",
+      "result": "FAIL",
+      "startedAt": "2026-10-15T13:53:01.235Z",
+      "finishedAt": "2026-10-15T13:53:01.314Z",
+      "stdout": "",
+      "stderr": "node:internal/modules/esm/resolve:272\r\n    throw new ERR_MODULE_NOT_FOUND(\r\n          ^\r\n\r\nError [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\.participation-test-tools.local\\node_modules\\pg\\lib\\index.js' imported from C:\\Users\\USUARIO\\Desktop\\PlanIt\\r6-block-2-worktree\\scripts\\check-search.r5.local.mjs\r\n    at finalizeResolution (node:internal/modules/esm/resolve:272:11)\r\n    at moduleResolve (node:internal/modules/esm/resolve:879:10)\r\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\r\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\r\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\r\n    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:763:56)\r\n    at #resolve (node:internal/modules/esm/loader:687:17)\r\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:607:35)\r\n    at node:internal/modules/esm/loader:636:32\r\n    at TracingChannel.tracePromise (node:diagnostics_channel:362:14) {\r\n  code: 'ERR_MODULE_NOT_FOUND',\r\n  url: 'file:///C:/Users/USUARIO/Desktop/PlanIt/r6-block-2-worktree/.participation-test-tools.local/node_modules/pg/lib/index.js'\r\n}\r\n\r\nNode.js v24.21.0\r\n"
+    }
+  ],
+  "result": "FAIL"
+}
