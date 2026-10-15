@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "name": "r5-release-sql",
+      "script": ".r6-check.local/r5-release-retry.mjs",
+      "args": [
+        "sql",
+        "edit-profile",
+        "private-profile",
+        "follows",
+        "requests"
+      ],
+      "result": "PASS",
+      "source_sha256": "31dc5fe54cae89216423d953f0f6a8a3371a89c8d85ad3f9ebe645a5895a868a"
+    }
+  ],
+  "result": "PASS"
+}

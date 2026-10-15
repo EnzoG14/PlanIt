@@ -1,0 +1,10 @@
+{
+  "base": "9ba2f687cfad0ad0997d8d5a9c7f8eca83659dc1",
+  "branch": "codex/r6-block-6",
+  "suite": "request-notifications",
+  "script": "scripts/check-r5-request-notifications.mjs",
+  "source_sha256": "3e31e53cd4114fbb07158066706381b924abc07272c11e12a7d7dc5ea3972dec",
+  "result": "PASS",
+  "startedAt": "2026-10-15T18:58:47.009Z",
+  "finishedAt": "2026-10-15T18:59:23.803Z"
+}

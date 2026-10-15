@@ -1,0 +1,10 @@
+{
+  "base": "9ba2f687cfad0ad0997d8d5a9c7f8eca83659dc1",
+  "branch": "codex/r6-block-6",
+  "suite": "edit-profile",
+  "script": "scripts/check-r5-edit-profile.mjs",
+  "source_sha256": "87cf248fe4fe180ad6e98f8af2a3f3810d67f0ad1a3109d517d6872b2069d85a",
+  "result": "PASS",
+  "startedAt": "2026-10-15T19:00:40.172Z",
+  "finishedAt": "2026-10-15T19:01:20.300Z"
+}

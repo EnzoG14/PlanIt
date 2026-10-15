@@ -32,10 +32,10 @@
 | RF-R6-04.CA-02 | cabeceras, encoding/quoting, filtros y cifras coinciden con RPC | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
 | RF-R6-04.CA-03 | Excel/CSV parser y ataques fórmula =,+,-,@, tabs/saltos; excluir PII | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
 | RF-R6-04.CA-04 | 0 filas/fallo chunk/timeout, revocación/permisos; no descarga de archivo parcial | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
-| RF-R6-05.CA-01 | última inscripción confirmed bajo lock llena capacity y crea 1 notificación | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
+| RF-R6-05.CA-01 | última inscripción confirmed bajo lock llena capacity y crea 1 notificación | PASS parcial B6 | NOT RUN | NOT RUN | NOT RUN | NOT RUN | [B6](r6-block-6/README.md) |
 | RF-R6-05.CA-02 | recipient organizador, event_id, type y target seguro, bandeja | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-05.CA-03 | con 1 lugar disponible no aviso; reintento/rollback y concurrencia | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-05.CA-04 | 2 usuarios simultáneos; nadie más lee, no dup tras respuesta ambigua | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
+| RF-R6-05.CA-03 | con 1 lugar disponible no aviso; reintento/rollback y concurrencia | PASS parcial B6 | NOT RUN | NOT RUN | NOT RUN | NOT RUN | [B6](r6-block-6/README.md) |
+| RF-R6-05.CA-04 | 2 usuarios simultáneos; nadie más lee, no dup tras respuesta ambigua | PASS parcial B6 | NOT RUN | NOT RUN | NOT RUN | NOT RUN | [B6](r6-block-6/README.md) |
 | RF-R6-06.CA-01 | selector de al menos dos eventos organizados | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-06.CA-02 | dos eventos cap10/4 y cap20/15 deben mostrar 40% y 75% | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-06.CA-03 | cambiar filtro y revalidar resultados; eventos finalizados/archivados | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |

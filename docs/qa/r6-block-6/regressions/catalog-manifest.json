@@ -1,0 +1,112 @@
+{
+  "environment": "Local regression expectation: B0 historical function/ACL/RLS definitions plus current local migration manifest. Not fresh remote verification.",
+  "source": "docs/qa/r6-block-0/catalog.json",
+  "source_sha256": "bfe01dcceb0bc3a17aabd49e1960cd3b6c7e65fc6425c08b92e4433ed3b59110",
+  "local_migrations": [
+    {
+      "version": "20261010011204"
+    },
+    {
+      "version": "20261010013449"
+    },
+    {
+      "version": "20261010023448"
+    },
+    {
+      "version": "20261010042701"
+    },
+    {
+      "version": "20261010052653"
+    },
+    {
+      "version": "20261010150232"
+    },
+    {
+      "version": "20261010154930"
+    },
+    {
+      "version": "20261010212819"
+    },
+    {
+      "version": "20261010214526"
+    },
+    {
+      "version": "20261011163653"
+    },
+    {
+      "version": "20261011193316"
+    },
+    {
+      "version": "20261011232326"
+    },
+    {
+      "version": "20261012001058"
+    },
+    {
+      "version": "20261012013634"
+    },
+    {
+      "version": "20261012031717"
+    },
+    {
+      "version": "20261012044919"
+    },
+    {
+      "version": "20261012155501"
+    },
+    {
+      "version": "20261013160000"
+    },
+    {
+      "version": "20261014120000"
+    },
+    {
+      "version": "20261014120001"
+    },
+    {
+      "version": "20261014120002"
+    },
+    {
+      "version": "20261014120003"
+    },
+    {
+      "version": "20261014120004"
+    },
+    {
+      "version": "20261014120005"
+    },
+    {
+      "version": "20261014120006"
+    },
+    {
+      "version": "20261014133225"
+    },
+    {
+      "version": "20261014133547"
+    },
+    {
+      "version": "20261014133847"
+    },
+    {
+      "version": "20261014212935"
+    },
+    {
+      "version": "20261014225216"
+    },
+    {
+      "version": "20261015130739"
+    },
+    {
+      "version": "20261015160324"
+    },
+    {
+      "version": "20261015162953"
+    },
+    {
+      "version": "20261015173426"
+    },
+    {
+      "version": "20261015185020"
+    }
+  ]
+}
