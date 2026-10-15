@@ -14,7 +14,7 @@
 | 5 | CSV seguros | Implementado; QA pendiente | codex/r6-block-5; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68) | edaa0c5 | 1/1/1/1 | RF-R6-04 CA01–04 parcial SQL/contrato/UI fixtures; HTTP/Excel/dispositivos NOT RUN | NO |
 | 6 | Trigger aviso lleno | Implementado; QA pendiente | codex/r6-block-6; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69) | 9ba2f68 | 1/1/1/1 | RF-R6-05 CA01/03/04 parcial SQL local; HTTP/Realtime NOT RUN | NO |
 | 7 | Bandeja aviso | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 | NO |
-| 8 | Comparación | Implementado; QA pendiente | codex/r6-block-8; PR draft (ver bitácora) | 9311c01 | 1/1/0/0 | RF-R6-06 CA01–04 parcial SQL local/UI fixtures; HTTP JWT real NOT RUN | NO |
+| 8 | Comparación | Implementado; QA pendiente | codex/r6-block-8; [PR #71 draft](https://github.com/EnzoG14/PlanIt/pull/71) | 9311c01 | 1/1/0/0 | RF-R6-06 CA01–04 parcial SQL local/UI fixtures; HTTP JWT real NOT RUN | NO |
 | 9 | QA integral | NO INICIADO | — | — | 0/0/0/0 | 24 CA y regresión | NO |
 
 ## Plantilla de bitácora por bloque
@@ -51,7 +51,7 @@
 - Base limpia `9311c0142e4c945656e8aa0fe9c89c1a37b4135b` (`origin/main`, tras fetch; PR #69 MERGED). Rama nueva `codex/r6-block-8` desde main; B7 (#70) no integrada y no requerida. `.env.local` de main conservado e ignorado. Pedido humano autoriza sólo B8; D09/D10 y A01–A07 conservados.
 - RPC `get_my_events_occupancy(uuid[])→jsonb`, STABLE DEFINER, `search_path=''`, EXECUTE authenticated; 2–10 IDs únicos, ownership de todos antes de agregar (mezcla rechaza todo con un único error), misma fórmula/estado que B1, capacidad inválida → N/D. Sin tablas/triggers/políticas/índices/grants de lectura.
 - Ruta `/my-events/compare` bajo auth con acceso secundario desde Mis eventos (sin dock nuevo): selector con filtros que conservan la selección, tabla/tarjetas accesibles, anti-carrera por clave de selección + abort + timeout, estados loading/empty/invalid/error/retry. DESIGN.md intacto.
-- Migración `20261015210000`: **1 creada / 1 probada local / 0 aplicada remota / 0 verificada remota**. SQL PostgreSQL17.5, contrato y UI (seis anchos) PASS; HTTP JWT real/Realtime/dispositivos NOT RUN. Dos fallos de regresión preexistentes documentados. [Evidencia](../qa/r6-block-8/README.md). Sin DDL remoto, merge, deploy ni B9.
+- Migración `20261015210000`: **1 creada / 1 probada local / 0 aplicada remota / 0 verificada remota**. SQL PostgreSQL17.5, contrato y UI (seis anchos) PASS; HTTP JWT real/Realtime/dispositivos NOT RUN. Dos fallos de regresión preexistentes documentados. [Evidencia](../qa/r6-block-8/README.md). Sin DDL remoto, merge, deploy ni B9. Cierre: commit funcional `8c930ed`; [PR #71 draft](https://github.com/EnzoG14/PlanIt/pull/71); HEAD final en Git/PR.
 
 ### B6 — 15/10/2026, Codex
 
