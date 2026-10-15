@@ -52,4 +52,4 @@ Incidencias de ejecución: primer intento sandbox denegó TCP local; se repitió
 
 Inventario: una migración, dos scripts de verificación, dos comandos npm, esta evidencia, plan/estado y matriz de aceptación R6. Diseño Amanecer, fuentes normativas de RF/CA y migraciones históricas sin cambios. `.env.local` de la copia local de main se conservó en el mismo checkout, ignorado y sin versionar.
 
-Riesgos pendientes: aplicación y verificación remotas expresamente autorizadas, pruebas JWT/Realtime reales, revisión humana y aceptación integral. B7 requiere instrucción humana independiente. Commit funcional y PR se enlazan al cierre; HEAD final se consulta en Git/PR para evitar una referencia circular dentro del propio commit.
+Riesgos pendientes: aplicación y verificación remotas expresamente autorizadas, pruebas JWT/Realtime reales, revisión humana y aceptación integral. B7 requiere instrucción humana independiente. Commit funcional `3932449`; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69). El commit documental posterior sólo enlaza la entrega; HEAD final se consulta en Git/PR para evitar una referencia circular dentro del propio commit.
