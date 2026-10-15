@@ -1,0 +1,87 @@
+{
+  "base": "ad9327fff5aca65e6b676a56f1e1e93737102f32",
+  "captured_at": "2026-10-15T12:32:26.00451+00:00",
+  "environment": "Offline assertions on captured current catalog; synthetic JS arithmetic only; not SQL/JWT/CA acceptance",
+  "inputs": {
+    "catalog.json": "875279bebc361c05c28b20b6ce8ee1abcb629debef02786decd46dca3a68e5ab",
+    "source.json": "65acf81f779e06f78b603d82f90bc7f698d153e4f99f5d1bba8948003db60a53",
+    "traceability.json": "ae157b798d50bed0beb62dbe83d7dec0d9e046b6099196a08a233ca962a605de",
+    "rf-traceability.json": "6563121b9a0eb7db2830a3f10dde64f36c3c58ee7a2682f02717eb913b498379",
+    "synthetic-fixtures.json": "5da167c608f57eefb1800b534bff82a9cfe21451da9a03ed898f7105697cf826",
+    "mockup": "f49c765e633881bc9993a2052b9ff59e4d50cd69991566e38b5740fa6e90fc69"
+  },
+  "results": [
+    {
+      "name": "30 Git migration versions equal current remote catalog",
+      "result": "PASS"
+    },
+    {
+      "name": "All 16 public tables use RLS",
+      "result": "PASS"
+    },
+    {
+      "name": "82 function signatures, definitions, ACL and config unchanged since R5 B10 catalog",
+      "result": "PASS"
+    },
+    {
+      "name": "R5 public columns, constraints, indexes, policies and triggers unchanged",
+      "result": "PASS"
+    },
+    {
+      "name": "register_for_event: authenticated only, definer, empty search_path and identity guard",
+      "result": "PASS"
+    },
+    {
+      "name": "leave_event: authenticated only, definer, empty search_path and identity guard",
+      "result": "PASS"
+    },
+    {
+      "name": "resolve_rejoin: authenticated only, definer, empty search_path and identity guard",
+      "result": "PASS"
+    },
+    {
+      "name": "remove_participant: authenticated only, definer, empty search_path and identity guard",
+      "result": "PASS"
+    },
+    {
+      "name": "update_event: authenticated only, definer, empty search_path and identity guard",
+      "result": "PASS"
+    },
+    {
+      "name": "get_event_attendees: authenticated only, definer, empty search_path and identity guard",
+      "result": "PASS"
+    },
+    {
+      "name": "Profiles SELECT remains owner-only",
+      "result": "PASS"
+    },
+    {
+      "name": "Only messages/notifications are published",
+      "result": "PASS"
+    },
+    {
+      "name": "No R6 analytics RPC has been installed",
+      "result": "PASS"
+    },
+    {
+      "name": "24 local CA exactly match fresh source text",
+      "result": "PASS"
+    },
+    {
+      "name": "Synthetic occupancy reconciles, excluding cancelled and removed",
+      "result": "PASS"
+    },
+    {
+      "name": "Complementary inference counterexample: total reveals hidden singleton",
+      "result": "PASS"
+    },
+    {
+      "name": "Temporal inference counterexample: k=5 on both snapshots still reveals one category",
+      "result": "PASS"
+    },
+    {
+      "name": "main env copy is byte-identical and ignored",
+      "result": "PASS"
+    }
+  ]
+}

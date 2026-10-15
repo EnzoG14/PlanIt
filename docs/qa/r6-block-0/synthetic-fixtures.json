@@ -1,0 +1,79 @@
+{
+  "occupancy": [
+    {
+      "capacity": 10,
+      "confirmed": 4,
+      "cancelled": 2,
+      "removed": 1,
+      "available": 6,
+      "percent": 40
+    },
+    {
+      "capacity": 20,
+      "confirmed": 15,
+      "available": 5,
+      "percent": 75
+    }
+  ],
+  "transitions": [
+    [
+      null,
+      "confirmed",
+      "alta"
+    ],
+    [
+      "confirmed",
+      "cancelled",
+      "baja"
+    ],
+    [
+      "cancelled",
+      "confirmed",
+      "reincorporacion"
+    ],
+    [
+      "confirmed",
+      "removed",
+      "baja"
+    ],
+    [
+      "removed",
+      "confirmed",
+      "reincorporacion"
+    ]
+  ],
+  "privacy": {
+    "tiny": [
+      1,
+      4
+    ],
+    "complementary": [
+      9,
+      1
+    ],
+    "before": [
+      5,
+      5
+    ],
+    "after": [
+      6,
+      5
+    ],
+    "overlapping_events": [
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        5
+      ]
+    ],
+    "unknown": [
+      5,
+      0,
+      0,
+      1
+    ]
+  }
+}

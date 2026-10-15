@@ -1,0 +1,63 @@
+{
+  "requirements": [
+    {
+      "id": "RF-R6-01",
+      "title": "Consultar ocupación y lugares disponibles",
+      "description": "El sistema permitirá al organizador visualizar el cupo total, la cantidad de inscriptos, los lugares disponibles y el porcentaje de ocupación de sus eventos, a partir de las inscripciones vigentes."
+    },
+    {
+      "id": "RF-R6-02",
+      "title": "Consultar métricas básicas de asistencia",
+      "description": "El sistema permitirá al organizador consultar estadísticas de asistentes de sus eventos, incluyendo distribuciones por edad y sexo y tendencias de nuevas inscripciones dentro de una ventana inicial."
+    },
+    {
+      "id": "RF-R6-03",
+      "title": "Analizar asistencia por período",
+      "description": "El sistema permitirá al organizador cambiar el período de análisis y consultar la evolución de las inscripciones o asistencias de sus eventos en el intervalo elegido."
+    },
+    {
+      "id": "RF-R6-04",
+      "title": "Exportar reportes en CSV",
+      "description": "El sistema permitirá al organizador exportar en formato CSV los datos de asistentes y estadísticas autorizadas de sus eventos para su análisis externo."
+    },
+    {
+      "id": "RF-R6-05",
+      "title": "Recibir aviso cuando un evento complete su cupo",
+      "description": "El sistema permitirá al organizador recibir un aviso dentro de la aplicación cuando un evento de su autoría alcance la capacidad máxima configurada."
+    },
+    {
+      "id": "RF-R6-06",
+      "title": "Comparar desempeño entre eventos organizados",
+      "description": "El sistema permitirá al organizador seleccionar dos o más eventos de su autoría y comparar en una misma vista la cantidad de inscriptos y el porcentaje de ocupación de cada uno, para identificar diferencias de desempeño."
+    }
+  ],
+  "url": "https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit",
+  "modified_time": "2026-10-14T03:30:02.621Z",
+  "read_date": "2026-10-15",
+  "criteria": [
+    "RF-R6-01.CA-01. El organizador puede ver para uno de sus eventos el cupo configurado, inscripciones vigentes, lugares disponibles y porcentaje de ocupación.",
+    "RF-R6-01.CA-02. Los lugares disponibles corresponden al cupo menos las inscripciones vigentes, sin mostrar valores negativos; el porcentaje es consistente con esos datos.",
+    "RF-R6-01.CA-03. Las altas y bajas de participantes modifican los indicadores después de actualizar los datos.",
+    "RF-R6-01.CA-04. El usuario no puede consultar el panel de gestión de eventos ajenos mediante acceso directo.",
+    "RF-R6-02.CA-01. El organizador puede acceder a estadísticas de uno de sus eventos y visualizar distribuciones de asistentes por edad y sexo cuando existan datos autorizados.",
+    "RF-R6-02.CA-02. El panel permite consultar la evolución de nuevas inscripciones dentro de una ventana inicial definida, de forma coherente con los registros del evento.",
+    "RF-R6-02.CA-03. Las cantidades y agrupaciones son consistentes con el conjunto de asistentes considerado; se especifica cuándo faltan datos para algún grupo.",
+    "RF-R6-02.CA-04. Si no hay suficientes datos se muestran indicadores vacíos o informativos, sin gráficos con valores inventados.",
+    "RF-R6-03.CA-01. El organizador puede elegir entre períodos disponibles o un intervalo válido de análisis para su evento.",
+    "RF-R6-03.CA-02. Al cambiar el período, se recalculan y actualizan los indicadores temporales utilizando sólo datos comprendidos en el intervalo seleccionado.",
+    "RF-R6-03.CA-03. El sistema rechaza fechas de inicio posteriores a la fecha final y presenta un mensaje claro.",
+    "RF-R6-03.CA-04. Los resultados de un período distinto no permanecen visibles como si correspondieran al nuevo filtro, y la consulta sólo considera eventos autorizados.",
+    "RF-R6-04.CA-01. El organizador puede solicitar un archivo CSV de asistentes y estadísticas de uno de sus eventos.",
+    "RF-R6-04.CA-02. El archivo generado contiene encabezados identificables y valores consistentes con los datos autorizados y los filtros aplicados.",
+    "RF-R6-04.CA-03. El archivo puede abrirse con herramientas de lectura CSV y no incluye información privada que el organizador no tenga autorización para exportar.",
+    "RF-R6-04.CA-04. Si no existen datos o la exportación falla, el sistema lo informa y no presenta una exportación incompleta como exitosa.",
+    "RF-R6-05.CA-01. Cuando un evento alcanza su cupo máximo mediante una inscripción confirmada, se registra un aviso dirigido al organizador.",
+    "RF-R6-05.CA-02. El aviso identifica el evento que alcanzó su capacidad y está disponible en la bandeja de notificaciones de la cuenta correspondiente.",
+    "RF-R6-05.CA-03. No se genera un aviso de cupo completo mientras queden lugares disponibles.",
+    "RF-R6-05.CA-04. El evento no genera avisos duplicados por reintentos del mismo cambio de estado y otras cuentas no pueden consultar el aviso privado.",
+    "RF-R6-06.CA-01. El organizador puede seleccionar al menos dos eventos de su autoría para incluirlos en una comparación.",
+    "RF-R6-06.CA-02. La comparación muestra, para cada evento seleccionado, la cantidad de inscriptos y el porcentaje de ocupación utilizando el mismo criterio de cálculo.",
+    "RF-R6-06.CA-03. Al cambiar los eventos seleccionados, la vista se actualiza y permite identificar las diferencias entre sus valores.",
+    "RF-R6-06.CA-04. No se permite incluir eventos ajenos ni presentar un porcentaje inválido cuando un evento no tiene un cupo utilizable; se informa esa situación."
+  ]
+}
