@@ -17,7 +17,7 @@
 | 6 | Trigger aviso lleno | Implementado; QA pendiente | codex/r6-block-6; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69) | 9ba2f68 | 1/1/1/1 | RF-R6-05 CA01/03/04 parcial SQL local; HTTP/Realtime NOT RUN | NO |
 | 7 | Bandeja aviso | Implementado; QA pendiente | codex/r6-block-7; [PR #70 integrada](https://github.com/EnzoG14/PlanIt/pull/70) | 9311c01 | 1/1/1/1 | RF-R6-05 CA02/04 parcial SQL/UI fixtures; catálogo remoto PASS; HTTP/Realtime real NOT RUN | NO |
 | 8 | Comparación | Implementado; QA pendiente | codex/r6-block-8; [PR #71 MERGED](https://github.com/EnzoG14/PlanIt/pull/71) | 9311c01 | 1/1/1/1 | RF-R6-06 CA01–04 parcial SQL local/UI fixtures; HTTP JWT real NOT RUN | NO |
-| 9 | QA integral | Implementado; QA pendiente; NO-GO | codex/r6-block-9; PR draft pendiente | 120d50a | 0/0/0/0 nuevas | 24 CA trazados; SQL/UI parcial,JWT/Realtime real BLOCKED; aceptación0/24 | NO |
+| 9 | QA integral | Implementado; QA pendiente; NO-GO | codex/r6-block-9; [PR #72 draft](https://github.com/EnzoG14/PlanIt/pull/72) | 120d50a | 0/0/0/0 nuevas | 24 CA trazados; SQL/UI parcial,JWT/Realtime real BLOCKED; aceptación0/24 | NO |
 
 ## Plantilla de bitácora por bloque
 

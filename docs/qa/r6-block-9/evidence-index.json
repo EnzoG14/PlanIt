@@ -1,5 +1,11 @@
 {
+  "hash_mode": "Exact bytes; evidence subtree is -text in Git",
   "files": [
+    {
+      "path": "docs/qa/r6-block-9/.gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
     {
       "path": "docs/qa/r6-block-9/accessibility/extension.json",
       "bytes": 262,
@@ -574,6 +580,11 @@
       "path": "docs/qa/r6-block-9/db-push-help.txt",
       "bytes": 3065,
       "sha256": "06cd4ac402247f2e30a0e89fa64298cf2cd876875e6bbee33ea08bbb2be13014"
+    },
+    {
+      "path": "docs/qa/r6-block-9/delivery.json",
+      "bytes": 1028,
+      "sha256": "8ff89aaee5cf7142d39e83b90f7f778ed3b494c04474566d8395d3ca56fc324a"
     },
     {
       "path": "docs/qa/r6-block-9/dry-run.txt",

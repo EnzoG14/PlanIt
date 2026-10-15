@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-15",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "audit_commit": "686160386ce6d719929f07b423a59eef91842ac8",
+  "branch": "codex/r6-block-9",
+  "pull_request": "https://github.com/EnzoG14/PlanIt/pull/72",
+  "draft": true,
+  "decision": "NO-GO",
+  "state": "Implementado; QA pendiente",
+  "accepted_integral": 0,
+  "criteria": 24,
+  "final_head": "The PR head includes the subsequent documentation closure commit; exact final SHA recorded in PR description after push.",
+  "environment": "Copied from original main checkout; byte-equal and git-ignored; no env files committed",
+  "migration_actions": {
+    "created": 0,
+    "applied_remote": 0,
+    "existing_replayed": 37,
+    "remote_catalog_verified": 37
+  },
+  "evidence_bytes": "Local .gitattributes disables text normalization for this evidence subtree; evidence-index hashes exact captured bytes.",
+  "authorization": "User requested B9, new branch from main, copied ignored env and draft PR. No merge/deploy/remote fixture writes/DDL."
+}
