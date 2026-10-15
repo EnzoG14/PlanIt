@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-15T01:10:26.764Z",
+  "environment": "Current remote READ ONLY catalog + local build inspection; no functional JWT/Realtime/Storage delivery proof",
+  "remote_version": "17.11",
+  "migrations": 30,
+  "public_rls_tables": 16,
+  "functions": 82,
+  "mockup_sha256": "4e71bb6ab5f4f5dd9d1282c16cba1d3991eae1197ff14f799d9439d9c666170d",
+  "input_hashes": {
+    "src/components/FollowButton.tsx": "295219debc954051a5b823971c46d39a0980f7faa874db8c9cc5a26bd9772d37",
+    "src/components/GradientButton.tsx": "f18eb2f39917ac71311c42e544342da80ae02274963a21f83df73a721b72cce6",
+    "src/features/social/api.ts": "11759f4e0f585a0036a34a04d4321c39b93dfaa863b28e39572d4037ff7766b5",
+    "src/styles/amanecer.css": "5675781cda582cc45d5ed90f7cb2f937057f07bb69f5326151a3fc27beed71c2",
+    "vite.config.ts": "ef84412e55727b709f22bc21a15bdb5cd57e078eb3ae99f95d6d73930dba8643",
+    "package-lock.json": "7770689624d654f6568e545c7ef2c7312158655f8007c7379446e379d8d55db0",
+    "dist/index.html": "952ebb46468a5bccc81730d033e10e5eedcecdb9381d8104f8145b2162728e1b",
+    "dist/sw.js": "d296523d99251433a69cfcb59dff74ce62d5c433ffe09216193eef46b79e45b3"
+  },
+  "results": [
+    {
+      "name": "Remote migration versions equal all versioned migrations",
+      "result": "PASS"
+    },
+    {
+      "name": "All public tables have RLS",
+      "result": "PASS"
+    },
+    {
+      "name": "Realtime publishes only messages and notifications; no profiles/follows/blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "Realtime message columns exclude profile data",
+      "result": "PASS"
+    },
+    {
+      "name": "Only owner SELECT policy on profiles",
+      "result": "PASS"
+    },
+    {
+      "name": "Social signing function cannot be executed by anon/authenticated",
+      "result": "PASS"
+    },
+    {
+      "name": "Avatar bucket private and limited to approved image MIME/5MiB",
+      "result": "PASS"
+    },
+    {
+      "name": "Avatar Edge function listed ACTIVE (inventory only, not functional proof)",
+      "result": "PASS"
+    },
+    {
+      "name": "Built service worker has no Supabase caching route",
+      "result": "PASS"
+    },
+    {
+      "name": "Local configuration copied byte-for-byte from main checkout",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

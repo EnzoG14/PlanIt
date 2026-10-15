@@ -11,7 +11,7 @@ const marker = '  // Retain invariants independent of API callers.'
 assert.equal(source.split(marker).length, 2)
 const tests = String.raw`
   {
-    const catalog=JSON.parse(await readFile('docs/qa/r5-block-7/remote/catalog.json','utf8')).rows[0].metadata;
+    const catalog=JSON.parse(await readFile(process.env.PLANIT_R5_FULL_CATALOG??'docs/qa/r5-block-7/remote/catalog.json','utf8')).rows[0].metadata;
     assert.deepEqual(catalog.migrations.map(m=>m.version),migrations.map(m=>m.file.split('_')[0]));
     const local=(await admin.query("select n.nspname as schema,p.proname as name,pg_get_function_identity_arguments(p.oid) as identity_arguments,pg_get_functiondef(p.oid) as definition,p.prosecdef as definer,p.proconfig as config,has_function_privilege('anon',p.oid,'execute') as anon_execute,has_function_privilege('authenticated',p.oid,'execute') as authenticated_execute from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname in ('public','planit_private') and p.prokind='f'")).rows;
     const comparison=catalog.functions.filter(f=>f.name!=='rls_auto_enable').map(f=>{

@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-15T00:55:38.321Z",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "environment": "Real HTTPS, public key only, no authenticated JWT or writes",
+  "results": [
+    {
+      "path": "rpc/get_social_relationship",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_social_counts",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/list_social_follows",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/list_social_follows",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "user_follows?select=follower_id,followed_id,status",
+      "status": 401,
+      "result": "PASS"
+    }
+  ],
+  "authenticated": "NOT RUN: no preexisting authorized test sessions supplied"
+}

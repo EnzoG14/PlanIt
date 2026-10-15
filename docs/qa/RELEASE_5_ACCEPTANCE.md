@@ -1,5 +1,7 @@
 # PlanIt — R5 matriz de aceptación (33 CA oficiales)
 
+**Corte B10 — 14/10/2026:** [Reporte integral de los33 CA](RELEASE_5_TEST_REPORT.md), [resultados computables](r5-block-10/summary.json). Cobertura nueva SQL local/UI fixture, catálogo READ ONLY y HTTP anónimo; **NO-GO para cierre de R5**, **Implementado; QA pendiente**. JWT autenticado/Storage/CDN/Realtime reales y aceptación integral NOT RUN. Se conserva la aprobación humana histórica B5; ninguna aceptación nueva se autodeclara. Sin nuevas migraciones, DDL remoto, deploy ni merge. Cortes siguientes conservados como antecedentes.
+
 **Corte B9 — 14/10/2026:** RF-R5-08.CA01..05 PASS parcial SQL local/UI fixture (CA05 SQL), HTTP anónimo real4/4. **NOT RUN integral**, sin aceptación humana. [Contrato,55 grupos UI,rollback/carrera triple y límites](r5-block-9/README.md). D01-A/B,D03-A,D04-B PASS parcial, sin renumerar33 CA. Sin migraciones nuevas/deploy/merge. B10 requiere aprobación independiente.
 
 **R5-B8-NOTIF, aplicación remota14/10/2026:**20261014225216 aplicada/verificada con autorización específica del responsable; fuentes/trigger/ACL/RLS/publicación PASS y30 versiones sincronizadas. [Acta](r5-block-8/message-notifications/remote/README.md). Supera el pendiente de aplicación señalado abajo; entrega JWT/Realtime real y aceptación siguen NOT RUN.

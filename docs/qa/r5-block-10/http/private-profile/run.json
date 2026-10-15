@@ -1,0 +1,10 @@
+{
+  "base": "f66d70bcf4f0e28c02fe2aff88088bd238a65e1e",
+  "branch": "codex/r5-block-10",
+  "suite": "private-profile",
+  "script": "scripts/check-r5-private-profile-http.mjs",
+  "source_sha256": "e02e13d2093db3a0d45906d8646a2366d19addadecd0caa0d5240d16b5f2f871",
+  "result": "PASS",
+  "startedAt": "2026-10-15T01:10:57.779Z",
+  "finishedAt": "2026-10-15T01:10:59.689Z"
+}

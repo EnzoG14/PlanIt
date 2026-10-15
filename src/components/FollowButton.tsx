@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { changeSocialFollow, loadSocialRelationship, type SocialRelationship } from '../features/social/follows'
 import { socialDenied } from '../features/social/api'
+import { GradientButton } from './GradientButton'
 
 export function FollowButton({ userId, relationship, onChanged, onSafetyChange }: { userId: string; relationship: NonNullable<SocialRelationship>; onChanged: () => void; onSafetyChange: (value: boolean) => void }) {
   const [busy, setBusy] = useState(false)
@@ -43,11 +44,13 @@ export function FollowButton({ userId, relationship, onChanged, onSafetyChange }
   const label = active ? relationship.status === 'pending' ? 'Cancelar solicitud' : 'Dejar de seguir' : relationship.visibility === 'private' ? 'Solicitar seguimiento' : 'Seguir'
   return <div className="social-follow-action" aria-busy={busy}>
     {relationship.status === 'pending' && <p role="status">Solicitud pendiente. El contenido sigue restringido hasta su aprobación.</p>}
-    <button ref={button} className={active ? 'secondary-button' : 'gradient-button'} disabled={busy || uncertain} onClick={() => active ? setConfirm(true) : void change()}>{busy ? 'Confirmando…' : label}</button>
+    {active
+      ? <button ref={button} className="secondary-button" disabled={busy || uncertain} onClick={() => setConfirm(true)}>{busy ? 'Confirmando…' : label}</button>
+      : <GradientButton disabled={busy || uncertain} onClick={() => void change()}>{busy ? 'Confirmando…' : label}</GradientButton>}
     {confirm && <div className="social-follow-confirm" role="group" aria-label={`Confirmar ${label.toLowerCase()}`} onKeyDown={event => { if (event.key === 'Escape') { setConfirm(false); button.current?.focus() } }}>
       <p>{relationship.status === 'pending' ? '¿Querés cancelar esta solicitud?' : '¿Querés dejar de seguir? Perderás el acceso reservado a seguidores.'}</p>
       <button className="secondary-button" onClick={() => { setConfirm(false); button.current?.focus() }}>Volver</button>
-      <button className="gradient-button" onClick={() => void change()}>Confirmar</button>
+      <GradientButton onClick={() => void change()}>Confirmar</GradientButton>
     </div>}
     {message && <><p className="field-error" role="alert">{message}</p><button className="secondary-button" onClick={onChanged}>Consultar estado</button></>}
   </div>

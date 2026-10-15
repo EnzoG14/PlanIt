@@ -1,0 +1,1 @@
+PASS: four real anonymous HTTP denials for B9

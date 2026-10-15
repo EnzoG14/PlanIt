@@ -9,7 +9,7 @@ const marker='  const avatarPath = `${bId}/avatar.png`'
 assert.equal(source.split(marker).length,2)
 const tests=`
   {
-    const catalog=JSON.parse(await readFile('docs/qa/r5-block-4/remote/catalog.json','utf8')).rows[0].metadata;
+    const catalog=JSON.parse(await readFile(process.env.PLANIT_R5_FULL_CATALOG??'docs/qa/r5-block-4/remote/catalog.json','utf8')).rows[0].metadata;
     assert.deepEqual(catalog.migrations.map(m=>m.version),migrations.map(m=>m.file.split('_')[0]));
     const local=(await admin.query("select n.nspname as schema,p.proname as name,pg_get_function_identity_arguments(p.oid) as identity_arguments,pg_get_functiondef(p.oid) as definition,p.prosecdef as definer,p.proconfig as config,has_function_privilege('anon',p.oid,'execute') as anon_execute,has_function_privilege('authenticated',p.oid,'execute') as authenticated_execute from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname in ('public','planit_private') and p.prokind='f'")).rows;
     const comparison=catalog.functions.filter(f=>f.name!=='rls_auto_enable').map(f=>{
@@ -19,7 +19,7 @@ const tests=`
     assert.ok(comparison.every(r=>r.body&&r.acl&&r.config));
     assert.ok(catalog.tables.every(t=>t.rls));
     await writeFile(out+'/remote-comparison.json',JSON.stringify({migrations:catalog.migrations.length,rls_tables:catalog.tables.length,functions:comparison,result:'PASS'},null,2)+'\\n');
-    record('B4 fresh read-only remote catalog: 28 migration versions, 16 RLS tables and 79 function bodies/ACL/config match full local replay');
+    record('Read-only catalog migration versions, RLS tables and function bodies/ACL/config match full local replay');
   }
   {
     const ownerId='84000000-0000-4000-8000-000000000001';

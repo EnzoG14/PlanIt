@@ -1,0 +1,73 @@
+{
+  "base": "f66d70bcf4f0e28c02fe2aff88088bd238a65e1e",
+  "branch": "codex/r5-block-10",
+  "stage": "http",
+  "migrations": 30,
+  "results": [
+    {
+      "suite": "participants",
+      "script": "scripts/check-r5-participants-http.mjs",
+      "source_sha256": "63d1f4ae6f71fcbd65d21f16b6838f4e8b763bec541eda7255aafa78d62a5a06",
+      "result": "PASS",
+      "startedAt": "2026-10-15T00:55:32.383Z",
+      "finishedAt": "2026-10-15T00:55:34.391Z"
+    },
+    {
+      "suite": "profile",
+      "script": "scripts/check-r5-profile-http.mjs",
+      "source_sha256": "cc968588675a9e94a00baa8629f16b14f0d1a2ddc9b68775549c56fafadfbb7c",
+      "result": "PASS",
+      "startedAt": "2026-10-15T00:55:34.392Z",
+      "finishedAt": "2026-10-15T00:55:35.239Z"
+    },
+    {
+      "suite": "edit-profile",
+      "script": "scripts/check-r5-edit-profile-http.mjs",
+      "source_sha256": "5bd5fa953fee0d4cf365e496effba9d1cf2e6cd3599343737bf518ffe5952b2b",
+      "result": "PASS",
+      "startedAt": "2026-10-15T00:55:35.240Z",
+      "finishedAt": "2026-10-15T00:55:35.880Z"
+    },
+    {
+      "suite": "follows",
+      "script": "scripts/check-r5-follows-http.mjs",
+      "source_sha256": "7735bc01e3d712968cd9ead05006e62c6b09f15a31246cd754cc54c47218d7cc",
+      "result": "PASS",
+      "startedAt": "2026-10-15T00:55:37.116Z",
+      "finishedAt": "2026-10-15T00:55:38.336Z"
+    },
+    {
+      "suite": "requests",
+      "script": "scripts/check-r5-requests-http.mjs",
+      "source_sha256": "487b1feae656deea59bbd232cab7144e94e2435a106362ed57563a62d07d1e5f",
+      "result": "PASS",
+      "startedAt": "2026-10-15T00:55:38.337Z",
+      "finishedAt": "2026-10-15T00:55:39.473Z"
+    },
+    {
+      "suite": "messages",
+      "script": "scripts/check-r5-messages-http.mjs",
+      "source_sha256": "39886add6c7d4a2e9a4f5a44fb2a95c2417d88ff49799d262c226f42cf8dd42a",
+      "result": "PASS",
+      "startedAt": "2026-10-15T00:55:39.475Z",
+      "finishedAt": "2026-10-15T00:55:40.483Z"
+    },
+    {
+      "suite": "blocks",
+      "script": "scripts/check-r5-blocks-http.mjs",
+      "source_sha256": "062297ab29b2badf1dc8f348177ebb33faf7e220c341aaff07ab7c14b416e63e",
+      "result": "PASS",
+      "startedAt": "2026-10-15T00:55:40.485Z",
+      "finishedAt": "2026-10-15T00:55:41.482Z"
+    },
+    {
+      "suite": "private-profile",
+      "script": "scripts/check-r5-private-profile-http.mjs",
+      "source_sha256": "e02e13d2093db3a0d45906d8646a2366d19addadecd0caa0d5240d16b5f2f871",
+      "result": "PASS",
+      "startedAt": "2026-10-15T01:10:57.779Z",
+      "finishedAt": "2026-10-15T01:10:59.689Z"
+    }
+  ],
+  "result": "PASS"
+}

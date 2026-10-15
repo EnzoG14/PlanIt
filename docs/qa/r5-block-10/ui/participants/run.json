@@ -1,0 +1,10 @@
+{
+  "base": "f66d70bcf4f0e28c02fe2aff88088bd238a65e1e",
+  "branch": "codex/r5-block-10",
+  "suite": "participants",
+  "script": "scripts/check-r5-profile-regression-ui.mjs",
+  "source_sha256": "b75ed0ebe02d8a26daa245a58aeac3ecdbb1c2aee08ab3e953ceb61276b1d8a5",
+  "result": "PASS",
+  "startedAt": "2026-10-15T01:05:55.102Z",
+  "finishedAt": "2026-10-15T01:11:35.806Z"
+}

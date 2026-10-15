@@ -1,0 +1,56 @@
+PASS 320: Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save
+PASS 320: D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh
+PASS 320: Public→private keeps accepted, return and reload persist all editable values in fixture backend
+PASS 320: Invalid username prevented before write; backend duplicate shown without false success
+PASS 320: Lost response locks edits, navigation warns, check-only reconciles late commit without another write
+PASS 320: Avatar selection detects a concurrent reference change before upload and preserves the other session
+PASS 320: Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove
+PASS 320: Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar
+PASS 320: Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow
+PASS 360: Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save
+PASS 360: D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh
+PASS 360: Public→private keeps accepted, return and reload persist all editable values in fixture backend
+PASS 360: Invalid username prevented before write; backend duplicate shown without false success
+PASS 360: Lost response locks edits, navigation warns, check-only reconciles late commit without another write
+PASS 360: Avatar selection detects a concurrent reference change before upload and preserves the other session
+PASS 360: Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove
+PASS 360: Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar
+PASS 360: Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow
+PASS 375: Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save
+PASS 375: D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh
+PASS 375: Public→private keeps accepted, return and reload persist all editable values in fixture backend
+PASS 375: Invalid username prevented before write; backend duplicate shown without false success
+PASS 375: Lost response locks edits, navigation warns, check-only reconciles late commit without another write
+PASS 375: Avatar selection detects a concurrent reference change before upload and preserves the other session
+PASS 375: Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove
+PASS 375: Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar
+PASS 375: Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow
+PASS 390: Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save
+PASS 390: D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh
+PASS 390: Public→private keeps accepted, return and reload persist all editable values in fixture backend
+PASS 390: Invalid username prevented before write; backend duplicate shown without false success
+PASS 390: Lost response locks edits, navigation warns, check-only reconciles late commit without another write
+PASS 390: Avatar selection detects a concurrent reference change before upload and preserves the other session
+PASS 390: Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove
+PASS 390: Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar
+PASS 390: Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow
+PASS 390: Actual 10s RPC deadline remains uncertain; late commit reconciled without repeating mutation
+PASS 390: Account/token change discards old editor and ignores late save response; short viewport emulation
+PASS 768: Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save
+PASS 768: D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh
+PASS 768: Public→private keeps accepted, return and reload persist all editable values in fixture backend
+PASS 768: Invalid username prevented before write; backend duplicate shown without false success
+PASS 768: Lost response locks edits, navigation warns, check-only reconciles late commit without another write
+PASS 768: Avatar selection detects a concurrent reference change before upload and preserves the other session
+PASS 768: Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove
+PASS 768: Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar
+PASS 768: Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow
+PASS 1280: Protected route from own profile, Amanecer, no overflow, allowlisted state, unchanged values disable save
+PASS 1280: D04 explicit confirmation/cancel/focus, one RPC with no owner ID, lowercase normalization, personal fields, relationship refresh
+PASS 1280: Public→private keeps accepted, return and reload persist all editable values in fixture backend
+PASS 1280: Invalid username prevented before write; backend duplicate shown without false success
+PASS 1280: Lost response locks edits, navigation warns, check-only reconciles late commit without another write
+PASS 1280: Avatar selection detects a concurrent reference change before upload and preserves the other session
+PASS 1280: Avatar MIME/size/decode validation; immutable owner path/cacheControl0/no upsert; failed link preserves old; lost response reconciles; staging cleanup and registered retention; remove
+PASS 1280: Reload recovery discovers only unregistered own uploads; cleanup retains registered former avatar
+PASS 1280: Long-text validation, discard navigation, loading failure/retry, visible keyboard focus and enlarged text without page overflow

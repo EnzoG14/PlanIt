@@ -1,0 +1,1 @@
+PASS: four real HTTP anonymous denials; no authenticated JWT proof

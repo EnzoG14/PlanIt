@@ -1,0 +1,17 @@
+{
+  "base": "f66d70bcf4f0e28c02fe2aff88088bd238a65e1e",
+  "branch": "codex/r5-block-10",
+  "stage": "regressions",
+  "migrations": 30,
+  "results": [
+    {
+      "suite": "regressions",
+      "script": "scripts/check-r5-regressions.mjs",
+      "source_sha256": "91d43ab54e58f579fa98e871cd1043f4c1b13ad3db7b26dfe75390b8cc4f3c2a",
+      "result": "PASS",
+      "startedAt": "2026-10-15T00:58:13.947Z",
+      "finishedAt": "2026-10-15T01:01:24.097Z"
+    }
+  ],
+  "result": "PASS"
+}

@@ -1,0 +1,79 @@
+PASS 320: B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields
+PASS 320: B5 accepted bio/public events, allowlist, stable 30+4 pagination
+PASS 320: B5 mid-read minimal-success reconciles current authorized projection
+PASS 320: B5 mid-read blocked-success reconciles current authorized projection
+PASS 320: B5 mid-read blocked-denied reconciles current authorized projection
+PASS 320: B5 mid-read minimal-denied reconciles current authorized projection
+PASS 320: B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable
+PASS 320: B5 failed reconciliation exposes no old data and retry recovers minimum
+PASS 320: B5 late authorized events cannot restore revoked bio or prior pages
+PASS 320: B5 accepted empty, blocked neutral, network failure and retry
+PASS 320: B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height
+PASS 320: B5 hidden/return and offline/reconnect clear data and revalidate revoked permission
+PASS 320: B5 late route request, invalid ID, self→me and logout remove prior social data
+PASS 360: B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields
+PASS 360: B5 accepted bio/public events, allowlist, stable 30+4 pagination
+PASS 360: B5 mid-read minimal-success reconciles current authorized projection
+PASS 360: B5 mid-read blocked-success reconciles current authorized projection
+PASS 360: B5 mid-read blocked-denied reconciles current authorized projection
+PASS 360: B5 mid-read minimal-denied reconciles current authorized projection
+PASS 360: B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable
+PASS 360: B5 failed reconciliation exposes no old data and retry recovers minimum
+PASS 360: B5 late authorized events cannot restore revoked bio or prior pages
+PASS 360: B5 accepted empty, blocked neutral, network failure and retry
+PASS 360: B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height
+PASS 360: B5 hidden/return and offline/reconnect clear data and revalidate revoked permission
+PASS 360: B5 late route request, invalid ID, self→me and logout remove prior social data
+PASS 375: B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields
+PASS 375: B5 accepted bio/public events, allowlist, stable 30+4 pagination
+PASS 375: B5 mid-read minimal-success reconciles current authorized projection
+PASS 375: B5 mid-read blocked-success reconciles current authorized projection
+PASS 375: B5 mid-read blocked-denied reconciles current authorized projection
+PASS 375: B5 mid-read minimal-denied reconciles current authorized projection
+PASS 375: B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable
+PASS 375: B5 failed reconciliation exposes no old data and retry recovers minimum
+PASS 375: B5 late authorized events cannot restore revoked bio or prior pages
+PASS 375: B5 accepted empty, blocked neutral, network failure and retry
+PASS 375: B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height
+PASS 375: B5 hidden/return and offline/reconnect clear data and revalidate revoked permission
+PASS 375: B5 late route request, invalid ID, self→me and logout remove prior social data
+PASS 390: B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields
+PASS 390: B5 accepted bio/public events, allowlist, stable 30+4 pagination
+PASS 390: B5 mid-read minimal-success reconciles current authorized projection
+PASS 390: B5 mid-read blocked-success reconciles current authorized projection
+PASS 390: B5 mid-read blocked-denied reconciles current authorized projection
+PASS 390: B5 mid-read minimal-denied reconciles current authorized projection
+PASS 390: B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable
+PASS 390: B5 failed reconciliation exposes no old data and retry recovers minimum
+PASS 390: B5 late authorized events cannot restore revoked bio or prior pages
+PASS 390: B5 accepted empty, blocked neutral, network failure and retry
+PASS 390: B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height
+PASS 390: B5 hidden/return and offline/reconnect clear data and revalidate revoked permission
+PASS 390: B5 visible30s polling and 10s deadline discard blocked/late data
+PASS 390: B5 late route request, invalid ID, self→me and logout remove prior social data
+PASS 768: B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields
+PASS 768: B5 accepted bio/public events, allowlist, stable 30+4 pagination
+PASS 768: B5 mid-read minimal-success reconciles current authorized projection
+PASS 768: B5 mid-read blocked-success reconciles current authorized projection
+PASS 768: B5 mid-read blocked-denied reconciles current authorized projection
+PASS 768: B5 mid-read minimal-denied reconciles current authorized projection
+PASS 768: B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable
+PASS 768: B5 failed reconciliation exposes no old data and retry recovers minimum
+PASS 768: B5 late authorized events cannot restore revoked bio or prior pages
+PASS 768: B5 accepted empty, blocked neutral, network failure and retry
+PASS 768: B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height
+PASS 768: B5 hidden/return and offline/reconnect clear data and revalidate revoked permission
+PASS 768: B5 late route request, invalid ID, self→me and logout remove prior social data
+PASS 1280: B5 direct/reloaded private minimum has exactly identity, no events request or reserved fields
+PASS 1280: B5 accepted bio/public events, allowlist, stable 30+4 pagination
+PASS 1280: B5 mid-read minimal-success reconciles current authorized projection
+PASS 1280: B5 mid-read blocked-success reconciles current authorized projection
+PASS 1280: B5 mid-read blocked-denied reconciles current authorized projection
+PASS 1280: B5 mid-read minimal-denied reconciles current authorized projection
+PASS 1280: B5 revoked second page drops all prior pages; denied events with expanded gate stay unavailable
+PASS 1280: B5 failed reconciliation exposes no old data and retry recovers minimum
+PASS 1280: B5 late authorized events cannot restore revoked bio or prior pages
+PASS 1280: B5 accepted empty, blocked neutral, network failure and retry
+PASS 1280: B5 keyboard roundtrip, focus3px, targets44px, long text, 200% and low height
+PASS 1280: B5 hidden/return and offline/reconnect clear data and revalidate revoked permission
+PASS 1280: B5 late route request, invalid ID, self→me and logout remove prior social data

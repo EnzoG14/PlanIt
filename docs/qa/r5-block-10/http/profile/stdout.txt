@@ -1,0 +1,1 @@
+PASS: three real anonymous HTTP denials for B3

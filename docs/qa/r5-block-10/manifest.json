@@ -1,0 +1,1919 @@
+{
+  "base": "f66d70bcf4f0e28c02fe2aff88088bd238a65e1e",
+  "branch": "codex/r5-block-10",
+  "files": [
+    {
+      "path": "docs/implementation/RELEASE_5_PLAN.md",
+      "git_blob": "6493af5ee66a11f67d1ccfce308aa8a4cd39116d"
+    },
+    {
+      "path": "docs/implementation/RELEASE_5_README.md",
+      "git_blob": "d2c49a63729f601080360b7e2983f8a3b4702b37"
+    },
+    {
+      "path": "docs/implementation/RELEASE_5_STATUS.md",
+      "git_blob": "8ddab5926bcc228e57eaa7602154b968c8175601"
+    },
+    {
+      "path": "docs/qa/RELEASE_5_ACCEPTANCE.md",
+      "git_blob": "9959130ff4fe61bab29168df62338ef7f890d06d"
+    },
+    {
+      "path": "docs/qa/RELEASE_5_TEST_REPORT.md",
+      "git_blob": "b45363e95cd02c658beaab3dd06c837dee90c5df"
+    },
+    {
+      "path": "docs/qa/r5-block-10/README.md",
+      "git_blob": "1808460797eaa56160caa03d743e3824fbbe0588"
+    },
+    {
+      "path": "docs/qa/r5-block-10/auth-unit.txt",
+      "git_blob": "09baa73a97b40f3c1f4a636a97be9279fdee9f36"
+    },
+    {
+      "path": "docs/qa/r5-block-10/before-follow-1280.png",
+      "git_blob": "92f217a35f007dad9f88d0ea70acc9794df94c1a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/before-follow-390.png",
+      "git_blob": "d68ffb206e1ebaac430a457d443134e8c49eea45"
+    },
+    {
+      "path": "docs/qa/r5-block-10/build.txt",
+      "git_blob": "37a3da03d9cabb320d2e3b65ec0ba5dffd6e2181"
+    },
+    {
+      "path": "docs/qa/r5-block-10/catalog.json",
+      "git_blob": "edf6f0f3304963231b237c9e6963fc3bc8193d2f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/design-detector.json",
+      "git_blob": "fe51488c7066f6687ef680d6bfaa4f7768ef205c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/design-review.md",
+      "git_blob": "2e5960b5e2e3a77569ec2f7c3f358c47b9b6cfae"
+    },
+    {
+      "path": "docs/qa/r5-block-10/events-unit.txt",
+      "git_blob": "d5ede9522f16bec7dfa7278986e516e491c9405c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/foundation.txt",
+      "git_blob": "0857e3eae3ba0f84c7f206ab7537208343ae8ff0"
+    },
+    {
+      "path": "docs/qa/r5-block-10/functions.json",
+      "git_blob": "9a3d3bda42a1d93b8594b432cb959c00b6fa14e3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http.json",
+      "git_blob": "76c0e8b64db3a41e595cbbab4b3bb6e54460ac21"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/blocks/http-anon.json",
+      "git_blob": "c91253d43fb9c05217bdac16d1c942334a6ffd42"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/blocks/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/blocks/stdout.txt",
+      "git_blob": "7615d31d0aec6a429743433fedc859aa17edf036"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/edit-profile/http-anon.json",
+      "git_blob": "b2897d254c988148580b3808f39105935c518335"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/edit-profile/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/edit-profile/stdout.txt",
+      "git_blob": "b307335b376cfa756fc88d0d3f8be413b3872db2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/follows/http-anon.json",
+      "git_blob": "3b26f0a0d73ca7c4d762172f8e55139b8b73a7e3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/follows/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/follows/stdout.txt",
+      "git_blob": "147c1f131f05e60d29d8183d34a7258870a7b87d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/messages/http-anon.json",
+      "git_blob": "54b12d29682a5d66ab752c32d53d567902828c8e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/messages/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/messages/stdout.txt",
+      "git_blob": "abb5036985eddc0285477f7fd1fc876cc4176f6f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/participants/http-anon.json",
+      "git_blob": "72dd70a9bba38a21f0623d17a9a087dffc0b94d9"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/participants/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/participants/stdout.txt",
+      "git_blob": "9e58ac2cfbf694ee59134c96aaa0720872f00527"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/private-profile/http.json",
+      "git_blob": "de7a568922babf3cdc0b7e895d975ed30d653cbd"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/private-profile/run.json",
+      "git_blob": "c4f9486dee6f774f39b149ceda42a3e4b4205d4e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/private-profile/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/private-profile/stdout.txt",
+      "git_blob": "cc8bff46d25bea8697e011715c23275f0dcbb733"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/profile/http-profile-anon.json",
+      "git_blob": "1b5dd22c8f120a20a98a4e6898664cceacbf0011"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/profile/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/profile/stdout.txt",
+      "git_blob": "b0e009cf96fba0c18be3d5caec8bca01d5c25858"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/requests/http-anon.json",
+      "git_blob": "a6da6420f7fe6d196e45f9f6be687df27b758e46"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/requests/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/http/requests/stdout.txt",
+      "git_blob": "5b377c2d2ed32a22bc940dab106953c04d1062df"
+    },
+    {
+      "path": "docs/qa/r5-block-10/install-authorized.txt",
+      "git_blob": "36d9cb9b7aed520abee850515d1c691c73cf766a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/install.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/lint.txt",
+      "git_blob": "d8b0a0dead0c1000cb2109a3b6fae0adc9adb1db"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions.json",
+      "git_blob": "e241daa1cbc1a0e292f6c49e522cfca4a93512eb"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions.json",
+      "git_blob": "cc5dc68c534b84ea61f4226703c9bb9641d0b6f6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/attendees/postgres-results.json",
+      "git_blob": "ecc1d9a0f2ab7fa75519eb23eb716c0ac499b13f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/chat/postgres-results.json",
+      "git_blob": "0bee88d23834d2b0e0da3f8e358e44885ac5ac36"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/edit-event/postgres-results.json",
+      "git_blob": "d7ca2f735ee16c09d73c3794ddaa6addf2d09de1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/event-access/postgres-results.json",
+      "git_blob": "6a9da57598f8b704e61c20258796841cc3ad3e41"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/event-actions/postgres-results.json",
+      "git_blob": "269ceaa5bab9dbe6e5342ebee634933657f238ab"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/event-links/postgres-results.json",
+      "git_blob": "9a1702c163ad9b426952a9e681efca367756ee25"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/gallery/postgres-results.json",
+      "git_blob": "102b69fa05a0f27bedebcdbf495211990e51b298"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/hidden-access/postgres-results.json",
+      "git_blob": "b0f9dea52d004a52e5c6a1f793573bee7d39f02f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/home-events/postgres-results.json",
+      "git_blob": "d0fb328c47cc565df2d887af4c1808fccd659698"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/interests/results.json",
+      "git_blob": "3c3e83bdaaed1f073b8c60c5b805ed65f492252e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/invite/postgres-results.json",
+      "git_blob": "77bf041b648e05d8a7d30f2c8201f46bac00d2d8"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/notifications/postgres-results.json",
+      "git_blob": "c9e156a3ac01bcff3bacdae24fbea5cfe99409cd"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/participations/postgres-results.json",
+      "git_blob": "d9d7ba7f3625d467e8c82b7bbd186a8edb9e895a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/profile/postgres-results.json",
+      "git_blob": "db020f56eb9deb44ee10f9cd6a2b5550ddb7bf78"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/rejoin/postgres-results.json",
+      "git_blob": "6953baab8669d9aa025949147167b09f7685bf7d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/regressions/search/postgres-results.json",
+      "git_blob": "becffa66f6b2388eddd8cceaa70f2c06c54fe7ae"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/regressions/regressions/stdout.txt",
+      "git_blob": "2c029ce41f623dd6f023bbb7b572b0a008b6b05d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/security-audit.json",
+      "git_blob": "5c5f9adc1e3934206f0f49f704a6e13d62495ebe"
+    },
+    {
+      "path": "docs/qa/r5-block-10/source.json",
+      "git_blob": "c1f253b723b3cb2b0416d804910eb6b7075bfb53"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql.json",
+      "git_blob": "c3526033faea13020f5a726981a36b3fa1669f8a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/avatar/avatar-unit.json",
+      "git_blob": "80470fa6bb0b80d08971f1c70b19c0268b70a5f4"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/avatar/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/avatar/stdout.txt",
+      "git_blob": "a06b828936a436741d036496426ff371440f72c5"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/blocks/explain.json",
+      "git_blob": "76d04630ee527733b9d4377010575b9b6eda64de"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/blocks/harness.json",
+      "git_blob": "f77f64a77d01c511246f0a8f94f8d92c2dc2f534"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/blocks/run.json",
+      "git_blob": "c1b306817eb55ef3a551e331ea9106ffdf7a807f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/blocks/sql-results.json",
+      "git_blob": "b53708540d8e218d5a73175a35b9d2d2d22589e0"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/blocks/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/blocks/stdout.txt",
+      "git_blob": "d3d89df616f4c66ec59db78283199e2460e01d64"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/edit-profile/explain.json",
+      "git_blob": "582f264797e8d81363aedd5b2c1a0484b68142d7"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/edit-profile/harness.json",
+      "git_blob": "ffe5c9e088036d819fd09cb93a181b3ce3ac1dcf"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/edit-profile/remote-comparison.json",
+      "git_blob": "d0c49df6c2e146b2d3c3feeebbf686725db74401"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/edit-profile/sql-results.json",
+      "git_blob": "3229dbd11cf083968a04b6a77c0e009ad6ba0f7b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/edit-profile/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/edit-profile/stdout.txt",
+      "git_blob": "405fa38cb8790ce2278627c6af0c3ca6dc9497b6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/follows/explain.json",
+      "git_blob": "1de5b96379b60b7be447b26190b5f2838802fdc5"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/follows/harness.json",
+      "git_blob": "08a80d4851e2d6a7ebb78ee2fdcca6e11a467702"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/follows/remote-comparison.json",
+      "git_blob": "374ba8d2759d70dcb65b811e2cbf5f7c13975de6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/follows/run.json",
+      "git_blob": "8e2fd835517ce5bff3f62df4c2c635dc4eb54c89"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/follows/sql-results.json",
+      "git_blob": "fb1a33658d4a5106624c45ddb94f9cad67f94839"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/follows/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/follows/stdout.txt",
+      "git_blob": "75b44bdd88fd99d1ffe114fa9bced230aefa215f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/message-notifications/explain.json",
+      "git_blob": "99608a3e262d20c55184065c0dae792dbb0d4bce"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/message-notifications/harness.json",
+      "git_blob": "d05a31e398bb2c82aa035eb2cec9aab720efb667"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/message-notifications/sql-results.json",
+      "git_blob": "b9f51b79eb053a8eb422fe44b272a37309ed662c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/message-notifications/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/message-notifications/stdout.txt",
+      "git_blob": "54b5400ca17d02a96f40bc22ac6a8ace02f52fbb"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/messages/explain.json",
+      "git_blob": "0cc436f73a5decb46deeec4614999b1100a0681c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/messages/harness.json",
+      "git_blob": "85d7d50298d5a95a6fb53a9e16ece884569e724d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/messages/sql-results.json",
+      "git_blob": "43ee6875f996da44c700e11510cb8381aa925e2c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/messages/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/messages/stdout.txt",
+      "git_blob": "7088cc46bdddb54a2c200e117972b44709148965"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/participants/explain.json",
+      "git_blob": "2daf39ca9a797d4972b822ff1bf69e849c6c05b2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/participants/harness.json",
+      "git_blob": "d16adae4222d246fd04a0ea951d30e91dd1ddab5"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/participants/sql-results.json",
+      "git_blob": "46c5c7af049fb997e3d976a7ea6ceaf57517d7ed"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/participants/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/participants/stdout.txt",
+      "git_blob": "a8b9165c07059e62597194349844e8d042505436"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/private-profile/explain.json",
+      "git_blob": "2c2976927616ffd8747b3907c20bbf44e219787b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/private-profile/harness.json",
+      "git_blob": "adc642b49bcef0bcb3db2f4d9329461646af45c0"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/private-profile/remote-comparison.json",
+      "git_blob": "374ba8d2759d70dcb65b811e2cbf5f7c13975de6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/private-profile/sql-results.json",
+      "git_blob": "6d28c11cca396e466129ee50455aec26883255c1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/private-profile/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/private-profile/stdout.txt",
+      "git_blob": "856a1e0001b17f20ed0083f1f073cbc18836f121"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/profile/explain.json",
+      "git_blob": "16aa384c62af25bdebc143fa51fc0f2071179e72"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/profile/harness.json",
+      "git_blob": "a8aac98fb6e89ecd5aa0104a842098b2b9268031"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/profile/sql-results.json",
+      "git_blob": "734edeadcdb16e31f89185326aeb2d257e91d5bf"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/profile/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/profile/stdout.txt",
+      "git_blob": "a4126c0356dc6a86c38c8381651d2fc28dcc86c3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/request-notifications/explain.json",
+      "git_blob": "42322e1b5f00e8db375122d85cc1061ca7a80fdb"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/request-notifications/harness.json",
+      "git_blob": "e54de607b26b35fee91fedeb0c005cd4a5409d27"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/request-notifications/sql-results.json",
+      "git_blob": "e4cc42c072c1a6aaee27144946397f8b17b80965"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/request-notifications/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/request-notifications/stdout.txt",
+      "git_blob": "dee7b5f801111c39fef7ca57b9ebf6d2b8edfdbb"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/requests/explain.json",
+      "git_blob": "3bbd9450fbc9fdd122b70e290866abe0e08e2b58"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/requests/harness.json",
+      "git_blob": "0aadabaa843b6e7c7d52c0dfe332bc1c17dd7506"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/requests/remote-comparison.json",
+      "git_blob": "374ba8d2759d70dcb65b811e2cbf5f7c13975de6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/requests/run.json",
+      "git_blob": "9e731219177dfb10d434432dd5de106e283c9948"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/requests/sql-results.json",
+      "git_blob": "57000ed009e20e762ac08f53dfb4dea2dc03f1da"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/requests/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/sql/requests/stdout.txt",
+      "git_blob": "c6ceed065f90a3e705a0930366653f8c7480a182"
+    },
+    {
+      "path": "docs/qa/r5-block-10/summary.json",
+      "git_blob": "596545590ec733ea3fee9b7858c8e3f4b4068799"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui.json",
+      "git_blob": "b6d6e35bf6014074ff900c211323041256a9b71d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/block-confirm-1280.png",
+      "git_blob": "ac205d77e9f5b15c9c93064c73be33ae08fcdbd0"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/block-confirm-390.png",
+      "git_blob": "c3c32636acf4241fa52ca2348d84099618491368"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/chat-blocked-1280.png",
+      "git_blob": "d240ce1715027fe998770dd7cb32f8a7fb53a8a8"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/chat-blocked-390.png",
+      "git_blob": "a53d4f63cb16badd035ef6d27e749e12af47d52c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/profile-before-1280.png",
+      "git_blob": "f82aecc520a33a7b4a79fa149a46a49d37c29992"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/profile-before-390.png",
+      "git_blob": "fa9c83af9ea9169e21fd8a118d30b5d5440f21ad"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/profile-blocked-1280.png",
+      "git_blob": "5c7c1355b4a0dfc0b166ac6e8e89e972919b21a1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/profile-blocked-390.png",
+      "git_blob": "5d7a9af6d1012e4c3bdd8b440f25cf0bb5f4ccaa"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/recovered-1280.png",
+      "git_blob": "8b3820f4c9477bb4b8c9bb8c6bfa11291bdc8347"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/recovered-390.png",
+      "git_blob": "01cc637eaa09d18ad944e41703a80a34e02f8452"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/short-text-1280.png",
+      "git_blob": "1cad4d0edf1e34007e62063057e04e528741d4ef"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/short-text-390.png",
+      "git_blob": "52a2438bdb75abe87b339fa5933334e3d558154b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/stdout.txt",
+      "git_blob": "dac5f681ecdf387d7a2ec7a5d6b7a230995daf8a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/ui-results.json",
+      "git_blob": "0aafec2df8ee64521c18848372986804d269c68b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/unblock-confirm-1280.png",
+      "git_blob": "09cba1270a596321b4f0deaeba6fd3002f8fc9f9"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/unblock-confirm-390.png",
+      "git_blob": "4624118a822df5a32106d7d6a853cb290871aff6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/uncertain-1280.png",
+      "git_blob": "b21140d2af724bb6d639beb7614a1e863691a732"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/blocks/uncertain-390.png",
+      "git_blob": "f60e4a7cd4372b935c8bf387bac5eedc695dd1fc"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/avatar-preview-1280.png",
+      "git_blob": "1ed06d7fb2d74076c89b98f95c140a12add7ffa3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/avatar-preview-320.png",
+      "git_blob": "63ea97b305c00fdc25896ac7d6d3ef45d1bdbef1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/avatar-preview-360.png",
+      "git_blob": "0a5558216434dcf55e9ad633aa4d63b0c9c5a599"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/avatar-preview-375.png",
+      "git_blob": "60627f472301aa6c65531149bd1b5784713cdfc6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/avatar-preview-390.png",
+      "git_blob": "3694cc7d65dc5e6da68fc1094bf1220ca7d401cf"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/avatar-preview-768.png",
+      "git_blob": "6b6ce27fc4546f9658c47f63c4a91f031540653d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/editor-1280.png",
+      "git_blob": "e207c1d00ceacac1964dab17a2b2d807e33740fd"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/editor-320.png",
+      "git_blob": "1c05172b3618ac27bf0995afdd9e4a9f9a3ddea2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/editor-360.png",
+      "git_blob": "178197ecece7c7ba60cff06684720333c9f97a8d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/editor-375.png",
+      "git_blob": "acd63871319c1173b231d93d2b945eae66c17b8b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/editor-390.png",
+      "git_blob": "c28688fe95085a8fa8e59bc3986ce42d699c6280"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/editor-768.png",
+      "git_blob": "c88212bd0690df018ff7fa22839bb08bdcd9d764"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/expanded-text-1280.png",
+      "git_blob": "e3d5988ece86f89cd8f39098888b188e4fefda1d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/expanded-text-320.png",
+      "git_blob": "b664b4573546c02afb98adc935e458052d239b5e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/expanded-text-360.png",
+      "git_blob": "f5515725686d6ace61135991b5b896e953102021"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/expanded-text-375.png",
+      "git_blob": "a64a35c68df540f634ecefd3b8d2f2354c3d7aed"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/expanded-text-390.png",
+      "git_blob": "c8b3c65a1fecc516a737b14182e279acb3425704"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/expanded-text-768.png",
+      "git_blob": "b88a05612a4e342473e941f5a4b2275f7e698c9e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/privacy-confirm-1280.png",
+      "git_blob": "2331700372ffc7d48aebc9a866ba773b1d76834e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/privacy-confirm-320.png",
+      "git_blob": "6ce8bbb34427f7ad43b45e26b97a0d3640fd2164"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/privacy-confirm-360.png",
+      "git_blob": "9e3c64aab79873692db803767dda32959eb4b7c3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/privacy-confirm-375.png",
+      "git_blob": "2ba987ed84d6df5c1dd218b0c7dcb6f3e10c6c5c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/privacy-confirm-390.png",
+      "git_blob": "97b714ad8f76fef01bb05206fff11f0136947852"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/privacy-confirm-768.png",
+      "git_blob": "5329c51d2176d8a670ccdd934efc9810ace5721c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/results.json",
+      "git_blob": "880b399d1b5ab92464f618ce01639cee20c6f60f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/short-height-390.png",
+      "git_blob": "dc620c7b43257c9082c6b2526602f2b9a056a950"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/stdout.txt",
+      "git_blob": "86b240278b9e42e17345ce3b820610637bd4675c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/edit-profile/timeout-390.png",
+      "git_blob": "5f7d672f96246298d4985119604ada5d8f19ad24"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/accepted-1280.png",
+      "git_blob": "7851c996e5f4cc00f7c246caa55d17484d8576c7"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/accepted-390.png",
+      "git_blob": "9bcef494b498bc55ab08c7fc5583ffb5035903b1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/blocked-1280.png",
+      "git_blob": "9f6b398f6e91dfac8d745053a98aa9c4ce6d42bf"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/blocked-390.png",
+      "git_blob": "bdb0c097237fc6ec8cc42dbc9b9a15901f4c5fe5"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/denied-1280.png",
+      "git_blob": "c16894cba97c8472cae6d6c40eb843a942ce8897"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/denied-390.png",
+      "git_blob": "ff0e81ec928e82aa3ba35eb26b2ffebd424cc7c8"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/empty-1280.png",
+      "git_blob": "fc3a4f5d2eb5e31f31d30ae98b89f06509f1c418"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/empty-390.png",
+      "git_blob": "ce79dc80611d38b83603cd2d2006ee202b63fbda"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/followers-1280.png",
+      "git_blob": "d6b88d8c92c86ea9ea6c2244171135ed219eaa4e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/followers-390.png",
+      "git_blob": "d228faf6d66774d93dd6873dfcc840b7b85e192c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/harness.json",
+      "git_blob": "7833b3c5a562d7f984f082b4f511518cacaa18bf"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/long-text-1280.png",
+      "git_blob": "c59a9a7cb756adbf0174d83edb43217287c748d1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/long-text-390.png",
+      "git_blob": "2317208103661f04d0b8a5f75febb8c1dcdf322f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/pending-1280.png",
+      "git_blob": "3b45c8f5c8c8d4cf97e5fbe08690094314b057d9"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/pending-390.png",
+      "git_blob": "7d74537d3a483d65d56f2bcba06f1bf3ce5b312b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/public-1280.png",
+      "git_blob": "4ecd89343ae51cc45167b173a55cad5357069598"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/public-390.png",
+      "git_blob": "bd1cc437ae3a01e10220df4d872d639e77175888"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/run.json",
+      "git_blob": "dbcfc5642e7150d34bdd6e0cffd874894ec9f18a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/stdout.txt",
+      "git_blob": "39cc5bec22a059b25e539c13b12c78194f6431bd"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/ui-results.json",
+      "git_blob": "edf7a69eb378e03fa75100e1a40b8a58a7c0c3b3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/uncertain-1280.png",
+      "git_blob": "250b56cf0425d90b4669ff34353d0b071f499fea"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/follows/uncertain-390.png",
+      "git_blob": "3bc91e83d98cb9bf182ea9233f1c7a44fb252d10"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/message-notifications/dm-notice-1280.png",
+      "git_blob": "a6d1a05e1303a5621c989179e180e5660089d2f9"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/message-notifications/dm-notice-390.png",
+      "git_blob": "bde0b55b0c8d7a9b90baf06ed82c7ea830ac2cb1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/message-notifications/results.json",
+      "git_blob": "0be79f75f1175f07508fee7726ee30722c6eb0f0"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/message-notifications/safe-target-1280.png",
+      "git_blob": "a22756040765269a4875d0200d3acbe78676122e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/message-notifications/safe-target-390.png",
+      "git_blob": "e2910e7d8b33a25bbb7327a93d83148fb5eafc97"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/message-notifications/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/message-notifications/stdout.txt",
+      "git_blob": "05aa9f6aa381f7a2e0f95850d843a79f8f51f426"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/blocked-1280.png",
+      "git_blob": "1d02efd1adf7464a75bd4f9aa19aa74adf5f9118"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/blocked-390.png",
+      "git_blob": "0dbb19ee6d6dd5ebe13ce9aa6d9978ca9839ee22"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/denied-1280.png",
+      "git_blob": "319790f306abd33856e98ac3106494b49552d4d7"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/denied-390.png",
+      "git_blob": "f370a973dade073eb6e7100575a2352b2dc438d6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/empty-1280.png",
+      "git_blob": "19b3a8906f4c9080fe31cc19f68b482693dfd8aa"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/empty-390.png",
+      "git_blob": "4e77e2b3aa44b4b220b7a263875b56d06a25fbd4"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/history-1280.png",
+      "git_blob": "7d3b1f33d79bdfd83b9ce72a1326fe35d317b783"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/history-390.png",
+      "git_blob": "3268a1423ef1deaa375315fe9bc34dfc23e4459b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/inbox-1280.png",
+      "git_blob": "0f32cdefc89e2b374398a70a065b90822cbfb541"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/inbox-390.png",
+      "git_blob": "510b8e8eb894f91eb7a5c8768895ceae8e42cc97"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/stdout.txt",
+      "git_blob": "fa2a9f458c0af14206b37d9a5dfacdc01b2843a4"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/ui-results.json",
+      "git_blob": "60cc84211b83fe7ee3cc047a278dd4ea8ecff597"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/uncertain-1280.png",
+      "git_blob": "b4663af2146a09835cf33d3a4385aef76d26fe5f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/messages/uncertain-390.png",
+      "git_blob": "f9b6b0ddae90909ca70bae929394a2d619b061c6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/adaptation.json",
+      "git_blob": "366d077db190a44d1cbcb4556e8be7add8649f1d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/chat-denied-1280.png",
+      "git_blob": "6cec01495eb118810445b73d00ab80cd0e8b2cde"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/chat-denied-320.png",
+      "git_blob": "2864ae13d548154c3894c4510ee98c15e4fa74ac"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/chat-denied-360.png",
+      "git_blob": "5d75ec60e55c3064e660264a5bfb55f3fea92444"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/chat-denied-375.png",
+      "git_blob": "13c58f2c6da8b4af935d665662681d5e820622f5"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/chat-denied-390.png",
+      "git_blob": "6cd4c5b569981cd06321ab5380ffe493fb260e63"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/chat-denied-768.png",
+      "git_blob": "989d970ed3009505fc420fd161bc1394b2489dae"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/confirmed-1280.png",
+      "git_blob": "8e3ed7942f08c1e9968a4f4bb5814b67c321c1fd"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/confirmed-320.png",
+      "git_blob": "38e7bdb8b0008ca5a907b231955e18685368a3ed"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/confirmed-360.png",
+      "git_blob": "88af43643167836526ea1bf89bd3947fd159e1d3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/confirmed-375.png",
+      "git_blob": "aefdcf2c56a6ca065f91e680a20b7d4697c5f44c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/confirmed-390.png",
+      "git_blob": "b519a09a02bf7eeaf875001a8c717e71dbcbb13f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/confirmed-768.png",
+      "git_blob": "2e1b06d9fb8fdd51efcca00539d4e4140fa2ec73"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/denied-1280.png",
+      "git_blob": "311512102cb5f3a734e7b0a6bffb10337923bac3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/denied-320.png",
+      "git_blob": "888d78e92bd5de1e7e2c11856e2030e35406c007"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/denied-360.png",
+      "git_blob": "0d1e847f5a5906c541fb022148aa955bd145ad52"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/denied-375.png",
+      "git_blob": "02030be1928a092794f9ce1970019c3946d2e304"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/denied-390.png",
+      "git_blob": "634967bd74972479f75b8d4bf5fa653325caffec"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/denied-768.png",
+      "git_blob": "d907722e393b8b87b004dc356b913732c313e320"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/dialog-1280.png",
+      "git_blob": "7e1d23701553d4f4d5c64cdb20d7c1cba4e09583"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/dialog-320.png",
+      "git_blob": "39c5d887f73653a710f219199f6348a0a31dd1b4"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/dialog-360.png",
+      "git_blob": "2fc4098db96a276c4b6eb29fb42d6173ebbfdb40"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/dialog-375.png",
+      "git_blob": "53c89f2423f263d0744d6a1f3224c4ba832700e2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/dialog-390.png",
+      "git_blob": "e3f4aff8f19e485a18a3aceafe86fb8513e1a20f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/dialog-768.png",
+      "git_blob": "b1f7469900bee723bbe5ab308771f40d880747b3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/empty-1280.png",
+      "git_blob": "3e54ed151f22e132d9cc5cb55ded2a5574b908df"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/empty-320.png",
+      "git_blob": "b6652df7c924df89a95c6c8bb2fb8240551b36d7"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/empty-360.png",
+      "git_blob": "c8926362a86e5b66ffe23ce252d69f7722194177"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/empty-375.png",
+      "git_blob": "1fbe385eacc5d4ef379d7e8a5339e7826ec21d51"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/empty-390.png",
+      "git_blob": "f2404518ff666761b3de486f4e596f09efec0d1f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/empty-768.png",
+      "git_blob": "730aa05c3748eef23b793734299e36d9d5bf89b6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/long-identity-1280.png",
+      "git_blob": "fa3a84c1a26f5485fe0f93c174c9b81347a0143a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/long-identity-320.png",
+      "git_blob": "31155e074fd324bf2fabdc470f2b3b4c3090ac04"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/long-identity-360.png",
+      "git_blob": "303e221c2880dfd20040297f15c2378b2a7c9e7e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/long-identity-375.png",
+      "git_blob": "03dcc99bcb7b274ba98f855735095db97fbb4eda"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/long-identity-390.png",
+      "git_blob": "b46ee2524aa6bc36b758180a5824d0ee189b3bbf"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/long-identity-768.png",
+      "git_blob": "7158e4fa2ce2857f6b1d0c538bd3207bb1085c36"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/regression.json",
+      "git_blob": "e7c754ad4855dc268f60315f4af5cde77fd0f0c2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/removed-1280.png",
+      "git_blob": "bb3afd189a36ca29983e9ba5613caad350c84b28"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/removed-320.png",
+      "git_blob": "9d86e77995e8106fdb5f2d92039529e54ff3513f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/removed-360.png",
+      "git_blob": "c0731d170d6cd38e910a3d7ccb63adab51ffcf8e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/removed-375.png",
+      "git_blob": "12adfaf2332cd4d1893a709b0e59d235acc59570"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/removed-390.png",
+      "git_blob": "6c9942001ffa986f34bdf1e55bb0b5831d286d17"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/removed-768.png",
+      "git_blob": "41c918cda0bb9c7d79e9364074fe6c65604c56b3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/search-empty-1280.png",
+      "git_blob": "0b697d280979f1d2784970ba56c2a605fb22a30a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/search-empty-320.png",
+      "git_blob": "8325c32a5e0e2855e285a89a1f1e3158b155f4ec"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/search-empty-360.png",
+      "git_blob": "85523e9f2ea9821bebca70427e34eb6ccd4b8314"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/search-empty-375.png",
+      "git_blob": "f08554c1e604c0b9067b430ece588006b2c263af"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/search-empty-390.png",
+      "git_blob": "7461f80b2f7c48c42f97f566ae152bc474660290"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/search-empty-768.png",
+      "git_blob": "b7cc542b4c0cc903e697329a434e9a55e6ce798a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/admin-ui/ui-results.json",
+      "git_blob": "dfc45e5cb227044d8967d218c81136d50ebb0aa4"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/attempt-before-fixture-update.json",
+      "git_blob": "1d75875f2bebb50859b84e8cb14ac5fd11b84900"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/focus-320.png",
+      "git_blob": "034a6c46013d38c6fc5e718668e61bff0aef03a3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-320.png",
+      "git_blob": "40e160925fa285f8ee7f5b09b8ca2bd172c78a63"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/denied-1280.png",
+      "git_blob": "b2f737587fd69b73138097c7bdfb4f5ef3fcd8bc"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/denied-320.png",
+      "git_blob": "1a3586e2d5f0174b405a236d994b754825eac54a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/denied-360.png",
+      "git_blob": "adc4dee87335bc12591d526d9fd165b03ac13479"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/denied-375.png",
+      "git_blob": "4912f1fd19240950021a849ddf966521efdc06b3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/denied-390.png",
+      "git_blob": "47f81fdfb2b81eb1044ea70d506eabb93e6d77e2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/denied-768.png",
+      "git_blob": "94e648fce12d3d6f5f4695224619067c893fd9a5"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/empty-1280.png",
+      "git_blob": "31e03a17d61cc87f71195da56771a5c0f1a0f063"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/empty-320.png",
+      "git_blob": "7a9e76a3668dbf3f905ea4ff2561ed54d4ff78c1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/empty-360.png",
+      "git_blob": "a306962addeec203258a42107b4e8a27c0e88da6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/empty-375.png",
+      "git_blob": "9545b39155022f977f836bfa4f3adbd358a360ea"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/empty-390.png",
+      "git_blob": "f67139ff90b3925d77512bd41f10ba50baeb3c62"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/empty-768.png",
+      "git_blob": "c4e770c9af3433cc2ea47f6dae73c23842be602a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/error-1280.png",
+      "git_blob": "b9825e55e4a79ddb77bf1c12644fcb4e9246354d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/error-320.png",
+      "git_blob": "0bd17ea62ec6be8fd1144cdf3d9e0f174969f45f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/error-360.png",
+      "git_blob": "7703efa0e0f491e6f927250af9c2629472546977"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/error-375.png",
+      "git_blob": "214781bef62ff247003094e200397c81ce7584a1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/error-390.png",
+      "git_blob": "d1b85666f7d1c02c357c074bcc75333bbeb7deed"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/error-768.png",
+      "git_blob": "385f9914aa14c82649c1bd0282090689aadf7c30"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/focus-1280.png",
+      "git_blob": "94f0d9f269c3d058db49021a0876dc1ca6f45af3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/focus-320.png",
+      "git_blob": "034a6c46013d38c6fc5e718668e61bff0aef03a3"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/focus-360.png",
+      "git_blob": "dd4675373ef02ecfab8d5ce07d2d96535e98da68"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/focus-375.png",
+      "git_blob": "9653f19beff4830d81f9d869987f1a46b14c57cc"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/focus-390.png",
+      "git_blob": "307cb1afca832278d228ac2e4bea1700951a93dd"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/focus-768.png",
+      "git_blob": "3f0d88ab9ef5723367df1cadcce2ecb45c707bb2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/long-avatar-fallback-1280.png",
+      "git_blob": "087b0b9f30f64f5753e10ac079200e9775f5dea8"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/long-avatar-fallback-320.png",
+      "git_blob": "f8d18106cc47ddb27d67466ff5a7a9418cab97d7"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/long-avatar-fallback-360.png",
+      "git_blob": "032e315608d17594bdd2445364516797eddc7ba9"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/long-avatar-fallback-375.png",
+      "git_blob": "8198eea6a279c0921fcd970df1057022b9629ee5"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/long-avatar-fallback-390.png",
+      "git_blob": "0b5e2948ae7db17cb6e5727e707639553aa4e848"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/long-avatar-fallback-768.png",
+      "git_blob": "e22ea1cb5f908f0faeed7f0a3e051c776c3a2617"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/participants-1280.png",
+      "git_blob": "e634eda9ecc85601ba33e3a1dc21cb6ab9750499"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/participants-320.png",
+      "git_blob": "40e160925fa285f8ee7f5b09b8ca2bd172c78a63"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/participants-360.png",
+      "git_blob": "12ed42e5cae34a9d134001ab64d334b114643679"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/participants-375.png",
+      "git_blob": "45cce87e89a277dbf1332f48596fb602390528b8"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/participants-390.png",
+      "git_blob": "3a16e21cc034179e081cc57fc88bd22490d2a047"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/participants-768.png",
+      "git_blob": "afe6cb6e05ec1ba12c972343f8af2bb2e58db632"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/regression.json",
+      "git_blob": "334d872a6304c1f37482d942088442846163f588"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/text-200-1280.png",
+      "git_blob": "93ef844dba43bb7e9b29241b14432811a7d1007e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/text-200-320.png",
+      "git_blob": "68615034d22d588da636f79efde897abc87a6fb0"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/text-200-360.png",
+      "git_blob": "7099483092e899e5e0c4ed3ca0e62c987a415185"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/text-200-375.png",
+      "git_blob": "44881a3b9cbb60ce61a7d66bfe621de8381bc5f1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/text-200-390.png",
+      "git_blob": "8a0e5673856cae046f836fd911d62a7a71286563"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/text-200-768.png",
+      "git_blob": "175560770bcfd75e07891ea35e2387f701ea6418"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/participants-ui/ui-results.json",
+      "git_blob": "4451937f2ebd61c63f2eecff7ba8f68b71e2bd7e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/run.json",
+      "git_blob": "2d51d11358833756dbb367eb11e85c3b08a4aa54"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/participants/stdout.txt",
+      "git_blob": "59e96462896f2501db6ccb1fffd2cdbe73fdada6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/harness.json",
+      "git_blob": "f13f327c1d88bb6db3222c509109b761038c126b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/keyboard-focus-1280.png",
+      "git_blob": "552fda8f1d362a935d3917ecd0ffac5a5b48f86b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/keyboard-focus-320.png",
+      "git_blob": "393b1c412af366d8b4fb993853a31577c29beb62"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/keyboard-focus-360.png",
+      "git_blob": "a46c786ee39b79f2285f7b9b7fb3e8b46b44fdae"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/keyboard-focus-375.png",
+      "git_blob": "9a40a9d6936fdcc166a7294d8f0e2b2872d62007"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/keyboard-focus-390.png",
+      "git_blob": "05032ef356331530b385a647d33053c351b4ec10"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/keyboard-focus-768.png",
+      "git_blob": "d3a145b444eb0a755a80df9523d5256e3e7e895f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/long-1280.png",
+      "git_blob": "e77be8dedba8c4960fd6b2bcd86a5e4b1b6e6841"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/long-320.png",
+      "git_blob": "4c30e234c1aea2920c0e4f1567435b2d0e04e3fb"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/long-360.png",
+      "git_blob": "ccb5b4768b725ab26c5644f135dcb6adeefafecf"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/long-375.png",
+      "git_blob": "5627d7a85d29c37653ee354e43a48b65b1055d88"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/long-390.png",
+      "git_blob": "42103858014acfed1a013cf87aa835598ac837bb"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/long-768.png",
+      "git_blob": "e13960172aaec8f6b21cf5976fdeae5111bff6a2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-1280.png",
+      "git_blob": "44b1752a5db8f5c8060e9bc1588f05d96b2ae78e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-320.png",
+      "git_blob": "4a0d976172a87b2e4408b5a3514c17430b6bccad"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-360.png",
+      "git_blob": "3220b7f60302c49660d740ecb4f80a7cc03aa14c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-375.png",
+      "git_blob": "2da1393a9c75d19e90441368793dfcce50776004"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-390.png",
+      "git_blob": "7d955b9953f8188b4346a0fedbd8fcac62b87bf8"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-768.png",
+      "git_blob": "61d42466d3f2f3840387bf379da0a2489e7824bf"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-empty-1280.png",
+      "git_blob": "64b03cc85a5c92e771c4a3091ef2ed455d9f5f35"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-empty-320.png",
+      "git_blob": "d26bb98849160821789c34915f45e725bfe66b9f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-empty-360.png",
+      "git_blob": "dc23ecd424f14e0b9be88e7c90d64ca5104060a4"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-empty-375.png",
+      "git_blob": "2fd9da45ded53e25850630e1a1fc2cd983904a40"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-empty-390.png",
+      "git_blob": "5f058988a1ca357856cef67c700ac1bd69dab387"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-accepted-empty-768.png",
+      "git_blob": "12e2cf8b9df2e49142c8a7308e2fe300222b0711"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-denied-1280.png",
+      "git_blob": "f7d7dcd42411eae6ae7179b19ad6cc56a76bbaf5"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-denied-320.png",
+      "git_blob": "9baca761697fe26056f24a8db12dad1aeb20a4c1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-denied-360.png",
+      "git_blob": "d61a4c97f8fd463017a9c5bbd38eed83e0d76917"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-denied-375.png",
+      "git_blob": "6a0f92598ceb68f6a49bceccf55c1349b1bc94ec"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-denied-390.png",
+      "git_blob": "d832b2b1d39767d98b1ad064fd0d887d741a8b6d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-denied-768.png",
+      "git_blob": "6e8e911588b4a567673be1b30a0ad83a0d9d9fe0"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-success-1280.png",
+      "git_blob": "f7d7dcd42411eae6ae7179b19ad6cc56a76bbaf5"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-success-320.png",
+      "git_blob": "9baca761697fe26056f24a8db12dad1aeb20a4c1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-success-360.png",
+      "git_blob": "d61a4c97f8fd463017a9c5bbd38eed83e0d76917"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-success-375.png",
+      "git_blob": "6a0f92598ceb68f6a49bceccf55c1349b1bc94ec"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-success-390.png",
+      "git_blob": "d832b2b1d39767d98b1ad064fd0d887d741a8b6d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-blocked-success-768.png",
+      "git_blob": "6e8e911588b4a567673be1b30a0ad83a0d9d9fe0"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-denied-1280.png",
+      "git_blob": "39a8a4f595413abf1850c343e5f9287d4abab92c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-denied-320.png",
+      "git_blob": "01cd87f775ba7c93e9734822ea3b872c53095f36"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-denied-360.png",
+      "git_blob": "bbd13638a286b7ca37498e27aa96baeca74285b7"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-denied-375.png",
+      "git_blob": "5e48db1745a7257cd6d9cad604f682ecde3102eb"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-denied-390.png",
+      "git_blob": "d68ffb206e1ebaac430a457d443134e8c49eea45"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-denied-768.png",
+      "git_blob": "5d12062dad85df318f9f14d851bd69c3b656c5c2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-success-1280.png",
+      "git_blob": "39a8a4f595413abf1850c343e5f9287d4abab92c"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-success-320.png",
+      "git_blob": "01cd87f775ba7c93e9734822ea3b872c53095f36"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-success-360.png",
+      "git_blob": "bbd13638a286b7ca37498e27aa96baeca74285b7"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-success-375.png",
+      "git_blob": "5e48db1745a7257cd6d9cad604f682ecde3102eb"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-success-390.png",
+      "git_blob": "d68ffb206e1ebaac430a457d443134e8c49eea45"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimal-success-768.png",
+      "git_blob": "5d12062dad85df318f9f14d851bd69c3b656c5c2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimum-1280.png",
+      "git_blob": "7def17045c4901d1590bb0f0787c469225e06f82"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimum-320.png",
+      "git_blob": "01cd87f775ba7c93e9734822ea3b872c53095f36"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimum-360.png",
+      "git_blob": "6b5401ead7aa6059bf6ff67df6d85532e283d30f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimum-375.png",
+      "git_blob": "486671d223573a96e9c38e47b927d303a784d483"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimum-390.png",
+      "git_blob": "d68ffb206e1ebaac430a457d443134e8c49eea45"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/private-minimum-768.png",
+      "git_blob": "8a53f3ba22539da1f6a4f5707e8526fb2a89a289"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/recheck-error-1280.png",
+      "git_blob": "2d5dab143614fea445ae656ebc5250338f730b9f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/recheck-error-320.png",
+      "git_blob": "e41217f0576ce9973b4c473925cbd8938153287e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/recheck-error-360.png",
+      "git_blob": "04ea25bed29e123bca5704781cf9313205bbb738"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/recheck-error-375.png",
+      "git_blob": "efc6700293b20a74b40581238e67950bcb6473e1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/recheck-error-390.png",
+      "git_blob": "8dc7af0a232a2283024c7242ccf73881a9c01e2b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/recheck-error-768.png",
+      "git_blob": "ae545bbe04a9b72d4f81f90197df212cb06e49d1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/stdout.txt",
+      "git_blob": "0240c7ad828972115a07303669dfc4b73a7d1cfa"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/text-200-1280.png",
+      "git_blob": "00838bc8c898a9cc67902cf0e994da14d1b3fc78"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/text-200-320.png",
+      "git_blob": "c8e11070b7fc8ad52bcc6b5b6b965e2f660019fe"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/text-200-360.png",
+      "git_blob": "edb52413079682a4c90731dd795d26ff713c491a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/text-200-375.png",
+      "git_blob": "c9549c0c917719bcc7188098dcba1d84f5814fc4"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/text-200-390.png",
+      "git_blob": "1b984098a6a3a14e10a7e7303af9023d25dfaef8"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/text-200-768.png",
+      "git_blob": "5c0c5017d3967f75c2dcfbb9e4a974343f569de6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/private-profile/ui-results.json",
+      "git_blob": "f18f770be3d2868d3e9ec0e9312c9391f3d01b4a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/empty-1280.png",
+      "git_blob": "dacc7ebe74862970a216bb64bd66613bb5f9014f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/empty-320.png",
+      "git_blob": "5a6de1328c538b6fb0b84b546c524de40c3ab100"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/empty-360.png",
+      "git_blob": "b5dae95b308e860672f4e50a796351234f3caae2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/empty-375.png",
+      "git_blob": "7366d235f7f8949d02dd5332995e8b5147bd1d84"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/empty-390.png",
+      "git_blob": "2ed9b93afda559e7508971fff59375c871f8083b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/empty-768.png",
+      "git_blob": "942a6e25d569ca3365acb5bb683373c04546bf37"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/error-1280.png",
+      "git_blob": "f2867716309b195e45c18414a6ebcfa3b4c5ea4a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/error-320.png",
+      "git_blob": "5b83dd592b702e7af6164e793175cc84291c25e6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/error-360.png",
+      "git_blob": "235c45464ee7e72574084f21c9f522d3c4b61b04"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/error-375.png",
+      "git_blob": "5b2018483dbc320c5e178b6ac984b699c79b5a83"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/error-390.png",
+      "git_blob": "aa022b2abc54e070cf6325ef5ea9f4b5bd63cd78"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/error-768.png",
+      "git_blob": "2fb655dcf657c93edabb0e98cef8ca0ede8b37af"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/focus-1280.png",
+      "git_blob": "e80224b1f6de64db4d247c0fd3d02ec2d905b9ac"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/focus-320.png",
+      "git_blob": "c598ee7ad3262e37943c71eaca770f60cccec605"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/focus-360.png",
+      "git_blob": "7d2e600c07dfe4c74e6d9e0e3bb7bfc2305dbf9b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/focus-375.png",
+      "git_blob": "47e3864c8603a70ebe147c93132c09f4ea02f5bc"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/focus-390.png",
+      "git_blob": "191c979c56f9268c3ca471b3acc09fb5c67cb32b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/focus-768.png",
+      "git_blob": "5a35f88dfa7e367330c1a74dabd763bcf10addda"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/long-1280.png",
+      "git_blob": "638360556d0b97abb3574c74932ec06c983560dc"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/long-320.png",
+      "git_blob": "6524e9868b434564223c9c3356a1f80d8781ec88"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/long-360.png",
+      "git_blob": "ef8729bd53db1a5951f0b931aa34c78353c9b977"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/long-375.png",
+      "git_blob": "b04c3cc8aaea18081bbea09df7e493b21290ff63"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/long-390.png",
+      "git_blob": "b6e9cd53267aec722a86edc0aa723106263f1ccc"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/long-768.png",
+      "git_blob": "173b733c54b25c775a6c1a28010a0af230167538"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/profile-1280.png",
+      "git_blob": "f14ceafb773859c997b320a061107d9dea159ce9"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/profile-320.png",
+      "git_blob": "c709280a8739939c695b61a6e3125c5c01e947e1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/profile-360.png",
+      "git_blob": "abf2ac6ae8a54cb5472ea73bc7a26e1a4e8caf42"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/profile-375.png",
+      "git_blob": "cb359d7a3ddddfdab9339954b03ddcd7c764580a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/profile-390.png",
+      "git_blob": "48185713674c5b152c3a30e89c614901f13b0f13"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/profile-768.png",
+      "git_blob": "75ffb1f9764c6497941897911c5513a0d20e47f1"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/run.json",
+      "git_blob": "3b0e01c7ee05ef99846175813230b24b82062233"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/stdout.txt",
+      "git_blob": "c13cf1909690732c0d88b05d4cd5511491b7f82d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/text-200-1280.png",
+      "git_blob": "c8b0b843f9f969fef530fe200803cf9fbd3b41eb"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/text-200-320.png",
+      "git_blob": "21783b621375cd78b6f9902d6056ea8ceed0e783"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/text-200-360.png",
+      "git_blob": "afc710a969536f2c044f914203da584cfd096f86"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/text-200-375.png",
+      "git_blob": "02e7cb329ac3fab4454b92788371aecbe95c5352"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/text-200-390.png",
+      "git_blob": "e22071e2b47a2c97e3b46763b9f73f1221f2598e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/text-200-768.png",
+      "git_blob": "36b374867d327bf5bde357a25b885fc2ea13733f"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/ui-results.json",
+      "git_blob": "d4b54c62c53151807ba4192d7b420ab31ed9bf0e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/unavailable-1280.png",
+      "git_blob": "9f6b398f6e91dfac8d745053a98aa9c4ce6d42bf"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/unavailable-320.png",
+      "git_blob": "aa62993d6146f4f814938b4bb8ea1b19c981c2dd"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/unavailable-360.png",
+      "git_blob": "7dabeade3fb7b2f5b693dc3cf4d5857c206ebc0a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/unavailable-375.png",
+      "git_blob": "0380044c8032e58abaf4d0c6f25eb57e972dbcfe"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/unavailable-390.png",
+      "git_blob": "bdb0c097237fc6ec8cc42dbc9b9a15901f4c5fe5"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/profile/unavailable-768.png",
+      "git_blob": "0d06ed6ed8b2b2de64f0c685cdc6cb905c0bf29a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/request-notifications/notification-1280.png",
+      "git_blob": "13a3781a9fe575c3ec9a3b16cf6500be79067819"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/request-notifications/notification-390.png",
+      "git_blob": "2f18ccbd3b6b83c34a1bdb23e86a773e36c58afb"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/request-notifications/requests-1280.png",
+      "git_blob": "988f651e1c52c296c2d9a52c4013ccc230525bb8"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/request-notifications/requests-390.png",
+      "git_blob": "b3511d43960b41828d61f1d0dc6c7c49634a354b"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/request-notifications/results.json",
+      "git_blob": "a3bbf134000614fff219311f574c6502087a4506"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/request-notifications/stderr.txt",
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/request-notifications/stdout.txt",
+      "git_blob": "72f720737e49943e9836f6227f6d0fddaafb3f83"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/confirm-1280.png",
+      "git_blob": "7f035869bc804562284d01b3295d11afc15fa383"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/confirm-390.png",
+      "git_blob": "f2c911c1afb198b9e2891bfd3309720d2d877dee"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/denied-1280.png",
+      "git_blob": "b851b4029da90f3b53d848a9c0eb9e1901251be6"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/denied-390.png",
+      "git_blob": "d28854951076c2bdcf0832d644d702ae81b178f9"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/empty-1280.png",
+      "git_blob": "986a4379772ebd5003da9fbc30fa5f264c3e57bb"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/empty-390.png",
+      "git_blob": "98e757d695257a574905fce5e987bfb9acf71959"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/error-1280.png",
+      "git_blob": "2f8f447e6aa1f49feb8616ee44afebaed6e68520"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/error-390.png",
+      "git_blob": "dd6285b9ef3780fa2ab0939ff4b3431ca1185a83"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/harness.json",
+      "git_blob": "4257e1c317ddb2545b89c20e96b31ad91b1749da"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/long-text-1280.png",
+      "git_blob": "9d376d135bb6ea205e963ceba43a773206fb7d1e"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/long-text-390.png",
+      "git_blob": "b9e843432eb5812dc3a0edde510d7fd78f75cb49"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/pending-1280.png",
+      "git_blob": "e350ac547bb5668cbbbf1bc46d70ede02b420474"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/pending-390.png",
+      "git_blob": "3fc590644c8479f540851d4c7b9487478d4d6e2a"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/stdout.txt",
+      "git_blob": "f5cb0a0275df969be7ffef8f132e0d4dcdc6c474"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/ui-results.json",
+      "git_blob": "36e4b6bda53061a21957eab942fea927f9a7143d"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/uncertain-1280.png",
+      "git_blob": "134ab6d83d27a893d8f5a7260cbd571ade45b3a2"
+    },
+    {
+      "path": "docs/qa/r5-block-10/ui/requests/uncertain-390.png",
+      "git_blob": "7eba6abfd76657d267bb1774c4935ae17e0374b0"
+    },
+    {
+      "path": "package.json",
+      "git_blob": "00e120f28efb4824819f86372f250d5b8330b950"
+    },
+    {
+      "path": "scripts/check-r5-blocks.mjs",
+      "git_blob": "fb6f595bef35dc1fe8f7eeb4d086678cf6f87769"
+    },
+    {
+      "path": "scripts/check-r5-edit-profile.mjs",
+      "git_blob": "90707205eba9f28ee5859a3a2cdfb96987f647af"
+    },
+    {
+      "path": "scripts/check-r5-follows-ui.mjs",
+      "git_blob": "d427c0f35fc4350bdec56d5b1aee8af620b44f51"
+    },
+    {
+      "path": "scripts/check-r5-follows.mjs",
+      "git_blob": "dd2fe9413a61094334c5de7a80633cfa19d2138f"
+    },
+    {
+      "path": "scripts/check-r5-participants-ui.mjs",
+      "git_blob": "f443ea61e0492ddc3f404992521f243e63d8230e"
+    },
+    {
+      "path": "scripts/check-r5-private-profile.mjs",
+      "git_blob": "f13e364cb7f96c92342850d3a455616d384b24fb"
+    },
+    {
+      "path": "scripts/check-r5-regressions.mjs",
+      "git_blob": "0193bbdf4dc6aa2167fbee7b8044de7be395741e"
+    },
+    {
+      "path": "scripts/check-r5-release-audit.mjs",
+      "git_blob": "7214d3b5f9d2e327438cf3683186714f8988ae13"
+    },
+    {
+      "path": "scripts/check-r5-release-report.mjs",
+      "git_blob": "5bd54b85f49bb65ced629b73056c15a8490b0dd0"
+    },
+    {
+      "path": "scripts/check-r5-release.mjs",
+      "git_blob": "44557a337cbb824fd9f4f6dd27d3d8cbbe66d7db"
+    },
+    {
+      "path": "scripts/check-r5-requests.mjs",
+      "git_blob": "6fec180bf9ed29a8a7f4280a2486cafa20ac9cd8"
+    },
+    {
+      "path": "src/components/FollowButton.tsx",
+      "git_blob": "2eae97ba92853d6a311cd4fbff203b72a54ad9d7"
+    }
+  ],
+  "excludes": "This manifest itself and later PR-link-only documentation commits; .env.local is ignored and never staged"
+}

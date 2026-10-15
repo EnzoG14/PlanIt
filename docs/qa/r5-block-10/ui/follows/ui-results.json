@@ -1,0 +1,279 @@
+{
+  "base": "54b4749b1c12775e0d6c800b15d82aeb8ecdafbc",
+  "branch": "codex/r5-block-6",
+  "environment": "Vite build + Edge headless, REST/session fixtures; not live JWT authorization",
+  "results": [
+    {
+      "viewport": 320,
+      "test": "CA01/03 public follow count, reload, cancel and confirmed unfollow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "CA04 double-submit disabled, allowlist args actor/status never provided",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "10s mutation timeout hides derived content and requery confirms server state without resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Blocking between render and mutation immediately reconciles denial and clears identity/controls",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "following route, no private payload in DOM, no primary tab added",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Own profile counts and follower list return to me; self has no follow action",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "CA01/03 public follow count, reload, cancel and confirmed unfollow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "CA04 double-submit disabled, allowlist args actor/status never provided",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "10s mutation timeout hides derived content and requery confirms server state without resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Blocking between render and mutation immediately reconciles denial and clears identity/controls",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "following route, no private payload in DOM, no primary tab added",
+      "result": "PASS"
+    },
+    {
+      "viewport": 360,
+      "test": "Own profile counts and follower list return to me; self has no follow action",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "CA01/03 public follow count, reload, cancel and confirmed unfollow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "CA04 double-submit disabled, allowlist args actor/status never provided",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "10s mutation timeout hides derived content and requery confirms server state without resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Blocking between render and mutation immediately reconciles denial and clears identity/controls",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "following route, no private payload in DOM, no primary tab added",
+      "result": "PASS"
+    },
+    {
+      "viewport": 375,
+      "test": "Own profile counts and follower list return to me; self has no follow action",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "CA01/03 public follow count, reload, cancel and confirmed unfollow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "CA04 double-submit disabled, allowlist args actor/status never provided",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "10s mutation timeout hides derived content and requery confirms server state without resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Blocking between render and mutation immediately reconciles denial and clears identity/controls",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "following route, no private payload in DOM, no primary tab added",
+      "result": "PASS"
+    },
+    {
+      "viewport": 390,
+      "test": "Own profile counts and follower list return to me; self has no follow action",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "CA01/03 public follow count, reload, cancel and confirmed unfollow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "CA04 double-submit disabled, allowlist args actor/status never provided",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "10s mutation timeout hides derived content and requery confirms server state without resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Blocking between render and mutation immediately reconciles denial and clears identity/controls",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "following route, no private payload in DOM, no primary tab added",
+      "result": "PASS"
+    },
+    {
+      "viewport": 768,
+      "test": "Own profile counts and follower list return to me; self has no follow action",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "CA01/03 public follow count, reload, cancel and confirmed unfollow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Lost mutation response: no uncertain success, no resend, explicit read reconciles committed follow",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "CA04 double-submit disabled, allowlist args actor/status never provided",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "10s mutation timeout hides derived content and requery confirms server state without resend",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Blocking between render and mutation immediately reconciles denial and clears identity/controls",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Lists: 30+4, safe return, denial/network/malformed clears previous rows, retry/empty, 200% long text and keyboard focus",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "following route, no private payload in DOM, no primary tab added",
+      "result": "PASS"
+    },
+    {
+      "viewport": 1280,
+      "test": "Own profile counts and follower list return to me; self has no follow action",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

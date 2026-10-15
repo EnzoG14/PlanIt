@@ -1,0 +1,1 @@
+PASS: two real anonymous HTTP GET denials for B4

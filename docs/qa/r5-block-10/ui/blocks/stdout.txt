@@ -1,0 +1,55 @@
+PASS 320: Confirmation initial focus,Escape,cancel restore focus without writing
+PASS 320: Block and reload neutral profile without identity,follow,DM;owner can unblock without projection
+PASS 320: Same canonical DM/history after unblock;read-only during block;no follow restore
+PASS 320: Lost committed response hides identity;close/reopen checks state without duplicate write
+PASS 320: Uncommitted response reconciles before explicit retry
+PASS 320: Counterparty block never offers unblock or identity
+PASS 320: Network failure clears options and retry recovers
+PASS 320: Text200%,short viewport,scrollable dialog,no horizontal overflow
+PASS 320: Self redirects to own profile,no block control,allowlisted payload
+PASS 360: Confirmation initial focus,Escape,cancel restore focus without writing
+PASS 360: Block and reload neutral profile without identity,follow,DM;owner can unblock without projection
+PASS 360: Same canonical DM/history after unblock;read-only during block;no follow restore
+PASS 360: Lost committed response hides identity;close/reopen checks state without duplicate write
+PASS 360: Uncommitted response reconciles before explicit retry
+PASS 360: Counterparty block never offers unblock or identity
+PASS 360: Network failure clears options and retry recovers
+PASS 360: Text200%,short viewport,scrollable dialog,no horizontal overflow
+PASS 360: Self redirects to own profile,no block control,allowlisted payload
+PASS 375: Confirmation initial focus,Escape,cancel restore focus without writing
+PASS 375: Block and reload neutral profile without identity,follow,DM;owner can unblock without projection
+PASS 375: Same canonical DM/history after unblock;read-only during block;no follow restore
+PASS 375: Lost committed response hides identity;close/reopen checks state without duplicate write
+PASS 375: Uncommitted response reconciles before explicit retry
+PASS 375: Counterparty block never offers unblock or identity
+PASS 375: Network failure clears options and retry recovers
+PASS 375: Text200%,short viewport,scrollable dialog,no horizontal overflow
+PASS 375: Self redirects to own profile,no block control,allowlisted payload
+PASS 390: Confirmation initial focus,Escape,cancel restore focus without writing
+PASS 390: Block and reload neutral profile without identity,follow,DM;owner can unblock without projection
+PASS 390: Same canonical DM/history after unblock;read-only during block;no follow restore
+PASS 390: Lost committed response hides identity;close/reopen checks state without duplicate write
+PASS 390: Uncommitted response reconciles before explicit retry
+PASS 390: Counterparty block never offers unblock or identity
+PASS 390: Network failure clears options and retry recovers
+PASS 390: Real10s timeout,double confirm suppressed,pending Escape safe,reconcile committed block without retry
+PASS 390: Text200%,short viewport,scrollable dialog,no horizontal overflow
+PASS 390: Self redirects to own profile,no block control,allowlisted payload
+PASS 768: Confirmation initial focus,Escape,cancel restore focus without writing
+PASS 768: Block and reload neutral profile without identity,follow,DM;owner can unblock without projection
+PASS 768: Same canonical DM/history after unblock;read-only during block;no follow restore
+PASS 768: Lost committed response hides identity;close/reopen checks state without duplicate write
+PASS 768: Uncommitted response reconciles before explicit retry
+PASS 768: Counterparty block never offers unblock or identity
+PASS 768: Network failure clears options and retry recovers
+PASS 768: Text200%,short viewport,scrollable dialog,no horizontal overflow
+PASS 768: Self redirects to own profile,no block control,allowlisted payload
+PASS 1280: Confirmation initial focus,Escape,cancel restore focus without writing
+PASS 1280: Block and reload neutral profile without identity,follow,DM;owner can unblock without projection
+PASS 1280: Same canonical DM/history after unblock;read-only during block;no follow restore
+PASS 1280: Lost committed response hides identity;close/reopen checks state without duplicate write
+PASS 1280: Uncommitted response reconciles before explicit retry
+PASS 1280: Counterparty block never offers unblock or identity
+PASS 1280: Network failure clears options and retry recovers
+PASS 1280: Text200%,short viewport,scrollable dialog,no horizontal overflow
+PASS 1280: Self redirects to own profile,no block control,allowlisted payload
