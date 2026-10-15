@@ -25,6 +25,7 @@ const EventRejoinRequestsPage = lazy(() => import('./pages/EventRejoinRequestsPa
 const EventDetailPage = lazy(() => import('./pages/EventDetailPage').then(module => ({ default: module.EventDetailPage })))
 const MapPage = lazy(() => import('./pages/MapPage').then(module => ({ default: module.MapPage })))
 const MyEventsPage = lazy(() => import('./pages/MyEventsPage').then(module => ({ default: module.MyEventsPage })))
+const CompareEventsPage = lazy(() => import('./pages/CompareEventsPage').then(module => ({ default: module.CompareEventsPage })))
 const HomePage = lazy(() => import('./pages/HomePage').then(module => ({ default: module.HomePage })))
 const EventChatPage = lazy(() => import('./pages/EventChatPage').then(module => ({ default: module.EventChatPage })))
 const NotificationsPage = lazy(() => import('./pages/NotificationsPage').then(module => ({ default: module.NotificationsPage })))
@@ -52,6 +53,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route path="events/:id/access" element={<Suspense fallback={<StatusMessage title="Cargando accesos">Esperá un momento.</StatusMessage>}><EventAccessPage /></Suspense>} />
       <Route path="events/:id/rejoin-requests" element={<Suspense fallback={<StatusMessage title="Cargando solicitudes">Esperá un momento.</StatusMessage>}><EventRejoinRequestsPage /></Suspense>} />
       <Route path="events/:id" element={<Suspense fallback={<StatusMessage title="Cargando evento">Esperá un momento.</StatusMessage>}><EventDetailPage /></Suspense>} />
+      <Route path="my-events/compare" element={<Suspense fallback={<StatusMessage title="Cargando comparación">Esperá un momento.</StatusMessage>}><CompareEventsPage /></Suspense>} />
       <Route path="my-events" element={<Suspense fallback={<StatusMessage title="Cargando Mis eventos">Esperá un momento.</StatusMessage>}><MyEventsPage /></Suspense>} />
       <Route path="me" element={<ProfilePage />} />
       <Route path="me/follow-requests" element={<Suspense fallback={<StatusMessage title="Consultando solicitudes">Esperá un momento.</StatusMessage>}><FollowRequestsPage /></Suspense>} />

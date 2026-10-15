@@ -3,6 +3,7 @@ import { parseEventOccupancy, type EventOccupancy } from './types'
 import { parseEventDemographics } from './demographics'
 import { parseParticipationSeries, type Period } from './periods'
 import { parseAttendeeExport } from './csv'
+import { MAX_COMPARE_EVENTS, MIN_COMPARE_EVENTS, parseEventsComparison } from './compare'
 
 export async function loadMyEventExport(eventId: string, signal: AbortSignal) {
   if (!supabase) throw new Error('La conexión no está configurada.')
@@ -31,6 +32,15 @@ export async function loadMyEventDemographics(eventId: string, signal: AbortSign
     ? 'No tenés acceso a las estadísticas de este evento.'
     : 'No pudimos cargar los datos demográficos. Volvé a intentar.')
   return parseEventDemographics(data)
+}
+
+export async function loadMyEventsComparison(eventIds: string[], signal: AbortSignal) {
+  if (!supabase) throw new Error('La conexión no está configurada.')
+  const { data, error } = await supabase.rpc('get_my_events_occupancy', { p_event_ids: eventIds }).abortSignal(signal)
+  if (error) throw new Error(error.code === '42501' ? 'No pudimos comparar esa selección. Revisá que sean eventos tuyos.'
+    : error.code === '22023' ? `Elegí entre ${MIN_COMPARE_EVENTS} y ${MAX_COMPARE_EVENTS} eventos distintos.`
+      : 'No pudimos cargar la comparación. Volvé a intentar.')
+  return parseEventsComparison(data, eventIds)
 }
 
 export async function loadMyEventOccupancy(eventId: string, signal: AbortSignal): Promise<EventOccupancy> {

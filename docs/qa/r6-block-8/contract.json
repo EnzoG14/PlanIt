@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "tests": [
+    "Batch DTO parser: order, ids, formula, N/D for unusable capacity; invalid/foreign payloads rejected",
+    "Selection normalization and 2..10 bounds",
+    "RPC parameters, AbortSignal and neutral denied/network/malformed errors"
+  ],
+  "transport": "Simulated; not HTTP/JWT"
+}
