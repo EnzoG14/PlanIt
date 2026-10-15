@@ -10,7 +10,7 @@
 | 1 | RPC ocupación owner-only | Implementado; QA pendiente | codex/r6-block-1; [PR #64 draft](https://github.com/EnzoG14/PlanIt/pull/64) | 1ee60e3a1636c0ec181782343100d44b5f08be1e | 1/1/1/1 | RF-R6-01 CA01–04 parcial SQL; contrato/build/lint PASS; JWT/UI NOT RUN | NO |
 | 2 | Panel KPI | Implementado; QA pendiente | codex/r6-block-2; [PR #65 draft](https://github.com/EnzoG14/PlanIt/pull/65) | 7933aa9 | 0/0/0/0 | RF-R6-01 CA01–04 UI fixtures; JWT real pendiente | NO |
 | 3 | Demográficos privados | Implementado; QA pendiente | codex/r6-block-3; [PR #66 draft](https://github.com/EnzoG14/PlanIt/pull/66) | e6a25a1 | 1/1/1/1 | RF-R6-02 CA01/03/04 parcial SQL/UI fixtures; CA02 B4; JWT real NOT RUN | NO |
-| 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; PR draft por vincular | 25685f0 | 1/1/0/0 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
+| 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67) | 25685f0 | 1/1/0/0 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
 | 5 | CSV seguros | NO INICIADO | — | — | 0/0/0/0 | RF-R6-04 | NO |
 | 6 | Trigger aviso lleno | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 parcial | NO |
 | 7 | Bandeja aviso | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 | NO |
@@ -50,6 +50,7 @@
 
 - Base integrada `25685f04c03c5ac308fc563f2a8e565e6987f39e`, fetch y merge #66 comprobados; R5 GO humano conservado. Rama/worktree nuevos, env de main local copiado e ignorado, cambios ajenos preservados.
 - Responsable aprueba [D03 propuesta B0](RELEASE_6_BLOCK_4_DECISIONS.md) en este chat; D02 mantiene altas/reincorporaciones/bajas, sin stock/check-in. No se modifican RF/CA ni mockups/DESIGN.
+- Commit funcional `93ecd66ae5a179973bf435395b792a92108a7c09`; [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67). Commit posterior de documentación vincula el cierre; HEAD final en Git/PR.
 - `get_my_event_participation_series(uuid,timestamp,timestamp,text)→jsonb`, STABLE DEFINER, UID/ownership antes de agregar, search_path vacío y EXECUTE authenticated. Sin grants de tablas, PII, tablas/triggers/índices nuevos. Migración `20261015162953`: **creada1 / probada local1 / aplicada remota0 / verificada remota0**.
 - Selector inicial30, presets7/30/90 y personalizado≤366, días/semanas lunes/parciales AR; gráfico tres flujos y tabla accesible, estados y validación, remount por clave/abort/guardia contra respuestas tardías. KPI/demografía continúan actuales.
 - Build/lint/contratos y replay33 PostgreSQL local PASS; UI compilada Edge con fixtures en seis anchos, texto200%, timeout/offline/retorno/logout; [evidencia, regresiones y límites](../qa/r6-block-4/README.md). HTTP JWT real, Realtime/dispositivos/lector y aceptación integral NOT RUN. B5 requiere aprobación independiente; no DDL remoto, merge, deploy ni Google Docs.

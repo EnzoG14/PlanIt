@@ -2,6 +2,8 @@
 
 **Implementado; QA pendiente.** Base `25685f04c03c5ac308fc563f2a8e565e6987f39e`, rama `codex/r6-block-4`. Tras fetch se comprobó el merge de PR #66, B3; B1/B2 también integrados. R5 conserva GO por aceptación humana, sin transformar sus NOT RUN técnicos. Checkout ajeno intacto; worktree separado y `.env.local` copiado byte a byte desde `mapbox-worktree` (main local), ignorado. No se versiona.
 
+Entrega funcional `93ecd66ae5a179973bf435395b792a92108a7c09`, [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67). Commit documental posterior sólo registra vínculo/cierre; HEAD final consultable en Git/PR. Worktree limpio al finalizar, `.env.local` continúa ignorado.
+
 El pedido autoriza sólo B4 y PR draft. [D03 aprobada en el chat](../../implementation/RELEASE_6_BLOCK_4_DECISIONS.md); D02/A01–A07 y D04/D08 B3 conservados. Los textos RF/CA oficiales y mockups/DESIGN no se modifican.
 
 ## Entrega y seguridad
