@@ -1,0 +1,90 @@
+{
+  "base": "f66d70bcf4f0e28c02fe2aff88088bd238a65e1e",
+  "branch": "codex/r5-block-10",
+  "stage": "ui",
+  "migrations": 30,
+  "results": [
+    {
+      "suite": "edit-profile",
+      "script": "scripts/check-r5-edit-profile-ui.mjs",
+      "source_sha256": "fb0ddca7698345f9206d780412f2e167efc541b81b17fe37918c5d0a6aea65bd",
+      "result": "PASS",
+      "startedAt": "2026-10-15T00:57:32.892Z",
+      "finishedAt": "2026-10-15T00:58:54.362Z"
+    },
+    {
+      "suite": "private-profile",
+      "script": "scripts/check-r5-private-profile-ui.mjs",
+      "source_sha256": "12c0125c7a6b21b415d7b3ee3bebd0de8817596a4de8f9f87b1d2f51319b73bc",
+      "result": "PASS",
+      "startedAt": "2026-10-15T00:58:54.364Z",
+      "finishedAt": "2026-10-15T01:00:05.433Z"
+    },
+    {
+      "suite": "requests",
+      "script": "scripts/check-r5-requests-ui.mjs",
+      "source_sha256": "31eeed1a23f4bc53fda46d51567daea394d56d223c544f02e4acb51053e49ede",
+      "result": "PASS",
+      "startedAt": "2026-10-15T01:01:06.841Z",
+      "finishedAt": "2026-10-15T01:04:25.053Z"
+    },
+    {
+      "suite": "messages",
+      "script": "scripts/check-r5-messages-ui.mjs",
+      "source_sha256": "687fe10938994c9cfe5f420f73b94c1491154f0e8d2630154b813968f9523e85",
+      "result": "PASS",
+      "startedAt": "2026-10-15T01:04:25.059Z",
+      "finishedAt": "2026-10-15T01:04:49.290Z"
+    },
+    {
+      "suite": "blocks",
+      "script": "scripts/check-r5-blocks-ui.mjs",
+      "source_sha256": "3c412fdb52c5458dc5c0339b7ce82222e5103e627527a86e2c302c0eaf5a1f9b",
+      "result": "PASS",
+      "startedAt": "2026-10-15T01:04:49.292Z",
+      "finishedAt": "2026-10-15T01:05:19.978Z"
+    },
+    {
+      "suite": "request-notifications",
+      "script": "scripts/check-r5-request-notifications-ui.mjs",
+      "source_sha256": "3cea57bf17c327420e2ac76d4568ba7784a8d78f76e380e63c9973eebadb79b2",
+      "result": "PASS",
+      "startedAt": "2026-10-15T01:05:19.979Z",
+      "finishedAt": "2026-10-15T01:05:27.664Z"
+    },
+    {
+      "suite": "message-notifications",
+      "script": "scripts/check-r5-message-notifications-ui.mjs",
+      "source_sha256": "f68969768e43a130e910663d1f3435f4b94d7446b01f4643d00f9fea940454b2",
+      "result": "PASS",
+      "startedAt": "2026-10-15T01:05:27.666Z",
+      "finishedAt": "2026-10-15T01:05:31.689Z"
+    },
+    {
+      "suite": "participants",
+      "script": "scripts/check-r5-profile-regression-ui.mjs",
+      "source_sha256": "b75ed0ebe02d8a26daa245a58aeac3ecdbb1c2aee08ab3e953ceb61276b1d8a5",
+      "result": "PASS",
+      "startedAt": "2026-10-15T01:05:55.102Z",
+      "finishedAt": "2026-10-15T01:11:35.806Z"
+    },
+    {
+      "suite": "profile",
+      "script": "scripts/check-r5-profile-ui.mjs",
+      "source_sha256": "f14b803805d3e1a4f44e21732f30a5349a8d1f39bd42bdab7231127ca842cca5",
+      "result": "PASS",
+      "startedAt": "2026-10-15T01:11:35.808Z",
+      "finishedAt": "2026-10-15T01:12:25.051Z"
+    },
+    {
+      "suite": "follows",
+      "script": "scripts/check-r5-follows-ui.mjs",
+      "source_sha256": "991a93496785ed05de82a53a423078b39673226484436ad4181e86472bcf2076",
+      "result": "PASS",
+      "startedAt": "2026-10-15T01:12:25.052Z",
+      "finishedAt": "2026-10-15T01:13:27.127Z"
+    }
+  ],
+  "result": "PASS",
+  "authoritative_summary": "summary.json"
+}

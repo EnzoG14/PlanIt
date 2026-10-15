@@ -1,0 +1,42 @@
+PASS 320: Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell
+PASS 320: Confirmed text send and lost committed response reconcile by ID without resending
+PASS 320: Uncommitted response keeps draft and retries same UUID only after reconciliation
+PASS 320: Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages
+PASS 320: Bilateral block removes identity,disables composer and retains history
+PASS 320: Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow
+PASS 320: Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads
+PASS 360: Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell
+PASS 360: Confirmed text send and lost committed response reconcile by ID without resending
+PASS 360: Uncommitted response keeps draft and retries same UUID only after reconciliation
+PASS 360: Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages
+PASS 360: Bilateral block removes identity,disables composer and retains history
+PASS 360: Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow
+PASS 360: Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads
+PASS 375: Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell
+PASS 375: Confirmed text send and lost committed response reconcile by ID without resending
+PASS 375: Uncommitted response keeps draft and retries same UUID only after reconciliation
+PASS 375: Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages
+PASS 375: Bilateral block removes identity,disables composer and retains history
+PASS 375: Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow
+PASS 375: Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads
+PASS 390: Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell
+PASS 390: Confirmed text send and lost committed response reconcile by ID without resending
+PASS 390: Uncommitted response keeps draft and retries same UUID only after reconciliation
+PASS 390: Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages
+PASS 390: Bilateral block removes identity,disables composer and retains history
+PASS 390: Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow
+PASS 390: Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads
+PASS 768: Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell
+PASS 768: Confirmed text send and lost committed response reconcile by ID without resending
+PASS 768: Uncommitted response keeps draft and retries same UUID only after reconciliation
+PASS 768: Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages
+PASS 768: Bilateral block removes identity,disables composer and retains history
+PASS 768: Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow
+PASS 768: Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads
+PASS 1280: Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell
+PASS 1280: Confirmed text send and lost committed response reconcile by ID without resending
+PASS 1280: Uncommitted response keeps draft and retries same UUID only after reconciliation
+PASS 1280: Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages
+PASS 1280: Bilateral block removes identity,disables composer and retains history
+PASS 1280: Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow
+PASS 1280: Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads

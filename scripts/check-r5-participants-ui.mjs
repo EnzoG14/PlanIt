@@ -51,6 +51,9 @@ try {
           const selected=visible.filter(row=>!args.p_after_user_id || row.user_id>args.p_after_user_id).slice(0,31)
           return reply({participants:selected.slice(0,30),next_cursor:selected.length>30?selected[29].user_id:null})
         }
+        if (path === '/rest/v1/rpc/get_social_relationship') return reply(blocked?{unavailable:true,blocked_by_me:false}:{visibility:'private',follow:null})
+        if (path === '/rest/v1/rpc/get_social_counts') return reply({followers:0,following:0})
+        if (path === '/rest/v1/rpc/get_social_profile_events') return reply({events:[],next_cursor:null})
         if (path === '/rest/v1/rpc/get_social_profile') {
           if(blocked) return reply({unavailable:true})
           const row=rows.find(row=>row.user_id===args.p_user_id)

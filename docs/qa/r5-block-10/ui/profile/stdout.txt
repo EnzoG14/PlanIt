@@ -1,0 +1,54 @@
+PASS 320: Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow
+PASS 320: 30+4 equal-date cursor pagination, refetch previous pages, unique events
+PASS 320: Keyboard participants→profile→event→profile→participants with visible focus
+PASS 320: Denied pagination clears whole projection; private minimum issues no events query
+PASS 320: Null bio retains content permission; explicit bio/event empty states
+PASS 320: Blocked neutral state, network retry and malformed bio/event/cursor fail closed
+PASS 320: Long names/bio/event titles, 200% text and low-height responsive
+PASS 320: Visible 30s revocation and offline/reconnect clear previous content
+PASS 320: Late request/invalid route safe, self→me, logout clears social view
+PASS 360: Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow
+PASS 360: 30+4 equal-date cursor pagination, refetch previous pages, unique events
+PASS 360: Keyboard participants→profile→event→profile→participants with visible focus
+PASS 360: Denied pagination clears whole projection; private minimum issues no events query
+PASS 360: Null bio retains content permission; explicit bio/event empty states
+PASS 360: Blocked neutral state, network retry and malformed bio/event/cursor fail closed
+PASS 360: Long names/bio/event titles, 200% text and low-height responsive
+PASS 360: Visible 30s revocation and offline/reconnect clear previous content
+PASS 360: Late request/invalid route safe, self→me, logout clears social view
+PASS 375: Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow
+PASS 375: 30+4 equal-date cursor pagination, refetch previous pages, unique events
+PASS 375: Keyboard participants→profile→event→profile→participants with visible focus
+PASS 375: Denied pagination clears whole projection; private minimum issues no events query
+PASS 375: Null bio retains content permission; explicit bio/event empty states
+PASS 375: Blocked neutral state, network retry and malformed bio/event/cursor fail closed
+PASS 375: Long names/bio/event titles, 200% text and low-height responsive
+PASS 375: Visible 30s revocation and offline/reconnect clear previous content
+PASS 375: Late request/invalid route safe, self→me, logout clears social view
+PASS 390: Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow
+PASS 390: 30+4 equal-date cursor pagination, refetch previous pages, unique events
+PASS 390: Keyboard participants→profile→event→profile→participants with visible focus
+PASS 390: Denied pagination clears whole projection; private minimum issues no events query
+PASS 390: Null bio retains content permission; explicit bio/event empty states
+PASS 390: Blocked neutral state, network retry and malformed bio/event/cursor fail closed
+PASS 390: Long names/bio/event titles, 200% text and low-height responsive
+PASS 390: Visible 30s revocation and offline/reconnect clear previous content
+PASS 390: Late request/invalid route safe, self→me, logout clears social view
+PASS 768: Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow
+PASS 768: 30+4 equal-date cursor pagination, refetch previous pages, unique events
+PASS 768: Keyboard participants→profile→event→profile→participants with visible focus
+PASS 768: Denied pagination clears whole projection; private minimum issues no events query
+PASS 768: Null bio retains content permission; explicit bio/event empty states
+PASS 768: Blocked neutral state, network retry and malformed bio/event/cursor fail closed
+PASS 768: Long names/bio/event titles, 200% text and low-height responsive
+PASS 768: Visible 30s revocation and offline/reconnect clear previous content
+PASS 768: Late request/invalid route safe, self→me, logout clears social view
+PASS 1280: Public identity/bio/events, private fields stripped, avatar gateway fallback, no overflow
+PASS 1280: 30+4 equal-date cursor pagination, refetch previous pages, unique events
+PASS 1280: Keyboard participants→profile→event→profile→participants with visible focus
+PASS 1280: Denied pagination clears whole projection; private minimum issues no events query
+PASS 1280: Null bio retains content permission; explicit bio/event empty states
+PASS 1280: Blocked neutral state, network retry and malformed bio/event/cursor fail closed
+PASS 1280: Long names/bio/event titles, 200% text and low-height responsive
+PASS 1280: Visible 30s revocation and offline/reconnect clear previous content
+PASS 1280: Late request/invalid route safe, self→me, logout clears social view

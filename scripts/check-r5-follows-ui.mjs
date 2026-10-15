@@ -58,14 +58,23 @@ try {
     const button=name=>page.getByRole('button',{name,exact:true});
     await page.goto(origin+'/users/'+target);await page.getByRole('heading',{name:'Camila Torres',exact:true}).waitFor();
     if(baseline) {await shot('before-public');await context.close();continue;}
-    await button('Seguir').waitFor();await shot('public');
+    await button('Seguir').waitFor();
+    const contrast=async name=>{
+      const ratio=await button(name).evaluate(node=>{
+        const luminance=color=>{const rgb=color.match(/[\d.]+/g).slice(0,3).map(Number).map(value=>{const channel=value/255;return channel<=0.04045?channel/12.92:((channel+0.055)/1.055)**2.4});return rgb[0]*0.2126+rgb[1]*0.7152+rgb[2]*0.0722};
+        const style=getComputedStyle(node),fg=luminance(style.color),bg=luminance(style.backgroundColor);
+        return (Math.max(fg,bg)+0.05)/(Math.min(fg,bg)+0.05);
+      });
+      assert.ok(ratio>=4.5,name+': measured text contrast '+ratio);
+    };
+    await contrast('Seguir');await shot('public');
     await button('Seguir').click();await button('Dejar de seguir').waitFor();assert.equal(writeCount,1);
     await page.getByRole('link',{name:'35 seguidores',exact:true}).waitFor();await shot('accepted');
     await page.reload();await button('Dejar de seguir').waitFor();
     await button('Dejar de seguir').click();await button('Volver').click();assert.equal(writeCount,1);
     await button('Dejar de seguir').click();await button('Confirmar').click();await button('Seguir').waitFor();assert.equal(writeCount,2);
     check('CA01/03 public follow count, reload, cancel and confirmed unfollow');
-    visibility='private';await update();await button('Solicitar seguimiento').click();await button('Cancelar solicitud').waitFor();
+    visibility='private';await update();await contrast('Solicitar seguimiento');await button('Solicitar seguimiento').click();await button('Cancelar solicitud').waitFor();
     assert.equal(await page.locator('.social-profile-bio').count(),0);assert.equal(await page.locator('.social-follow-counts').count(),0);await shot('pending');
     await page.reload();await button('Cancelar solicitud').waitFor();
     visibility='public';status='accepted';await update();await button('Dejar de seguir').waitFor();

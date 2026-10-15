@@ -95,7 +95,10 @@
     "check:r5:message-notifications:ui": "node scripts/check-r5-message-notifications-ui.mjs",
     "check:r5:blocks": "node scripts/check-r5-blocks.mjs",
     "check:r5:blocks:ui": "node scripts/check-r5-blocks-ui.mjs",
-    "check:r5:blocks:http": "node scripts/check-r5-blocks-http.mjs"
+    "check:r5:blocks:http": "node scripts/check-r5-blocks-http.mjs",
+    "check:r5:release": "node scripts/check-r5-release.mjs",
+    "check:r5:release:audit": "node scripts/check-r5-release-audit.mjs",
+    "check:r5:release:report": "node scripts/check-r5-release-report.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",

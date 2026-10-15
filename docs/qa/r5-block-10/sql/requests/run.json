@@ -1,0 +1,10 @@
+{
+  "base": "f66d70bcf4f0e28c02fe2aff88088bd238a65e1e",
+  "branch": "codex/r5-block-10",
+  "suite": "requests",
+  "script": "scripts/check-r5-requests.mjs",
+  "source_sha256": "63d25465792c24e5e344c4ce3c5dcc17ca40bdda1f6b455b34c870069e1123fe",
+  "result": "PASS",
+  "startedAt": "2026-10-15T01:01:59.645Z",
+  "finishedAt": "2026-10-15T01:02:36.557Z"
+}

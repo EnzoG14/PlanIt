@@ -1,0 +1,10 @@
+{
+  "base": "f66d70bcf4f0e28c02fe2aff88088bd238a65e1e",
+  "branch": "codex/r5-block-10",
+  "suite": "profile",
+  "script": "scripts/check-r5-profile-ui.mjs",
+  "source_sha256": "f14b803805d3e1a4f44e21732f30a5349a8d1f39bd42bdab7231127ca842cca5",
+  "result": "PASS",
+  "startedAt": "2026-10-15T01:11:35.808Z",
+  "finishedAt": "2026-10-15T01:12:25.051Z"
+}

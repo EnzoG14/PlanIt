@@ -1,0 +1,14 @@
+[
+  {
+    "created_at": 1791988301820,
+    "entrypoint_path": "file:///app/supabase/functions/social-avatar/index.ts",
+    "ezbr_sha256": "b66c057d4d0a26cb71680182690255e03354d0b488e2efee0548a86698c1b2bf",
+    "id": "33dcb4cc-ef86-4240-81e3-c0115bc0aba3",
+    "name": "social-avatar",
+    "slug": "social-avatar",
+    "status": "ACTIVE",
+    "updated_at": 1791988301820,
+    "verify_jwt": true,
+    "version": 1
+  }
+]

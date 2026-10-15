@@ -16,7 +16,7 @@ const extra = String.raw`
   await unblock(a,bId); await unblock(a,bId)
   record('B9 own block SELECT only,self/anon denied,idempotent block/unblock,counterparty cannot remove actor block')
   await privacy(a,aId,'private');await privacy(b,bId,'private');await follow(a,bId);await follow(b,aId)
-  await admin.query("create function public.b9_fail_cleanup() returns trigger language plpgsql as $ begin raise exception 'injected'; end $; create trigger b9_fail_cleanup before delete on public.user_follows for each row execute function public.b9_fail_cleanup();")
+  await admin.query("create function public.b9_fail_cleanup() returns trigger language plpgsql as $b9$ begin raise exception 'injected'; end $b9$; create trigger b9_fail_cleanup before delete on public.user_follows for each row execute function public.b9_fail_cleanup();")
   await assert.rejects(block(a,bId),e=>e.code==='P0001')
   assert.equal(await value(admin,'select count(*)::int from public.user_blocks'),0)
   assert.equal(await value(admin,'select count(*)::int from public.user_follows where (follower_id=$1 and followed_id=$2) or (follower_id=$2 and followed_id=$1)',[aId,bId]),2)

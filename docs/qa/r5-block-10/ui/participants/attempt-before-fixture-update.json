@@ -1,0 +1,21 @@
+{
+  "base": "1bcef5af3397b54bae8cc18e6336092639c2b964",
+  "branch": "codex/r5-block-2",
+  "environment": "Edge headless; running Vite app; Auth/REST/gateway fixtures, no remote JWT/RLS proof",
+  "baseline": false,
+  "results": [
+    {
+      "viewport": 320,
+      "test": "Confirmed default route uses social RPC only; no administration",
+      "result": "PASS"
+    },
+    {
+      "viewport": 320,
+      "test": "Cursor pagination refetches previous pages, 34 unique identities",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "failure": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'Camila Torres', exact: true }) to be visible\u001b[22m\n",
+  "result": "FAIL"
+}

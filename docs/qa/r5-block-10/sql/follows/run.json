@@ -1,0 +1,10 @@
+{
+  "base": "f66d70bcf4f0e28c02fe2aff88088bd238a65e1e",
+  "branch": "codex/r5-block-10",
+  "suite": "follows",
+  "script": "scripts/check-r5-follows.mjs",
+  "source_sha256": "91e00af92f1f81e1cd663a380a74e194d08949af8faafa0277701bd6af19d545",
+  "result": "PASS",
+  "startedAt": "2026-10-15T01:01:22.932Z",
+  "finishedAt": "2026-10-15T01:01:59.643Z"
+}

@@ -1,0 +1,921 @@
+{
+  "base": "f66d70bcf4f0e28c02fe2aff88088bd238a65e1e",
+  "branch": "codex/r5-block-10",
+  "generatedAt": "2026-10-15T01:13:34.215Z",
+  "decision": "NO-GO",
+  "reason": "Authenticated integrated JWT/Storage/Realtime and human acceptance pending; local/fixture PASS never grants release approval",
+  "layers": {
+    "sql": [
+      {
+        "suite": "participants",
+        "evidence": [
+          {
+            "path": "sql/participants/sql-results.json",
+            "result": "PASS",
+            "groups": 27,
+            "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime."
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "profile",
+        "evidence": [
+          {
+            "path": "sql/profile/sql-results.json",
+            "result": "PASS",
+            "groups": 28,
+            "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime."
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "edit-profile",
+        "evidence": [
+          {
+            "path": "sql/edit-profile/sql-results.json",
+            "result": "PASS",
+            "groups": 28,
+            "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime."
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "private-profile",
+        "evidence": [
+          {
+            "path": "sql/private-profile/sql-results.json",
+            "result": "PASS",
+            "groups": 29,
+            "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime."
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "follows",
+        "evidence": [
+          {
+            "path": "sql/follows/sql-results.json",
+            "result": "PASS",
+            "groups": 28,
+            "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime."
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "requests",
+        "evidence": [
+          {
+            "path": "sql/requests/sql-results.json",
+            "result": "PASS",
+            "groups": 45,
+            "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime."
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "messages",
+        "evidence": [
+          {
+            "path": "sql/messages/sql-results.json",
+            "result": "PASS",
+            "groups": 26,
+            "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime."
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "blocks",
+        "evidence": [
+          {
+            "path": "sql/blocks/sql-results.json",
+            "result": "PASS",
+            "groups": 28,
+            "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime."
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "request-notifications",
+        "evidence": [
+          {
+            "path": "sql/request-notifications/sql-results.json",
+            "result": "PASS",
+            "groups": 28,
+            "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime."
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "message-notifications",
+        "evidence": [
+          {
+            "path": "sql/message-notifications/sql-results.json",
+            "result": "PASS",
+            "groups": 28,
+            "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime."
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "avatar",
+        "evidence": [
+          {
+            "path": "sql/avatar/avatar-unit.json",
+            "result": "PASS",
+            "groups": 5,
+            "environment": "Actual handler TypeScript transpiled in Node; mocked fetch; no Deno runtime, real Auth, Storage or deployed Edge"
+          }
+        ],
+        "result": "PASS"
+      }
+    ],
+    "ui": [
+      {
+        "suite": "participants",
+        "evidence": [
+          {
+            "path": "ui/participants/participants-ui/ui-results.json",
+            "result": "PASS",
+            "groups": 66,
+            "environment": "Edge headless; running Vite app; Auth/REST/gateway fixtures, no remote JWT/RLS proof"
+          },
+          {
+            "path": "ui/participants/admin-ui/ui-results.json",
+            "result": "PASS",
+            "groups": 72,
+            "environment": "Edge headless; Auth/REST fixtures; Asia/Tokyo; no remote HTTP/JWT"
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "profile",
+        "evidence": [
+          {
+            "path": "ui/profile/ui-results.json",
+            "result": "PASS",
+            "groups": 54,
+            "environment": "Real Vite build and Edge headless; Auth/RPC/gateway fixtures, no real JWT/RLS transport"
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "edit-profile",
+        "evidence": [
+          {
+            "path": "ui/edit-profile/results.json",
+            "result": "PASS",
+            "groups": 56,
+            "environment": "Edge production build; synthetic Auth/REST/Storage fixtures, no real JWT or Storage transport"
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "private-profile",
+        "evidence": [
+          {
+            "path": "ui/private-profile/ui-results.json",
+            "result": "PASS",
+            "groups": 79,
+            "environment": "Real Vite build and Edge headless; Auth/RPC/gateway fixtures, no real JWT/RLS transport"
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "follows",
+        "evidence": [
+          {
+            "path": "ui/follows/ui-results.json",
+            "result": "PASS",
+            "groups": 54,
+            "environment": "Vite build + Edge headless, REST/session fixtures; not live JWT authorization"
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "requests",
+        "evidence": [
+          {
+            "path": "ui/requests/ui-results.json",
+            "result": "PASS",
+            "groups": 78,
+            "environment": "Vite build + Edge headless; REST/session fixtures; no live JWT authorization or physical keyboard"
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "messages",
+        "evidence": [
+          {
+            "path": "ui/messages/ui-results.json",
+            "result": "PASS",
+            "groups": 42,
+            "environment": "Actual Vite build + Edge headless; explicit Auth/REST/WebSocket fixtures; NOT real JWT/RLS transport or physical mobile"
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "blocks",
+        "evidence": [
+          {
+            "path": "ui/blocks/ui-results.json",
+            "result": "PASS",
+            "groups": 55,
+            "environment": "Actual Vite build + Edge headless; explicit Auth/REST/WebSocket fixtures; NOT real JWT/RLS transport or physical mobile"
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "request-notifications",
+        "evidence": [
+          {
+            "path": "ui/request-notifications/results.json",
+            "result": "PASS",
+            "groups": 2,
+            "environment": "Actual Vite build + Supabase SDK; mocked HTTP and Phoenix WebSocket; not remote JWT or Realtime transport proof"
+          }
+        ],
+        "result": "PASS"
+      },
+      {
+        "suite": "message-notifications",
+        "evidence": [
+          {
+            "path": "ui/message-notifications/results.json",
+            "result": "PASS",
+            "groups": 2,
+            "environment": "Actual Vite build + SDK; fixture Auth/REST/Phoenix WebSocket; not real JWT/RLS/Realtime"
+          }
+        ],
+        "result": "PASS"
+      }
+    ]
+  },
+  "regressions": {
+    "result": "PASS",
+    "suites": 16,
+    "results": [
+      {
+        "suite": "profile",
+        "result": "PASS"
+      },
+      {
+        "suite": "notifications",
+        "result": "PASS"
+      },
+      {
+        "suite": "chat",
+        "result": "PASS"
+      },
+      {
+        "suite": "interests",
+        "result": "PASS"
+      },
+      {
+        "suite": "event-links",
+        "result": "PASS"
+      },
+      {
+        "suite": "hidden-access",
+        "result": "PASS"
+      },
+      {
+        "suite": "gallery",
+        "result": "PASS"
+      },
+      {
+        "suite": "event-access",
+        "result": "PASS"
+      },
+      {
+        "suite": "invite",
+        "result": "PASS"
+      },
+      {
+        "suite": "event-actions",
+        "result": "PASS"
+      },
+      {
+        "suite": "attendees",
+        "result": "PASS"
+      },
+      {
+        "suite": "rejoin",
+        "result": "PASS"
+      },
+      {
+        "suite": "edit-event",
+        "result": "PASS"
+      },
+      {
+        "suite": "participations",
+        "result": "PASS"
+      },
+      {
+        "suite": "home-events",
+        "result": "PASS"
+      },
+      {
+        "suite": "search",
+        "result": "PASS"
+      }
+    ]
+  },
+  "http": [
+    {
+      "suite": "participants",
+      "path": "http/participants/http-anon.json",
+      "results": [
+        {
+          "path": "rpc/get_event_social_participants",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "rpc/get_social_profile",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "rpc/get_event_attendees",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "profiles?select=id,birth_date,sex",
+          "status": 401,
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "suite": "profile",
+      "path": "http/profile/http-profile-anon.json",
+      "results": [
+        {
+          "path": "rpc/get_social_profile",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "rpc/get_social_profile_events",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "profiles?select=id,birth_date,sex",
+          "status": 401,
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "suite": "edit-profile",
+      "path": "http/edit-profile/http-anon.json",
+      "results": [
+        {
+          "path": "rest/v1/profiles?select=id,birth_date,sex",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "rest/v1/files?select=id,storage_path",
+          "status": 401,
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "suite": "private-profile",
+      "path": "http/private-profile/http.json",
+      "results": [
+        {
+          "case": "anonymous",
+          "path": "/rest/v1/rpc/get_social_profile",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "case": "anonymous",
+          "path": "/rest/v1/rpc/get_social_profile_events",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "case": "anonymous",
+          "path": "/rest/v1/profiles?select=id,birth_date,sex",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "case": "anonymous",
+          "path": "/rest/v1/files?select=id&bucket_name=eq.avatars",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "case": "anonymous",
+          "path": "/functions/v1/social-avatar",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "case": "authenticated audiences + avatar/Storage",
+          "result": "NOT RUN",
+          "reason": "No authorized pre-existing session fixture file supplied; no remote data provisioned"
+        }
+      ]
+    },
+    {
+      "suite": "follows",
+      "path": "http/follows/http-anon.json",
+      "results": [
+        {
+          "path": "rpc/get_social_relationship",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "rpc/get_social_counts",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "rpc/list_social_follows",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "rpc/list_social_follows",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "user_follows?select=follower_id,followed_id,status",
+          "status": 401,
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "suite": "requests",
+      "path": "http/requests/http-anon.json",
+      "results": [
+        {
+          "path": "rpc/list_follow_requests",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "rpc/resolve_follow_request",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "user_follows?select=request_version,status&followed_id=eq.90000000-0000-4000-8000-000000000001&follower_id=eq.90000000-0000-4000-8000-000000000001",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "profiles?select=id,birth_date,sex",
+          "status": 401,
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "suite": "messages",
+      "path": "http/messages/http-anon.json",
+      "results": [
+        {
+          "path": "rpc/list_direct_conversations?p_limit=30",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "rpc/get_direct_messages?p_conversation_id=90000000-0000-4000-8000-000000000001",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "conversations?select=id&kind=eq.direct",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "messages?select=id,sender_id,body,created_at&conversation_id=eq.90000000-0000-4000-8000-000000000001",
+          "status": 401,
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "suite": "blocks",
+      "path": "http/blocks/http-anon.json",
+      "results": [
+        {
+          "path": "user_blocks?select=blocked_id",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "user_follows?select=follower_id,followed_id",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "rpc/get_social_relationship?p_user_id=90000000-0000-4000-8000-000000000001",
+          "status": 401,
+          "result": "PASS"
+        },
+        {
+          "path": "rpc/get_social_profile?p_user_id=90000000-0000-4000-8000-000000000001",
+          "status": 401,
+          "result": "PASS"
+        }
+      ]
+    }
+  ],
+  "criteria": [
+    {
+      "id": "RF-R5-01.CA-01",
+      "literal": "RF-R5-01.CA-01. Sólo el organizador y los asistentes confirmados pueden abrir la lista de participantes de un evento; conocer el enlace o consultar el detalle no concede ese permiso.",
+      "suite": "participants",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-01.CA-02",
+      "literal": "RF-R5-01.CA-02. Cada usuario mostrado corresponde al evento seleccionado y permite abrir el perfil al que se tiene acceso.",
+      "suite": "participants",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-01.CA-03",
+      "literal": "RF-R5-01.CA-03. Los datos visibles respetan la privacidad configurada por cada cuenta y no revelan información restringida.",
+      "suite": "participants",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-01.CA-04",
+      "literal": "RF-R5-01.CA-04. Cuando un evento no tiene usuarios visibles o el usuario no tiene permiso de consulta, se informa el estado sin mostrar participantes de otros eventos.",
+      "suite": "participants",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-02.CA-01",
+      "literal": "RF-R5-02.CA-01. Un usuario autenticado puede abrir un perfil público y consultar su nombre o seudónimo, fotografía e información declarada pública.",
+      "suite": "profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-02.CA-02",
+      "literal": "RF-R5-02.CA-02. Cuando el perfil tiene eventos públicos asociados, se muestran únicamente esos eventos y se puede acceder a sus detalles.",
+      "suite": "profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-02.CA-03",
+      "literal": "RF-R5-02.CA-03. Los datos privados, credenciales y demás información restringida no se muestran ni quedan disponibles por consultas directas.",
+      "suite": "profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-02.CA-04",
+      "literal": "RF-R5-02.CA-04. Cuando la persona no tiene foto o eventos públicos, el perfil sigue siendo legible y presenta estados vacíos adecuados.",
+      "suite": "profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-03.CA-01",
+      "literal": "RF-R5-03.CA-01. El usuario puede modificar sus datos editables y fotografía y guardar los cambios en su propia cuenta.",
+      "suite": "edit-profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-03.CA-02",
+      "literal": "RF-R5-03.CA-02. El usuario puede cambiar la visibilidad entre perfil público y privado, y el estado elegido persiste al volver a ingresar.",
+      "suite": "edit-profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-03.CA-03",
+      "literal": "RF-R5-03.CA-03. Las modificaciones se reflejan en el perfil propio y en las vistas públicas o privadas según la visibilidad configurada.",
+      "suite": "edit-profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-03.CA-04",
+      "literal": "RF-R5-03.CA-04. Un usuario no puede editar el perfil de otra persona; los valores no válidos o errores de guardado se informan sin simular éxito.",
+      "suite": "edit-profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-04.CA-01",
+      "literal": "RF-R5-04.CA-01. Al consultar un perfil privado sin seguimiento aprobado, únicamente se muestran nombre visible, username y avatar; los datos adicionales permanecen restringidos.",
+      "suite": "private-profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Historical B5 approval retained; no new B10 approval"
+    },
+    {
+      "id": "RF-R5-04.CA-02",
+      "literal": "RF-R5-04.CA-02. El sistema no presenta datos reservados ni eventos privados del perfil a usuarios sin autorización.",
+      "suite": "private-profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Historical B5 approval retained; no new B10 approval"
+    },
+    {
+      "id": "RF-R5-04.CA-03",
+      "literal": "RF-R5-04.CA-03. Un seguidor aprobado puede consultar exclusivamente los datos habilitados para seguidores de ese perfil.",
+      "suite": "private-profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Historical B5 approval retained; no new B10 approval"
+    },
+    {
+      "id": "RF-R5-04.CA-04",
+      "literal": "RF-R5-04.CA-04. Las mismas restricciones se aplican si se intenta consultar información privada mediante acceso directo a la capa de datos.",
+      "suite": "private-profile",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Historical B5 approval retained; no new B10 approval"
+    },
+    {
+      "id": "RF-R5-05.CA-01",
+      "literal": "RF-R5-05.CA-01. Seguir un perfil público desde una cuenta autenticada registra la relación y actualiza el estado del botón y los contadores o listados correspondientes.",
+      "suite": "follows",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-05.CA-02",
+      "literal": "RF-R5-05.CA-02. Seguir un perfil privado genera una solicitud pendiente y no concede acceso a sus contenidos privados antes de su aprobación.",
+      "suite": "follows",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-05.CA-03",
+      "literal": "RF-R5-05.CA-03. Dejar de seguir elimina la relación y revoca el acceso derivado de ella; los seguidores ya aceptados conservan su seguimiento cuando el perfil cambia de público a privado.",
+      "suite": "follows",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-05.CA-04",
+      "literal": "RF-R5-05.CA-04. No se permite seguir la propia cuenta ni duplicar relaciones o solicitudes activas al repetir la operación.",
+      "suite": "follows",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-06.CA-01",
+      "literal": "RF-R5-06.CA-01. El propietario de un perfil privado puede consultar las solicitudes de seguimiento que tiene pendientes.",
+      "suite": "requests",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-06.CA-02",
+      "literal": "RF-R5-06.CA-02. Al aceptar una solicitud, se establece la relación de seguimiento y se concede la visibilidad correspondiente a un seguidor aprobado.",
+      "suite": "requests",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-06.CA-03",
+      "literal": "RF-R5-06.CA-03. Al rechazar una solicitud, no se concede seguimiento ni acceso adicional; el solicitante puede enviar otra inmediatamente si no existe bloqueo.",
+      "suite": "requests",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-06.CA-04",
+      "literal": "RF-R5-06.CA-04. Sólo el dueño del perfil puede resolver sus solicitudes; una solicitud ya resuelta no puede procesarse de nuevo como pendiente.",
+      "suite": "requests",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-07.CA-01",
+      "literal": "RF-R5-07.CA-01. Dos usuarios autenticados pueden iniciar una conversación privada de texto sin seguirse; si se bloquean se impiden nuevos mensajes, pero permanece accesible su historial.",
+      "suite": "messages",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-07.CA-02",
+      "literal": "RF-R5-07.CA-02. Los mensajes enviados quedan asociados a la conversación y a su remitente, y se recuperan al volver a abrirla.",
+      "suite": "messages",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-07.CA-03",
+      "literal": "RF-R5-07.CA-03. Los mensajes se muestran con un orden temporal coherente y sin mezclarse con los chats de eventos.",
+      "suite": "messages",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-07.CA-04",
+      "literal": "RF-R5-07.CA-04. Un tercero que no participa de la conversación no puede leer ni escribir mensajes mediante la interfaz o accesos directos a los datos.",
+      "suite": "messages",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-08.CA-01",
+      "literal": "RF-R5-08.CA-01. Un usuario puede bloquear y desbloquear a otro, pero no bloquear su propia cuenta.",
+      "suite": "blocks",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-08.CA-02",
+      "literal": "RF-R5-08.CA-02. Al bloquearse dos cuentas, se eliminan los seguimientos y solicitudes en ambos sentidos y se impiden nuevos seguimientos y mensajes privados entre ellas.",
+      "suite": "blocks",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-08.CA-03",
+      "literal": "RF-R5-08.CA-03. Las conversaciones privadas anteriores permanecen disponibles para consulta, sin permitir nuevos envíos durante el bloqueo.",
+      "suite": "blocks",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-08.CA-04",
+      "literal": "RF-R5-08.CA-04. Si se elimina el bloqueo, se reutiliza la conversación privada existente y los seguimientos eliminados no se restauran automáticamente.",
+      "suite": "blocks",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    },
+    {
+      "id": "RF-R5-08.CA-05",
+      "literal": "RF-R5-08.CA-05. El bloqueo no impide que ambos participen en el chat grupal de un evento para el que sigan autorizados.",
+      "suite": "blocks",
+      "sql_local": "PASS",
+      "ui_fixture": "PASS",
+      "http_authenticated": "NOT RUN",
+      "storage_realtime_real": "NOT RUN",
+      "integral": "NOT RUN",
+      "human_acceptance": "Pending"
+    }
+  ]
+}

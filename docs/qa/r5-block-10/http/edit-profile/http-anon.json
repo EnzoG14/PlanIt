@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-15T00:55:35.866Z",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "environment": "Real HTTPS GET only; public key; no JWT, mutation RPC, account provisioning or writes; status only",
+  "results": [
+    {
+      "path": "rest/v1/profiles?select=id,birth_date,sex",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rest/v1/files?select=id,storage_path",
+      "status": 401,
+      "result": "PASS"
+    }
+  ],
+  "blocked": [
+    {
+      "test": "Live anonymous POST update_my_social_profile/set_my_avatar",
+      "result": "BLOCKED",
+      "reason": "Automatic approval review rejected live mutation RPC probes because misconfigured ACL could allow remote writes. No request was executed."
+    }
+  ],
+  "not_run": [
+    "Authenticated HTTP/JWT",
+    "Storage upload/signing/CDN",
+    "Realtime transport"
+  ]
+}

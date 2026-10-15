@@ -1,0 +1,78 @@
+PASS 320: CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus
+PASS 320: CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible
+PASS 320: Lost committed response: status/version RLS read only,never resends or claims uncertain success
+PASS 320: Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed
+PASS 320: CA04 stale generation:reconciliation sees replacement,never resolves new request
+PASS 320: Double submit locked;10s write timeout reconciles without duplicate
+PASS 320: Mutation aborted on hide never reloads identities in background;visible return requires reconciliation
+PASS 320: D04 external conversion empties pending at30s/focus;no residual cached identities
+PASS 320: Network/invalid cursor/denied clear rows;real retry recovers
+PASS 320: Offline/hidden clear identities;online/visible revalidate
+PASS 320: Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels
+PASS 320: Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities
+PASS 320: Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected
+PASS 360: CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus
+PASS 360: CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible
+PASS 360: Lost committed response: status/version RLS read only,never resends or claims uncertain success
+PASS 360: Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed
+PASS 360: CA04 stale generation:reconciliation sees replacement,never resolves new request
+PASS 360: Double submit locked;10s write timeout reconciles without duplicate
+PASS 360: Mutation aborted on hide never reloads identities in background;visible return requires reconciliation
+PASS 360: D04 external conversion empties pending at30s/focus;no residual cached identities
+PASS 360: Network/invalid cursor/denied clear rows;real retry recovers
+PASS 360: Offline/hidden clear identities;online/visible revalidate
+PASS 360: Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels
+PASS 360: Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities
+PASS 360: Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected
+PASS 375: CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus
+PASS 375: CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible
+PASS 375: Lost committed response: status/version RLS read only,never resends or claims uncertain success
+PASS 375: Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed
+PASS 375: CA04 stale generation:reconciliation sees replacement,never resolves new request
+PASS 375: Double submit locked;10s write timeout reconciles without duplicate
+PASS 375: Mutation aborted on hide never reloads identities in background;visible return requires reconciliation
+PASS 375: D04 external conversion empties pending at30s/focus;no residual cached identities
+PASS 375: Network/invalid cursor/denied clear rows;real retry recovers
+PASS 375: Offline/hidden clear identities;online/visible revalidate
+PASS 375: Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels
+PASS 375: Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities
+PASS 375: Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected
+PASS 390: CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus
+PASS 390: CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible
+PASS 390: Lost committed response: status/version RLS read only,never resends or claims uncertain success
+PASS 390: Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed
+PASS 390: CA04 stale generation:reconciliation sees replacement,never resolves new request
+PASS 390: Double submit locked;10s write timeout reconciles without duplicate
+PASS 390: Mutation aborted on hide never reloads identities in background;visible return requires reconciliation
+PASS 390: D04 external conversion empties pending at30s/focus;no residual cached identities
+PASS 390: Network/invalid cursor/denied clear rows;real retry recovers
+PASS 390: Offline/hidden clear identities;online/visible revalidate
+PASS 390: Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels
+PASS 390: Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities
+PASS 390: Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected
+PASS 768: CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus
+PASS 768: CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible
+PASS 768: Lost committed response: status/version RLS read only,never resends or claims uncertain success
+PASS 768: Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed
+PASS 768: CA04 stale generation:reconciliation sees replacement,never resolves new request
+PASS 768: Double submit locked;10s write timeout reconciles without duplicate
+PASS 768: Mutation aborted on hide never reloads identities in background;visible return requires reconciliation
+PASS 768: D04 external conversion empties pending at30s/focus;no residual cached identities
+PASS 768: Network/invalid cursor/denied clear rows;real retry recovers
+PASS 768: Offline/hidden clear identities;online/visible revalidate
+PASS 768: Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels
+PASS 768: Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities
+PASS 768: Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected
+PASS 1280: CA01: profile entry,30+4 tie cursor pagination,Argentina time in Tokyo,4 dock tabs,profile round trip and restored focus
+PASS 1280: CA02/03: Escape/cancel focus,no write;confirmed accept/reject remove pending;renewal immediately visible
+PASS 1280: Lost committed response: status/version RLS read only,never resends or claims uncertain success
+PASS 1280: Lost uncommitted response and failed reconciliation:actions locked until current pending confirmed;explicit retry then allowed
+PASS 1280: CA04 stale generation:reconciliation sees replacement,never resolves new request
+PASS 1280: Double submit locked;10s write timeout reconciles without duplicate
+PASS 1280: Mutation aborted on hide never reloads identities in background;visible return requires reconciliation
+PASS 1280: D04 external conversion empties pending at30s/focus;no residual cached identities
+PASS 1280: Network/invalid cursor/denied clear rows;real retry recovers
+PASS 1280: Offline/hidden clear identities;online/visible revalidate
+PASS 1280: Amanecer text200%,long names,no overflow,44px controls,3px focus,self-hosted font,allowlist excludes private sentinels
+PASS 1280: Cross-tab account/token change remounts inbox,aborts old read,and never republishes previous identities
+PASS 1280: Short viewport keyboard navigation;logout aborts late read;anonymous direct route protected
