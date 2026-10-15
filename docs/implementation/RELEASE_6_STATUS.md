@@ -7,7 +7,7 @@
 | Bloque | Objetivo | Estado | Rama/PR | SHA base | Migración (creada/local/remota/verificada) | Pruebas y CA | Aprobación para siguiente |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 0 | Auditoría, contratos, decisiones | Implementado; QA/firma humana pendientes | codex/r6-block-0; [PR #63 draft](https://github.com/EnzoG14/PlanIt/pull/63) | ad9327fff5aca65e6b676a56f1e1e93737102f32 | 0/0/0/0 | 18 checks baseline; build/lint PASS; 24 CA NOT RUN | NO |
-| 1 | RPC ocupación owner-only | Implementado; QA pendiente | codex/r6-block-1; PR draft pendiente de creación | 1ee60e3a1636c0ec181782343100d44b5f08be1e | 1/1/0/0 | RF-R6-01 CA01–04 parcial SQL; contrato/build/lint PASS; JWT/UI NOT RUN | NO |
+| 1 | RPC ocupación owner-only | Implementado; QA pendiente | codex/r6-block-1; [PR #64 draft](https://github.com/EnzoG14/PlanIt/pull/64) | 1ee60e3a1636c0ec181782343100d44b5f08be1e | 1/1/0/0 | RF-R6-01 CA01–04 parcial SQL; contrato/build/lint PASS; JWT/UI NOT RUN | NO |
 | 2 | Panel KPI | NO INICIADO | — | — | 0/0/0/0 | RF-R6-01 | NO |
 | 3 | Demográficos privados | NO INICIADO | — | — | 0/0/0/0 | RF-R6-02 | NO |
 | 4 | Períodos y series | NO INICIADO | — | — | 0/0/0/0 | RF-R6-03 + R6-02 | NO |

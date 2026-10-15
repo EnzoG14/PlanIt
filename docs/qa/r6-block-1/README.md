@@ -1,6 +1,6 @@
 # R6 · Bloque 1 — Ocupación exclusiva del organizador
 
-15/10/2026 (Argentina). **Implementado; QA pendiente.** Base integrada `1ee60e3a1636c0ec181782343100d44b5f08be1e`, rama `codex/r6-block-1`. PR y HEAD final en seguimiento/entrega. Sin B2 ni aceptación integral de CA.
+15/10/2026 (Argentina). **Implementado; QA pendiente.** Base integrada `1ee60e3a1636c0ec181782343100d44b5f08be1e`, rama `codex/r6-block-1`. [PR #64 en borrador](https://github.com/EnzoG14/PlanIt/pull/64). HEAD de implementación `56dcb4bb662dd80e45878a30fa43f541d30455e4`; commits posteriores sólo enlazan seguimiento. HEAD final en la entrega. Sin B2 ni aceptación integral de CA.
 
 ## Alcance y seguridad
 
