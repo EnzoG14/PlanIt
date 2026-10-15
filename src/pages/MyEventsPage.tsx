@@ -28,6 +28,7 @@ export function MyEventsPage() {
       <div className="my-events-filters" role="group" aria-label="Filtrar eventos organizados">
         {Object.entries(organizedFilters).map(([value, label]) => <button key={value} type="button" aria-pressed={filter === value} onClick={() => setParams({ section, filter: value }, { replace: true })}>{label}</button>)}
       </div>
+      <p className="my-events-compare-link"><Link className="secondary-link" to="/my-events/compare">Comparar eventos</Link></p>
       {filter === 'upcoming' && <p className="field-hint my-events-filter-hint">Próximos incluye eventos en curso que todavía no finalizaron.</p>}
     </>}
     <MyEventsList key={`${session?.user.id}:${section}:${section === 'organizing' ? filter : 'all'}`} section={section} filter={section === 'organizing' ? filter : 'all'} />

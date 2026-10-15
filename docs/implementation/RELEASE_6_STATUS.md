@@ -1,6 +1,6 @@
 # PlanIt — R6 seguimiento de ejecución
 
-**Estado global:** **B6 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **7 (B0–B6)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B5 integrados en main; B6 añade productor transaccional privado `event_full`, sin UI nueva. Migración B6 **1/1/1/1**, aplicada y verificada remotamente por autorización posterior. [Evidencia B6](../qa/r6-block-6/README.md). B7 no iniciado; sin merge ni deploy en B6. Cortes anteriores históricos.
+**Estado global:** **B8 Implementado; QA pendiente** (15/10/2026), derivado de main sin B7 (PR #70 sin integrar; su fila y bitácora llegan con ese PR). Bloques con entrega propia en main/PR: B0–B6 y B8. [Evidencia B8](../qa/r6-block-8/README.md). Estado previo: **B6 Implementado; QA pendiente**. Bloques con entrega: **7 (B0–B6)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B5 integrados en main; B6 añade productor transaccional privado `event_full`, sin UI nueva. Migración B6 **1/1/1/1**, aplicada y verificada remotamente por autorización posterior. [Evidencia B6](../qa/r6-block-6/README.md). B7 no iniciado; sin merge ni deploy en B6. Cortes anteriores históricos.
 
 **Baseline comprobado B6:** `main` SHA `9ba2f687cfad0ad0997d8d5a9c7f8eca83659dc1` (15/10/2026), fetch y PR #68 MERGED comprobados. La fotografía B0 era `66e24d85f32123ecd70f457f8381c68ae5af1603`. **Dependencia R5:** `RELEASE_5_TEST_REPORT.md` y `RELEASE_5_STATUS.md` registran **GO por aceptación humana, estado Validado**. Pruebas automáticas/JWT/Realtime que no se ejecutaron siguen documentadas como tal. **Acuerdos A01–A07 aprobados; B0–B6 entregados, sin aceptación integral R6.**
 
@@ -14,7 +14,7 @@
 | 5 | CSV seguros | Implementado; QA pendiente | codex/r6-block-5; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68) | edaa0c5 | 1/1/1/1 | RF-R6-04 CA01–04 parcial SQL/contrato/UI fixtures; HTTP/Excel/dispositivos NOT RUN | NO |
 | 6 | Trigger aviso lleno | Implementado; QA pendiente | codex/r6-block-6; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69) | 9ba2f68 | 1/1/1/1 | RF-R6-05 CA01/03/04 parcial SQL local; HTTP/Realtime NOT RUN | NO |
 | 7 | Bandeja aviso | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 | NO |
-| 8 | Comparación | NO INICIADO | — | — | 0/0/0/0 | RF-R6-06 | NO |
+| 8 | Comparación | Implementado; QA pendiente | codex/r6-block-8; [PR #71 draft](https://github.com/EnzoG14/PlanIt/pull/71) | 9311c01 | 1/1/0/0 | RF-R6-06 CA01–04 parcial SQL local/UI fixtures; HTTP JWT real NOT RUN | NO |
 | 9 | QA integral | NO INICIADO | — | — | 0/0/0/0 | 24 CA y regresión | NO |
 
 ## Plantilla de bitácora por bloque
@@ -45,6 +45,13 @@
 - Riesgos abiertos, autorización humana para avanzar, estado del PR y decisión GO/NO-GO.
 
 **No cambiar «Implementado; QA pendiente» a «Validado» sin pruebas completas y aprobación humana expresa.**
+
+### B8 — 15/10/2026, Codex
+
+- Base limpia `9311c0142e4c945656e8aa0fe9c89c1a37b4135b` (`origin/main`, tras fetch; PR #69 MERGED). Rama nueva `codex/r6-block-8` desde main; B7 (#70) no integrada y no requerida. `.env.local` de main conservado e ignorado. Pedido humano autoriza sólo B8; D09/D10 y A01–A07 conservados.
+- RPC `get_my_events_occupancy(uuid[])→jsonb`, STABLE DEFINER, `search_path=''`, EXECUTE authenticated; 2–10 IDs únicos, ownership de todos antes de agregar (mezcla rechaza todo con un único error), misma fórmula/estado que B1, capacidad inválida → N/D. Sin tablas/triggers/políticas/índices/grants de lectura.
+- Ruta `/my-events/compare` bajo auth con acceso secundario desde Mis eventos (sin dock nuevo): selector con filtros que conservan la selección, tabla/tarjetas accesibles, anti-carrera por clave de selección + abort + timeout, estados loading/empty/invalid/error/retry. DESIGN.md intacto.
+- Migración `20261015210000`: **1 creada / 1 probada local / 0 aplicada remota / 0 verificada remota**. SQL PostgreSQL17.5, contrato y UI (seis anchos) PASS; HTTP JWT real/Realtime/dispositivos NOT RUN. Dos fallos de regresión preexistentes documentados. [Evidencia](../qa/r6-block-8/README.md). Sin DDL remoto, merge, deploy ni B9. Cierre: commit funcional `8c930ed`; [PR #71 draft](https://github.com/EnzoG14/PlanIt/pull/71); HEAD final en Git/PR.
 
 ### B6 — 15/10/2026, Codex
 
