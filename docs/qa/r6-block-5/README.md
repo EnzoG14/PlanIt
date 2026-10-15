@@ -1,6 +1,6 @@
 # R6 · Bloque 5 — CSV seguros
 
-15/10/2026, Argentina. **Implementado; QA pendiente.** Sólo RF-R6-04.CA-01..04. No aceptación integral, merge, SQL remoto, deploy ni B6.
+15/10/2026, Argentina. **Implementado; QA pendiente.** Sólo RF-R6-04.CA-01..04. Sin aceptación integral, merge, deploy ni B6. Aplicación remota autorizada registrada en la adenda final.
 
 ## Procedencia y decisiones
 
@@ -13,7 +13,7 @@
 
 RPC nueva, adaptador/parser CSV y serializador, control reutilizado de descarga, integración en contexto de evento y movimientos B4, estilos mínimos Amanecer y tres scripts `check:r6:csv*` en package.json. Sin dependencias nuevas ni cambios a DESIGN, fuentes oficiales RF/CA o Google Doc. Seguimiento actualizado en PLAN/STATUS/DECISIONS_PROPOSED y matriz de aceptación.
 
-Migración `20261015173426_r6_export_projection.sql`: **creada 1 / probada local 1 / aplicada remota autorizada 0 / verificada remota 0**. Replay de 34 migraciones en PostgreSQL **17.5 Windows** con scaffolds Auth/Storage y roles reales SQL; no es Supabase remoto ni JWT HTTP.
+Migración `20261015173426_r6_export_projection.sql`: **creada 1 / probada local 1 / aplicada remota autorizada 1 / verificada remota 1** (actualizadas con autorización posterior; el corte de entrega inicial era1/1/0/0). Replay de 34 migraciones en PostgreSQL **17.5 Windows** con scaffolds Auth/Storage y roles reales SQL; no es Supabase remoto ni JWT HTTP.
 
 `public.get_my_event_export_rows(uuid)→jsonb`, STABLE DEFINER, `search_path=''`, EXECUTE sólo authenticated; UID/ownership antes de consultar. Sin nuevas tablas, triggers, índices, políticas ni grants de lectura. Perfiles completos e historia conservan RLS. La proyección transmite únicamente campos autorizados y usa el enmascarado administrativo bilateral R5. Primera inscripción se obtiene del historial, no del último reingreso.
 
@@ -30,7 +30,7 @@ Amenazas cubiertas: evento ajeno/inexistente/NULL, acceso social insuficiente, U
 | `npm run check:r6:csv:ui` | PASS fixtures | [14 checks](ui/results.json), Edge production, seis anchos, Tokio como zona del navegador, dos descargas reales por ancho |
 | Regresión SQL ocupación B1 | PASS | [29 checks](checks/occupancy/sql-results.json); copia temporal de `scripts/check-r6-occupancy.mjs` cambiando sólo destino a B5, replay34 y carrera última plaza |
 | Contratos B3/B4 | PASS | [Demografía](checks/demographics-contract.json), [períodos](checks/periods-contract.json); evidencia histórica preservada |
-| HTTP/JWT real / permisos remotos | NOT RUN | No credenciales de usuarios de prueba ni migración remota B5 |
+| HTTP/JWT real / permisos remotos | NOT RUN | Sin credenciales de usuarios de prueba; instalación remota posterior verificada por catálogo/SQL |
 | Excel / PWA instalada / dispositivos / lector real | NOT RUN | Parser independiente y emulación web no sustituyen estas capas |
 | Realtime | NOT RUN | B5 no agrega productor ni consumidor Realtime |
 | Aceptación humana integral | NOT RUN | No autovalidada |
@@ -56,4 +56,17 @@ Capturas [antes móvil](ui-before/series-390.png), [antes escritorio](ui-before/
 
 Los CSV de `contract/` y `ui/` son fixtures de prueba, incluidos textos con ataques deliberados. El prefijo protector se aplica antes del quoting; no ejecutar ni quitar protección al abrirlos como planilla. La convención de reversión se documenta en la adenda, no elimina la necesidad de probar Excel real.
 
-B6 requiere autorización humana independiente. Aplicación de esta migración en `planit-v2` y pruebas HTTP posteriores requieren su autorización correspondiente; no se usó el proyecto histórico.
+B6 requiere autorización humana independiente. La migración ya se aplicó en `planit-v2` con autorización posterior. HTTP autenticado permanece pendiente; no se usó el proyecto histórico.
+
+
+## Aplicación remota autorizada — 15/10/2026
+
+Pedido humano: «Aplicá la migracion a la db remota por favor». Aplicada únicamente `20261015173426_r6_export_projection.sql` desde la rama B5, fuente `6fb3bbd2292a8984f7fba7933aeb0e372f6e4b75`, a `planit-v2` (`iepeqmvzjguwlhnecsdq`). Sin seeds/roles/Vault, fixtures de negocio remotos, merge, deploy ni B6. Los cortes locales anteriores se conservan como antecedentes; marcas actuales **1/1/1/1**.
+
+- `supabase migration list --linked --project-ref iepeqmvzjguwlhnecsdq`:33 aplicadas y sólo B5 pendiente antes; [34/34 después](remote/migrations-after.txt), [tabla convertida a JSON](remote/migrations-after.json).
+- `supabase db push --linked --project-ref iepeqmvzjguwlhnecsdq --dry-run --skip-vault`: [antes](remote/dry-run-before.txt) una pendiente; [después](remote/dry-run-after.txt) ninguna.
+- Mismo comando sin `--dry-run`, con `--yes`: [aplicación](remote/apply.txt), una sola migración.
+- `supabase db query --linked --project-ref iepeqmvzjguwlhnecsdq --file <SQL> --output json`: [catálogo READ ONLY](remote/catalog-readonly.sql), [resultado](remote/catalog.json), [rechazos READ ONLY](remote/verify-readonly.sql), [resultado](remote/verification.json). Cuerpo coincide con Git normalizando CRLF en ambos lados; PostgreSQL17.11, STABLE/DEFINER/search_path vacío, EXECUTE authenticated, sin PUBLIC/anon; cero tablas públicas sin RLS. Authenticated sin UID y con evento NULL rechazados42501. Sin lectura de filas privadas.
+- `supabase db advisors --linked --project-ref iepeqmvzjguwlhnecsdq --type security --output json`:49→50 WARN. El único nuevo aviso corresponde a `get_my_event_export_rows` DEFINER authenticated: exposición RPC intencional protegida por ownership, no un permiso de tabla. [Referencia del asesor](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable). No se aplicaron recomendaciones automáticas.
+
+[Resumen verificable](remote/summary.json). La instalación remota no sustituye HTTP/JWT real, Excel, dispositivos ni aceptación humana; estos siguen pendientes. PR #68 permanece draft.

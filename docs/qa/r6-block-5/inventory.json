@@ -23,6 +23,19 @@
     "docs/qa/r6-block-5/contract/formula-fixture.csv",
     "docs/qa/r6-block-5/contract/results.json",
     "docs/qa/r6-block-5/inventory.json",
+    "docs/qa/r6-block-5/remote/advisors-after.json",
+    "docs/qa/r6-block-5/remote/advisors-before.json",
+    "docs/qa/r6-block-5/remote/apply.txt",
+    "docs/qa/r6-block-5/remote/catalog-readonly.sql",
+    "docs/qa/r6-block-5/remote/catalog.json",
+    "docs/qa/r6-block-5/remote/dry-run-after.txt",
+    "docs/qa/r6-block-5/remote/dry-run-before.txt",
+    "docs/qa/r6-block-5/remote/function-body.json",
+    "docs/qa/r6-block-5/remote/migrations-after.json",
+    "docs/qa/r6-block-5/remote/migrations-after.txt",
+    "docs/qa/r6-block-5/remote/summary.json",
+    "docs/qa/r6-block-5/remote/verification.json",
+    "docs/qa/r6-block-5/remote/verify-readonly.sql",
     "docs/qa/r6-block-5/sql/benchmark.json",
     "docs/qa/r6-block-5/sql/explain.json",
     "docs/qa/r6-block-5/sql/harness.json",
@@ -89,5 +102,6 @@
     "supabase/migrations/20261015173426_r6_export_projection.sql"
   ],
   "env_tracked": false,
-  "remote_migrations_applied": 0
+  "remote_migrations_applied": 1,
+  "remote_verification": "docs/qa/r6-block-5/remote/summary.json"
 }

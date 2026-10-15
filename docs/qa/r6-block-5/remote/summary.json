@@ -1,0 +1,51 @@
+{
+  "project": "planit-v2",
+  "ref": "iepeqmvzjguwlhnecsdq",
+  "date_argentina": "2026-10-15",
+  "authorized_by": "User: Aplicá la migracion a la db remota por favor",
+  "source_commit": "6fb3bbd2292a8984f7fba7933aeb0e372f6e4b75",
+  "applied": [
+    "20261015173426"
+  ],
+  "migration_count": 34,
+  "body_matches_git": true,
+  "body_sha256_lf": "b5ba52d302960f27c3e21d1d81b75c6a395943071cc3a4de643a9119edf149ee",
+  "acl_stable_search_path_rls": "PASS",
+  "missing_uid_null_event_denial": "PASS",
+  "dry_run_after": "up to date",
+  "security_advisors_before": {
+    "WARN": 49
+  },
+  "security_advisors_after": {
+    "WARN": 50
+  },
+  "new_warnings": [
+    {
+      "name": "authenticated_security_definer_function_executable",
+      "title": "Signed-In Users Can Execute SECURITY DEFINER Function",
+      "level": "WARN",
+      "facing": "EXTERNAL",
+      "categories": [
+        "SECURITY"
+      ],
+      "description": "Detects `SECURITY DEFINER` functions that are callable by signed-in users. Revoke `EXECUTE`, switch the function to `SECURITY INVOKER`, or move it out of your exposed API schema if signed-in users should not call it.",
+      "detail": "Function `public.get_my_event_export_rows(p_event_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_my_event_export_rows`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+      "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable",
+      "metadata": {
+        "name": "get_my_event_export_rows",
+        "schema": "public"
+      },
+      "cache_key": "authenticated_security_definer_function_executable_public_get_my_event_export_rows_p_event_id uuid"
+    }
+  ],
+  "http_real_jwt": "NOT RUN",
+  "seeds": false,
+  "roles": false,
+  "vault": false,
+  "marks": {
+    "created": 1,
+    "tested_local": 1,
+    "applied_remote_authorized": 1,
+    "verified_remote": 1
+  }
+}

@@ -11,7 +11,7 @@
 | 2 | Panel KPI | Implementado; QA pendiente | codex/r6-block-2; [PR #65 draft](https://github.com/EnzoG14/PlanIt/pull/65) | 7933aa9 | 0/0/0/0 | RF-R6-01 CA01–04 UI fixtures; JWT real pendiente | NO |
 | 3 | Demográficos privados | Implementado; QA pendiente | codex/r6-block-3; [PR #66 draft](https://github.com/EnzoG14/PlanIt/pull/66) | e6a25a1 | 1/1/1/1 | RF-R6-02 CA01/03/04 parcial SQL/UI fixtures; CA02 B4; JWT real NOT RUN | NO |
 | 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67) | 25685f0 | 1/1/1/1 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
-| 5 | CSV seguros | Implementado; QA pendiente | codex/r6-block-5; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68) | edaa0c5 | 1/1/0/0 | RF-R6-04 CA01–04 parcial SQL/contrato/UI fixtures; HTTP/Excel/dispositivos NOT RUN | NO |
+| 5 | CSV seguros | Implementado; QA pendiente | codex/r6-block-5; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68) | edaa0c5 | 1/1/1/1 | RF-R6-04 CA01–04 parcial SQL/contrato/UI fixtures; HTTP/Excel/dispositivos NOT RUN | NO |
 | 6 | Trigger aviso lleno | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 parcial | NO |
 | 7 | Bandeja aviso | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 | NO |
 | 8 | Comparación | NO INICIADO | — | — | 0/0/0/0 | RF-R6-06 | NO |
@@ -99,3 +99,10 @@ Por instrucción humana se aplicó la única pendiente 20261015130739 en planit-
 - HTTP/JWT real, Excel, PWA instalada/dispositivos, zoom real/lector y aceptación integral NOT RUN; no certificarlos desde fixtures. Estado Implementado; QA pendiente. PR/commit funcional enlazados al cierre; HEAD final en Git/PR. B6 requiere autorización independiente; sin DDL remoto/merge/deploy/Google Docs.
 
 - Cierre B5: commit funcional `c574440b133c24e52fff98df225eb4c892146f42`; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68). El commit documental posterior vincula la entrega; HEAD final disponible en Git/PR. `.env.local` no versionado; migración remota sigue0.
+
+
+### B5 — Aplicación remota autorizada posterior, 15/10/2026
+
+- Por solicitud humana se aplicó únicamente `20261015173426_r6_export_projection.sql` en planit-v2 (`iepeqmvzjguwlhnecsdq`). Dry-run previo una pendiente; posterior ninguna; historial34/34 sincronizado. Sin seeds/roles/Vault, merge, deploy ni B6.
+- Marcas **1 creada / 1 probada local / 1 aplicada remota autorizada / 1 verificada remota**. PostgreSQL17.11: cuerpo remoto coincide con el SQL versionado normalizando CRLF; STABLE/DEFINER/search_path/ACL y RLS público verificados. Rechazo sin UID y evento NULL como authenticated comprobado en transacción READ ONLY/ROLLBACK. No se exportaron datos de negocio.
+- Asesores seguridad49→50 WARN: nuevo aviso de RPC DEFINER ejecutable por authenticated, intencional y protegida por ownership; sin cambios adicionales de permisos. [Acta y evidencia](../qa/r6-block-5/remote/summary.json). HTTP/JWT real y aceptación integral siguen NOT RUN. Las marcas locales en entradas anteriores conservan la fotografía de entrega.
