@@ -167,3 +167,5 @@ Verificación de despliegue (11/10/2026): historial local/remoto con 11 versione
 ## R6 Bloque 1 — Contrato de ocupación (local)
 
 `get_my_event_occupancy(uuid)` devuelve JSON de ocupación actual exclusivamente al organizador, incluidos eventos ocultos, terminados, cancelados y archivados. Una consulta calcula sólo confirmed, excluye organizador y deriva disponibles/porcentaje sin persistir contadores. STABLE DEFINER justificado por RLS de participaciones propias; auth.uid/ownership en servidor, search_path vacío, EXECUTE sólo authenticated. No amplía políticas públicas ni acceso a profiles/history. Adaptador validado y formato es-AR en features/analytics; no incorpora panel/ruta B2. Migración 20261015130739 creada y probada localmente, sin aplicación remota. [QA y límites](qa/r6-block-1/README.md).
+
+Actualización R6 B1 (15/10/2026): migración 20261015130739 aplicada en planit-v2 con autorización posterior; cuerpo, ACL y RLS verificados, 31 versiones sincronizadas. HTTP/JWT funcional pendiente. Ver evidencia remota B1.

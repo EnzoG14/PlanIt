@@ -61,3 +61,11 @@ Incidencias resueltas: sandbox bloqueó TCP localhost,replay repetido con permis
 | RF-R6-06 | Fórmula de soporte;sin comparativa implementada | NOT RUN |
 
 Migración `20261015130739_r6_organizer_occupancy.sql`: **creada sí / probada local sí / aplicada remota no / verificada remota no**. Restan revisión humana,aplicación remota autorizada y HTTP autenticado. Riesgo entorno: PostgreSQL18.4 local frente a17.11 inventariado B0;SQL compatible con17,no sustituye prueba remota. Sin merge,deploy,db push,fixtures remotos ni edición Google Docs. B2 requiere permiso independiente. Detenerse en B1.
+
+## Aplicación remota autorizada — 15/10/2026
+
+Actualización posterior al cierre local: el usuario autorizó aplicar pendientes. Se aplicó únicamente `20261015130739_r6_organizer_occupancy.sql` en **planit-v2, iepeqmvzjguwlhnecsdq**, con `db push --skip-vault --yes`, sin seeds, roles ni actualización Vault. Esta actualización reemplaza las marcas previas de «sin aplicación remota» del corte local B1.
+
+Estado: **creada sí / probada local sí / aplicada remota autorizada sí / verificada remota sí**. 31 versiones local/remoto iguales y dry-run sin pendientes. Catálogo remoto confirma cuerpo coincidente con Git, STABLE DEFINER, search_path vacío, EXECUTE authenticated sí/anon no y 0 tablas públicas sin RLS. Bloque READ ONLY comprueba rechazo authentication_required sin UID; no se crearon usuarios ni fixtures. HTTP/JWT autenticado y prueba funcional owner siguen NOT RUN; verificación de catálogo no sustituye esas capas.
+
+[Historial](remote/migrations.json), [dry-run](remote/dry-run.json), [catálogo](remote/catalog.json), [aserciones](remote/verify.sql), [resultado](remote/verification.json), [asesores](remote/security-advisors.json). Asesores: 46 WARN de funciones DEFINER ejecutables por authenticated (incluye esta RPC, intencional con ownership comprobado) y 1 WARN de protección de contraseñas filtradas; no se cambió configuración de Auth ni funciones existentes. Sin merge, deploy de frontend ni avance B2.
