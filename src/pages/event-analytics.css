@@ -15,3 +15,15 @@
 .analytics-occupancy progress::-webkit-progress-value { background: var(--pi-color-primary); }
 .analytics-occupancy progress::-moz-progress-bar { background: var(--pi-color-primary); }
 @media (min-width: 768px) { .analytics-kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.demographics-panel { margin-top: var(--pi-space-section); }
+.demographics-columns { display: grid; gap: var(--pi-space-section); }
+.demographics-distribution { min-width: 0; }
+.demographics-distribution h3 { margin-bottom: var(--pi-space-base); }
+.demographics-distribution p { line-height: 1.5; }
+.demographics-distribution table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: var(--pi-font-meta-size); font-variant-numeric: tabular-nums; }
+.demographics-distribution caption { text-align: left; color: var(--pi-color-text-muted); margin-bottom: var(--pi-space-base); }
+.demographics-distribution th, .demographics-distribution td { text-align: left; padding: var(--pi-space-tight) var(--pi-space-micro); overflow-wrap: anywhere; border-bottom: 1px solid var(--pi-color-divider); vertical-align: top; }
+.demographics-distribution th:first-child { width: 40%; }
+.demographics-bar { display: block; height: 6px; background: var(--pi-color-disabled-bg); border-radius: var(--pi-radius-pill); overflow: hidden; margin-top: var(--pi-space-tight); }
+.demographics-bar > span { display: block; height: 100%; background: var(--pi-color-primary); }
+@media (min-width: 768px) { .demographics-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

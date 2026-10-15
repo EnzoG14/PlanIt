@@ -3,7 +3,9 @@ import { Link, useLocation, useParams } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
-import { loadMyEventOccupancy } from '../features/analytics/api'
+import { loadMyEventOccupancy, loadMyEventDemographics } from '../features/analytics/api'
+import type { EventDemographics } from '../features/analytics/demographics'
+import { DemographicsPanel } from '../components/analytics/DemographicsPanel'
 import { formatOccupancyPercent } from '../features/analytics/format'
 import type { EventOccupancy } from '../features/analytics/types'
 import { validatedMyEventsReturn } from '../features/events/my-events'
@@ -20,6 +22,8 @@ export function EventAnalyticsPage() {
 function AnalyticsContent({ eventId }: { eventId: string }) {
   const location = useLocation()
   const [attempt, setAttempt] = useState(0)
+  const [demographics, setDemographics] = useState<EventDemographics | null>(null)
+  const [demographicsError, setDemographicsError] = useState(false)
   const [data, setData] = useState<EventOccupancy | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [pending, setPending] = useState(true)
@@ -30,23 +34,23 @@ function AnalyticsContent({ eventId }: { eventId: string }) {
     let active = true
     const controller = new AbortController()
     const timeout = window.setTimeout(() => controller.abort(), 10000)
-    const invalidate = () => { active = false; controller.abort(); setData(null); setPending(false); setStale(true); setOffline(!navigator.onLine) }
+    const invalidate = () => { active = false; controller.abort(); setData(null); setDemographics(null); setDemographicsError(false); setPending(false); setStale(true); setOffline(!navigator.onLine) }
     const online = () => setOffline(false)
     window.addEventListener('offline', invalidate)
     window.addEventListener('online', online)
     const onHide = () => { if (document.hidden) invalidate() }
     document.addEventListener('visibilitychange', onHide)
     if (navigator.onLine) {
-      void loadMyEventOccupancy(eventId, controller.signal).then(value => {
+      void Promise.all([loadMyEventOccupancy(eventId, controller.signal), loadMyEventDemographics(eventId, controller.signal).catch(() => null)]).then(([value, demo]) => {
         if (value.event_id !== eventId) throw new Error('No pudimos leer la ocupación del evento.')
-        if (active) { setData(value); setPending(false) }
+        if (active) { setData(value); setDemographics(demo?.event_id === eventId ? demo : null); setDemographicsError(!demo || demo.event_id !== eventId); setPending(false) }
       }).catch(reason => {
         if (active) { setError(controller.signal.aborted ? 'La consulta tardó demasiado. Volvé a intentar.' : reason instanceof Error ? reason.message : 'No pudimos cargar la ocupación.'); setPending(false) }
       }).finally(() => window.clearTimeout(timeout))
     } else { queueMicrotask(() => { if (active) { setPending(false); setStale(true) } }) }
     return () => { active = false; controller.abort(); window.clearTimeout(timeout); window.removeEventListener('offline', invalidate); window.removeEventListener('online', online); document.removeEventListener('visibilitychange', onHide) }
   }, [eventId, attempt])
-  function refresh() { setData(null); setError(null); setStale(false); setPending(true); setAttempt(value => value + 1) }
+  function refresh() { setData(null); setDemographics(null); setDemographicsError(false); setError(null); setStale(false); setPending(true); setAttempt(value => value + 1) }
   const origin = { myEventsReturnTo: validatedMyEventsReturn(location.state?.myEventsReturnTo) ?? undefined, returnTo: ['/home', '/map'].includes(location.state?.returnTo) ? location.state.returnTo : undefined }
   const count = new Intl.NumberFormat('es-AR')
   const percent = data?.capacity_usable ? formatOccupancyPercent(data.occupancy_percent) : 'N/D'
@@ -57,7 +61,7 @@ function AnalyticsContent({ eventId }: { eventId: string }) {
     <header className="management-header"><h1>Estadísticas del evento</h1><p>Estado actual de inscripciones</p></header>
     <div className="analytics-toolbar"><Link className="secondary-link" to={origin.myEventsReturnTo ?? '/my-events?section=organizing'}>Mis eventos</Link><button className="secondary-button" disabled={pending || offline} onClick={refresh}>{pending ? 'Consultando…' : error ? 'Reintentar' : 'Actualizar datos'}</button></div>
     <div aria-live="polite" aria-busy={pending}>
-      {pending && <StatusMessage title="Consultando ocupación">Esperá un momento.</StatusMessage>}
+      {pending && <StatusMessage title="Consultando estadísticas">Esperá un momento.</StatusMessage>}
       {offline ? <StatusMessage title="Sin conexión">Conectate y elegí Actualizar datos para consultar la ocupación.</StatusMessage> : stale ? <StatusMessage title="Actualizá la ocupación">La consulta anterior dejó de estar vigente. Elegí Actualizar datos.</StatusMessage> : error ? <StatusMessage title="Estadísticas no disponibles" tone="error">{error} Indicadores no disponibles (N/D).</StatusMessage> : data && <>
         <h2 className="analytics-event-title">{data.title}</h2>
         <p className="analytics-state">{stateLabels[data.event_state]}</p>
@@ -72,6 +76,8 @@ function AnalyticsContent({ eventId }: { eventId: string }) {
           <p>{data.confirmed_count === 0 ? 'Todavía no hay inscriptos confirmados.' : `${count.format(data.confirmed_count)} inscriptos confirmados de ${count.format(data.capacity)} lugares.`}</p>
           <p className="field-hint">Las inscripciones no acreditan presencia física. Las altas y bajas se reflejan al actualizar.</p>
         </section>
+        {demographics && <DemographicsPanel data={demographics} />}
+        {demographicsError && <StatusMessage title="Datos demográficos no disponibles">No pudimos consultar esta distribución. Elegí Actualizar datos para reintentar.</StatusMessage>}
         <p className="analytics-updated">Última consulta: <time dateTime={`${data.as_of}-03:00`}>{formatEventTime(data.as_of)}</time> (hora de Argentina).</p>
       </>}
     </div>

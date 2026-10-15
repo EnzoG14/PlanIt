@@ -1,6 +1,6 @@
 # PlanIt — R6 seguimiento de ejecución
 
-**Estado global:** **B2 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **3 (B0–B2)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. RPC y contrato de ocupación implementados localmente; migración remota aplicada y verificada con autorización posterior; panel B2 implementado con fixtures, sin deploy ni avance a B3. [Evidencia B2](../qa/r6-block-2/README.md). [Contratos B0](RELEASE_6_BLOCK_0_DECISIONS.md), [evidencia B1](../qa/r6-block-1/README.md).
+**Estado global:** **B3 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **4 (B0–B3)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B1/B2 integrados en `e6a25a1`; B3 añade agregación demográfica owner-only y tablas accesibles. Migración B3 sólo local, sin deploy ni avance a B4. [Evidencia B3](../qa/r6-block-3/README.md), [adenda D04/D08 aprobada](RELEASE_6_BLOCK_3_DECISIONS.md). Los cortes anteriores preservan el estado histórico de decisiones y PR.
 
 **Baseline comprobado:** `main` SHA `66e24d85f32123ecd70f457f8381c68ae5af1603` (14/10/2026). **Dependencia R5:** `RELEASE_5_TEST_REPORT.md` y `RELEASE_5_STATUS.md` registran **GO por aceptación humana, estado Validado**. Pruebas automáticas/JWT/Realtime que no se ejecutaron siguen documentadas como tal; B0 revalida integración de PR #60 y entorno. **Acuerdos A01–A07 aprobados; B0–B2 entregados, sin aceptación integral.**
 
@@ -9,7 +9,7 @@
 | 0 | Auditoría, contratos, decisiones | Implementado; QA/firma humana pendientes | codex/r6-block-0; [PR #63 draft](https://github.com/EnzoG14/PlanIt/pull/63) | ad9327fff5aca65e6b676a56f1e1e93737102f32 | 0/0/0/0 | 18 checks baseline; build/lint PASS; 24 CA NOT RUN | NO |
 | 1 | RPC ocupación owner-only | Implementado; QA pendiente | codex/r6-block-1; [PR #64 draft](https://github.com/EnzoG14/PlanIt/pull/64) | 1ee60e3a1636c0ec181782343100d44b5f08be1e | 1/1/1/1 | RF-R6-01 CA01–04 parcial SQL; contrato/build/lint PASS; JWT/UI NOT RUN | NO |
 | 2 | Panel KPI | Implementado; QA pendiente | codex/r6-block-2; [PR #65 draft](https://github.com/EnzoG14/PlanIt/pull/65) | 7933aa9 | 0/0/0/0 | RF-R6-01 CA01–04 UI fixtures; JWT real pendiente | NO |
-| 3 | Demográficos privados | NO INICIADO | — | — | 0/0/0/0 | RF-R6-02 | NO |
+| 3 | Demográficos privados | Implementado; QA pendiente | codex/r6-block-3; PR draft pendiente | e6a25a1 | 1/1/0/0 | RF-R6-02 CA01/03/04 parcial SQL/UI fixtures; CA02 B4; JWT real NOT RUN | NO |
 | 4 | Períodos y series | NO INICIADO | — | — | 0/0/0/0 | RF-R6-03 + R6-02 | NO |
 | 5 | CSV seguros | NO INICIADO | — | — | 0/0/0/0 | RF-R6-04 | NO |
 | 6 | Trigger aviso lleno | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 parcial | NO |
@@ -56,3 +56,11 @@ Por instrucción humana se aplicó la única pendiente 20261015130739 en planit-
 - Ruta lazy protegida, acceso contextual owner, cuatro KPI, barra accesible con equivalente textual, estado/hora Argentina, refresh/retry. Remount usuario/token/evento, abort/timeout10s, limpieza offline/pestaña oculta/error/logout; sin cache privada ni títulos ajenos.
 - RPC B1 y ACL sin cambios, cero migraciones B2 (0/0/0/0). Amanecer y mockup original revisados, DESIGN intacto. Sin R6-02 ni siguientes bloques.
 - Build/lint y contrato PASS; UI compilada con fixtures y regresiones SQL en [evidencia B2](../qa/r6-block-2/README.md). JWT real/Realtime/dispositivos/aceptación integral NOT RUN; no extrapolar permisos remotos desde mocks. Estado Implementado; QA pendiente.
+
+### B3 — 15/10/2026, Codex
+
+- Base integrada `e6a25a1f81a6c25ab4694fc4c16cf695e8ab6dfa` tras fetch; merge #65 y dependencia #64 comprobados. Rama/worktree nuevos `codex/r6-block-3`; env copiado desde main local e ignorado. Cambios ajenos preservados.
+- [Adenda aprobada](RELEASE_6_BLOCK_3_DECISIONS.md): responsable elige estadísticas exactas/actualizadas aceptando riesgo residual de inferencia temporal/multievento; D08 ratificada. La garantía absoluta previa D04 queda reemplazada expresamente. Umbral técnico k5, supresión completa por dimensión si alguna celda positiva<5, incluido unknown. No exportaciones ni cambios de alcance B5.
+- RPC `get_my_event_demographics(uuid)→jsonb`, STABLE DEFINER, ownership antes de lectura privada, search_path vacío, EXECUTE authenticated; sin grants nuevos de lectura/tablas/triggers/índices. Migración `20261015160324`: **1 creada / 1 probada local / 0 aplicada remota / 0 verificada remota**.
+- Tablas y barras accesibles Amanecer, edad al día AR, sexo declarado y faltantes; empty/suppressed/error diferenciados, refresh y limpieza privada reutilizados de B2. Mockups/ DESIGN intactos. Sin B4/CSV/Realtime nuevos.
+- Build/lint y DTO PASS; replay PostgreSQL18.4, regresión R5 social y pruebas específicas SQL PASS; UI Edge con fixtures seis anchos, texto200%, altura corta, timeout/logout/offline PASS. Riesgo temporal/multievento reproducido como límite aceptado, no prueba de anonimato. [Evidencias, rendimiento y límites](../qa/r6-block-3/README.md). HTTP/JWT real, dispositivos, lector real y aceptación integral NOT RUN. B4 requiere permiso humano independiente; no merge/deploy/DDL remoto.
