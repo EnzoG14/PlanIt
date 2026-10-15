@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-14T23:20:48.009Z",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "environment": "Real HTTPS anonymous GET only; no authenticated JWT or allowed writes",
+  "results": [
+    {
+      "path": "user_blocks?select=blocked_id",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "user_follows?select=follower_id,followed_id",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_social_relationship?p_user_id=90000000-0000-4000-8000-000000000001",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_social_profile?p_user_id=90000000-0000-4000-8000-000000000001",
+      "status": 401,
+      "result": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+.block-user-action { color: var(--pi-color-ink); font-family: var(--pi-font-family); overflow-wrap: anywhere; }
+.block-user-action > p { margin-block: 8px; font-size: var(--pi-font-meta-size); }
+.block-user-action > .text-button { color: var(--pi-color-danger-text); }
+.block-user-dialog { box-sizing: border-box; width: min(440px, calc(100% - 32px)); max-height: calc(100dvh - 32px); overflow-y: auto; overscroll-behavior: contain; padding: 26px 22px 22px; border: 0; border-radius: var(--pi-radius-sheet); background: var(--pi-color-surface); color: var(--pi-color-ink); box-shadow: var(--pi-shadow-dialog); font: inherit; }
+.block-user-dialog::backdrop { background: var(--pi-color-scrim); }
+.block-user-dialog h2 { margin: 0 0 16px; font-size: var(--pi-font-title-lg-size); }
+.block-user-dialog p { line-height: 1.5; }
+.block-user-dialog-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.block-user-dialog-actions button { flex: 1 1 150px; min-height: 48px; padding: 12px 16px; border-radius: var(--pi-radius-pill); white-space: normal; }
+.block-user-danger { border: 0; background: var(--pi-color-danger-action); color: var(--pi-color-surface); font: inherit; font-weight: 700; cursor: pointer; }
+.block-user-danger:hover:not(:disabled) { filter: brightness(.92); }
+.block-user-dialog button:disabled { background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); opacity: 1; cursor: default; }
+.block-user-action :focus-visible { outline: 3px solid var(--pi-color-focus); outline-offset: 3px; }
+.direct-chat > .block-user-action { max-height: 25%; overflow-y: auto; }
