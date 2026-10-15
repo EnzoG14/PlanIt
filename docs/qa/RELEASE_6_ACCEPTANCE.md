@@ -28,10 +28,10 @@
 | RF-R6-03.CA-02 | dos rangos disjuntos producen series distintas y sólo movimientos respectivos | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
 | RF-R6-03.CA-03 | desde > hasta, rango excesivo y fecha malformada devuelven error seguro | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
 | RF-R6-03.CA-04 | cambio rápido de filtro/reorden de respuestas, evento ajeno y unlisted link-only | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
-| RF-R6-04.CA-01 | descarga propietario dos CSV distintos, asistentes y estadísticas (acuerdo A04) | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-04.CA-02 | cabeceras, encoding/quoting, filtros y cifras coinciden con RPC | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-04.CA-03 | Excel/CSV parser y ataques fórmula =,+,-,@, tabs/saltos; excluir PII | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-04.CA-04 | 0 filas/fallo chunk/timeout, revocación/permisos; no descarga de archivo parcial | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
+| RF-R6-04.CA-01 | descarga propietario dos CSV distintos, asistentes y estadísticas (acuerdo A04) | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
+| RF-R6-04.CA-02 | cabeceras, encoding/quoting, filtros y cifras coinciden con RPC | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
+| RF-R6-04.CA-03 | Excel/CSV parser y ataques fórmula =,+,-,@, tabs/saltos; excluir PII | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
+| RF-R6-04.CA-04 | 0 filas/fallo chunk/timeout, revocación/permisos; no descarga de archivo parcial | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
 | RF-R6-05.CA-01 | última inscripción confirmed bajo lock llena capacity y crea 1 notificación | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-05.CA-02 | recipient organizador, event_id, type y target seguro, bandeja | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-05.CA-03 | con 1 lugar disponible no aviso; reintento/rollback y concurrencia | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |

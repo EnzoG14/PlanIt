@@ -1,0 +1,2 @@
+# Preserve exact BOM, CRLF records and embedded LF in downloaded CSV fixtures.
+*.csv -text -whitespace
