@@ -15,6 +15,7 @@ const EditProfilePage = lazy(() => import('./pages/EditProfilePage').then(module
 const CreateEventPage = lazy(() => import('./pages/CreateEventPage').then(module => ({ default: module.CreateEventPage })))
 const EditEventPage = lazy(() => import('./pages/EditEventPage').then(module => ({ default: module.EditEventPage })))
 const EventGalleryPage = lazy(() => import('./pages/EventGalleryPage').then(module => ({ default: module.EventGalleryPage })))
+const EventAnalyticsPage = lazy(() => import('./pages/EventAnalyticsPage').then(module => ({ default: module.EventAnalyticsPage })))
 const EventAttendeesPage = lazy(() => import('./pages/EventAttendeesPage').then(module => ({ default: module.EventAttendeesPage })))
 const SocialIdentityPage = lazy(() => import('./pages/SocialIdentityPage').then(module => ({ default: module.SocialIdentityPage })))
 const SocialFollowsPage = lazy(() => import('./pages/SocialFollowsPage').then(module => ({ default: module.SocialFollowsPage })))
@@ -46,6 +47,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route path="events/new" element={<Suspense fallback={<StatusMessage title="Cargando formulario">Esperá un momento.</StatusMessage>}><CreateEventPage /></Suspense>} />
       <Route path="events/:id/edit" element={<Suspense fallback={<StatusMessage title="Cargando formulario">Esperá un momento.</StatusMessage>}><EditEventPage /></Suspense>} />
       <Route path="events/:id/gallery" element={<Suspense fallback={<StatusMessage title="Cargando galería">Esperá un momento.</StatusMessage>}><EventGalleryPage /></Suspense>} />
+      <Route path="events/:id/analytics" element={<Suspense fallback={<StatusMessage title="Cargando estadísticas">Esperá un momento.</StatusMessage>}><EventAnalyticsPage /></Suspense>} />
       <Route path="events/:id/attendees" element={<Suspense fallback={<StatusMessage title="Cargando asistentes">Esperá un momento.</StatusMessage>}><EventAttendeesPage /></Suspense>} />
       <Route path="events/:id/access" element={<Suspense fallback={<StatusMessage title="Cargando accesos">Esperá un momento.</StatusMessage>}><EventAccessPage /></Suspense>} />
       <Route path="events/:id/rejoin-requests" element={<Suspense fallback={<StatusMessage title="Cargando solicitudes">Esperá un momento.</StatusMessage>}><EventRejoinRequestsPage /></Suspense>} />

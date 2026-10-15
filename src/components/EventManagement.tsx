@@ -18,7 +18,7 @@ export function EventManagement({ event, origin, onChanged }: { event: EventReco
   return <section ref={section} tabIndex={-1} className="event-management" aria-label="Gestión del evento">
     <h2>Gestionar evento</h2>
     {event.visibility === 'unlisted' && <EventLinkPanel key={`${event.id}:${session?.user.id}:${event.cancelled_at}:${event.archived_at}:${event.ends_at}`} event={event} />}
-    <div className="event-management-rows">{isEventEditable(event) && row('Editar evento', 'edit', 'edit')}{row('Gestionar imágenes', 'gallery', 'image')}{row('Ver asistentes', 'attendees', 'people')}{event.visibility === 'unlisted' && row('Gestionar accesos', 'access', 'people')}{button('duplicate', 'copy')}</div>
+    <div className="event-management-rows">{isEventEditable(event) && row('Editar evento', 'edit', 'edit')}{row('Gestionar imágenes', 'gallery', 'image')}{row('Ver asistentes', 'attendees', 'people')}{session?.user.id === event.organizer_id && row('Estadísticas', 'analytics', 'category')}{event.visibility === 'unlisted' && row('Gestionar accesos', 'access', 'people')}{button('duplicate', 'copy')}</div>
     {managed.event_state !== 'archived' && <div className="event-management-rows event-management-danger">{managed.event_state === 'open' && button('cancel', 'pause')}{button('archive', 'archive')}</div>}
     <EventActionDialog key={event.id} event={managed} action={action} onClose={() => setAction(null)} onChanged={message => { onChanged(message); requestAnimationFrame(() => { if (document.activeElement === document.body) section.current?.focus() }) }} origin={origin} dismissLabel={action === 'cancel' ? 'Conservar evento' : 'Volver'} />
   </section>

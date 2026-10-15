@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-15",
+  "base": "7933aa9",
+  "branch": "codex/r6-block-2",
+  "status": "Implementado; QA pendiente",
+  "checks": {
+    "build": "PASS",
+    "lint": "PASS with pre-existing warnings",
+    "b1Contract": "PASS",
+    "ui": "PASS 43 groups, synthetic Auth/RPC",
+    "sqlRegressions": "PASS 16 suites, local scaffold",
+    "realJwt": "NOT RUN",
+    "realRealtime": "NOT RUN",
+    "realDevices": "NOT RUN"
+  },
+  "newMigrations": {
+    "created": 0,
+    "local": 0,
+    "remote": 0,
+    "remoteVerified": 0
+  },
+  "sources": [
+    {
+      "path": "src/App.tsx",
+      "sha256": "6e989d02458a7cc7d9c2ecf86502e8e951726683967af9073c75b917d0e7f6d3"
+    },
+    {
+      "path": "src/components/AppLayout.tsx",
+      "sha256": "abf7d87a894918e8e06ac1a22d8323ad7807c25a9a5b1e7d6e9e7239916dfed7"
+    },
+    {
+      "path": "src/components/EventManagement.tsx",
+      "sha256": "41d62e45888291907b0d5d8cb58c7cdf1aa9fd48dee5b2c630e6c5284fe514ae"
+    },
+    {
+      "path": "src/pages/EventAnalyticsPage.tsx",
+      "sha256": "1dc97b165bf17f298bf93ec8138464a13877d0ab82b2f3fa58eb53f8e861190a"
+    },
+    {
+      "path": "src/pages/event-analytics.css",
+      "sha256": "e6f6ab54b6baeb647316a2e3c74ac9ae81f473e4b2419513c53a79c493cc83c4"
+    },
+    {
+      "path": "scripts/check-r6-occupancy-ui.mjs",
+      "sha256": "9d550a9803be6abab8b49823459e683a5838ce1d8b937dd39a272ae0d834c8ea"
+    }
+  ]
+}
