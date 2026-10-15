@@ -1,0 +1,22 @@
+
+> planit@0.0.0 lint
+> oxlint
+
+src/components/DiscoveryFilters.tsx:30:21: warning react(set-state-in-effect): Calling setState synchronously within an effect can trigger cascading renders help: Effects should synchronize React with external systems. Calling setState synchronously inside an effect starts another render and is usually unnecessary. Derive the value during render, initialize state directly, or update it from the event that caused the change. Use an effect only when synchronizing with an external system.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/targeted.mjs:43:16: warning eslint(no-unused-vars): Function 'capture' is declared but never used. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-stress.mjs:1:8: warning eslint(no-unused-vars): Identifier 'assert' is imported but never used. help: Consider removing this import.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-stress.mjs:7:7: warning eslint(no-unused-vars): Variable 'phase' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-stress.mjs:13:7: warning eslint(no-unused-vars): Variable 'results' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-confirm.mjs:1:8: warning eslint(no-unused-vars): Identifier 'assert' is imported but never used. help: Consider removing this import.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-confirm.mjs:7:7: warning eslint(no-unused-vars): Variable 'phase' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/social-confirm.mjs:13:7: warning eslint(no-unused-vars): Variable 'results' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/integration.mjs:43:16: warning eslint(no-unused-vars): Function 'capture' is declared but never used. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:4:10: warning eslint(no-unused-vars): Identifier 'execFileSync' is imported but never used. help: Consider removing this import.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:7:7: warning eslint(no-unused-vars): Variable 'base' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:11:52: warning eslint(no-unused-vars): Variable 'guest' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:14:19: warning eslint(no-unused-vars): Variable 'pixelComparisons' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:15:7: warning eslint(no-unused-vars): Variable 'check' is declared but never used. Unused variables should start with a '_'. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:41:16: warning eslint(no-unused-vars): Function 'capture' is declared but never used. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:42:16: warning eslint(no-unused-vars): Function 'noOverflow' is declared but never used. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/forms-rejoin.mjs:44:16: warning eslint(no-unused-vars): Function 'reachButtons' is declared but never used. help: Consider removing this declaration.
+docs/design/verification/ui-refresh/block-8-audit/a378259/probes/discovery-stable.mjs:43:16: warning eslint(no-unused-vars): Function 'capture' is declared but never used. help: Consider removing this declaration.

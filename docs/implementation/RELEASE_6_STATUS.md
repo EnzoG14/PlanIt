@@ -1,6 +1,6 @@
 # PlanIt — R6 seguimiento de ejecución
 
-**Estado global:** **B3 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **4 (B0–B3)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B1/B2 integrados en `e6a25a1`; B3 añade agregación demográfica owner-only y tablas accesibles. Migración B3 aplicada/verificada remotamente con autorización posterior, sin deploy ni avance a B4. [Evidencia B3](../qa/r6-block-3/README.md), [adenda D04/D08 aprobada](RELEASE_6_BLOCK_3_DECISIONS.md). Los cortes anteriores preservan el estado histórico de decisiones y PR.
+**Estado global:** **B4 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **5 (B0–B4)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B3 integrados; B4 base `25685f0` añade RPC owner-only de movimientos, selector y gráfico/tabla accesibles. Migración B4 sólo creada/probada local (1/1/0/0). [Evidencia B4](../qa/r6-block-4/README.md), [D03 aprobada](RELEASE_6_BLOCK_4_DECISIONS.md). Sin deploy ni avance a B5; cortes anteriores históricos.
 
 **Baseline comprobado:** `main` SHA `66e24d85f32123ecd70f457f8381c68ae5af1603` (14/10/2026). **Dependencia R5:** `RELEASE_5_TEST_REPORT.md` y `RELEASE_5_STATUS.md` registran **GO por aceptación humana, estado Validado**. Pruebas automáticas/JWT/Realtime que no se ejecutaron siguen documentadas como tal; B0 revalida integración de PR #60 y entorno. **Acuerdos A01–A07 aprobados; B0–B2 entregados, sin aceptación integral.**
 
@@ -10,7 +10,7 @@
 | 1 | RPC ocupación owner-only | Implementado; QA pendiente | codex/r6-block-1; [PR #64 draft](https://github.com/EnzoG14/PlanIt/pull/64) | 1ee60e3a1636c0ec181782343100d44b5f08be1e | 1/1/1/1 | RF-R6-01 CA01–04 parcial SQL; contrato/build/lint PASS; JWT/UI NOT RUN | NO |
 | 2 | Panel KPI | Implementado; QA pendiente | codex/r6-block-2; [PR #65 draft](https://github.com/EnzoG14/PlanIt/pull/65) | 7933aa9 | 0/0/0/0 | RF-R6-01 CA01–04 UI fixtures; JWT real pendiente | NO |
 | 3 | Demográficos privados | Implementado; QA pendiente | codex/r6-block-3; [PR #66 draft](https://github.com/EnzoG14/PlanIt/pull/66) | e6a25a1 | 1/1/1/1 | RF-R6-02 CA01/03/04 parcial SQL/UI fixtures; CA02 B4; JWT real NOT RUN | NO |
-| 4 | Períodos y series | NO INICIADO | — | — | 0/0/0/0 | RF-R6-03 + R6-02 | NO |
+| 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; PR draft por vincular | 25685f0 | 1/1/0/0 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
 | 5 | CSV seguros | NO INICIADO | — | — | 0/0/0/0 | RF-R6-04 | NO |
 | 6 | Trigger aviso lleno | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 parcial | NO |
 | 7 | Bandeja aviso | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 | NO |
@@ -45,6 +45,14 @@
 - Riesgos abiertos, autorización humana para avanzar, estado del PR y decisión GO/NO-GO.
 
 **No cambiar «Implementado; QA pendiente» a «Validado» sin pruebas completas y aprobación humana expresa.**
+
+### B4 — 15/10/2026, Codex
+
+- Base integrada `25685f04c03c5ac308fc563f2a8e565e6987f39e`, fetch y merge #66 comprobados; R5 GO humano conservado. Rama/worktree nuevos, env de main local copiado e ignorado, cambios ajenos preservados.
+- Responsable aprueba [D03 propuesta B0](RELEASE_6_BLOCK_4_DECISIONS.md) en este chat; D02 mantiene altas/reincorporaciones/bajas, sin stock/check-in. No se modifican RF/CA ni mockups/DESIGN.
+- `get_my_event_participation_series(uuid,timestamp,timestamp,text)→jsonb`, STABLE DEFINER, UID/ownership antes de agregar, search_path vacío y EXECUTE authenticated. Sin grants de tablas, PII, tablas/triggers/índices nuevos. Migración `20261015162953`: **creada1 / probada local1 / aplicada remota0 / verificada remota0**.
+- Selector inicial30, presets7/30/90 y personalizado≤366, días/semanas lunes/parciales AR; gráfico tres flujos y tabla accesible, estados y validación, remount por clave/abort/guardia contra respuestas tardías. KPI/demografía continúan actuales.
+- Build/lint/contratos y replay33 PostgreSQL local PASS; UI compilada Edge con fixtures en seis anchos, texto200%, timeout/offline/retorno/logout; [evidencia, regresiones y límites](../qa/r6-block-4/README.md). HTTP JWT real, Realtime/dispositivos/lector y aceptación integral NOT RUN. B5 requiere aprobación independiente; no DDL remoto, merge, deploy ni Google Docs.
 
 ### B1 — Aplicación remota autorizada posterior, 15/10/2026
 

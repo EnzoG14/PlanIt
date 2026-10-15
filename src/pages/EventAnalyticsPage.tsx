@@ -6,6 +6,7 @@ import { useAuth } from '../features/auth/useAuth'
 import { loadMyEventOccupancy, loadMyEventDemographics } from '../features/analytics/api'
 import type { EventDemographics } from '../features/analytics/demographics'
 import { DemographicsPanel } from '../components/analytics/DemographicsPanel'
+import { TrendPanel } from '../components/analytics/TrendPanel'
 import { formatOccupancyPercent } from '../features/analytics/format'
 import type { EventOccupancy } from '../features/analytics/types'
 import { validatedMyEventsReturn } from '../features/events/my-events'
@@ -78,6 +79,7 @@ function AnalyticsContent({ eventId }: { eventId: string }) {
         </section>
         {demographics && <DemographicsPanel data={demographics} />}
         {demographicsError && <StatusMessage title="Datos demográficos no disponibles">No pudimos consultar esta distribución. Elegí Actualizar datos para reintentar.</StatusMessage>}
+        <TrendPanel eventId={eventId} revision={attempt} />
         <p className="analytics-updated">Última consulta: <time dateTime={`${data.as_of}-03:00`}>{formatEventTime(data.as_of)}</time> (hora de Argentina).</p>
       </>}
     </div>

@@ -1,5 +1,7 @@
 # PlanIt — R6 · Decisiones de producto y pendientes técnicos
 
+**Adenda B4 — 15/10/2026:** [D03 aprobada expresamente](RELEASE_6_BLOCK_4_DECISIONS.md). Inicial30 días incluyendo hoy en Argentina; presets7/30/90, manual≤366, día/semana lunes/parcial. Sólo filtra movimientos históricos. La matriz original debajo conserva su corte histórico; no autoriza B5 ni SQL remoto.
+
 **Adenda posterior B3 (15/10/2026):** el responsable aprobó exactitud actual con riesgo residual y D08. [Decisión y política vigente](RELEASE_6_BLOCK_3_DECISIONS.md) sustituyen el bloqueo D04 de este corte histórico; no constituyen firma integral de B0 ni autorización de B4.
 
 **Versión:** 1.0 · 14/10/2026. **Estado:** siete respuestas expresas del responsable incorporadas. La aprobación de alcance NO equivale a aprobación de firmas SQL, cambios remotos o cierre de un bloque. No modifica los 24 CA oficiales del Google Doc.
