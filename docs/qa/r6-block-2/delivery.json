@@ -44,5 +44,7 @@
       "path": "scripts/check-r6-occupancy-ui.mjs",
       "sha256": "9d550a9803be6abab8b49823459e683a5838ce1d8b937dd39a272ae0d834c8ea"
     }
-  ]
+  ],
+  "implementationHead": "7a86c0befd8b56a428fbe3485cd5ff1d96c4f9f1",
+  "pr": "https://github.com/EnzoG14/PlanIt/pull/65"
 }
