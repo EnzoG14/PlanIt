@@ -2,11 +2,11 @@
 
 **Entrega:** [PR #60 en borrador](https://github.com/EnzoG14/PlanIt/pull/60), commit de implementación/evidencia `76d2183ebf1a8fce9652680a82f95116dd5dfd75`. Commits posteriores sólo de seguimiento; sin merge.
 
-Base `f66d70bcf4f0e28c02fe2aff88088bd238a65e1e` (`origin/main`, PR #50–#59 integradas), rama `codex/r5-block-10`. Fecha de trabajo: 14/10/2026, Argentina; timestamps de herramientas en UTC pueden indicar 15/10. **Implementado; QA pendiente**. Sólo B10, sin merge/deploy/DDL remoto ni modificaciones del documento oficial.
+Base `f66d70bcf4f0e28c02fe2aff88088bd238a65e1e` (`origin/main`, PR #50–#59 integradas), rama `codex/r5-block-10`. Fecha de trabajo: 14/10/2026, Argentina; timestamps de herramientas en UTC pueden indicar 15/10. **Validado; GO por aceptación humana** ([acta](human-acceptance.json)). Sólo B10, sin merge/deploy/DDL remoto ni modificaciones del documento oficial.
 
 El checkout original con cambios del usuario se conserva. Worktree aislado; `.env.local` copiado byte a byte de `mapbox-worktree` (checkout main), ignorado y fuera del índice. La base del nuevo trabajo es origin/main actualizado; el main local antiguo no se reseteó.
 
-Resultado final: **11 suites SQL/unit sociales,10 suites UI (560 grupos),16 regresiones R1–R4 y31 comprobaciones HTTP anónimas PASS**. Build/lint y10 verificaciones de catálogo/build PASS. [Resumen por capa](summary.json). Las11 suites incluyen10 replay SQL y1 unit del gateway; no sumar sus grupos como escenarios únicos, porque reutilizan el harness B1. Ningún PASS técnico convierte el resultado integral en Validado.
+Resultado final: **11 suites SQL/unit sociales,10 suites UI (560 grupos),16 regresiones R1–R4 y31 comprobaciones HTTP anónimas PASS**. Build/lint y10 verificaciones de catálogo/build PASS. [Resumen por capa](summary.json). Las11 suites incluyen10 replay SQL y1 unit del gateway; no sumar sus grupos como escenarios únicos, porque reutilizan el harness B1. La validación integral se basa en la aceptación humana registrada; los resultados técnicos no cambian.
 
 [Manifiesto de archivos y blobs Git](manifest.json): lista exacta de código/documentación/evidencias del commit de implementación. Los stdout.txt se normalizaron sólo en espacios de fin de línea/EOF para revisión Git; los harness.json conservan stdout/stderr originales.
 
@@ -71,4 +71,4 @@ El inventario actual confirma `social-avatar` ACTIVE v1 con verify_jwt; supera l
 
 ## Revisión humana
 
-Ver [reporte GO/NO-GO y matriz completa](../RELEASE_5_TEST_REPORT.md). Mantener **Implementado; QA pendiente** hasta aceptación expresa, conservando la aprobación histórica B5. No iniciar otra release/bloque ni fusionar o desplegar como continuación automática.
+Ver [reporte GO/NO-GO y matriz completa](../RELEASE_5_TEST_REPORT.md). **Validado; GO por aceptación humana**, por confirmación del responsable el 14/10/2026 de pruebas manuales completas y funcionamiento de R5. Reemplaza el NO-GO previo. Los resultados técnicos del agente se conservan sin reclasificar; no se infieren cuentas, dispositivos ni artefactos por escenario. [Acta](human-acceptance.json). Se conserva la aprobación histórica B5. No iniciar otra release/bloque ni fusionar o desplegar como continuación automática.

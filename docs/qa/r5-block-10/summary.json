@@ -2,8 +2,8 @@
   "base": "f66d70bcf4f0e28c02fe2aff88088bd238a65e1e",
   "branch": "codex/r5-block-10",
   "generatedAt": "2026-10-15T01:13:34.215Z",
-  "decision": "NO-GO",
-  "reason": "Authenticated integrated JWT/Storage/Realtime and human acceptance pending; local/fixture PASS never grants release approval",
+  "decision": "GO por aceptación humana",
+  "reason": "Pruebas manuales completas y funcionamiento de R5 confirmados por el responsable; resultados técnicos del agente sin cambios.",
   "layers": {
     "sql": [
       {
@@ -562,8 +562,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-01.CA-02",
@@ -573,8 +573,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-01.CA-03",
@@ -584,8 +584,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-01.CA-04",
@@ -595,8 +595,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-02.CA-01",
@@ -606,8 +606,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-02.CA-02",
@@ -617,8 +617,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-02.CA-03",
@@ -628,8 +628,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-02.CA-04",
@@ -639,8 +639,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-03.CA-01",
@@ -650,8 +650,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-03.CA-02",
@@ -661,8 +661,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-03.CA-03",
@@ -672,8 +672,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-03.CA-04",
@@ -683,8 +683,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-04.CA-01",
@@ -694,8 +694,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Historical B5 approval retained; no new B10 approval"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-04.CA-02",
@@ -705,8 +705,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Historical B5 approval retained; no new B10 approval"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-04.CA-03",
@@ -716,8 +716,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Historical B5 approval retained; no new B10 approval"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-04.CA-04",
@@ -727,8 +727,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Historical B5 approval retained; no new B10 approval"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-05.CA-01",
@@ -738,8 +738,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-05.CA-02",
@@ -749,8 +749,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-05.CA-03",
@@ -760,8 +760,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-05.CA-04",
@@ -771,8 +771,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-06.CA-01",
@@ -782,8 +782,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-06.CA-02",
@@ -793,8 +793,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-06.CA-03",
@@ -804,8 +804,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-06.CA-04",
@@ -815,8 +815,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-07.CA-01",
@@ -826,8 +826,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-07.CA-02",
@@ -837,8 +837,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-07.CA-03",
@@ -848,8 +848,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-07.CA-04",
@@ -859,8 +859,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-08.CA-01",
@@ -870,8 +870,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-08.CA-02",
@@ -881,8 +881,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-08.CA-03",
@@ -892,8 +892,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-08.CA-04",
@@ -903,8 +903,8 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     },
     {
       "id": "RF-R5-08.CA-05",
@@ -914,8 +914,10 @@
       "ui_fixture": "PASS",
       "http_authenticated": "NOT RUN",
       "storage_realtime_real": "NOT RUN",
-      "integral": "NOT RUN",
-      "human_acceptance": "Pending"
+      "integral": "Validado por aceptación humana",
+      "human_acceptance": "Approved by project owner; human-acceptance.json"
     }
-  ]
+  ],
+  "state": "Validado",
+  "humanAcceptanceEvidence": "human-acceptance.json"
 }

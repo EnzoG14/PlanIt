@@ -1,0 +1,15 @@
+{
+  "dateArgentina": "2026-10-14",
+  "scope": "Release 5 / Bloque 10",
+  "status": "approved",
+  "approvedBy": "responsable del proyecto",
+  "source": "declaración explícita del usuario en este chat",
+  "statement": "Agarrá la conclusion del bloque 10 de la r5 y cambia el estado de no-go, ya se hicieron pruebas manuales de todo y funciona.",
+  "reportedTesting": "pruebas manuales completas y funcionamiento confirmados por el responsable",
+  "criteriaAccepted": 33,
+  "state": "Validado",
+  "decision": "GO por aceptación humana",
+  "evidenceLimit": "No se entregó desglose de dispositivos, cuentas, JWT ni artefactos por escenario; los resultados automatizados y remotos del agente no se reclasifican como ejecutados.",
+  "mergeAuthorized": false,
+  "deployAuthorized": false
+}
