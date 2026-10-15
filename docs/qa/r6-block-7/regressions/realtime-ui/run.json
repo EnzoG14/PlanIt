@@ -1,0 +1,7 @@
+{
+  "script": "scripts/check-realtime-ui.mjs",
+  "source_sha256": "0747e79eda35b9599e41b394849172e1cf2aaf6d2014f32f8d4fab2637a91b91",
+  "result": "PASS",
+  "stdout": "PASS fixture: two authorized fixture sessions receive persisted RPC message via WebSocket without refresh; own echo deduplicates; textarea preserved\nPASS fixture: bursts preserve order, UUID uniqueness, loaded older history and reader scroll position\nPASS fixture: events during delayed query reconcile again; reconnect recovers 120 persisted messages across multiple pages\nPASS fixture: StrictMode retains one channel per scope; changing event unsubscribes previous conversation; account change remounts private chat state\nPASS fixture: closed event is read only; detected membership denial clears private history and channel\nPASS fixture: notification INSERT and read UPDATE sync two tabs; retained pagination; exact badge includes rows beyond first page and works outside inbox\nPASS fixture: reconnect revalidates loaded read states and recovers notifications absent from WebSocket history\nPASS fixture: account change isolates rows/count/channels; logout clears private UI\n",
+  "stderr": ""
+}

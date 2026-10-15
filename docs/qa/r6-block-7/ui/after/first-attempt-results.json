@@ -1,0 +1,32 @@
+{
+  "environment": "Actual Vite build + SDK; synthetic Auth/REST/Phoenix WebSocket; NOT real JWT/RLS/Realtime/device QA",
+  "baseline": false,
+  "results": [
+    {
+      "test": "After actual app at 320px: title, badge, read state, no horizontal overflow; fixture capture",
+      "result": "PASS"
+    },
+    {
+      "test": "After actual app at 360px: title, badge, read state, no horizontal overflow; fixture capture",
+      "result": "PASS"
+    },
+    {
+      "test": "Long event title, text enlargement 200%, short viewport, reduced motion: no horizontal document overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "After actual app at 375px: title, badge, read state, no horizontal overflow; fixture capture",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "calls": {
+    "listCalls": 8,
+    "changeCalls": 1,
+    "countCalls": 9,
+    "markCalls": 1,
+    "targetCalls": 2
+  },
+  "failure": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'Cupo completo', exact: true }) to be visible\u001b[22m\n\n    at D:\\planit\\scripts\\check-r6-event-full-ui.mjs:123:131",
+  "result": "FAIL"
+}

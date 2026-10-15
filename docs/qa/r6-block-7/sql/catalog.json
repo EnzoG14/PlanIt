@@ -1,0 +1,32 @@
+[
+  {
+    "proname": "get_notifications",
+    "prosecdef": false,
+    "provolatile": "s",
+    "proconfig": [
+      "search_path=\"\""
+    ],
+    "anon_execute": false,
+    "authenticated_execute": true
+  },
+  {
+    "proname": "get_notification_changes",
+    "prosecdef": false,
+    "provolatile": "s",
+    "proconfig": [
+      "search_path=\"\""
+    ],
+    "anon_execute": false,
+    "authenticated_execute": true
+  },
+  {
+    "proname": "get_notification_target",
+    "prosecdef": false,
+    "provolatile": "s",
+    "proconfig": [
+      "search_path=\"\""
+    ],
+    "anon_execute": false,
+    "authenticated_execute": true
+  }
+]

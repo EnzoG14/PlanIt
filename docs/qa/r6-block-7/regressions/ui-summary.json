@@ -1,0 +1,17 @@
+{
+  "environment": "Actual app + fixture transport; reconciliation unit simulated; no remote delivery",
+  "results": [
+    {
+      "script": "scripts/check-notifications-ui.mjs",
+      "result": "PASS"
+    },
+    {
+      "script": "scripts/check-realtime-ui.mjs",
+      "result": "PASS"
+    },
+    {
+      "script": "scripts/check-realtime.mjs",
+      "result": "PASS"
+    }
+  ]
+}

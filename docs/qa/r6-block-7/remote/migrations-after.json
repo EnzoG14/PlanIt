@@ -1,0 +1,148 @@
+{
+  "migrations": [
+    {
+      "version": "20261010011204",
+      "name": "create_profiles_and_categories"
+    },
+    {
+      "version": "20261010013449",
+      "name": "create_profiles_and_categories"
+    },
+    {
+      "version": "20261010023448",
+      "name": "restrict_rls_auto_enable_execute"
+    },
+    {
+      "version": "20261010042701",
+      "name": "create_events_and_event_media"
+    },
+    {
+      "version": "20261010052653",
+      "name": "public_event_discovery"
+    },
+    {
+      "version": "20261010150232",
+      "name": "event_participations"
+    },
+    {
+      "version": "20261010154930",
+      "name": "my_events_read"
+    },
+    {
+      "version": "20261010212819",
+      "name": "home_and_event_organizer_read"
+    },
+    {
+      "version": "20261010214526",
+      "name": "event_chat"
+    },
+    {
+      "version": "20261011163653",
+      "name": "notifications_inbox"
+    },
+    {
+      "version": "20261011193316",
+      "name": "r2_realtime_chat_notifications"
+    },
+    {
+      "version": "20261011232326",
+      "name": "my_organized_events_read"
+    },
+    {
+      "version": "20261012001058",
+      "name": "edit_own_event"
+    },
+    {
+      "version": "20261012013634",
+      "name": "manage_event_gallery"
+    },
+    {
+      "version": "20261012031717",
+      "name": "manage_event_attendees"
+    },
+    {
+      "version": "20261012044919",
+      "name": "close_and_duplicate_events"
+    },
+    {
+      "version": "20261012155501",
+      "name": "event_rejoin_requests"
+    },
+    {
+      "version": "20261013160000",
+      "name": "search_public_events"
+    },
+    {
+      "version": "20261014120000",
+      "name": "search_public_events_date_radius"
+    },
+    {
+      "version": "20261014120001",
+      "name": "user_category_interests"
+    },
+    {
+      "version": "20261014120002",
+      "name": "get_suggested_events"
+    },
+    {
+      "version": "20261014120003",
+      "name": "hidden_event_access"
+    },
+    {
+      "version": "20261014120004",
+      "name": "event_visibility_links"
+    },
+    {
+      "version": "20261014120005",
+      "name": "redeem_event_link"
+    },
+    {
+      "version": "20261014120006",
+      "name": "event_access_management"
+    },
+    {
+      "version": "20261014133225",
+      "name": "social_security_model"
+    },
+    {
+      "version": "20261014133547",
+      "name": "social_projections_and_avatars"
+    },
+    {
+      "version": "20261014133847",
+      "name": "social_legacy_projections"
+    },
+    {
+      "version": "20261014212935",
+      "name": "follow_request_notifications"
+    },
+    {
+      "version": "20261014225216",
+      "name": "direct_message_notifications"
+    },
+    {
+      "version": "20261015130739",
+      "name": "r6_organizer_occupancy"
+    },
+    {
+      "version": "20261015160324",
+      "name": "r6_demographic_aggregates"
+    },
+    {
+      "version": "20261015162953",
+      "name": "r6_participation_series"
+    },
+    {
+      "version": "20261015173426",
+      "name": "r6_export_projection"
+    },
+    {
+      "version": "20261015185020",
+      "name": "r6_event_full_notifications"
+    },
+    {
+      "version": "20261015201034",
+      "name": "r6_event_full_inbox"
+    }
+  ]
+}

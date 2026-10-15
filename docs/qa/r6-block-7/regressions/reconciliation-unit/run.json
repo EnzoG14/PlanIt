@@ -1,0 +1,7 @@
+{
+  "script": "scripts/check-realtime.mjs",
+  "source_sha256": "51ec85464a51513487d7a70de65e6ec9115dd1502ec41dd2625d7072a3e5d390",
+  "result": "PASS",
+  "stdout": "PASS simulated: bursts coalesce; invalidations during query run again; errors recover; disposal stops queued work\nPASS simulated: UUID deduplication, chronological microsecond/UUID ordering, recovery beyond 6 pages\nPASS simulated: all channel statuses, fresh channel on CLOSED, auth refresh/focus/online recovery, cleanup and ignored stale callbacks\n",
+  "stderr": ""
+}

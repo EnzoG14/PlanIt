@@ -1,0 +1,6 @@
+Initialising login role...
+DRY RUN: migrations will *not* be pushed to the database.
+Connecting to remote database...
+Would push these migrations:
+ • 20261015201034_r6_event_full_inbox.sql
+{"upToDate":false,"dryRun":true,"migrations":["20261015201034_r6_event_full_inbox.sql"],"seeds":[],"roles":[],"message":"Finished supabase db push."}

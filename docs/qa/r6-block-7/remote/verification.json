@@ -1,0 +1,72 @@
+[
+  {
+    "verification": {
+      "functions": [
+        {
+          "name": "get_notification_target",
+          "result": "text",
+          "stable": true,
+          "arguments": "p_id uuid",
+          "anon_execute": false,
+          "public_execute": false,
+          "body_matches_git": true,
+          "security_invoker": true,
+          "search_path_empty": true,
+          "authenticated_execute": true
+        },
+        {
+          "name": "get_notifications",
+          "result": "TABLE(id uuid, type text, title text, body text, read_at timestamp without time zone, created_at timestamp without time zone, target text)",
+          "stable": true,
+          "arguments": "p_before_at timestamp without time zone DEFAULT NULL::timestamp without time zone, p_before_id uuid DEFAULT NULL::uuid",
+          "anon_execute": false,
+          "public_execute": false,
+          "body_matches_git": true,
+          "security_invoker": true,
+          "search_path_empty": true,
+          "authenticated_execute": true
+        },
+        {
+          "name": "get_notification_changes",
+          "result": "TABLE(id uuid, type text, title text, body text, read_at timestamp without time zone, created_at timestamp without time zone, target text)",
+          "stable": true,
+          "arguments": "p_ids uuid[]",
+          "anon_execute": false,
+          "public_execute": false,
+          "body_matches_git": true,
+          "security_invoker": true,
+          "search_path_empty": true,
+          "authenticated_execute": true
+        }
+      ],
+      "server_version": "17.11",
+      "migration_count": 36,
+      "anon_target_call": "DENIED 42501 in read-only transaction",
+      "notification_rls": true,
+      "migration_recorded": true,
+      "client_notice_delete": false,
+      "client_notice_insert": false,
+      "notification_policies": [
+        {
+          "cmd": "UPDATE",
+          "name": "notifications_mark_own",
+          "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+          "with_check": "(recipient_id = ( SELECT auth.uid() AS uid))"
+        },
+        {
+          "cmd": "SELECT",
+          "name": "notifications_read_own",
+          "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+          "with_check": null
+        }
+      ],
+      "producer_body_preserved": true,
+      "history_trigger_preserved": true,
+      "public_tables_without_rls": 0,
+      "producer_trigger_preserved": true,
+      "authenticated_no_uid_target": "NULL in read-only transaction",
+      "notification_realtime_publication": true,
+      "authenticated_no_uid_list_and_changes": "DENIED 42501 in read-only transaction"
+    }
+  }
+]

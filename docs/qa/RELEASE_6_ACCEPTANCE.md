@@ -8,6 +8,10 @@
 
 ## Convenciones de QA
 
+**B7 remoto — 15/10/2026:** aplicada/verificada `20261015201034` con autorización humana posterior; marcas **1/1/1/1**, historial36/36, cuerpos/firmas/ACL/RLS y preservación de productor/historial/publicación PASS en READ ONLY. [Acta](r6-block-7/remote/summary.json). No cambia el alcance de las pruebas UI con fixtures ni convierte HTTP JWT/Realtime reales o aceptación integral en PASS. El corte local B7 siguiente es histórico.
+
+**B7 — 15/10/2026:** [bandeja `event_full`, navegación y evidencia](r6-block-7/README.md). Nombre actual autorizado, archivado/sin ownership genérico y target NULL; CA02/04 parcialmente cubiertos SQL local y UI con fixtures. Regresión productor B6 y DM/seguimiento PASS. Migración B7 **1/1/0/0**; HTTP JWT/Realtime reales e integral siguen NOT RUN. No se altera la aceptación humana R5 ni se declara R6 validada.
+
 **B6 remoto — 15/10/2026:** migración aplicada/verificada con autorización humana, marcas1/1/1/1; cuerpo, trigger, ACL/RLS y rechazo de ejecución directa comprobados en READ ONLY. [Acta](r6-block-6/remote/summary.json). No se elevan HTTP JWT, UI/Realtime ni aceptación integral desde esta verificación de catálogo.
 
 **B4 — 15/10/2026:** [D03 aprobada](../implementation/RELEASE_6_BLOCK_4_DECISIONS.md); [RPC, selector y evidencia](r6-block-4/README.md). Cinco CA parcialmente cubiertos por SQL local y UI con fixtures. Migración1/1/1/1 tras aplicación remota autorizada y verificación; HTTP JWT real e integral NOT RUN, sin avance a B5.
@@ -35,9 +39,9 @@
 | RF-R6-04.CA-03 | Excel/CSV parser y ataques fórmula =,+,-,@, tabs/saltos; excluir PII | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
 | RF-R6-04.CA-04 | 0 filas/fallo chunk/timeout, revocación/permisos; no descarga de archivo parcial | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
 | RF-R6-05.CA-01 | última inscripción confirmed bajo lock llena capacity y crea 1 notificación | PASS parcial B6 | NOT RUN | NOT RUN | NOT RUN | NOT RUN | [B6](r6-block-6/README.md) |
-| RF-R6-05.CA-02 | recipient organizador, event_id, type y target seguro, bandeja | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
+| RF-R6-05.CA-02 | recipient organizador, event_id, type y target seguro, bandeja | PASS parcial B7 | NOT RUN | PASS fixtures B7 | PASS fixtures; real NOT RUN | NOT RUN | [B7](r6-block-7/README.md) |
 | RF-R6-05.CA-03 | con 1 lugar disponible no aviso; reintento/rollback y concurrencia | PASS parcial B6 | NOT RUN | NOT RUN | NOT RUN | NOT RUN | [B6](r6-block-6/README.md) |
-| RF-R6-05.CA-04 | 2 usuarios simultáneos; nadie más lee, no dup tras respuesta ambigua | PASS parcial B6 | NOT RUN | NOT RUN | NOT RUN | NOT RUN | [B6](r6-block-6/README.md) |
+| RF-R6-05.CA-04 | 2 usuarios simultáneos; nadie más lee, no dup tras respuesta ambigua | PASS parcial B6+B7 | NOT RUN | PASS fixtures B7 | PASS fixtures; real NOT RUN | NOT RUN | [B7](r6-block-7/README.md) |
 | RF-R6-06.CA-01 | selector de al menos dos eventos organizados | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-06.CA-02 | dos eventos cap10/4 y cap20/15 deben mostrar 40% y 75% | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-06.CA-03 | cambiar filtro y revalidar resultados; eventos finalizados/archivados | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
