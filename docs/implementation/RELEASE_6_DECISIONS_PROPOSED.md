@@ -1,5 +1,7 @@
 # PlanIt — R6 · Decisiones de producto y pendientes técnicos
 
+**Adenda posterior B3 (15/10/2026):** el responsable aprobó exactitud actual con riesgo residual y D08. [Decisión y política vigente](RELEASE_6_BLOCK_3_DECISIONS.md) sustituyen el bloqueo D04 de este corte histórico; no constituyen firma integral de B0 ni autorización de B4.
+
 **Versión:** 1.0 · 14/10/2026. **Estado:** siete respuestas expresas del responsable incorporadas. La aprobación de alcance NO equivale a aprobación de firmas SQL, cambios remotos o cierre de un bloque. No modifica los 24 CA oficiales del Google Doc.
 
 **Auditoría B0 — 15/10/2026:** [contratos para revisión y firma](RELEASE_6_BLOCK_0_DECISIONS.md). Conserva A01–A07; detalla D01/D03/D05/D06/D08/D11 sin atribuir aprobación humana. D04: contraejemplos reproducibles prueban que k=5 y supresión complementaria no bastan frente a diferencias temporales/multievento; decisión de garantías bloqueante antes de B3/B5. D12: PR #60/#61 integradas y catálogo vigente comprobado. La matriz debajo conserva el estado de propuesta original; no interpretar la entrega como autorización B1.

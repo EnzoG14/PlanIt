@@ -1,0 +1,252 @@
+{
+  "result": "PASS",
+  "environment": "Actual Vite build in Edge headless; synthetic Auth/RPC fixtures, not real JWT/RLS",
+  "results": [
+    {
+      "width": 320,
+      "test": "Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "200% text and short viewport without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "10s timeout ignores late response; logout removes private panel",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "200% text and short viewport without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "10s timeout ignores late response; logout removes private panel",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "200% text and short viewport without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "10s timeout ignores late response; logout removes private panel",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Owner detail→analytics→detail; participant has no analytics entry",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "200% text and short viewport without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "10s timeout ignores late response; logout removes private panel",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "200% text and short viewport without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "10s timeout ignores late response; logout removes private panel",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "200% text and short viewport without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "10s timeout ignores late response; logout removes private panel",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    }
+  ],
+  "errors": []
+}

@@ -1,5 +1,7 @@
 # PlanIt — Plan técnico de implementación Release 6 · Gestión avanzada y analítica
 
+**Adenda B3 — 15/10/2026:** [D04/D08 y contrato aprobado](RELEASE_6_BLOCK_3_DECISIONS.md) reemplazan el gate previo de anti-inferencia absoluta: cifras exactas actuales con riesgo residual temporal/multievento aceptado, k5 y supresión completa por dimensión pequeña. B3 implementado; QA pendiente, migración aplicada/verificada remotamente con autorización posterior. No autoriza B4 ni cambios remotos. Las propuestas y cortes siguientes se conservan como antecedentes.
+
 **Versión de propuesta:** 1.0 · acuerdos A01–A07 confirmados — 14/10/2026 · **Estado de ejecución al 15/10:** B0–B1 integrados y B2 implementado, QA pendiente; ningún RF validado integralmente. Ver [seguimiento](RELEASE_6_STATUS.md) y [evidencia B1](../qa/r6-block-1/README.md).
 **Baseline documental:** Google Doc «Nueva planificación — RF R1 a R7», «Criterios de aceptación — R1 a R7», «Especificación técnica — R1 a R7»; `docs/requirements/RELEASE_6_REQUIREMENTS.md` conserva literalmente 6 RF y 24 CA.  
 **Baseline de código verificado al actualizar esta propuesta:** `EnzoG14/PlanIt` `main`, commit `66e24d85f32123ecd70f457f8381c68ae5af1603` (14/10/2026). Revalidar SHA, ramas, estado remoto y catálogo de BD en B0 y en cada bloque.  

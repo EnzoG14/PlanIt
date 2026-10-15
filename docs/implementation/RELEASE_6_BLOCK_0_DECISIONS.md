@@ -1,5 +1,7 @@
 # Release 6 · Bloque 0 — Auditoría y contratos para revisión
 
+**Adenda posterior B3 (15/10/2026):** el responsable aprobó exactitud actual con riesgo residual y D08. [Decisión y política vigente](RELEASE_6_BLOCK_3_DECISIONS.md) sustituyen el bloqueo D04 de este corte histórico; no constituyen firma integral de B0 ni autorización de B4.
+
 **Corte:** 15/10/2026, Argentina. **Base integrada:** `ad9327fff5aca65e6b676a56f1e1e93737102f32`, PR #62. **Rama:** `codex/r6-block-0`. **Estado:** Implementado; QA y firma humana pendientes. **0/24 CA aceptados.** Documento completado según la plantilla B0; no implementa B1. Firma técnica: Codex, 15/10/2026; firma del responsable: **PENDIENTE**, no atribuida por el agente.
 
 ## 1. Entorno y fuentes

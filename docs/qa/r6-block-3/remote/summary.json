@@ -1,0 +1,24 @@
+{
+  "project": "planit-v2",
+  "ref": "iepeqmvzjguwlhnecsdq",
+  "authorized_by": "User request: hace las migraciones a la base remota pendientes",
+  "applied": [
+    "20261015160324"
+  ],
+  "migration_count": 32,
+  "body_matches_git": true,
+  "acl_stable_search_path_rls": "PASS",
+  "missing_uid_null_event_denial": "PASS",
+  "dry_run_after": "up to date",
+  "security_advisors_before": {
+    "WARN": 47
+  },
+  "security_advisors_after": {
+    "WARN": 48
+  },
+  "new_warning": "authenticated_security_definer_function_executable on get_my_event_demographics; intentional RPC guarded by ownership",
+  "http_real_jwt": "NOT RUN",
+  "seeds": false,
+  "roles": false,
+  "vault": false
+}

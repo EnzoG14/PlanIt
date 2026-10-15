@@ -4,6 +4,8 @@
 
 **B0 — 15/10/2026:** auditoría documental/catálogo entregada, sin ejecución funcional R6. [24 CA literales y traza a contratos](r6-block-0/traceability.json), [resultados baseline](r6-block-0/audit.json), [límites y pendientes](r6-block-0/README.md). Se mantienen **0/24 aceptados** y todas las capas de esta matriz NOT RUN. Riesgo D04 anti-diferencias bloquea B3/B5; revisión/firma humana B0 y aprobación de B1 pendientes.
 
+**B3 — 15/10/2026:** [implementación y pruebas por capa](r6-block-3/README.md), [adenda humana D04/D08](../implementation/RELEASE_6_BLOCK_3_DECISIONS.md). Exactitud actual con riesgo residual aceptado; no se afirma anonimato. CA01/03/04 parcialmente cubiertos SQL local/UI fixtures; CA02 pertenece a B4. HTTP JWT real e integral NOT RUN. Migración B3 1/1/1/1 tras aplicación remota autorizada; HTTP JWT real sigue NOT RUN. El bloqueo D04 en el corte B0 anterior es histórico.
+
 ## Convenciones de QA
 
 `PASS` únicamente con aserciones y evidencia efectivamente ejecutadas en una capa; `FAIL` fallo comprobado; `BLOCKED` dependencia/permiso impide ejecución; `NOT RUN` no ejecutado. Registrar por separado capas `SQL-local`, `HTTP-JWT-real`, `UI-browser`, `Realtime/PWA` (cuando aplique) y `Aceptación-integral`. `PASS SQL-local` no convierte automáticamente la última columna a `PASS`. Fixture: A organizador, B confirmado, C cancelado/removido o link-only, D otro organizador, anon; entre 0 y 1.000 participaciones sintéticas. Los datos reales privados nunca se guardan en reportes.
@@ -16,10 +18,10 @@
 | RF-R6-01.CA-02 | aserción capacity=10, confirmed=4, avail=6, percent=40; sin contar organizador | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
 | RF-R6-01.CA-03 | registrar/retirar/remover/reincorporar y refrescar; reconciliar | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
 | RF-R6-01.CA-04 | actor B confirmed, C link-only, D ajeno, anon contra ruta/RPC/REST | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
-| RF-R6-02.CA-01 | propietario; demografía optativa mixta sin fuga, 0/1/5/10 participantes | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
+| RF-R6-02.CA-01 | propietario; demografía optativa mixta sin fuga, 0/1/5/10 participantes | PASS parcial B3 | NOT RUN | PASS fixtures B3 | NOT RUN | NOT RUN | [B3](r6-block-3/README.md) |
 | RF-R6-02.CA-02 | historial registration y rejoin dentro de ventana inicial; bins conocidos | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-02.CA-03 | NULLs, fechas límite, sexo otros, coherencia de cohortes y privacidad | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-02.CA-04 | cohortes diminutas suprimidas, 0 datos y error versus gráfico falso | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
+| RF-R6-02.CA-03 | NULLs, fechas límite, sexo otros, coherencia de cohortes y privacidad | PASS parcial B3 | NOT RUN | PASS fixtures B3 | NOT RUN | NOT RUN | [B3](r6-block-3/README.md) |
+| RF-R6-02.CA-04 | cohortes diminutas suprimidas, 0 datos y error versus gráfico falso | PASS parcial B3 | NOT RUN | PASS fixtures B3 | NOT RUN | NOT RUN | [B3](r6-block-3/README.md) |
 | RF-R6-03.CA-01 | presets y rango personalizado; boundaries en Argentina | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-03.CA-02 | dos rangos disjuntos producen series distintas y sólo movimientos respectivos | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-03.CA-03 | desde > hasta, rango excesivo y fecha malformada devuelven error seguro | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |

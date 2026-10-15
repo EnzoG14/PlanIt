@@ -1,0 +1,26 @@
+{
+  "base": "e6a25a1f81a6c25ab4694fc4c16cf695e8ab6dfa",
+  "branch": "codex/r6-block-3",
+  "migration": "20261015160324",
+  "migration_states": {
+    "created": 1,
+    "tested_local": 1,
+    "applied_remote": 1,
+    "verified_remote": 1
+  },
+  "sql_checks": 30,
+  "ui_checks": 49,
+  "ui_widths": [
+    320,
+    360,
+    375,
+    390,
+    768,
+    1280
+  ],
+  "env_copied_equal": true,
+  "mockup_sha256": "f49c765e633881bc9993a2052b9ff59e4d50cd69991566e38b5740fa6e90fc69",
+  "remote_jwt": "NOT RUN",
+  "acceptance": "NOT RUN",
+  "remote_evidence": "remote/summary.json"
+}

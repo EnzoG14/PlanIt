@@ -99,7 +99,10 @@
     "check:r5:release": "node scripts/check-r5-release.mjs",
     "check:r5:release:audit": "node scripts/check-r5-release-audit.mjs",
     "check:r5:release:report": "node scripts/check-r5-release-report.mjs",
-    "check:r6:occupancy:ui": "node scripts/check-r6-occupancy-ui.mjs"
+    "check:r6:occupancy:ui": "node scripts/check-r6-occupancy-ui.mjs",
+    "check:r6:demographics": "node scripts/check-r6-demographics.mjs",
+    "check:r6:demographics:contract": "node scripts/check-r6-demographics-contract.mjs",
+    "check:r6:demographics:ui": "node scripts/check-r6-demographics-ui.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",
