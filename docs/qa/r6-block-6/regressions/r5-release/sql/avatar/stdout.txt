@@ -1,0 +1,5 @@
+PASS: Method/CORS, missing bearer, malformed JSON and invalid target rejected before privileged fetch
+PASS: Viewer from verified Auth response; client cannot choose viewer/path/bucket/TTL; privileged signature exactly 60 seconds
+PASS: Blocked/nonexistent/no-avatar neutral response never reveals a storage path
+PASS: Block committed while signing: final authorization recheck withholds newly signed URL
+PASS: Expired/rejected identity, network failure and malformed signing response fail closed without backend payloads or secrets

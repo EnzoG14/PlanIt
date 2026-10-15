@@ -1,0 +1,2 @@
+DRY RUN: migrations will not be pushed to the database.
+{"upToDate":false,"dryRun":true,"migrations":["20261015185020_r6_event_full_notifications.sql"],"seeds":[],"roles":[],"message":"Finished supabase db push."}

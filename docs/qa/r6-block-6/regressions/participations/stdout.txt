@@ -1,0 +1,12 @@
+PASS: Replay all versioned migrations on clean PostgreSQL (Auth/Storage scaffolding)
+PASS: Both tables RLS-enabled; definer endpoints have empty search_path
+PASS: Registration / lost-response retry / leave / retry / rejoin: unique row, three actual history transitions, released capacity, no foreign leave
+PASS: Organizer excluded; summary has exactly six safe fields without participant identities
+PASS: Anonymous / missing JWT / direct mutations / history forgery denied; own-only RLS
+PASS: Removed cannot rejoin/leave into cancelled; status/unique/FK constraints retain history
+PASS: Hidden / cancelled / archived / ended events reject registration and unauthorized summaries
+PASS: Participant retains authorized detail and can leave after archive
+PASS: Forced history failure rolls back participation in same transaction
+PASS: 10 REAL simultaneous last-place races: distinct backend PIDs, both lock-waiting, exactly one confirms / one event_full, one history
+PASS: Same-user concurrent retries are idempotent on independent connections
+PASS: Frozen REPEATABLE READ snapshot explicitly rejected instead of risking stale capacity count

@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:r6:event-full": "node scripts/check-r6-event-full.mjs",
+    "check:r6:event-full:regressions": "node scripts/check-r6-event-full-regressions.mjs",
     "check:r6:csv": "node scripts/check-r6-csv.mjs",
     "check:r6:csv:contract": "node scripts/check-r6-csv-contract.mjs",
     "check:r6:csv:ui": "node scripts/check-r6-csv-ui.mjs",

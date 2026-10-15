@@ -1,0 +1,94 @@
+{
+  "project": "planit-v2",
+  "ref": "iepeqmvzjguwlhnecsdq",
+  "date_argentina": "2026-10-15",
+  "authorized_by": "User: aplica la migracion remota por favor",
+  "source_commit": "7a5aa6a031f00287500d7e4b34e3b0fd196293ab",
+  "applied": [
+    "20261015185020"
+  ],
+  "migration_count": 35,
+  "verification": {
+    "anon_execute": false,
+    "public_execute": false,
+    "server_version": "17.11",
+    "migration_count": 35,
+    "trigger_enabled": true,
+    "body_matches_git": true,
+    "notification_rls": true,
+    "security_invoker": true,
+    "search_path_empty": true,
+    "migration_recorded": true,
+    "trigger_definition": "CREATE TRIGGER participations_notify_event_full AFTER INSERT OR UPDATE OF status ON public.event_participations FOR EACH ROW EXECUTE FUNCTION planit_private.notify_event_full()",
+    "client_notice_insert": false,
+    "authenticated_execute": false,
+    "notification_policies": [
+      {
+        "cmd": "UPDATE",
+        "name": "notifications_mark_own",
+        "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+        "with_check": "(recipient_id = ( SELECT auth.uid() AS uid))"
+      },
+      {
+        "cmd": "SELECT",
+        "name": "notifications_read_own",
+        "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+        "with_check": null
+      }
+    ],
+    "history_trigger_preserved": true,
+    "public_tables_without_rls": 0,
+    "authenticated_producer_call": "DENIED 42501 in read-only transaction",
+    "client_participation_insert": false,
+    "client_participation_update": false
+  },
+  "advisors": {
+    "before": [
+      {
+        "name": "rls_enabled_no_policy",
+        "level": "INFO",
+        "count": 1
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "count": 49
+      },
+      {
+        "name": "auth_leaked_password_protection",
+        "level": "WARN",
+        "count": 1
+      }
+    ],
+    "after": [
+      {
+        "name": "rls_enabled_no_policy",
+        "level": "INFO",
+        "count": 1
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "count": 49
+      },
+      {
+        "name": "auth_leaked_password_protection",
+        "level": "WARN",
+        "count": 1
+      }
+    ],
+    "new_findings": []
+  },
+  "http_real_jwt": "NOT RUN",
+  "realtime": "NOT RUN",
+  "business_fixture_writes": false,
+  "seeds": false,
+  "roles": false,
+  "vault": false,
+  "marks": {
+    "created": 1,
+    "tested_local": 1,
+    "applied_remote_authorized": 1,
+    "verified_remote": 1
+  }
+}

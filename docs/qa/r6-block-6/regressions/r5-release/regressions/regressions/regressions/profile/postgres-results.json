@@ -1,0 +1,22 @@
+{
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "environment": "Local PostgreSQL with Auth/Storage scaffolding, no real Supabase HTTP or JWT",
+  "results": [
+    {
+      "test": "CA-02/04: two SQL identities read only own profile; direct ID, unfiltered SELECT and cross-account UPDATE cannot expose/change private data",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-03: subsequent read reflects persisted profile updates; absent optional values stay null",
+      "result": "PASS"
+    },
+    {
+      "test": "R5 private avatar fixture: own file/Storage RLS permits owner and hides object metadata from another account",
+      "result": "PASS"
+    },
+    {
+      "test": "Anonymous role cannot SELECT profiles",
+      "result": "PASS"
+    }
+  ]
+}

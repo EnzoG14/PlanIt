@@ -1,0 +1,10 @@
+{
+  "base": "9ba2f687cfad0ad0997d8d5a9c7f8eca83659dc1",
+  "branch": "codex/r6-block-6",
+  "suite": "participants",
+  "script": "scripts/check-r5-participants.mjs",
+  "source_sha256": "feaa03c311038145d85d7ae3e722ecee9cfc9c425988d13a1e6fc31ea63cf3a1",
+  "result": "PASS",
+  "startedAt": "2026-10-15T18:53:50.260Z",
+  "finishedAt": "2026-10-15T18:54:28.016Z"
+}

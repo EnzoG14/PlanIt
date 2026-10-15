@@ -1,0 +1,4 @@
+PASS: sql/edit-profile
+PASS: sql/private-profile
+PASS: sql/follows
+PASS: sql/requests

@@ -1,0 +1,118 @@
+{
+  "base": "0428d4f",
+  "environment": "Isolated PostgreSQL, SET ROLE, Auth/Storage SQL scaffolding; no real HTTP/JWT",
+  "migrations": [
+    "20261010011204_create_profiles_and_categories.sql",
+    "20261010013449_create_profiles_and_categories.sql",
+    "20261010023448_restrict_rls_auto_enable_execute.sql",
+    "20261010042701_create_events_and_event_media.sql",
+    "20261010052653_public_event_discovery.sql",
+    "20261010150232_event_participations.sql",
+    "20261010154930_my_events_read.sql",
+    "20261010212819_home_and_event_organizer_read.sql",
+    "20261010214526_event_chat.sql",
+    "20261011163653_notifications_inbox.sql",
+    "20261011193316_r2_realtime_chat_notifications.sql",
+    "20261011232326_my_organized_events_read.sql",
+    "20261012001058_edit_own_event.sql",
+    "20261012013634_manage_event_gallery.sql",
+    "20261012031717_manage_event_attendees.sql",
+    "20261012044919_close_and_duplicate_events.sql",
+    "20261012155501_event_rejoin_requests.sql",
+    "20261013160000_search_public_events.sql",
+    "20261014120000_search_public_events_date_radius.sql",
+    "20261014120001_user_category_interests.sql",
+    "20261014120002_get_suggested_events.sql",
+    "20261014120003_hidden_event_access.sql",
+    "20261014120004_event_visibility_links.sql",
+    "20261014120005_redeem_event_link.sql",
+    "20261014120006_event_access_management.sql",
+    "20261014133225_social_security_model.sql",
+    "20261014133547_social_projections_and_avatars.sql",
+    "20261014133847_social_legacy_projections.sql",
+    "20261014212935_follow_request_notifications.sql",
+    "20261014225216_direct_message_notifications.sql",
+    "20261015130739_r6_organizer_occupancy.sql",
+    "20261015160324_r6_demographic_aggregates.sql",
+    "20261015162953_r6_participation_series.sql",
+    "20261015173426_r6_export_projection.sql",
+    "20261015185020_r6_event_full_notifications.sql"
+  ],
+  "inventory": [
+    {
+      "signature": "create_event(uuid,text,text,timestamp without time zone,timestamp without time zone,uuid,integer,text,double precision,double precision,text,text[],text)",
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "update_event(uuid,text,text,timestamp without time zone,timestamp without time zone,uuid,integer,text,double precision,double precision,text,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "set_event_visibility(uuid,text)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "create_or_rotate_event_link(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "signature": "get_event_link_status(uuid)",
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    }
+  ],
+  "results": [
+    {
+      "name": "Atomic unlisted creation, idempotent UUID/chat, invalid media rollback, legacy public defaults",
+      "result": "PASS"
+    },
+    {
+      "name": "Only owner RPCs, no direct UPDATE or hash SELECT, anon and stranger denied",
+      "result": "PASS"
+    },
+    {
+      "name": "256-bit CSPRNG and SHA-256 only, old hash revoked, rotation rollback preserves prior link",
+      "result": "PASS"
+    },
+    {
+      "name": "Two real concurrent rotations serialize on event lock, exactly one active hash",
+      "result": "PASS"
+    },
+    {
+      "name": "A04/A05/D12: confirmed preserved, conflict rolls back content/grants/visibility, revoked remains revoked and removed",
+      "result": "PASS"
+    },
+    {
+      "name": "Authorized duplicate source, new events inherit no grants/links; owner hidden events excluded from public search",
+      "result": "PASS"
+    },
+    {
+      "name": "No calendar expiry; end/cancel/archive prohibit generation/rotation without mutating active hash (redemption B7 pending)",
+      "result": "PASS"
+    },
+    {
+      "name": "Distinct D stranger and E historical: A04 preserves confirmed E; revoked E cannot use history; restore preserves cancelled state/history without chat",
+      "result": "PASS"
+    }
+  ],
+  "redemption": "NOT RUN: block 7"
+}

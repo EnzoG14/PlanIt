@@ -1,8 +1,8 @@
 # PlanIt — R6 seguimiento de ejecución
 
-**Estado global:** **B4 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **5 (B0–B4)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B3 integrados; B4 base `25685f0` añade RPC owner-only de movimientos, selector y gráfico/tabla accesibles. Migración B4 aplicada/verificada remotamente por autorización posterior (1/1/1/1). [Evidencia B4](../qa/r6-block-4/README.md), [D03 aprobada](RELEASE_6_BLOCK_4_DECISIONS.md). Sin deploy ni avance a B5; cortes anteriores históricos.
+**Estado global:** **B6 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **7 (B0–B6)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B5 integrados en main; B6 añade productor transaccional privado `event_full`, sin UI nueva. Migración B6 **1/1/1/1**, aplicada y verificada remotamente por autorización posterior. [Evidencia B6](../qa/r6-block-6/README.md). B7 no iniciado; sin merge ni deploy en B6. Cortes anteriores históricos.
 
-**Baseline comprobado:** `main` SHA `66e24d85f32123ecd70f457f8381c68ae5af1603` (14/10/2026). **Dependencia R5:** `RELEASE_5_TEST_REPORT.md` y `RELEASE_5_STATUS.md` registran **GO por aceptación humana, estado Validado**. Pruebas automáticas/JWT/Realtime que no se ejecutaron siguen documentadas como tal; B0 revalida integración de PR #60 y entorno. **Acuerdos A01–A07 aprobados; B0–B2 entregados, sin aceptación integral.**
+**Baseline comprobado B6:** `main` SHA `9ba2f687cfad0ad0997d8d5a9c7f8eca83659dc1` (15/10/2026), fetch y PR #68 MERGED comprobados. La fotografía B0 era `66e24d85f32123ecd70f457f8381c68ae5af1603`. **Dependencia R5:** `RELEASE_5_TEST_REPORT.md` y `RELEASE_5_STATUS.md` registran **GO por aceptación humana, estado Validado**. Pruebas automáticas/JWT/Realtime que no se ejecutaron siguen documentadas como tal. **Acuerdos A01–A07 aprobados; B0–B6 entregados, sin aceptación integral R6.**
 
 | Bloque | Objetivo | Estado | Rama/PR | SHA base | Migración (creada/local/remota/verificada) | Pruebas y CA | Aprobación para siguiente |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -12,7 +12,7 @@
 | 3 | Demográficos privados | Implementado; QA pendiente | codex/r6-block-3; [PR #66 draft](https://github.com/EnzoG14/PlanIt/pull/66) | e6a25a1 | 1/1/1/1 | RF-R6-02 CA01/03/04 parcial SQL/UI fixtures; CA02 B4; JWT real NOT RUN | NO |
 | 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67) | 25685f0 | 1/1/1/1 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
 | 5 | CSV seguros | Implementado; QA pendiente | codex/r6-block-5; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68) | edaa0c5 | 1/1/1/1 | RF-R6-04 CA01–04 parcial SQL/contrato/UI fixtures; HTTP/Excel/dispositivos NOT RUN | NO |
-| 6 | Trigger aviso lleno | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 parcial | NO |
+| 6 | Trigger aviso lleno | Implementado; QA pendiente | codex/r6-block-6; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69) | 9ba2f68 | 1/1/1/1 | RF-R6-05 CA01/03/04 parcial SQL local; HTTP/Realtime NOT RUN | NO |
 | 7 | Bandeja aviso | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 | NO |
 | 8 | Comparación | NO INICIADO | — | — | 0/0/0/0 | RF-R6-06 | NO |
 | 9 | QA integral | NO INICIADO | — | — | 0/0/0/0 | 24 CA y regresión | NO |
@@ -45,6 +45,21 @@
 - Riesgos abiertos, autorización humana para avanzar, estado del PR y decisión GO/NO-GO.
 
 **No cambiar «Implementado; QA pendiente» a «Validado» sin pruebas completas y aprobación humana expresa.**
+
+### B6 — 15/10/2026, Codex
+
+- Base integrada `9ba2f687cfad0ad0997d8d5a9c7f8eca83659dc1`; fetch y PR #68 MERGED comprobados. Rama nueva `codex/r6-block-6`; checkout inicialmente limpio, `.env.local` de main local conservado e ignorado en el mismo directorio. La instrucción humana autoriza sólo B6; R5 GO y A01–A07/D07 conservados.
+- `planit_private.notify_event_full()→trigger`, INVOKER, search_path vacío, sin EXECUTE de clientes; `participations_notify_event_full` AFTER INSERT/UPDATE status. Reutiliza RPC autorizadas y lock evento→participación, sin nuevas RPC/tablas/contadores/índices/políticas ni grants de lectura. Historial y firmas existentes intactos. Aviso owner-only genérico, event_id real, actor/conversation NULL.
+- Dedupe por transición real confirmed y serialización: reintento no cambia estado; cada lleno→libre→lleno por inscripción/aprobación permite nuevo aviso. Edición de capacidad y eventos cerrados no notifican. Cualquier fallo de INSERT revierte confirmación/historial/resolución.
+- Migración `20261015185020`: **creada1 / probada local1 / aplicada remota0 / verificada remota0**. PostgreSQL17.5 replay35; 41 grupos SQL con ocho carreras B6 observadas, rollback inyectado, roles A/B/C/D/anon/sin UID, catálogo ACL/RLS e índices existentes y benchmark20 muestras×5 tamaños. Build/lint PASS con advertencias previas. [Evidencia, regresiones y límites](../qa/r6-block-6/README.md).
+- RF-R6-05 CA01/03/04 parcial SQL local; CA02/bandeja/Realtime quedan B7. HTTP JWT real, UI/Realtime/PWA/dispositivos y aceptación integral NOT RUN. Sin cambio visual, DDL remoto, merge, deploy o Google Docs. Estado **Implementado; QA pendiente**; B7 requiere autorización humana independiente.
+- Cierre B6: commit funcional `3932449`; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69). El commit documental posterior enlaza la entrega; HEAD final consultable en Git/PR. 11 suites SQL R5 + 16 regresiones R1–R5 + cuatro aisladas PASS; se conservan las marcas de intentos previos por catálogos/scaffold. `.env.local` sigue ignorado y no versionado.
+
+### B6 — Aplicación remota autorizada posterior, 15/10/2026
+
+- Por solicitud humana «aplica la migracion remota por favor» se aplicó únicamente `20261015185020_r6_event_full_notifications.sql` en planit-v2 (`iepeqmvzjguwlhnecsdq`). Dry-run previo: una pendiente; posterior: ninguna; historial35/35 sincronizado. Sin seeds/roles/Vault, merge, deploy ni B7.
+- Marcas **1 creada / 1 probada local / 1 aplicada remota autorizada / 1 verificada remota**. PostgreSQL17.11: cuerpo SQL igual al versionado normalizando CRLF; trigger activo e historial preservado, INVOKER/search_path/ACL y RLS recipient-only verificados. Llamada directa authenticated denegada42501 en READ ONLY/ROLLBACK; no se escribieron fixtures ni avisos de prueba.
+- Asesores: sin nuevos hallazgos, se mantienen50 WARN y1 INFO previos. [Acta y evidencia](../qa/r6-block-6/remote/summary.json). HTTP/JWT real, entrega Realtime y aceptación integral siguen NOT RUN; estado Implementado; QA pendiente. Los cortes locales anteriores conservan su fotografía de entrega.
 
 ### B4 — 15/10/2026, Codex
 

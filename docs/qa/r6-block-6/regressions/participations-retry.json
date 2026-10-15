@@ -1,0 +1,12 @@
+{
+  "results": [
+    {
+      "name": "participations",
+      "script": ".r6-check.local/participations-participations.mjs",
+      "args": [],
+      "result": "PASS",
+      "source_sha256": "9667d6a7c804feb4ecfe22e8f2a78612a31d6c273d65552f7ea7335646ab9f8d"
+    }
+  ],
+  "result": "PASS"
+}

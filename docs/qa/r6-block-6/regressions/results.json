@@ -1,0 +1,59 @@
+{
+  "results": [
+    {
+      "name": "r5-release-regressions",
+      "script": ".r6-check.local/r5-release.mjs",
+      "args": [
+        "regressions"
+      ],
+      "result": "PASS",
+      "source_sha256": "31dc5fe54cae89216423d953f0f6a8a3371a89c8d85ad3f9ebe645a5895a868a"
+    },
+    {
+      "name": "rejoin",
+      "script": "scripts/check-rejoin.mjs",
+      "args": [],
+      "result": "PASS",
+      "source_sha256": "3532ca8ffbf5aa7e9b173d35b265b9d2bad32879e48b63c38b431083d3153ce1"
+    },
+    {
+      "name": "event-access",
+      "script": "scripts/check-event-access.mjs",
+      "args": [],
+      "result": "PASS",
+      "source_sha256": "8a93d9fd1a7c545c0404d1f8051e197b9c0888b12134abac83417d0a5d2b7764"
+    },
+    {
+      "name": "notifications",
+      "script": "scripts/check-notifications.mjs",
+      "args": [],
+      "result": "PASS",
+      "source_sha256": "fc432765a4c477a6f7ae69bfa3395ce89ed90b9e9529f28b9d876ea9b35d3aec"
+    },
+    {
+      "name": "r5-release-sql",
+      "script": ".r6-check.local/r5-release-retry.mjs",
+      "args": [
+        "sql",
+        "edit-profile",
+        "private-profile",
+        "follows",
+        "requests"
+      ],
+      "result": "PASS",
+      "source_sha256": "31dc5fe54cae89216423d953f0f6a8a3371a89c8d85ad3f9ebe645a5895a868a",
+      "previous_attempt_result": "FAIL",
+      "resolved_by": "catalog-retry.json"
+    },
+    {
+      "name": "participations",
+      "script": ".r6-check.local/participations-participations.mjs",
+      "args": [],
+      "result": "PASS",
+      "source_sha256": "9667d6a7c804feb4ecfe22e8f2a78612a31d6c273d65552f7ea7335646ab9f8d",
+      "previous_attempt_result": "FAIL",
+      "resolved_by": "participations-retry.json"
+    }
+  ],
+  "result": "PASS"
+}

@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-15",
+  "base": "9ba2f687cfad0ad0997d8d5a9c7f8eca83659dc1",
+  "branch": "codex/r6-block-6",
+  "status": "Implementado; QA pendiente",
+  "dependency_pr": 68,
+  "dependency_merged": true,
+  "migration": {
+    "version": "20261015185020",
+    "created": 1,
+    "tested_local": 1,
+    "applied_remote_authorized": 1,
+    "verified_remote": 1,
+    "sha256_lf": "6e7cab6d9747c214475518e318605e03eff1c22c1c3b857fb8649dc36feb598b"
+  },
+  "sql_local": {
+    "result": "PASS",
+    "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+    "migrations": 35,
+    "groups": 41,
+    "block6_groups": 16,
+    "block6_observed_lock_races": 8
+  },
+  "regressions": {
+    "result": "PASS",
+    "r5_sql_suites": 11,
+    "legacy_suites": 16,
+    "direct_suites": [
+      "participations",
+      "rejoin",
+      "event-access",
+      "notifications"
+    ],
+    "previous_attempts": "Historical catalogs and missing service_role scaffold corrected; see retry manifests"
+  },
+  "checks": {
+    "build": "PASS",
+    "lint": "PASS",
+    "diff_check": "PASS",
+    "warnings": "Existing chunk-size, QA probes and DiscoveryFilters warnings"
+  },
+  "layers": {
+    "http_jwt_real": "NOT RUN",
+    "ui_browser": "NOT RUN",
+    "realtime": "NOT RUN",
+    "pwa_devices": "NOT RUN",
+    "integral_acceptance": "NOT RUN"
+  },
+  "unchanged": [
+    "frontend/design",
+    "historical migrations",
+    "public RPC signatures",
+    "notification recipient-only RLS"
+  ],
+  "environment_file": "Existing main-local .env.local preserved in same checkout, ignored and unversioned",
+  "next_gate": "Human review and real JWT/Realtime QA; do not start B7",
+  "remote_evidence": "remote/summary.json"
+}

@@ -1,0 +1,10 @@
+{
+  "base": "9ba2f687cfad0ad0997d8d5a9c7f8eca83659dc1",
+  "branch": "codex/r6-block-6",
+  "suite": "regressions",
+  "script": "scripts/check-r5-regressions.mjs",
+  "source_sha256": "044a48340eca8a6009f6765b36d9259070ad1810145ead3b43ef946c0ccc0a17",
+  "result": "PASS",
+  "startedAt": "2026-10-15T19:00:01.468Z",
+  "finishedAt": "2026-10-15T19:03:58.933Z"
+}
