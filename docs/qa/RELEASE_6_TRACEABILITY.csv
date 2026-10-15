@@ -1,0 +1,25 @@
+﻿RF;CA;criterio_oficial;bloque_principal;estado_integral;evidencia
+RF-R6-01;RF-R6-01.CA-01;El organizador puede ver para uno de sus eventos el cupo configurado, inscripciones vigentes, lugares disponibles y porcentaje de ocupación.;B1+B2;NOT RUN;
+RF-R6-01;RF-R6-01.CA-02;"Los lugares disponibles corresponden al cupo menos las inscripciones vigentes, sin mostrar valores negativos; el porcentaje es consistente con esos datos.";B1+B2;NOT RUN;
+RF-R6-01;RF-R6-01.CA-03;Las altas y bajas de participantes modifican los indicadores después de actualizar los datos.;B1+B2;NOT RUN;
+RF-R6-01;RF-R6-01.CA-04;El usuario no puede consultar el panel de gestión de eventos ajenos mediante acceso directo.;B1+B2;NOT RUN;
+RF-R6-02;RF-R6-02.CA-01;El organizador puede acceder a estadísticas de uno de sus eventos y visualizar distribuciones de asistentes por edad y sexo cuando existan datos autorizados.;B3+B4;NOT RUN;
+RF-R6-02;RF-R6-02.CA-02;El panel permite consultar la evolución de nuevas inscripciones dentro de una ventana inicial definida, de forma coherente con los registros del evento.;B3+B4;NOT RUN;
+RF-R6-02;RF-R6-02.CA-03;"Las cantidades y agrupaciones son consistentes con el conjunto de asistentes considerado; se especifica cuándo faltan datos para algún grupo.";B3+B4;NOT RUN;
+RF-R6-02;RF-R6-02.CA-04;Si no hay suficientes datos se muestran indicadores vacíos o informativos, sin gráficos con valores inventados.;B3+B4;NOT RUN;
+RF-R6-03;RF-R6-03.CA-01;El organizador puede elegir entre períodos disponibles o un intervalo válido de análisis para su evento.;B4;NOT RUN;
+RF-R6-03;RF-R6-03.CA-02;Al cambiar el período, se recalculan y actualizan los indicadores temporales utilizando sólo datos comprendidos en el intervalo seleccionado.;B4;NOT RUN;
+RF-R6-03;RF-R6-03.CA-03;El sistema rechaza fechas de inicio posteriores a la fecha final y presenta un mensaje claro.;B4;NOT RUN;
+RF-R6-03;RF-R6-03.CA-04;Los resultados de un período distinto no permanecen visibles como si correspondieran al nuevo filtro, y la consulta sólo considera eventos autorizados.;B4;NOT RUN;
+RF-R6-04;RF-R6-04.CA-01;El organizador puede solicitar un archivo CSV de asistentes y estadísticas de uno de sus eventos.;B5;NOT RUN;
+RF-R6-04;RF-R6-04.CA-02;El archivo generado contiene encabezados identificables y valores consistentes con los datos autorizados y los filtros aplicados.;B5;NOT RUN;
+RF-R6-04;RF-R6-04.CA-03;El archivo puede abrirse con herramientas de lectura CSV y no incluye información privada que el organizador no tenga autorización para exportar.;B5;NOT RUN;
+RF-R6-04;RF-R6-04.CA-04;Si no existen datos o la exportación falla, el sistema lo informa y no presenta una exportación incompleta como exitosa.;B5;NOT RUN;
+RF-R6-05;RF-R6-05.CA-01;Cuando un evento alcanza su cupo máximo mediante una inscripción confirmada, se registra un aviso dirigido al organizador.;B6+B7;NOT RUN;
+RF-R6-05;RF-R6-05.CA-02;El aviso identifica el evento que alcanzó su capacidad y está disponible en la bandeja de notificaciones de la cuenta correspondiente.;B6+B7;NOT RUN;
+RF-R6-05;RF-R6-05.CA-03;No se genera un aviso de cupo completo mientras queden lugares disponibles.;B6+B7;NOT RUN;
+RF-R6-05;RF-R6-05.CA-04;El evento no genera avisos duplicados por reintentos del mismo cambio de estado y otras cuentas no pueden consultar el aviso privado.;B6+B7;NOT RUN;
+RF-R6-06;RF-R6-06.CA-01;El organizador puede seleccionar al menos dos eventos de su autoría para incluirlos en una comparación.;B8;NOT RUN;
+RF-R6-06;RF-R6-06.CA-02;La comparación muestra, para cada evento seleccionado, la cantidad de inscriptos y el porcentaje de ocupación utilizando el mismo criterio de cálculo.;B8;NOT RUN;
+RF-R6-06;RF-R6-06.CA-03;Al cambiar los eventos seleccionados, la vista se actualiza y permite identificar las diferencias entre sus valores.;B8;NOT RUN;
+RF-R6-06;RF-R6-06.CA-04;"No se permite incluir eventos ajenos ni presentar un porcentaje inválido cuando un evento no tiene un cupo utilizable; se informa esa situación.";B8;NOT RUN;
