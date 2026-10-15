@@ -1,6 +1,8 @@
 # PlanIt — R6 seguimiento de ejecución
 
-**Estado global:** **B6 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **7 (B0–B6)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B5 integrados en main; B6 añade productor transaccional privado `event_full`, sin UI nueva. Migración B6 **1/1/1/1**, aplicada y verificada remotamente por autorización posterior. [Evidencia B6](../qa/r6-block-6/README.md). B7 no iniciado; sin merge ni deploy en B6. Cortes anteriores históricos.
+**Estado global:** **B7 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **8 (B0–B7)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B6 integrados en main; B7 añade bandeja `event_full`, nombre actual autorizado y navegación segura sobre la conciliación existente. Migración B6 **1/1/1/1**; B7 **1/1/0/0**. [Evidencia B7](../qa/r6-block-7/README.md). B8 no iniciado; sin merge ni deploy B7. Cortes anteriores históricos.
+
+**Baseline B7:** `main`/`origin/main` `9311c0142e4c945656e8aa0fe9c89c1a37b4135b`, fetch y PR #69 MERGED comprobados. Rama `codex/r6-block-7`; pedido humano autoriza sólo B7 y decide nombre actual, sin snapshot. `.env.local` de main conservado en el mismo checkout e ignorado.
 
 **Baseline comprobado B6:** `main` SHA `9ba2f687cfad0ad0997d8d5a9c7f8eca83659dc1` (15/10/2026), fetch y PR #68 MERGED comprobados. La fotografía B0 era `66e24d85f32123ecd70f457f8381c68ae5af1603`. **Dependencia R5:** `RELEASE_5_TEST_REPORT.md` y `RELEASE_5_STATUS.md` registran **GO por aceptación humana, estado Validado**. Pruebas automáticas/JWT/Realtime que no se ejecutaron siguen documentadas como tal. **Acuerdos A01–A07 aprobados; B0–B6 entregados, sin aceptación integral R6.**
 
@@ -13,11 +15,19 @@
 | 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67) | 25685f0 | 1/1/1/1 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
 | 5 | CSV seguros | Implementado; QA pendiente | codex/r6-block-5; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68) | edaa0c5 | 1/1/1/1 | RF-R6-04 CA01–04 parcial SQL/contrato/UI fixtures; HTTP/Excel/dispositivos NOT RUN | NO |
 | 6 | Trigger aviso lleno | Implementado; QA pendiente | codex/r6-block-6; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69) | 9ba2f68 | 1/1/1/1 | RF-R6-05 CA01/03/04 parcial SQL local; HTTP/Realtime NOT RUN | NO |
-| 7 | Bandeja aviso | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 | NO |
+| 7 | Bandeja aviso | Implementado; QA pendiente | codex/r6-block-7; PR draft en preparación | 9311c01 | 1/1/0/0 | RF-R6-05 CA02/04 parcial SQL/UI fixtures; regresión B6 PASS; HTTP/Realtime real NOT RUN | NO |
 | 8 | Comparación | NO INICIADO | — | — | 0/0/0/0 | RF-R6-06 | NO |
 | 9 | QA integral | NO INICIADO | — | — | 0/0/0/0 | 24 CA y regresión | NO |
 
 ## Plantilla de bitácora por bloque
+
+### B7 — 15/10/2026, Codex
+
+- Base limpia tras fetch `9311c0142e4c945656e8aa0fe9c89c1a37b4135b`; PR #69 MERGED verificada. Rama nueva `codex/r6-block-7` desde origin/main, env local de main preservado e ignorado. R5 GO y A01–A07/D07 conservados; B7 aprobado por este pedido, sin permiso B8.
+- Tres RPC existentes conservan firmas, shape, keyset y límites; STABLE INVOKER/search_path vacío/EXECUTE authenticated. `event_full` exige recipient y ownership vigente; nombre actual en `title`, archivado genérico/target NULL. Tipos anteriores intactos; sin tablas, triggers, índices, políticas, grants de lectura ni contadores nuevos. Productor B6 intacto.
+- Etiqueta Cupo completo/icono calendario, estados de lectura, navegación RPC revalidada y error neutro con eliminación del título rechazado; resiste conciliación anterior al rechazo. Sin CSS/tokens/DISEÑO nuevos.
+- Migración `20261015201034`: **1 creada / 1 probada local / 0 aplicada remota / 0 verificada remota**. PostgreSQL17.5 replay36; 31 grupos B7+social, 41 B6, 28 DM, 28 seguimiento y 7 bandeja; benchmark20×5 tamaños. UI B7 14 grupos, regresiones bandeja17/Realtime8/DM2/seguimiento2 y tres grupos unitarios; build/lint PASS con advertencias previas. [Comandos, capturas, amenazas, intentos y límites](../qa/r6-block-7/README.md).
+- HTTP JWT real, Realtime real, dispositivos/lector/zoom nativo y aceptación integral NOT RUN. Estado **Implementado; QA pendiente**. Sin DDL remoto, fixtures remotos, deploy, merge o Google Docs. Detenerse en B7.
 
 ### B1 — 15/10/2026, Codex
 

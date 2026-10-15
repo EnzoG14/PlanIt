@@ -1,0 +1,23 @@
+{
+  "environment": "Actual Vite build + SDK; synthetic Auth/REST/Phoenix WebSocket; NOT real JWT/RLS/Realtime/device QA",
+  "baseline": true,
+  "results": [
+    {
+      "test": "Before actual app at 390px: title, badge, read state, no horizontal overflow; fixture capture",
+      "result": "PASS"
+    },
+    {
+      "test": "Before actual app at 1280px: title, badge, read state, no horizontal overflow; fixture capture",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "calls": {
+    "listCalls": 2,
+    "changeCalls": 0,
+    "countCalls": 2,
+    "markCalls": 0,
+    "targetCalls": 0
+  },
+  "result": "PASS"
+}

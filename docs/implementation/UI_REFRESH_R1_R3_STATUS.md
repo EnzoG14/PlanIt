@@ -1,5 +1,7 @@
 # PlanIt — Estado visual UI Refresh R1–R3
 
+**Integración R6/B7 · 15/10/2026:** `event_full` conserva la bandeja Amanecer; añade etiqueta Cupo completo, calendario y estado de recurso no disponible. [Antes/después y seis anchos](../qa/r6-block-7/README.md), texto del centro duplicado200%, foco3px, controles44px y altura corta en app ejecutada con fixtures. Sin CSS/tokens/DESIGN/sidecar/mockups nuevos ni aceptación adicional R1–R3. Zoom nativo, dispositivos y lector reales NOT RUN.
+
 **Ampliación R5/B8 avisos DM:** centro existente conserva Amanecer, muestra tipo Mensaje privado/icono y Ver mensaje. [Capturas reales con fixtures390/1280](../qa/r5-block-8/message-notifications/README.md); regresiones DM/follow PASS. Sin nuevo CSS/tokens/mockups ni aceptación R1–R3.
 
 **Adición R5/B8 · 14/10/2026:** bandeja y conversación DM heredan Amanecer/chat, sin nuevo tab. [Capturas y verificación](../qa/r5-block-8/README.md): seis anchos, texto200%, altura400, foco/retorno, estados, texto largo y limpieza offline/oculto. Sin baseline preimplementación nuevo ni aceptación funcional R1–R3. Dispositivo/teclado móvil/lector reales NOT RUN; QA humana pendiente. DESIGN/tokens/mockups intactos.

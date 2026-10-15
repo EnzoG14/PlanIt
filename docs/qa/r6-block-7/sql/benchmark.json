@@ -1,0 +1,375 @@
+{
+  "environment": "Local synthetic PostgreSQL; 20 samples/size; no production SLA",
+  "sizes": [
+    {
+      "count": 0,
+      "samples_ms": [
+        10.431899999995949,
+        0.824399999997695,
+        0.786999999996624,
+        0.6283999999941443,
+        0.57220000000234,
+        0.5264999999999418,
+        0.22550000000046566,
+        0.18829999999434222,
+        0.2091999999975087,
+        0.2275999999983469,
+        0.1986999999935506,
+        0.21450000000186265,
+        0.19580000000132713,
+        0.2165999999997439,
+        0.19680000000516884,
+        0.20550000000366708,
+        0.26670000000012806,
+        0.2526999999972759,
+        0.439700000002631,
+        0.2782000000006519
+      ],
+      "max_ms": 10.431899999995949,
+      "plan": [
+        {
+          "QUERY PLAN": [
+            {
+              "Plan": {
+                "Node Type": "Function Scan",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Function Name": "get_notifications",
+                "Alias": "get_notifications",
+                "Startup Cost": 0.25,
+                "Total Cost": 10.25,
+                "Plan Rows": 1000,
+                "Plan Width": 160,
+                "Actual Startup Time": 0.057,
+                "Actual Total Time": 0.057,
+                "Actual Rows": 0,
+                "Actual Loops": 1,
+                "Shared Hit Blocks": 1,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning": {
+                "Shared Hit Blocks": 0,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning Time": 0.02,
+              "Triggers": [],
+              "Execution Time": 0.064
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "count": 1,
+      "samples_ms": [
+        18.0512000000017,
+        1.8352999999988242,
+        1.3237999999983003,
+        1.3184000000037486,
+        1.4326000000000931,
+        1.934400000005553,
+        1.0250000000014552,
+        1.0146999999997206,
+        1.1543999999994412,
+        1.332799999996496,
+        1.3514000000068336,
+        1.2493999999933294,
+        0.9911000000065542,
+        0.7756999999983236,
+        0.7062000000005355,
+        0.6792999999961467,
+        0.9888999999966472,
+        1.262799999996787,
+        1.0705000000016298,
+        1.169499999996333
+      ],
+      "max_ms": 18.0512000000017,
+      "plan": [
+        {
+          "QUERY PLAN": [
+            {
+              "Plan": {
+                "Node Type": "Function Scan",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Function Name": "get_notifications",
+                "Alias": "get_notifications",
+                "Startup Cost": 0.25,
+                "Total Cost": 10.25,
+                "Plan Rows": 1000,
+                "Plan Width": 160,
+                "Actual Startup Time": 0.905,
+                "Actual Total Time": 0.905,
+                "Actual Rows": 1,
+                "Actual Loops": 1,
+                "Shared Hit Blocks": 9,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning": {
+                "Shared Hit Blocks": 0,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning Time": 0.028,
+              "Triggers": [],
+              "Execution Time": 0.918
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "count": 10,
+      "samples_ms": [
+        14.84479999999894,
+        1.573099999994156,
+        2.0120999999999185,
+        1.8608000000022002,
+        1.8145999999978812,
+        1.7623999999996158,
+        1.9104000000006636,
+        1.4144999999989523,
+        1.2247999999963213,
+        1.2725999999966007,
+        1.1461999999955879,
+        2.0169000000023516,
+        1.7779999999984284,
+        1.871899999998277,
+        1.6886000000013155,
+        2.024599999997008,
+        1.3597000000008848,
+        1.2611999999935506,
+        1.1826000000000931,
+        1.4971000000005006
+      ],
+      "max_ms": 14.84479999999894,
+      "plan": [
+        {
+          "QUERY PLAN": [
+            {
+              "Plan": {
+                "Node Type": "Function Scan",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Function Name": "get_notifications",
+                "Alias": "get_notifications",
+                "Startup Cost": 0.25,
+                "Total Cost": 10.25,
+                "Plan Rows": 1000,
+                "Plan Width": 160,
+                "Actual Startup Time": 1.058,
+                "Actual Total Time": 1.059,
+                "Actual Rows": 10,
+                "Actual Loops": 1,
+                "Shared Hit Blocks": 64,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning": {
+                "Shared Hit Blocks": 0,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning Time": 0.031,
+              "Triggers": [],
+              "Execution Time": 1.069
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "count": 100,
+      "samples_ms": [
+        18.010699999998906,
+        2.7773999999990338,
+        3.5333000000027823,
+        2.819500000005064,
+        3.2629000000015367,
+        2.6008999999976368,
+        2.2769999999945867,
+        3.3034999999945285,
+        2.296199999997043,
+        2.9315999999962514,
+        2.6291999999957625,
+        2.5125999999945634,
+        2.5432999999975436,
+        2.3012999999991735,
+        2.6283000000039465,
+        3.1468000000022585,
+        2.194999999999709,
+        2.7652000000016415,
+        2.371400000003632,
+        3.090300000003481
+      ],
+      "max_ms": 18.010699999998906,
+      "plan": [
+        {
+          "QUERY PLAN": [
+            {
+              "Plan": {
+                "Node Type": "Function Scan",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Function Name": "get_notifications",
+                "Alias": "get_notifications",
+                "Startup Cost": 0.25,
+                "Total Cost": 10.25,
+                "Plan Rows": 1000,
+                "Plan Width": 160,
+                "Actual Startup Time": 2.693,
+                "Actual Total Time": 2.696,
+                "Actual Rows": 31,
+                "Actual Loops": 1,
+                "Shared Hit Blocks": 329,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning": {
+                "Shared Hit Blocks": 0,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning Time": 0.037,
+              "Triggers": [],
+              "Execution Time": 2.71
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "count": 1000,
+      "samples_ms": [
+        14.76650000000518,
+        3.0705999999991036,
+        2.899600000004284,
+        3.021099999998114,
+        3.0701000000044587,
+        3.8528999999980442,
+        4.430500000002212,
+        3.899599999997008,
+        3.5177999999941676,
+        3.5811000000030617,
+        3.262800000004063,
+        3.4567000000024564,
+        3.378499999998894,
+        3.422900000005029,
+        3.345900000000256,
+        3.4265999999988708,
+        3.354399999996531,
+        3.386800000000221,
+        3.4574999999967986,
+        4.414199999999255
+      ],
+      "max_ms": 14.76650000000518,
+      "plan": [
+        {
+          "QUERY PLAN": [
+            {
+              "Plan": {
+                "Node Type": "Function Scan",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Function Name": "get_notifications",
+                "Alias": "get_notifications",
+                "Startup Cost": 0.25,
+                "Total Cost": 10.25,
+                "Plan Rows": 1000,
+                "Plan Width": 160,
+                "Actual Startup Time": 2.826,
+                "Actual Total Time": 2.827,
+                "Actual Rows": 31,
+                "Actual Loops": 1,
+                "Shared Hit Blocks": 2186,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning": {
+                "Shared Hit Blocks": 0,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning Time": 0.023,
+              "Triggers": [],
+              "Execution Time": 2.837
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

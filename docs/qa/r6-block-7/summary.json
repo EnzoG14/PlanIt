@@ -1,0 +1,143 @@
+{
+  "date_argentina": "2026-10-15",
+  "base": "9311c0142e4c945656e8aa0fe9c89c1a37b4135b",
+  "branch": "codex/r6-block-7",
+  "dependency": {
+    "pr": 69,
+    "state": "MERGED",
+    "merge_commit": "9311c0142e4c945656e8aa0fe9c89c1a37b4135b",
+    "verification": "git fetch + gh pr view 69"
+  },
+  "env_local": {
+    "preserved_from_main": true,
+    "same_checkout": true,
+    "ignored": true,
+    "versioned": false
+  },
+  "status": "Implementado; QA pendiente",
+  "migration": {
+    "version": "20261015201034",
+    "created": 1,
+    "local_tested": 1,
+    "remote_applied": 0,
+    "remote_verified": 0
+  },
+  "commands": [
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "warning": "Existing large chunks >500 kB"
+    },
+    {
+      "command": "npm run lint",
+      "result": "PASS",
+      "warning": "Existing probes and DiscoveryFilters warnings"
+    },
+    {
+      "command": "node scripts/check-realtime.mjs",
+      "result": "PASS",
+      "groups": 3
+    }
+  ],
+  "results": [
+    {
+      "name": "B7 SQL",
+      "path": "sql/sql-results.json",
+      "result": "PASS",
+      "groups": 31
+    },
+    {
+      "name": "B6 SQL regression",
+      "path": "regressions/producer-b6/sql-results.json",
+      "result": "PASS",
+      "groups": 41
+    },
+    {
+      "name": "DM SQL regression",
+      "path": "regressions/dm-sql/sql-results.json",
+      "result": "PASS",
+      "groups": 28
+    },
+    {
+      "name": "Follow SQL regression",
+      "path": "regressions/follows-sql/sql-results.json",
+      "result": "PASS",
+      "groups": 28
+    },
+    {
+      "name": "Inbox SQL regression",
+      "path": "regressions/notifications-sql/postgres-results.json",
+      "result": "PASS",
+      "groups": 7
+    },
+    {
+      "name": "B7 UI fixtures",
+      "path": "ui/after/results.json",
+      "result": "PASS",
+      "groups": 14
+    },
+    {
+      "name": "DM UI fixtures",
+      "path": "regressions/dm-ui/results.json",
+      "result": "PASS",
+      "groups": 2
+    },
+    {
+      "name": "Follow UI fixtures",
+      "path": "regressions/follows-ui/results.json",
+      "result": "PASS",
+      "groups": 2
+    },
+    {
+      "name": "Inbox UI fixtures",
+      "path": "regressions/notifications-ui/ui-results.json",
+      "result": "PASS",
+      "groups": 17
+    },
+    {
+      "name": "Realtime UI fixtures",
+      "path": "regressions/realtime-ui/ui-results.json",
+      "result": "PASS",
+      "groups": 8
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/pages/NotificationsPage.tsx",
+      "sha256_lf": "e35f14657d2fe2d6483e4c9c7b770bba1d59015c281edb5c9642a41f8a00d137"
+    },
+    {
+      "path": "scripts/check-r6-event-full-inbox.mjs",
+      "sha256_lf": "aaab2abe99d9b8512ecd8b99e1527ae26f187efad8ac297f1b721cb978fef44a"
+    },
+    {
+      "path": "scripts/check-r6-event-full-ui.mjs",
+      "sha256_lf": "b95b1fc915d20e2ce45290e1e4a430cd214b5b649bc6a012e785f7c8f01b05a8"
+    },
+    {
+      "path": "supabase/migrations/20261015201034_r6_event_full_inbox.sql",
+      "sha256_lf": "2b64bf1bcbf122bf5f11af33a2873668e035f1d110560ca3a4db53c6f726f527"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256_lf": "5fd93ae33117156dba72bb7eda09d5592cec2525be0f075798609f59a4f65cbb"
+    }
+  ],
+  "layers": {
+    "sql_local": "PASS",
+    "http_jwt_real": "NOT RUN",
+    "ui_browser_fixtures": "PASS",
+    "realtime_fixture": "PASS",
+    "realtime_real": "NOT RUN",
+    "pwa": "PASS limited: empty runtimeCaching and no Supabase in Cache API",
+    "native_zoom_devices_screen_reader": "NOT RUN",
+    "acceptance_integral": "NOT RUN"
+  },
+  "authorization": {
+    "remote_ddl": false,
+    "remote_fixtures": false,
+    "merge": false,
+    "deploy": false,
+    "next_block": false
+  }
+}
