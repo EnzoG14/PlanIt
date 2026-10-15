@@ -1,5 +1,7 @@
 # PlanIt — R5 matriz de aceptación (33 CA oficiales)
 
+**Entrega para revisión:** [PR #60 en borrador](https://github.com/EnzoG14/PlanIt/pull/60), implementación/evidencia `76d2183ebf1a8fce9652680a82f95116dd5dfd75`; commits posteriores sólo vinculan seguimiento. Sin merge.
+
 **Corte B10 — 14/10/2026:** [Reporte integral de los33 CA](RELEASE_5_TEST_REPORT.md), [resultados computables](r5-block-10/summary.json). Cobertura nueva SQL local/UI fixture, catálogo READ ONLY y HTTP anónimo; **NO-GO para cierre de R5**, **Implementado; QA pendiente**. JWT autenticado/Storage/CDN/Realtime reales y aceptación integral NOT RUN. Se conserva la aprobación humana histórica B5; ninguna aceptación nueva se autodeclara. Sin nuevas migraciones, DDL remoto, deploy ni merge. Cortes siguientes conservados como antecedentes.
 
 **Corte B9 — 14/10/2026:** RF-R5-08.CA01..05 PASS parcial SQL local/UI fixture (CA05 SQL), HTTP anónimo real4/4. **NOT RUN integral**, sin aceptación humana. [Contrato,55 grupos UI,rollback/carrera triple y límites](r5-block-9/README.md). D01-A/B,D03-A,D04-B PASS parcial, sin renumerar33 CA. Sin migraciones nuevas/deploy/merge. B10 requiere aprobación independiente.

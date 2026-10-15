@@ -1,5 +1,7 @@
 # Release 5 — Reporte de QA integral · Bloque 10
 
+**Entrega para revisión:** [PR #60 en borrador](https://github.com/EnzoG14/PlanIt/pull/60), implementación/evidencia `76d2183ebf1a8fce9652680a82f95116dd5dfd75`; commits posteriores sólo vinculan seguimiento. Sin merge.
+
 **Decisión: NO-GO para cierre/entrega funcional de R5.** La implementación queda **Implementado; QA pendiente**. Las pruebas técnicas locales y UI con fixtures no validan los 33 CA de extremo a extremo. La aprobación humana histórica de B5 se conserva; no se extiende a la release completa.
 
 Fecha: 14/10/2026, Argentina. Base `f66d70bcf4f0e28c02fe2aff88088bd238a65e1e`, rama `codex/r5-block-10`; PR #50–#59 integradas, comprobadas después de fetch. Sin merge, deploy, escrituras de fixtures remotos ni DDL remoto. [Contrato, amenazas y reproducción](r5-block-10/README.md). [Resumen computable y resultados por capa](r5-block-10/summary.json).

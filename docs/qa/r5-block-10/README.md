@@ -1,5 +1,7 @@
 # R5 · Bloque 10 — QA integrada
 
+**Entrega:** [PR #60 en borrador](https://github.com/EnzoG14/PlanIt/pull/60), commit de implementación/evidencia `76d2183ebf1a8fce9652680a82f95116dd5dfd75`. Commits posteriores sólo de seguimiento; sin merge.
+
 Base `f66d70bcf4f0e28c02fe2aff88088bd238a65e1e` (`origin/main`, PR #50–#59 integradas), rama `codex/r5-block-10`. Fecha de trabajo: 14/10/2026, Argentina; timestamps de herramientas en UTC pueden indicar 15/10. **Implementado; QA pendiente**. Sólo B10, sin merge/deploy/DDL remoto ni modificaciones del documento oficial.
 
 El checkout original con cambios del usuario se conserva. Worktree aislado; `.env.local` copiado byte a byte de `mapbox-worktree` (checkout main), ignorado y fuera del índice. La base del nuevo trabajo es origin/main actualizado; el main local antiguo no se reseteó.
