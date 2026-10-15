@@ -15,7 +15,7 @@
 | 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67) | 25685f0 | 1/1/1/1 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
 | 5 | CSV seguros | Implementado; QA pendiente | codex/r6-block-5; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68) | edaa0c5 | 1/1/1/1 | RF-R6-04 CA01–04 parcial SQL/contrato/UI fixtures; HTTP/Excel/dispositivos NOT RUN | NO |
 | 6 | Trigger aviso lleno | Implementado; QA pendiente | codex/r6-block-6; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69) | 9ba2f68 | 1/1/1/1 | RF-R6-05 CA01/03/04 parcial SQL local; HTTP/Realtime NOT RUN | NO |
-| 7 | Bandeja aviso | Implementado; QA pendiente | codex/r6-block-7; PR draft en preparación | 9311c01 | 1/1/0/0 | RF-R6-05 CA02/04 parcial SQL/UI fixtures; regresión B6 PASS; HTTP/Realtime real NOT RUN | NO |
+| 7 | Bandeja aviso | Implementado; QA pendiente | codex/r6-block-7; [PR #70 draft](https://github.com/EnzoG14/PlanIt/pull/70) | 9311c01 | 1/1/0/0 | RF-R6-05 CA02/04 parcial SQL/UI fixtures; regresión B6 PASS; HTTP/Realtime real NOT RUN | NO |
 | 8 | Comparación | NO INICIADO | — | — | 0/0/0/0 | RF-R6-06 | NO |
 | 9 | QA integral | NO INICIADO | — | — | 0/0/0/0 | 24 CA y regresión | NO |
 
@@ -28,6 +28,7 @@
 - Etiqueta Cupo completo/icono calendario, estados de lectura, navegación RPC revalidada y error neutro con eliminación del título rechazado; resiste conciliación anterior al rechazo. Sin CSS/tokens/DISEÑO nuevos.
 - Migración `20261015201034`: **1 creada / 1 probada local / 0 aplicada remota / 0 verificada remota**. PostgreSQL17.5 replay36; 31 grupos B7+social, 41 B6, 28 DM, 28 seguimiento y 7 bandeja; benchmark20×5 tamaños. UI B7 14 grupos, regresiones bandeja17/Realtime8/DM2/seguimiento2 y tres grupos unitarios; build/lint PASS con advertencias previas. [Comandos, capturas, amenazas, intentos y límites](../qa/r6-block-7/README.md).
 - HTTP JWT real, Realtime real, dispositivos/lector/zoom nativo y aceptación integral NOT RUN. Estado **Implementado; QA pendiente**. Sin DDL remoto, fixtures remotos, deploy, merge o Google Docs. Detenerse en B7.
+- Cierre: commit funcional `f5208d6ce45bde189a9fd1b56be9e3220ef8325f`; [PR #70 draft](https://github.com/EnzoG14/PlanIt/pull/70). El commit posterior sólo enlaza la entrega; HEAD final consultable en Git/PR. `.env.local` ignorado y no versionado; checkout limpio al publicar.
 
 ### B1 — 15/10/2026, Codex
 

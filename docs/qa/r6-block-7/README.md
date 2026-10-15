@@ -73,4 +73,4 @@ Se conservan intentos fallidos de pruebas: [SQL](sql/first-attempt-fixture-failu
 
 HTTP autenticado y entrega real Realtime requieren usuarios/fixtures autorizados de prueba; no se usaron cuentas reales ni se escribieron datos remotos. Pruebas de dispositivos, lector de pantalla, zoom nativo200%, rendimiento móvil y aceptación humana **NOT RUN**. La bandeja remota no tendrá la proyección de nombre ni la regla de destino archivado de B7 hasta aplicar la migración con permiso separado. No afirmar cierre integral R6 ni Web Push.
 
-La PR es draft. SHA funcional y enlace se registran en el seguimiento al publicar; HEAD final se consulta en Git/PR. **Detenerse aquí: B8 requiere autorización humana independiente.**
+[PR #70 draft](https://github.com/EnzoG14/PlanIt/pull/70), commit funcional `f5208d6ce45bde189a9fd1b56be9e3220ef8325f`. El commit posterior sólo registra el enlace y este cierre; HEAD final se consulta en Git/PR. Inventario: un componente, una migración, dos runners, dos scripts npm, seguimiento y evidencia aislada bajo esta carpeta (sin modificaciones de reportes históricos). **Detenerse aquí: B8 requiere autorización humana independiente.**
