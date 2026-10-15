@@ -1,0 +1,15 @@
+{
+  "name": "hidden-access",
+  "stage": "regression",
+  "attempt": 1,
+  "script": "scripts/check-hidden-access.mjs",
+  "command": "node scripts/check-hidden-access.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:56:19.029Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "66046f5b859c59f2e3f728819a133afaa38ff4c5c6dd16857c6bccbcb5f2e9c8",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/regression/hidden-access/attempt-1",
+  "finished_at": "2026-10-15T22:57:00.014Z"
+}

@@ -1,0 +1,60 @@
+PASS 320: 0 and 1 selected block the comparison with an accessible message
+PASS 320: Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone
+PASS 320: Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view
+PASS 320: Filter change keeps the selection; archived event is selectable and shows its state
+PASS 320: Hostile title rendered as text only
+PASS 320: Maximum of 10 enforced in the UI; further options disabled
+PASS 320: Rapid selection change: late response for the old selection is ignored
+PASS 320: Error is neutral, hides stale rows, and Retry recovers
+PASS 320: 200 % text without page overflow
+PASS 320: Anonymous direct route requires login
+PASS 360: 0 and 1 selected block the comparison with an accessible message
+PASS 360: Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone
+PASS 360: Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view
+PASS 360: Filter change keeps the selection; archived event is selectable and shows its state
+PASS 360: Hostile title rendered as text only
+PASS 360: Maximum of 10 enforced in the UI; further options disabled
+PASS 360: Rapid selection change: late response for the old selection is ignored
+PASS 360: Error is neutral, hides stale rows, and Retry recovers
+PASS 360: 200 % text without page overflow
+PASS 360: Anonymous direct route requires login
+PASS 375: 0 and 1 selected block the comparison with an accessible message
+PASS 375: Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone
+PASS 375: Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view
+PASS 375: Filter change keeps the selection; archived event is selectable and shows its state
+PASS 375: Hostile title rendered as text only
+PASS 375: Maximum of 10 enforced in the UI; further options disabled
+PASS 375: Rapid selection change: late response for the old selection is ignored
+PASS 375: Error is neutral, hides stale rows, and Retry recovers
+PASS 375: 200 % text without page overflow
+PASS 375: Anonymous direct route requires login
+PASS 390: 0 and 1 selected block the comparison with an accessible message
+PASS 390: Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone
+PASS 390: Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view
+PASS 390: Filter change keeps the selection; archived event is selectable and shows its state
+PASS 390: Hostile title rendered as text only
+PASS 390: Maximum of 10 enforced in the UI; further options disabled
+PASS 390: Rapid selection change: late response for the old selection is ignored
+PASS 390: Error is neutral, hides stale rows, and Retry recovers
+PASS 390: 200 % text without page overflow
+PASS 390: Anonymous direct route requires login
+PASS 768: 0 and 1 selected block the comparison with an accessible message
+PASS 768: Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone
+PASS 768: Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view
+PASS 768: Filter change keeps the selection; archived event is selectable and shows its state
+PASS 768: Hostile title rendered as text only
+PASS 768: Maximum of 10 enforced in the UI; further options disabled
+PASS 768: Rapid selection change: late response for the old selection is ignored
+PASS 768: Error is neutral, hides stale rows, and Retry recovers
+PASS 768: 200 % text without page overflow
+PASS 768: Anonymous direct route requires login
+PASS 1280: 0 and 1 selected block the comparison with an accessible message
+PASS 1280: Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone
+PASS 1280: Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view
+PASS 1280: Filter change keeps the selection; archived event is selectable and shows its state
+PASS 1280: Hostile title rendered as text only
+PASS 1280: Maximum of 10 enforced in the UI; further options disabled
+PASS 1280: Rapid selection change: late response for the old selection is ignored
+PASS 1280: Error is neutral, hides stale rows, and Retry recovers
+PASS 1280: 200 % text without page overflow
+PASS 1280: Anonymous direct route requires login

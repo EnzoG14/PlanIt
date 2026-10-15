@@ -1,0 +1,15 @@
+{
+  "name": "demographics",
+  "stage": "ui",
+  "attempt": 1,
+  "script": "scripts/check-r6-demographics-ui.mjs",
+  "command": "node scripts/check-r6-demographics-ui.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:54:08.484Z",
+  "environment": "Compiled React app, synthetic Auth/REST/WebSocket fixtures; no real JWT/Realtime",
+  "source_sha256": "b4b07faf35f7363f0acc70cef4888d6930079efcbded14f9ac9f4bfb076f0576",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/ui/demographics/attempt-1",
+  "finished_at": "2026-10-15T22:55:53.076Z"
+}

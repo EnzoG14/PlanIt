@@ -1,0 +1,15 @@
+{
+  "name": "periods",
+  "stage": "ui",
+  "attempt": 1,
+  "script": "scripts/check-r6-periods-ui.mjs",
+  "command": "node scripts/check-r6-periods-ui.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:55:53.080Z",
+  "environment": "Compiled React app, synthetic Auth/REST/WebSocket fixtures; no real JWT/Realtime",
+  "source_sha256": "749544191d79d2802098812a753c7bc37ee407c57fedc15fb4d25121d55bec1a",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/ui/periods/attempt-1",
+  "finished_at": "2026-10-15T22:56:33.934Z"
+}

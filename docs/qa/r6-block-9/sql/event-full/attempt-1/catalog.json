@@ -1,0 +1,40 @@
+{
+  "acl": {
+    "prosecdef": false,
+    "proconfig": [
+      "search_path=\"\""
+    ],
+    "anon": false,
+    "authenticated": false
+  },
+  "triggers": [
+    {
+      "tgname": "participations_notify_event_full",
+      "definition": "CREATE TRIGGER participations_notify_event_full AFTER INSERT OR UPDATE OF status ON public.event_participations FOR EACH ROW EXECUTE FUNCTION planit_private.notify_event_full()"
+    },
+    {
+      "tgname": "participations_record_history",
+      "definition": "CREATE TRIGGER participations_record_history AFTER INSERT OR UPDATE OF status ON public.event_participations FOR EACH ROW EXECUTE FUNCTION planit_private.record_participation_history()"
+    },
+    {
+      "tgname": "participations_touch_updated_at",
+      "definition": "CREATE TRIGGER participations_touch_updated_at BEFORE UPDATE ON public.event_participations FOR EACH ROW EXECUTE FUNCTION planit_private.touch_updated_at()"
+    }
+  ],
+  "policies": [
+    {
+      "policyname": "notifications_mark_own",
+      "cmd": "UPDATE",
+      "roles": "{authenticated}",
+      "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+      "with_check": "(recipient_id = ( SELECT auth.uid() AS uid))"
+    },
+    {
+      "policyname": "notifications_read_own",
+      "cmd": "SELECT",
+      "roles": "{authenticated}",
+      "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+      "with_check": null
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "profile",
+  "stage": "r5",
+  "attempt": 1,
+  "script": "scripts/check-r5-profile.mjs",
+  "command": "node scripts/check-r5-profile.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:53:12.600Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "828790770d3114e7d8afa345d0e1c3e6c8c08f16487e74c11ae0c8573dbd3b5a",
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/r5/profile/attempt-1",
+  "finished_at": "2026-10-15T22:53:58.015Z"
+}

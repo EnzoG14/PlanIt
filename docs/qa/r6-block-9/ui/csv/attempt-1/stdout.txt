@@ -1,0 +1,14 @@
+PASS 320: Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout
+PASS 320: 200% text and 480px height without clipping/overflow; reduced motion, six viewport widths
+PASS 360: Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout
+PASS 360: 200% text and 480px height without clipping/overflow; reduced motion, six viewport widths
+PASS 375: Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout
+PASS 375: 200% text and 480px height without clipping/overflow; reduced motion, six viewport widths
+PASS 390: Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout
+PASS 390: Empty/errors/denial/size/version/event mismatch, 5001 rows, explicit cancel and timeout discard all data without download
+PASS 390: Filter changes, offline/reconnect, hidden tab, refresh, foreign navigation and logout invalidate pending exports; no late downloads
+PASS 390: 200% text and 480px height without clipping/overflow; reduced motion, six viewport widths
+PASS 768: Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout
+PASS 768: 200% text and 480px height without clipping/overflow; reduced motion, six viewport widths
+PASS 1280: Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout
+PASS 1280: 200% text and 480px height without clipping/overflow; reduced motion, six viewport widths

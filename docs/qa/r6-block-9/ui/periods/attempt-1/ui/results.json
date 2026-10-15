@@ -1,0 +1,192 @@
+{
+  "environment": "Real React production build in Edge; simulated Auth/RPC; Tokyo browser timezone; no remote permissions certified",
+  "results": [
+    {
+      "width": 320,
+      "test": "Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Successful zero vs error vs denial; safe retry; mismatched request DTO rejected",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "90→7→30 delayed network; prior table removed during load and late responses discarded",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "200% text, reduced motion and short viewport without overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Foreign route and logout remove all historical data; session fixture only",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Successful zero vs error vs denial; safe retry; mismatched request DTO rejected",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "90→7→30 delayed network; prior table removed during load and late responses discarded",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "200% text, reduced motion and short viewport without overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Foreign route and logout remove all historical data; session fixture only",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Successful zero vs error vs denial; safe retry; mismatched request DTO rejected",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "90→7→30 delayed network; prior table removed during load and late responses discarded",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "200% text, reduced motion and short viewport without overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Foreign route and logout remove all historical data; session fixture only",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Successful zero vs error vs denial; safe retry; mismatched request DTO rejected",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "90→7→30 delayed network; prior table removed during load and late responses discarded",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "10s timeout, late abort, offline and reconnect clear historical values before retry",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "200% text, reduced motion and short viewport without overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Foreign route and logout remove all historical data; session fixture only",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Successful zero vs error vs denial; safe retry; mismatched request DTO rejected",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "90→7→30 delayed network; prior table removed during load and late responses discarded",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "200% text, reduced motion and short viewport without overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Foreign route and logout remove all historical data; session fixture only",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Successful zero vs error vs denial; safe retry; mismatched request DTO rejected",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "90→7→30 delayed network; prior table removed during load and late responses discarded",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "200% text, reduced motion and short viewport without overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Foreign route and logout remove all historical data; session fixture only",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

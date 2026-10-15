@@ -1,6 +1,6 @@
 # PlanIt — R6 seguimiento de ejecución
 
-**Estado global:** **B7 y B8 Implementados; QA pendiente** (15/10/2026). Bloques con entrega: **9 (B0–B8)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B6 y B8 integrados en main; B7 permanece en [PR #70 draft](https://github.com/EnzoG14/PlanIt/pull/70). Esta rama incorpora main tras el merge de B8 (PR #71), conservando ambos bloques y sus evidencias. Migraciones B6 y B7 **1/1/1/1**; B8 conserva su corte publicado **1/1/0/0**. [Evidencia B7](../qa/r6-block-7/README.md) y [B8](../qa/r6-block-8/README.md). B9 no iniciado; sin merge de PR #70 ni deploy. Cortes anteriores históricos.
+**Estado global:** **B9 Implementado; QA pendiente — NO-GO** (15/10/2026). B0–B8 integrados en main (incluidas PR #70/#71), base `120d50a2ccfc9fc107b5d01e994c40b493bcbe79`. R5 conserva GO humano/Validado. R6:0/6 RF validados integralmente,0/24 CA aceptados. QA por capas y defectos en [reporte B9](../qa/RELEASE_6_TEST_REPORT.md). Catálogo remoto37/37, B8 observada aplicada/verificada; B9 sin migraciones nuevas ni aplicaciones remotas. JWT autenticado/Realtime reales bloqueados y aceptación humana pendiente.
 
 **Baseline B7:** `main`/`origin/main` `9311c0142e4c945656e8aa0fe9c89c1a37b4135b`, fetch y PR #69 MERGED comprobados. Rama `codex/r6-block-7`; pedido humano autoriza sólo B7 y decide nombre actual, sin snapshot. `.env.local` de main conservado en el mismo checkout e ignorado.
 
@@ -15,9 +15,9 @@
 | 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67) | 25685f0 | 1/1/1/1 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
 | 5 | CSV seguros | Implementado; QA pendiente | codex/r6-block-5; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68) | edaa0c5 | 1/1/1/1 | RF-R6-04 CA01–04 parcial SQL/contrato/UI fixtures; HTTP/Excel/dispositivos NOT RUN | NO |
 | 6 | Trigger aviso lleno | Implementado; QA pendiente | codex/r6-block-6; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69) | 9ba2f68 | 1/1/1/1 | RF-R6-05 CA01/03/04 parcial SQL local; HTTP/Realtime NOT RUN | NO |
-| 7 | Bandeja aviso | Implementado; QA pendiente | codex/r6-block-7; [PR #70 draft](https://github.com/EnzoG14/PlanIt/pull/70) | 9311c01 | 1/1/1/1 | RF-R6-05 CA02/04 parcial SQL/UI fixtures; catálogo remoto PASS; HTTP/Realtime real NOT RUN | NO |
-| 8 | Comparación | Implementado; QA pendiente | codex/r6-block-8; [PR #71 MERGED](https://github.com/EnzoG14/PlanIt/pull/71) | 9311c01 | 1/1/0/0 | RF-R6-06 CA01–04 parcial SQL local/UI fixtures; HTTP JWT real NOT RUN | NO |
-| 9 | QA integral | NO INICIADO | — | — | 0/0/0/0 | 24 CA y regresión | NO |
+| 7 | Bandeja aviso | Implementado; QA pendiente | codex/r6-block-7; [PR #70 integrada](https://github.com/EnzoG14/PlanIt/pull/70) | 9311c01 | 1/1/1/1 | RF-R6-05 CA02/04 parcial SQL/UI fixtures; catálogo remoto PASS; HTTP/Realtime real NOT RUN | NO |
+| 8 | Comparación | Implementado; QA pendiente | codex/r6-block-8; [PR #71 MERGED](https://github.com/EnzoG14/PlanIt/pull/71) | 9311c01 | 1/1/1/1 | RF-R6-06 CA01–04 parcial SQL local/UI fixtures; HTTP JWT real NOT RUN | NO |
+| 9 | QA integral | Implementado; QA pendiente; NO-GO | codex/r6-block-9; PR draft pendiente | 120d50a | 0/0/0/0 nuevas | 24 CA trazados; SQL/UI parcial,JWT/Realtime real BLOCKED; aceptación0/24 | NO |
 
 ## Plantilla de bitácora por bloque
 
@@ -143,3 +143,16 @@ Por instrucción humana se aplicó la única pendiente 20261015130739 en planit-
 - Por solicitud humana se aplicó únicamente `20261015173426_r6_export_projection.sql` en planit-v2 (`iepeqmvzjguwlhnecsdq`). Dry-run previo una pendiente; posterior ninguna; historial34/34 sincronizado. Sin seeds/roles/Vault, merge, deploy ni B6.
 - Marcas **1 creada / 1 probada local / 1 aplicada remota autorizada / 1 verificada remota**. PostgreSQL17.11: cuerpo remoto coincide con el SQL versionado normalizando CRLF; STABLE/DEFINER/search_path/ACL y RLS público verificados. Rechazo sin UID y evento NULL como authenticated comprobado en transacción READ ONLY/ROLLBACK. No se exportaron datos de negocio.
 - Asesores seguridad49→50 WARN: nuevo aviso de RPC DEFINER ejecutable por authenticated, intencional y protegida por ownership; sin cambios adicionales de permisos. [Acta y evidencia](../qa/r6-block-5/remote/summary.json). HTTP/JWT real y aceptación integral siguen NOT RUN. Las marcas locales en entradas anteriores conservan la fotografía de entrega.
+
+
+### B9 — 15/10/2026, Codex
+
+- Pedido humano autoriza B9 y PR draft, después de esperar B7. Base integrada120d50a, fetch y merge #70/#71 comprobados; worktree nuevo bajo home, rama codex/r6-block-9. Checkout B8 original y cambios ajenos intactos; env copiado byte a byte e ignorado; CodeGraph propio.
+- Coordinación de suites, catálogo READ ONLY y HTTP anónimo, reporte de24 CA con casos positivos/adversariales por capa, capturas y manifiestos con hashes. Única reparación de código previo: resolución de imports del test de contrato B1, manteniendo sus aserciones. Sin APIs/SQL/diseño nuevos.
+- [Reporte](../qa/RELEASE_6_TEST_REPORT.md), [evidencia y reproducción](../qa/r6-block-9/README.md), [resultados](../qa/r6-block-9/summary.json). SQL/R5/regresiones, build/lint/contratos,UI fixtures,PWA shell; FAIL de zoom CSS estrecho y cabecera de Mis eventos histórico preservados. JWT autenticado/Realtime reales BLOCKED, dispositivo/lector/zoom nativo/Excel NOT RUN.
+- Catálogo37 versiones/16 tablas RLS/88 funciones; cuerpos/ACL/config comparados con replay local. B8 aplicada observada y verificada hoy; su1/1/0/0 publicado era corte anterior. Historial CLI37/37 y dry-run sin pendientes. B9:0 creada/0 nueva probada/0 aplicada/0 nueva verificada; replay/verificación de37 existentes por separado.
+- R6 **NO-GO; Implementado; QA pendiente**,0/24 aceptados integralmente. Sin merge/deploy/DDL remoto/Google Docs/siguiente bloque. SHA de entrega/PR en [acta](../qa/r6-block-9/delivery.json).
+
+### Corte global anterior a la auditoría B9 (histórico)
+
+**Estado global:** **B7 y B8 Implementados; QA pendiente** (15/10/2026). Bloques con entrega: **9 (B0–B8)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B6 y B8 integrados en main; B7 permanece en [PR #70 draft](https://github.com/EnzoG14/PlanIt/pull/70). Esta rama incorpora main tras el merge de B8 (PR #71), conservando ambos bloques y sus evidencias. Migraciones B6 y B7 **1/1/1/1**; B8 conserva su corte publicado **1/1/0/0**. [Evidencia B7](../qa/r6-block-7/README.md) y [B8](../qa/r6-block-8/README.md). B9 no iniciado; sin merge de PR #70 ni deploy. Cortes anteriores históricos.

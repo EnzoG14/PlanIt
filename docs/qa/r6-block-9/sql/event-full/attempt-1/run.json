@@ -1,0 +1,15 @@
+{
+  "name": "event-full",
+  "stage": "sql",
+  "attempt": 1,
+  "script": "scripts/check-r6-event-full.mjs",
+  "command": "node scripts/check-r6-event-full.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:55:09.250Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "cc32434178c512c03592e85d1356906f31dcfe4633498053c5aa0f01b8c06b69",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/sql/event-full/attempt-1",
+  "finished_at": "2026-10-15T22:55:51.544Z"
+}

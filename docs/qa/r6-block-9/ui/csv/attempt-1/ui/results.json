@@ -1,0 +1,77 @@
+{
+  "environment": "Real React production build in Edge; simulated Auth/RPC; Tokyo browser timezone; actual CSV downloads. No remote JWT/permissions or installed device PWA certified.",
+  "results": [
+    {
+      "width": 320,
+      "test": "Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "200% text and 480px height without clipping/overflow; reduced motion, six viewport widths",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "200% text and 480px height without clipping/overflow; reduced motion, six viewport widths",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "200% text and 480px height without clipping/overflow; reduced motion, six viewport widths",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Empty/errors/denial/size/version/event mismatch, 5001 rows, explicit cancel and timeout discard all data without download",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Filter changes, offline/reconnect, hidden tab, refresh, foreign navigation and logout invalidate pending exports; no late downloads",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "200% text and 480px height without clipping/overflow; reduced motion, six viewport widths",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "200% text and 480px height without clipping/overflow; reduced motion, six viewport widths",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Two actual browser downloads, BOM/quoting/formula prefix, no IDs, exact seven chart buckets/counts and filters; focus and layout",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "200% text and 480px height without clipping/overflow; reduced motion, six viewport widths",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

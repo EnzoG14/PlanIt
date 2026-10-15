@@ -1,0 +1,15 @@
+{
+  "name": "avatar",
+  "stage": "r5",
+  "attempt": 1,
+  "script": "scripts/check-r5-avatar.mjs",
+  "command": "node scripts/check-r5-avatar.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:59:50.350Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "9d966e99ca25b388e69a499fded20db5add59cb8a97f0879532cd2689aec9de6",
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/r5/avatar/attempt-1",
+  "finished_at": "2026-10-15T22:59:50.804Z"
+}

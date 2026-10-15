@@ -1,0 +1,15 @@
+{
+  "name": "occupancy",
+  "stage": "contract",
+  "attempt": 2,
+  "script": "scripts/check-r6-occupancy-contract.mjs",
+  "command": "node scripts/check-r6-occupancy-contract.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:53:39.245Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "7eb5bd166886d108cbb144e02b01b60d069b32018c50e6271279fec81bbb3b6d",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/contract/occupancy/attempt-2",
+  "finished_at": "2026-10-15T22:53:39.855Z"
+}

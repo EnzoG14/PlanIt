@@ -1,0 +1,51 @@
+{
+  "environment": "Real HTTPS/public key; no user JWT, no writes, no signup",
+  "results": [
+    {
+      "path": "rpc/get_my_event_occupancy",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_my_event_demographics",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_my_event_participation_series",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_my_event_export_rows",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_my_events_occupancy",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "profiles?select=id,birth_date,sex",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "participation_history?select=id",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "notifications?select=id,title",
+      "status": 401,
+      "result": "PASS"
+    },
+    {
+      "path": "rpc/get_notifications",
+      "status": 404,
+      "result": "FAIL"
+    }
+  ],
+  "result": "FAIL"
+}

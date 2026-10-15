@@ -1,0 +1,15 @@
+{
+  "name": "demographics",
+  "stage": "sql",
+  "attempt": 1,
+  "script": "scripts/check-r6-demographics.mjs",
+  "command": "node scripts/check-r6-demographics.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:52:47.541Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "e2933322741352cd17628dffac7002ba463c3346428099e45ac476cf7ae78b5f",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/sql/demographics/attempt-1",
+  "finished_at": "2026-10-15T22:53:31.251Z"
+}

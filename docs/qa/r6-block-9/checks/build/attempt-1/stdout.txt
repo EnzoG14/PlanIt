@@ -1,0 +1,92 @@
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 201 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/registerSW.js                                                    0.13 kB
+dist/manifest.webmanifest                                             0.45 kB
+dist/index.html                                                       1.19 kB │ gzip:   0.56 kB
+dist/assets/bricolage-grotesque-latin-wght-normal-DLoelf7F.woff2     41.34 kB
+dist/assets/EventAccessPage-BeGsKfAb.css                              0.48 kB │ gzip:   0.24 kB
+dist/assets/EditEventPage-C6-wzkKq.css                                0.59 kB │ gzip:   0.31 kB
+dist/assets/EventDetailPage-BbVrzJ0G.css                              0.91 kB │ gzip:   0.40 kB
+dist/assets/direct-messages-DskRB6Ck.css                              0.95 kB │ gzip:   0.40 kB
+dist/assets/FollowRequestsPage-CQuhFr09.css                           1.03 kB │ gzip:   0.45 kB
+dist/assets/social-participants-aRHlihRl.css                          1.06 kB │ gzip:   0.45 kB
+dist/assets/SocialIdentityPage-QJlu3sMr.css                           1.10 kB │ gzip:   0.42 kB
+dist/assets/BlockUserAction-B_7Ut3m4.css                              1.45 kB │ gzip:   0.58 kB
+dist/assets/InvitePage-DjKK25Qp.css                                   1.61 kB │ gzip:   0.64 kB
+dist/assets/InterestsPage-M1hJwhQD.css                                1.98 kB │ gzip:   0.73 kB
+dist/assets/NotificationsPage-CAH3WiNg.css                            2.08 kB │ gzip:   0.70 kB
+dist/assets/HomePage-BHFJQBKd.css                                     2.65 kB │ gzip:   0.75 kB
+dist/assets/CompareEventsPage-CqKO1_lx.css                            2.96 kB │ gzip:   0.86 kB
+dist/assets/event-management-CcyhFY58.css                             3.67 kB │ gzip:   1.13 kB
+dist/assets/EditProfilePage-BUZOgfIW.css                              3.95 kB │ gzip:   1.20 kB
+dist/assets/chat-svdyR_PM.css                                         3.97 kB │ gzip:   1.16 kB
+dist/assets/event-forms-C7Iivlt7.css                                  4.48 kB │ gzip:   1.23 kB
+dist/assets/EventGalleryPage-B65VEpO7.css                             4.83 kB │ gzip:   1.35 kB
+dist/assets/event-rejoin-CN93N2a9.css                                 4.90 kB │ gzip:   1.20 kB
+dist/assets/event-attendees-QCB2rwCX.css                              5.19 kB │ gzip:   1.40 kB
+dist/assets/EventActionDialog-DqYOnHgA.css                            5.86 kB │ gzip:   1.47 kB
+dist/assets/event-analytics-CBFEXF6C.css                              6.31 kB │ gzip:   1.42 kB
+dist/assets/my-events-1plIaxp-.css                                   11.46 kB │ gzip:   2.63 kB
+dist/assets/discovery-CYFQEXaF.css                                   16.75 kB │ gzip:   3.46 kB
+dist/assets/index-sJ6g-UXM.css                                       35.10 kB │ gzip:   7.18 kB
+dist/assets/EventMap-DdcgI_dU.css                                    51.50 kB │ gzip:   6.43 kB
+dist/assets/geolocation-DXgn9iGR.js                                   0.56 kB │ gzip:   0.37 kB
+dist/assets/SocialAvatar-BMwsCzhH.js                                  0.75 kB │ gzip:   0.45 kB
+dist/assets/reconciliation-A1EZ7NIs.js                                0.75 kB │ gzip:   0.47 kB
+dist/assets/participation-Du4oArlD.js                                 1.15 kB │ gzip:   0.64 kB
+dist/assets/attendees-kTZN0tdF.js                                     1.20 kB │ gzip:   0.66 kB
+dist/assets/api-CVqPGe3t.js                                           1.93 kB │ gzip:   0.98 kB
+dist/assets/event-rejoin-jr7XwO1M.js                                  2.12 kB │ gzip:   0.91 kB
+dist/assets/actions-DSSspvay.js                                       2.13 kB │ gzip:   1.02 kB
+dist/assets/follows-DsEt5kC7.js                                       2.15 kB │ gzip:   0.82 kB
+dist/assets/requests-7fYLFflt.js                                      2.25 kB │ gzip:   0.89 kB
+dist/assets/my-events-DpzAx4na.js                                     2.56 kB │ gzip:   1.39 kB
+dist/assets/DirectMessagesPage-B70vTB6g.js                            2.77 kB │ gzip:   1.32 kB
+dist/assets/validation-DH1mSUXy.js                                    3.00 kB │ gzip:   1.37 kB
+dist/assets/search-CfFYVi23.js                                        3.00 kB │ gzip:   1.44 kB
+dist/assets/SocialFollowsPage--J-z0f0Q.js                             3.02 kB │ gzip:   1.36 kB
+dist/assets/edit-DeRRyz__.js                                          3.15 kB │ gzip:   1.48 kB
+dist/assets/EventActionDialog-BgLc0hzR.js                             3.38 kB │ gzip:   1.61 kB
+dist/assets/api-DpPfbx-n.js                                           3.50 kB │ gzip:   1.34 kB
+dist/assets/InvitePage-BvCbN6jR.js                                    3.86 kB │ gzip:   1.55 kB
+dist/assets/api-D5tGuYho.js                                           4.65 kB │ gzip:   1.90 kB
+dist/assets/BlockUserAction-Bsxd9DHj.js                               4.78 kB │ gzip:   1.96 kB
+dist/assets/EventCard-DLSk3Hzu.js                                     5.48 kB │ gzip:   1.87 kB
+dist/assets/NotificationsPage-CQXvm_8x.js                             5.54 kB │ gzip:   2.23 kB
+dist/assets/EditEventPage-CpFA1Bub.js                                 5.59 kB │ gzip:   2.46 kB
+dist/assets/InterestsPage-DGEcwRgE.js                                 5.62 kB │ gzip:   2.30 kB
+dist/assets/MyEventsPage-rpY7BlIX.js                                  6.08 kB │ gzip:   2.29 kB
+dist/assets/MapPage-xQ4ht9k6.js                                       6.10 kB │ gzip:   2.67 kB
+dist/assets/event-forms-ByJgi61Z.js                                   6.19 kB │ gzip:   2.04 kB
+dist/assets/FollowRequestsPage-CbFbxFLX.js                            6.21 kB │ gzip:   2.42 kB
+dist/assets/CreateEventPage-ByVL6rh-.js                               6.56 kB │ gzip:   2.76 kB
+dist/assets/useDiscoveryFilters-CokFlfEy.js                           7.32 kB │ gzip:   2.95 kB
+dist/assets/EventChatPage-D9_6i-hi.js                                 7.50 kB │ gzip:   3.04 kB
+dist/assets/CompareEventsPage-Dm_L7EGF.js                             8.25 kB │ gzip:   2.99 kB
+dist/assets/EventRejoinRequestsPage-BL5mWqkV.js                       8.69 kB │ gzip:   3.12 kB
+dist/assets/DirectChatPage-W2iBocZE.js                                8.73 kB │ gzip:   3.22 kB
+dist/assets/SocialIdentityPage-BdoMbioF.js                            9.38 kB │ gzip:   3.29 kB
+dist/assets/HomePage-DUQ0duZ6.js                                      9.39 kB │ gzip:   3.47 kB
+dist/assets/EventAccessPage-D9KLUZd9.js                               9.65 kB │ gzip:   3.60 kB
+dist/assets/event-analytics-DhKFGGFA.js                              10.33 kB │ gzip:   3.42 kB
+dist/assets/jsx-runtime-TSwjJPAg.js                                  10.40 kB │ gzip:   4.03 kB
+dist/assets/EventAttendeesPage-81vDB2uA.js                           12.76 kB │ gzip:   3.97 kB
+dist/assets/EventGalleryPage-DAgqzmS_.js                             13.83 kB │ gzip:   4.83 kB
+dist/assets/EditProfilePage-Bm_gJIOS.js                              14.40 kB │ gzip:   4.64 kB
+dist/assets/EventAnalyticsPage-BzRuqe0A.js                           18.14 kB │ gzip:   5.90 kB
+dist/assets/EventDetailPage-CNiLGV9z.js                              18.52 kB │ gzip:   6.04 kB
+dist/assets/index-jfoPCz2T.js                                       263.43 kB │ gzip:  81.12 kB
+dist/assets/StatusMessage-C5W76xAe.js                               309.50 kB │ gzip:  86.08 kB
+dist/assets/EventMap-CzgPTROj.js                                  1,865.13 kB │ gzip: 518.63 kB
+
+✓ built in 1.00s
+
+PWA v2.0.0
+mode      generateSW
+precache  86 entries (2890.14 KiB)
+files generated
+  dist/sw.js
+  dist/workbox-9c191d2f.js

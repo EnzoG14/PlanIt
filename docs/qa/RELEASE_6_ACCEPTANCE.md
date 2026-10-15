@@ -6,6 +6,8 @@
 
 **B3 — 15/10/2026:** [implementación y pruebas por capa](r6-block-3/README.md), [adenda humana D04/D08](../implementation/RELEASE_6_BLOCK_3_DECISIONS.md). Exactitud actual con riesgo residual aceptado; no se afirma anonimato. CA01/03/04 parcialmente cubiertos SQL local/UI fixtures; CA02 pertenece a B4. HTTP JWT real e integral NOT RUN. Migración B3 1/1/1/1 tras aplicación remota autorizada; HTTP JWT real sigue NOT RUN. El bloqueo D04 en el corte B0 anterior es histórico.
 
+**B9 — 15/10/2026:** QA integral ejecutada sobre B0–B8 integrados,base120d50a. [Reporte](RELEASE_6_TEST_REPORT.md) y [24 casos/evidencias por capa](r6-block-9/summary.json). **NO-GO,0/24 aceptados integralmente**: JWT/Realtime reales bloqueados y firma humana pendiente;UI con fixtures y SQL no los sustituyen. D04 B3 vigente,con riesgo residual aceptado.
+
 ## Convenciones de QA
 
 **B7 remoto — 15/10/2026:** aplicada/verificada `20261015201034` con autorización humana posterior; marcas **1/1/1/1**, historial36/36, cuerpos/firmas/ACL/RLS y preservación de productor/historial/publicación PASS en READ ONLY. [Acta](r6-block-7/remote/summary.json). No cambia el alcance de las pruebas UI con fixtures ni convierte HTTP JWT/Realtime reales o aceptación integral en PASS. El corte local B7 siguiente es histórico.
@@ -20,32 +22,32 @@
 
 ## Matriz oficial: 24 criterios
 
-| CA | Verificación mínima propuesta | SQL | HTTP-JWT | UI | Realtime (si aplica) | Integral | Evidencia |
+| CA | Texto literal | SQL | UI fixtures | HTTP JWT | Realtime real | Integral | Evidencia |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| RF-R6-01.CA-01 | evento capacity=10 con 4 confirmed/cancelled/removed; propietario y evento archivado | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
-| RF-R6-01.CA-02 | aserción capacity=10, confirmed=4, avail=6, percent=40; sin contar organizador | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
-| RF-R6-01.CA-03 | registrar/retirar/remover/reincorporar y refrescar; reconciliar | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
-| RF-R6-01.CA-04 | actor B confirmed, C link-only, D ajeno, anon contra ruta/RPC/REST | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
-| RF-R6-02.CA-01 | propietario; demografía optativa mixta sin fuga, 0/1/5/10 participantes | PASS parcial B3 | NOT RUN | PASS fixtures B3 | NOT RUN | NOT RUN | [B3](r6-block-3/README.md) |
-| RF-R6-02.CA-02 | historial registration y rejoin dentro de ventana inicial; bins conocidos | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
-| RF-R6-02.CA-03 | NULLs, fechas límite, sexo otros, coherencia de cohortes y privacidad | PASS parcial B3 | NOT RUN | PASS fixtures B3 | NOT RUN | NOT RUN | [B3](r6-block-3/README.md) |
-| RF-R6-02.CA-04 | cohortes diminutas suprimidas, 0 datos y error versus gráfico falso | PASS parcial B3 | NOT RUN | PASS fixtures B3 | NOT RUN | NOT RUN | [B3](r6-block-3/README.md) |
-| RF-R6-03.CA-01 | presets y rango personalizado; boundaries en Argentina | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
-| RF-R6-03.CA-02 | dos rangos disjuntos producen series distintas y sólo movimientos respectivos | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
-| RF-R6-03.CA-03 | desde > hasta, rango excesivo y fecha malformada devuelven error seguro | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
-| RF-R6-03.CA-04 | cambio rápido de filtro/reorden de respuestas, evento ajeno y unlisted link-only | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
-| RF-R6-04.CA-01 | descarga propietario dos CSV distintos, asistentes y estadísticas (acuerdo A04) | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
-| RF-R6-04.CA-02 | cabeceras, encoding/quoting, filtros y cifras coinciden con RPC | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
-| RF-R6-04.CA-03 | Excel/CSV parser y ataques fórmula =,+,-,@, tabs/saltos; excluir PII | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
-| RF-R6-04.CA-04 | 0 filas/fallo chunk/timeout, revocación/permisos; no descarga de archivo parcial | PASS parcial B5 | NOT RUN | PASS fixtures B5 | NOT RUN | NOT RUN | [B5](r6-block-5/README.md) |
-| RF-R6-05.CA-01 | última inscripción confirmed bajo lock llena capacity y crea 1 notificación | PASS parcial B6 | NOT RUN | NOT RUN | NOT RUN | NOT RUN | [B6](r6-block-6/README.md) |
-| RF-R6-05.CA-02 | recipient organizador, event_id, type y target seguro, bandeja | PASS parcial B7 | NOT RUN | PASS fixtures B7 | PASS fixtures; real NOT RUN | NOT RUN | [B7](r6-block-7/README.md) |
-| RF-R6-05.CA-03 | con 1 lugar disponible no aviso; reintento/rollback y concurrencia | PASS parcial B6 | NOT RUN | NOT RUN | NOT RUN | NOT RUN | [B6](r6-block-6/README.md) |
-| RF-R6-05.CA-04 | 2 usuarios simultáneos; nadie más lee, no dup tras respuesta ambigua | PASS parcial B6+B7 | NOT RUN | PASS fixtures B7 | PASS fixtures; real NOT RUN | NOT RUN | [B7](r6-block-7/README.md) |
-| RF-R6-06.CA-01 | selector de al menos dos eventos organizados | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-06.CA-02 | dos eventos cap10/4 y cap20/15 deben mostrar 40% y 75% | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-06.CA-03 | cambiar filtro y revalidar resultados; eventos finalizados/archivados | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-06.CA-04 | mix propio+ajeno rechaza totalidad; cap0 legacy/NULL controlado; UI no NaN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
+| RF-R6-01.CA-01 | El organizador puede ver para uno de sus eventos el cupo configurado, inscripciones vigentes, lugares disponibles y porcentaje de ocupación. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-01.CA-02 | Los lugares disponibles corresponden al cupo menos las inscripciones vigentes, sin mostrar valores negativos; el porcentaje es consistente con esos datos. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-01.CA-03 | Las altas y bajas de participantes modifican los indicadores después de actualizar los datos. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-01.CA-04 | El usuario no puede consultar el panel de gestión de eventos ajenos mediante acceso directo. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-02.CA-01 | El organizador puede acceder a estadísticas de uno de sus eventos y visualizar distribuciones de asistentes por edad y sexo cuando existan datos autorizados. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-02.CA-02 | El panel permite consultar la evolución de nuevas inscripciones dentro de una ventana inicial definida, de forma coherente con los registros del evento. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-02.CA-03 | Las cantidades y agrupaciones son consistentes con el conjunto de asistentes considerado; se especifica cuándo faltan datos para algún grupo. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-02.CA-04 | Si no hay suficientes datos se muestran indicadores vacíos o informativos, sin gráficos con valores inventados. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-03.CA-01 | El organizador puede elegir entre períodos disponibles o un intervalo válido de análisis para su evento. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-03.CA-02 | Al cambiar el período, se recalculan y actualizan los indicadores temporales utilizando sólo datos comprendidos en el intervalo seleccionado. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-03.CA-03 | El sistema rechaza fechas de inicio posteriores a la fecha final y presenta un mensaje claro. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-03.CA-04 | Los resultados de un período distinto no permanecen visibles como si correspondieran al nuevo filtro, y la consulta sólo considera eventos autorizados. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-04.CA-01 | El organizador puede solicitar un archivo CSV de asistentes y estadísticas de uno de sus eventos. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-04.CA-02 | El archivo generado contiene encabezados identificables y valores consistentes con los datos autorizados y los filtros aplicados. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-04.CA-03 | El archivo puede abrirse con herramientas de lectura CSV y no incluye información privada que el organizador no tenga autorización para exportar. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-04.CA-04 | Si no existen datos o la exportación falla, el sistema lo informa y no presenta una exportación incompleta como exitosa. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-05.CA-01 | Cuando un evento alcanza su cupo máximo mediante una inscripción confirmada, se registra un aviso dirigido al organizador. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-05.CA-02 | El aviso identifica el evento que alcanzó su capacidad y está disponible en la bandeja de notificaciones de la cuenta correspondiente. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-05.CA-03 | No se genera un aviso de cupo completo mientras queden lugares disponibles. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-05.CA-04 | El evento no genera avisos duplicados por reintentos del mismo cambio de estado y otras cuentas no pueden consultar el aviso privado. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-06.CA-01 | El organizador puede seleccionar al menos dos eventos de su autoría para incluirlos en una comparación. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-06.CA-02 | La comparación muestra, para cada evento seleccionado, la cantidad de inscriptos y el porcentaje de ocupación utilizando el mismo criterio de cálculo. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-06.CA-03 | Al cambiar los eventos seleccionados, la vista se actualiza y permite identificar las diferencias entre sus valores. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
+| RF-R6-06.CA-04 | No se permite incluir eventos ajenos ni presentar un porcentaje inválido cuando un evento no tiene un cupo utilizable; se informa esa situación. | PASS parcial | PASS parcial | BLOCKED | BLOCKED | NOT RUN | [casos y evidencia](r6-block-9/summary.json) |
 
 ### Fuente oficial íntegra para la revisión
 

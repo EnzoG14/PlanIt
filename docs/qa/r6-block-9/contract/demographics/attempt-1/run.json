@@ -1,0 +1,15 @@
+{
+  "name": "demographics",
+  "stage": "contract",
+  "attempt": 1,
+  "script": "scripts/check-r6-demographics-contract.mjs",
+  "command": "node scripts/check-r6-demographics-contract.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:52:15.971Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "1b483f1f5c511d0a679b1c21e8c6443adb4b1542056fa3a66d5eeaad0a99faa0",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/contract/demographics/attempt-1",
+  "finished_at": "2026-10-15T22:52:16.227Z"
+}

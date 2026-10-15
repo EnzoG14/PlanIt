@@ -1,0 +1,15 @@
+{
+  "name": "csv",
+  "stage": "contract",
+  "attempt": 1,
+  "script": "scripts/check-r6-csv-contract.mjs",
+  "command": "node scripts/check-r6-csv-contract.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:52:16.437Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "52216ddd8775fe763e44c1f819f7ab58bfba1dc366043063b9d6319e05bbfd37",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/contract/csv/attempt-1",
+  "finished_at": "2026-10-15T22:52:18.810Z"
+}

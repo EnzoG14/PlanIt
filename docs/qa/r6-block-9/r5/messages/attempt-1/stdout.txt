@@ -1,0 +1,27 @@
+PASS: A/B/C/D/anon: own profiles only; PATCH visibility/avatar and forged writes denied; DEFINER ACL/search_path audited
+PASS: 72 profile audience combinations: public/private × none/pending/accepted/rejected × bilateral block × three viewers
+PASS: Follow/resolve/unfollow: idempotent active request, rejected renewal, stale generation denied, accepted revocation
+PASS: Requests/follows/counts: own pending only; private audience gate; keyset pages; bilateral viewer filtering before count/pagination
+PASS: D04 0/1/N, repeat, public→private retains accepted; rejected unchanged; injected failure and invalid username roll back
+PASS: DM canonical pair, sender/body/UUID retry, bilateral block cleans follows, historical read, own unblock only, no restoration
+PASS: DM pagination uses server timestamp + UUID, disjoint pages and bounded cursor validation
+PASS: B8: 36 equal-timestamp messages page30+6,exact payload,ID reconciliation,forged sender/anon denied,Unicode trim
+PASS: R3/R4: grant-only denied social participants; public-only social events; C01 neutral admin identities; C02 event access intact; group chat unchanged; revoked/removed denied
+PASS: Avatar SQL: immutable private bucket, owner/purpose/metadata, no third-party direct signing, bilateral signing gate, failed replace retains previous reference
+PASS: Notification target never constructs an event URL for a direct conversation; no new DM notification producer
+PASS: Concurrency: privacy wins vs follow; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: follow wins vs privacy; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: block wins vs privacy; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: privacy wins vs block; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: block wins vs send; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: send wins vs block; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: block wins vs follow; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: A→C and C→A create same DM; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: privacy vs third-party follow; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: same actor simultaneous private→public; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: opposite block directions; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: avatar registration wins vs deletion; observed PostgreSQL lock wait, completed without deadlock
+PASS: Concurrency: avatar deletion wins vs registration; observed PostgreSQL lock wait, completed without deadlock
+PASS: Frozen snapshots rejected; concurrent mutations leave no residual pending requests
+PASS: Canonical/no-self checks and required FK/cursor indexes; local EXPLAIN recorded
+

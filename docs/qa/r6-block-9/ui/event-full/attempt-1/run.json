@@ -1,0 +1,15 @@
+{
+  "name": "event-full",
+  "stage": "ui",
+  "attempt": 1,
+  "script": "scripts/check-r6-event-full-ui.mjs",
+  "command": "node scripts/check-r6-event-full-ui.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:57:09.661Z",
+  "environment": "Compiled React app, synthetic Auth/REST/WebSocket fixtures; no real JWT/Realtime",
+  "source_sha256": "bd9cdce6d0618e4ba0894a42926969656e65a4defa83a9a479b1332cda17de53",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/ui/event-full/attempt-1",
+  "finished_at": "2026-10-15T22:57:19.287Z"
+}

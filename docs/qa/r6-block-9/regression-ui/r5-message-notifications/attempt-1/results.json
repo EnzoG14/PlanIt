@@ -1,0 +1,17 @@
+{
+  "environment": "Actual Vite build + SDK; fixture Auth/REST/Phoenix WebSocket; not real JWT/RLS/Realtime",
+  "results": [
+    {
+      "width": 390,
+      "result": "PASS",
+      "test": "Send DM→recipient notification WebSocket+badge;sender excluded;generic safe content;dedup;mark read;Ver mensaje opens blocked historical DM;unsafe target rejected"
+    },
+    {
+      "width": 1280,
+      "result": "PASS",
+      "test": "Send DM→recipient notification WebSocket+badge;sender excluded;generic safe content;dedup;mark read;Ver mensaje opens blocked historical DM;unsafe target rejected"
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}
