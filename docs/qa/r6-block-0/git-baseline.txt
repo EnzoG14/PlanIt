@@ -1,0 +1,15 @@
+ad9327f Merge pull request #62 from EnzoG14/docs/r6-planificacion-y-prompts
+66e24d8 Merge pull request #61 from EnzoG14/codex/r5-block-10-human-acceptance
+47dfb8f Merge pull request #60 from EnzoG14/codex/r5-block-10
+f66d70b Merge pull request #59 from EnzoG14/codex/r5-block-9
+65b46ab Merge pull request #58 from EnzoG14/codex/r5-block-8
+0116fd3 Merge pull request #57 from EnzoG14/codex/r5-block-7
+cbb0547 Merge pull request #56 from EnzoG14/codex/r5-block-6
+54b4749 Merge pull request #55 from EnzoG14/codex/r5-block-5
+24c24ce Merge pull request #54 from EnzoG14/codex/r5-block-4
+286d38e Merge pull request #53 from EnzoG14/codex/r5-block-3
+4ef0b34 Merge pull request #52 from EnzoG14/codex/r5-block-2
+1bcef5a Merge pull request #51 from EnzoG14/codex/r5-block-1
+da4379f Merge pull request #50 from EnzoG14/codex/r5-block-0
+1b77b37 Merge pull request #49 from EnzoG14/docs/r5-plan-prompts-v1-1
+aaa100d Merge pull request #48 from EnzoG14/codex/r4-block-9

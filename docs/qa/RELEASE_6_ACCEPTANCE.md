@@ -2,6 +2,8 @@
 
 **Fuente literal:** `../requirements/RELEASE_6_REQUIREMENTS.md`, 24 CA. **Versión:** 0.1, 14/10/2026. **TODOS los CA: NOT RUN**. Ni documentación, ni auditoría, ni test unitario aislado otorgan aceptación integral.
 
+**B0 — 15/10/2026:** auditoría documental/catálogo entregada, sin ejecución funcional R6. [24 CA literales y traza a contratos](r6-block-0/traceability.json), [resultados baseline](r6-block-0/audit.json), [límites y pendientes](r6-block-0/README.md). Se mantienen **0/24 aceptados** y todas las capas de esta matriz NOT RUN. Riesgo D04 anti-diferencias bloquea B3/B5; revisión/firma humana B0 y aprobación de B1 pendientes.
+
 ## Convenciones de QA
 
 `PASS` únicamente con aserciones y evidencia efectivamente ejecutadas en una capa; `FAIL` fallo comprobado; `BLOCKED` dependencia/permiso impide ejecución; `NOT RUN` no ejecutado. Registrar por separado capas `SQL-local`, `HTTP-JWT-real`, `UI-browser`, `Realtime/PWA` (cuando aplique) y `Aceptación-integral`. `PASS SQL-local` no convierte automáticamente la última columna a `PASS`. Fixture: A organizador, B confirmado, C cancelado/removido o link-only, D otro organizador, anon; entre 0 y 1.000 participaciones sintéticas. Los datos reales privados nunca se guardan en reportes.

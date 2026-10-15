@@ -1,0 +1,17 @@
+{
+  "base": "ad9327fff5aca65e6b676a56f1e1e93737102f32",
+  "implementation_head": "dcc7687db7917c15b36ae071472bcddf98baef0d",
+  "branch": "codex/r6-block-0",
+  "pull_request": "https://github.com/EnzoG14/PlanIt/pull/63",
+  "draft": true,
+  "functional_changes": false,
+  "new_migrations": {"created": 0, "local_tested": 0, "remote_applied": 0, "remote_verified": 0},
+  "baseline_checks": 18,
+  "build_exit": 0,
+  "lint_exit": 0,
+  "lint_warnings": 18,
+  "accepted_criteria": 0,
+  "human_signature": "PENDING",
+  "block_1_authorized": false,
+  "note": "The final tracking commit contains only delivery references and whitespace-normalized build log. Its own SHA is available in Git/PR rather than self-referencing this file."
+}

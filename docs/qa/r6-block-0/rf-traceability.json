@@ -1,0 +1,68 @@
+[
+  {
+    "id": "RF-R6-01",
+    "title": "Consultar ocupación y lugares disponibles",
+    "description": "El sistema permitirá al organizador visualizar el cupo total, la cantidad de inscriptos, los lugares disponibles y el porcentaje de ocupación de sus eventos, a partir de las inscripciones vigentes.",
+    "contract": [
+      "get_my_event_occupancy",
+      "B1/B2",
+      "events + confirmed participations; owner guard; refresh"
+    ],
+    "acceptance": "NOT RUN"
+  },
+  {
+    "id": "RF-R6-02",
+    "title": "Consultar métricas básicas de asistencia",
+    "description": "El sistema permitirá al organizador consultar estadísticas de asistentes de sus eventos, incluyendo distribuciones por edad y sexo y tendencias de nuevas inscripciones dentro de una ventana inicial.",
+    "contract": [
+      "get_my_event_demographics + get_my_event_participation_series",
+      "B3/B4",
+      "profiles aggregate + history; D04 privacy gate"
+    ],
+    "acceptance": "NOT RUN"
+  },
+  {
+    "id": "RF-R6-03",
+    "title": "Analizar asistencia por período",
+    "description": "El sistema permitirá al organizador cambiar el período de análisis y consultar la evolución de las inscripciones o asistencias de sus eventos en el intervalo elegido.",
+    "contract": [
+      "get_my_event_participation_series",
+      "B4",
+      "history [from,to); context invalidation"
+    ],
+    "acceptance": "NOT RUN"
+  },
+  {
+    "id": "RF-R6-04",
+    "title": "Exportar reportes en CSV",
+    "description": "El sistema permitirá al organizador exportar en formato CSV los datos de asistentes y estadísticas autorizadas de sus eventos para su análisis externo.",
+    "contract": [
+      "get_my_event_export_rows + series",
+      "B5",
+      "authorized snapshot + sanitized CSV; all-or-nothing"
+    ],
+    "acceptance": "NOT RUN"
+  },
+  {
+    "id": "RF-R6-05",
+    "title": "Recibir aviso cuando un evento complete su cupo",
+    "description": "El sistema permitirá al organizador recibir un aviso dentro de la aplicación cuando un evento de su autoría alcance la capacidad máxima configurada.",
+    "contract": [
+      "record_participation_history producer + notifications",
+      "B6/B7",
+      "event lock + unique transition + recipient RLS"
+    ],
+    "acceptance": "NOT RUN"
+  },
+  {
+    "id": "RF-R6-06",
+    "title": "Comparar desempeño entre eventos organizados",
+    "description": "El sistema permitirá al organizador seleccionar dos o más eventos de su autoría y comparar en una misma vista la cantidad de inscriptos y el porcentaje de ocupación de cada uno, para identificar diferencias de desempeño.",
+    "contract": [
+      "compare_my_event_occupancy",
+      "B8",
+      "all IDs owned; same occupancy expression"
+    ],
+    "acceptance": "NOT RUN"
+  }
+]
