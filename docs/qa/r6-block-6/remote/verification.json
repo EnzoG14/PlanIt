@@ -1,0 +1,38 @@
+[
+  {
+    "verification": {
+      "anon_execute": false,
+      "public_execute": false,
+      "server_version": "17.11",
+      "migration_count": 35,
+      "trigger_enabled": true,
+      "body_matches_git": true,
+      "notification_rls": true,
+      "security_invoker": true,
+      "search_path_empty": true,
+      "migration_recorded": true,
+      "trigger_definition": "CREATE TRIGGER participations_notify_event_full AFTER INSERT OR UPDATE OF status ON public.event_participations FOR EACH ROW EXECUTE FUNCTION planit_private.notify_event_full()",
+      "client_notice_insert": false,
+      "authenticated_execute": false,
+      "notification_policies": [
+        {
+          "cmd": "UPDATE",
+          "name": "notifications_mark_own",
+          "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+          "with_check": "(recipient_id = ( SELECT auth.uid() AS uid))"
+        },
+        {
+          "cmd": "SELECT",
+          "name": "notifications_read_own",
+          "qual": "(recipient_id = ( SELECT auth.uid() AS uid))",
+          "with_check": null
+        }
+      ],
+      "history_trigger_preserved": true,
+      "public_tables_without_rls": 0,
+      "authenticated_producer_call": "DENIED 42501 in read-only transaction",
+      "client_participation_insert": false,
+      "client_participation_update": false
+    }
+  }
+]

@@ -4,7 +4,7 @@
 
 ## Contrato e invariantes
 
-- Migración `20261015185020_r6_event_full_notifications.sql`, generada con `supabase migration new`. **Creada 1 / probada local 1 / aplicada remota autorizada 0 / verificada remota 0**. No se ejecutó SQL remoto, deploy ni merge.
+- Migración `20261015185020_r6_event_full_notifications.sql`, generada con `supabase migration new`. **Creada 1 / probada local 1 / aplicada remota autorizada 1 / verificada remota 1** tras autorización humana posterior. [Acta remota](remote/summary.json). Sin deploy ni merge.
 - Nueva función `planit_private.notify_event_full() → trigger`, VOLATILE, SECURITY INVOKER, `search_path=''`; EXECUTE revocado a PUBLIC/anon/authenticated. No nueva RPC ni cambios de firmas/ACL de las RPC existentes.
 - Trigger `participations_notify_event_full`, AFTER INSERT OR UPDATE OF status sobre `event_participations`. Omite estados distintos de confirmed y UPDATE confirmed→confirmed. No modifica el trigger de historial.
 - `register_for_event` y `resolve_rejoin` autorizan en servidor, rechazan snapshots congelados, bloquean evento antes de participación y confirman una sola fila por llamada. El productor vuelve a tomar el lock ya poseído y consulta el conteo derivado, excluyendo organizador. Sólo notifica si la confirmación completa exactamente capacity y el evento no está cerrado.
@@ -52,4 +52,6 @@ Incidencias de ejecución: primer intento sandbox denegó TCP local; se repitió
 
 Inventario: una migración, dos scripts de verificación, dos comandos npm, esta evidencia, plan/estado y matriz de aceptación R6. Diseño Amanecer, fuentes normativas de RF/CA y migraciones históricas sin cambios. `.env.local` de la copia local de main se conservó en el mismo checkout, ignorado y sin versionar.
 
-Riesgos pendientes: aplicación y verificación remotas expresamente autorizadas, pruebas JWT/Realtime reales, revisión humana y aceptación integral. B7 requiere instrucción humana independiente. Commit funcional `3932449`; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69). El commit documental posterior sólo enlaza la entrega; HEAD final se consulta en Git/PR para evitar una referencia circular dentro del propio commit.
+Aplicación remota posterior: por solicitud humana se aplicó únicamente B6 en planit-v2, sin seeds/roles/Vault. Historial35/35 y dry-run vacío. PostgreSQL17.11: cuerpo coincidente, trigger activo, historial conservado, INVOKER/search_path/ACL, RLS recipient-only y rechazo42501 de llamada directa authenticated verificados en READ ONLY/ROLLBACK. Sin escrituras de fixtures ni avisos de prueba. Asesores sin nuevos hallazgos:50 WARN y1 INFO previos. [Evidencia](remote/summary.json).
+
+Pendientes: pruebas JWT/Realtime reales, revisión humana y aceptación integral. B7 requiere instrucción humana independiente. Commit funcional `3932449`; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69). Los commits documentales posteriores enlazan la entrega y registran la aplicación remota; HEAD final se consulta en Git/PR para evitar una referencia circular dentro del propio commit.

@@ -1,5 +1,7 @@
 # PlanIt — Plan técnico de implementación Release 6 · Gestión avanzada y analítica
 
+**Aplicación remota B6 autorizada — 15/10/2026:** migración `20261015185020` aplicada y verificada en planit-v2; marcas **1/1/1/1**, historial35/35 y dry-run sin pendientes. [Acta](../qa/r6-block-6/remote/summary.json). Actualiza el corte local de la entrega inferior; no implica QA JWT/Realtime ni aceptación integral, merge, deploy o autorización B7.
+
 **Entrega B6 — 15/10/2026:** [productor transaccional y evidencia](../qa/r6-block-6/README.md), D07 aplicada sin tabla de control ni contador redundante. Sólo servidor RF-R6-05 CA01/03/04; `event_full` privado y atómico con la confirmación. Migración creada/probada local, sin aplicación remota. Estado **Implementado; QA pendiente**. No adelanta bandeja/Realtime B7 ni autoriza el siguiente bloque.
 
 **Adenda B5 — 15/10/2026:** [D05/D06 y snapshot único aprobados](RELEASE_6_BLOCK_5_DECISIONS.md). CSV de asistentes actuales y movimientos filtrados B4, sin demografía; límite5.000/10MiB/15s, sin archivos parciales. Esta decisión reemplaza paginación del prompt B5. [Implementación y evidencia](../qa/r6-block-5/README.md): Implementado; QA pendiente, migración sólo local. No autoriza B6, SQL remoto, merge ni deploy.

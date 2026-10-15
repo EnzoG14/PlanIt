@@ -8,6 +8,8 @@
 
 ## Convenciones de QA
 
+**B6 remoto — 15/10/2026:** migración aplicada/verificada con autorización humana, marcas1/1/1/1; cuerpo, trigger, ACL/RLS y rechazo de ejecución directa comprobados en READ ONLY. [Acta](r6-block-6/remote/summary.json). No se elevan HTTP JWT, UI/Realtime ni aceptación integral desde esta verificación de catálogo.
+
 **B4 — 15/10/2026:** [D03 aprobada](../implementation/RELEASE_6_BLOCK_4_DECISIONS.md); [RPC, selector y evidencia](r6-block-4/README.md). Cinco CA parcialmente cubiertos por SQL local y UI con fixtures. Migración1/1/1/1 tras aplicación remota autorizada y verificación; HTTP JWT real e integral NOT RUN, sin avance a B5.
 
 `PASS` únicamente con aserciones y evidencia efectivamente ejecutadas en una capa; `FAIL` fallo comprobado; `BLOCKED` dependencia/permiso impide ejecución; `NOT RUN` no ejecutado. Registrar por separado capas `SQL-local`, `HTTP-JWT-real`, `UI-browser`, `Realtime/PWA` (cuando aplique) y `Aceptación-integral`. `PASS SQL-local` no convierte automáticamente la última columna a `PASS`. Fixture: A organizador, B confirmado, C cancelado/removido o link-only, D otro organizador, anon; entre 0 y 1.000 participaciones sintéticas. Los datos reales privados nunca se guardan en reportes.

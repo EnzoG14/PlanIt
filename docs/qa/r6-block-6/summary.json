@@ -9,8 +9,8 @@
     "version": "20261015185020",
     "created": 1,
     "tested_local": 1,
-    "applied_remote_authorized": 0,
-    "verified_remote": 0,
+    "applied_remote_authorized": 1,
+    "verified_remote": 1,
     "sha256_lf": "6e7cab6d9747c214475518e318605e03eff1c22c1c3b857fb8649dc36feb598b"
   },
   "sql_local": {
@@ -53,5 +53,6 @@
     "notification recipient-only RLS"
   ],
   "environment_file": "Existing main-local .env.local preserved in same checkout, ignored and unversioned",
-  "next_gate": "Human review; remote migration needs separate authorization; do not start B7"
+  "next_gate": "Human review and real JWT/Realtime QA; do not start B7",
+  "remote_evidence": "remote/summary.json"
 }
