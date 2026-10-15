@@ -1,0 +1,28 @@
+{
+  "date_argentina": "2026-10-15",
+  "pull_request": 70,
+  "pr_head_before": "ec4c1481675115e6dfe2c863fe4976c353ceb0dd",
+  "main_integrated": "d291d76075b2ffc3836fa14053fbb2006e0ce182",
+  "integrated_pr": 71,
+  "method": "Merge origin/main into B7 in isolated managed worktree; no history rewrite",
+  "conflicted_files": [
+    "docs/implementation/RELEASE_6_STATUS.md"
+  ],
+  "resolution": "Preserve B7 and B8 rows, bitacoras and migration marks; global delivered blocks B0-B8; B7 PR remains draft",
+  "validation": {
+    "build": "PASS; existing large chunk warning",
+    "lint": "PASS; existing warnings",
+    "compare_contract": "PASS",
+    "reconciliation_simulated": "PASS",
+    "b7_ui_fixtures": {
+      "result": "PASS",
+      "groups": 14,
+      "errors": []
+    },
+    "unresolved_paths": 0
+  },
+  "source_changes_for_resolution": false,
+  "remote_db_changes": false,
+  "pr_merged": false,
+  "original_checkout": "D:/planit left on codex/r6-block-8 with its existing uncommitted changes preserved"
+}

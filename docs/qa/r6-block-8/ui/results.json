@@ -1,0 +1,312 @@
+{
+  "result": "PASS",
+  "environment": "Actual Vite build in Edge headless; synthetic Auth/RPC fixtures, not real JWT/RLS",
+  "results": [
+    {
+      "width": 320,
+      "test": "0 and 1 selected block the comparison with an accessible message",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Filter change keeps the selection; archived event is selectable and shows its state",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Hostile title rendered as text only",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Maximum of 10 enforced in the UI; further options disabled",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Rapid selection change: late response for the old selection is ignored",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Error is neutral, hides stale rows, and Retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "200 % text without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "0 and 1 selected block the comparison with an accessible message",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Filter change keeps the selection; archived event is selectable and shows its state",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Hostile title rendered as text only",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Maximum of 10 enforced in the UI; further options disabled",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Rapid selection change: late response for the old selection is ignored",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Error is neutral, hides stale rows, and Retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "200 % text without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "0 and 1 selected block the comparison with an accessible message",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Filter change keeps the selection; archived event is selectable and shows its state",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Hostile title rendered as text only",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Maximum of 10 enforced in the UI; further options disabled",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Rapid selection change: late response for the old selection is ignored",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Error is neutral, hides stale rows, and Retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "200 % text without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Secondary entry from Mis eventos; still four dock destinations",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "0 and 1 selected block the comparison with an accessible message",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Filter change keeps the selection; archived event is selectable and shows its state",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Hostile title rendered as text only",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Maximum of 10 enforced in the UI; further options disabled",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Rapid selection change: late response for the old selection is ignored",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Error is neutral, hides stale rows, and Retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "200 % text without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "0 and 1 selected block the comparison with an accessible message",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Filter change keeps the selection; archived event is selectable and shows its state",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Hostile title rendered as text only",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Maximum of 10 enforced in the UI; further options disabled",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Rapid selection change: late response for the old selection is ignored",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Error is neutral, hides stale rows, and Retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "200 % text without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "0 and 1 selected block the comparison with an accessible message",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Filter change keeps the selection; archived event is selectable and shows its state",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Hostile title rendered as text only",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Maximum of 10 enforced in the UI; further options disabled",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Rapid selection change: late response for the old selection is ignored",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Error is neutral, hides stale rows, and Retry recovers",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "200 % text without page overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Anonymous direct route requires login",
+      "result": "PASS"
+    }
+  ],
+  "errors": []
+}

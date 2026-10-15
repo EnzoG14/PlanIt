@@ -1,6 +1,6 @@
 # PlanIt — R6 seguimiento de ejecución
 
-**Estado global:** **B7 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **8 (B0–B7)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B6 integrados en main; B7 añade bandeja `event_full`, nombre actual autorizado y navegación segura sobre la conciliación existente. Migraciones B6 y B7 **1/1/1/1**, aplicadas y verificadas remotamente por autorizaciones posteriores. [Evidencia B7](../qa/r6-block-7/README.md). B8 no iniciado; sin merge ni deploy B7. Cortes anteriores históricos.
+**Estado global:** **B7 y B8 Implementados; QA pendiente** (15/10/2026). Bloques con entrega: **9 (B0–B8)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B6 y B8 integrados en main; B7 permanece en [PR #70 draft](https://github.com/EnzoG14/PlanIt/pull/70). Esta rama incorpora main tras el merge de B8 (PR #71), conservando ambos bloques y sus evidencias. Migraciones B6 y B7 **1/1/1/1**; B8 conserva su corte publicado **1/1/0/0**. [Evidencia B7](../qa/r6-block-7/README.md) y [B8](../qa/r6-block-8/README.md). B9 no iniciado; sin merge de PR #70 ni deploy. Cortes anteriores históricos.
 
 **Baseline B7:** `main`/`origin/main` `9311c0142e4c945656e8aa0fe9c89c1a37b4135b`, fetch y PR #69 MERGED comprobados. Rama `codex/r6-block-7`; pedido humano autoriza sólo B7 y decide nombre actual, sin snapshot. `.env.local` de main conservado en el mismo checkout e ignorado.
 
@@ -16,12 +16,14 @@
 | 5 | CSV seguros | Implementado; QA pendiente | codex/r6-block-5; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68) | edaa0c5 | 1/1/1/1 | RF-R6-04 CA01–04 parcial SQL/contrato/UI fixtures; HTTP/Excel/dispositivos NOT RUN | NO |
 | 6 | Trigger aviso lleno | Implementado; QA pendiente | codex/r6-block-6; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69) | 9ba2f68 | 1/1/1/1 | RF-R6-05 CA01/03/04 parcial SQL local; HTTP/Realtime NOT RUN | NO |
 | 7 | Bandeja aviso | Implementado; QA pendiente | codex/r6-block-7; [PR #70 draft](https://github.com/EnzoG14/PlanIt/pull/70) | 9311c01 | 1/1/1/1 | RF-R6-05 CA02/04 parcial SQL/UI fixtures; catálogo remoto PASS; HTTP/Realtime real NOT RUN | NO |
-| 8 | Comparación | NO INICIADO | — | — | 0/0/0/0 | RF-R6-06 | NO |
+| 8 | Comparación | Implementado; QA pendiente | codex/r6-block-8; [PR #71 MERGED](https://github.com/EnzoG14/PlanIt/pull/71) | 9311c01 | 1/1/0/0 | RF-R6-06 CA01–04 parcial SQL local/UI fixtures; HTTP JWT real NOT RUN | NO |
 | 9 | QA integral | NO INICIADO | — | — | 0/0/0/0 | 24 CA y regresión | NO |
 
 ## Plantilla de bitácora por bloque
 
 ### B7 — 15/10/2026, Codex
+
+**Sincronización con main posterior:** resueltos los conflictos de PR #70 incorporando `origin/main` `d291d76075b2ffc3836fa14053fbb2006e0ce182` (B8/PR #71 ya MERGED) en un worktree aislado. Se conservan filas, bitácoras y evidencias de ambos bloques; cambios locales de B8 en el checkout original intactos. Build/lint, contrato de comparación, conciliación y 14 grupos UI B7 PASS. [Acta de resolución](../qa/r6-block-7/merge-resolution.json). Sin SQL remoto, deploy ni merge de PR #70.
 
 **Aplicación remota autorizada posterior:** por pedido humano «Aplicá la migración remotapor favor», aplicada únicamente `20261015201034_r6_event_full_inbox.sql` en planit-v2. Dry-run previo una pendiente y posterior ninguna, historial36/36 sincronizado. Marcas **1 creada / 1 probada local / 1 aplicada remota autorizada / 1 verificada remota**. PostgreSQL17.11: tres cuerpos iguales a Git normalizando CRLF, firmas/INVOCADOR/STABLE/search_path/ACL y RLS comprobados en READ ONLY/ROLLBACK; anon y authenticated sin UID rechazados según contrato. Productor B6, triggers y publicación preservados. Asesores sin cambios:50 WARN y1 INFO previos; sin fixtures remotos, merge, deploy ni B8. [Acta](../qa/r6-block-7/remote/summary.json). HTTP JWT/Realtime reales e integral siguen NOT RUN; los cortes inferiores conservan la fotografía de entrega local.
 
@@ -58,6 +60,13 @@
 - Riesgos abiertos, autorización humana para avanzar, estado del PR y decisión GO/NO-GO.
 
 **No cambiar «Implementado; QA pendiente» a «Validado» sin pruebas completas y aprobación humana expresa.**
+
+### B8 — 15/10/2026, Codex
+
+- Base limpia `9311c0142e4c945656e8aa0fe9c89c1a37b4135b` (`origin/main`, tras fetch; PR #69 MERGED). Rama nueva `codex/r6-block-8` desde main; B7 (#70) no integrada y no requerida. `.env.local` de main conservado e ignorado. Pedido humano autoriza sólo B8; D09/D10 y A01–A07 conservados.
+- RPC `get_my_events_occupancy(uuid[])→jsonb`, STABLE DEFINER, `search_path=''`, EXECUTE authenticated; 2–10 IDs únicos, ownership de todos antes de agregar (mezcla rechaza todo con un único error), misma fórmula/estado que B1, capacidad inválida → N/D. Sin tablas/triggers/políticas/índices/grants de lectura.
+- Ruta `/my-events/compare` bajo auth con acceso secundario desde Mis eventos (sin dock nuevo): selector con filtros que conservan la selección, tabla/tarjetas accesibles, anti-carrera por clave de selección + abort + timeout, estados loading/empty/invalid/error/retry. DESIGN.md intacto.
+- Migración `20261015210000`: **1 creada / 1 probada local / 0 aplicada remota / 0 verificada remota**. SQL PostgreSQL17.5, contrato y UI (seis anchos) PASS; HTTP JWT real/Realtime/dispositivos NOT RUN. Dos fallos de regresión preexistentes documentados. [Evidencia](../qa/r6-block-8/README.md). Sin DDL remoto, merge, deploy ni B9. Cierre: commit funcional `8c930ed`; [PR #71 draft](https://github.com/EnzoG14/PlanIt/pull/71); HEAD final en Git/PR.
 
 ### B6 — 15/10/2026, Codex
 
