@@ -7,7 +7,7 @@
 - Base tras `git fetch origin`: `edaa0c5bc8785dad371736be8e16d693966fb4cf`; `main` local coincidía y estaba limpio. Merges B0–B4 #63–#67 y GO humano R5 #61 comprobados en Git; los NOT RUN previos no cambian.
 - Rama `codex/r6-block-5` creada desde `origin/main` en el mismo checkout de main. `.env.local` de main permanece intacto e ignorado; no necesitó traslado entre directorios, no se imprimió ni versionó. El CLI actualizó su aviso de versión; ese cambio ajeno al bloque fue revertido.
 - [Adenda aprobada D05/D06](../../implementation/RELEASE_6_BLOCK_5_DECISIONS.md): el responsable eligió snapshot único sobre paginación. 5.000 filas/10 MiB/15 s, sin archivo para ausencia de datos. D04 B3 conservada; no demografía en CSV.
-- Commit funcional y PR se vinculan al cerrar. El HEAD definitivo es el de la rama/PR, incluyendo el commit documental de enlace.
+- Commit funcional `c574440b133c24e52fff98df225eb4c892146f42`; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68). El HEAD definitivo es el de la rama/PR, incluyendo el commit documental de enlace.
 
 ## Cambio e inventario
 
