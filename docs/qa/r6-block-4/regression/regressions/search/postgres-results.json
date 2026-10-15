@@ -1,0 +1,98 @@
+{
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "environment": "Local PostgreSQL; test Auth/Storage scaffolding only, no real Supabase Auth/REST/JWT",
+  "results": [
+    {
+      "test": "Replay migrations; search_public_events is SECURITY INVOKER with empty search_path",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-01.01/02: title and description match, case-insensitive, repeated with different text",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-01.03/04: non-matching events are not returned; no-match query is an empty list, not an error",
+      "result": "PASS"
+    },
+    {
+      "test": "Wildcards %, _ and \\ are literal; injection text is inert",
+      "result": "PASS"
+    },
+    {
+      "test": "Blank/null query is neutral, trimmed, and length is bounded in SQL",
+      "result": "PASS"
+    },
+    {
+      "test": "Universe: public, not cancelled/archived/finished; unlisted never returned; in-progress included",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-02.01: one or several categories (OR)",
+      "result": "PASS"
+    },
+    {
+      "test": "Inactive categories are ignored; [] and null are neutral (CA R4-02.03: removing a selection restores results)",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-02.02/04: text AND categories AND bounds; empty intersection is an empty list",
+      "result": "PASS"
+    },
+    {
+      "test": "A/B authenticated users see the same public result; anonymous is denied",
+      "result": "PASS"
+    },
+    {
+      "test": "Keyset cursor is stable with no duplicates; invalid cursor/bounds are rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-03.01: a single day is complete [00:00, next 00:00) in Argentina; a midnight-crossing event counts on its start day",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-03.01/02: inclusive range by starts_at only; an event that started before the range is excluded even if it ends inside",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-03.02: events outside the period are not returned (empty list, not an error)",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-03.03: inverted range, \"to\" without \"from\" and absurd years are rejected in SQL",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-03.04: clearing the dates restores other days and keeps the remaining criteria (text)",
+      "result": "PASS"
+    },
+    {
+      "test": "Day boundaries do not depend on the session/browser time zone (Tokyo session returns the same Argentina day)",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-04.01/02: 5 vs 25 vs 100 km return progressively larger sets; points just inside/outside 25 km are classified correctly",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-04.03 / R4-02.02: radius AND category AND dates AND bounds AND text; empty intersection is an empty list",
+      "result": "PASS"
+    },
+    {
+      "test": "CA R4-04.04: zero, negative, NaN, huge, partial and out-of-range origin/radius are rejected in SQL (never silently ignored)",
+      "result": "PASS"
+    },
+    {
+      "test": "Radius crosses the antimeridian in both directions",
+      "result": "PASS"
+    },
+    {
+      "test": "Radius near the pole falls back to latitude + Haversine (no division by zero)",
+      "result": "PASS"
+    },
+    {
+      "test": "Hidden/cancelled/archived/finished events never appear with date and radius filters",
+      "result": "PASS"
+    }
+  ]
+}

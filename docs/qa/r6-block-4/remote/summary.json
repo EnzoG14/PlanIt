@@ -1,0 +1,31 @@
+{
+  "project": "planit-v2",
+  "ref": "iepeqmvzjguwlhnecsdq",
+  "authorized_by": "User: hace las migraciones a la base remota",
+  "applied": [
+    "20261015162953"
+  ],
+  "migration_count": 33,
+  "body_matches_git": true,
+  "acl_stable_search_path_rls": "PASS",
+  "missing_uid_null_event_denial": "PASS",
+  "dry_run_after": "up to date",
+  "security_advisors_before": {
+    "WARN": 48
+  },
+  "security_advisors_after": {
+    "WARN": 49
+  },
+  "new_warnings": [
+    {
+      "name": "authenticated_security_definer_function_executable",
+      "level": "WARN",
+      "function": "get_my_event_participation_series",
+      "detail": "Function `public.get_my_event_participation_series(p_event_id uuid, p_from timestamp without time zone, p_to timestamp without time zone, p_bucket text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_my_event_participation_series`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional."
+    }
+  ],
+  "http_real_jwt": "NOT RUN",
+  "seeds": false,
+  "roles": false,
+  "vault": false
+}

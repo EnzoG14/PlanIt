@@ -1,5 +1,7 @@
 # PlanIt — Plan técnico de implementación Release 6 · Gestión avanzada y analítica
 
+**Adenda B4 — 15/10/2026:** [D03 aprobada](RELEASE_6_BLOCK_4_DECISIONS.md): inicial30 días AR incluyendo hoy, presets7/30/90, manual≤366 y agrupación día/semana lunes/parcial; sólo movimientos históricos. [Implementación y evidencia](../qa/r6-block-4/README.md). Las menciones inferiores a D03 pendiente son antecedentes. No autoriza B5 ni aplicación remota.
+
 **Adenda B3 — 15/10/2026:** [D04/D08 y contrato aprobado](RELEASE_6_BLOCK_3_DECISIONS.md) reemplazan el gate previo de anti-inferencia absoluta: cifras exactas actuales con riesgo residual temporal/multievento aceptado, k5 y supresión completa por dimensión pequeña. B3 implementado; QA pendiente, migración aplicada/verificada remotamente con autorización posterior. No autoriza B4 ni cambios remotos. Las propuestas y cortes siguientes se conservan como antecedentes.
 
 **Versión de propuesta:** 1.0 · acuerdos A01–A07 confirmados — 14/10/2026 · **Estado de ejecución al 15/10:** B0–B1 integrados y B2 implementado, QA pendiente; ningún RF validado integralmente. Ver [seguimiento](RELEASE_6_STATUS.md) y [evidencia B1](../qa/r6-block-1/README.md).

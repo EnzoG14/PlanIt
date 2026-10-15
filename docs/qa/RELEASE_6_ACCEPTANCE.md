@@ -8,6 +8,8 @@
 
 ## Convenciones de QA
 
+**B4 — 15/10/2026:** [D03 aprobada](../implementation/RELEASE_6_BLOCK_4_DECISIONS.md); [RPC, selector y evidencia](r6-block-4/README.md). Cinco CA parcialmente cubiertos por SQL local y UI con fixtures. Migración1/1/1/1 tras aplicación remota autorizada y verificación; HTTP JWT real e integral NOT RUN, sin avance a B5.
+
 `PASS` únicamente con aserciones y evidencia efectivamente ejecutadas en una capa; `FAIL` fallo comprobado; `BLOCKED` dependencia/permiso impide ejecución; `NOT RUN` no ejecutado. Registrar por separado capas `SQL-local`, `HTTP-JWT-real`, `UI-browser`, `Realtime/PWA` (cuando aplique) y `Aceptación-integral`. `PASS SQL-local` no convierte automáticamente la última columna a `PASS`. Fixture: A organizador, B confirmado, C cancelado/removido o link-only, D otro organizador, anon; entre 0 y 1.000 participaciones sintéticas. Los datos reales privados nunca se guardan en reportes.
 
 ## Matriz oficial: 24 criterios
@@ -19,13 +21,13 @@
 | RF-R6-01.CA-03 | registrar/retirar/remover/reincorporar y refrescar; reconciliar | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
 | RF-R6-01.CA-04 | actor B confirmed, C link-only, D ajeno, anon contra ruta/RPC/REST | PASS parcial B1 | NOT RUN | PASS fixtures B2 | NOT RUN | NOT RUN | [B2](r6-block-2/README.md) |
 | RF-R6-02.CA-01 | propietario; demografía optativa mixta sin fuga, 0/1/5/10 participantes | PASS parcial B3 | NOT RUN | PASS fixtures B3 | NOT RUN | NOT RUN | [B3](r6-block-3/README.md) |
-| RF-R6-02.CA-02 | historial registration y rejoin dentro de ventana inicial; bins conocidos | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
+| RF-R6-02.CA-02 | historial registration y rejoin dentro de ventana inicial; bins conocidos | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
 | RF-R6-02.CA-03 | NULLs, fechas límite, sexo otros, coherencia de cohortes y privacidad | PASS parcial B3 | NOT RUN | PASS fixtures B3 | NOT RUN | NOT RUN | [B3](r6-block-3/README.md) |
 | RF-R6-02.CA-04 | cohortes diminutas suprimidas, 0 datos y error versus gráfico falso | PASS parcial B3 | NOT RUN | PASS fixtures B3 | NOT RUN | NOT RUN | [B3](r6-block-3/README.md) |
-| RF-R6-03.CA-01 | presets y rango personalizado; boundaries en Argentina | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-03.CA-02 | dos rangos disjuntos producen series distintas y sólo movimientos respectivos | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-03.CA-03 | desde > hasta, rango excesivo y fecha malformada devuelven error seguro | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
-| RF-R6-03.CA-04 | cambio rápido de filtro/reorden de respuestas, evento ajeno y unlisted link-only | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
+| RF-R6-03.CA-01 | presets y rango personalizado; boundaries en Argentina | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
+| RF-R6-03.CA-02 | dos rangos disjuntos producen series distintas y sólo movimientos respectivos | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
+| RF-R6-03.CA-03 | desde > hasta, rango excesivo y fecha malformada devuelven error seguro | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
+| RF-R6-03.CA-04 | cambio rápido de filtro/reorden de respuestas, evento ajeno y unlisted link-only | PASS parcial B4 | NOT RUN | PASS fixtures B4 | NOT RUN | NOT RUN | [B4](r6-block-4/README.md) |
 | RF-R6-04.CA-01 | descarga propietario dos CSV distintos, asistentes y estadísticas (acuerdo A04) | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-04.CA-02 | cabeceras, encoding/quoting, filtros y cifras coinciden con RPC | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
 | RF-R6-04.CA-03 | Excel/CSV parser y ataques fórmula =,+,-,@, tabs/saltos; excluir PII | NOT RUN | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |

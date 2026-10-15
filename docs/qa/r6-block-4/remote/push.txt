@@ -1,0 +1,1 @@
+{"upToDate":false,"dryRun":false,"migrations":["20261015162953_r6_participation_series.sql"],"seeds":[],"roles":[],"message":"Finished supabase db push."}

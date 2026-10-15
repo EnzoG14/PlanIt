@@ -1,0 +1,26 @@
+{
+  "base": "25685f04c03c5ac308fc563f2a8e565e6987f39e",
+  "branch": "codex/r6-block-4",
+  "status": "Implementado; QA pendiente",
+  "sql_checks": 28,
+  "ui_checks": 37,
+  "regression_suites": 16,
+  "contract_groups": 3,
+  "migration": "20261015162953",
+  "migrations": {
+    "created": 1,
+    "tested_local": 1,
+    "applied_remote": 1,
+    "verified_remote": 1
+  },
+  "sql_local": "PASS",
+  "ui_fixtures": "PASS",
+  "build": "PASS",
+  "lint": "PASS with inherited warnings",
+  "http_real_jwt": "NOT RUN",
+  "realtime_devices": "NOT RUN",
+  "integral": "NOT RUN",
+  "mockup_sha256": "F49C765E633881BC9993A2052B9FF59E4D50CD69991566E38B5740FA6E90FC69",
+  "env_equal_to_main": true,
+  "env_ignored": true
+}
