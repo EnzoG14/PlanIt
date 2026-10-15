@@ -1,6 +1,10 @@
 .analytics-page { max-width: 760px; margin-inline: auto; }
 .analytics-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--pi-space-base); margin-bottom: var(--pi-space-section); }
 .analytics-event-title { overflow-wrap: anywhere; }
+.analytics-export { margin-block: var(--pi-space-base); }
+.analytics-export-actions { display: flex; flex-wrap: wrap; gap: var(--pi-space-tight); }
+.analytics-export-actions button { max-width: 100%; min-height: 44px; white-space: normal; overflow-wrap: anywhere; }
+.analytics-export [role="status"]:empty { display: none; }
 .analytics-state, .analytics-updated { color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); line-height: 1.5; }
 .analytics-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--pi-space-section) var(--pi-space-base); margin-block: var(--pi-space-section); }
 .analytics-kpis div { min-width: 0; }

@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "test": "Argentina date independent of host zone, includes today and leap day",
+      "result": "PASS"
+    },
+    {
+      "test": "Inclusive form to half-open RPC and validation including missing/malformed dates",
+      "result": "PASS"
+    },
+    {
+      "test": "Strict DTO shape and request identity/range/bucket; ordered complete buckets and safe counts",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

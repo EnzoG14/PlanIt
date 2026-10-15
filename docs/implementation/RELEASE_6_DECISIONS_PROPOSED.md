@@ -1,5 +1,7 @@
 # PlanIt — R6 · Decisiones de producto y pendientes técnicos
 
+**Adenda B5 — 15/10/2026:** [D05/D06 ratificadas](RELEASE_6_BLOCK_5_DECISIONS.md) por aprobación humana del plan: snapshot único sobre paginación,5.000filas/10MiB/15s, CSV separados, formato y neutralización reversible documentados. D04 B3 conservada; sin demografía en CSV. Las propuestas inferiores son antecedentes; no autoriza B6 ni SQL remoto.
+
 **Adenda B4 — 15/10/2026:** [D03 aprobada expresamente](RELEASE_6_BLOCK_4_DECISIONS.md). Inicial30 días incluyendo hoy en Argentina; presets7/30/90, manual≤366, día/semana lunes/parcial. Sólo filtra movimientos históricos. La matriz original debajo conserva su corte histórico; no autoriza B5 ni SQL remoto.
 
 **Adenda posterior B3 (15/10/2026):** el responsable aprobó exactitud actual con riesgo residual y D08. [Decisión y política vigente](RELEASE_6_BLOCK_3_DECISIONS.md) sustituyen el bloqueo D04 de este corte histórico; no constituyen firma integral de B0 ni autorización de B4.

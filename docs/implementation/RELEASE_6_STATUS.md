@@ -11,7 +11,7 @@
 | 2 | Panel KPI | Implementado; QA pendiente | codex/r6-block-2; [PR #65 draft](https://github.com/EnzoG14/PlanIt/pull/65) | 7933aa9 | 0/0/0/0 | RF-R6-01 CA01–04 UI fixtures; JWT real pendiente | NO |
 | 3 | Demográficos privados | Implementado; QA pendiente | codex/r6-block-3; [PR #66 draft](https://github.com/EnzoG14/PlanIt/pull/66) | e6a25a1 | 1/1/1/1 | RF-R6-02 CA01/03/04 parcial SQL/UI fixtures; CA02 B4; JWT real NOT RUN | NO |
 | 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67) | 25685f0 | 1/1/1/1 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
-| 5 | CSV seguros | NO INICIADO | — | — | 0/0/0/0 | RF-R6-04 | NO |
+| 5 | CSV seguros | Implementado; QA pendiente | codex/r6-block-5; PR draft al cierre | edaa0c5 | 1/1/0/0 | RF-R6-04 CA01–04 parcial SQL/contrato/UI fixtures; HTTP/Excel/dispositivos NOT RUN | NO |
 | 6 | Trigger aviso lleno | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 parcial | NO |
 | 7 | Bandeja aviso | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 | NO |
 | 8 | Comparación | NO INICIADO | — | — | 0/0/0/0 | RF-R6-06 | NO |
@@ -87,3 +87,13 @@ Por instrucción humana se aplicó la única pendiente 20261015130739 en planit-
 - Pedido humano: «hace las migraciones a la base remota». Aplicada únicamente `20261015162953_r6_participation_series.sql` en planit-v2 (`iepeqmvzjguwlhnecsdq`); dry-run previo una pendiente, posterior ninguna; 33/33 versiones sincronizadas. Sin seeds/roles/Vault, merge, deploy o B5.
 - Marcas **1 creada / 1 probada local / 1 aplicada remota autorizada / 1 verificada remota**. Cuerpo remoto igual al versionado; STABLE/DEFINER/search_path/ACL, RLS público, rechazo sin UID/evento NULL PASS en READ ONLY/ROLLBACK. HTTP JWT real e integral NOT RUN.
 - Asesores seguridad48→49 WARN: nuevo aviso por RPC DEFINER authenticated, intencional y protegida por ownership. [Acta y evidencia](../qa/r6-block-4/remote/summary.json). Cortes locales anteriores conservados como historia.
+
+
+### B5 — 15/10/2026, Codex
+
+- Base integrada `edaa0c5bc8785dad371736be8e16d693966fb4cf`, fetch y merges #63–#67 comprobados; R5 GO humano conservado. Pedido humano autoriza sólo B5. Rama nueva `codex/r6-block-5` desde origin/main, checkout inicialmente limpio; `.env.local` de main conservado intacto e ignorado al usar el mismo directorio.
+- [Adenda aprobada D05/D06](RELEASE_6_BLOCK_5_DECISIONS.md): snapshot único sobre paginación, 5.000filas/10MiB/15s; asistentes confirmed actuales con máscara R5 y primera inscripción, estadísticas desde la misma respuesta B4 mostrada. Sin demografía, IDs técnicos en archivos ni nuevas dependencias. D04 y DESIGN intactos.
+- `get_my_event_export_rows(uuid)→jsonb`, STABLE DEFINER, UID/ownership antes de lectura, search_path vacío y EXECUTE authenticated; sin nuevos grants de tablas/políticas/triggers/índices. Migración `20261015173426`: **creada1 / probada local1 / aplicada remota0 / verificada remota0**.
+- Serializador UTF8 BOM/;/CRLF/quoted, neutralización reversible de fórmulas; límites JSON/CSV, validación de contexto y sesión, cancelación/timeout/limpieza, sin archivo ante vacío/error. Dos CTA Amanecer y cancelación; no rediseño.
+- Build/lint PASS (advertencias previas); PostgreSQL17.5 local replay34 y 29 checks con regresión R5; parser Python independiente y 5 grupos de contrato; Edge production 14 checks en seis anchos, descargas reales con fixtures, texto200%, foco, reduced-motion, límites y cancelaciones. [Evidencias, CA, benchmarks y límites](../qa/r6-block-5/README.md).
+- HTTP/JWT real, Excel, PWA instalada/dispositivos, zoom real/lector y aceptación integral NOT RUN; no certificarlos desde fixtures. Estado Implementado; QA pendiente. PR/commit funcional enlazados al cierre; HEAD final en Git/PR. B6 requiere autorización independiente; sin DDL remoto/merge/deploy/Google Docs.

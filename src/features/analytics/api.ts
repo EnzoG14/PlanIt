@@ -2,6 +2,16 @@ import { supabase } from '../../lib/supabase'
 import { parseEventOccupancy, type EventOccupancy } from './types'
 import { parseEventDemographics } from './demographics'
 import { parseParticipationSeries, type Period } from './periods'
+import { parseAttendeeExport } from './csv'
+
+export async function loadMyEventExport(eventId: string, signal: AbortSignal) {
+  if (!supabase) throw new Error('La conexión no está configurada.')
+  const { data, error } = await supabase.rpc('get_my_event_export_rows', { p_event_id: eventId }).abortSignal(signal)
+  if (error) throw new Error(error.code === '42501' ? 'No tenés acceso al reporte de este evento.'
+    : error.code === '54000' ? 'El reporte supera el límite de 5.000 asistentes o 10 MiB. No se descargó ningún archivo.'
+      : 'No pudimos preparar el reporte. Volvé a intentar.')
+  return parseAttendeeExport(data, eventId)
+}
 
 export async function loadMyEventSeries(eventId: string, period: Period, signal: AbortSignal) {
   if (!supabase) throw new Error('La conexión no está configurada.')

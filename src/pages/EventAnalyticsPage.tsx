@@ -7,6 +7,7 @@ import { loadMyEventOccupancy, loadMyEventDemographics } from '../features/analy
 import type { EventDemographics } from '../features/analytics/demographics'
 import { DemographicsPanel } from '../components/analytics/DemographicsPanel'
 import { TrendPanel } from '../components/analytics/TrendPanel'
+import { CsvDownload } from '../components/analytics/CsvDownload'
 import { formatOccupancyPercent } from '../features/analytics/format'
 import type { EventOccupancy } from '../features/analytics/types'
 import { validatedMyEventsReturn } from '../features/events/my-events'
@@ -23,6 +24,7 @@ export function EventAnalyticsPage() {
 function AnalyticsContent({ eventId }: { eventId: string }) {
   const location = useLocation()
   const [attempt, setAttempt] = useState(0)
+  const [exportRevision, setExportRevision] = useState(0)
   const [demographics, setDemographics] = useState<EventDemographics | null>(null)
   const [demographicsError, setDemographicsError] = useState(false)
   const [data, setData] = useState<EventOccupancy | null>(null)
@@ -66,6 +68,7 @@ function AnalyticsContent({ eventId }: { eventId: string }) {
       {offline ? <StatusMessage title="Sin conexión">Conectate y elegí Actualizar datos para consultar la ocupación.</StatusMessage> : stale ? <StatusMessage title="Actualizá la ocupación">La consulta anterior dejó de estar vigente. Elegí Actualizar datos.</StatusMessage> : error ? <StatusMessage title="Estadísticas no disponibles" tone="error">{error} Indicadores no disponibles (N/D).</StatusMessage> : data && <>
         <h2 className="analytics-event-title">{data.title}</h2>
         <p className="analytics-state">{stateLabels[data.event_state]}</p>
+        <CsvDownload key={`export:${attempt}:${exportRevision}`} kind="attendees" eventId={eventId} />
         <dl className="analytics-kpis" aria-label="Indicadores de ocupación">
           <div><dt>Cupo total</dt><dd>{data.capacity_usable ? count.format(data.capacity) : 'N/D'}<span>lugares</span></dd></div>
           <div><dt>Inscriptos confirmados</dt><dd>{count.format(data.confirmed_count)}<span>personas</span></dd></div>
@@ -79,7 +82,7 @@ function AnalyticsContent({ eventId }: { eventId: string }) {
         </section>
         {demographics && <DemographicsPanel data={demographics} />}
         {demographicsError && <StatusMessage title="Datos demográficos no disponibles">No pudimos consultar esta distribución. Elegí Actualizar datos para reintentar.</StatusMessage>}
-        <TrendPanel eventId={eventId} revision={attempt} />
+        <TrendPanel eventId={eventId} title={data.title} revision={attempt} onPeriodChange={() => setExportRevision(n => n + 1)} />
         <p className="analytics-updated">Última consulta: <time dateTime={`${data.as_of}-03:00`}>{formatEventTime(data.as_of)}</time> (hora de Argentina).</p>
       </>}
     </div>
