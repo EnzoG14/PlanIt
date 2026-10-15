@@ -54,3 +54,5 @@ Entrega: documento B0, actualización STATUS/decisiones/aceptación, runner offl
 Riesgos abiertos: D04 anti-diferencias; D05/D06 snapshot/límites de CSV para firma; B8 selector 'all' excluye archivados; límite semanal366 días puede requerir54 buckets; historia no registra cupo ni presencia física; informe database19 tablas incluye modelo futuro. Revisar propuestas concretas, no aprobar por existir documento. Mockup original inspeccionado, hash en audit.json, sin modificaciones ni screenshots simuladas.
 
 Firma técnica: Codex15/10/2026. Firma humana: PENDIENTE. Enlace PR y SHA de entrega en delivery.json (commit de seguimiento posterior puede contener sólo esa referencia).
+
+Entrega: [PR #63 en borrador](https://github.com/EnzoG14/PlanIt/pull/63), HEAD de auditoría `dcc7687db7917c15b36ae071472bcddf98baef0d`; seguimiento posterior sólo registra estas referencias. Log build normalizado en whitespace final de línea, sin cambiar resultados. `git diff --check` final PASS. Commit inicial requirió identidad Git explícita Codex por comando, sin configurar identidad global ni atribuir autoría al usuario.
