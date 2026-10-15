@@ -10,8 +10,8 @@
   "migrations": {
     "created": 1,
     "tested_local": 1,
-    "applied_remote": 0,
-    "verified_remote": 0
+    "applied_remote": 1,
+    "verified_remote": 1
   },
   "sql_local": "PASS",
   "ui_fixtures": "PASS",

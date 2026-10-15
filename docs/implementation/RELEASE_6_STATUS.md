@@ -1,6 +1,6 @@
 # PlanIt — R6 seguimiento de ejecución
 
-**Estado global:** **B4 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **5 (B0–B4)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B3 integrados; B4 base `25685f0` añade RPC owner-only de movimientos, selector y gráfico/tabla accesibles. Migración B4 sólo creada/probada local (1/1/0/0). [Evidencia B4](../qa/r6-block-4/README.md), [D03 aprobada](RELEASE_6_BLOCK_4_DECISIONS.md). Sin deploy ni avance a B5; cortes anteriores históricos.
+**Estado global:** **B4 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **5 (B0–B4)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B3 integrados; B4 base `25685f0` añade RPC owner-only de movimientos, selector y gráfico/tabla accesibles. Migración B4 aplicada/verificada remotamente por autorización posterior (1/1/1/1). [Evidencia B4](../qa/r6-block-4/README.md), [D03 aprobada](RELEASE_6_BLOCK_4_DECISIONS.md). Sin deploy ni avance a B5; cortes anteriores históricos.
 
 **Baseline comprobado:** `main` SHA `66e24d85f32123ecd70f457f8381c68ae5af1603` (14/10/2026). **Dependencia R5:** `RELEASE_5_TEST_REPORT.md` y `RELEASE_5_STATUS.md` registran **GO por aceptación humana, estado Validado**. Pruebas automáticas/JWT/Realtime que no se ejecutaron siguen documentadas como tal; B0 revalida integración de PR #60 y entorno. **Acuerdos A01–A07 aprobados; B0–B2 entregados, sin aceptación integral.**
 
@@ -10,7 +10,7 @@
 | 1 | RPC ocupación owner-only | Implementado; QA pendiente | codex/r6-block-1; [PR #64 draft](https://github.com/EnzoG14/PlanIt/pull/64) | 1ee60e3a1636c0ec181782343100d44b5f08be1e | 1/1/1/1 | RF-R6-01 CA01–04 parcial SQL; contrato/build/lint PASS; JWT/UI NOT RUN | NO |
 | 2 | Panel KPI | Implementado; QA pendiente | codex/r6-block-2; [PR #65 draft](https://github.com/EnzoG14/PlanIt/pull/65) | 7933aa9 | 0/0/0/0 | RF-R6-01 CA01–04 UI fixtures; JWT real pendiente | NO |
 | 3 | Demográficos privados | Implementado; QA pendiente | codex/r6-block-3; [PR #66 draft](https://github.com/EnzoG14/PlanIt/pull/66) | e6a25a1 | 1/1/1/1 | RF-R6-02 CA01/03/04 parcial SQL/UI fixtures; CA02 B4; JWT real NOT RUN | NO |
-| 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67) | 25685f0 | 1/1/0/0 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
+| 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67) | 25685f0 | 1/1/1/1 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
 | 5 | CSV seguros | NO INICIADO | — | — | 0/0/0/0 | RF-R6-04 | NO |
 | 6 | Trigger aviso lleno | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 parcial | NO |
 | 7 | Bandeja aviso | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 | NO |
@@ -81,3 +81,9 @@ Por instrucción humana se aplicó la única pendiente 20261015130739 en planit-
 - Por solicitud humana se aplicó únicamente `20261015160324_r6_demographic_aggregates.sql` en planit-v2 (`iepeqmvzjguwlhnecsdq`). Dry-run previo: una pendiente; posterior: sin pendientes, 32/32 versiones sincronizadas. Sin seeds/roles/Vault, merge, deploy o B4.
 - Marcas **1 creada / 1 probada local / 1 aplicada remota autorizada / 1 verificada remota**. PostgreSQL17.11: cuerpo remoto igual al SQL versionado; STABLE/DEFINER/search_path/ACL, RLS público y rechazo sin UID/evento NULL PASS en transacción READ ONLY. HTTP JWT real y aceptación integral siguen NOT RUN.
 - Asesores: 47→48 WARN; nuevo aviso por RPC DEFINER ejecutable por authenticated (intencional y protegida por ownership). Persiste aviso previo de contraseñas filtradas. [Evidencia remota](../qa/r6-block-3/remote/summary.json). Cortes locales anteriores conservados como historia.
+
+### B4 — Aplicación remota autorizada posterior, 15/10/2026
+
+- Pedido humano: «hace las migraciones a la base remota». Aplicada únicamente `20261015162953_r6_participation_series.sql` en planit-v2 (`iepeqmvzjguwlhnecsdq`); dry-run previo una pendiente, posterior ninguna; 33/33 versiones sincronizadas. Sin seeds/roles/Vault, merge, deploy o B5.
+- Marcas **1 creada / 1 probada local / 1 aplicada remota autorizada / 1 verificada remota**. Cuerpo remoto igual al versionado; STABLE/DEFINER/search_path/ACL, RLS público, rechazo sin UID/evento NULL PASS en READ ONLY/ROLLBACK. HTTP JWT real e integral NOT RUN.
+- Asesores seguridad48→49 WARN: nuevo aviso por RPC DEFINER authenticated, intencional y protegida por ownership. [Acta y evidencia](../qa/r6-block-4/remote/summary.json). Cortes locales anteriores conservados como historia.
