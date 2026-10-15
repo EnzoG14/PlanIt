@@ -7,7 +7,7 @@
 - Base limpia `main`/`origin/main`: `9311c0142e4c945656e8aa0fe9c89c1a37b4135b`, verificada tras fetch. PR #69 **MERGED**, commit coincidente, fecha remota `2026-10-15T20:03:52Z`. Rama nueva `codex/r6-block-7` en el mismo checkout; `.env.local` de main conservado, ignorado y nunca versionado.
 - El pedido humano autoriza B7 de **R6**, según el archivo y plan aprobados, pese a la referencia inicial a R5. R5 conserva GO/Validado por aceptación humana; no se elevan sus NOT RUN técnicos.
 - A01–A07 y D07 conservados. Decisión explícita B7: **nombre actual autorizado**, sin snapshot del título. B6 integrado; aplicación remota B6 acreditada por [acta previa](../r6-block-6/remote/summary.json), no por una nueva consulta remota B7.
-- Migración B7 `20261015201034_r6_event_full_inbox.sql`: **creada 1 / probada local 1 / aplicada remota 0 / verificada remota 0**. No se ejecutó SQL ni se escribieron fixtures en remoto.
+- Migración B7 `20261015201034_r6_event_full_inbox.sql`: **creada 1 / probada local 1 / aplicada remota autorizada 1 / verificada remota 1**. Aplicación posterior autorizada por el responsable; sin fixtures remotos. El corte de implementación inicial era1/1/0/0.
 
 ## Contrato y amenazas
 
@@ -71,6 +71,16 @@ Se conservan intentos fallidos de pruebas: [SQL](sql/first-attempt-fixture-failu
 | RF-R6-05.CA-03 | PASS regresión B6 | No productor cliente | NOT RUN | NOT RUN | NOT RUN |
 | RF-R6-05.CA-04 | PASS B6+B7 | PASS dedupe/aislamiento fixtures | NOT RUN | NOT RUN | NOT RUN |
 
-HTTP autenticado y entrega real Realtime requieren usuarios/fixtures autorizados de prueba; no se usaron cuentas reales ni se escribieron datos remotos. Pruebas de dispositivos, lector de pantalla, zoom nativo200%, rendimiento móvil y aceptación humana **NOT RUN**. La bandeja remota no tendrá la proyección de nombre ni la regla de destino archivado de B7 hasta aplicar la migración con permiso separado. No afirmar cierre integral R6 ni Web Push.
+HTTP autenticado y entrega real Realtime requieren usuarios/fixtures autorizados de prueba; no se usaron cuentas reales ni se escribieron datos de producto remotos. Pruebas de dispositivos, lector de pantalla, zoom nativo200%, rendimiento móvil y aceptación humana **NOT RUN**. Las RPC B7 ya están aplicadas remotamente; esto no implica despliegue del frontend ni aceptación integral R6 o Web Push.
+
+## Aplicación remota autorizada · 15/10/2026
+
+Pedido humano: «Aplicá la migración remotapor favor». Proyecto `planit-v2` (`iepeqmvzjguwlhnecsdq`); fuente `05750617d7418011061bdc0b3afa12c40e6dc815`.
+
+- [Dry-run previo](remote/dry-run-before.txt): única pendiente `20261015201034_r6_event_full_inbox.sql`. [Aplicación](remote/apply.txt) por CLI enlazado con `--skip-vault`; sin seeds/roles/Vault ni otras migraciones.
+- [Historial posterior](remote/migrations-after.json)36/36 igual al manifiesto local; [dry-run posterior](remote/dry-run-after.txt) vacío.
+- [Verificación](remote/verification.json) PostgreSQL17.11 en [READ ONLY/ROLLBACK](remote/verify-readonly.sql): cuerpos de las tres RPC iguales a Git, firmas conservadas, INVOKER/STABLE/search_path vacío, EXECUTE authenticated y no PUBLIC/anon. RLS recipient-only, publicación y productor/triggers B6 e historial preservados; cero tablas públicas sin RLS. Anon no puede ejecutar target; authenticated sin UID no puede listar ni conciliar y obtiene target NULL.
+- [Asesores](remote/summary.json): **sin nuevos hallazgos**, mismos50 WARN y1 INFO; 49 corresponden a funciones DEFINER previas, uno a [protección de contraseñas filtradas](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection) y uno informativo a tabla con RLS sin políticas. Las tres RPC B7 son INVOKER.
+- Marcas **1/1/1/1**. No se crearon avisos, usuarios o eventos de prueba remotos; HTTP JWT y entrega Realtime reales siguen NOT RUN. Sin merge, deploy o avance B8; estado **Implementado; QA pendiente**.
 
 [PR #70 draft](https://github.com/EnzoG14/PlanIt/pull/70), commit funcional `f5208d6ce45bde189a9fd1b56be9e3220ef8325f`. El commit posterior sólo registra el enlace y este cierre; HEAD final se consulta en Git/PR. Inventario: un componente, una migración, dos runners, dos scripts npm, seguimiento y evidencia aislada bajo esta carpeta (sin modificaciones de reportes históricos). **Detenerse aquí: B8 requiere autorización humana independiente.**

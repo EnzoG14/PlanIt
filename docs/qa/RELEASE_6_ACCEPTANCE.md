@@ -8,6 +8,8 @@
 
 ## Convenciones de QA
 
+**B7 remoto — 15/10/2026:** aplicada/verificada `20261015201034` con autorización humana posterior; marcas **1/1/1/1**, historial36/36, cuerpos/firmas/ACL/RLS y preservación de productor/historial/publicación PASS en READ ONLY. [Acta](r6-block-7/remote/summary.json). No cambia el alcance de las pruebas UI con fixtures ni convierte HTTP JWT/Realtime reales o aceptación integral en PASS. El corte local B7 siguiente es histórico.
+
 **B7 — 15/10/2026:** [bandeja `event_full`, navegación y evidencia](r6-block-7/README.md). Nombre actual autorizado, archivado/sin ownership genérico y target NULL; CA02/04 parcialmente cubiertos SQL local y UI con fixtures. Regresión productor B6 y DM/seguimiento PASS. Migración B7 **1/1/0/0**; HTTP JWT/Realtime reales e integral siguen NOT RUN. No se altera la aceptación humana R5 ni se declara R6 validada.
 
 **B6 remoto — 15/10/2026:** migración aplicada/verificada con autorización humana, marcas1/1/1/1; cuerpo, trigger, ACL/RLS y rechazo de ejecución directa comprobados en READ ONLY. [Acta](r6-block-6/remote/summary.json). No se elevan HTTP JWT, UI/Realtime ni aceptación integral desde esta verificación de catálogo.

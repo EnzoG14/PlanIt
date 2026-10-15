@@ -1,6 +1,6 @@
 # PlanIt — R6 seguimiento de ejecución
 
-**Estado global:** **B7 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **8 (B0–B7)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B6 integrados en main; B7 añade bandeja `event_full`, nombre actual autorizado y navegación segura sobre la conciliación existente. Migración B6 **1/1/1/1**; B7 **1/1/0/0**. [Evidencia B7](../qa/r6-block-7/README.md). B8 no iniciado; sin merge ni deploy B7. Cortes anteriores históricos.
+**Estado global:** **B7 Implementado; QA pendiente** (15/10/2026). Bloques con entrega: **8 (B0–B7)**. RF completos: **0/6**. CA aceptados integralmente: **0/24**. B0–B6 integrados en main; B7 añade bandeja `event_full`, nombre actual autorizado y navegación segura sobre la conciliación existente. Migraciones B6 y B7 **1/1/1/1**, aplicadas y verificadas remotamente por autorizaciones posteriores. [Evidencia B7](../qa/r6-block-7/README.md). B8 no iniciado; sin merge ni deploy B7. Cortes anteriores históricos.
 
 **Baseline B7:** `main`/`origin/main` `9311c0142e4c945656e8aa0fe9c89c1a37b4135b`, fetch y PR #69 MERGED comprobados. Rama `codex/r6-block-7`; pedido humano autoriza sólo B7 y decide nombre actual, sin snapshot. `.env.local` de main conservado en el mismo checkout e ignorado.
 
@@ -15,13 +15,15 @@
 | 4 | Períodos y series | Implementado; QA pendiente | codex/r6-block-4; [PR #67 draft](https://github.com/EnzoG14/PlanIt/pull/67) | 25685f0 | 1/1/1/1 | RF-R6-03 CA01–04 + R6-02 CA02 parcial SQL/UI; JWT real NOT RUN | NO |
 | 5 | CSV seguros | Implementado; QA pendiente | codex/r6-block-5; [PR #68 draft](https://github.com/EnzoG14/PlanIt/pull/68) | edaa0c5 | 1/1/1/1 | RF-R6-04 CA01–04 parcial SQL/contrato/UI fixtures; HTTP/Excel/dispositivos NOT RUN | NO |
 | 6 | Trigger aviso lleno | Implementado; QA pendiente | codex/r6-block-6; [PR #69 draft](https://github.com/EnzoG14/PlanIt/pull/69) | 9ba2f68 | 1/1/1/1 | RF-R6-05 CA01/03/04 parcial SQL local; HTTP/Realtime NOT RUN | NO |
-| 7 | Bandeja aviso | Implementado; QA pendiente | codex/r6-block-7; [PR #70 draft](https://github.com/EnzoG14/PlanIt/pull/70) | 9311c01 | 1/1/0/0 | RF-R6-05 CA02/04 parcial SQL/UI fixtures; regresión B6 PASS; HTTP/Realtime real NOT RUN | NO |
+| 7 | Bandeja aviso | Implementado; QA pendiente | codex/r6-block-7; [PR #70 draft](https://github.com/EnzoG14/PlanIt/pull/70) | 9311c01 | 1/1/1/1 | RF-R6-05 CA02/04 parcial SQL/UI fixtures; catálogo remoto PASS; HTTP/Realtime real NOT RUN | NO |
 | 8 | Comparación | NO INICIADO | — | — | 0/0/0/0 | RF-R6-06 | NO |
 | 9 | QA integral | NO INICIADO | — | — | 0/0/0/0 | 24 CA y regresión | NO |
 
 ## Plantilla de bitácora por bloque
 
 ### B7 — 15/10/2026, Codex
+
+**Aplicación remota autorizada posterior:** por pedido humano «Aplicá la migración remotapor favor», aplicada únicamente `20261015201034_r6_event_full_inbox.sql` en planit-v2. Dry-run previo una pendiente y posterior ninguna, historial36/36 sincronizado. Marcas **1 creada / 1 probada local / 1 aplicada remota autorizada / 1 verificada remota**. PostgreSQL17.11: tres cuerpos iguales a Git normalizando CRLF, firmas/INVOCADOR/STABLE/search_path/ACL y RLS comprobados en READ ONLY/ROLLBACK; anon y authenticated sin UID rechazados según contrato. Productor B6, triggers y publicación preservados. Asesores sin cambios:50 WARN y1 INFO previos; sin fixtures remotos, merge, deploy ni B8. [Acta](../qa/r6-block-7/remote/summary.json). HTTP JWT/Realtime reales e integral siguen NOT RUN; los cortes inferiores conservan la fotografía de entrega local.
 
 - Base limpia tras fetch `9311c0142e4c945656e8aa0fe9c89c1a37b4135b`; PR #69 MERGED verificada. Rama nueva `codex/r6-block-7` desde origin/main, env local de main preservado e ignorado. R5 GO y A01–A07/D07 conservados; B7 aprobado por este pedido, sin permiso B8.
 - Tres RPC existentes conservan firmas, shape, keyset y límites; STABLE INVOKER/search_path vacío/EXECUTE authenticated. `event_full` exige recipient y ownership vigente; nombre actual en `title`, archivado genérico/target NULL. Tipos anteriores intactos; sin tablas, triggers, índices, políticas, grants de lectura ni contadores nuevos. Productor B6 intacto.

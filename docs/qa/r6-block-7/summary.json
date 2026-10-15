@@ -19,8 +19,8 @@
     "version": "20261015201034",
     "created": 1,
     "local_tested": 1,
-    "remote_applied": 0,
-    "remote_verified": 0
+    "remote_applied": 1,
+    "remote_verified": 1
   },
   "commands": [
     {
@@ -134,10 +134,17 @@
     "acceptance_integral": "NOT RUN"
   },
   "authorization": {
-    "remote_ddl": false,
+    "remote_ddl": true,
     "remote_fixtures": false,
     "merge": false,
     "deploy": false,
     "next_block": false
+  },
+  "remote_application": {
+    "authorized_by": "User: Aplicá la migración remotapor favor",
+    "evidence": "remote/summary.json",
+    "migration_count": 36,
+    "body_acl_rls_verified": true,
+    "advisors_unchanged": true
   }
 }
