@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "tests": [
+    "DTO and formula consistency; invalid payloads rejected",
+    "es-AR rounding only in presentation; N/D invalid numbers",
+    "RPC parameters and AbortSignal; denied/network/malformed responses never return stale success"
+  ],
+  "transport": "Simulated; not HTTP/JWT"
+}

@@ -1,6 +1,6 @@
 # PlanIt — Plan técnico de implementación Release 6 · Gestión avanzada y analítica
 
-**Versión de propuesta:** 1.0 · acuerdos A01–A07 confirmados — 14/10/2026 · **Estado:** propuesta de implementación; **NINGÚN bloque R6 ejecutado ni validado**.  
+**Versión de propuesta:** 1.0 · acuerdos A01–A07 confirmados — 14/10/2026 · **Estado de ejecución al 15/10:** B0 integrado y B1 implementado localmente, QA pendiente; ningún RF validado integralmente. Ver [seguimiento](RELEASE_6_STATUS.md) y [evidencia B1](../qa/r6-block-1/README.md).
 **Baseline documental:** Google Doc «Nueva planificación — RF R1 a R7», «Criterios de aceptación — R1 a R7», «Especificación técnica — R1 a R7»; `docs/requirements/RELEASE_6_REQUIREMENTS.md` conserva literalmente 6 RF y 24 CA.  
 **Baseline de código verificado al actualizar esta propuesta:** `EnzoG14/PlanIt` `main`, commit `66e24d85f32123ecd70f457f8381c68ae5af1603` (14/10/2026). Revalidar SHA, ramas, estado remoto y catálogo de BD en B0 y en cada bloque.  
 **Puerta de entrada:** `docs/qa/RELEASE_5_TEST_REPORT.md` y `docs/implementation/RELEASE_5_STATUS.md` registran **GO por aceptación humana, R5 validada** el 14/10/2026; el reporte preserva claramente las pruebas técnicas no ejecutadas. Verificar integración de PR #60 y catálogo real en B0. La existencia de GO no autoriza escribir en Supabase remoto ni comenzar automáticamente un bloque.
