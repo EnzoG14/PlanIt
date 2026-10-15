@@ -43,7 +43,9 @@ export function FollowButton({ userId, relationship, onChanged, onSafetyChange }
   }
   const label = active ? relationship.status === 'pending' ? 'Cancelar solicitud' : 'Dejar de seguir' : relationship.visibility === 'private' ? 'Solicitar seguimiento' : 'Seguir'
   return <div className="social-follow-action" aria-busy={busy}>
-    {relationship.status === 'pending' && <p role="status">Solicitud pendiente. El contenido sigue restringido hasta su aprobación.</p>}
+    {busy && active
+      ? <p role="status">{relationship.status === 'pending' ? 'Cancelando solicitud…' : 'Dejando de seguir…'}</p>
+      : relationship.status === 'pending' && <p role="status">Solicitud pendiente. El contenido sigue restringido hasta su aprobación.</p>}
     {active
       ? <button ref={button} className="secondary-button" disabled={busy || uncertain} onClick={() => setConfirm(true)}>{busy ? 'Confirmando…' : label}</button>
       : <GradientButton disabled={busy || uncertain} onClick={() => void change()}>{busy ? 'Confirmando…' : label}</GradientButton>}

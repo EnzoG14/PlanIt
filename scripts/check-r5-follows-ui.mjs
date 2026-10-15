@@ -80,7 +80,7 @@ try {
     visibility='public';status='accepted';await update();await button('Dejar de seguir').waitFor();
     visibility='private';await update();await button('Dejar de seguir').waitFor();assert.equal(await page.locator('.social-profile-bio').count(),1);
     await button('Dejar de seguir').click();await button('Confirmar').click();await button('Solicitar seguimiento').waitFor();assert.equal(await page.locator('.social-profile-bio').count(),0);
-    await button('Solicitar seguimiento').click();await button('Cancelar solicitud').waitFor();await button('Cancelar solicitud').click();await button('Confirmar').click();await button('Solicitar seguimiento').waitFor();
+    await button('Solicitar seguimiento').click();await button('Cancelar solicitud').waitFor();await button('Cancelar solicitud').click();await button('Confirmar').waitFor();await contrast('Confirmar');await button('Confirmar').click();await button('Solicitar seguimiento').waitFor();
     check('CA02/03 private pending exact minimum, cancellation, D04 polling acceptance, accepted survives privatization, unfollow revocation');
     visibility='public';status=null;await update();loseResponse=true;await button('Seguir').click();await button('Consultar estado').waitFor();
     assert.equal(await button('Seguir').isDisabled(),true);assert.equal(await page.locator('.social-profile-bio').count(),0);await shot('uncertain');
