@@ -4,7 +4,7 @@
 
 **B0 — 15/10/2026:** auditoría documental/catálogo entregada, sin ejecución funcional R6. [24 CA literales y traza a contratos](r6-block-0/traceability.json), [resultados baseline](r6-block-0/audit.json), [límites y pendientes](r6-block-0/README.md). Se mantienen **0/24 aceptados** y todas las capas de esta matriz NOT RUN. Riesgo D04 anti-diferencias bloquea B3/B5; revisión/firma humana B0 y aprobación de B1 pendientes.
 
-**B3 — 15/10/2026:** [implementación y pruebas por capa](r6-block-3/README.md), [adenda humana D04/D08](../implementation/RELEASE_6_BLOCK_3_DECISIONS.md). Exactitud actual con riesgo residual aceptado; no se afirma anonimato. CA01/03/04 parcialmente cubiertos SQL local/UI fixtures; CA02 pertenece a B4. HTTP JWT real e integral NOT RUN. Migración B3 1/1/0/0. El bloqueo D04 en el corte B0 anterior es histórico.
+**B3 — 15/10/2026:** [implementación y pruebas por capa](r6-block-3/README.md), [adenda humana D04/D08](../implementation/RELEASE_6_BLOCK_3_DECISIONS.md). Exactitud actual con riesgo residual aceptado; no se afirma anonimato. CA01/03/04 parcialmente cubiertos SQL local/UI fixtures; CA02 pertenece a B4. HTTP JWT real e integral NOT RUN. Migración B3 1/1/1/1 tras aplicación remota autorizada; HTTP JWT real sigue NOT RUN. El bloqueo D04 en el corte B0 anterior es histórico.
 
 ## Convenciones de QA
 

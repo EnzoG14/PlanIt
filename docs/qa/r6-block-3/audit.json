@@ -5,8 +5,8 @@
   "migration_states": {
     "created": 1,
     "tested_local": 1,
-    "applied_remote": 0,
-    "verified_remote": 0
+    "applied_remote": 1,
+    "verified_remote": 1
   },
   "sql_checks": 30,
   "ui_checks": 49,
@@ -21,5 +21,6 @@
   "env_copied_equal": true,
   "mockup_sha256": "f49c765e633881bc9993a2052b9ff59e4d50cd69991566e38b5740fa6e90fc69",
   "remote_jwt": "NOT RUN",
-  "acceptance": "NOT RUN"
+  "acceptance": "NOT RUN",
+  "remote_evidence": "remote/summary.json"
 }
