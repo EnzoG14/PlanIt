@@ -26,7 +26,7 @@ async function check(name) {
     .replaceAll(/docs\/qa\/r4-block-[0-9]+/g,`${out}/regressions/${name}`)
     // R1/R2 scaffolds predate R5's server-only signing role. Add only the
     // missing local role; keep all original assertions and caller roles.
-    .replace('create role anon; create role authenticated;', 'create role anon; create role authenticated; create role service_role;')
+    .replace(/create role anon; create role authenticated;(?! create role service_role;)/, 'create role anon; create role authenticated; create role service_role;')
   await writeFile(target,redirected)
   const startedAt=new Date().toISOString()
   try {

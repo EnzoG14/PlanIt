@@ -1,0 +1,33 @@
+{
+  "environment": "Existing suites; 31 migrations available; real local PostgreSQL with SQL Auth/Storage scaffolds; each suite records its replay; redirected evidence only",
+  "results": [
+    {
+      "suite": "participations",
+      "result": "PASS",
+      "startedAt": "2026-10-15T13:13:20.164Z",
+      "finishedAt": "2026-10-15T13:13:56.916Z",
+      "stdout": "PASS: Replay all versioned migrations on clean PostgreSQL (Auth/Storage scaffolding)\nPASS: Both tables RLS-enabled; definer endpoints have empty search_path\nPASS: Registration / lost-response retry / leave / retry / rejoin: unique row, three actual history transitions, released capacity, no foreign leave\nPASS: Organizer excluded; summary has exactly six safe fields without participant identities\nPASS: Anonymous / missing JWT / direct mutations / history forgery denied; own-only RLS\nPASS: Removed cannot rejoin/leave into cancelled; status/unique/FK constraints retain history\nPASS: Hidden / cancelled / archived / ended events reject registration and unauthorized summaries\nPASS: Participant retains authorized detail and can leave after archive\nPASS: Forced history failure rolls back participation in same transaction\nPASS: 10 REAL simultaneous last-place races: distinct backend PIDs, both lock-waiting, exactly one confirms / one event_full, one history\nPASS: Same-user concurrent retries are idempotent on independent connections\nPASS: Frozen REPEATABLE READ snapshot explicitly rejected instead of risking stale capacity count\n",
+      "stderr": "",
+      "source_sha256": "2e23884b10b87508bc4b8097d1f0fe0a515eeedeb1a5c9ee2473acffae0b88c1"
+    },
+    {
+      "suite": "attendees",
+      "result": "PASS",
+      "startedAt": "2026-10-15T13:15:26.266Z",
+      "finishedAt": "2026-10-15T13:16:02.146Z",
+      "stdout": "PASS: Full migration replay; RLS, unchanged direct mutation grants, authenticated-only RPC and empty search_path\nPASS: Owner-only empty/populated projection; other event, participant, stranger, anon and missing identity denied; private profiles inaccessible\nPASS: Literal case-insensitive name search before stable pagination; count unaffected by filters; invalid queries rejected\nPASS: Removal retains row, one actor/reason history transition, frees capacity; RPC/direct chat reads and sends denied; rejoin and leave cannot reset removed\nPASS: History failure rolls back state and capacity; cancelled or nonexistent participation rejected\nPASS: Upcoming/ongoing removal allowed; ended/cancelled/archived read-only; frozen isolation rejected\nPASS: Real lock races: duplicate removal, withdrawal in both orders, released last seat, chat send before/after removal\n",
+      "stderr": "",
+      "source_sha256": "5fd03fc093dddeb91681be3b4f98488ae0a172296ea3ee6d65a7fd0a9987d0d3"
+    },
+    {
+      "suite": "rejoin",
+      "result": "PASS",
+      "startedAt": "2026-10-15T13:15:26.257Z",
+      "finishedAt": "2026-10-15T13:16:03.407Z",
+      "stdout": "PASS: Full migration replay; RLS, no generic writes, authenticated-only definers with empty search_path\nPASS: R3-08 CA01–03: immediate first request, one pending, confirmed/cancelled/never removed denied; owner projection and cross-account/anon/direct access secured\nPASS: R3-08 CA04 / R3-09 CA02,04: seven-day boundary, rejection audit without fabricated transition, approval actor/history/chat recovery, immutable resolved requests\nPASS: A new removal after approval allows a new immediate request\nPASS: R4: historical holder needs active grant for hidden detail/rejoin; history alone never grants access\nPASS: R3-08 CA04 / R3-09 CA05: ended/cancelled/archived block requests and approvals; human-approved rejection after closure retained\nPASS: R3-09 CA03: full remains pending without reservation; freeing a place does not autoapprove\nPASS: Failure in history or resolution rolls back participation, capacity, history and request together\nPASS: Eleven real blocked-lock races: duplicate resolution/request, approval vs registration both orders, approvals for last seat, cancellation/archive both orders; no overcapacity\nPASS: R3-09 CA01: pending-only pagination with stable date/UUID order, counts and minimal social projection\n",
+      "stderr": "",
+      "source_sha256": "3532ca8ffbf5aa7e9b173d35b265b9d2bad32879e48b63c38b431083d3153ce1"
+    }
+  ],
+  "result": "PASS"
+}

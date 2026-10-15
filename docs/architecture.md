@@ -163,3 +163,9 @@ Implementadas en Git y probadas localmente; migración aplicada y verificada en 
 Resolución y cupo son transaccionales con el mismo lock de evento que inscripción/edición/remoción/cierre. Una respuesta perdida se comprueba por solicitud exacta antes de reintentar; cuenta/evento nuevos descartan respuestas anteriores. Refresco explícito/foco/online/visibilidad, sin nueva publicación Realtime ni notificaciones automáticas. Rechazos tras el cierre permitidos por decisión del usuario; pedidos/aprobaciones bloqueados. [Contratos, nueve CA y evidencia](design/verification/r3-block-6/README.md).
 
 Verificación de despliegue (11/10/2026): historial local/remoto con 11 versiones sincronizadas, dry-run sin pendientes, publicación supabase_realtime con messages/notifications, RPC invoker y RLS/grants intactos e índice parcial presente. Worktree configurado con .env.local ignorado (URL y publishable key), build PASS. Entrega WS/JWT con dos sesiones reales sigue pendiente.
+
+## R6 Bloque 1 — Contrato de ocupación (local)
+
+`get_my_event_occupancy(uuid)` devuelve JSON de ocupación actual exclusivamente al organizador, incluidos eventos ocultos, terminados, cancelados y archivados. Una consulta calcula sólo confirmed, excluye organizador y deriva disponibles/porcentaje sin persistir contadores. STABLE DEFINER justificado por RLS de participaciones propias; auth.uid/ownership en servidor, search_path vacío, EXECUTE sólo authenticated. No amplía políticas públicas ni acceso a profiles/history. Adaptador validado y formato es-AR en features/analytics; no incorpora panel/ruta B2. Migración 20261015130739 creada y probada localmente, sin aplicación remota. [QA y límites](qa/r6-block-1/README.md).
+
+Actualización R6 B1 (15/10/2026): migración 20261015130739 aplicada en planit-v2 con autorización posterior; cuerpo, ACL y RLS verificados, 31 versiones sincronizadas. HTTP/JWT funcional pendiente. Ver evidencia remota B1.

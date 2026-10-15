@@ -1,0 +1,186 @@
+{
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "environment": "Local PostgreSQL; Auth/Storage scaffolding, no Supabase HTTP",
+  "results": [
+    {
+      "test": "Replay all versioned migrations on clean PostgreSQL (Auth/Storage scaffolding)",
+      "result": "PASS"
+    },
+    {
+      "test": "Both tables RLS-enabled; definer endpoints have empty search_path",
+      "result": "PASS"
+    },
+    {
+      "test": "Registration / lost-response retry / leave / retry / rejoin: unique row, three actual history transitions, released capacity, no foreign leave",
+      "result": "PASS"
+    },
+    {
+      "test": "Organizer excluded; summary has exactly six safe fields without participant identities",
+      "result": "PASS"
+    },
+    {
+      "test": "Anonymous / missing JWT / direct mutations / history forgery denied; own-only RLS",
+      "result": "PASS"
+    },
+    {
+      "test": "Removed cannot rejoin/leave into cancelled; status/unique/FK constraints retain history",
+      "result": "PASS"
+    },
+    {
+      "test": "Hidden / cancelled / archived / ended events reject registration and unauthorized summaries",
+      "result": "PASS"
+    },
+    {
+      "test": "Participant retains authorized detail and can leave after archive",
+      "result": "PASS"
+    },
+    {
+      "test": "Forced history failure rolls back participation in same transaction",
+      "result": "PASS"
+    },
+    {
+      "test": "10 REAL simultaneous last-place races: distinct backend PIDs, both lock-waiting, exactly one confirms / one event_full, one history",
+      "result": "PASS"
+    },
+    {
+      "test": "Same-user concurrent retries are idempotent on independent connections",
+      "result": "PASS"
+    },
+    {
+      "test": "Frozen REPEATABLE READ snapshot explicitly rejected instead of risking stale capacity count",
+      "result": "PASS"
+    }
+  ],
+  "concurrency": [
+    {
+      "round": 0,
+      "pids": [
+        18288,
+        14412
+      ],
+      "bothWaiting": true,
+      "confirmed": 1,
+      "outcomes": [
+        "fulfilled",
+        "rejected"
+      ]
+    },
+    {
+      "round": 1,
+      "pids": [
+        18288,
+        14412
+      ],
+      "bothWaiting": true,
+      "confirmed": 1,
+      "outcomes": [
+        "fulfilled",
+        "rejected"
+      ]
+    },
+    {
+      "round": 2,
+      "pids": [
+        18288,
+        14412
+      ],
+      "bothWaiting": true,
+      "confirmed": 1,
+      "outcomes": [
+        "fulfilled",
+        "rejected"
+      ]
+    },
+    {
+      "round": 3,
+      "pids": [
+        18288,
+        14412
+      ],
+      "bothWaiting": true,
+      "confirmed": 1,
+      "outcomes": [
+        "fulfilled",
+        "rejected"
+      ]
+    },
+    {
+      "round": 4,
+      "pids": [
+        18288,
+        14412
+      ],
+      "bothWaiting": true,
+      "confirmed": 1,
+      "outcomes": [
+        "fulfilled",
+        "rejected"
+      ]
+    },
+    {
+      "round": 5,
+      "pids": [
+        18288,
+        14412
+      ],
+      "bothWaiting": true,
+      "confirmed": 1,
+      "outcomes": [
+        "fulfilled",
+        "rejected"
+      ]
+    },
+    {
+      "round": 6,
+      "pids": [
+        18288,
+        14412
+      ],
+      "bothWaiting": true,
+      "confirmed": 1,
+      "outcomes": [
+        "fulfilled",
+        "rejected"
+      ]
+    },
+    {
+      "round": 7,
+      "pids": [
+        18288,
+        14412
+      ],
+      "bothWaiting": true,
+      "confirmed": 1,
+      "outcomes": [
+        "fulfilled",
+        "rejected"
+      ]
+    },
+    {
+      "round": 8,
+      "pids": [
+        18288,
+        14412
+      ],
+      "bothWaiting": true,
+      "confirmed": 1,
+      "outcomes": [
+        "fulfilled",
+        "rejected"
+      ]
+    },
+    {
+      "round": 9,
+      "pids": [
+        18288,
+        14412
+      ],
+      "bothWaiting": true,
+      "confirmed": 1,
+      "outcomes": [
+        "fulfilled",
+        "rejected"
+      ]
+    }
+  ]
+}
