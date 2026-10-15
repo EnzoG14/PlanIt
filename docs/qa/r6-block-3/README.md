@@ -1,6 +1,6 @@
 # Release 6 · B3 — Demografía agregada
 
-**Estado: Implementado; QA pendiente.** 15/10/2026, Codex. Base integrada `e6a25a1f81a6c25ab4694fc4c16cf695e8ab6dfa` (merge PR #65); rama `codex/r6-block-3`. B1/B2 comprobados tras fetch. R5 conserva GO humano; no se convierten sus NOT RUN en PASS. PR y SHA funcional final en el seguimiento. B4 requiere aprobación independiente.
+**Estado: Implementado; QA pendiente.** 15/10/2026, Codex. Base integrada `e6a25a1f81a6c25ab4694fc4c16cf695e8ab6dfa` (merge PR #65); rama `codex/r6-block-3`. B1/B2 comprobados tras fetch. R5 conserva GO humano; no se convierten sus NOT RUN en PASS. [PR #66 draft](https://github.com/EnzoG14/PlanIt/pull/66); commit funcional `ae9a0fea8a33bd3897188355108bd6b92dc096b5`. El commit documental posterior sólo enlaza esta entrega; HEAD final en Git/PR. B4 requiere aprobación independiente.
 
 [Decisión humana y contrato](../../implementation/RELEASE_6_BLOCK_3_DECISIONS.md): exactitud actual con **riesgo residual de inferencia aceptado**, D08 ratificada y supresión completa por dimensión si alguna celda es 1..4, incluidos faltantes. No certifica anonimato ni cumplimiento legal.
 

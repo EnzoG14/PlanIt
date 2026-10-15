@@ -9,7 +9,7 @@
 | 0 | Auditoría, contratos, decisiones | Implementado; QA/firma humana pendientes | codex/r6-block-0; [PR #63 draft](https://github.com/EnzoG14/PlanIt/pull/63) | ad9327fff5aca65e6b676a56f1e1e93737102f32 | 0/0/0/0 | 18 checks baseline; build/lint PASS; 24 CA NOT RUN | NO |
 | 1 | RPC ocupación owner-only | Implementado; QA pendiente | codex/r6-block-1; [PR #64 draft](https://github.com/EnzoG14/PlanIt/pull/64) | 1ee60e3a1636c0ec181782343100d44b5f08be1e | 1/1/1/1 | RF-R6-01 CA01–04 parcial SQL; contrato/build/lint PASS; JWT/UI NOT RUN | NO |
 | 2 | Panel KPI | Implementado; QA pendiente | codex/r6-block-2; [PR #65 draft](https://github.com/EnzoG14/PlanIt/pull/65) | 7933aa9 | 0/0/0/0 | RF-R6-01 CA01–04 UI fixtures; JWT real pendiente | NO |
-| 3 | Demográficos privados | Implementado; QA pendiente | codex/r6-block-3; PR draft pendiente | e6a25a1 | 1/1/0/0 | RF-R6-02 CA01/03/04 parcial SQL/UI fixtures; CA02 B4; JWT real NOT RUN | NO |
+| 3 | Demográficos privados | Implementado; QA pendiente | codex/r6-block-3; [PR #66 draft](https://github.com/EnzoG14/PlanIt/pull/66) | e6a25a1 | 1/1/0/0 | RF-R6-02 CA01/03/04 parcial SQL/UI fixtures; CA02 B4; JWT real NOT RUN | NO |
 | 4 | Períodos y series | NO INICIADO | — | — | 0/0/0/0 | RF-R6-03 + R6-02 | NO |
 | 5 | CSV seguros | NO INICIADO | — | — | 0/0/0/0 | RF-R6-04 | NO |
 | 6 | Trigger aviso lleno | NO INICIADO | — | — | 0/0/0/0 | RF-R6-05 parcial | NO |
@@ -64,3 +64,5 @@ Por instrucción humana se aplicó la única pendiente 20261015130739 en planit-
 - RPC `get_my_event_demographics(uuid)→jsonb`, STABLE DEFINER, ownership antes de lectura privada, search_path vacío, EXECUTE authenticated; sin grants nuevos de lectura/tablas/triggers/índices. Migración `20261015160324`: **1 creada / 1 probada local / 0 aplicada remota / 0 verificada remota**.
 - Tablas y barras accesibles Amanecer, edad al día AR, sexo declarado y faltantes; empty/suppressed/error diferenciados, refresh y limpieza privada reutilizados de B2. Mockups/ DESIGN intactos. Sin B4/CSV/Realtime nuevos.
 - Build/lint y DTO PASS; replay PostgreSQL18.4, regresión R5 social y pruebas específicas SQL PASS; UI Edge con fixtures seis anchos, texto200%, altura corta, timeout/logout/offline PASS. Riesgo temporal/multievento reproducido como límite aceptado, no prueba de anonimato. [Evidencias, rendimiento y límites](../qa/r6-block-3/README.md). HTTP/JWT real, dispositivos, lector real y aceptación integral NOT RUN. B4 requiere permiso humano independiente; no merge/deploy/DDL remoto.
+
+- Cierre B3: commit funcional `ae9a0fea8a33bd3897188355108bd6b92dc096b5`; [PR #66 draft](https://github.com/EnzoG14/PlanIt/pull/66). El commit documental posterior sólo vincula PR/SHA; HEAD final disponible en Git/PR. Worktree limpio al cerrar; env continúa ignorado.
