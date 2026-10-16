@@ -1,0 +1,17 @@
+{
+  "environment": "Node 24; transpiled actual API, Supabase and fetch stubs; no real JWT/Storage/browser",
+  "results": [
+    {
+      "test": "Publish confirms exact UUID; retries preserve payload; null ACK/network/serialization uncertain; typed permission/conflict/read-only/validation failures",
+      "result": "PASS"
+    },
+    {
+      "test": "Cursor/server time/empty page and abort propagation; cross-event response refused",
+      "result": "PASS"
+    },
+    {
+      "test": "Authenticated no-store Blob download, changed session and forbidden/invalid bytes rejected; no signed/public URL or deletion",
+      "result": "PASS"
+    }
+  ]
+}

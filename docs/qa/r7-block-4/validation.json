@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-16",
+  "base": "b7a3e6a31f328ec375c4dcee1f3923720b42e697",
+  "branch": "codex/r7-block-4",
+  "build": {
+    "command": "npm run build",
+    "result": "PASS",
+    "warnings": [
+      "Mapbox chunk above 500kB",
+      "inlineDynamicImports deprecated"
+    ],
+    "pwa": "injectManifest, 86 precache entries"
+  },
+  "lint": {
+    "command": "npm run lint",
+    "result": "PASS",
+    "note": "Existing design audit/DiscoveryFilters warnings; generated local SQL runners may appear while tests run."
+  },
+  "deno": {
+    "command": "deno check --config supabase/functions/r7-story-image/deno.json supabase/functions/r7-story-image/index.ts",
+    "version": "2.9.6",
+    "result": "PASS"
+  },
+  "http": {
+    "command": "node scripts/check-r7-stories-http.mjs",
+    "result": "NOT RUN",
+    "reason": "Migration applied with approval; story reader deployment and provisioned JWT fixtures still pending"
+  },
+  "review": {
+    "agent": "stories_review",
+    "scope": "Read-only security review",
+    "result": "No actionable findings; no remote execution"
+  },
+  "migration": {
+    "version": "20261016193248",
+    "created": true,
+    "local_sql": "PASS",
+    "remote_applied": true,
+    "remote_verified": true,
+    "remote_evidence": "remote/summary.json"
+  }
+}

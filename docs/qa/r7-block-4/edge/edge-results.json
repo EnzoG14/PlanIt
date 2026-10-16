@@ -1,0 +1,17 @@
+{
+  "environment": "Node 24, actual TS handler; Auth/RPC/Storage HTTP stubs; no remote JWT or object authorization claim",
+  "results": [
+    {
+      "test": "Verified Auth identity, service-only target, bounded bytes and digest, second authorization, image MIME and no-store",
+      "result": "PASS"
+    },
+    {
+      "test": "CORS; wrong method, absent/invalid Auth, invalid message ID, browser path/identity and duplicate parameters rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "Denied target, TTL expiry/removal during fetch, changed object, digest mismatch, excess bytes and malformed target never return private bytes or internal metadata",
+      "result": "PASS"
+    }
+  ]
+}
