@@ -1,0 +1,273 @@
+{
+  "source": "https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit",
+  "generated_on": "2026-10-15",
+  "status": "planning",
+  "release": "R7",
+  "rf_count": 7,
+  "ca_count": 29,
+  "criteria": [
+    {
+      "rf": "RF-R7-01",
+      "ca": "RF-R7-01.CA-01",
+      "text": "El organizador o un asistente confirmado puede enviar como máximo una imagen de formato admitido por mensaje en un chat de evento vigente; los chats privados no admiten imágenes.",
+      "sprint": 1,
+      "implementation_block": "B2/B3",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-01",
+      "ca": "RF-R7-01.CA-02",
+      "text": "La imagen enviada queda asociada al mensaje, al remitente y al evento, y puede visualizarse al reabrir la conversación.",
+      "sprint": 1,
+      "implementation_block": "B2/B3",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-01",
+      "ca": "RF-R7-01.CA-03",
+      "text": "Los archivos con formato no permitido o las cargas fallidas se rechazan con un mensaje claro sin crear enlaces inválidos o mensajes aparentemente exitosos.",
+      "sprint": 1,
+      "implementation_block": "B2/B3",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-01",
+      "ca": "RF-R7-01.CA-04",
+      "text": "Las imágenes del chat sólo pueden ser consultadas por personas autorizadas a acceder a la conversación correspondiente.",
+      "sprint": 1,
+      "implementation_block": "B2/B3",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-02",
+      "ca": "RF-R7-02.CA-01",
+      "text": "El organizador o un asistente confirmado puede publicar una historia de una sola imagen válida antes de que el evento termine, se cancele o se archive.",
+      "sprint": 1,
+      "implementation_block": "B4/B5",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-02",
+      "ca": "RF-R7-02.CA-02",
+      "text": "Al publicar, la historia conserva su autor, evento y fecha/hora de publicación y queda disponible en la sección correspondiente.",
+      "sprint": 1,
+      "implementation_block": "B4/B5",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-02",
+      "ca": "RF-R7-02.CA-03",
+      "text": "Si el archivo no es admitido o la publicación falla, el sistema informa el error y no presenta una historia inexistente como publicada.",
+      "sprint": 1,
+      "implementation_block": "B4/B5",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-02",
+      "ca": "RF-R7-02.CA-04",
+      "text": "Un usuario no autorizado para participar en el evento no puede publicar historias en él.",
+      "sprint": 1,
+      "implementation_block": "B4/B5",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-03",
+      "ca": "RF-R7-03.CA-01",
+      "text": "El organizador y los asistentes confirmados pueden abrir desde la ficha del evento la sección de historias vigentes compartidas por usuarios autorizados.",
+      "sprint": 1,
+      "implementation_block": "B4/B5",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-03",
+      "ca": "RF-R7-03.CA-02",
+      "text": "Las historias mostradas corresponden únicamente al evento consultado y presentan las imágenes publicadas correctamente.",
+      "sprint": 1,
+      "implementation_block": "B4/B5",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-03",
+      "ca": "RF-R7-03.CA-03",
+      "text": "El usuario puede abrir una historia disponible y regresar a la sección del evento sin perder la navegación.",
+      "sprint": 1,
+      "implementation_block": "B4/B5",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-03",
+      "ca": "RF-R7-03.CA-04",
+      "text": "Cuando no hay historias vigentes, se muestra un estado vacío; un usuario no autorizado no accede a historias restringidas.",
+      "sprint": 1,
+      "implementation_block": "B4/B5",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-04",
+      "ca": "RF-R7-04.CA-01",
+      "text": "Una historia permanece disponible durante las primeras 24 horas posteriores a su fecha y hora de publicación, siempre que el usuario tenga permiso de acceso.",
+      "sprint": 2,
+      "implementation_block": "B6",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-04",
+      "ca": "RF-R7-04.CA-02",
+      "text": "Tras cumplirse 24 horas, la historia deja de estar accesible incluso por enlace directo; posteriormente se elimina su imagen de Storage sin afectar otras imágenes del evento ni mensajes.",
+      "sprint": 2,
+      "implementation_block": "B6",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-04",
+      "ca": "RF-R7-04.CA-03",
+      "text": "Una historia vencida tampoco puede recuperarse como contenido vigente mediante enlaces o consultas directas no autorizadas.",
+      "sprint": 2,
+      "implementation_block": "B6",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-04",
+      "ca": "RF-R7-04.CA-04",
+      "text": "El cálculo del vencimiento se basa en el instante persistido de publicación y no depende de modificar el reloj local del dispositivo.",
+      "sprint": 2,
+      "implementation_block": "B6",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-05",
+      "ca": "RF-R7-05.CA-01",
+      "text": "Desde el detalle de un evento, el usuario puede iniciar la acción de agregarlo al calendario personal.",
+      "sprint": 2,
+      "implementation_block": "B7",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-05",
+      "ca": "RF-R7-05.CA-02",
+      "text": "La invitación o entrada generada contiene como mínimo título, fecha, hora y ubicación del evento, cuando esta última está disponible.",
+      "sprint": 2,
+      "implementation_block": "B7",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-05",
+      "ca": "RF-R7-05.CA-03",
+      "text": "La aplicación solicita los permisos necesarios cuando corresponda y respeta una denegación sin afirmar que el evento fue agregado.",
+      "sprint": 2,
+      "implementation_block": "B7",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-05",
+      "ca": "RF-R7-05.CA-04",
+      "text": "Al completar correctamente la operación, el calendario o archivo compatible refleja los datos del evento; no se exige sincronización bidireccional.",
+      "sprint": 2,
+      "implementation_block": "B7",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-06",
+      "ca": "RF-R7-06.CA-01",
+      "text": "Desde el detalle de un evento, el usuario puede iniciar la opción Compartir y abrir el selector de aplicaciones compatibles disponible en su dispositivo.",
+      "sprint": 2,
+      "implementation_block": "B8",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-06",
+      "ca": "RF-R7-06.CA-02",
+      "text": "El contenido compartido incluye información suficiente para identificar el evento, como título, fecha y un enlace o referencia accesible cuando esté disponible.",
+      "sprint": 2,
+      "implementation_block": "B8",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-06",
+      "ca": "RF-R7-06.CA-03",
+      "text": "Si el usuario cancela el diálogo de compartir, la aplicación vuelve a la vista anterior sin indicar que el envío se completó.",
+      "sprint": 2,
+      "implementation_block": "B8",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-06",
+      "ca": "RF-R7-06.CA-04",
+      "text": "No se incluyen datos privados del evento o de sus asistentes que el usuario no tenga permiso para compartir.",
+      "sprint": 2,
+      "implementation_block": "B8",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-07",
+      "ca": "RF-R7-07.CA-01",
+      "text": "Un usuario puede activar las notificaciones Web Push cuando utiliza un navegador compatible y concede el permiso correspondiente.",
+      "sprint": 2,
+      "implementation_block": "B9/B10",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-07",
+      "ca": "RF-R7-07.CA-02",
+      "text": "Los avisos Push se generan a partir de los mismos eventos que la bandeja interna, sin duplicar el aviso en ella; se incluyen mensajes privados y no se envía un aviso por cada mensaje de chat grupal.",
+      "sprint": 2,
+      "implementation_block": "B9/B10",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-07",
+      "ca": "RF-R7-07.CA-03",
+      "text": "Si el usuario rechaza el permiso o el dispositivo no es compatible, la bandeja interna de notificaciones continúa disponible.",
+      "sprint": 2,
+      "implementation_block": "B9/B10",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-07",
+      "ca": "RF-R7-07.CA-04",
+      "text": "Si el envío Push falla o la suscripción deja de ser válida, el aviso permanece en la bandeja interna y no se informa una entrega inexistente.",
+      "sprint": 2,
+      "implementation_block": "B9/B10",
+      "status": "NOT RUN"
+    },
+    {
+      "rf": "RF-R7-07",
+      "ca": "RF-R7-07.CA-05",
+      "text": "Un usuario puede desactivar sus suscripciones Push sin afectar el historial de avisos dentro de PlanIt.",
+      "sprint": 2,
+      "implementation_block": "B9/B10",
+      "status": "NOT RUN"
+    }
+  ],
+  "implementation_planning_v2": {
+    "updated_on": "2026-10-15",
+    "user_decisions": [
+      "D01",
+      "D02",
+      "D03",
+      "D05",
+      "D07",
+      "D08",
+      "D09",
+      "D15",
+      "P01"
+    ],
+    "technical_calendar": "Google Calendar prefilled-link + ICS approved (D06); no OAuth",
+    "parallel_strategy": "docs/implementation/RELEASE_7_PARALLEL_WORK.md",
+    "parallel_roots": [
+      "B1",
+      "B7",
+      "B8",
+      "B9"
+    ],
+    "fanout_after_b1": [
+      "B2",
+      "B4"
+    ],
+    "fanout_after_b4": [
+      "B5",
+      "B6"
+    ],
+    "end_gate": "B11"
+  }
+}
