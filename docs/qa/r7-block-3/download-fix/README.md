@@ -1,6 +1,6 @@
 # R7 B3 — lectura de imágenes, corrección posterior
 
-16/10/2026. Rama `codex/r7-chat-upload-fix`, base `9d917a4`; continuación de [PR draft #82](https://github.com/EnzoG14/PlanIt/pull/82). **Implementación local verificada; lector nuevo NO desplegado; aceptación real pendiente.** No habilita otro bloque.
+16/10/2026. Rama `codex/r7-chat-upload-fix`, base `9d917a4`; continuación de [PR draft #82](https://github.com/EnzoG14/PlanIt/pull/82). **Lector desplegado y migración aplicada con autorización expresa «desplegalo»; aceptación real pendiente.** No habilita otro bloque.
 
 ## Diagnóstico y alcance
 
@@ -19,7 +19,10 @@ El cliente usa el JWT actual, conserva la caja y el ciclo de revocación de Blob
 - `node scripts/check-r7-chat-image-edge.mjs`: 3 grupos PASS sobre el handler real con HTTP simulado: autenticación, entrega y digest; entradas inválidas; denegación, retirada durante I/O, objeto cambiado, hash incorrecto y exceso de tamaño. [Evidencia](edge-results.json). No acredita JWT remoto.
 - `node scripts/check-r7-chat-image.mjs`: 8 grupos PASS; replay completo en PostgreSQL local, grants mínimos, organizador/confirmado, pendientes/retirados/terceros denegados, baja y revocación de grant oculto, regresiones B1/B2, operaciones concurrentes y rollback. [Evidencia](sql/sql-results.json).
 - `$env:PLANIT_UI_OUTPUT='docs/qa/r7-block-3/download-fix/ui'; node scripts/check-r7-chat-ui.mjs`: 62 checks PASS con fixtures, anchos 320/375/390/768/1280, éxito/error de imagen, autorización enviada y `cache: no-store`, revocación de Blob y regresión del compositor. [Evidencia](ui/results.json). Inspección visual de captura 375 px sin cambio de identidad.
-- `supabase db push --linked --skip-vault --dry-run` con staging de historial remoto: PASS; propone únicamente `20261016185634_r7_chat_image_delivery.sql`, sin seeds ni roles. No se ejecutó el push de esta migración.
+- `supabase db push --linked --skip-vault --dry-run` con staging de historial remoto: PASS; propone únicamente `20261016185634_r7_chat_image_delivery.sql`, sin seeds ni roles. Tras la autorización expresa se ejecutó ese push correctamente.
+- `supabase functions deploy r7-chat-image --project-ref iepeqmvzjguwlhnecsdq --use-api`: PASS. ACTIVE v1, `verify_jwt=true`. CORS OPTIONS 204; GET sin credenciales e inválidas 401. [HTTP remoto](deploy-http.json).
+- Catálogo remoto: migración registrada, `SECURITY DEFINER` con `search_path=''`, EXECUTE permitido sólo a `service_role`, denegado a anon/authenticated, target del último adjunto disponible para su autor y nulo sin identidad. [Evidencia](deployment.json). No acredita entrega de bytes con JWT real del usuario.
+- Asesor de seguridad remoto: cero errores, ningún hallazgo sobre `get_r7_chat_image_target`; 59 advertencias sobre otras RPC SECURITY DEFINER y protección de contraseñas filtradas. No se modifican esas funciones ni la configuración Auth en este arreglo. [Resumen](deploy-advisors.json).
 
 Los primeros intentos de pruebas dentro del sandbox fallaron por EACCES de loopback/lanzamiento de Edge; las ejecuciones finales fuera del sandbox pasaron. La prueba SQL también detectó un fixture de revocación sin `revoked_at`; se corrigió el fixture respetando el CHECK existente.
 
@@ -29,8 +32,8 @@ Los primeros intentos de pruebas dentro del sandbox fallaron por EACCES de loopb
 |---|---|---|---|---|
 | 20261016185018, ensayo GET de contexto | Sí | Sí, replay | Sí | Sí, registrada; ensayo fallido para el caso real |
 | 20261016185322, restaurar guard original | Sí | Sí, replay | Sí | Sí, política original restaurada |
-| 20261016185634, target sólo de servicio | Sí | Sí, positivos/negativos | No | No |
+| 20261016185634, target sólo de servicio | Sí | Sí, positivos/negativos | Sí, «desplegalo» | Sí, catálogo/permisos/target |
 
 La migración anterior de preflight y el validator desplegado se documentan en [storage-fix](../storage-fix/README.md). El nuevo lector no se confunde con aquel despliegue autorizado.
 
-Pendiente: autorización expresa para desplegar `r7-chat-image` y activar su migración en `planit-v2`, luego prueba HTTP con usuario real y confirmación visual del responsable. El prompt B3 exige permiso expreso para Edge deploy. No hay merge ni avance al siguiente bloque. RF-R7-02 y sus CA siguen sin aceptación integral; las pruebas con fixtures no se contabilizan como aceptación real.
+Pendiente: prueba HTTP con usuario real y confirmación visual del responsable desde el frontend de esta rama. El despliegue autorizado es del backend Supabase; no se publica otro frontend. No hay merge ni avance al siguiente bloque. RF-R7-02 y sus CA siguen sin aceptación integral; las pruebas con fixtures no se contabilizan como aceptación real.
