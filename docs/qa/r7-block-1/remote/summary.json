@@ -1,0 +1,161 @@
+{
+  "date_argentina": "2026-10-16",
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "authorization": "User explicitly requested applying pending remote migrations in this chat.",
+  "version": "20261016131118",
+  "created": true,
+  "local_sql": "PASS",
+  "remote_applied_with_approval": true,
+  "remote_verified": true,
+  "migration_sha256": "0486fc3cae32df29fc0ca2cc3da31deaed010c6835184b001899cf9e3416a135",
+  "server_version": "17.11",
+  "history_count": 38,
+  "pending_after_dry_run": 0,
+  "functions": [
+    {
+      "schema": "planit_private",
+      "name": "r7_media_path",
+      "body_sha256": "2ca84014ee8be81438eaad47bcea43e998813485c41d7ab0a4987b3831ce0dad",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "lock_r7_media_event",
+      "body_sha256": "a93db0ba8032c3f59ff167979cf910ab01b442d4579b40e73b177e151042abb2",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "public",
+      "name": "reserve_event_media_upload",
+      "body_sha256": "61d0f1ef81258fb96069577535d9f93d64ff0173bd4d2360b9031d84e55720bb",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "can_read_r7_media",
+      "body_sha256": "ec8d7a8f440b52b8e86f306d9bcb9b47a734893566b4f729941fb9983e14ba90",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "can_upload_r7_media",
+      "body_sha256": "4cd439ac2ce5452b4953ae282924e76ffa5ada4ec659d7f87d18c40935416367",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "guard_r7_file",
+      "body_sha256": "3d07d9fd66b14356d69935da0d30a336bc0e7d081c9310bf18437f7e6f551860",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "validate_event_file",
+      "body_sha256": "cde6249692c045ead7d61f61304465229300105fb18e2ece89b8626cb409a49b",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "guard_r7_gallery",
+      "body_sha256": "1cd269df762f23a38d38102480811dc3b6c9a5f83ebad972bc5b68e19ffc7ed4",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "register_r7_media",
+      "body_sha256": "da9d2deb87054b81b192c7b933ab966c095d56f9ec8319661d1636d5ef6eedf9",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "check_r7_message",
+      "body_sha256": "759b3881a080db56e899cea740322a87d0a0b30d6f55d281eaa3578d77edd5b1",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "check_r7_message_trigger",
+      "body_sha256": "0b64ab9a8b0391d478bb40a273707500de77bd5cc5a17e769c476749e8259469",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "check_r7_claim_trigger",
+      "body_sha256": "ceaf6360049f4785e205595a84c7b6db2d3e8105ba53e74550727a314528c642",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "check_r7_file",
+      "body_sha256": "61aad33e817eb92364f7f1be663ba584090a706deae83839fdcbab4e3d60661a",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "check_r7_file_trigger",
+      "body_sha256": "64312df6bbd1b69926c844673c37e3c2138b8335cecd7dea467880fe1a4a9fa5",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "planit_private",
+      "name": "guard_r7_conversation",
+      "body_sha256": "f9b50dbb4ce599bfd927f8410bda386f9008a4f193ce5ff7adf297b13244befd",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_chat_messages",
+      "body_sha256": "0b8eda910bc933f7ac23bb8f8e93ec7b58731cd72630fb81438d213340d18344",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "public",
+      "name": "get_event_media_upload_state",
+      "body_sha256": "a64dc3a538d98c9290e9bdf7ad5cbb91f3551e3ddd7d7ea5785372a9f63e2b5d",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "public",
+      "name": "get_r7_media_validation_target",
+      "body_sha256": "1a41e4c3ff488247d084d7558e268704f2c17de0bb163a565b040420f5ba40ea",
+      "body_matches": true,
+      "acl_matches": true
+    },
+    {
+      "schema": "public",
+      "name": "complete_r7_media_validation",
+      "body_sha256": "6c2793d71dfd8f8f87c24e37b4f8f87485ca6fafd3dc4bab304082107cd3fd64",
+      "body_matches": true,
+      "acl_matches": true
+    }
+  ],
+  "rls_acl": "PASS",
+  "storage_policy_inventory": "PASS",
+  "advisors": {
+    "errors": 0,
+    "warnings": 53,
+    "names": [
+      "authenticated_security_definer_function_executable",
+      "auth_leaked_password_protection"
+    ]
+  },
+  "scope": "Catalog/history/function bodies/ACL/RLS verification. Real Auth/JWT/Storage HTTP and Edge deploy NOT RUN.",
+  "result": "PASS"
+}

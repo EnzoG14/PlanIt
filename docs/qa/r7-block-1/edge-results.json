@@ -1,0 +1,14 @@
+{
+  "environment": "Node 24 executing actual handler/decoder TS with real ImageMagick WASM; Auth/Storage/PostgREST HTTP stubs. Deno/Supabase deployment NOT RUN.",
+  "results": [
+    {
+      "test": "Actual pinned WASM decodes JPEG/PNG/WebP pixel data; truncation, false MIME/magic, GIF, empty and oversize rejected; asset SHA-256 verified",
+      "result": "PASS"
+    },
+    {
+      "test": "Edge handler validates Auth identity, ignores client identity/path, rejects unauthorized and corrupt images, hashes bytes, handles revalidation race, no URLs/secrets in response (HTTP dependencies stubbed)",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}
