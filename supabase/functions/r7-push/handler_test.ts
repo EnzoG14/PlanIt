@@ -44,8 +44,9 @@ Deno.test('B10 payload: strict recipient/job correlation, Unicode limits, plain 
   assert.equal(plainText('<b>Hola</b>\u0000 https://evil.invalid/path\u202e', 120, ''), 'Hola')
   for (const endpoint of ['https://127.0.0.1/', 'http://fcm.googleapis.com/', 'https://fcm.googleapis.com.evil.invalid/',
     'https://user:secret@fcm.googleapis.com/', 'https://fcm.googleapis.com:444/', 'https://fcm.googleapis.com/#fragment',
-    'https://random-public.example/', 'https://fcm.googleapis.com\\@evil.invalid/']) assert.equal(safeEndpoint(endpoint), false)
-  for (const endpoint of ['https://updates.push.services.mozilla.com/wpush/v2/x', 'https://web.push.apple.com/x', 'https://wns2-par02p.notify.windows.com/w/?x']) assert.equal(safeEndpoint(endpoint), true)
+    'https://random-public.example/', 'https://fcm.googleapis.com\\@evil.invalid/',
+    'https://jmt17.google.com/log', 'https://jmt17.google.com.evil.invalid/fcm/send/x']) assert.equal(safeEndpoint(endpoint), false)
+  for (const endpoint of ['https://updates.push.services.mozilla.com/wpush/v2/x', 'https://web.push.apple.com/x', 'https://wns2-par02p.notify.windows.com/w/?x', 'https://jmt17.google.com/fcm/send/fixture']) assert.equal(safeEndpoint(endpoint), true)
   for (const target of ['//evil.invalid', 'https://evil.invalid', '/events/../secret', '/invite#token=secret', '/messages/------------------------------------']) assert.equal(safeTarget(target), '/notifications')
   assert.equal(safeTarget(raw.payload.target), raw.payload.target)
   assert.throws(() => parseDelivery({ ...raw, payload: { ...raw.payload, notification_id: job.subscription_id } }, job))

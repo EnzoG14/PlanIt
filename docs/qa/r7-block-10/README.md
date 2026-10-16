@@ -24,7 +24,7 @@ La tabla está en `planit_private`, fuera de los schemas de Data API; RLS activa
 
 La función acepta exclusivamente POST con `Authorization: Bearer <PUSH_WORKER_TOKEN>`, secreto dedicado aleatorio de 32 bytes codificados base64url. No acepta JWT de usuarios, publishable key ni la propia service key como credencial de invocación. La service key se usa dentro de Edge para llamar las RPC. El gateway debe desplegarse con `--no-verify-jwt`: la verificación del secreto se realiza siempre en el handler con comparación de hashes en tiempo constante. Sin configuración válida responde 503 y no reclama trabajo.
 
-El transporte usa `web-push@3.6.7` fijado en `deno.json`/`deno.lock`, sólo en Edge, para cifrado `aes128gcm` y firma VAPID. Se usa `generateRequestDetails` y fetch con timeout absoluto de ocho segundos y `redirect: 'error'`. No se leen cuerpos de respuesta del proveedor. Se admiten exclusivamente FCM, Mozilla Push, Apple Web Push y subdominios de Windows Notify enumerados por `safeEndpoint`; otros proveedores fallan de forma segura y requieren revisión antes de ampliar la lista. La validación general B9 no basta para impedir DNS rebinding; esta restricción no cambia permisos de recursos.
+El transporte usa `web-push@3.6.7` fijado en `deno.json`/`deno.lock`, sólo en Edge, para cifrado `aes128gcm` y firma VAPID. Se usa `generateRequestDetails` y fetch con timeout absoluto de ocho segundos y `redirect: 'error'`. No se leen cuerpos de respuesta del proveedor. Se admiten exclusivamente FCM, Mozilla Push, Apple Web Push y subdominios de Windows Notify enumerados por `safeEndpoint`; Se añadió después, con autorización específica, el endpoint Chromium de staging `jmt17.google.com/fcm/send/`; otros proveedores fallan de forma segura y requieren revisión antes de ampliar la lista. La validación general B9 no basta para impedir DNS rebinding; esta restricción no cambia permisos de recursos.
 
 D12 aprobada por el responsable en esta conversación: lease 60 s, hasta cinco intentos, backoff 30/60/120/240 s + jitter uniforme 0..10 s, TTL 15 min, lote máximo 100 y retención terminal siete días. Edge reclama grupos de cinco inmediatamente antes de enviarlos, con concurrencia cinco y presupuesto de inicio de grupos de 40 s; REST tiene timeout cinco segundos. No reserva 100 leases antes de atenderlos.
 
@@ -54,7 +54,7 @@ SQL usa PostgreSQL real local con Auth/Storage SQL simulados y `SET ROLE`; no ac
 
 ## Procedimiento remoto — migración aplicada; infraestructura pendiente
 
-Actualización posterior: el paso 1 se ejecutó para B10 con autorización expresa del responsable el 16/10/2026. B9 ya estaba aplicada. Ver [acta remota](remote/README.md). Los pasos 2–6 siguen propuestos y NO ejecutados.
+Actualización posterior: el paso 1 se ejecutó para B10 con autorización expresa del responsable el 16/10/2026. B9 ya estaba aplicada. Ver [acta remota](remote/README.md). Actualización posterior: secrets y deploy ejecutados; Perfil integrado y un DM real recibido confirmado por el responsable. Ver [acta de deploy](deploy/README.md). Cron/Vault y matriz completa de dispositivos siguen pendientes.
 
 Requiere aprobación independiente para cada operación y exclusivamente proyecto `iepeqmvzjguwlhnecsdq`. El proyecto histórico no participa.
 
@@ -69,6 +69,6 @@ Con un cron por minuto: hasta **1.440 invocaciones Edge/día** y techo de **144.
 
 Rollback operativo: detener el cron y retirar el acceso del invocador; conservar jobs y avisos. No deshacer migraciones aplicadas ni borrar historial para desactivar Push. Rotar token dedicado en Edge y Vault de forma coordinada; rotar VAPID exige renovar suscripciones del navegador con la nueva clave pública.
 
-El SW B9 dirige clics a la bandeja del mismo origen, que valida sesión y RLS; B11 es dueño del wiring central y del ajuste Push visible en la aplicación. No se añade integración de rutas en B10. Previews ya entregadas a un dispositivo y la ventana entre comprobación de permisos y red no son revocables retroactivamente.
+El SW B9 dirige clics a la bandeja del mismo origen, que valida sesión y RLS; B11 conserva el wiring central restante. El pedido posterior de ejecutar el circuito adelantó únicamente la inclusión del panel Push existente en Perfil; no se ejecutó B11 completo. Previews ya entregadas a un dispositivo y la ventana entre comprobación de permisos y red no son revocables retroactivamente.
 
 Fuentes técnicas consultadas: [web-push](https://github.com/web-push-libs/web-push#api-reference) y [autenticación de Edge Functions](https://supabase.com/docs/guides/functions/auth). El mecanismo de token dedicado se valida en el handler, independiente de JWT de usuario.

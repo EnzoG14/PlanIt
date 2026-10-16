@@ -49,6 +49,8 @@ export function safeEndpoint(value: unknown): value is string {
     const u = new URL(value)
     return u.protocol === 'https:' && !u.username && !u.password && !u.port && !u.hash &&
       (['fcm.googleapis.com', 'updates.push.services.mozilla.com', 'web.push.apple.com'].includes(u.hostname)
+        // Chromium's explicit staging endpoint; never allow arbitrary google.com hosts.
+        || (u.hostname === 'jmt17.google.com' && u.pathname.startsWith('/fcm/send/'))
         || /^[a-z0-9-]+\.notify\.windows\.com$/.test(u.hostname))
   } catch { return false }
 }

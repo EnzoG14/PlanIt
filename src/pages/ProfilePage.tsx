@@ -8,6 +8,7 @@ import './profile.css'
 import { participantsReturn } from '../features/social/api'
 import { OwnSocialCounts } from '../components/SocialCounts'
 import { followsReturn } from '../features/social/follows'
+import { PushSettings } from '../features/notifications/PushSettings'
 
 type ProfileResult = { profile: OwnProfile; avatarUrl: string | null } | { error: true }
 
@@ -91,5 +92,6 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
       <Link to="/my-events"><Icon name="calendar" /><span>Mis eventos</span><span aria-hidden="true">›</span></Link>
       <Link to="/notifications"><Icon name="bell" /><span>Notificaciones</span><span aria-hidden="true">›</span></Link>
     </nav>
+    <PushSettings userId={userId} />
   </div>
 }

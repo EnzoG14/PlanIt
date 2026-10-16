@@ -1,0 +1,31 @@
+{
+  "environment": "Production build in Edge headless; Auth/RPC and permission fixtures; no real account or Push reception",
+  "results": [
+    {
+      "width": 320,
+      "result": "PASS",
+      "scope": "Profile integration, no auto permission, preview control, explicit denied gesture, no overflow; Auth/RPC/permission fixtures"
+    },
+    {
+      "width": 375,
+      "result": "PASS",
+      "scope": "Profile integration, no auto permission, preview control, explicit denied gesture, no overflow; Auth/RPC/permission fixtures"
+    },
+    {
+      "width": 390,
+      "result": "PASS",
+      "scope": "Profile integration, no auto permission, preview control, explicit denied gesture, no overflow; Auth/RPC/permission fixtures"
+    },
+    {
+      "width": 768,
+      "result": "PASS",
+      "scope": "Profile integration, no auto permission, preview control, explicit denied gesture, no overflow; Auth/RPC/permission fixtures"
+    },
+    {
+      "width": 1280,
+      "result": "PASS",
+      "scope": "Profile integration, no auto permission, preview control, explicit denied gesture, no overflow; Auth/RPC/permission fixtures"
+    }
+  ],
+  "result": "PASS"
+}
