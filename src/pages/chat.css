@@ -34,3 +34,26 @@
 .chat-messages:focus-visible { outline-offset: -3px; }
 .social-shell .chat-composer > .field-error { color: var(--pi-color-danger-on-bg); }
 @media (max-height: 500px) { .chat-page { gap: 4px; } .chat-header { padding-block: calc(4px + env(safe-area-inset-top)) 4px; } .chat-composer label { margin-bottom: 4px; } .chat-composer textarea { max-height: 64px; } }
+
+/* Event attachments stay local to this composer; DMs retain their text layout. */
+.event-chat-page .chat-composer { max-height: 55%; overflow-y: auto; }
+.event-chat-page .chat-refresh { flex-wrap: wrap; }
+.event-chat-page .chat-compose-row { align-items: center; }
+.event-chat-page .chat-compose-row button { max-width: 46%; flex-shrink: 0; overflow-wrap: anywhere; }
+.event-chat-page .chat-attachment-controls { justify-content: space-between; flex-wrap: wrap; gap: 0 12px; }
+.event-chat-page .chat-attachment-controls p { margin: 0; font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); }
+.event-chat-page .chat-file-label { position: relative; display: inline-flex; align-items: center; min-height: 44px; margin: 0; color: var(--pi-color-violet-deep); font-size: var(--pi-font-meta-size); cursor: pointer; border-radius: var(--pi-radius-pill); padding-inline: 8px; }
+.event-chat-page .chat-file-label input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.event-chat-page .chat-file-label:focus-within { outline: 3px solid var(--pi-color-focus); outline-offset: 2px; }
+.event-chat-page .chat-file-label[aria-disabled="true"] { color: var(--pi-color-disabled-text); cursor: default; }
+.event-chat-page .chat-attachment-preview { gap: 8px; padding-block: 4px 8px; }
+.event-chat-page .chat-attachment-preview img { width: 56px; height: 56px; flex-shrink: 0; object-fit: contain; border-radius: 8px; }
+.event-chat-page .chat-attachment-preview span { flex: 1; min-width: 0; overflow-wrap: anywhere; font-size: var(--pi-font-meta-size); }
+.event-chat-page .chat-attachment-preview .text-button { min-height: 44px; max-width: 42%; background: transparent; color: var(--pi-color-violet-deep); }
+.event-chat-page .chat-composer > p:empty { display: none; }
+.event-chat-page .chat-file-help { font-size: var(--pi-font-meta-size); }
+.chat-image { width: min(260px, 65vw); height: clamp(112px, 23vh, 210px); margin-block: 6px; border-radius: var(--pi-radius-bubble); overflow: hidden; background: var(--pi-color-surface-soft); }
+.chat-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.chat-image-placeholder { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px; overflow: auto; }
+.chat-image-placeholder p { margin: 0; font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); }
+.chat-image-placeholder .text-button { min-height: 44px; }

@@ -1,0 +1,323 @@
+{
+  "base": "cc4e70e89f03fed2162c5477af5a5c564ad83745",
+  "branch": "codex/r7-block-3",
+  "sourceHashes": {
+    "src/features/events/chat.ts": "94700e5f886674b3cd22e9aa6f1048fd0f9559463185c4753a3077320e08cb8a",
+    "src/pages/EventChatPage.tsx": "3a16c6eafcd676a346266d0baabb52c39f8483a373c72369dea6710fb6588a2e",
+    "src/pages/chat.css": "ea9df1a06b050faefd739ec44ba98f2dcb63b590e1ab00035f167ca6f475171a"
+  },
+  "browser": "155.0.4283.45",
+  "environment": "Edge headless; actual production build; intercepted Auth/RPC/Storage/Edge/Phoenix; NO remote authorization claim",
+  "results": [
+    {
+      "width": 320,
+      "name": "Invalid MIME, size and corrupt bytes reject without send; native picker is single file",
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Replace/remove, text+image, image-only, reopen and authorized GET fixture",
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Upload failure never commits; retry preserves reservation and path",
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Validation failure is not success; retry uses original file",
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Lost committed reply reconciles without another send",
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Lost uncommitted reply retries identical UUID/body/file after querying",
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Text only, 2000 codepoints and offline preserve content without sending",
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Stable pagination anchor and duplicate Realtime reconciliation preserve reader",
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Responsive, doubled computed text, short viewport with preview and keyboard focus",
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Denied GET shows explicit error and no image",
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Closed event retains history without composer",
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Permission loss clears all private Blob URLs",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Invalid MIME, size and corrupt bytes reject without send; native picker is single file",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Replace/remove, text+image, image-only, reopen and authorized GET fixture",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Upload failure never commits; retry preserves reservation and path",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Validation failure is not success; retry uses original file",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Lost committed reply reconciles without another send",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Lost uncommitted reply retries identical UUID/body/file after querying",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Text only, 2000 codepoints and offline preserve content without sending",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Stable pagination anchor and duplicate Realtime reconciliation preserve reader",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Responsive, doubled computed text, short viewport with preview and keyboard focus",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Denied GET shows explicit error and no image",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Closed event retains history without composer",
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Permission loss clears all private Blob URLs",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Invalid MIME, size and corrupt bytes reject without send; native picker is single file",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Replace/remove, text+image, image-only, reopen and authorized GET fixture",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Upload failure never commits; retry preserves reservation and path",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Validation failure is not success; retry uses original file",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Lost committed reply reconciles without another send",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Lost uncommitted reply retries identical UUID/body/file after querying",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Text only, 2000 codepoints and offline preserve content without sending",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Stable pagination anchor and duplicate Realtime reconciliation preserve reader",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Responsive, doubled computed text, short viewport with preview and keyboard focus",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Blob expiry after 30s and hidden document revoke all downloaded URLs",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Denied GET shows explicit error and no image",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Closed event retains history without composer",
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Permission loss clears all private Blob URLs",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Invalid MIME, size and corrupt bytes reject without send; native picker is single file",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Replace/remove, text+image, image-only, reopen and authorized GET fixture",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Upload failure never commits; retry preserves reservation and path",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Validation failure is not success; retry uses original file",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Lost committed reply reconciles without another send",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Lost uncommitted reply retries identical UUID/body/file after querying",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Text only, 2000 codepoints and offline preserve content without sending",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Stable pagination anchor and duplicate Realtime reconciliation preserve reader",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Responsive, doubled computed text, short viewport with preview and keyboard focus",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Denied GET shows explicit error and no image",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Closed event retains history without composer",
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Permission loss clears all private Blob URLs",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Invalid MIME, size and corrupt bytes reject without send; native picker is single file",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Replace/remove, text+image, image-only, reopen and authorized GET fixture",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Upload failure never commits; retry preserves reservation and path",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Validation failure is not success; retry uses original file",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Lost committed reply reconciles without another send",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Lost uncommitted reply retries identical UUID/body/file after querying",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Text only, 2000 codepoints and offline preserve content without sending",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Stable pagination anchor and duplicate Realtime reconciliation preserve reader",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Responsive, doubled computed text, short viewport with preview and keyboard focus",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "200% desktop zoom reflow emulation at 640x450 CSS pixels; native browser zoom not claimed",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Denied GET shows explicit error and no image",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Closed event retains history without composer",
+      "status": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Permission loss clears all private Blob URLs",
+      "status": "PASS"
+    }
+  ]
+}
