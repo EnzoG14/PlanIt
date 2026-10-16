@@ -1,0 +1,1 @@
+{"project":"planit-v2","verification":"READ ONLY catalog query, 2026-10-16","corrective_migrations_applied":2,"original_operation_guard_restored":true,"new_reader_not_applied":true,"reader_dry_run":{"migrations":["20261016185634_r7_chat_image_delivery.sql"],"seeds":[],"roles":[]},"note":"Catalog and dry-run only; no authenticated user byte delivery proven."}

@@ -1,5 +1,9 @@
 # R7 · Bloque 3 — Imágenes en el chat de evento
 
+**Lectura posterior, 16/10/2026:** ante el GET del usuario con `NoSuchKey`, se preparó un nuevo lector privado. [Diagnóstico, despliegue y pruebas](download-fix/README.md): `r7-chat-image` ACTIVE v1 y RPC sólo de servicio aplicada/verificada en planit-v2 tras autorización expresa «desplegalo». OPTIONS 204 y GET sin sesión/inválida 401. El responsable confirmó «ahora si se visualiza»: PASS manual reportado para el caso real que fallaba, sin ampliar la aceptación a los demás casos pendientes. El ensayo de política GET se revirtió con una migración incremental y la restauración se verificó remotamente. PR #82 actualizada; no habilita otro bloque.
+
+**Corrección posterior, 16/10/2026:** el responsable detectó un 403 real de Storage. [Reparación y evidencia](storage-fix/README.md), [PR draft #82](https://github.com/EnzoG14/PlanIt/pull/82): migración incremental de preflight aplicada/verificada en planit-v2, sin debilitar la validación final. `r7-media-validate` desplegada con aprobación expresa posterior: ACTIVE v1, verify_jwt=true, OPTIONS 204 y POST sin credenciales 401. Las menciones inferiores a cero migraciones describen la entrega inicial #79 y quedan complementadas por esta corrección; el flujo autenticado integral continúa pendiente de prueba/aceptación.
+
 16/10/2026, Argentina. **Implementado; validación de interfaz con fixtures PASS; aceptación integral pendiente de transporte real y revisión humana.** Rama `codex/r7-block-3`, worktree `r7-block-3-worktree`, base limpia `cc4e70e89f03fed2162c5477af5a5c564ad83745` (`origin/main`, PR #78/B2, #75/B1 y #74/B0 integradas tras fetch). El pedido del responsable autoriza este bloque. Entrega técnica `1fcc491a4cb7b1e31a2208f2e2195f0e39e6bebe`, [PR draft #79](https://github.com/EnzoG14/PlanIt/pull/79). La PR no habilita el bloque siguiente ni acredita aceptación humana.
 
 ## Cambios y compatibilidad

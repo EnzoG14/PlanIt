@@ -1,0 +1,19 @@
+{
+  "project": "planit-v2",
+  "function": "r7-chat-image",
+  "results": [
+    {
+      "name": "CORS preflight",
+      "status": 204
+    },
+    {
+      "name": "No credentials",
+      "status": 401
+    },
+    {
+      "name": "Invalid bearer",
+      "status": 401
+    }
+  ],
+  "note": "No authenticated user image delivery asserted."
+}

@@ -1,0 +1,20 @@
+{
+  "project": "planit-v2",
+  "function": "r7-media-validate",
+  "results": [
+    {
+      "method": "OPTIONS",
+      "status": 204,
+      "cacheControl": "no-store",
+      "allowMethods": "POST, OPTIONS",
+      "body": ""
+    },
+    {
+      "method": "POST",
+      "status": 401,
+      "cacheControl": null,
+      "allowMethods": null,
+      "body": "{\"code\":\"UNAUTHORIZED_NO_AUTH_HEADER\",\"message\":\"Missing authorization header\"}"
+    }
+  ]
+}

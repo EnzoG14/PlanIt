@@ -8,7 +8,7 @@
 | B0 | Auditoría entregada; firma humana pendiente | `codex/r7-block-0` / [PR draft #74](https://github.com/EnzoG14/PlanIt/pull/74) | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | [Acta](RELEASE_7_BLOCK_0_DECISIONS.md), [37/37 checks documentales](../qa/r7-block-0/audit.json) | NO-GO siguiente bloque |
 | B1 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
 | B2 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
-| B3 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
+| B3 | Corrección de lectura desplegada; visualización confirmada | `codex/r7-chat-upload-fix` / [PR draft #82](https://github.com/EnzoG14/PlanIt/pull/82) | 4 correctivas | PASS local | 4/4 | 4/4 catálogo | Lector ACTIVE v1; OPTIONS 204, sin sesión/inválida 401; visualización real PASS reportado por responsable | 62 checks fixtures PASS | [Detalle y marcas](../qa/r7-block-3/download-fix/README.md), [preflight](../qa/r7-block-3/storage-fix/README.md) | NO-GO siguiente bloque |
 | B4 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
 | B5 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
 | B6 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |

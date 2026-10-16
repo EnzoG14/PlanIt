@@ -1,0 +1,11 @@
+{
+  "project": "planit-v2",
+  "type": "security",
+  "warning_count": 59,
+  "error_count": 0,
+  "reader_findings": [],
+  "categories": [
+    "auth_leaked_password_protection",
+    "authenticated_security_definer_function_executable"
+  ]
+}

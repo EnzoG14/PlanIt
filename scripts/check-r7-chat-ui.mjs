@@ -6,8 +6,9 @@ import { pathToFileURL } from 'node:url'
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 
-const root = resolve('dist'), out = 'docs/qa/r7-block-3/ui'
+const root = resolve('dist'), out = process.env.PLANIT_UI_OUTPUT ?? 'docs/qa/r7-block-3/ui'
 const revision = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim()
+const branch = execFileSync('git', ['branch', '--show-current'], { encoding: 'utf8' }).trim()
 const sourceHashes = Object.fromEntries(await Promise.all(['src/features/events/chat.ts','src/pages/EventChatPage.tsx','src/pages/chat.css'].map(async path => [path, createHash('sha256').update(await readFile(path)).digest('hex')])))
 const mime = { '.js': 'text/javascript', '.css': 'text/css', '.html': 'text/html', '.woff2': 'font/woff2', '.svg': 'image/svg+xml' }
 const server = createServer(async (req, res) => {
@@ -28,7 +29,7 @@ try {
     process.env.PLANIT_UI_OUTPUT = `${out}/regression-dm`
     await import('./check-r5-messages-ui.mjs')
     const path = `${out}/regression-dm/ui-results.json`, result = JSON.parse(await readFile(path,'utf8'))
-    await writeFile(path,JSON.stringify({...result,base:revision,branch:'codex/r7-block-3',sourceHashes,harness:'Unmodified R5 DM regression; metadata updated by B3 wrapper to identify the actual tested build'},null,2))
+    await writeFile(path,JSON.stringify({...result,base:revision,branch,sourceHashes,harness:'Unmodified R5 DM regression; metadata updated by B3 wrapper to identify the actual tested build'},null,2))
   } else {
     await run()
   }
@@ -53,6 +54,12 @@ async function checks(browser) {
       URL.createObjectURL = blob => { const url = create(blob); live.add(url); return url }
       URL.revokeObjectURL = url => { live.delete(url); revoke(url) }
       window.__liveBlobs = live
+      window.__downloadCacheModes = []
+      const fetchOriginal = window.fetch.bind(window)
+      window.fetch = (input, init) => {
+        if (String(input).includes('/functions/v1/r7-chat-image?') && (!init?.method || init.method === 'GET')) window.__downloadCacheModes.push(init?.cache)
+        return fetchOriginal(input, init)
+      }
     }, session)
     let state = 'open', denied = false, getDenied = false, uploadFailed = false, rpcFail = '', commitLost = false, validationFailed = false
     const writes = [], reservations = [], gets = [], uploads = [], sockets = []
@@ -87,7 +94,7 @@ async function checks(browser) {
       if (path.endsWith('/get_event_media_upload_state')) return reply({uploaded:true,state:'reserved'})
       if (path.endsWith('/r7-media-validate')) return validationFailed ? fail('invalid_image','P0001',422) : reply({verified:true,file_id:req.postDataJSON().file_id})
       if (path.includes('/storage/v1/object/') && req.method() === 'POST') { uploads.push(path); return uploadFailed ? fail('upload failed','500',500) : reply({Key:path}) }
-      if (path.includes('/storage/v1/object/authenticated/') && req.method() === 'GET') { gets.push({method:req.method(),authorization:req.headers().authorization,cache:req.headers()['cache-control']}); return getDenied ? fail('denied') : route.fulfill({contentType:'image/png',body:png}) }
+      if (path === '/functions/v1/r7-chat-image' && req.method() === 'GET') { assert.ok(new URL(req.url()).searchParams.get('message_id'));gets.push({method:req.method(),authorization:req.headers().authorization}); return getDenied ? fail('denied') : route.fulfill({contentType:'image/png',body:png}) }
       if (path.endsWith('/send_event_chat_message_v2')) {
         const p=req.postDataJSON(); writes.push(p)
         if (rpcFail && !commitLost) { const failure=rpcFail; rpcFail=''; return failure === 'lost' ? route.abort('failed') : fail(failure,'P0001',400) }
@@ -119,7 +126,7 @@ async function checks(browser) {
       await select();await shot('preview');await b('Quitar imagen').click();assert.equal(await page.getByAltText('Vista previa de la imagen seleccionada').count(),0)
       await select();await select({...file,name:'reemplazo.png'});assert.equal(await page.getByText('reemplazo.png',{exact:true}).count(),1)
       await page.locator('#chat-text').fill('Nos vemos en el encuentro');await page.locator('.chat-composer').evaluate(form=>{form.requestSubmit();form.requestSubmit()});await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.equal(writes.length,1)
-      await page.getByAltText('Imagen compartida por Sofía fixture').waitFor();assert.ok(gets.length>0);assert.ok(gets.every(g=>g.authorization==='Bearer fixture-token' && /no-cache|no-store/.test(g.cache)))
+      await page.getByAltText('Imagen compartida por Sofía fixture').waitFor();assert.ok(gets.length>0);assert.ok(gets.every(g=>g.authorization==='Bearer fixture-token'));assert.ok(await page.evaluate(()=>window.__downloadCacheModes.length>0&&window.__downloadCacheModes.every(mode=>mode==='no-store')))
       await shot('text-image');await select();await b('Enviar').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.equal(writes[1].p_body,null)
       await page.reload();await page.getByAltText('Imagen compartida por Sofía fixture').last().waitFor();check('Replace/remove, text+image, image-only, reopen and authorized GET fixture')
       await select();uploadFailed=true;const n=writes.length;await b('Enviar').click();await page.getByRole('alert').filter({hasText:'carga se interrumpió'}).waitFor();assert.equal(writes.length,n);uploadFailed=false
@@ -161,6 +168,6 @@ async function checks(browser) {
     } catch(error) { await shot('failure'); throw error }
     finally { await context.close() }
   }
-  await writeFile(`${out}/results.json`,JSON.stringify({base:revision,branch:'codex/r7-block-3',sourceHashes,browser:browser.version(),environment:'Edge headless; actual production build; intercepted Auth/RPC/Storage/Edge/Phoenix; NO remote authorization claim',results},null,2))
+  await writeFile(`${out}/results.json`,JSON.stringify({base:revision,branch,sourceHashes,browser:browser.version(),environment:'Edge headless; actual production build; intercepted Auth/RPC/Storage/Edge/Phoenix; NO remote authorization claim',results},null,2))
   console.log(`${results.length} UI fixture checks PASS`)
 }
