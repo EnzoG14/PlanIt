@@ -1,6 +1,6 @@
 # R7 · Bloque 1 — Modelo multimedia y aislamiento
 
-16/10/2026, Argentina. **Implementación entregada para revisión; NO-GO de integración/despliegue hasta comprobar Storage HTTP real.** Base `5adf8e455c90d46adc0f5477c5d3e9ee06eb2461` (`origin/main`, #74 integrada), rama `codex/r7-block-1`, worktree `r7-block-1-worktree`. PR draft: pendiente de crear.
+16/10/2026, Argentina. **Implementación entregada para revisión; NO-GO de integración/despliegue hasta comprobar Storage HTTP real.** Base `5adf8e455c90d46adc0f5477c5d3e9ee06eb2461` (`origin/main`, #74 integrada), rama `codex/r7-block-1`, worktree `r7-block-1-worktree`. Entrega técnica `894fc6ce8922d3ba65f0d6f04c37266c70de5afd`, [PR draft #75](https://github.com/EnzoG14/PlanIt/pull/75). Este registro posterior sólo añade el vínculo de revisión.
 
 El pedido humano de implementar B1 habilita este bloque sobre el contrato B0 integrado. El responsable autorizó además «Ampliar B1 con validación en Edge», exclusivamente código y pruebas locales, sin deploy. No se atribuye aprobación a los demás bloques ni a decisiones de historias canceladas/archivadas pendientes de B4.
 
