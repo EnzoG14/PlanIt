@@ -1,0 +1,17 @@
+{
+  "base": "3f2a49800198825abfca660fa20acc051a31a94c",
+  "branch": "codex/r7-block-2",
+  "date_argentina": "2026-10-16",
+  "sql_b2": {"result":"PASS","groups":9,"evidence":"sql/sql-results.json"},
+  "sql_b1_regression": {"result":"PASS","groups":7,"evidence":"regression-b1/sql-results.json"},
+  "build": {"command":"npm run build","result":"PASS","warning":"Existing large map chunk","pwa":"generateSW, 86 precache entries"},
+  "lint": {"command":"npm run lint","result":"PASS","errors":0,"warnings":"18 inherited warnings; no new-file warnings in final run"},
+  "migration": {"version":"20261016141952","created":true,"local_sql":"PASS","remote_applied":false,"remote_verified":false},
+  "http_jwt":"NOT RUN",
+  "storage_transport":"NOT RUN",
+  "ui":"NOT RUN; no visual changes",
+  "sw_offline":"NOT RUN",
+  "push_device":"NOT RUN",
+  "full_r1_r6_e2e":"NOT RUN",
+  "env_local":"Copied byte-for-byte from main worktree; ignored and outside index"
+}
