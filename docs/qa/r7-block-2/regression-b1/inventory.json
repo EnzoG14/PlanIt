@@ -1,0 +1,175 @@
+{
+  "inventory": [
+    {
+      "relname": "media_claims",
+      "relrowsecurity": true
+    },
+    {
+      "relname": "media_uploads",
+      "relrowsecurity": true
+    },
+    {
+      "relname": "message_attachments",
+      "relrowsecurity": true
+    }
+  ],
+  "acl": [
+    {
+      "proname": "check_r7_file_trigger",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "guard_r7_conversation",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "can_read_r7_media",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "r7_media_path",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "check_r7_claim_trigger",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "check_r7_file",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "lock_r7_media_event",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "reserve_event_media_upload",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "can_upload_r7_media",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "guard_r7_file",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "guard_r7_gallery",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "register_r7_media",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "check_r7_message",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "check_r7_message_trigger",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "get_event_media_upload_state",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "get_r7_media_validation_target",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "complete_r7_media_validation",
+      "anon_execute": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "policyname": "avatars_delete_unlinked",
+      "cmd": "DELETE",
+      "qual": "((bucket_id = 'avatars'::text) AND planit_private.can_delete_avatar_upload(name))",
+      "with_check": null
+    },
+    {
+      "policyname": "avatars_insert_own",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "((bucket_id = 'avatars'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text))"
+    },
+    {
+      "policyname": "avatars_select_own",
+      "cmd": "SELECT",
+      "qual": "((bucket_id = 'avatars'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text))",
+      "with_check": null
+    },
+    {
+      "policyname": "event_media_delete_unlinked",
+      "cmd": "DELETE",
+      "qual": "((bucket_id = 'event_media'::text) AND (split_part(name, '/'::text, 1) <> 'r7'::text) AND planit_private.can_delete_event_upload(name))",
+      "with_check": null
+    },
+    {
+      "policyname": "event_media_insert_own",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "((bucket_id = 'event_media'::text) AND (((split_part(name, '/'::text, 1) <> 'r7'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text) AND (split_part(name, '/'::text, 2) ~ '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'::text) AND (NOT (EXISTS ( SELECT 1\n   FROM events\n  WHERE (((events.id)::text = split_part(objects.name, '/'::text, 2)) AND (events.organizer_id <> ( SELECT auth.uid() AS uid))))))) OR ((split_part(name, '/'::text, 1) = 'r7'::text) AND planit_private.can_upload_r7_media(name, owner_id, metadata))))"
+    },
+    {
+      "policyname": "event_media_select_visible",
+      "cmd": "SELECT",
+      "qual": "((bucket_id = 'event_media'::text) AND (((split_part(name, '/'::text, 1) <> 'r7'::text) AND ((split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text) OR (EXISTS ( SELECT 1\n   FROM files\n  WHERE ((files.bucket_name = objects.bucket_id) AND (files.storage_path = objects.name)))))) OR ((split_part(name, '/'::text, 1) = 'r7'::text) AND storage.allow_only_operation('object.get_authenticated'::text) AND planit_private.can_read_r7_media(name))))",
+      "with_check": null
+    }
+  ]
+}

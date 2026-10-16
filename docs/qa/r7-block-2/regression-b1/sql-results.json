@@ -1,0 +1,196 @@
+{
+  "base": "5adf8e4",
+  "branch": "codex/r7-block-1",
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime.",
+  "migrations": [
+    {
+      "file": "20261010011204_create_profiles_and_categories.sql",
+      "sha256_lf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "20261010013449_create_profiles_and_categories.sql",
+      "sha256_lf": "b1bd184d670eda14ec9cc3b94dc92740e3c9ff02116d90b0f8dc9ad5efedc83c"
+    },
+    {
+      "file": "20261010023448_restrict_rls_auto_enable_execute.sql",
+      "sha256_lf": "a5198a148a192826ea1128a27d0ed1e6b94c10c23c5cf510a83e01ac8201637f"
+    },
+    {
+      "file": "20261010042701_create_events_and_event_media.sql",
+      "sha256_lf": "5ef339cb5724a90115272f42b8b6a7062b8c2876c4537cf88d453340f5543a84"
+    },
+    {
+      "file": "20261010052653_public_event_discovery.sql",
+      "sha256_lf": "663799461061a9b004d00c084422d724f380ae5851841b33f7b561d97c4401f8"
+    },
+    {
+      "file": "20261010150232_event_participations.sql",
+      "sha256_lf": "527aac17a1648a4355be009862e3f60ddfebaedeaf89cc86f9d98e075ddb5d89"
+    },
+    {
+      "file": "20261010154930_my_events_read.sql",
+      "sha256_lf": "c5d59029ec6c46794c57e3ccdd55d2e3ea19322e9e63ac42c059a0509b9b7e34"
+    },
+    {
+      "file": "20261010212819_home_and_event_organizer_read.sql",
+      "sha256_lf": "73832a98232e18363bdbb37a7dcf430a8bfdbb385d9fa77e5d0ad321e3c5d3e1"
+    },
+    {
+      "file": "20261010214526_event_chat.sql",
+      "sha256_lf": "196fad6f6518b1755ea0094b957b647020fab39b99aba274c3943cfbcb8614b3"
+    },
+    {
+      "file": "20261011163653_notifications_inbox.sql",
+      "sha256_lf": "150c0aa52d08868dccbafd27df75fe7fb2789d91809f4cc057be8e79af3d53c7"
+    },
+    {
+      "file": "20261011193316_r2_realtime_chat_notifications.sql",
+      "sha256_lf": "1aa40c90c30847bbebea307cbbada013d35c1a4b4f5dfeeb38c32b15e7c56685"
+    },
+    {
+      "file": "20261011232326_my_organized_events_read.sql",
+      "sha256_lf": "a31952af6337bc8b9abab55372b2bbdfc1a3188029117c9c4106767b20f5b503"
+    },
+    {
+      "file": "20261012001058_edit_own_event.sql",
+      "sha256_lf": "2a537f7670cc6435ddba308f67f75e5a1ec86bd87c8510f48beedcabc8ceaff7"
+    },
+    {
+      "file": "20261012013634_manage_event_gallery.sql",
+      "sha256_lf": "e1a326c145d9d430bbb6360b0ee014ebf1567f7efc61366d6a89c7bc587db365"
+    },
+    {
+      "file": "20261012031717_manage_event_attendees.sql",
+      "sha256_lf": "ff00a9c416dbe9d6d4f2a5b997077f0193a4f0ffe8d1853ae393c38681418cb3"
+    },
+    {
+      "file": "20261012044919_close_and_duplicate_events.sql",
+      "sha256_lf": "079e0606addb5bc3d834f397fb05a7a4c0d6b93afae867ceaf1c5487e9770370"
+    },
+    {
+      "file": "20261012155501_event_rejoin_requests.sql",
+      "sha256_lf": "c7790f113177730e3bb3bd062896eb4eb7d5e020995f0ae78b419ace9a5dc37d"
+    },
+    {
+      "file": "20261013160000_search_public_events.sql",
+      "sha256_lf": "6d338a970fdee8ef0450b6e7357e0f728df8aaabc3902de6d0d88a4f3de887ab"
+    },
+    {
+      "file": "20261014120000_search_public_events_date_radius.sql",
+      "sha256_lf": "748608a49c5043ffb5b9896e23dd2f2fe02adbf3600ab83ddb722bc5f4946b0d"
+    },
+    {
+      "file": "20261014120001_user_category_interests.sql",
+      "sha256_lf": "2961e04141d0da6cbb2d470f5ebb5ca9c0d018542108e78ee8aef86adb9f1050"
+    },
+    {
+      "file": "20261014120002_get_suggested_events.sql",
+      "sha256_lf": "fdaa7752c761c1b2f886990d5c9a867c711ae81e198bc1577bd1a921f0e056a3"
+    },
+    {
+      "file": "20261014120003_hidden_event_access.sql",
+      "sha256_lf": "14ab0c3dfddc7a141138277a6ba544fe3eb09c8588842fe5e5674d4e3b7e503c"
+    },
+    {
+      "file": "20261014120004_event_visibility_links.sql",
+      "sha256_lf": "5304e874af92de9d82a3c23affcd8f40c75bb9b05d167b8b21cb97de1283e606"
+    },
+    {
+      "file": "20261014120005_redeem_event_link.sql",
+      "sha256_lf": "9a5cf05db931539a5c197d53e959d3197f4452f66d431b2a47d423f513fb4a59"
+    },
+    {
+      "file": "20261014120006_event_access_management.sql",
+      "sha256_lf": "c9633d97e689d805e9dd55791fce5071f73ddeb05889575a4b142d6e018fed7b"
+    },
+    {
+      "file": "20261014133225_social_security_model.sql",
+      "sha256_lf": "895c8f586efd59689b9e05a41dccd98037853210768936e81fa9632b78aaead1"
+    },
+    {
+      "file": "20261014133547_social_projections_and_avatars.sql",
+      "sha256_lf": "a47332c48828ead6cb9c77ec133867d6e5ee78a4adf1355d799e883d0acf84db"
+    },
+    {
+      "file": "20261014133847_social_legacy_projections.sql",
+      "sha256_lf": "b146cb24952f7cdbb90da67bf5fe66a439b426e1b3d8fb619ec4837b9d9361e8"
+    },
+    {
+      "file": "20261014212935_follow_request_notifications.sql",
+      "sha256_lf": "78ca016f5135b13a595150ae769eff52387056d4595e70443bb8ec44e737ad9f"
+    },
+    {
+      "file": "20261014225216_direct_message_notifications.sql",
+      "sha256_lf": "11feb5c2e3e704cd0c4d31608d8298e203e7184edc65a42d4be932363f541b6a"
+    },
+    {
+      "file": "20261015130739_r6_organizer_occupancy.sql",
+      "sha256_lf": "741b82e69b2afae45b5d23732d762e028f92fff616fadeb52283b67365d9c3b1"
+    },
+    {
+      "file": "20261015160324_r6_demographic_aggregates.sql",
+      "sha256_lf": "b0c536839e5b2eefab69b9dcbfbe58971c22749a90a5dc0a5caf76d012e84b94"
+    },
+    {
+      "file": "20261015162953_r6_participation_series.sql",
+      "sha256_lf": "7350d44551a5b24859e11f234360c0e13699561c0d96410f3389f585a8210712"
+    },
+    {
+      "file": "20261015173426_r6_export_projection.sql",
+      "sha256_lf": "1bf4e869a41ec1a0f81e43b3265ed5fa50733d94203353b860383c5569f1dd09"
+    },
+    {
+      "file": "20261015185020_r6_event_full_notifications.sql",
+      "sha256_lf": "6e7cab6d9747c214475518e318605e03eff1c22c1c3b857fb8649dc36feb598b"
+    },
+    {
+      "file": "20261015201034_r6_event_full_inbox.sql",
+      "sha256_lf": "2b64bf1bcbf122bf5f11af33a2873668e035f1d110560ca3a4db53c6f726f527"
+    },
+    {
+      "file": "20261015210000_r6_compare_events.sql",
+      "sha256_lf": "a390e88308628bd92ec9ff1f4bcdf7b09e18c9d4f99c08b39157018b723a2a38"
+    },
+    {
+      "file": "20261016131118_r7_media_contract.sql",
+      "sha256_lf": "0486fc3cae32df29fc0ca2cc3da31deaed010c6835184b001899cf9e3416a135"
+    },
+    {
+      "file": "20261016141952_r7_chat_attachments.sql",
+      "sha256_lf": "1f58234fcb3529098ea6eb5ce4b03e361a1cf52d3e7685508f3357a5d841b43f"
+    }
+  ],
+  "results": [
+    {
+      "test": "R7-B1-TC-01: all versioned migrations replayed from zero on real PostgreSQL",
+      "result": "PASS"
+    },
+    {
+      "test": "Reservation UUID/payload retry, conflict, membership, MIME/size/cache/owner negatives; unpublished uploader GET/sign/list denied (SQL operation scaffold)",
+      "result": "PASS"
+    },
+    {
+      "test": "Image-only commit, text+image, v1 text/retry and DM preserved; attachment/claim deletion and cross-domain reassignment rejected, FK RESTRICT and direct DML denied",
+      "result": "PASS"
+    },
+    {
+      "test": "B1 story namespace fail-closed; malformed stored metadata publication rolls back all files/claims/domain rows",
+      "result": "PASS"
+    },
+    {
+      "test": "R7-B1-TC-03 SQL: gallery/avatar legacy access and shared gallery references preserved; exactly two SELECT policies (event_media and avatars), no extra permissive OR",
+      "result": "PASS"
+    },
+    {
+      "test": "R7-B1-TC-04 SQL: simultaneous retry yields one reservation; event closure wins under lock and late reserve rejected; historical chat retained",
+      "result": "PASS"
+    },
+    {
+      "test": "RLS enabled from creation, anon EXECUTE revoked, empty search_path verified on R7 functions",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS",
+  "remote_baseline_compared": false
+}
