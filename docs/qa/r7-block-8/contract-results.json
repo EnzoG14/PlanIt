@@ -1,0 +1,34 @@
+{
+  "environment": "Node; synthetic inputs and browser API mocks; no HTTP/JWT or native chooser",
+  "results": [
+    {
+      "test": "R7-B8-TC-03: payload allowlist, canonical URL, Unicode and no private fields",
+      "result": "PASS"
+    },
+    {
+      "test": "HTTPS public deployment, BASE_URL, no login/grant/local URLs",
+      "result": "PASS"
+    },
+    {
+      "test": "R7-B8-TC-02: unlisted organizer-only, no token invention and strict invite URL",
+      "result": "PASS"
+    },
+    {
+      "test": "R7-B8-TC-01: immediate native invocation, success, cancellation, errors",
+      "result": "PASS"
+    },
+    {
+      "test": "R7-B8-TC-01: unsupported, denied, absent/insecure clipboard; manual fallback",
+      "result": "PASS"
+    },
+    {
+      "test": "Argentina date independent of browser/system timezone",
+      "result": "PASS"
+    }
+  ],
+  "payloadSnapshot": {
+    "title": "Encuentro · música 🎵",
+    "text": "Encuentro · música 🎵 · 12 de oct de 2099, 20:00",
+    "url": "https://planit.example.org/events/30000000-0000-4000-8000-000000000001"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "environment": "Isolated PostgreSQL; SQL Auth/Storage scaffolding; SET ROLE; no HTTP/JWT",
+  "migrations": [
+    "20261010011204_create_profiles_and_categories.sql",
+    "20261010013449_create_profiles_and_categories.sql",
+    "20261010023448_restrict_rls_auto_enable_execute.sql",
+    "20261010042701_create_events_and_event_media.sql",
+    "20261010052653_public_event_discovery.sql",
+    "20261010150232_event_participations.sql",
+    "20261010154930_my_events_read.sql",
+    "20261010212819_home_and_event_organizer_read.sql",
+    "20261010214526_event_chat.sql",
+    "20261011163653_notifications_inbox.sql",
+    "20261011193316_r2_realtime_chat_notifications.sql",
+    "20261011232326_my_organized_events_read.sql",
+    "20261012001058_edit_own_event.sql",
+    "20261012013634_manage_event_gallery.sql",
+    "20261012031717_manage_event_attendees.sql",
+    "20261012044919_close_and_duplicate_events.sql",
+    "20261012155501_event_rejoin_requests.sql",
+    "20261013160000_search_public_events.sql",
+    "20261014120000_search_public_events_date_radius.sql",
+    "20261014120001_user_category_interests.sql",
+    "20261014120002_get_suggested_events.sql",
+    "20261014120003_hidden_event_access.sql",
+    "20261014120004_event_visibility_links.sql",
+    "20261014120005_redeem_event_link.sql",
+    "20261014120006_event_access_management.sql",
+    "20261014133225_social_security_model.sql",
+    "20261014133547_social_projections_and_avatars.sql",
+    "20261014133847_social_legacy_projections.sql",
+    "20261014212935_follow_request_notifications.sql",
+    "20261014225216_direct_message_notifications.sql",
+    "20261015130739_r6_organizer_occupancy.sql",
+    "20261015160324_r6_demographic_aggregates.sql",
+    "20261015162953_r6_participation_series.sql",
+    "20261015173426_r6_export_projection.sql",
+    "20261015185020_r6_event_full_notifications.sql",
+    "20261015201034_r6_event_full_inbox.sql",
+    "20261015210000_r6_compare_events.sql"
+  ],
+  "results": [
+    {
+      "test": "Authenticated-only empty-search_path definers; A owns; B/C/D/anon cannot list/mutate; no private profile read",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-01 safe profile projection, active/revoked filters, stable keyset pagination, bounded arguments",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-02/03/04 confirmed revocation is atomic, unique history, derived free seat, detail/Storage/chat denied; repeated revoke and regenerated link cannot restore",
+      "result": "PASS"
+    },
+    {
+      "test": "CA-05 restore changes only grant; no seat/chat/participation restoration; duplicate restore stable; rotation preserves other active grants; missing grants never created",
+      "result": "PASS"
+    },
+    {
+      "test": "R3 pending rejoin/cooldown untouched; approval denied while revoked, restoration alone does not approve",
+      "result": "PASS"
+    },
+    {
+      "test": "History failure rolls back all state; other event participation, grant and seats unaffected",
+      "result": "PASS"
+    },
+    {
+      "test": "Closed hidden events are read-only; A05 public detail permitted with revoked grant; A04 rehide conflict blocked",
+      "result": "PASS"
+    },
+    {
+      "test": "Seven real-lock races: revoke/register both orders, revoke/chat, revoke/rejoin both orders, double revoke/restore; zero deadlocks",
+      "result": "PASS"
+    }
+  ]
+}
