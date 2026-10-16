@@ -1,0 +1,854 @@
+{
+  "documentId": "1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww",
+  "revisionId": "AHj4eMSjM2RXCOXYHbRqf2PAVBRXc4VZBe36hyspPcloTNUKEYFHx3O_o6zZj34H1katSSNVhCBNtMrCLrdguOpfmLTWYeZZuqlTF6NSRi8",
+  "paragraphs": [
+    {
+      "text": "ID",
+      "startIndex": 23372,
+      "endIndex": 23374,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-01",
+      "startIndex": 23376,
+      "endIndex": 23384,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Nombre",
+      "startIndex": 23387,
+      "endIndex": 23393,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Enviar imágenes en el chat del evento",
+      "startIndex": 23395,
+      "endIndex": 23432,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Descripción",
+      "startIndex": 23435,
+      "endIndex": 23446,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "El sistema permitirá al organizador y a los asistentes confirmados adjuntar como máximo una imagen por mensaje en el chat de un evento vigente, y consultar las imágenes conservadas en su historial autorizado.",
+      "startIndex": 23448,
+      "endIndex": 23656,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Prioridad",
+      "startIndex": 23659,
+      "endIndex": 23668,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Alta",
+      "startIndex": 23670,
+      "endIndex": 23674,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Usuario(s)",
+      "startIndex": 23677,
+      "endIndex": 23687,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Participantes y organizadores de eventos",
+      "startIndex": 23689,
+      "endIndex": 23729,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "ID",
+      "startIndex": 23735,
+      "endIndex": 23737,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-02",
+      "startIndex": 23739,
+      "endIndex": 23747,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Nombre",
+      "startIndex": 23750,
+      "endIndex": 23756,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Publicar historias con imágenes del evento",
+      "startIndex": 23758,
+      "endIndex": 23800,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Descripción",
+      "startIndex": 23803,
+      "endIndex": 23814,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "El sistema permitirá al organizador y a los asistentes confirmados publicar historias con exactamente una imagen vinculada a un evento no finalizado, cancelado ni archivado, para compartir momentos con otros asistentes.",
+      "startIndex": 23816,
+      "endIndex": 24035,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Prioridad",
+      "startIndex": 24038,
+      "endIndex": 24047,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Alta",
+      "startIndex": 24049,
+      "endIndex": 24053,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Usuario(s)",
+      "startIndex": 24056,
+      "endIndex": 24066,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Participantes de eventos",
+      "startIndex": 24068,
+      "endIndex": 24092,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "ID",
+      "startIndex": 24098,
+      "endIndex": 24100,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-03",
+      "startIndex": 24102,
+      "endIndex": 24110,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Nombre",
+      "startIndex": 24113,
+      "endIndex": 24119,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Visualizar historias publicadas en el evento",
+      "startIndex": 24121,
+      "endIndex": 24165,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Descripción",
+      "startIndex": 24168,
+      "endIndex": 24179,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "El sistema permitirá al organizador y a los asistentes confirmados visualizar desde la ficha del evento las historias vigentes publicadas por sus participantes autorizados.",
+      "startIndex": 24181,
+      "endIndex": 24353,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Prioridad",
+      "startIndex": 24356,
+      "endIndex": 24365,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Alta",
+      "startIndex": 24367,
+      "endIndex": 24371,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Usuario(s)",
+      "startIndex": 24374,
+      "endIndex": 24384,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Participantes de eventos",
+      "startIndex": 24386,
+      "endIndex": 24410,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "ID",
+      "startIndex": 24416,
+      "endIndex": 24418,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-04",
+      "startIndex": 24420,
+      "endIndex": 24428,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Nombre",
+      "startIndex": 24431,
+      "endIndex": 24437,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Expirar las historias después de 24 horas",
+      "startIndex": 24439,
+      "endIndex": 24480,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Descripción",
+      "startIndex": 24483,
+      "endIndex": 24494,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "El sistema dejará de mostrar y servir historias después de 24 horas de su publicación, calculadas con la fecha registrada por el servidor; posteriormente eliminará sus imágenes almacenadas, sin borrar mensajes ni galerías normales de eventos.",
+      "startIndex": 24496,
+      "endIndex": 24738,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Prioridad",
+      "startIndex": 24741,
+      "endIndex": 24750,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Alta",
+      "startIndex": 24752,
+      "endIndex": 24756,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Usuario(s)",
+      "startIndex": 24759,
+      "endIndex": 24769,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Participantes de eventos",
+      "startIndex": 24771,
+      "endIndex": 24795,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "ID",
+      "startIndex": 24801,
+      "endIndex": 24803,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-05",
+      "startIndex": 24805,
+      "endIndex": 24813,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Nombre",
+      "startIndex": 24816,
+      "endIndex": 24822,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Agregar un evento al calendario del dispositivo",
+      "startIndex": 24824,
+      "endIndex": 24871,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Descripción",
+      "startIndex": 24874,
+      "endIndex": 24885,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "El sistema permitirá al usuario agregar un evento a su calendario personal utilizando las capacidades del dispositivo o un archivo compatible, con fecha, hora, título y ubicación.",
+      "startIndex": 24887,
+      "endIndex": 25066,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Prioridad",
+      "startIndex": 25069,
+      "endIndex": 25078,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Media",
+      "startIndex": 25080,
+      "endIndex": 25085,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Usuario(s)",
+      "startIndex": 25088,
+      "endIndex": 25098,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Usuarios autenticados",
+      "startIndex": 25100,
+      "endIndex": 25121,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "ID",
+      "startIndex": 25127,
+      "endIndex": 25129,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-06",
+      "startIndex": 25131,
+      "endIndex": 25139,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Nombre",
+      "startIndex": 25142,
+      "endIndex": 25148,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Compartir un evento mediante aplicaciones externas",
+      "startIndex": 25150,
+      "endIndex": 25200,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Descripción",
+      "startIndex": 25203,
+      "endIndex": 25214,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "El sistema permitirá al usuario compartir información relevante de un evento mediante las aplicaciones externas de mensajería o redes disponibles en el dispositivo.",
+      "startIndex": 25216,
+      "endIndex": 25380,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Prioridad",
+      "startIndex": 25383,
+      "endIndex": 25392,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Media",
+      "startIndex": 25394,
+      "endIndex": 25399,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Usuario(s)",
+      "startIndex": 25402,
+      "endIndex": 25412,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Usuarios autenticados",
+      "startIndex": 25414,
+      "endIndex": 25435,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "ID",
+      "startIndex": 25441,
+      "endIndex": 25443,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-07",
+      "startIndex": 25445,
+      "endIndex": 25453,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Nombre",
+      "startIndex": 25456,
+      "endIndex": 25462,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Habilitar y recibir notificaciones Web Push",
+      "startIndex": 25464,
+      "endIndex": 25507,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Descripción",
+      "startIndex": 25510,
+      "endIndex": 25521,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "El sistema permitirá al usuario habilitar voluntariamente notificaciones Web Push en navegadores compatibles para recibir avisos ya registrados en la bandeja interna. El funcionamiento de las notificaciones internas no dependerá del permiso ni del éxito del envío Push.",
+      "startIndex": 25523,
+      "endIndex": 25792,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Prioridad",
+      "startIndex": 25795,
+      "endIndex": 25804,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Media",
+      "startIndex": 25806,
+      "endIndex": 25811,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Usuario(s)",
+      "startIndex": 25814,
+      "endIndex": 25824,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "Usuarios autenticados",
+      "startIndex": 25826,
+      "endIndex": 25847,
+      "tabId": "t.6cfgj0znk3o",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-01 — Enviar imágenes en el chat del evento",
+      "startIndex": 29758,
+      "endIndex": 29806,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "HEADING_3",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-01.CA-01. El organizador o un asistente confirmado puede enviar como máximo una imagen de formato admitido por mensaje en un chat de evento vigente; los chats privados no admiten imágenes.",
+      "startIndex": 29807,
+      "endIndex": 30001,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-01.CA-02. La imagen enviada queda asociada al mensaje, al remitente y al evento, y puede visualizarse al reabrir la conversación.",
+      "startIndex": 30002,
+      "endIndex": 30137,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-01.CA-03. Los archivos con formato no permitido o las cargas fallidas se rechazan con un mensaje claro sin crear enlaces inválidos o mensajes aparentemente exitosos.",
+      "startIndex": 30138,
+      "endIndex": 30309,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-01.CA-04. Las imágenes del chat sólo pueden ser consultadas por personas autorizadas a acceder a la conversación correspondiente.",
+      "startIndex": 30310,
+      "endIndex": 30445,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-02 — Publicar historias con imágenes del evento",
+      "startIndex": 30447,
+      "endIndex": 30500,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "HEADING_3",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-02.CA-01. El organizador o un asistente confirmado puede publicar una historia de una sola imagen válida antes de que el evento termine, se cancele o se archive.",
+      "startIndex": 30501,
+      "endIndex": 30668,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-02.CA-02. Al publicar, la historia conserva su autor, evento y fecha/hora de publicación y queda disponible en la sección correspondiente.",
+      "startIndex": 30669,
+      "endIndex": 30813,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-02.CA-03. Si el archivo no es admitido o la publicación falla, el sistema informa el error y no presenta una historia inexistente como publicada.",
+      "startIndex": 30814,
+      "endIndex": 30965,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-02.CA-04. Un usuario no autorizado para participar en el evento no puede publicar historias en él.",
+      "startIndex": 30966,
+      "endIndex": 31070,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-03 — Visualizar historias publicadas en el evento",
+      "startIndex": 31072,
+      "endIndex": 31127,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "HEADING_3",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-03.CA-01. El organizador y los asistentes confirmados pueden abrir desde la ficha del evento la sección de historias vigentes compartidas por usuarios autorizados.",
+      "startIndex": 31128,
+      "endIndex": 31297,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-03.CA-02. Las historias mostradas corresponden únicamente al evento consultado y presentan las imágenes publicadas correctamente.",
+      "startIndex": 31298,
+      "endIndex": 31433,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-03.CA-03. El usuario puede abrir una historia disponible y regresar a la sección del evento sin perder la navegación.",
+      "startIndex": 31434,
+      "endIndex": 31557,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-03.CA-04. Cuando no hay historias vigentes, se muestra un estado vacío; un usuario no autorizado no accede a historias restringidas.",
+      "startIndex": 31558,
+      "endIndex": 31696,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-04 — Expirar las historias después de 24 horas",
+      "startIndex": 31698,
+      "endIndex": 31750,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "HEADING_3",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-04.CA-01. Una historia permanece disponible durante las primeras 24 horas posteriores a su fecha y hora de publicación, siempre que el usuario tenga permiso de acceso.",
+      "startIndex": 31751,
+      "endIndex": 31924,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-04.CA-02. Tras cumplirse 24 horas, la historia deja de estar accesible incluso por enlace directo; posteriormente se elimina su imagen de Storage sin afectar otras imágenes del evento ni mensajes.",
+      "startIndex": 31925,
+      "endIndex": 32127,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-04.CA-03. Una historia vencida tampoco puede recuperarse como contenido vigente mediante enlaces o consultas directas no autorizadas.",
+      "startIndex": 32128,
+      "endIndex": 32267,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-04.CA-04. El cálculo del vencimiento se basa en el instante persistido de publicación y no depende de modificar el reloj local del dispositivo.",
+      "startIndex": 32268,
+      "endIndex": 32417,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-05 — Agregar un evento al calendario del dispositivo",
+      "startIndex": 32419,
+      "endIndex": 32477,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "HEADING_3",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-05.CA-01. Desde el detalle de un evento, el usuario puede iniciar la acción de agregarlo al calendario personal.",
+      "startIndex": 32478,
+      "endIndex": 32596,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-05.CA-02. La invitación o entrada generada contiene como mínimo título, fecha, hora y ubicación del evento, cuando esta última está disponible.",
+      "startIndex": 32597,
+      "endIndex": 32746,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-05.CA-03. La aplicación solicita los permisos necesarios cuando corresponda y respeta una denegación sin afirmar que el evento fue agregado.",
+      "startIndex": 32747,
+      "endIndex": 32893,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-05.CA-04. Al completar correctamente la operación, el calendario o archivo compatible refleja los datos del evento; no se exige sincronización bidireccional.",
+      "startIndex": 32894,
+      "endIndex": 33057,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-06 — Compartir un evento mediante aplicaciones externas",
+      "startIndex": 33059,
+      "endIndex": 33120,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "HEADING_3",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-06.CA-01. Desde el detalle de un evento, el usuario puede iniciar la opción Compartir y abrir el selector de aplicaciones compatibles disponible en su dispositivo.",
+      "startIndex": 33121,
+      "endIndex": 33290,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-06.CA-02. El contenido compartido incluye información suficiente para identificar el evento, como título, fecha y un enlace o referencia accesible cuando esté disponible.",
+      "startIndex": 33291,
+      "endIndex": 33467,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-06.CA-03. Si el usuario cancela el diálogo de compartir, la aplicación vuelve a la vista anterior sin indicar que el envío se completó.",
+      "startIndex": 33468,
+      "endIndex": 33609,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-06.CA-04. No se incluyen datos privados del evento o de sus asistentes que el usuario no tenga permiso para compartir.",
+      "startIndex": 33610,
+      "endIndex": 33734,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-07 — Habilitar y recibir notificaciones Web Push",
+      "startIndex": 33738,
+      "endIndex": 33792,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "HEADING_3",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-07.CA-01. Un usuario puede activar las notificaciones Web Push cuando utiliza un navegador compatible y concede el permiso correspondiente.",
+      "startIndex": 33793,
+      "endIndex": 33938,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-07.CA-02. Los avisos Push se generan a partir de los mismos eventos que la bandeja interna, sin duplicar el aviso en ella; se incluyen mensajes privados y no se envía un aviso por cada mensaje de chat grupal.",
+      "startIndex": 33939,
+      "endIndex": 34153,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-07.CA-03. Si el usuario rechaza el permiso o el dispositivo no es compatible, la bandeja interna de notificaciones continúa disponible.",
+      "startIndex": 34154,
+      "endIndex": 34295,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-07.CA-04. Si el envío Push falla o la suscripción deja de ser válida, el aviso permanece en la bandeja interna y no se informa una entrega inexistente.",
+      "startIndex": 34296,
+      "endIndex": 34453,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    },
+    {
+      "text": "RF-R7-07.CA-05. Un usuario puede desactivar sus suscripciones Push sin afectar el historial de avisos dentro de PlanIt.",
+      "startIndex": 34454,
+      "endIndex": 34573,
+      "tabId": "t.89mq08i5ups2",
+      "namedStyleType": "NORMAL_TEXT",
+      "isListItem": false
+    }
+  ]
+}

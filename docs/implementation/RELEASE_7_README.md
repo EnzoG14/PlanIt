@@ -2,6 +2,8 @@
 
 ## Cómo usar este paquete
 
+**B0 entregado el16/10/2026 para revisión:** [acta y decisiones](RELEASE_7_BLOCK_0_DECISIONS.md), [contratos v1](RELEASE_7_BLOCK_0_CONTRACTS.md), [amenazas](RELEASE_7_BLOCK_0_THREAT_MODEL.md) y [evidencia](../qa/r7-block-0/README.md). Firma humana pendiente; **NO-GO para iniciar el bloque siguiente**. La plantilla se conserva para referencia, no es un acta aprobada.
+
 1. Revisar `../requirements/RELEASE_7_REQUIREMENTS.md`: **7 RF/29 CA oficiales**, sin ediciones de Codex.
 2. Tomar las decisiones de producto ya **CONFIRMADAS** en `RELEASE_7_DECISIONS_PROPOSED.md`; cerrar las cuestiones técnicas pendientes (D06 ya está aprobada) en `RELEASE_7_BLOCK_0_DECISIONS_TEMPLATE.md`.
 3. Leer `RELEASE_7_PLAN.md` y **`RELEASE_7_PARALLEL_WORK.md`**; ejecutar **varios prompts en paralelo cuando NO tengan dependencia ni solapamiento de archivos**, según `RELEASE_7_PARALLEL_WORK.md`. Cada bloque termina en PR draft, evidencia y revisión humana.

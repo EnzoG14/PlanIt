@@ -1,0 +1,845 @@
+{
+  "source_document": "1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww",
+  "source_revision": "AHj4eMSjM2RXCOXYHbRqf2PAVBRXc4VZBe36hyspPcloTNUKEYFHx3O_o6zZj34H1katSSNVhCBNtMrCLrdguOpfmLTWYeZZuqlTF6NSRi8",
+  "hash_rule": "SHA-256 UTF-8 of CA text only, no normalization, excludes ID and paragraph newline",
+  "criteria": [
+    {
+      "id": "RF-R7-01.CA-01",
+      "text": "El organizador o un asistente confirmado puede enviar como máximo una imagen de formato admitido por mensaje en un chat de evento vigente; los chats privados no admiten imágenes.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 29807,
+      "end_index": 30001,
+      "sha256_utf8": "27506296a6b731503a86c787d728d2cbc015c39ca5f50a15a8b42e33e08ddfe5",
+      "local_sha256_utf8": "27506296a6b731503a86c787d728d2cbc015c39ca5f50a15a8b42e33e08ddfe5",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B2",
+        "B3",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-01",
+        "R7-TC-SQL-02",
+        "R7-TC-SQL-03",
+        "R7-TC-SQL-04",
+        "R7-TC-UI-01"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-01.CA-02",
+      "text": "La imagen enviada queda asociada al mensaje, al remitente y al evento, y puede visualizarse al reabrir la conversación.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 30002,
+      "end_index": 30137,
+      "sha256_utf8": "cdb9f81ee84e267bfe161a7691584e3462ce160870b59395b0bf3bba745a24af",
+      "local_sha256_utf8": "cdb9f81ee84e267bfe161a7691584e3462ce160870b59395b0bf3bba745a24af",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B2",
+        "B3",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-01",
+        "R7-TC-SQL-02",
+        "R7-TC-SQL-03",
+        "R7-TC-SQL-04",
+        "R7-TC-UI-01"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-01.CA-03",
+      "text": "Los archivos con formato no permitido o las cargas fallidas se rechazan con un mensaje claro sin crear enlaces inválidos o mensajes aparentemente exitosos.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 30138,
+      "end_index": 30309,
+      "sha256_utf8": "e350c9d5f451b77276d0e66cef178c779890f473fc85c9a711e0a71e3b9f1fd2",
+      "local_sha256_utf8": "e350c9d5f451b77276d0e66cef178c779890f473fc85c9a711e0a71e3b9f1fd2",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B2",
+        "B3",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-01",
+        "R7-TC-SQL-02",
+        "R7-TC-SQL-03",
+        "R7-TC-SQL-04",
+        "R7-TC-UI-01"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-01.CA-04",
+      "text": "Las imágenes del chat sólo pueden ser consultadas por personas autorizadas a acceder a la conversación correspondiente.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 30310,
+      "end_index": 30445,
+      "sha256_utf8": "052f91c9740865f1052b7077de5354284a41baeeafdb6811a27b99ffdd3cdf1a",
+      "local_sha256_utf8": "052f91c9740865f1052b7077de5354284a41baeeafdb6811a27b99ffdd3cdf1a",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B2",
+        "B3",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-01",
+        "R7-TC-SQL-02",
+        "R7-TC-SQL-03",
+        "R7-TC-SQL-04",
+        "R7-TC-UI-01"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-02.CA-01",
+      "text": "El organizador o un asistente confirmado puede publicar una historia de una sola imagen válida antes de que el evento termine, se cancele o se archive.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 30501,
+      "end_index": 30668,
+      "sha256_utf8": "46d4b9fce2ab803637ac9615e436117383586c09399e4d3920d8ab95d4f0096f",
+      "local_sha256_utf8": "46d4b9fce2ab803637ac9615e436117383586c09399e4d3920d8ab95d4f0096f",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B4",
+        "B5",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-04",
+        "R7-TC-SQL-05",
+        "R7-TC-UI-02"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-02.CA-02",
+      "text": "Al publicar, la historia conserva su autor, evento y fecha/hora de publicación y queda disponible en la sección correspondiente.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 30669,
+      "end_index": 30813,
+      "sha256_utf8": "cd39b298c550864506ec4a5e57a24baf8e6bf779852fde616870de10df88f594",
+      "local_sha256_utf8": "cd39b298c550864506ec4a5e57a24baf8e6bf779852fde616870de10df88f594",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B4",
+        "B5",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-04",
+        "R7-TC-SQL-05",
+        "R7-TC-UI-02"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-02.CA-03",
+      "text": "Si el archivo no es admitido o la publicación falla, el sistema informa el error y no presenta una historia inexistente como publicada.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 30814,
+      "end_index": 30965,
+      "sha256_utf8": "d42299bbd61feef0b5c640543b98eb3cde885f84d58f1076c9751573b26dfaae",
+      "local_sha256_utf8": "d42299bbd61feef0b5c640543b98eb3cde885f84d58f1076c9751573b26dfaae",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B4",
+        "B5",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-04",
+        "R7-TC-SQL-05",
+        "R7-TC-UI-02"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-02.CA-04",
+      "text": "Un usuario no autorizado para participar en el evento no puede publicar historias en él.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 30966,
+      "end_index": 31070,
+      "sha256_utf8": "ee3aeb5d4aa61b42a3f9d614dd30e6996410477d55404216d7c113295204be62",
+      "local_sha256_utf8": "ee3aeb5d4aa61b42a3f9d614dd30e6996410477d55404216d7c113295204be62",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B4",
+        "B5",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-04",
+        "R7-TC-SQL-05",
+        "R7-TC-UI-02"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-03.CA-01",
+      "text": "El organizador y los asistentes confirmados pueden abrir desde la ficha del evento la sección de historias vigentes compartidas por usuarios autorizados.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 31128,
+      "end_index": 31297,
+      "sha256_utf8": "3f5972a0f9955f2867502e94bfe40cdc5a1eadb4a8352044fdb4560ef78b537f",
+      "local_sha256_utf8": "3f5972a0f9955f2867502e94bfe40cdc5a1eadb4a8352044fdb4560ef78b537f",
+      "literal_match": true,
+      "blocks": [
+        "B4",
+        "B5",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-06",
+        "R7-TC-UI-02",
+        "R7-TC-UI-03"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-03.CA-02",
+      "text": "Las historias mostradas corresponden únicamente al evento consultado y presentan las imágenes publicadas correctamente.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 31298,
+      "end_index": 31433,
+      "sha256_utf8": "724f09884812ce6e237305fa60272209aabcc7329c99aeed777597b19465855d",
+      "local_sha256_utf8": "724f09884812ce6e237305fa60272209aabcc7329c99aeed777597b19465855d",
+      "literal_match": true,
+      "blocks": [
+        "B4",
+        "B5",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-06",
+        "R7-TC-UI-02",
+        "R7-TC-UI-03"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-03.CA-03",
+      "text": "El usuario puede abrir una historia disponible y regresar a la sección del evento sin perder la navegación.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 31434,
+      "end_index": 31557,
+      "sha256_utf8": "afacfa02ab781a0c44cbcafbb0c3482b17ebaa3f5a7fd932fdee82dd1afbb6b1",
+      "local_sha256_utf8": "afacfa02ab781a0c44cbcafbb0c3482b17ebaa3f5a7fd932fdee82dd1afbb6b1",
+      "literal_match": true,
+      "blocks": [
+        "B4",
+        "B5",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-06",
+        "R7-TC-UI-02",
+        "R7-TC-UI-03"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-03.CA-04",
+      "text": "Cuando no hay historias vigentes, se muestra un estado vacío; un usuario no autorizado no accede a historias restringidas.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 31558,
+      "end_index": 31696,
+      "sha256_utf8": "ebb55dea92d31970569f69ca99b6ae6ee59700c02ac8fc6cb5ffd46f110d4844",
+      "local_sha256_utf8": "ebb55dea92d31970569f69ca99b6ae6ee59700c02ac8fc6cb5ffd46f110d4844",
+      "literal_match": true,
+      "blocks": [
+        "B4",
+        "B5",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-06",
+        "R7-TC-UI-02",
+        "R7-TC-UI-03"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-04.CA-01",
+      "text": "Una historia permanece disponible durante las primeras 24 horas posteriores a su fecha y hora de publicación, siempre que el usuario tenga permiso de acceso.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 31751,
+      "end_index": 31924,
+      "sha256_utf8": "a6d0fdde12725d5581ae8fa24590c273b569a1a7dadb2c35996413c4fa16663b",
+      "local_sha256_utf8": "a6d0fdde12725d5581ae8fa24590c273b569a1a7dadb2c35996413c4fa16663b",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B4",
+        "B6",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-07",
+        "R7-TC-SQL-08",
+        "R7-TC-SQL-09"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-04.CA-02",
+      "text": "Tras cumplirse 24 horas, la historia deja de estar accesible incluso por enlace directo; posteriormente se elimina su imagen de Storage sin afectar otras imágenes del evento ni mensajes.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 31925,
+      "end_index": 32127,
+      "sha256_utf8": "80f4fa7c80117efdade5305f0c09d7ee1bd55e4ae52d25962964bf887108ba18",
+      "local_sha256_utf8": "80f4fa7c80117efdade5305f0c09d7ee1bd55e4ae52d25962964bf887108ba18",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B4",
+        "B6",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-07",
+        "R7-TC-SQL-08",
+        "R7-TC-SQL-09"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-04.CA-03",
+      "text": "Una historia vencida tampoco puede recuperarse como contenido vigente mediante enlaces o consultas directas no autorizadas.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 32128,
+      "end_index": 32267,
+      "sha256_utf8": "96eddcfcac7ff2970ea9bb88c402a0b659c680e7824d8e7a710b65e6095ac54c",
+      "local_sha256_utf8": "96eddcfcac7ff2970ea9bb88c402a0b659c680e7824d8e7a710b65e6095ac54c",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B4",
+        "B6",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-07",
+        "R7-TC-SQL-08",
+        "R7-TC-SQL-09"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-04.CA-04",
+      "text": "El cálculo del vencimiento se basa en el instante persistido de publicación y no depende de modificar el reloj local del dispositivo.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 32268,
+      "end_index": 32417,
+      "sha256_utf8": "aa42033d7db8d6686ed05caaf57a694643a3f1cf485647d88fd1166b1c4b93aa",
+      "local_sha256_utf8": "aa42033d7db8d6686ed05caaf57a694643a3f1cf485647d88fd1166b1c4b93aa",
+      "literal_match": true,
+      "blocks": [
+        "B1",
+        "B4",
+        "B6",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-07",
+        "R7-TC-SQL-08",
+        "R7-TC-SQL-09"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-05.CA-01",
+      "text": "Desde el detalle de un evento, el usuario puede iniciar la acción de agregarlo al calendario personal.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 32478,
+      "end_index": 32596,
+      "sha256_utf8": "d653cb64e5b2235be3499b2a47ff02df0748a66deca0ae18248241cef53e2802",
+      "local_sha256_utf8": "d653cb64e5b2235be3499b2a47ff02df0748a66deca0ae18248241cef53e2802",
+      "literal_match": true,
+      "blocks": [
+        "B7",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-UI-04"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-05.CA-02",
+      "text": "La invitación o entrada generada contiene como mínimo título, fecha, hora y ubicación del evento, cuando esta última está disponible.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 32597,
+      "end_index": 32746,
+      "sha256_utf8": "935dfe71162a990ed989702948835073f10aef87bf2d168cf97bdf6fb240982c",
+      "local_sha256_utf8": "935dfe71162a990ed989702948835073f10aef87bf2d168cf97bdf6fb240982c",
+      "literal_match": true,
+      "blocks": [
+        "B7",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-UI-04"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-05.CA-03",
+      "text": "La aplicación solicita los permisos necesarios cuando corresponda y respeta una denegación sin afirmar que el evento fue agregado.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 32747,
+      "end_index": 32893,
+      "sha256_utf8": "ef48fff68eee9e4af3b87fafc55522fff44ccdf006392149f7a69c8f50a5059f",
+      "local_sha256_utf8": "ef48fff68eee9e4af3b87fafc55522fff44ccdf006392149f7a69c8f50a5059f",
+      "literal_match": true,
+      "blocks": [
+        "B7",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-UI-04"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-05.CA-04",
+      "text": "Al completar correctamente la operación, el calendario o archivo compatible refleja los datos del evento; no se exige sincronización bidireccional.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 32894,
+      "end_index": 33057,
+      "sha256_utf8": "e75c4f62255cd29a7605b8e8176eb56af94945f2f6f021f13fe35074aef5551c",
+      "local_sha256_utf8": "e75c4f62255cd29a7605b8e8176eb56af94945f2f6f021f13fe35074aef5551c",
+      "literal_match": true,
+      "blocks": [
+        "B7",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-UI-04"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-06.CA-01",
+      "text": "Desde el detalle de un evento, el usuario puede iniciar la opción Compartir y abrir el selector de aplicaciones compatibles disponible en su dispositivo.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 33121,
+      "end_index": 33290,
+      "sha256_utf8": "a12016fc970ec67b99d1178a0b8a876d6d7382b9c67fb566c9dca05cd5029289",
+      "local_sha256_utf8": "a12016fc970ec67b99d1178a0b8a876d6d7382b9c67fb566c9dca05cd5029289",
+      "literal_match": true,
+      "blocks": [
+        "B8",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-UI-05"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-06.CA-02",
+      "text": "El contenido compartido incluye información suficiente para identificar el evento, como título, fecha y un enlace o referencia accesible cuando esté disponible.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 33291,
+      "end_index": 33467,
+      "sha256_utf8": "afe63f1e7f7185448e563625f4fd16fbcaa48276c59e0b8e810705d45e045aab",
+      "local_sha256_utf8": "afe63f1e7f7185448e563625f4fd16fbcaa48276c59e0b8e810705d45e045aab",
+      "literal_match": true,
+      "blocks": [
+        "B8",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-UI-05"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-06.CA-03",
+      "text": "Si el usuario cancela el diálogo de compartir, la aplicación vuelve a la vista anterior sin indicar que el envío se completó.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 33468,
+      "end_index": 33609,
+      "sha256_utf8": "cc83ffd3da86c5f34a336ef29c726ae02695bdedf43810ea20e0cd8e000d3ad3",
+      "local_sha256_utf8": "cc83ffd3da86c5f34a336ef29c726ae02695bdedf43810ea20e0cd8e000d3ad3",
+      "literal_match": true,
+      "blocks": [
+        "B8",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-UI-05"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-06.CA-04",
+      "text": "No se incluyen datos privados del evento o de sus asistentes que el usuario no tenga permiso para compartir.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 33610,
+      "end_index": 33734,
+      "sha256_utf8": "08e5af6dd1def7a92a37520769181f928bbf81b80f7ad5a2df0b0d2389e65a8b",
+      "local_sha256_utf8": "08e5af6dd1def7a92a37520769181f928bbf81b80f7ad5a2df0b0d2389e65a8b",
+      "literal_match": true,
+      "blocks": [
+        "B8",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-UI-05"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-07.CA-01",
+      "text": "Un usuario puede activar las notificaciones Web Push cuando utiliza un navegador compatible y concede el permiso correspondiente.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 33793,
+      "end_index": 33938,
+      "sha256_utf8": "01755a400408bdd1b1ba1b8d89703160ddfded665039e7a979098d8a61c6b8dc",
+      "local_sha256_utf8": "01755a400408bdd1b1ba1b8d89703160ddfded665039e7a979098d8a61c6b8dc",
+      "literal_match": true,
+      "blocks": [
+        "B9",
+        "B10",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-10",
+        "R7-TC-SQL-11",
+        "R7-TC-UI-06",
+        "R7-TC-PUSH-01",
+        "R7-TC-PUSH-02",
+        "R7-TC-PUSH-03",
+        "R7-TC-PUSH-04",
+        "R7-TC-PUSH-05",
+        "R7-TC-PUSH-06"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-07.CA-02",
+      "text": "Los avisos Push se generan a partir de los mismos eventos que la bandeja interna, sin duplicar el aviso en ella; se incluyen mensajes privados y no se envía un aviso por cada mensaje de chat grupal.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 33939,
+      "end_index": 34153,
+      "sha256_utf8": "09ca2280323682c7970067cc811f6e62588fa8e9f265f72fdaeb0c6368c3b709",
+      "local_sha256_utf8": "09ca2280323682c7970067cc811f6e62588fa8e9f265f72fdaeb0c6368c3b709",
+      "literal_match": true,
+      "blocks": [
+        "B9",
+        "B10",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-10",
+        "R7-TC-SQL-11",
+        "R7-TC-UI-06",
+        "R7-TC-PUSH-01",
+        "R7-TC-PUSH-02",
+        "R7-TC-PUSH-03",
+        "R7-TC-PUSH-04",
+        "R7-TC-PUSH-05",
+        "R7-TC-PUSH-06"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-07.CA-03",
+      "text": "Si el usuario rechaza el permiso o el dispositivo no es compatible, la bandeja interna de notificaciones continúa disponible.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 34154,
+      "end_index": 34295,
+      "sha256_utf8": "e0189b8a95ad35c692eba9752fa33a010889118e9fb0724b7d79c1f84098cbc6",
+      "local_sha256_utf8": "e0189b8a95ad35c692eba9752fa33a010889118e9fb0724b7d79c1f84098cbc6",
+      "literal_match": true,
+      "blocks": [
+        "B9",
+        "B10",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-10",
+        "R7-TC-SQL-11",
+        "R7-TC-UI-06",
+        "R7-TC-PUSH-01",
+        "R7-TC-PUSH-02",
+        "R7-TC-PUSH-03",
+        "R7-TC-PUSH-04",
+        "R7-TC-PUSH-05",
+        "R7-TC-PUSH-06"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-07.CA-04",
+      "text": "Si el envío Push falla o la suscripción deja de ser válida, el aviso permanece en la bandeja interna y no se informa una entrega inexistente.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 34296,
+      "end_index": 34453,
+      "sha256_utf8": "23e8fc0699bea7087f6f065d7346711e22048b630442195c4f6293dadf5ae5b7",
+      "local_sha256_utf8": "23e8fc0699bea7087f6f065d7346711e22048b630442195c4f6293dadf5ae5b7",
+      "literal_match": true,
+      "blocks": [
+        "B9",
+        "B10",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-10",
+        "R7-TC-SQL-11",
+        "R7-TC-UI-06",
+        "R7-TC-PUSH-01",
+        "R7-TC-PUSH-02",
+        "R7-TC-PUSH-03",
+        "R7-TC-PUSH-04",
+        "R7-TC-PUSH-05",
+        "R7-TC-PUSH-06"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    },
+    {
+      "id": "RF-R7-07.CA-05",
+      "text": "Un usuario puede desactivar sus suscripciones Push sin afectar el historial de avisos dentro de PlanIt.",
+      "tab_id": "t.89mq08i5ups2",
+      "start_index": 34454,
+      "end_index": 34573,
+      "sha256_utf8": "cce100fac9441efc15fa358eb16edff5721ac84a901e23840a02cf48273a129e",
+      "local_sha256_utf8": "cce100fac9441efc15fa358eb16edff5721ac84a901e23840a02cf48273a129e",
+      "literal_match": true,
+      "blocks": [
+        "B9",
+        "B10",
+        "B11"
+      ],
+      "tests": [
+        "R7-TC-SQL-10",
+        "R7-TC-SQL-11",
+        "R7-TC-UI-06",
+        "R7-TC-PUSH-01",
+        "R7-TC-PUSH-02",
+        "R7-TC-PUSH-03",
+        "R7-TC-PUSH-04",
+        "R7-TC-PUSH-05",
+        "R7-TC-PUSH-06"
+      ],
+      "layers": {
+        "sql": "NOT RUN",
+        "http_jwt": "NOT RUN",
+        "storage": "NOT RUN",
+        "ui": "NOT RUN",
+        "sw_push": "NOT RUN"
+      },
+      "acceptance": "NOT RUN"
+    }
+  ]
+}

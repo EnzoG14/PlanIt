@@ -1,0 +1,57 @@
+{
+  "destination": "https://github.com/EnzoG14/PlanIt",
+  "destination_verified_by": "GitHub connector repository metadata: private=true; permissions.push=true; matches git origin",
+  "request_authorization": "User explicitly requested new branch and PR following R7 B0; B0 explicitly requires catalog evidence",
+  "prior_catalog": "origin/main:docs/qa/r6-block-9/catalog.json",
+  "sections": {
+    "buckets": {
+      "equal_to_existing_main": true
+    },
+    "column_grants": {
+      "equal_to_existing_main": true
+    },
+    "columns": {
+      "equal_to_existing_main": true
+    },
+    "constraints": {
+      "equal_to_existing_main": true
+    },
+    "functions": {
+      "equal_to_existing_main": true
+    },
+    "indexes": {
+      "equal_to_existing_main": true
+    },
+    "migrations": {
+      "equal_to_existing_main": true
+    },
+    "policies": {
+      "equal_to_existing_main": true
+    },
+    "publications": {
+      "equal_to_existing_main": true
+    },
+    "schema_usage": {
+      "equal_to_existing_main": true
+    },
+    "server_version": {
+      "equal_to_existing_main": true
+    },
+    "table_grants": {
+      "equal_to_existing_main": true
+    },
+    "tables": {
+      "equal_to_existing_main": true
+    },
+    "triggers": {
+      "equal_to_existing_main": true
+    }
+  },
+  "secret_pattern_scan": {
+    "private_key": false,
+    "jwt": false,
+    "supabase_secret": false
+  },
+  "comparison_rule": "Recursive object-key sorting; preserve array order and literal values",
+  "only_catalog_change_is_audit_timestamp": true
+}
