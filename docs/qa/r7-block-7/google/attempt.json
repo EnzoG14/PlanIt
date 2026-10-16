@@ -1,0 +1,9 @@
+{
+  "result": "BLOCKED",
+  "httpStatus": 200,
+  "finalOrigin": "https://workspace.google.com",
+  "finalPath": "/intl/es/products/calendar/",
+  "title": "Programación y calendario online que se pueden compartir - Google Calendar",
+  "reason": "Automated inspection does not certify the prefilled editor; manual verification required. No login or save performed.",
+  "prefillVerified": false
+}

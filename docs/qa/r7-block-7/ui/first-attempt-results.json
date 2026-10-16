@@ -1,0 +1,26 @@
+{
+  "browser": "Microsoft Edge headless",
+  "timezone": "Asia/Tokyo",
+  "environment": "Executed production component in ignored Vite harness, synthetic DTO, no auth/server claims; Google open instrumented",
+  "results": [
+    {
+      "width": 320,
+      "name": "Amanecer layout without overflow, touch targets and StrictMode double initialization",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Real browser download: filename, Unicode content, UTC dates, Blob URL released",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Google action parameters and popup-blocker-safe wording (window.open instrumented)",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "result": "INTERRUPTED_HARNESS_FAILURE",
+  "reason": "getByRole(status) excludes the intentionally hidden empty notice; corrected selector in second run"
+}

@@ -1,0 +1,5 @@
+PASS: UTC conversion independent of host timezone (AR, UTC, Tokyo, New York, Madrid)
+PASS: Date validation, leap year, fractional SQL timestamps, midnight/month/year boundaries
+PASS: Independent ical.js parser: one VEVENT, escaping/injection/UTF-8 folding round trip
+PASS: Stable UID, optional location, exact export allowlist, no metadata/token/link leaks
+PASS: Google prefill origin/route, UTC dates, IANA zone and Unicode parameter round trip

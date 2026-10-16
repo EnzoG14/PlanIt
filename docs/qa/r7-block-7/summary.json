@@ -1,0 +1,26 @@
+{
+  "base": "5adf8e455c90d46adc0f5477c5d3e9ee06eb2461",
+  "branch": "codex/r7-block-7",
+  "state": "Implemented; integrated QA pending",
+  "unitGroups": 5,
+  "uiChecks": 41,
+  "hashes": {
+    "src/features/events/calendar.ts": "ec31b670f8315ef1e7ef1de5b34ae15028e1abbd27c946215b42abdf4aa1f20e",
+    "src/features/events/EventCalendarAction.tsx": "d1fdca953474df11b831e1827580c61012aed7aa4a4d68da37e12524fb9aaa84",
+    "src/features/events/calendar.css": "64978defd2b5b317cc319918e818bb872dbd73c21aadf6c2f968078533c353ab"
+  },
+  "build": "PASS",
+  "lint": "PASS (pre-existing warnings)",
+  "eventsRegression": "PASS local",
+  "realtimeRegression": "PASS simulated",
+  "googlePrefill": "BLOCKED",
+  "calendarClientImport": "NOT RUN",
+  "detailIntegration": "B11 pending",
+  "migrations": {
+    "created": 0,
+    "local": "NOT RUN",
+    "remoteApplied": 0,
+    "remoteVerified": 0
+  },
+  "hashConvention": "sha256 of UTF-8 source normalized to LF"
+}
