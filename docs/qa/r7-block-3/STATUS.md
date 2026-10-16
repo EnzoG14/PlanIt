@@ -1,6 +1,6 @@
 # R7 · Bloque 3 — Imágenes en el chat de evento
 
-16/10/2026, Argentina. **Implementado; validación de interfaz con fixtures PASS; aceptación integral pendiente de transporte real y revisión humana.** Rama `codex/r7-block-3`, worktree `r7-block-3-worktree`, base limpia `cc4e70e89f03fed2162c5477af5a5c564ad83745` (`origin/main`, PR #78/B2, #75/B1 y #74/B0 integradas tras fetch). El pedido del responsable autoriza este bloque. PR draft: pendiente de creación al registrar este informe.
+16/10/2026, Argentina. **Implementado; validación de interfaz con fixtures PASS; aceptación integral pendiente de transporte real y revisión humana.** Rama `codex/r7-block-3`, worktree `r7-block-3-worktree`, base limpia `cc4e70e89f03fed2162c5477af5a5c564ad83745` (`origin/main`, PR #78/B2, #75/B1 y #74/B0 integradas tras fetch). El pedido del responsable autoriza este bloque. Entrega técnica `1fcc491a4cb7b1e31a2208f2e2195f0e39e6bebe`, [PR draft #79](https://github.com/EnzoG14/PlanIt/pull/79). La PR no habilita el bloque siguiente ni acredita aceptación humana.
 
 ## Cambios y compatibilidad
 
