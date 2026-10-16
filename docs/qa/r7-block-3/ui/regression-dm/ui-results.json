@@ -1,0 +1,225 @@
+{
+  "base": "cc4e70e89f03fed2162c5477af5a5c564ad83745",
+  "branch": "codex/r7-block-3",
+  "environment": "Actual Vite build + Edge headless; explicit Auth/REST/WebSocket fixtures; NOT real JWT/RLS transport or physical mobile",
+  "results": [
+    {
+      "width": 320,
+      "test": "Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Confirmed text send and lost committed response reconcile by ID without resending",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Uncommitted response keeps draft and retries same UUID only after reconciliation",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Bilateral block removes identity,disables composer and retains history",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Confirmed text send and lost committed response reconcile by ID without resending",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Uncommitted response keeps draft and retries same UUID only after reconciliation",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Bilateral block removes identity,disables composer and retains history",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 360,
+      "test": "Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Confirmed text send and lost committed response reconcile by ID without resending",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Uncommitted response keeps draft and retries same UUID only after reconciliation",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Bilateral block removes identity,disables composer and retains history",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Confirmed text send and lost committed response reconcile by ID without resending",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Uncommitted response keeps draft and retries same UUID only after reconciliation",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Bilateral block removes identity,disables composer and retains history",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Confirmed text send and lost committed response reconcile by ID without resending",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Uncommitted response keeps draft and retries same UUID only after reconciliation",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Bilateral block removes identity,disables composer and retains history",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Confirmed text send and lost committed response reconcile by ID without resending",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Uncommitted response keeps draft and retries same UUID only after reconciliation",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Bilateral block removes identity,disables composer and retains history",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Whitespace/overlimit guard,long text,offline/hidden clears history and return reloads",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "result": "PASS",
+  "sourceHashes": {
+    "src/features/events/chat.ts": "94700e5f886674b3cd22e9aa6f1048fd0f9559463185c4753a3077320e08cb8a",
+    "src/pages/EventChatPage.tsx": "3a16c6eafcd676a346266d0baabb52c39f8483a373c72369dea6710fb6588a2e",
+    "src/pages/chat.css": "ea9df1a06b050faefd739ec44ba98f2dcb63b590e1ab00035f167ca6f475171a"
+  },
+  "harness": "Unmodified R5 DM regression; metadata updated by B3 wrapper to identify the actual tested build"
+}
