@@ -24,7 +24,7 @@
   "http": {
     "command": "node scripts/check-r7-stories-http.mjs",
     "result": "NOT RUN",
-    "reason": "Requires approved remote application/deploy and private provisioned JWT fixtures"
+    "reason": "Migration applied with approval; story reader deployment and provisioned JWT fixtures still pending"
   },
   "review": {
     "agent": "stories_review",
@@ -35,7 +35,8 @@
     "version": "20261016193248",
     "created": true,
     "local_sql": "PASS",
-    "remote_applied": false,
-    "remote_verified": false
+    "remote_applied": true,
+    "remote_verified": true,
+    "remote_evidence": "remote/summary.json"
   }
 }

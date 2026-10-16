@@ -1,0 +1,121 @@
+{
+  "project": "planit-v2",
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "authorization": "User requested remote database migrations in this chat, 2026-10-16",
+  "migration": "20261016193248_r7_stories.sql",
+  "marks": {
+    "created": true,
+    "local_sql": "PASS",
+    "remote_applied_with_approval": true,
+    "remote_verified_catalog": true
+  },
+  "remote_version": "17.11",
+  "migrations": {
+    "before": 45,
+    "after": 46,
+    "pending": 0,
+    "extra_already_applied": "20261016154257_r7_push_jobs.sql"
+  },
+  "functions": [
+    {
+      "schema": "planit_private",
+      "name": "can_read_story_event",
+      "body": "MATCH",
+      "acl": "PASS",
+      "search_path": "PASS"
+    },
+    {
+      "schema": "planit_private",
+      "name": "can_read_story",
+      "body": "MATCH",
+      "acl": "PASS",
+      "search_path": "PASS"
+    },
+    {
+      "schema": "planit_private",
+      "name": "guard_r7_story",
+      "body": "MATCH",
+      "acl": "PASS",
+      "search_path": "PASS"
+    },
+    {
+      "schema": "public",
+      "name": "publish_event_story",
+      "body": "MATCH",
+      "acl": "PASS",
+      "search_path": "PASS"
+    },
+    {
+      "schema": "public",
+      "name": "get_event_stories",
+      "body": "MATCH",
+      "acl": "PASS",
+      "search_path": "PASS"
+    },
+    {
+      "schema": "public",
+      "name": "get_r7_story_image_target",
+      "body": "MATCH",
+      "acl": "PASS",
+      "search_path": "PASS"
+    },
+    {
+      "schema": "planit_private",
+      "name": "register_r7_media",
+      "body": "MATCH",
+      "acl": "PASS",
+      "search_path": "PASS"
+    },
+    {
+      "schema": "planit_private",
+      "name": "check_r7_file",
+      "body": "MATCH",
+      "acl": "PASS",
+      "search_path": "PASS"
+    },
+    {
+      "schema": "planit_private",
+      "name": "check_r7_claim_trigger",
+      "body": "MATCH",
+      "acl": "PASS",
+      "search_path": "PASS"
+    },
+    {
+      "schema": "planit_private",
+      "name": "can_read_r7_media",
+      "body": "MATCH",
+      "acl": "PASS",
+      "search_path": "PASS"
+    },
+    {
+      "schema": "planit_private",
+      "name": "check_r7_story_trigger",
+      "body": "MATCH",
+      "acl": "PASS",
+      "search_path": "PASS"
+    }
+  ],
+  "table_rls_acl": "PASS",
+  "constraints_indexes_triggers": "PASS",
+  "storage_files_policies_unchanged": true,
+  "security": {
+    "before": 59,
+    "after": 61,
+    "errors": 0,
+    "added": [
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "cache_key": "authenticated_security_definer_function_executable_public_get_event_stories_p_event_id uuid, p_before_at timestamp without time zone, p_before_id uuid, p_limit integer"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "cache_key": "authenticated_security_definer_function_executable_public_publish_event_story_p_event_id uuid, p_story_id uuid, p_file_id uuid"
+      }
+    ]
+  },
+  "http_jwt_storage": "NOT RUN",
+  "edge_story_reader_deployed": false,
+  "result": "PASS"
+}

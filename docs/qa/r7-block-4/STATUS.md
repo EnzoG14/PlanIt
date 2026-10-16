@@ -1,6 +1,6 @@
 # R7 · Bloque 4 — Publicación y consulta segura de historias
 
-16/10/2026, Argentina. **IMPLEMENTADO / PR draft para revisión. QA HTTP real pendiente.**
+16/10/2026, Argentina. **IMPLEMENTADO / migración remota autorizada aplicada. QA HTTP real pendiente.** Ver actualización remota al final; los gates anteriores describen la entrega inicial.
 
 Entrega técnica `1fcd3f510918b8c204e088069c6e5ae9fe1fc9bf`, [PR draft #83](https://github.com/EnzoG14/PlanIt/pull/83). La PR no autoriza merge, pasos remotos ni el siguiente bloque.
 
@@ -61,7 +61,7 @@ La corrección integrada #82 documenta que la API Storage real no permitió el G
 
 | Migración | Creada | Probada SQL local | Aplicada remota con aprobación | Verificada remota |
 |---|---|---|---|---|
-| `20261016193248_r7_stories.sql` | Sí, CLI `migration new r7_stories` | PASS, replay 45/45 | No | No |
+| `20261016193248_r7_stories.sql` | Sí, CLI `migration new r7_stories` | PASS, replay 45/45 | Sí, autorización posterior | Sí, catálogo/ACL/RLS |
 
 ## Reproducción
 
@@ -93,3 +93,15 @@ Revisión cruzada sólo lectura por `stories_review`: sin hallazgos accionables 
 Riesgos/pendientes: falta validar PostgreSQL remoto/Storage/Auth/Edge en conjunto y headers reales tras autorización, más pruebas reales de sign/list/HEAD/transforms/cachés y carreras TTL. No cron, GC ni cuota de producto nuevos. No se usa un mock como evidencia de permisos reales. No se aplicaron migraciones, DDL remoto, deploy, secretos, merge ni cambios de Google Doc.
 
 **Revisar PR y autorizar por separado los pasos remotos que correspondan. No GO de aceptación funcional ni del siguiente bloque. B5 y B6 podrán habilitarse tras revisión/integración B4 y aprobación del responsable; no se iniciaron.**
+
+## Actualización remota autorizada — 16/10/2026
+
+El responsable pidió expresamente **«hace las migraciones a la base remota»**. Se aplicó únicamente `20261016193248_r7_stories.sql` en **planit-v2 (`iepeqmvzjguwlhnecsdq`)**, con `--skip-vault`, sin seeds, roles, secretos, deploy Edge, cron ni merge. El CLI terminó correctamente; el proyecto histórico no se modificó.
+
+La inspección previa encontró 45 versiones remotas, incluida B10 `20261016154257_r7_push_jobs.sql`, aplicada por otra tarea pero aún fuera de main. El primer dry-run la detectó ausente localmente. Siguiendo el precedente B3/#82 se preparó un directorio `.r7-b4-remote.local` ignorado con las migraciones de esta rama y esa versión leída de `origin/codex/r7-block-10`. No se reparó ni alteró el historial remoto; B10 no se incorporó a esta PR ni se ejecutó otra vez. El dry-run preparado mostró **sólo B4 pendiente**.
+
+Evidencia de catálogo/ACL/RLS y asesores: [antes](remote/before.json), [después](remote/after.json), [consulta READ ONLY](remote/verify-readonly.sql), [verificador](remote/verify.mjs), [resumen](remote/summary.json). El catálogo se limita al esquema y no contiene filas de usuarios ni secretos.
+
+Verificación posterior **PASS**: 46 versiones en remoto, cero pendientes en dry-run con historial completo; 11/11 cuerpos de función idénticos al SQL de Git, `search_path=''`, RLS/ACL y constraints/índices/triggers de stories correctos. Policies Storage/files intactas. El remoto usa PostgreSQL 17.11. Los permisos por defecto de Supabase en `public` también conceden EXECUTE a service_role para las dos nuevas RPC autenticadas; ningún helper privado concede acceso cliente y el target de bytes sigue exclusivo de servicio. Asesores: **0 ERROR, 61 WARN** frente a 59 previos; los dos nuevos son avisos esperados de RPC SECURITY DEFINER ejecutables por authenticated (`get_event_stories`, `publish_event_story`), cuya autorización explícita fue revisada. No se cambió configuración Auth para silenciar avisos. Una consulta de catálogo demorada se reintentó correctamente; no se reaplicó la migración.
+
+La autorización de migración no despliega `r7-story-image`. HTTP/JWT/Storage reales continúan **NOT RUN**, y el lector de historias requiere deploy separado antes de utilizar su descarga desde B5. No se inició otro bloque.
