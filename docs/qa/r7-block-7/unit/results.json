@@ -1,0 +1,25 @@
+{
+  "parser": "ical.js 2.2.1 (QA-only, ignored install)",
+  "results": [
+    {
+      "name": "UTC conversion independent of host timezone (AR, UTC, Tokyo, New York, Madrid)",
+      "result": "PASS"
+    },
+    {
+      "name": "Date validation, leap year, fractional SQL timestamps, midnight/month/year boundaries",
+      "result": "PASS"
+    },
+    {
+      "name": "Independent ical.js parser: one VEVENT, escaping/injection/UTF-8 folding round trip",
+      "result": "PASS"
+    },
+    {
+      "name": "Stable UID, optional location, exact export allowlist, no metadata/token/link leaks",
+      "result": "PASS"
+    },
+    {
+      "name": "Google prefill origin/route, UTC dates, IANA zone and Unicode parameter round trip",
+      "result": "PASS"
+    }
+  ]
+}
