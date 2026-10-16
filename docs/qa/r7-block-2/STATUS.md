@@ -1,6 +1,6 @@
 # R7 · Bloque 2 — API transaccional de adjuntos de chat
 
-16/10/2026 (Argentina). **Implementado y probado en SQL local; revisión humana y transporte integrado pendientes.** Base `3f2a49800198825abfca660fa20acc051a31a94c` (`origin/main`, PR #75/B1 y #74/B0 integradas), rama `codex/r7-block-2`, worktree `r7-block-2-worktree`. Entrega técnica `bcbf916b9ca00e2520b3cd624608d4b5af29d699`; [PR draft #78](https://github.com/EnzoG14/PlanIt/pull/78). El pedido explícito habilita B2; no se atribuye autorización a B3 ni a despliegues remotos.
+16/10/2026 (Argentina). **Implementado, probado en SQL local y aplicado/verificado remotamente con autorización posterior; revisión humana y transporte integrado pendientes.** Base `3f2a49800198825abfca660fa20acc051a31a94c` (`origin/main`, PR #75/B1 y #74/B0 integradas), rama `codex/r7-block-2`, worktree `r7-block-2-worktree`. Entrega técnica `bcbf916b9ca00e2520b3cd624608d4b5af29d699`; [PR draft #78](https://github.com/EnzoG14/PlanIt/pull/78). El pedido explícito habilita B2; no se atribuye autorización a B3 ni a despliegues remotos.
 
 ## Cambios y contratos
 
@@ -33,7 +33,7 @@ RF-R7-01.CA-01..04: **backend SQL parcial PASS; aceptación integral NOT RUN** h
 
 | Migración | Creada | Probada SQL local | Aplicada remota con aprobación | Verificada remota |
 |---|---|---|---|---|
-| 20261016141952 | Sí | PASS | No | No |
+| 20261016141952 | Sí | PASS | Sí | Sí (catálogo/ACL/RLS) |
 
 ## Reproducción
 
@@ -55,3 +55,11 @@ Se copiaron los bytes de `.env.local` desde el worktree de main (`mapbox-worktre
 Referencias técnicas consultadas: [funciones PostgreSQL/Supabase](https://supabase.com/docs/guides/database/functions), [changelog](https://supabase.com/changelog) y reglas locales de privilegios/locks. El índice `.md` no respondió desde el navegador; se usó el changelog HTML. Sin cambio de SDK ni API Storage en B2.
 
 **Gate humano:** revisar esta PR y autorizar B3 por separado. Antes de habilitar multimedia integrada: aplicar B2 con aprobación separada, completar validación Edge/Storage real pendiente de B1 y pruebas HTTP/JWT positivas/negativas de B2. No se continúa con el siguiente bloque.
+
+## Actualización remota autorizada — 16/10/2026
+
+El responsable solicitó explícitamente aplicar las migraciones a la base remota. Se comprobó el destino planit-v2 (`iepeqmvzjguwlhnecsdq`), 38 versiones previas sincronizadas y dry-run con sólo B2 pendiente. Se aplicó `20261016141952_r7_chat_attachments.sql` mediante CLI linked, sin seeds, roles, deploy Edge, cron, secretos ni merge. Las referencias previas a aplicación remota pendiente describen la entrega inicial y quedan superadas por esta autorización.
+
+Verificación posterior PASS: **39 versiones sincronizadas, cero pendientes**, dos cuerpos de función idénticos al SQL versionado, EXECUTE authenticated/anon y search_path correctos, RLS y ausencia de DML genérico comprobados. Asesores: cero ERROR, 55 WARN frente a 53 antes; los dos nuevos avisos corresponden a las RPC DEFINER autenticadas intencionales. Se conserva el aviso Auth heredado sin cambiar configuración.
+
+Evidencia: [resumen](remote/summary.json), [catálogo READ ONLY](remote/catalog.json), [asesores](remote/security-advisors.json), [consulta reproducible](remote/verify-readonly.sql), [verificador](remote/verify.mjs). Cuatro marcas: creada sí / SQL local PASS / aplicada remota con autorización sí / verificada remota por catálogo sí. HTTP/JWT y Storage reales continúan NOT RUN; esta aplicación no despliega el validador Edge ni habilita B3 automáticamente.

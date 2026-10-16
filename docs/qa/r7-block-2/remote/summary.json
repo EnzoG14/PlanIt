@@ -1,0 +1,38 @@
+{
+  "date_argentina": "2026-10-16",
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "authorization": "User explicitly requested remote migrations in this chat",
+  "migration": "20261016141952",
+  "created": true,
+  "local_sql": "PASS",
+  "remote_applied_with_approval": true,
+  "remote_verified": true,
+  "history_count": 39,
+  "pending_after_dry_run": 0,
+  "functions": [
+    {
+      "name": "send_event_chat_message_v2",
+      "body_matches": true,
+      "acl_matches": true,
+      "sha256": "c035f1c4de866b00b99561ea66f36c9b1a1c10a279eb54f9846a6a6b7f488d1e"
+    },
+    {
+      "name": "get_event_chat_messages_v2",
+      "body_matches": true,
+      "acl_matches": true,
+      "sha256": "dc6de9245b2a14f5b981cdb4b941bf70d20011b695f28a00e7eccc96fb42869a"
+    }
+  ],
+  "rls_acl": "PASS",
+  "advisors": {
+    "errors": 0,
+    "warnings": 55,
+    "before_warnings": 53,
+    "names": [
+      "authenticated_security_definer_function_executable",
+      "auth_leaked_password_protection"
+    ]
+  },
+  "scope": "Catalog/history/function bodies/ACL/RLS. HTTP/JWT/Storage integration NOT RUN. No Edge deployment.",
+  "result": "PASS"
+}
