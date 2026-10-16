@@ -5,7 +5,7 @@
 
 | Bloque | Estado | Rama/PR | Migración creada | SQL local | Remoto aplicado | Remoto verificado | HTTP/JWT | UI | Evidencia | Gate |
 |---|---|---|---|---|---|---|---|---|---|---|
-| B0 | Auditoría entregada; firma humana pendiente | `codex/r7-block-0` / PR draft por registrar | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | [Acta](RELEASE_7_BLOCK_0_DECISIONS.md), [37/37 checks documentales](../qa/r7-block-0/audit.json) | NO-GO siguiente bloque |
+| B0 | Auditoría entregada; firma humana pendiente | `codex/r7-block-0` / [PR draft #74](https://github.com/EnzoG14/PlanIt/pull/74) | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | [Acta](RELEASE_7_BLOCK_0_DECISIONS.md), [37/37 checks documentales](../qa/r7-block-0/audit.json) | NO-GO siguiente bloque |
 | B1 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
 | B2 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
 | B3 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
@@ -35,6 +35,8 @@
 ### 16/10/2026 — B0, auditoría documental
 
 Base `origin/main` **f8dd53c136fb30fbef5f3b2d9fa7cf0359923974** tras fetch; #73 planificación y #72 cierre R6 integradas. Worktree nuevo `r7-block-0-worktree`, rama `codex/r7-block-0`; `.env.local` copiado desde main e ignorado, sin versiones ni contenido en evidencia. Checkout inicial y sus cambios ajenos preservados.
+
+Entrega técnica `82b1a68d45a3f7c8b99d4672c081c862ef2468ff`, [PR draft #74](https://github.com/EnzoG14/PlanIt/pull/74). La creación de PR no firma el acta ni autoriza el siguiente bloque.
 
 Entregados [acta](RELEASE_7_BLOCK_0_DECISIONS.md), [contratos v1](RELEASE_7_BLOCK_0_CONTRACTS.md), [amenazas/matriz de permisos](RELEASE_7_BLOCK_0_THREAT_MODEL.md), [catálogo fresco](../qa/r7-block-0/catalog.json), [trazabilidad/hash de 29 CA](../qa/r7-block-0/traceability.json) y [reproducción](../qa/r7-block-0/README.md). Google Doc vigente: 7 descripciones y29 CA coinciden literalmente. Catálogo READ ONLY:37 migraciones sincronizadas,16 tablas públicas RLS,88 funciones,2 buckets privados,publicación sólo messages/notifications. Edge sólo social-avatar; sin cron/pg_net instalados. Helpers Storage por operación instalados; bloqueo real de firma/GET exige prueba B1.
 
