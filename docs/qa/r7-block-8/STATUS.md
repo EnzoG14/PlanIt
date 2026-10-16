@@ -1,7 +1,7 @@
 # R7 · Bloque 8 — Estado de entrega
 
 Fecha: 16/10/2026 (Argentina). Rama: `codex/r7-block-8`. Base inicial tras fetch: `5adf8e455c90d46adc0f5477c5d3e9ee06eb2461` (B0/#74). Base final tras rebase: `3f2a49800198825abfca660fa20acc051a31a94c`, main con B1/#75 integrado. Se repitieron contrato/build/lint y las tres suites SQL R4 sobre esta base; UI aislada conserva evidencia porque B1 no modifica su superficie.
-PR: pendiente de publicación; se registra al crearla.
+PR draft: [#77](https://github.com/EnzoG14/PlanIt/pull/77), contra main. Implementación y evidencia: dfe3b89 + f585be5; este registro de publicación se entrega en commit documental posterior.
 Estado: implementación aislada; verificación técnica local PASS. **Aceptación integrada y selector nativo real pendientes; no se declara GO funcional R7.**
 
 ## Autorización y alcance
