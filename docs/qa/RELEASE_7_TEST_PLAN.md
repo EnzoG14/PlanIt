@@ -46,7 +46,7 @@
 
 **R7-TC-UI-05** Share: `navigator.share` disponible, falta de soporte, fallback de copiar, `AbortError`, fallo permiso, links event public/unlisted (sólo organizer) y links rotados; sin datos personales ni tokens de R4 indebidos.
 
-**R7-TC-UI-06** Push: `default/denied/granted/unsupported`, registro múltiple/baja, ventana privada, identidad cambia, app abierta/cerrada, offline/reconexión, click y RLS. Notificación genérica, no información privada en lock-screen.
+**R7-TC-UI-06** Push: `default/denied/granted/unsupported`, registro múltiple/baja, ventana privada, identidad cambia, app abierta/cerrada, offline/reconexión, click y RLS. Según D08 confirmada, preview real autorizada (incluido fragmento DM) tras explicar exposición en pantalla bloqueada; opción de ocultar previews y fallback genérico sin afectar la bandeja. No datos demográficos, contactos, claves ni endpoints en payload/logs.
 
 **R7-TC-UI-07** Accesibilidad responsive: 320/375/390/768/1280 px, zoom 200 %, 44px target, foco, tab/ESC, aria-live, reduced-motion, contraste Amanecer, screen reader si disponible, safe area/keyboard real.
 
@@ -60,7 +60,7 @@
 
 **R7-TC-PUSH-04** HTTPS/origin/env correcto; VAPID public front, private secrets Edge; rotación de clave o endpoint inválido, 404/410, 429, 500, timeout, retry jitter/backoff y job exhausto. No duplicar la fila notifications al reintentar.
 
-**R7-TC-PUSH-05** Dos suscripciones mismo usuario y otra cuenta, multi-tenant isolation; push no debe filtrar hidden event o texto DM a pantalla bloqueada; click revalida RLS/recursos revocados.
+**R7-TC-PUSH-05** Dos suscripciones mismo usuario y otra cuenta, aislamiento entre destinatarios; preview de DM sólo para destinatario autorizado con consentimiento, genérica si la oculta o pierde autorización; sin datos ocultos no autorizados ni secretos. Click revalida sesión, destinatario, RLS y recursos revocados. Probar cambio de cuenta, baja de endpoint y notificaciones ya en vuelo; no afirmar revocación de contenido ya entregado.
 
 **R7-TC-PUSH-06** Cron de cleanup/worker: autenticación server-to-server real, invocador no autorizado rechazo, locks de concurrencia, cuotas, detección stuck jobs, rotación de secretos y guardrails de costo.
 

@@ -1,0 +1,27 @@
+{
+  "captured_date_ar": "2026-10-16",
+  "base": "f8dd53c136fb30fbef5f3b2d9fa7cf0359923974",
+  "branch": "codex/r7-block-0",
+  "head": "f8dd53c136fb30fbef5f3b2d9fa7cf0359923974",
+  "remote": "https://github.com/EnzoG14/PlanIt.git",
+  "recent_commits": [
+    "f8dd53c136fb30fbef5f3b2d9fa7cf0359923974 Merge pull request #73 from EnzoG14/docs/release-7-parallel-plan-20261015",
+    "a8c9404cf1f98388e514e3cc6675e79cc3f96243 docs(r7): add approved release plan and parallel implementation prompts",
+    "12a8f80b1d6c480dd3bc45c3cfbd06f702b53992 Merge pull request #72 from EnzoG14/codex/r6-block-9",
+    "3576a7eaa4a5daf421d9eb23273a047ba8725fa5 docs(r6): record human GO after manual acceptance",
+    "fd6e1a86ff025488d85ae0045dfa011d2b802e1e fix(r6): resolve B9 reflow and verify authenticated realtime QA"
+  ],
+  "initial_checkout_branch": "codex/r2-block-3-own-profile",
+  "initial_checkout_changes_preserved": [
+    ".env.example deleted",
+    "package.json modified",
+    "package-lock.json modified",
+    "existing untracked worktrees/config"
+  ],
+  "main_worktree": "mapbox-worktree",
+  "implementation_worktree": "r7-block-0-worktree",
+  "env_copy_equal": true,
+  "env_ignored": true,
+  "env_tracked": false,
+  "remote_changes": "none (read-only catalog, migration list, Edge list)"
+}
