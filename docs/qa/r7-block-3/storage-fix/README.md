@@ -2,6 +2,8 @@
 
 16/10/2026. Rama `codex/r7-chat-upload-fix`, desde `origin/main` `9d917a4` después de integrar #79/B3, #76/B7, #77/B8 y #80/B9. Se conserva el worktree `r7-block-3-worktree` y su `.env.local` ignorado. No se inicia otro bloque de R7.
 
+Entrega técnica `9c3e5f6`, verificación remota `db57610`, [PR draft #82](https://github.com/EnzoG14/PlanIt/pull/82). Sin merge. El deploy pendiente queda expresamente separado de la autorización previa de migraciones.
+
 ## Problema confirmado
 
 El responsable reprodujo un POST de una imagen PNG de 1,8 MB a Storage en planit-v2: **403 AccessDenied / new row violates row-level security policy**. No se persiste su ruta ni identificadores en esta evidencia.
