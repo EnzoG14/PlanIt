@@ -1,0 +1,22 @@
+{
+  "date_argentina": "2026-10-16",
+  "base": "5adf8e455c90d46adc0f5477c5d3e9ee06eb2461",
+  "branch": "codex/r7-block-1",
+  "node": "24.21.0",
+  "npm": "11.19.0",
+  "deno": "2.9.6",
+  "commands": [
+    { "command": "node scripts/check-r7-media.mjs", "result": "PASS", "evidence": "sql/sql-results.json", "scope": "38 migration replay, real PostgreSQL 18.4, roles with SQL Auth/Storage scaffolds" },
+    { "command": "node scripts/check-r7-media-client.mjs", "result": "PASS", "evidence": "client-results.json", "scope": "actual TS helpers, browser decoder and API stubs" },
+    { "command": "node scripts/check-r7-media-edge.mjs", "result": "PASS", "evidence": "edge-results.json", "scope": "real WASM decoder and handler, HTTP stubs" },
+    { "command": "deno check --config supabase/functions/r7-media-validate/deno.json supabase/functions/r7-media-validate/index.ts", "result": "PASS", "scope": "types and pinned module imports" },
+    { "command": "deno test --allow-read --config supabase/functions/r7-media-validate/deno.json supabase/functions/r7-media-validate/decoder_test.ts", "result": "PASS", "passed": 1, "failed": 0, "scope": "actual Deno runtime and pinned WASM" },
+    { "command": "npm run build", "result": "PASS", "exit_code": 0, "notes": "existing large chunk warning; generateSW 86 entries" },
+    { "command": "npm run lint", "result": "PASS", "exit_code": 0, "notes": "existing warnings; no errors" },
+    { "command": "git diff --check", "result": "PASS" }
+  ],
+  "migration": { "version": "20261016131118", "created": true, "local_sql": "PASS", "remote_applied_with_approval": false, "remote_verified": false },
+  "not_run": ["Real Auth/JWT and Storage HTTP GET/sign/list/HEAD/transform/cache", "Stories TTL T+24h (B4/B6)", "Supabase Edge Runtime deployment", "GC physical cleanup (B6)", "UI viewport review (no visual diff)", "SW offline/update and physical Push", "Integrated R1-R6 E2E regression"],
+  "gate": "Human review and real Storage HTTP evidence required before integration/enabling successors. Remote DDL/deploy require separate approval.",
+  "environment_file": "Copied from main worktree, ignored and never staged; contents excluded."
+}
