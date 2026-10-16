@@ -38,7 +38,8 @@
     "20261015173426_r6_export_projection.sql",
     "20261015185020_r6_event_full_notifications.sql",
     "20261015201034_r6_event_full_inbox.sql",
-    "20261015210000_r6_compare_events.sql"
+    "20261015210000_r6_compare_events.sql",
+    "20261016131118_r7_media_contract.sql"
   ],
   "results": [
     {

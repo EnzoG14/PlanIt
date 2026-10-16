@@ -32,15 +32,12 @@ Regresiones existentes, con herramientas PostgreSQL locales ya disponibles:
 
 ```powershell
 $env:PLANIT_TEST_TOOLS_DIR='D:/planit/.participation-test-tools.local/node_modules'
-$env:PLANIT_UI_OUTPUT='docs/qa/r7-block-8/r4-links'
-node scripts/check-event-links.mjs
-$env:PLANIT_UI_OUTPUT='docs/qa/r7-block-8/r4-access'
-node scripts/check-event-access.mjs
-$env:PLANIT_UI_OUTPUT='docs/qa/r7-block-8/r4-invite'
-node scripts/check-invite.mjs
+node scripts/check-r7-share-regressions.mjs
 ```
 
-Son bases efímeras propias, no el Supabase local compartido ni remoto. Las etiquetas históricas base/redemption del runner links se conservan tal como las genera; la base de esta ejecución está en STATUS.md y la evidencia de canje actual está en r4-invite. Ningún mock acredita HTTP/JWT real.
+El adaptador ejecuta las tres suites R4 originales (links/access/invite) sin cambiar sus aserciones. Agrega al bootstrap aislado el UNIQUE Storage y el helper simulado storage.allow_only_operation(text) que usa el runner B1; sin ese helper las suites antiguas se bloquean al reproducir la migración B1 (SQLSTATE 42883). Guarda cada resultado en r4-links/r4-access/r4-invite y el resumen en regression-results.json. No modifica scripts R4 ni migraciones; los runners temporales ignorados se borran al terminar.
+
+Son bases efímeras propias, no el Supabase local compartido ni remoto. Las etiquetas históricas base/redemption del runner links se conservan tal como las genera; la base de esta ejecución está en STATUS.md y la evidencia de canje actual está en r4-invite. Ningún scaffold acredita HTTP/JWT o transporte Storage real.
 
 ## Prueba manual pendiente
 

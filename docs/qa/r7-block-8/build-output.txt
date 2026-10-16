@@ -91,7 +91,7 @@ dist/assets/EventMap-X71zh91z.js                                  1,865.13 kB �
 - Using dynamic import() to code-split the application
 - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
-✓ built in 1.11s
+✓ built in 836ms
 
 PWA v2.0.0
 mode      generateSW

@@ -38,11 +38,12 @@
     "20261015173426_r6_export_projection.sql",
     "20261015185020_r6_event_full_notifications.sql",
     "20261015201034_r6_event_full_inbox.sql",
-    "20261015210000_r6_compare_events.sql"
+    "20261015210000_r6_compare_events.sql",
+    "20261016131118_r7_media_contract.sql"
   ],
   "inventory": [
     {
-      "signature": "set_event_visibility(uuid,text)",
+      "signature": "get_event_link_status(uuid)",
       "prosecdef": true,
       "proconfig": [
         "search_path=\"\""
@@ -66,7 +67,7 @@
       "anon_execute": false
     },
     {
-      "signature": "create_or_rotate_event_link(uuid)",
+      "signature": "set_event_visibility(uuid,text)",
       "prosecdef": true,
       "proconfig": [
         "search_path=\"\""
@@ -74,7 +75,7 @@
       "anon_execute": false
     },
     {
-      "signature": "get_event_link_status(uuid)",
+      "signature": "create_or_rotate_event_link(uuid)",
       "prosecdef": true,
       "proconfig": [
         "search_path=\"\""

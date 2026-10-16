@@ -1,0 +1,30 @@
+{
+  "environment": "Real isolated PostgreSQL; existing R4 assertions unchanged; Auth/Storage SQL scaffolds, SET ROLE; no HTTP/JWT",
+  "originalRunnerOnB1": {
+    "result": "BLOCKED",
+    "sqlstate": "42883",
+    "missingScaffold": "storage.allow_only_operation(text)",
+    "note": "All three original R4 bootstraps lack the helper required by the integrated B1 migration. Original assertions were not failing."
+  },
+  "adapter": "Adds only Storage unique(bucket_id,name) and operation helper from B1 test scaffold before replay; originals untouched",
+  "suites": [
+    {
+      "suite": "links",
+      "result": "PASS",
+      "groups": 8,
+      "migrations": 38
+    },
+    {
+      "suite": "access",
+      "result": "PASS",
+      "groups": 8,
+      "migrations": 38
+    },
+    {
+      "suite": "invite",
+      "result": "PASS",
+      "groups": 10,
+      "migrations": 38
+    }
+  ]
+}

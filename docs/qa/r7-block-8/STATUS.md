@@ -1,6 +1,6 @@
 # R7 · Bloque 8 — Estado de entrega
 
-Fecha: 16/10/2026 (Argentina). Rama: `codex/r7-block-8`. Base limpia tras fetch: `5adf8e455c90d46adc0f5477c5d3e9ee06eb2461`, main con B0/#74 integrado.
+Fecha: 16/10/2026 (Argentina). Rama: `codex/r7-block-8`. Base inicial tras fetch: `5adf8e455c90d46adc0f5477c5d3e9ee06eb2461` (B0/#74). Base final tras rebase: `3f2a49800198825abfca660fa20acc051a31a94c`, main con B1/#75 integrado. Se repitieron contrato/build/lint y las tres suites SQL R4 sobre esta base; UI aislada conserva evidencia porque B1 no modifica su superficie.
 PR: pendiente de publicación; se registra al crearla.
 Estado: implementación aislada; verificación técnica local PASS. **Aceptación integrada y selector nativo real pendientes; no se declara GO funcional R7.**
 
@@ -24,9 +24,9 @@ Se entregan `share.ts`, `EventShareAction.tsx`, CSS acotado, scripts/fixture y e
 | Contrato Share y Clipboard | PASS: 6 grupos en [contract-results.json](contract-results.json) |
 | UI aislada | PASS: 31 comprobaciones, Edge headless, 320/375/390/768/1280 y zoom CSS 200%; [ui-results.json](ui-results.json) |
 | Inspección visual | Fixture con shell Amanecer; copia manual, foco y estados; [capturas](visual/) |
-| R4 links / access / redeem | PASS: 8 + 8 + 10 grupos; PostgreSQL real aislado con scaffolding Auth/Storage y SET ROLE |
+| R4 links / access / redeem | PASS: 8 + 8 + 10 grupos; PostgreSQL real aislado con scaffolding Auth/Storage y SET ROLE; [adaptador y resultado](regression-results.json) |
 | Concurrencia/negativos | PASS local: doble gesto/respuesta obsoleta; carreras de rotación/canje/revocación y rollback en suites R4 |
-| Build / lint | PASS; advertencias preexistentes de lint y tamaño de chunks, sin nuevas dependencias |
+| Build / lint | PASS; 18 advertencias preexistentes de lint y aviso de tamaño de chunks, sin nuevas dependencias |
 | HTTP/JWT remoto, selector real móvil/desktop y recepción externa | NOT RUN |
 | Lector de pantalla, hardware móvil y PWA instalada | NOT RUN |
 | SW/offline y regresión completa R1–R6 | NOT RUN; sin cambios SW/PWA ni reapertura de R6; build y regresiones R4 no equivalen a QA completa |
@@ -40,6 +40,8 @@ Se entregan `share.ts`, `EventShareAction.tsx`, CSS acotado, scripts/fixture y e
 - Los booleanos del DTO son UX: R4 decide acceso al canjear. Validar el formato de un token **no comprueba que siga activo**; get_event_link_status sólo devuelve booleano y no identifica el token vigente.
 - El componente descarta respuestas anteriores al cambiar entradas o desmontarse; B11 debe remount por sesión y retirar datos al perder autorización.
 - Las capturas/fixtures usan datos sintéticos. El origin HTTPS de UI está interceptado hacia Vite local y las APIs Share/Clipboard están mockeadas: no acredita TLS desplegado ni selector nativo.
+
+Los bootstraps R4 originales quedan BLOCKED al reproducir B1 por falta del helper Storage (42883). El adaptador B8 agrega exclusivamente el scaffold de B1 antes del replay; no cambia aserciones ni declara una prueba de transporte Storage. La evidencia original sobre la base B0 también pasó; los JSON finales corresponden al replay actualizado.
 
 ## Gate y próximos pasos
 
