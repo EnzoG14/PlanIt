@@ -1,0 +1,145 @@
+{
+  "acl": [
+    {
+      "proname": "publish_event_story",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "proname": "guard_r7_story",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "proname": "can_read_story_event",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "proname": "can_read_story",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "proname": "get_event_stories",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "proname": "get_r7_story_image_target",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    },
+    {
+      "proname": "check_r7_story_trigger",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "anon_execute": false
+    }
+  ],
+  "policies": [
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "avatars_insert_own",
+      "permissive": "PERMISSIVE",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "((bucket_id = 'avatars'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text))"
+    },
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "avatars_select_own",
+      "permissive": "PERMISSIVE",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((bucket_id = 'avatars'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text))",
+      "with_check": null
+    },
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "avatars_delete_unlinked",
+      "permissive": "PERMISSIVE",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "((bucket_id = 'avatars'::text) AND planit_private.can_delete_avatar_upload(name))",
+      "with_check": null
+    },
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "event_media_insert_own",
+      "permissive": "PERMISSIVE",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "((bucket_id = 'event_media'::text) AND (((split_part(name, '/'::text, 1) <> 'r7'::text) AND (split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text) AND (split_part(name, '/'::text, 2) ~ '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'::text) AND (NOT (EXISTS ( SELECT 1\n   FROM events\n  WHERE (((events.id)::text = split_part(objects.name, '/'::text, 2)) AND (events.organizer_id <> ( SELECT auth.uid() AS uid))))))) OR ((split_part(name, '/'::text, 1) = 'r7'::text) AND planit_private.can_upload_r7_media(name, owner_id, metadata))))"
+    },
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "event_media_delete_unlinked",
+      "permissive": "PERMISSIVE",
+      "roles": "{authenticated}",
+      "cmd": "DELETE",
+      "qual": "((bucket_id = 'event_media'::text) AND (split_part(name, '/'::text, 1) <> 'r7'::text) AND planit_private.can_delete_event_upload(name))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "files",
+      "policyname": "files_select_visible",
+      "permissive": "PERMISSIVE",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "(((split_part(storage_path, '/'::text, 1) <> 'r7'::text) AND ((uploaded_by = ( SELECT auth.uid() AS uid)) OR (EXISTS ( SELECT 1\n   FROM event_images\n  WHERE (event_images.file_id = files.id))))) OR ((bucket_name = 'event_media'::text) AND (split_part(storage_path, '/'::text, 1) = 'r7'::text) AND planit_private.can_read_r7_media(storage_path)))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "files",
+      "policyname": "files_insert_own",
+      "permissive": "PERMISSIVE",
+      "roles": "{authenticated}",
+      "cmd": "INSERT",
+      "qual": null,
+      "with_check": "((uploaded_by = ( SELECT auth.uid() AS uid)) AND (split_part(storage_path, '/'::text, 1) <> 'r7'::text))"
+    },
+    {
+      "schemaname": "storage",
+      "tablename": "objects",
+      "policyname": "event_media_select_visible",
+      "permissive": "PERMISSIVE",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "((bucket_id = 'event_media'::text) AND (((split_part(name, '/'::text, 1) <> 'r7'::text) AND ((split_part(name, '/'::text, 1) = (( SELECT auth.uid() AS uid))::text) OR (EXISTS ( SELECT 1\n   FROM files\n  WHERE ((files.bucket_name = objects.bucket_id) AND (files.storage_path = objects.name)))))) OR ((split_part(name, '/'::text, 1) = 'r7'::text) AND storage.allow_only_operation('object.get_authenticated'::text) AND planit_private.can_read_r7_media(name))))",
+      "with_check": null
+    },
+    {
+      "schemaname": "public",
+      "tablename": "stories",
+      "policyname": "stories_read_current",
+      "permissive": "PERMISSIVE",
+      "roles": "{authenticated}",
+      "cmd": "SELECT",
+      "qual": "planit_private.can_read_story(id)",
+      "with_check": null
+    }
+  ]
+}

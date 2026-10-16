@@ -1,0 +1,14 @@
+{
+  "environment": "Node 24; transpiled actual TS helpers; decoder and Supabase API stubs. No HTTP/Storage/browser validation.",
+  "results": [
+    {
+      "test": "Size boundaries, MIME allowlist, spoofed magic and decode failure rejected; bitmap closed (decoder stub, not real browser)",
+      "result": "PASS"
+    },
+    {
+      "test": "Immutable retry IDs/path, raw no-store upload, 409 requires server reconciliation, failure never publishes or deletes, forged reservation rejected (API stub)",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}
