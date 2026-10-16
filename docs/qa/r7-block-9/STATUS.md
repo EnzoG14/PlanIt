@@ -5,6 +5,8 @@
 - **Rama:** `codex/r7-block-9`
 - **Base:** `3f2a498f8cb66039c114732944bb4410d708825a` (`origin/main`, con Bloques 0 y 1 integrados)
 - **Worktree:** `C:/Users/enzog/planit-worktrees/r7-block-9`
+- **Commit de implementación:** `47f968e`
+- **Pull Request (Draft):** [#80](https://github.com/EnzoG14/PlanIt/pull/80)
 
 ---
 
