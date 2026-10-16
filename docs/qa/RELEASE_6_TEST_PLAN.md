@@ -1,5 +1,8 @@
 # PlanIt — Release 6 · Plan de pruebas técnicas y de aceptación
 
+**GO humano — 15/10/2026:** el usuario confirmó que las pruebas manuales se completaron y aprobó R6 / B9 en la PR #72. Estado **Validado por aceptación humana**. [Acta de aprobación](RELEASE_6_HUMAN_APPROVAL.json). Los NO-GO y pendientes humanos inferiores conservan su corte histórico; los límites técnicos registrados no se convierten en pruebas ejecutadas por el agente. Sin merge ni deploy.
+
+
 **Seguimiento B9 — 15/10/2026:** dos P2 resueltos; HTTP/JWT real, Realtime real, UI autenticada y zoom nativo Edge comprobados. [Resultados y alcance](r6-block-9/followup/summary.json). NO-GO: aceptación humana y dispositivos pendientes. El informe B9 original se conserva como antecedente.
 
 

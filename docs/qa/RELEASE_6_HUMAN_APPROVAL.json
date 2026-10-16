@@ -1,0 +1,10 @@
+{
+  "decision": "GO",
+  "state": "Validado por aceptación humana",
+  "date": "2026-10-15",
+  "source": "Aprobación explícita del usuario en este chat",
+  "statement": "Marca la pr como go, ya se probó manualmente",
+  "scope": "Release 6 / Bloque 9 / PR #72",
+  "technical_evidence": "r6-block-9/followup/summary.json",
+  "note": "La validación manual fue informada por el usuario. Se conservan los alcances y limitaciones de las pruebas técnicas históricas; no implica merge ni deploy."
+}

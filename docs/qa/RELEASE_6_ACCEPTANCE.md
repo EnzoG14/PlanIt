@@ -1,5 +1,8 @@
 # PlanIt — Release 6 · Matriz de aceptación y evidencia
 
+**GO humano — 15/10/2026:** el usuario confirmó que las pruebas manuales se completaron y aprobó R6 / B9 en la PR #72. Estado **Validado por aceptación humana**. [Acta de aprobación](RELEASE_6_HUMAN_APPROVAL.json). Los NO-GO y pendientes humanos inferiores conservan su corte histórico; los límites técnicos registrados no se convierten en pruebas ejecutadas por el agente. Sin merge ni deploy.
+
+
 **Fuente literal:** `../requirements/RELEASE_6_REQUIREMENTS.md`, 24 CA. **Versión:** 0.1, 14/10/2026. **Aceptación integral de todos los CA: NOT RUN**. Ni documentación, ni auditoría, ni test unitario aislado otorgan aceptación integral.
 
 **B0 — 15/10/2026:** auditoría documental/catálogo entregada, sin ejecución funcional R6. [24 CA literales y traza a contratos](r6-block-0/traceability.json), [resultados baseline](r6-block-0/audit.json), [límites y pendientes](r6-block-0/README.md). Se mantienen **0/24 aceptados** y todas las capas de esta matriz NOT RUN. Riesgo D04 anti-diferencias bloquea B3/B5; revisión/firma humana B0 y aprobación de B1 pendientes.

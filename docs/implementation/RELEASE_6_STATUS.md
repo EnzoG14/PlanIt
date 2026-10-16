@@ -1,6 +1,9 @@
 # PlanIt — R6 seguimiento de ejecución
 
-**Estado global:** B9 corregido y QA HTTP/JWT/Realtime real ejecutada; **NO-GO, QA humana pendiente** (15/10/2026). P2 zoom y harness Mis eventos resueltos;[alcance y evidencias](../qa/r6-block-9/followup/summary.json).0/24 CA aceptados integralmente. R5 conserva GO humano;sin nuevas migraciones,merge o deploy.
+**GO humano — 15/10/2026:** el usuario confirmó que las pruebas manuales se completaron y aprobó R6 / B9 en la PR #72. Estado **Validado por aceptación humana**. [Acta de aprobación](../qa/RELEASE_6_HUMAN_APPROVAL.json). Los NO-GO y pendientes humanos inferiores conservan su corte histórico; los límites técnicos registrados no se convierten en pruebas ejecutadas por el agente. Sin merge ni deploy.
+
+
+**Estado global:** **GO humano · R6 validada**, aprobación expresa del usuario tras pruebas manuales (15/10/2026). B9 y sus dos P2 cerrados; PR #72 lista para revisión. Sin merge ni deploy.
 
 **Baseline B7:** `main`/`origin/main` `9311c0142e4c945656e8aa0fe9c89c1a37b4135b`, fetch y PR #69 MERGED comprobados. Rama `codex/r6-block-7`; pedido humano autoriza sólo B7 y decide nombre actual, sin snapshot. `.env.local` de main conservado en el mismo checkout e ignorado.
 

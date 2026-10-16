@@ -1,5 +1,8 @@
 # Release 6 — QA integral · Bloque 9
 
+**GO humano — 15/10/2026:** el usuario confirmó que las pruebas manuales se completaron y aprobó R6 / B9 en la PR #72. Estado **Validado por aceptación humana**. [Acta de aprobación](RELEASE_6_HUMAN_APPROVAL.json). Los NO-GO y pendientes humanos inferiores conservan su corte histórico; los límites técnicos registrados no se convierten en pruebas ejecutadas por el agente. Sin merge ni deploy.
+
+
 <!-- R6-FOLLOWUP:begin -->
 ## Seguimiento — correcciones y QA real, 15/10/2026
 
