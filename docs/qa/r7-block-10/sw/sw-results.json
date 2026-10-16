@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-10-16T15:51:39.802Z",
+  "results": [
+    {
+      "test": "Static bundle verification: dist/sw.js (injectManifest) and dist/registerSW.js exist, contain precache + push/click handlers, and exclude supabase.co or secrets",
+      "result": "PASS",
+      "environment": "Edge headless + local HTTP server over production dist/ build (synthetic SW PushEvent/NotificationClickEvent, not OS push daemon)"
+    },
+    {
+      "test": "Active Service Worker (/sw.js) registers, claims client, populates Workbox precache, and stores zero supabase.co entries",
+      "result": "PASS",
+      "environment": "Edge headless + local HTTP server over production dist/ build (synthetic SW PushEvent/NotificationClickEvent, not OS push daemon)",
+      "cachedCount": 83,
+      "cacheNames": [
+        "workbox-precache-v2-http://127.0.0.1:50093/"
+      ]
+    },
+    {
+      "test": "Offline reload serves precached app shell (NavigationRoute -> index.html) without network",
+      "result": "PASS",
+      "environment": "Edge headless + local HTTP server over production dist/ build (synthetic SW PushEvent/NotificationClickEvent, not OS push daemon)"
+    },
+    {
+      "test": "Service Worker push/notificationclick/message handlers sanitize HTML/URLs, enforce 80/120 char limits, reject external targets, close notifications on PLANIT_CLEAR_NOTIFICATIONS, and handle notificationclick",
+      "result": "PASS",
+      "environment": "Edge headless + local HTTP server over production dist/ build (synthetic SW PushEvent/NotificationClickEvent, not OS push daemon)"
+    }
+  ]
+}

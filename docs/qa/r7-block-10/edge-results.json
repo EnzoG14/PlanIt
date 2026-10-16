@@ -1,0 +1,16 @@
+{
+  "environment": "Local Deno. Real Web Push encryption and VAPID signature, mocked network and RPC; no deployed Edge or physical push.",
+  "results": [
+    {
+      "command": "deno check --config supabase/functions/r7-push/deno.json supabase/functions/r7-push/index.ts",
+      "result": "PASS",
+      "output": ""
+    },
+    {
+      "command": "deno test --allow-env --allow-read --config supabase/functions/r7-push/deno.json supabase/functions/r7-push/handler_test.ts",
+      "result": "PASS",
+      "output": "running 9 tests from ./supabase/functions/r7-push/handler_test.ts\nB10 config: missing, malformed and mismatched VAPID fails before RPC or send ... ok (5ms)\nB10 private worker: rejects anonymous, public key, user JWT, service key and wrong method ... ok (1ms)\nB10 payload: strict recipient/job correlation, Unicode limits, plain text, internal routes, trusted provider endpoints ... ok (2ms)\nB10 transport: real aes128gcm encryption/decryption and verified VAPID signature; mocked HTTPS transport ... ok (14ms)\nB10 HTTP classifier separates provider acceptance, stale endpoint, transient and permanent errors ... ok (0ms)\nB10 handler acknowledges only acceptance; errors never contain provider body, endpoint, keys or preview ... ok (5ms)\nB10 transport normalizes timeout and redirect/network exceptions without exposing request data ... ok (4ms)\nB10 invalid/disabled delivery never sends; lost ACK returns infrastructure failure without false completion ... ok (1ms)\nB10 invocation bounds: no more than 100 claims; five immediate sends per lease batch ... ok (54ms)\n\nok | 9 passed | 0 failed (96ms)\n\n"
+    }
+  ],
+  "result": "PASS"
+}
