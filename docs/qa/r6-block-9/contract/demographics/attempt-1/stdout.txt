@@ -1,0 +1,1 @@
+PASS: 3 valid DTOs, 13 malformed/leaking/inconsistent DTOs rejected

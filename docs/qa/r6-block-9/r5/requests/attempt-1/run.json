@@ -1,0 +1,15 @@
+{
+  "name": "requests",
+  "stage": "r5",
+  "attempt": 1,
+  "script": "scripts/check-r5-requests.mjs",
+  "command": "node scripts/check-r5-requests.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:56:06.957Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "63d25465792c24e5e344c4ce3c5dcc17ca40bdda1f6b455b34c870069e1123fe",
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/r5/requests/attempt-1",
+  "finished_at": "2026-10-15T22:56:51.876Z"
+}

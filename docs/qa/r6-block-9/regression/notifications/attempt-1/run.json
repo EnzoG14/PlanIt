@@ -1,0 +1,15 @@
+{
+  "name": "notifications",
+  "stage": "regression",
+  "attempt": 1,
+  "script": "scripts/check-notifications.mjs",
+  "command": "node scripts/check-notifications.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:55:05.461Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "fc432765a4c477a6f7ae69bfa3395ce89ed90b9e9529f28b9d876ea9b35d3aec",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/regression/notifications/attempt-1",
+  "finished_at": "2026-10-15T22:55:42.856Z"
+}

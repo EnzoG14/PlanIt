@@ -1,0 +1,15 @@
+{
+  "name": "events",
+  "stage": "checks",
+  "attempt": 1,
+  "script": "scripts/check-events.mjs",
+  "command": "node scripts/check-events.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:52:43.101Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "e319f1fcb8b358a3781ded0130dbc634e3402bed95892e7f4e45c6063882b6a7",
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/checks/events/attempt-1",
+  "finished_at": "2026-10-15T22:52:43.641Z"
+}

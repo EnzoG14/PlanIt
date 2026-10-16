@@ -1,0 +1,15 @@
+{
+  "name": "r5-message-notifications",
+  "stage": "regression-ui",
+  "attempt": 1,
+  "script": "scripts/check-r5-message-notifications-ui.mjs",
+  "command": "node scripts/check-r5-message-notifications-ui.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:59:01.676Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "f68969768e43a130e910663d1f3435f4b94d7446b01f4643d00f9fea940454b2",
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/regression-ui/r5-message-notifications/attempt-1",
+  "finished_at": "2026-10-15T22:59:07.985Z"
+}

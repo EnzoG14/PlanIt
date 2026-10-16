@@ -1,0 +1,10 @@
+PASS 320: 0 and 1 selected block the comparison with an accessible message
+PASS 320: Two events: 4/10 = 40 % and 15/20 = 75 % with Argentina time under Tokyo zone
+PASS 320: Capacity 0 shows N/D with explanation, never a percentage; selection change updates the view
+PASS 320: Filter change keeps the selection; archived event is selectable and shows its state
+PASS 320: Hostile title rendered as text only
+PASS 320: Maximum of 10 enforced in the UI; further options disabled
+PASS 320: Rapid selection change: late response for the old selection is ignored
+PASS 320: Error is neutral, hides stale rows, and Retry recovers
+PASS 320: 200 % text without page overflow
+PASS 320: Measured loaded font and keyboard focus; touch target dimensions recorded for review

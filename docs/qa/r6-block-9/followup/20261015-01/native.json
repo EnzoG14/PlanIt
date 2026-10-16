@@ -1,0 +1,1091 @@
+{
+  "run_id": "20261015-01",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "captured_at": "2026-10-15T23:36:12.544Z",
+  "environment": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures",
+  "result": "PASS",
+  "results": [
+    {
+      "test": "analytics native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 320,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 320,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 160,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 160,
+        "dock": [
+          {
+            "left": 26,
+            "right": 78,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 82,
+            "right": 134,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 26,
+            "right": 78,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 82,
+            "right": 134,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "compare native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 320,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 320,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 160,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 160,
+        "dock": [
+          {
+            "left": 26,
+            "right": 78,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 82,
+            "right": 134,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 14,
+            "right": 146,
+            "width": 132,
+            "height": 52
+          },
+          {
+            "left": 54,
+            "right": 106,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "notifications native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 320,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 320,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 160,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 160,
+        "dock": [
+          {
+            "left": 26,
+            "right": 78,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 82,
+            "right": 134,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 26,
+            "right": 78,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 82,
+            "right": 134,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "my-events native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 320,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 320,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 160,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 160,
+        "dock": [
+          {
+            "left": 33,
+            "right": 79,
+            "width": 46,
+            "height": 52
+          },
+          {
+            "left": 81,
+            "right": 127,
+            "width": 46,
+            "height": 52
+          },
+          {
+            "left": 14,
+            "right": 146,
+            "width": 132,
+            "height": 52
+          },
+          {
+            "left": 57,
+            "right": 103,
+            "width": 46,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "analytics native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 360,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 360,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 180,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 180,
+        "dock": [
+          {
+            "left": 36,
+            "right": 88,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 92,
+            "right": 144,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 36,
+            "right": 88,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 92,
+            "right": 144,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "compare native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 360,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 360,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 180,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 180,
+        "dock": [
+          {
+            "left": 36,
+            "right": 88,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 92,
+            "right": 144,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 14.7890625,
+            "right": 165.203125,
+            "width": 150.4140625,
+            "height": 52
+          },
+          {
+            "left": 64,
+            "right": 116,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "notifications native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 360,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 360,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 180,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 180,
+        "dock": [
+          {
+            "left": 36,
+            "right": 88,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 92,
+            "right": 144,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 36,
+            "right": 88,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 92,
+            "right": 144,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "my-events native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 360,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 360,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 180,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 180,
+        "dock": [
+          {
+            "left": 43,
+            "right": 89,
+            "width": 46,
+            "height": 52
+          },
+          {
+            "left": 91,
+            "right": 137,
+            "width": 46,
+            "height": 52
+          },
+          {
+            "left": 18.7890625,
+            "right": 161.203125,
+            "width": 142.4140625,
+            "height": 52
+          },
+          {
+            "left": 67,
+            "right": 113,
+            "width": 46,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "analytics native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 375,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 375,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 187,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 187,
+        "dock": [
+          {
+            "left": 39.75,
+            "right": 91.75,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 95.75,
+            "right": 147.75,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 39.75,
+            "right": 91.75,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 95.75,
+            "right": 147.75,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "compare native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 375,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 375,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 187,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 187,
+        "dock": [
+          {
+            "left": 39.75,
+            "right": 91.75,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 95.75,
+            "right": 147.75,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 18.5390625,
+            "right": 168.953125,
+            "width": 150.4140625,
+            "height": 52
+          },
+          {
+            "left": 67.75,
+            "right": 119.75,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "notifications native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 375,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 375,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 187,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 187,
+        "dock": [
+          {
+            "left": 39.75,
+            "right": 91.75,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 95.75,
+            "right": 147.75,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 39.75,
+            "right": 91.75,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 95.75,
+            "right": 147.75,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "my-events native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 375,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 375,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 187,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 187,
+        "dock": [
+          {
+            "left": 46.75,
+            "right": 92.75,
+            "width": 46,
+            "height": 52
+          },
+          {
+            "left": 94.75,
+            "right": 140.75,
+            "width": 46,
+            "height": 52
+          },
+          {
+            "left": 22.5390625,
+            "right": 164.953125,
+            "width": 142.4140625,
+            "height": 52
+          },
+          {
+            "left": 70.75,
+            "right": 116.75,
+            "width": 46,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "analytics native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 390,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 390,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 195,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 195,
+        "dock": [
+          {
+            "left": 15.5,
+            "right": 67.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 71.5,
+            "right": 123.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 127.5,
+            "right": 179.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 71.5,
+            "right": 123.5,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "compare native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 390,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 390,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 195,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 195,
+        "dock": [
+          {
+            "left": 43.5,
+            "right": 95.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 99.5,
+            "right": 151.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 22.2890625,
+            "right": 172.703125,
+            "width": 150.4140625,
+            "height": 52
+          },
+          {
+            "left": 71.5,
+            "right": 123.5,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "notifications native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 390,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 390,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 195,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 195,
+        "dock": [
+          {
+            "left": 15.5,
+            "right": 67.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 71.5,
+            "right": 123.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 127.5,
+            "right": 179.5,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 71.5,
+            "right": 123.5,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "my-events native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 390,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 390,
+        "outer": 516,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 195,
+        "outer": 516,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 195,
+        "dock": [
+          {
+            "left": 50.5,
+            "right": 96.5,
+            "width": 46,
+            "height": 52
+          },
+          {
+            "left": 98.5,
+            "right": 144.5,
+            "width": 46,
+            "height": 52
+          },
+          {
+            "left": 26.2890625,
+            "right": 168.703125,
+            "width": 142.4140625,
+            "height": 52
+          },
+          {
+            "left": 74.5,
+            "right": 120.5,
+            "width": 46,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "analytics native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 768,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 768,
+        "outer": 768,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 384,
+        "outer": 768,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 384,
+        "dock": [
+          {
+            "left": 82,
+            "right": 134,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 138,
+            "right": 190,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 194,
+            "right": 246,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 250,
+            "right": 302,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "compare native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 768,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 768,
+        "outer": 768,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 384,
+        "outer": 768,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 384,
+        "dock": [
+          {
+            "left": 32.79296875,
+            "right": 84.79296875,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 88.79296875,
+            "right": 140.79296875,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 144.79296875,
+            "right": 295.20703125,
+            "width": 150.4140625,
+            "height": 52
+          },
+          {
+            "left": 299.20703125,
+            "right": 351.20703125,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "notifications native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 768,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 768,
+        "outer": 768,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 384,
+        "outer": 768,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 384,
+        "dock": [
+          {
+            "left": 82,
+            "right": 134,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 138,
+            "right": 190,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 194,
+            "right": 246,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 250,
+            "right": 302,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "my-events native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 768,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 768,
+        "outer": 768,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 384,
+        "outer": 768,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 384,
+        "dock": [
+          {
+            "left": 32.79296875,
+            "right": 84.79296875,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 88.79296875,
+            "right": 140.79296875,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 144.79296875,
+            "right": 295.20703125,
+            "width": 150.4140625,
+            "height": 52
+          },
+          {
+            "left": 299.20703125,
+            "right": 351.20703125,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "analytics native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 1280,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 1280,
+        "outer": 1280,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 640,
+        "outer": 1280,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 640,
+        "dock": [
+          {
+            "left": 210,
+            "right": 262,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 266,
+            "right": 318,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 322,
+            "right": 374,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 378,
+            "right": 430,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "compare native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 1280,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 1280,
+        "outer": 1280,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 640,
+        "outer": 1280,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 640,
+        "dock": [
+          {
+            "left": 160.79296875,
+            "right": 212.79296875,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 216.79296875,
+            "right": 268.79296875,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 272.79296875,
+            "right": 423.20703125,
+            "width": 150.4140625,
+            "height": 52
+          },
+          {
+            "left": 427.20703125,
+            "right": 479.20703125,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "notifications native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 1280,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 1280,
+        "outer": 1280,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 640,
+        "outer": 1280,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 640,
+        "dock": [
+          {
+            "left": 210,
+            "right": 262,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 266,
+            "right": 318,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 322,
+            "right": 374,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 378,
+            "right": 430,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    },
+    {
+      "test": "my-events native tabs.setZoom(2) + getZoom confirmation, no CSS/pinch/DPR override",
+      "width": 1280,
+      "result": "PASS",
+      "factor": 2,
+      "before": {
+        "inner": 1280,
+        "outer": 1280,
+        "dpr": 1
+      },
+      "after": {
+        "inner": 640,
+        "outer": 1280,
+        "dpr": 2,
+        "visual_scale": 1,
+        "css_zoom": "1",
+        "document": 640,
+        "dock": [
+          {
+            "left": 160.79296875,
+            "right": 212.79296875,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 216.79296875,
+            "right": 268.79296875,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "left": 272.79296875,
+            "right": 423.20703125,
+            "width": 150.4140625,
+            "height": 52
+          },
+          {
+            "left": 427.20703125,
+            "right": 479.20703125,
+            "width": 52,
+            "height": 52
+          }
+        ]
+      }
+    }
+  ],
+  "screenshots": "docs/qa/r6-block-9/followup/20261015-01/native-1792107342244",
+  "method": "Edge native chrome.tabs.setZoom/getZoom via temporary local QA extension; measured innerWidth halves while outerWidth and visualViewport scale stay constant; no CSS zoom or forced device scale"
+}

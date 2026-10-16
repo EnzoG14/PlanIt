@@ -1,0 +1,15 @@
+{
+  "name": "compare",
+  "stage": "contract",
+  "attempt": 1,
+  "script": "scripts/check-r6-compare-contract.mjs",
+  "command": "node scripts/check-r6-compare-contract.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:52:18.820Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "cf5fd58982731149259d98a97a33c1982bf9b5b2480b7ab12695a55832eeb9d3",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/contract/compare/attempt-1",
+  "finished_at": "2026-10-15T22:52:19.242Z"
+}

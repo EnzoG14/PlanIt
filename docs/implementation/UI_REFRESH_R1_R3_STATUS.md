@@ -1,5 +1,7 @@
 # PlanIt — Estado visual UI Refresh R1–R3
 
+**Auditoría R6/B9 — 15/10/2026:** Amanecer preservado, sin cambios de UI/tokens/DESIGN. [App ejecutada y capturas](../qa/r6-block-9/README.md), seis anchos y texto200%; foco3px/targets medidos, contraste muestreado. Hallazgo P2: zoom CSS200 genera overflow en320/360/375/390; no acredita zoom nativo. Regresión histórica de cabecera Mis eventos reproducida. No cambia aceptación R1–R3 ni autovalida R6.
+
 **Integración R6/B7 · 15/10/2026:** `event_full` conserva la bandeja Amanecer; añade etiqueta Cupo completo, calendario y estado de recurso no disponible. [Antes/después y seis anchos](../qa/r6-block-7/README.md), texto del centro duplicado200%, foco3px, controles44px y altura corta en app ejecutada con fixtures. Sin CSS/tokens/DESIGN/sidecar/mockups nuevos ni aceptación adicional R1–R3. Zoom nativo, dispositivos y lector reales NOT RUN.
 
 **Ampliación R5/B8 avisos DM:** centro existente conserva Amanecer, muestra tipo Mensaje privado/icono y Ver mensaje. [Capturas reales con fixtures390/1280](../qa/r5-block-8/message-notifications/README.md); regresiones DM/follow PASS. Sin nuevo CSS/tokens/mockups ni aceptación R1–R3.

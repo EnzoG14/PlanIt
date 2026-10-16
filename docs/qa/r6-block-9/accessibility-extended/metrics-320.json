@@ -1,0 +1,113 @@
+{
+  "font": "\"Bricolage Grotesque\", \"Segoe UI\", system-ui, sans-serif",
+  "text": "rgb(86, 95, 138)",
+  "background": "#f6f5fd",
+  "focus": {
+    "width": "3px",
+    "style": "solid",
+    "color": "rgb(91, 52, 214)"
+  },
+  "targets_below_44": [],
+  "targets": [
+    {
+      "label": "Todos",
+      "width": 69.953125,
+      "height": 44
+    },
+    {
+      "label": "Próximos",
+      "width": 94.34375,
+      "height": 44
+    },
+    {
+      "label": "Pasados",
+      "width": 87.890625,
+      "height": 44
+    },
+    {
+      "label": "Cancelados",
+      "width": 110.1875,
+      "height": 44
+    },
+    {
+      "label": "Archivados",
+      "width": 107.734375,
+      "height": 44
+    },
+    {
+      "label": "Evento AVigente · 1 de ene de 2099, 18:00",
+      "width": 288,
+      "height": 68
+    },
+    {
+      "label": "Evento BVigente · 1 de ene de 2099, 18:00",
+      "width": 288,
+      "height": 68
+    },
+    {
+      "label": "Sin cupo legadoVigente · 1 de ene de 2099, 18:00",
+      "width": 288,
+      "height": 68
+    },
+    {
+      "label": "<img src=x onerror=\"window.__xss=1\">FiestaFinalizado · 1 de ene de 209",
+      "width": 288,
+      "height": 111
+    },
+    {
+      "label": "Extra 1Vigente · 1 de ene de 2099, 18:00",
+      "width": 288,
+      "height": 68
+    },
+    {
+      "label": "Extra 2Vigente · 1 de ene de 2099, 18:00",
+      "width": 288,
+      "height": 68
+    },
+    {
+      "label": "Extra 3Vigente · 1 de ene de 2099, 18:00",
+      "width": 288,
+      "height": 68
+    },
+    {
+      "label": "Extra 4Vigente · 1 de ene de 2099, 18:00",
+      "width": 288,
+      "height": 68
+    },
+    {
+      "label": "Extra 5Vigente · 1 de ene de 2099, 18:00",
+      "width": 288,
+      "height": 68
+    },
+    {
+      "label": "Extra 6Vigente · 1 de ene de 2099, 18:00",
+      "width": 288,
+      "height": 68
+    },
+    {
+      "label": "Extra 7Vigente · 1 de ene de 2099, 18:00",
+      "width": 288,
+      "height": 68
+    },
+    {
+      "label": "Extra 8Vigente · 1 de ene de 2099, 18:00",
+      "width": 288,
+      "height": 68
+    },
+    {
+      "label": "Quitar",
+      "width": 69.234375,
+      "height": 44
+    },
+    {
+      "label": "Quitar",
+      "width": 69.234375,
+      "height": 44
+    },
+    {
+      "label": "Actualizar",
+      "width": 116.234375,
+      "height": 48
+    }
+  ]
+}

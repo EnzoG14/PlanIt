@@ -1,0 +1,15 @@
+{
+  "name": "gallery",
+  "stage": "regression",
+  "attempt": 1,
+  "script": "scripts/check-gallery.mjs",
+  "command": "node scripts/check-gallery.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:58:54.555Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "9486591582b9646c2934a6442b212cbefed165d7f3ec462c32d308c1fe0e34f9",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/regression/gallery/attempt-1",
+  "finished_at": "2026-10-15T22:59:43.023Z"
+}

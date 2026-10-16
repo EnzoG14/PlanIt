@@ -1,11 +1,16 @@
 import assert from 'node:assert/strict'
 import { readFile, mkdir, writeFile } from 'node:fs/promises'
 import ts from 'typescript'
+import { pathToFileURL } from 'node:url'
+import { dirname, resolve } from 'node:path'
 
 async function module(path, replacements = []) {
   let source = await readFile(path, 'utf8')
   for (const [from, to] of replacements) source = source.replace(from, to)
-  const js = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext } }).outputText
+  let js = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext } }).outputText
+  // Resolve later analytics imports against their real files, keeping all assertions.
+  js = js.replace(/from '(\.\/[^']+)'/g, (_, specifier) =>
+    `from '${pathToFileURL(resolve(dirname(path), specifier + '.ts')).href}'`)
   return import('data:text/javascript;base64,' + Buffer.from(js).toString('base64'))
 }
 const { parseEventOccupancy } = await module('src/features/analytics/types.ts')

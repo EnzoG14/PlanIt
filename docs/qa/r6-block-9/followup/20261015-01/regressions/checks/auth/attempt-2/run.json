@@ -1,0 +1,15 @@
+{
+  "name": "auth",
+  "stage": "checks",
+  "attempt": 2,
+  "script": "scripts/check-auth.mjs",
+  "command": "node scripts/check-auth.mjs",
+  "base": "8dfbdd32e9dd6a4be7739df5c4a4be87b49f2df2",
+  "started_at": "2026-10-15T23:51:16.651Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "d156a003e496d91e51562e0f3cb66250e2fa12af83a12fe45b94ea0edd85dac1",
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/followup/20261015-01/regressions/checks/auth/attempt-2",
+  "finished_at": "2026-10-15T23:51:17.273Z"
+}

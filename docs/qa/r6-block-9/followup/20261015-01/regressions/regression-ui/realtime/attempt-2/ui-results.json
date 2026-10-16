@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "test": "two authorized fixture sessions receive persisted RPC message via WebSocket without refresh; own echo deduplicates; textarea preserved",
+      "result": "PASS",
+      "environment": "React + Supabase SDK; intercepted HTTP and Phoenix WebSocket, no remote delivery proof"
+    },
+    {
+      "test": "bursts preserve order, UUID uniqueness, loaded older history and reader scroll position",
+      "result": "PASS",
+      "environment": "React + Supabase SDK; intercepted HTTP and Phoenix WebSocket, no remote delivery proof"
+    },
+    {
+      "test": "events during delayed query reconcile again; reconnect recovers 120 persisted messages across multiple pages",
+      "result": "PASS",
+      "environment": "React + Supabase SDK; intercepted HTTP and Phoenix WebSocket, no remote delivery proof"
+    },
+    {
+      "test": "StrictMode retains one channel per scope; changing event unsubscribes previous conversation; account change remounts private chat state",
+      "result": "PASS",
+      "environment": "React + Supabase SDK; intercepted HTTP and Phoenix WebSocket, no remote delivery proof"
+    },
+    {
+      "test": "closed event is read only; detected membership denial clears private history and channel",
+      "result": "PASS",
+      "environment": "React + Supabase SDK; intercepted HTTP and Phoenix WebSocket, no remote delivery proof"
+    },
+    {
+      "test": "notification INSERT and read UPDATE sync two tabs; retained pagination; exact badge includes rows beyond first page and works outside inbox",
+      "result": "PASS",
+      "environment": "React + Supabase SDK; intercepted HTTP and Phoenix WebSocket, no remote delivery proof"
+    },
+    {
+      "test": "reconnect revalidates loaded read states and recovers notifications absent from WebSocket history",
+      "result": "PASS",
+      "environment": "React + Supabase SDK; intercepted HTTP and Phoenix WebSocket, no remote delivery proof"
+    },
+    {
+      "test": "account change isolates rows/count/channels; logout clears private UI",
+      "result": "PASS",
+      "environment": "React + Supabase SDK; intercepted HTTP and Phoenix WebSocket, no remote delivery proof"
+    }
+  ]
+}

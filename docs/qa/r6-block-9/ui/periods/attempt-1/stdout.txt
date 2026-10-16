@@ -1,0 +1,37 @@
+PASS 320: Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout
+PASS 320: Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC
+PASS 320: Successful zero vs error vs denial; safe retry; mismatched request DTO rejected
+PASS 320: 90→7→30 delayed network; prior table removed during load and late responses discarded
+PASS 320: 200% text, reduced motion and short viewport without overflow
+PASS 320: Foreign route and logout remove all historical data; session fixture only
+PASS 360: Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout
+PASS 360: Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC
+PASS 360: Successful zero vs error vs denial; safe retry; mismatched request DTO rejected
+PASS 360: 90→7→30 delayed network; prior table removed during load and late responses discarded
+PASS 360: 200% text, reduced motion and short viewport without overflow
+PASS 360: Foreign route and logout remove all historical data; session fixture only
+PASS 375: Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout
+PASS 375: Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC
+PASS 375: Successful zero vs error vs denial; safe retry; mismatched request DTO rejected
+PASS 375: 90→7→30 delayed network; prior table removed during load and late responses discarded
+PASS 375: 200% text, reduced motion and short viewport without overflow
+PASS 375: Foreign route and logout remove all historical data; session fixture only
+PASS 390: Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout
+PASS 390: Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC
+PASS 390: Successful zero vs error vs denial; safe retry; mismatched request DTO rejected
+PASS 390: 90→7→30 delayed network; prior table removed during load and late responses discarded
+PASS 390: 10s timeout, late abort, offline and reconnect clear historical values before retry
+PASS 390: 200% text, reduced motion and short viewport without overflow
+PASS 390: Foreign route and logout remove all historical data; session fixture only
+PASS 768: Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout
+PASS 768: Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC
+PASS 768: Successful zero vs error vs denial; safe retry; mismatched request DTO rejected
+PASS 768: 90→7→30 delayed network; prior table removed during load and late responses discarded
+PASS 768: 200% text, reduced motion and short viewport without overflow
+PASS 768: Foreign route and logout remove all historical data; session fixture only
+PASS 1280: Default30 AR,7 preset keyboard/focus, three series + accessible table and mobile layout
+PASS 1280: Custom range, Monday partial weeks; reversed/missing/overlong invalid dates hide old results without RPC
+PASS 1280: Successful zero vs error vs denial; safe retry; mismatched request DTO rejected
+PASS 1280: 90→7→30 delayed network; prior table removed during load and late responses discarded
+PASS 1280: 200% text, reduced motion and short viewport without overflow
+PASS 1280: Foreign route and logout remove all historical data; session fixture only

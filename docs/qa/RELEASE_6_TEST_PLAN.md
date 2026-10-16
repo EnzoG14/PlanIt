@@ -1,5 +1,13 @@
 # PlanIt — Release 6 · Plan de pruebas técnicas y de aceptación
 
+**GO humano — 15/10/2026:** el usuario confirmó que las pruebas manuales se completaron y aprobó R6 / B9 en la PR #72. Estado **Validado por aceptación humana**. [Acta de aprobación](RELEASE_6_HUMAN_APPROVAL.json). Los NO-GO y pendientes humanos inferiores conservan su corte histórico; los límites técnicos registrados no se convierten en pruebas ejecutadas por el agente. Sin merge ni deploy.
+
+
+**Seguimiento B9 — 15/10/2026:** dos P2 resueltos; HTTP/JWT real, Realtime real, UI autenticada y zoom nativo Edge comprobados. [Resultados y alcance](r6-block-9/followup/summary.json). NO-GO: aceptación humana y dispositivos pendientes. El informe B9 original se conserva como antecedente.
+
+
+**Ejecución B9 — 15/10/2026:** [comandos/casos](r6-block-9/README.md), [24 CA y fuentes](r6-block-9/summary.json), [reporte](RELEASE_6_TEST_REPORT.md). Capas independientes; NO-GO. D04/D08 B3 aceptan exactitud y riesgo residual temporal/multievento: TC02-04 documenta ese límite y no exige anonimato absoluto. D05/D06 B5 sustituyen paginación por snapshot único≤5000filas/10MiB/15s; probar límites completos y ausencia de archivo parcial. Las propuestas históricas inferiores se interpretan con estas adendas.
+
 **Versión:** 0.1 — 14/10/2026. **Estado:** plan NO ejecutado. **Contrato:** [24 CA oficiales](../requirements/RELEASE_6_REQUIREMENTS.md). **Tracking:** [matriz CA](RELEASE_6_ACCEPTANCE.md).  
 **Dependencia crítica:** R5 consta **Validado / GO por aceptación humana** en el reporte y STATUS de `main` SHA `66e24d85f32123ecd70f457f8381c68ae5af1603` (14/10/2026). Comprobar integración de PR #60, catálogo y alcance de QA técnica al iniciar B0. Ningún caso con «PASS» en este archivo: **son escenarios propuestos**.
 

@@ -1,0 +1,15 @@
+{
+  "name": "private-profile",
+  "stage": "r5",
+  "attempt": 1,
+  "script": "scripts/check-r5-private-profile.mjs",
+  "command": "node scripts/check-r5-private-profile.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:54:39.518Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "fb8486ea171d8f80437eb8c86dde777e3f372369ab5ed726280abf4b0642a0e9",
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/r5/private-profile/attempt-1",
+  "finished_at": "2026-10-15T22:55:22.930Z"
+}

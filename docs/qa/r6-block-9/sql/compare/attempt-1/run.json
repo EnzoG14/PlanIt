@@ -1,0 +1,15 @@
+{
+  "name": "compare",
+  "stage": "sql",
+  "attempt": 1,
+  "script": "scripts/check-r6-compare.mjs",
+  "command": "node scripts/check-r6-compare.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:56:35.917Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "7077bb32675d581d2e4dbfbfbfde7ecc336f33688c4144e86c32bc7298f198a3",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/sql/compare/attempt-1",
+  "finished_at": "2026-10-15T22:57:19.560Z"
+}

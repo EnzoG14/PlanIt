@@ -1,0 +1,14 @@
+PASS fixture: After actual app at 320px: title, badge, read state, no horizontal overflow; fixture capture
+PASS fixture: After actual app at 360px: title, badge, read state, no horizontal overflow; fixture capture
+PASS fixture: Long event title, notification text actually doubled from computed px sizes, short viewport, reduced motion: no horizontal document overflow
+PASS fixture: After actual app at 375px: title, badge, read state, no horizontal overflow; fixture capture
+PASS fixture: Keyboard mark/read persistence; authorized existing route; allowlist blocks external/protocol-relative/query URLs; revoked click clears title and delayed pre-revocation delta cannot restore it
+PASS fixture: Actual SDK Phoenix fixtures: repeated INSERT/UPDATE reconciled by UUID, current name/read changes, badge fetched authoritatively
+PASS fixture: Reconnect/online recovery spans >30 missed notices; reload reinitialization and keyset pagination retain 65 rows without duplicates
+PASS fixture: Error/missing migration clear private rows and retry; account change tears down A channel and discards delayed A list response and late WebSocket event
+PASS fixture: After actual app at 390px: title, badge, read state, no horizontal overflow; fixture capture
+PASS fixture: After actual app at 768px: title, badge, read state, no horizontal overflow; fixture capture
+PASS fixture: After actual app at 1280px: title, badge, read state, no horizontal overflow; fixture capture
+PASS fixture: Two simultaneous initializations of the same account keep independent reconciled inboxes/counts; closing one leaves the other subscribed
+PASS fixture: No Realtime subscription acknowledgement: manual refresh still retrieves notices and authoritative unread count
+PASS fixture: Existing notification types keep actions; browser Cache API contains no Supabase private responses

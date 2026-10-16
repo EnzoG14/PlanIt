@@ -1,0 +1,15 @@
+{
+  "name": "event-actions",
+  "stage": "regression",
+  "attempt": 1,
+  "script": "scripts/check-event-actions.mjs",
+  "command": "node scripts/check-event-actions.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T23:00:59.807Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "3af125b24d1f08b71e821763c42e568dd66a946091a57d10a0fa31f88940b98b",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/regression/event-actions/attempt-1",
+  "finished_at": "2026-10-15T23:01:37.518Z"
+}

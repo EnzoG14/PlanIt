@@ -1,0 +1,19 @@
+{
+  "name": "my-events-refresh",
+  "stage": "regression-ui",
+  "attempt": 1,
+  "script": "scripts/check-my-events-refresh-ui.mjs",
+  "command": "node scripts/check-my-events-refresh-ui.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:59:17.006Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "06d94ab7de1d1d0568632b7fd1e5faa8d93e22324a64b3914010b15eac994408",
+  "relocation": false,
+  "result": "FAIL",
+  "directory": "docs/qa/r6-block-9/regression-ui/my-events-refresh/attempt-1",
+  "error": {
+    "message": "Command failed: C:\\Program Files\\nodejs\\node.exe .r6-check.local/release-regression-ui-my-events-refresh.mjs\nnode:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: other routes preserve the current header\r\n\r\n1 !== 0\r\n\r\n    at file:///C:/Users/enzog/planit-worktrees/r6-block-9/.r6-check.local/release-regression-ui-my-events-refresh.mjs:96:14 {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: 1,\r\n  expected: 0,\r\n  operator: 'strictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.19.0\r\n",
+    "code": 1
+  },
+  "finished_at": "2026-10-15T22:59:20.420Z"
+}

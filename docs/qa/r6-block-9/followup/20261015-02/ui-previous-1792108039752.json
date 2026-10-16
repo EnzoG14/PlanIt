@@ -1,0 +1,94 @@
+{
+  "run_id": "20261015-02",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "captured_at": "2026-10-15T23:45:16.472Z",
+  "environment": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures",
+  "result": "FAIL",
+  "results": [
+    {
+      "test": "analytics actual JWT UI; normal reflow and reachable dock/controls",
+      "width": 320,
+      "result": "PASS",
+      "geometry": {
+        "document": 320,
+        "viewport": 320,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 50,
+            "right": 102,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mapa",
+            "left": 106,
+            "right": 158,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Mis eventos",
+            "left": 162,
+            "right": 214,
+            "width": 52,
+            "height": 52
+          },
+          {
+            "label": "Perfil",
+            "left": 218,
+            "right": 270,
+            "width": 52,
+            "height": 52
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "analytics actual JWT UI; CSS zoom200 reflow and reachable dock/controls",
+      "width": 320,
+      "result": "PASS",
+      "geometry": {
+        "document": 320,
+        "viewport": 320,
+        "dock": [
+          {
+            "label": "Inicio",
+            "left": 52,
+            "right": 156,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mapa",
+            "left": 164,
+            "right": 268,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Mis eventos",
+            "left": 52,
+            "right": 156,
+            "width": 104,
+            "height": 104
+          },
+          {
+            "label": "Perfil",
+            "left": 164,
+            "right": 268,
+            "width": 104,
+            "height": 104
+          }
+        ],
+        "overflow": []
+      }
+    },
+    {
+      "test": "Real UI assertion failure",
+      "result": "FAIL",
+      "reason": "Last control can scroll above the wrapped dock"
+    }
+  ]
+}

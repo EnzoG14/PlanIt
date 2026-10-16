@@ -32,3 +32,6 @@ dist-ssr
 .agents
 .impeccable/critique
 .impeccable/live
+# Private R6 live QA credentials and browser profiles
+.r6-live.local/
+.r6-check.local/

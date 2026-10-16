@@ -1,0 +1,115 @@
+{
+  "run_id": "20261015-02",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "captured_at": "2026-10-15T23:42:01.589Z",
+  "environment": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures",
+  "result": "PASS",
+  "results": [
+    {
+      "test": "14 dedicated confirmed QA users; ordinary password logins; existing pair verified without profile mutations",
+      "result": "PASS",
+      "existing_verified": 2
+    },
+    {
+      "test": "11 manifest-scoped events created by user RPC; registrations/leaves/removal/follow/link redemption via real JWT",
+      "result": "PASS"
+    }
+  ],
+  "actors": {
+    "A": "d3ae8d60-3236-4418-a626-874ca778d936",
+    "B": "f3e9ad0f-8c58-4e3f-a42b-1eb73dd65fa8",
+    "C": "93efc0df-f827-4aff-a28f-2c01d7d70a99",
+    "D": "dd88e406-1258-40ac-aad8-f0f9aa80d740",
+    "P0": "ee3d834f-1b90-40f5-8b6d-e4b5902f3d99",
+    "P1": "1d665cde-7d81-43cf-8bff-efa220ed3a8a",
+    "P2": "40c4c2fb-ed47-4767-a1c6-169220eb9008",
+    "P3": "200fdbdc-deff-4822-8ae5-48ee7630f574",
+    "P4": "7e8b5124-0b67-4ce9-b6fc-9a612aac2937",
+    "P5": "ea56766b-ffaa-4390-87b0-add86bd307a1",
+    "P6": "6b5d30ed-5fd4-495a-82cb-a92ccdea270d",
+    "P7": "a3010b71-f63d-49d6-87ae-a2d6b36c74de",
+    "P8": "afff8597-796a-4084-9bd5-e1cc6f043fda",
+    "P9": "c9a122c3-b32f-48c4-b4fb-e12b18115ad7"
+  },
+  "events": {
+    "occupancy": {
+      "id": "e552e5f9-ba66-41a3-9f3a-8b957b0b12fa",
+      "owner": "A",
+      "title": "QA R6 20261015-02 occupancy",
+      "capacity": 10,
+      "visibility": "public"
+    },
+    "compare": {
+      "id": "f3db8f7b-f9c6-4e46-a840-31ae21affa10",
+      "owner": "A",
+      "title": "QA R6 20261015-02 compare",
+      "capacity": 20,
+      "visibility": "public"
+    },
+    "empty": {
+      "id": "16b77742-b5df-44ba-b50e-f7180963b9a6",
+      "owner": "A",
+      "title": "QA R6 20261015-02 empty",
+      "capacity": 10,
+      "visibility": "public"
+    },
+    "demo": {
+      "id": "97ea6408-0bf4-42a0-8ea3-a2c4dabba095",
+      "owner": "A",
+      "title": "QA R6 20261015-02 demo",
+      "capacity": 10,
+      "visibility": "public"
+    },
+    "small": {
+      "id": "f8929f02-e9fb-4a94-adae-fbb1b88e6dec",
+      "owner": "A",
+      "title": "QA R6 20261015-02 small",
+      "capacity": 10,
+      "visibility": "public"
+    },
+    "hidden": {
+      "id": "5269ca9b-8141-4b15-9c3f-8bd9c5f403ce",
+      "owner": "A",
+      "title": "QA R6 20261015-02 hidden",
+      "capacity": 10,
+      "visibility": "unlisted"
+    },
+    "cancelled": {
+      "id": "9e10f685-a025-4a65-a8d0-faaa907426d8",
+      "owner": "A",
+      "title": "QA R6 20261015-02 cancelled",
+      "capacity": 10,
+      "visibility": "public"
+    },
+    "archived": {
+      "id": "66299b33-ca9f-407f-bfe2-1ccbe27267d5",
+      "owner": "A",
+      "title": "QA R6 20261015-02 archived",
+      "capacity": 10,
+      "visibility": "public"
+    },
+    "foreign": {
+      "id": "4d3d17de-801f-4b0a-87dd-31282f6070d3",
+      "owner": "D",
+      "title": "QA R6 20261015-02 foreign",
+      "capacity": 3,
+      "visibility": "public"
+    },
+    "realtime": {
+      "id": "d06f2179-4d0c-4bbc-950a-bd988f0a1363",
+      "owner": "A",
+      "title": "QA R6 20261015-02 realtime",
+      "capacity": 1,
+      "visibility": "public"
+    },
+    "race": {
+      "id": "2d8836b3-4b39-4977-9499-2048cebe7f81",
+      "owner": "A",
+      "title": "QA R6 20261015-02 race",
+      "capacity": 1,
+      "visibility": "public"
+    }
+  },
+  "admin_scope": "Auth user provisioning only; no admin product queries/assertions/DDL",
+  "credentials": "Private ignored manifest only"
+}

@@ -1,0 +1,14 @@
+{
+  "run_id": "20261015-01",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "captured_at": "2026-10-15T23:31:29.041Z",
+  "environment": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures",
+  "result": "FAIL",
+  "results": [
+    {
+      "test": "Real UI assertion failure",
+      "result": "FAIL",
+      "reason": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.analytics-trend table') to be visible\u001b[22m\n\u001b[2m    59 × locator resolved to hidden <table>…</table>\u001b[22m\n"
+    }
+  ]
+}

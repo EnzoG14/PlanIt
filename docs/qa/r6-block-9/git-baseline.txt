@@ -1,0 +1,35 @@
+120d50a2ccfc9fc107b5d01e994c40b493bcbe79 Merge pull request #70 from EnzoG14/codex/r6-block-7
+bcab204164415f0f1a450739ada0fb9a5a83dda8 merge: reconcile R6 block 7 with integrated block 8
+d291d76075b2ffc3836fa14053fbb2006e0ce182 Merge pull request #71 from EnzoG14/codex/r6-block-8
+74ddd9cfe23dbd2f7b5ccf5fad93581d9c486e83 docs(r6): link block 8 delivery and draft PR
+8c930eda58e0c4a413b2668034b70e9665a94ca6 feat(analytics): compare own events with batch occupancy for R6 block 8
+ec4c1481675115e6dfe2c863fe4976c353ceb0dd docs(r6): record authorized remote block 7 migration
+05750617d7418011061bdc0b3afa12c40e6dc815 docs(r6): link block 7 delivery and draft PR
+f5208d6ce45bde189a9fd1b56be9e3220ef8325f feat(notifications): integrate event-full inbox for R6 block 7
+9311c0142e4c945656e8aa0fe9c89c1a37b4135b Merge pull request #69 from EnzoG14/codex/r6-block-6
+d7788f39ba41717d7502c3b8836e0d81529a182b docs(r6): record authorized remote block 6 migration
+7a5aa6a031f00287500d7e4b34e3b0fd196293ab docs(r6): link block 6 delivery and draft PR
+3932449f5beee09e82c8b598d9bd6887edf5969c feat(notifications): add transactional event-full alerts for R6 block 6
+9ba2f687cfad0ad0997d8d5a9c7f8eca83659dc1 Merge pull request #68 from EnzoG14/codex/r6-block-5
+0766651078aadab19782f22980ae76dc3abe677d docs(r6): trim padding in captured migration history
+6be8d2290da14abe0ff1230c3af45af69299b0c5 docs(r6): record authorized remote block 5 migration
+6fb3bbd2292a8984f7fba7933aeb0e372f6e4b75 docs(r6): link block 5 delivery and draft PR
+c574440b133c24e52fff98df225eb4c892146f42 feat(analytics): add secure attendee and statistics CSV exports
+edaa0c5bc8785dad371736be8e16d693966fb4cf Merge pull request #67 from EnzoG14/codex/r6-block-4
+954ef36809385cbfe765c4ff1238a29a53e67c47 docs(r6): normalize migration listing evidence
+6a7b4a81146dfa627996474b76bf5d1b5ac105f2 docs(r6): record authorized remote block 4 migration and verification
+75718fdd432431491d2e56bdda2ff2170548b062 docs(r6): link block 4 draft PR and closure evidence
+93ecd66ae5a179973bf435395b792a92108a7c09 feat(r6): add bounded participation periods and historical movements
+25685f04c03c5ac308fc563f2a8e565e6987f39e Merge pull request #66 from EnzoG14/codex/r6-block-3
+c2abfacb5acb1a11a33bf78defea9d8c27e06a6e docs(r6): normalize remote CLI evidence formats
+38ebcd392e72b607d77338889de103414f9cce86 docs(r6): record authorized block 3 remote migration and verification
+d881607a993b9990cb06f1544776e8a749bf5700 docs(r6): link block 3 draft PR and final evidence
+ae9a0fea8a33bd3897188355108bd6b92dc096b5 feat(r6): add protected demographic aggregates and panel for block 3
+e6a25a1f81a6c25ab4694fc4c16cf695e8ab6dfa Merge pull request #65 from EnzoG14/codex/r6-block-2
+65a4e55ef6abe5f007a2e3e59f6910fef33f59d4 docs(r6): link block 2 draft PR and evidence
+7a86c0befd8b56a428fbe3485cd5ff1d96c4f9f1 feat(r6): add organizer occupancy panel for block 2
+7933aa942aedf3a67e46bdcdbeafc014dc1a67ea Merge pull request #64 from EnzoG14/codex/r6-block-1
+552e81771466fc7f2c91ecb54328b8e684b1d530 docs(r6): record authorized remote occupancy migration
+680fd2fc876cf0251a3293db5cfaece347dde160 docs(r6): link block 1 draft PR and verification
+56dcb4bb662dd80e45878a30fa43f541d30455e4 feat(r6): add owner-only event occupancy RPC and contract
+1ee60e3a1636c0ec181782343100d44b5f08be1e Merge pull request #63 from EnzoG14/codex/r6-block-0

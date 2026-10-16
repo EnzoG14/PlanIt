@@ -1,0 +1,6 @@
+{
+  "result": "PASS",
+  "valid": 3,
+  "rejected": 13,
+  "layer": "DTO only; not SQL/JWT"
+}

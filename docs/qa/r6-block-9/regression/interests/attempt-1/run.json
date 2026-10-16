@@ -1,0 +1,15 @@
+{
+  "name": "interests",
+  "stage": "regression",
+  "attempt": 1,
+  "script": "scripts/check-interests.mjs",
+  "command": "node scripts/check-interests.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:55:43.013Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "3b9ca4843c7732a69b82be8ce6eb33dca3f49be6d264365f3792cb80d6a032bb",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/regression/interests/attempt-1",
+  "finished_at": "2026-10-15T22:56:19.022Z"
+}

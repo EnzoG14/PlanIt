@@ -1,0 +1,15 @@
+{
+  "run_id": "20261015-02",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "captured_at": "2026-10-15T23:47:20.364Z",
+  "environment": "Real remote HTTPS/Auth/PostgREST/Postgres Changes on planit-v2; dedicated synthetic QA fixtures",
+  "result": "FAIL",
+  "results": [
+    {
+      "test": "ui execution",
+      "result": "FAIL",
+      "reason": "Last control can scroll above the wrapped dock: {\"pass\":false,\"top\":459.59375,\"bottom\":555.59375,\"dockTop\":512,\"padding\":\"424px\"}",
+      "code": "ERR_ASSERTION"
+    }
+  ]
+}

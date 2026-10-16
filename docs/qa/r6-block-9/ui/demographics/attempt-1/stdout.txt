@@ -1,0 +1,48 @@
+PASS 320: Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus
+PASS 320: Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data
+PASS 320: Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit
+PASS 320: Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics
+PASS 320: Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics
+PASS 320: 200% text and short viewport without page overflow
+PASS 320: 10s timeout ignores late response; logout removes private panel
+PASS 320: Anonymous direct route requires login
+PASS 360: Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus
+PASS 360: Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data
+PASS 360: Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit
+PASS 360: Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics
+PASS 360: Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics
+PASS 360: 200% text and short viewport without page overflow
+PASS 360: 10s timeout ignores late response; logout removes private panel
+PASS 360: Anonymous direct route requires login
+PASS 375: Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus
+PASS 375: Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data
+PASS 375: Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit
+PASS 375: Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics
+PASS 375: Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics
+PASS 375: 200% text and short viewport without page overflow
+PASS 375: 10s timeout ignores late response; logout removes private panel
+PASS 375: Anonymous direct route requires login
+PASS 390: Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus
+PASS 390: Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data
+PASS 390: Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit
+PASS 390: Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics
+PASS 390: Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics
+PASS 390: 200% text and short viewport without page overflow
+PASS 390: 10s timeout ignores late response; logout removes private panel
+PASS 390: Anonymous direct route requires login
+PASS 768: Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus
+PASS 768: Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data
+PASS 768: Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit
+PASS 768: Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics
+PASS 768: Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics
+PASS 768: 200% text and short viewport without page overflow
+PASS 768: 10s timeout ignores late response; logout removes private panel
+PASS 768: Anonymous direct route requires login
+PASS 1280: Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus
+PASS 1280: Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data
+PASS 1280: Refresh after withdrawal 10/3/7/30%; zero, cancelled, archived and ended explicit
+PASS 1280: Error/invalid capacity fail closed, no raw RPC errors, explicit retry and reconnect clear stale metrics
+PASS 1280: Direct foreign/link-only/follower denial fixture and route change erase prior title/metrics
+PASS 1280: 200% text and short viewport without page overflow
+PASS 1280: 10s timeout ignores late response; logout removes private panel
+PASS 1280: Anonymous direct route requires login

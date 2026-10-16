@@ -1,0 +1,15 @@
+{
+  "name": "follows",
+  "stage": "r5",
+  "attempt": 1,
+  "script": "scripts/check-r5-follows.mjs",
+  "command": "node scripts/check-r5-follows.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:55:22.935Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "91e00af92f1f81e1cd663a380a74e194d08949af8faafa0277701bd6af19d545",
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/r5/follows/attempt-1",
+  "finished_at": "2026-10-15T22:56:06.912Z"
+}

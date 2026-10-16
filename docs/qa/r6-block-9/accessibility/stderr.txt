@@ -1,0 +1,21 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   'DIV.:640',
++   'DIV.app-shell product-shell amanecer-shell event-management-shell:640',
++   'HEADER.app-header:640',
++   'NAV.account-nav:608',
++   'A.icon-link notifications-bell:355'
++ ]
+- []
+
+    at noOverflow (file:///C:/Users/enzog/planit-worktrees/r6-block-9/.r6-check.local/release-accessibility.mjs:64:345)
+    at async file:///C:/Users/enzog/planit-worktrees/r6-block-9/.r6-check.local/release-accessibility.mjs:148:5 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}

@@ -1,0 +1,15 @@
+{
+  "name": "event-access",
+  "stage": "regression",
+  "attempt": 1,
+  "script": "scripts/check-event-access.mjs",
+  "command": "node scripts/check-event-access.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:58:16.293Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "8a93d9fd1a7c545c0404d1f8051e197b9c0888b12134abac83417d0a5d2b7764",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/regression/event-access/attempt-1",
+  "finished_at": "2026-10-15T22:58:54.545Z"
+}

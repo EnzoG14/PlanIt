@@ -1,0 +1,15 @@
+{
+  "name": "request-notifications",
+  "stage": "r5",
+  "attempt": 1,
+  "script": "scripts/check-r5-request-notifications.mjs",
+  "command": "node scripts/check-r5-request-notifications.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:58:17.515Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "3e31e53cd4114fbb07158066706381b924abc07272c11e12a7d7dc5ea3972dec",
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/r5/request-notifications/attempt-1",
+  "finished_at": "2026-10-15T22:59:06.004Z"
+}

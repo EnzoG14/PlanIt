@@ -1,0 +1,15 @@
+{
+  "name": "participants",
+  "stage": "r5",
+  "attempt": 1,
+  "script": "scripts/check-r5-participants.mjs",
+  "command": "node scripts/check-r5-participants.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:52:28.462Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "feaa03c311038145d85d7ae3e722ecee9cfc9c425988d13a1e6fc31ea63cf3a1",
+  "relocation": false,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/r5/participants/attempt-1",
+  "finished_at": "2026-10-15T22:53:12.589Z"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "home-events",
+  "stage": "regression",
+  "attempt": 1,
+  "script": "scripts/check-home-events.mjs",
+  "command": "node scripts/check-home-events.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T23:02:50.760Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "120629c3e2d3a817f1ceb7f6266ce96aae6ba606b172555771f8639dfc7583e2",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/regression/home-events/attempt-1",
+  "finished_at": "2026-10-15T23:03:27.585Z"
+}

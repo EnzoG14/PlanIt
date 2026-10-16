@@ -60,3 +60,9 @@
 .analytics-series-table th, .analytics-series-table td { text-align: left; vertical-align: top; overflow-wrap: anywhere; padding: var(--pi-space-tight) var(--pi-space-micro); border-bottom: 1px solid var(--pi-color-divider); }
 .analytics-series-table th:first-child { width: 32%; }
 @media (min-width: 768px) { .analytics-period-fields { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Narrow layout space can result from native or CSS zoom, not only viewport width. */
+.analytics-page { container-type: inline-size; }
+.analytics-trend-totals > div, .analytics-trend-axis > * { min-width: 0; overflow-wrap: anywhere; }
+.analytics-trend-totals dt { overflow-wrap: anywhere; }
+@container (max-width: 239px) { .analytics-kpis { grid-template-columns: minmax(0, 1fr); } }

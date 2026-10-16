@@ -1,0 +1,71 @@
+{
+  "environment": "Actual Vite build + SDK; synthetic Auth/REST/Phoenix WebSocket; NOT real JWT/RLS/Realtime/device QA",
+  "baseline": false,
+  "results": [
+    {
+      "test": "After actual app at 320px: title, badge, read state, no horizontal overflow; fixture capture",
+      "result": "PASS"
+    },
+    {
+      "test": "After actual app at 360px: title, badge, read state, no horizontal overflow; fixture capture",
+      "result": "PASS"
+    },
+    {
+      "test": "Long event title, notification text actually doubled from computed px sizes, short viewport, reduced motion: no horizontal document overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "After actual app at 375px: title, badge, read state, no horizontal overflow; fixture capture",
+      "result": "PASS"
+    },
+    {
+      "test": "Keyboard mark/read persistence; authorized existing route; allowlist blocks external/protocol-relative/query URLs; revoked click clears title and delayed pre-revocation delta cannot restore it",
+      "result": "PASS"
+    },
+    {
+      "test": "Actual SDK Phoenix fixtures: repeated INSERT/UPDATE reconciled by UUID, current name/read changes, badge fetched authoritatively",
+      "result": "PASS"
+    },
+    {
+      "test": "Reconnect/online recovery spans >30 missed notices; reload reinitialization and keyset pagination retain 65 rows without duplicates",
+      "result": "PASS"
+    },
+    {
+      "test": "Error/missing migration clear private rows and retry; account change tears down A channel and discards delayed A list response and late WebSocket event",
+      "result": "PASS"
+    },
+    {
+      "test": "After actual app at 390px: title, badge, read state, no horizontal overflow; fixture capture",
+      "result": "PASS"
+    },
+    {
+      "test": "After actual app at 768px: title, badge, read state, no horizontal overflow; fixture capture",
+      "result": "PASS"
+    },
+    {
+      "test": "After actual app at 1280px: title, badge, read state, no horizontal overflow; fixture capture",
+      "result": "PASS"
+    },
+    {
+      "test": "Two simultaneous initializations of the same account keep independent reconciled inboxes/counts; closing one leaves the other subscribed",
+      "result": "PASS"
+    },
+    {
+      "test": "No Realtime subscription acknowledgement: manual refresh still retrieves notices and authoritative unread count",
+      "result": "PASS"
+    },
+    {
+      "test": "Existing notification types keep actions; browser Cache API contains no Supabase private responses",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "calls": {
+    "listCalls": 32,
+    "changeCalls": 8,
+    "countCalls": 35,
+    "markCalls": 1,
+    "targetCalls": 5
+  },
+  "result": "PASS"
+}

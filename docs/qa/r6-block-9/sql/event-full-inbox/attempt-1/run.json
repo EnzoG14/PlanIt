@@ -1,0 +1,15 @@
+{
+  "name": "event-full-inbox",
+  "stage": "sql",
+  "attempt": 1,
+  "script": "scripts/check-r6-event-full-inbox.mjs",
+  "command": "node scripts/check-r6-event-full-inbox.mjs",
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "started_at": "2026-10-15T22:55:52.106Z",
+  "environment": "Local execution; PostgreSQL SQL Auth/Storage scaffolds where applicable",
+  "source_sha256": "f531a2a997930892bb742ac378aa539316723fb95f9962e15554e99faf62608f",
+  "relocation": true,
+  "result": "PASS",
+  "directory": "docs/qa/r6-block-9/sql/event-full-inbox/attempt-1",
+  "finished_at": "2026-10-15T22:56:35.913Z"
+}

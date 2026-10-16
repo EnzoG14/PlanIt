@@ -1,0 +1,230 @@
+{
+  "base": "120d50a2ccfc9fc107b5d01e994c40b493bcbe79",
+  "captured_at": "2026-10-15T22:51:04.959334+00:00",
+  "server_version": "17.11",
+  "migration_count": 37,
+  "public_rls_tables": 16,
+  "function_count": 88,
+  "rpc": [
+    {
+      "name": "get_my_event_demographics",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "jsonb",
+      "schema": "public",
+      "definer": true,
+      "arguments": "p_event_id uuid",
+      "anon_execute": false,
+      "identity_arguments": "p_event_id uuid",
+      "authenticated_execute": true
+    },
+    {
+      "name": "get_my_event_export_rows",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "jsonb",
+      "schema": "public",
+      "definer": true,
+      "arguments": "p_event_id uuid",
+      "anon_execute": false,
+      "identity_arguments": "p_event_id uuid",
+      "authenticated_execute": true
+    },
+    {
+      "name": "get_my_event_occupancy",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "jsonb",
+      "schema": "public",
+      "definer": true,
+      "arguments": "p_event_id uuid",
+      "anon_execute": false,
+      "identity_arguments": "p_event_id uuid",
+      "authenticated_execute": true
+    },
+    {
+      "name": "get_my_event_participation_series",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "jsonb",
+      "schema": "public",
+      "definer": true,
+      "arguments": "p_event_id uuid, p_from timestamp without time zone, p_to timestamp without time zone, p_bucket text",
+      "anon_execute": false,
+      "identity_arguments": "p_event_id uuid, p_from timestamp without time zone, p_to timestamp without time zone, p_bucket text",
+      "authenticated_execute": true
+    },
+    {
+      "name": "get_my_events_occupancy",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "jsonb",
+      "schema": "public",
+      "definer": true,
+      "arguments": "p_event_ids uuid[]",
+      "anon_execute": false,
+      "identity_arguments": "p_event_ids uuid[]",
+      "authenticated_execute": true
+    }
+  ],
+  "producer": {
+    "schema": "planit_private",
+    "name": "notify_event_full"
+  },
+  "advisors": [
+    {
+      "name": "rls_enabled_no_policy",
+      "level": "INFO",
+      "findings": 1,
+      "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy"
+    },
+    {
+      "name": "authenticated_security_definer_function_executable",
+      "level": "WARN",
+      "findings": 50,
+      "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable"
+    },
+    {
+      "name": "auth_leaked_password_protection",
+      "level": "WARN",
+      "findings": 1,
+      "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection"
+    }
+  ],
+  "migration_sha256": {
+    "20261010011204_create_profiles_and_categories.sql": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "20261010013449_create_profiles_and_categories.sql": "bd841f3a38375bc38015c52d1eda79ff4d5c967ccd415682e919ce2964472f44",
+    "20261010023448_restrict_rls_auto_enable_execute.sql": "5355c41a3268c7af4aff6d0757d7a49aeef3240404f10c713092ccc65bc805a5",
+    "20261010042701_create_events_and_event_media.sql": "37c37dede9fe8806aa09900eb1c85f08d5ce6a7c91007d96d20e109f890362da",
+    "20261010052653_public_event_discovery.sql": "629cd2517acc9f3648d878c876564702ceb6084c0a5a7c867ccd6cc12caec3d6",
+    "20261010150232_event_participations.sql": "9257b2ffcf2aa4e49e09c43998d79632e0f78f256ac22eec8185fc396b23f270",
+    "20261010154930_my_events_read.sql": "4173b61139f8dc12fc9fc468f7ea7d06b487904e06553450fddea61a95c0f117",
+    "20261010212819_home_and_event_organizer_read.sql": "003c000d0a05ff697010b99ff6ba7afd3f61e701db375cc393d6afc0839f8809",
+    "20261010214526_event_chat.sql": "94d98da90aa4387db7ed8545d99f04e826c1b671a48e0cf40203260dc6fe1e9b",
+    "20261011163653_notifications_inbox.sql": "11f8c6ae6f319c72aa7e0aff2693edc7ff043ecc8d854becf3e88fa67ee8422a",
+    "20261011193316_r2_realtime_chat_notifications.sql": "fe04e70a5685a1a992f26b20732906d50e4a3f41ecedbaa092aaa2cf34ba9bbc",
+    "20261011232326_my_organized_events_read.sql": "543489f573c9515323ce7900a83d466f33a55c04d2ae47aeea817d136e1a96fe",
+    "20261012001058_edit_own_event.sql": "d338a67ef07596a66c7e6fba037d2621e5cbe5fa890ae7d6c081cac2c7e817c4",
+    "20261012013634_manage_event_gallery.sql": "91c2e52a21dd167b6facb6d42274ad865d492e86e0fe77c37eeec811a8d09d0f",
+    "20261012031717_manage_event_attendees.sql": "a632435496a1a7d6cb0652ea2132c994bdd62ab609c4772c9c30f9252aa07049",
+    "20261012044919_close_and_duplicate_events.sql": "24fc802941a8b034173602f7b96b8ebd959cf522e9e1553722dbb46354834e2a",
+    "20261012155501_event_rejoin_requests.sql": "f8f39c232ab97f130eb015bbefec98354f1b58861540c7f4cc2029775ad1583e",
+    "20261013160000_search_public_events.sql": "ceea7aa6bb28fd8c6d7d158e43782f992b8f61478c1d97e56324c650b19159fc",
+    "20261014120000_search_public_events_date_radius.sql": "d030335140548ca6e3274e80f89f8b07d83296c0aee3faa26488da5dd6c6072b",
+    "20261014120001_user_category_interests.sql": "cec990dff99d01052af1a29d948be5f5036e89483b75379818e4772f6f316549",
+    "20261014120002_get_suggested_events.sql": "15b571126a216fd3fa32011ba41ff97fb318b3ccaaf38d57751832801c8c0211",
+    "20261014120003_hidden_event_access.sql": "b50a7a1f059e5c1afd663309737ae3e473dd3fa67a36f956453a3d49684aefd7",
+    "20261014120004_event_visibility_links.sql": "d43c1e60a32b700fe7be3b126b18130270688a0a9bedc6816a61992e1881bcc0",
+    "20261014120005_redeem_event_link.sql": "345ac78058fdb433522b53780f2134966196cc8cdf3ecc4cd12b030a36d655e9",
+    "20261014120006_event_access_management.sql": "483c10481c5baf40edf4273a4187e5a7ff51f753acce6e870766e424a69788e7",
+    "20261014133225_social_security_model.sql": "cd5f734f3ad816002e0b82fa53ad7e52c3167eeac7c3c34e2a38c8a928f4ef8f",
+    "20261014133547_social_projections_and_avatars.sql": "b2c2a5be66ab1898bb57add52bc1f755a0ccfb0cb451fd2f2e37a8fcc932fe08",
+    "20261014133847_social_legacy_projections.sql": "61cef1987e66233ee819d80b14f9c0bf7d863613eb1717dd6b33c2cfe997011b",
+    "20261014212935_follow_request_notifications.sql": "8b1e4d98c0c3767ab63177b2bad1702bea41536b59ebf8a9a8a0bfd6c2015875",
+    "20261014225216_direct_message_notifications.sql": "e588afb12eaab91e12fd5f32feeda786551984064c89b1db63bcfee3532bb295",
+    "20261015130739_r6_organizer_occupancy.sql": "b625aa388f1af480a59524a82cecc8905dc257e21e9635012d325c91228078e7",
+    "20261015160324_r6_demographic_aggregates.sql": "bf17b2b4c139d1c1d5fe7ea3f8129af60d14189acffa0f7be904e209e260060a",
+    "20261015162953_r6_participation_series.sql": "d107b120e0a8ee4b3b2041c68c8aace7eac04b63525c41ac10d2ea6f2b2a34d5",
+    "20261015173426_r6_export_projection.sql": "41fe06c6b5178c524fbf1d716b0cea98b5ef67efa4b7dd53965942093f220e1f",
+    "20261015185020_r6_event_full_notifications.sql": "8fccead1c4934e5e60466cce4adfae6308f90367badb8be55e3c911cb505786e",
+    "20261015201034_r6_event_full_inbox.sql": "93acf216de25887d814ee7ac200bfaa0bf58c117e6058dea2089139789f61592",
+    "20261015210000_r6_compare_events.sql": "536f03283c87eab1d6a40c30c3bd5405fc77466ba6b7edba77f7d3e085853e2e"
+  },
+  "results": [
+    {
+      "test": "Fresh remote migration versions exactly match integrated Git migrations",
+      "result": "PASS"
+    },
+    {
+      "test": "All public tables have RLS",
+      "result": "PASS"
+    },
+    {
+      "test": "All five owner analytics RPCs exist, restricted DEFINER/search_path/UID/owner guards",
+      "result": "PASS"
+    },
+    {
+      "test": "Producer private/invoker, no client EXECUTE",
+      "result": "PASS"
+    },
+    {
+      "test": "Producer trigger active in versioned remote definition",
+      "result": "PASS"
+    },
+    {
+      "test": "B7 inbox RPCs are restricted invokers with event_full branch",
+      "result": "PASS"
+    },
+    {
+      "test": "Profile SELECT remains owner-only",
+      "result": "PASS"
+    },
+    {
+      "test": "Realtime publication excludes profiles/history and contains only messages/notifications",
+      "result": "PASS"
+    },
+    {
+      "test": "No events.timezone column",
+      "result": "PASS"
+    },
+    {
+      "test": "Built SW has no Supabase/network-response cache route",
+      "result": "PASS"
+    },
+    {
+      "test": "PWA standalone manifest and local icons exist",
+      "result": "PASS"
+    },
+    {
+      "test": "Environment ignored and never tracked",
+      "result": "PASS"
+    },
+    {
+      "test": "Integrated PR #60 is in base ancestry",
+      "result": "PASS"
+    },
+    {
+      "test": "Integrated PR #63 is in base ancestry",
+      "result": "PASS"
+    },
+    {
+      "test": "Integrated PR #64 is in base ancestry",
+      "result": "PASS"
+    },
+    {
+      "test": "Integrated PR #65 is in base ancestry",
+      "result": "PASS"
+    },
+    {
+      "test": "Integrated PR #66 is in base ancestry",
+      "result": "PASS"
+    },
+    {
+      "test": "Integrated PR #67 is in base ancestry",
+      "result": "PASS"
+    },
+    {
+      "test": "Integrated PR #68 is in base ancestry",
+      "result": "PASS"
+    },
+    {
+      "test": "Integrated PR #69 is in base ancestry",
+      "result": "PASS"
+    },
+    {
+      "test": "Integrated PR #70 is in base ancestry",
+      "result": "PASS"
+    },
+    {
+      "test": "Integrated PR #71 is in base ancestry",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS",
+  "environment": "Remote READ ONLY catalog and local build checks; no authenticated JWT/Realtime acceptance"
+}

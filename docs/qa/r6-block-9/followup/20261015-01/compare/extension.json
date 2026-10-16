@@ -1,0 +1,5 @@
+{
+  "source": "scripts/check-r6-compare-ui.mjs",
+  "source_sha256": "f40279da2ed3cc8fcd33af4ddb9028bd62ceff4193b091742b9ebed49771aa2c",
+  "scope": "Additional keyboard/metrics/CSS zoom200 checks; fixture transport; no native browser zoom/device certification"
+}

@@ -1,0 +1,7 @@
+PASS: CA-04: fresh inbox is empty; migrations generate no notifications
+PASS: Realtime batch RPC isolates recipients, rejects anon and oversized batches; exact unread count exceeds page size; migration idempotent
+PASS: CA-01/02/03: persisted content/time, A/B isolation including direct and unfiltered SELECT
+PASS: Keyset pagination with tied timestamps, lookahead and concurrent newer insertion stays stable
+PASS: Only own read_at can change; server timestamp, immutable first read, idempotent retries; forged INSERT/DELETE/content/identity updates denied
+PASS: Targets inherit event/chat RLS; nonmember, removed access, hidden event and foreign notification never grant navigation
+PASS: RLS enabled; all new RPCs SECURITY INVOKER, empty search_path; anon and missing identity denied
