@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-10-16T15:27:38.302Z",
+  "rpcCallsCount": 15,
+  "results": [
+    {
+      "test": "R7-B9-TC-01 UI: initial default state renders without auto-prompting Notification.requestPermission and shows multi-device count",
+      "result": "PASS",
+      "environment": "Edge headless + compiled PushSettings bundle with mocked PushManager/Notification and PostgREST RPC fixtures"
+    },
+    {
+      "test": "Uncertain state: when PushManager.subscribe succeeds but DB RPC fails, UI never reports active and offers retry or local discard",
+      "result": "PASS",
+      "environment": "Edge headless + compiled PushSettings bundle with mocked PushManager/Notification and PostgREST RPC fixtures"
+    },
+    {
+      "test": "R7-B9-TC-01 UI: retry completes upsert_my_push_subscription and transitions to Active state with 2 active devices",
+      "result": "PASS",
+      "environment": "Edge headless + compiled PushSettings bundle with mocked PushManager/Notification and PostgREST RPC fixtures"
+    },
+    {
+      "test": "R7-B9-TC-02 UI: preview checkbox toggles via keyboard Space, updates description, and persists set_my_push_previews(false)",
+      "result": "PASS",
+      "environment": "Edge headless + compiled PushSettings bundle with mocked PushManager/Notification and PostgREST RPC fixtures"
+    },
+    {
+      "test": "Shared browser isolation: switching session from User A to User B does not falsely report active push subscription for User B",
+      "result": "PASS",
+      "environment": "Edge headless + compiled PushSettings bundle with mocked PushManager/Notification and PostgREST RPC fixtures"
+    },
+    {
+      "test": "R7-B9-TC-03 UI: disabling push unsubscribes browser PushManager and marks subscription disabled_at in DB while preserving other devices",
+      "result": "PASS",
+      "environment": "Edge headless + compiled PushSettings bundle with mocked PushManager/Notification and PostgREST RPC fixtures"
+    },
+    {
+      "test": "Denied state: displays clear browser unblocking guidance without dead or misleading buttons",
+      "result": "PASS",
+      "environment": "Edge headless + compiled PushSettings bundle with mocked PushManager/Notification and PostgREST RPC fixtures"
+    },
+    {
+      "test": "Unsupported state: gracefully informs user when Web Push APIs are unavailable",
+      "result": "PASS",
+      "environment": "Edge headless + compiled PushSettings bundle with mocked PushManager/Notification and PostgREST RPC fixtures"
+    },
+    {
+      "test": "Responsive matrix (320, 375, 390, 768, 1280 px): zero horizontal overflow, >=44px touch targets, Amanecer tokens verified",
+      "result": "PASS",
+      "environment": "Edge headless + compiled PushSettings bundle with mocked PushManager/Notification and PostgREST RPC fixtures"
+    },
+    {
+      "test": "Accessibility: 200% text scaling at 320px and 1280px wraps cleanly without horizontal overflow",
+      "result": "PASS",
+      "environment": "Edge headless + compiled PushSettings bundle with mocked PushManager/Notification and PostgREST RPC fixtures"
+    }
+  ]
+}
