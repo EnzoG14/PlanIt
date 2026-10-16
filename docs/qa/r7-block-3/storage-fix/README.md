@@ -20,7 +20,7 @@ Storage v1.80.2 persiste finalmente como superusuario; el probe no acredita los 
 
 - `node scripts/check-r7-storage-preflight.mjs`: **9 grupos PASS**, PostgreSQL real local 18.4 con Auth/Storage como scaffolds SQL. Replay desde cero; prueba INSERT/ROLLBACK con forma preflight v1.80.2; negativos de longitud, MIME, compresión, cache, owner y reserva; rechazo de lectura/registro de metadatos incompletos; regresiones B1 galería/avatar/DM/chat, exclusividad, ACL, cierre y concurrencia. [Resultados](sql/sql-results.json).
 - `node scripts/check-r7-media-edge.mjs`: **2 grupos PASS**, WASM real y handler con dependencias HTTP stub. [Resultados copiados de esta ejecución](edge-results.json). No equivale a Edge desplegada.
-- Lint/diff: pendientes al preparar este informe. No se cambian páginas, estilos ni cliente, por lo que no se repiten snapshots ni se atribuye una nueva ejecución UI/build.
+- Lint/diff: **PASS** (advertencias heredadas). No se cambian páginas, estilos ni cliente, por lo que no se repiten snapshots ni se atribuye una nueva ejecución UI/build.
 - Una primera expectativa del test asumía `uploaded=false` para una fila incompleta; el productor realmente lanza `invalid_image`. Se corrigió la expectativa conservando ese rechazo.
 
 ## Estado remoto y gate
@@ -29,7 +29,9 @@ La consulta READ ONLY confirmó B1/B2 instaladas y, además, `20261016142017`/B9
 
 | Migración | Creada | SQL local | Aplicada remota con aprobación | Verificada remota |
 |---|---|---|---|---|
-| 20261016182333 | Sí | PASS | Pendiente | Pendiente |
+| 20261016182333 | Sí | PASS | Sí | Sí: cuerpo/versión/ACL/RLS |
+
+Aplicada a `planit-v2` conforme al pedido previo del responsable de realizar las migraciones remotas de este trabajo. CLI confirmó únicamente 20261016182333, sin seeds, roles, vault, Edge ni cron. Dry-run posterior: cero pendientes en el historial completo preparado, incluidas las versiones B9/B10 ya instaladas. [Antes](before.json), [después](after.json), `node docs/qa/r7-block-3/storage-fix/verify.mjs`: cuerpo idéntico al SQL versionado, EXECUTE sólo authenticated (no anon), search_path vacío y RLS de Storage preservados. La verificación por catálogo no equivale a un nuevo upload HTTP con JWT real.
 
 La lista remota de funciones contiene sólo `social-avatar`: **r7-media-validate no está desplegada**. El flujo completo seguirá bloqueado en validación después de reparar el 403 hasta desplegar esa función B1 con permiso separado. No se sortea la validación ni se permiten imágenes sin attestation.
 

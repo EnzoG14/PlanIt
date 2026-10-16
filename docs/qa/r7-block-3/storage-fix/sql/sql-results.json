@@ -1,6 +1,6 @@
 {
-  "base": "c6fd54c",
-  "branch": "codex/r7-block-3",
+  "base": "9d917a4765e713b1adc4f75f89a7d6b4b57c8a25",
+  "branch": "codex/r7-chat-upload-fix",
   "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
   "environment": "Real local PostgreSQL; SET ROLE authenticated/anon; SQL Auth/Storage scaffolds. No HTTP JWT, deployed Edge, Storage transport or Realtime.",
   "migrations": [
