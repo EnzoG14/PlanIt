@@ -1,6 +1,6 @@
 # R7 · Bloque 1 — Modelo multimedia y aislamiento
 
-16/10/2026, Argentina. **Implementación entregada para revisión; NO-GO de integración/despliegue hasta comprobar Storage HTTP real.** Base `5adf8e455c90d46adc0f5477c5d3e9ee06eb2461` (`origin/main`, #74 integrada), rama `codex/r7-block-1`, worktree `r7-block-1-worktree`. Entrega técnica `894fc6ce8922d3ba65f0d6f04c37266c70de5afd`, [PR draft #75](https://github.com/EnzoG14/PlanIt/pull/75). Este registro posterior sólo añade el vínculo de revisión.
+16/10/2026, Argentina. **BD aplicada con autorización posterior y verificada por catálogo; validación integrada Storage/Edge pendiente.** Base `5adf8e455c90d46adc0f5477c5d3e9ee06eb2461` (`origin/main`, #74 integrada), rama `codex/r7-block-1`, worktree `r7-block-1-worktree`. Entrega técnica `894fc6ce8922d3ba65f0d6f04c37266c70de5afd`, [PR draft #75](https://github.com/EnzoG14/PlanIt/pull/75). Ver actualización remota autorizada al final.
 
 El pedido humano de implementar B1 habilita este bloque sobre el contrato B0 integrado. El responsable autorizó además «Ampliar B1 con validación en Edge», exclusivamente código y pruebas locales, sin deploy. No se atribuye aprobación a los demás bloques ni a decisiones de historias canceladas/archivadas pendientes de B4.
 
@@ -33,7 +33,7 @@ RF-R7-01.CA-03/04 y RF-R7-02.CA-03/04 tienen infraestructura y evidencia parcial
 
 | Migración | Creada | SQL local | Aplicada remota con aprobación | Verificada remota |
 |---|---|---|---|---|
-| 20261016131118 | Sí | PASS | No, 0 | No, 0 |
+| 20261016131118 | Sí | PASS | Sí, 1 | Sí, 1 (catálogo/ACL/RLS) |
 
 ## Reproducción
 
@@ -66,3 +66,11 @@ SQL usa `PLANIT_TEST_TOOLS_DIR`, default `../.participation-test-tools.local/nod
 Revisión cruzada de seguridad sólo lectura por `media_audit`: corrigió claim huérfano al borrar attachment con texto; reforzadas comprobaciones de ambas direcciones. Pruebas locales incluyen ese negativo. La ampliación Edge también fue revisada sin defecto bloqueante concreto; como endurecimiento adicional, attestation persiste object_id/eTag y registro/lectura cotejan esa identidad, evitando aceptar un objeto reemplazado en el mismo path.
 
 **Gate humano:** revisar PR y completar evidencia Storage HTTP/GET/sign real antes de integrar/habilitar dependientes; autorización remota y deploy son posteriores y separados. No se ejecutó otro bloque, deploy, secrets, cron ni merge.
+
+## Actualización remota autorizada — 16/10/2026
+
+El responsable pidió expresamente aplicar las migraciones remotas pendientes. Se verificó el destino `planit-v2` (`iepeqmvzjguwlhnecsdq`), 37 versiones previas coincidentes y dry-run con únicamente B1 pendiente. Se aplicó `20261016131118_r7_media_contract.sql` con `--skip-vault`, sin seeds, roles, deploy Edge, cron, secretos ni merge. El gate anterior describía la entrega inicial: esta autorización posterior habilitó la aplicación de BD, sin convertir las pruebas HTTP pendientes en PASS ni autorizar otro bloque.
+
+Verificación posterior: **38/38 versiones sincronizadas, 0 pendientes**, 19/19 cuerpos de función idénticos al SQL de Git; ACL, search_path, RLS y policies Storage comprobados. Asesores: 0 ERROR, 53 WARN (`authenticated_security_definer_function_executable` y `auth_leaked_password_protection`); no se atribuyen todos esos warnings a B1 ni se cambian ajustes Auth. [Resumen reproducible](remote/summary.json), [catálogo READ ONLY](remote/catalog.json), [asesores](remote/security-advisors.json), [consulta](remote/verify-readonly.sql), [verificador](remote/verify.mjs).
+
+Cuatro marcas actuales: **creada sí / SQL local PASS / aplicada remotamente con autorización sí / verificada remota por catálogo sí**. GET/sign/list/HEAD/transform/cache con JWT reales siguen NOT RUN; validación y funcionamiento integrado requieren desplegar Edge por separado con autorización. B2/B4 no iniciados.
