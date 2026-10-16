@@ -61,14 +61,19 @@ export function chatSendFailure(cause: unknown): { message: string; uncertain: b
 
 export async function downloadChatImage(message: ChatMessage, userId: string, signal: AbortSignal): Promise<Blob> {
   if (!supabase || message.bucket_name !== 'event_media' || !message.storage_path?.startsWith('r7/chat/')) throw new Error('Imagen no disponible.')
+  const identity = await supabase.auth.getUser()
+  if (identity.error || identity.data.user?.id !== userId) throw new Error('No pudimos verificar tu sesión. Volvé a ingresar.')
   const { data, error } = await supabase.auth.getSession()
   if (error || !data.session || data.session.user.id !== userId) throw new Error('La sesión cambió. Volvé a abrir el chat.')
-  const path = message.storage_path.split('/').map(encodeURIComponent).join('/')
-  const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/authenticated/event_media/${path}`, {
-    headers: { Authorization: `Bearer ${data.session.access_token}`, apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY!, 'Cache-Control': 'no-store' },
-    cache: 'no-store', signal,
+  // The reader verifies Auth + current chat access twice around the Storage GET,
+  // and checks the stored digest before returning bytes. No signed URL is issued.
+  const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/r7-chat-image?message_id=${encodeURIComponent(message.id)}`, {
+    headers: { Authorization: `Bearer ${data.session.access_token}`, apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY! }, cache: 'no-store', signal,
   })
-  if (!response.ok) throw new Error(response.status === 401 || response.status === 403 || response.status === 404 ? 'Imagen no disponible o sin permiso de acceso.' : 'No pudimos descargar la imagen. Reintentá.')
+  if (!response.ok) {
+    if (import.meta.env.DEV) console.warn('Chat image download failed', { status: response.status })
+    throw new Error('Imagen no disponible o sin permiso de acceso. Reintentá.')
+  }
   const blob = await response.blob()
   if (!['image/jpeg', 'image/png', 'image/webp'].includes(blob.type) || blob.size < 1 || blob.size > 5 * 1024 * 1024) throw new Error('El archivo recibido no es una imagen admitida.')
   return blob
