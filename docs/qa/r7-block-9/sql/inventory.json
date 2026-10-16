@@ -1,0 +1,86 @@
+{
+  "inventory": [
+    {
+      "relname": "push_preferences",
+      "relrowsecurity": true
+    },
+    {
+      "relname": "push_subscriptions",
+      "relrowsecurity": true
+    }
+  ],
+  "acl": [
+    {
+      "proname": "bytes_to_numeric",
+      "anon_execute": false,
+      "authenticated_execute": false,
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "decode_base64url",
+      "anon_execute": false,
+      "authenticated_execute": false,
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "is_valid_p256_public_key",
+      "anon_execute": false,
+      "authenticated_execute": false,
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "is_valid_push_endpoint",
+      "anon_execute": false,
+      "authenticated_execute": false,
+      "prosecdef": false,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "disable_my_push_subscription",
+      "anon_execute": false,
+      "authenticated_execute": true,
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "get_my_push_settings",
+      "anon_execute": false,
+      "authenticated_execute": true,
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "set_my_push_previews",
+      "anon_execute": false,
+      "authenticated_execute": true,
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    },
+    {
+      "proname": "upsert_my_push_subscription",
+      "anon_execute": false,
+      "authenticated_execute": true,
+      "prosecdef": true,
+      "proconfig": [
+        "search_path=\"\""
+      ]
+    }
+  ]
+}
