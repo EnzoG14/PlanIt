@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-16T20:15:48.573Z",
+  "project": "iepeqmvzjguwlhnecsdq",
+  "results": [
+    {
+      "test": "GET rejected",
+      "status": 405,
+      "expected": 405,
+      "body": {
+        "code": "method_not_allowed"
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Anonymous POST rejected",
+      "status": 401,
+      "expected": 401,
+      "body": {
+        "code": "unauthorized"
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Wrong token POST rejected",
+      "status": 401,
+      "expected": 401,
+      "body": {
+        "code": "unauthorized"
+      },
+      "result": "PASS"
+    },
+    {
+      "test": "Authorized server invocation",
+      "status": 200,
+      "expected": 200,
+      "body": {
+        "code": "push_batch_complete",
+        "enqueued": 0,
+        "claimed": 0,
+        "accepted": 0,
+        "retry": 0,
+        "failed": 0,
+        "discarded": 0,
+        "infrastructure_errors": 0
+      },
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

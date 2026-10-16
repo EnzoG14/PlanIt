@@ -1,0 +1,332 @@
+{
+  "date": "2026-10-16",
+  "project": {
+    "name": "planit-v2",
+    "ref": "iepeqmvzjguwlhnecsdq",
+    "postgres": "17.11"
+  },
+  "authorization": "User explicitly requested remote migration in this chat. No Edge deploy, secrets, Vault, cron, merge or historical-project writes authorized/performed.",
+  "migration": {
+    "file": "20261016154257_r7_push_jobs.sql",
+    "version": "20261016154257",
+    "sha256_file": "33d8ac63b9fb232c0cf87b3abef6f45b88c2f5c82b7769a13a9b47e4865494a2",
+    "created": true,
+    "local_tested": true,
+    "remote_applied": true,
+    "remote_verified": true
+  },
+  "migration_count_before": 40,
+  "migration_count_after": 41,
+  "apply": "Initialising login role...\nConnecting to remote database...\nDo you want to push these migrations to the remote database?\n • 20261016154257_r7_push_jobs.sql\n [Y/n] y\nApplying migration 20261016154257_r7_push_jobs.sql...\n{\"upToDate\":false,\"dryRun\":false,\"migrations\":[\"20261016154257_r7_push_jobs.sql\"],\"seeds\":[],\"roles\":[],\"message\":\"Finished supabase db push.\"}\n",
+  "post_dry_run": "Initialising login role...\nDRY RUN: migrations will *not* be pushed to the database.\nConnecting to remote database...\n{\"upToDate\":true,\"dryRun\":true,\"migrations\":[],\"seeds\":[],\"roles\":[],\"message\":\"Remote database is up to date.\"}",
+  "tables": [
+    {
+      "rls": true,
+      "name": "push_jobs",
+      "schema": "planit_private",
+      "anon_dml": false,
+      "service_dml": false,
+      "authenticated_dml": false
+    }
+  ],
+  "functions": [
+    {
+      "name": "public.get_push_job_delivery",
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "arguments": "p_notification_id uuid, p_subscription_id uuid, p_lease_token uuid",
+      "anon_execute": false,
+      "service_execute": true,
+      "authenticated_execute": false
+    },
+    {
+      "name": "public.complete_push_job",
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "arguments": "p_notification_id uuid, p_subscription_id uuid, p_lease_token uuid",
+      "anon_execute": false,
+      "service_execute": true,
+      "authenticated_execute": false
+    },
+    {
+      "name": "planit_private.enqueue_notification_push",
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "arguments": "",
+      "anon_execute": false,
+      "service_execute": false,
+      "authenticated_execute": false
+    },
+    {
+      "name": "public.enqueue_missing_push_jobs",
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "arguments": "p_limit integer",
+      "anon_execute": false,
+      "service_execute": true,
+      "authenticated_execute": false
+    },
+    {
+      "name": "public.claim_push_jobs",
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "arguments": "p_limit integer",
+      "anon_execute": false,
+      "service_execute": true,
+      "authenticated_execute": false
+    },
+    {
+      "name": "public.fail_push_job",
+      "config": [
+        "search_path=\"\""
+      ],
+      "definer": true,
+      "arguments": "p_notification_id uuid, p_subscription_id uuid, p_lease_token uuid, p_error_code text",
+      "anon_execute": false,
+      "service_execute": true,
+      "authenticated_execute": false
+    }
+  ],
+  "body_checks": [
+    {
+      "name": "planit_private.enqueue_notification_push",
+      "body_match": true
+    },
+    {
+      "name": "public.enqueue_missing_push_jobs",
+      "body_match": true
+    },
+    {
+      "name": "public.claim_push_jobs",
+      "body_match": true
+    },
+    {
+      "name": "public.get_push_job_delivery",
+      "body_match": true
+    },
+    {
+      "name": "public.complete_push_job",
+      "body_match": true
+    },
+    {
+      "name": "public.fail_push_job",
+      "body_match": true
+    }
+  ],
+  "trigger": [
+    {
+      "name": "notifications_enqueue_push",
+      "enabled": "O",
+      "definition": "CREATE TRIGGER notifications_enqueue_push AFTER INSERT ON public.notifications FOR EACH ROW EXECUTE FUNCTION planit_private.enqueue_notification_push()"
+    }
+  ],
+  "columns": [
+    {
+      "name": "notification_id",
+      "type": "uuid"
+    },
+    {
+      "name": "subscription_id",
+      "type": "uuid"
+    },
+    {
+      "name": "state",
+      "type": "text"
+    },
+    {
+      "name": "attempts",
+      "type": "integer"
+    },
+    {
+      "name": "created_at",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "next_attempt_at",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "expires_at",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "lease_token",
+      "type": "uuid"
+    },
+    {
+      "name": "lease_until",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "delivery_subscription_updated_at",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "finished_at",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "last_error_code",
+      "type": "text"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "push_jobs_attempts_check",
+      "definition": "CHECK (((attempts >= 0) AND (attempts <= 5)))"
+    },
+    {
+      "name": "push_jobs_check",
+      "definition": "CHECK ((expires_at > created_at))"
+    },
+    {
+      "name": "push_jobs_check1",
+      "definition": "CHECK ((((state = 'processing'::text) AND (lease_token IS NOT NULL) AND (lease_until IS NOT NULL)) OR ((state <> 'processing'::text) AND (lease_token IS NULL) AND (lease_until IS NULL))))"
+    },
+    {
+      "name": "push_jobs_check2",
+      "definition": "CHECK (((state = ANY (ARRAY['sent'::text, 'failed'::text, 'discarded'::text])) = (finished_at IS NOT NULL)))"
+    },
+    {
+      "name": "push_jobs_last_error_code_check",
+      "definition": "CHECK ((last_error_code = ANY (ARRAY['expired'::text, 'disabled'::text, 'unavailable'::text, 'gone'::text, 'rate_limited'::text, 'provider_error'::text, 'timeout'::text, 'network_error'::text, 'permanent'::text, 'invalid_delivery'::text])))"
+    },
+    {
+      "name": "push_jobs_notification_id_fkey",
+      "definition": "FOREIGN KEY (notification_id) REFERENCES notifications(id) ON DELETE RESTRICT"
+    },
+    {
+      "name": "push_jobs_pkey",
+      "definition": "PRIMARY KEY (notification_id, subscription_id)"
+    },
+    {
+      "name": "push_jobs_state_check",
+      "definition": "CHECK ((state = ANY (ARRAY['pending'::text, 'processing'::text, 'sent'::text, 'failed'::text, 'discarded'::text])))"
+    },
+    {
+      "name": "push_jobs_subscription_id_fkey",
+      "definition": "FOREIGN KEY (subscription_id) REFERENCES push_subscriptions(id) ON DELETE RESTRICT"
+    }
+  ],
+  "indexes": [
+    {
+      "name": "push_jobs_pkey",
+      "definition": "CREATE UNIQUE INDEX push_jobs_pkey ON planit_private.push_jobs USING btree (notification_id, subscription_id)"
+    },
+    {
+      "name": "push_jobs_subscription",
+      "definition": "CREATE INDEX push_jobs_subscription ON planit_private.push_jobs USING btree (subscription_id)"
+    },
+    {
+      "name": "push_jobs_ready",
+      "definition": "CREATE INDEX push_jobs_ready ON planit_private.push_jobs USING btree (next_attempt_at, created_at) WHERE (state = ANY (ARRAY['pending'::text, 'processing'::text]))"
+    },
+    {
+      "name": "push_jobs_retention",
+      "definition": "CREATE INDEX push_jobs_retention ON planit_private.push_jobs USING btree (finished_at) WHERE (finished_at IS NOT NULL)"
+    }
+  ],
+  "producers_before": [
+    {
+      "md5": "73cb227cd1eec5811f14cdd35e824fa1",
+      "name": "planit_private.notify_direct_message"
+    },
+    {
+      "md5": "75d97110f41a34dd0a4affcc8d5560ef",
+      "name": "planit_private.notify_event_full"
+    },
+    {
+      "md5": "3c217ddf7a70f9fb871f425a05260eb8",
+      "name": "planit_private.notify_follow_request"
+    }
+  ],
+  "producers_after": [
+    {
+      "md5": "73cb227cd1eec5811f14cdd35e824fa1",
+      "name": "planit_private.notify_direct_message"
+    },
+    {
+      "md5": "75d97110f41a34dd0a4affcc8d5560ef",
+      "name": "planit_private.notify_event_full"
+    },
+    {
+      "md5": "3c217ddf7a70f9fb871f425a05260eb8",
+      "name": "planit_private.notify_follow_request"
+    }
+  ],
+  "notice_count_before": 17,
+  "notice_count_after": 17,
+  "job_count": 0,
+  "smoke": {
+    "result": "PASS",
+    "mode": "Transaction rolled back; no fixtures, messages, subscriptions or deliveries created. SQL SET ROLE, not HTTP/JWT.",
+    "checks": [
+      "anon/authenticated denied all five worker RPCs",
+      "anon/authenticated/service_role denied direct queue SELECT",
+      "service_role invalid limit rejected with 22023",
+      "service_role missing-job lookup returns null"
+    ],
+    "initial_attempt": "A READ ONLY transaction rejected SELECT FOR UPDATE (25006). Repeated successfully in BEGIN/ROLLBACK; no migration change required."
+  },
+  "advisors": {
+    "before": [
+      {
+        "name": "rls_enabled_no_policy",
+        "level": "INFO",
+        "count": 5,
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "count": 58,
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable"
+      },
+      {
+        "name": "auth_leaked_password_protection",
+        "level": "WARN",
+        "count": 1,
+        "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection"
+      }
+    ],
+    "after": [
+      {
+        "name": "rls_enabled_no_policy",
+        "level": "INFO",
+        "count": 6,
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "count": 58,
+        "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable"
+      },
+      {
+        "name": "auth_leaked_password_protection",
+        "level": "WARN",
+        "count": 1,
+        "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection"
+      }
+    ],
+    "assessment": "No new WARN or ERROR categories. One additional INFO: private push_jobs uses RLS without client policies, intentionally, with all direct DML privileges revoked."
+  },
+  "result": "PASS",
+  "not_run": [
+    "deployed Edge",
+    "HTTP/JWT Supabase integration",
+    "provider acceptance",
+    "physical device reception",
+    "cron/Vault activation"
+  ]
+}

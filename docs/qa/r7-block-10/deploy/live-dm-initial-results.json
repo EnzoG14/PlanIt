@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-16T20:13:00.373Z",
+  "test": "Real DM from dedicated technical account to the user-confirmed subscribed account",
+  "message_id": "522ea7ae-97df-45ad-af07-1542a1ad411d",
+  "fixture_sender_id": "d3f645d7-4490-45f6-ada0-73840df92194",
+  "real_auth_rpc": true,
+  "worker": {
+    "code": "push_batch_complete",
+    "enqueued": 0,
+    "claimed": 1,
+    "accepted": 0,
+    "retry": 0,
+    "failed": 1,
+    "discarded": 0,
+    "infrastructure_errors": 0
+  },
+  "displayed_on_device": "AWAITING_USER_CONFIRMATION"
+}
