@@ -1,0 +1,162 @@
+{
+  "environment": "Headless Edge; local isolated fixture under synthetic HTTPS origin; Share and Clipboard mocks; no native chooser, real TLS deployment, HTTP/JWT or device test",
+  "browser": "155.0.4283.45",
+  "results": [
+    {
+      "width": 320,
+      "test": "Native API mock, keyboard activation, minimal payload, 44px target and focus",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "AbortError neutral; previous success cleared; route unchanged",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Native rejection, explicit copy action, denied clipboard, selected manual fallback without overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "No Web Share uses clipboard and accurately reports copy",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Grant-only denied despite token input; owner with ephemeral invite enabled; losing token clears state",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Duplicate gesture guarded; old async response discarded on event change",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Native API mock, keyboard activation, minimal payload, 44px target and focus",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "AbortError neutral; previous success cleared; route unchanged",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Native rejection, explicit copy action, denied clipboard, selected manual fallback without overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "No Web Share uses clipboard and accurately reports copy",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Grant-only denied despite token input; owner with ephemeral invite enabled; losing token clears state",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Duplicate gesture guarded; old async response discarded on event change",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Native API mock, keyboard activation, minimal payload, 44px target and focus",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "AbortError neutral; previous success cleared; route unchanged",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Native rejection, explicit copy action, denied clipboard, selected manual fallback without overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "No Web Share uses clipboard and accurately reports copy",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Grant-only denied despite token input; owner with ephemeral invite enabled; losing token clears state",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Duplicate gesture guarded; old async response discarded on event change",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "200% CSS zoom without horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Native API mock, keyboard activation, minimal payload, 44px target and focus",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "AbortError neutral; previous success cleared; route unchanged",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Native rejection, explicit copy action, denied clipboard, selected manual fallback without overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "No Web Share uses clipboard and accurately reports copy",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Grant-only denied despite token input; owner with ephemeral invite enabled; losing token clears state",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Duplicate gesture guarded; old async response discarded on event change",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Native API mock, keyboard activation, minimal payload, 44px target and focus",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "AbortError neutral; previous success cleared; route unchanged",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Native rejection, explicit copy action, denied clipboard, selected manual fallback without overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "No Web Share uses clipboard and accurately reports copy",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Grant-only denied despite token input; owner with ephemeral invite enabled; losing token clears state",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Duplicate gesture guarded; old async response discarded on event change",
+      "result": "PASS"
+    }
+  ],
+  "errors": []
+}

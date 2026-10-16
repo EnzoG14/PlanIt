@@ -1,0 +1,4 @@
+.event-share-action { display: grid; gap: var(--pi-space-compact); min-width: 0; }
+.event-share-action p { margin: 0; }
+.event-share-action .form-field { display: grid; gap: var(--pi-space-tight); min-width: 0; }
+.event-share-action input { min-width: 0; width: 100%; box-sizing: border-box; }
