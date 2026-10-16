@@ -5,7 +5,7 @@
 - Base limpia `origin/main`: `9d917a4765e713b1adc4f75f89a7d6b4b57c8a25`, con PR #80/B9 integrada.
 - Rama: `codex/r7-block-10`; worktree: `C:/Users/enzog/planit-worktrees/r7-block-10`.
 - `.env.local` copiado desde main e ignorado; sin contenido ni valores en Git/evidencia. CodeGraph inicializado con índice propio.
-- PR draft: pendiente de registrar tras creación.
+- Implementación: `d10fb35`; PR draft: [#81](https://github.com/EnzoG14/PlanIt/pull/81).
 - Decisiones: D08 (preview real con opt-out) y D09 (Edge/cola/cron separado) confirmadas previamente; **D12 adoptada expresamente por el responsable en esta conversación**, incluyendo los parámetros y cron propuesto. El pedido actual autoriza implementación y PR, sin permisos remotos.
 - El seguimiento global conserva su fotografía histórica; la consolidación de `RELEASE_7_STATUS.md` corresponde exclusivamente a B11.
 
