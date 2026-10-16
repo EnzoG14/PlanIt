@@ -1,6 +1,6 @@
 # R7 B3 — lectura de imágenes, corrección posterior
 
-16/10/2026. Rama `codex/r7-chat-upload-fix`, base `9d917a4`; continuación de [PR draft #82](https://github.com/EnzoG14/PlanIt/pull/82). **Lector desplegado y migración aplicada con autorización expresa «desplegalo»; aceptación real pendiente.** No habilita otro bloque.
+16/10/2026. Rama `codex/r7-chat-upload-fix`, base `9d917a4`; continuación de [PR draft #82](https://github.com/EnzoG14/PlanIt/pull/82). **Lector desplegado y migración aplicada con autorización expresa «desplegalo»; visualización real confirmada por el responsable («ahora si se visualiza»).** No habilita otro bloque.
 
 ## Diagnóstico y alcance
 
@@ -36,4 +36,4 @@ Los primeros intentos de pruebas dentro del sandbox fallaron por EACCES de loopb
 
 La migración anterior de preflight y el validator desplegado se documentan en [storage-fix](../storage-fix/README.md). El nuevo lector no se confunde con aquel despliegue autorizado.
 
-Pendiente: prueba HTTP con usuario real y confirmación visual del responsable desde el frontend de esta rama. El despliegue autorizado es del backend Supabase; no se publica otro frontend. No hay merge ni avance al siguiente bloque. RF-R7-02 y sus CA siguen sin aceptación integral; las pruebas con fixtures no se contabilizan como aceptación real.
+El responsable confirmó desde su sesión: «ahora si se visualiza». PASS manual reportado para la visualización de la imagen que fallaba; no se capturaron tokens ni se infieren códigos HTTP o pruebas negativas adicionales. El despliegue autorizado es del backend Supabase; no se publica otro frontend. No hay merge ni avance al siguiente bloque. RF-R7-02 y sus CA siguen sin aceptación integral; las pruebas con fixtures no se contabilizan como aceptación real.
