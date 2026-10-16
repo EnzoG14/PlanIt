@@ -1,6 +1,6 @@
 # R7 · Bloque 2 — API transaccional de adjuntos de chat
 
-16/10/2026 (Argentina). **Implementado y probado en SQL local; revisión humana y transporte integrado pendientes.** Base `3f2a49800198825abfca660fa20acc051a31a94c` (`origin/main`, PR #75/B1 y #74/B0 integradas), rama `codex/r7-block-2`, worktree `r7-block-2-worktree`. PR draft: se vincula al publicarse esta entrega. El pedido explícito habilita B2; no se atribuye autorización a B3 ni a despliegues remotos.
+16/10/2026 (Argentina). **Implementado y probado en SQL local; revisión humana y transporte integrado pendientes.** Base `3f2a49800198825abfca660fa20acc051a31a94c` (`origin/main`, PR #75/B1 y #74/B0 integradas), rama `codex/r7-block-2`, worktree `r7-block-2-worktree`. Entrega técnica `bcbf916b9ca00e2520b3cd624608d4b5af29d699`; [PR draft #78](https://github.com/EnzoG14/PlanIt/pull/78). El pedido explícito habilita B2; no se atribuye autorización a B3 ni a despliegues remotos.
 
 ## Cambios y contratos
 
