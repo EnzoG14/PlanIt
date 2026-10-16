@@ -150,5 +150,3 @@ try {
   await browser?.close(); await server.close()
   await writeFile(`${out}/results.json`, JSON.stringify({ browser: 'Microsoft Edge headless', timezone: 'Asia/Tokyo', environment: 'Executed production component in ignored Vite harness, synthetic DTO, no auth/server claims; Google open instrumented', results, errors, external }, null, 2) + '\n')
 }
-
-

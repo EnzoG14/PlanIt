@@ -86,7 +86,7 @@ dist/assets/index-DLOScFYc.js                                       263.93 kB �
 dist/assets/StatusMessage-C5W76xAe.js                               309.50 kB │ gzip:  86.08 kB
 dist/assets/EventMap-X71zh91z.js                                  1,865.13 kB │ gzip: 518.62 kB
 
-[plugin builtin:vite-reporter] 
+[plugin builtin:vite-reporter]
 (!) Some chunks are larger than 500 kB after minification. Consider:
 - Using dynamic import() to code-split the application
 - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting

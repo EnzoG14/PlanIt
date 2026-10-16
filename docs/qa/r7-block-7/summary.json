@@ -5,9 +5,9 @@
   "unitGroups": 5,
   "uiChecks": 41,
   "hashes": {
-    "src/features/events/calendar.ts": "8461d0073cdbe4e31367d58cffce46c473a1ca7786367c4b894e9932ed5ae6f5",
-    "src/features/events/EventCalendarAction.tsx": "804bc556d3fd2502f08c55efba0541616df964061f1a74f06d935d19187c99c4",
-    "src/features/events/calendar.css": "8a6dc91fc522213f54d32c48b06e8fed6ec6bc58eb13cf05233c8eca27e0db6b"
+    "src/features/events/calendar.ts": "ec31b670f8315ef1e7ef1de5b34ae15028e1abbd27c946215b42abdf4aa1f20e",
+    "src/features/events/EventCalendarAction.tsx": "d1fdca953474df11b831e1827580c61012aed7aa4a4d68da37e12524fb9aaa84",
+    "src/features/events/calendar.css": "64978defd2b5b317cc319918e818bb872dbd73c21aadf6c2f968078533c353ab"
   },
   "build": "PASS",
   "lint": "PASS (pre-existing warnings)",
@@ -21,5 +21,6 @@
     "local": "NOT RUN",
     "remoteApplied": 0,
     "remoteVerified": 0
-  }
+  },
+  "hashConvention": "sha256 of UTF-8 source normalized to LF"
 }

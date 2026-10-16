@@ -89,4 +89,3 @@ export function downloadEventCalendar(event: EventIntegrationV1): void {
     window.setTimeout(() => URL.revokeObjectURL(url), 1000)
   }
 }
-

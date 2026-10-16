@@ -17,4 +17,3 @@ try {
 finally {await browser.close()}
 await writeFile(`${out}/attempt.json`,JSON.stringify(result,null,2)+'\n')
 console.log(JSON.stringify(result))
-
