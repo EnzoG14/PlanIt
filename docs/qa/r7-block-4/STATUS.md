@@ -2,6 +2,8 @@
 
 16/10/2026, Argentina. **IMPLEMENTADO / PR draft para revisión. QA HTTP real pendiente.**
 
+Entrega técnica `1fcd3f510918b8c204e088069c6e5ae9fe1fc9bf`, [PR draft #83](https://github.com/EnzoG14/PlanIt/pull/83). La PR no autoriza merge, pasos remotos ni el siguiente bloque.
+
 Base tras `git fetch origin`: `b7a3e6a31f328ec375c4dcee1f3923720b42e697`, rama `codex/r7-block-4`, worktree `r7-block-4-worktree`. Prerequisitos integrados: B0 #74, B1 #75 (`3f2a498`), B2 #78 (`cc4e70e`), B3 #79 y correctivas #82. El seguimiento global conserva cortes históricos: este reporte registra B4; B11 consolida `RELEASE_7_STATUS.md` conforme al ownership.
 
 ## Decisiones y alcance
