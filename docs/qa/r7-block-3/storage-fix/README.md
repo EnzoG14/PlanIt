@@ -35,12 +35,12 @@ La consulta READ ONLY confirmó B1/B2 instaladas y, además, `20261016142017`/B9
 
 Aplicada a `planit-v2` conforme al pedido previo del responsable de realizar las migraciones remotas de este trabajo. CLI confirmó únicamente 20261016182333, sin seeds, roles, vault, Edge ni cron. Dry-run posterior: cero pendientes en el historial completo preparado, incluidas las versiones B9/B10 ya instaladas. [Antes](before.json), [después](after.json), `node docs/qa/r7-block-3/storage-fix/verify.mjs`: cuerpo idéntico al SQL versionado, EXECUTE sólo authenticated (no anon), search_path vacío y RLS de Storage preservados. La verificación por catálogo no equivale a un nuevo upload HTTP con JWT real.
 
-La lista remota de funciones contiene sólo `social-avatar`: **r7-media-validate no está desplegada**. El flujo completo seguirá bloqueado en validación después de reparar el 403 hasta desplegar esa función B1 con permiso separado. No se sortea la validación ni se permiten imágenes sin attestation.
+La inspección inicial encontró sólo `social-avatar`. **Actualización 16/10/2026: el responsable autorizó explícitamente el deploy («desplegala»); `r7-media-validate` desplegada y ACTIVE, versión 1, verify_jwt=true.** No se sortea la validación ni se permiten imágenes sin attestation.
 
-Comando de despliegue preparado (NO ejecutado):
+Comando de despliegue ejecutado con éxito:
 
 ```powershell
 npx supabase functions deploy r7-media-validate --project-ref iepeqmvzjguwlhnecsdq --use-api
 ```
 
-Se conserva la verificación JWT del gateway (default true) y `Auth.getUser` dentro del handler. Usa variables de servicio del runtime, no requiere copiarlas al frontend. Prueba posterior pendiente: PNG válido → upload → validación → commit → GET autorizado y GET de tercero negado. No se declara resuelta la carga completa por sólo probar SQL.
+Se conserva la verificación JWT del gateway y `Auth.getUser` dentro del handler. Usa variables de servicio del runtime, sin copiar credenciales al frontend ni modificar secretos. [Catálogo posterior](functions-after-deploy.json); [HTTP real](deploy-http.json): OPTIONS 204 con CORS y no-store demuestra que el handler inicia (WASM inicializada); POST sin credenciales 401 del gateway. Prueba autenticada pendiente: PNG válido → upload → validación → commit → GET autorizado y GET de tercero negado. No se declara resuelta la carga completa por sólo probar SQL y arranque/denegación HTTP. Sin merge ni siguiente bloque.
