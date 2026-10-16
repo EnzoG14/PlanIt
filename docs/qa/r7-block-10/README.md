@@ -52,7 +52,9 @@ node scripts/check-r7-push-subscriptions.mjs
 
 SQL usa PostgreSQL real local con Auth/Storage SQL simulados y `SET ROLE`; no acredita HTTP/JWT ni Supabase remoto. Deno prueba criptografía real con RPC y transporte de red simulados. SW se ejecuta en Edge headless con eventos sintéticos; no acredita recepción Push del SO. El suite heredado B9 conserva un rótulo histórico «39 migraciones»; consultar el inventario JSON para la cantidad realmente reproducida.
 
-## Procedimiento remoto propuesto — NO ejecutado
+## Procedimiento remoto — migración aplicada; infraestructura pendiente
+
+Actualización posterior: el paso 1 se ejecutó para B10 con autorización expresa del responsable el 16/10/2026. B9 ya estaba aplicada. Ver [acta remota](remote/README.md). Los pasos 2–6 siguen propuestos y NO ejecutados.
 
 Requiere aprobación independiente para cada operación y exclusivamente proyecto `iepeqmvzjguwlhnecsdq`. El proyecto histórico no participa.
 

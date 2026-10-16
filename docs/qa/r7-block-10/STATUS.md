@@ -1,12 +1,12 @@
 # Release 7 · Bloque 10 — Estado de entrega
 
-16/10/2026, Argentina. **Implementación local verificada; pendiente revisión de PR y validación remota/física.** No representa aceptación completa de RF-R7-07 ni habilita ejecución de B11.
+16/10/2026, Argentina. **Implementación local y migración remota verificadas; pendientes revisión de PR, deploy del worker y recepción Push real.** No representa aceptación completa de RF-R7-07 ni habilita ejecución de B11.
 
 - Base limpia `origin/main`: `9d917a4765e713b1adc4f75f89a7d6b4b57c8a25`, con PR #80/B9 integrada.
 - Rama: `codex/r7-block-10`; worktree: `C:/Users/enzog/planit-worktrees/r7-block-10`.
 - `.env.local` copiado desde main e ignorado; sin contenido ni valores en Git/evidencia. CodeGraph inicializado con índice propio.
 - Implementación: `d10fb35`; PR draft: [#81](https://github.com/EnzoG14/PlanIt/pull/81).
-- Decisiones: D08 (preview real con opt-out) y D09 (Edge/cola/cron separado) confirmadas previamente; **D12 adoptada expresamente por el responsable en esta conversación**, incluyendo los parámetros y cron propuesto. El pedido actual autoriza implementación y PR, sin permisos remotos.
+- Decisiones: D08 (preview real con opt-out) y D09 (Edge/cola/cron separado) confirmadas previamente; **D12 adoptada expresamente por el responsable en esta conversación**, incluyendo los parámetros y cron propuesto. El pedido inicial autorizó implementación y PR; posteriormente el responsable autorizó expresamente la migración remota. Deploy, secrets/Vault y cron siguen sin autorización.
 - El seguimiento global conserva su fotografía histórica; la consolidación de `RELEASE_7_STATUS.md` corresponde exclusivamente a B11.
 
 ## Cambios y compatibilidad
@@ -26,6 +26,7 @@ No se modificaron frontend, UI Amanecer, SW B9, Vite, migraciones históricas, p
 | R7-B10-TC-03 · SW/offline/clic | PASS sintético | [4 pruebas SW](sw/sw-results.json), Edge headless sobre build de producción: registro, precache, cero Supabase en caché, recarga offline, payload sanitizado y clic seguro. No equivale a Push físico ni sesión remota |
 | R7-B10-TC-04 · Edge local | PASS | [Deno check + 9 tests](edge-results.json): fallo seguro de VAPID/configuración, rechazo de invocadores, clasificación de estados, SSRF/redirect, ACK perdido y topes por invocación |
 | Cifrado y firma | PASS local | aes128gcm generado y descifrado con claves efímeras del receptor; firma VAPID ES256 verificada con Web Crypto, audience y subject correctos. HTTPS/RPC simulados |
+| Migración y ACL remotas | PASS | [Acta remota](remote/README.md), [catálogo y verificación](remote/verification.json): 41 versiones sincronizadas, seis cuerpos iguales al SQL local, trigger activo, RLS, grants, negativos con SET ROLE y lookup service-only sin fixtures. No equivale a HTTP/JWT |
 | Regresión B9 | PASS local | [13 grupos SQL](subscriptions/sql-results.json) + derivación determinista de IDs: alta/baja, owner-only, privacidad, validación P-256, carreras y bandeja. La etiqueta heredada dice 39 migraciones; el inventario contiene 41. Ejecución anterior al ajuste final de selección de jobs B10; suite B10 final reproduce íntegramente la migración final |
 | Build | PASS | `npm run build`: TypeScript, Vite y `injectManifest`; SW producido y probado |
 | Lint | PASS con advertencias previas | `npm run lint`: sin errores; advertencias históricas en probes y `DiscoveryFilters.tsx`. Lint dirigido a archivos B10: sin errores ni advertencias |
@@ -44,12 +45,12 @@ No se modificaron frontend, UI Amanecer, SW B9, Vite, migraciones históricas, p
 
 | Migración | Creada | Probada local | Aplicada remota con aprobación | Verificada remota |
 |---|---|---|---|---|
-| `20261016154257_r7_push_jobs.sql` | Sí | PASS, 41 migraciones desde cero / PostgreSQL 17.5 | No | NOT RUN |
+| `20261016154257_r7_push_jobs.sql` | Sí | PASS, 41 migraciones desde cero / PostgreSQL 17.5 | Sí, autorización expresa posterior | PASS, planit-v2 / PostgreSQL 17.11 |
 
-No se aplicó DDL remoto, configuraron secrets/Vault, instaló cron, desplegó Edge, modificó Google Doc ni fusionó a main. Proyecto histórico sin modificaciones.
+Entrega inicial sin operaciones remotas. Posteriormente se aplicó únicamente la migración B10 a `planit-v2`, con autorización expresa y `--skip-vault`; B9 ya estaba aplicada. No se configuraron secrets/Vault, instaló cron, desplegó Edge, modificó Google Doc ni fusionó a main. Proyecto histórico sin modificaciones. Advisors: sin nuevas categorías WARN/ERROR; un INFO adicional por RLS sin policies en la cola privada, con DML directo revocado, intencional.
 
 ## Riesgos y siguiente gate
 
 Pérdida de ACK puede causar reenvío; no se promete exactly-once, mostrado ni leído. Cambios de permiso posteriores a la preparación del envío y previews ya entregadas no pueden revocarse retroactivamente. La allowlist de proveedores del transporte es deliberadamente estricta; un endpoint de otro proveedor termina de forma segura y requiere revisión técnica. El tope es por invocación y no sustituye controlar cron/credenciales y costos. Monitorización y SQL/Vault/cron remotos están propuestos en README, sin activación.
 
-Gate de entrega: revisión de esta PR draft. Gate de producción: autorización separada de migraciones/secrets/deploy/cron en `planit-v2` y pruebas de recepción/dispositivos, con integración de settings/routing B11. B11 requiere revisión y aprobación humanas; no fue ejecutado automáticamente.
+Gate de entrega: revisión de esta PR draft. Migración B10 aplicada/verificada. Gate de producción pendiente: autorización separada de secrets/deploy/cron en `planit-v2` y pruebas de recepción/dispositivos, con integración de settings/routing B11. B11 requiere revisión y aprobación humanas; no fue ejecutado automáticamente.
