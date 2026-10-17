@@ -1,6 +1,6 @@
 # Ubicación sugerida — evidencia
 
-Fecha: 17/10/2026 (Argentina). Rama `codex/event-location-autocomplete`, desde main `f8dd53c`. Implementado; aceptación humana pendiente.
+Fecha: 17/10/2026 (Argentina). Rama `codex/event-location-autocomplete`, desde main `f8dd53c`. Implementado; aceptación humana pendiente. [PR draft #87](https://github.com/EnzoG14/PlanIt/pull/87), sin fusionar. Comprobación `git merge-tree` contra main `eeeb021`: sin conflictos.
 
 ## Cambio y revisión visual
 

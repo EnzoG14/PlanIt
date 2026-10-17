@@ -57,6 +57,8 @@
 
 ## Ubicación sugerida — 17/10/2026
 
+Entrega: [PR draft #87](https://github.com/EnzoG14/PlanIt/pull/87), sin fusionar.
+
 Implementado; aceptación humana pendiente. Rama `codex/event-location-autocomplete` desde main `f8dd53c`. En creación: Dirección con sugerencias Geoapify, coordenadas internas sin campos visibles, invalidación al cambiar dirección y alternativa GPS. Se conserva Amanecer; sin cambios de esquema/RPC ni migraciones. `.env.local` copiado desde el worktree de main y luego configurado con la clave entregada por el usuario, siempre ignorado y fuera del commit.
 
 PASS build/lint (advertencias previas), validaciones de eventos, contrato del buscador, UI crear/editar y matriz de autocompletado/duplicación, incluyendo texto ampliado, poca altura, carreras de búsqueda/GPS y clave ausente. Consulta Geoapify real PASS con guardado en backend fixture; sin escrituras remotas Supabase. [Capturas, resultados, reproducción y límites](../design/verification/location-autocomplete/README.md). No cambia los estados históricos de aceptación de la release. Pendientes: revisión humana, dispositivos físicos/lector de pantalla y confirmar restricciones de origen/cuota para producción.
