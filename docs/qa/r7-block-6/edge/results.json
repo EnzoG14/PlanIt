@@ -1,0 +1,25 @@
+{
+  "environment": "Actual TS handler transpiled on Node; simulated RPC and Storage failures, no real HTTP/JWT or physical deletion",
+  "results": [
+    {
+      "test": "TC-04: absent/invalid secret, anon/JWT/service key and wrong method/config cause no backend I/O",
+      "result": "PASS"
+    },
+    {
+      "test": "Revalidates authoritative target, removes exact path then completes; no-store aggregate metrics only",
+      "result": "PASS"
+    },
+    {
+      "test": "Stale lease/changed target/path traversal blocked; timeout/5xx/429 preserve references, lost ACK remains retryable without logging private details",
+      "result": "PASS"
+    },
+    {
+      "test": "Invocation bounded to 100 single-object claims; no large reserved batch",
+      "result": "PASS"
+    },
+    {
+      "test": "Entrypoint uses exact Storage API DELETE, service headers only on approved project, bounded timeout, redirects refused; 503 never finalizes DB",
+      "result": "PASS"
+    }
+  ]
+}
