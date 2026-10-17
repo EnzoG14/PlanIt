@@ -1,0 +1,15 @@
+{
+  "environment": "Edge headless, actual App and pages; synthetic HTTPS proxied to Vite, mocked Auth/RPC/Web Share. Not remote permissions or native sharing.",
+  "browser": "155.0.4283.45",
+  "results": [
+    {
+      "test": "390: base HEAD actual detail before integration, synthetic Auth/RPC",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: base HEAD actual detail before integration, synthetic Auth/RPC",
+      "result": "PASS"
+    }
+  ],
+  "errors": []
+}

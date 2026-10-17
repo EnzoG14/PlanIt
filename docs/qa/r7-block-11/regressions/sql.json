@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "suite": "r5-social",
+      "result": "PASS",
+      "source_sha256": "03e93a4cf4906db29b79b8d066f2a1c32af8672d17df190e6b0b076b5fee9117",
+      "adapter": "R7 Storage unique and operation-aware helper scaffold only; original assertions",
+      "directory": "docs/qa/r7-block-11/regressions/r5-social"
+    },
+    {
+      "suite": "r6-compare",
+      "result": "PASS",
+      "source_sha256": "2ca04ffa2a991aa7bcf813fc974a0a66b2c9c2e640bcd69c45cf69cfd3f7891a",
+      "adapter": "R7 Storage unique and operation-aware helper scaffold only; original assertions",
+      "directory": "docs/qa/r7-block-11/regressions/r6-compare"
+    },
+    {
+      "suite": "r6-event-full",
+      "result": "PASS",
+      "source_sha256": "48d88bc1d8b91f5f7acec83f3f8305c1839c4f3eedf8f7ad3c5e92a3a71d366a",
+      "adapter": "R7 Storage unique and operation-aware helper scaffold only; original assertions",
+      "directory": "docs/qa/r7-block-11/regressions/r6-event-full"
+    }
+  ]
+}

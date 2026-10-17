@@ -1,5 +1,7 @@
 # PlanIt — R7 · Plan integral de pruebas
 
+**Corte de ejecución B11,17/10/2026:** [reporte](RELEASE_7_TEST_REPORT.md), [reproducción y evidencia](r7-block-11/README.md), [29 CA por capa](r7-block-11/CRITERIA.md). Los casos siguientes conservan el alcance aprobado. Replay47 y suites locales/UI/SW ejecutados; transporte real A–G/Storage/TTL/GC y matriz física siguen pendientes. No interpretar pruebas locales como autorización remota o aceptación humana.
+
 **Cobertura:** 29 CA, 7 RF, regresión R1–R6, 12 bloques. **Preparación:** generar fixtures en DB LOCAL aislada; remoto sólo con autorización. Separar comprobación de SQL, REST/JWT, Storage autenticado, UI, SW y Push dispositivo real. No incluir credenciales/endpoint de usuarios en reportes.
 
 ## 1. Entornos y técnica de evidencia

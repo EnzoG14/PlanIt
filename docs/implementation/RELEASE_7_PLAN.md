@@ -230,3 +230,9 @@ Las decisiones **de producto confirmadas** D01, D02, D03, D05, D06, D07, D08, D0
 **OBLIGATORIO:** consultar `RELEASE_7_PARALLEL_WORK.md`. Tras B0, B1/B7/B8/B9 pueden abrir PRs simultáneamente. Tras integrar B1, B2 y B4 se desarrollan en paralelo. Tras B4, B5 y B6 son independientes. B10 parte de B9 y puede coexistir con las otras líneas. **B11 es el único punto de composición de `EventDetailPage.tsx` y `src/App.tsx`**, cuyos cambios directos se prohíben a B5/B7/B8; cada frente exporta componente/DTO aislado. Los merges de migraciones y despliegues remotos requieren orden, replay y revisión humana; el paralelismo NO autoriza escritura concurrente a un mismo esquema remoto.
 
 En B0 congelar DTO de evento seguro para Calendar/Share/Stories, firma de mensajes con imagen opcional, API Stories y contrato de preview Push. Ejecutar mínimo dos worktrees y reportar qué tareas están en progreso/bloqueadas, no una única fila de secuencia.
+
+## Corte de ejecución B11 — 17/10/2026
+
+Base `279af15d09988f43a4e79dd397611c645b0b2808`, productores B0–B10 integrados según [inventario Git/GitHub](../qa/r7-block-11/prerequisites.json). B11 conecta componentes aislados en detalle. `EventParticipation` comunica su resumen existente; `EventManagement`/`EventLinkPanel` admiten un render prop opcional para compartir el token sólo dentro de su diálogo. Son ajustes de integración sin cambio de API/SQL de dominio. `PushSettings` ya se montó por ampliación humana B10, por lo que no se repite; visor inline Stories no necesita nueva ruta en App.
+
+QA por capas y limitaciones en [reporte final](../qa/RELEASE_7_TEST_REPORT.md) y [seguimiento vigente](RELEASE_7_STATUS.md). 29 CA evaluados: 4 PASS técnicos locales,25 BLOCKED, aceptación humana pendiente; NO-GO recomendado. Esta actualización no redefine el plan normativo ni autoriza operaciones remotas/merge/siguiente bloque.

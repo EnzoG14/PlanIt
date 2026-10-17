@@ -6,7 +6,7 @@ import { loadRejoinStatus, requestRejoin, rejoinError, type RejoinStatus } from 
 import { formatEventTime } from '../features/events/validation'
 import '../pages/event-rejoin.css'
 
-export function EventParticipation({ eventId }: { eventId: string }) {
+export function EventParticipation({ eventId, onSummary }: { eventId: string; onSummary?: (summary: ParticipationSummary | null) => void }) {
   const location = useLocation()
   const [summary, setSummary] = useState<ParticipationSummary | null>(null)
   const [pending, setPending] = useState(true)
@@ -21,6 +21,7 @@ export function EventParticipation({ eventId }: { eventId: string }) {
     busy.current = true
     setPending(true)
     setSummary(null)
+    if (action) onSummary?.(null)
     setRejoin(null)
     setError('')
     let operationError = ''
@@ -35,6 +36,7 @@ export function EventParticipation({ eventId }: { eventId: string }) {
       const summaryData = await loadParticipationSummary(eventId)
       if (!current()) return
       setSummary(summaryData)
+      onSummary?.(summaryData)
       if (!summaryData.is_organizer && (summaryData.own_status === 'removed' || summaryData.own_status === 'confirmed')) {
         try {
           const status = await loadRejoinStatus(eventId)
@@ -45,11 +47,12 @@ export function EventParticipation({ eventId }: { eventId: string }) {
       }
       if (current()) setError(operationError)
     } catch {
+      if (current()) onSummary?.(null)
       if (current()) { setUncertain(true); setError(`${operationError ? `${operationError} ` : ''}No pudimos consultar el estado actual. Revisá la conexión y actualizá.`) }
     } finally {
       if (current()) { busy.current = false; setPending(false) }
     }
-  }, [eventId])
+  }, [eventId, onSummary])
   useEffect(() => {
     const state = revision.current
     mounted.current = true

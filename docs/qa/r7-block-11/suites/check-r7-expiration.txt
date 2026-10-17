@@ -1,0 +1,5 @@
+PASS: R7-B1-TC-01: all versioned migrations replayed from zero on real PostgreSQL
+PASS: TC-01/02 SQL: positive before 24h, strict equality predicate, expired RPC/RLS/reader target denied to author and member before GC; timezone skew and all Storage operations denied (SQL scaffold)
+PASS: TC-03/04 SQL: service-only ACL, retry/backoff and stale token; Storage metadata required absent; partial DB failure rolls back references; retry completes atomically, immutable tombstone prevents reuse
+PASS: TC-03/04 SQL: simultaneous workers disjoint, late publication/gallery/avatar references rejected during lease; active stories, chat image/text, DM, inbox, gallery, avatar and orphan bytes unchanged
+PASS: Crash lease recovery and stale ACK fencing; replaced object quarantined; job RLS and least-privilege ACL/search_path verified

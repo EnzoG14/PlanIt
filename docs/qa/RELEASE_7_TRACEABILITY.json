@@ -1,7 +1,7 @@
 {
   "source": "https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit",
   "generated_on": "2026-10-15",
-  "status": "planning",
+  "status": "B11 technical evaluation; human acceptance pending",
   "release": "R7",
   "rf_count": 7,
   "ca_count": 29,
@@ -12,7 +12,11 @@
       "text": "El organizador o un asistente confirmado puede enviar como máximo una imagen de formato admitido por mensaje en un chat de evento vigente; los chats privados no admiten imágenes.",
       "sprint": 1,
       "implementation_block": "B2/B3",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "SQL chat v2: una imagen, texto/imagen, DM texto-only y locks; UI de chat B3 heredada.",
+      "limitation": "HTTP/JWT y Storage positivos/negativos A–G integrados no ejecutados.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "27506296a6b731503a86c787d728d2cbc015c39ca5f50a15a8b42e33e08ddfe5"
     },
     {
       "rf": "RF-R7-01",
@@ -20,7 +24,11 @@
       "text": "La imagen enviada queda asociada al mensaje, al remitente y al evento, y puede visualizarse al reabrir la conversación.",
       "sprint": 1,
       "implementation_block": "B2/B3",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "Asociación, cursor, idempotencia y lectura SQL PASS; responsable confirmó imagen real en B3 (histórica).",
+      "limitation": "No se repitió reapertura real autenticada con la composición B11.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "cdb9f81ee84e267bfe161a7691584e3462ce160870b59395b0bf3bba745a24af"
     },
     {
       "rf": "RF-R7-01",
@@ -28,7 +36,11 @@
       "text": "Los archivos con formato no permitido o las cargas fallidas se rechazan con un mensaje claro sin crear enlaces inválidos o mensajes aparentemente exitosos.",
       "sprint": 1,
       "implementation_block": "B2/B3",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "Decoder WASM real, cliente y handler rechazan MIME, bytes truncados, tamaño y errores; SQL rollback PASS.",
+      "limitation": "Upload/validación/commit/fallo HTTP integrado pendiente.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "e350c9d5f451b77276d0e66cef178c779890f473fc85c9a711e0a71e3b9f1fd2"
     },
     {
       "rf": "RF-R7-01",
@@ -36,7 +48,11 @@
       "text": "Las imágenes del chat sólo pueden ser consultadas por personas autorizadas a acceder a la conversación correspondiente.",
       "sprint": 1,
       "implementation_block": "B2/B3",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "SET ROLE y operación Storage simulada niegan C/D/E/F/anon y remoción; handler revalida JWT/target mediante stubs.",
+      "limitation": "GET/JWT reales de terceros y revocación no ejecutados en B11.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "052f91c9740865f1052b7077de5354284a41baeeafdb6811a27b99ffdd3cdf1a"
     },
     {
       "rf": "RF-R7-02",
@@ -44,7 +60,11 @@
       "text": "El organizador o un asistente confirmado puede publicar una historia de una sola imagen válida antes de que el evento termine, se cancele o se archive.",
       "sprint": 1,
       "implementation_block": "B4/B5",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "Publicación SQL de organizer/confirmed, fin/cancelación/archivo, locks e idempotencia; publisher UI aislado.",
+      "limitation": "Publicación integrada HTTP/Storage con JWT reales pendiente.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "46d4b9fce2ab803637ac9615e436117383586c09399e4d3920d8ab95d4f0096f"
     },
     {
       "rf": "RF-R7-02",
@@ -52,7 +72,11 @@
       "text": "Al publicar, la historia conserva su autor, evento y fecha/hora de publicación y queda disponible en la sección correspondiente.",
       "sprint": 1,
       "implementation_block": "B4/B5",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "SQL conserva autor/evento/tiempos servidor/archivo exclusivo; lista y UI aislada de B5.",
+      "limitation": "Lectura después de publicación real con JWT no ejecutada.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "cd39b298c550864506ec4a5e57a24baf8e6bf779852fde616870de10df88f594"
     },
     {
       "rf": "RF-R7-02",
@@ -60,7 +84,11 @@
       "text": "Si el archivo no es admitido o la publicación falla, el sistema informa el error y no presenta una historia inexistente como publicada.",
       "sprint": 1,
       "implementation_block": "B4/B5",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "Cliente/decoder/handler/rollback y publisher con error o respuesta incierta.",
+      "limitation": "Rechazo completo del upload real y comprobación persistida pendiente.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "d42299bbd61feef0b5c640543b98eb3cde885f84d58f1076c9751573b26dfaae"
     },
     {
       "rf": "RF-R7-02",
@@ -68,7 +96,11 @@
       "text": "Un usuario no autorizado para participar en el evento no puede publicar historias en él.",
       "sprint": 1,
       "implementation_block": "B4/B5",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "SQL niega pending/removed/link-only/tercero/anon; detalle integrado oculta entry de link-only.",
+      "limitation": "Negativos HTTP/JWT y Storage real pendientes.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "ee3aeb5d4aa61b42a3f9d614dd30e6996410477d55404216d7c113295204be62"
     },
     {
       "rf": "RF-R7-03",
@@ -76,7 +108,11 @@
       "text": "El organizador y los asistentes confirmados pueden abrir desde la ficha del evento la sección de historias vigentes compartidas por usuarios autorizados.",
       "sprint": 1,
       "implementation_block": "B4/B5",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "Detalle real App/router monta sección para confirmed/owner; link-only no la monta.",
+      "limitation": "Autorización HTTP/JWT real de las dos identidades pendiente.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "3f5972a0f9955f2867502e94bfe40cdc5a1eadb4a8352044fdb4560ef78b537f"
     },
     {
       "rf": "RF-R7-03",
@@ -84,7 +120,11 @@
       "text": "Las historias mostradas corresponden únicamente al evento consultado y presentan las imágenes publicadas correctamente.",
       "sprint": 1,
       "implementation_block": "B4/B5",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "RPC SQL impide cross-event; detalle abre Blob de historia sintética y el handler comprueba target.",
+      "limitation": "Imagen real autenticada por evento y negativos remotos pendientes.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "724f09884812ce6e237305fa60272209aabcc7329c99aeed777597b19465855d"
     },
     {
       "rf": "RF-R7-03",
@@ -92,7 +132,11 @@
       "text": "El usuario puede abrir una historia disponible y regresar a la sección del evento sin perder la navegación.",
       "sprint": 1,
       "implementation_block": "B4/B5",
-      "status": "NOT RUN"
+      "status": "PASS",
+      "executed": "Edge headless en 320/375/390/768/1280 abre StoryViewer desde el detalle, Escape cierra y conserva URL del detalle.",
+      "limitation": "PASS local de navegación con Auth/RPC/imagen sintéticos; gestos/lector reales no ejecutados.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "afacfa02ab781a0c44cbcafbb0c3482b17ebaa3f5a7fd932fdee82dd1afbb6b1"
     },
     {
       "rf": "RF-R7-03",
@@ -100,7 +144,11 @@
       "text": "Cuando no hay historias vigentes, se muestra un estado vacío; un usuario no autorizado no accede a historias restringidas.",
       "sprint": 1,
       "implementation_block": "B4/B5",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "Estado vacío integrado; retirar participación y denegar detalle retira acciones; SQL niega lectura a ajenos.",
+      "limitation": "RLS/Storage por transporte real pendiente.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "ebb55dea92d31970569f69ca99b6ae6ee59700c02ac8fc6cb5ffd46f110d4844"
     },
     {
       "rf": "RF-R7-04",
@@ -108,7 +156,11 @@
       "text": "Una historia permanece disponible durante las primeras 24 horas posteriores a su fecha y hora de publicación, siempre que el usuario tenga permiso de acceso.",
       "sprint": 2,
       "implementation_block": "B6",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "SQL prueba disponibilidad y predicado estricto de expiración; fin normal conserva lectura; handler revalida tras I/O.",
+      "limitation": "Frontera temporal por HTTP/Storage real pendiente.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "a6d0fdde12725d5581ae8fa24590c273b569a1a7dadb2c35996413c4fa16663b"
     },
     {
       "rf": "RF-R7-04",
@@ -116,7 +168,11 @@
       "text": "Tras cumplirse 24 horas, la historia deja de estar accesible incluso por enlace directo; posteriormente se elimina su imagen de Storage sin afectar otras imágenes del evento ni mensajes.",
       "sprint": 2,
       "implementation_block": "B6",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "SQL/handler prueban lease, ACK perdido, concurrencia, retry y conservación de galería/avatar/DM/mensajes.",
+      "limitation": "r7-media-cleanup no desplegada y cron inactivo según B6; no eliminación física Storage real.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "80f4fa7c80117efdade5305f0c09d7ee1bd55e4ae52d25962964bf887108ba18"
     },
     {
       "rf": "RF-R7-04",
@@ -124,7 +180,11 @@
       "text": "Una historia vencida tampoco puede recuperarse como contenido vigente mediante enlaces o consultas directas no autorizadas.",
       "sprint": 2,
       "implementation_block": "B6",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "SQL niega RPC/files/objeto al autor y confirmed vencidos; sin firmas R7 ni bypass uploader.",
+      "limitation": "GET/sign/list/HEAD reales a T+24h no ejecutados.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "96eddcfcac7ff2970ea9bb88c402a0b659c680e7824d8e7a710b65e6095ac54c"
     },
     {
       "rf": "RF-R7-04",
@@ -132,7 +192,11 @@
       "text": "El cálculo del vencimiento se basa en el instante persistido de publicación y no depende de modificar el reloj local del dispositivo.",
       "sprint": 2,
       "implementation_block": "B6",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "created_at/expires_at servidor, zonas extremas y cálculo monotónico UI; reloj local no renueva TTL.",
+      "limitation": "Cambio de reloj de dispositivo y descarga real en frontera no ejecutados.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "aa42033d7db8d6686ed05caaf57a694643a3f1cf485647d88fd1166b1c4b93aa"
     },
     {
       "rf": "RF-R7-05",
@@ -140,7 +204,11 @@
       "text": "Desde el detalle de un evento, el usuario puede iniciar la acción de agregarlo al calendario personal.",
       "sprint": 2,
       "implementation_block": "B7",
-      "status": "NOT RUN"
+      "status": "PASS",
+      "executed": "Detalle real ofrece las dos acciones y descarga .ics en cinco viewports.",
+      "limitation": "PASS local UI; no afirma escritura en calendario externo.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "d653cb64e5b2235be3499b2a47ff02df0748a66deca0ae18248241cef53e2802"
     },
     {
       "rf": "RF-R7-05",
@@ -148,7 +216,11 @@
       "text": "La invitación o entrada generada contiene como mínimo título, fecha, hora y ubicación del evento, cuando esta última está disponible.",
       "sprint": 2,
       "implementation_block": "B7",
-      "status": "NOT RUN"
+      "status": "PASS",
+      "executed": "Parser independiente ical.js 2.2.1: título/horario/ubicación, UTC Argentina, Unicode, escaping/folding e inyección.",
+      "limitation": "PASS sobre archivo compatible generado; cinco TZ de proceso y navegador Asia/Tokyo.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "935dfe71162a990ed989702948835073f10aef87bf2d168cf97bdf6fb240982c"
     },
     {
       "rf": "RF-R7-05",
@@ -156,7 +228,11 @@
       "text": "La aplicación solicita los permisos necesarios cuando corresponda y respeta una denegación sin afirmar que el evento fue agregado.",
       "sprint": 2,
       "implementation_block": "B7",
-      "status": "NOT RUN"
+      "status": "PASS",
+      "executed": "ICS no requiere permiso; evento oculto confirma exportación; UI sólo informa archivo ofrecido/Google solicitado.",
+      "limitation": "PASS del flujo sin permisos innecesarios; sin OAuth ni promesa de guardado externo.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "ef48fff68eee9e4af3b87fafc55522fff44ccdf006392149f7a69c8f50a5059f"
     },
     {
       "rf": "RF-R7-05",
@@ -164,7 +240,11 @@
       "text": "Al completar correctamente la operación, el calendario o archivo compatible refleja los datos del evento; no se exige sincronización bidireccional.",
       "sprint": 2,
       "implementation_block": "B7",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "Archivo descargado y parser reflejan datos; URL Google codificada probada localmente.",
+      "limitation": "Importación en cliente calendario final/guardado Google real no ejecutados.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "e75c4f62255cd29a7605b8e8176eb56af94945f2f6f021f13fe35074aef5551c"
     },
     {
       "rf": "RF-R7-06",
@@ -172,7 +252,11 @@
       "text": "Desde el detalle de un evento, el usuario puede iniciar la opción Compartir y abrir el selector de aplicaciones compatibles disponible en su dispositivo.",
       "sprint": 2,
       "implementation_block": "B8",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "Detalle llama navigator.share por gesto y fallback probado en componente con APIs simuladas.",
+      "limitation": "Selector nativo de aplicaciones en dispositivo compatible no ejecutado.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "a12016fc970ec67b99d1178a0b8a876d6d7382b9c67fb566c9dca05cd5029289"
     },
     {
       "rf": "RF-R7-06",
@@ -180,7 +264,11 @@
       "text": "El contenido compartido incluye información suficiente para identificar el evento, como título, fecha y un enlace o referencia accesible cuando esté disponible.",
       "sprint": 2,
       "implementation_block": "B8",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "Payload allowlist real probado: título/fecha/enlace canónico, oculto sólo token emitido en diálogo owner.",
+      "limitation": "Verificar referencia/canje final en apps y despliegue público, no sólo origen sintético.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "afe63f1e7f7185448e563625f4fd16fbcaa48276c59e0b8e810705d45e045aab"
     },
     {
       "rf": "RF-R7-06",
@@ -188,7 +276,11 @@
       "text": "Si el usuario cancela el diálogo de compartir, la aplicación vuelve a la vista anterior sin indicar que el envío se completó.",
       "sprint": 2,
       "implementation_block": "B8",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "AbortError simulado en detalle devuelve sin aviso de envío; fallback/error probados aisladamente.",
+      "limitation": "Cancelación en selector nativo de dispositivo no ejecutada.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "cc83ffd3da86c5f34a336ef29c726ae02695bdedf43810ea20e0cd8e000d3ad3"
     },
     {
       "rf": "RF-R7-06",
@@ -196,7 +288,11 @@
       "text": "No se incluyen datos privados del evento o de sus asistentes que el usuario no tenga permiso para compartir.",
       "sprint": 2,
       "implementation_block": "B8",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "Sin asistentes/descripción/estadísticas; token oculto sólo owner/en memoria; sin rotación automática; R4 SQL negativo.",
+      "limitation": "JWT/rotación/canje reales y revisión final de aplicaciones destino pendientes.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "08e5af6dd1def7a92a37520769181f928bbf81b80f7ad5a2df0b0d2389e65a8b"
     },
     {
       "rf": "RF-R7-07",
@@ -204,7 +300,11 @@
       "text": "Un usuario puede activar las notificaciones Web Push cuando utiliza un navegador compatible y concede el permiso correspondiente.",
       "sprint": 2,
       "implementation_block": "B9/B10",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "SQL y UI opt-in/permiso/sincronización; recepción real confirmada por responsable en B10, evidencia heredada.",
+      "limitation": "No se repitió alta/recepción física con build B11 ni Android/iOS.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "01755a400408bdd1b1ba1b8d89703160ddfded665039e7a979098d8a61c6b8dc"
     },
     {
       "rf": "RF-R7-07",
@@ -212,7 +312,11 @@
       "text": "Los avisos Push se generan a partir de los mismos eventos que la bandeja interna, sin duplicar el aviso en ella; se incluyen mensajes privados y no se envía un aviso por cada mensaje de chat grupal.",
       "sprint": 2,
       "implementation_block": "B9/B10",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "SQL cola/notificación única, DM preview habilitada/oculta y ausencia grupo; Edge9 tests; SW sintético.",
+      "limitation": "No se repitió DM real, no Push grupal y dos dispositivos en entorno acordado.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "09ca2280323682c7970067cc811f6e62588fa8e9f265f72fdaeb0c6368c3b709"
     },
     {
       "rf": "RF-R7-07",
@@ -220,7 +324,11 @@
       "text": "Si el usuario rechaza el permiso o el dispositivo no es compatible, la bandeja interna de notificaciones continúa disponible.",
       "sprint": 2,
       "implementation_block": "B9/B10",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "UI denied/unsupported por fixtures; SQL/inbox independientes; PushSettings existente único en Perfil.",
+      "limitation": "Permiso denegado real con bandeja/Realtime funcional en dispositivo no ejecutado.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "e0189b8a95ad35c692eba9752fa33a010889118e9fb0724b7d79c1f84098cbc6"
     },
     {
       "rf": "RF-R7-07",
@@ -228,7 +336,11 @@
       "text": "Si el envío Push falla o la suscripción deja de ser válida, el aviso permanece en la bandeja interna y no se informa una entrega inexistente.",
       "sprint": 2,
       "implementation_block": "B9/B10",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "SQL/handler inyectan 404/410/429/5xx/timeout/ACK perdido; aviso intacto y sin éxito falso.",
+      "limitation": "Fallas de proveedor/suscripción y bandeja reales integradas pendientes.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "23e8fc0699bea7087f6f065d7346711e22048b630442195c4f6293dadf5ae5b7"
     },
     {
       "rf": "RF-R7-07",
@@ -236,7 +348,11 @@
       "text": "Un usuario puede desactivar sus suscripciones Push sin afectar el historial de avisos dentro de PlanIt.",
       "sprint": 2,
       "implementation_block": "B9/B10",
-      "status": "NOT RUN"
+      "status": "BLOCKED",
+      "executed": "SQL dos endpoints, baja idempotente sin perder inbox; UI unsubscribe y cambio de identidad con fixtures.",
+      "limitation": "Baja/cierre de sesión reales con dos dispositivos y mensajes en vuelo pendientes.",
+      "evidence": "r7-block-11/README.md",
+      "text_sha256": "cce100fac9441efc15fa358eb16edff5721ac84a901e23840a02cf48273a129e"
     }
   ],
   "implementation_planning_v2": {
@@ -269,5 +385,6 @@
       "B6"
     ],
     "end_gate": "B11"
-  }
+  },
+  "evaluated_on": "2026-10-17"
 }

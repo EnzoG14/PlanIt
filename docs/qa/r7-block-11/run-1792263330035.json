@@ -1,0 +1,124 @@
+{
+  "base": "279af15d09988f43a4e79dd397611c645b0b2808",
+  "branch": "codex/r7-block-11",
+  "results": [
+    {
+      "command": "node scripts/check-r7-media.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-media/r7-block-1/sql/inventory.json",
+        "docs/qa/r7-block-11/suites/check-r7-media/r7-block-1/sql/sql-results.json"
+      ],
+      "log": "suites/check-r7-media-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-r7-push-delivery.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-push-delivery/r7-block-10/sql/sql-results.json"
+      ],
+      "log": "suites/check-r7-push-delivery-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-r7-media-client.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-media-client/r7-block-1/client-results.json"
+      ],
+      "log": "suites/check-r7-media-client-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-r7-media-edge.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-media-edge/r7-block-1/edge-results.json"
+      ],
+      "log": "suites/check-r7-media-edge-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-r7-chat-image-edge.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-chat-image-edge/r7-block-3/download-fix/edge-results.json"
+      ],
+      "log": "suites/check-r7-chat-image-edge-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-r7-stories-client.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-stories-client/r7-block-4/client/results.json"
+      ],
+      "log": "suites/check-r7-stories-client-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-r7-stories-edge.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-stories-edge/r7-block-4/edge/edge-results.json"
+      ],
+      "log": "suites/check-r7-stories-edge-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-r7-expiration-edge.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-expiration-edge/r7-block-6/edge/results.json"
+      ],
+      "log": "suites/check-r7-expiration-edge-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-r7-share.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-share/r7-block-8/contract-results.json"
+      ],
+      "log": "suites/check-r7-share-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-r7-calendar.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-calendar/r7-block-7/unit/results.json"
+      ],
+      "log": "suites/check-r7-calendar-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-r7-push-delivery-edge.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-push-delivery-edge/r7-block-10/edge-results.json"
+      ],
+      "log": "suites/check-r7-push-delivery-edge-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-r7-share-regressions.mjs",
+      "result": "PASS",
+      "evidence": [
+        "docs/qa/r7-block-11/suites/check-r7-share-regressions/r7-block-8/r4-access/postgres-results.json",
+        "docs/qa/r7-block-11/suites/check-r7-share-regressions/r7-block-8/r4-invite/postgres-results.json",
+        "docs/qa/r7-block-11/suites/check-r7-share-regressions/r7-block-8/r4-links/postgres-results.json",
+        "docs/qa/r7-block-11/suites/check-r7-share-regressions/r7-block-8/regression-results.json"
+      ],
+      "log": "suites/check-r7-share-regressions-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-foundation.mjs",
+      "result": "PASS",
+      "evidence": [],
+      "log": "suites/check-foundation-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-events.mjs",
+      "result": "PASS",
+      "evidence": [],
+      "log": "suites/check-events-1792263330035.txt"
+    },
+    {
+      "command": "node scripts/check-amanecer-tokens.mjs",
+      "result": "PASS",
+      "evidence": [],
+      "log": "suites/check-amanecer-tokens-1792263330035.txt"
+    }
+  ]
+}

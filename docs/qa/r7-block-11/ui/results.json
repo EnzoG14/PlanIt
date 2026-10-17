@@ -1,0 +1,107 @@
+{
+  "environment": "Edge headless, actual App and pages; synthetic HTTPS proxied to Vite, mocked Auth/RPC/Web Share. Not remote permissions or native sharing.",
+  "browser": "155.0.4283.45",
+  "results": [
+    {
+      "test": "320: actual App/router/detail, confirmed Stories empty/publish, ICS download, share cancellation and public allowlist, no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "320: opens image in inline StoryViewer, Escape returns focus and preserves detail URL",
+      "result": "PASS"
+    },
+    {
+      "test": "320: leave removes Stories; hidden link-only cannot read/publish Stories or share invitation",
+      "result": "PASS"
+    },
+    {
+      "test": "320: owner shares only issued token inside dialog, no implicit rotation/storage; ended event keeps Stories reading without publishing",
+      "result": "PASS"
+    },
+    {
+      "test": "320: revoked detail removes all export and Stories actions",
+      "result": "PASS"
+    },
+    {
+      "test": "375: actual App/router/detail, confirmed Stories empty/publish, ICS download, share cancellation and public allowlist, no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "375: opens image in inline StoryViewer, Escape returns focus and preserves detail URL",
+      "result": "PASS"
+    },
+    {
+      "test": "375: leave removes Stories; hidden link-only cannot read/publish Stories or share invitation",
+      "result": "PASS"
+    },
+    {
+      "test": "375: owner shares only issued token inside dialog, no implicit rotation/storage; ended event keeps Stories reading without publishing",
+      "result": "PASS"
+    },
+    {
+      "test": "375: revoked detail removes all export and Stories actions",
+      "result": "PASS"
+    },
+    {
+      "test": "390: actual App/router/detail, confirmed Stories empty/publish, ICS download, share cancellation and public allowlist, no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "390: opens image in inline StoryViewer, Escape returns focus and preserves detail URL",
+      "result": "PASS"
+    },
+    {
+      "test": "390: leave removes Stories; hidden link-only cannot read/publish Stories or share invitation",
+      "result": "PASS"
+    },
+    {
+      "test": "390: owner shares only issued token inside dialog, no implicit rotation/storage; ended event keeps Stories reading without publishing",
+      "result": "PASS"
+    },
+    {
+      "test": "390: revoked detail removes all export and Stories actions",
+      "result": "PASS"
+    },
+    {
+      "test": "768: actual App/router/detail, confirmed Stories empty/publish, ICS download, share cancellation and public allowlist, no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "768: opens image in inline StoryViewer, Escape returns focus and preserves detail URL",
+      "result": "PASS"
+    },
+    {
+      "test": "768: leave removes Stories; hidden link-only cannot read/publish Stories or share invitation",
+      "result": "PASS"
+    },
+    {
+      "test": "768: owner shares only issued token inside dialog, no implicit rotation/storage; ended event keeps Stories reading without publishing",
+      "result": "PASS"
+    },
+    {
+      "test": "768: revoked detail removes all export and Stories actions",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: actual App/router/detail, confirmed Stories empty/publish, ICS download, share cancellation and public allowlist, no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: opens image in inline StoryViewer, Escape returns focus and preserves detail URL",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: leave removes Stories; hidden link-only cannot read/publish Stories or share invitation",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: owner shares only issued token inside dialog, no implicit rotation/storage; ended event keeps Stories reading without publishing",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: revoked detail removes all export and Stories actions",
+      "result": "PASS"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,213 @@
+{
+  "browser": "Microsoft Edge headless",
+  "timezone": "Asia/Tokyo",
+  "environment": "Executed production component in ignored Vite harness, synthetic DTO, no auth/server claims; Google open instrumented",
+  "results": [
+    {
+      "width": 320,
+      "name": "Amanecer layout without overflow, touch targets and StrictMode double initialization",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Real browser download: filename, Unicode content, UTC dates, Blob URL released",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Google action parameters and popup-blocker-safe wording (window.open instrumented)",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Hidden Google export asks every time, initial/return focus, Escape/cancel are neutral",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Hidden ICS requires explicit confirmation; extra fields never exported",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Changed event DTO discards stale confirmation and feedback",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Invalid dates/download failure report errors; same action can retry successfully",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "name": "Keyboard navigation, visible 3px focus and enlarged text without horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Amanecer layout without overflow, touch targets and StrictMode double initialization",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Real browser download: filename, Unicode content, UTC dates, Blob URL released",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Google action parameters and popup-blocker-safe wording (window.open instrumented)",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Hidden Google export asks every time, initial/return focus, Escape/cancel are neutral",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Hidden ICS requires explicit confirmation; extra fields never exported",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Changed event DTO discards stale confirmation and feedback",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Invalid dates/download failure report errors; same action can retry successfully",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "name": "Keyboard navigation, visible 3px focus and enlarged text without horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Amanecer layout without overflow, touch targets and StrictMode double initialization",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Real browser download: filename, Unicode content, UTC dates, Blob URL released",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Google action parameters and popup-blocker-safe wording (window.open instrumented)",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Hidden Google export asks every time, initial/return focus, Escape/cancel are neutral",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Hidden ICS requires explicit confirmation; extra fields never exported",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Changed event DTO discards stale confirmation and feedback",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Invalid dates/download failure report errors; same action can retry successfully",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "name": "Keyboard navigation, visible 3px focus and enlarged text without horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Amanecer layout without overflow, touch targets and StrictMode double initialization",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Real browser download: filename, Unicode content, UTC dates, Blob URL released",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Google action parameters and popup-blocker-safe wording (window.open instrumented)",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Hidden Google export asks every time, initial/return focus, Escape/cancel are neutral",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Hidden ICS requires explicit confirmation; extra fields never exported",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Changed event DTO discards stale confirmation and feedback",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Invalid dates/download failure report errors; same action can retry successfully",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "name": "Keyboard navigation, visible 3px focus and enlarged text without horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Amanecer layout without overflow, touch targets and StrictMode double initialization",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Real browser download: filename, Unicode content, UTC dates, Blob URL released",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Google action parameters and popup-blocker-safe wording (window.open instrumented)",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Hidden Google export asks every time, initial/return focus, Escape/cancel are neutral",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Hidden ICS requires explicit confirmation; extra fields never exported",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Changed event DTO discards stale confirmation and feedback",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Invalid dates/download failure report errors; same action can retry successfully",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "name": "Keyboard navigation, visible 3px focus and enlarged text without horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "name": "No browser exceptions or external network requests",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "external": []
+}

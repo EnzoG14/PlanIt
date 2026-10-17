@@ -1,0 +1,13 @@
+PASS 320: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup
+PASS 320: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success
+PASS 375: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup
+PASS 375: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success
+PASS 390: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup
+PASS 390: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success
+PASS Image GET denied, clear error, pointer retry successfully loads image
+PASS Hold and manual pause freeze progress, Tab stays in dialog; autoplay explicitly enabled across 3 alternating-author stories, final closes
+PASS Empty, denied/retry, server TTL while open revokes Blob despite changed device clock, account remount and permission gate
+PASS 768: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup
+PASS 768: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success
+PASS 1280: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup
+PASS 1280: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success

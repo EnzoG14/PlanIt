@@ -126,6 +126,11 @@ const tests = String.raw`
 
   const story=await reserve(a,randomUUID(),randomUUID(),'story');await store(a,story);
   assert.equal((await a.query('select * from storage.objects where name=$1',[story.storage_path])).rowCount,0);
+  // Validation is now enforced before cross-domain consistency. Exercise both
+  // gates, so the missing attestation cannot mask a broken story/chat guard.
+  await assert.rejects(publish(story,randomUUID()),/image_verification_required/);
+  const storyTarget=await value(service,'select public.get_r7_media_validation_target($1,$2)',[aId,story.file_id]);
+  await value(service,'select public.complete_r7_media_validation($1,$2,$3,$4,$5)',[aId,story.file_id,storyTarget.object_id,storyTarget.etag,'c'.repeat(64)]);
   await assert.rejects(publish(story,randomUUID()),/media_conflict/);
   assert.equal(await value(admin,'select count(*)::int from public.files where id=$1',[story.file_id]),0);
   const broken=await reserve();

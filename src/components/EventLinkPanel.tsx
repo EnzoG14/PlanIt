@@ -1,11 +1,11 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
 import type { EventRecord } from '../features/events/api'
 import { argentinaNow } from '../features/events/validation'
 import { loadEventLinkStatus, rotateEventLink } from '../features/events/links'
 import { Icon } from './Icon'
 import './event-links.css'
 
-export function EventLinkPanel({ event }: { event: EventRecord }) {
+export function EventLinkPanel({ event, renderInviteAction }: { event: EventRecord; renderInviteAction?: (url: string) => ReactNode }) {
   const [hasLink, setHasLink] = useState<boolean | null>(null)
   const [revision, setRevision] = useState(0)
   const [error, setError] = useState(''), [busy, setBusy] = useState(false)
@@ -72,6 +72,7 @@ export function EventLinkPanel({ event }: { event: EventRecord }) {
       {url && <div className="form-field"><label htmlFor={inputId}>Enlace de acceso (una sola vez)</label><input ref={input} id={inputId} readOnly value={url} onFocus={e => e.currentTarget.select()} autoComplete="off" spellCheck={false} /><p className="field-hint">Al cerrar se borra de esta pantalla. Copialo antes de continuar.</p></div>}
       {manual && <p role="status">No pudimos usar el portapapeles. El enlace está seleccionado: copialo manualmente.</p>}
       {copied && <p role="status">Enlace copiado.</p>}
+      {url && !closed && renderInviteAction?.(url)}
       {error && <p role="alert" className="field-error">{error}</p>}
       <div className="event-action-dialog-buttons"><button ref={cancel} type="button" className="secondary-button" disabled={busy} onClick={close}>{url ? 'Listo' : 'Volver'}</button>{url ? <button type="button" className="gradient-link" onClick={() => void copy()}>Copiar enlace</button> : <button type="button" className="gradient-link" disabled={busy || closed} onClick={() => void generate()}>{busy ? 'Generando…' : hasLink ? 'Confirmar regeneración' : 'Confirmar generación'}</button>}</div>
     </dialog>

@@ -1,0 +1,11 @@
+PASS: ACL: anon, authenticated and missing identity cannot access queue or any worker RPC; service only has RPC access; RLS on
+PASS: DM producer retry: exactly one internal notice, two device jobs, no third-user job or duplicate backfill
+PASS: Concurrent workers SKIP LOCKED; real recipient preview; opt-out, block, deleted message and wrong lease are safe
+PASS: 429 schedules 30..40-second retry; stale ACK cannot overwrite a new lease; sent pair stays deduped; inbox unchanged
+PASS: 404/410 disables only matching subscription revision; renewed keys and other device survive
+PASS: Lost worker lease recovers; timeout retries; fifth 5xx attempt terminalizes without inbox mutation
+PASS: Enqueue exception preserves DM and inbox; bounded backfill repairs exactly once; disabled device discarded before network
+PASS: Real group-chat producer excluded; real event_full episode queues once; archive neutralizes payload; inbox read/changes intact
+PASS: Follow-request producer supported; new device cannot backfill notifications from before opt-in
+PASS: 15-minute expiration, seven-day terminal retention and queue without private payload/endpoint/key columns
+PASS: All four backoff intervals include bounded jitter; expired prefix cannot starve live jobs; unknown types excluded by trigger and backfill

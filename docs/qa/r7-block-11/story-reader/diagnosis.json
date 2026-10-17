@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-17",
+  "project": "planit-v2",
+  "ref": "iepeqmvzjguwlhnecsdq",
+  "function": "r7-story-image",
+  "deployed": false,
+  "probes": [
+    {
+      "method": "OPTIONS",
+      "status": 404,
+      "code": "NOT_FOUND"
+    },
+    {
+      "method": "GET",
+      "status": 404,
+      "code": "NOT_FOUND"
+    }
+  ],
+  "existing_deployed_functions": [
+    "social-avatar",
+    "r7-media-validate",
+    "r7-chat-image",
+    "r7-push"
+  ],
+  "local_handler_tests": "3 groups PASS",
+  "proposed_action": "Deploy only existing r7-story-image with JWT verification enabled; no SQL, secrets or cron",
+  "deploy_authorization": "GRANTED subsequently: user requested desplega",
+  "resolution": "Deployed r7-story-image v1 ACTIVE, verify_jwt=true; see deployment.json"
+}

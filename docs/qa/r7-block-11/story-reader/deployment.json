@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-17T19:25:28.705Z",
+  "project": "planit-v2",
+  "ref": "iepeqmvzjguwlhnecsdq",
+  "authorization": "User explicitly requested desplega after diagnosis and single-function deployment proposal",
+  "function": {
+    "created_at": 1792265112829,
+    "entrypoint_path": "file:///tmp/user_fn_iepeqmvzjguwlhnecsdq_1fb81f5c-9133-4408-ba6e-6f76ad5afde0_1/source/supabase/functions/r7-story-image/index.ts",
+    "ezbr_sha256": "32d10092fee556beb6921939622fe1cda3d460ad279243119426ef4f32cc035b",
+    "id": "1fb81f5c-9133-4408-ba6e-6f76ad5afde0",
+    "import_map": true,
+    "import_map_path": "file:///tmp/user_fn_iepeqmvzjguwlhnecsdq_1fb81f5c-9133-4408-ba6e-6f76ad5afde0_1/source/supabase/functions/r7-story-image/deno.json",
+    "name": "r7-story-image",
+    "slug": "r7-story-image",
+    "status": "ACTIVE",
+    "updated_at": 1792265112829,
+    "verify_jwt": true,
+    "version": 1
+  },
+  "probes": [
+    {
+      "method": "OPTIONS",
+      "status": 204,
+      "cache_control": "no-store",
+      "allow_origin": "*"
+    },
+    {
+      "method": "GET",
+      "status": 401,
+      "cache_control": null,
+      "allow_origin": "*"
+    }
+  ],
+  "authenticated_image": "NOT RUN: requires user session and live story",
+  "sql_secrets_cron": "Unchanged"
+}

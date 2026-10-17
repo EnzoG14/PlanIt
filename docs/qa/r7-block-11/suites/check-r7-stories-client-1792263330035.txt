@@ -1,0 +1,3 @@
+PASS: Publish confirms exact UUID; retries preserve payload; null ACK/network/serialization uncertain; typed permission/conflict/read-only/validation failures
+PASS: Cursor/server time/empty page and abort propagation; cross-event response refused
+PASS: Authenticated no-store Blob download, changed session and forbidden/invalid bytes rejected; no signed/public URL or deletion

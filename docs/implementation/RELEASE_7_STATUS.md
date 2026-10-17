@@ -1,36 +1,49 @@
 # PlanIt — Release 7 · Seguimiento
 
-**Fecha de preparación documental:** 15/10/2026. **Última actualización:** 16/10/2026. **Estado global:** B0 AUDITADO / ENTREGADO PARA REVISIÓN HUMANA / CONTRATOS TÉCNICOS PROPUESTOS v1. **QA funcional R7:** NOT RUN.
+**Fecha de preparación documental:** 15/10/2026. **Corte B11:** 17/10/2026. **Estado global:** B0–B10 integrados; B11 composición implementada y QA local ejecutada, [PR draft #86](https://github.com/EnzoG14/PlanIt/pull/86). **Aceptación integral:** NO-GO recomendado; firma humana pendiente. 29 CA evaluados: 4 PASS locales / 25 BLOCKED / 0 FAIL.
 **Baseline de alcance:** R6 se supone funcionalmente completa, por instrucción de planificación; no se corrigen tareas residuales de R6.
 
 | Bloque | Estado | Rama/PR | Migración creada | SQL local | Remoto aplicado | Remoto verificado | HTTP/JWT | UI | Evidencia | Gate |
 |---|---|---|---|---|---|---|---|---|---|---|
-| B0 | Auditoría entregada; firma humana pendiente | `codex/r7-block-0` / [PR draft #74](https://github.com/EnzoG14/PlanIt/pull/74) | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | [Acta](RELEASE_7_BLOCK_0_DECISIONS.md), [37/37 checks documentales](../qa/r7-block-0/audit.json) | NO-GO siguiente bloque |
-| B1 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
-| B2 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
-| B3 | Corrección de lectura desplegada; visualización confirmada | `codex/r7-chat-upload-fix` / [PR draft #82](https://github.com/EnzoG14/PlanIt/pull/82) | 4 correctivas | PASS local | 4/4 | 4/4 catálogo | Lector ACTIVE v1; OPTIONS 204, sin sesión/inválida 401; visualización real PASS reportado por responsable | 62 checks fixtures PASS | [Detalle y marcas](../qa/r7-block-3/download-fix/README.md), [preflight](../qa/r7-block-3/storage-fix/README.md) | NO-GO siguiente bloque |
-| B4 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
-| B5 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
-| B6 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
-| B7 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
-| B8 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
-| B9 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
-| B10 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
-| B11 | Pendiente | — | 0 | NOT RUN | 0 | 0 | NOT RUN | NOT RUN | — | NO-GO |
+| B0 | Auditoría integrada | `codex/r7-block-0` / [PR #74 integrada](https://github.com/EnzoG14/PlanIt/pull/74) | 0 | Documental PASS | 0 | 0 | Lectura histórica | Sin cambios | [B0](../qa/r7-block-0/README.md) | Integrado; no firma global |
+| B1 | Integrado; permisos reales pendientes | `codex/r7-block-1` / [PR #75 integrada](https://github.com/EnzoG14/PlanIt/pull/75) | 1 | PASS47 B11 | 1/1 histórico | Catálogo histórico | BLOCKED integral | Cliente/Edge local | [B1](../qa/r7-block-1/STATUS.md) | NO-GO integral |
+| B2 | Integrado | `codex/r7-block-2` / [PR #78 integrada](https://github.com/EnzoG14/PlanIt/pull/78) | 1 | PASS47 B11 | 1/1 histórico | Catálogo histórico | BLOCKED integral | Chat B3 | [B2](../qa/r7-block-2/STATUS.md) | NO-GO integral |
+| B3 | Integrado + correctiva #82 | `codex/r7-chat-upload-fix` / [PR #79 integrada](https://github.com/EnzoG14/PlanIt/pull/79) | 4 correctivas | PASS47 B11 | 4/4 histórico | Catálogo histórico | Imagen real confirmada en B3; matriz A–G pendiente | Fixtures B3 PASS histórico | [B3](../qa/r7-block-3/STATUS.md) | NO-GO integral |
+| B4 | Integrado | `codex/r7-block-4` / [PR #83 integrada](https://github.com/EnzoG14/PlanIt/pull/83) | 1 | PASS47 B11 | 1/1 histórico | Catálogo histórico | BLOCKED integral | B5 + detalle B11 | [B4](../qa/r7-block-4/STATUS.md) | NO-GO integral |
+| B5 | Integrado; visor conectado B11 | `codex/r7-block-5` / [PR #84 integrada](https://github.com/EnzoG14/PlanIt/pull/84) | 0 | B4 | 0 | 0 | BLOCKED integral | Fixtures B11 PASS | [B5](../qa/r7-block-5/STATUS.md) | NO-GO integral |
+| B6 | Integrado; worker/cron sin deploy | `codex/r7-block-6` / [PR #85 integrada](https://github.com/EnzoG14/PlanIt/pull/85) | 1 | PASS47 B11 | 1/1 histórico | Catálogo histórico | GC/TTL transporte NOT RUN | Sin cambios propios | [B6](../qa/r7-block-6/STATUS.md) | NO-GO integral |
+| B7 | Integrado; conectado B11 | `codex/r7-block-7` / [PR #76 integrada](https://github.com/EnzoG14/PlanIt/pull/76) | 0 | No aplica | 0 | 0 | Sin OAuth | Parser + UI B11 PASS | [B7](../qa/r7-block-7/STATUS.md) | Cliente calendario pendiente |
+| B8 | Integrado; conectado B11 | `codex/r7-block-8` / [PR #77 integrada](https://github.com/EnzoG14/PlanIt/pull/77) | 0 | R4 PASS B11 | 0 | 0 | R4 transporte pendiente | Payload/fallback/cancelación fixtures PASS | [B8](../qa/r7-block-8/STATUS.md) | Share nativo pendiente |
+| B9 | Integrado; Perfil ya montado por B10 | `codex/r7-block-9` / [PR #80 integrada](https://github.com/EnzoG14/PlanIt/pull/80) | 1 | PASS47 B11 | Historial B10/B6 | Historial47; no recert B11 | Opt-in real B10 histórico | Fixtures + SW B11 PASS | [B9](../qa/r7-block-9/STATUS.md) | Dispositivos pendientes |
+| B10 | Integrado; deploy v2 histórico | `codex/r7-block-10` / [PR #81 integrada](https://github.com/EnzoG14/PlanIt/pull/81) | 1 | PASS47 B11 | 1/1 histórico | Catálogo histórico | DM recibido confirmado en B10; sin cron | Fixtures B11 PASS | [B10](../qa/r7-block-10/STATUS.md) | Dos dispositivos pendientes |
+| B11 | Implementado; revisión humana pendiente | `codex/r7-block-11` / [PR draft #86](https://github.com/EnzoG14/PlanIt/pull/86) | 0 nuevas | PASS47 + regresiones | 0 nuevas | No ejecutado en B11 | NOT RUN A–G real | 25 grupos integrados +4 suites PASS | [B11](../qa/r7-block-11/README.md) | NO-GO recomendado |
 
 ## RF/CA
 
 | RF | CA oficiales | PASS | FAIL | NOT RUN/BLOCKED | Estado |
 |---|---:|---:|---:|---:|---|
-| RF-R7-01 | 4 | 0 | 0 | 4 | NO VALIDADO |
-| RF-R7-02 | 4 | 0 | 0 | 4 | NO VALIDADO |
-| RF-R7-03 | 4 | 0 | 0 | 4 | NO VALIDADO |
-| RF-R7-04 | 4 | 0 | 0 | 4 | NO VALIDADO |
-| RF-R7-05 | 4 | 0 | 0 | 4 | NO VALIDADO |
-| RF-R7-06 | 4 | 0 | 0 | 4 | NO VALIDADO |
-| RF-R7-07 | 5 | 0 | 0 | 5 | NO VALIDADO |
+| RF-R7-01 | 4 | 0 | 0 | 4 BLOCKED | EVALUADO; aceptación pendiente |
+| RF-R7-02 | 4 | 0 | 0 | 4 BLOCKED | EVALUADO; aceptación pendiente |
+| RF-R7-03 | 4 | 1 | 0 | 3 BLOCKED | EVALUADO; aceptación pendiente |
+| RF-R7-04 | 4 | 0 | 0 | 4 BLOCKED | EVALUADO; aceptación pendiente |
+| RF-R7-05 | 4 | 3 | 0 | 1 BLOCKED | EVALUADO; aceptación pendiente |
+| RF-R7-06 | 4 | 0 | 0 | 4 BLOCKED | EVALUADO; aceptación pendiente |
+| RF-R7-07 | 5 | 0 | 0 | 5 BLOCKED | EVALUADO; aceptación pendiente |
+
+[29 criterios y capas](../qa/r7-block-11/CRITERIA.md), [informe integral](../qa/RELEASE_7_TEST_REPORT.md). PASS de navegación/calendario local no es GO humano.
 
 ## Cambios de estado
+
+### 17/10/2026 — B11: composición, replay y acta
+
+Entrega técnica `1f1c8d8372f5964ce5a4787bfcf6e6e013c74358`, [PR draft #86](https://github.com/EnzoG14/PlanIt/pull/86). Base `279af15d09988f43a4e79dd397611c645b0b2808` tras fetch; 12 PRs productoras/correctiva MERGED y ancestry comprobadas. Rama nueva `codex/r7-block-11`, worktree independiente. `.env.local` copiado desde main, igual e ignorado, sin versionar. Cambios ajenos del checkout inicial preservados.
+
+Detalle conecta Stories/Calendar/Share; token oculto sólo en diálogo de generación y memoria. Callback de resumen existente evita RPC duplicada. Push ya estaba montado en Perfil por ampliación autorizada B10; no se duplica. Stories modal inline, sin nueva ruta. Sin SQL/API/SW nuevos ni cambios de mockup/identidad Amanecer.
+
+47 migraciones replay local; chat/DM/TTL/GC/cola/subscriptions/validación/handlers, R4 enlaces/accesos, R5 social y R6 compare/event_full PASS por capas. App/router/detalle: 25 grupos en cinco tamaños, capturas antes/después y texto200%. Cuatro suites UI de componentes PASS. Calendario parser independiente, SW offline/no caché privada/eventos sintéticos, build/lint y31 checks documentales PASS. Fallo inicial de expectativa multimedia conservado y corregido verificando dos barreras, sin cambiar SQL. [Comandos/resultados/limitaciones](../qa/r7-block-11/README.md).
+
+25 CA bloqueados por ensayos integrados reales o dispositivo: HTTP/JWT A–G, Storage y frontera TTL, GC físico/cron, selector nativo, cliente calendario, dos dispositivos Push/preview/logout y plataformas. B6 sólo migración aplicada; cleanup sin deploy/cron. B10 recepción de un DM es evidencia histórica, no repetición B11. No SQL remoto/deploy/secretos/cron/merge ni edición Google Doc en esta entrega. NO-GO recomendado, firma humana pendiente; detenerse en B11.
+
 
 ### 16/10/2026 — B0, auditoría documental
 
@@ -46,17 +59,11 @@ D01/D02/D03/D05/D06/D07/D08/D09/D15/P01 siguen confirmadas por responsable15/10.
 
 **R7-B0-TC-01/02/03:** PASS documental (baseline, matriz y diseño frente a CHECK/Storage OR/generateSW). **R7-B0-TC-04:** BLOCKED por firma humana; acta NO-GO preparada. No representa defecto funcional ejecutado ni rechazo del responsable. Se detiene B0 a la espera de revisión/autorización; ningún bloque posterior iniciado.
 
-## Estado de paralelización
+## Estado de paralelización — corte B11
 
-| Frente | Bloques | Responsable asignado | Rama/worktree | Prerequisito integrado | Estado | Próximo merge/revisión |
-|---|---|---|---|---|---|---|
-| Auditoría B0 | B0 | Codex + auditor `audit_contracts` (sólo lectura) | `codex/r7-block-0` / `r7-block-0-worktree`; main `mapbox-worktree` sólo referencia | #73 integrado | ENTREGADA / REVISIÓN HUMANA PENDIENTE | Contratos/gates, sin features |
-| Plataforma multimedia | B1 | — | — | B0 | PENDIENTE | — |
-| Chat | B2, B3 | — | — | B1 | BLOQUEADO POR CONTRATO | — |
-| Historias | B4, B5, B6 | — | — | B1 para B4 | BLOQUEADO POR CONTRATO | — |
-| Calendario | B7 | — | — | B0, aprobar contratos (D06 confirmada) | PENDIENTE | — |
-| Compartir | B8 | — | — | B0 | PENDIENTE | — |
-| Push | B9, B10 | — | — | B0/B9 | PENDIENTE | — |
-| Integración + QA | B11 | — | — | PRs productores | BLOQUEADO | — |
+Todos los productores B0–B10 y correctiva B3 están integrados. No hay agentes o frentes paralelos activos de este pedido. B11 compone y presenta revisión; pruebas remotas/operativas y aceptación humana pendientes. El [DAG/ownership](RELEASE_7_PARALLEL_WORK.md) conserva su contrato. No se concede PASS por cierre/merge de un productor.
 
-No se concede PASS de RF/CA por el simple cierre de un bloque paralelo. La tabla de ownership y DAG están en `RELEASE_7_PARALLEL_WORK.md`.
+
+### 17/10/2026 — Corrección operativa de lectura de historias
+
+Tras reporte de historia publicada que no abre, se confirmó ausencia de r7-story-image: catálogo sin lector y OPTIONS/GET404. El responsable autorizó expresamente su despliegue («desplega»). Función existente B4 desplegada sólo en planit-v2: ACTIVE v1, verify_jwt=true; OPTIONS204/no-store/CORS y GET sin sesión401. Tests handler3 grupos y Deno check PASS. [Diagnóstico y evidencia](../qa/r7-block-11/story-reader/README.md). Sin cambios SQL/secretos/cron ni otras funciones. Reintento autenticado y aceptación visual del responsable pendientes; no cambia el dictamen integral por desplegar.

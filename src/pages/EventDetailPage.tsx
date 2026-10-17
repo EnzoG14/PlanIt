@@ -10,6 +10,12 @@ import { formatEventTime } from '../features/events/validation'
 import { EventManagement } from '../components/EventManagement'
 import { validatedMyEventsReturn, myEventsPath } from '../features/events/my-events'
 import { socialProfileReturn, participantsReturn } from '../features/social/api'
+import { EventCalendarAction } from '../features/events/EventCalendarAction'
+import { EventShareAction } from '../features/events/EventShareAction'
+import { EventStoriesEntry } from '../features/events/stories/EventStoriesEntry'
+import type { EventIntegrationV1 } from '../features/events/calendar'
+import type { ParticipationSummary } from '../features/events/participation'
+import { managedEvent } from '../features/events/actions'
 import './discovery.css'
 
 export function EventDetailPage() {
@@ -39,6 +45,7 @@ function EventDetailContent({ id }: { id: string }) {
   const [attempt, setAttempt] = useState(0)
   const [notice, setNotice] = useState('')
   const [participationRevision, setParticipationRevision] = useState(0)
+  const [participation, setParticipation] = useState<ParticipationSummary | null>(null)
   useEffect(() => {
     let active = true
     let revision = 0
@@ -95,6 +102,13 @@ function EventDetailContent({ id }: { id: string }) {
   const discoveryOrigin = validatedDiscoveryReturn(location.state?.returnTo)
   const myEventsReturnTo = listOrigin ?? (event.organizer_id === session?.user.id ? myEventsPath('organizing') : '/my-events')
   const returnTo = profileOrigin ?? listOrigin ?? discoveryOrigin ?? (event.organizer_id === session?.user.id ? myEventsReturnTo : '/map')
+  // Explicit export allowlist: no description, people, grants or media paths.
+  const integration: EventIntegrationV1 | null = event.visibility === 'public' || event.visibility === 'unlisted' ? {
+    id: event.id, title: event.title, starts_at: event.starts_at, ends_at: event.ends_at,
+    location_name: event.location_name, address: event.address, visibility: event.visibility,
+    state: managedEvent(event).event_state,
+  } : null
+  const canReadStories = Boolean(participation && (participation.is_organizer || participation.own_status === 'confirmed'))
   return <div className="event-detail-page">
     {location.state?.published && <StatusMessage title="Evento publicado">{event.visibility === 'unlisted' ? 'Tu evento oculto fue publicado. Generá un enlace desde la gestión para compartirlo.' : 'Tu evento ya está disponible para la comunidad.'}</StatusMessage>}
     {location.state?.edited && <StatusMessage title="Cambios guardados">La información del evento se actualizó.</StatusMessage>}
@@ -104,6 +118,14 @@ function EventDetailContent({ id }: { id: string }) {
     <span className="category-chip">{category}</span>
     {imageError && <p role="status" className="field-error">No pudimos cargar las fotos. <button className="text-button" onClick={retry}>Reintentar</button></p>}
     <dl className="detail-metadata"><dt><Icon name="calendar" />Inicio</dt><dd>{formatEventTime(event.starts_at)}</dd><dt><Icon name="clock" />Fin</dt><dd>{formatEventTime(event.ends_at)}</dd><dt><Icon name="pin" />Lugar</dt><dd>{event.location_name ?? event.address}</dd>{event.location_name && <><dt>Dirección</dt><dd>{event.address}</dd></>}</dl>
+    {integration && <div className="event-integrations">
+      <EventCalendarAction event={integration} />
+      <EventShareAction event={integration} canManageInvite={event.organizer_id === session?.user.id} />
+    </div>}
+    <EventStoriesEntry eventId={id} returnTo={`/events/${id}`} permissions={{
+      can_read_stories: canReadStories,
+      can_publish_story: canReadStories && participation?.event_state === 'open' && integration?.state === 'open',
+    }} />
     <section className="event-about" aria-labelledby="event-about-title"><h2 id="event-about-title">Acerca del evento</h2><p className="event-description">{event.description}</p></section>
     {images.length > 1 && <section className="event-gallery" aria-label="Fotos del evento">{images.slice(1).map((url, index) => <img key={`${url}-${index}`} src={url} width="360" height="240" alt={`Foto ${index + 2} de ${event.title}`} loading="lazy" onError={e => { e.currentTarget.hidden = true }} />)}</section>}
     <section className="event-organizer" aria-labelledby="event-organizer-title">
@@ -111,9 +133,10 @@ function EventDetailContent({ id }: { id: string }) {
       {organizer ? <><strong>{organizer.display_name}</strong><p>@{organizer.username}</p></> : organizerError ? <p role="status">No pudimos cargar los datos del organizador. <button className="text-button" type="button" onClick={retry}>Reintentar</button></p> : <p>Datos del organizador no disponibles.</p>}
     </section>
     <p className="field-hint">Horarios de Argentina.</p>
-    <EventParticipation key={`${id}:${session?.user.id}:${participationRevision}`} eventId={id} />
+    <EventParticipation key={`${id}:${session?.user.id}:${participationRevision}`} eventId={id} onSummary={setParticipation} />
     <p role="status" className="event-action-notice">{notice}</p>
-    {event.organizer_id === session?.user.id && <EventManagement event={event} origin={{ myEventsReturnTo: listOrigin ?? undefined, returnTo: discoveryOrigin ?? undefined }} onChanged={message => {
+    {event.organizer_id === session?.user.id && <EventManagement event={event} renderInviteAction={integration ? url => <EventShareAction event={integration} canManageInvite inviteUrl={url} /> : undefined} origin={{ myEventsReturnTo: listOrigin ?? undefined, returnTo: discoveryOrigin ?? undefined }} onChanged={message => {
+      setParticipation(null)
       setNotice(message); setParticipationRevision(value => value + 1)
       void loadEvent(id).then(data => setEvent(data)).catch(() => { setError('La operación se completó, pero no pudimos actualizar el detalle. Reintentá la consulta.') })
     }} />}

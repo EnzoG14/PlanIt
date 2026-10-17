@@ -24,6 +24,8 @@
 .map-preview .event-card { display: grid; grid-template-columns: 120px minmax(0, 1fr); }
 .map-preview .event-card-photo { height: 100%; min-height: 150px; }
 .event-detail-page { max-width: 640px; margin: auto; }
+.event-detail-page .event-integrations { display: grid; gap: var(--pi-space-base); margin-block: var(--pi-space-section); }
+.event-detail-page > .event-stories { margin-block: var(--pi-space-section); }
 .event-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 20px 0; }
 .event-gallery img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-bg-elevated); }
 .event-organizer { padding: 16px; margin-top: 24px; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-bg-elevated); }

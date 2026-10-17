@@ -1,0 +1,6 @@
+PASS R7-B8-TC-03: payload allowlist, canonical URL, Unicode and no private fields
+PASS HTTPS public deployment, BASE_URL, no login/grant/local URLs
+PASS R7-B8-TC-02: unlisted organizer-only, no token invention and strict invite URL
+PASS R7-B8-TC-01: immediate native invocation, success, cancellation, errors
+PASS R7-B8-TC-01: unsupported, denied, absent/insecure clipboard; manual fallback
+PASS Argentina date independent of browser/system timezone
