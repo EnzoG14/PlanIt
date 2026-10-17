@@ -1,6 +1,6 @@
 # R7 · Bloque 6 — Caducidad y limpieza física
 
-17/10/2026, Argentina. **IMPLEMENTADO / SQL y Edge locales PASS / remoto NOT RUN / revisión humana pendiente.** PR draft: pendiente de creación al cerrar la entrega.
+17/10/2026, Argentina. **IMPLEMENTADO / SQL y Edge locales PASS / remoto NOT RUN / revisión humana pendiente.** [PR draft #85](https://github.com/EnzoG14/PlanIt/pull/85). Entrega técnica `2a3533dc66bbd95c63973b98529cf9262107c878`; el commit posterior enlaza este reporte con la PR y actualiza el hash de evidencia de la regresión final.
 
 Base verificada tras fetch: `0beac193775ec043f1d063637c00ecc82152c42a`, `origin/main`. Rama nueva `codex/r7-block-6`, worktree `r7-block-6-worktree`. Prerequisito B4 integrado por PR #83 (`1364e21`); la base también incluye B5 #84 y B10 #81, sin convertirlos en prerrequisitos. `.env.local` copiado desde `mapbox-worktree` (main), igualdad byte a byte comprobada, ignorado y sin versionar. Checkout inicial y sus cambios ajenos preservados.
 
