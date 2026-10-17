@@ -1,0 +1,103 @@
+{
+  "base": "279af15d09988f43a4e79dd397611c645b0b2808",
+  "checked_on": "2026-10-17",
+  "source": "GitHub get_pr_info plus git merge-base ancestry",
+  "pull_requests": [
+    {
+      "number": 74,
+      "merged": true,
+      "merge_commit_sha": "5adf8e455c90d46adc0f5477c5d3e9ee06eb2461",
+      "head": "codex/r7-block-0",
+      "base_sha": "f8dd53c136fb30fbef5f3b2d9fa7cf0359923974",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/74"
+    },
+    {
+      "number": 75,
+      "merged": true,
+      "merge_commit_sha": "3f2a49800198825abfca660fa20acc051a31a94c",
+      "head": "codex/r7-block-1",
+      "base_sha": "5adf8e455c90d46adc0f5477c5d3e9ee06eb2461",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/75"
+    },
+    {
+      "number": 76,
+      "merged": true,
+      "merge_commit_sha": "d5cb3146fb9e86547b6570e878ea8ecac0178e21",
+      "head": "codex/r7-block-7",
+      "base_sha": "5adf8e455c90d46adc0f5477c5d3e9ee06eb2461",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/76"
+    },
+    {
+      "number": 77,
+      "merged": true,
+      "merge_commit_sha": "d6c2573f665e94e28541d2ba8621c7d8509f3dcb",
+      "head": "codex/r7-block-8",
+      "base_sha": "3f2a49800198825abfca660fa20acc051a31a94c",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/77"
+    },
+    {
+      "number": 78,
+      "merged": true,
+      "merge_commit_sha": "cc4e70e89f03fed2162c5477af5a5c564ad83745",
+      "head": "codex/r7-block-2",
+      "base_sha": "3f2a49800198825abfca660fa20acc051a31a94c",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/78"
+    },
+    {
+      "number": 79,
+      "merged": true,
+      "merge_commit_sha": "6d9d6bba99d3bde2bf836e36c6ce5f2dd62af295",
+      "head": "codex/r7-block-3",
+      "base_sha": "cc4e70e89f03fed2162c5477af5a5c564ad83745",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/79"
+    },
+    {
+      "number": 80,
+      "merged": true,
+      "merge_commit_sha": "9d917a4765e713b1adc4f75f89a7d6b4b57c8a25",
+      "head": "codex/r7-block-9",
+      "base_sha": "cc4e70e89f03fed2162c5477af5a5c564ad83745",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/80"
+    },
+    {
+      "number": 81,
+      "merged": true,
+      "merge_commit_sha": "9d3117dd3c45b12dcae75f5d7f536a99e8a691d2",
+      "head": "codex/r7-block-10",
+      "base_sha": "9d917a4765e713b1adc4f75f89a7d6b4b57c8a25",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/81"
+    },
+    {
+      "number": 82,
+      "merged": true,
+      "merge_commit_sha": "b7a3e6a31f328ec375c4dcee1f3923720b42e697",
+      "head": "codex/r7-chat-upload-fix",
+      "base_sha": "9d917a4765e713b1adc4f75f89a7d6b4b57c8a25",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/82"
+    },
+    {
+      "number": 83,
+      "merged": true,
+      "merge_commit_sha": "1364e215ce3c3fe85d1be9d17e84bf85cef3f0cc",
+      "head": "codex/r7-block-4",
+      "base_sha": "b7a3e6a31f328ec375c4dcee1f3923720b42e697",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/83"
+    },
+    {
+      "number": 84,
+      "merged": true,
+      "merge_commit_sha": "0beac193775ec043f1d063637c00ecc82152c42a",
+      "head": "codex/r7-block-5",
+      "base_sha": "9d3117dd3c45b12dcae75f5d7f536a99e8a691d2",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/84"
+    },
+    {
+      "number": 85,
+      "merged": true,
+      "merge_commit_sha": "279af15d09988f43a4e79dd397611c645b0b2808",
+      "head": "codex/r7-block-6",
+      "base_sha": "0beac193775ec043f1d063637c00ecc82152c42a",
+      "url": "https://github.com/EnzoG14/PlanIt/pull/85"
+    }
+  ]
+}

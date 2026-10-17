@@ -1,0 +1,129 @@
+{
+  "environment": "Documentary/static checks only, not functional acceptance",
+  "results": [
+    {
+      "test": "RF-R7-01.CA-01: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-01.CA-02: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-01.CA-03: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-01.CA-04: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-02.CA-01: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-02.CA-02: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-02.CA-03: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-02.CA-04: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-03.CA-01: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-03.CA-02: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-03.CA-03: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-03.CA-04: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-04.CA-01: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-04.CA-02: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-04.CA-03: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-04.CA-04: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-05.CA-01: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-05.CA-02: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-05.CA-03: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-05.CA-04: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-06.CA-01: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-06.CA-02: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-06.CA-03: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-06.CA-04: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-07.CA-01: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-07.CA-02: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-07.CA-03: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-07.CA-04: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "RF-R7-07.CA-05: literal text/hash, result and executed/pending layers",
+      "result": "PASS"
+    },
+    {
+      "test": "12 producer/corrective PRs merged and ancestors of B11 base",
+      "result": "PASS"
+    },
+    {
+      "test": "47 migration files, three entrypoints integrated, one PushSettings mount, env ignored/untracked",
+      "result": "PASS"
+    }
+  ]
+}

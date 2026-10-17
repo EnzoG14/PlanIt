@@ -1,0 +1,10 @@
+PASS: R7-B4 replay: all versioned migrations replayed from zero on real PostgreSQL
+PASS: R7-B4-TC-01/03 SQL: organizer and confirmed publish exactly one verified image, server author and 24h timestamps; C/D/E/F/missing/anon denied, direct DML/service target denied; authorized empty event
+PASS: R7-B4-TC-02 SQL: event isolation, table/files/Storage exact GET-only policy scaffold; removed author and revoked hidden grant denied, link-only denied; social blocking masks identity
+PASS: R7-B4-TC-04 SQL: simultaneous publish/retry commits once; original UUID/payload preserves times; alternate file/author/reused claim/other event/chat/gallery refused; transaction isolation enforced
+PASS: Global UUID collision across events rolls back losing file/claim; concurrent removal under event lock prevents a waiting author publication
+PASS: Atomic rollback after final insert failure; object retained and retry succeeds; missing/malformed/unverified rejected; reverse claim/story invariants enforced
+PASS: Bounded deterministic keyset pagination and empty next_cursor; partial cursor/out-of-range limit rejected
+PASS: D03 + human confirmation: ended/cancelled/archived deny new publish, preserve authorized stories and identical retry; closure while publish waits is rejected
+PASS: TTL server filter independent of GC: expired story/files/object denied to author and confirmed, service target null; retry never renews TTL; physical bytes retained for B6
+PASS: RLS/ACL/search_path verified; exactly two existing disjoint Storage SELECT policies, no uploader bypass added

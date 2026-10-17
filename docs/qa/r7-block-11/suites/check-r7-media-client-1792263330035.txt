@@ -1,0 +1,2 @@
+PASS: Size boundaries, MIME allowlist, spoofed magic and decode failure rejected; bitmap closed (decoder stub, not real browser)
+PASS: Immutable retry IDs/path, raw no-store upload, 409 requires server reconciliation, failure never publishes or deletes, forged reservation rejected (API stub)

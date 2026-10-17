@@ -1,0 +1,15 @@
+PASS: R7-B9-TC-01 SQL: all 39 versioned migrations replayed from zero on real PostgreSQL
+PASS: Default get_my_push_settings returns show_previews=true and empty subscriptions; anon and missing-profile callers denied
+PASS: Direct client SELECT/INSERT/UPDATE/DELETE on push_subscriptions and push_preferences and private helpers denied (42501)
+PASS: R7-B9-TC-01 SQL: upsert_my_push_subscription creates/updates multi-device rows and initializes push_preferences; get_my_push_settings never leaks endpoint/p256dh/auth
+PASS: R7-B9-TC-02 SQL: set_my_push_previews toggles show_previews and subsequent subscription upserts preserve user preference
+PASS: R7-B9-TC-03 SQL: disable_my_push_subscription sets disabled_at idempotently, preserves other active devices, and upsert re-activates
+PASS: Cross-user endpoint hijack, cross-user id hijack, cross-user disable, and same-id endpoint conflict rejected
+PASS: SSRF endpoints (http, localhost, .local, .internal, IP literals, root path, fragments) and invalid NIST P-256 points / auth lengths rejected (22023)
+PASS: Write RPCs enforce read committed transaction isolation (40001 retry_read_committed)
+PASS: ON DELETE RESTRICT prevents profile deletion when push_subscriptions or push_preferences exist
+PASS: Concurrent same-user upsert converges on single subscription id; concurrent cross-user endpoint race allows one owner and rejects the other (42501)
+PASS: RLS enabled from creation, anon EXECUTE revoked, empty search_path verified on all B9 RPCs and helpers
+PASS: Regression: in-app notifications inbox (get_notifications, get_notification_changes, mark_notification_read) works unchanged alongside B9 push tables
+
+PASS deterministic Push subscription ID derivation and user isolation checks

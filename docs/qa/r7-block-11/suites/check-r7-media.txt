@@ -1,0 +1,312 @@
+PASS: R7-B1-TC-01: all versioned migrations replayed from zero on real PostgreSQL
+PASS: Reservation UUID/payload retry, conflict, membership, MIME/size/cache/owner negatives; unpublished uploader GET/sign/list denied (SQL operation scaffold)
+PASS: Image-only commit, text+image, v1 text/retry and DM preserved; attachment/claim deletion and cross-domain reassignment rejected, FK RESTRICT and direct DML denied
+ node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /media_conflict/. Input:
+
+'error: image_verification_required'
+
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: error: image_verification_required
+      at C:\Users\USUARIO\Desktop\PlanIt\.participation-test-tools.local\node_modules\pg\lib\client.js:694:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async publish (file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:182:7)
+      at async waitForActual (node:assert:646:5)
+      at async strict.rejects (node:assert:769:25)
+      at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {
+    length: 169,
+    severity: 'ERROR',
+    code: 'P0001',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: 'PL/pgSQL function planit_private.register_r7_media(uuid,uuid) line 18 at RAISE',
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'pl_exec.c',
+    line: '3923',
+    routine: 'exec_stmt_raise'
+  },
+  expected: /media_conflict/,
+  operator: 'rejects',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+
+node:internal/errors:986
+  const err = new Error(message);
+              ^
+
+Error: Command failed: C:\Program Files\nodejs\node.exe scripts/.r7-media-run.local.mjs
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /media_conflict/. Input:
+
+'error: image_verification_required'
+
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: error: image_verification_required
+      at C:\Users\USUARIO\Desktop\PlanIt\.participation-test-tools.local\node_modules\pg\lib\client.js:694:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async publish (file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:182:7)
+      at async waitForActual (node:assert:646:5)
+      at async strict.rejects (node:assert:769:25)
+      at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {
+    length: 169,
+    severity: 'ERROR',
+    code: 'P0001',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: 'PL/pgSQL function planit_private.register_r7_media(uuid,uuid) line 18 at RAISE',
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'pl_exec.c',
+    line: '3923',
+    routine: 'exec_stmt_raise'
+  },
+  expected: /media_conflict/,
+  operator: 'rejects',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+
+    at genericNodeError (node:internal/errors:986:15)
+    at wrappedFn (node:internal/errors:540:14)
+    at ChildProcess.exithandler (node:child_process:417:12)
+    at ChildProcess.emit (node:events:514:28)
+    at maybeClose (node:internal/child_process:1141:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  code: 1,
+  killed: false,
+  signal: null,
+  cmd: 'C:\\Program Files\\nodejs\\node.exe scripts/.r7-media-run.local.mjs',
+  stdout: 'PASS: R7-B1-TC-01: all versioned migrations replayed from zero on real PostgreSQL\n' +
+    'PASS: Reservation UUID/payload retry, conflict, membership, MIME/size/cache/owner negatives; unpublished uploader GET/sign/list denied (SQL operation scaffold)\n' +
+    'PASS: Image-only commit, text+image, v1 text/retry and DM preserved; attachment/claim deletion and cross-domain reassignment rejected, FK RESTRICT and direct DML denied\n',
+  stderr: 'node:internal/modules/run_main:107\r\n' +
+    '    triggerUncaughtException(\r\n' +
+    '    ^\r\n' +
+    '\r\n' +
+    'AssertionError [ERR_ASSERTION]: The input did not match the regular expression /media_conflict/. Input:\r\n' +
+    '\r\n' +
+    "'error: image_verification_required'\r\n" +
+    '\r\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\r\n' +
+    '    at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {\r\n' +
+    '  generatedMessage: true,\r\n' +
+    "  code: 'ERR_ASSERTION',\r\n" +
+    '  actual: error: image_verification_required\r\n' +
+    '      at C:\\Users\\USUARIO\\Desktop\\PlanIt\\.participation-test-tools.local\\node_modules\\pg\\lib\\client.js:694:17\r\n' +
+    '      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\r\n' +
+    '      at async publish (file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:182:7)\r\n' +
+    '      at async waitForActual (node:assert:646:5)\r\n' +
+    '      at async strict.rejects (node:assert:769:25)\r\n' +
+    '      at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {\r\n' +
+    '    length: 169,\r\n' +
+    "    severity: 'ERROR',\r\n" +
+    "    code: 'P0001',\r\n" +
+    '    detail: undefined,\r\n' +
+    '    hint: undefined,\r\n' +
+    '    position: undefined,\r\n' +
+    '    internalPosition: undefined,\r\n' +
+    '    internalQuery: undefined,\r\n' +
+    "    where: 'PL/pgSQL function planit_private.register_r7_media(uuid,uuid) line 18 at RAISE',\r\n" +
+    '    schema: undefined,\r\n' +
+    '    table: undefined,\r\n' +
+    '    column: undefined,\r\n' +
+    '    dataType: undefined,\r\n' +
+    '    constraint: undefined,\r\n' +
+    "    file: 'pl_exec.c',\r\n" +
+    "    line: '3923',\r\n" +
+    "    routine: 'exec_stmt_raise'\r\n" +
+    '  },\r\n' +
+    '  expected: /media_conflict/,\r\n' +
+    "  operator: 'rejects',\r\n" +
+    "  diff: 'simple'\r\n" +
+    '}\r\n' +
+    '\r\n' +
+    'Node.js v24.21.0\r\n'
+}
+
+Node.js v24.21.0
+
+Command failed: C:\Program Files\nodejs\node.exe scripts/check-r7-media.mjs
+PASS: R7-B1-TC-01: all versioned migrations replayed from zero on real PostgreSQL
+PASS: Reservation UUID/payload retry, conflict, membership, MIME/size/cache/owner negatives; unpublished uploader GET/sign/list denied (SQL operation scaffold)
+PASS: Image-only commit, text+image, v1 text/retry and DM preserved; attachment/claim deletion and cross-domain reassignment rejected, FK RESTRICT and direct DML denied
+ node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /media_conflict/. Input:
+
+'error: image_verification_required'
+
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: error: image_verification_required
+      at C:\Users\USUARIO\Desktop\PlanIt\.participation-test-tools.local\node_modules\pg\lib\client.js:694:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async publish (file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:182:7)
+      at async waitForActual (node:assert:646:5)
+      at async strict.rejects (node:assert:769:25)
+      at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {
+    length: 169,
+    severity: 'ERROR',
+    code: 'P0001',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: 'PL/pgSQL function planit_private.register_r7_media(uuid,uuid) line 18 at RAISE',
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'pl_exec.c',
+    line: '3923',
+    routine: 'exec_stmt_raise'
+  },
+  expected: /media_conflict/,
+  operator: 'rejects',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+
+node:internal/errors:986
+  const err = new Error(message);
+              ^
+
+Error: Command failed: C:\Program Files\nodejs\node.exe scripts/.r7-media-run.local.mjs
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /media_conflict/. Input:
+
+'error: image_verification_required'
+
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: error: image_verification_required
+      at C:\Users\USUARIO\Desktop\PlanIt\.participation-test-tools.local\node_modules\pg\lib\client.js:694:17
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async publish (file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:182:7)
+      at async waitForActual (node:assert:646:5)
+      at async strict.rejects (node:assert:769:25)
+      at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {
+    length: 169,
+    severity: 'ERROR',
+    code: 'P0001',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: 'PL/pgSQL function planit_private.register_r7_media(uuid,uuid) line 18 at RAISE',
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'pl_exec.c',
+    line: '3923',
+    routine: 'exec_stmt_raise'
+  },
+  expected: /media_conflict/,
+  operator: 'rejects',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+
+    at genericNodeError (node:internal/errors:986:15)
+    at wrappedFn (node:internal/errors:540:14)
+    at ChildProcess.exithandler (node:child_process:417:12)
+    at ChildProcess.emit (node:events:514:28)
+    at maybeClose (node:internal/child_process:1141:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  code: 1,
+  killed: false,
+  signal: null,
+  cmd: 'C:\\Program Files\\nodejs\\node.exe scripts/.r7-media-run.local.mjs',
+  stdout: 'PASS: R7-B1-TC-01: all versioned migrations replayed from zero on real PostgreSQL\n' +
+    'PASS: Reservation UUID/payload retry, conflict, membership, MIME/size/cache/owner negatives; unpublished uploader GET/sign/list denied (SQL operation scaffold)\n' +
+    'PASS: Image-only commit, text+image, v1 text/retry and DM preserved; attachment/claim deletion and cross-domain reassignment rejected, FK RESTRICT and direct DML denied\n',
+  stderr: 'node:internal/modules/run_main:107\r\n' +
+    '    triggerUncaughtException(\r\n' +
+    '    ^\r\n' +
+    '\r\n' +
+    'AssertionError [ERR_ASSERTION]: The input did not match the regular expression /media_conflict/. Input:\r\n' +
+    '\r\n' +
+    "'error: image_verification_required'\r\n" +
+    '\r\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\r\n' +
+    '    at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {\r\n' +
+    '  generatedMessage: true,\r\n' +
+    "  code: 'ERR_ASSERTION',\r\n" +
+    '  actual: error: image_verification_required\r\n' +
+    '      at C:\\Users\\USUARIO\\Desktop\\PlanIt\\.participation-test-tools.local\\node_modules\\pg\\lib\\client.js:694:17\r\n' +
+    '      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\r\n' +
+    '      at async publish (file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:182:7)\r\n' +
+    '      at async waitForActual (node:assert:646:5)\r\n' +
+    '      at async strict.rejects (node:assert:769:25)\r\n' +
+    '      at async file:///C:/Users/USUARIO/Desktop/PlanIt/r7-block-11-worktree/scripts/.r7-media-run.local.mjs:220:3 {\r\n' +
+    '    length: 169,\r\n' +
+    "    severity: 'ERROR',\r\n" +
+    "    code: 'P0001',\r\n" +
+    '    detail: undefined,\r\n' +
+    '    hint: undefined,\r\n' +
+    '    position: undefined,\r\n' +
+    '    internalPosition: undefined,\r\n' +
+    '    internalQuery: undefined,\r\n' +
+    "    where: 'PL/pgSQL function planit_private.register_r7_media(uuid,uuid) line 18 at RAISE',\r\n" +
+    '    schema: undefined,\r\n' +
+    '    table: undefined,\r\n' +
+    '    column: undefined,\r\n' +
+    '    dataType: undefined,\r\n' +
+    '    constraint: undefined,\r\n' +
+    "    file: 'pl_exec.c',\r\n" +
+    "    line: '3923',\r\n" +
+    "    routine: 'exec_stmt_raise'\r\n" +
+    '  },\r\n' +
+    '  expected: /media_conflict/,\r\n' +
+    "  operator: 'rejects',\r\n" +
+    "  diff: 'simple'\r\n" +
+    '}\r\n' +
+    '\r\n' +
+    'Node.js v24.21.0\r\n'
+}
+
+Node.js v24.21.0

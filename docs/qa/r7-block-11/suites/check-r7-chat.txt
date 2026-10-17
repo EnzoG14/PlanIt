@@ -1,0 +1,9 @@
+PASS: R7-B1-TC-01: all versioned migrations replayed from zero on real PostgreSQL
+PASS: R7-B2-TC-01 SQL: organizer/confirmed text, image-only, combined and history; pending/removed/grant-only/stranger/missing JWT/anon denied; no forged REST table writes (SQL roles)
+PASS: R7-B2-TC-03 SQL: concurrent initial sends, identical retry/reconnect after commit, changed body/file/author conflict, READ COMMITTED enforced
+PASS: Global UUID collision across two events is a neutral message_id_conflict with one committed file/message
+PASS: R7-B2-TC-04 SQL: injected final insert rolls back message/file/claim/attachment/reservation; Storage object retained and retry succeeds; unverified/missing/malformed/reused/story upload rejected
+PASS: R7-B2-TC-02 SQL: DM text notification single, NULL DM/direct media rejected, R2 text API/retry and v1 non-null history preserved
+PASS: Versioned projection: equal timestamps, descending UUID cursor, 51 lookahead without duplicates or omissions; social allowlist only
+PASS: Concurrent event closure/removal wins event lock; no late inserts; authorized identical retry/history after closure preserved; removed retry denied
+PASS: New RPC grants exactly authenticated, empty search_path; no new table/Storage grants or DM media endpoint

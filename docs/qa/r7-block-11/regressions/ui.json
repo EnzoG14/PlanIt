@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "suite": "r7-stories-ui",
+      "result": "PASS",
+      "source_sha256": "6d5de1a050cf761a83b40579fb714bccb233629d2f18b06cd2edd5a8608ce4c6",
+      "adapter": "output relocation only",
+      "directory": "docs/qa/r7-block-11/regressions/r7-stories-ui"
+    },
+    {
+      "suite": "r7-calendar-ui",
+      "result": "PASS",
+      "source_sha256": "c427929e7e6bf53f6245a978455b295b8ffdafff6893b10a34bc0b2597282cbd",
+      "adapter": "output relocation only",
+      "directory": "docs/qa/r7-block-11/regressions/r7-calendar-ui"
+    },
+    {
+      "suite": "r7-share-ui",
+      "result": "PASS",
+      "source_sha256": "5fa6cc6ae44d9ed8c4ebf39f489fe6709ab575100566391fb54d04a2a35f69e6",
+      "adapter": "output relocation only",
+      "directory": "docs/qa/r7-block-11/regressions/r7-share-ui"
+    },
+    {
+      "suite": "r7-push-subscriptions-ui",
+      "result": "PASS",
+      "source_sha256": "e07dc0e517afeceabf2d4c3566bd65ea35be263aed0b02741b8f50eb87c69101",
+      "adapter": "output relocation only",
+      "directory": "docs/qa/r7-block-11/regressions/r7-push-subscriptions-ui"
+    }
+  ]
+}

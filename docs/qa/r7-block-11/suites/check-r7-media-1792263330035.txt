@@ -1,0 +1,7 @@
+PASS: R7-B1-TC-01: all versioned migrations replayed from zero on real PostgreSQL
+PASS: Reservation UUID/payload retry, conflict, membership, MIME/size/cache/owner negatives; unpublished uploader GET/sign/list denied (SQL operation scaffold)
+PASS: Image-only commit, text+image, v1 text/retry and DM preserved; attachment/claim deletion and cross-domain reassignment rejected, FK RESTRICT and direct DML denied
+PASS: B1 story namespace fail-closed; malformed stored metadata publication rolls back all files/claims/domain rows
+PASS: R7-B1-TC-03 SQL: gallery/avatar legacy access and shared gallery references preserved; exactly two SELECT policies (event_media and avatars), no extra permissive OR
+PASS: R7-B1-TC-04 SQL: simultaneous retry yields one reservation; event closure wins under lock and late reserve rejected; historical chat retained
+PASS: RLS enabled from creation, anon EXECUTE revoked, empty search_path verified on R7 functions

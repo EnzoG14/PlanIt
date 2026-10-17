@@ -1,0 +1,31 @@
+PASS 320: Native API mock, keyboard activation, minimal payload, 44px target and focus
+PASS 320: AbortError neutral; previous success cleared; route unchanged
+PASS 320: Native rejection, explicit copy action, denied clipboard, selected manual fallback without overflow
+PASS 320: No Web Share uses clipboard and accurately reports copy
+PASS 320: Grant-only denied despite token input; owner with ephemeral invite enabled; losing token clears state
+PASS 320: Duplicate gesture guarded; old async response discarded on event change
+PASS 375: Native API mock, keyboard activation, minimal payload, 44px target and focus
+PASS 375: AbortError neutral; previous success cleared; route unchanged
+PASS 375: Native rejection, explicit copy action, denied clipboard, selected manual fallback without overflow
+PASS 375: No Web Share uses clipboard and accurately reports copy
+PASS 375: Grant-only denied despite token input; owner with ephemeral invite enabled; losing token clears state
+PASS 375: Duplicate gesture guarded; old async response discarded on event change
+PASS 390: Native API mock, keyboard activation, minimal payload, 44px target and focus
+PASS 390: AbortError neutral; previous success cleared; route unchanged
+PASS 390: Native rejection, explicit copy action, denied clipboard, selected manual fallback without overflow
+PASS 390: No Web Share uses clipboard and accurately reports copy
+PASS 390: Grant-only denied despite token input; owner with ephemeral invite enabled; losing token clears state
+PASS 390: Duplicate gesture guarded; old async response discarded on event change
+PASS 390: 200% CSS zoom without horizontal overflow
+PASS 768: Native API mock, keyboard activation, minimal payload, 44px target and focus
+PASS 768: AbortError neutral; previous success cleared; route unchanged
+PASS 768: Native rejection, explicit copy action, denied clipboard, selected manual fallback without overflow
+PASS 768: No Web Share uses clipboard and accurately reports copy
+PASS 768: Grant-only denied despite token input; owner with ephemeral invite enabled; losing token clears state
+PASS 768: Duplicate gesture guarded; old async response discarded on event change
+PASS 1280: Native API mock, keyboard activation, minimal payload, 44px target and focus
+PASS 1280: AbortError neutral; previous success cleared; route unchanged
+PASS 1280: Native rejection, explicit copy action, denied clipboard, selected manual fallback without overflow
+PASS 1280: No Web Share uses clipboard and accurately reports copy
+PASS 1280: Grant-only denied despite token input; owner with ephemeral invite enabled; losing token clears state
+PASS 1280: Duplicate gesture guarded; old async response discarded on event change

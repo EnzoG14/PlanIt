@@ -1,0 +1,16 @@
+{
+  "environment": "Local Deno. Real Web Push encryption and VAPID signature, mocked network and RPC; no deployed Edge or physical push.",
+  "results": [
+    {
+      "command": "deno check --config supabase/functions/r7-push/deno.json supabase/functions/r7-push/index.ts",
+      "result": "PASS",
+      "output": "Download https://registry.npmjs.org/web-push/-/web-push-3.6.7.tgz\nDownload https://registry.npmjs.org/http_ece/-/http_ece-1.2.0.tgz\nDownload https://registry.npmjs.org/@types/node/-/node-24.2.0.tgz\nDownload https://registry.npmjs.org/asn1.js/-/asn1.js-5.4.1.tgz\nDownload https://registry.npmjs.org/jws/-/jws-4.0.1.tgz\nDownload https://registry.npmjs.org/https-proxy-agent/-/https-proxy-agent-7.0.6.tgz\nDownload https://registry.npmjs.org/minimist/-/minimist-1.2.8.tgz\nDownload https://registry.npmjs.org/undici-types/-/undici-types-7.10.0.tgz\nDownload https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz\nDownload https://registry.npmjs.org/bn.js/-/bn.js-4.12.5.tgz\nDownload https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz\nDownload https://registry.npmjs.org/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz\nDownload https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz\nDownload https://registry.npmjs.org/jwa/-/jwa-2.0.1.tgz\nDownload https://registry.npmjs.org/agent-base/-/agent-base-7.1.4.tgz\nDownload https://registry.npmjs.org/debug/-/debug-4.4.3.tgz\nDownload https://registry.npmjs.org/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz\nDownload https://registry.npmjs.org/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.11.tgz\nDownload https://registry.npmjs.org/ms/-/ms-2.1.3.tgz\nDownload https://registry.npmjs.org/web-push\nCheck supabase/functions/r7-push/index.ts\n"
+    },
+    {
+      "command": "deno test --allow-env --allow-read --config supabase/functions/r7-push/deno.json supabase/functions/r7-push/handler_test.ts",
+      "result": "PASS",
+      "output": "running 9 tests from ./supabase/functions/r7-push/handler_test.ts\nB10 config: missing, malformed and mismatched VAPID fails before RPC or send ... ok (27ms)\nB10 private worker: rejects anonymous, public key, user JWT, service key and wrong method ... ok (3ms)\nB10 payload: strict recipient/job correlation, Unicode limits, plain text, internal routes, trusted provider endpoints ... ok (4ms)\nB10 transport: real aes128gcm encryption/decryption and verified VAPID signature; mocked HTTPS transport ... ok (42ms)\nB10 HTTP classifier separates provider acceptance, stale endpoint, transient and permanent errors ... ok (1ms)\nB10 handler acknowledges only acceptance; errors never contain provider body, endpoint, keys or preview ... ok (9ms)\nB10 transport normalizes timeout and redirect/network exceptions without exposing request data ... ok (9ms)\nB10 invalid/disabled delivery never sends; lost ACK returns infrastructure failure without false completion ... ok (4ms)\nB10 invocation bounds: no more than 100 claims; five immediate sends per lease batch ... ok (314ms)\n\nok | 9 passed | 0 failed (444ms)\n\nCheck supabase/functions/r7-push/handler_test.ts\nDownload https://registry.npmjs.org/http_ece\n"
+    }
+  ],
+  "result": "PASS"
+}

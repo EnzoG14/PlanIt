@@ -1,0 +1,2 @@
+PASS: Actual pinned WASM decodes JPEG/PNG/WebP pixel data; truncation, false MIME/magic, GIF, empty and oversize rejected; asset SHA-256 verified
+PASS: Edge handler validates Auth identity, ignores client identity/path, rejects unauthorized and corrupt images, hashes bytes, handles revalidation race, no URLs/secrets in response (HTTP dependencies stubbed)

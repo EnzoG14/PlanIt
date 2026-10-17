@@ -1,0 +1,40 @@
+PASS 320: Amanecer layout without overflow, touch targets and StrictMode double initialization
+PASS 320: Real browser download: filename, Unicode content, UTC dates, Blob URL released
+PASS 320: Google action parameters and popup-blocker-safe wording (window.open instrumented)
+PASS 320: Hidden Google export asks every time, initial/return focus, Escape/cancel are neutral
+PASS 320: Hidden ICS requires explicit confirmation; extra fields never exported
+PASS 320: Changed event DTO discards stale confirmation and feedback
+PASS 320: Invalid dates/download failure report errors; same action can retry successfully
+PASS 320: Keyboard navigation, visible 3px focus and enlarged text without horizontal overflow
+PASS 375: Amanecer layout without overflow, touch targets and StrictMode double initialization
+PASS 375: Real browser download: filename, Unicode content, UTC dates, Blob URL released
+PASS 375: Google action parameters and popup-blocker-safe wording (window.open instrumented)
+PASS 375: Hidden Google export asks every time, initial/return focus, Escape/cancel are neutral
+PASS 375: Hidden ICS requires explicit confirmation; extra fields never exported
+PASS 375: Changed event DTO discards stale confirmation and feedback
+PASS 375: Invalid dates/download failure report errors; same action can retry successfully
+PASS 375: Keyboard navigation, visible 3px focus and enlarged text without horizontal overflow
+PASS 390: Amanecer layout without overflow, touch targets and StrictMode double initialization
+PASS 390: Real browser download: filename, Unicode content, UTC dates, Blob URL released
+PASS 390: Google action parameters and popup-blocker-safe wording (window.open instrumented)
+PASS 390: Hidden Google export asks every time, initial/return focus, Escape/cancel are neutral
+PASS 390: Hidden ICS requires explicit confirmation; extra fields never exported
+PASS 390: Changed event DTO discards stale confirmation and feedback
+PASS 390: Invalid dates/download failure report errors; same action can retry successfully
+PASS 390: Keyboard navigation, visible 3px focus and enlarged text without horizontal overflow
+PASS 768: Amanecer layout without overflow, touch targets and StrictMode double initialization
+PASS 768: Real browser download: filename, Unicode content, UTC dates, Blob URL released
+PASS 768: Google action parameters and popup-blocker-safe wording (window.open instrumented)
+PASS 768: Hidden Google export asks every time, initial/return focus, Escape/cancel are neutral
+PASS 768: Hidden ICS requires explicit confirmation; extra fields never exported
+PASS 768: Changed event DTO discards stale confirmation and feedback
+PASS 768: Invalid dates/download failure report errors; same action can retry successfully
+PASS 768: Keyboard navigation, visible 3px focus and enlarged text without horizontal overflow
+PASS 1280: Amanecer layout without overflow, touch targets and StrictMode double initialization
+PASS 1280: Real browser download: filename, Unicode content, UTC dates, Blob URL released
+PASS 1280: Google action parameters and popup-blocker-safe wording (window.open instrumented)
+PASS 1280: Hidden Google export asks every time, initial/return focus, Escape/cancel are neutral
+PASS 1280: Hidden ICS requires explicit confirmation; extra fields never exported
+PASS 1280: Changed event DTO discards stale confirmation and feedback
+PASS 1280: Invalid dates/download failure report errors; same action can retry successfully
+PASS 1280: Keyboard navigation, visible 3px focus and enlarged text without horizontal overflow

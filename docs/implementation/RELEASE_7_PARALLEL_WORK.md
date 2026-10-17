@@ -153,3 +153,9 @@ Sugerencia de ramas: `feat/r7-bN-short-name` (o `codex/r7-block-N`, consistente 
 ## 9. Definición de «bloque independiente terminado»
 
 Un bloque puede marcarse **LISTO PARA INTEGRAR** si: su diff respeta ownership; API coincide contrato B0; tests unitarios/SQL locales y negativos PASS; migraciones fueron ensayadas, no supuestas; `build/lint` ejecutados cuando aplique; PR draft con base SHA y evidencias; y no hubo cambios remotos no aprobados. Eso **no es QA R7 final**. Los 29 CA siguen NOT RUN hasta que existan pruebas integradas verificadas.
+
+## Corte de ejecución B11 — 17/10/2026
+
+Base `279af15d09988f43a4e79dd397611c645b0b2808`, productores B0–B10 integrados según [inventario Git/GitHub](../qa/r7-block-11/prerequisites.json). B11 conecta componentes aislados en detalle. `EventParticipation` comunica su resumen existente; `EventManagement`/`EventLinkPanel` admiten un render prop opcional para compartir el token sólo dentro de su diálogo. Son ajustes de integración sin cambio de API/SQL de dominio. `PushSettings` ya se montó por ampliación humana B10, por lo que no se repite; visor inline Stories no necesita nueva ruta en App.
+
+QA por capas y limitaciones en [reporte final](../qa/RELEASE_7_TEST_REPORT.md) y [seguimiento vigente](RELEASE_7_STATUS.md). 29 CA evaluados: 4 PASS técnicos locales,25 BLOCKED, aceptación humana pendiente; NO-GO recomendado. Esta actualización no redefine el plan normativo ni autoriza operaciones remotas/merge/siguiente bloque.
