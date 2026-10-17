@@ -2,7 +2,7 @@
 
 17/10/2026, Argentina. **IMPLEMENTADO / UI local PASS / integración y seguridad remotas pendientes.** Sólo B5; ningún bloque posterior iniciado.
 
-Base `origin/main` tras fetch: `9d3117dd3c45b12dcae75f5d7f536a99e8a691d2`. Rama nueva `codex/r7-block-5`, worktree `r7-block-5-worktree`. B4 integrado por PR #83 (`1364e21`), B1/B2/B3 y correctiva #82 presentes; B10 #81 también integrado en la base. Checkout original con cambios ajenos preservado. `.env.local` copiado desde `mapbox-worktree` (main), ignorado y fuera del commit. PR draft: pendiente de creación al preparar este reporte.
+Base `origin/main` tras fetch: `9d3117dd3c45b12dcae75f5d7f536a99e8a691d2`. Rama nueva `codex/r7-block-5`, worktree `r7-block-5-worktree`. B4 integrado por PR #83 (`1364e21`), B1/B2/B3 y correctiva #82 presentes; B10 #81 también integrado en la base. Checkout original con cambios ajenos preservado. `.env.local` copiado desde `mapbox-worktree` (main), ignorado y fuera del commit. Entrega técnica `f8e097c60cdb96a54c19149d2752bc7e24c42455`, [PR draft #84](https://github.com/EnzoG14/PlanIt/pull/84); sin merge ni aprobación implícita del siguiente bloque.
 
 Leídos prompt, plan y estado R7 antes del cambio; contratos/acta B0, decisiones/ownership, RF/CA, aceptación y plan QA; instrucciones raíz/src/diseño/Supabase, PRODUCT/DESIGN, arquitectura/modelo, sistema/workflow visual y referencias del refresh. `UI_WORKFLOW.md` raíz no existe: se consultó `docs/design/UI_WORKFLOW.md`. R6 conserva su aceptación humana como baseline, sin abrir correcciones. Mockup original `release-7.png` inspeccionado y conservado: se mantiene publicador/entrada/secuencia; no se implementan texto, música, stickers, likes ni reacciones dibujadas fuera del contrato. Apariencia según Amanecer vigente.
 
