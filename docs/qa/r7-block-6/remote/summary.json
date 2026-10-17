@@ -1,0 +1,25 @@
+{
+  "project": "planit-v2",
+  "ref": "iepeqmvzjguwlhnecsdq",
+  "migration": "20261017180932",
+  "result": "PASS",
+  "server_version": "17.11",
+  "migrations": {
+    "before": 46,
+    "after": 47
+  },
+  "functions_verified": 5,
+  "rls_acl_constraints_indexes": "PASS",
+  "existing_read_functions_and_policies_unchanged": true,
+  "advisors_before": {
+    "ERROR": 0,
+    "WARN": 61,
+    "INFO": 0
+  },
+  "advisors_after": {
+    "ERROR": 0,
+    "WARN": 61,
+    "INFO": 0
+  },
+  "limits": "Catalog verification only. No deployed worker, cron activation, physical Storage deletion or HTTP/JWT acceptance performed."
+}

@@ -1,6 +1,6 @@
 # R7 · Bloque 6 — Caducidad y limpieza física
 
-17/10/2026, Argentina. **IMPLEMENTADO / SQL y Edge locales PASS / remoto NOT RUN / revisión humana pendiente.** [PR draft #85](https://github.com/EnzoG14/PlanIt/pull/85). Entrega técnica `2a3533dc66bbd95c63973b98529cf9262107c878`; el commit posterior enlaza este reporte con la PR y actualiza el hash de evidencia de la regresión final.
+17/10/2026, Argentina. **IMPLEMENTADO / SQL y Edge locales PASS / migración remota aplicada y catálogo verificado con autorización posterior / HTTP y GC físico NOT RUN.** [PR draft #85](https://github.com/EnzoG14/PlanIt/pull/85). Entrega técnica `2a3533dc66bbd95c63973b98529cf9262107c878`; los cortes inferiores describen la entrega inicial. Ver actualización remota al final.
 
 Base verificada tras fetch: `0beac193775ec043f1d063637c00ecc82152c42a`, `origin/main`. Rama nueva `codex/r7-block-6`, worktree `r7-block-6-worktree`. Prerequisito B4 integrado por PR #83 (`1364e21`); la base también incluye B5 #84 y B10 #81, sin convertirlos en prerrequisitos. `.env.local` copiado desde `mapbox-worktree` (main), igualdad byte a byte comprobada, ignorado y sin versionar. Checkout inicial y sus cambios ajenos preservados.
 
@@ -47,7 +47,7 @@ El primer intento SQL quedó bloqueado por conexión localhost del sandbox; se r
 
 | Migración | Creada | Probada SQL local | Aplicada remotamente con aprobación | Verificada remota |
 |---|---|---|---|---|
-| `20261017180932_r7_story_gc.sql` | Sí, CLI | PASS, replay47/47 | No | No |
+| `20261017180932_r7_story_gc.sql` | Sí, CLI | PASS, replay47/47 | Sí, autorización posterior | PASS catálogo/ACL/RLS |
 
 Compatibilidad: DB sólo cola/funciones nuevas; API usuario/RPC de B4 sin cambios; Storage policies y lectores actuales sin cambios; sin nueva dependencia npm, modificación de SW/PWA ni UI. Invariantes FK/claims siguen efectivas durante lease y al commit. La reserva privada se conserva como tombstone para impedir reuso; métricas sólo agregadas en respuesta, sin historial personal nuevo.
 
@@ -75,3 +75,15 @@ HTTP opt-in: aprobación expresa del entorno, `PLANIT_EXPIRATION_HTTP_APPROVED=1
 ## Gate
 
 Revisar PR draft y autorizar por separado SQL/deploy/secretos/cron y pruebas reales de ciclo de vida. Riesgos pendientes: paridad PG17, transporte Storage/Auth/Edge desplegado, configuración y secretos de cron, backlog/cuota medida, frontera exacta y fallos reales de Storage. Limpieza de huérfanos reservados se audita por separado, no tiene autoridad para borrar en este worker. **Detener B6 aquí; no iniciar el siguiente bloque sin aprobación humana.**
+
+## Actualización remota autorizada — 17/10/2026
+
+El responsable pidió **«hace las migraciones a la base remota pendientes»**. Historial y dry-run confirmaron que sólo estaba pendiente `20261017180932_r7_story_gc.sql`. Se aplicó esa migración en **planit-v2 (`iepeqmvzjguwlhnecsdq`)** usando `db push --linked --project-ref ... --skip-vault --yes`; sin seeds, roles adicionales, secretos, deploy Edge, cron ni merge. El proyecto histórico no se modificó.
+
+Antes:46 versiones. Después:47 versiones, PostgreSQL17.11, dry-run final `upToDate:true`, ninguna migración pendiente. [Catálogo anterior](remote/before.json), [posterior](remote/after.json), [consulta READ ONLY](remote/verify-readonly.sql), [verificador](remote/verify.mjs) y [resumen](remote/summary.json). Sólo esquema/ACL, sin filas personales ni secretos.
+
+**PASS remoto de catálogo:**5/5 cuerpos de funciones idénticos al SQL versionado; `search_path=''`; sin EXECUTE anon/authenticated; cuatro RPC service-only y helper privado; tabla de jobs con RLS y sin SELECT cliente/servicio directo; cinco constraints e índices presentes. Funciones de lectura y policies de files/stories/Storage idénticas antes/después. Asesores de seguridad: **0 ERROR /61 WARN antes y después**, sin nuevas advertencias. No se cambió configuración para silenciarlas.
+
+El primer dry-run se demoró inicializando el rol de conexión mientras había consultas CLI simultáneas. Se detuvo únicamente ese proceso de dry-run y se repitió secuencialmente, con resultado correcto; no hubo intento de aplicación hasta confirmar el alcance. El verificador local se ajustó para reconocer nombres que contienen dígitos (`r7`); el resultado final PASS compara los cinco cuerpos.
+
+Esta autorización completa las marcas **aplicada/verificada remota de la migración**, no la aceptación funcional por HTTP ni la ejecución del worker. No se desplegó `r7-media-cleanup`, no se configuraron secretos y **no se activó cron**. No se invocó GC ni se borraron imágenes. Continúan pendientes las pruebas reales de Storage/JWT/ciclo de vida y su autorización específica. No se inició otro bloque.

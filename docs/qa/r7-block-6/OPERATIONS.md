@@ -1,6 +1,6 @@
 # B6 — Despliegue y recuperación de limpieza
 
-Implementación preparada; **no desplegada ni activada**. Destino exclusivo: planit-v2. El pedido de implementar B6 no autoriza aplicación SQL, deploy, secretos ni cron remoto. Cada paso requiere aprobación expresa. No ejecutar contra el proyecto histórico.
+**Migración B6 aplicada y catálogo verificado el17/10/2026 con autorización posterior**, según [STATUS](STATUS.md). Worker **no desplegado ni cron activado**. Destino exclusivo: planit-v2. La autorización SQL no habilita deploy, secretos ni cron remoto. Cada paso requiere aprobación expresa. No ejecutar contra el proyecto histórico.
 
 ## Contrato
 
