@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:location": "node scripts/check-location-autocomplete.mjs",
+    "check:location:ui": "node scripts/check-location-autocomplete-ui.mjs",
     "check:r6:event-full:inbox": "node scripts/check-r6-event-full-inbox.mjs",
     "check:r6:event-full:ui": "node scripts/check-r6-event-full-ui.mjs",
     "check:r6:event-full": "node scripts/check-r6-event-full.mjs",

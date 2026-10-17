@@ -1,0 +1,9 @@
+{
+  "environment": "Edge headless, Auth/REST/Storage/Geoapify/GPS fixtures; no remote writes",
+  "results": [
+    {
+      "name": "Baseline main: crear 375/1280",
+      "result": "PASS"
+    }
+  ]
+}

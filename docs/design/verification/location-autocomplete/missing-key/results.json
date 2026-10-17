@@ -1,0 +1,9 @@
+{
+  "environment": "Edge headless, Auth/REST/Storage/Geoapify/GPS fixtures; no remote writes",
+  "results": [
+    {
+      "name": "Sin clave: mensaje, cero consultas y alternativa GPS con payload válido",
+      "result": "PASS"
+    }
+  ]
+}
