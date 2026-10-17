@@ -1,3 +1,4 @@
+import type { AddressSuggestion } from '../features/location/autocomplete'
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { EventFields } from '../components/EventFields'
@@ -71,8 +72,20 @@ function EditEventForm({ id, userId }: { id: string; userId: string }) {
   const success = () => navigate(`/events/${id}`, { replace: true, state: { ...origin, edited: true } })
   function change(field: keyof EventValues, value: string) {
     if (locked) return
-    if (field === 'latitude' || field === 'longitude') { locationRevision.current += 1; setLocating(false) }
+    if (field === 'address' || field === 'latitude' || field === 'longitude') { locationRevision.current += 1; setLocating(false); setLocationError('') }
+    if (field === 'address') {
+      setValues(current => ({ ...current, address: value, latitude: '', longitude: '' }))
+      setErrors(current => ({ ...current, address: undefined, latitude: undefined, longitude: undefined }))
+      return
+    }
     setValues(current => ({ ...current, [field]: value })); setErrors(current => ({ ...current, [field]: undefined }))
+  }
+  function selectLocation(value: AddressSuggestion) {
+    if (locked) return
+    locationRevision.current += 1
+    setLocating(false); setLocationError('')
+    setValues(current => ({ ...current, address: value.address, latitude: String(value.latitude), longitude: String(value.longitude) }))
+    setErrors(current => ({ ...current, address: undefined, latitude: undefined, longitude: undefined }))
   }
   async function locate() {
     const revision = ++locationRevision.current
@@ -82,7 +95,7 @@ function EditEventForm({ id, userId }: { id: string; userId: string }) {
       if (!active.current || revision !== locationRevision.current) return
       setValues(current => ({ ...current, latitude: position.latitude.toFixed(6), longitude: position.longitude.toFixed(6) }))
       setErrors(current => ({ ...current, latitude: undefined, longitude: undefined }))
-    } catch { if (active.current && revision === locationRevision.current) setLocationError('No pudimos obtener tu ubicación. Ingresá las coordenadas manualmente.') }
+    } catch { if (active.current && revision === locationRevision.current) setLocationError('No pudimos obtener tu ubicación. Elegí una dirección sugerida o reintentá.') }
     finally { if (active.current && revision === locationRevision.current) setLocating(false) }
   }
   async function submit(e: FormEvent<HTMLFormElement>) {
@@ -93,7 +106,7 @@ function EditEventForm({ id, userId }: { id: string; userId: string }) {
       if (confirmed !== undefined && Number(values.capacity) < confirmed) validation.capacity = `El cupo no puede ser menor que ${confirmed} inscriptos confirmados.`
       setErrors(validation)
       const first = Object.keys(validation)[0]
-      if (first) { form.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus(); return }
+      if (first) { form.current?.querySelector<HTMLElement>(`[name="${first === 'latitude' || first === 'longitude' ? 'address' : first}"]`)?.focus(); return }
     }
     sending.current = true; setBusy(true); setError('')
     try {
@@ -125,7 +138,7 @@ function EditEventForm({ id, userId }: { id: string; userId: string }) {
     {back}<header><h1>Editar evento</h1><p>Modificá la información de tu evento.</p></header>
     <div className="edit-event-cover">{photo && !photoError ? <img src={photo} alt={`Portada de ${event.title}`} onError={() => setPhotoError(true)} /> : <><Icon name="calendar" /><span>{photoError ? 'No pudimos cargar la portada.' : 'Sin foto de portada'}</span></>}</div>
     <form ref={form} className="event-form" onSubmit={submit} noValidate aria-busy={busy}>
-      <EventFields values={values} errors={errors} categories={categories} locked={locked} change={change} locating={locating} locate={() => void locate()} locationError={locationError} catalogLoading={false} catalogError="" retryCategories={retry} confirmedCount={confirmed} />
+      <EventFields selectLocation={selectLocation} values={values} errors={errors} categories={categories} locked={locked} change={change} locating={locating} locate={() => void locate()} locationError={locationError} catalogLoading={false} catalogError="" retryCategories={retry} confirmedCount={confirmed} />
       {error && <div ref={feedback} tabIndex={-1}><StatusMessage title={uncertain ? 'Guardado por confirmar' : 'No se pudo guardar'} tone="error">{error}{uncertain && ' Conservamos este intento. Comprobá el resultado antes de volver a guardar.'}</StatusMessage></div>}
       <GradientButton type="submit" disabled={busy || locating || !categories.length}>{busy ? 'Comprobando cambios…' : uncertain ? 'Comprobar guardado' : 'Guardar cambios'}</GradientButton>
       <Link className="secondary-link" to={`/events/${id}`} state={origin}>Cancelar edición</Link>

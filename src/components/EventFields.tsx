@@ -1,15 +1,17 @@
+import { AddressAutocomplete } from './AddressAutocomplete'
+import type { AddressSuggestion } from '../features/location/autocomplete'
 import { FormField } from './FormField'
 import { Icon, type IconName } from './Icon'
 import { StatusMessage } from './StatusMessage'
 import { useState } from 'react'
 import { eventDateMinimums, type Category, type EventErrors, type EventValues } from '../features/events/validation'
 
-type Props = { values: EventValues; errors: EventErrors; categories: Category[]; locked: boolean; change: (field: keyof EventValues, value: string) => void; locating: boolean; locate: () => void; locationError: string; catalogLoading: boolean; catalogError: string; retryCategories: () => void; confirmedCount?: number }
-export function EventFields({ values, errors, categories, locked, change, locating, locate, locationError, catalogLoading, catalogError, retryCategories, confirmedCount }: Props) {
+type Props = { values: EventValues; errors: EventErrors; categories: Category[]; locked: boolean; change: (field: keyof EventValues, value: string) => void; locating: boolean; locate: () => void; locationError: string; catalogLoading: boolean; catalogError: string; retryCategories: () => void; confirmedCount?: number; selectLocation: (value: AddressSuggestion) => void }
+export function EventFields({ values, errors, categories, locked, change, locating, locate, locationError, catalogLoading, catalogError, retryCategories, confirmedCount, selectLocation }: Props) {
   const [now, setNow] = useState(() => new Date())
   const minimums = eventDateMinimums(values, now)
   function field(name: keyof EventValues, label: string, icon: IconName, type = 'text', required = true, placeholder?: string) {
-    return <FormField id={`event-${name}`} name={name} label={label} icon={icon} type={type} value={values[name]} onFocus={() => setNow(new Date())} onChange={event => change(name, event.target.value)} error={errors[name]} required={required} disabled={locked} min={name in minimums ? minimums[name as keyof typeof minimums] : name === 'capacity' ? Math.max(1, confirmedCount ?? 0) : undefined} placeholder={placeholder} inputMode={name === 'capacity' ? 'numeric' : name === 'latitude' || name === 'longitude' ? 'decimal' : undefined} step={name === 'capacity' ? 1 : name === 'latitude' || name === 'longitude' ? 'any' : undefined} />
+    return <FormField id={`event-${name}`} name={name} label={label} icon={icon} type={type} value={values[name]} onFocus={() => setNow(new Date())} onChange={event => change(name, event.target.value)} error={errors[name]} required={required} disabled={locked} min={name in minimums ? minimums[name as keyof typeof minimums] : name === 'capacity' ? Math.max(1, confirmedCount ?? 0) : undefined} placeholder={placeholder} inputMode={name === 'capacity' ? 'numeric' : undefined} step={name === 'capacity' ? 1 : undefined} />
   }
   return <>
       <section className="event-form-section" aria-labelledby="event-visibility-heading"><h2 id="event-visibility-heading">Visibilidad</h2>
@@ -34,11 +36,9 @@ export function EventFields({ values, errors, categories, locked, change, locati
       <fieldset className="event-dates"><legend>Fin del evento</legend><div className="field-pair">{field('end_date', 'Fecha de fin', 'calendar', 'date')}{field('end_time', 'Hora de fin', 'clock', 'time')}</div><p className="field-hint">Todos los horarios son de Argentina.</p></fieldset>
       </section>
       <fieldset className="event-location event-form-section"><legend>Ubicación</legend>
-        {field('address', 'Dirección', 'pin', 'text', true, 'Calle, número y ciudad')}
+        <AddressAutocomplete address={values.address} resolved={Boolean(values.latitude && values.longitude)} disabled={locked} locating={locating} error={errors.address || ((errors.latitude || errors.longitude) ? 'Elegí una dirección sugerida o usá tu ubicación actual.' : undefined)} change={value => change('address', value)} select={selectLocation} />
         {field('location_name', 'Nombre del lugar (opcional)', 'pin', 'text', false, 'Por ejemplo, Centro Cultural')}
         <button type="button" className="secondary-button" disabled={locked || locating} onClick={locate}>{locating ? 'Obteniendo ubicación…' : 'Usar mi ubicación actual'}</button>
-        <div className="field-pair">{field('latitude', 'Latitud', 'pin', 'number', true, '−34.6037')}{field('longitude', 'Longitud', 'pin', 'number', true, '−58.3816')}</div>
-        <p className="field-hint">Indicá las coordenadas del lugar. Tu ubicación actual sirve si estás allí.</p>
         {locationError && <p className="field-error" role="status">{locationError}</p>}
       </fieldset>
       <section className="event-form-section" aria-labelledby="event-capacity-heading"><h2 id="event-capacity-heading">Categoría y cupo</h2>

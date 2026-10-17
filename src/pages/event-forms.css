@@ -48,3 +48,8 @@
   .event-form-shell .screen-header { grid-template-columns: minmax(0, 1fr); }
   .event-form-shell .screen-emblem { display: none; }
 }
+
+.event-form-shell .address-options { list-style: none; padding: 4px; margin: 0; background: var(--pi-color-surface); border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-field); }
+.event-form-shell .address-options [role="option"] { display: flex; align-items: center; min-height: 48px; padding: 12px; overflow-wrap: anywhere; cursor: pointer; border-radius: 12px; }
+.event-form-shell .address-options [role="option"]:is(:hover, [aria-selected="true"]) { background: var(--pi-color-chip-bg); color: var(--pi-color-ink); }
+.event-form-shell .address-attribution a { color: var(--pi-color-text-muted); text-underline-offset: 3px; }

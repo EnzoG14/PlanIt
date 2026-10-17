@@ -53,6 +53,7 @@ async function fixture(width = 390, height = 844, authenticated = true) {
     }
     return reply({ code: 'fixture_unhandled', message: url.pathname }, 500)
   })
+  await context.route('https://api.geoapify.com/**', route => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ results: [{ place_id: 'fixture', formatted: 'Av. Corrientes 123, Buenos Aires', lat: -34.6037, lon: -58.3816 }] }) }))
   const page = await context.newPage()
   const errors = []
   page.on('pageerror', error => errors.push(error.message))
@@ -61,7 +62,9 @@ async function fixture(width = 390, height = 844, authenticated = true) {
   return { context, page, state, errors }
 }
 async function fill(page) {
-  for (const [name, value] of Object.entries({ title: 'Encuentro de música', description: 'Compartimos una noche de música con la comunidad.', start_date: '2099-10-11', start_time: '20:00', end_date: '2099-10-11', end_time: '22:00', address: 'Av. Corrientes 123, Buenos Aires', latitude: '-34.6037', longitude: '-58.3816', capacity: '20' })) await page.locator(`form [name="${name}"]`).fill(value)
+  for (const [name, value] of Object.entries({ title: 'Encuentro de música', description: 'Compartimos una noche de música con la comunidad.', start_date: '2099-10-11', start_time: '20:00', end_date: '2099-10-11', end_time: '22:00', address: 'Av. Corrientes 123, Buenos Aires', capacity: '20' })) await page.locator(`form [name="${name}"]`).fill(value)
+  await page.locator('[name="address"]').focus()
+  await page.getByRole('option', { name: 'Av. Corrientes 123, Buenos Aires', exact: true }).click()
   await page.getByLabel('Categoría', { exact: true }).selectOption(category.id)
 }
 const photo = { name: 'fixture.png', mimeType: 'image/png', buffer: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jrXkAAAAASUVORK5CYII=', 'base64') }

@@ -53,3 +53,10 @@
 - Reconciliación: rama basada en `origin/main` `9f54deb`; siete migraciones versionadas coinciden con la lista read-only de `planit-v2` (`iepeqmvzjguwlhnecsdq`). Sin SQL remoto ni cambios de Auth. `vite.config.ts` preexistente se preservó y queda fuera del cambio.
 - Pendiente para decisión global de release: tratamiento explícito de WARN de RPC `SECURITY DEFINER`, policies permisivas y leaked-password protection; se solicitó aceptación del usuario o resolución y no se cambió configuración ni SQL. El informe precisa qué pruebas remotas no fueron observadas independientemente por Codex.
 - Recomendación de release: **pendiente** de respuesta sobre WARN; ver [decisión y criterios](../qa/RELEASE_1_TEST_REPORT.md#decisión-de-release). `Validado` refleja la aceptación manual explícita del Bloque 6, no el cierre automático de los riesgos de seguridad.
+
+
+## Ubicación sugerida — 17/10/2026
+
+Implementado; aceptación humana pendiente. Rama `codex/event-location-autocomplete` desde main `f8dd53c`. En creación: Dirección con sugerencias Geoapify, coordenadas internas sin campos visibles, invalidación al cambiar dirección y alternativa GPS. Se conserva Amanecer; sin cambios de esquema/RPC ni migraciones. `.env.local` copiado desde el worktree de main y luego configurado con la clave entregada por el usuario, siempre ignorado y fuera del commit.
+
+PASS build/lint (advertencias previas), validaciones de eventos, contrato del buscador, UI crear/editar y matriz de autocompletado/duplicación, incluyendo texto ampliado, poca altura, carreras de búsqueda/GPS y clave ausente. Consulta Geoapify real PASS con guardado en backend fixture; sin escrituras remotas Supabase. [Capturas, resultados, reproducción y límites](../design/verification/location-autocomplete/README.md). No cambia los estados históricos de aceptación de la release. Pendientes: revisión humana, dispositivos físicos/lector de pantalla y confirmar restricciones de origen/cuota para producción.

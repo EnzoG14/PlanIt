@@ -1,3 +1,4 @@
+import type { AddressSuggestion } from '../features/location/autocomplete'
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { EventFields } from '../components/EventFields'
@@ -74,9 +75,21 @@ function CreateEventForm({ duplicateFrom }: { duplicateFrom: string | null }) {
 
   function change(field: keyof EventValues, value: string) {
     if (locked) return
-    if (field === 'latitude' || field === 'longitude') { locationRevision.current += 1; setLocating(false) }
+    if (field === 'address' || field === 'latitude' || field === 'longitude') { locationRevision.current += 1; setLocating(false); setLocationError('') }
+    if (field === 'address') {
+      setValues(current => ({ ...current, address: value, latitude: '', longitude: '' }))
+      setErrors(current => ({ ...current, address: undefined, latitude: undefined, longitude: undefined }))
+      return
+    }
     setValues(current => ({ ...current, [field]: value }))
     setErrors(current => ({ ...current, [field]: undefined }))
+  }
+  function selectLocation(value: AddressSuggestion) {
+    if (locked) return
+    locationRevision.current += 1
+    setLocating(false); setLocationError('')
+    setValues(current => ({ ...current, address: value.address, latitude: String(value.latitude), longitude: String(value.longitude) }))
+    setErrors(current => ({ ...current, address: undefined, latitude: undefined, longitude: undefined }))
   }
   function locate() {
     setLocating(true); setLocationError('')
@@ -88,7 +101,7 @@ function CreateEventForm({ duplicateFrom }: { duplicateFrom: string | null }) {
       setLocating(false)
     }).catch(() => {
       if (revision !== locationRevision.current) return
-      setLocationError('No pudimos obtener tu ubicación. Ingresá las coordenadas manualmente.'); setLocating(false)
+      setLocationError('No pudimos obtener tu ubicación. Elegí una dirección sugerida o reintentá.'); setLocating(false)
     })
   }
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -99,7 +112,7 @@ function CreateEventForm({ duplicateFrom }: { duplicateFrom: string | null }) {
       const validation = validateEvent(values, categories, files)
       setErrors(validation)
       const first = Object.keys(validation)[0]
-      if (first) { formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus(); return }
+      if (first) { formRef.current?.querySelector<HTMLElement>(`[name="${first === 'latitude' || first === 'longitude' ? 'address' : first}"]`)?.focus(); return }
       attempt.current = { id: crypto.randomUUID(), values: { ...values }, files: [...files], paths: [] }
     }
     if (!attempt.current) return
@@ -128,7 +141,7 @@ function CreateEventForm({ duplicateFrom }: { duplicateFrom: string | null }) {
     {duplicateFrom !== null && <Link className="secondary-link duplicate-back" to={`/events/${duplicateFrom}`} state={origin}>Volver al evento original</Link>}
     <ScreenHeader title={duplicateFrom !== null ? 'Duplicá un evento' : 'Creá un evento'} description={duplicateFrom !== null ? 'Revisá los datos y elegí nuevas fechas. Las fotos y participaciones no se copian.' : 'Compartí un plan con la comunidad.'} icon="calendar" />
     <form ref={formRef} className="event-form" onSubmit={submit} noValidate aria-busy={busy}>
-      <EventFields values={values} errors={errors} categories={categories} locked={locked} change={change} locating={locating} locate={locate} locationError={locationError} catalogLoading={catalogLoading} catalogError={catalogError} retryCategories={() => { setCatalogLoading(true); setCatalogError(''); setCatalogAttempt(value => value + 1) }} />
+      <EventFields selectLocation={selectLocation} values={values} errors={errors} categories={categories} locked={locked} change={change} locating={locating} locate={locate} locationError={locationError} catalogLoading={catalogLoading} catalogError={catalogError} retryCategories={() => { setCatalogLoading(true); setCatalogError(''); setCatalogAttempt(value => value + 1) }} />
       <section className="event-form-section" aria-labelledby="event-images-heading"><h2 id="event-images-heading">Imágenes</h2><div className="form-field"><label htmlFor="event-images">Fotos (opcional)</label><input className="image-picker" id="event-images" name="images" type="file" accept="image/jpeg,image/png,image/webp" multiple disabled={locked} aria-invalid={Boolean(errors.images)} aria-describedby={errors.images ? 'event-images-error' : 'event-images-hint'} onChange={event => {
         const selected = [...files, ...Array.from(event.target.files ?? [])]
         const imageError = validateImages(selected)

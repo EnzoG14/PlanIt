@@ -55,7 +55,7 @@ try {
     const form=()=>page.locator('form.event-form'),field=name=>page.locator(`[name="${name}"]`)
     const open=async()=>{await page.goto(`${origin}/events/${id}/edit`);await form().waitFor()}
     const check=test=>{results.push({viewport:`${width}x${height}`,test,result:'PASS'});console.log(`PASS ${width}: ${test}`)}
-    await open();assert.equal(await field('title').inputValue(),event.title);assert.equal(await field('start_time').inputValue(),'22:00');assert.equal(await field('end_date').inputValue(),'2099-10-13');assert.equal(await field('latitude').inputValue(),'-34.6');assert.equal(await field('capacity').getAttribute('min'),'48')
+    await open();assert.equal(await field('title').inputValue(),event.title);assert.equal(await field('start_time').inputValue(),'22:00');assert.equal(await field('end_date').inputValue(),'2099-10-13');assert.equal(await field('latitude').count(),0);assert.equal(await field('longitude').count(),0);await page.getByText('Ubicación lista para guardar.',{exact:true}).waitFor();assert.equal(await field('capacity').getAttribute('min'),'48')
     assert.equal(await page.getByRole('button',{name:'Cambiar imagen'}).count(),0)
     await page.screenshot({path:`${out}/edit-${width}x${height}.png`,fullPage:true})
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true)

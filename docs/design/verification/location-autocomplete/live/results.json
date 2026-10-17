@@ -1,0 +1,9 @@
+{
+  "environment": "Edge headless; Geoapify real; Auth/REST/Storage fixtures; no remote Supabase writes",
+  "results": [
+    {
+      "name": "Geoapify real: sugerencia, selección y coordenadas guardadas en backend fixture; sin escrituras Supabase reales",
+      "result": "PASS"
+    }
+  ]
+}

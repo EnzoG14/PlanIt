@@ -1,0 +1,69 @@
+{
+  "environment": "Edge headless, Auth/REST/Storage/Geoapify/GPS fixtures; no remote writes",
+  "results": [
+    {
+      "name": "Crear 320: debounce, teclado, invalidación, vacío, error/reintento, búsquedas y GPS tardíos, payload correcto",
+      "result": "PASS"
+    },
+    {
+      "name": "Editar 320: selección y payload atómico",
+      "result": "PASS"
+    },
+    {
+      "name": "Duplicar 320: precarga sin escritura, selección y nuevo evento",
+      "result": "PASS"
+    },
+    {
+      "name": "Crear 375: debounce, teclado, invalidación, vacío, error/reintento, búsquedas y GPS tardíos, payload correcto",
+      "result": "PASS"
+    },
+    {
+      "name": "Editar 375: selección y payload atómico",
+      "result": "PASS"
+    },
+    {
+      "name": "Duplicar 375: precarga sin escritura, selección y nuevo evento",
+      "result": "PASS"
+    },
+    {
+      "name": "Crear 390: debounce, teclado, invalidación, vacío, error/reintento, búsquedas y GPS tardíos, payload correcto",
+      "result": "PASS"
+    },
+    {
+      "name": "Editar 390: selección y payload atómico",
+      "result": "PASS"
+    },
+    {
+      "name": "Duplicar 390: precarga sin escritura, selección y nuevo evento",
+      "result": "PASS"
+    },
+    {
+      "name": "Crear 768: debounce, teclado, invalidación, vacío, error/reintento, búsquedas y GPS tardíos, payload correcto",
+      "result": "PASS"
+    },
+    {
+      "name": "Editar 768: selección y payload atómico",
+      "result": "PASS"
+    },
+    {
+      "name": "Duplicar 768: precarga sin escritura, selección y nuevo evento",
+      "result": "PASS"
+    },
+    {
+      "name": "Crear 1280: debounce, teclado, invalidación, vacío, error/reintento, búsquedas y GPS tardíos, payload correcto",
+      "result": "PASS"
+    },
+    {
+      "name": "Editar 1280: selección y payload atómico",
+      "result": "PASS"
+    },
+    {
+      "name": "Duplicar 1280: precarga sin escritura, selección y nuevo evento",
+      "result": "PASS"
+    },
+    {
+      "name": "GPS actual conserva dirección y permite publicar",
+      "result": "PASS"
+    }
+  ]
+}

@@ -106,3 +106,10 @@ Para actualizar: registrar por bloque cambios, evidencia, validaciones, límites
 ## Extensión funcional R5 · B9 — 14/10/2026
 
 Controles de bloqueo/desbloqueo en perfil social y DM sobre Amanecer existente; sin rediseñar R1–R3 ni modificar su aceptación. [Evidencia y límites](../qa/r5-block-9/README.md), [revisión](../qa/r5-block-9/design-review.md), [documentación](../qa/r5-block-9/design-documentation.md). Capturas reales antes/después mobile390/desktop1280, fixtures explícitos; seis anchos, texto200%,poca altura,foco y estados de error/resultado incierto. Contraste de confirmar desbloqueo corregido; revisión puntuó el hallazgo resuelto. Sistema y mockups originales intactos. Dispositivos/teclado móvil/lector reales NOT RUN. Estado funcional únicamente en R5 STATUS; B10 sin aprobación.
+
+
+## Ubicación sugerida — 17/10/2026
+
+Implementado; aceptación humana pendiente. Rama `codex/event-location-autocomplete` desde main `f8dd53c`. En formulario compartido Amanecer: Dirección con sugerencias Geoapify, coordenadas internas sin campos visibles, invalidación al cambiar dirección y alternativa GPS. Se conserva Amanecer; sin cambios de esquema/RPC ni migraciones. `.env.local` copiado desde el worktree de main y luego configurado con la clave entregada por el usuario, siempre ignorado y fuera del commit.
+
+PASS build/lint (advertencias previas), validaciones de eventos, contrato del buscador, UI crear/editar y matriz de autocompletado/duplicación, incluyendo texto ampliado, poca altura, carreras de búsqueda/GPS y clave ausente. Consulta Geoapify real PASS con guardado en backend fixture; sin escrituras remotas Supabase. [Capturas, resultados, reproducción y límites](../design/verification/location-autocomplete/README.md). No cambia los estados históricos de aceptación de la release. Pendientes: revisión humana, dispositivos físicos/lector de pantalla y confirmar restricciones de origen/cuota para producción.
