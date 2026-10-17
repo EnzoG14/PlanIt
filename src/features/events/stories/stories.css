@@ -1,0 +1,40 @@
+.event-stories {
+  color: var(--pi-color-text);
+  font-family: var(--pi-font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  min-width: 0;
+}
+.event-stories header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.event-stories h2 { font-size: var(--pi-font-title-lg-size); letter-spacing: var(--pi-font-title-lg-tracking); margin: 0; }
+.event-stories p { overflow-wrap: anywhere; }
+.event-stories button { min-height: 44px; padding: 10px 16px; border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-pill); color: var(--pi-color-ink); background: var(--pi-color-surface); font: inherit; font-weight: 650; cursor: pointer; }
+.event-stories button:hover { background: var(--pi-color-surface-soft); }
+.event-stories button:disabled { background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); cursor: default; }
+.event-stories :focus-visible { outline: 3px solid var(--pi-color-focus); outline-offset: 3px; }
+.story-authors { display: flex; gap: 16px; overflow-x: auto; padding: 8px 4px 16px; }
+.event-stories .story-author { flex: 0 0 104px; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 4px; border: 0; border-radius: 0; background: transparent; overflow-wrap: anywhere; }
+.story-author small { font-size: var(--pi-font-meta-size); font-weight: 400; }
+.story-ring { display: grid; place-items: center; width: 64px; height: 64px; border: 3px solid var(--pi-color-violet-deep); border-radius: 50%; background: var(--pi-color-surface); font-size: 24px; }
+.story-viewer, .story-publisher { box-sizing: border-box; border: 0; background: var(--pi-color-bg); padding: 20px; color: var(--pi-color-ink); }
+.story-viewer::backdrop, .story-publisher::backdrop { background: var(--pi-color-scrim); }
+.story-viewer[open] { display: flex; flex-direction: column; gap: 12px; position: fixed; inset: 0; width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: max(12px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); }
+.story-viewer > * { width: min(100%, 560px); margin-inline: auto; }
+.story-viewer header { flex-wrap: nowrap; }
+.story-viewer header > div { min-width: 0; overflow-wrap: anywhere; }
+.story-viewer header p { margin: 2px 0; font-size: var(--pi-font-meta-size); }
+.story-progress { display: flex; gap: 4px; min-height: 4px; }
+.story-progress > span { flex: 1; background: var(--pi-color-disabled-bg); border-radius: var(--pi-radius-pill); overflow: hidden; }
+.story-progress i { display: block; height: 4px; background: var(--pi-color-primary); }
+.story-image { flex: 1; min-height: 80px; display: grid; place-items: center; overflow: hidden; user-select: none; touch-action: pan-y; }
+.story-image img { width: 100%; height: 100%; min-height: 0; object-fit: contain; grid-area: 1 / 1; }
+.story-image > p, .story-image > div { grid-area: 1 / 1; padding: 16px; background: var(--pi-color-surface); border-radius: var(--pi-radius-notice); }
+.story-viewer footer { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.story-viewer footer button { flex: 1; padding-inline: 10px; }
+.story-publisher { width: min(560px, calc(100% - 24px)); max-height: calc(100dvh - 24px); border-radius: var(--pi-radius-sheet); box-shadow: var(--pi-shadow-dialog); }
+.story-publisher label { display: grid; gap: 8px; font-weight: 650; }
+.story-publisher input { max-width: 100%; font: inherit; padding-block: 12px; }
+.story-preview { display: block; width: 100%; max-height: 42dvh; object-fit: contain; margin-top: 16px; border-radius: var(--pi-radius-media); }
+.event-stories .story-primary { width: 100%; background: var(--pi-color-ink); color: var(--pi-color-surface); }
+.event-stories [role=alert] { padding: 12px; border-radius: var(--pi-radius-notice); background: var(--pi-color-danger-bg); color: var(--pi-color-danger-on-bg); }
+@media (max-height: 480px) { .story-viewer[open] { overflow-y: auto; } .story-image { flex-basis: 120px; } }

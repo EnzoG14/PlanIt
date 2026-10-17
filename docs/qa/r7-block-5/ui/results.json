@@ -1,0 +1,63 @@
+{
+  "environment": "Edge headless, actual isolated components served by Vite; HTTP/Auth/Storage intercepted, labeled synthetic image; no real authorization evidence",
+  "hashes": {
+    "EventStoriesEntry.tsx": "f85e40df31f601076a3eb4606ef74c43c9b8b9cb39c0afb695b4fe2af6067bb7",
+    "StoryViewer.tsx": "7dac0864f53aaca5d89405ccf2e1dcf47741525d48e144f19b0d28ee014ea74d",
+    "StoryPublisher.tsx": "916117170952cbc67c8b2a588caa33ca8f474545c3e96593e69cb2f94c23e9ef",
+    "stories.css": "ea0ae3b1dedc2dc2685f3ec30509abb924dbd0a7af71c5399b1ba3a393d2a0e8"
+  },
+  "results": [
+    {
+      "test": "320: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup",
+      "result": "PASS"
+    },
+    {
+      "test": "320: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success",
+      "result": "PASS"
+    },
+    {
+      "test": "375: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup",
+      "result": "PASS"
+    },
+    {
+      "test": "375: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success",
+      "result": "PASS"
+    },
+    {
+      "test": "390: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup",
+      "result": "PASS"
+    },
+    {
+      "test": "390: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success",
+      "result": "PASS"
+    },
+    {
+      "test": "Image GET denied, clear error, pointer retry successfully loads image",
+      "result": "PASS"
+    },
+    {
+      "test": "Hold and manual pause freeze progress, Tab stays in dialog; autoplay explicitly enabled across 3 alternating-author stories, final closes",
+      "result": "PASS"
+    },
+    {
+      "test": "Empty, denied/retry, server TTL while open revokes Blob despite changed device clock, account remount and permission gate",
+      "result": "PASS"
+    },
+    {
+      "test": "768: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup",
+      "result": "PASS"
+    },
+    {
+      "test": "768: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success",
+      "result": "PASS"
+    }
+  ]
+}
