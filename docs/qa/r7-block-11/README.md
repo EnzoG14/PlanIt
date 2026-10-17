@@ -1,6 +1,6 @@
 # R7 · Bloque 11 — Composición y QA integral
 
-17/10/2026, Argentina. **Implementado para revisión; NO-GO de aceptación integral.** Base limpia `279af15d09988f43a4e79dd397611c645b0b2808`, rama `codex/r7-block-11`, worktree `r7-block-11-worktree`. La PR draft se registra en el reporte final. No se autoriza ni ejecuta merge, deploy, SQL remoto, secretos, cron o edición del Google Doc.
+17/10/2026, Argentina. **Implementado para revisión; NO-GO de aceptación integral.** Base limpia `279af15d09988f43a4e79dd397611c645b0b2808`, rama `codex/r7-block-11`, worktree `r7-block-11-worktree`. Entrega técnica `1f1c8d8372f5964ce5a4787bfcf6e6e013c74358`, [PR draft #86](https://github.com/EnzoG14/PlanIt/pull/86). No se autoriza ni ejecuta merge, deploy, SQL remoto, secretos, cron o edición del Google Doc.
 
 ## Composición y compatibilidad
 

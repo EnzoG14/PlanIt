@@ -1,6 +1,6 @@
 # PlanIt — R7 · Reporte de validación B11
 
-**Fecha:** 17/10/2026, Argentina. **Base:** `279af15d09988f43a4e79dd397611c645b0b2808`. **Rama:** `codex/r7-block-11`. **PR:** draft, pendiente de registrar URL. **Responsable técnico:** Codex. **Ambiente:** Windows, Node24.21.0, PostgreSQL18.4 aislado, Edge headless (versión en JSON), build Vite de producción y Vite de desarrollo para UI. **Dictamen recomendado:** NO-GO de aceptación integral; revisión humana pendiente.
+**Fecha:** 17/10/2026, Argentina. **Base:** `279af15d09988f43a4e79dd397611c645b0b2808`. **Rama:** `codex/r7-block-11`. **PR:** [draft #86](https://github.com/EnzoG14/PlanIt/pull/86). **Entrega técnica:** `1f1c8d8372f5964ce5a4787bfcf6e6e013c74358`. **Responsable técnico:** Codex. **Ambiente:** Windows, Node24.21.0, PostgreSQL18.4 aislado, Edge headless (versión en JSON), build Vite de producción y Vite de desarrollo para UI. **Dictamen recomendado:** NO-GO de aceptación integral; revisión humana pendiente.
 
 ## 1. Resultado de RF/CA
 

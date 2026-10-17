@@ -1,6 +1,6 @@
 # PlanIt — Release 7 · Seguimiento
 
-**Fecha de preparación documental:** 15/10/2026. **Corte B11:** 17/10/2026. **Estado global:** B0–B10 integrados; B11 composición implementada y QA local ejecutada, PR draft en preparación. **Aceptación integral:** NO-GO recomendado; firma humana pendiente. 29 CA evaluados: 4 PASS locales / 25 BLOCKED / 0 FAIL.
+**Fecha de preparación documental:** 15/10/2026. **Corte B11:** 17/10/2026. **Estado global:** B0–B10 integrados; B11 composición implementada y QA local ejecutada, [PR draft #86](https://github.com/EnzoG14/PlanIt/pull/86). **Aceptación integral:** NO-GO recomendado; firma humana pendiente. 29 CA evaluados: 4 PASS locales / 25 BLOCKED / 0 FAIL.
 **Baseline de alcance:** R6 se supone funcionalmente completa, por instrucción de planificación; no se corrigen tareas residuales de R6.
 
 | Bloque | Estado | Rama/PR | Migración creada | SQL local | Remoto aplicado | Remoto verificado | HTTP/JWT | UI | Evidencia | Gate |
@@ -16,7 +16,7 @@
 | B8 | Integrado; conectado B11 | `codex/r7-block-8` / [PR #77 integrada](https://github.com/EnzoG14/PlanIt/pull/77) | 0 | R4 PASS B11 | 0 | 0 | R4 transporte pendiente | Payload/fallback/cancelación fixtures PASS | [B8](../qa/r7-block-8/STATUS.md) | Share nativo pendiente |
 | B9 | Integrado; Perfil ya montado por B10 | `codex/r7-block-9` / [PR #80 integrada](https://github.com/EnzoG14/PlanIt/pull/80) | 1 | PASS47 B11 | Historial B10/B6 | Historial47; no recert B11 | Opt-in real B10 histórico | Fixtures + SW B11 PASS | [B9](../qa/r7-block-9/STATUS.md) | Dispositivos pendientes |
 | B10 | Integrado; deploy v2 histórico | `codex/r7-block-10` / [PR #81 integrada](https://github.com/EnzoG14/PlanIt/pull/81) | 1 | PASS47 B11 | 1/1 histórico | Catálogo histórico | DM recibido confirmado en B10; sin cron | Fixtures B11 PASS | [B10](../qa/r7-block-10/STATUS.md) | Dos dispositivos pendientes |
-| B11 | Implementado; revisión humana pendiente | `codex/r7-block-11` / PR draft pendiente de URL | 0 nuevas | PASS47 + regresiones | 0 nuevas | No ejecutado en B11 | NOT RUN A–G real | 25 grupos integrados +4 suites PASS | [B11](../qa/r7-block-11/README.md) | NO-GO recomendado |
+| B11 | Implementado; revisión humana pendiente | `codex/r7-block-11` / [PR draft #86](https://github.com/EnzoG14/PlanIt/pull/86) | 0 nuevas | PASS47 + regresiones | 0 nuevas | No ejecutado en B11 | NOT RUN A–G real | 25 grupos integrados +4 suites PASS | [B11](../qa/r7-block-11/README.md) | NO-GO recomendado |
 
 ## RF/CA
 
@@ -36,7 +36,7 @@
 
 ### 17/10/2026 — B11: composición, replay y acta
 
-Base `279af15d09988f43a4e79dd397611c645b0b2808` tras fetch; 12 PRs productoras/correctiva MERGED y ancestry comprobadas. Rama nueva `codex/r7-block-11`, worktree independiente. `.env.local` copiado desde main, igual e ignorado, sin versionar. Cambios ajenos del checkout inicial preservados.
+Entrega técnica `1f1c8d8372f5964ce5a4787bfcf6e6e013c74358`, [PR draft #86](https://github.com/EnzoG14/PlanIt/pull/86). Base `279af15d09988f43a4e79dd397611c645b0b2808` tras fetch; 12 PRs productoras/correctiva MERGED y ancestry comprobadas. Rama nueva `codex/r7-block-11`, worktree independiente. `.env.local` copiado desde main, igual e ignorado, sin versionar. Cambios ajenos del checkout inicial preservados.
 
 Detalle conecta Stories/Calendar/Share; token oculto sólo en diálogo de generación y memoria. Callback de resumen existente evita RPC duplicada. Push ya estaba montado en Perfil por ampliación autorizada B10; no se duplica. Stories modal inline, sin nueva ruta. Sin SQL/API/SW nuevos ni cambios de mockup/identidad Amanecer.
 
