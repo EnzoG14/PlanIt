@@ -77,3 +77,8 @@ Inventario de limitaciones:
 **Recomendación técnica:** NO-GO para aceptación integral por25 CA con gates pendientes. **Aceptación/firma humana:** PENDIENTE. **Fecha/identidad del responsable:** PENDIENTE. **Excepciones aceptadas:** ninguna atribuida. **Autorización para merge/deploy/SQL/secrets/cron:** NO concedida por esta entrega.
 
 La revisión humana puede aprobar la composición del PR y autorizar ensayos/operación por separado. El cierre R7 requiere evidencia restante o excepciones formales explícitas, más aceptación humana; no se fabrica una firma. Entregado exclusivamente B11. No se continúa con otro bloque.
+
+
+## Actualización operativa autorizada: lector de historias
+
+17/10/2026: el reporte de historia recién publicada que no abre permitió confirmar r7-story-image ausente (404). El responsable autorizó «desplega»: lector existente desplegado ACTIVE v1 con verify_jwt=true; OPTIONS204 y GET sin sesión401. [Evidencia y límites](r7-block-11/story-reader/README.md). Esta actualización resuelve la ausencia del endpoint; lectura autenticada/confirmación visual pendientes. Las menciones anteriores a lector no acreditado describen el corte inicial. Sin migraciones, secretos, cron, merge ni otros deploys.

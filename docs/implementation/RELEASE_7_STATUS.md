@@ -62,3 +62,8 @@ D01/D02/D03/D05/D06/D07/D08/D09/D15/P01 siguen confirmadas por responsable15/10.
 ## Estado de paralelización — corte B11
 
 Todos los productores B0–B10 y correctiva B3 están integrados. No hay agentes o frentes paralelos activos de este pedido. B11 compone y presenta revisión; pruebas remotas/operativas y aceptación humana pendientes. El [DAG/ownership](RELEASE_7_PARALLEL_WORK.md) conserva su contrato. No se concede PASS por cierre/merge de un productor.
+
+
+### 17/10/2026 — Corrección operativa de lectura de historias
+
+Tras reporte de historia publicada que no abre, se confirmó ausencia de r7-story-image: catálogo sin lector y OPTIONS/GET404. El responsable autorizó expresamente su despliegue («desplega»). Función existente B4 desplegada sólo en planit-v2: ACTIVE v1, verify_jwt=true; OPTIONS204/no-store/CORS y GET sin sesión401. Tests handler3 grupos y Deno check PASS. [Diagnóstico y evidencia](../qa/r7-block-11/story-reader/README.md). Sin cambios SQL/secretos/cron ni otras funciones. Reintento autenticado y aceptación visual del responsable pendientes; no cambia el dictamen integral por desplegar.
