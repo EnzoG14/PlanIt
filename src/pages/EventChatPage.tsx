@@ -6,7 +6,10 @@ import { useAuth } from '../features/auth/useAuth'
 import { chatSendFailure, chatUnavailable, downloadChatImage, findChatMessage, loadChat, loadChatMessages, sendChatMediaMessage, trimChatText, type ChatHeader, type ChatMessage } from '../features/events/chat'
 import { createMediaAttempt, uploadEventMedia, MediaUploadError, type MediaAttempt } from '../features/events/media/uploads'
 import { validateMediaImage } from '../features/events/media/images'
-import { formatEventTime } from '../features/events/validation'
+import { Fragment } from 'react'
+import { ChatDaySeparator, ChatTimestamp } from '../components/ChatDate'
+import { useChatToday } from '../lib/useChatToday'
+import { chatDay, isChatContinuation } from '../lib/chatDates'
 import { supabase } from '../lib/supabase'
 import { catchUp, compareRows, createReconciler, mergeRows } from '../lib/reconciliation'
 import { subscribeToChanges, type ConnectionState } from '../lib/realtime'
@@ -18,6 +21,7 @@ export function EventChatPage() {
   return <ChatContent key={`${id}:${session?.user.id}`} eventId={id} userId={session?.user.id ?? ''} sessionToken={session?.access_token ?? ''} />
 }
 function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userId: string; sessionToken: string }) {
+  const today = useChatToday()
   const [header, setHeader] = useState<ChatHeader | null>(null)
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [hasOlder, setHasOlder] = useState(false)
@@ -126,7 +130,7 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
       }
       if (!active) return
       const element = list.current
-      const anchor = element && [...element.children].find(child => child.getBoundingClientRect().bottom > element.getBoundingClientRect().top)
+      const anchor = element && [...element.children].find(child => child.hasAttribute('data-message-id') && child.getBoundingClientRect().bottom > element.getBoundingClientRect().top)
       scroll.current = { anchor: anchor?.getAttribute('data-message-id') ?? null,
         offset: anchor && element ? anchor.getBoundingClientRect().top - element.getBoundingClientRect().top : 0, bottom: !element || element.scrollHeight - element.scrollTop - element.clientHeight < 64,
         height: element?.scrollHeight ?? 0, top: element?.scrollTop ?? 0, older: Boolean(before) }
@@ -220,7 +224,7 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
     {unavailable ? <div className="chat-state"><StatusMessage title="Chat no disponible">Sólo el organizador y los asistentes confirmados pueden acceder.</StatusMessage></div> : error ? <div className="chat-state"><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage></div> : pending && !header ? <div className="chat-state"><StatusMessage title="Cargando chat">Esperá un momento.</StatusMessage></div> : <>
       {closed && <p className="chat-read-only" role="status">{header.event_state === 'ended' ? 'Evento finalizado' : header.event_state === 'archived' ? 'Evento archivado' : 'Evento cancelado'} · Chat de sólo lectura.</p>}
       {hasOlder && <button className="text-button" disabled={pending || sending} onClick={() => refresh.current(messages[0])}>Cargar mensajes anteriores</button>}
-      {messages.length === 0 ? <div className="chat-state"><StatusMessage title="Todavía no hay mensajes">El historial de este evento está vacío.</StatusMessage></div> : <ol className="chat-messages" ref={list} tabIndex={0} aria-label="Historial de mensajes">{messages.map(message => <li key={message.id} data-message-id={message.id} className={message.sender_id === userId ? 'chat-own' : 'chat-incoming'}><div className="chat-message-meta"><strong>{message.sender_id === userId ? 'Vos' : message.display_name}</strong><span>@{message.username}</span></div>{message.body && <p className="chat-bubble">{message.body}</p>}{message.attachment_id && <ChatImage key={`${message.file_id}:${sessionToken}`} message={message} userId={userId} />}<time dateTime={`${message.created_at}-03:00`}>{formatEventTime(message.created_at)}</time></li>)}</ol>}
+      {messages.length === 0 ? <div className="chat-state"><StatusMessage title="Todavía no hay mensajes">El historial de este evento está vacío.</StatusMessage></div> : <ol className="chat-messages" ref={list} tabIndex={0} aria-label="Historial de mensajes">{messages.map((message, index) => <Fragment key={message.id}>{(index === 0 || chatDay(messages[index - 1].created_at) !== chatDay(message.created_at)) && <ChatDaySeparator day={chatDay(message.created_at)} today={today} />}<li data-message-id={message.id} className={`${message.sender_id === userId ? 'chat-own' : 'chat-incoming'}${isChatContinuation(message, messages[index - 1]) ? ' chat-continuation' : ''}`}>{!isChatContinuation(message, messages[index - 1]) && <div className="chat-message-meta"><strong>{message.sender_id === userId ? 'Vos' : message.display_name}</strong><span>@{message.username}</span></div>}<div className="chat-bubble">{message.body && <p className="chat-message-text">{message.body}</p>}{message.attachment_id && <ChatImage key={`${message.file_id}:${sessionToken}`} message={message} userId={userId} />}<ChatTimestamp value={message.created_at} /></div></li></Fragment>)}</ol>}
       {(!closed || uncertain) && <form className="chat-composer" onSubmit={send} aria-busy={sending || selecting}>
         <label htmlFor="chat-text">Mensaje{media ? ' (texto opcional)' : ''}</label>
         {media && <div className="chat-attachment-preview"><LocalPreview key={sessionToken} file={media.file} /><span>{media.file.name}</span><button type="button" className="text-button" disabled={sending || uncertain || selecting} onClick={() => { setMedia(null); retry.current = null; setSendError(''); fileInput.current?.focus() }}>Quitar imagen</button></div>}

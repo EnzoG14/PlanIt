@@ -1,0 +1,105 @@
+{
+  "environment": "Edge; intercepted Auth/RPC/Phoenix fixtures; no remote writes",
+  "results": [
+    {
+      "width": 360,
+      "height": 800,
+      "geometry": {
+        "pageHeight": 800,
+        "viewport": 800,
+        "pageScroll": 0,
+        "list": {
+          "top": 173.59375,
+          "bottom": 614.40625,
+          "height": 440.8125
+        },
+        "composer": {
+          "top": 622.40625,
+          "bottom": 800,
+          "height": 177.59375
+        },
+        "last": {
+          "top": 484.59375,
+          "bottom": 602.59375,
+          "height": 118
+        },
+        "bottomGap": 0
+      }
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "geometry": {
+        "pageHeight": 812,
+        "viewport": 812,
+        "pageScroll": 0,
+        "list": {
+          "top": 172,
+          "bottom": 626.40625,
+          "height": 454.40625
+        },
+        "composer": {
+          "top": 634.40625,
+          "bottom": 812,
+          "height": 177.59375
+        },
+        "last": {
+          "top": 496,
+          "bottom": 614,
+          "height": 118
+        },
+        "bottomGap": 0
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "geometry": {
+        "pageHeight": 844,
+        "viewport": 844,
+        "pageScroll": 0,
+        "list": {
+          "top": 172,
+          "bottom": 658.40625,
+          "height": 486.40625
+        },
+        "composer": {
+          "top": 666.40625,
+          "bottom": 844,
+          "height": 177.59375
+        },
+        "last": {
+          "top": 528,
+          "bottom": 646,
+          "height": 118
+        },
+        "bottomGap": 0
+      }
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "geometry": {
+        "pageHeight": 900,
+        "viewport": 900,
+        "pageScroll": 0,
+        "list": {
+          "top": 172,
+          "bottom": 714.40625,
+          "height": 542.40625
+        },
+        "composer": {
+          "top": 722.40625,
+          "bottom": 900,
+          "height": 177.59375
+        },
+        "last": {
+          "top": 608,
+          "bottom": 702,
+          "height": 94
+        },
+        "bottomGap": 0
+      }
+    }
+  ]
+}

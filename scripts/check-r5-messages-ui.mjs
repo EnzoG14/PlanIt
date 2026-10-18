@@ -29,7 +29,7 @@ try {
   await context.addInitScript(value=>localStorage.setItem('sb-iepeqmvzjguwlhnecsdq-auth-token',JSON.stringify(value)),session);
   const conversation='96000000-0000-4000-8000-000000000001',sockets=[];
   let blocked=false,denied=false,network=false,lost=false,commit=true,writes=0,reads=0;
-  const seed=i=>({id:'97000000-0000-4000-8000-'+String(i).padStart(12,'0'),sender_id:target,body:'Mensaje fixture '+i,created_at:'2026-10-14T10:00:00'});
+  const seed=i=>({id:'97000000-0000-4000-8000-'+String(i).padStart(12,'0'),sender_id:target,body:'Mensaje fixture '+i,created_at:`2026-10-${i <= 10 ? '12' : i <= 22 ? '13' : '14'}T10:00:00`});
   let rows=Array.from({length:34},(_,i)=>seed(i+1));
   await context.routeWebSocket('wss://iepeqmvzjguwlhnecsdq.supabase.co/realtime/**',ws=>{
    const socket={ws,joins:new Map()};sockets.push(socket);
@@ -79,6 +79,11 @@ try {
   await page.goto(origin+'/users/'+target);await button('Enviar mensaje').click();await loaded();await page.getByText('Actualizaciones en tiempo real',{exact:true}).waitFor();
   await page.getByRole('link',{name:'Volver',exact:true}).click();await button('Enviar mensaje').waitFor();assert.ok(await button('Enviar mensaje').evaluate(e=>e===document.activeElement));await button('Enviar mensaje').click();await loaded();
   assert.equal(await page.locator('.chat-bubble').count(),30);assert.equal(await page.locator('.primary-nav').count(),0);await button('Cargar mensajes anteriores').click();await page.waitForFunction(()=>document.querySelectorAll('.chat-bubble').length===34);
+  assert.equal(await page.locator('.chat-day-separator').count(),3);
+  assert.equal(await page.locator('.chat-message-meta').count(),0);
+  assert.ok(await page.locator('.chat-continuation').evaluateAll(rows=>rows.length>0 && rows.every(row=>Math.abs(row.getBoundingClientRect().top-row.previousElementSibling.getBoundingClientRect().bottom-4)<1)));
+  assert.equal(await page.locator('[data-message-id] > time').count(),0);
+  assert.equal(await page.locator('.chat-bubble time').first().textContent(),'10:00');
   await shot('history');check('Own/profile-private entry without follow,4 dock tabs,focus return,30+4 stable tie pagination,chat shell');
   await page.locator('#direct-text').fill('Hola fixture');await button('Enviar').click();await page.getByText('Hola fixture',{exact:true}).waitFor();assert.equal(writes,1);
   lost=true;await page.locator('#direct-text').fill('Respuesta perdida');await button('Enviar').click();await button('Consultar estado').waitFor();await shot('uncertain');await button('Consultar estado').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.equal(writes,2);check('Confirmed text send and lost committed response reconcile by ID without resending');
@@ -89,7 +94,7 @@ try {
   await page.evaluate(()=>{document.documentElement.style.fontSize='200%'});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.evaluate(()=>{document.documentElement.style.fontSize=''});
   await page.setViewportSize({width,height:400});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.setViewportSize({width,height:900});
   denied=true;await button('Actualizar chat').click();await page.getByRole('heading',{name:'Conversación no disponible',exact:true}).waitFor();assert.equal(await page.locator('.chat-bubble').count(),0);await shot('denied');
-  denied=false;blocked=false;network=true;await button('Reintentar').click();await button('Reintentar').waitFor();network=false;await button('Reintentar').click();await loaded();
+  denied=false;blocked=false;network=true;await Promise.all([page.waitForEvent('requestfailed'),button('Reintentar').click()]);await button('Reintentar').waitFor();network=false;await button('Actualizar chat').click();await loaded();
   check('Unauthorized/network failures clear history;retry recovers;allowlists,text200%,short viewport and no horizontal overflow');
   await page.locator('#direct-text').fill('x'.repeat(2001));assert.ok(await button('Enviar').isDisabled());await page.locator('#direct-text').fill('   ');assert.ok(await button('Enviar').isDisabled());await page.locator('#direct-text').fill('');
   rows[0].body='Texto muy largo sin espacios'.repeat(70);await button('Actualizar chat').click();await page.getByText(rows[0].body,{exact:true}).waitFor();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));

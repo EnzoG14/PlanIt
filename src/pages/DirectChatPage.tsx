@@ -3,7 +3,10 @@ import { Link, useLocation, useParams } from 'react-router-dom'
 import { useAuth } from '../features/auth/useAuth'
 import { trimDirectText, directReturn, findDirectMessage, loadDirectHeader, loadDirectMessages, sendDirectMessage, type DirectHeader, type DirectMessage, type DirectCursor } from '../features/social/messages'
 import { socialProfileReturn } from '../features/social/api'
-import { formatEventTime } from '../features/events/validation'
+import { Fragment } from 'react'
+import { ChatDaySeparator, ChatTimestamp } from '../components/ChatDate'
+import { useChatToday } from '../lib/useChatToday'
+import { chatDay, isChatContinuation } from '../lib/chatDates'
 import { compareRows, createReconciler, mergeRows } from '../lib/reconciliation'
 import { subscribeToChanges, type ConnectionState } from '../lib/realtime'
 import { supabase } from '../lib/supabase'
@@ -18,6 +21,7 @@ export function DirectChatPage() {
   return session ? <Chat key={`${conversationId}:${session.user.id}:${session.access_token}`} id={conversationId} viewer={session.user.id} /> : null
 }
 function Chat({ id, viewer }: { id: string; viewer: string }) {
+  const today = useChatToday()
   const location = useLocation()
   const back = socialProfileReturn(location.state?.directOrigin) ?? directReturn(location.state?.directOrigin) ?? '/messages'
   const [header, setHeader] = useState<DirectHeader | null>(null), [messages, setMessages] = useState<DirectMessage[]>([])
@@ -76,7 +80,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
         const finalHeader = await loadDirectHeader(id, viewer, request.signal)
         if (!active || generation !== revision || request.signal.aborted || !visible()) return
         const element = list.current
-        const anchor = element ? [...element.children].find(row => row.getBoundingClientRect().bottom > element.getBoundingClientRect().top) : null
+        const anchor = element ? [...element.children].find(row => row.hasAttribute('data-message-id') && row.getBoundingClientRect().bottom > element.getBoundingClientRect().top) : null
         scroll.current = element ? { height: element.scrollHeight, top: element.scrollTop, bottom: !includeOlder && element.scrollHeight - element.scrollTop - element.clientHeight < 64, anchor: anchor?.getAttribute('data-message-id') ?? null, offset: anchor ? anchor.getBoundingClientRect().top - element.getBoundingClientRect().top : 0 } : { height: 0, top: 0, bottom: true, anchor: null, offset: 0 }
         const sorted = mergeRows([], rows)
         boundary = sorted[0] ?? null
@@ -146,7 +150,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
     {error ? <div className="chat-state"><StatusMessage title="Conversación no disponible" tone="error">No pudimos consultar este chat. Revisá tu acceso y conexión.</StatusMessage><button className="text-button" onClick={() => refresh.current()}>Reintentar</button></div> : !header ? <div className="chat-state" role="status">{navigator.onLine ? 'Consultando conversación…' : 'Estás sin conexión. Reconectate para consultar el historial.'}</div> : <>
       {(blockUnsafe || header.read_only) && <p className="chat-read-only" role="status">Perfil no disponible · Conversación de sólo lectura. El historial permanece disponible.</p>}
       {hasOlder && <button className="text-button" disabled={loading} onClick={() => refresh.current(true)}>Cargar mensajes anteriores</button>}
-      <ol className="chat-messages" ref={list} tabIndex={0} aria-label="Historial de mensajes privados" aria-busy={loading}>{!messages.length && <li>Todavía no hay mensajes. Iniciá la conversación con un texto.</li>}{messages.map(row => <li key={row.id} data-message-id={row.id} className={row.sender_id === viewer ? 'chat-own' : 'chat-incoming'}><div className="chat-message-meta"><strong>{row.sender_id === viewer ? 'Vos' : (!blockUnsafe && header.profile?.display_name) || 'Perfil no disponible'}</strong></div><p className="chat-bubble">{row.body}</p><time dateTime={`${row.created_at}-03:00`}>{formatEventTime(row.created_at)}</time></li>)}</ol>
+      <ol className="chat-messages" ref={list} tabIndex={0} aria-label="Historial de mensajes privados" aria-busy={loading}>{!messages.length && <li>Todavía no hay mensajes. Iniciá la conversación con un texto.</li>}{messages.map((row, index) => <Fragment key={row.id}>{(index === 0 || chatDay(messages[index - 1].created_at) !== chatDay(row.created_at)) && <ChatDaySeparator day={chatDay(row.created_at)} today={today} />}<li data-message-id={row.id} className={`${row.sender_id === viewer ? 'chat-own' : 'chat-incoming'}${isChatContinuation(row, messages[index - 1]) ? ' chat-continuation' : ''}`}><div className="chat-bubble"><p className="chat-message-text">{row.body}</p><ChatTimestamp value={row.created_at} /></div></li></Fragment>)}</ol>
       <form className="chat-composer" onSubmit={send}><label htmlFor="direct-text">Mensaje privado</label><div><textarea id="direct-text" rows={2} value={text} onChange={event => setText(event.target.value)} disabled={blockUnsafe || header.read_only || !!operation} aria-describedby="direct-limit" /><GradientButton type="submit" disabled={blockUnsafe || header.read_only || !!operation || !trimDirectText(text) || [...trimDirectText(text)].length > 2000}>Enviar</GradientButton></div><p id="direct-limit">{[...trimDirectText(text)].length}/2000 caracteres · Sólo texto</p>
       </form>
     </>}

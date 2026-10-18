@@ -1,5 +1,9 @@
 # PlanIt — Estado visual UI Refresh R1–R3
 
+**Refinamiento de chats · 18/10/2026:** privados sin nombres sobre los mensajes; eventos con nombre al inicio de cada tanda y 4 px entre mensajes consecutivos del mismo remitente/día en ambos chats. [Capturas y verificación](../design/verification/chat-message-groups/README.md). Conserva pastillas, hora interior, separadores y contratos. Aceptación humana/dispositivos reales pendientes.
+
+**Ajuste de chats · 18/10/2026:** hora dentro de las pastillas y separadores diarios en chats privados y de eventos. [Capturas, resultados y límites](../design/verification/chat-day-groups/README.md). PASS build/lint (advertencias previas), fechas/realtime simulado, UI eventos en cinco anchos y DM en seis; medianoche argentina, adjuntos y anclaje de scroll verificados con fixtures. Comprobación SQL no iniciada por dependencia local `pg` ausente. Aceptación humana/dispositivos reales pendientes; sin cambios de backend ni aceptación funcional R1–R3.
+
 **Auditoría R6/B9 — 15/10/2026:** Amanecer preservado, sin cambios de UI/tokens/DESIGN. [App ejecutada y capturas](../qa/r6-block-9/README.md), seis anchos y texto200%; foco3px/targets medidos, contraste muestreado. Hallazgo P2: zoom CSS200 genera overflow en320/360/375/390; no acredita zoom nativo. Regresión histórica de cabecera Mis eventos reproducida. No cambia aceptación R1–R3 ni autovalida R6.
 
 **Integración R6/B7 · 15/10/2026:** `event_full` conserva la bandeja Amanecer; añade etiqueta Cupo completo, calendario y estado de recurso no disponible. [Antes/después y seis anchos](../qa/r6-block-7/README.md), texto del centro duplicado200%, foco3px, controles44px y altura corta en app ejecutada con fixtures. Sin CSS/tokens/DESIGN/sidecar/mockups nuevos ni aceptación adicional R1–R3. Zoom nativo, dispositivos y lector reales NOT RUN.

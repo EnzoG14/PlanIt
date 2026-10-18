@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, writeFile, readFile } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
 
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
@@ -13,10 +13,10 @@ const event = '30000000-0000-4000-8000-000000000001'
 const conversation = '50000000-0000-4000-8000-000000000001'
 const results = []
 try {
-  for (const [width, height] of [[360,800], [375,812], [390,844], [1280,900]]) {
-    const context = await browser.newContext({ viewport: { width, height } })
+  for (const [width, height] of [[320,800], [375,812], [390,844], [768,900], [1280,900]]) {
+    const context = await browser.newContext({ viewport: { width, height }, timezoneId: 'Asia/Tokyo' })
     await context.addInitScript(user => localStorage.setItem('sb-iepeqmvzjguwlhnecsdq-auth-token', JSON.stringify({ access_token: 'fixture-token', refresh_token: 'fixture', expires_at: Math.floor(Date.now()/1000)+3600, token_type: 'bearer', user })), user)
-    const rows = Array.from({ length: 65 }, (_, n) => ({ id: `40000000-0000-4000-8000-${String(n).padStart(12,'0')}`, sender_id: n % 3 ? 'other' : user.id, display_name: 'Sofía de prueba', username: 'sofia_fixture', body: `Mensaje ${n} · Nos encontramos en el evento.`, created_at: `2026-10-11T12:00:00.${String(n).padStart(6,'0')}` }))
+    const rows = Array.from({ length: 65 }, (_, n) => ({ id: `40000000-0000-4000-8000-${String(n).padStart(12,'0')}`, sender_id: n % 3 ? 'other' : user.id, display_name: 'Sofía de prueba', username: 'sofia_fixture', body: `Mensaje ${n} · Nos encontramos en el evento.`, created_at: `2026-10-${String(9 + Math.floor(n/22)).padStart(2,'0')}T12:00:00.${String(n).padStart(6,'0')}` }))
     const joins = new Map()
     let socket
     await context.routeWebSocket('**/realtime/v1/websocket**', ws => {
@@ -32,16 +32,18 @@ try {
       })
     })
     let state = 'open'
+    const imageBytes = await readFile('public/icons/pwa-192.png')
     await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**', async route => {
       const path = new URL(route.request().url()).pathname
       const reply = data => route.fulfill({ contentType: 'application/json', body: JSON.stringify(data) })
+      if (path === '/functions/v1/r7-chat-image') return route.fulfill({ contentType: 'image/png', body: imageBytes })
       if (path === '/auth/v1/user') return reply(user)
       if (path.endsWith('/get_event_chat')) return reply([{ conversation_id: conversation, title: 'Encuentro de música · prueba', event_state: state }])
-      if (path.endsWith('/get_event_chat_messages')) {
+      if (path.endsWith('/get_event_chat_messages_v2')) {
         const p = route.request().postDataJSON()
         return reply([...rows].reverse().filter(row => !p.p_before_id || row.created_at < p.p_before_at || row.created_at === p.p_before_at && row.id < p.p_before_id).slice(0,51))
       }
-      if (path.endsWith('/send_event_chat_message')) {
+      if (path.endsWith('/send_event_chat_message_v2')) {
         const p = route.request().postDataJSON()
         rows.push({ ...rows.at(-1), id: p.p_message_id, sender_id: user.id, body: p.p_body, created_at: '2026-10-11T13:00:00.000000' })
         emit(rows.at(-1)); return reply(p.p_message_id)
@@ -55,6 +57,7 @@ try {
       }
     }
     const page = await context.newPage()
+    await page.clock.install({ time: new Date('2026-10-11T15:00:00Z') })
     const errors = []; page.on('pageerror', error => errors.push(error.message))
     await page.goto(`${origin}/events/${event}/chat`)
     await page.getByText('Mensajes en tiempo real.', { exact:true }).waitFor()
@@ -80,6 +83,24 @@ try {
       assert.equal(await page.locator('.app-header, .primary-nav').count(), 0)
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false)
     }
+    const checkDates = async () => {
+      assert.equal(await page.locator('[data-message-id]:not(.chat-continuation)').count(), await page.locator('.chat-message-meta').count())
+      assert.equal(await page.locator('.chat-continuation .chat-message-meta').count(), 0)
+      assert.ok(await page.locator('.chat-continuation').evaluateAll(rows => rows.length > 0 && rows.every(row => {
+        const previous = row.previousElementSibling
+        return previous.hasAttribute('data-message-id') && Math.abs(row.getBoundingClientRect().top - previous.getBoundingClientRect().bottom - 4) < 1
+      })))
+      assert.equal(await page.locator('.chat-day-separator').count(), 3)
+      assert.equal(await page.locator('[data-message-id] > time').count(), 0)
+      assert.equal(await page.locator('[data-message-id]').count(), await page.locator('.chat-bubble time').count())
+      assert.equal(await page.locator('.chat-bubble time').first().textContent(), '12:00')
+      assert.ok(await page.locator('.chat-bubble time').first().getAttribute('aria-label'))
+      assert.ok(await page.locator('.chat-bubble time').evaluateAll(times => times.every(time => {
+        const t = time.getBoundingClientRect(), b = time.closest('.chat-bubble').getBoundingClientRect()
+        return t.left >= b.left && t.right <= b.right && t.bottom <= b.bottom
+      })))
+    }
+    await checkDates()
     await assertLayout(true)
     await page.mouse.move(width/2, height-40); await page.mouse.wheel(0,1000)
     await assertLayout(true)
@@ -91,13 +112,18 @@ try {
     await assertLayout(true)
     await history.evaluate(el => el.scrollTop = 400)
     const anchor = await history.evaluate(el => {
-      const child = [...el.children].find(child => child.getBoundingClientRect().bottom > el.getBoundingClientRect().top)
+      const child = [...el.children].find(child => child.hasAttribute('data-message-id') && child.getBoundingClientRect().bottom > el.getBoundingClientRect().top)
       return { id:child.dataset.messageId, offset:child.getBoundingClientRect().top-el.getBoundingClientRect().top }
     })
     await page.getByRole('button',{name:'Cargar mensajes anteriores'}).click()
     await page.getByText(rows[0].body,{exact:true}).waitFor()
+    await checkDates()
+    assert.deepEqual(await page.locator('.chat-day-separator').allTextContents(), ['9 de octubre de 2026', 'Ayer', 'Hoy'])
     const offset = await history.evaluate((el, id) => el.querySelector(`[data-message-id="${id}"]`).getBoundingClientRect().top-el.getBoundingClientRect().top, anchor.id)
     assert.ok(Math.abs(offset-anchor.offset) < 2)
+    await page.evaluate(() => document.documentElement.style.fontSize = '200%')
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false)
+    await page.evaluate(() => document.documentElement.style.fontSize = '')
     const top = await history.evaluate(el => el.scrollTop)
     const incoming = { ...rows.at(-1), id:'new-incoming', sender_id:'other', body:'Nuevo mensaje mientras leés el historial', created_at:'2026-10-11T14:00:00.000000' }
     rows.push(incoming); emit(incoming)
@@ -128,6 +154,23 @@ try {
     await page.waitForFunction(() => { const el=document.querySelector('.chat-messages'); return el.scrollHeight-el.scrollTop-el.clientHeight<2 })
     await assertLayout(true)
     await safeAreas.evaluate(el => el.remove())
+    // Media stays inside the bubble, including its placeholder/error state.
+    const media = { ...rows.at(-1), id: 'image-only', sender_id: user.id, body: null, attachment_id: 'fixture', file_id: 'fixture', bucket_name: 'event_media', storage_path: 'r7/chat/fixture', created_at: '2026-10-11T15:00:00' }
+    rows.push(media, { ...media, id: 'image-caption', body: 'Imagen con texto\nSegunda línea' })
+    await page.getByRole('button', { name: 'Actualizar chat' }).click()
+    await page.locator('[data-message-id="image-caption"]').waitFor()
+    assert.equal(await page.locator('.chat-bubble > .chat-image').count(), 2)
+    assert.ok(await page.locator('.chat-image').evaluateAll(images => images.every(image => image.getBoundingClientRect().bottom <= image.nextElementSibling.getBoundingClientRect().top)))
+    await page.locator('[data-message-id="image-caption"]').scrollIntoViewIfNeeded()
+    await page.locator('[data-message-id="image-caption"] .chat-image img').waitFor()
+    await page.screenshot({path: `${output}/media-${width}.png`})
+    await page.clock.setSystemTime(new Date('2026-10-12T02:59:59Z'))
+    await page.evaluate(() => window.dispatchEvent(new Event('focus')))
+    await page.clock.fastForward(2000)
+    await page.waitForFunction(() => ![...document.querySelectorAll('.chat-day-separator')].some(el => el.textContent === 'Hoy'))
+    assert.deepEqual(await page.locator('.chat-day-separator').allTextContents(), ['9 de octubre de 2026', '10 de octubre de 2026', 'Ayer'])
+    await history.evaluate(el => el.scrollTop = 0)
+    await page.screenshot({path: `${output}/days-${width}.png`})
     state='ended'; await page.getByRole('button',{name:'Actualizar chat'}).click()
     await page.getByText('Evento finalizado · Chat de sólo lectura.').waitFor()
     await assertLayout()
@@ -136,7 +179,7 @@ try {
     await page.locator('.app-header').waitFor(); await page.locator('.primary-nav').waitFor()
     assert.equal(await page.evaluate(() => document.documentElement.classList.contains('chat-active')),false)
     assert.deepEqual(errors,[])
-    results.push({width,height,result:'PASS',geometry:before,scenarios:['single scroll','last message','send','pagination anchor','incoming reader position','keyboard height and bottom pinning','visual viewport offset','read only','route cleanup']})
+    results.push({width,height,result:'PASS',geometry:before,scenarios:['single scroll','last message','send','pagination anchor','incoming reader position','keyboard height and bottom pinning','visual viewport offset','read only','route cleanup', 'day separators and Argentina time in Tokyo', 'media with and without caption', 'midnight timer']})
     await context.close()
   }
   await writeFile(`${output}/${baseline?'before':'after'}-results.json`,JSON.stringify({environment:'Edge; intercepted Auth/RPC/Phoenix fixtures; no remote writes',results},null,2))
