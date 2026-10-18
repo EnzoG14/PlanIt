@@ -10,16 +10,21 @@
 .chat-refresh p { margin: 0; color: var(--pi-color-text-on-wash); font-size: var(--pi-font-meta-size); line-height: 1.4; }
 .chat-refresh { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .chat-refresh .text-button { flex-shrink: 0; }
-.chat-messages { list-style: none; padding: 12px 4px; margin: 0; display: flex; flex-direction: column; gap: 20px; flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; overflow-anchor: none; scrollbar-gutter: stable; scrollbar-color: var(--pi-color-control-border) transparent; }
+.chat-messages { list-style: none; padding: 12px 4px; margin: 0; display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; overflow-anchor: none; scrollbar-gutter: stable; scrollbar-color: var(--pi-color-control-border) transparent; }
 .chat-messages li { flex-shrink: 0; max-width: 86%; align-self: flex-start; min-width: 0; }
+.chat-messages li + li { margin-top: 20px; }
+.chat-messages li.chat-continuation { margin-top: 4px; }
 .chat-messages .chat-own { align-self: flex-end; }
 .chat-message-meta { display: flex; flex-wrap: wrap; gap: 6px; font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); margin-bottom: 6px; overflow-wrap: anywhere; }
 .chat-message-meta strong { color: var(--pi-color-violet-deep); }
 .chat-own .chat-message-meta strong { color: var(--pi-color-ink); }
-.chat-bubble { background: var(--pi-color-surface); color: var(--pi-color-ink); box-shadow: var(--pi-shadow-card); padding: 12px 16px; margin: 0 0 6px; border-radius: 8px var(--pi-radius-bubble) var(--pi-radius-bubble); white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--pi-font-body-size); line-height: 1.5; }
+.chat-bubble { background: var(--pi-color-surface); color: var(--pi-color-ink); box-shadow: var(--pi-shadow-card); padding: 12px 16px; margin: 0; border-radius: 8px var(--pi-radius-bubble) var(--pi-radius-bubble); overflow-wrap: anywhere; font-size: var(--pi-font-body-size); line-height: 1.5; }
 .chat-own .chat-bubble { background: var(--pi-color-ink); color: var(--pi-color-surface); border-radius: var(--pi-radius-bubble) 8px var(--pi-radius-bubble) var(--pi-radius-bubble); }
-.chat-messages time { display: block; font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); font-variant-numeric: tabular-nums; }
-.chat-own time { text-align: right; }
+.chat-message-text { margin: 0; white-space: pre-wrap; }
+.chat-messages .chat-day-separator { align-self: center; max-width: 100%; text-align: center; }
+.chat-day-separator span { display: inline-block; padding: 6px 12px; border-radius: var(--pi-radius-pill); background: var(--pi-color-surface-soft); color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); line-height: 1.4; }
+.chat-bubble time { margin-top: 4px; text-align: right; line-height: 1.4; white-space: nowrap; display: block; font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); font-variant-numeric: tabular-nums; }
+.chat-own .chat-bubble time { color: var(--pi-color-dock-text); }
 .chat-composer { background: var(--pi-color-bg); border-top: 1px solid var(--pi-color-divider); padding: 8px 0 max(8px, env(safe-area-inset-bottom)); }
 .chat-composer label { display: block; font-size: var(--pi-font-label-size); font-weight: 650; margin-bottom: 8px; }
 .chat-composer > div { display: flex; align-items: center; gap: 8px; }
@@ -52,7 +57,7 @@
 .event-chat-page .chat-attachment-preview .text-button { min-height: 44px; max-width: 42%; background: transparent; color: var(--pi-color-violet-deep); }
 .event-chat-page .chat-composer > p:empty { display: none; }
 .event-chat-page .chat-file-help { font-size: var(--pi-font-meta-size); }
-.chat-image { width: min(260px, 65vw); height: clamp(112px, 23vh, 210px); margin-block: 6px; border-radius: var(--pi-radius-bubble); overflow: hidden; background: var(--pi-color-surface-soft); }
+.chat-image { width: min(260px, 65vw); max-width: 100%; height: clamp(112px, 23vh, 210px); margin-block: 6px; border-radius: var(--pi-radius-bubble); overflow: hidden; background: var(--pi-color-surface-soft); }
 .chat-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .chat-image-placeholder { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px; overflow: auto; }
 .chat-image-placeholder p { margin: 0; font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); }

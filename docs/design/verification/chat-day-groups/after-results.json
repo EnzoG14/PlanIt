@@ -1,0 +1,205 @@
+{
+  "environment": "Edge; intercepted Auth/RPC/Phoenix fixtures; no remote writes",
+  "results": [
+    {
+      "width": 320,
+      "height": 800,
+      "result": "PASS",
+      "geometry": {
+        "pageHeight": 800,
+        "viewport": 800,
+        "pageScroll": 0,
+        "list": {
+          "top": 173.59375,
+          "bottom": 614.40625,
+          "height": 440.8125
+        },
+        "composer": {
+          "top": 622.40625,
+          "bottom": 800,
+          "height": 177.59375
+        },
+        "last": {
+          "top": 456.1875,
+          "bottom": 602.859375,
+          "height": 146.671875
+        },
+        "bottomGap": 0
+      },
+      "scenarios": [
+        "single scroll",
+        "last message",
+        "send",
+        "pagination anchor",
+        "incoming reader position",
+        "keyboard height and bottom pinning",
+        "visual viewport offset",
+        "read only",
+        "route cleanup",
+        "day separators and Argentina time in Tokyo",
+        "media with and without caption",
+        "midnight timer"
+      ]
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "result": "PASS",
+      "geometry": {
+        "pageHeight": 812,
+        "viewport": 812,
+        "pageScroll": 0,
+        "list": {
+          "top": 172,
+          "bottom": 626.40625,
+          "height": 454.40625
+        },
+        "composer": {
+          "top": 634.40625,
+          "bottom": 812,
+          "height": 177.59375
+        },
+        "last": {
+          "top": 492.5,
+          "bottom": 613.578125,
+          "height": 121.078125
+        },
+        "bottomGap": 0
+      },
+      "scenarios": [
+        "single scroll",
+        "last message",
+        "send",
+        "pagination anchor",
+        "incoming reader position",
+        "keyboard height and bottom pinning",
+        "visual viewport offset",
+        "read only",
+        "route cleanup",
+        "day separators and Argentina time in Tokyo",
+        "media with and without caption",
+        "midnight timer"
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "result": "PASS",
+      "geometry": {
+        "pageHeight": 844,
+        "viewport": 844,
+        "pageScroll": 0,
+        "list": {
+          "top": 172,
+          "bottom": 658.40625,
+          "height": 486.40625
+        },
+        "composer": {
+          "top": 666.40625,
+          "bottom": 844,
+          "height": 177.59375
+        },
+        "last": {
+          "top": 524.5,
+          "bottom": 645.578125,
+          "height": 121.078125
+        },
+        "bottomGap": 0
+      },
+      "scenarios": [
+        "single scroll",
+        "last message",
+        "send",
+        "pagination anchor",
+        "incoming reader position",
+        "keyboard height and bottom pinning",
+        "visual viewport offset",
+        "read only",
+        "route cleanup",
+        "day separators and Argentina time in Tokyo",
+        "media with and without caption",
+        "midnight timer"
+      ]
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "result": "PASS",
+      "geometry": {
+        "pageHeight": 900,
+        "viewport": 900,
+        "pageScroll": 0,
+        "list": {
+          "top": 172,
+          "bottom": 714.40625,
+          "height": 542.40625
+        },
+        "composer": {
+          "top": 722.40625,
+          "bottom": 900,
+          "height": 177.59375
+        },
+        "last": {
+          "top": 606.40625,
+          "bottom": 701.890625,
+          "height": 95.484375
+        },
+        "bottomGap": 0
+      },
+      "scenarios": [
+        "single scroll",
+        "last message",
+        "send",
+        "pagination anchor",
+        "incoming reader position",
+        "keyboard height and bottom pinning",
+        "visual viewport offset",
+        "read only",
+        "route cleanup",
+        "day separators and Argentina time in Tokyo",
+        "media with and without caption",
+        "midnight timer"
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "result": "PASS",
+      "geometry": {
+        "pageHeight": 900,
+        "viewport": 900,
+        "pageScroll": 0,
+        "list": {
+          "top": 172,
+          "bottom": 714.40625,
+          "height": 542.40625
+        },
+        "composer": {
+          "top": 722.40625,
+          "bottom": 900,
+          "height": 177.59375
+        },
+        "last": {
+          "top": 606.40625,
+          "bottom": 701.890625,
+          "height": 95.484375
+        },
+        "bottomGap": 0
+      },
+      "scenarios": [
+        "single scroll",
+        "last message",
+        "send",
+        "pagination anchor",
+        "incoming reader position",
+        "keyboard height and bottom pinning",
+        "visual viewport offset",
+        "read only",
+        "route cleanup",
+        "day separators and Argentina time in Tokyo",
+        "media with and without caption",
+        "midnight timer"
+      ]
+    }
+  ]
+}
