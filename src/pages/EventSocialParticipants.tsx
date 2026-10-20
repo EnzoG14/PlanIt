@@ -25,7 +25,7 @@ export function EventSocialParticipants({ eventId, origin }: { eventId: string; 
   return <section className="attendees-page management-page social-participants" aria-label="Participantes del evento">
     <Link className="secondary-link management-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
     <header className="management-header"><h1>Participantes</h1><p>Personas con inscripción confirmada en este evento.</p></header>
-    <div className="attendees-update"><button className="text-button" disabled={loading} onClick={() => void refresh()}>Actualizar participantes</button></div>
+
     <div aria-busy={loading}>
       {loading && <p role="status">Cargando participantes…</p>}
       {denied ? <StatusMessage title="Participantes no disponibles">Sólo el organizador y los asistentes confirmados pueden consultar esta lista. Conocer el enlace no concede acceso.</StatusMessage> : error ? <><p className="field-error" role="alert">{error}</p><button className="secondary-button" onClick={() => void refresh()}>Reintentar</button></> : data && <>

@@ -4,7 +4,7 @@ import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
 import { formatEventTime } from '../features/events/validation'
-import { loadNotificationChanges, loadNotifications, markNotificationRead, notificationTarget, notificationsError, type NotificationItem } from '../features/notifications/api'
+import { clearNotifications, loadNotificationChanges, loadNotifications, markNotificationRead, notificationTarget, notificationsError, type NotificationItem } from '../features/notifications/api'
 import { catchUp, compareRows, createReconciler, mergeRows } from '../lib/reconciliation'
 import { useNotificationsRealtime } from '../features/notifications/realtime-context'
 import './notifications.css'
@@ -25,6 +25,8 @@ function NotificationsInbox() {
   const [error, setError] = useState('')
   const [actionError, setActionError] = useState('')
   const [pending, setPending] = useState<string | null>(null)
+  const [clearRevision, setClearRevision] = useState(0)
+  const [notice, setNotice] = useState('')
   const busy = useRef(false)
   const alive = useRef(false)
   const reload = useRef(() => {})
@@ -53,8 +55,8 @@ function NotificationsInbox() {
         // Reconnect revalidates the loaded range, including read changes missed offline.
         const result = await catchUp(async before => loadNotifications(before ?? null), cached.at(-1))
         incoming = result.items.filter(row => !cached.length || compareRows(row, cached.at(-1)!) >= 0)
-        if (!initialized && active) {
-          cursor = result.items.at(-1) ?? null
+        if (active) {
+          cursor = incoming.at(-1) ?? null
           setHasMore(result.hasMore)
         }
       }
@@ -90,7 +92,25 @@ function NotificationsInbox() {
     more.current = () => { append = true; queue.request() }
     queue.request()
     return () => { active = false; alive.current = false; queue.dispose(); unlisten(); reload.current = () => {}; more.current = () => {} }
-  }, [listen, invalidate])
+  }, [listen, invalidate, clearRevision])
+  async function clearInbox() {
+    if (busy.current) return
+    busy.current = true; setPending('clear'); setActionError(''); setNotice('')
+    try {
+      await clearNotifications()
+      if (!alive.current) return
+      // Remount the reconciler so no in-flight page or cached read can restore cleared rows.
+      setItems([]); setHasMore(false); setLoading(true)
+      confirmedReads.current.clear(); targetChecks.current.clear()
+      setClearRevision(value => value + 1)
+      invalidate()
+      setNotice('Notificaciones limpiadas.')
+    } catch {
+      if (alive.current) setActionError('No pudimos limpiar las notificaciones. Revisá tu conexión y volvé a intentarlo.')
+    } finally {
+      if (alive.current) { busy.current = false; setPending(null) }
+    }
+  }
   async function act(item: NotificationItem, open: boolean) {
     if (busy.current) return
     busy.current = true; setPending(item.id); setActionError('')
@@ -117,7 +137,8 @@ function NotificationsInbox() {
   }
 
   return <div className="notifications-page">
-    <header className="notifications-heading"><h1>Notificaciones</h1><button type="button" className="text-button" disabled={loading || loadingMore || pending !== null} onClick={() => reload.current()}>Actualizar</button></header>
+    <header className="notifications-heading"><h1>Notificaciones</h1><button type="button" className="secondary-button" disabled={loading || loadingMore || pending !== null || !items.length} onClick={() => void clearInbox()}>{pending === 'clear' ? 'Limpiando…' : 'Limpiar notificaciones'}</button></header>
+    {notice && <p role="status">{notice}</p>}
     {connection !== "connected" && <p role="status">{connection === "connecting" ? "Conectando los avisos…" : "Conexión interrumpida. Recuperaremos los avisos al reconectar."}</p>}
     <section aria-label="Tus avisos" aria-busy={loading || loadingMore}>
       {loading ? <div role="status"><StatusMessage title="Cargando notificaciones">Esperá un momento.</StatusMessage></div> : <>

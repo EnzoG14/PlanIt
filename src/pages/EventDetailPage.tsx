@@ -113,7 +113,7 @@ function EventDetailContent({ id }: { id: string }) {
     {location.state?.published && <StatusMessage title="Evento publicado">{event.visibility === 'unlisted' ? 'Tu evento oculto fue publicado. Generá un enlace desde la gestión para compartirlo.' : 'Tu evento ya está disponible para la comunidad.'}</StatusMessage>}
     {location.state?.edited && <StatusMessage title="Cambios guardados">La información del evento se actualizó.</StatusMessage>}
     <Link className="detail-back secondary-link" to={returnTo} state={profileBackState}><Icon name="back" />{profileOrigin ? 'Volver al perfil' : returnTo.startsWith('/my-events') ? 'Volver a Mis eventos' : returnTo.startsWith('/home') ? 'Volver al inicio' : 'Volver al mapa'}</Link>
-    <div className={`event-hero ${images[0] && !imageError ? 'has-photo' : 'without-photo'}`}>{images[0] && !imageError ? <img src={images[0]} width="960" height="600" alt={`Foto de ${event.title}`} onError={() => setImageError(true)} /> : <div className="event-hero-placeholder"><Icon name="calendar" /><span>Sin foto de portada</span></div>}<div className="event-hero-overlay" /></div>
+    {images[0] && !imageError && <div className="event-hero has-photo"><img src={images[0]} width="960" height="600" alt={`Foto de ${event.title}`} onError={() => setImageError(true)} /><div className="event-hero-overlay" /></div>}
     <h1>{event.title}</h1>
     <span className="category-chip">{category}</span>
     {imageError && <p role="status" className="field-error">No pudimos cargar las fotos. <button className="text-button" onClick={retry}>Reintentar</button></p>}
@@ -133,6 +133,7 @@ function EventDetailContent({ id }: { id: string }) {
       {organizer ? <><strong>{organizer.display_name}</strong><p>@{organizer.username}</p></> : organizerError ? <p role="status">No pudimos cargar los datos del organizador. <button className="text-button" type="button" onClick={retry}>Reintentar</button></p> : <p>Datos del organizador no disponibles.</p>}
     </section>
     <p className="field-hint">Horarios de Argentina.</p>
+    <Link className="secondary-link" to={myEventsReturnTo}>Ir a Mis eventos</Link>
     <EventParticipation key={`${id}:${session?.user.id}:${participationRevision}`} eventId={id} onSummary={setParticipation} />
     <p role="status" className="event-action-notice">{notice}</p>
     {event.organizer_id === session?.user.id && <EventManagement event={event} renderInviteAction={integration ? url => <EventShareAction event={integration} canManageInvite inviteUrl={url} /> : undefined} origin={{ myEventsReturnTo: listOrigin ?? undefined, returnTo: discoveryOrigin ?? undefined }} onChanged={message => {
@@ -140,6 +141,5 @@ function EventDetailContent({ id }: { id: string }) {
       setNotice(message); setParticipationRevision(value => value + 1)
       void loadEvent(id).then(data => setEvent(data)).catch(() => { setError('La operación se completó, pero no pudimos actualizar el detalle. Reintentá la consulta.') })
     }} />}
-    <Link className="secondary-link" to={myEventsReturnTo}>Ir a Mis eventos</Link>
   </div>
 }

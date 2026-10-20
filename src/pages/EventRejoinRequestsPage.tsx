@@ -36,7 +36,7 @@ function RequestsContent({ eventId }: { eventId: string }) {
   const dialog = useRef<HTMLDialogElement>(null)
   const cancel = useRef<HTMLButtonElement>(null)
   const trigger = useRef<HTMLElement | null>(null)
-  const update = useRef<HTMLButtonElement>(null)
+  const update = useRef<HTMLAnchorElement>(null)
   useEffect(() => { const state = life.current; state.active = true; return () => { state.active = false; state.revision++ } }, [])
   const refresh = useCallback(async (append = false) => {
     if (append && fetching.current) return
@@ -91,9 +91,9 @@ function RequestsContent({ eventId }: { eventId: string }) {
   }
   const approve = selection?.decision === 'approved'
   return <section className="attendees-page management-page rejoin-page" aria-label="Solicitudes de reincorporación">
-    <Link className="secondary-link attendees-back management-back" to={`/events/${eventId}/attendees`} state={origin}><Icon name="back" />Volver a asistentes</Link>
+    <Link ref={update} className="secondary-link attendees-back management-back" to={`/events/${eventId}/attendees`} state={origin}><Icon name="back" />Volver a asistentes</Link>
     <header className="management-header"><h1>Solicitudes de reincorporación</h1><p className="attendees-event-title">Usuarios removidos que solicitaron volver a participar del evento</p>{page && <><p className="management-event-title">{page.title}</p><p className="attendees-capacity">{page.confirmed_count} / {page.capacity} asistentes · {page.pending_count} solicitudes pendientes</p></>}</header>
-    <div className="attendees-update"><button ref={update} className="text-button" disabled={loading || saving || !!selection} onClick={() => void refresh()}>Actualizar solicitudes</button></div>
+
     <p className="attendees-notice" role="status">{notice}</p>
     {!selection && error && <p role="alert" className="field-error">{error}</p>}
     {denied ? <StatusMessage title="Solicitudes no disponibles">No encontramos el evento o no tenés permiso para administrar sus solicitudes.</StatusMessage> : <div aria-busy={loading}>
@@ -102,7 +102,7 @@ function RequestsContent({ eventId }: { eventId: string }) {
       {page && <>
         {page.event_state === 'open' && page.confirmed_count >= page.capacity && <p className="rejoin-full" role="status"><Icon name="people" />Sin cupo disponible. Las solicitudes siguen pendientes y no reservan plaza.</p>}
         {page.event_state !== 'open' && <p className="participation-notice">El evento está cerrado. Podés rechazar solicitudes pendientes; no aprobarlas.</p>}
-        {!page.requests.length && <StatusMessage title="No hay solicitudes pendientes">Los pedidos y resoluciones se reflejan al actualizar.</StatusMessage>}
+        {!page.requests.length && <StatusMessage title="No hay solicitudes pendientes">Los pedidos pendientes aparecerán acá.</StatusMessage>}
         <ul className="rejoin-list">{page.requests.map(row => <li key={row.request_id}>
           <div className="rejoin-identity"><span className="attendee-avatar" aria-hidden="true">{row.display_name.trim().split(/\s+/).slice(0,2).map(word => [...word][0]).join('').toLocaleUpperCase()}</span><div className="attendee-identity"><strong>{row.display_name}</strong><span>@{row.username}</span></div><span className="rejoin-pending">Pendiente</span></div>
           <p className="rejoin-date"><Icon name="calendar" />Solicitó: {formatEventTime(row.requested_at)}</p>

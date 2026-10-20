@@ -70,7 +70,7 @@ function StoriesContent({ eventId, permissions, durationMs, userId }: EventStori
   const authors = items.filter((story, index) => items.findIndex(s => s.author_id === story.author_id) === index)
   const selected = items.find(s => s.id === viewer)
   return <section className="event-stories" aria-label="Historias del evento">
-    <header><h2>Historias del evento</h2><button type="button" disabled={loading} onClick={() => { setMore(false); setRevision(n => n + 1) }}>Actualizar</button></header>
+    <header><h2>Historias del evento</h2></header>
     <p>Momentos compartidos durante 24 horas.</p>
     <div className="story-authors">
       {permissions.can_publish_story && <button type="button" className="story-author" aria-label="Publicar historia" onClick={() => setPublisher(true)}><span className="story-ring" aria-hidden="true">+</span>Publicar historia</button>}

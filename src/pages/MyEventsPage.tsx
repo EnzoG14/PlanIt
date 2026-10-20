@@ -93,7 +93,7 @@ function MyEventsList({ section, filter }: { section: MyEventsSection; filter: O
   }, [section, filter])
   return <section id={`panel-${section}`} role="tabpanel" aria-labelledby={`tab-${section}`} tabIndex={0} aria-busy={loading || loadingMore}>
     <p className="event-action-notice my-events-notice" role="status">{notice}</p>
-    <div className="my-events-refresh"><button type="button" className="text-button" disabled={loading || loadingMore} onClick={() => reload.current()}>Actualizar</button></div>
+
     {loading ? <div role="status"><StatusMessage title="Cargando tus eventos">Esperá un momento.</StatusMessage></div> : <>
       {error && <div><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage><button type="button" className="secondary-button" disabled={loadingMore} onClick={() => appendError ? more.current() : reload.current()}>{appendError ? 'Reintentar carga adicional' : 'Reintentar'}</button></div>}
       {!error && !events.length && !hasMore && <><StatusMessage title={section === 'organizing' ? `No hay eventos en ${organizedFilters[filter]}` : 'Todavía no tenés participaciones'}>{section === 'organizing' ? filter === 'all' ? 'Creá un evento o consultá tu histórico en Archivados.' : 'Probá otro filtro para consultar tus eventos.' : 'Explorá el mapa y elegí un evento para sumarte.'}</StatusMessage><Link className="secondary-link" to={section === 'organizing' ? '/events/new' : '/map'}>{section === 'organizing' ? 'Crear evento' : 'Explorar el mapa'}</Link></>}

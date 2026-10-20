@@ -110,3 +110,4 @@
 /* Wrapped navigation reserves its measured height, including at browser zoom. */
 html:has(.primary-nav) { scroll-padding-bottom: max(calc(112px + env(safe-area-inset-bottom)), calc(var(--dock-scroll-space, 112px) + env(safe-area-inset-bottom))); }
 .app-shell.amanecer-shell:has(.primary-nav) main { padding-bottom: max(calc(112px + env(safe-area-inset-bottom)), calc(var(--dock-space, 112px) + env(safe-area-inset-bottom))); }
+.app-shell.amanecer-shell:not(.chat-shell):not(:has(.primary-nav)) main { padding-bottom: calc(32px + env(safe-area-inset-bottom)); }

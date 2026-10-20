@@ -1,0 +1,388 @@
+{
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "migration": "20261020120000",
+  "applied": true,
+  "authorization": "Explicit user request",
+  "preflight_sql": "PASS, transaction rolled back including temporary DDL",
+  "postflight_sql": "PASS, fixtures and inbox operations rolled back",
+  "dry_run_after": "No pending migrations",
+  "security_advisors": {
+    "errors": 0,
+    "warnings": 61,
+    "findings": [
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "add_event_image"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "archive_event"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "block_user"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "cancel_event"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "create_or_rotate_event_link"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "disable_my_push_subscription"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "follow_user"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_access_grants"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_attendees"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_chat"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_chat_messages"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_chat_messages_v2"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_link_status"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_media_upload_state"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_organizer"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_participation_summary"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_rejoin_requests"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_rejoin_resolution"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_social_participants"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_stories"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_event_unregistered_uploads"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_my_event_demographics"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_my_event_export_rows"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_my_event_occupancy"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_my_event_participation_series"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_my_events_occupancy"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_my_push_settings"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_my_rejoin_status"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_or_create_direct_conversation"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_social_counts"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_social_profile"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_social_profile_events"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "get_social_relationship"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "leave_event"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "list_follow_requests"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "list_social_follows"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "publish_event_story"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "redeem_event_link"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "register_for_event"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "remove_event_image"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "remove_participant"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "reorder_event_images"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "request_rejoin"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "reserve_event_media_upload"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "resolve_follow_request"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "resolve_rejoin"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "restore_event_access"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "revoke_event_access"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "send_direct_message"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "send_event_chat_message"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "send_event_chat_message_v2"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "set_event_visibility"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "set_my_avatar"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "set_my_category_interests"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "set_my_push_previews"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "unblock_user"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "unfollow_user"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "update_event"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "update_my_social_profile"
+      },
+      {
+        "name": "authenticated_security_definer_function_executable",
+        "level": "WARN",
+        "schema": "public",
+        "entity": "upsert_my_push_subscription"
+      },
+      {
+        "name": "auth_leaked_password_protection",
+        "level": "WARN",
+        "entity": "Auth"
+      }
+    ]
+  },
+  "notes": "Existing exposed SECURITY DEFINER functions and disabled leaked-password protection were already reported before this migration. clear_notifications uses SECURITY INVOKER.",
+  "catalog_confirmation": {
+    "migration_applied": true,
+    "column_verified": true,
+    "authenticated_can_clear": true,
+    "anon_can_clear": false,
+    "rls_enabled": true
+  }
+}

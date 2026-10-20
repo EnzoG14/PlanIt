@@ -35,7 +35,7 @@ function FollowsContent({ userId, direction, own }: { userId: string; direction:
   const title = direction === 'followers' ? 'Seguidores' : 'Siguiendo'
   useEffect(() => { document.title = `${title} · PlanIt` }, [title])
   const back = own ? '/me' : `/users/${userId}`
-  return <><div className="management-wash" aria-hidden="true" /><section className="management-page social-identity-page">
+  return <><section className="management-page social-identity-page">
     <Link className="secondary-link management-back" to={back} state={location.state?.profileOrigin}><Icon name="back" />Volver al perfil</Link>
     <header className="management-header"><h1>{title}</h1></header>
     <div aria-busy={loading}>{loading ? <p role="status">Consultando {title.toLowerCase()}…</p> : denied ? <StatusMessage title="Lista no disponible">No tenés permiso para consultar esta lista.</StatusMessage> : error ? <><p className="field-error" role="alert">{error}</p><button className="secondary-button" onClick={() => void refresh()}>Reintentar</button></> : data && <>
@@ -45,6 +45,6 @@ function FollowsContent({ userId, direction, own }: { userId: string; direction:
       </Link></li>)}</ul>
       {data.next_cursor && <button className="secondary-button" onClick={() => setPages(value => value + 1)}>Cargar más personas</button>}
     </>}</div>
-    <button className="text-button" disabled={loading} onClick={() => void refresh()}>Actualizar lista</button>
+
   </section></>
 }

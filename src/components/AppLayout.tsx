@@ -20,6 +20,8 @@ function LayoutContent() {
   const { count } = useNotificationsRealtime()
   const { pathname } = useLocation()
   const isAuth = pathname === '/login' || pathname === '/register'
+  const showPrimaryNav = ['/home', '/map', '/my-events', '/me'].includes(pathname)
+  const isSocialIdentity = Boolean(matchPath('/users/:id', pathname) || matchPath('/users/:id/followers', pathname) || matchPath('/users/:id/following', pathname))
   const isEventForm = pathname === '/events/new' || Boolean(matchPath('/events/:id/edit', pathname))
   const isEventManagement = Boolean(pathname === '/me/follow-requests' || pathname === '/my-events/compare' || matchPath('/users/:id', pathname) || matchPath('/users/:id/followers', pathname) || matchPath('/users/:id/following', pathname) || matchPath('/events/:id/analytics', pathname) || matchPath('/events/:id/gallery', pathname) || matchPath('/events/:id/attendees', pathname) || matchPath('/events/:id/rejoin-requests', pathname) || matchPath('/events/:id/access', pathname))
   const isChat = Boolean(matchPath('/events/:id/chat', pathname) || matchPath('/messages/:conversationId', pathname))
@@ -46,6 +48,7 @@ function LayoutContent() {
     window.scrollTo(0, 0)
   }, [pathname])
   useLayoutEffect(() => {
+    if (!showPrimaryNav) return
     const navigation = shell.current?.querySelector<HTMLElement>('.primary-nav')
     if (!navigation) return
     const root = document.documentElement
@@ -57,7 +60,7 @@ function LayoutContent() {
     const observer = new ResizeObserver(reserve)
     reserve(); observer.observe(navigation)
     return () => { observer.disconnect(); root.style.removeProperty('--dock-space'); root.style.removeProperty('--dock-scroll-space') }
-  }, [isAuth, isChat])
+  }, [showPrimaryNav])
   useLayoutEffect(() => {
     if (!isChat) return
     const element = shell.current
@@ -85,6 +88,7 @@ function LayoutContent() {
   return (
     <div ref={shell} className={`app-shell ${isChat ? 'chat-shell' : isAuth ? 'auth-shell' : 'product-shell'}${pathname === '/my-events' ? ' amanecer-shell my-events-shell' : isEventForm ? ' amanecer-shell event-form-shell' : isAuth ? ' amanecer-shell' : isEventManagement ? ' amanecer-shell event-management-shell' : isDiscovery ? ' amanecer-shell discovery-shell' : isInvite ? ' amanecer-shell invite-shell' : isSocial ? ' amanecer-shell social-shell' : ''}`}>
       {isAuth && <div className="auth-wash" aria-hidden="true" />}
+      {(isSocialIdentity || pathname === '/me/follow-requests') && <div className="management-wash" aria-hidden="true" />}
       {isSocial && <div className="social-wash" aria-hidden="true" />}
       {isInvite && <div className="invite-wash" aria-hidden="true" />}
       <a className="skip-link" href="#main-content">Saltar al contenido</a>
@@ -101,7 +105,7 @@ function LayoutContent() {
         {logoutError && <StatusMessage title="No se pudo cerrar la sesión" tone="error">Revisá la conexión y volvé a elegir Cerrar sesión en Cuenta.</StatusMessage>}
         <RouteErrorBoundary><Outlet /></RouteErrorBoundary>
       </main>
-      {!isAuth && !isChat && <nav className="primary-nav" aria-label="Navegación principal">
+      {showPrimaryNav && <nav className="primary-nav" aria-label="Navegación principal">
         <NavLink to="/home"><Icon name="home" /><span>Inicio</span></NavLink>
         <NavLink to="/map"><Icon name="map" /><span>Mapa</span></NavLink>
         <NavLink to="/my-events"><Icon name="calendar" /><span>Mis eventos</span></NavLink>

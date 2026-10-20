@@ -115,8 +115,8 @@ function ComparisonResult({ ids }: { ids: string[] }) {
     const controller = new AbortController()
     const timeout = window.setTimeout(() => controller.abort(), 10000)
     const invalidate = () => { active = false; controller.abort(); setData(null); setStale(true); setOffline(!navigator.onLine) }
-    const online = () => setOffline(false)
-    const onHide = () => { if (document.hidden) invalidate() }
+    const online = () => { setOffline(false); retry() }
+    const onHide = () => { if (document.hidden) invalidate(); else if (navigator.onLine) retry() }
     window.addEventListener('offline', invalidate); window.addEventListener('online', online); document.addEventListener('visibilitychange', onHide)
     if (navigator.onLine) {
       loadMyEventsComparison(ids, controller.signal).then(value => { if (active) setData(value) })
@@ -133,7 +133,7 @@ function ComparisonResult({ ids }: { ids: string[] }) {
   return <section className="compare-result" aria-labelledby="compare-title" aria-live="polite" aria-busy={pending}>
     <h2 id="compare-title">Comparación</h2>
     {pending && <StatusMessage title="Comparando eventos">Esperá un momento.</StatusMessage>}
-    {offline ? <StatusMessage title="Sin conexión">Conectate y elegí Actualizar para comparar.</StatusMessage>
+    {offline ? <StatusMessage title="Sin conexión">Recuperaremos la comparación cuando vuelvas a conectarte.</StatusMessage>
       : stale ? <StatusMessage title="Actualizá la comparación">La consulta anterior dejó de estar vigente.</StatusMessage>
         : error ? <StatusMessage title="Comparación no disponible" tone="error">{error}</StatusMessage>
           : data && <>
@@ -158,6 +158,6 @@ function ComparisonResult({ ids }: { ids: string[] }) {
             <p className="field-hint">Las inscripciones no acreditan presencia física. Los datos reflejan inscripciones vigentes al actualizar.</p>
             <p className="analytics-updated">Última consulta: <time dateTime={`${data.as_of}-03:00`}>{formatEventTime(data.as_of)}</time> (hora de Argentina).</p>
           </>}
-    <button type="button" className="secondary-button" disabled={pending || offline} onClick={retry}>{error ? 'Reintentar' : 'Actualizar'}</button>
+    {error && <button type="button" className="secondary-button" disabled={pending || offline} onClick={retry}>Reintentar</button>}
   </section>
 }

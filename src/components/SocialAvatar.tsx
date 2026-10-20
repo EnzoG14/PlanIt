@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Icon } from './Icon'
 import { loadSocialAvatar } from '../features/social/api'
+import './social-avatar.css'
 
 export function SocialAvatar({ avatar }: { avatar: string | null }) {
   const [url, setUrl] = useState<string | null>(null)

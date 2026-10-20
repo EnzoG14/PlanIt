@@ -12,7 +12,7 @@ import { useChatToday } from '../lib/useChatToday'
 import { chatDay, isChatContinuation } from '../lib/chatDates'
 import { supabase } from '../lib/supabase'
 import { catchUp, compareRows, createReconciler, mergeRows } from '../lib/reconciliation'
-import { subscribeToChanges, type ConnectionState } from '../lib/realtime'
+import { subscribeToChanges } from '../lib/realtime'
 import './chat.css'
 
 export function EventChatPage() {
@@ -46,7 +46,6 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
   const list = useRef<HTMLOListElement>(null)
   const refresh = useRef<(before?: ChatMessage) => void>(() => {})
   const scroll = useRef<{ bottom: boolean; height: number; top: number; older: boolean; anchor: string | null; offset: number } | null>(null)
-  const [connection, setConnection] = useState<ConnectionState>('connecting')
   const body = trimChatText(text)
   useLayoutEffect(() => { if (!sending && notice) textarea.current?.focus() }, [sending, notice])
   useEffect(() => {
@@ -107,7 +106,7 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
               if (!hint || compareRows(candidate, hint) < 0) hint = candidate
             }
             dirty = true; queue.request()
-          }, () => { recovery = true; dirty = true; queue.request() }, setConnection)
+          }, () => { recovery = true; dirty = true; queue.request() }, () => {})
       }
       const load = async (cursor?: ChatMessage) => {
         if (!active) return { items: [], hasMore: false }
@@ -220,7 +219,6 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
   const closed = header && header.event_state !== 'open'
   return <section className="chat-page event-chat-page" aria-label="Chat del evento">
     <header className="chat-header"><Link className="icon-link" to={`/events/${eventId}`} aria-label="Volver al evento"><Icon name="back" /></Link><h1>{header?.title ?? 'Chat del evento'}</h1></header>
-    <div className="chat-refresh"><p role="status">{connection === 'connected' ? 'Mensajes en tiempo real.' : connection === 'connecting' ? 'Conectando el chat…' : 'Conexión interrumpida. Recuperaremos los mensajes al reconectar.'}</p><button className="text-button" disabled={pending || sending} onClick={() => refresh.current()}>Actualizar chat</button></div>
     {unavailable ? <div className="chat-state"><StatusMessage title="Chat no disponible">Sólo el organizador y los asistentes confirmados pueden acceder.</StatusMessage></div> : error ? <div className="chat-state"><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage></div> : pending && !header ? <div className="chat-state"><StatusMessage title="Cargando chat">Esperá un momento.</StatusMessage></div> : <>
       {closed && <p className="chat-read-only" role="status">{header.event_state === 'ended' ? 'Evento finalizado' : header.event_state === 'archived' ? 'Evento archivado' : 'Evento cancelado'} · Chat de sólo lectura.</p>}
       {hasOlder && <button className="text-button" disabled={pending || sending} onClick={() => refresh.current(messages[0])}>Cargar mensajes anteriores</button>}

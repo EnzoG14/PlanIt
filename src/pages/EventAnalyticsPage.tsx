@@ -38,10 +38,10 @@ function AnalyticsContent({ eventId }: { eventId: string }) {
     const controller = new AbortController()
     const timeout = window.setTimeout(() => controller.abort(), 10000)
     const invalidate = () => { active = false; controller.abort(); setData(null); setDemographics(null); setDemographicsError(false); setPending(false); setStale(true); setOffline(!navigator.onLine) }
-    const online = () => setOffline(false)
+    const online = () => { setOffline(false); refresh() }
     window.addEventListener('offline', invalidate)
     window.addEventListener('online', online)
-    const onHide = () => { if (document.hidden) invalidate() }
+    const onHide = () => { if (document.hidden) invalidate(); else if (navigator.onLine) refresh() }
     document.addEventListener('visibilitychange', onHide)
     if (navigator.onLine) {
       void Promise.all([loadMyEventOccupancy(eventId, controller.signal), loadMyEventDemographics(eventId, controller.signal).catch(() => null)]).then(([value, demo]) => {
@@ -62,10 +62,10 @@ function AnalyticsContent({ eventId }: { eventId: string }) {
     <div className="management-wash" aria-hidden="true" />
     <Link className="secondary-link management-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
     <header className="management-header"><h1>Estadísticas del evento</h1><p>Estado actual de inscripciones</p></header>
-    <div className="analytics-toolbar"><Link className="secondary-link" to={origin.myEventsReturnTo ?? '/my-events?section=organizing'}>Mis eventos</Link><button className="secondary-button" disabled={pending || offline} onClick={refresh}>{pending ? 'Consultando…' : error ? 'Reintentar' : 'Actualizar datos'}</button></div>
+    <div className="analytics-toolbar"><Link className="secondary-link" to={origin.myEventsReturnTo ?? '/my-events?section=organizing'}>Mis eventos</Link>{(error || stale || demographicsError) && <button className="secondary-button" disabled={pending || offline} onClick={refresh}>Reintentar</button>}</div>
     <div aria-live="polite" aria-busy={pending}>
       {pending && <StatusMessage title="Consultando estadísticas">Esperá un momento.</StatusMessage>}
-      {offline ? <StatusMessage title="Sin conexión">Conectate y elegí Actualizar datos para consultar la ocupación.</StatusMessage> : stale ? <StatusMessage title="Actualizá la ocupación">La consulta anterior dejó de estar vigente. Elegí Actualizar datos.</StatusMessage> : error ? <StatusMessage title="Estadísticas no disponibles" tone="error">{error} Indicadores no disponibles (N/D).</StatusMessage> : data && <>
+      {offline ? <StatusMessage title="Sin conexión">Recuperaremos la ocupación cuando vuelvas a conectarte.</StatusMessage> : stale ? <StatusMessage title="Actualizá la ocupación">La consulta anterior dejó de estar vigente. Estamos recuperando la ocupación.</StatusMessage> : error ? <StatusMessage title="Estadísticas no disponibles" tone="error">{error} Indicadores no disponibles (N/D).</StatusMessage> : data && <>
         <h2 className="analytics-event-title">{data.title}</h2>
         <p className="analytics-state">{stateLabels[data.event_state]}</p>
         <CsvDownload key={`export:${attempt}:${exportRevision}`} kind="attendees" eventId={eventId} />
@@ -81,7 +81,7 @@ function AnalyticsContent({ eventId }: { eventId: string }) {
           <p className="field-hint">Las inscripciones no acreditan presencia física. Las altas y bajas se reflejan al actualizar.</p>
         </section>
         {demographics && <DemographicsPanel data={demographics} />}
-        {demographicsError && <StatusMessage title="Datos demográficos no disponibles">No pudimos consultar esta distribución. Elegí Actualizar datos para reintentar.</StatusMessage>}
+        {demographicsError && <StatusMessage title="Datos demográficos no disponibles">No pudimos consultar esta distribución. Podés reintentar la consulta.</StatusMessage>}
         <TrendPanel eventId={eventId} title={data.title} revision={attempt} onPeriodChange={() => setExportRevision(n => n + 1)} />
         <p className="analytics-updated">Última consulta: <time dateTime={`${data.as_of}-03:00`}>{formatEventTime(data.as_of)}</time> (hora de Argentina).</p>
       </>}

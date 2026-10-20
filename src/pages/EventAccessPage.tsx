@@ -27,7 +27,7 @@ function AccessContent({ eventId }: { eventId: string }) {
   const lifetime = useRef({ mounted: false, revision: 0 })
   const cursor = useRef<string | null>(null), fetching = useRef(false), locked = useRef(false)
   const dialog = useRef<HTMLDialogElement>(null), cancel = useRef<HTMLButtonElement>(null)
-  const trigger = useRef<HTMLElement | null>(null), update = useRef<HTMLButtonElement>(null)
+  const trigger = useRef<HTMLElement | null>(null), update = useRef<HTMLAnchorElement>(null)
   useEffect(() => { const state = lifetime.current; state.mounted = true; return () => { state.mounted = false; state.revision++ } }, [])
   const fetchPage = useCallback(async (append = false) => {
     if (append && fetching.current) return
@@ -91,12 +91,12 @@ function AccessContent({ eventId }: { eventId: string }) {
     }
   }
   return <section className="access-page attendees-page management-page" aria-label="Administración de accesos">
-    <Link className="secondary-link management-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
+    <Link ref={update} className="secondary-link management-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
     <header className="management-header"><h1>Accesos al evento</h1><p>Administrá quién puede consultar este evento oculto.</p>{page && <p className="management-event-title">{page.title}</p>}</header>
     {!denied && <div className="attendees-filters" role="group" aria-label="Estado del permiso">
       {(['active', 'revoked'] as const).map(value => <button key={value} type="button" aria-pressed={status === value} disabled={busy || Boolean(confirm)} onClick={() => { setStatus(value); setNotice('') }}>{value === 'active' ? 'Activos' : 'Revocados'}</button>)}
     </div>}
-    <div className="attendees-update"><button ref={update} className="text-button" disabled={pending || busy || Boolean(confirm)} onClick={() => void fetchPage()}>Actualizar accesos</button></div>
+
     <p className="attendees-notice" role="status">{notice}</p>
     {error && <p role="alert" className="field-error">{error}</p>}
     {denied ? <StatusMessage title="Accesos no disponibles">Este panel está disponible sólo para el organizador de un evento oculto.</StatusMessage> : <div aria-busy={pending}>

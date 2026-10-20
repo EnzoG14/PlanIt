@@ -34,7 +34,7 @@ function GalleryContent({ id, userId }: { id: string; userId: string }) {
   const locked = useRef(false)
   const previews = useRef<string[]>([])
   const dialog = useRef<HTMLDialogElement>(null)
-  const refreshButton = useRef<HTMLButtonElement>(null)
+  const refreshButton = useRef<HTMLAnchorElement>(null)
   const removeButton = useRef<HTMLButtonElement | null>(null)
   useEffect(() => { document.title = 'Galería · PlanIt'; mounted.current = true; const urls = previews.current; return () => { mounted.current = false; urls.forEach(URL.revokeObjectURL) } }, [])
   useEffect(() => {
@@ -104,17 +104,17 @@ function GalleryContent({ id, userId }: { id: string; userId: string }) {
   }
   function closeConfirm() { setConfirm(null) }
   if (loading) return <div className="management-page"><StatusMessage title="Cargando galería">Esperá un momento.</StatusMessage></div>
-  if (!event || event.organizer_id !== userId) return <div className="management-page"><StatusMessage title={error ? 'No se pudo cargar' : 'Galería no disponible'}>{error || 'Sólo el organizador puede administrar las imágenes del evento.'}</StatusMessage>{error && <button className="secondary-button" onClick={() => setRevision(n => n+1)}>Reintentar</button>}<Link className="secondary-link management-back" to={`/events/${id}`} state={origin}><Icon name="back" />Volver al evento</Link></div>
+  if (!event || event.organizer_id !== userId) return <div className="management-page"><StatusMessage title={error ? 'No se pudo cargar' : 'Galería no disponible'}>{error || 'Sólo el organizador puede administrar las imágenes del evento.'}</StatusMessage>{error && <button className="secondary-button" onClick={() => setRevision(n => n+1)}>Reintentar</button>}<Link ref={refreshButton} className="secondary-link management-back" to={`/events/${id}`} state={origin}><Icon name="back" />Volver al evento</Link></div>
   return <div className="gallery-page management-page">
-    <Link className="secondary-link management-back" to={`/events/${id}`} state={origin}><Icon name="back" />Volver al evento</Link>
+    <Link ref={refreshButton} className="secondary-link management-back" to={`/events/${id}`} state={origin}><Icon name="back" />Volver al evento</Link>
     <header className="management-header"><h1>Galería de imágenes</h1><p className="management-event-title">{event.title}</p><p>Elegí la portada y el orden de las fotos de tu evento.</p></header>
     <a className="secondary-link gallery-add-link" href="#gallery-upload"><Icon name="plus" />Agregar fotos</a>
-    <div className="gallery-feedback">{error && <p role="alert" className="field-error">{error}</p>}<p role="status" className={busy ? 'gallery-notice is-processing' : 'gallery-notice'}>{busy ? 'Procesando…' : notice}</p></div>
+    <div className="gallery-feedback">{error && <><p role="alert" className="field-error">{error}</p><button className="secondary-button" disabled={busy} onClick={() => void operation(refresh)}>Reintentar</button></>}<p role="status" className={busy ? 'gallery-notice is-processing' : 'gallery-notice'}>{busy ? 'Procesando…' : notice}</p></div>
     <div className="gallery-section-heading"><h2>Imágenes guardadas</h2><strong aria-live="polite">{images.length} / 10 guardadas{pending.length > 0 && ` · ${pending.length} pendientes`}</strong></div>
     <p className="field-hint">La primera imagen será la portada. Usá los controles para cambiar el orden.</p>
     {!images.length && <StatusMessage title="Tu galería empieza acá">Tu evento todavía no tiene imágenes. Seleccioná la primera para agregar una portada.</StatusMessage>}
     <ol className="gallery-grid" aria-label="Imágenes guardadas">{images.map((image, index) => <li key={image.id} className={index === 0 ? 'is-cover' : ''}>
-      <div className="gallery-photo">{image.url && !failedPhotos.includes(image.id) ? <img src={image.url} alt={`Imagen ${index+1} de ${event.title}`} onError={() => setFailedPhotos(ids => [...ids,image.id])} /> : <span>Foto no disponible. Renovala con Actualizar.</span>}{index === 0 && <span className="gallery-cover">Portada</span>}
+      <div className="gallery-photo">{image.url && !failedPhotos.includes(image.id) ? <img src={image.url} alt={`Imagen ${index+1} de ${event.title}`} onError={() => setFailedPhotos(ids => [...ids,image.id])} /> : <span>Foto no disponible.</span>}{index === 0 && <span className="gallery-cover">Portada</span>}
         <button className="gallery-remove" disabled={busy} aria-label={`Quitar imagen ${index+1}`} onClick={e => { removeButton.current = e.currentTarget; setConfirm(image) }}><Icon name="close" /></button></div>
       <p className="gallery-position">Imagen {index+1}</p><div className="gallery-order">{[-1,1].map(direction => <button key={direction} className="text-button" aria-label={`Mover imagen ${index+1} ${direction === -1 ? 'antes' : 'después'}`} disabled={busy || index+direction < 0 || index+direction >= images.length} onClick={() => void operation(async () => {
         const ids = images.map(row => row.id); [ids[index],ids[index+direction]] = [ids[index+direction],ids[index]]
@@ -130,7 +130,7 @@ function GalleryContent({ id, userId }: { id: string; userId: string }) {
 
     {pending.length > 0 && <section aria-label="Cargas pendientes"><h2>Imágenes por subir</h2><p>Las vistas previas se guardan al subir cada imagen.</p><ul className="gallery-grid">{pending.map(item => <li key={item.attempt.path}><div className="gallery-photo"><img src={item.preview} alt={`Vista previa de ${item.attempt.file.name}`} /></div><p className="gallery-filename">{item.attempt.file.name}</p><p role="status">{item.status}</p>{busy && item.status.endsWith('…') && <progress aria-label={`Carga de ${item.attempt.file.name}`} />}{item.error && <p className="field-error" role="alert">{item.error}</p>}<div className="gallery-pending-actions"><button className="secondary-button" disabled={busy} onClick={() => void operation(() => upload(item))}>{item.error ? 'Reintentar carga' : 'Subir imagen'}</button><button className="text-button" disabled={busy} onClick={() => void operation(async () => { await cleanupUpload(item.attempt.path); setPending(rows => rows.filter(row => row.attempt.path !== item.attempt.path)); await refresh() })}>Descartar y limpiar</button></div></li>)}</ul></section>}
     <div className="gallery-maintenance" aria-label="Recuperación de imágenes">
-    <button ref={refreshButton} className="text-button" disabled={busy} onClick={() => void operation(refresh)}>Actualizar galería y renovar fotos</button>
+
     <button className="text-button" disabled={busy} onClick={() => void operation(async () => { const paths = await loadUnregisteredUploads(id); setUnregistered(paths.filter(path => !pending.some(item => item.attempt.path === path))); setNotice(paths.length ? 'Encontramos cargas sin guardar. Podés limpiarlas.' : 'No hay cargas sin guardar.') })}>Revisar cargas interrumpidas</button>
     {unregistered.length > 0 && <section className="gallery-recovery"><p>{unregistered.length} cargas sin registrar. Cerrá otras sesiones de carga antes de limpiarlas.</p><button className="secondary-button" disabled={busy} onClick={() => void operation(async () => { for (const path of unregistered) await cleanupUpload(path); setUnregistered([]); setNotice('Limpieza completada.'); await refresh() })}>Limpiar cargas sin guardar</button></section>}
     </div>

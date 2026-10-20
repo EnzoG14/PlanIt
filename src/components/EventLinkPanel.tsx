@@ -58,7 +58,7 @@ export function EventLinkPanel({ event, renderInviteAction }: { event: EventReco
     <h3>Enlace del evento oculto</h3>
     <p>{closed ? 'El evento terminó, fue cancelado o archivado. No admite nuevos accesos.' : 'El enlace se entrega una sola vez. Si lo perdiste, regeneralo; no podemos recuperar el anterior.'}</p>
     <button ref={trigger} type="button" className="secondary-button" disabled={closed || hasLink === null} onClick={open}><Icon name="copy" />{hasLink ? 'Regenerar enlace' : hasLink === null ? 'Comprobando enlace…' : 'Generar enlace'}</button>
-    {error && !openDialog && <><p role="alert" className="field-error">{error}</p><button type="button" className="secondary-button" onClick={() => { setError(''); setRevision(value => value + 1) }}>Actualizar enlace</button></>}
+    {error && !openDialog && <><p role="alert" className="field-error">{error}</p><button type="button" className="secondary-button" onClick={() => { setError(''); setRevision(value => value + 1) }}>Reintentar</button></>}
     <dialog ref={dialog} className="event-action-dialog event-link-dialog" aria-labelledby={titleId} aria-describedby={descriptionId} tabIndex={-1} onCancel={e => { e.preventDefault(); close() }} onKeyDown={e => {
       if (e.key !== 'Tab') return
       const nodes = [...e.currentTarget.querySelectorAll<HTMLElement>('button:not(:disabled),input:not(:disabled)')]

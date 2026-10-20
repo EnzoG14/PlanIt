@@ -1,5 +1,7 @@
-.notifications-heading { display: flex; justify-content: space-between; }
+.notifications-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 .notifications-heading h1 { margin: 0; }
+.notifications-heading > * { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+.notifications-heading button { white-space: normal; }
 .notifications-page > p[role="status"] { color: var(--pi-color-text-on-wash); font-size: var(--pi-font-meta-size); }
 .notifications-list { display: grid; gap: var(--pi-space-compact); list-style: none; padding: 0; margin: 0; }
 .notification-row { display: flex; gap: 12px; padding: 18px 16px; border-radius: var(--pi-radius-card-compact); background: var(--pi-color-surface-card); box-shadow: var(--pi-shadow-card); }

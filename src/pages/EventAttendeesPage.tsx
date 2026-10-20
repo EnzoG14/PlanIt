@@ -58,7 +58,7 @@ function AttendeesContent({ eventId }: { eventId: string }) {
   const dialog = useRef<HTMLDialogElement>(null)
   const cancel = useRef<HTMLButtonElement>(null)
   const trigger = useRef<HTMLElement | null>(null)
-  const update = useRef<HTMLButtonElement>(null)
+  const update = useRef<HTMLAnchorElement>(null)
   useEffect(() => { const state = lifetime.current; state.mounted = true; return () => { state.mounted = false; state.revision++ } }, [])
   useEffect(() => {
     const timer = window.setTimeout(() => setQuery(search.trim()), 250)
@@ -124,7 +124,7 @@ function AttendeesContent({ eventId }: { eventId: string }) {
     if (lifetime.current.mounted) { setRemoving(false); closeDialog() }
   }
   return <section className="attendees-page management-page" aria-label="Administración de asistentes">
-    <Link className="secondary-link management-back attendees-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
+    <Link ref={update} className="secondary-link management-back attendees-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
     <header className="management-header"><h1>Asistentes</h1>{page && <><p className="attendees-capacity">{page.confirmed_count} / {page.capacity} asistentes</p><p className="attendees-event-title management-event-title">{page.title}</p></>}</header>
     {page && <Link className="secondary-link" to={`/events/${eventId}/attendees?view=social`} state={origin}>Ver participantes</Link>}
     {!denied && <>
@@ -134,7 +134,7 @@ function AttendeesContent({ eventId }: { eventId: string }) {
       </div>
       <span className="attendees-search-label" id="attendees-search-label">Buscar por nombre</span><label className="attendees-search"><Icon name="search" /><span className="visually-hidden">Buscar asistentes por nombre</span><input aria-labelledby="attendees-search-label" type="search" placeholder="Buscar asistentes…" maxLength={120} value={search} disabled={removing} onChange={e => { setSearch(e.target.value); setNotice('') }} /></label>
     </>}
-    <div className="attendees-update"><button ref={update} className="text-button" disabled={pending || removing} onClick={() => void fetchPage()}>Actualizar asistentes</button></div>
+
     <p className="attendees-notice" role="status">{notice}</p>
     {error && <p role="alert" className="field-error">{error}</p>}
     {denied ? <StatusMessage title="Asistentes no disponibles">No encontramos el evento o no tenés permiso para administrar sus asistentes.</StatusMessage> : <div aria-busy={pending}>
@@ -142,7 +142,7 @@ function AttendeesContent({ eventId }: { eventId: string }) {
       {!pending && !page && error && <button className="secondary-button" onClick={() => void fetchPage()}>Reintentar</button>}
       {page && <>
         {page.event_state !== 'open' && <p className="participation-notice">{page.event_state === 'ended' ? 'Evento finalizado' : page.event_state === 'cancelled' ? 'Evento cancelado' : 'Evento archivado'} · Asistentes de sólo lectura.</p>}
-        {!page.attendees.length && <StatusMessage title={query ? 'Sin resultados' : status === 'confirmed' ? 'Todavía no hay asistentes confirmados' : 'No hay asistentes removidos'}>{query ? 'Probá con otro nombre.' : 'Las inscripciones y bajas se reflejan al actualizar.'}</StatusMessage>}
+        {!page.attendees.length && <StatusMessage title={query ? 'Sin resultados' : status === 'confirmed' ? 'Todavía no hay asistentes confirmados' : 'No hay asistentes removidos'}>{query ? 'Probá con otro nombre.' : 'Las inscripciones y bajas aparecerán acá.'}</StatusMessage>}
         <ul className="attendees-list">{page.attendees.map(row => <li key={row.participation_id}>
           <span className="attendee-avatar" aria-hidden="true">{row.display_name.trim().split(/\s+/).slice(0, 2).map(word => [...word][0]).join('').toLocaleUpperCase()}</span>
           <div className="attendee-identity"><strong>{row.display_name}</strong><span>@{row.username}</span></div>
