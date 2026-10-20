@@ -1,3 +1,4 @@
+import { invalidateContent } from '../../lib/session-content'
 import { signedImageUrls } from '../../lib/signed-images'
 import { supabase } from '../../lib/supabase'
 import { isSocialId } from '../social/api'
@@ -54,11 +55,13 @@ function saveFailure(error: { code?: string; message?: string }): ProfileSaveErr
 }
 export async function saveMyProfile(userId: string, raw: ProfileValues, signal: AbortSignal): Promise<number> {
   const client = await clientFor(userId, signal), values = normalizedProfile(raw)
+  invalidateContent('profile:')
   const { data, error } = await client.rpc('update_my_social_profile', {
     p_username: values.username, p_display_name: values.display_name, p_first_name: values.first_name || null,
     p_last_name: values.last_name || null, p_birth_date: values.birth_date || null, p_sex: values.sex || null,
     p_bio: values.bio || null, p_visibility: values.visibility,
   }).abortSignal(deadline(signal))
+  invalidateContent('profile:')
   if (error) throw saveFailure(error)
   if (data?.visibility !== values.visibility || !Number.isSafeInteger(data.accepted_requests) || data.accepted_requests < 0) throw new ProfileSaveError(message, true)
   return data.accepted_requests
@@ -102,6 +105,7 @@ export async function checkMyAvatar(userId: string, attempt: AvatarAttempt | nul
   return { profile, saved: profile.avatar_file_id === (fileId ?? null) && (!attempt || !!fileId) }
 }
 export async function saveMyAvatar(userId: string, attempt: AvatarAttempt | null, previousId: string | null, signal: AbortSignal): Promise<void> {
+  invalidateContent('profile:')
   const current = await checkMyAvatar(userId, attempt, signal)
   if (current.saved) return
   if (current.profile.avatar_file_id !== previousId) throw new ProfileSaveError('La foto cambió en otra sesión. Descartá esta selección y actualizá el perfil.')
@@ -123,6 +127,7 @@ export async function saveMyAvatar(userId: string, attempt: AvatarAttempt | null
   }
   const client = await clientFor(userId, signal)
   const { data, error } = await client.rpc('set_my_avatar', { p_storage_path: attempt?.path ?? null }).abortSignal(deadline(signal))
+  invalidateContent('profile:')
   if (error) throw saveFailure(error)
   if (attempt ? !isSocialId(data) : data !== null) throw new ProfileSaveError(message, true)
 }

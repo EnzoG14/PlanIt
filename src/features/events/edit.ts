@@ -1,3 +1,4 @@
+import { invalidateContent } from '../../lib/session-content'
 import { supabase } from '../../lib/supabase'
 import { loadEvent, type EventRecord } from './api'
 import { argentinaNow, argentinaTimestamp, type EventValues } from './validation'
@@ -40,6 +41,7 @@ export function editMessage(code: string, message: string): string {
   return 'No pudimos guardar los cambios. Revisá la conexión y reintentá.'
 }
 export async function updateEvent(id: string, values: EventValues): Promise<void> {
+  invalidateContent('home:'); invalidateContent('suggestions:'); invalidateContent('my-events:')
   if (!supabase) throw new EditError('La conexión no está configurada.')
   try {
     const { data, error } = await supabase.rpc('update_event', {
@@ -49,6 +51,7 @@ export async function updateEvent(id: string, values: EventValues): Promise<void
       p_latitude: Number(values.latitude), p_longitude: Number(values.longitude), p_location_name: values.location_name.trim() || null,
       p_visibility: values.visibility ?? 'public',
     })
+    invalidateContent('home:'); invalidateContent('suggestions:'); invalidateContent('my-events:')
     if (error) throw new EditError(editMessage(error.code, error.message), !/^(22|23|40|42|P0001|PGRST202|PGRST30[13])/.test(error.code))
     if (data !== id) throw new EditError('No pudimos confirmar el guardado.', true)
   } catch (error) {

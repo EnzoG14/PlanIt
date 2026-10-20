@@ -3,7 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
-import { loadMyProfile, loadMyAvatar, type OwnProfile } from '../features/profile/api'
+import type { OwnProfile } from '../features/profile/api'
+import { loadProfileContent, profileContentKey, type ProfileContent } from '../features/startup/content'
+import { contentUpdatedAt, readContent } from '../lib/session-content'
 import './profile.css'
 import { participantsReturn } from '../features/social/api'
 import { OwnSocialCounts } from '../components/SocialCounts'
@@ -29,7 +31,7 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
     const frame = window.requestAnimationFrame(() => (location.state?.focusMessages ? messagesLink : location.state?.focusRequests ? requestsLink : location.state?.focusEdit ? editLink : interestsLink).current?.focus())
     return () => window.cancelAnimationFrame(frame)
   }, [location.key, location.state])
-  const [result, setResult] = useState<ProfileResult | null>(null)
+  const [result, setResult] = useState<ProfileResult | null>(() => readContent<ProfileContent>(profileContentKey(userId)) ?? null)
   const [attempt, setAttempt] = useState(0)
   const [avatarFailed, setAvatarFailed] = useState(false)
   const refresh = () => { setResult(null); setAvatarFailed(false); setAttempt(value => value + 1) }
@@ -39,24 +41,22 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
     let revision = 0
     let controller = new AbortController()
     let avatarExpiry: number | undefined
-    async function load() {
+    async function load(force = false) {
       const request = ++revision
       controller.abort(); controller = new AbortController()
       const signal = controller.signal
       window.clearTimeout(avatarExpiry)
-      setResult(null); setAvatarFailed(false)
+      setAvatarFailed(false)
       try {
-        const data = await loadMyProfile(userId, signal)
-        let avatarUrl: string | null = null
-        try { avatarUrl = await loadMyAvatar(userId, data.avatar_file_id, signal) } catch { /* Optional media fallback. */ }
+        const data = await loadProfileContent(userId, force)
         if (active && request === revision && !signal.aborted) {
-          setResult({ profile: data, avatarUrl })
-          avatarExpiry = window.setTimeout(() => { if (active && request === revision) setAvatarFailed(true) }, 55000)
+          setResult(data)
+          avatarExpiry = window.setTimeout(() => { if (active && request === revision) setAvatarFailed(true) }, Math.max(1, contentUpdatedAt(profileContentKey(userId)) + 45000 - Date.now()))
         }
       } catch { if (active && request === revision && !signal.aborted) setResult({ error: true }) }
     }
-    const onVisible = () => { if (document.visibilityState === 'visible') void load(); else { controller.abort(); setResult(null) } }
-    void load()
+    const onVisible = () => { if (document.visibilityState === 'visible') void load(); else { controller.abort() } }
+    void load(attempt > 0)
     window.addEventListener('focus', onVisible)
     document.addEventListener('visibilitychange', onVisible)
     return () => {

@@ -1,3 +1,4 @@
+import { invalidateContent } from '../../lib/session-content'
 import { supabase } from '../../lib/supabase'
 import { loadEvent, type EventRecord } from './api'
 import { argentinaNow, emptyEvent, type EventValues } from './validation'
@@ -24,9 +25,11 @@ export async function checkEventAction(id: string, action: 'cancel' | 'archive')
   return Boolean(event && (action === 'archive' ? event.archived_at : event.cancelled_at))
 }
 export async function closeEvent(id: string, action: 'cancel' | 'archive') {
+  invalidateContent('home:'); invalidateContent('suggestions:'); invalidateContent('my-events:')
   if (!supabase) throw new EventActionError('La conexión no está configurada.')
   try {
     const { data, error } = await supabase.rpc(action === 'cancel' ? 'cancel_event' : 'archive_event', { p_event_id: id })
+    invalidateContent('home:'); invalidateContent('suggestions:'); invalidateContent('my-events:')
     if (error) throw new EventActionError(actionMessage(error.code, error.message), !/^(22|23|40|42|P0001|PGRST202|PGRST30[13])/.test(error.code))
     if (data !== id) throw new EventActionError('No pudimos confirmar la operación.', true)
   } catch (failure) {
