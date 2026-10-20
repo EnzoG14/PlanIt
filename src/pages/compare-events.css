@@ -29,3 +29,10 @@
   .compare-table td::before { content: attr(data-label) ': '; font-weight: 650; }
   .compare-table th[scope="row"] { font-size: var(--pi-font-title-size); }
 }
+
+/* One continuous Amanecer wash behind the account and comparison headers. */
+.compare-shell { position: relative; isolation: isolate; }
+.compare-shell > .management-wash { height: 380px; }
+.compare-shell .app-header { background: transparent; }
+.compare-shell .management-header { margin-top: 0; }
+.compare-shell .management-header h1 { text-wrap: balance; }

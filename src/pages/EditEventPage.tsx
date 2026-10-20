@@ -1,6 +1,8 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import type { AddressSuggestion } from '../features/location/autocomplete'
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { EventFields } from '../components/EventFields'
 import { GradientButton } from '../components/GradientButton'
 import { Icon } from '../components/Icon'
@@ -127,7 +129,7 @@ function EditEventForm({ id, userId }: { id: string; userId: string }) {
       loadParticipationSummary(id).then(summary => { if (active.current) setConfirmed(summary.confirmed_count) }).catch(() => { /* Server validates capacity even if refresh fails. */ })
     } finally { sending.current = false; if (active.current) setBusy(false) }
   }
-  const back = <Link className="secondary-link detail-back" to={`/events/${id}`} state={origin}><Icon name="back" />Volver al evento</Link>
+  const back = <BackButton to={`/events/${id}`} state={origin} />
   if (loading) return <StatusMessage title="Cargando formulario">Esperá un momento.</StatusMessage>
   if (loadError) return <>{back}<StatusMessage title="No se pudo cargar" tone="error">{loadError}</StatusMessage><button className="secondary-button" onClick={retry}>Reintentar</button></>
   if (!event) return <>{back}<StatusMessage title="Evento no encontrado">No encontramos un evento disponible para tu cuenta.</StatusMessage></>

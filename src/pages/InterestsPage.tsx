@@ -1,5 +1,6 @@
+import { BackButton } from '../components/BackButton'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Link, useBeforeUnload, useBlocker } from 'react-router-dom'
+import { useBeforeUnload, useBlocker } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { ScreenHeader } from '../components/ScreenHeader'
 import { StatusMessage } from '../components/StatusMessage'
@@ -97,7 +98,7 @@ function InterestsEditor({ userId }: { userId: string }) {
     }
   }
   return <section className="interests-page" aria-label="Preferencias de categorías">
-    <Link className="secondary-link interests-back" to="/me" state={{ focusInterests: true }}><Icon name="back" />Volver a mi perfil</Link>
+    <BackButton to="/me" state={{ focusInterests: true }} />
     <div ref={heading}><ScreenHeader title="Mis intereses" description="Elegí las categorías que te interesan. Podés cambiarlas cuando quieras." icon="category" /></div>
     {loading && <div role="status"><StatusMessage title="Cargando intereses">Consultando categorías y preferencias de tu cuenta…</StatusMessage></div>}
     {error && <p className="field-error" role="alert">{error}</p>}

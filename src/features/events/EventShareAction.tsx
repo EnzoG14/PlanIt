@@ -27,7 +27,7 @@ function ShareAction({ event, canManageInvite, inviteUrl }: EventShareActionProp
       ? !canManageInvite ? 'Sólo el organizador puede compartir la invitación de este evento oculto.'
         : event.state !== 'open' ? 'Este evento ya no admite nuevos accesos.'
         : 'Necesitás el enlace de invitación. Si lo perdiste, generá otro desde la gestión del enlace; el anterior dejará de funcionar.'
-      : 'Para compartir, abrí PlanIt desde su dirección HTTPS pública y comprobá los datos del evento.'
+      : ''
   }
   const platform: SharePlatform = {
     isSecureContext: window.isSecureContext,

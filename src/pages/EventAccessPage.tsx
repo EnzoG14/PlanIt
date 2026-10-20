@@ -1,5 +1,7 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
@@ -91,7 +93,7 @@ function AccessContent({ eventId }: { eventId: string }) {
     }
   }
   return <section className="access-page attendees-page management-page" aria-label="Administración de accesos">
-    <Link ref={update} className="secondary-link management-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
+    <BackButton ref={update} to={`/events/${eventId}`} state={origin} />
     <header className="management-header"><h1>Accesos al evento</h1><p>Administrá quién puede consultar este evento oculto.</p>{page && <p className="management-event-title">{page.title}</p>}</header>
     {!denied && <div className="attendees-filters" role="group" aria-label="Estado del permiso">
       {(['active', 'revoked'] as const).map(value => <button key={value} type="button" aria-pressed={status === value} disabled={busy || Boolean(confirm)} onClick={() => { setStatus(value); setNotice('') }}>{value === 'active' ? 'Activos' : 'Revocados'}</button>)}

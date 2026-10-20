@@ -1,0 +1,14 @@
+{
+  "environment": "Edge Playwright, intercepted Auth/REST/Mapbox; fixtures, no remote writes or physical devices",
+  "results": [
+    "320: one arrow, no dock on secondary screens, touch targets, comparison header, map spacing, no overflow",
+    "375: one arrow, no dock on secondary screens, touch targets, comparison header, map spacing, no overflow",
+    "390: one arrow, no dock on secondary screens, touch targets, comparison header, map spacing, no overflow",
+    "768: one arrow, no dock on secondary screens, touch targets, comparison header, map spacing, no overflow",
+    "1280: one arrow, no dock on secondary screens, touch targets, comparison header, map spacing, no overflow",
+    "Direct entry/reload falls back to Inicio; no interests access in Home",
+    "Internal origin, query/hash, browser forward and repeated back remain consistent",
+    "Profile-only interests access and focus restoration after history POP",
+    "Forms, event management, profiles, chats, invite, 404, loading/error and enlarged text retain a single usable arrow"
+  ]
+}

@@ -1,5 +1,7 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
@@ -91,7 +93,7 @@ function RequestsContent({ eventId }: { eventId: string }) {
   }
   const approve = selection?.decision === 'approved'
   return <section className="attendees-page management-page rejoin-page" aria-label="Solicitudes de reincorporación">
-    <Link ref={update} className="secondary-link attendees-back management-back" to={`/events/${eventId}/attendees`} state={origin}><Icon name="back" />Volver a asistentes</Link>
+    <BackButton ref={update} to={`/events/${eventId}/attendees`} state={origin} />
     <header className="management-header"><h1>Solicitudes de reincorporación</h1><p className="attendees-event-title">Usuarios removidos que solicitaron volver a participar del evento</p>{page && <><p className="management-event-title">{page.title}</p><p className="attendees-capacity">{page.confirmed_count} / {page.capacity} asistentes · {page.pending_count} solicitudes pendientes</p></>}</header>
 
     <p className="attendees-notice" role="status">{notice}</p>

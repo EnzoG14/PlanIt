@@ -60,7 +60,9 @@ function StoriesContent({ eventId, permissions, durationMs, userId }: EventStori
       return live.length === previous.length ? previous : live
     }), 100)
     const revalidate = () => { setItems([]); setViewer(null); setMore(false); setRevision(n => n + 1) }
-    const visibility = () => { if (document.hidden) { setItems([]); setViewer(null); setPublisher(false) } else revalidate() }
+    // Native camera/file pickers can hide the document. Keep the local composer
+    // mounted so their selection can return; published media is still cleared.
+    const visibility = () => { if (document.hidden) { setItems([]); setViewer(null) } else revalidate() }
     window.addEventListener('focus', revalidate); window.addEventListener('online', revalidate)
     document.addEventListener('visibilitychange', visibility)
     // Poll authorization while visible; failure removes already rendered bytes.

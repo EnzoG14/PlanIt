@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useBackLocation as useLocation } from './back-navigation-context'
 import { openDirectConversation } from '../features/social/messages'
 import '../pages/direct-messages.css'
 

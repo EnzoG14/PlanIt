@@ -1,3 +1,5 @@
+import { BackNavigationProvider } from './BackNavigationProvider'
+import { BackButton } from './BackButton'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation, matchPath } from 'react-router-dom'
 import { supabase, supabaseConfigError } from '../lib/supabase'
@@ -14,7 +16,7 @@ import '../styles/social.css'
 export function AppLayout() {
   const { session } = useAuth()
   const userId = session?.user.id ?? ''
-  return <NotificationsProvider key={userId} userId={userId}><LayoutContent /></NotificationsProvider>
+  return <BackNavigationProvider><NotificationsProvider key={userId} userId={userId}><LayoutContent /></NotificationsProvider></BackNavigationProvider>
 }
 function LayoutContent() {
   const { count } = useNotificationsRealtime()
@@ -86,14 +88,14 @@ function LayoutContent() {
     }
   }, [isChat])
   return (
-    <div ref={shell} className={`app-shell ${isChat ? 'chat-shell' : isAuth ? 'auth-shell' : 'product-shell'}${pathname === '/my-events' ? ' amanecer-shell my-events-shell' : isEventForm ? ' amanecer-shell event-form-shell' : isAuth ? ' amanecer-shell' : isEventManagement ? ' amanecer-shell event-management-shell' : isDiscovery ? ' amanecer-shell discovery-shell' : isInvite ? ' amanecer-shell invite-shell' : isSocial ? ' amanecer-shell social-shell' : ''}`}>
+    <div ref={shell} className={`app-shell ${isChat ? 'chat-shell' : isAuth ? 'auth-shell' : 'product-shell'}${pathname === '/my-events/compare' ? ' compare-shell' : ''}${pathname === '/my-events' ? ' amanecer-shell my-events-shell' : isEventForm ? ' amanecer-shell event-form-shell' : isAuth ? ' amanecer-shell' : isEventManagement ? ' amanecer-shell event-management-shell' : isDiscovery ? ' amanecer-shell discovery-shell' : isInvite ? ' amanecer-shell invite-shell' : isSocial ? ' amanecer-shell social-shell' : ''}`}>
       {isAuth && <div className="auth-wash" aria-hidden="true" />}
-      {(isSocialIdentity || pathname === '/me/follow-requests') && <div className="management-wash" aria-hidden="true" />}
+      {(isSocialIdentity || pathname === '/me/follow-requests' || pathname === '/my-events/compare') && <div className="management-wash" aria-hidden="true" />}
       {isSocial && <div className="social-wash" aria-hidden="true" />}
       {isInvite && <div className="invite-wash" aria-hidden="true" />}
       <a className="skip-link" href="#main-content">Saltar al contenido</a>
       {!isChat && (isAuth ? <div className="auth-topbar">
-        <Link className="icon-link" to="/map" aria-label="Volver al mapa"><Icon name="back" /></Link>
+        <BackButton to="/map" />
         <Link className="brand" to="/map" aria-label="PlanIt, inicio">Plan<span>It</span></Link>
       </div> : <header className="app-header">
         <NavLink className="brand" to="/home" aria-label="PlanIt, inicio"><img src="/favicon.svg" width="32" height="32" alt="" />Plan<span>It</span></NavLink>
@@ -103,6 +105,13 @@ function LayoutContent() {
         {supabaseConfigError && <StatusMessage title="Configuración pendiente" tone="error">{supabaseConfigError}</StatusMessage>}
         {error && <div className="session-error"><StatusMessage title="No se pudo recuperar la sesión" tone="error">{error}</StatusMessage><GradientButton type="button" onClick={retry}>Reintentar</GradientButton></div>}
         {logoutError && <StatusMessage title="No se pudo cerrar la sesión" tone="error">Revisá la conexión y volvé a elegir Cerrar sesión en Cuenta.</StatusMessage>}
+        {!showPrimaryNav && !isAuth && <BackButton fallback to={
+          pathname.startsWith('/me/') || pathname === '/messages' ? '/me'
+            : matchPath('/messages/:conversationId', pathname) ? '/messages'
+              : pathname === '/my-events/compare' || pathname === '/events/new' ? '/my-events'
+                : matchPath('/events/:id/*', pathname) && pathname.split('/')[2] !== 'new' && pathname.split('/').length > 3 ? `/events/${pathname.split('/')[2]}`
+                  : '/home'
+        } />}
         <RouteErrorBoundary><Outlet /></RouteErrorBoundary>
       </main>
       {showPrimaryNav && <nav className="primary-nav" aria-label="Navegación principal">

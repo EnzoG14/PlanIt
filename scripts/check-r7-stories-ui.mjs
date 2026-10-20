@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url'
 import { createServer } from 'vite'
 import { createHash } from 'node:crypto'
 
-const out = 'docs/qa/r7-block-5/ui', fixture = '.r7-stories-ui.local'
+const out = process.env.PLANIT_STORIES_UI_OUTPUT ?? 'docs/design/verification/ui-back-navigation/stories', fixture = '.r7-stories-ui.local'
 await mkdir(out, { recursive: true }); await mkdir(fixture, { recursive: true })
 await writeFile(`${fixture}/index.html`, '<html lang="es"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Historias · fixture B5</title><div id="root"></div><script type="module" src="/\u002er7-stories-ui.local/main.tsx"></script></html>')
 await writeFile(`${fixture}/main.tsx`, `import React,{useState} from 'react';import{createRoot}from'react-dom/client';import{AuthContext}from'/src/features/auth/useAuth';import{EventStoriesEntry}from'/src/features/events/stories/EventStoriesEntry';import'/src/styles/tokens.css';function Fixture(){const[account,setAccount]=useState('user-a'),[allowed,setAllowed]=useState(true);return <AuthContext.Provider value={{session:{user:{id:account},access_token:'fixture'},loading:false,error:null,retry:()=>{}}}><main style={{maxWidth:560,margin:'auto',padding:16,background:'var(--pi-color-bg)'}}><h1>Encuentro de fotografía</h1><p>Datos sintéticos · prueba aislada B5</p><button onClick={()=>setAccount('user-b')}>Cambiar cuenta</button><button onClick={()=>setAllowed(false)}>Quitar permiso</button><EventStoriesEntry eventId="event-a" returnTo="/events/event-a" permissions={{can_read_stories:allowed,can_publish_story:true}} durationMs={1100}/></main></AuthContext.Provider>}createRoot(document.getElementById('root')).render(<Fixture/>);`)
@@ -68,9 +68,24 @@ try {
     assert.equal(await page.evaluate(()=>window.__blobs.size),0)
     record(`${width}: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup`)
     await page.getByRole('button',{name:'Publicar historia',exact:true}).click()
-    await page.locator('input[type=file]').setInputFiles({name:'bad.txt',mimeType:'text/plain',buffer:Buffer.from('bad')})
+    assert.equal(await page.getByText(/Una imagen JPEG, PNG o WebP/).count(), 0)
+    await page.screenshot({path:`${out}/publisher-empty-${width}.png`,fullPage:true})
+    const chooserReady = page.waitForEvent('filechooser')
+    await page.getByRole('button', {name:'Tomar foto',exact:true}).click()
+    const chooser = await chooserReady
+    assert.equal(await chooser.element().getAttribute('capture'), 'user')
+    await chooser.setFiles({name:'camara.png',mimeType:'image/png',buffer:png})
+    await page.locator('.story-preview').waitFor()
+    assert.equal(await page.getByLabel('Tomar foto para la historia').inputValue(), '')
+    // Native camera/file selection may hide the document temporarily.
+    await page.evaluate(() => { Object.defineProperty(document, 'hidden', {configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange')) })
+    assert.equal(await page.locator('.story-publisher[open]').count(), 1)
+    await page.evaluate(() => { Object.defineProperty(document, 'hidden', {configurable:true,value:false});document.dispatchEvent(new Event('visibilitychange')) })
+    assert.equal(await page.locator('.story-preview').count(), 1)
+    record(`${width}: camera source, preview and composer retained across native-picker visibility`)
+    await page.getByLabel('Imagen de la historia', { exact: true }).setInputFiles({name:'bad.txt',mimeType:'text/plain',buffer:Buffer.from('bad')})
     await page.getByRole('alert').filter({hasText:'JPEG'}).waitFor()
-    await page.locator('input[type=file]').setInputFiles({name:'momento.png',mimeType:'image/png',buffer:png})
+    await page.getByLabel('Imagen de la historia', { exact: true }).setInputFiles({name:'momento.png',mimeType:'image/png',buffer:png})
     await page.locator('.story-preview').waitFor()
     await page.screenshot({path:`${out}/publisher-${width}.png`,fullPage:true})
     await page.locator('.story-primary').click(); await page.getByRole('button',{name:'Comprobar y reintentar'}).waitFor()
@@ -97,12 +112,12 @@ try {
       await page.getByText('Historia 3 de 3',{exact:true}).waitFor()
       await page.waitForFunction(()=>!document.querySelector('.story-viewer[open]'))
       record('Hold and manual pause freeze progress, Tab stays in dialog; autoplay explicitly enabled across 3 alternating-author stories, final closes')
-      mode='empty';await page.getByRole('button',{name:'Actualizar',exact:true}).click();await page.getByText('Todavía no hay historias vigentes.').waitFor()
-      mode='denied';await page.getByRole('button',{name:'Actualizar',exact:true}).click();await page.getByRole('alert').waitFor()
+      mode='empty';await page.evaluate(() => window.dispatchEvent(new Event('focus')));await page.getByText('Todavía no hay historias vigentes.').waitFor()
+      mode='denied';await page.evaluate(() => window.dispatchEvent(new Event('focus')));await page.getByRole('alert').waitFor()
       mode='live';shortTTL=true;await page.getByRole('button',{name:'Reintentar',exact:true}).click();await page.getByRole('button',{name:'Sofía 2 historias'}).click()
       await page.evaluate(()=>{Date.now=()=>0})
       await page.waitForFunction(()=>!document.querySelector('.story-viewer[open]'));assert.equal(await page.evaluate(()=>window.__blobs.size),0)
-      shortTTL=false;await page.getByRole('button',{name:'Actualizar',exact:true}).click();await page.getByRole('button',{name:'Sofía 2 historias'}).click()
+      shortTTL=false;await page.evaluate(() => window.dispatchEvent(new Event('focus')));await page.getByRole('button',{name:'Sofía 2 historias'}).click()
       await page.keyboard.press('Escape');await page.getByRole('button',{name:'Cambiar cuenta'}).click()
       await page.getByRole('button',{name:'Quitar permiso'}).click();assert.equal(await page.locator('.event-stories').count(),0)
       record('Empty, denied/retry, server TTL while open revokes Blob despite changed device clock, account remount and permission gate')

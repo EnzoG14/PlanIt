@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { useAuth } from '../features/auth/useAuth'
 import { eventEndsAt, type SuggestedEvent } from '../features/events/suggestions'
 import { clearSuggestions } from '../features/events/suggestions-cache'
@@ -69,7 +68,7 @@ function Suggestions({ userId, returnTo, reference }: { userId: string; returnTo
     return reasons.join(' · ')
   }
   return <section className="home-suggestions" aria-labelledby="home-suggestions-title" aria-busy={state.loading}>
-    <div className="home-suggestions-heading"><h2 id="home-suggestions-title">Para vos</h2><Link className="text-button" to="/me/interests">Mis intereses</Link></div>
+    <div className="home-suggestions-heading"><h2 id="home-suggestions-title">Para vos</h2></div>
     <p className="field-hint">{state.loading ? 'Consultando tus preferencias y eventos disponibles.' : state.error ? 'Reintentá para consultar tus preferencias y eventos disponibles.' : state.hasInterests ? 'Sugerencias por tus intereses, cercanía o fecha. Son independientes de los filtros de abajo.' : 'No elegiste intereses: estos son próximos eventos públicos generales.'}</p>
     {reference.origin && !state.loading && !state.error && state.hasInterests && <p className="field-hint">Referencia de cercanía: {originLabel(reference)}.</p>}
     {state.loading ? <div role="status"><StatusMessage title="Buscando sugerencias">Esperá un momento.</StatusMessage></div> : state.error ? <><StatusMessage title="No pudimos cargar tus sugerencias" tone="error">Revisá la conexión y volvé a intentar.</StatusMessage><button className="secondary-button" type="button" onClick={() => setAttempt(value => value + 1)}>Reintentar sugerencias</button></> : <>

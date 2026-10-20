@@ -1,5 +1,7 @@
 # PlanIt — Estado visual UI Refresh R1–R3
 
+**Adición · 20/10/2026 · Navegación e historias:** flechas de regreso unificadas en pantallas secundarias, acceso a intereses desde Perfil, encabezado continuo de comparación y espacio del mapa; selector de historias con vista previa y captura móvil nativa. [Evidencia, pruebas y límites](../design/verification/ui-back-navigation/README.md). Amanecer y contratos de datos conservados. Cámara/dispositivos/lector reales pendientes; sin nueva aceptación funcional R1–R3.
+
 **Ubicación del mapa · 19/10/2026:** solicitud automática de GPS y fallback Resistencia, Chaco; composición y estilos actuales conservados, sin rediseño. [Capturas con fixtures y verificación](../design/verification/map-current-location/README.md), móvil/escritorio. Sin cambios de tokens, CSS, DESIGN.md ni mockups; dispositivos reales y aceptación humana pendientes.
 
 **Refinamiento de chats · 18/10/2026:** privados sin nombres sobre los mensajes; eventos con nombre al inicio de cada tanda y 4 px entre mensajes consecutivos del mismo remitente/día en ambos chats. [Capturas y verificación](../design/verification/chat-message-groups/README.md). Conserva pastillas, hora interior, separadores y contratos. Aceptación humana/dispositivos reales pendientes.

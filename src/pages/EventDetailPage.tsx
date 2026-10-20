@@ -1,5 +1,7 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import { useEffect, useState } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { useAuth } from '../features/auth/useAuth'
 import { validatedDiscoveryReturn } from '../features/events/search'
@@ -112,7 +114,7 @@ function EventDetailContent({ id }: { id: string }) {
   return <div className="event-detail-page">
     {location.state?.published && <StatusMessage title="Evento publicado">{event.visibility === 'unlisted' ? 'Tu evento oculto fue publicado. Generá un enlace desde la gestión para compartirlo.' : 'Tu evento ya está disponible para la comunidad.'}</StatusMessage>}
     {location.state?.edited && <StatusMessage title="Cambios guardados">La información del evento se actualizó.</StatusMessage>}
-    <Link className="detail-back secondary-link" to={returnTo} state={profileBackState}><Icon name="back" />{profileOrigin ? 'Volver al perfil' : returnTo.startsWith('/my-events') ? 'Volver a Mis eventos' : returnTo.startsWith('/home') ? 'Volver al inicio' : 'Volver al mapa'}</Link>
+    <BackButton to={returnTo} state={profileBackState} />
     {images[0] && !imageError && <div className="event-hero has-photo"><img src={images[0]} width="960" height="600" alt={`Foto de ${event.title}`} onError={() => setImageError(true)} /><div className="event-hero-overlay" /></div>}
     <h1>{event.title}</h1>
     <span className="category-chip">{category}</span>

@@ -1,0 +1,83 @@
+{
+  "environment": "Edge headless, actual isolated components served by Vite; HTTP/Auth/Storage intercepted, labeled synthetic image; no real authorization evidence",
+  "hashes": {
+    "EventStoriesEntry.tsx": "f8829e37091fdde775adc86858f4b445d8869285e5c487f75d2dbdbe8564e787",
+    "StoryViewer.tsx": "d0a1561cd093465a4ed798ae99817f37f8c17736bdbf8ec863403662ceeb4468",
+    "StoryPublisher.tsx": "98c77a062f67376957859a5ff896353adb83302a47e19caf26481012b889d10f",
+    "stories.css": "ba1540533f4868966577fc6afd8fe7581e8c8db9cd252626adb4845311fa0128"
+  },
+  "results": [
+    {
+      "test": "320: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup",
+      "result": "PASS"
+    },
+    {
+      "test": "320: camera source, preview and composer retained across native-picker visibility",
+      "result": "PASS"
+    },
+    {
+      "test": "320: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success",
+      "result": "PASS"
+    },
+    {
+      "test": "375: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup",
+      "result": "PASS"
+    },
+    {
+      "test": "375: camera source, preview and composer retained across native-picker visibility",
+      "result": "PASS"
+    },
+    {
+      "test": "375: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success",
+      "result": "PASS"
+    },
+    {
+      "test": "390: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup",
+      "result": "PASS"
+    },
+    {
+      "test": "390: camera source, preview and composer retained across native-picker visibility",
+      "result": "PASS"
+    },
+    {
+      "test": "390: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success",
+      "result": "PASS"
+    },
+    {
+      "test": "Image GET denied, clear error, pointer retry successfully loads image",
+      "result": "PASS"
+    },
+    {
+      "test": "Hold and manual pause freeze progress, Tab stays in dialog; autoplay explicitly enabled across 3 alternating-author stories, final closes",
+      "result": "PASS"
+    },
+    {
+      "test": "Empty, denied/retry, server TTL while open revokes Blob despite changed device clock, account remount and permission gate",
+      "result": "PASS"
+    },
+    {
+      "test": "768: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup",
+      "result": "PASS"
+    },
+    {
+      "test": "768: camera source, preview and composer retained across native-picker visibility",
+      "result": "PASS"
+    },
+    {
+      "test": "768: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: layout, native dialog, reduced-motion, keyboard sequence, Escape, focus and Blob cleanup",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: camera source, preview and composer retained across native-picker visibility",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: invalid image, preview, failed RPC never success, same UUID retry without second upload, confirmed success",
+      "result": "PASS"
+    }
+  ]
+}

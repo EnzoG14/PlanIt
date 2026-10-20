@@ -175,3 +175,6 @@
 .discovery-shell .discovery-origin-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .discovery-shell .discovery-origin-actions .text-button, .discovery-shell .discovery-date-radius > .text-button { min-height: 44px; justify-self: start; }
 @media (min-width: 480px) { .discovery-shell .discovery-dates { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Keep the zone heading separate from every result state. */
+.discovery-shell .map-results > .results-heading { margin-bottom: 16px; }

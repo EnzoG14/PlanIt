@@ -1,5 +1,7 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import { useEffect, useRef, useState } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useAuth } from '../features/auth/useAuth'
 import { loadEvent, type EventRecord } from '../features/events/api'
 import { addImage, cleanupUpload, imageValidation, loadGallery, loadUnregisteredUploads, removeImage, reorderImages, type GalleryImage, type ImageAttempt } from '../features/events/gallery'
@@ -104,9 +106,9 @@ function GalleryContent({ id, userId }: { id: string; userId: string }) {
   }
   function closeConfirm() { setConfirm(null) }
   if (loading) return <div className="management-page"><StatusMessage title="Cargando galería">Esperá un momento.</StatusMessage></div>
-  if (!event || event.organizer_id !== userId) return <div className="management-page"><StatusMessage title={error ? 'No se pudo cargar' : 'Galería no disponible'}>{error || 'Sólo el organizador puede administrar las imágenes del evento.'}</StatusMessage>{error && <button className="secondary-button" onClick={() => setRevision(n => n+1)}>Reintentar</button>}<Link ref={refreshButton} className="secondary-link management-back" to={`/events/${id}`} state={origin}><Icon name="back" />Volver al evento</Link></div>
+  if (!event || event.organizer_id !== userId) return <div className="management-page"><StatusMessage title={error ? 'No se pudo cargar' : 'Galería no disponible'}>{error || 'Sólo el organizador puede administrar las imágenes del evento.'}</StatusMessage>{error && <button className="secondary-button" onClick={() => setRevision(n => n+1)}>Reintentar</button>}<BackButton ref={refreshButton} to={`/events/${id}`} state={origin} /></div>
   return <div className="gallery-page management-page">
-    <Link ref={refreshButton} className="secondary-link management-back" to={`/events/${id}`} state={origin}><Icon name="back" />Volver al evento</Link>
+    <BackButton ref={refreshButton} to={`/events/${id}`} state={origin} />
     <header className="management-header"><h1>Galería de imágenes</h1><p className="management-event-title">{event.title}</p><p>Elegí la portada y el orden de las fotos de tu evento.</p></header>
     <a className="secondary-link gallery-add-link" href="#gallery-upload"><Icon name="plus" />Agregar fotos</a>
     <div className="gallery-feedback">{error && <><p role="alert" className="field-error">{error}</p><button className="secondary-button" disabled={busy} onClick={() => void operation(refresh)}>Reintentar</button></>}<p role="status" className={busy ? 'gallery-notice is-processing' : 'gallery-notice'}>{busy ? 'Procesando…' : notice}</p></div>

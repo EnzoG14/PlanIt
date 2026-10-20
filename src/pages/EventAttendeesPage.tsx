@@ -1,5 +1,7 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
@@ -36,7 +38,7 @@ function AttendeesEntry({ eventId }: { eventId: string }) {
   const origin = { myEventsReturnTo: validatedMyEventsReturn(location.state?.myEventsReturnTo) ?? undefined, returnTo: location.state?.returnTo === '/home' || location.state?.returnTo === '/map' ? location.state.returnTo : undefined }
   if (social || owner === false) return <EventSocialParticipants eventId={eventId} origin={origin} />
   if (owner) return <AttendeesContent eventId={eventId} />
-  return <section className="management-page"><Link className="secondary-link management-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link><StatusMessage title={failed ? 'Asistentes no disponibles' : 'Consultando asistentes'}>{failed ? 'No pudimos comprobar el evento y tus permisos.' : 'Esperá un momento.'}</StatusMessage>{failed && <button className="secondary-button" onClick={() => setAttempt(value => value + 1)}>Reintentar</button>}</section>
+  return <section className="management-page"><BackButton to={`/events/${eventId}`} state={origin} /><StatusMessage title={failed ? 'Asistentes no disponibles' : 'Consultando asistentes'}>{failed ? 'No pudimos comprobar el evento y tus permisos.' : 'Esperá un momento.'}</StatusMessage>{failed && <button className="secondary-button" onClick={() => setAttempt(value => value + 1)}>Reintentar</button>}</section>
 }
 function AttendeesContent({ eventId }: { eventId: string }) {
   const location = useLocation()
@@ -124,7 +126,7 @@ function AttendeesContent({ eventId }: { eventId: string }) {
     if (lifetime.current.mounted) { setRemoving(false); closeDialog() }
   }
   return <section className="attendees-page management-page" aria-label="Administración de asistentes">
-    <Link ref={update} className="secondary-link management-back attendees-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
+    <BackButton ref={update} to={`/events/${eventId}`} state={origin} />
     <header className="management-header"><h1>Asistentes</h1>{page && <><p className="attendees-capacity">{page.confirmed_count} / {page.capacity} asistentes</p><p className="attendees-event-title management-event-title">{page.title}</p></>}</header>
     {page && <Link className="secondary-link" to={`/events/${eventId}/attendees?view=social`} state={origin}>Ver participantes</Link>}
     {!denied && <>

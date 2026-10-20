@@ -64,7 +64,7 @@ try {
     assert.equal(await page.getByRole('navigation', { name: 'Navegación principal' }).getByRole('link').count(), 4)
     if (baseline) { check(`${width}: immutable main baseline`); await context.close(); continue }
     const section = page.getByRole('region', { name: 'Para vos', exact: true })
-    assert.ok(await section.getByRole('link', { name: 'Mis intereses', exact: true }).evaluate(el => el.getBoundingClientRect().height >= 44))
+    assert.equal(await section.getByRole('link', { name: 'Mis intereses', exact: true }).count(), 0)
     assert.equal(await section.getByText('Por tu interés en Música', { exact: true }).count(), 1)
     assert.equal(requests[0].p_origin_lat, null); assert.equal(requests[0].p_origin_lng, null)
     assert.deepEqual(Object.keys(requests[0]).sort(), ['p_limit', 'p_origin_lat', 'p_origin_lng'])
@@ -72,7 +72,7 @@ try {
     const beforeReturn = requests.length
     await section.getByRole('link', { name: /Ver detalle de/ }).click()
     await page.getByRole('heading', { name: event.title, exact: true, level: 1 }).waitFor()
-    await page.getByRole('link', { name: 'Volver al inicio' }).click()
+    await page.getByRole('link', { name: 'Volver' }).click()
     await page.locator('.home-suggestions .event-card').waitFor()
     assert.equal(requests.length, beforeReturn, 'returning within 30 seconds reuses suggestions')
     check(`${width}: CA-04 detail return reuses fresh suggestions without another RPC`)
