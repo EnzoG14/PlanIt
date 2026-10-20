@@ -1,3 +1,4 @@
+import { signedImageUrls } from '../../lib/signed-images'
 import { supabase } from '../../lib/supabase'
 import { argentinaTimestamp, imageTypes, type Category, type EventValues } from './validation'
 
@@ -108,8 +109,7 @@ export async function loadEventImages(id: string): Promise<string[]> {
   const paths = (data ?? []).flatMap(row => (Array.isArray(row.files) ? row.files : [row.files]).filter(Boolean).map(file => file.storage_path))
   if (!paths.length) return []
   // D14: private-capable surfaces request a 60-second signed URL lifetime.
-  const signed = await supabase.storage.from('event_media').createSignedUrls(paths, 60)
-  if (signed.error) throw new Error('No se pudieron cargar las fotos.')
-  if (signed.data?.some(file => !file.signedUrl || file.error)) throw new Error('No se pudieron renovar las fotos. Reintentá.')
-  return signed.data?.flatMap(file => file.signedUrl ? [file.signedUrl] : []) ?? []
+  const signed = await signedImageUrls('event_media', paths, 60)
+  if (signed.imageError) throw new Error('No se pudieron renovar las fotos. Reintentá.')
+  return paths.flatMap(path => signed.urls.get(path) ? [signed.urls.get(path)!] : [])
 }
