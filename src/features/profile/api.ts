@@ -1,3 +1,4 @@
+import { signedImageUrls } from '../../lib/signed-images'
 import { supabase } from '../../lib/supabase'
 import { isSocialId } from '../social/api'
 import { normalizedProfile, type ProfileValues } from './validation'
@@ -84,8 +85,9 @@ export async function loadMyAvatar(userId: string, fileId: string | null, signal
   const { data, error } = await client.from('files').select('storage_path,bucket_name,mime_type,uploaded_by')
     .eq('id', fileId).eq('uploaded_by', userId).eq('bucket_name', 'avatars').abortSignal(deadline(signal)).single()
   if (error || !data || data.uploaded_by !== userId || data.bucket_name !== 'avatars' || typeof data.storage_path !== 'string' || !data.storage_path.startsWith(`${userId}/`) || !['image/jpeg', 'image/png', 'image/webp'].includes(data.mime_type)) return null
-  const signed = await bounded(client.storage.from('avatars').createSignedUrl(data.storage_path, 60), signal)
-  return signed.error ? null : signed.data.signedUrl
+  const signed = await bounded(signedImageUrls('avatars', [data.storage_path], 60), signal)
+  signal.throwIfAborted()
+  return signed.urls.get(data.storage_path) ?? null
 }
 async function registeredAvatar(userId: string, path: string, signal: AbortSignal) {
   const client = await clientFor(userId, signal); ownPath(userId, path)

@@ -1,3 +1,4 @@
+import { signedImageUrls } from '../../lib/signed-images'
 import { supabase } from '../../lib/supabase'
 import type { ParticipationStatus } from './participation'
 import { argentinaNow, formatEventTime } from './validation'
@@ -69,9 +70,9 @@ export async function loadMyEvents(section: MyEventsSection, offset = 0, filter:
   let imageError = false
   if (paths.length) {
     try {
-      const signed = await supabase.storage.from('event_media').createSignedUrls(paths, 60)
-      imageError = Boolean(signed.error || signed.data?.some(item => item.error))
-      signed.data?.forEach(item => { if (item.signedUrl && item.path) urls.set(item.path, item.signedUrl) })
+      const signed = await signedImageUrls('event_media', paths, 60)
+      imageError = signed.imageError
+      signed.urls.forEach((url, path) => urls.set(path, url))
     } catch { imageError = true }
   }
   return { events: visible.map(row => ({ ...row, imageUrl: row.image_path ? urls.get(row.image_path) ?? null : null })), hasMore: rows.length > myEventsPageSize, imageError }

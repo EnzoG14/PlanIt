@@ -1,3 +1,4 @@
+import { signedImageUrls } from '../../lib/signed-images'
 import { supabase } from '../../lib/supabase'
 import type { Coordinates, MapBounds } from '../location/geolocation'
 import type { EventRecord } from './api'
@@ -92,9 +93,9 @@ export async function searchEvents(filters: DiscoveryFilters, options: { cursor?
   let imageError = false
   if (paths.length) {
     try {
-      const signed = await supabase.storage.from('event_media').createSignedUrls(paths, 300)
-      imageError = Boolean(signed.error || signed.data?.some(item => item.error))
-      signed.data?.forEach(item => { if (item.signedUrl && item.path) urls.set(item.path, item.signedUrl) })
+      const signed = await signedImageUrls('event_media', paths, 300)
+      imageError = signed.imageError
+      signed.urls.forEach((url, path) => urls.set(path, url))
     } catch { imageError = true }
   }
   const events: EventPreview[] = visible.map(row => ({ ...row, categoryName: row.category_name, imageUrl: row.image_path ? urls.get(row.image_path) ?? null : null }))
