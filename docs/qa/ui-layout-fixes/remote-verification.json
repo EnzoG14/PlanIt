@@ -377,5 +377,12 @@
       }
     ]
   },
-  "notes": "Existing exposed SECURITY DEFINER functions and disabled leaked-password protection were already reported before this migration. clear_notifications uses SECURITY INVOKER."
+  "notes": "Existing exposed SECURITY DEFINER functions and disabled leaked-password protection were already reported before this migration. clear_notifications uses SECURITY INVOKER.",
+  "catalog_confirmation": {
+    "migration_applied": true,
+    "column_verified": true,
+    "authenticated_can_clear": true,
+    "anon_can_clear": false,
+    "rls_enabled": true
+  }
 }

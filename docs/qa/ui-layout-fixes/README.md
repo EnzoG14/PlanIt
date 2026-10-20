@@ -1,6 +1,6 @@
 # Correcciones de layout y simplificación de controles
 
-Rama: `codex/ui-layout-fixes`, basada en main de `mapbox-worktree`.
+Rama: `codex/ui-layout-fixes`, basada en main de `mapbox-worktree`. Incluye main actualizado (`b57580c`, PR #92 de precarga) mediante merge en esta rama; se repitieron build, lint y pruebas de interfaz después de integrarlo.
 
 Cambios: avatar social con estilos propios; dock sólo en las cuatro rutas principales;
 fondo continuo en seguidores, siguiendo, perfiles y solicitudes de seguimiento;
