@@ -1,0 +1,29 @@
+{
+  "environment": "Playwright fixtures; no remote database writes",
+  "results": [
+    {
+      "width": 375,
+      "result": "PASS",
+      "tests": [
+        "parallel startup before navigation",
+        "image download at startup",
+        "home/profile/both event lists reused",
+        "no duplicate suggestion RPC on navigation",
+        "origin change keeps cards mounted",
+        "return after 30 seconds retains content while refreshing"
+      ]
+    },
+    {
+      "width": 1280,
+      "result": "PASS",
+      "tests": [
+        "parallel startup before navigation",
+        "image download at startup",
+        "home/profile/both event lists reused",
+        "no duplicate suggestion RPC on navigation",
+        "origin change keeps cards mounted",
+        "return after 30 seconds retains content while refreshing"
+      ]
+    }
+  ]
+}

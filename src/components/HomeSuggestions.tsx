@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../features/auth/useAuth'
-import { eventEndsAt, loadSuggestions, type SuggestedEvent } from '../features/events/suggestions'
-import { clearSuggestions, readSuggestions, rememberSuggestions } from '../features/events/suggestions-cache'
+import { eventEndsAt, type SuggestedEvent } from '../features/events/suggestions'
+import { clearSuggestions } from '../features/events/suggestions-cache'
+import { loadSuggestionsContent, readSuggestionsContent } from '../features/startup/content'
 import { originLabel, useSearchOrigin } from '../features/location/origin'
 import { EventCard } from './EventCard'
 import { StatusMessage } from './StatusMessage'
@@ -10,16 +11,15 @@ import { StatusMessage } from './StatusMessage'
 export function HomeSuggestions({ returnTo }: { returnTo: string }) {
   const { session } = useAuth()
   const reference = useSearchOrigin(false)
-  const key = JSON.stringify([session?.user.id, reference.origin])
-  return session ? <Suggestions key={key} userId={session.user.id} returnTo={returnTo} reference={reference} /> : null
+  return session ? <Suggestions key={session.user.id} userId={session.user.id} returnTo={returnTo} reference={reference} /> : null
 }
 function Suggestions({ userId, returnTo, reference }: { userId: string; returnTo: string; reference: ReturnType<typeof useSearchOrigin> }) {
   const latitude = reference.origin?.latitude ?? null, longitude = reference.origin?.longitude ?? null
   const kind = reference.origin?.kind ?? null
   const [attempt, setAttempt] = useState(0)
-  const cacheKey = JSON.stringify([userId, latitude, longitude, kind])
+  const currentOrigin = latitude !== null && longitude !== null && kind ? { latitude, longitude, kind } : null
   const [state, setState] = useState<{ loading: boolean; error: boolean; events: SuggestedEvent[]; hasInterests: boolean; imageError: boolean }>(() => {
-    const cached = readSuggestions(cacheKey)
+    const cached = readSuggestionsContent(userId, currentOrigin)
     return cached ? { ...cached, loading: false, error: false } : { loading: true, error: false, events: [], hasInterests: false, imageError: false }
   })
   const [now, setNow] = useState(() => Date.now())
@@ -27,8 +27,7 @@ function Suggestions({ userId, returnTo, reference }: { userId: string; returnTo
     let active = true, revision = 0
     let controller: AbortController | null = null
     let busy = false
-    const cached = attempt === 0 ? readSuggestions(cacheKey) : null
-    async function refresh() {
+    async function refresh(force = false) {
       if (busy) return
       busy = true
       const request = ++revision
@@ -36,14 +35,14 @@ function Suggestions({ userId, returnTo, reference }: { userId: string; returnTo
       // Keep the current cards mounted during background updates.
       setState(previous => ({ ...previous, loading: previous.loading || previous.error, error: false }))
       try {
-        const result = await loadSuggestions(userId, latitude !== null && longitude !== null && kind ? { latitude, longitude, kind } : null, controller.signal)
-        if (active && request === revision) { rememberSuggestions(cacheKey, result); setNow(Date.now()); setState({ ...result, loading: false, error: false }) }
+        const result = await loadSuggestionsContent(userId, latitude !== null && longitude !== null && kind ? { latitude, longitude, kind } : null, force || attempt > 0)
+        if (active && request === revision) { setNow(Date.now()); setState({ ...result, loading: false, error: false }) }
       } catch {
         if (active && request === revision) { clearSuggestions(); setState(previous => ({ ...previous, events: [], loading: false, error: true })) }
       } finally { busy = false }
     }
-    const visibleRefresh = () => { if (document.visibilityState === 'visible') void refresh() }
-    if (!cached) void refresh()
+    const visibleRefresh = () => { if (document.visibilityState === 'visible') void refresh(true) }
+    void refresh()
     const interval = window.setInterval(visibleRefresh, 30000)
     window.addEventListener('focus', visibleRefresh)
     window.addEventListener('online', visibleRefresh)
@@ -53,7 +52,7 @@ function Suggestions({ userId, returnTo, reference }: { userId: string; returnTo
       window.removeEventListener('focus', visibleRefresh); window.removeEventListener('online', visibleRefresh)
       document.removeEventListener('visibilitychange', visibleRefresh)
     }
-  }, [userId, latitude, longitude, kind, cacheKey, attempt])
+  }, [userId, latitude, longitude, kind, attempt])
   useEffect(() => {
     const next = Math.min(...state.events.map(eventEndsAt).filter(end => end > now))
     if (!Number.isFinite(next)) return

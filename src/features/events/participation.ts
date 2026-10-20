@@ -1,3 +1,4 @@
+import { invalidateContent } from '../../lib/session-content'
 import { supabase } from '../../lib/supabase'
 
 export type ParticipationStatus = 'confirmed' | 'cancelled' | 'removed'
@@ -18,7 +19,9 @@ export async function loadParticipationSummary(eventId: string, signal?: AbortSi
 
 export async function changeParticipation(eventId: string, action: 'register' | 'leave'): Promise<void> {
   if (!supabase) throw new Error('La conexión no está configurada.')
+  invalidateContent('my-events:')
   const { error } = await supabase.rpc(action === 'register' ? 'register_for_event' : 'leave_event', { p_event_id: eventId })
+  invalidateContent('my-events:')
   if (error) throw error
 }
 

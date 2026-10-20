@@ -1,10 +1,12 @@
+import { readContent } from '../lib/session-content'
+import { loadMyEventsContent, myEventsContentKey, type MyEventsContent } from '../features/startup/content'
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { CompactEventCard } from '../components/EventCard'
 import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
-import { eventStartTime, groupEventsByDay, loadMyEvents, myEventsError, myEventsPageSize, organizedFilters, organizedFilter, myEventsPath, type OrganizedEventsFilter, type MyEventListItem, type MyEventsSection } from '../features/events/my-events'
+import { eventStartTime, groupEventsByDay, myEventsError, myEventsPageSize, organizedFilters, organizedFilter, myEventsPath, type OrganizedEventsFilter, type MyEventListItem, type MyEventsSection } from '../features/events/my-events'
 import './discovery.css'
 import './my-events.css'
 
@@ -36,13 +38,14 @@ export function MyEventsPage() {
 }
 
 function MyEventsList({ section, filter }: { section: MyEventsSection; filter: OrganizedEventsFilter }) {
-  const [events, setEvents] = useState<MyEventListItem[]>([])
-  const [loading, setLoading] = useState(true)
+  const cached = readContent<MyEventsContent>(myEventsContentKey(section, filter))
+  const [events, setEvents] = useState<MyEventListItem[]>(cached?.events ?? [])
+  const [loading, setLoading] = useState(!cached)
   const [loadingMore, setLoadingMore] = useState(false)
-  const [hasMore, setHasMore] = useState(false)
+  const [hasMore, setHasMore] = useState(cached?.hasMore ?? false)
   const [error, setError] = useState('')
   const [appendError, setAppendError] = useState(false)
-  const [imageError, setImageError] = useState(false)
+  const [imageError, setImageError] = useState(cached?.imageError ?? false)
   const [notice, setNotice] = useState('')
   const revision = useRef(0)
   const busy = useRef(false)
@@ -53,16 +56,22 @@ function MyEventsList({ section, filter }: { section: MyEventsSection; filter: O
   useEffect(() => {
     document.title = 'Mis eventos · PlanIt'
     let active = true
-    async function fetchPage(append = false) {
+    async function fetchPage(append = false, force = false) {
       if (append && busy.current) return
       const request = ++revision.current
       busy.current = true
       setError('')
       setAppendError(false)
       if (append) setLoadingMore(true)
-      else { offset.current = 0; setEvents([]); setHasMore(false); setImageError(false); setLoading(true); setLoadingMore(false) }
+      else {
+        offset.current = 0
+        const previous = readContent<MyEventsContent>(myEventsContentKey(section, filter))
+        if (previous) { setEvents(previous.events); setHasMore(previous.hasMore); setImageError(previous.imageError) }
+        else { setEvents([]); setHasMore(false); setImageError(false) }
+        setLoading(!previous); setLoadingMore(false)
+      }
       try {
-        const result = await loadMyEvents(section, append ? offset.current : 0, filter)
+        const result = await loadMyEventsContent(section, append ? offset.current : 0, filter, force)
         if (!active || revision.current !== request) return
         setEvents(previous => append ? [...new Map([...previous, ...result.events].map(item => [item.id, item])).values()] : result.events)
         offset.current += myEventsPageSize
@@ -74,7 +83,7 @@ function MyEventsList({ section, filter }: { section: MyEventsSection; filter: O
         if (active && revision.current === request) { busy.current = false; setLoading(false); setLoadingMore(false) }
       }
     }
-    reload.current = () => { void fetchPage() }
+    reload.current = () => { void fetchPage(false, true) }
     more.current = () => { void fetchPage(true) }
     const onReturn = () => { if (document.visibilityState === 'visible' && !busy.current && !document.querySelector('dialog[open]')) void fetchPage() }
     window.addEventListener('focus', onReturn)
