@@ -1,5 +1,7 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useAuth } from '../features/auth/useAuth'
 import { loadDirectConversations, type DirectCursor } from '../features/social/messages'
 import { loadSocialIdentity } from '../features/social/api'
@@ -39,7 +41,7 @@ function Inbox() {
     return () => window.cancelAnimationFrame(frame)
   }, [data, location.state])
   return <section ref={container} className="direct-inbox">
-    <Link className="secondary-link" to="/me" state={{ focusMessages: true }}>Volver a mi perfil</Link>
+    <BackButton to="/me" state={{ focusMessages: true }} />
     <header><h1>Mensajes privados</h1></header>
     {loading ? <p role="status">Consultando conversaciones…</p> : error ? <><StatusMessage title="No pudimos consultar los mensajes" tone="error">{error}</StatusMessage><button className="text-button" onClick={() => void refresh()}>Reintentar</button></> : data && <>
       {!data.rows.length && <StatusMessage title="Todavía no tenés conversaciones">Podés enviar un mensaje desde el perfil de otra persona, sin necesidad de seguirla.</StatusMessage>}

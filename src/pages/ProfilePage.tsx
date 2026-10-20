@@ -1,5 +1,6 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
 import { useEffect, useRef, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
@@ -25,13 +26,13 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
   const interestsLink = useRef<HTMLAnchorElement>(null), editLink = useRef<HTMLAnchorElement>(null)
   const messagesLink = useRef<HTMLAnchorElement>(null)
   const requestsLink = useRef<HTMLAnchorElement>(null)
+  const [result, setResult] = useState<ProfileResult | null>(() => readContent<ProfileContent>(profileContentKey(userId)) ?? null)
   useEffect(() => {
     if (!location.state?.focusInterests && !location.state?.focusEdit && !location.state?.focusRequests && !location.state?.focusMessages) return
     // Restore the trigger after AppLayout applies its route-level main focus.
     const frame = window.requestAnimationFrame(() => (location.state?.focusMessages ? messagesLink : location.state?.focusRequests ? requestsLink : location.state?.focusEdit ? editLink : interestsLink).current?.focus())
     return () => window.cancelAnimationFrame(frame)
-  }, [location.key, location.state])
-  const [result, setResult] = useState<ProfileResult | null>(() => readContent<ProfileContent>(profileContentKey(userId)) ?? null)
+  }, [location.key, location.state, result])
   const [attempt, setAttempt] = useState(0)
   const [avatarFailed, setAvatarFailed] = useState(false)
   const refresh = () => { setResult(null); setAvatarFailed(false); setAttempt(value => value + 1) }

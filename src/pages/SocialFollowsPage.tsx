@@ -1,5 +1,7 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import { useCallback, useEffect, useState } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { SocialAvatar } from '../components/SocialAvatar'
 import { StatusMessage } from '../components/StatusMessage'
@@ -36,7 +38,7 @@ function FollowsContent({ userId, direction, own }: { userId: string; direction:
   useEffect(() => { document.title = `${title} · PlanIt` }, [title])
   const back = own ? '/me' : `/users/${userId}`
   return <><section className="management-page social-identity-page">
-    <Link className="secondary-link management-back" to={back} state={location.state?.profileOrigin}><Icon name="back" />Volver al perfil</Link>
+    <BackButton to={back} state={location.state?.profileOrigin} />
     <header className="management-header"><h1>{title}</h1></header>
     <div aria-busy={loading}>{loading ? <p role="status">Consultando {title.toLowerCase()}…</p> : denied ? <StatusMessage title="Lista no disponible">No tenés permiso para consultar esta lista.</StatusMessage> : error ? <><p className="field-error" role="alert">{error}</p><button className="secondary-button" onClick={() => void refresh()}>Reintentar</button></> : data && <>
       {!data.users.length && <StatusMessage title={direction === 'followers' ? 'Todavía no hay seguidores visibles' : 'Todavía no hay seguimientos visibles'}>Los seguimientos aceptados aparecerán acá.</StatusMessage>}

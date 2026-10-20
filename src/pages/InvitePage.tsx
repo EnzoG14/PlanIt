@@ -1,5 +1,6 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
 import { useEffect, useRef, useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { GradientButton } from '../components/GradientButton'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'

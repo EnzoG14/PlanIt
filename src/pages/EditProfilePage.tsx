@@ -1,5 +1,6 @@
+import { BackButton } from '../components/BackButton'
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { Link, useBeforeUnload, useBlocker } from 'react-router-dom'
+import { useBeforeUnload, useBlocker } from 'react-router-dom'
 import { FormField } from '../components/FormField'
 import { GradientButton } from '../components/GradientButton'
 import { Icon } from '../components/Icon'
@@ -181,7 +182,7 @@ function ProfileEditor({ userId }: { userId: string }) {
   }
   const disabled = busy || uncertain || avatarUncertain
   return <section className="edit-profile-page">
-    <Link className="secondary-link edit-profile-back" to="/me" state={{ focusEdit: true }}><Icon name="back" />Volver a mi perfil</Link>
+    <BackButton to="/me" state={{ focusEdit: true }} />
     <header><h1>Editar perfil</h1><p>Elegí cómo te ven y qué querés contar.</p></header>
     {loading && <div role="status"><StatusMessage title="Cargando tu perfil">Consultando los datos de tu cuenta…</StatusMessage></div>}
     {error && <p className="field-error" role="alert">{error}</p>}

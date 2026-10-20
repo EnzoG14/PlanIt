@@ -1,3 +1,4 @@
+import { BackButton } from '../components/BackButton'
 import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from '../components/Icon'
@@ -23,7 +24,7 @@ export function EventSocialParticipants({ eventId, origin }: { eventId: string; 
   useEffect(() => { document.title = 'Participantes · PlanIt' }, [])
   const returnTo = `/events/${eventId}/attendees?view=social`
   return <section className="attendees-page management-page social-participants" aria-label="Participantes del evento">
-    <Link className="secondary-link management-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
+    <BackButton to={`/events/${eventId}`} state={origin} />
     <header className="management-header"><h1>Participantes</h1><p>Personas con inscripción confirmada en este evento.</p></header>
 
     <div aria-busy={loading}>

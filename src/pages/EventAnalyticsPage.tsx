@@ -1,6 +1,7 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import { useEffect, useState } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
-import { Icon } from '../components/Icon'
+import { Link, useParams } from 'react-router-dom'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
 import { loadMyEventOccupancy, loadMyEventDemographics } from '../features/analytics/api'
@@ -60,7 +61,7 @@ function AnalyticsContent({ eventId }: { eventId: string }) {
   const stateLabels = { open: 'Evento vigente', ended: 'Evento finalizado', cancelled: 'Evento cancelado', archived: 'Evento archivado' }
   return <section className="management-page analytics-page">
     <div className="management-wash" aria-hidden="true" />
-    <Link className="secondary-link management-back" to={`/events/${eventId}`} state={origin}><Icon name="back" />Volver al evento</Link>
+    <BackButton to={`/events/${eventId}`} state={origin} />
     <header className="management-header"><h1>Estadísticas del evento</h1><p>Estado actual de inscripciones</p></header>
     <div className="analytics-toolbar"><Link className="secondary-link" to={origin.myEventsReturnTo ?? '/my-events?section=organizing'}>Mis eventos</Link>{(error || stale || demographicsError) && <button className="secondary-button" disabled={pending || offline} onClick={refresh}>Reintentar</button>}</div>
     <div aria-live="polite" aria-busy={pending}>

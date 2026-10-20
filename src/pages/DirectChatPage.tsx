@@ -1,5 +1,7 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import { useEffect, useLayoutEffect, useRef, useState, type FormEvent } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useAuth } from '../features/auth/useAuth'
 import { trimDirectText, directReturn, findDirectMessage, loadDirectHeader, loadDirectMessages, sendDirectMessage, type DirectHeader, type DirectMessage, type DirectCursor } from '../features/social/messages'
 import { socialProfileReturn } from '../features/social/api'
@@ -146,7 +148,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
     finally { clearTimeout(timer); writing.current = false; writeRequest.current = null }
   }
   return <section className="chat-page direct-chat">
-    <header className="chat-header"><Link className="icon-link" aria-label="Volver" to={back} state={back === '/messages' ? { focusConversation: id } : { ...location.state?.profileOrigin, focusMessage: true }}><Icon name="back" /></Link><h1>{(!blockUnsafe && header?.profile?.display_name) || 'Conversación privada'}</h1><Link className="direct-inbox-link" to="/messages"><Icon name="email" /><span>Bandeja</span></Link></header>
+    <header className="chat-header"><BackButton to={back} state={back === '/messages' ? { focusConversation: id } : { ...location.state?.profileOrigin, focusMessage: true }} /><h1>{(!blockUnsafe && header?.profile?.display_name) || 'Conversación privada'}</h1><Link className="direct-inbox-link" to="/messages"><Icon name="email" /><span>Bandeja</span></Link></header>
     {error ? <div className="chat-state"><StatusMessage title="Conversación no disponible" tone="error">No pudimos consultar este chat. Revisá tu acceso y conexión.</StatusMessage><button className="text-button" onClick={() => refresh.current()}>Reintentar</button></div> : !header ? <div className="chat-state" role="status">{navigator.onLine ? 'Consultando conversación…' : 'Estás sin conexión. Reconectate para consultar el historial.'}</div> : <>
       {(blockUnsafe || header.read_only) && <p className="chat-read-only" role="status">Perfil no disponible · Conversación de sólo lectura. El historial permanece disponible.</p>}
       {hasOlder && <button className="text-button" disabled={loading} onClick={() => refresh.current(true)}>Cargar mensajes anteriores</button>}

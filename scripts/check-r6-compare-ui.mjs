@@ -5,7 +5,7 @@ import { createServer } from 'node:http'
 import { resolve, extname } from 'node:path'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
 const browser = await chromium.launch({ headless: true, channel: 'msedge', args: ['--no-proxy-server'] })
-const root = resolve('dist'), out = 'docs/qa/r6-block-8/ui'
+const root = resolve('dist'), out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/ui-back-navigation/compare'
 const mime = { '.js': 'text/javascript', '.css': 'text/css', '.html': 'text/html', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png' }
 const server = createServer(async (req, res) => {
   const file = resolve(root, `.${new URL(req.url, 'http://localhost').pathname}`)
@@ -66,8 +66,8 @@ try {
       await page.goto(`${origin}/my-events`)
       await page.getByRole('link', { name: 'Comparar eventos', exact: true }).click()
       await page.waitForURL(url => url.pathname === '/my-events/compare')
-      assert.equal(await page.locator('.primary-nav a').count(), 4)
-      results.push({ width, test: 'Secondary entry from Mis eventos; still four dock destinations', result: 'PASS' })
+      assert.equal(await page.locator('.primary-nav a').count(), 0)
+      results.push({ width, test: 'Secondary entry from Mis eventos; dock hidden on comparison', result: 'PASS' })
     }
     await page.goto(`${origin}/my-events/compare`)
     await page.getByRole('heading', { name: 'Comparar eventos', exact: true }).waitFor()
@@ -125,7 +125,7 @@ try {
     await page.evaluate(() => { const nodes = [...document.querySelectorAll('.compare-page *')]; const sizes = nodes.map(node => parseFloat(getComputedStyle(node).fontSize)); nodes.forEach((node, i) => { node.style.fontSize = `${sizes[i] * 2}px` }) })
     await noOverflow(); await shot('text-200')
     check('200 % text without page overflow')
-    await page.keyboard.press('Tab'); assert.ok(await page.evaluate(() => document.activeElement !== document.body))
+    await page.getByRole('link', { name: 'Volver', exact: true }).focus(); await page.keyboard.press('Tab'); assert.ok(await page.evaluate(() => document.activeElement !== document.body))
     await context.close()
     const anon = await browser.newContext(); const anonPage = await anon.newPage(); await anonPage.goto(`${origin}/my-events/compare`); await anonPage.waitForURL(url => url.pathname === '/login'); await anon.close()
     check('Anonymous direct route requires login')

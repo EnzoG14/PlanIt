@@ -1,6 +1,5 @@
+import { BackButton } from '../components/BackButton'
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Icon } from '../components/Icon'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
 import { loadMyEventsComparison } from '../features/analytics/api'
@@ -35,8 +34,7 @@ function CompareContent() {
       : previous.length >= MAX_COMPARE_EVENTS ? previous : [...previous, { id: event.id, title: event.title, state: event.event_state }])
   }
   return <section className="management-page analytics-page compare-page">
-    <div className="management-wash" aria-hidden="true" />
-    <Link className="secondary-link management-back" to={myEventsPath('organizing', filter)}><Icon name="back" />Mis eventos</Link>
+    <BackButton to={myEventsPath('organizing', filter)} />
     <header className="management-header"><h1>Comparar eventos</h1><p>Inscriptos confirmados y ocupación actual de tus eventos</p></header>
     <EventPicker filter={filter} onFilter={setFilter} chosen={chosen} onToggle={toggle} />
     <p className="field-hint compare-count" id="compare-hint" role="status">

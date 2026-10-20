@@ -1,5 +1,7 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import { useCallback, useEffect, useState } from 'react'
-import { Link, Navigate, useLocation, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { SocialAvatar } from '../components/SocialAvatar'
 import { StatusMessage } from '../components/StatusMessage'
@@ -80,7 +82,7 @@ function IdentityContent({ userId }: { userId: string }) {
   const origin = { participantsReturnTo: back, myEventsReturnTo: validatedMyEventsReturn(location.state?.myEventsReturnTo), returnTo: validatedDiscoveryReturn(location.state?.returnTo) }
   useEffect(() => { document.title = 'Perfil · PlanIt' }, [])
   return <><section className="management-page social-identity-page">
-    <Link className="secondary-link management-back" to={back ?? '/home'} state={listBack ? location.state?.followsOrigin : back ? location.state : undefined}><Icon name="back" />{listBack ? 'Volver a la lista' : back ? 'Volver a participantes' : 'Volver al inicio'}</Link>
+    <BackButton to={back ?? '/home'} state={listBack ? location.state?.followsOrigin : back ? location.state : undefined} />
     <header className="management-header"><h1>Perfil</h1></header>
     <div aria-busy={loading}>{blockUnsafe ? <><StatusMessage title="Perfil no disponible">Consultá de nuevo el estado del bloqueo.</StatusMessage><button className="secondary-button" disabled={loading || mutating} onClick={() => { setRevision(value => value + 1); void refresh(); setBlockUnsafe(false) }}>Reintentar</button></> : loading ? <p role="status">Consultando perfil…</p> : denied || (!error && !data) ? <StatusMessage title="Perfil no disponible">No se puede consultar este perfil.</StatusMessage> : error ? <><p className="field-error" role="alert">{error}</p><button className="secondary-button" onClick={() => void refresh()}>Reintentar</button></> : data && <>
       <div className="social-identity"><SocialAvatar key={data.profile.avatar} avatar={data.profile.avatar} /><h2>{data.profile.display_name}</h2><p>@{data.profile.username}</p></div>

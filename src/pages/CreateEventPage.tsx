@@ -1,6 +1,8 @@
+import { useBackLocation as useLocation } from '../components/back-navigation-context'
+import { BackButton } from '../components/BackButton'
 import type { AddressSuggestion } from '../features/location/autocomplete'
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { EventFields } from '../components/EventFields'
 import { GradientButton } from '../components/GradientButton'
 import { ScreenHeader } from '../components/ScreenHeader'
@@ -135,10 +137,10 @@ function CreateEventForm({ duplicateFrom }: { duplicateFrom: string | null }) {
     } finally { sending.current = false; if (mounted.current) { setBusy(false); setProgress('') } }
   }
   if (sourceLoading) return <StatusMessage title="Cargando evento de origen">Esperá un momento.</StatusMessage>
-  if (sourceError) return <><StatusMessage title="No se pudo duplicar" tone="error">{sourceError}</StatusMessage><button type="button" className="secondary-button" onClick={() => { setSourceLoading(true); setSourceError(''); setSourceAttempt(value => value + 1) }}>Reintentar</button><Link className="secondary-link" to={origin.myEventsReturnTo ?? '/my-events?section=organizing&filter=all'}>Volver a Mis eventos</Link></>
+  if (sourceError) return <><StatusMessage title="No se pudo duplicar" tone="error">{sourceError}</StatusMessage><button type="button" className="secondary-button" onClick={() => { setSourceLoading(true); setSourceError(''); setSourceAttempt(value => value + 1) }}>Reintentar</button><BackButton to={origin.myEventsReturnTo ?? '/my-events?section=organizing&filter=all'} /></>
   return <div className="create-event-page">
     <div className="event-form-wash" aria-hidden="true" />
-    {duplicateFrom !== null && <Link className="secondary-link duplicate-back" to={`/events/${duplicateFrom}`} state={origin}>Volver al evento original</Link>}
+    {duplicateFrom !== null && <BackButton to={`/events/${duplicateFrom}`} state={origin} />}
     <ScreenHeader title={duplicateFrom !== null ? 'Duplicá un evento' : 'Creá un evento'} description={duplicateFrom !== null ? 'Revisá los datos y elegí nuevas fechas. Las fotos y participaciones no se copian.' : 'Compartí un plan con la comunidad.'} icon="calendar" />
     <form ref={formRef} className="event-form" onSubmit={submit} noValidate aria-busy={busy}>
       <EventFields selectLocation={selectLocation} values={values} errors={errors} categories={categories} locked={locked} change={change} locating={locating} locate={locate} locationError={locationError} catalogLoading={catalogLoading} catalogError={catalogError} retryCategories={() => { setCatalogLoading(true); setCatalogError(''); setCatalogAttempt(value => value + 1) }} />

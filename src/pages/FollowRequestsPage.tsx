@@ -1,6 +1,6 @@
+import { BackButton } from '../components/BackButton'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Icon } from '../components/Icon'
 import { GradientButton } from '../components/GradientButton'
 import { SocialAvatar } from '../components/SocialAvatar'
 import { StatusMessage } from '../components/StatusMessage'
@@ -84,7 +84,7 @@ function RequestsContent({ userId }: { userId: string }) {
   }
   const disabled = busy || uncertain !== null
   return <><section className="management-page social-identity-page follow-requests-page">
-    <Link className="secondary-link management-back" to="/me" state={{ focusRequests: true }}><Icon name="back" />Volver a mi perfil</Link>
+    <BackButton to="/me" state={{ focusRequests: true }} />
     <header className="management-header"><h1>Solicitudes de seguimiento</h1><p>Elegí quién puede seguir tu perfil privado. Al aceptar, podrá ver tu biografía y tus eventos públicos.</p></header>
     <p ref={feedback} tabIndex={-1} role="status" className="follow-request-feedback">{busy ? 'Consultando resultado…' : notice}</p>
     {uncertain && <button className="secondary-button" disabled={busy} onClick={() => void act(uncertain, true)}>Consultar estado</button>}

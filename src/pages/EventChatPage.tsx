@@ -1,6 +1,6 @@
+import { BackButton } from '../components/BackButton'
 import { useLayoutEffect, useEffect, useRef, useState, type FormEvent } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { Icon } from '../components/Icon'
+import { useParams } from 'react-router-dom'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
 import { chatSendFailure, chatUnavailable, downloadChatImage, findChatMessage, loadChat, loadChatMessages, sendChatMediaMessage, trimChatText, type ChatHeader, type ChatMessage } from '../features/events/chat'
@@ -218,7 +218,7 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
   }
   const closed = header && header.event_state !== 'open'
   return <section className="chat-page event-chat-page" aria-label="Chat del evento">
-    <header className="chat-header"><Link className="icon-link" to={`/events/${eventId}`} aria-label="Volver al evento"><Icon name="back" /></Link><h1>{header?.title ?? 'Chat del evento'}</h1></header>
+    <header className="chat-header"><BackButton to={`/events/${eventId}`} /><h1>{header?.title ?? 'Chat del evento'}</h1></header>
     {unavailable ? <div className="chat-state"><StatusMessage title="Chat no disponible">Sólo el organizador y los asistentes confirmados pueden acceder.</StatusMessage></div> : error ? <div className="chat-state"><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage></div> : pending && !header ? <div className="chat-state"><StatusMessage title="Cargando chat">Esperá un momento.</StatusMessage></div> : <>
       {closed && <p className="chat-read-only" role="status">{header.event_state === 'ended' ? 'Evento finalizado' : header.event_state === 'archived' ? 'Evento archivado' : 'Evento cancelado'} · Chat de sólo lectura.</p>}
       {hasOlder && <button className="text-button" disabled={pending || sending} onClick={() => refresh.current(messages[0])}>Cargar mensajes anteriores</button>}
