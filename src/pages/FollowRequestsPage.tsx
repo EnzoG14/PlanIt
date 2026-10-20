@@ -83,7 +83,7 @@ function RequestsContent({ userId }: { userId: string }) {
     }
   }
   const disabled = busy || uncertain !== null
-  return <><div className="management-wash" aria-hidden="true" /><section className="management-page social-identity-page follow-requests-page">
+  return <><section className="management-page social-identity-page follow-requests-page">
     <Link className="secondary-link management-back" to="/me" state={{ focusRequests: true }}><Icon name="back" />Volver a mi perfil</Link>
     <header className="management-header"><h1>Solicitudes de seguimiento</h1><p>Elegí quién puede seguir tu perfil privado. Al aceptar, podrá ver tu biografía y tus eventos públicos.</p></header>
     <p ref={feedback} tabIndex={-1} role="status" className="follow-request-feedback">{busy ? 'Consultando resultado…' : notice}</p>
@@ -107,6 +107,6 @@ function RequestsContent({ userId }: { userId: string }) {
       })}</ul>
       {data.next_cursor && <button className="secondary-button" disabled={disabled} onClick={() => { setConfirmation(null); setPages(value => value + 1) }}>Cargar más solicitudes</button>}
     </>}</div>
-    <button className="text-button" disabled={loading || disabled} onClick={() => { setConfirmation(null); void refresh() }}>Actualizar solicitudes</button>
+
   </section></>
 }

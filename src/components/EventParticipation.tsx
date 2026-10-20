@@ -84,8 +84,10 @@ export function EventParticipation({ eventId, onSummary }: { eventId: string; on
     </div></div>
     {summary?.is_organizer && <p className="participation-notice">Organizás este evento. No ocupás cupo ni podés inscribirte.</p>}
     {summary?.own_status === 'confirmed' && <p className="participation-notice" role="status">Ya participás.</p>}
-    {summary && (summary.is_organizer || summary.own_status === 'confirmed') && <Link className="secondary-link" to={`/events/${eventId}/chat`}>Abrir chat del evento</Link>}
-    {summary && (summary.is_organizer || summary.own_status === 'confirmed') && <Link className="secondary-link" to={`/events/${eventId}/attendees?view=social`} state={location.state}>Ver participantes</Link>}
+    {summary && (summary.is_organizer || summary.own_status === 'confirmed') && <div className="participation-links">
+      <Link className="secondary-link" to={`/events/${eventId}/chat`}>Abrir chat del evento</Link>
+      <Link className="secondary-link" to={`/events/${eventId}/attendees?view=social`} state={location.state}>Ver participantes</Link>
+    </div>}
     {summary?.own_status === 'cancelled' && <p className="participation-notice" role="status">Tu participación está cancelada.</p>}
     {summary?.own_status === 'removed' && <div className={`rejoin-own-state rejoin-state-${rejoin?.status ?? 'eligible'}`} role="status">
       <strong>{rejoin?.status === 'pending' ? 'Solicitud en revisión' : rejoin?.status === 'rejected' ? 'Solicitud rechazada' : 'Solicitud de reincorporación'}</strong>
@@ -93,11 +95,11 @@ export function EventParticipation({ eventId, onSummary }: { eventId: string; on
       {!closed && rejoin?.can_request && <button className="gradient-button gradient-link" disabled={pending || uncertain} onClick={() => void refresh('rejoin')}>Solicitar reincorporación</button>}
     </div>}
     {summary?.own_status === 'confirmed' && rejoin?.status === 'approved' && <p className="participation-notice rejoin-approved" role="status">Solicitud aprobada. Volvés a participar del evento.</p>}
-    <button className="gradient-link gradient-button participation-action" disabled={pending || !(canLeave || canJoin)} onClick={() => void refresh(canLeave ? 'leave' : 'register')}>
+    {summary && closed && <p className="participation-notice" role="status">{label}{summary.event_state === 'archived' ? ' · Archivado' : ''}</p>}
+    {error && <><p className="field-error" role="alert">{error}</p><button className="text-button" disabled={pending} onClick={() => void refresh()}>Reintentar</button></>}
+
+    <button className={`gradient-link gradient-button participation-action${canJoin ? ' participation-action-floating' : ''}`} disabled={pending || !(canLeave || canJoin)} onClick={() => void refresh(canLeave ? 'leave' : 'register')}>
       {pending ? 'Consultando participación…' : canLeave ? 'Retirarme' : label}
     </button>
-    {summary && closed && <p className="participation-notice" role="status">{label}{summary.event_state === 'archived' ? ' · Archivado' : ''}</p>}
-    {error && <p className="field-error" role="alert">{error}</p>}
-    <button className="text-button" disabled={pending} onClick={() => void refresh()}>Actualizar estado</button>
   </section>
 }

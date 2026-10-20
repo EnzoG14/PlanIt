@@ -22,6 +22,11 @@ export async function markNotificationRead(id: string): Promise<string> {
   if (typeof data !== 'string') throw new Error('No se pudo confirmar la lectura.')
   return data
 }
+export async function clearNotifications(): Promise<void> {
+  if (!supabase) throw new Error('La conexión no está configurada.')
+  const { error } = await supabase.rpc('clear_notifications')
+  if (error) throw error
+}
 export async function notificationTarget(id: string): Promise<string | null> {
   if (!supabase) throw new Error('La conexión no está configurada.')
   const { data, error } = await supabase.rpc('get_notification_target', { p_id: id })

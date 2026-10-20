@@ -8,11 +8,12 @@ import { ChatDaySeparator, ChatTimestamp } from '../components/ChatDate'
 import { useChatToday } from '../lib/useChatToday'
 import { chatDay, isChatContinuation } from '../lib/chatDates'
 import { compareRows, createReconciler, mergeRows } from '../lib/reconciliation'
-import { subscribeToChanges, type ConnectionState } from '../lib/realtime'
+import { subscribeToChanges } from '../lib/realtime'
 import { supabase } from '../lib/supabase'
 import { StatusMessage } from '../components/StatusMessage'
 import { BlockUserAction } from '../components/BlockUserAction'
 import { GradientButton } from '../components/GradientButton'
+import { Icon } from '../components/Icon'
 import './chat.css'
 import './direct-messages.css'
 
@@ -26,7 +27,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
   const back = socialProfileReturn(location.state?.directOrigin) ?? directReturn(location.state?.directOrigin) ?? '/messages'
   const [header, setHeader] = useState<DirectHeader | null>(null), [messages, setMessages] = useState<DirectMessage[]>([])
   const [loading, setLoading] = useState(true), [error, setError] = useState(false), [hasOlder, setHasOlder] = useState(false)
-  const [connection, setConnection] = useState<ConnectionState>('connecting'), [text, setText] = useState('')
+  const [text, setText] = useState('')
   const [operation, setOperation] = useState<{ id: string; body: string; status: 'pending' | 'uncertain' } | null>(null)
   const [notice, setNotice] = useState(''), [checking, setChecking] = useState(false)
   const [blockUnsafe, setBlockUnsafe] = useState(false), [blockRevision, setBlockRevision] = useState(0)
@@ -50,7 +51,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
     const visible = () => document.visibilityState === 'visible' && navigator.onLine
     const clear = () => {
       revision++; controller?.abort(); controller = null; stop?.(); stop = null
-      setHeader(null); setMessages([]); setHasOlder(false); setLoading(false); setConnection('disconnected')
+      setHeader(null); setMessages([]); setHasOlder(false); setLoading(false)
     }
     const queue = createReconciler(async () => {
       if (!active || !visible()) return
@@ -61,7 +62,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
       try {
         const current = await loadDirectHeader(id, viewer, request.signal)
         if (active && visible() && !stop && supabase) stop = subscribeToChanges(supabase, `direct:${viewer}:${id}`,
-          [{ table: 'messages', event: 'INSERT', filter: `conversation_id=eq.${id}` }], () => queue.request(), () => queue.request(), setConnection)
+          [{ table: 'messages', event: 'INSERT', filter: `conversation_id=eq.${id}` }], () => queue.request(), () => queue.request(), () => {})
         let cursor: DirectCursor | null = null, rows: DirectMessage[] = [], more = false
         while (true) {
           const page = await loadDirectMessages(id, cursor, request.signal)
@@ -145,8 +146,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
     finally { clearTimeout(timer); writing.current = false; writeRequest.current = null }
   }
   return <section className="chat-page direct-chat">
-    <header className="chat-header"><Link className="text-button" to={back} state={back === '/messages' ? { focusConversation: id } : { ...location.state?.profileOrigin, focusMessage: true }}>Volver</Link><h1>{(!blockUnsafe && header?.profile?.display_name) || 'Conversación privada'}</h1><Link className="text-button" to="/messages">Bandeja</Link></header>
-    <div className="chat-refresh"><p role="status">{connection === 'connected' ? 'Actualizaciones en tiempo real' : 'Reconectando · actualización de respaldo cada 30 s'}</p><button className="text-button" disabled={loading} onClick={() => { setBlockRevision(value => value + 1); refresh.current() }}>Actualizar chat</button></div>
+    <header className="chat-header"><Link className="icon-link" aria-label="Volver" to={back} state={back === '/messages' ? { focusConversation: id } : { ...location.state?.profileOrigin, focusMessage: true }}><Icon name="back" /></Link><h1>{(!blockUnsafe && header?.profile?.display_name) || 'Conversación privada'}</h1><Link className="direct-inbox-link" to="/messages"><Icon name="email" /><span>Bandeja</span></Link></header>
     {error ? <div className="chat-state"><StatusMessage title="Conversación no disponible" tone="error">No pudimos consultar este chat. Revisá tu acceso y conexión.</StatusMessage><button className="text-button" onClick={() => refresh.current()}>Reintentar</button></div> : !header ? <div className="chat-state" role="status">{navigator.onLine ? 'Consultando conversación…' : 'Estás sin conexión. Reconectate para consultar el historial.'}</div> : <>
       {(blockUnsafe || header.read_only) && <p className="chat-read-only" role="status">Perfil no disponible · Conversación de sólo lectura. El historial permanece disponible.</p>}
       {hasOlder && <button className="text-button" disabled={loading} onClick={() => refresh.current(true)}>Cargar mensajes anteriores</button>}

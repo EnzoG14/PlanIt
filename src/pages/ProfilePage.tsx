@@ -68,7 +68,7 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
   return <div className="profile-page">
     {followsReturn(location.state?.followsReturnTo) && <Link className="secondary-link" to={followsReturn(location.state.followsReturnTo)!} state={location.state?.followsOrigin}><Icon name="back" />Volver a la lista</Link>}
     {participantsReturn(location.state?.participantsReturnTo) && <Link className="secondary-link" to={participantsReturn(location.state.participantsReturnTo)!} state={location.state}><Icon name="back" />Volver a participantes</Link>}
-    <header className="profile-heading"><h1>Mi perfil</h1><button className="text-button" type="button" onClick={refresh} disabled={!result}>Actualizar perfil</button></header>
+    <header className="profile-heading"><h1>Mi perfil</h1></header>
     {!result ? <div role="status"><StatusMessage title="Cargando perfil">Consultando los datos de tu cuenta…</StatusMessage></div>
       : 'error' in result ? <><StatusMessage title="No se pudo consultar el perfil" tone="error">No pudimos recuperar tus datos. Revisá la conexión y volvé a intentar.</StatusMessage><button className="gradient-link gradient-button" type="button" onClick={refresh}>Reintentar</button></>
       : <>

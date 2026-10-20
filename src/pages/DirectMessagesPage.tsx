@@ -40,7 +40,7 @@ function Inbox() {
   }, [data, location.state])
   return <section ref={container} className="direct-inbox">
     <Link className="secondary-link" to="/me" state={{ focusMessages: true }}>Volver a mi perfil</Link>
-    <header><h1>Mensajes privados</h1><button className="text-button" onClick={() => void refresh()} disabled={loading}>Actualizar mensajes</button></header>
+    <header><h1>Mensajes privados</h1></header>
     {loading ? <p role="status">Consultando conversaciones…</p> : error ? <><StatusMessage title="No pudimos consultar los mensajes" tone="error">{error}</StatusMessage><button className="text-button" onClick={() => void refresh()}>Reintentar</button></> : data && <>
       {!data.rows.length && <StatusMessage title="Todavía no tenés conversaciones">Podés enviar un mensaje desde el perfil de otra persona, sin necesidad de seguirla.</StatusMessage>}
       <ul>{data.rows.map(row => <li key={row.id}><Link data-conversation={row.id} to={`/messages/${row.id}`} state={{ directOrigin: '/messages' }}><SocialAvatar key={row.identity?.avatar ?? "none"} avatar={row.identity?.avatar ?? null} /><span><strong>{row.identity?.display_name ?? 'Perfil no disponible'}</strong>{row.identity && <span>@{row.identity.username}</span>}<span>{row.read_only || !row.identity ? 'Conversación de sólo lectura' : 'Abrir conversación'}</span></span><span aria-hidden="true">›</span></Link></li>)}</ul>

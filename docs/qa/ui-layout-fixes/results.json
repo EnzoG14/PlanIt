@@ -1,0 +1,31 @@
+{
+  "environment": "Built Vite app, Edge headless, intercepted Auth/REST/WebSocket fixtures. No remote SQL or real mobile device.",
+  "results": [
+    {
+      "width": 320,
+      "result": "PASS",
+      "cases": "avatar/direct reload/fallback, dock transitions, followers/following/profile wash, chat controls, join/leave/rejoin, failed/successful clear including unloaded notifications/new arrivals, 200% text and short viewport"
+    },
+    {
+      "width": 375,
+      "result": "PASS",
+      "cases": "avatar/direct reload/fallback, dock transitions, followers/following/profile wash, chat controls, join/leave/rejoin, failed/successful clear including unloaded notifications/new arrivals, 200% text and short viewport"
+    },
+    {
+      "width": 390,
+      "result": "PASS",
+      "cases": "avatar/direct reload/fallback, dock transitions, followers/following/profile wash, chat controls, join/leave/rejoin, failed/successful clear including unloaded notifications/new arrivals, 200% text and short viewport"
+    },
+    {
+      "width": 768,
+      "result": "PASS",
+      "cases": "avatar/direct reload/fallback, dock transitions, followers/following/profile wash, chat controls, join/leave/rejoin, failed/successful clear including unloaded notifications/new arrivals, 200% text and short viewport"
+    },
+    {
+      "width": 1280,
+      "result": "PASS",
+      "cases": "avatar/direct reload/fallback, dock transitions, followers/following/profile wash, chat controls, join/leave/rejoin, failed/successful clear including unloaded notifications/new arrivals, 200% text and short viewport"
+    }
+  ],
+  "errors": []
+}

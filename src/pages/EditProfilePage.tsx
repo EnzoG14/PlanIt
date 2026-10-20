@@ -37,6 +37,10 @@ function ProfileEditor({ userId }: { userId: string }) {
       const current = await loadMyProfile(userId, life.controller.signal)
       if (!life.active) return
       setProfile(current); setValues(current)
+      // Optional recovery stays automatic; it never removes uploads on entry.
+      void loadUnregisteredAvatars(userId, life.controller.signal).then(paths => {
+        if (life.active) setUnregistered(paths)
+      }).catch(() => { /* Profile editing remains available if the optional scan fails. */ })
     } catch { if (life.active) setError('No pudimos cargar tu perfil. Revisá la conexión y reintentá.') }
     finally { if (life.active) setLoading(false) }
   }
@@ -107,7 +111,7 @@ function ProfileEditor({ userId }: { userId: string }) {
       setProfile(current); setValues(current); setUncertain(false)
       setNotice('Tus datos y privacidad quedaron guardados.')
       try { await refreshMyRelations(userId, life.controller.signal) }
-      catch { if (life.active) setError('El perfil quedó guardado, pero no pudimos actualizar las relaciones. Reintentá con Actualizar relaciones.') }
+      catch { if (life.active) setError('El perfil quedó guardado, pero no pudimos actualizar las relaciones. Volvé a intentar guardar los cambios.') }
     } catch (failure) {
       if (life.active) {
         const unknown = ack || (failure instanceof ProfileSaveError && failure.uncertain)
@@ -118,7 +122,7 @@ function ProfileEditor({ userId }: { userId: string }) {
             const current = await loadMyProfile(userId, life.controller.signal)
             if (life.active && sameProfile(expected, current)) {
               setProfile(current); setValues(current); setUncertain(false); setError(''); setNotice('Comprobamos que tus datos y privacidad quedaron guardados.')
-              try { await refreshMyRelations(userId, life.controller.signal) } catch { if (life.active) setError('No pudimos actualizar las relaciones. Reintentá con Actualizar relaciones.') }
+              try { await refreshMyRelations(userId, life.controller.signal) } catch { if (life.active) setError('No pudimos actualizar las relaciones. Volvé a intentar guardar los cambios.') }
             }
           } catch { /* Keep the attempted values locked until a confirmed read. */ }
         }
@@ -171,7 +175,7 @@ function ProfileEditor({ userId }: { userId: string }) {
     try {
       if (clean && unregistered) for (const path of unregistered) await cleanUnregisteredAvatar(userId, path, life.controller.signal)
       const paths = (await loadUnregisteredAvatars(userId, life.controller.signal)).filter(path => path !== pending?.path)
-      if (life.active) { setUnregistered(paths); setNotice(paths.length ? 'Encontramos cargas sin vincular.' : 'No encontramos cargas sin vincular entre las últimas 100.') }
+      if (life.active) { setUnregistered(paths); setNotice(clean ? 'Limpieza completada.' : '') }
     } catch { if (life.active) setError('No pudimos revisar las cargas. Revisá la conexión y reintentá.') }
     finally { locked.current = false; if (life.active) setBusy(false) }
   }
@@ -196,7 +200,7 @@ function ProfileEditor({ userId }: { userId: string }) {
           </div>
         </div>
       </section>
-      <div className="profile-upload-recovery"><button className="text-button" disabled={disabled} onClick={() => void recovery()}>Revisar cargas interrumpidas</button>
+      <div className="profile-upload-recovery">
         {!!unregistered?.length && <div><p>Hay {unregistered.length} cargas sin vincular entre las últimas 100. Cerrá otras sesiones de carga antes de limpiarlas. Las fotos registradas se conservan.</p><button className="secondary-button" disabled={disabled} onClick={() => void recovery(true)}>Limpiar cargas sin vincular</button></div>}
       </div>
       <form onSubmit={submit} noValidate>
@@ -216,7 +220,7 @@ function ProfileEditor({ userId }: { userId: string }) {
           </fieldset>
         </fieldset>
         <div className="profile-save-actions"><p role="status">{notice || (busy ? 'Comprobando los cambios…' : uncertain ? 'Guardado pendiente de comprobar.' : avatarUncertain ? 'Foto pendiente de comprobar.' : dirty ? 'Tenés cambios sin guardar.' : 'Tus datos están actualizados.')}</p><button className="gradient-link gradient-button" ref={saveButton} disabled={busy || avatarUncertain || (!dirty && !uncertain)} type="submit">{busy ? 'Procesando…' : uncertain ? 'Comprobar guardado' : 'Guardar datos y privacidad'}</button>
-          <button type="button" className="text-button" disabled={disabled} onClick={() => { void refreshMyRelations(userId, lifetime.current.controller.signal).then(() => { if (lifetime.current.active) { setError(''); setNotice('Relaciones actualizadas.') } }).catch(() => { if (lifetime.current.active) setError('No pudimos actualizar las relaciones. Reintentá.') }) }}>Actualizar relaciones</button>
+
         </div>
       </form>
     </>}

@@ -393,14 +393,7 @@ function PushSettingsPanel({ userId }: { userId: string }) {
             </p>
           </div>
         </div>
-        <button
-          type="button"
-          className="text-button push-settings-refresh"
-          disabled={controlsDisabled}
-          onClick={() => void synchronize()}
-        >
-          Actualizar estado
-        </button>
+
       </div>
 
       <div className={`push-settings-status is-${currentStatus.tone}`} role="status">
@@ -461,6 +454,7 @@ function PushSettingsPanel({ userId }: { userId: string }) {
         <p className="push-settings-error field-error" role="alert">
           <Icon name="close" />
           <span>{error}</span>
+          <button type="button" className="text-button" disabled={controlsDisabled} onClick={() => void synchronize()}>Reintentar</button>
         </p>
       )}
 

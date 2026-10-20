@@ -7,8 +7,12 @@
 .direct-inbox li > a > span:nth-child(2) { flex: 1; display: grid; gap: 6px; }
 .direct-inbox li span span { font-size: var(--pi-font-meta-size); }
 .direct-start { margin-block: 16px; }
-.direct-chat .chat-header { flex-wrap: wrap; }
-.direct-chat .chat-header h1 { flex: 1; font-size: 24px; }
+.direct-chat .chat-header { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 12px; }
+.direct-chat .chat-header h1 { font-size: var(--pi-font-title-size); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.direct-inbox-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 14px; border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-pill); background: var(--pi-color-surface-glass); color: var(--pi-color-ink); font-size: var(--pi-font-meta-size); font-weight: 650; text-decoration: none; }
+.direct-inbox-link:hover { background: var(--pi-color-surface); }
+.direct-inbox-link .icon { flex-shrink: 0; width: 20px; height: 20px; }
+@media (max-width: 359px) { .direct-inbox-link { width: 44px; padding: 10px; } .direct-inbox-link span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } }
 .direct-chat .chat-composer { max-height: 48%; overflow-y: auto; }
 .direct-chat .direct-send-state { margin: 0; font-size: var(--pi-font-meta-size); overflow-wrap: anywhere; }
 .direct-chat .chat-refresh { flex-wrap: wrap; }

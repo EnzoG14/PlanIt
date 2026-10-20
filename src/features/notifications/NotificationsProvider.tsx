@@ -28,7 +28,7 @@ export function NotificationsProvider({ userId, children }: { userId: string; ch
     requestCount.current = () => counter.request()
     const cleanup = subscribeToChanges(client, 'notifications:' + userId,
       ['INSERT', 'UPDATE'].map(event => ({ table: 'notifications', event: event as 'INSERT' | 'UPDATE', filter: 'recipient_id=eq.' + userId })),
-      change => invalidate({ recover: false, ids: typeof change.new.id === 'string' ? [change.new.id] : [] }),
+      change => invalidate({ recover: Boolean(change.new.dismissed_at), ids: typeof change.new.id === 'string' ? [change.new.id] : [] }),
       () => invalidate({ recover: true, ids: [] }), setConnection)
     counter.request()
     return () => { active = false; requestCount.current = () => {}; counter.dispose(); cleanup() }

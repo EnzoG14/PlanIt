@@ -101,6 +101,7 @@ function InterestsEditor({ userId }: { userId: string }) {
     <div ref={heading}><ScreenHeader title="Mis intereses" description="Elegí las categorías que te interesan. Podés cambiarlas cuando quieras." icon="category" /></div>
     {loading && <div role="status"><StatusMessage title="Cargando intereses">Consultando categorías y preferencias de tu cuenta…</StatusMessage></div>}
     {error && <p className="field-error" role="alert">{error}</p>}
+    {categories && (error || uncertain) && <button className="secondary-button" disabled={busy || loading} onClick={() => void load(true)}>Reintentar</button>}
     {!loading && !categories && <GradientButton onClick={() => void load()}>Reintentar</GradientButton>}
     {categories && <>
       <fieldset disabled={busy || loading || uncertain} className="interests-categories"><legend>Categorías</legend>
@@ -114,7 +115,7 @@ function InterestsEditor({ userId }: { userId: string }) {
       <div className="interests-actions">
         <p role="status">{notice || (busy ? 'Comprobando tus preferencias…' : uncertain ? 'Guardado pendiente de comprobar.' : dirty ? 'Tenés cambios sin guardar.' : 'La selección coincide con tus preferencias guardadas.')}</p>
         <GradientButton disabled={busy || loading || (!dirty && !uncertain)} onClick={() => void save(uncertain)}>{busy ? 'Guardando…' : uncertain ? 'Comprobar guardado' : 'Guardar intereses'}</GradientButton>
-        <button className="text-button" disabled={busy || loading || uncertain} onClick={() => void load(true)}>Actualizar categorías</button>
+
       </div>
     </>}
     <dialog ref={dialog} className="interests-dialog" aria-labelledby="interests-leave-title" aria-describedby="interests-leave-description" onCancel={event => { event.preventDefault(); keepEditing() }}>

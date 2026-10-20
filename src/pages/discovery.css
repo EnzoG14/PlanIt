@@ -128,8 +128,10 @@
 .discovery-shell .capacity-bar, .discovery-shell .capacity-bar::-webkit-progress-bar { background: var(--pi-color-disabled-bg); }
 .discovery-shell .capacity-bar::-webkit-progress-value { background: var(--pi-color-primary); }
 .discovery-shell .capacity-bar::-moz-progress-bar { background: var(--pi-color-primary); }
-.discovery-shell .event-detail-page::after { content: ''; position: fixed; z-index: 2; bottom: calc(82px + env(safe-area-inset-bottom)); inset-inline: 0; height: 96px; background: linear-gradient(transparent, var(--pi-color-bg) 45%); pointer-events: none; }
-.discovery-shell .participation-action { position: fixed; z-index: 3; left: 50%; transform: translateX(-50%); bottom: calc(98px + env(safe-area-inset-bottom)); width: min(640px, calc(100% - 40px - env(safe-area-inset-left) - env(safe-area-inset-right))); min-height: 56px; max-height: calc(100dvh - 150px); overflow: auto; margin: 0; padding: 12px 20px; font-size: 16px; line-height: 1.4; }
+.discovery-shell .participation-action { min-height: 56px; padding: 12px 20px; font-size: 16px; line-height: 1.4; }
+.discovery-shell .participation-action-floating { position: fixed; z-index: 3; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom)); width: min(640px, calc(100% - 40px - env(safe-area-inset-left) - env(safe-area-inset-right))); max-height: calc(100dvh - 36px - env(safe-area-inset-bottom)); overflow: auto; margin: 0; }
+.discovery-shell .event-detail-page:has(.participation-action-floating) { padding-bottom: calc(92px + env(safe-area-inset-bottom)); }
+.participation-links { display: grid; gap: 12px; }
 .discovery-shell .event-participation { padding-bottom: 16px; }
 .discovery-shell .event-participation > .field-error { padding: 12px; border-radius: var(--pi-radius-notice); background: var(--pi-color-danger-bg); color: var(--pi-color-danger-on-bg); }
 .discovery-shell .event-action-notice:not(:empty) { background: var(--pi-color-success-bg); color: var(--pi-color-success-on-bg); padding: var(--pi-space-base); border-radius: var(--pi-radius-notice); font-size: var(--pi-font-meta-size); line-height: 1.5; }
