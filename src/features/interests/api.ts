@@ -39,6 +39,7 @@ export async function saveMyInterests(userId: string, ids: string[], signal: Abo
   clearSuggestions()
   try {
     const { data, error } = await client.rpc('set_my_category_interests', { p_category_ids: ids }).abortSignal(signal)
+    clearSuggestions()
     if (error) {
       const rejected = /^(22|23|42|P0001|PGRST)/.test(error.code ?? '')
       throw new InterestsSaveError(error.message.includes('interests_category_unavailable')

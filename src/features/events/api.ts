@@ -1,3 +1,4 @@
+import { invalidateContent, loadContent } from '../../lib/session-content'
 import { signedImageUrls } from '../../lib/signed-images'
 import { supabase } from '../../lib/supabase'
 import { argentinaTimestamp, imageTypes, type Category, type EventValues } from './validation'
@@ -12,7 +13,10 @@ export class PublicationError extends Error {
   uncertain: boolean
   constructor(message: string, uncertain = false) { super(message); this.uncertain = uncertain }
 }
-export async function loadCategories(): Promise<Category[]> {
+export function loadCategories(): Promise<Category[]> {
+  return loadContent('categories', () => fetchCategories())
+}
+async function fetchCategories(): Promise<Category[]> {
   if (!supabase) throw new Error('La conexión no está configurada.')
   const { data, error } = await supabase.from('categories').select('id,name,is_active').eq('is_active', true).order('name')
   if (error) throw error
@@ -62,6 +66,7 @@ export async function publishEvent(attempt: PublishAttempt, userId: string, onPr
     const cleaned = await cleanup()
     throw new PublicationError(`${error instanceof Error ? error.message : 'No se pudieron subir las fotos.'}${!cleaned ? ' La limpieza quedó pendiente; el reintento usará los mismos archivos.' : ''}`, !cleaned)
   }
+  invalidateContent('home:'); invalidateContent('suggestions:'); invalidateContent('my-events:')
   onProgress('Publicando evento…')
   try {
     const result = await client.rpc('create_event', {
@@ -72,6 +77,7 @@ export async function publishEvent(attempt: PublishAttempt, userId: string, onPr
       p_latitude: Number(attempt.values.latitude), p_longitude: Number(attempt.values.longitude), p_image_paths: attempt.paths,
       p_visibility: attempt.values.visibility ?? 'public',
     })
+    invalidateContent('home:'); invalidateContent('suggestions:'); invalidateContent('my-events:')
     if (result.error) {
       // Only a PostgreSQL response proves rollback. Network/PostgREST failures
       // can arrive after commit: preserve uploads and retry the same operation.

@@ -7,7 +7,9 @@ import { DiscoveryFilters } from '../components/DiscoveryFilters'
 import { useDiscoveryFilters } from '../features/events/useDiscoveryFilters'
 import { hasActiveFilters } from '../features/events/search'
 import { useSearchOrigin } from '../features/location/origin'
-import { loadHomeEvents, type HomeEventsCursor } from '../features/events/home'
+import type { HomeEventsCursor } from '../features/events/home'
+import { homeContentKey, loadHomeContent, type HomeContent } from '../features/startup/content'
+import { readContent } from '../lib/session-content'
 import type { EventPreview } from '../features/events/discovery'
 import './discovery.css'
 import './home.css'
@@ -15,21 +17,23 @@ import './home.css'
 type CategoryGroup = { id: string; name: string; events: EventPreview[] }
 
 export function HomePage() {
-  const [events, setEvents] = useState<EventPreview[]>([])
-  const [loading, setLoading] = useState(true)
-  const [loadingMore, setLoadingMore] = useState(false)
-  const [hasMore, setHasMore] = useState(false)
-  const [error, setError] = useState('')
-  const [imageError, setImageError] = useState(false)
   const { filters, filtersKey, search, setFilters } = useDiscoveryFilters()
   const radiusOn = filters.radiusKm !== null
   const origin = useSearchOrigin(radiusOn)
+  const cached = readContent<HomeContent>(homeContentKey(filters, origin.origin))
+
+  const [events, setEvents] = useState<EventPreview[]>(cached?.events ?? [])
+  const [loading, setLoading] = useState(!cached)
+  const [loadingMore, setLoadingMore] = useState(false)
+  const [hasMore, setHasMore] = useState(cached?.hasMore ?? false)
+  const [error, setError] = useState('')
+  const [imageError, setImageError] = useState(cached?.imageError ?? false)
   // Radius needs a reference point: wait while GPS is being asked, never query without one.
   const originKey = !radiusOn ? '' : origin.locating ? 'wait' : origin.origin ? `${origin.origin.kind}:${origin.origin.latitude},${origin.origin.longitude}` : 'none'
   const filtersRef = useRef(filters)
   const originRef = useRef(origin.origin)
   useEffect(() => { filtersRef.current = filters; originRef.current = origin.origin })
-  const cursor = useRef<HomeEventsCursor | null>(null)
+  const cursor = useRef<HomeEventsCursor | null>(cached?.cursor ?? null)
   const busy = useRef(false)
   const revision = useRef(0)
   const reload = useRef<() => void>(() => {})
@@ -38,7 +42,7 @@ export function HomePage() {
   useEffect(() => { document.title = 'Inicio · PlanIt' }, [])
   useEffect(() => {
     let active = true
-    async function fetchPage(append = false) {
+    async function fetchPage(append = false, force = false) {
       if (append && busy.current) return
       const request = ++revision.current
       if (originKey === 'wait' || originKey === 'none') {
@@ -52,14 +56,15 @@ export function HomePage() {
       if (append) setLoadingMore(true)
       else {
         cursor.current = null
-        setEvents([])
-        setHasMore(false)
-        setImageError(false)
-        setLoading(true)
+        const previous = readContent<HomeContent>(homeContentKey(filtersRef.current, originRef.current))
+        if (previous) {
+          setEvents(previous.events); setHasMore(previous.hasMore); setImageError(previous.imageError)
+        } else { setEvents([]); setHasMore(false); setImageError(false) }
+        setLoading(!previous)
         setLoadingMore(false)
       }
       try {
-        const result = await loadHomeEvents(append ? cursor.current : null, filtersRef.current, originRef.current)
+        const result = await loadHomeContent(append ? cursor.current : null, filtersRef.current, originRef.current, force)
         if (!active || revision.current !== request) return
         setEvents(previous => append
           ? [...new Map([...previous, ...result.events].map(event => [event.id, event])).values()]
@@ -77,7 +82,7 @@ export function HomePage() {
         }
       }
     }
-    reload.current = () => { void fetchPage() }
+    reload.current = () => { void fetchPage(false, true) }
     more.current = () => { void fetchPage(true) }
     const refresh = () => {
       if (document.visibilityState === 'visible' && !busy.current) void fetchPage()
