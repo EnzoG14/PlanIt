@@ -1,0 +1,55 @@
+{
+  "fixtures": "Simulated Auth, RPC, Mapbox style and geolocation; no remote writes",
+  "results": [
+    {
+      "width": 375,
+      "mode": "granted",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "mode": "denied",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "mode": "timeout",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "mode": "unavailable",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "mode": "manual-during-gps",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "mode": "granted",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "mode": "denied",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "mode": "timeout",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "mode": "unavailable",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "mode": "manual-during-gps",
+      "result": "PASS"
+    }
+  ]
+}

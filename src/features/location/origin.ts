@@ -26,7 +26,7 @@ export function boundsCenter(bounds: { south: number; north: number; west: numbe
 
 export function originLabel(origin: { origin: SearchOrigin | null; initialCenter: boolean }) {
   if (!origin.origin) return ''
-  return origin.origin.kind === 'gps' ? 'Tu ubicación' : origin.initialCenter ? 'Centro del mapa (Buenos Aires, punto inicial)' : 'Centro del mapa'
+  return origin.origin.kind === 'gps' ? 'Tu ubicación' : origin.initialCenter ? 'Centro del mapa (Resistencia, Chaco, punto inicial)' : 'Centro del mapa'
 }
 
 export function useSearchOrigin(active: boolean, onGps?: (coordinates: Coordinates) => void) {
@@ -37,15 +37,18 @@ export function useSearchOrigin(active: boolean, onGps?: (coordinates: Coordinat
     try {
       const gps = await getCurrentLocation()
       update({ gps, locating: false })
-      onGps?.(gps)
       return null
     } catch (failure) {
       const message = failure instanceof Error ? failure.message : 'No pudimos obtener tu ubicación.'
       update({ locating: false, gps: null, gpsError: message })
       return message
     }
-  }, [onGps])
-  // The first radius selection asks for GPS once; a refusal is not retried automatically.
+  }, [])
+  // Also deliver a GPS fix obtained on Inicio or while this consumer was unmounted.
+  useEffect(() => {
+    if (current.gps && !current.preferMap) onGps?.(current.gps)
+  }, [current.gps, current.preferMap, onGps])
+  // Active consumers ask for GPS once; a refusal is not retried automatically.
   useEffect(() => { if (active && !state.gpsTried && !state.locating) void locate() }, [active, locate])
   const preferMapCenter = useCallback(() => update({ preferMap: true }), [])
   const origin: SearchOrigin | null = !current.preferMap && current.gps ? { ...current.gps, kind: 'gps' } : current.mapCenter ? { ...current.mapCenter, kind: 'map' } : null

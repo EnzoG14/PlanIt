@@ -1,5 +1,7 @@
 # PlanIt — Release 4: seguimiento de implementación
 
+**Ajuste de ubicación inicial · 19/10/2026 — Implementado; QA humana pendiente:** rama `codex/map-current-location`. El mapa pide GPS al abrir; ante permiso denegado, timeout o error usa Resistencia, Chaco. Conserva reintento manual, filtros y origen compartido en memoria. Build/lint/check:mapbox PASS; diez escenarios de navegador con fixtures en móvil/escritorio. [Evidencias y límites](../design/verification/map-current-location/README.md). Sin migraciones ni cambios en aceptación histórica de R4.
+
 **Actualización de planificación R4 v1.2 (13/10/2026):** esta edición documental parte del `main` `a378259a6010`, con Amanecer v3.0 integrado (PR #27–#34). La línea de base anterior del 12/10 y los pasos del bloque 0 son históricos/propuestos: **no** acreditan ejecución ni QA R4. Leer `RELEASE_4_VISUAL_INTEGRATION.md`, `DESIGN.md`, `docs/design/UI_WORKFLOW.md`. R3 confirmada validada por el responsable; informe QA versionado conserva NO-GO por falta de E2E/aceptación humana documentada; reportar esa brecha de evidencia sin reabrir A07.
 
 
