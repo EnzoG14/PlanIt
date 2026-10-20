@@ -1,3 +1,4 @@
+import { clearSuggestions } from '../events/suggestions-cache'
 import { supabase } from '../../lib/supabase'
 import { loadCategories } from '../events/api'
 import type { Category } from '../events/validation'
@@ -35,6 +36,7 @@ export async function loadInterestsEditor(userId: string, signal: AbortSignal) {
 }
 export async function saveMyInterests(userId: string, ids: string[], signal: AbortSignal): Promise<string[]> {
   const client = await ownClient(userId)
+  clearSuggestions()
   try {
     const { data, error } = await client.rpc('set_my_category_interests', { p_category_ids: ids }).abortSignal(signal)
     if (error) {
