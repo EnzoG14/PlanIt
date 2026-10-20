@@ -23,10 +23,10 @@ export function MapPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
-  const [locationNotice, setLocationNotice] = useState('Ubicación inicial: Buenos Aires. Mové el mapa para explorar otra zona.')
+  const [locationNotice, setLocationNotice] = useState('Ubicación inicial: Resistencia, Chaco. Mové el mapa para explorar otra zona.')
   const [attempt, setAttempt] = useState(0)
   const centerOnGps = useCallback((gps: Coordinates) => { setCenter({ ...gps }); setLocationNotice('Mapa centrado en tu ubicación. Movelo para explorar.') }, [])
-  const origin = useSearchOrigin(filters.radiusKm !== null, centerOnGps)
+  const origin = useSearchOrigin(true, centerOnGps)
   const [truncated, setTruncated] = useState(false)
   const [imageError, setImageError] = useState(false)
   const preview = useRef<HTMLElement>(null)
@@ -74,15 +74,11 @@ export function MapPage() {
     }, 300)
     return () => { active = false; window.clearTimeout(timer) }
   }, [bounds, attempt, filtersKey, gpsLat, gpsLng, waitingOrigin])
-  async function locate() {
-    const failure = await origin.locate()
-    if (failure) setLocationNotice(`${failure} Conservamos la zona actual; podés mover el mapa o volver a Buenos Aires.`)
-  }
   const selected = events.find(event => event.id === selectedId)
   return <div className="map-page">
-    <header className="map-heading"><div><h1>Encontrá tu próximo plan</h1><p>Eventos públicos en el mapa</p></div><button className="secondary-button location-button" onClick={locate} disabled={origin.locating}><Icon name="pin" />{origin.locating ? 'Buscando…' : 'Mi ubicación'}</button></header>
-    <p className="location-notice" role="status">{locationNotice}</p>
-    <button className="text-button" onClick={() => { origin.preferMapCenter(); setCenter({ ...defaultLocation }); setLocationNotice('Ubicación predeterminada: Buenos Aires.') }}>Usar Buenos Aires</button>
+    <header className="map-heading"><div><h1>Encontrá tu próximo plan</h1><p>Eventos públicos en el mapa</p></div><button className="secondary-button location-button" onClick={() => void origin.locate()} disabled={origin.locating}><Icon name="pin" />{origin.locating ? 'Buscando…' : 'Mi ubicación'}</button></header>
+    <p className="location-notice" role="status">{origin.locating ? 'Buscando tu ubicación…' : origin.gpsError ? `${origin.gpsError} Podés explorar el mapa o usar Resistencia, Chaco.` : locationNotice}</p>
+    <button className="text-button" onClick={() => { origin.preferMapCenter(); setCenter({ ...defaultLocation }); setLocationNotice('Ubicación predeterminada: Resistencia, Chaco.') }}>Usar Resistencia, Chaco</button>
     <DiscoveryFilters filters={filters} onChange={setFilters} idPrefix="map" origin={origin} />
     <Suspense fallback={<StatusMessage title="Cargando mapa">Esperá un momento.</StatusMessage>}><EventMap events={events} center={center} selectedId={selectedId} onSelect={selectFromMarker} onBoundsChange={reportBounds} /></Suspense>
     {selected && <section ref={preview} className="map-preview" aria-label="Evento seleccionado"><EventCard event={selected} selected returnTo={`/map${search}`} /><button className="text-button" onClick={() => setSelectedId(null)}>Cerrar vista previa</button></section>}

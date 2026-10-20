@@ -1,6 +1,6 @@
 export type Coordinates = { latitude: number; longitude: number }
 export type MapBounds = { south: number; north: number; west: number; east: number }
-export const defaultLocation: Coordinates = { latitude: -34.6037, longitude: -58.3816 }
+export const defaultLocation: Coordinates = { latitude: -27.4514, longitude: -58.9867 }
 
 export function getCurrentLocation(): Promise<Coordinates> {
   return new Promise((resolve, reject) => {
