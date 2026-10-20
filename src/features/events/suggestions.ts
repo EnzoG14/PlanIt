@@ -1,3 +1,4 @@
+import { signedImageUrls } from '../../lib/signed-images'
 import { supabase } from '../../lib/supabase'
 import { loadMyInterests } from '../interests/api'
 import type { SearchOrigin } from '../location/origin'
@@ -26,9 +27,9 @@ export async function loadSuggestions(userId: string, origin: SearchOrigin | nul
   let imageError = false
   if (paths.length) {
     try {
-      const signed = await client.storage.from('event_media').createSignedUrls(paths, 300)
-      imageError = Boolean(signed.error || signed.data?.some(item => item.error || !item.signedUrl))
-      signed.data?.forEach(item => { if (item.path && item.signedUrl) urls.set(item.path, item.signedUrl) })
+      const signed = await signedImageUrls('event_media', paths, 300)
+      imageError = signed.imageError
+      signed.urls.forEach((url, path) => urls.set(path, url))
     } catch { imageError = true }
   }
   return { hasInterests: rows[0]?.has_interests ?? interests.length > 0, imageError,

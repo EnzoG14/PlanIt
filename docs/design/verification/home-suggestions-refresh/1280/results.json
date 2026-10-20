@@ -1,0 +1,21 @@
+{
+  "environment": "Playwright fixtures; simulated Auth/REST, no HTTP JWT or remote writes",
+  "results": [
+    {
+      "test": "1280: CA-01/02, dedicated section, honest reason, no automatic GPS or search filters, no overflow",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: CA-04 detail return reuses fresh suggestions without another RPC",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: cards remain visible during slow refresh and duplicate triggers do not restart it",
+      "result": "PASS"
+    },
+    {
+      "test": "1280: empty/error/retry independent of discovery; interests failure is not general fallback",
+      "result": "PASS"
+    }
+  ]
+}
