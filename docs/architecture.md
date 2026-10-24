@@ -172,7 +172,7 @@ Actualización R6 B1 (15/10/2026): migración 20261015130739 aplicada en planit-
 
 ## Ciclo de vida de eventos — decisión del 24/10/2026
 
-Implementación en PR, pendiente de aplicar migración y desplegar el trabajador. La decisión reemplaza la equivalencia histórica entre eliminar y archivar: ambas acciones quedan separadas. La cancelación detiene actividad; sólo un evento archivado puede reactivarse mediante reprogramación explícita.
+Migración aplicada en planit-v2 el 24/10/2026 con autorización explícita; funciones/permisos y prueba transaccional remota verificados. El trabajador Edge sigue pendiente de desplegar. La decisión reemplaza la equivalencia histórica entre eliminar y archivar: ambas acciones quedan separadas. La cancelación detiene actividad; sólo un evento archivado puede reactivarse mediante reprogramación explícita.
 
 `/events/:id/reactivate` reutiliza el formulario de edición, con fechas vacías y demás datos precargados. El horario se introduce mediante teclado numérico, formato HH:mm de 24 horas, en todos los formularios. Descartar el formulario no escribe datos. Reactivar conserva ID, archivos, conversación e historial, cambia confirmed a cancelled con motivo event_reactivation y exige reinscripción; removed, revocaciones y solicitudes pendientes se conservan. Se mantienen las reglas de acceso existentes al chat, sin acceso renovado hasta reinscribirse.
 

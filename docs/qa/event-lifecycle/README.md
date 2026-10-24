@@ -1,6 +1,6 @@
 # QA: horarios, desarchivado y eliminación definitiva
 
-Implementación del 24/10/2026, rama `codex/event-lifecycle-adjustments`, base `a877444` de origin/main. No se aplicó SQL remoto, no se desplegaron Edge Functions ni se eliminaron eventos reales.
+Implementación del 24/10/2026, rama `codex/event-lifecycle-adjustments`, base `a877444` de origin/main. La migración se aplicó en planit-v2 el 24/10/2026 con autorización posterior explícita. No se desplegaron Edge Functions ni se eliminaron eventos reales.
 
 ## Decisiones implementadas
 
@@ -28,10 +28,12 @@ Los fixtures SQL no representan HTTP/JWT/Storage reales. Los fixtures de navegad
 
 Reutiliza las herramientas PostgreSQL de los harness existentes en `.participation-test-tools.local/node_modules`; no agrega dependencias de producción. Node 24 permite ejecutar los imports TypeScript de la prueba unitaria. La prueba UI requiere Playwright y Edge, Vite local y las variables públicas habituales; puede recibir `PLANIT_PLAYWRIGHT_PATH` y `PLANIT_UI_ORIGIN`. Los fixtures interceptan el proyecto v2; no acceden a eventos reales. En Windows restringido, PostgreSQL y Edge requieren permiso para conexiones localhost.
 
-## Despliegue pendiente, requiere autorización separada
+## Estado remoto y despliegue pendiente
 
-1. Confirmar exclusivamente planit-v2 (`iepeqmvzjguwlhnecsdq`); revisar historial, dry-run y asesores antes de aplicar `20261024221340_event_lifecycle_adjustments.sql`. No modificar migraciones previas ni el proyecto histórico.
+1. **Completado el 24/10/2026:** migración `20261024221340_event_lifecycle_adjustments.sql` aplicada exclusivamente en planit-v2 (`iepeqmvzjguwlhnecsdq`). Historial sincronizado, dry-run posterior sin pendientes, diez cuerpos de funciones idénticos a Git y RLS/permisos comprobados. Prueba remota con dos identidades SET ROLE, evento temporal, reactivación/reinscripción/idempotencia/borrado y ROLLBACK aprobada. No se modificaron eventos reales. [Resumen remoto](remote/summary.json), [prueba](remote/functional-results.json), [catálogo](remote/catalog-results.json).
 2. Desplegar la versión actualizada de `r7-media-cleanup` después de la migración. Reutiliza SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY y STORY_GC_WORKER_TOKEN sólo del servidor, con autenticación de trabajador existente; no introducir VITE_* ni secretos en Git. Mantener desactivada la verificación JWT del gateway sólo para este trabajador, conforme al procedimiento ya documentado para R7.
 3. Verificar o configurar una invocación periódica server-to-server del trabajador mediante POST y su token dedicado. Este PR no instala ni activa cron. El trabajador reparte cada lote entre historias expiradas y eventos eliminados, con un máximo de 100 objetos y presupuesto de 40 segundos por lote.
 4. Comprobar reintentos/leases pendientes y errores de Storage. La UI confirma el borrado en base; las rutas permanecerán en la cola hasta confirmar su ausencia física. Los objetos reemplazados o con referencias inesperadas se conservan para revisión, nunca se borran a ciegas.
 5. Desplegar frontend y comprobar con dos cuentas reales registro, reactivación, permisos y limpieza de archivos en datos de prueba autorizados. No fusionar ni desplegar como parte de esta entrega.
+
+Asesores remotos antes/después: 60 → 63 avisos de RPC SECURITY DEFINER ejecutables por authenticated. Los tres nuevos corresponden únicamente a reactivate_event/delete_event/get_event_operation, intencionales y con autorización de propietario/recibo comprobada, search_path vacío y EXECUTE anónimo denegado. El aviso previo de protección de contraseñas filtradas de Auth permanece sin cambios. [Antes](remote/advisors-before.json), [después](remote/advisors-after.json).
