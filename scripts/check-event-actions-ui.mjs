@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { pathToFileURL } from 'node:url'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/enzog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
-const browser = await chromium.launch({ headless: true, channel: 'msedge' })
+const browser = await chromium.launch({ headless: true, channel: 'msedge', args: ['--no-proxy-server'] })
 const origin = process.env.PLANIT_UI_ORIGIN ?? 'http://127.0.0.1:4187', out = process.env.PLANIT_UI_OUTPUT ?? 'docs/design/verification/r3-block-5'
 await mkdir(out, { recursive: true })
 const owner = '20000000-0000-4000-8000-000000000001', guest = '20000000-0000-4000-8000-000000000002'
@@ -39,6 +39,7 @@ try {
         if (path === '/rest/v1/categories') return reply(activeCategory ? [{ id: category, name: 'Música', is_active: true }] : [{ id: other, name: 'Arte', is_active: true }])
         if (path === '/rest/v1/event_images') return reply([])
         if (path.startsWith('/storage/v1/object/')) { uploads++; return reply({}) }
+        if (path === '/rest/v1/rpc/get_event_stories') return reply({ server_now: '2026-10-24T12:00:00', items: [], next_cursor: null })
         if (path === '/rest/v1/rpc/get_event_organizer') return reply([{ display_name: 'Organizador de prueba', username: 'organizador' }])
         if (path === '/rest/v1/rpc/get_event_participation_summary') return reply([{ confirmed_count: 48, capacity: 80, available_spots: 32, own_status: identity === owner ? null : 'confirmed', is_organizer: identity === owner, event_state: state() }])
         if (path === '/rest/v1/rpc/get_my_organized_events') {
@@ -65,7 +66,7 @@ try {
         }
         if (path === '/rest/v1/rpc/create_event') {
           publications++; const p = req.postDataJSON(); assert.deepEqual(p.p_image_paths, [])
-          assert.notEqual(p.p_id, id); assert.ok(p.p_starts_at.startsWith('2099-11-01')); assert.equal(p.p_starts_at.endsWith('20:00:00'), true)
+          assert.equal(p.p_latitude,-34.6);assert.equal(p.p_longitude,-58.38);assert.notEqual(p.p_id, id); assert.ok(p.p_starts_at.startsWith('2099-11-01')); assert.equal(p.p_starts_at.endsWith('20:00:00'), true)
           const data = { ...event, id: p.p_id, title: p.p_title, description: p.p_description, starts_at: p.p_starts_at, ends_at: p.p_ends_at, cancelled_at: null, archived_at: null }
           saved.set(p.p_id, data)
           if (releasePublication) { publicationStarted?.(); await new Promise(r => { releasePublication = r }) }
@@ -73,7 +74,7 @@ try {
           return reply(p.p_id)
         }
         if (path === '/rest/v1/rpc/get_event_chat') return reply([{ conversation_id: id, title: event.title, event_state: state() }])
-        if (path === '/rest/v1/rpc/get_event_chat_messages') return reply([{ id: other, sender_id: owner, body: 'Mensaje histórico de prueba', created_at: '2026-10-12T12:00:00', display_name: 'Organizador', username: 'organizador' }])
+        if (path === '/rest/v1/rpc/get_event_chat_messages_v2') return reply([{ id: other, sender_id: owner, body: 'Mensaje histórico de prueba', attachment_id: null, file_id: null, bucket_name: null, storage_path: null, mime_type: null, size_bytes: null, created_at: '2026-10-12T12:00:00', display_name: 'Organizador', username: 'organizador' }])
         return reply([])
       })
       const page = await context.newPage(); page.on('pageerror', e => errors.push(e.message)); await page.routeWebSocket(/supabase\.co/, socket => socket.close()); return page
@@ -89,7 +90,7 @@ try {
     await page.waitForFunction(() => document.activeElement?.textContent?.includes('Cancelar evento'))
     await open('Archivar evento'); await page.getByRole('dialog').getByRole('button', { name: /^(Cancelar|Volver|Conservar evento)$/ }).click(); assert.equal(writes, 0)
     check('Own action rows preserve visual identity/no overflow; initial/loop/return focus; Cancel/Escape write nothing')
-    failure = 'fixture_rejection'; await open('Cancelar evento'); await page.getByRole('dialog').getByRole('button', { name: 'Cancelar evento', exact: true }).click(); await page.getByRole('alert').waitFor(); assert.equal(event.cancelled_at, null); assert.equal(await page.locator('.event-action-notice').innerText(), '')
+    failure = 'fixture_rejection'; await open('Cancelar evento'); await page.getByRole('dialog').getByRole('button', { name: 'Cancelar evento', exact: true }).click(); await page.getByRole('dialog').getByRole('alert').waitFor(); assert.equal(event.cancelled_at, null); assert.equal(await page.locator('.event-action-notice').innerText(), '')
     await page.getByRole('dialog').getByRole('button', { name: /^(Cancelar|Volver|Conservar evento)$/ }).click()
     failure = ''; slow = true; await open('Cancelar evento'); const before = writes
     await page.getByRole('dialog').getByRole('button', { name: 'Cancelar evento', exact: true }).dblclick(); await page.locator('.event-action-notice').filter({ hasText: 'fue cancelado' }).waitFor(); assert.equal(writes, before + 1); slow = false
@@ -100,16 +101,16 @@ try {
     assert.equal(await page.getByRole('dialog').getByRole('alert').count(), 1)
     await page.getByRole('button', { name: 'Comprobar estado' }).click(); await page.getByRole('button', { name: 'Comprobar estado', exact: true }).waitFor(); assert.equal(writes, pendingWrites)
     readFailure = false; failure = ''; await page.getByRole('button', { name: 'Comprobar estado' }).click(); await page.locator('.event-action-notice').filter({ hasText: 'fue archivado' }).waitFor(); assert.equal(writes, pendingWrites)
-    await page.waitForFunction(() => !document.querySelector('.event-management-danger'))
+    assert.equal(await page.getByRole('button', { name: 'Archivar evento', exact: true }).count(), 0); assert.equal(await page.getByRole('button', { name: 'Eliminar definitivamente', exact: true }).count(), 1)
     await page.goto(`${origin}/my-events?section=organizing&filter=all`); await page.getByRole('heading', { name: 'No hay eventos en Todos' }).waitFor()
     await page.getByRole('button', { name: 'Archivados', exact: true }).click(); await page.getByRole('heading', { name: event.title, exact: true }).waitFor()
     await page.getByRole('button', { name: `Acciones de ${event.title}`, exact: true }).click(); assert.equal(await page.getByRole('button', { name: 'Archivar evento', exact: true }).count(), 0)
     await page.getByRole('link', { name: 'Ver detalle', exact: true }).click(); await ready()
-    assert.ok(await page.getByRole('link', { name: 'Volver a Mis eventos' }).getAttribute('href').then(x => x.includes('filter=archived')))
+    assert.ok(await page.getByRole('link', { name: 'Ir a Mis eventos' }).getAttribute('href').then(x => x.includes('filter=archived')))
     check('Lost commit/read response stays uncertain; check performs no second write; archived disappears from active list and remains in own historical navigation/filter')
     await open('Duplicar evento'); await page.screenshot({ path: `${out}/duplicate-dialog-${width}.png` }); await page.getByRole('button', { name: 'Abrir formulario', exact: true }).click(); await field('title').waitFor()
     assert.equal(await field('title').inputValue(), event.title); assert.equal(await field('description').inputValue(), event.description); assert.equal(await field('category_id').inputValue(), category)
-    assert.equal(await field('capacity').inputValue(), '80'); assert.equal(await field('latitude').inputValue(), '-34.6')
+    assert.equal(await field('capacity').inputValue(), '80')
     for (const name of ['start_date', 'start_time', 'end_date', 'end_time']) assert.equal(await field(name).inputValue(), '')
     assert.equal(publications, 0); assert.equal(uploads, 0); assert.equal(await page.locator('.image-previews li').count(), 0)
     await field('title').fill('Cambio local'); await page.getByRole('link', { name: 'Salir sin guardar' }).click(); await ready(); assert.equal(publications, 0); assert.equal(uploads, 0)

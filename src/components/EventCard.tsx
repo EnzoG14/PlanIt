@@ -59,6 +59,8 @@ export function CompactEventCard({ event, returnTo, showMenu = false, onChanged 
         <Link ref={detail} to={`/events/${event.id}`} state={{ myEventsReturnTo: returnTo }}>Ver detalle</Link>{event.event_state === 'open' && event.starts_at > argentinaNow() && <Link to={`/events/${event.id}/edit`} state={{ myEventsReturnTo: returnTo }}>Editar evento</Link>}<Link to={`/events/${event.id}/gallery`} state={{ myEventsReturnTo: returnTo }}>Gestionar imágenes</Link><Link to={`/events/${event.id}/attendees`} state={{ myEventsReturnTo: returnTo }}>Ver asistentes</Link>
         <button type="button" onClick={() => { setMenuOpen(false); setAction('duplicate') }}>Duplicar evento</button>
         {event.event_state === 'open' && <button type="button" className="event-menu-danger" onClick={() => { setMenuOpen(false); setAction('cancel') }}>Cancelar evento</button>}
+        {event.event_state === 'archived' && <Link to={`/events/${event.id}/reactivate`} state={{ myEventsReturnTo: returnTo }}>Desarchivar</Link>}
+        {event.event_state !== 'open' && <button type="button" className="event-menu-danger" onClick={() => { setMenuOpen(false); setAction('delete') }}>Eliminar definitivamente</button>}
         {event.event_state !== 'archived' && <button type="button" className="event-menu-danger" onClick={() => { setMenuOpen(false); setAction('archive') }}>Archivar evento</button>}
       </div>}
     </div>}

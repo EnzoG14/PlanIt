@@ -4,6 +4,7 @@ import { FormField } from './FormField'
 import { Icon, type IconName } from './Icon'
 import { StatusMessage } from './StatusMessage'
 import { useState } from 'react'
+import { formatTimeInput } from '../features/events/time-input'
 import { eventDateMinimums, type Category, type EventErrors, type EventValues } from '../features/events/validation'
 
 type Props = { values: EventValues; errors: EventErrors; categories: Category[]; locked: boolean; change: (field: keyof EventValues, value: string) => void; locating: boolean; locate: () => void; locationError: string; catalogLoading: boolean; catalogError: string; retryCategories: () => void; confirmedCount?: number; selectLocation: (value: AddressSuggestion) => void }
@@ -11,6 +12,13 @@ export function EventFields({ values, errors, categories, locked, change, locati
   const [now, setNow] = useState(() => new Date())
   const minimums = eventDateMinimums(values, now)
   function field(name: keyof EventValues, label: string, icon: IconName, type = 'text', required = true, placeholder?: string) {
+    if (type === 'time') return <FormField id={`event-${name}`} name={name} label={`${label} (HH:mm)`} icon={icon} type="text" inputMode="numeric" autoComplete="off" placeholder="HH:mm" maxLength={5} value={values[name]} onChange={event => {
+      const input = event.currentTarget
+      const digitsBefore = input.value.slice(0, input.selectionStart ?? input.value.length).replace(/\D/g, '').length
+      const formatted = formatTimeInput(input.value)
+      change(name, formatted)
+      requestAnimationFrame(() => { const caret = digitsBefore + (digitsBefore > 2 ? 1 : 0); if (document.activeElement === input) input.setSelectionRange(caret, caret) })
+    }} error={errors[name]} required={required} disabled={locked} />
     return <FormField id={`event-${name}`} name={name} label={label} icon={icon} type={type} value={values[name]} onFocus={() => setNow(new Date())} onChange={event => change(name, event.target.value)} error={errors[name]} required={required} disabled={locked} min={name in minimums ? minimums[name as keyof typeof minimums] : name === 'capacity' ? Math.max(1, confirmedCount ?? 0) : undefined} placeholder={placeholder} inputMode={name === 'capacity' ? 'numeric' : undefined} step={name === 'capacity' ? 1 : undefined} />
   }
   return <>

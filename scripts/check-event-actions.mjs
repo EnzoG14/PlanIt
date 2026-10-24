@@ -29,6 +29,7 @@ try {
     create table storage.buckets(id text primary key,name text,public boolean,file_size_limit bigint,allowed_mime_types text[]);
     create table storage.objects(id uuid primary key default gen_random_uuid(),bucket_id text references storage.buckets(id),name text,owner_id text,metadata jsonb);
     alter table storage.objects enable row level security; grant select,insert,update,delete on storage.objects to authenticated;
+    create function storage.allow_only_operation(text) returns boolean language sql stable as $$ select false $$;
     create function public.rls_auto_enable() returns event_trigger language plpgsql as $$begin end$$;`)
   for (const file of (await readdir('supabase/migrations')).filter(f => f.endsWith('.sql')).sort()) { const sql = await readFile(`supabase/migrations/${file}`, 'utf8'); if (sql.trim()) await admin.query(sql) }
   for (const id of [owner, guest, stranger]) await admin.query('insert into auth.users values($1,$2)', [id, { display_name: 'Prueba' }])

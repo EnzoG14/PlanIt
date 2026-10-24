@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "project_ref": "iepeqmvzjguwlhnecsdq",
+  "migration": "20261024221340",
+  "applied_date_argentina": "2026-10-24",
+  "function_bodies_match_git": 10,
+  "rls_and_privileges": "PASS",
+  "rollback_probe": "PASS",
+  "temporary_operations_and_gc_rows_absent": true,
+  "edge_worker_deployment": "PENDING",
+  "cron_configuration": "NOT_CHANGED",
+  "migration_history_synced": true,
+  "migration_count": 49,
+  "dry_run_after": "up_to_date",
+  "security_advisors_added": [
+    "delete_event",
+    "get_event_operation",
+    "reactivate_event"
+  ],
+  "security_advisors_interpretation": "Expected authenticated SECURITY DEFINER entry points; owner checks verified; no new anonymous execute or RLS exposure"
+}

@@ -1,0 +1,578 @@
+[
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_add_event_image_p_event_id uuid, p_storage_path text",
+    "metadata": {
+      "name": "add_event_image",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_archive_event_p_event_id uuid",
+    "metadata": {
+      "name": "archive_event",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_block_user_p_target_id uuid",
+    "metadata": {
+      "name": "block_user",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_cancel_event_p_event_id uuid",
+    "metadata": {
+      "name": "cancel_event",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_create_or_rotate_event_link_p_event_id uuid",
+    "metadata": {
+      "name": "create_or_rotate_event_link",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_delete_event_p_event_id uuid, p_operation_id uuid",
+    "metadata": {
+      "name": "delete_event",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_disable_my_push_subscription_p_id uuid",
+    "metadata": {
+      "name": "disable_my_push_subscription",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_follow_user_p_target_id uuid",
+    "metadata": {
+      "name": "follow_user",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_access_grants_p_event_id uuid, p_status text, p_after_id uuid, p_limit integer",
+    "metadata": {
+      "name": "get_event_access_grants",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_attendees_p_event_id uuid, p_status text, p_search text, p_offset integer",
+    "metadata": {
+      "name": "get_event_attendees",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_chat_p_event_id uuid",
+    "metadata": {
+      "name": "get_event_chat",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_chat_messages_p_event_id uuid, p_before_at timestamp without time zone, p_before_id uuid",
+    "metadata": {
+      "name": "get_event_chat_messages",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_chat_messages_v2_p_event_id uuid, p_before_at timestamp without time zone, p_before_id uuid",
+    "metadata": {
+      "name": "get_event_chat_messages_v2",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_link_status_p_event_id uuid",
+    "metadata": {
+      "name": "get_event_link_status",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_media_upload_state_p_file_id uuid",
+    "metadata": {
+      "name": "get_event_media_upload_state",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_operation_p_operation_id uuid, p_event_id uuid, p_action text",
+    "metadata": {
+      "name": "get_event_operation",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_organizer_p_event_id uuid",
+    "metadata": {
+      "name": "get_event_organizer",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_participation_summary_p_event_id uuid",
+    "metadata": {
+      "name": "get_event_participation_summary",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_rejoin_requests_p_event_id uuid, p_offset integer",
+    "metadata": {
+      "name": "get_event_rejoin_requests",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_rejoin_resolution_p_event_id uuid, p_request_id uuid",
+    "metadata": {
+      "name": "get_event_rejoin_resolution",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_social_participants_p_event_id uuid, p_after_user_id uuid, p_limit integer",
+    "metadata": {
+      "name": "get_event_social_participants",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_stories_p_event_id uuid, p_before_at timestamp without time zone, p_before_id uuid, p_limit integer",
+    "metadata": {
+      "name": "get_event_stories",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_event_unregistered_uploads_p_event_id uuid",
+    "metadata": {
+      "name": "get_event_unregistered_uploads",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_my_event_demographics_p_event_id uuid",
+    "metadata": {
+      "name": "get_my_event_demographics",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_my_event_export_rows_p_event_id uuid",
+    "metadata": {
+      "name": "get_my_event_export_rows",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_my_event_occupancy_p_event_id uuid",
+    "metadata": {
+      "name": "get_my_event_occupancy",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_my_event_participation_series_p_event_id uuid, p_from timestamp without time zone, p_to timestamp without time zone, p_bucket text",
+    "metadata": {
+      "name": "get_my_event_participation_series",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_my_events_occupancy_p_event_ids uuid[]",
+    "metadata": {
+      "name": "get_my_events_occupancy",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_my_push_settings_",
+    "metadata": {
+      "name": "get_my_push_settings",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_my_rejoin_status_p_event_id uuid",
+    "metadata": {
+      "name": "get_my_rejoin_status",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_or_create_direct_conversation_p_target_id uuid",
+    "metadata": {
+      "name": "get_or_create_direct_conversation",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_social_counts_p_user_id uuid",
+    "metadata": {
+      "name": "get_social_counts",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_social_profile_p_user_id uuid",
+    "metadata": {
+      "name": "get_social_profile",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_social_profile_events_p_user_id uuid, p_before_starts_at timestamp without time zone, p_before_id uuid, p_limit integer",
+    "metadata": {
+      "name": "get_social_profile_events",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_get_social_relationship_p_user_id uuid",
+    "metadata": {
+      "name": "get_social_relationship",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_leave_event_p_event_id uuid",
+    "metadata": {
+      "name": "leave_event",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_list_follow_requests_p_after_requested_at timestamp without time zone, p_after_follower_id uuid, p_limit integer",
+    "metadata": {
+      "name": "list_follow_requests",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_list_social_follows_p_user_id uuid, p_direction text, p_after_user_id uuid, p_limit integer",
+    "metadata": {
+      "name": "list_social_follows",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_publish_event_story_p_event_id uuid, p_story_id uuid, p_file_id uuid",
+    "metadata": {
+      "name": "publish_event_story",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_reactivate_event_p_event_id uuid, p_operation_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text, p_visibility text",
+    "metadata": {
+      "name": "reactivate_event",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_redeem_event_link_p_token text",
+    "metadata": {
+      "name": "redeem_event_link",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_register_for_event_p_event_id uuid",
+    "metadata": {
+      "name": "register_for_event",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_remove_event_image_p_event_id uuid, p_image_id uuid",
+    "metadata": {
+      "name": "remove_event_image",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_remove_participant_p_event_id uuid, p_participation_id uuid",
+    "metadata": {
+      "name": "remove_participant",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_reorder_event_images_p_event_id uuid, p_image_ids uuid[], p_expected_ids uuid[]",
+    "metadata": {
+      "name": "reorder_event_images",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_request_rejoin_p_event_id uuid",
+    "metadata": {
+      "name": "request_rejoin",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_reserve_event_media_upload_p_event_id uuid, p_attempt_id uuid, p_file_id uuid, p_purpose text, p_mime_type text, p_size_bytes bigint",
+    "metadata": {
+      "name": "reserve_event_media_upload",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_resolve_follow_request_p_follower_id uuid, p_request_version uuid, p_decision text",
+    "metadata": {
+      "name": "resolve_follow_request",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_resolve_rejoin_p_event_id uuid, p_request_id uuid, p_decision text",
+    "metadata": {
+      "name": "resolve_rejoin",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_restore_event_access_p_event_id uuid, p_user_id uuid",
+    "metadata": {
+      "name": "restore_event_access",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_revoke_event_access_p_event_id uuid, p_user_id uuid",
+    "metadata": {
+      "name": "revoke_event_access",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_send_direct_message_p_conversation_id uuid, p_message_id uuid, p_body text",
+    "metadata": {
+      "name": "send_direct_message",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_send_event_chat_message_p_event_id uuid, p_message_id uuid, p_body text",
+    "metadata": {
+      "name": "send_event_chat_message",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_send_event_chat_message_v2_p_event_id uuid, p_message_id uuid, p_body text, p_file_id uuid",
+    "metadata": {
+      "name": "send_event_chat_message_v2",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_set_event_visibility_p_event_id uuid, p_visibility text",
+    "metadata": {
+      "name": "set_event_visibility",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_set_my_avatar_p_storage_path text",
+    "metadata": {
+      "name": "set_my_avatar",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_set_my_category_interests_p_category_ids uuid[]",
+    "metadata": {
+      "name": "set_my_category_interests",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_set_my_push_previews_p_show_previews boolean",
+    "metadata": {
+      "name": "set_my_push_previews",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_unblock_user_p_target_id uuid",
+    "metadata": {
+      "name": "unblock_user",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_unfollow_user_p_target_id uuid",
+    "metadata": {
+      "name": "unfollow_user",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_update_event_p_event_id uuid, p_title text, p_description text, p_starts_at timestamp without time zone, p_ends_at timestamp without time zone, p_category_id uuid, p_capacity integer, p_address text, p_latitude double precision, p_longitude double precision, p_location_name text, p_visibility text",
+    "metadata": {
+      "name": "update_event",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_update_my_social_profile_p_username text, p_display_name text, p_first_name text, p_last_name text, p_birth_date date, p_sex text, p_bio text, p_visibility text",
+    "metadata": {
+      "name": "update_my_social_profile",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "cache_key": "authenticated_security_definer_function_executable_public_upsert_my_push_subscription_p_id uuid, p_endpoint text, p_p256dh text, p_auth text",
+    "metadata": {
+      "name": "upsert_my_push_subscription",
+      "schema": "public"
+    }
+  },
+  {
+    "name": "auth_leaked_password_protection",
+    "level": "WARN",
+    "cache_key": "auth_leaked_password_protection",
+    "metadata": {
+      "entity": "Auth",
+      "type": "auth"
+    }
+  }
+]

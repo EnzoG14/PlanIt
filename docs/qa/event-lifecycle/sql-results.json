@@ -1,0 +1,38 @@
+{
+  "version": "PostgreSQL 18.4 on x86_64-windows, compiled by msvc-19.44.35226, 64-bit",
+  "environment": "Isolated PostgreSQL; SQL Auth/Storage scaffolds; no remote changes",
+  "results": [
+    {
+      "test": "Owner, anonymous/missing session, foreign event and date/capacity validation; failures roll back all transitions",
+      "result": "PASS"
+    },
+    {
+      "test": "Same ID/history/chat retained; fresh registration required, expulsions/revocations/pending requests retained; lost-ACK replay cannot reset new registrations",
+      "result": "PASS"
+    },
+    {
+      "test": "Deletion restricted to owner of closed event; generic browser DELETE remains denied",
+      "result": "PASS"
+    },
+    {
+      "test": "Atomic deletion of full chat/story/reserved/gallery dependencies; rollback and receipts; shared file retained; loose uploads queued; deleted UUID/late upload/relink blocked",
+      "result": "PASS"
+    },
+    {
+      "test": "Service-only GC; storage-error retry; stale lease fencing; no completion before Storage absence; shared bytes untouched",
+      "result": "PASS"
+    },
+    {
+      "test": "Real transaction races: registration waits for reactivation; operation replay preserves it; concurrent deletion serializes",
+      "result": "PASS"
+    },
+    {
+      "test": "Ended and archived deletion; Push jobs removed but subscription retained; expired-story jobs removed; in-flight Storage upload included after lock wait",
+      "result": "PASS"
+    },
+    {
+      "test": "New tables have RLS and no browser privileges; RPCs have empty search_path and no anonymous EXECUTE",
+      "result": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "environment": "Edge headless; REST/Auth fixtures; Tokyo timezone; no physical keyboard or remote changes",
+  "results": [
+    {
+      "width": 320,
+      "test": "Archived list action opens prefilled form with empty dates; abandoning writes nothing",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Numeric typing/paste/backspace, invalid 24:00, overnight midnight, reduced capacity, lost response recovered without a second write",
+      "result": "PASS"
+    },
+    {
+      "width": 320,
+      "test": "Named irreversible delete dialog, keyboard trap/Escape/focus return; lost response receipt removes event and returns to list",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Archived list action opens prefilled form with empty dates; abandoning writes nothing",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Numeric typing/paste/backspace, invalid 24:00, overnight midnight, reduced capacity, lost response recovered without a second write",
+      "result": "PASS"
+    },
+    {
+      "width": 375,
+      "test": "Named irreversible delete dialog, keyboard trap/Escape/focus return; lost response receipt removes event and returns to list",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Archived list action opens prefilled form with empty dates; abandoning writes nothing",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Numeric typing/paste/backspace, invalid 24:00, overnight midnight, reduced capacity, lost response recovered without a second write",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "test": "Named irreversible delete dialog, keyboard trap/Escape/focus return; lost response receipt removes event and returns to list",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Archived list action opens prefilled form with empty dates; abandoning writes nothing",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Numeric typing/paste/backspace, invalid 24:00, overnight midnight, reduced capacity, lost response recovered without a second write",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "test": "Named irreversible delete dialog, keyboard trap/Escape/focus return; lost response receipt removes event and returns to list",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Archived list action opens prefilled form with empty dates; abandoning writes nothing",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Numeric typing/paste/backspace, invalid 24:00, overnight midnight, reduced capacity, lost response recovered without a second write",
+      "result": "PASS"
+    },
+    {
+      "width": 1280,
+      "test": "Named irreversible delete dialog, keyboard trap/Escape/focus return; lost response receipt removes event and returns to list",
+      "result": "PASS"
+    }
+  ]
+}

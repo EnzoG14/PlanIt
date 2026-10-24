@@ -2,6 +2,7 @@ import { invalidateContent } from '../../lib/session-content'
 import { supabase } from '../../lib/supabase'
 import { loadEvent, type EventRecord } from './api'
 import { argentinaNow, argentinaTimestamp, type EventValues } from './validation'
+import { checkEventOperation, invalidateEventContent } from './actions'
 
 export function isEventEditable(event: Pick<EventRecord, 'starts_at' | 'cancelled_at' | 'archived_at'>): boolean {
   return !event.cancelled_at && !event.archived_at && event.starts_at > argentinaNow()
@@ -26,6 +27,8 @@ export function editMessage(code: string, message: string): string {
   const messages: Record<string, string> = {
     authentication_required: 'Tu sesión venció. Volvé a ingresar.',
     not_event_organizer: 'Sólo el organizador puede editar este evento.',
+    event_not_archived: 'El evento ya no está archivado. Actualizá la pantalla.',
+    operation_conflict: 'Este intento ya se completó con otros datos. Actualizá la pantalla.',
     event_unavailable: 'El evento no está disponible para tu cuenta.',
     event_not_editable: 'Sólo podés editar antes del inicio, sin cancelar ni archivar el evento.',
     start_not_future: 'Elegí una fecha y hora de inicio futuras, en horario de Argentina.',
@@ -40,24 +43,25 @@ export function editMessage(code: string, message: string): string {
   if (/^22|^23/.test(code)) return 'Revisá los datos: fechas, cupo, categoría y ubicación deben ser válidos.'
   return 'No pudimos guardar los cambios. Revisá la conexión y reintentá.'
 }
-export async function updateEvent(id: string, values: EventValues): Promise<void> {
+export async function updateEvent(id: string, values: EventValues, reactivationOperation?: string): Promise<void> {
   invalidateContent('home:'); invalidateContent('suggestions:'); invalidateContent('my-events:')
   if (!supabase) throw new EditError('La conexión no está configurada.')
   try {
-    const { data, error } = await supabase.rpc('update_event', {
+    const { data, error } = await supabase.rpc(reactivationOperation ? 'reactivate_event' : 'update_event', {
+      ...(reactivationOperation ? { p_operation_id: reactivationOperation } : {}),
       p_event_id: id, p_title: values.title.trim(), p_description: values.description.trim(),
       p_starts_at: argentinaTimestamp(values.start_date, values.start_time), p_ends_at: argentinaTimestamp(values.end_date, values.end_time),
       p_category_id: values.category_id, p_capacity: Number(values.capacity), p_address: values.address.trim(),
       p_latitude: Number(values.latitude), p_longitude: Number(values.longitude), p_location_name: values.location_name.trim() || null,
       p_visibility: values.visibility ?? 'public',
     })
-    invalidateContent('home:'); invalidateContent('suggestions:'); invalidateContent('my-events:')
+    invalidateEventContent()
     if (error) throw new EditError(editMessage(error.code, error.message), !/^(22|23|40|42|P0001|PGRST202|PGRST30[13])/.test(error.code))
     if (data !== id) throw new EditError('No pudimos confirmar el guardado.', true)
   } catch (error) {
     const failure = error instanceof EditError ? error : new EditError('No pudimos confirmar el guardado.', true)
     if (failure.uncertain) {
-      try { if (matchesEdit(await loadEvent(id), values)) return } catch { /* Keep uncertain state until a successful read. */ }
+      try { if (reactivationOperation ? await checkEventOperation(id, reactivationOperation, 'reactivate') : matchesEdit(await loadEvent(id), values)) return } catch { /* Keep uncertain state until a successful read. */ }
     }
     throw failure
   }

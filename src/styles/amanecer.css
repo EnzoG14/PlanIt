@@ -85,7 +85,7 @@
 .amanecer-shell .event-action-close { border-radius: 50%; color: var(--pi-color-text-muted); }
 .amanecer-shell .event-action-close:hover { background: var(--pi-color-chip-bg); }
 .amanecer-shell .event-action-symbol { border: 0; background: var(--pi-color-chip-bg); color: var(--pi-color-chip-text); }
-.amanecer-shell .action-cancel .event-action-symbol { background: var(--pi-color-danger-bg); color: var(--pi-color-danger-text); }
+.amanecer-shell :is(.action-cancel,.action-delete) .event-action-symbol { background: var(--pi-color-danger-bg); color: var(--pi-color-danger-text); }
 .amanecer-shell .event-action-dialog-buttons button { border-radius: var(--pi-radius-pill); font-weight: 700; }
 .amanecer-shell .event-action-danger { background: var(--pi-color-danger-action); color: #fff; }
 .amanecer-shell .event-action-dialog button:disabled { opacity: 1; background: var(--pi-color-disabled-bg); color: var(--pi-color-disabled-text); border-color: transparent; }

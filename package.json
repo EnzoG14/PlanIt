@@ -125,7 +125,10 @@
     "check:r6:release:pwa": "node scripts/check-r6-release-pwa.mjs",
     "check:r6:live": "node scripts/check-r6-live.mjs",
     "check:r6:followup": "node scripts/check-r6-followup.mjs",
-    "check:r6:followup:report": "node scripts/check-r6-followup-report.mjs"
+    "check:r6:followup:report": "node scripts/check-r6-followup-report.mjs",
+    "check:event-lifecycle": "node scripts/check-event-lifecycle.mjs",
+    "check:event-lifecycle:unit": "node scripts/check-event-lifecycle-unit.mjs",
+    "check:event-lifecycle:ui": "node scripts/check-event-lifecycle-ui.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",
