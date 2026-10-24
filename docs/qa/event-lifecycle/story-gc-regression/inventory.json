@@ -1,0 +1,49 @@
+{
+  "acl": [
+    {
+      "proname": "story_gc_target",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "a": false,
+      "u": false,
+      "s": false
+    },
+    {
+      "proname": "claim_r7_story_gc",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "a": false,
+      "u": false,
+      "s": true
+    },
+    {
+      "proname": "fail_r7_story_gc",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "a": false,
+      "u": false,
+      "s": true
+    },
+    {
+      "proname": "get_r7_story_gc_target",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "a": false,
+      "u": false,
+      "s": true
+    },
+    {
+      "proname": "complete_r7_story_gc",
+      "proconfig": [
+        "search_path=\"\""
+      ],
+      "a": false,
+      "u": false,
+      "s": true
+    }
+  ]
+}

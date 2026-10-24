@@ -50,7 +50,7 @@ Notas: Los mockups muestran acciones `Seguir`, filtros de notificaciones, contad
 | 4 | **Asistentes** | Buscador, chips por estado, lista de avatars, nombres, estados y menú por persona | R3-05/R3-06 |
 | 5 | **Acciones del evento** | Hero del evento y menú vertical de editar, duplicar, imágenes, asistentes; zona de peligro con cancelar y eliminar | R3-02/R3-07 |
 
-Notas: El chip `Borradores` ilustra algo **no persistido** por decisión aprobada. No agregar un estado `draft` ni lista remota de borradores. «Eliminar evento» equivale a **archivar**, no ejecutar DELETE. El estado `pending` dibujado para asistentes **no es** un estado de inscripción común; la inscripción es directa (`confirmed`) y la espera de reingreso reside en `event_rejoin_requests`.
+Notas: El chip `Borradores` ilustra algo **no persistido** por decisión aprobada. No agregar un estado `draft` ni lista remota de borradores. Decisión actualizada el 24/10/2026: **archivar** conserva los datos; **eliminar definitivamente** permite al organizador borrar un evento cancelado o finalizado y sus datos asociados tras confirmación. **Desarchivar** abre reprogramación y reactiva con nuevas inscripciones. El estado `pending` dibujado para asistentes **no es** un estado de inscripción común; la inscripción es directa (`confirmed`) y la espera de reingreso reside en `event_rejoin_requests`.
 
 ## Release 4 — Descubrimiento y personalización
 

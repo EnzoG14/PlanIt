@@ -12,19 +12,22 @@ import { loadCategories, loadEvent, loadEventImages, type EventRecord } from '..
 import { EditError, eventValues, isEventEditable, matchesEdit, updateEvent } from '../features/events/edit'
 import { loadParticipationSummary } from '../features/events/participation'
 import { validatedMyEventsReturn } from '../features/events/my-events'
+import { checkEventOperation } from '../features/events/actions'
 import { emptyEvent, validateEvent, type Category, type EventErrors, type EventValues } from '../features/events/validation'
 import { getCurrentLocation } from '../features/location/geolocation'
 import './discovery.css'
 import './edit-event.css'
 import './event-forms.css'
 
-export function EditEventPage() {
+export function EditEventPage({ reactivate = false }: { reactivate?: boolean }) {
   const { id = '' } = useParams()
   const { session } = useAuth()
   // A token refresh keeps the same user's local edits; event/account changes reset.
-  return <EditEventForm key={`${id}:${session?.user.id}`} id={id} userId={session?.user.id ?? ''} />
+  return <EditEventForm key={`${id}:${session?.user.id}:${reactivate}`} reactivate={reactivate} id={id} userId={session?.user.id ?? ''} />
 }
-function EditEventForm({ id, userId }: { id: string; userId: string }) {
+function EditEventForm({ id, userId, reactivate }: { id: string; userId: string; reactivate: boolean }) {
+  const operation = useRef(crypto.randomUUID())
+  const editable = (data: EventRecord) => reactivate ? Boolean(data.archived_at) : isEventEditable(data)
   const navigate = useNavigate()
   const location = useLocation()
   const origin = { myEventsReturnTo: validatedMyEventsReturn(location.state?.myEventsReturnTo) ?? undefined, returnTo: ['/home', '/map'].includes(location.state?.returnTo) ? location.state.returnTo : undefined }
@@ -52,26 +55,26 @@ function EditEventForm({ id, userId }: { id: string; userId: string }) {
   useEffect(() => { active.current = true; return () => { active.current = false; locationRevision.current += 1 } }, [])
   useEffect(() => {
     let current = true
-    document.title = 'Editar evento · PlanIt'
+    document.title = `${reactivate ? 'Desarchivar evento' : 'Editar evento'} · PlanIt`
     async function load() {
       try {
         const data = await loadEvent(id)
         if (!current) return
         setEvent(data)
-        if (!data || data.organizer_id !== userId || !isEventEditable(data)) return
+        if (!data || data.organizer_id !== userId || !(reactivate ? data.archived_at : isEventEditable(data))) return
         const [catalog, summary] = await Promise.all([loadCategories(), loadParticipationSummary(id)])
         if (!current) return
-        setCategories(catalog); setConfirmed(summary.confirmed_count); setValues(eventValues(data))
+        setCategories(catalog); setConfirmed(reactivate ? 0 : summary.confirmed_count); setValues(reactivate ? { ...eventValues(data), start_date: '', start_time: '', end_date: '', end_time: '' } : eventValues(data))
         loadEventImages(id).then(images => { if (current) { setPhoto(images[0] ?? ''); setPhotoError(false) } }).catch(() => { if (current) setPhotoError(true) })
       } catch { if (current) setLoadError('No pudimos cargar el formulario. Revisá la conexión y reintentá.') }
       finally { if (current) setLoading(false) }
     }
     void load()
     return () => { current = false }
-  }, [id, userId, attempt])
+  }, [id, userId, attempt, reactivate])
   useEffect(() => { if (error) feedback.current?.focus() }, [error])
   const retry = () => { setLoading(true); setLoadError(''); setAttempt(value => value + 1) }
-  const success = () => navigate(`/events/${id}`, { replace: true, state: { ...origin, edited: true } })
+  const success = () => navigate(`/events/${id}`, { replace: true, state: { ...origin, edited: !reactivate, reactivated: reactivate } })
   function change(field: keyof EventValues, value: string) {
     if (locked) return
     if (field === 'address' || field === 'latitude' || field === 'longitude') { locationRevision.current += 1; setLocating(false); setLocationError('') }
@@ -115,18 +118,18 @@ function EditEventForm({ id, userId }: { id: string; userId: string }) {
       if (uncertain) {
         const current = await loadEvent(id)
         if (!active.current) return
-        if (current?.organizer_id === userId && matchesEdit(current, values)) { success(); return }
+        if (reactivate ? await checkEventOperation(id, operation.current, 'reactivate') : current?.organizer_id === userId && matchesEdit(current, values)) { success(); return }
         setUncertain(false)
         setError('El guardado no se confirmó. Conservamos tus cambios; revisalos y volvé a guardar.')
         return
       }
-      await updateEvent(id, { ...values })
+      await updateEvent(id, { ...values }, reactivate ? operation.current : undefined)
       if (active.current) success()
     } catch (failure) {
       if (!active.current) return
       setUncertain(failure instanceof EditError ? failure.uncertain : uncertain)
       setError(failure instanceof Error ? failure.message : 'No pudimos comprobar el guardado. Revisá la conexión.')
-      loadParticipationSummary(id).then(summary => { if (active.current) setConfirmed(summary.confirmed_count) }).catch(() => { /* Server validates capacity even if refresh fails. */ })
+      loadParticipationSummary(id).then(summary => { if (active.current) setConfirmed(reactivate ? 0 : summary.confirmed_count) }).catch(() => { /* Server validates capacity even if refresh fails. */ })
     } finally { sending.current = false; if (active.current) setBusy(false) }
   }
   const back = <BackButton to={`/events/${id}`} state={origin} />
@@ -134,16 +137,16 @@ function EditEventForm({ id, userId }: { id: string; userId: string }) {
   if (loadError) return <>{back}<StatusMessage title="No se pudo cargar" tone="error">{loadError}</StatusMessage><button className="secondary-button" onClick={retry}>Reintentar</button></>
   if (!event) return <>{back}<StatusMessage title="Evento no encontrado">No encontramos un evento disponible para tu cuenta.</StatusMessage></>
   if (event.organizer_id !== userId) return <>{back}<StatusMessage title="No autorizado" tone="error">Sólo el organizador puede editar este evento.</StatusMessage></>
-  if (!isEventEditable(event)) return <>{back}<StatusMessage title="Evento no editable">Sólo podés editar antes del inicio, sin cancelar ni archivar el evento.</StatusMessage></>
+  if (!editable(event)) return <>{back}<StatusMessage title="Evento no editable">{reactivate ? 'Sólo podés desarchivar un evento archivado.' : 'Sólo podés editar antes del inicio, sin cancelar ni archivar el evento.'}</StatusMessage></>
   return <div className="create-event-page edit-event-page">
     <div className="event-form-wash" aria-hidden="true" />
-    {back}<header><h1>Editar evento</h1><p>Modificá la información de tu evento.</p></header>
+    {back}<header><h1>{reactivate ? 'Desarchivar evento' : 'Editar evento'}</h1><p>{reactivate ? 'Elegí nuevas fechas para reactivar el evento. Los asistentes deberán inscribirse otra vez; el historial, el chat y las expulsiones se conservan.' : 'Modificá la información de tu evento.'}</p></header>
     <div className="edit-event-cover">{photo && !photoError ? <img src={photo} alt={`Portada de ${event.title}`} onError={() => setPhotoError(true)} /> : <><Icon name="calendar" /><span>{photoError ? 'No pudimos cargar la portada.' : 'Sin foto de portada'}</span></>}</div>
     <form ref={form} className="event-form" onSubmit={submit} noValidate aria-busy={busy}>
       <EventFields selectLocation={selectLocation} values={values} errors={errors} categories={categories} locked={locked} change={change} locating={locating} locate={() => void locate()} locationError={locationError} catalogLoading={false} catalogError="" retryCategories={retry} confirmedCount={confirmed} />
       {error && <div ref={feedback} tabIndex={-1}><StatusMessage title={uncertain ? 'Guardado por confirmar' : 'No se pudo guardar'} tone="error">{error}{uncertain && ' Conservamos este intento. Comprobá el resultado antes de volver a guardar.'}</StatusMessage></div>}
-      <GradientButton type="submit" disabled={busy || locating || !categories.length}>{busy ? 'Comprobando cambios…' : uncertain ? 'Comprobar guardado' : 'Guardar cambios'}</GradientButton>
-      <Link className="secondary-link" to={`/events/${id}`} state={origin}>Cancelar edición</Link>
+      <GradientButton type="submit" disabled={busy || locating || !categories.length}>{busy ? 'Comprobando cambios…' : uncertain ? 'Comprobar guardado' : reactivate ? 'Desarchivar y reactivar' : 'Guardar cambios'}</GradientButton>
+      <Link className="secondary-link" to={`/events/${id}`} state={origin}>{reactivate ? 'Volver sin desarchivar' : 'Cancelar edición'}</Link>
     </form>
   </div>
 }

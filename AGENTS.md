@@ -38,7 +38,7 @@ Si existe una discrepancia entre requisitos y código, informar y proponer la co
 - Activar RLS desde la creación de cada tabla `public`. No confiar en filtros sólo del frontend ni en IDs proporcionados por el navegador para autorización.
 - Mantener separados los datos sociales de los privados aunque `profiles` sea una única tabla: lectura íntegra sólo para el propietario; vistas/RPC para datos visibles a terceros.
 - Las invariantes locales se imponen con PK/FK/UNIQUE/CHECK; cupos, pertenencia, autorización y operaciones de varios pasos requieren transacciones verificables.
-- Evitar cascadas que destruyan eventos, participantes, mensajes o historiales. Eliminar un evento significa archivar; archivar uno vigente implica cancelarlo primero.
+- Evitar cascadas que destruyan eventos, participantes, mensajes o historiales. Archivar uno vigente implica cancelarlo primero. Por decisión del 24/10/2026, el organizador puede eliminar definitivamente un evento cancelado o finalizado mediante RPC transaccional explícita, incluida su información asociada y limpieza de Storage con reintentos. Desarchivar requiere reprogramar y reactivar; las confirmaciones previas pasan a cancelled y las expulsiones se conservan.
 - Antes de modificar SQL: inspeccionar dependencias y migraciones existentes. No editar una migración ya aplicada; crear otra.
 - Respetar contratos y estructura existente, no agregar dependencias innecesarias. Nunca ejecutar comandos destructivos sin autorización explícita.
 

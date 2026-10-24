@@ -40,7 +40,7 @@
 .event-management .event-action-close { border-radius: 50%; color: var(--pi-color-text-muted); }
 .event-management .event-action-close:hover { background: var(--pi-color-chip-bg); }
 .event-management .event-action-symbol { border: 0; background: var(--pi-color-chip-bg); color: var(--pi-color-chip-text); }
-.event-management :is(.action-cancel,.action-archive) .event-action-symbol { background: var(--pi-color-danger-bg); color: var(--pi-color-danger-text); }
+.event-management :is(.action-cancel,.action-archive,.action-delete) .event-action-symbol { background: var(--pi-color-danger-bg); color: var(--pi-color-danger-text); }
 .event-management .event-action-dialog-buttons { flex-wrap: wrap; }
 .event-management .event-action-dialog-buttons button { flex: 1 1 150px; padding: 12px 16px; border-radius: var(--pi-radius-pill); font-weight: 700; white-space: normal; }
 .event-management .event-action-dialog .secondary-button { border: 1.5px solid var(--pi-color-ink); background: transparent; color: var(--pi-color-ink); }

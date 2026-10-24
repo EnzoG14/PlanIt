@@ -113,6 +113,7 @@ function EventDetailContent({ id }: { id: string }) {
   const canReadStories = Boolean(participation && (participation.is_organizer || participation.own_status === 'confirmed'))
   return <div className="event-detail-page">
     {location.state?.published && <StatusMessage title="Evento publicado">{event.visibility === 'unlisted' ? 'Tu evento oculto fue publicado. Generá un enlace desde la gestión para compartirlo.' : 'Tu evento ya está disponible para la comunidad.'}</StatusMessage>}
+    {location.state?.reactivated && <StatusMessage title="Evento reactivado">Los asistentes deberán inscribirse otra vez para participar.</StatusMessage>}
     {location.state?.edited && <StatusMessage title="Cambios guardados">La información del evento se actualizó.</StatusMessage>}
     <BackButton to={returnTo} state={profileBackState} />
     {images[0] && !imageError && <div className="event-hero has-photo"><img src={images[0]} width="960" height="600" alt={`Foto de ${event.title}`} onError={() => setImageError(true)} /><div className="event-hero-overlay" /></div>}

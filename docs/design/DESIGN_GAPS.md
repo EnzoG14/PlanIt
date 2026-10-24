@@ -13,7 +13,7 @@
 | R2 notificaciones | «Recordatorio» programado | `notifications` soporta avisos, pero no hay programación de recordatorios definida. |
 | R3 Mis eventos | Chip «Borradores» / estado Borrador | **No hay borradores persistidos en PostgreSQL**. Crear/duplicar es formulario local hasta publicar. No mostrar lista real de drafts. |
 | R3 asistentes | Chip «Pendientes» como estado de participación | La participación básica no incluye pending; sí hay pending para solicitudes de reingreso (`event_rejoin_requests`), conceptos diferentes. |
-| R3 acciones | «Eliminar evento» | Significa **archivar**, preservando historia. Si el evento no terminó se cancela antes en la misma operación. |
+| R3 acciones | «Eliminar evento» | Actualizado el 24/10/2026: archivar conserva historia y cancela primero si sigue vigente. El organizador también puede **eliminar definitivamente** eventos cancelados o finalizados, con sus datos asociados y confirmación explícita. Desarchivar requiere reprogramación y nueva inscripción de asistentes. |
 | R4 filtros | «Solo eventos gratuitos», entradas disponibles | No existe sistema de precios/pagos/tickets. No implementar como filtros operativos. |
 | R4 explorar | Favoritos con corazón | No hay tabla de eventos guardados; usar sólo si se aprueba el requerimiento adicional. |
 | R5 editar perfil | `Mostrar mis eventos`, `Permitir mensajes` | No existen como atributos/decisiones aprobadas. La política de perfil privado y bloqueos sí. |

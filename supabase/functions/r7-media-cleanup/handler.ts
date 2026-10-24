@@ -37,7 +37,7 @@ export function createCleanupHandler(config: Config, deps: Dependencies) {
     const metrics = { claimed: 0, deleted: 0, retry: 0, stale: 0, errors: 0 }
     const now = deps.now ?? Date.now, start = now()
     try {
-      while (metrics.claimed < 100 && now() - start < 40000) {
+      while (metrics.claimed < 50 && now() - start < 20000) {
         const raw = await deps.rpc('claim_r7_story_gc', {})
         if (raw === null) break
         const job = target(raw) as Job
@@ -62,6 +62,36 @@ export function createCleanupHandler(config: Config, deps: Dependencies) {
           // Lease expiry also recovers a crashed worker without manual mutation.
           metrics.retry++
           try { await deps.rpc('fail_r7_story_gc', { ...args, p_error_code: errorCode }) }
+          catch { metrics.errors++ }
+        }
+      }
+      // Independent deletion outbox: no request may supply a path or job ID.
+      // The server rechecks the lease, original object identity and references.
+      while (metrics.claimed < 100 && now() - start < 40000) {
+        const raw = await deps.rpc('claim_event_media_gc', {})
+        if (raw === null) break
+        const job = raw as { job_id: string; lease_token: string; storage_path: string }
+        if (!job || !uuid.test(job.job_id) || !uuid.test(job.lease_token)) throw new Error('invalid_lease')
+        metrics.claimed++
+        const args = { p_job_id: job.job_id, p_lease_token: job.lease_token }
+        let errorCode = 'backend_error'
+        try {
+          const checked = await deps.rpc('get_event_media_gc_target', args) as { job_id: string; storage_path: string } | null
+          if (!checked || checked.job_id !== job.job_id || checked.storage_path !== job.storage_path
+            || typeof checked.storage_path !== 'string' || checked.storage_path.length > 1024
+            || checked.storage_path.includes(String.fromCharCode(0))
+            || checked.storage_path.split('/').some(part => !part || part === '.' || part === '..')
+            || !/^(?:r7\/(?:chat|stories)\/[0-9a-f-]{36}\/[0-9a-f-]{36}\/[a-zA-Z0-9._-]+|[0-9a-f-]{36}\/[^\\]+)$/.test(checked.storage_path)) {
+            throw new Error('invalid_target')
+          }
+          errorCode = 'storage_error'
+          await deps.remove(checked.storage_path)
+          errorCode = 'backend_error'
+          if (await deps.rpc('complete_event_media_gc', args) !== true) throw new Error('completion_unconfirmed')
+          metrics.deleted++
+        } catch {
+          metrics.retry++
+          try { await deps.rpc('fail_event_media_gc', { ...args, p_error_code: errorCode }) }
           catch { metrics.errors++ }
         }
       }

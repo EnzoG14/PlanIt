@@ -24,7 +24,7 @@ function LayoutContent() {
   const isAuth = pathname === '/login' || pathname === '/register'
   const showPrimaryNav = ['/home', '/map', '/my-events', '/me'].includes(pathname)
   const isSocialIdentity = Boolean(matchPath('/users/:id', pathname) || matchPath('/users/:id/followers', pathname) || matchPath('/users/:id/following', pathname))
-  const isEventForm = pathname === '/events/new' || Boolean(matchPath('/events/:id/edit', pathname))
+  const isEventForm = pathname === '/events/new' || Boolean(matchPath('/events/:id/edit', pathname) || matchPath('/events/:id/reactivate', pathname))
   const isEventManagement = Boolean(pathname === '/me/follow-requests' || pathname === '/my-events/compare' || matchPath('/users/:id', pathname) || matchPath('/users/:id/followers', pathname) || matchPath('/users/:id/following', pathname) || matchPath('/events/:id/analytics', pathname) || matchPath('/events/:id/gallery', pathname) || matchPath('/events/:id/attendees', pathname) || matchPath('/events/:id/rejoin-requests', pathname) || matchPath('/events/:id/access', pathname))
   const isChat = Boolean(matchPath('/events/:id/chat', pathname) || matchPath('/messages/:conversationId', pathname))
   const isInvite = pathname === '/invite'

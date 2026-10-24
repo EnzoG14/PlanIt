@@ -3,8 +3,8 @@ import { supabase } from '../../lib/supabase'
 import { loadEvent, type EventRecord } from './api'
 import { argentinaNow, emptyEvent, type EventValues } from './validation'
 
-export type EventAction = 'cancel' | 'archive' | 'duplicate'
-export const actionLabels = { cancel: 'Cancelar evento', archive: 'Archivar evento', duplicate: 'Duplicar evento' } as const
+export type EventAction = 'cancel' | 'archive' | 'duplicate' | 'delete'
+export const actionLabels = { cancel: 'Cancelar evento', archive: 'Archivar evento', duplicate: 'Duplicar evento', delete: 'Eliminar definitivamente' } as const
 export type ManagedEvent = { id: string; title: string; event_state: 'open' | 'ended' | 'cancelled' | 'archived' }
 export function managedEvent(event: EventRecord): ManagedEvent {
   return { id: event.id, title: event.title, event_state: event.archived_at ? 'archived' : event.cancelled_at ? 'cancelled' : event.ends_at <= argentinaNow() ? 'ended' : 'open' }
@@ -12,6 +12,26 @@ export function managedEvent(event: EventRecord): ManagedEvent {
 export class EventActionError extends Error {
   uncertain: boolean
   constructor(message: string, uncertain = false) { super(message); this.uncertain = uncertain }
+}
+export function invalidateEventContent() {
+  for (const prefix of ['home:', 'suggestions:', 'my-events:', 'map:', 'search:', 'notifications:', 'compare:']) invalidateContent(prefix)
+}
+export async function checkEventOperation(id: string, operation: string, action: 'delete' | 'reactivate'): Promise<boolean> {
+  if (!supabase) throw new EventActionError('La conexión no está configurada.')
+  const { data, error } = await supabase.rpc('get_event_operation', { p_event_id: id, p_operation_id: operation, p_action: action })
+  if (error) throw new EventActionError(actionMessage(error.code, error.message), true)
+  return data === true
+}
+export async function deleteEvent(id: string, operation: string) {
+  if (!supabase) throw new EventActionError('La conexión no está configurada.')
+  try {
+    const { data, error } = await supabase.rpc('delete_event', { p_event_id: id, p_operation_id: operation })
+    if (error) throw new EventActionError(error.message.includes('event_not_closed') ? 'Primero cancelá el evento o esperá a que finalice.' : actionMessage(error.code, error.message), !/^(22|23|40|42|P0001|PGRST202|PGRST30[13])/.test(error.code))
+    if (data !== id) throw new EventActionError('No pudimos confirmar la eliminación.', true)
+  } catch (failure) {
+    const error = failure instanceof EventActionError ? failure : new EventActionError('No pudimos confirmar la eliminación.', true)
+    if (!error.uncertain || !await checkEventOperation(id, operation, 'delete').catch(() => false)) throw error
+  } finally { invalidateEventContent() }
 }
 function actionMessage(code: string, message: string) {
   if (code === '42501' || /^PGRST30[13]$/.test(code)) return 'No tenés permiso para gestionar este evento. Comprobá tu sesión.'
