@@ -1,3 +1,4 @@
+import { EventImage } from './EventImage'
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import { Icon } from './Icon'
@@ -41,7 +42,7 @@ export function CompactEventCard({ event, returnTo, showMenu = false, onChanged 
   return <article className={`compact-event-card is-${event.event_state}${showMenu ? ' has-menu' : ''}`}>
     <Link to={`/events/${event.id}`} state={{ myEventsReturnTo: returnTo }} className="compact-event-link">
       <div className="compact-event-main">
-        <span className="compact-event-photo" aria-hidden="true"><Icon name="calendar" />{event.imageUrl && <img src={event.imageUrl} alt="" width="52" height="52" loading="lazy" onError={e => { e.currentTarget.hidden = true }} />}</span>
+        <span className="compact-event-photo" aria-hidden="true"><EventImage src={event.imageUrl} alt="" fallback={<Icon name="calendar" />} /></span>
         <div className="compact-event-body">
           <h3>{event.title}</h3>
           <p><Icon name="pin" /><span className="compact-event-location">{event.location_name ?? event.address}</span></p>
@@ -74,7 +75,7 @@ export function EventCard({ event, selected, onSelect, returnTo }: { event: Even
   const hasPhoto = Boolean(event.imageUrl && failedImage !== event.imageUrl)
   return <article data-event-id={event.id} className={`event-card ${selected ? 'is-selected' : ''} ${hasPhoto ? 'has-photo' : 'without-photo'}`}>
     <Link to={`/events/${event.id}`} state={state} className="event-card-open" aria-label={`Ver detalle de ${event.title}`}>
-      {hasPhoto && <div className="event-card-photo"><img src={event.imageUrl ?? undefined} alt="" width="480" height="320" loading="lazy" onError={() => setFailedImage(event.imageUrl ?? null)} /></div>}
+      {hasPhoto && <div className="event-card-photo"><EventImage src={event.imageUrl} alt="" onError={() => setFailedImage(event.imageUrl ?? null)} /></div>}
       <div className="event-card-body"><span className="category-chip">{event.categoryName}</span><h3>{event.title}</h3>
         <p className="event-card-time"><Icon name="clock" />{formatEventTime(event.starts_at)}</p>
         <p><Icon name="pin" />{event.location_name ?? event.address}</p>

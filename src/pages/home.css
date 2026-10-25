@@ -10,8 +10,8 @@
 .home-category-groups { display: grid; gap: 28px; }
 .home-category h2 { margin: 0; font-size: 19px; letter-spacing: -.25px; }
 .home-event-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; list-style: none; padding: 0; margin: 14px 0 0; }
-.home-event-list li { min-width: 0; }
-.home-event-list .event-card-photo { height: 180px; }
+.home-event-list li { min-width: 0; align-self: start; }
+.home-event-list .event-card-photo { height: auto; }
 .home-event-list .event-card-actions { display: none; }
 .home-load-more { width: 100%; margin-top: 28px; }
 .home-map-link { justify-content: flex-start; padding-left: 0; }
@@ -20,12 +20,12 @@
   .home-heading h1 { font-size: 24px; }
   .home-category-groups { gap: 24px; }
   .home-event-list { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .home-event-list .event-card-photo { height: 190px; }
+  .home-event-list .event-card-photo { height: auto; }
 }
 @media (min-width: 900px) {
   main:has(.home-page) { max-width: 1160px; }
   .home-event-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-  .home-event-list .event-card-photo { height: 190px; }
+  .home-event-list .event-card-photo { height: auto; }
 }
 
 /* Block 4 Inicio: preserve category grouping and keyset pagination. */
@@ -38,4 +38,4 @@
 .discovery-shell .home-event-list { grid-template-columns: minmax(0, 1fr); gap: 14px; }
 .discovery-shell .home-map-link { display: inline-flex; padding-inline: 20px; margin-top: 16px; }
 @media (min-width: 768px) { .discovery-shell .home-event-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.discovery-shell .home-event-list .event-card-photo { height: 100%; }
+.discovery-shell .home-event-list .event-card-photo { height: auto; }
