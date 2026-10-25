@@ -45,7 +45,6 @@ export function CompactEventCard({ event, returnTo, showMenu = false, onChanged 
         <span className="compact-event-photo" aria-hidden="true"><EventImage src={event.imageUrl} alt="" fallback={<Icon name="calendar" />} /></span>
         <div className="compact-event-body">
           <h3>{event.title}</h3>
-          <p><Icon name="pin" /><span className="compact-event-location">{event.location_name ?? event.address}</span></p>
         </div>
       </div>
       <div className="compact-event-badges"><span className={`event-state state-${event.event_state}`}>{eventStates[event.event_state]}</span>
@@ -78,7 +77,6 @@ export function EventCard({ event, selected, onSelect, returnTo }: { event: Even
       {hasPhoto && <div className="event-card-photo"><EventImage src={event.imageUrl} alt="" onError={() => setFailedImage(event.imageUrl ?? null)} /></div>}
       <div className="event-card-body"><span className="category-chip">{event.categoryName}</span><h3>{event.title}</h3>
         <p className="event-card-time"><Icon name="clock" />{formatEventTime(event.starts_at)}</p>
-        <p><Icon name="pin" />{event.location_name ?? event.address}</p>
         {!hasPhoto && <span className="event-card-no-photo"><Icon name="calendar" />Sin foto</span>}
         <span className="event-card-detail">Ver detalle <Icon name="back" /></span>
       </div>

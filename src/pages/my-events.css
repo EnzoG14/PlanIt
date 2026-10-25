@@ -60,9 +60,9 @@
 .my-events-page .compact-event-link:focus-visible { outline: 3px solid var(--pi-color-violet-deep); outline-offset: -4px; }
 .my-events-page .compact-event-main { display: flex; align-items: flex-start; gap: 12px; min-width: 0; }
 .my-events-page .has-menu .compact-event-main { padding-right: 40px; }
-.my-events-page .compact-event-photo { position: relative; display: grid; place-items: center; width: 52px; height: auto; min-height: 32px; align-self: start; flex-shrink: 0; overflow: hidden; border-radius: 16px; background: var(--pi-color-chip-bg); color: var(--pi-color-chip-text); }
+.my-events-page .compact-event-photo { position: relative; display: grid; place-items: center; width: 52px; height: auto; aspect-ratio: 1; align-self: start; flex-shrink: 0; overflow: hidden; border-radius: 16px; background: var(--pi-color-chip-bg); color: var(--pi-color-chip-text); }
 .my-events-page .compact-event-photo .icon { width: 22px; height: 22px; }
-.my-events-page .compact-event-photo img { width: 100%; height: auto; }
+.my-events-page .compact-event-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .my-events-page .compact-event-body { min-width: 0; flex: 1; }
 .my-events-page .compact-event-body h3 { margin: 0 0 4px; font-size: 17px; line-height: 1.2; font-weight: 700; letter-spacing: -.02em; overflow-wrap: anywhere; }
 /* Full text stays in the accessibility tree and in the linked event detail. */
