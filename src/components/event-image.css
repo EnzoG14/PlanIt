@@ -1,0 +1,3 @@
+.event-image { display: block; width: 100%; max-width: 100%; height: auto; }
+.event-image[data-image-state="loading"] { min-height: 32px; }
+.event-image-unavailable { display: block; padding: 16px; color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); }

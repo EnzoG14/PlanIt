@@ -97,12 +97,12 @@ main:focus-visible { outline: none; box-shadow: inset 0 3px var(--color-focus); 
 .image-picker { width: 100%; min-width: 0; font-size: 14px; }
 .image-picker::file-selector-button { background: var(--color-bg-elevated); color: var(--color-text); border: 1px solid var(--color-border); padding: 8px; border-radius: 8px; margin-right: 8px; min-height: 44px; cursor: pointer; }
 .image-previews { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.image-previews li { min-width: 0; }
-.image-previews img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-control); }
+.image-previews li { min-width: 0; align-self: start; }
+.image-previews img { width: 100%; height: auto; border-radius: var(--radius-control); }
 .image-previews button { width: 100%; margin-top: 4px; }
 .event-public-note { text-align: center; margin: 0; }
 .event-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 24px; }
-.event-gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-card); }
+.event-gallery img { width: 100%; height: auto; border-radius: var(--radius-card); }
 .event-gallery img:first-child { grid-column: 1 / -1; }
 .event-description { white-space: pre-wrap; }
 .event-detail-page > .status-message { margin-bottom: 24px; }

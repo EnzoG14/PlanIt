@@ -77,7 +77,7 @@ try {
       }
       check(width, 'Immutable baseline and implementation: create/edit/public detail, no overflow, Amanecer scopes')
       await page.goto(`${origin}/events/new`); await page.locator('form').waitFor()
-      for (const [name, value] of Object.entries({ title: 'Oculto fixture', description: 'Evento de prueba', start_date: '2099-10-12', start_time: '20:00', end_date: '2099-10-12', end_time: '23:00', address: 'Buenos Aires', latitude: '-34.6', longitude: '-58.38', capacity: '20' })) await page.locator(`form [name="${name}"]`).fill(value)
+      for (const [name, value] of Object.entries({ title: 'Oculto fixture', description: 'Evento de prueba', start_date: '2099-10-12', start_time: '20:00', end_time: '23:00', address: 'Buenos Aires', latitude: '-34.6', longitude: '-58.38', capacity: '20' })) await page.locator(`form [name="${name}"]`).fill(value)
       await page.locator('[name="category_id"]').selectOption(category.id); await page.locator('[name="visibility"]').selectOption('unlisted')
       await page.getByRole('button', { name: 'Publicar evento', exact: true }).dblclick(); await page.getByText('Tu evento oculto fue publicado.', { exact: false }).waitFor(); assert.equal(state.creations, 1)
       check(width, 'Hidden creation sends visibility in the only create RPC, duplicate submit blocked, accurate success copy')

@@ -62,7 +62,7 @@ async function fixture(width = 390, height = 844, authenticated = true) {
   return { context, page, state, errors }
 }
 async function fill(page) {
-  for (const [name, value] of Object.entries({ title: 'Encuentro de música', description: 'Compartimos una noche de música con la comunidad.', start_date: '2099-10-11', start_time: '20:00', end_date: '2099-10-11', end_time: '22:00', address: 'Av. Corrientes 123, Buenos Aires', capacity: '20' })) await page.locator(`form [name="${name}"]`).fill(value)
+  for (const [name, value] of Object.entries({ title: 'Encuentro de música', description: 'Compartimos una noche de música con la comunidad.', start_date: '2099-10-11', start_time: '20:00', end_time: '22:00', address: 'Av. Corrientes 123, Buenos Aires', capacity: '20' })) await page.locator(`form [name="${name}"]`).fill(value)
   await page.locator('[name="address"]').focus()
   await page.getByRole('option', { name: 'Av. Corrientes 123, Buenos Aires', exact: true }).click()
   await page.getByLabel('Categoría', { exact: true }).selectOption(category.id)
@@ -71,6 +71,7 @@ const photo = { name: 'fixture.png', mimeType: 'image/png', buffer: Buffer.from(
 try {
   for (const [width, height] of [[320, 800], [360, 800], [375, 812], [390, 844], [768, 1024], [1280, 800]]) {
     const { context, page, state, errors } = await fixture(width, height)
+    assert.equal(await page.locator('[name="end_date"]').count(), 0)
     await page.getByRole('button', { name: 'Publicar evento', exact: true }).isEnabled()
     await page.screenshot({ path: `${output}/form-${width}x${height}.png`, fullPage: true })
     const metrics = await page.evaluate(() => ({ viewport: innerWidth, scrollWidth: document.documentElement.scrollWidth, controls: [...document.querySelectorAll('input,textarea,select,button')].map(control => ({ name: control.getAttribute('name') ?? control.textContent?.trim(), width: control.getBoundingClientRect().width, height: control.getBoundingClientRect().height })) }))
@@ -86,6 +87,7 @@ try {
       await page.getByRole('button', { name: 'Usar mi ubicación actual' }).click()
       await page.getByText('No pudimos obtener tu ubicación.', { exact: false }).waitFor()
       await fill(page)
+      await page.locator('[name="end_time"]').fill('02:00')
       await page.locator('[name="images"]').setInputFiles(Array.from({ length: 11 }, (_, index) => ({ ...photo, name: `${index}.png` })))
       await page.getByText('Podés agregar hasta 10 fotos.').waitFor()
       assert.equal(await page.locator('.image-previews li').count(), 0)
@@ -98,6 +100,8 @@ try {
       await page.getByRole('heading', { name: 'Evento publicado' }).waitFor()
       assert.equal(state.rpc, 1); assert.equal(state.uploads, 1)
       assert.equal(state.events.size, 1)
+      assert.equal([...state.events.values()][0].ends_at, '2099-10-12T02:00:00')
+      assert.equal(await page.locator('.detail-metadata dd').nth(1).textContent(), '02:00')
       await page.locator('dd').filter({ hasText: /20:00/ }).waitFor()
       assert.equal(await page.locator('.event-hero img').count(), 1)
       await page.screenshot({ path: `${output}/success-390x844.png`, fullPage: true })

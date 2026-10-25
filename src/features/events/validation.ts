@@ -17,6 +17,22 @@ export function argentinaTimestamp(date: string, time: string): string | null {
   if (!Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0, 19) !== local) return null
   return local
 }
+function inferredEndDate(values: EventValues): string {
+  const midnight = argentinaTimestamp(values.start_date, '00:00')
+  if (!midnight) return ''
+  return values.end_time < values.start_time
+    ? new Date(Date.parse(`${midnight}Z`) + 86400000).toISOString().slice(0, 10)
+    : values.start_date
+}
+// Retain existing multi-day dates until the organizer changes the schedule.
+export function updateEventValues(values: EventValues, field: keyof EventValues, value: string): EventValues {
+  const next = { ...values, [field]: value }
+  if (['start_date', 'start_time', 'end_time'].includes(field)) next.end_date = inferredEndDate(next)
+  return next
+}
+export function eventEndTimestamp(values: EventValues): string | null {
+  return argentinaTimestamp(values.end_date || inferredEndDate(values), values.end_time)
+}
 export function argentinaNow(now = new Date()): string {
   const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Argentina/Buenos_Aires', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' }).formatToParts(now)
   const value = (type: string) => parts.find(part => part.type === type)!.value
@@ -35,6 +51,9 @@ export function eventDateMinimums(values: EventValues, now = new Date()) {
 export function formatEventTime(value: string): string {
   return new Intl.DateTimeFormat('es-AR', { timeZone: 'America/Argentina/Buenos_Aires', dateStyle: 'medium', timeStyle: 'short', hourCycle: 'h23' }).format(new Date(`${value}-03:00`))
 }
+export function formatEventEndTime(value: string): string {
+  return new Intl.DateTimeFormat('es-AR', { timeZone: 'America/Argentina/Buenos_Aires', timeStyle: 'short', hourCycle: 'h23' }).format(new Date(`${value}-03:00`))
+}
 export function validateImages(files: Pick<File, 'type' | 'size'>[]): string | undefined {
   if (files.length > 10) return 'Podés agregar hasta 10 fotos.'
   if (files.some(file => !imageTypes.includes(file.type))) return 'Elegí fotos JPG, PNG o WebP.'
@@ -46,11 +65,10 @@ export function validateEvent(values: EventValues, categories: Category[], files
   if (![...values.title.trim()].length || [...values.title.trim()].length > 120) errors.title = 'Escribí un título de hasta 120 caracteres.'
   if (![...values.description.trim()].length || [...values.description.trim()].length > 3000) errors.description = 'Escribí una descripción de hasta 3000 caracteres.'
   const start = argentinaTimestamp(values.start_date, values.start_time)
-  const end = argentinaTimestamp(values.end_date, values.end_time)
+  const end = eventEndTimestamp(values)
   if (!values.start_date || !argentinaTimestamp(values.start_date, '00:00')) errors.start_date = 'Elegí una fecha de inicio válida.'
   if (!start) errors.start_time = 'Elegí una hora de inicio válida.'
   else if (start <= argentinaNow(now)) errors.start_time = 'El inicio debe ser posterior a la hora actual de Argentina.'
-  if (!values.end_date || !argentinaTimestamp(values.end_date, '00:00')) errors.end_date = 'Elegí una fecha de fin válida.'
   if (!end) errors.end_time = 'Elegí una hora de fin válida.'
   else if (start && end <= start) errors.end_time = 'El fin debe ser posterior al inicio.'
   if (!categories.some(category => category.id === values.category_id && category.is_active)) errors.category_id = 'Elegí una categoría disponible.'

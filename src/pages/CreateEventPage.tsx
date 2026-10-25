@@ -1,3 +1,4 @@
+import { EventImage } from '../components/EventImage'
 import { useBackLocation as useLocation } from '../components/back-navigation-context'
 import { BackButton } from '../components/BackButton'
 import type { AddressSuggestion } from '../features/location/autocomplete'
@@ -9,7 +10,7 @@ import { ScreenHeader } from '../components/ScreenHeader'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
 import { loadCategories, PublicationError, publishEvent, type PublishAttempt } from '../features/events/api'
-import { emptyEvent, validateEvent, validateImages, type Category, type EventErrors, type EventValues } from '../features/events/validation'
+import { emptyEvent, updateEventValues, validateEvent, validateImages, type Category, type EventErrors, type EventValues } from '../features/events/validation'
 import { getCurrentLocation } from '../features/location/geolocation'
 import { loadDuplicateSource } from '../features/events/actions'
 import { validatedMyEventsReturn } from '../features/events/my-events'
@@ -83,7 +84,7 @@ function CreateEventForm({ duplicateFrom }: { duplicateFrom: string | null }) {
       setErrors(current => ({ ...current, address: undefined, latitude: undefined, longitude: undefined }))
       return
     }
-    setValues(current => ({ ...current, [field]: value }))
+    setValues(current => updateEventValues(current, field, value))
     setErrors(current => ({ ...current, [field]: undefined }))
   }
   function selectLocation(value: AddressSuggestion) {
@@ -151,7 +152,7 @@ function CreateEventForm({ duplicateFrom }: { duplicateFrom: string | null }) {
         if (!imageError) setFiles(selected)
         event.target.value = ''
       }} /><p id="event-images-hint" className="field-hint">Hasta 10 fotos JPG, PNG o WebP, de hasta 5 MB cada una.</p>{errors.images && <p id="event-images-error" className="field-error">{errors.images}</p>}
-      {files.length > 0 && <ul className="image-previews">{files.map((file, index) => <li key={`${file.name}-${index}`}><img src={previews[index]} alt={`Foto seleccionada ${index + 1}`} /><button className="secondary-button" type="button" disabled={locked} aria-label={`Quitar foto ${index + 1}`} onClick={() => { setFiles(current => current.filter((_, position) => position !== index)); setErrors(current => ({ ...current, images: undefined })) }}>Quitar</button></li>)}</ul>}</div></section>
+      {files.length > 0 && <ul className="image-previews">{files.map((file, index) => <li key={`${file.name}-${index}`}><EventImage src={previews[index]} alt={`Foto seleccionada ${index + 1}`} loading="eager" /><button className="secondary-button" type="button" disabled={locked} aria-label={`Quitar foto ${index + 1}`} onClick={() => { setFiles(current => current.filter((_, position) => position !== index)); setErrors(current => ({ ...current, images: undefined })) }}>Quitar</button></li>)}</ul>}</div></section>
       {error && <div ref={feedbackRef} tabIndex={-1} className="auth-feedback"><StatusMessage title={uncertain ? 'Publicación por confirmar' : 'No se pudo publicar'} tone="error">{error}{uncertain && ' Conservamos los datos de este intento. Reintentá para comprobarlo sin crear otro evento.'}</StatusMessage></div>}
       <GradientButton type="submit" disabled={busy || locating || catalogLoading || Boolean(catalogError) || !categories.length}>{busy ? progress || 'Publicando…' : uncertain ? 'Comprobar publicación' : 'Publicar evento'}</GradientButton>
       <p className="field-hint event-public-note">El evento será público. Los datos se envían al pulsar Publicar evento.</p>

@@ -31,6 +31,7 @@
 .my-events-tabs button[aria-selected="true"] { background: var(--pi-color-ink); color: #fff; }
 .my-events-tabs button[aria-selected="true"]:hover { background: var(--pi-color-ink-hover); }
 .my-events-tabs button:focus-visible { outline-offset: 2px; }
+.my-events-tabs + [role="tabpanel"] { padding-top: var(--pi-space-base); }
 
 /* State filters: blue applies a filter */
 .my-events-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
@@ -59,9 +60,9 @@
 .my-events-page .compact-event-link:focus-visible { outline: 3px solid var(--pi-color-violet-deep); outline-offset: -4px; }
 .my-events-page .compact-event-main { display: flex; align-items: flex-start; gap: 12px; min-width: 0; }
 .my-events-page .has-menu .compact-event-main { padding-right: 40px; }
-.my-events-page .compact-event-photo { position: relative; display: grid; place-items: center; width: 52px; height: 52px; flex-shrink: 0; overflow: hidden; border-radius: 16px; background: var(--pi-color-chip-bg); color: var(--pi-color-chip-text); }
+.my-events-page .compact-event-photo { position: relative; display: grid; place-items: center; width: 52px; height: auto; min-height: 32px; align-self: start; flex-shrink: 0; overflow: hidden; border-radius: 16px; background: var(--pi-color-chip-bg); color: var(--pi-color-chip-text); }
 .my-events-page .compact-event-photo .icon { width: 22px; height: 22px; }
-.my-events-page .compact-event-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.my-events-page .compact-event-photo img { width: 100%; height: auto; }
 .my-events-page .compact-event-body { min-width: 0; flex: 1; }
 .my-events-page .compact-event-body h3 { margin: 0 0 4px; font-size: 17px; line-height: 1.2; font-weight: 700; letter-spacing: -.02em; overflow-wrap: anywhere; }
 /* Full text stays in the accessibility tree and in the linked event detail. */
@@ -119,7 +120,7 @@
   .my-events-heading { margin-bottom: 24px; }
   .my-events-heading h1 { font-size: 40px; }
   .my-events-page .compact-event-link { padding: 14px 14px 14px 24px; }
-  .my-events-page .compact-event-photo { width: 60px; height: 60px; }
+  .my-events-page .compact-event-photo { width: 60px; height: auto; }
   .my-events-page .compact-event-body h3 { font-size: 18px; }
 }
 .my-events-compare-link { margin: 8px 0 0; }

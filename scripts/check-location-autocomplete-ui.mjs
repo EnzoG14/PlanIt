@@ -66,7 +66,7 @@ async function fixture(width = 390, height = 844, authenticated = true) {
 
 const suggestion = (address, lat = -34.6037, lon = -58.3816) => ({ place_id: address, formatted: address, lat, lon })
 async function fields(page) {
-  for (const [name, value] of Object.entries({ title: 'Evento de prueba', description: 'Descripción de prueba', start_date: '2099-10-11', start_time: '20:00', end_date: '2099-10-11', end_time: '22:00', capacity: '20' })) await page.locator(`form [name="${name}"]`).fill(value)
+  for (const [name, value] of Object.entries({ title: 'Evento de prueba', description: 'Descripción de prueba', start_date: '2099-10-11', start_time: '20:00', end_time: '22:00', capacity: '20' })) await page.locator(`form [name="${name}"]`).fill(value)
   await page.getByLabel('Categoría', { exact: true }).selectOption(category.id)
 }
 try {

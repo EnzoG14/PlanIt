@@ -60,7 +60,7 @@ try{
   await page.goto(`${origin}/events/${id}`)
   await page.getByRole('link',{name:'Desarchivar',exact:true}).click()
   await page.locator('.event-form').waitFor()
-  await field('start_date').fill('2099-11-12');await field('end_date').fill('2099-11-13')
+  await field('start_date').fill('2099-11-12');
   assert.equal(await field('start_time').getAttribute('inputmode'),'numeric');assert.equal(await field('start_time').getAttribute('type'),'text')
   await field('start_time').pressSequentially('0930',{delay:60});assert.equal(await field('start_time').inputValue(),'09:30')
   await field('start_time').press('Backspace');assert.equal(await field('start_time').inputValue(),'09:3')

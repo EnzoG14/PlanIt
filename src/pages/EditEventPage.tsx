@@ -1,3 +1,4 @@
+import { EventImage } from '../components/EventImage'
 import { useBackLocation as useLocation } from '../components/back-navigation-context'
 import { BackButton } from '../components/BackButton'
 import type { AddressSuggestion } from '../features/location/autocomplete'
@@ -13,7 +14,7 @@ import { EditError, eventValues, isEventEditable, matchesEdit, updateEvent } fro
 import { loadParticipationSummary } from '../features/events/participation'
 import { validatedMyEventsReturn } from '../features/events/my-events'
 import { checkEventOperation } from '../features/events/actions'
-import { emptyEvent, validateEvent, type Category, type EventErrors, type EventValues } from '../features/events/validation'
+import { emptyEvent, updateEventValues, validateEvent, type Category, type EventErrors, type EventValues } from '../features/events/validation'
 import { getCurrentLocation } from '../features/location/geolocation'
 import './discovery.css'
 import './edit-event.css'
@@ -83,7 +84,7 @@ function EditEventForm({ id, userId, reactivate }: { id: string; userId: string;
       setErrors(current => ({ ...current, address: undefined, latitude: undefined, longitude: undefined }))
       return
     }
-    setValues(current => ({ ...current, [field]: value })); setErrors(current => ({ ...current, [field]: undefined }))
+    setValues(current => updateEventValues(current, field, value)); setErrors(current => ({ ...current, [field]: undefined }))
   }
   function selectLocation(value: AddressSuggestion) {
     if (locked) return
@@ -141,7 +142,7 @@ function EditEventForm({ id, userId, reactivate }: { id: string; userId: string;
   return <div className="create-event-page edit-event-page">
     <div className="event-form-wash" aria-hidden="true" />
     {back}<header><h1>{reactivate ? 'Desarchivar evento' : 'Editar evento'}</h1><p>{reactivate ? 'Elegí nuevas fechas para reactivar el evento. Los asistentes deberán inscribirse otra vez; el historial, el chat y las expulsiones se conservan.' : 'Modificá la información de tu evento.'}</p></header>
-    <div className="edit-event-cover">{photo && !photoError ? <img src={photo} alt={`Portada de ${event.title}`} onError={() => setPhotoError(true)} /> : <><Icon name="calendar" /><span>{photoError ? 'No pudimos cargar la portada.' : 'Sin foto de portada'}</span></>}</div>
+    <div className="edit-event-cover">{photo && !photoError ? <EventImage src={photo} alt={`Portada de ${event.title}`} loading="eager" onError={() => setPhotoError(true)} /> : <><Icon name="calendar" /><span>{photoError ? 'No pudimos cargar la portada.' : 'Sin foto de portada'}</span></>}</div>
     <form ref={form} className="event-form" onSubmit={submit} noValidate aria-busy={busy}>
       <EventFields selectLocation={selectLocation} values={values} errors={errors} categories={categories} locked={locked} change={change} locating={locating} locate={() => void locate()} locationError={locationError} catalogLoading={false} catalogError="" retryCategories={retry} confirmedCount={confirmed} />
       {error && <div ref={feedback} tabIndex={-1}><StatusMessage title={uncertain ? 'Guardado por confirmar' : 'No se pudo guardar'} tone="error">{error}{uncertain && ' Conservamos este intento. Comprobá el resultado antes de volver a guardar.'}</StatusMessage></div>}

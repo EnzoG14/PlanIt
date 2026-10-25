@@ -136,6 +136,8 @@ Galería administrativa R3 en `/events/:id/gallery`, con selección/preview loca
 
 ## Creación de eventos — BLOQUE 2
 
+Decisión del 25/10/2026: creación, duplicación, edición y reactivación solicitan fecha y hora de inicio y sólo hora de fin. La fecha de fin se infiere del inicio: una hora de fin anterior corresponde al día siguiente; una hora igual es inválida. El detalle muestra sólo el horario de fin. `ends_at` conserva su timestamp completo de Argentina. Los eventos existentes de varios días conservan su fecha al editar datos ajenos al horario; cambiar fecha de inicio u horas recalcula el fin con esta regla.
+
 Formulario local en `src/pages/CreateEventPage.tsx`, validación/fechas y llamadas en `src/features/events/`. Campos de inicio y fin se envían como timestamps de Argentina sin conversión desde la zona del dispositivo. Ubicación manual y geolocalización optativa según alternativa admitida por el plan técnico; mapa de descubrimiento pendiente del BLOQUE 3.
 
 La publicación sube fotos opcionales y llama a `create_event` para insertar evento completo y relaciones atómicamente, usando identidad derivada de Auth y RLS. Reintentos inciertos conservan un UUID, datos y archivos sólo en memoria. `/events/:id` consulta el registro y media autorizada para confirmar el resultado. Las rutas de eventos se cargan por separado para conservar el tamaño del bundle inicial. No se agregaron dependencias de producción.

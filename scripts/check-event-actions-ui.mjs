@@ -111,18 +111,18 @@ try {
     await open('Duplicar evento'); await page.screenshot({ path: `${out}/duplicate-dialog-${width}.png` }); await page.getByRole('button', { name: 'Abrir formulario', exact: true }).click(); await field('title').waitFor()
     assert.equal(await field('title').inputValue(), event.title); assert.equal(await field('description').inputValue(), event.description); assert.equal(await field('category_id').inputValue(), category)
     assert.equal(await field('capacity').inputValue(), '80')
-    for (const name of ['start_date', 'start_time', 'end_date', 'end_time']) assert.equal(await field(name).inputValue(), '')
+    for (const name of ['start_date', 'start_time', 'end_time']) assert.equal(await field(name).inputValue(), '')
     assert.equal(publications, 0); assert.equal(uploads, 0); assert.equal(await page.locator('.image-previews li').count(), 0)
     await field('title').fill('Cambio local'); await page.getByRole('link', { name: 'Salir sin guardar' }).click(); await ready(); assert.equal(publications, 0); assert.equal(uploads, 0)
     check('Historical duplicate opens shared form with required fields/empty dates/no photos; edits and exit create no event or upload; returns to original')
     await page.goto(`${origin}/events/new?duplicateFrom=${id}`); await field('title').waitFor()
     await page.getByRole('button', { name: 'Publicar evento', exact: true }).click(); assert.equal(publications, 0); await page.locator('#event-start_date-error').waitFor()
-    await field('start_date').fill('2000-01-01'); await field('start_time').fill('20:00'); await field('end_date').fill('2000-01-01'); await field('end_time').fill('23:00')
+    await field('start_date').fill('2000-01-01'); await field('start_time').fill('20:00');  await field('end_time').fill('23:00')
     await page.getByRole('button', { name: 'Publicar evento', exact: true }).click(); assert.equal(publications, 0)
     await field('title').fill('Nuevo plan editable'); const original = { ...event }
     await page.evaluate(({ key, value }) => localStorage.setItem(key, JSON.stringify(value)), { key, value: session(owner) }); assert.equal(await field('title').inputValue(), 'Nuevo plan editable')
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true)
-    for (const [name, value] of Object.entries({ start_date: '2099-11-01', start_time: '20:00', end_date: '2099-11-01', end_time: '23:00' })) await field(name).fill(value)
+    for (const [name, value] of Object.entries({ start_date: '2099-11-01', start_time: '20:00', end_time: '23:00' })) await field(name).fill(value)
     await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0) }); await page.screenshot({ path: `${out}/duplicate-form-${width}.png`, fullPage: true })
     losePublish = true; await page.getByRole('button', { name: 'Publicar evento', exact: true }).click(); await page.getByRole('heading', { name: 'Publicación por confirmar' }).waitFor()
     readFailure = false; losePublish = false; await page.getByRole('button', { name: 'Comprobar publicación', exact: true }).click(); await page.getByRole('heading', { name: 'Evento publicado' }).waitFor()
@@ -134,7 +134,7 @@ try {
     const anonymous = await pageFor(null); await anonymous.goto(`${origin}/events/new?duplicateFrom=${id}`); await anonymous.waitForURL(url => url.pathname === '/login')
     check('Owner-only controls, foreign/malformed duplicate URL blocks publishing; anonymous route requires login')
     sourceFailure = 'PGRST202'; await page.goto(`${origin}/events/new?duplicateFrom=${id}`); await page.getByRole('heading', { name: 'No se pudo duplicar' }).waitFor(); sourceFailure = ''; await page.getByRole('button', { name: 'Reintentar', exact: true }).click(); await field('title').waitFor()
-    activeCategory = false; await page.reload(); await field('title').waitFor(); for (const [name, value] of Object.entries({ start_date: '2099-11-01', start_time: '20:00', end_date: '2099-11-01', end_time: '23:00' })) await field(name).fill(value)
+    activeCategory = false; await page.reload(); await field('title').waitFor(); for (const [name, value] of Object.entries({ start_date: '2099-11-01', start_time: '20:00', end_time: '23:00' })) await field(name).fill(value)
     const previousPublications = publications; await page.getByRole('button', { name: 'Publicar evento' }).click(); await page.locator('#event-category_id-error').waitFor(); assert.equal(publications, previousPublications); activeCategory = true
     check('Missing source RPC shows retry; inactive source category requires an available selection before publish')
     if (width === 360) {
@@ -167,7 +167,7 @@ try {
     check('Archived chat keeps historical messages and removes composer')
     if (width === 360) {
       await page.goto(`${origin}/events/new?duplicateFrom=${id}`); await field('title').waitFor()
-      for (const [name, value] of Object.entries({ start_date: '2099-11-01', start_time: '20:00', end_date: '2099-11-01', end_time: '23:00' })) await field(name).fill(value)
+      for (const [name, value] of Object.entries({ start_date: '2099-11-01', start_time: '20:00', end_time: '23:00' })) await field(name).fill(value)
       const sent = new Promise(r => { publicationStarted = r }); releasePublication = () => {}
       await page.getByRole('button', { name: 'Publicar evento', exact: true }).click(); await sent
       sourceFailure = '42501'

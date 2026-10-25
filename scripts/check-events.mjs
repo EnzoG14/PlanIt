@@ -4,7 +4,7 @@ import ts from 'typescript'
 
 const source = await readFile(new URL('../src/features/events/validation.ts', import.meta.url), 'utf8')
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext } }).outputText
-const { validateEvent, argentinaTimestamp, argentinaNow, formatEventTime, validateImages } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`)
+const { validateEvent, argentinaTimestamp, argentinaNow, formatEventTime, formatEventEndTime, eventEndTimestamp, updateEventValues, validateImages } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`)
 const categoryId = '10000000-0000-4000-8000-000000000001'
 const userA = '20000000-0000-4000-8000-000000000001'
 const userB = '20000000-0000-4000-8000-000000000002'
@@ -18,7 +18,22 @@ assert.equal(argentinaTimestamp('2099-10-11', '24:00'), null)
 assert.equal(argentinaTimestamp('2099-10-11', '20:00'), '2099-10-11T20:00:00')
 assert.match(formatEventTime('2099-10-11T20:00:00'), /20:00/)
 assert.deepEqual(validateEvent(values, categories, [], now), {})
-for (const field of ['title', 'description', 'start_date', 'start_time', 'end_date', 'end_time', 'category_id', 'capacity', 'address', 'latitude', 'longitude']) assert.ok(validateEvent({ ...values, [field]: '' }, categories, [], now)[field], field)
+assert.equal(formatEventEndTime('2099-10-11T22:00:00'), '22:00')
+assert.deepEqual(validateEvent({ ...values, end_date: '' }, categories, [], now), {})
+assert.equal(eventEndTimestamp({ ...values, end_date: '' }), '2099-10-11T22:00:00')
+const overnight = updateEventValues(values, 'end_time', '02:00')
+assert.equal(eventEndTimestamp(overnight), '2099-10-12T02:00:00')
+assert.deepEqual(validateEvent(overnight, categories, [], now), {})
+assert.equal(eventEndTimestamp(updateEventValues(overnight, 'end_time', '23:00')), '2099-10-11T23:00:00')
+assert.equal(eventEndTimestamp(updateEventValues(overnight, 'start_date', '2099-12-31')), '2100-01-01T02:00:00')
+assert.equal(eventEndTimestamp(updateEventValues({ ...overnight, start_date: '2028-02-28' }, 'end_time', '02:00')), '2028-02-29T02:00:00')
+const multiDay = { ...values, end_date: '2099-10-14' }
+assert.equal(eventEndTimestamp(updateEventValues(multiDay, 'title', 'Otro nombre')), '2099-10-14T22:00:00')
+assert.equal(eventEndTimestamp(updateEventValues(multiDay, 'end_time', '23:00')), '2099-10-11T23:00:00')
+assert.ok(validateEvent(updateEventValues(values, 'end_time', '20:00'), categories, [], now).end_time)
+assert.ok(validateEvent(updateEventValues(values, 'end_time', '25:00'), categories, [], now).end_time)
+
+for (const field of ['title', 'description', 'start_date', 'start_time', 'end_time', 'category_id', 'capacity', 'address', 'latitude', 'longitude']) assert.ok(validateEvent({ ...values, [field]: '' }, categories, [], now)[field], field)
 for (const capacity of ['0', '-1', '1.5', '2147483648', 'Infinity']) assert.ok(validateEvent({ ...values, capacity }, categories, [], now).capacity)
 for (const latitude of ['91', '-91', 'NaN', 'Infinity']) assert.ok(validateEvent({ ...values, latitude }, categories, [], now).latitude)
 for (const longitude of ['181', '-181', 'NaN', 'Infinity']) assert.ok(validateEvent({ ...values, longitude }, categories, [], now).longitude)

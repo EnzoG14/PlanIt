@@ -1,7 +1,7 @@
 import { invalidateContent, loadContent } from '../../lib/session-content'
 import { signedImageUrls } from '../../lib/signed-images'
 import { supabase } from '../../lib/supabase'
-import { argentinaTimestamp, imageTypes, type Category, type EventValues } from './validation'
+import { argentinaTimestamp, eventEndTimestamp, imageTypes, type Category, type EventValues } from './validation'
 
 export type EventRecord = {
   id: string; organizer_id: string; title: string; description: string; starts_at: string; ends_at: string
@@ -71,7 +71,7 @@ export async function publishEvent(attempt: PublishAttempt, userId: string, onPr
   try {
     const result = await client.rpc('create_event', {
       p_id: attempt.id, p_title: attempt.values.title.trim(), p_description: attempt.values.description.trim(),
-      p_starts_at: argentinaTimestamp(attempt.values.start_date, attempt.values.start_time), p_ends_at: argentinaTimestamp(attempt.values.end_date, attempt.values.end_time),
+      p_starts_at: argentinaTimestamp(attempt.values.start_date, attempt.values.start_time), p_ends_at: eventEndTimestamp(attempt.values),
       p_category_id: attempt.values.category_id, p_capacity: Number(attempt.values.capacity),
       p_location_name: attempt.values.location_name.trim() || null, p_address: attempt.values.address.trim(),
       p_latitude: Number(attempt.values.latitude), p_longitude: Number(attempt.values.longitude), p_image_paths: attempt.paths,

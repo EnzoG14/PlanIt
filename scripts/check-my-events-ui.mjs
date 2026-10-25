@@ -166,7 +166,7 @@ try {
     extraRows=[]
     // Creation from the page must become visible on return from its detail.
     await owner.getByRole('link',{name:'Crear evento',exact:true}).click()
-    const values={title:'Evento recién creado — prueba',description:'Fixture de creación y navegación',start_date:'2099-11-01',start_time:'20:00',end_date:'2099-11-01',end_time:'22:00',address:'Corrientes 123',latitude:'-34.6',longitude:'-58.38',capacity:'20'}
+    const values={title:'Evento recién creado — prueba',description:'Fixture de creación y navegación',start_date:'2099-11-01',start_time:'20:00',end_time:'22:00',address:'Corrientes 123',latitude:'-34.6',longitude:'-58.38',capacity:'20'}
     for(const [name,value] of Object.entries(values)) await owner.locator(`.event-form [name="${name}"]`).fill(value)
     await owner.locator('[name="category_id"]').selectOption(category.id)
     await owner.getByRole('button',{name:'Publicar evento',exact:true}).click(); await owner.getByText('Evento publicado',{exact:true}).waitFor()
