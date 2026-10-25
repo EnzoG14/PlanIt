@@ -55,7 +55,7 @@ try {
     const form=()=>page.locator('form.event-form'),field=name=>page.locator(`[name="${name}"]`)
     const open=async()=>{await page.goto(`${origin}/events/${id}/edit`);await form().waitFor()}
     const check=test=>{results.push({viewport:`${width}x${height}`,test,result:'PASS'});console.log(`PASS ${width}: ${test}`)}
-    await open();assert.equal(await field('title').inputValue(),event.title);assert.equal(await field('start_time').inputValue(),'22:00');assert.equal(await field('end_date').inputValue(),'2099-10-13');assert.equal(await field('latitude').count(),0);assert.equal(await field('longitude').count(),0);await page.getByText('Ubicación lista para guardar.',{exact:true}).waitFor();assert.equal(await field('capacity').getAttribute('min'),'48')
+    await open();assert.equal(await field('title').inputValue(),event.title);assert.equal(await field('start_time').inputValue(),'22:00');assert.equal(await field('end_date').count(),0);assert.equal(await field('end_time').inputValue(),'03:00');assert.equal(await field('latitude').count(),0);assert.equal(await field('longitude').count(),0);await page.getByText('Ubicación lista para guardar.',{exact:true}).waitFor();assert.equal(await field('capacity').getAttribute('min'),'48')
     assert.equal(await page.getByRole('button',{name:'Cambiar imagen'}).count(),0)
     await page.screenshot({path:`${out}/edit-${width}x${height}.png`,fullPage:true})
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true)
@@ -63,8 +63,8 @@ try {
     check('Precarga completa, horario Argentina en Tokyo, portada de lectura, cupo y responsive')
     await field('start_date').fill('2020-01-01');await page.getByRole('button',{name:'Guardar cambios',exact:true}).click();await page.getByText('El inicio debe ser posterior a la hora actual de Argentina.',{exact:true}).waitFor();assert.equal(writes,0)
     assert.equal(await field('start_time').evaluate(e=>e===document.activeElement),true)
-    await field('start_date').fill('2099-10-12');await field('end_date').fill('2099-10-12');await field('end_time').fill('20:00');await page.getByRole('button',{name:'Guardar cambios',exact:true}).click();await page.getByText('El fin debe ser posterior al inicio.',{exact:true}).waitFor();assert.equal(writes,0)
-    await field('end_date').fill('2099-10-13');await field('end_time').fill('03:00');await field('capacity').fill('47');await page.getByRole('button',{name:'Guardar cambios',exact:true}).click();await page.getByText('El cupo no puede ser menor que 48 inscriptos confirmados.',{exact:true}).waitFor();assert.equal(writes,0)
+    await field('start_date').fill('2099-10-12');await field('end_time').fill('22:00');await page.getByRole('button',{name:'Guardar cambios',exact:true}).click();await page.getByText('El fin debe ser posterior al inicio.',{exact:true}).waitFor();assert.equal(writes,0)
+    await field('end_time').fill('03:00');await field('capacity').fill('47');await page.getByRole('button',{name:'Guardar cambios',exact:true}).click();await page.getByText('El cupo no puede ser menor que 48 inscriptos confirmados.',{exact:true}).waitFor();assert.equal(writes,0)
     check('Fechas pasadas/fin inválido/cupo insuficiente rechazados y foco en primer error')
     await field('capacity').fill('80');await field('title').fill('Título conservado');failure='capacity_below_confirmed';await page.getByRole('button',{name:'Guardar cambios',exact:true}).click();await page.getByRole('alert').waitFor();assert.equal(await field('title').inputValue(),'Título conservado')
     await page.screenshot({path:`${out}/error-${width}x${height}.png`,fullPage:true})

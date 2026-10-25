@@ -41,7 +41,7 @@ export function EventFields({ values, errors, categories, locked, change, locati
       </section>
       <section className="event-form-section" aria-labelledby="event-schedule-heading"><h2 id="event-schedule-heading">Fecha y horario</h2>
       <fieldset className="event-dates"><legend>Inicio del evento</legend><div className="field-pair">{field('start_date', 'Fecha de inicio', 'calendar', 'date')}{field('start_time', 'Hora de inicio', 'clock', 'time')}</div></fieldset>
-      <fieldset className="event-dates"><legend>Fin del evento</legend><div className="field-pair">{field('end_date', 'Fecha de fin', 'calendar', 'date')}{field('end_time', 'Hora de fin', 'clock', 'time')}</div><p className="field-hint">Todos los horarios son de Argentina.</p></fieldset>
+      <fieldset className="event-dates"><legend>Fin del evento</legend>{field('end_time', 'Hora de fin', 'clock', 'time')}<p className="field-hint">Si la hora de fin es anterior a la de inicio, el evento termina al día siguiente. Todos los horarios son de Argentina.</p></fieldset>
       </section>
       <fieldset className="event-location event-form-section"><legend>Ubicación</legend>
         <AddressAutocomplete address={values.address} resolved={Boolean(values.latitude && values.longitude)} disabled={locked} locating={locating} error={errors.address || ((errors.latitude || errors.longitude) ? 'Elegí una dirección sugerida o usá tu ubicación actual.' : undefined)} change={value => change('address', value)} select={selectLocation} />

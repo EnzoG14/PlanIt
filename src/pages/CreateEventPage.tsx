@@ -10,7 +10,7 @@ import { ScreenHeader } from '../components/ScreenHeader'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
 import { loadCategories, PublicationError, publishEvent, type PublishAttempt } from '../features/events/api'
-import { emptyEvent, validateEvent, validateImages, type Category, type EventErrors, type EventValues } from '../features/events/validation'
+import { emptyEvent, updateEventValues, validateEvent, validateImages, type Category, type EventErrors, type EventValues } from '../features/events/validation'
 import { getCurrentLocation } from '../features/location/geolocation'
 import { loadDuplicateSource } from '../features/events/actions'
 import { validatedMyEventsReturn } from '../features/events/my-events'
@@ -84,7 +84,7 @@ function CreateEventForm({ duplicateFrom }: { duplicateFrom: string | null }) {
       setErrors(current => ({ ...current, address: undefined, latitude: undefined, longitude: undefined }))
       return
     }
-    setValues(current => ({ ...current, [field]: value }))
+    setValues(current => updateEventValues(current, field, value))
     setErrors(current => ({ ...current, [field]: undefined }))
   }
   function selectLocation(value: AddressSuggestion) {

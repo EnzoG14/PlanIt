@@ -9,7 +9,7 @@ import { validatedDiscoveryReturn } from '../features/events/search'
 import { StatusMessage } from '../components/StatusMessage'
 import { EventParticipation } from '../components/EventParticipation'
 import { loadCategories, loadEvent, loadEventImages, loadEventOrganizer, type EventRecord } from '../features/events/api'
-import { formatEventTime } from '../features/events/validation'
+import { formatEventTime, formatEventEndTime } from '../features/events/validation'
 import { EventManagement } from '../components/EventManagement'
 import { validatedMyEventsReturn, myEventsPath } from '../features/events/my-events'
 import { socialProfileReturn, participantsReturn } from '../features/social/api'
@@ -121,7 +121,7 @@ function EventDetailContent({ id }: { id: string }) {
     <h1>{event.title}</h1>
     <span className="category-chip">{category}</span>
     {imageError && <p role="status" className="field-error">No pudimos cargar las fotos. <button className="text-button" onClick={retry}>Reintentar</button></p>}
-    <dl className="detail-metadata"><dt><Icon name="calendar" />Inicio</dt><dd>{formatEventTime(event.starts_at)}</dd><dt><Icon name="clock" />Fin</dt><dd>{formatEventTime(event.ends_at)}</dd><dt><Icon name="pin" />Lugar</dt><dd>{event.location_name ?? event.address}</dd>{event.location_name && <><dt>Dirección</dt><dd>{event.address}</dd></>}</dl>
+    <dl className="detail-metadata"><dt><Icon name="calendar" />Inicio</dt><dd>{formatEventTime(event.starts_at)}</dd><dt><Icon name="clock" />Fin</dt><dd>{formatEventEndTime(event.ends_at)}</dd><dt><Icon name="pin" />Lugar</dt><dd>{event.location_name ?? event.address}</dd>{event.location_name && <><dt>Dirección</dt><dd>{event.address}</dd></>}</dl>
     {integration && <div className="event-integrations">
       <EventCalendarAction event={integration} />
       <EventShareAction event={integration} canManageInvite={event.organizer_id === session?.user.id} />

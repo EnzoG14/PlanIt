@@ -1,7 +1,7 @@
 import { invalidateContent } from '../../lib/session-content'
 import { supabase } from '../../lib/supabase'
 import { loadEvent, type EventRecord } from './api'
-import { argentinaNow, argentinaTimestamp, type EventValues } from './validation'
+import { argentinaNow, argentinaTimestamp, eventEndTimestamp, type EventValues } from './validation'
 import { checkEventOperation, invalidateEventContent } from './actions'
 
 export function isEventEditable(event: Pick<EventRecord, 'starts_at' | 'cancelled_at' | 'archived_at'>): boolean {
@@ -13,7 +13,7 @@ export function eventValues(event: EventRecord): EventValues {
 export function matchesEdit(event: EventRecord | null, values: EventValues): boolean {
   return Boolean(event && event.title === values.title.trim() && event.description === values.description.trim()
     && event.starts_at.replace(' ', 'T') === argentinaTimestamp(values.start_date, values.start_time)
-    && event.ends_at.replace(' ', 'T') === argentinaTimestamp(values.end_date, values.end_time)
+    && event.ends_at.replace(' ', 'T') === eventEndTimestamp(values)
     && event.category_id === values.category_id && event.capacity === Number(values.capacity)
     && event.address === values.address.trim() && (event.location_name ?? '') === values.location_name.trim()
     && event.latitude === Number(values.latitude) && event.longitude === Number(values.longitude)
@@ -50,7 +50,7 @@ export async function updateEvent(id: string, values: EventValues, reactivationO
     const { data, error } = await supabase.rpc(reactivationOperation ? 'reactivate_event' : 'update_event', {
       ...(reactivationOperation ? { p_operation_id: reactivationOperation } : {}),
       p_event_id: id, p_title: values.title.trim(), p_description: values.description.trim(),
-      p_starts_at: argentinaTimestamp(values.start_date, values.start_time), p_ends_at: argentinaTimestamp(values.end_date, values.end_time),
+      p_starts_at: argentinaTimestamp(values.start_date, values.start_time), p_ends_at: eventEndTimestamp(values),
       p_category_id: values.category_id, p_capacity: Number(values.capacity), p_address: values.address.trim(),
       p_latitude: Number(values.latitude), p_longitude: Number(values.longitude), p_location_name: values.location_name.trim() || null,
       p_visibility: values.visibility ?? 'public',

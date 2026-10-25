@@ -14,7 +14,7 @@ import { EditError, eventValues, isEventEditable, matchesEdit, updateEvent } fro
 import { loadParticipationSummary } from '../features/events/participation'
 import { validatedMyEventsReturn } from '../features/events/my-events'
 import { checkEventOperation } from '../features/events/actions'
-import { emptyEvent, validateEvent, type Category, type EventErrors, type EventValues } from '../features/events/validation'
+import { emptyEvent, updateEventValues, validateEvent, type Category, type EventErrors, type EventValues } from '../features/events/validation'
 import { getCurrentLocation } from '../features/location/geolocation'
 import './discovery.css'
 import './edit-event.css'
@@ -84,7 +84,7 @@ function EditEventForm({ id, userId, reactivate }: { id: string; userId: string;
       setErrors(current => ({ ...current, address: undefined, latitude: undefined, longitude: undefined }))
       return
     }
-    setValues(current => ({ ...current, [field]: value })); setErrors(current => ({ ...current, [field]: undefined }))
+    setValues(current => updateEventValues(current, field, value)); setErrors(current => ({ ...current, [field]: undefined }))
   }
   function selectLocation(value: AddressSuggestion) {
     if (locked) return
