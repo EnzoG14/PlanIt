@@ -12,7 +12,7 @@
 .event-card.is-selected { border-color: var(--color-purple); box-shadow: 0 0 0 1px var(--color-purple); }
 .event-card-photo { position: relative; display: flex; align-items: center; justify-content: center; height: auto; background: linear-gradient(135deg, #14328b, #292054); overflow: hidden; }
 .event-card-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 40%, #0d1638); pointer-events: none; }
-.event-card-photo img { width: 100%; height: auto; }
+.event-card-photo img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .event-card-photo > .icon { width: 40px; height: 40px; color: #adb7d8; }
 .event-card-body { padding: 12px; }
 .event-card h3 { font-size: 17px; line-height: 1.35; margin: 10px 0 8px; overflow-wrap: anywhere; }
@@ -77,7 +77,7 @@
 .discovery-shell .event-card.has-photo .event-card-open { grid-template-columns: 100px minmax(0, 1fr); }
 .discovery-shell .event-card-open:hover { background: var(--pi-color-surface-soft); }
 .discovery-shell .event-card-open:focus-visible { outline-offset: -3px; }
-.discovery-shell .event-card-photo { height: auto; min-width: 0; align-self: start; border-radius: var(--pi-radius-media); background: var(--pi-color-surface-soft); }
+.discovery-shell .event-card-photo { height: auto; aspect-ratio: 1; min-width: 0; align-self: start; border-radius: var(--pi-radius-media); background: transparent; }
 .discovery-shell .event-card-photo::after { content: none; }
 .discovery-shell .event-card-body { padding: 4px; min-width: 0; }
 .discovery-shell .event-card h3 { font-size: var(--pi-font-title-size); font-weight: 700; line-height: var(--pi-font-title-line-height); letter-spacing: var(--pi-font-title-tracking); margin: 10px 0; }

@@ -1,5 +1,7 @@
 # PlanIt — Estado visual UI Refresh R1–R3
 
+**Tarjetas · 25/10/2026:** ubicación retirada de Inicio, Mapa y Mis eventos; miniaturas cuadradas con imagen completa centrada, conservando estados sin foto/error y ubicación en el detalle. [Capturas, mediciones y verificación](../design/verification/event-cards-image-layout/README.md). UI con fixtures en cinco anchos; build/lint PASS con advertencias previas. Sin cambios de backend ni aceptación en dispositivos reales.
+
 **Adición · 20/10/2026 · Navegación e historias:** flechas de regreso unificadas en pantallas secundarias, acceso a intereses desde Perfil, encabezado continuo de comparación y espacio del mapa; selector de historias con vista previa y captura móvil nativa. [Evidencia, pruebas y límites](../design/verification/ui-back-navigation/README.md). Amanecer y contratos de datos conservados. Cámara/dispositivos/lector reales pendientes; sin nueva aceptación funcional R1–R3.
 
 **Ubicación del mapa · 19/10/2026:** solicitud automática de GPS y fallback Resistencia, Chaco; composición y estilos actuales conservados, sin rediseño. [Capturas con fixtures y verificación](../design/verification/map-current-location/README.md), móvil/escritorio. Sin cambios de tokens, CSS, DESIGN.md ni mockups; dispositivos reales y aceptación humana pendientes.
