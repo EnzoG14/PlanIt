@@ -54,13 +54,14 @@ try {
         if (index < 3) {
           const metric = await card.locator('img').evaluate(image => {
             const frame = image.parentElement.getBoundingClientRect(), rect = image.getBoundingClientRect(), css = getComputedStyle(image)
-            return { frameWidth: frame.width, frameHeight: frame.height, imageWidth: rect.width, imageHeight: rect.height, fit: css.objectFit, position: css.objectPosition, naturalRatio: image.naturalWidth / image.naturalHeight }
+            return { frameWidth: frame.width, frameHeight: frame.height, imageWidth: rect.width, imageHeight: rect.height, fit: css.objectFit, position: css.objectPosition, background: getComputedStyle(image.parentElement).backgroundColor, naturalRatio: image.naturalWidth / image.naturalHeight }
           })
           assert.ok(Math.abs(metric.frameWidth - metric.frameHeight) < 1, JSON.stringify(metric))
           assert.ok(Math.abs(metric.imageWidth - metric.frameWidth) < 1)
           assert.ok(Math.abs(metric.imageHeight - metric.frameHeight) < 1)
           assert.equal(metric.fit, 'contain')
           assert.equal(metric.position, '50% 50%')
+          assert.equal(metric.background, 'rgba(0, 0, 0, 0)')
           measurements.push({ width, page: name, shape: shapes[index], ...metric })
         }
       }

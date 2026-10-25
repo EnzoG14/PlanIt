@@ -77,7 +77,7 @@
 .discovery-shell .event-card.has-photo .event-card-open { grid-template-columns: 100px minmax(0, 1fr); }
 .discovery-shell .event-card-open:hover { background: var(--pi-color-surface-soft); }
 .discovery-shell .event-card-open:focus-visible { outline-offset: -3px; }
-.discovery-shell .event-card-photo { height: auto; aspect-ratio: 1; min-width: 0; align-self: start; border-radius: var(--pi-radius-media); background: var(--pi-color-surface-soft); }
+.discovery-shell .event-card-photo { height: auto; aspect-ratio: 1; min-width: 0; align-self: start; border-radius: var(--pi-radius-media); background: transparent; }
 .discovery-shell .event-card-photo::after { content: none; }
 .discovery-shell .event-card-body { padding: 4px; min-width: 0; }
 .discovery-shell .event-card h3 { font-size: var(--pi-font-title-size); font-weight: 700; line-height: var(--pi-font-title-line-height); letter-spacing: var(--pi-font-title-tracking); margin: 10px 0; }

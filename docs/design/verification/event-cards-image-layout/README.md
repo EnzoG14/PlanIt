@@ -3,7 +3,7 @@
 Verificación del 25/10/2026 sobre la dirección Amanecer. Fixtures locales identificados; no se consultaron ni modificaron datos remotos.
 
 - Inicio, resultados y vista previa del mapa, Organizo y Participo: se elimina la ubicación de las tarjetas. El detalle conserva la ubicación.
-- Miniaturas cuadradas con ancho existente: 80/100 px en descubrimiento y 52/60 px en Mis eventos según breakpoint; imagen completa centrada con `object-fit: contain` y fondo de tokens existentes.
+- Miniaturas cuadradas con ancho existente: 80/100 px en descubrimiento y 52/60 px en Mis eventos según breakpoint; imagen completa centrada con `object-fit: contain`. Por ajuste solicitado, el fondo de las imágenes es transparente: los espacios libres muestran la superficie de la tarjeta. Los iconos de ausencia/error de Mis eventos conservan su fondo.
 - Se conservan los estados sin imagen/error y la navegación. No cambia EventImage ni los contratos de datos.
 
 ## Comprobaciones
