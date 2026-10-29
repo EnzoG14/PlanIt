@@ -2,7 +2,7 @@
 
 Corte inicial: 26/10/2026; ampliación a 47 diapositivas: 27/10/2026. Rama: `codex/presentation-prototype`, creada desde `codex/release-7-documentation`. La presencia de código no acredita despliegue ni aceptación humana.
 
-La entrega vigente contiene 53 diapositivas. La reorganización de apertura del 29/10/2026 se documenta en [NARRATIVE_ADJUSTMENTS.md](NARRATIVE_ADJUSTMENTS.md). Desarrolla R1–R7 después del roadmap y termina con demo, evolución, conclusiones y agradecimiento. Las 53 historias literales, su asignación a 13 sprints, portadas y cierres proceden de Planificación Oficial: ver [RELEASE_SOURCES.md](RELEASE_SOURCES.md). La trazabilidad del cierre está en [CLOSING_SOURCES.md](CLOSING_SOURCES.md). Las entregas históricas de 18 y 47 páginas se conservan.
+La entrega vigente contiene 54 diapositivas. Alcance y Limitaciones están separados y las historias incluyen esfuerzo relativo propuesto: ver [EFFORT_ESTIMATES.md](EFFORT_ESTIMATES.md). La reorganización de apertura del 29/10/2026 se documenta en [NARRATIVE_ADJUSTMENTS.md](NARRATIVE_ADJUSTMENTS.md). Desarrolla R1–R7 después del roadmap y termina con demo, evolución, conclusiones y agradecimiento. Las 53 historias literales, su asignación a 13 sprints, portadas y cierres proceden de Planificación Oficial: ver [RELEASE_SOURCES.md](RELEASE_SOURCES.md). La trazabilidad del cierre está en [CLOSING_SOURCES.md](CLOSING_SOURCES.md). Las entregas históricas de 18 y 47 páginas se conservan.
 
 ## Documento oficial
 

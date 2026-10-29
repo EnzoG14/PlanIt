@@ -2,7 +2,7 @@
 theme: default
 title: PlanIt — Proyecto Final
 author: Grupo N.º 1 · UTN FRRe
-info: Presentación completa de PlanIt, releases R1–R7 y cierre. 53 diapositivas. Ingeniería en Sistemas de Información, 2026.
+info: Presentación completa de PlanIt, releases R1–R7 y cierre. 54 diapositivas. Ingeniería en Sistemas de Información, 2026.
 aspectRatio: 16/9
 canvasWidth: 1280
 colorSchema: light
@@ -217,14 +217,32 @@ Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3Ph
 ---
 layout: planit
 name: scope
-title: Alcance y limitaciones
+title: Alcance
 ---
 
-# Alcance y limitaciones
+# Alcance
 
-<div class="scope-grid content-section">
+<div class="scope-grid scope-separated content-section">
 <div><h2>Descubrimiento y participación</h2><p>Explorar eventos por ubicación e intereses y gestionar la participación.</p></div>
 <div><h2>Organización y comunidad</h2><p>Administrar eventos y asistentes, comunicarse y consultar estadísticas.</p></div>
+</div>
+
+<SlideFooter />
+
+<!--
+ERS Oficial §§1.2 y 2.2: alcance funcional de PlanIt para participantes y organizadores. La página de alcance se separa de limitaciones por pedido del usuario. Referencia editorial: Tatool, página 10; no se copian funciones ni responsabilidades de ese proyecto.
+Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.8kvi3flgq86r
+-->
+
+---
+layout: planit
+name: limitations
+title: Limitaciones
+---
+
+# Limitaciones
+
+<div class="scope-grid scope-separated content-section">
 <div><h2>Conectividad y servicios</h2><p>Requiere Internet y disponibilidad de los servicios de autenticación, almacenamiento y mapas.</p></div>
 <div><h2>Compatibilidad y permisos</h2><p>Ubicación, notificaciones e integraciones dependen del navegador, dispositivo y permisos otorgados.</p></div>
 </div>
@@ -232,7 +250,7 @@ title: Alcance y limitaciones
 <SlideFooter />
 
 <!--
-ERS Oficial §§1.2 y 2.2 para el alcance; §2.5 para conexión a Internet, disponibilidad de servicios, capacidades del dispositivo y permisos. §2.4 no define restricciones adicionales: se presentan dependencias documentadas, sin inventar restricciones de edad, mercado o uso offline. Las posibilidades futuras de §2.6 se mantienen en Evolución del producto. Referencia editorial: modelo SysAssign, página 12; sin trasladar sus limitaciones específicas.
+ERS Oficial §2.5: conexión a Internet, disponibilidad de servicios, capacidades del dispositivo y permisos. §2.4 no define restricciones adicionales: se presentan dependencias documentadas, sin inventar restricciones de edad, mercado o uso offline. Las posibilidades futuras de §2.6 se mantienen en Evolución del producto. Referencia editorial: Tatool, página 11; no se copian sus limitaciones legales ni comerciales.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.8kvi3flgq86r
 -->
 
@@ -363,12 +381,12 @@ title: Priorización y estimación
 
 <div class="estimation-split content-section">
 <section><h2>MoSCoW</h2><dl class="moscow"><div><dt>Must</dt><dd>Imprescindible</dd></div><div><dt>Should</dt><dd>Importante</dd></div><div><dt>Could</dt><dd>Deseable</dd></div><div><dt>Won’t</dt><dd>Fuera del alcance</dd></div></dl></section>
-<section><h2>Planning Poker</h2><p>Considerar esfuerzo, dependencias e incertidumbre.</p><div class="poker-scale" aria-label="Escala de puntos: 1, 2, 3, 5, 8 y 13"><span>1</span><span>2</span><span>3</span><span>5</span><span>8</span><span>13</span></div><p class="emphasis">Los puntos expresan esfuerzo relativo, no horas.</p></section>
+<section><h2>Planning Poker</h2><p>Considerar esfuerzo, dependencias e incertidumbre.</p><EffortLegend /><p class="emphasis">Los puntos expresan esfuerzo relativo, no horas.</p><p class="effort-explanation">Puntos y tallas propuestos para esta presentación; no son estimaciones históricas del equipo.</p></section>
 </div>
 <SlideFooter />
 
 <!--
-Planificación Oficial §2.5. La escala es 1, 2, 3, 5, 8 y 13 puntos. Se estima colaborativamente y se dividen historias demasiado grandes. No asignar puntos inventados a una historia ni convertirlos en horas.
+Planificación Oficial §2.5. La escala es 1, 2, 3, 5, 8 y 13 puntos. Se estima colaborativamente y se dividen historias demasiado grandes. Por autorización expresa del usuario del 29/10/2026 se asignan estimaciones propuestas a las 53 historias. No representan estimaciones históricas del equipo ni horas. La equivalencia visual XS–XXL es una convención propuesta para esta presentación, no una conversión universal. Tatool, página 23, aporta la referencia de tallas; se conserva la escala de Planning Poker de PlanIt. Asignaciones y colores: data/story-effort.mjs.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
@@ -468,6 +486,7 @@ title: R1 · Sprint 1
 <SlideFooter label="Historias oficiales completas · 4 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R1-01, RF-R1-02, RF-R1-03, RF-R1-04. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente explicita el sprint del 08/09/2025 al 23/09/2025. Las dos páginas pertenecen al único sprint funcional de R1.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §5.1.
@@ -485,6 +504,7 @@ title: R1 · Sprint 1 · continuación
 <SlideFooter label="Continuación del mismo sprint · Historias oficiales completas · 3 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R1-05, RF-R1-06, RF-R1-07. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente explicita el sprint del 08/09/2025 al 23/09/2025. Las dos páginas pertenecen al único sprint funcional de R1.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §5.1.
@@ -535,6 +555,7 @@ title: R2 · Sprint 1
 <SlideFooter label="Historias oficiales completas · 3 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R2-01, RF-R2-02, RF-R2-03. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §6.1.
@@ -552,6 +573,7 @@ title: R2 · Sprint 2
 <SlideFooter label="Historias oficiales completas · 4 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R2-04, RF-R2-05, RF-R2-06, RF-R2-07. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §6.2.
@@ -602,6 +624,7 @@ title: R3 · Sprint 1
 <SlideFooter label="Historias oficiales completas · 4 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R3-01, RF-R3-02, RF-R3-03, RF-R3-04. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §7.1.
@@ -619,6 +642,7 @@ title: R3 · Sprint 2
 <SlideFooter label="Historias oficiales completas · 5 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R3-05, RF-R3-06, RF-R3-07, RF-R3-08, RF-R3-09. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §7.2.
@@ -669,6 +693,7 @@ title: R4 · Sprint 1
 <SlideFooter label="Historias oficiales completas · 4 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R4-01, RF-R4-02, RF-R4-03, RF-R4-04. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §8.1.
@@ -686,6 +711,7 @@ title: R4 · Sprint 2
 <SlideFooter label="Historias oficiales completas · 5 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R4-05, RF-R4-06, RF-R4-07, RF-R4-08, RF-R4-09. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §8.2.
@@ -736,6 +762,7 @@ title: R5 · Sprint 1
 <SlideFooter label="Historias oficiales completas · 4 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R5-01, RF-R5-02, RF-R5-03, RF-R5-04. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §9.1.
@@ -753,6 +780,7 @@ title: R5 · Sprint 2
 <SlideFooter label="Historias oficiales completas · 4 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R5-05, RF-R5-06, RF-R5-07, RF-R5-08. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §9.2.
@@ -803,6 +831,7 @@ title: R6 · Sprint 1
 <SlideFooter label="Historias oficiales completas · 3 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R6-01, RF-R6-02, RF-R6-03. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §10.1.
@@ -820,6 +849,7 @@ title: R6 · Sprint 2
 <SlideFooter label="Historias oficiales completas · 3 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R6-04, RF-R6-05, RF-R6-06. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §10.2.
@@ -870,6 +900,7 @@ title: R7 · Sprint 1
 <SlideFooter label="Historias oficiales completas · 3 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R7-01, RF-R7-02, RF-R7-03. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §11.1.
@@ -887,6 +918,7 @@ title: R7 · Sprint 2
 <SlideFooter label="Historias oficiales completas · 4 requisitos" />
 
 <!--
+Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R7-04, RF-R7-05, RF-R7-06, RF-R7-07. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §11.2.

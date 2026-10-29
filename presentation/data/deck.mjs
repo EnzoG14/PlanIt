@@ -10,7 +10,7 @@ export const deck = [
   ['features', 'Funcionalidades principales'],
   ['participant-opportunity', 'Oportunidad de mejora — Participantes'],
   ['organizer-opportunity', 'Oportunidad de mejora — Organizadores'],
-  ['benefits', 'Beneficios esperados'], ['scope', 'Alcance y limitaciones'],
+  ['benefits', 'Beneficios esperados'], ['scope', 'Alcance'], ['limitations', 'Limitaciones'],
   ['requirements', 'Especificación de requisitos'], ['domains', 'Agrupación funcional y módulos'],
   ['users', 'Usuarios del sistema'], ['stack', 'Stack tecnológico'], ['architecture', 'Arquitectura tecnológica'],
   ['method', 'Enfoque de trabajo'], ['estimation', 'Priorización y estimación'],

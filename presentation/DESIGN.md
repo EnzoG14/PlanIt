@@ -103,9 +103,9 @@ components:
 
 **Creative North Star: "La agenda con luz difusa"**
 
-Sistema reutilizable para las 53 diapositivas académicas de PlanIt, hasta el agradecimiento. La apertura reorganizada incorpora dos páginas de oportunidades, una por usuario, y alcance; se conservan las releases y el cierre de demo, evolución, conclusiones y agradecimiento. Extiende B · Amanecer de [DESIGN.md](../DESIGN.md): nombre, logo, familia local, fondo claro, tinta marina y luz violeta-azul. No reemplaza el sistema de la aplicación.
+Sistema reutilizable para las 54 diapositivas académicas de PlanIt, hasta el agradecimiento. La apertura reorganizada incorpora dos páginas de oportunidades, una por usuario, y alcance; se conservan las releases y el cierre de demo, evolución, conclusiones y agradecimiento. Extiende B · Amanecer de [DESIGN.md](../DESIGN.md): nombre, logo, familia local, fondo claro, tinta marina y luz violeta-azul. No reemplaza el sistema de la aplicación.
 
-La escala cambia para proyección: títulos grandes, texto breve y espacio para la explicación oral. Las capturas prueban recorridos; el diagrama explica relaciones. El propósito del producto sigue definido en [PRODUCT.md](../PRODUCT.md), sin métricas ni ventajas comerciales inventadas. La composición de las 53 diapositivas vive en [DIRECTION.md](references/DIRECTION.md).
+La escala cambia para proyección: títulos grandes, texto breve y espacio para la explicación oral. Las capturas prueban recorridos; el diagrama explica relaciones. El propósito del producto sigue definido en [PRODUCT.md](../PRODUCT.md), sin métricas ni ventajas comerciales inventadas. La composición de las 54 diapositivas vive en [DIRECTION.md](references/DIRECTION.md).
 
 **Key Characteristics:**
 
@@ -136,7 +136,7 @@ Los valores normativos para esta superficie están en el frontmatter, extraídos
 - **Borde de control:** contorno del backend y divisor interno de Realtime.
 - **Divisor translúcido:** separación académica y servicios de apoyo.
 
-**The Light-Not-Fill Rule.** Las 53 diapositivas llevan fondos con luz azul-lavanda suave. Sin franja lateral. Los degradados se rasterizan en PNG opacos sRGB para estabilizar su aspecto en PDF; no se aplican a texto, nodos ni conectores. Los post-its usan superficies planas blancas, lavanda y azul claro.
+**The Light-Not-Fill Rule.** Las 54 diapositivas llevan fondos con luz azul-lavanda suave. Sin franja lateral. Los degradados se rasterizan en PNG opacos sRGB para estabilizar su aspecto en PDF; no se aplican a texto, nodos ni conectores. Los post-its usan superficies planas blancas, lavanda y azul claro.
 
 ## Typography
 
@@ -199,7 +199,7 @@ Su geometría reserva una columna de 100 px al año y 24 px de separación hasta
 
 ### Cierre académico
 
-Las páginas 50–53 usan `styles/closing.css`, limitado a las clases del cierre y la nota de agenda. Demo y agradecimiento combinan el logo existente con marca grande y texto abierto. El recorrido de demo separa tres acciones mediante flechas SVG decorativas; la página es un separador para exposición en vivo.
+Las páginas 51–54 usan `styles/closing.css`, limitado a las clases del cierre y la nota de agenda. Demo y agradecimiento combinan el logo existente con marca grande y texto abierto. El recorrido de demo separa tres acciones mediante flechas SVG decorativas; la página es un separador para exposición en vivo.
 
 Evolución organiza seis posibilidades en una grilla de dos columnas, con separación horizontal de 72 px y vertical de 25 px, divisores finos y 16 px de espacio antes de cada título. La introducción y el pie conservan su condición de propuestas futuras fuera de R1–R7. Conclusiones separa dos perspectivas con gap de 82 px y tres ideas por columna; las listas sin viñetas usan divisores, 20 px entre filas y 16 px de espacio superior. Se reserva la banda del pie. No hay nuevos papeles, paneles, imágenes ni animaciones.
 
@@ -233,6 +233,10 @@ El diagrama tiene dos pasos de `v-click`: primero Realtime/WebSocket y luego ser
 - **Don't** sustituir flechas SVG por glifos Unicode dependientes de la fuente.
 - **Don't** presentar fixtures, capturas locales o existencia de código como aceptación remota o despliegue verificado.
 
-## Ajuste narrativo del 29/10/2026
+## Ajuste inicial del 29/10/2026 (histórico: 53 páginas)
 
-La apertura de 53 páginas conserva Funcionalidades y Beneficios, elimina Escenario y añade dos oportunidades y alcance. Oportunidades: composición editorial de 330 px para el usuario y una columna de tres necesidades, con subtítulo de 38 px y textos de 26 px. Alcance: cuatro bloques abiertos en dos columnas, títulos de 30 px y cuerpo de 26 px. Las clases específicas de `styles/extended.css` mantienen la escala y los fondos existentes sin modificar las páginas conservadas.
+La apertura inicial de 53 páginas conserva Funcionalidades y Beneficios, elimina Escenario y añade dos oportunidades y alcance. Oportunidades: composición editorial de 330 px para el usuario y una columna de tres necesidades, con subtítulo de 38 px y textos de 26 px. Alcance: cuatro bloques abiertos en dos columnas, títulos de 30 px y cuerpo de 26 px. Las clases específicas de `styles/extended.css` mantienen la escala y los fondos existentes sin modificar las páginas conservadas.
+
+## Alcance, limitaciones y esfuerzo relativo
+
+Entrega de 54 páginas: Alcance y Limitaciones se separan, con dos bloques por página, títulos de bloque de 34 px y cuerpo de 28 px. Cada historia incorpora encabezado flexible con ID de 20 px y círculo de 36 px con cifra de 22 px, sin reducir el texto de 24 px. La leyenda usa el mismo componente que los post-its. `data/story-effort.mjs` reutiliza lavanda claro, selección lavanda, azul grisáceo, azul principal, violeta y marino; texto marino en los dos fondos claros y blanco en los cuatro oscuros. Colores con contraste ≥4,5:1. La talla es una equivalencia propuesta y los valores no son históricos ni horas.

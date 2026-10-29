@@ -44,6 +44,9 @@
 .planit-slide .scope-grid > div { padding-top: 22px; border-top: 1px solid #060b2720; }
 .planit-slide .scope-grid h2 { font-size: 30px; max-width: 450px; color: var(--pi-violet); }
 .planit-slide .scope-grid p { font-size: 26px; margin-top: 16px; }
+.planit-slide .scope-separated { margin-top: 90px; }
+.planit-slide .scope-separated h2 { font-size: 34px; }
+.planit-slide .scope-separated p { font-size: 28px; margin-top: 24px; }
 .planit-slide .requirements-counts { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 46px; }
 .planit-slide .requirements-counts strong { font-size: 104px; letter-spacing: -.04em; line-height: 1; color: var(--pi-violet); }
 .planit-slide .requirements-counts p { font-size: 27px; margin-top: 12px; }

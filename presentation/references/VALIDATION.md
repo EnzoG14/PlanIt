@@ -1,6 +1,26 @@
 # Validación de la presentación
 
-## Entrega vigente: 53 diapositivas con apertura reorganizada
+## Entrega vigente: 54 diapositivas, alcance separado y esfuerzo relativo
+
+29/10/2026. Alcance y Limitaciones ocupan páginas independientes. Las 53 historias incorporan estimaciones propuestas expresamente autorizadas por el usuario, con puntos, tallas y colores centralizados; no son estimaciones históricas ni horas. Referencia: [EFFORT_ESTIMATES.md](EFFORT_ESTIMATES.md).
+
+| Verificación ejecutada | Resultado |
+| --- | --- |
+| npm run check | PASS: 54 identidades y notas, 53 historias literales, 53 asignaciones válidas, seis colores únicos con contraste ≥4,5:1 |
+| npm run build | PASS: compilación independiente Slidev, 674 módulos |
+| npm run check:visual | PASS: 108 capturas, las 54 páginas a 1280×720 y 1920×1080; sin desbordes ni colisiones con el pie |
+| Círculos de historias | PASS: 53 por resolución, valor/talla/color consistentes, diámetro 36 px, número 22 px, accesibles y dentro del encabezado sin cubrir texto |
+| Historias y arquitectura | PASS: enunciados completos, cuerpo ≥24 px, identificadores ≥20 px, composiciones de tres/cuatro/cinco; teclado y movimiento reducido |
+| npm run export | PASS: exports/planit-completa.pdf, 54 páginas; versión de 53 preservada como planit-completa-53.pdf |
+| scripts/check-pdf.py | PASS: 54 páginas 16:9, 53 historias completas y 53 números de esfuerzo seleccionables en sus círculos; colores comprobados sobre el render PDF |
+| Roadmap y fondos | PASS: fechas intactas, cero recursos /Shading y diferencia de fondo PDF/navegador 0/255 |
+| Regresión visual | PASS: las 37 páginas ajenas al cambio son idénticas píxel a píxel a la versión de 53 páginas en ambas resoluciones, 74 comparaciones |
+| Regresión de contenido | PASS: sin cambios de texto oficial; sólo se añaden notas de esfuerzo en tableros y se modifican alcance/estimación según lo autorizado |
+| Inspección directa | 54 páginas de navegador y PDF en planchas; Alcance, Limitaciones, leyenda y tableros a tamaño completo; tablero de cinco historias a 1080p |
+
+El exportador conserva el diagnóstico no bloqueante conocido de Twoslash/FloatingVue y finaliza con exit 0. Capturas y reportes permanecen en `.validation/`, sin versionar. No se agregan dependencias ni se modifica la PWA. No se ejecutaron pruebas físicas de proyector ni pruebas funcionales remotas de la aplicación.
+
+## Entrega histórica: 53 diapositivas con apertura reorganizada
 
 29/10/2026. Se elimina Escenario, se titulan Problema y Solución y se añaden dos oportunidades de mejora por tipo de usuario y Alcance y limitaciones. Fuentes y decisiones: [NARRATIVE_ADJUSTMENTS.md](NARRATIVE_ADJUSTMENTS.md). Las páginas de funcionalidades y beneficios se mantienen idénticas.
 

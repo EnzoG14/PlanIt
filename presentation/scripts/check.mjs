@@ -3,9 +3,10 @@ import { readFile, access } from 'node:fs/promises'
 import { deck, releases, sources } from '../data/deck.mjs'
 import { stories } from '../data/release-stories.mjs'
 import { releaseContent } from '../data/release-content.mjs'
+import { effortScale, storyEffort } from '../data/story-effort.mjs'
 
 const slides = await readFile(new URL('../slides.md', import.meta.url), 'utf8')
-assert.equal(deck.length, 53, 'Approved complete deck')
+assert.equal(deck.length, 54, 'Approved complete deck')
 assert.equal((slides.match(/^layout: planit$/gm) || []).length, deck.length, 'One layout per manifest entry')
 assert.deepEqual([...slides.matchAll(/^name: (.+)$/gm)].map(match => match[1]), deck.map(slide => slide.id), 'Approved narrative order')
 assert.match(slides, /aspectRatio: 16\/9/)
@@ -16,7 +17,7 @@ assert.equal(releases.slice(1).reduce((sum, release) => sum + release.rf, 0), 53
 assert.equal(releases.slice(1).reduce((sum, release) => sum + release.ca, 0), 218)
 assert.equal(releases.slice(1).reduce((sum, release) => sum + release.sprints, 0), 13)
 assert.equal(releases[0].sprints, 1)
-assert.deepEqual(deck.slice(0, 11).map(slide => slide.id), ['cover', 'team', 'agenda', 'problem', 'product', 'features', 'participant-opportunity', 'organizer-opportunity', 'benefits', 'scope', 'requirements'], 'Approved opening narrative')
+assert.deepEqual(deck.slice(0, 12).map(slide => slide.id), ['cover', 'team', 'agenda', 'problem', 'product', 'features', 'participant-opportunity', 'organizer-opportunity', 'benefits', 'scope', 'limitations', 'requirements'], 'Approved opening narrative')
 const roadmapIndex = deck.findIndex(slide => slide.id === 'roadmap')
 assert.ok(roadmapIndex >= 0, 'Roadmap present')
 assert.equal(deck[roadmapIndex + 1].id, 'releases', 'Releases follow roadmap')
@@ -26,6 +27,19 @@ const snapshot = JSON.parse(await readFile(new URL('../references/release-storie
 const normalize = text => text.replace(/\s+/g, ' ').trim()
 assert.equal(stories.length, 53)
 assert.equal(new Set(stories.map(story => story.id)).size, 53)
+assert.deepEqual(Object.keys(storyEffort), stories.map(story => story.id), 'Exactly one proposed estimate for every official story')
+assert.deepEqual(effortScale.map(item => item.points), [1, 2, 3, 5, 8, 13], 'Approved Planning Poker scale')
+assert.deepEqual(effortScale.map(item => item.size), ['XS', 'S', 'M', 'L', 'XL', 'XXL'], 'Proposed shirt size convention')
+assert.equal(new Set(effortScale.map(item => item.background)).size, 6, 'Distinct color for every point value')
+assert.ok(Object.values(storyEffort).every(points => effortScale.some(item => item.points === points)), 'All estimates belong to scale')
+const luminance = hex => {
+  const rgb = hex.match(/[a-f\d]{2}/gi).map(value => parseInt(value, 16) / 255).map(value => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4)
+  return .2126 * rgb[0] + .7152 * rgb[1] + .0722 * rgb[2]
+}
+for (const item of effortScale) {
+  const values = [luminance(item.background), luminance(item.foreground)].sort((a, b) => a - b)
+  assert.ok((values[1] + .05) / (values[0] + .05) >= 4.5, `Readable effort color ${item.points}`)
+}
 assert.deepEqual(stories.map(story => ({ id: story.id, text: normalize(story.text) })), snapshot.stories.map(story => ({ id: story.id, text: normalize(story.text) })), 'Verbatim official stories')
 const placed = releaseContent.flatMap(block => block.pages.flatMap(page => page.ids))
 assert.deepEqual(placed, stories.map(story => story.id), 'Every story placed exactly once and in official order')

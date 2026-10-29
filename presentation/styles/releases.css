@@ -15,6 +15,13 @@
 .planit-slide .story-note:nth-child(3n) { background: #e7edff; }
 .planit-slide .story-note .story-id { margin: 0 0 12px; font-size: 20px; line-height: 1.2; font-weight: 700; color: var(--pi-violet); letter-spacing: 0; }
 .planit-slide .story-note .story-copy { margin: 0; font-size: 24px; line-height: 1.24; color: var(--pi-ink); }
+.planit-slide .story-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 36px; margin-bottom: 12px; }
+.planit-slide .story-header .story-id { margin: 0; }
+.planit-slide .effort-circle { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 36px; width: 36px; height: 36px; border-radius: 50%; background: var(--effort-bg); color: var(--effort-ink); font-size: 22px; line-height: 1; font-weight: 700; font-variant-numeric: tabular-nums; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.slidev-layout.planit-slide .story-effort-notice { position: absolute; bottom: 50px; right: 64px; font-size: 17px; color: var(--pi-muted); }
+.planit-slide .effort-legend { display: flex; justify-content: space-between; gap: 12px; margin: 24px 0; }
+.planit-slide .effort-legend > div { display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 21px; font-weight: 650; }
+.planit-slide .effort-explanation { font-size: 21px; color: var(--pi-muted); margin-top: 18px; }
 .planit-slide .story-copy strong { font-weight: 700; }
 .planit-slide .story-board-3 .story-note { width: 342px; min-height: 290px; }
 .planit-slide .story-board-3 .story-note-1 { left: 20px; top: 66px; transform: rotate(-2deg); }
