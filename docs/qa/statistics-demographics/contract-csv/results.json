@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "test": "DTO strict allowlist, version, event, valid times, status and 5000-row bound",
+      "result": "PASS"
+    },
+    {
+      "test": "Formula prefixes after whitespace/control/format; apostrophe escaping reversible",
+      "result": "PASS"
+    },
+    {
+      "test": "UTF8 byte boundary, final serialization size and invalid number/row shape",
+      "result": "PASS"
+    },
+    {
+      "test": "Three rows per bucket and all demographic groups, including zeros; different event rejected",
+      "result": "PASS"
+    },
+    {
+      "test": "PASS Python csv strict: quoted semicolon/unicode/newline round trip, exact series counts and BOM",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS",
+  "excel": "NOT RUN; independent Python CSV reader is not Excel formula execution"
+}

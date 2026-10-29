@@ -1,4 +1,5 @@
 import type { ParticipationSeries } from './periods'
+import { reportedAgeKeys, sexKeys, demographicLabels, parseEventDemographics, type EventDemographics } from './demographics.ts'
 
 export const MAX_EXPORT_BYTES = 10 * 1024 * 1024
 export const MAX_EXPORT_ROWS = 5000
@@ -50,8 +51,17 @@ export function attendeesCsv(data: AttendeeExport): string | null {
   return serializeCsv(['evento', 'username', 'nombre_visible', 'estado', 'fecha_primera_inscripcion'],
     data.rows.map(r => [data.event_title, r.username, r.display_name, r.status, r.first_registered_at]))
 }
-export function statisticsCsv(title: string, data: ParticipationSeries): string | null {
-  if (!data.points.some(p => p.new_confirmations + p.reconfirmations + p.departures > 0)) return null
-  return serializeCsv(['evento', 'desde', 'hasta', 'granularidad', 'inicio_periodo', 'inscripciones_nuevas', 'reincorporaciones', 'bajas'],
-    data.points.map(p => [title, data.from, data.to, data.bucket, p.bucket_start, p.new_confirmations, p.reconfirmations, p.departures]))
+export function statisticsCsv(title: string, data: ParticipationSeries, demographics: EventDemographics): string {
+  const demo = parseEventDemographics(demographics)
+  if (demo.event_id !== data.event_id) throw new Error('El reporte no corresponde a este evento.')
+  const rows: (string | number | null)[][] = data.points.flatMap(p => [
+    ['inscripciones_nuevas', p.new_confirmations], ['reincorporaciones', p.reconfirmations], ['bajas', p.departures],
+  ].map(([type, count]) => [data.event_id, title, type, null, data.from, data.to, data.bucket, p.bucket_start, data.as_of, count]))
+  for (const [type, keys, distribution] of [
+    ['edad', reportedAgeKeys, demo.age], ['sexo', sexKeys, demo.sex],
+  ] as const) {
+    keys.forEach(key => rows.push([data.event_id, title, type, demographicLabels[key],
+      null, null, null, null, demo.as_of, distribution.state === 'empty' ? 0 : distribution.groups.find(group => group.key === key)!.count]))
+  }
+  return serializeCsv(['evento_id', 'evento', 'tipo', 'grupo', 'desde', 'hasta', 'granularidad', 'inicio_periodo', 'fecha_consulta', 'cantidad'], rows)
 }

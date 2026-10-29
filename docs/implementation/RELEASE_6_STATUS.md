@@ -164,3 +164,7 @@ Por instrucción humana se aplicó la única pendiente 20261015130739 en planit-
 ### B9 — Seguimiento autorizado,15/10/2026
 
 - [Reporte actual](../qa/RELEASE_6_TEST_REPORT.md),[pruebas y fuentes](../qa/r6-block-9/followup/summary.json). Dos P2 corregidos,14 usuarios QA dedicados y23 eventos QA archivados,sin borrar historiales ni tocar datos ajenos. HTTP/JWT real,Realtime real y app real verificados;aceptación humana pendiente. Rama/PR72 conservadas y evidencia inicial intacta. Sin DDL,merge,deploy o nueva release.
+
+## Estadísticas y CSV — actualización aprobada del 29/10/2026
+
+Demografía agrupada disponible desde una persona, sólo para el organizador, excluido éste del conteo. CSV de estadísticas con movimientos del período y totales actuales por edad y sexo, con fechas de consulta separadas; también descargable sin movimientos. [Contrato vigente](STATISTICS_DEMOGRAPHICS_CSV.md). Migración `20261029180809_r6_demographics_without_suppression.sql` preparada localmente, pendiente de autorización para aplicar al remoto. Las decisiones históricas de supresión k=5 y CSV sin demografía quedan reemplazadas por esta adenda.

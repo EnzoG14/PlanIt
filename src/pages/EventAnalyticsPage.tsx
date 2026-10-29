@@ -83,7 +83,7 @@ function AnalyticsContent({ eventId }: { eventId: string }) {
         </section>
         {demographics && <DemographicsPanel data={demographics} />}
         {demographicsError && <StatusMessage title="Datos demográficos no disponibles">No pudimos consultar esta distribución. Podés reintentar la consulta.</StatusMessage>}
-        <TrendPanel eventId={eventId} title={data.title} revision={attempt} onPeriodChange={() => setExportRevision(n => n + 1)} />
+        <TrendPanel eventId={eventId} title={data.title} revision={attempt} demographics={demographics} onPeriodChange={() => setExportRevision(n => n + 1)} />
         <p className="analytics-updated">Última consulta: <time dateTime={`${data.as_of}-03:00`}>{formatEventTime(data.as_of)}</time> (hora de Argentina).</p>
       </>}
     </div>

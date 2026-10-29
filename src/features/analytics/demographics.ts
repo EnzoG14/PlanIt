@@ -1,7 +1,14 @@
 export const ageKeys = ['under_18', '18_24', '25_34', '35_44', '45_54', '55_plus', 'unknown'] as const
+export const reportedAgeKeys = ageKeys.filter(key => key !== 'under_18')
 export const sexKeys = ['female', 'male', 'other', 'unknown'] as const
-export type Distribution = { state: 'empty' | 'suppressed' | 'available'; groups: { key: string; count: number }[] }
+export type Distribution = { state: 'empty' | 'available'; groups: { key: string; count: number }[] }
 export type EventDemographics = { event_id: string; as_of: string; age_as_of: string; age: Distribution; sex: Distribution }
+
+export const demographicLabels: Record<string, string> = {
+  '18_24': '18–24', '25_34': '25–34', '35_44': '35–44',
+  '45_54': '45–54', '55_plus': '55 o más', unknown: 'Sin informar',
+  female: 'Femenino', male: 'Masculino', other: 'Otro',
+}
 
 export function parseEventDemographics(input: unknown): EventDemographics {
   const invalid = () => new Error('No pudimos leer los datos demográficos.')
@@ -20,7 +27,7 @@ export function parseEventDemographics(input: unknown): EventDemographics {
   const distribution = (input: unknown, keys: readonly string[]): Distribution => {
     const d = object(input)
     exactKeys(d, ['state', 'groups'])
-    if (!['empty', 'suppressed', 'available'].includes(String(d.state)) || !Array.isArray(d.groups)) throw invalid()
+    if (!['empty', 'available'].includes(String(d.state)) || !Array.isArray(d.groups)) throw invalid()
     if (d.state !== 'available') {
       if (d.groups.length !== 0) throw invalid()
       return { state: d.state as Distribution['state'], groups: [] }
@@ -29,11 +36,10 @@ export function parseEventDemographics(input: unknown): EventDemographics {
     const groups = d.groups.map((row, index) => {
       const g = object(row)
       exactKeys(g, ['key', 'count'])
-      if (g.key !== keys[index] || !Number.isSafeInteger(g.count) || (g.count as number) < 0
-        || ((g.count as number) > 0 && (g.count as number) < 5)) throw invalid()
+      if (g.key !== keys[index] || !Number.isSafeInteger(g.count) || (g.count as number) < 0) throw invalid()
       return { key: g.key as string, count: g.count as number }
     })
-    if (!groups.some(g => g.count >= 5) || !Number.isSafeInteger(groups.reduce((n, g) => n + g.count, 0))) throw invalid()
+    if (!groups.some(g => g.count > 0) || !Number.isSafeInteger(groups.reduce((n, g) => n + g.count, 0))) throw invalid()
     return { state: 'available', groups }
   }
   const age = distribution(v.age, ageKeys), sex = distribution(v.sex, sexKeys)

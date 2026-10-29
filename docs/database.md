@@ -163,3 +163,7 @@ La regla antigua «eliminar equivale a archivar» queda reemplazada por decisió
 ## Avisos de cambios/cancelación · implementación local 28/10/2026
 
 Migración `20261028234334_event_change_notifications.sql`, **no aplicada en remoto**: trigger INVOKER privado compara OLD/NEW con `IS DISTINCT FROM`, inserta avisos para confirmed excluyendo organizador, con atomicidad y locks de las RPC actuales. Conserva RLS y firmas; amplía encolado, recuperación y entrega Push para `event_update`/`event_cancelled` con identidad derivada del aviso y visibilidad vigente. Sin nuevas tablas ni permisos de cliente. [Contrato y evidencia](qa/event-change-notifications/README.md).
+
+## Estadísticas y CSV — actualización aprobada del 29/10/2026
+
+Demografía agrupada disponible desde una persona, sólo para el organizador, excluido éste del conteo. CSV de estadísticas con movimientos del período y totales actuales por edad y sexo, con fechas de consulta separadas; también descargable sin movimientos. [Contrato vigente](implementation/STATISTICS_DEMOGRAPHICS_CSV.md). Migración `20261029180809_r6_demographics_without_suppression.sql` preparada localmente, pendiente de autorización para aplicar al remoto. Las decisiones históricas de supresión k=5 y CSV sin demografía quedan reemplazadas por esta adenda.

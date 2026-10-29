@@ -35,7 +35,7 @@ try{
         if(route.request().postDataJSON().p_event_id!==event)return reply({code:'42501',message:'PRIVATE_SENTINEL'},403)
         return reply({event_id:event,title:'Encuentro de primavera',event_state:'open',as_of:'2026-10-15T10:30:00',capacity:10,confirmed_count:4,available_spots:6,occupancy_percent:40,capacity_usable:true})
       }
-      if(path==='/rest/v1/rpc/get_my_event_demographics')return reply({event_id:event,as_of:'2026-10-15T10:30:00',age_as_of:'2026-10-15',age:{state:'suppressed',groups:[]},sex:{state:'suppressed',groups:[]}})
+      if(path==='/rest/v1/rpc/get_my_event_demographics')return reply({event_id:event,as_of:'2026-10-15T10:30:00',age_as_of:'2026-10-15',age:{state:'available',groups:['under_18','18_24','25_34','35_44','45_54','55_plus','unknown'].map(key=>({key,count:key==='unknown'?4:0}))},sex:{state:'available',groups:['female','male','other','unknown'].map(key=>({key,count:key==='unknown'?4:0}))}})
       if(path==='/rest/v1/rpc/get_my_event_participation_series'){
         const args=route.request().postDataJSON();reads.push(args)
         assert.deepEqual(Object.keys(args).sort(),['p_event_id','p_from','p_to','p_bucket'].sort())

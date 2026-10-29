@@ -4,6 +4,7 @@ import { addDays, presetPeriod, type Period, type ParticipationSeries } from '..
 import { StatusMessage } from '../StatusMessage'
 import { PeriodSelector } from './PeriodSelector'
 import { CsvDownload } from './CsvDownload'
+import type { EventDemographics } from '../../features/analytics/demographics'
 
 const metrics = [
   { key: 'new_confirmations', label: 'Altas nuevas', style: 'trend-new' },
@@ -12,17 +13,17 @@ const metrics = [
 ] as const
 const dateLabel = (value: string) => value.slice(0, 10).split('-').reverse().join('/')
 
-export function TrendPanel({ eventId, title, revision, onPeriodChange }: { eventId: string; title: string; revision: number; onPeriodChange: () => void }) {
+export function TrendPanel({ eventId, title, revision, demographics, onPeriodChange }: { eventId: string; title: string; revision: number; demographics: EventDemographics | null; onPeriodChange: () => void }) {
   const [initial] = useState(() => presetPeriod(30))
   const [period, setPeriod] = useState<Period | null>(initial)
   return <section className="analytics-trend" aria-labelledby="trend-title">
     <h2 id="trend-title">Evolución de inscripciones</h2>
     <p>Altas nuevas: primera inscripción. Reincorporaciones: regreso después de una baja. Bajas: retiros y remociones. Son movimientos registrados, no ocupación histórica ni presencia física.</p>
     <PeriodSelector initial={initial} onChange={value => { setPeriod(value); onPeriodChange() }} />
-    {period && <SeriesResult key={`${eventId}:${period.from}:${period.to}:${period.bucket}:${revision}`} eventId={eventId} title={title} period={period} />}
+    {period && <SeriesResult key={`${eventId}:${period.from}:${period.to}:${period.bucket}:${revision}`} eventId={eventId} title={title} period={period} demographics={demographics} />}
   </section>
 }
-function SeriesResult({ eventId, title, period }: { eventId: string; title: string; period: Period }) {
+function SeriesResult({ eventId, title, period, demographics }: { eventId: string; title: string; period: Period; demographics: EventDemographics | null }) {
   const [data, setData] = useState<ParticipationSeries | null>(null)
   const [error, setError] = useState('')
   const [attempt, setAttempt] = useState(0)
@@ -68,7 +69,7 @@ function SeriesResult({ eventId, title, period }: { eventId: string; title: stri
       </>}
       <details className="analytics-series-table"><summary>Ver tabla de movimientos</summary><table><caption>Movimientos registrados por {period.bucket === 'day' ? 'día' : 'semana'}. Cero indica una consulta sin movimientos en ese intervalo.</caption><thead><tr><th scope="col">Período</th>{metrics.map(m => <th scope="col" key={m.key}>{m.label}</th>)}</tr></thead><tbody>{data.points.map(p => <tr key={p.bucket_start}><th scope="row">{bucketLabel(p.bucket_start)}</th>{metrics.map(m => <td key={m.key}>{p[m.key].toLocaleString('es-AR')}</td>)}</tr>)}</tbody></table></details>
       <p className="field-hint">Fuente: historial de cambios de inscripción. Consulta: {dateLabel(data.as_of)} {data.as_of.slice(11, 16)} (Argentina).</p>
-      <CsvDownload key={`csv:${attempt}`} kind="statistics" eventId={eventId} title={title} data={data} />
+      <CsvDownload key={`csv:${attempt}`} kind="statistics" eventId={eventId} title={title} data={data} demographics={demographics} />
     </>}
   </div>
 }

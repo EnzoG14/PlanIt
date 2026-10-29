@@ -4,8 +4,11 @@ import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
 
 // Reuse the real PostgreSQL replay, role matrix and social regression harness.
-const out = 'docs/qa/r6-block-3/sql'
-const source = await readFile('scripts/check-r5-social.mjs', 'utf8')
+const out = 'docs/qa/statistics-demographics/sql'
+const source = (await readFile('scripts/check-r5-social.mjs', 'utf8')).replace(
+  'create function public.rls_auto_enable()',
+  () => 'create function storage.allow_only_operation(text) returns boolean language sql stable as $$ select false $$; create function public.rls_auto_enable()',
+)
 const marker = '  // Retain invariants independent of API callers.'
 assert.equal(source.split(marker).length, 2)
 const tests = String.raw`
@@ -18,12 +21,14 @@ const tests = String.raw`
     let dto=await demo(a,fixture);
     assert.equal(dto.age.state,'empty');assert.deepEqual(dto.age.groups,[]);assert.equal(dto.sex.state,'empty');
     await role(admin,aId);await admin.query('reset role');
+    await admin.query("insert into public.event_participations(event_id,user_id,status) values($1,$2,'confirmed')",[fixture,aId]);
+    assert.equal((await demo(a,fixture)).age.state,'empty');
     for(const n of [1,4,5,10]){
       for(let i=0;i<n;i++)await admin.query("insert into public.event_participations(event_id,user_id,status) values($1,$2,'confirmed') on conflict(event_id,user_id) do nothing",[fixture,ids[i]]);
       dto=await demo(a,fixture);
       for(const dim of ['age','sex']){
-        assert.equal(dto[dim].state,n<5?'suppressed':'available');
-        if(n<5)assert.deepEqual(dto[dim].groups,[]);else assert.equal(dto[dim].groups.at(-1).count,n);
+        assert.equal(dto[dim].state,'available');
+        assert.equal(dto[dim].groups.at(-1).count,n);
       }
     }
     assert.deepEqual(Object.keys(dto).sort(),['event_id','as_of','age_as_of','age','sex'].sort());
@@ -31,15 +36,17 @@ const tests = String.raw`
     await admin.query("update public.profiles set birth_date=(statement_timestamp() at time zone 'America/Argentina/Buenos_Aires')::date-interval '25 years',sex='female' where id=any($1::uuid[])",[ids]);
     dto=await demo(a,fixture);assert.equal(dto.age.groups.find(g=>g.key==='25_34').count,10);assert.equal(dto.sex.groups[0].count,10);
     await admin.query("update public.profiles set sex='male' where id=$1",[ids[0]]);
-    dto=await demo(a,fixture);assert.equal(dto.sex.state,'suppressed');assert.deepEqual(dto.sex.groups,[]);assert.equal(dto.age.state,'available');
-    // Complement 9/1 must not leak either count, including known total=10.
+    dto=await demo(a,fixture);assert.equal(dto.sex.state,'available');assert.deepEqual(dto.sex.groups.map(g=>g.count),[9,1,0,0]);assert.equal(dto.age.state,'available');
+    // Mixed groups 9/1 are exact under the approved no-suppression contract.
     for(let i=0;i<5;i++)await admin.query("update public.profiles set sex='other',birth_date=null where id=$1",[ids[i]]);
     dto=await demo(a,fixture);assert.deepEqual(dto.sex.groups.map(g=>g.count),[5,0,5,0]);assert.equal(dto.age.groups.at(-1).count,5);
     assert.ok(!JSON.stringify(dto).match(/birth_date|user_id|participation_id|email/));
     await admin.query("update public.event_participations set status='cancelled' where event_id=$1 and user_id=$2",[fixture,ids[0]]);
-    assert.equal((await demo(a,fixture)).sex.state,'suppressed');
+    assert.equal((await demo(a,fixture)).sex.state,'available');
+    assert.equal((await demo(a,fixture)).sex.groups.reduce((n,g)=>n+g.count,0),9);
     await admin.query("update public.event_participations set status='removed' where event_id=$1 and user_id=$2",[fixture,ids[1]]);
-    assert.equal((await demo(a,fixture)).sex.state,'suppressed');
+    assert.equal((await demo(a,fixture)).sex.state,'available');
+    assert.equal((await demo(a,fixture)).sex.groups.reduce((n,g)=>n+g.count,0),8);
     await admin.query("update public.event_participations set status='confirmed' where event_id=$1",[fixture]);
     assert.equal((await demo(a,fixture)).sex.state,'available');
     const repeated=await demo(a,fixture);assert.deepEqual(repeated.sex,dto.sex);

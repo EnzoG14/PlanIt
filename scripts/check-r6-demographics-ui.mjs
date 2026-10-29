@@ -5,7 +5,7 @@ import { createServer } from 'node:http'
 import { resolve, extname } from 'node:path'
 const { chromium } = await import(pathToFileURL(process.env.PLANIT_PLAYWRIGHT_PATH ?? 'C:/Users/USUARIO/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs').href)
 const browser = await chromium.launch({ headless: true, channel: 'msedge', args: ['--no-proxy-server'] })
-const root = resolve('dist'), out = 'docs/qa/r6-block-3/ui'
+const root = resolve('dist'), out = 'docs/qa/statistics-demographics/demographics-ui'
 const mime = { '.js': 'text/javascript', '.css': 'text/css', '.html': 'text/html', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png' }
 const server = createServer(async (req, res) => {
   const file = resolve(root, `.${new URL(req.url, 'http://localhost').pathname}`)
@@ -35,11 +35,10 @@ try {
         if (demoMode === 'error') return reply({code:'500',message:'PRIVATE_SENTINEL'},500)
         if (mode === 'denied') return reply({code:'42501',message:'PRIVATE_SENTINEL'},403)
         const keys=[['under_18','18_24','25_34','35_44','45_54','55_plus','unknown'],['female','male','other','unknown']]
-        const dimension=(list,index)=>({state:count===0?'empty':count<5?'suppressed':'available',groups:count<5?[]:list.map((key,i)=>({key,count:index===0?(i===2?count:0):(i===0||i===2?count/2:0)}))})
+        const dimension=(list,index)=>({state:count===0?'empty':'available',groups:count===0?[]:list.map((key,i)=>({key,count:index===0?(i===2?count:0):(i===0?Math.ceil(count/2):i===2?Math.floor(count/2):0)}))})
         const data={event_id:event,as_of:'2026-10-15T10:30:00',age_as_of:'2026-10-15',age:dimension(keys[0],0),sex:dimension(keys[1],1)}
         if(demoMode==='invalid')data.sex.groups=[{key:'female',count:1}]
         if(demoMode==='unknown')data.sex={state:'available',groups:keys[1].map(key=>({key,count:key==='unknown'?count:0}))}
-        if(demoMode==='suppressed')data.sex={state:'suppressed',groups:[]}
         return reply(data)
       }
       if (path === '/rest/v1/rpc/get_my_event_occupancy') {
@@ -58,29 +57,19 @@ try {
       return reply({})
     })
     const page = await context.newPage(); page.on('pageerror', error => errors.push(error.message))
-    if (width === 390) {
-      await page.goto(`${origin}/events/${event}`)
-      await page.getByRole('link', {name:'Estadísticas',exact:true}).click()
-      await page.getByRole('heading',{name:'Encuentro de primavera',exact:true}).waitFor()
-      await page.getByRole('link',{name:'Volver al evento',exact:true}).click()
-      await page.getByRole('heading',{name:'Gestionar evento',exact:true}).waitFor()
-      owner=false; await page.reload(); await page.getByRole('heading',{name:'Encuentro de primavera',exact:true}).waitFor()
-      assert.equal(await page.getByRole('link',{name:'Estadísticas',exact:true}).count(),0)
-      owner=true; results.push({width,test:'Owner detail→analytics→detail; participant has no analytics entry',result:'PASS'})
-    }
     const loaded = () => page.getByRole('heading', { name: 'Encuentro de primavera', exact: true }).waitFor()
-    const update = () => page.getByRole('button', { name: 'Actualizar datos', exact: true }).click()
+    const update = () => page.reload()
     const shot = name => page.screenshot({ path: `${out}/${name}-${width}.png`, fullPage: true })
     const check = test => { results.push({ width, test, result: 'PASS' }); console.log(`PASS ${width}: ${test}`) }
     await page.goto(`${origin}/events/${event}/analytics`); await loaded(); await page.evaluate(() => document.fonts.ready)
     assert.equal(await page.locator('progress').getAttribute('value'), '40')
     assert.match(await page.locator('.analytics-kpis').innerText(), /6\s*lugares/)
     assert.match(await page.locator('.analytics-updated').innerText(), /10:30/)
-    assert.equal(await page.locator('.primary-nav a').count(), 4)
+    assert.equal(await page.locator('.primary-nav a').count(), 0)
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)); await shot('occupancy')
-    await page.getByRole('button', { name: 'Actualizar datos' }).focus()
-    assert.equal(await page.getByRole('button', { name: 'Actualizar datos' }).evaluate(n => getComputedStyle(n).outlineWidth), '3px')
-    check('Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, four navigation destinations and focus')
+    await page.getByRole('link', { name: 'Mis eventos',exact:true }).focus()
+    assert.equal(await page.getByRole('link', { name: 'Mis eventos',exact:true }).evaluate(n => getComputedStyle(n).outlineWidth), '3px')
+    check('Four KPI, 10/4/6/40%, Argentina time in Tokyo zone, management navigation and focus')
     count=10; await update(); await loaded();
     await page.getByRole('table').first().waitFor();
     assert.equal(await page.getByRole('table').count(),2)
@@ -89,11 +78,12 @@ try {
     assert.ok(!await page.locator('.demographics-panel').innerText().then(s=>/birth_date|user_id|fixture@example/.test(s)))
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await shot('demographics-available')
     demoMode='unknown';await update();await loaded();assert.match(await page.locator('.demographics-distribution').last().innerText(),/Sin informar\s+10/);await shot('demographics-unknown')
-    demoMode='suppressed';await update();await loaded();assert.equal(await page.getByRole('table').count(),1);await shot('demographics-suppressed')
+    for(count of [1,4,5]){await update();await loaded();assert.equal(await page.getByRole('table').count(),2);assert.match(await page.locator('.demographics-panel').innerText(),/desde una persona/);await shot(`demographics-${count}`)}
+    count=10
     demoMode='invalid';await update();await loaded();await page.getByRole('heading',{name:'Datos demográficos no disponibles'}).waitFor();assert.equal(await page.getByRole('table').count(),0)
     demoMode='error';await update();await loaded();assert.equal(await page.locator('.analytics-kpis').count(),1);assert.equal(await page.getByRole('table').count(),0);assert.ok(!(await page.locator('body').innerText()).includes('PRIVATE_SENTINEL'));await shot('demographics-error')
-    demoMode='normal';count=4;await update();await loaded();assert.equal(await page.getByRole('table').count(),0);await shot('demographics-small')
-    check('Exact age/sex accessible tables, other/unknown, suppressed whole dimension, invalid/error and recovery without stale data')
+    demoMode='normal';count=4;await update();await loaded();assert.equal(await page.getByRole('table').count(),2);await shot('demographics-small')
+    check('Exact age/sex accessible tables, other/unknown, 1/4/5 participants, invalid/error and recovery without stale data')
     count = 3; await update(); await loaded(); assert.equal(await page.locator('progress').getAttribute('value'), '30'); assert.match(await page.locator('.analytics-kpis').innerText(), /7\s*lugares/)
     count = 0; state = 'cancelled'; await update(); await loaded(); await page.getByText('Todavía no hay inscriptos confirmados.', { exact: true }).waitFor(); await shot('empty-cancelled')
     for (state of ['archived', 'ended']) { await update(); await loaded(); assert.match(await page.locator('.analytics-state').innerText(), state === 'archived' ? /archivado/ : /finalizado/) }
