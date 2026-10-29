@@ -1,0 +1,39 @@
+/* Scoped release compositions preserve the first 18 slides and their title cascade. */
+.planit-slide:has(.story-board) .background-light { background-image: url('/assets/backgrounds/product.png'); }
+.planit-slide:has(.release-review) .background-light { background-image: url('/assets/backgrounds/architecture.png'); }
+.planit-slide .releases-opening { margin-top: 78px; max-width: 1040px; }
+.planit-slide .releases-opening h2 { font-size: 76px; line-height: 1.08; letter-spacing: -.035em; }
+.planit-slide .releases-opening p { margin-top: 32px; font-size: 29px; color: var(--pi-muted); }
+.planit-slide .release-cover { margin-top: 65px; }
+.planit-slide .release-cover h2 { max-width: 1000px; font-size: 64px; line-height: 1.08; letter-spacing: -.035em; }
+.planit-slide .release-cover .release-objective { margin-top: 34px; max-width: 980px; font-size: 30px; }
+.planit-slide .release-cover .release-period { margin-top: 40px; font-size: 23px; color: var(--pi-muted); font-variant-numeric: tabular-nums; }
+.planit-slide .story-board { position: relative; margin-top: 30px; height: 520px; }
+.planit-slide .story-note { position: absolute; padding: 22px; background: #ffffff; box-shadow: 0 9px 20px #24186e14; transform-origin: 50% 50%; border-radius: 2px 2px 18px 2px; }
+.planit-slide .story-note::before { content: ''; position: absolute; width: 112px; height: 18px; top: -9px; left: calc(50% - 56px); background: #c5b5ffb3; transform: rotate(-2deg); }
+.planit-slide .story-note:nth-child(3n+2) { background: #f1eeff; }
+.planit-slide .story-note:nth-child(3n) { background: #e7edff; }
+.planit-slide .story-note .story-id { margin: 0 0 12px; font-size: 20px; line-height: 1.2; font-weight: 700; color: var(--pi-violet); letter-spacing: 0; }
+.planit-slide .story-note .story-copy { margin: 0; font-size: 24px; line-height: 1.24; color: var(--pi-ink); }
+.planit-slide .story-copy strong { font-weight: 700; }
+.planit-slide .story-board-3 .story-note { width: 342px; min-height: 290px; }
+.planit-slide .story-board-3 .story-note-1 { left: 20px; top: 66px; transform: rotate(-2deg); }
+.planit-slide .story-board-3 .story-note-2 { left: 405px; top: 20px; transform: rotate(1.4deg); }
+.planit-slide .story-board-3 .story-note-3 { left: 790px; top: 88px; transform: rotate(-1.4deg); }
+.planit-slide .story-board-4 .story-note { width: 490px; min-height: 210px; }
+.planit-slide .story-board-4 .story-note-1 { left: 26px; top: 13px; transform: rotate(-1.5deg); }
+.planit-slide .story-board-4 .story-note-2 { left: 620px; top: 0; transform: rotate(1.2deg); }
+.planit-slide .story-board-4 .story-note-3 { left: 76px; top: 266px; transform: rotate(.8deg); }
+.planit-slide .story-board-4 .story-note-4 { left: 572px; top: 258px; transform: rotate(-1.1deg); }
+.planit-slide .story-board-5 .story-note { width: 350px; min-height: 242px; padding: 18px; }
+.planit-slide .story-board-5 .story-note-1 { left: 14px; top: 0; transform: rotate(-1.3deg); }
+.planit-slide .story-board-5 .story-note-2 { left: 400px; top: 7px; transform: rotate(.9deg); }
+.planit-slide .story-board-5 .story-note-3 { left: 785px; top: 0; transform: rotate(-1deg); }
+.planit-slide .story-board-5 .story-note-4 { left: 209px; top: 267px; transform: rotate(1deg); }
+.planit-slide .story-board-5 .story-note-5 { left: 599px; top: 265px; transform: rotate(-1.2deg); }
+.slidev-layout.planit-slide .story-period { position: absolute; bottom: 50px; left: 64px; font-size: 19px; color: var(--pi-muted); }
+.planit-slide .release-review { margin-top: 50px; display: grid; gap: 24px; }
+.planit-slide .release-review section { display: grid; grid-template-columns: 285px 1fr; gap: 40px; align-items: baseline; padding: 18px 0 25px; border-bottom: 1px solid #060b2720; }
+.planit-slide .release-review h2 { font-size: 29px; color: var(--pi-violet); }
+.planit-slide .release-review p { font-size: 27px; }
+@media print { .planit-slide .story-note { box-shadow: none; } }

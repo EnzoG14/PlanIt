@@ -7,6 +7,12 @@
       "skillPath": "skills/frontend-design/SKILL.md",
       "computedHash": "106acf230014cbb43ca34e6410371321b56ca742f9ee0442e8ec05bf02eb0384"
     },
+    "slidev": {
+      "source": "slidevjs/slidev",
+      "sourceType": "github",
+      "skillPath": "skills/slidev/SKILL.md",
+      "computedHash": "a56b00fa553662ba8418ec033f36aee15d86807dfd8033e1b164824c2a46aab1"
+    },
     "supabase": {
       "source": "supabase/agent-skills",
       "sourceType": "github",
