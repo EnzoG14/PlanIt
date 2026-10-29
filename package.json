@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "check:event-notifications": "node scripts/check-event-change-notifications.mjs",
+    "check:event-notifications:ui": "node scripts/check-event-change-notifications-ui.mjs",
     "check:location": "node scripts/check-location-autocomplete.mjs",
     "check:location:ui": "node scripts/check-location-autocomplete-ui.mjs",
     "check:r6:event-full:inbox": "node scripts/check-r6-event-full-inbox.mjs",

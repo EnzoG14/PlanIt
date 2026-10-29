@@ -1,0 +1,30 @@
+{
+  "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+  "environment": "Isolated PostgreSQL; SET ROLE; Auth/Storage scaffolds; no remote or real push transport",
+  "results": [
+    {
+      "test": "Every important field, NULL place transitions and combined edit; confirmed recipients only; no-op/capacity/category/visibility do not notify",
+      "result": "PASS"
+    },
+    {
+      "test": "Cancelled/removed/pending excluded; cancellation wins; direct/archive cancellation and retries; archive ended and reactivation add no notice",
+      "result": "PASS"
+    },
+    {
+      "test": "Atomic rollback, organizer-only mutation, recipient RLS, no forged notices, read/changes RPCs and private trigger ACL",
+      "result": "PASS"
+    },
+    {
+      "test": "Registration and withdrawal races in both lock orders select committed confirmed recipients",
+      "result": "PASS"
+    },
+    {
+      "test": "Push types enqueue only recipient devices; update/cancellation payloads, privacy preferences, hidden/historical access and revocation",
+      "result": "PASS"
+    },
+    {
+      "test": "Backfill recovers without duplicates; dismissed notices and disabled subscriptions cannot deliver; inbox persists",
+      "result": "PASS"
+    }
+  ]
+}

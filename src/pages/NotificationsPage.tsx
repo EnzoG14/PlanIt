@@ -9,7 +9,7 @@ import { catchUp, compareRows, createReconciler, mergeRows } from '../lib/reconc
 import { useNotificationsRealtime } from '../features/notifications/realtime-context'
 import './notifications.css'
 
-const notificationKinds: Record<string, string> = { event_full: 'Cupo completo', event_update: 'Evento', chat: 'Conversación', direct_message: 'Mensaje privado', system: 'Sistema', follow_request: 'Seguimiento' }
+const notificationKinds: Record<string, string> = { event_full: 'Cupo completo', event_update: 'Evento actualizado', event_cancelled: 'Evento cancelado', chat: 'Conversación', direct_message: 'Mensaje privado', system: 'Sistema', follow_request: 'Seguimiento' }
 
 export function NotificationsPage() {
   const { session } = useAuth()
