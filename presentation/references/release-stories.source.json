@@ -1,0 +1,380 @@
+{
+  "source": "https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti",
+  "tabId": "t.q5vok7qr5sti",
+  "revision": "AHj4eMQvsguD-206O69ul1YTBsNVMcNNxFHln2TCIedV9wKiqaR_-fYCTmZWuicBIEdLZHdAMX5Md2KUZjSBjXRSlDJoEGG2UPTojIudVxU",
+  "retrieved": "2026-10-27",
+  "normalization": "Only whitespace may be normalized during comparisons.",
+  "stories": [
+    {
+      "id": "RF-R1-01",
+      "release": 1,
+      "sprint": 1,
+      "title": "Registrarse en PlanIt",
+      "text": "Como persona interesada, quiero registrarme con mis datos básicos para comenzar a utilizar PlanIt."
+    },
+    {
+      "id": "RF-R1-02",
+      "release": 1,
+      "sprint": 1,
+      "title": "Iniciar sesión y recuperar una sesión vigente",
+      "text": "Como usuario registrado, quiero iniciar sesión y recuperar una sesión vigente para acceder a mi cuenta."
+    },
+    {
+      "id": "RF-R1-03",
+      "release": 1,
+      "sprint": 1,
+      "title": "Crear un evento",
+      "text": "Como usuario autenticado, quiero crear un evento completo para organizar una actividad."
+    },
+    {
+      "id": "RF-R1-04",
+      "release": 1,
+      "sprint": 1,
+      "title": "Visualizar eventos cercanos en el mapa",
+      "text": "Como usuario, quiero explorar eventos cercanos en el mapa para encontrar actividades en mi zona."
+    },
+    {
+      "id": "RF-R1-05",
+      "release": 1,
+      "sprint": 1,
+      "title": "Inscribirse a un evento",
+      "text": "Como usuario, quiero inscribirme en un evento con cupo para participar."
+    },
+    {
+      "id": "RF-R1-06",
+      "release": 1,
+      "sprint": 1,
+      "title": "Retirarse de un evento",
+      "text": "Como participante, quiero retirarme de un evento para liberar mi lugar y conservar el historial."
+    },
+    {
+      "id": "RF-R1-07",
+      "release": 1,
+      "sprint": 1,
+      "title": "Consultar Mis eventos",
+      "text": "Como usuario, quiero consultar mis eventos organizados y mis participaciones para administrar mi agenda dentro de PlanIt."
+    },
+    {
+      "id": "RF-R2-01",
+      "release": 2,
+      "sprint": 1,
+      "title": "Consultar el detalle ampliado de un evento",
+      "text": "Como usuario, quiero consultar el detalle de un evento para conocer más sobre el mismo."
+    },
+    {
+      "id": "RF-R2-02",
+      "release": 2,
+      "sprint": 1,
+      "title": "Explorar eventos recientes en Inicio",
+      "text": "Como usuario, quiero explorar Inicio para descubrir eventos disponibles."
+    },
+    {
+      "id": "RF-R2-03",
+      "release": 2,
+      "sprint": 1,
+      "title": "Visualizar eventos agrupados por categoría",
+      "text": "Como usuario, quiero ver eventos agrupados por categoría para reconocer actividades de mi interés."
+    },
+    {
+      "id": "RF-R2-04",
+      "release": 2,
+      "sprint": 2,
+      "title": "Visualizar mensajes del chat de un evento",
+      "text": "Como organizador o participante confirmado, quiero consultar el chat del evento para seguir la conversación."
+    },
+    {
+      "id": "RF-R2-05",
+      "release": 2,
+      "sprint": 2,
+      "title": "Enviar mensajes de texto al chat de un evento",
+      "text": "Como integrante autorizado de un evento, quiero enviar mensajes de texto para comunicarme con el grupo."
+    },
+    {
+      "id": "RF-R2-06",
+      "release": 2,
+      "sprint": 2,
+      "title": "Consultar mi perfil",
+      "text": "Como usuario, quiero consultar mi perfil para revisar los datos de mi cuenta."
+    },
+    {
+      "id": "RF-R2-07",
+      "release": 2,
+      "sprint": 2,
+      "title": "Consultar un centro de notificaciones",
+      "text": "Como usuario, quiero consultar mis notificaciones para conocer los avisos registrados."
+    },
+    {
+      "id": "RF-R3-01",
+      "release": 3,
+      "sprint": 1,
+      "title": "Editar un evento propio",
+      "text": "Como organizador, quiero editar mi evento para mantener su información actualizada."
+    },
+    {
+      "id": "RF-R3-02",
+      "release": 3,
+      "sprint": 1,
+      "title": "Cancelar o archivar un evento propio",
+      "text": "Como organizador, quiero cancelar o archivar mi evento para gestionar su disponibilidad sin perder su historial."
+    },
+    {
+      "id": "RF-R3-03",
+      "release": 3,
+      "sprint": 1,
+      "title": "Administrar imágenes de un evento",
+      "text": "Como organizador, quiero administrar la galería de mi evento para mostrar imágenes pertinentes."
+    },
+    {
+      "id": "RF-R3-04",
+      "release": 3,
+      "sprint": 1,
+      "title": "Consultar eventos organizados",
+      "text": "Como organizador, quiero consultar mis eventos para acceder a su administración."
+    },
+    {
+      "id": "RF-R3-05",
+      "release": 3,
+      "sprint": 2,
+      "title": "Consultar la lista de asistentes",
+      "text": "Como organizador, quiero consultar los asistentes confirmados para conocer la participación vigente."
+    },
+    {
+      "id": "RF-R3-06",
+      "release": 3,
+      "sprint": 2,
+      "title": "Remover un asistente de un evento",
+      "text": "Como organizador, quiero remover un asistente con confirmación para administrar la participación."
+    },
+    {
+      "id": "RF-R3-07",
+      "release": 3,
+      "sprint": 2,
+      "title": "Duplicar un evento existente",
+      "text": "Como organizador, quiero duplicar un evento en un formulario editable para preparar una nueva actividad."
+    },
+    {
+      "id": "RF-R3-08",
+      "release": 3,
+      "sprint": 2,
+      "title": "Solicitar reincorporación a un evento",
+      "text": "Como usuario removido, quiero solicitar la reincorporación para pedir volver a participar del evento."
+    },
+    {
+      "id": "RF-R3-09",
+      "release": 3,
+      "sprint": 2,
+      "title": "Gestionar solicitudes de reincorporación",
+      "text": "Como organizador, quiero resolver solicitudes de reincorporación para controlar el reingreso al evento."
+    },
+    {
+      "id": "RF-R4-01",
+      "release": 4,
+      "sprint": 1,
+      "title": "Buscar eventos por nombre o descripción",
+      "text": "Como usuario, quiero buscar por nombre o descripción para localizar eventos relevantes."
+    },
+    {
+      "id": "RF-R4-02",
+      "release": 4,
+      "sprint": 1,
+      "title": "Filtrar eventos por categoría",
+      "text": "Como usuario, quiero filtrar por categorías para acotar el descubrimiento."
+    },
+    {
+      "id": "RF-R4-03",
+      "release": 4,
+      "sprint": 1,
+      "title": "Filtrar eventos por fecha",
+      "text": "Como usuario, quiero filtrar por fecha para encontrar eventos compatibles con mi disponibilidad."
+    },
+    {
+      "id": "RF-R4-04",
+      "release": 4,
+      "sprint": 1,
+      "title": "Modificar el radio de búsqueda",
+      "text": "Como usuario, quiero modificar el radio de búsqueda para explorar la distancia que me interesa."
+    },
+    {
+      "id": "RF-R4-05",
+      "release": 4,
+      "sprint": 2,
+      "title": "Seleccionar categorías de interés",
+      "text": "Como usuario, quiero guardar mis categorías de interés para personalizar la experiencia."
+    },
+    {
+      "id": "RF-R4-06",
+      "release": 4,
+      "sprint": 2,
+      "title": "Consultar eventos sugeridos",
+      "text": "Como usuario, quiero consultar sugerencias para descubrir eventos relacionados con mis intereses."
+    },
+    {
+      "id": "RF-R4-07",
+      "release": 4,
+      "sprint": 2,
+      "title": "Configurar visibilidad y administrar enlace de un evento oculto",
+      "text": "Como organizador, quiero definir la visibilidad y administrar el enlace de mi evento oculto para controlar su difusión."
+    },
+    {
+      "id": "RF-R4-08",
+      "release": 4,
+      "sprint": 2,
+      "title": "Acceder a un evento oculto mediante enlace",
+      "text": "Como usuario, quiero acceder mediante un enlace válido para consultar un evento oculto autorizado."
+    },
+    {
+      "id": "RF-R4-09",
+      "release": 4,
+      "sprint": 2,
+      "title": "Revocar y restituir accesos a eventos ocultos",
+      "text": "Como organizador, quiero revocar y restituir accesos a mi evento oculto para administrar su audiencia."
+    },
+    {
+      "id": "RF-R5-01",
+      "release": 5,
+      "sprint": 1,
+      "title": "Explorar usuarios de un evento",
+      "text": "Como integrante autorizado de un evento, quiero explorar sus usuarios para conocer a otras personas de la actividad."
+    },
+    {
+      "id": "RF-R5-02",
+      "release": 5,
+      "sprint": 1,
+      "title": "Visualizar perfiles públicos",
+      "text": "Como usuario, quiero consultar perfiles públicos para conocer la información social disponible."
+    },
+    {
+      "id": "RF-R5-03",
+      "release": 5,
+      "sprint": 1,
+      "title": "Editar perfil propio y privacidad",
+      "text": "Como usuario, quiero editar mi perfil y su privacidad para decidir cómo me presento."
+    },
+    {
+      "id": "RF-R5-04",
+      "release": 5,
+      "sprint": 1,
+      "title": "Visualizar perfiles privados",
+      "text": "Como usuario, quiero consultar un perfil privado según mis permisos para respetar sus restricciones."
+    },
+    {
+      "id": "RF-R5-05",
+      "release": 5,
+      "sprint": 2,
+      "title": "Seguir y dejar de seguir usuarios",
+      "text": "Como usuario, quiero seguir o dejar de seguir personas para administrar mis relaciones."
+    },
+    {
+      "id": "RF-R5-06",
+      "release": 5,
+      "sprint": 2,
+      "title": "Gestionar solicitudes de seguimiento",
+      "text": "Como titular de un perfil privado, quiero gestionar solicitudes para decidir quién puede seguirme."
+    },
+    {
+      "id": "RF-R5-07",
+      "release": 5,
+      "sprint": 2,
+      "title": "Intercambiar mensajes privados",
+      "text": "Como usuario, quiero intercambiar mensajes privados autorizados para conversar con otra persona."
+    },
+    {
+      "id": "RF-R5-08",
+      "release": 5,
+      "sprint": 2,
+      "title": "Bloquear y desbloquear usuarios",
+      "text": "Como usuario, quiero bloquear o desbloquear personas para controlar el contacto y el seguimiento."
+    },
+    {
+      "id": "RF-R6-01",
+      "release": 6,
+      "sprint": 1,
+      "title": "Consultar ocupación y lugares disponibles",
+      "text": "Como organizador, quiero consultar ocupación y lugares disponibles para conocer el estado del cupo."
+    },
+    {
+      "id": "RF-R6-02",
+      "release": 6,
+      "sprint": 1,
+      "title": "Consultar métricas básicas de asistencia",
+      "text": "Como organizador, quiero consultar métricas de participación para comprender la asistencia a mis eventos."
+    },
+    {
+      "id": "RF-R6-03",
+      "release": 6,
+      "sprint": 1,
+      "title": "Analizar asistencia por período",
+      "text": "Como organizador, quiero analizar la evolución por período para observar cambios en las inscripciones."
+    },
+    {
+      "id": "RF-R6-04",
+      "release": 6,
+      "sprint": 2,
+      "title": "Exportar reportes en CSV",
+      "text": "Como organizador, quiero exportar reportes CSV para trabajar con información autorizada fuera de PlanIt."
+    },
+    {
+      "id": "RF-R6-05",
+      "release": 6,
+      "sprint": 2,
+      "title": "Recibir aviso cuando un evento complete su cupo",
+      "text": "Como organizador, quiero recibir un aviso cuando se complete el cupo para conocer ese cambio."
+    },
+    {
+      "id": "RF-R6-06",
+      "release": 6,
+      "sprint": 2,
+      "title": "Comparar desempeño entre eventos organizados",
+      "text": "Como organizador, quiero comparar mis eventos para evaluar diferencias de desempeño."
+    },
+    {
+      "id": "RF-R7-01",
+      "release": 7,
+      "sprint": 1,
+      "title": "Enviar imágenes en el chat del evento",
+      "text": "Como organizador o participante confirmado, quiero adjuntar una imagen en el chat del evento para compartir información visual."
+    },
+    {
+      "id": "RF-R7-02",
+      "release": 7,
+      "sprint": 1,
+      "title": "Publicar historias con imágenes del evento",
+      "text": "Como integrante autorizado de un evento, quiero publicar una historia con una imagen para compartir un momento."
+    },
+    {
+      "id": "RF-R7-03",
+      "release": 7,
+      "sprint": 1,
+      "title": "Visualizar historias publicadas en el evento",
+      "text": "Como integrante autorizado de un evento, quiero visualizar sus historias vigentes para conocer lo compartido."
+    },
+    {
+      "id": "RF-R7-04",
+      "release": 7,
+      "sprint": 2,
+      "title": "Expirar las historias después de 24 horas",
+      "text": "Como participante, quiero que las historias dejen de estar disponibles a las 24 horas para mantener su carácter temporal."
+    },
+    {
+      "id": "RF-R7-05",
+      "release": 7,
+      "sprint": 2,
+      "title": "Agregar un evento al calendario del dispositivo",
+      "text": "Como usuario, quiero agregar los datos de un evento a mi calendario para recordarlo."
+    },
+    {
+      "id": "RF-R7-06",
+      "release": 7,
+      "sprint": 2,
+      "title": "Compartir un evento mediante aplicaciones externas",
+      "text": "Como usuario, quiero compartir un evento con aplicaciones compatibles para invitar a otras personas."
+    },
+    {
+      "id": "RF-R7-07",
+      "release": 7,
+      "sprint": 2,
+      "title": "Habilitar y recibir notificaciones Web Push",
+      "text": "Como usuario, quiero activar o desactivar Web Push para recibir avisos voluntariamente en un navegador compatible."
+    }
+  ]
+}

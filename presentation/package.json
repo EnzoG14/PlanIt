@@ -1,0 +1,29 @@
+{
+  "name": "planit-presentation",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "backgrounds": "node scripts/render-backgrounds.mjs",
+    "dev": "slidev --port 3030",
+    "build": "slidev build",
+    "export": "slidev export --output exports/planit-completa.pdf",
+    "check": "node scripts/check.mjs",
+    "check:visual": "node scripts/check-visual.mjs",
+    "capture:app": "node scripts/capture-app.mjs"
+  },
+  "dependencies": {
+    "vue": "3.5.44"
+  },
+  "devDependencies": {
+    "@slidev/cli": "53.0.0",
+    "@slidev/theme-default": "0.25.0",
+    "playwright-chromium": "1.64.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "overrides": {
+    "dompurify": "3.4.17",
+    "image-size": "2.0.4"
+  }
+}

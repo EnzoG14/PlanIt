@@ -1,0 +1,23 @@
+# PlanIt — presentación de Proyecto Final
+
+Este proyecto Slidev es independiente de la PWA. Aplican las reglas de la raíz.
+
+- Alcance aprobado: 51 diapositivas. Seguir el orden de `data/deck.mjs`: contexto y roadmap, separador Releases y cuatro páginas por cada R1–R7 (portada, dos páginas de historias, cierre); después demo, evolución del producto, conclusiones y agradecimiento. R0 permanece en planificación y roadmap. El cierre se autorizó el 27/10/2026.
+- No editar `src/`, `supabase/`, dependencias ni despliegue de la aplicación por esta tarea. No conectar la presentación a Supabase ni incluir `.env` o credenciales.
+- Identidad normativa: `../DESIGN.md`, dirección B Amanecer. La adaptación a proyección está en `DESIGN.md` de esta carpeta. Conservar logo original y Bricolage Grotesque autoalojada con licencia OFL.
+- Canvas 1280 × 720, 16:9. Márgenes 64 px horizontales y 52 px superiores. Un mensaje por slide, títulos 52 px y texto principal 21–28 px. Texto de capturas es evidencia, no texto de exposición.
+- Fondo lavanda casi blanco, tinta marina, violeta profundo para énfasis. Todas las diapositivas llevan luz suave y contornos de pantallas en los márgenes. Por corrección posterior del usuario, no usar franja vertical izquierda. Los fondos son PNG opacos sRGB, generados mediante `npm run backgrounds` desde `styles/background-source.css`, para evitar cambios de color en visores PDF. No crear nuevas paletas.
+- Priorizar Markdown y componentes nativos de Slidev. Vue sólo para diagramas y composiciones reutilizables. No añadir UI kits ni dependencias sin necesidad.
+- Las capturas deben proceder de la app real. Los fixtures se identifican visiblemente y en notas. No sustituir interfaces por ilustraciones generadas ni presentarlas como producción.
+- Documentar procedencia de imágenes en `references/` y, para PNG, metadatos de origen. No usar fotos sin licencia ni datos personales productivos.
+- Fuente principal: pestaña Planificación Oficial `t.q5vok7qr5sti`. Complementar escenario, problema y alcance con ERS Oficial del mismo Google Doc. Código y evidencia técnica verifican arquitectura. El PDF Equipo 6 aporta sólo la secuencia narrativa, nunca cifras, fechas o funciones. Una implementación no equivale a aceptación remota.
+- Datos: siete releases funcionales, 53 requisitos/historias, 218 CA y 13 sprints funcionales. R0 suma un sprint técnico adicional, fuera de esos totales. `data/deck.mjs` centraliza equipo, secuencia y calendario oficial. Conservar los intervalos entre fechas sin inventar actividades ni versiones.
+- Historias: conservar literalmente los 53 enunciados de `data/release-stories.mjs`, contrastados con `references/release-stories.source.json` y su revisión oficial. Mostrar todos los IDs una vez. R1 tiene dos páginas de un mismo sprint, no dos sprints. Sólo mostrar fechas individuales de sprint si las explicita la fuente.
+- Post-its: composiciones específicas de tres, cuatro y cinco notas; inclinaciones leves, papeles blancos/lavanda/azul, tinta marina. Texto ≥24 px e IDs ≥20 px, sin recortes, superposiciones de texto ni clics obligatorios para leerlo. No introducir cambios globales que alteren las 18 primeras páginas.
+- Cierres: separar incremento, dificultad observada y acuerdo de mejora. No presentar acuerdos futuros como soluciones aplicadas ni reconstruir burn-up sin datos.
+- Animación: fade de Slidev, dos revelaciones progresivas en arquitectura, 260 ms. Respetar reduced-motion. La exportación PDF muestra el diagrama completo en una sola página.
+- Notas del presentador en comentarios HTML de cada slide; conservar fuentes y límites fuera del texto de exposición.
+- La evolución futura procede de ERS §2.6, fuera de los requisitos comprometidos; no inventar nuevas releases o fechas. Demo es un separador para exposición en vivo, no una grabación ni una conexión automática a producción. Conclusiones: síntesis de revisiones y retrospectivas, sin métricas de impacto o aceptación inventadas.
+- Verificar `npm run check`, `npm run build`, `npm run check:visual` con el servidor activo y `npm run export`. Recorrer 51 diapositivas a 720p/1080p e inspeccionar 51 páginas del PDF, incluida la selección completa de historias. Salida vigente: `exports/planit-completa.pdf`; preservar los PDF históricos. Localizar arquitectura y roadmap por identidad, no por posición final. No declarar verificaciones no ejecutadas.
+- No versionar node_modules, dist, exports ni .validation. Sí versionar lockfile, fuentes, logo, capturas utilizadas y sus licencias/procedencia.
+- Skills: `.agents/skills/slidev` e `impeccable` en la raíz del repo (ignoradas por política existente). Reinstalación documentada en README. No sobrescribir el sistema de diseño de la PWA ni su sidecar.
