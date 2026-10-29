@@ -1,0 +1,39 @@
+{
+  "environment": "Actual Vite build + SDK; synthetic Auth/REST/Phoenix WebSocket; NOT real JWT/RLS/Realtime/device QA",
+  "baseline": false,
+  "results": [
+    {
+      "test": "Width 320: labels, wrapping and screenshot plus enlarged text/short viewport",
+      "result": "PASS"
+    },
+    {
+      "test": "Width 375: labels, wrapping and screenshot plus enlarged text/short viewport",
+      "result": "PASS"
+    },
+    {
+      "test": "Keyboard read and unread count; revoked destination denied; Realtime fixture adds one notice; cancellation opens authorized event",
+      "result": "PASS"
+    },
+    {
+      "test": "Width 390: labels, wrapping and screenshot plus enlarged text/short viewport",
+      "result": "PASS"
+    },
+    {
+      "test": "Width 768: labels, wrapping and screenshot plus enlarged text/short viewport",
+      "result": "PASS"
+    },
+    {
+      "test": "Width 1280: labels, wrapping and screenshot plus enlarged text/short viewport",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "calls": {
+    "listCalls": 10,
+    "changeCalls": 2,
+    "countCalls": 12,
+    "markCalls": 2,
+    "targetCalls": 2
+  },
+  "result": "PASS"
+}
