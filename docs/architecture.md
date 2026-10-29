@@ -184,3 +184,7 @@ Las operaciones usan UUID de intento y recibos privados del propietario para rec
 ## Avisos de cambios/cancelación · implementación local 28/10/2026
 
 Trigger privado sobre `events` genera `event_update`/`event_cancelled` para confirmados dentro de la transacción autorizada, con un aviso por guardado y prioridad de cancelación. Reutiliza bandeja/Realtime y extiende el catálogo y entrega Push respetando vistas previas y acceso actual. No cambia firmas RPC ni concede acceso por el aviso. [Contrato, pruebas y límites](qa/event-change-notifications/README.md). Migración `20261028234334_event_change_notifications.sql` **pendiente de aplicación remota autorizada**; sin deploy/merge.
+
+## Estadísticas y CSV — actualización aprobada del 29/10/2026
+
+Demografía agrupada disponible desde una persona, sólo para el organizador, excluido éste del conteo. CSV de estadísticas con movimientos del período y totales actuales por edad y sexo, con fechas de consulta separadas; también descargable sin movimientos. [Contrato vigente](implementation/STATISTICS_DEMOGRAPHICS_CSV.md). Migración `20261029180809_r6_demographics_without_suppression.sql` preparada localmente, pendiente de autorización para aplicar al remoto. Las decisiones históricas de supresión k=5 y CSV sin demografía quedan reemplazadas por esta adenda.

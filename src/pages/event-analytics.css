@@ -36,7 +36,7 @@
 .analytics-period { min-width: 0; margin: var(--pi-space-section) 0; padding: 0; border: 0; }
 .analytics-period legend { font-weight: 650; margin-bottom: var(--pi-space-base); }
 .analytics-presets { display: flex; flex-wrap: wrap; gap: var(--pi-space-tight); }
-.analytics-presets button[aria-pressed="true"] { color: var(--pi-color-surface); background: var(--pi-color-primary); }
+.amanecer-shell .analytics-presets .secondary-button[aria-pressed="true"] { color: var(--pi-color-surface); background: var(--pi-color-primary); }
 .analytics-period-fields { display: grid; gap: var(--pi-space-base); margin-top: var(--pi-space-base); }
 .analytics-period-fields label { display: grid; gap: var(--pi-space-tight); font-size: var(--pi-font-meta-size); font-weight: 650; min-width: 0; }
 .analytics-period-fields input, .analytics-period-fields select { min-width: 0; width: 100%; min-height: 44px; box-sizing: border-box; border: 1px solid var(--pi-color-control-border); border-radius: var(--pi-radius-field); padding: var(--pi-space-tight); background: var(--pi-color-surface); color: var(--pi-color-text); font: inherit; }

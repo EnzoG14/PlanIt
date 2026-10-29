@@ -4,7 +4,7 @@ import {readFile,mkdir} from 'node:fs/promises'
 import {resolve,extname} from 'node:path'
 import {pathToFileURL} from 'node:url'
 import {attendeesCsv,statisticsCsv} from '../../src/features/analytics/csv.ts'
-import {load,identities,logout,rpc,event,today,dayAfter,evidence,out,project} from './common.mjs'
+import {load,identities,logout,rpc,event,evidence,out,project} from './common.mjs'
 export async function ui(){
  const m=await load(),c=await identities(m),results=[],root=resolve('dist'),directory=out+'/ui-'+Date.now()
  await mkdir(directory,{recursive:true})
@@ -19,6 +19,12 @@ export async function ui(){
    const context=await browser.newContext({viewport:{width,height:900},timezoneId:'America/Argentina/Buenos_Aires',reducedMotion:'reduce',acceptDownloads:true})
    await context.addInitScript(({k,s})=>localStorage.setItem(k,JSON.stringify(s)),{k:authKey,s:session})
    const page=await context.newPage()
+   let shownDemographics,shownSeries
+   page.on('response',async response=>{
+    const path=new URL(response.url()).pathname
+    if(path.endsWith('/rpc/get_my_event_demographics')&&response.ok())shownDemographics=await response.json()
+    if(path.endsWith('/rpc/get_my_event_participation_series')&&response.ok())shownSeries=await response.json()
+   })
    const routes=[['analytics',`/events/${event(m,'occupancy')}/analytics`,'.analytics-kpis'],['compare','/my-events/compare','.compare-options'],['notifications','/notifications','.notification-row'],['my-events','/my-events','.compact-event-card']]
    for(const [name,path,selector] of routes){
     await page.goto(origin+path);await page.locator(selector).first().waitFor({timeout:30000});await page.evaluate(()=>document.fonts.ready)
@@ -29,8 +35,10 @@ export async function ui(){
     if(width===390&&name==='analytics'){
      const expected=attendeesCsv(await rpc(c.A,'get_my_event_export_rows',{p_event_id:event(m,'occupancy')}))
      const pending=page.waitForEvent('download');await page.getByRole('button',{name:'Descargar asistentes CSV',exact:true}).click();const download=await pending;const bytes=await readFile(await download.path(),'utf8');assert.equal(bytes,expected);await download.saveAs(directory+'/asistentes-real.csv')
-     const series=await rpc(c.A,'get_my_event_participation_series',{p_event_id:event(m,'occupancy'),p_from:dayAfter(today(),-29)+'T00:00:00',p_to:dayAfter(today())+'T00:00:00',p_bucket:'day'})
-     const expectedStats=statisticsCsv(m.events.occupancy.title,series),pendingStats=page.waitForEvent('download');await page.getByRole('button',{name:'Descargar estadísticas CSV',exact:true}).click();const stats=await pendingStats;assert.equal(await readFile(await stats.path(),'utf8'),expectedStats);await stats.saveAs(directory+'/estadisticas-real.csv')
+     await page.waitForFunction(()=>Boolean(document.querySelector('.analytics-range')))
+     assert.ok(shownSeries);assert.ok(shownDemographics)
+     const series=shownSeries
+     const expectedStats=statisticsCsv(m.events.occupancy.title,series,shownDemographics),pendingStats=page.waitForEvent('download');await page.getByRole('button',{name:'Descargar estadísticas CSV',exact:true}).click();const stats=await pendingStats;assert.equal(await readFile(await stats.path(),'utf8'),expectedStats);await stats.saveAs(directory+'/estadisticas-real.csv')
      results.push({test:'Actual browser downloads equal real authorized RPC serialization and visible default30 period',width,result:'PASS'})
     }
     await page.screenshot({path:`${directory}/${name}-normal-${width}.png`,fullPage:true})

@@ -4,10 +4,11 @@ import { supabase } from '../../lib/supabase'
 import { loadMyEventExport } from '../../features/analytics/api'
 import { attendeesCsv, statisticsCsv } from '../../features/analytics/csv'
 import type { ParticipationSeries } from '../../features/analytics/periods'
+import type { EventDemographics } from '../../features/analytics/demographics'
 
 type Props = { eventId: string } & (
   | { kind: 'attendees' }
-  | { kind: 'statistics'; title: string; data: ParticipationSeries }
+  | { kind: 'statistics'; title: string; data: ParticipationSeries; demographics: EventDemographics | null }
 )
 
 export function CsvDownload(props: Props) {
@@ -62,7 +63,8 @@ export function CsvDownload(props: Props) {
         csv = attendeesCsv(data); asOf = data.as_of
       } else {
         if (props.data.event_id !== props.eventId) throw new Error('El reporte no corresponde a este evento.')
-        csv = statisticsCsv(props.title, props.data); asOf = props.data.as_of
+        if (!props.demographics) throw new Error('Reintentá la consulta demográfica antes de exportar las estadísticas.')
+        csv = statisticsCsv(props.title, props.data, props.demographics); asOf = props.data.as_of
       }
       // A local session read after serialization also catches logout/token changes
       // while a response was arriving. No Blob exists until all guards pass.
@@ -70,7 +72,7 @@ export function CsvDownload(props: Props) {
       if (error || data.session?.access_token !== token || data.session?.user.id !== userId) throw new Error('La sesión cambió. Volvé a consultar los datos.')
       if (!current()) return
       if (csv === null) {
-        setMessage(props.kind === 'attendees' ? 'No hay asistentes confirmados para exportar.' : 'No hay movimientos en este período para exportar.')
+        setMessage('No hay asistentes confirmados para exportar.')
         return
       }
       objectUrl = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }))
@@ -98,7 +100,7 @@ export function CsvDownload(props: Props) {
   }
   return <div className="analytics-export">
     <div className="analytics-export-actions">
-      <button type="button" className="secondary-button" disabled={pending} onClick={() => void download()}>
+      <button type="button" className="secondary-button" disabled={pending || (props.kind === 'statistics' && !props.demographics)} onClick={() => void download()}>
         {pending ? 'Preparando CSV…' : props.kind === 'attendees' ? 'Descargar asistentes CSV' : 'Descargar estadísticas CSV'}
       </button>
       {pending && <button type="button" className="secondary-button" onClick={() => {
@@ -106,7 +108,7 @@ export function CsvDownload(props: Props) {
         setMessage('Exportación cancelada. No se descargó ningún archivo.')
       }}>Cancelar exportación</button>}
     </div>
-    <p className="field-hint">{props.kind === 'attendees' ? 'Inscripciones confirmadas actuales; el período de movimientos no modifica esta lista.' : 'Movimientos del período y agrupación que se muestran arriba.'}</p>
+    <p className="field-hint">{props.kind === 'attendees' ? 'Inscripciones confirmadas actuales; el período de movimientos no modifica esta lista.' : props.demographics ? 'Movimientos del período seleccionado y totales actuales por edad y sexo. Cada dato incluye su fecha de consulta (hora de Argentina).' : 'Para descargar el reporte completo, reintentá la consulta demográfica con el botón Reintentar.'}</p>
     <p role="status" aria-live="polite">{message}</p>
   </div>
 }

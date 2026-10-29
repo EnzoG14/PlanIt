@@ -1,5 +1,7 @@
 # R6 B5 — Contratos aprobados de exportación
 
+**Actualización 29/10/2026:** el CSV de estadísticas incorpora edad y sexo agrupados y conserva períodos sin movimientos. [Contrato vigente y decisión aprobada](STATISTICS_DEMOGRAPHICS_CSV.md). El CSV de asistentes no cambia; el texto siguiente es el antecedente del 15/10.
+
 15/10/2026, Argentina. El responsable aprobó expresamente el plan B5 en este chat. Alcance exclusivo RF-R6-04.CA-01..04; sin merge, DDL remoto, deploy ni avance a B6.
 
 ## Snapshot y límites

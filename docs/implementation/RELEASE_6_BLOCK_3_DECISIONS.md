@@ -1,5 +1,7 @@
 # R6 B3 — Decisiones aprobadas y contrato de demografía
 
+**Actualización 29/10/2026:** el responsable aprobó retirar la supresión y mostrar grupos desde una persona. El contrato vigente se describe en [la adenda de estadísticas y CSV](STATISTICS_DEMOGRAPHICS_CSV.md); el texto siguiente es el antecedente del 15/10.
+
 15/10/2026. Adenda posterior al contrato B0; conserva los RF/CA oficiales sin editar su texto. Sólo autoriza B3, no B4, DDL remoto, deploy o merge.
 
 ## D04 — Exactitud actual y riesgo residual aceptado
