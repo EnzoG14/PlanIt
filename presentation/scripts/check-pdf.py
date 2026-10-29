@@ -19,7 +19,7 @@ metadata = json.loads(subprocess.check_output([
 path = root / "exports/planit-completa.pdf"
 reader = PdfReader(path)
 document = pdfium.PdfDocument(str(path))
-assert len(reader.pages) == len(metadata["deck"]) == 51
+assert len(reader.pages) == len(metadata["deck"]) == 53
 output = root / ".validation"
 output.mkdir(exist_ok=True)
 samples = [(20, 20), (640, 10), (1200, 10), (20, 350), (640, 710), (1200, 700)]

@@ -1,6 +1,6 @@
 # PlanIt · Proyecto Final
 
-Presentación independiente de **51 diapositivas Slidev**, 16:9. Incluye contexto, roadmap, siete releases con sus 53 historias completas en post-its PlanIt y cuatro páginas finales: demo, evolución, conclusiones y agradecimiento. Sigue la estructura del PDF Equipo 6 y la documentación oficial de PlanIt. Identidad B Amanecer, Bricolage local y fondos PNG opacos sin franja izquierda. No modifica la PWA, SQL, dependencias ni despliegue.
+Presentación independiente de **53 diapositivas Slidev**, 16:9. Incluye situación problemática, solución, oportunidades por usuario, alcance, roadmap, siete releases con sus 53 historias completas en post-its PlanIt y cuatro páginas finales: demo, evolución, conclusiones y agradecimiento. Sigue la documentación oficial de PlanIt y el esquema editorial de los modelos Equipo 6 y SysAssign. La reorganización inicial autorizada el 29/10/2026 se documenta en [NARRATIVE_ADJUSTMENTS.md](references/NARRATIVE_ADJUSTMENTS.md). Identidad B Amanecer, Bricolage local y fondos PNG opacos sin franja izquierda. No modifica la PWA, SQL, dependencias ni despliegue.
 
 ## Requisitos e instalación
 
@@ -26,7 +26,7 @@ npm run build
 npm run export
 ```
 
-Flechas para navegar. En arquitectura, dos avances revelan Realtime y servicios complementarios; todas las historias están visibles sin clics. Exportación vigente: `exports/planit-completa.pdf` (51 páginas). Se conservan planit-con-releases.pdf y su copia planit-con-releases-47.pdf (47 páginas), planit-hasta-roadmap.pdf (18) y planit-prototipo.pdf (tres). Build: `dist/`. QA: `.validation/`. Son salidas locales ignoradas por Git.
+Flechas para navegar. En arquitectura, dos avances revelan Realtime y servicios complementarios; todas las historias están visibles sin clics. Exportación vigente: `exports/planit-completa.pdf` (53 páginas). Se conservan planit-con-releases.pdf y su copia planit-con-releases-47.pdf (47 páginas), planit-hasta-roadmap.pdf (18) y planit-prototipo.pdf (tres). Build: `dist/`. QA: `.validation/`. Son salidas locales ignoradas por Git.
 
 No configurar variables de Supabase en este proyecto. La presentación funciona con recursos locales.
 
@@ -58,11 +58,11 @@ Los recursos renderizados viven en `public/assets/`, según la convención de Sl
 
 `TeamRoster`, `FunctionalGroups` y `ReleaseRoadmap` consumen los datos oficiales compartidos. `SlideFooter` conserva el pie común. Las cifras distinguen 13 sprints funcionales de R1–R7 y un sprint técnico adicional de R0.
 
-La revisión PDF se ejecuta con `python scripts/check-pdf.py` después de `check:visual` y `export`. Requiere pypdf, pypdfium2 y Pillow, disponibles en el runtime de Codex. Renderiza las 51 páginas y comprueba las 53 historias como texto completo seleccionable, fechas, 16:9 y color frente al navegador. No se agregan estos paquetes a la PWA ni al proyecto Node.
+La revisión PDF se ejecuta con `python scripts/check-pdf.py` después de `check:visual` y `export`. Requiere pypdf, pypdfium2 y Pillow, disponibles en el runtime de Codex. Renderiza las 53 páginas y comprueba las 53 historias como texto completo seleccionable, fechas, 16:9 y color frente al navegador. No se agregan estos paquetes a la PWA ni al proyecto Node.
 
 ## Agregar una diapositiva
 
-Para una ampliación posterior autorizada, separar con `---`, asignar `layout: planit`, `name` estable, título y contenido Markdown. Añadir notas con fuente y sección. Registrar identidad, orden y pasos en el manifiesto. Las 29 páginas de releases se describen en `release-content.mjs`; `StoryBoard` reutiliza composiciones de tres, cuatro o cinco historias. La entrega de 51 páginas finaliza en agradecimientos. Las fuentes del cierre están en `references/CLOSING_SOURCES.md`. Demo es un separador para exposición en vivo; las posibilidades de evolución se identifican como futuras y no comprometidas.
+Para una ampliación posterior autorizada, separar con `---`, asignar `layout: planit`, `name` estable, título y contenido Markdown. Añadir notas con fuente y sección. Registrar identidad, orden y pasos en el manifiesto. Las 29 páginas de releases se describen en `release-content.mjs`; `StoryBoard` reutiliza composiciones de tres, cuatro o cinco historias. La entrega de 53 páginas finaliza en agradecimientos. Las fuentes del cierre están en `references/CLOSING_SOURCES.md`. Demo es un separador para exposición en vivo; las posibilidades de evolución se identifican como futuras y no comprometidas.
 
 La transcripción oficial y su revisión consultada se conservan en `references/release-stories.source.json`. La comprobación permite normalizar espacios y saltos de línea, pero no abreviar los enunciados. R1 ocupa dos páginas del mismo sprint; el total sigue siendo 13 sprints funcionales. No derivar fechas de sprint dividiendo las fechas de una release.
 

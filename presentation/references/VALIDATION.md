@@ -1,6 +1,26 @@
 # Validación de la presentación
 
-## Entrega vigente: 51 diapositivas con cierre completo
+## Entrega vigente: 53 diapositivas con apertura reorganizada
+
+29/10/2026. Se elimina Escenario, se titulan Problema y Solución y se añaden dos oportunidades de mejora por tipo de usuario y Alcance y limitaciones. Fuentes y decisiones: [NARRATIVE_ADJUSTMENTS.md](NARRATIVE_ADJUSTMENTS.md). Las páginas de funcionalidades y beneficios se mantienen idénticas.
+
+| Verificación ejecutada | Resultado |
+| --- | --- |
+| npm run check | PASS: 53 identidades y notas, orden inicial, 53 historias literales únicas y 13 sprints funcionales |
+| npm run build | PASS: build independiente de Slidev, 667 módulos |
+| npm run check:visual | PASS: 106 capturas, 53 páginas a 1280×720 y 1920×1080; sin desbordes ni colisiones con pies |
+| Arquitectura | PASS: dos pasos por teclado y movimiento reducido; localización por identidad |
+| npm run export | PASS: exports/planit-completa.pdf, 53 páginas |
+| scripts/check-pdf.py | PASS: 53 páginas 16:9, 53 historias completas seleccionables, fechas exactas de roadmap y cero recursos /Shading |
+| Color PDF/navegador | PASS: seis muestras por página, diferencia máxima 0/255; fondos RGB opacos |
+| Regresión de contenido | Funcionalidades, Beneficios y todas las páginas desde Requisitos hasta Agradecimientos conservan contenido y notas respecto a main |
+| Regresión visual | Funcionalidades y Beneficios idénticos píxel a píxel a sus capturas originales, tanto a 720p como a 1080p |
+| Inspección visual | 53 páginas de navegador y PDF en planchas; nuevas páginas y títulos modificados del PDF a tamaño completo; muestra nueva a 1080p |
+| Aislamiento | Cambios limitados a presentation; dependencias y lockfile intactos; cambio local preexistente de supabase/.temp/cli-latest excluido del commit |
+
+La exportación emitió el diagnóstico conocido de Twoslash/FloatingVue y finalizó con exit 0; el PDF pasó la revisión. Los resultados y capturas locales están en `.validation/`, sin versionar. No se ejecutó una prueba física de proyector ni se certifica aceptación funcional remota de la PWA. No se aplicaron migraciones ni se ejecutaron pruebas de la PWA, que no cambia en esta tarea.
+
+## Entrega histórica: 51 diapositivas con cierre completo
 
 27/10/2026. Pedido posterior: agregar las páginas que siguen a las releases en el PDF del Equipo 6. Se añadieron 48 Demo, 49 Evolución del producto, 50 Conclusiones y 51 Agradecimiento; la agenda anuncia el cierre. Fuentes: CLOSING_SOURCES.md y notas del presentador.
 

@@ -9,21 +9,25 @@ El PDF local «Proyecto Final - Equipo 6.pdf» se usó únicamente para orden na
 | 1 | Portada | Planificación: cabecera, §2.2; portada institucional |
 | 2 | Equipo | Planificación §2.2 |
 | 3 | Agenda | Orden editorial acordado del PDF; contenido de PlanIt |
-| 4 | Escenario | ERS §§1.1–1.2 y 2.1 |
-| 5 | Situación disparadora | ERS §2.1 |
-| 6 | Solución | Planificación §§5–11, ERS §2.2; capturas reales de app local con fixtures |
-| 7 | Funcionalidades | Planificación §3.2 y objetivos R1–R7 |
-| 8 | Beneficios esperados | ERS §§1.1–1.2 y 2.1 |
-| 9 | Especificación | Planificación §§2.5 y 3.2 |
-| 10 | Agrupación y módulos conceptuales | Planificación §3.2 |
-| 11 | Usuarios | ERS §§1.4 y 2.3; Planificación objetivos R1/R3/R5/R6 |
-| 12 | Stack | Planificación §2.6; versiones contrastadas con package.json y vite.config.ts |
-| 13 | Arquitectura | Planificación §2.6, ERS §2.1 y fuentes técnicas ya registradas |
-| 14 | Enfoque | Planificación §§2.1–2.4 |
-| 15 | Priorización/estimación | Planificación §2.5 |
-| 16 | Colaboración | Planificación §2.6 |
-| 17 | Planificación general | Planificación §§3.1–3.2 y 4 |
-| 18 | Roadmap | Planificación §3.1 |
+| 4 | Situación problemática | ERS §2.1; contenido de la anterior página 5 |
+| 5 | Solución propuesta | Planificación §§5–11, ERS §2.2; capturas reales de app local con fixtures |
+| 6 | Funcionalidades | Planificación §3.2 y objetivos R1–R7; sin cambios |
+| 7 | Oportunidad de mejora — Participantes | ERS §§2.1–2.3; necesidades atendidas, no resultados medidos |
+| 8 | Oportunidad de mejora — Organizadores | ERS §§2.1–2.3; necesidades atendidas, no resultados medidos |
+| 9 | Beneficios esperados | ERS §§1.1–1.2 y 2.1; sin cambios |
+| 10 | Alcance y limitaciones | ERS §§1.2, 2.2 y 2.5; dependencias documentadas |
+| 11 | Especificación | Planificación §§2.5 y 3.2 |
+| 12 | Agrupación y módulos conceptuales | Planificación §3.2 |
+| 13 | Usuarios | ERS §§1.4 y 2.3; Planificación objetivos R1/R3/R5/R6 |
+| 14 | Stack | Planificación §2.6; versiones contrastadas con package.json y vite.config.ts |
+| 15 | Arquitectura | Planificación §2.6, ERS §2.1 y fuentes técnicas ya registradas |
+| 16 | Enfoque | Planificación §§2.1–2.4 |
+| 17 | Priorización/estimación | Planificación §2.5 |
+| 18 | Colaboración | Planificación §2.6 |
+| 19 | Planificación general | Planificación §§3.1–3.2 y 4 |
+| 20 | Roadmap | Planificación §3.1 |
+
+Ajuste autorizado el 29/10/2026: el modelo SysAssign, páginas 5–12, aporta el esquema de la apertura. Las referencias anteriores a terminar en roadmap describen el prototipo histórico; la entrega vigente tiene 53 páginas y conserva releases y cierre. Ver [NARRATIVE_ADJUSTMENTS.md](NARRATIVE_ADJUSTMENTS.md).
 
 ## Datos preservados
 

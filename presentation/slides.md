@@ -2,7 +2,7 @@
 theme: default
 title: PlanIt — Proyecto Final
 author: Grupo N.º 1 · UTN FRRe
-info: Presentación completa de PlanIt, releases R1–R7 y cierre. 51 diapositivas. Ingeniería en Sistemas de Información, 2026.
+info: Presentación completa de PlanIt, releases R1–R7 y cierre. 53 diapositivas. Ingeniería en Sistemas de Información, 2026.
 aspectRatio: 16/9
 canvasWidth: 1280
 colorSchema: light
@@ -64,7 +64,7 @@ title: Agenda
 # Agenda
 
 <ol class="agenda-list">
-<li>Contexto y problema</li><li>Solución propuesta</li><li>Requisitos y usuarios</li><li>Tecnología y arquitectura</li><li>Enfoque de trabajo</li><li>Planificación y releases</li>
+<li>Situación problemática</li><li>Solución propuesta</li><li>Requisitos y usuarios</li><li>Tecnología y arquitectura</li><li>Enfoque de trabajo</li><li>Planificación y releases</li>
 </ol>
 
 <p class="closing-agenda-note">Al final: demo, evolución del producto y conclusiones.</p>
@@ -72,37 +72,17 @@ title: Agenda
 <SlideFooter />
 
 <!--
-Secuencia editorial adaptada de Proyecto Final — Equipo 6, páginas 1–53. Se condensan separadores; el contenido corresponde a PlanIt. La ampliación autorizada incorpora demo, evolución, conclusiones y agradecimiento después de R7.
+Secuencia editorial adaptada de Proyecto Final — Equipo 6 y del modelo SysAssign (páginas 5–12). Ajuste autorizado el 29/10/2026: problema, solución, funcionalidades, oportunidades por usuario, beneficios y alcance. El contenido corresponde a PlanIt. Se conserva demo, evolución, conclusiones y agradecimiento después de R7.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
 ---
 layout: planit
-name: scenario
-title: Escenario
----
-
-# Actividades sociales, cerca tuyo
-
-<div class="editorial-split content-section">
-<p class="editorial-statement">Personas que buscan planes.<br /><span class="emphasis">Personas que los organizan.</span></p>
-<div class="context-lines"><div><h2>Ubicación</h2><p>Encontrar actividades cercanas.</p></div><div><h2>Intereses</h2><p>Descubrir propuestas afines.</p></div><div><h2>Participación</h2><p>Compartir experiencias con otras personas.</p></div></div>
-</div>
-
-<SlideFooter />
-
-<!--
-ERS Oficial §§1.1–1.2 y 2.1: propósito, ámbito y perspectiva del producto. No se presupone un segmento demográfico, tamaño de mercado ni frecuencia de uso. Es el contexto del producto, no un estudio de adopción.
-Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.8kvi3flgq86r
--->
-
----
-layout: planit
 name: problem
-title: Situación disparadora
+title: Situación problemática
 ---
 
-# Información dispersa
+# Situación problemática
 
 <p class="slide-lead">Encontrar y dar a conocer actividades sociales cercanas.</p>
 <div class="problem-rows content-section">
@@ -124,7 +104,7 @@ name: product
 title: Solución propuesta
 ---
 
-<div class="product-heading"><h1>Un lugar para tus planes</h1><p>Una PWA, dos formas de usarla</p></div>
+<div class="product-heading"><h1>Solución propuesta</h1><p>Una PWA, dos formas de usarla</p></div>
 
 <div class="product-gallery">
   <PhoneCapture src="/assets/screenshots/discover.png" alt="Inicio real de PlanIt con eventos de prueba y filtros" label="Descubrir" detail="Explorar eventos y actividades" />
@@ -167,6 +147,54 @@ Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3Ph
 
 ---
 layout: planit
+name: participant-opportunity
+title: Oportunidad de mejora — Participantes
+---
+
+# Oportunidad de mejora
+
+<div class="opportunity-layout content-section">
+<div class="opportunity-user"><h2>Participantes</h2><p>Encontrar un plan<br />y ser parte.</p></div>
+<div class="opportunity-needs">
+<div><h3>Encontrar actividades afines</h3><p>Descubrir propuestas cercanas según sus intereses, entre información dispersa.</p></div>
+<div><h3>Gestionar la participación</h3><p>Consultar detalles y cupos, inscribirse o retirarse de una actividad.</p></div>
+<div><h3>Seguir sus actividades</h3><p>Reunir sus planes en Mis eventos y comunicarse con otras personas.</p></div>
+</div>
+</div>
+
+<SlideFooter />
+
+<!--
+ERS Oficial §§2.1–2.3: información dispersa, descubrimiento por ubicación e intereses, participación, Mis eventos y comunicación según permisos. Son necesidades atendidas por el alcance, no resultados medidos ni entrevistas. Participar y organizar son formas de uso no excluyentes. Referencia editorial: modelo SysAssign, página 8; se conserva la identidad Amanecer y no se reutilizan fotos ni afirmaciones de ese proyecto.
+Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.8kvi3flgq86r
+-->
+
+---
+layout: planit
+name: organizer-opportunity
+title: Oportunidad de mejora — Organizadores
+---
+
+# Oportunidad de mejora
+
+<div class="opportunity-layout content-section">
+<div class="opportunity-user"><h2>Organizadores</h2><p>Dar a conocer<br />y gestionar un plan.</p></div>
+<div class="opportunity-needs">
+<div><h3>Dar a conocer propuestas</h3><p>Publicar actividades y facilitar que otras personas las descubran.</p></div>
+<div><h3>Centralizar la organización</h3><p>Mantener la información del evento, los cupos y la gestión de asistentes.</p></div>
+<div><h3>Acompañar cada actividad</h3><p>Comunicarse con participantes y consultar estadísticas para orientar la organización.</p></div>
+</div>
+</div>
+
+<SlideFooter />
+
+<!--
+ERS Oficial §§2.1–2.3: difusión de iniciativas, creación y actualización de eventos, capacidad y asistentes, comunicación, estadísticas y reportes. Síntesis de necesidades atendidas, sin atribuir eficiencia, adopción o impacto medido. Participar y organizar no son roles excluyentes. Referencia editorial: modelo SysAssign, página 9; sin copiar contenido ni recursos.
+Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.8kvi3flgq86r
+-->
+
+---
+layout: planit
 name: benefits
 title: Beneficios esperados
 ---
@@ -183,6 +211,28 @@ title: Beneficios esperados
 
 <!--
 ERS Oficial §§1.1–1.2 y 2.1. Beneficios esperados derivados del propósito y de la perspectiva del producto. No se presentan como mejoras medidas, validación de mercado ni impacto demostrado.
+Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.8kvi3flgq86r
+-->
+
+---
+layout: planit
+name: scope
+title: Alcance y limitaciones
+---
+
+# Alcance y limitaciones
+
+<div class="scope-grid content-section">
+<div><h2>Descubrimiento y participación</h2><p>Explorar eventos por ubicación e intereses y gestionar la participación.</p></div>
+<div><h2>Organización y comunidad</h2><p>Administrar eventos y asistentes, comunicarse y consultar estadísticas.</p></div>
+<div><h2>Conectividad y servicios</h2><p>Requiere Internet y disponibilidad de los servicios de autenticación, almacenamiento y mapas.</p></div>
+<div><h2>Compatibilidad y permisos</h2><p>Ubicación, notificaciones e integraciones dependen del navegador, dispositivo y permisos otorgados.</p></div>
+</div>
+
+<SlideFooter />
+
+<!--
+ERS Oficial §§1.2 y 2.2 para el alcance; §2.5 para conexión a Internet, disponibilidad de servicios, capacidades del dispositivo y permisos. §2.4 no define restricciones adicionales: se presentan dependencias documentadas, sin inventar restricciones de edad, mercado o uso offline. Las posibilidades futuras de §2.6 se mantienen en Evolución del producto. Referencia editorial: modelo SysAssign, página 12; sin trasladar sus limitaciones específicas.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.8kvi3flgq86r
 -->
 
