@@ -23,4 +23,4 @@ La duración «Sprints de 2 semanas» de la página 17 fue indicada expresamente
 
 Se preserva la exportación previa como `exports/planit-completa-antes-logos.pdf`; la entrega sigue teniendo 54 páginas.
 
-La transparencia de Scrum se verificó sobre su canal alfa (mínimo 0, máximo 255) y en la diapositiva sobre fondo Amanecer. El viewport CSS de 300 × 150 px aprovecha el área del diagrama; el PNG generado no se vuelve a editar. Se conserva la versión anterior como `exports/planit-completa-antes-scrum.pdf`.
+La transparencia de Scrum se verificó sobre su canal alfa (mínimo 0, máximo 255) y en la diapositiva sobre fondo Amanecer. El viewport CSS de 420 × 210 px aprovecha el área del diagrama; el PNG generado no se vuelve a editar. Se conserva la versión anterior como `exports/planit-completa-antes-scrum.pdf`.

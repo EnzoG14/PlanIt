@@ -249,4 +249,4 @@ Stack incorpora logos de 48 px junto al texto de Interfaz y Datos y servicios. E
 
 ## Incorporación de PWA, Mapbox y Scrum
 
-Las cuatro filas del stack tienen ahora un recurso de 48 px junto al texto. Scrum incorpora un diagrama con alfa real, sin placa blanca, en un viewport de 300 × 150 px a la derecha del recorrido Product Backlog → Sprint Backlog → Incremento. El grupo usa dos columnas con separación de 32 px y textos de 25 px; el diagrama es complementario a los textos editables. Los recursos anteriores no cambian.
+Las cuatro filas del stack tienen ahora un recurso de 48 px junto al texto. Scrum incorpora un diagrama con alfa real, sin placa blanca, en un viewport de 420 × 210 px a la derecha del recorrido Product Backlog → Sprint Backlog → Incremento. El grupo usa dos columnas con separación de 24 px y textos de 25 px; el diagrama es complementario a los textos editables. Los recursos anteriores no cambian.

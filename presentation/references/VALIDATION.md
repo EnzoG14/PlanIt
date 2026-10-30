@@ -2,6 +2,8 @@
 
 ## Entrega vigente: 54 diapositivas, alcance separado y esfuerzo relativo
 
+Ampliación puntual de Scrum: viewport de 300 × 150 a 420 × 210 px (+40% en cada dimensión), conservando transparencia y proporción. `check`, `build`, `check:visual` (108 capturas), exportación con `--wait 700` y revisión PDF pasan. Las otras 53 diapositivas permanecen idénticas píxel a píxel en ambas resoluciones (106 comparaciones). Se inspeccionó la página 17 ampliada en navegador y PDF, sin recortes ni colisión con el pie. Se preserva `exports/planit-completa-antes-ampliar-scrum.pdf`.
+
 Incorporación posterior de PWA, Mapbox y Scrum: el stack incluye cuatro imágenes y Scrum una; los otros nueve recursos permanecen. PWA y Mapbox se conservan originales. El fondo blanco de Scrum se retiró con ImageGen por solicitud expresa; se preserva el original y se verificaron PNG RGBA, alfa 0–255 y esquinas totalmente transparentes. `npm run check`, `npm run build` (686 módulos), `npm run check:visual` (108 capturas), `npm run export -- --wait 700` y `scripts/check-pdf.py` pasan. El PDF mantiene 54 páginas, 53 historias y 53 números seleccionables. Las otras 52 diapositivas son idénticas píxel a píxel a la entrega anterior en ambas resoluciones (104 comparaciones). Inspección directa de Stack y Scrum en navegador y PDF. Se conserva `exports/planit-completa-antes-scrum.pdf`.
 
 Corrección editorial posterior: se retiraron las tallas visibles y sus etiquetas accesibles de la leyenda de estimación, conservando los seis puntos y sus colores. También se retiró la frase de esfuerzo de los pies de los 14 tableros y su CSS; la procedencia permanece en estimación y notas. Las comprobaciones de navegador y PDF verifican expresamente estas ausencias.
