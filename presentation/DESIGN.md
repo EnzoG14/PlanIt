@@ -148,7 +148,7 @@ Variantes observadas del diagrama: título de cliente (44 px), backend (36 px), 
 
 Las composiciones de `styles/extended.css` amplían la escala según la densidad: bajada de 25 px; equipo de 28 px/650 para nombres y 24 px para responsabilidades; áreas funcionales de 26 px y detalle de 20 px; cuerpo editorial de 23–28 px. Los conteos de planificación son de 100 px y los de requisitos de 104 px, con tracking −0,04 em. En el roadmap, año de 34 px, identificador de 25 px, nombre de 23 px/650/1,15 y fechas de 20 px con cifras tabulares. Son roles de exposición y datos documentales, no una nueva escala móvil.
 
-En `styles/closing.css`, demo y agradecimiento recuperan la marca a 118 px/1 con tracking −0,04 em y logo de 104 px. La frase de demo usa 43 px y el propósito final 35 px. Evolución emplea introducción de 25 px, títulos de 29 px y cuerpo de 24 px. Conclusiones usa encabezados de 37 px/1,14 y cuerpo de 24 px/1,3, con énfasis violeta de peso 650. Recorrido e invitación a preguntas usan 29 px/600. Son variantes locales de cierre sobre la misma familia y paleta; no agregan tokens de identidad.
+En `styles/closing.css`, demo y agradecimiento recuperan la marca a 118 px/1 con tracking −0,04 em y logo de 104 px. La frase de demo usa 43 px y el propósito final 35 px. Evolución emplea introducción de 25 px, títulos de 29 px y cuerpo de 24 px. Conclusiones usa encabezados de 30 px/1,14 y cuerpo de 25 px/1,35, con títulos violetas. Recorrido e invitación a preguntas usan 29 px/600. Son variantes locales de cierre sobre la misma familia y paleta; no agregan tokens de identidad.
 
 **The Projection Rule.** Para agregar contenido, dividir o resumir antes de reducir títulos, rótulos y cuerpo. Los 17 px corresponden a créditos o notas, no al argumento principal.
 
@@ -201,7 +201,7 @@ Su geometría reserva una columna de 100 px al año y 24 px de separación hasta
 
 Las páginas 51–54 usan `styles/closing.css`, limitado a las clases del cierre y la nota de agenda. Demo y agradecimiento combinan el logo existente con marca grande y texto abierto. El recorrido de demo separa tres acciones mediante flechas SVG decorativas; la página es un separador para exposición en vivo.
 
-Evolución organiza seis posibilidades en una grilla de dos columnas, con separación horizontal de 72 px y vertical de 25 px, divisores finos y 16 px de espacio antes de cada título. La introducción y el pie conservan su condición de propuestas futuras fuera de R1–R7. Conclusiones separa dos perspectivas con gap de 82 px y tres ideas por columna; las listas sin viñetas usan divisores, 20 px entre filas y 16 px de espacio superior. Se reserva la banda del pie. No hay nuevos papeles, paneles, imágenes ni animaciones.
+Evolución organiza seis posibilidades en una grilla de dos columnas, con separación horizontal de 72 px y vertical de 25 px, divisores finos y 16 px de espacio antes de cada título. La introducción y el pie conservan su condición de propuestas futuras fuera de R1–R7. Conclusiones presenta cuatro ejes en dos columnas con gap horizontal de 72 px y vertical de 36 px; cada bloque tiene un divisor fino y 20 px de espacio superior. Se reserva la banda del pie. No hay nuevos papeles, paneles, imágenes ni animaciones.
 
 ### Marco de diapositiva
 
@@ -250,3 +250,7 @@ Stack incorpora logos de 48 px junto al texto de Interfaz y Datos y servicios. E
 ## Incorporación de PWA, Mapbox y Scrum
 
 Las cuatro filas del stack tienen ahora un recurso de 48 px junto al texto. Scrum incorpora un diagrama con alfa real, sin placa blanca, en un viewport de 420 × 210 px a la derecha del recorrido Product Backlog → Sprint Backlog → Incremento. El grupo usa dos columnas con separación de 24 px y textos de 25 px; el diagrama es complementario a los textos editables. Los recursos anteriores no cambian.
+
+## Conclusiones adaptadas a los modelos
+
+La página 53 reemplaza las dos perspectivas anteriores por cuatro ejes de contenido: producto integrado, formación profesional, gestión y mejora continua, y continuidad del proyecto. Composición abierta de dos columnas, separación de 72 px y 36 px entre filas, títulos de 30 px y cuerpo de 25 px. Se conserva Amanecer y se evita copiar impactos o promesas de los modelos.

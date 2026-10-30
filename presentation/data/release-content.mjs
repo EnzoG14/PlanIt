@@ -211,8 +211,8 @@ export const releaseContent = [
     "reviewSection": "10.4",
     "retrospectiveSection": "10.5",
     "increment": "Imágenes, historias, calendario, compartir y Web Push amplían la interacción y las integraciones.",
-    "difficulty": "Las lecciones del proyecto quedaban en cada integrante y faltaba reunirlas en un resumen común.",
-    "agreement": "Hacer una reunión de cierre y documentar las decisiones útiles, las dificultades y las recomendaciones para próximos proyectos.",
+    "difficulty": "Al probar calendario, compartir y notificaciones, obteníamos resultados distintos según el navegador y los permisos concedidos.",
+    "agreement": "Definir desde el inicio pruebas por navegador: permiso aceptado, permiso rechazado y función no disponible.",
     "pages": [
       {
         "part": 1,

@@ -941,7 +941,7 @@ title: R7 · Aspectos destacados
 <SlideFooter label="Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas" />
 
 <!--
-Síntesis editorial del incremento (§10.4) y la retrospectiva (§10.5) de la revisión actual de Planificación Oficial. Aprendizajes repartidos entre integrantes al cierre: fila Comenzar a hacer de §10.5. El acuerdo propone una puesta en común y un resumen de decisiones, dificultades y recomendaciones. La dificultad y el acuerdo se distinguen: no se convierte una propuesta futura en una solución aplicada ni se atribuyen resultados técnicos no medidos. No se reconstruyen burn-up charts sin datos verificables.
+Síntesis editorial del incremento (§10.4) y la retrospectiva (§10.5) de la revisión actual de Planificación Oficial. Diferencias al probar las integraciones según navegador, permisos y aplicaciones externas: segundo párrafo de §10.5. El acuerdo concreta la propuesta de identificar esas condiciones desde el inicio mediante escenarios por navegador y permiso, sin afirmar que esas pruebas ya se ejecutaron. La dificultad y el acuerdo se distinguen: no se convierte una propuesta futura en una solución aplicada ni se atribuyen resultados técnicos no medidos. No se reconstruyen burn-up charts sin datos verificables.
 Las integraciones dependen de permisos, navegador y dispositivo; la bandeja interna sigue disponible sin Push. No se certifican nuevas entregas Push ni limpieza física por esta presentación.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -1002,25 +1002,19 @@ title: Conclusiones
 
 # Conclusiones
 
-<div class="conclusion-columns">
-<section><h2>Como futuros<br />ingenieros</h2><ul>
-<li><strong>Trabajar por incrementos</strong> nos permitió revisar el producto y nuestra forma de organizarnos.</li>
-<li><strong>Colaborar ante los bloqueos</strong> y recuperar decisiones anteriores fortaleció la autonomía del equipo.</li>
-<li><strong>Ver una pantalla funcionar</strong> no reemplaza comprobar sus valores, permisos y condiciones de uso.</li>
-</ul></section>
-<section><h2>Como equipo<br />de PlanIt</h2><ul>
-<li><strong>Conectamos el recorrido</strong> de descubrir, organizar y participar en actividades sociales.</li>
-<li><strong>Integramos comunidad y gestión</strong> con comunicación, perfiles y herramientas para organizadores.</li>
-<li><strong>Aprendimos a cuidar el contexto:</strong> la experiencia también depende del navegador, los permisos y el dispositivo.</li>
-</ul></section>
+<div class="conclusion-grid">
+<section><h2>Un producto integrado</h2><p>PlanIt reúne el descubrimiento, la organización y la participación en eventos, con herramientas para participantes y organizadores.</p></section>
+<section><h2>Formación profesional</h2><p>El proyecto nos permitió aplicar análisis, diseño, desarrollo y pruebas, e integrar las tecnologías de una PWA con servicios de backend.</p></section>
+<section><h2>Gestión y mejora continua</h2><p>Las entregas incrementales nos ayudaron a coordinar tareas, priorizar el alcance y mejorar nuestra forma de resolver dificultades.</p></section>
+<section><h2>Continuidad del proyecto</h2><p>El desarrollo deja una base para futuras mejoras, que deberán priorizarse según las necesidades de los usuarios y su viabilidad.</p></section>
 </div>
 
-<SlideFooter label="Síntesis de las revisiones y retrospectivas del proyecto" />
+<SlideFooter label="Síntesis del producto, el aprendizaje y la continuidad del proyecto" />
 
 <!--
-Composición en dos perspectivas inspirada en la página 52 del PDF Equipo 6; afirmaciones y aprendizaje son de PlanIt, no de ADE Toolkit. Síntesis editorial de metodología §1.1, revisión/retrospectivas R3 §§6.4–6.5, R6 §§9.4–9.5 y R7 §§10.4–10.5 en la revisión consultada el 27/10/2026.
-Las retrospectivas documentan colaboración, autonomía gradual, reutilización de soluciones, comprobación de valores y dependencia de condiciones del entorno. Los acuerdos pendientes no se convierten en resultados. No se afirma adopción, impacto medido, escala en producción ni aceptación técnica integral de R1–R7.
-Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §§1.1, 6.4–6.5, 9.4–9.5 y 10.4–10.5.
+Reescritura solicitada por el usuario. Referencias de contenido: SysAssign, página 56 (respuesta a una necesidad, producto y aprendizaje técnico), y Tatool, página 107 (aplicación de conocimientos, gestión, mejora continua y continuidad). Se adaptan los ejes a PlanIt sin copiar impactos, algoritmos, ahorro, mercados B2B ni promesas de escalabilidad de esos proyectos.
+PlanIt: propósito y alcance ERS §§1.1–1.2 y 2.2; posibles ampliaciones ERS §2.6. Metodología y organización: Planificación Oficial §1.1. Colaboración, autonomía y mejora gradual: retrospectivas actuales R5 §8.5, R6 §9.5 y R7 §10.5. Se conserva la distinción entre producto desarrollado, aprendizaje documentado y mejoras futuras. No se afirma adopción, impacto medido ni aceptación técnica integral de R1–R7.
+Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §§1.1, 8.5, 9.5 y 10.5. ERS: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.8kvi3flgq86r §§1.1–1.2, 2.2 y 2.6.
 -->
 
 ---

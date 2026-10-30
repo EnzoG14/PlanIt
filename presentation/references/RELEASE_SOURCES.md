@@ -27,7 +27,7 @@ Las portadas conservan los nombres y períodos ya verificados del calendario gen
 
 Los cierres son síntesis editoriales, no citas literales. Cada uno conserva tres categorías: incremento desarrollado, dificultad observada y acuerdo de mejora. Los acuerdos se presentan como tales, sin afirmar que ya se ejecutaron o que produjeron resultados medidos.
 
-Se priorizan los aprendizajes documentados: R1 continuidad/documentación, R2 carga del sprint, R3 estimación/integración, R4 revisiones distribuidas, R5 decisiones registradas, R6 interrupciones por ajustes menores y R7 puesta en común de aprendizajes. Estos tres cierres se reescribieron con referencias a la revisión actual; la transcripción de historias conserva su revisión histórica. En R6 las métricas son inscripciones, no asistencia física; R7 no certifica entrega Push ni limpieza programada por mostrarse en la presentación.
+Se priorizan los aprendizajes documentados: R1 continuidad/documentación, R2 carga del sprint, R3 estimación/integración, R4 revisiones distribuidas, R5 decisiones registradas, R6 interrupciones por ajustes menores y R7 pruebas de integraciones según navegador y permisos. Estos tres cierres se reescribieron con referencias a la revisión actual; la transcripción de historias conserva su revisión histórica. En R6 las métricas son inscripciones, no asistencia física; R7 no certifica entrega Push ni limpieza programada por mostrarse en la presentación.
 
 La estructura adapta las páginas 22–49 del PDF Equipo 6: separador, portadas, historias por sprint y cierre. No se reutilizan historias, fechas, logos, fotos ni paleta del proyecto ADE Toolkit. No se añadieron gráficos burn-up sin datos de base ni contenidos posteriores a R7.
 
@@ -39,6 +39,8 @@ Se volvió a consultar Planificación Oficial, pestaña `t.q5vok7qr5sti`, revisi
 | --- | --- | --- |
 | R5 | Repetir conversaciones sin una decisión registrada en la tarea | Registrar decisión, motivo y próximo paso. §8.5, filas Hacer menos y Dejar de hacer |
 | R6 | Cambiar de tarea por ajustes menores y perder contexto | Agrupar ajustes y reservar momentos para resolverlos. §9.5, fila Hacer menos |
-| R7 | Aprendizajes repartidos entre integrantes al cierre | Reunión de cierre y resumen de decisiones útiles, dificultades y recomendaciones. §10.5, fila Comenzar a hacer |
+| R7 | Resultados distintos al probar calendario, compartir y notificaciones según navegador y permisos | Definir escenarios por navegador con permiso aceptado, rechazado y función no disponible. §10.5, segundo párrafo; §10.3 y CA RF-R7-05/06/07 |
 
 No fue necesario modificar el Google Doc: las alternativas ya están respaldadas por sus retrospectivas. Sólo cambian las seis frases de la presentación y su trazabilidad. No se presentan los acuerdos como acciones ya ejecutadas ni se agregan problemas históricos no documentados. Los incrementos, historias, fechas y demás diapositivas se conservan.
+
+Corrección de R7 a pedido del usuario: se descarta el enfoque de aprendizajes dispersos. Se utiliza la dificultad de las integraciones que la retrospectiva §10.5 describe explícitamente (navegadores, permisos y aplicaciones externas). El acuerdo se formula como una propuesta concreta de pruebas, no como actividad ya realizada. R5 y R6 se conservan.
