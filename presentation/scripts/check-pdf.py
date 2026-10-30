@@ -33,6 +33,8 @@ for index, page in enumerate(reader.pages):
     assert 'Esfuerzo relativo propuesto para esta presentación' not in page_text, f"Removed effort footer remains on page {index + 1}"
     if metadata['deck'][index]['id'] == 'estimation':
         assert not re.search(r'\b(?:XS|XXL|XL)\b|tallas|camiseta', page_text, re.I), 'Shirt sizes remain in estimation PDF'
+    if metadata['deck'][index]['id'] == 'method':
+        assert 'Sprints de 2 semanas' in page_text, 'Sprint cadence missing from PDF'
     assert len(page.extract_text().strip()) > 30, f"Selectable text missing on page {index + 1}"
     assert not page["/Resources"].get("/Shading"), f"PDF shading present on page {index + 1}"
     assert abs(float(page.mediabox.width) / float(page.mediabox.height) - 16 / 9) < .001

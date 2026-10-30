@@ -24,6 +24,7 @@ npm run check
 npm run check:visual  # requiere npm run dev activo
 npm run build
 npm run export
+# Si el exportador captura antes de completar la carga: npm run export -- --wait 700
 ```
 
 Flechas para navegar. En arquitectura, dos avances revelan Realtime y servicios complementarios; todas las historias están visibles sin clics. Exportación vigente: `exports/planit-completa.pdf` (54 páginas). Se conservan planit-con-releases.pdf y su copia planit-con-releases-47.pdf (47 páginas), planit-hasta-roadmap.pdf (18) y planit-prototipo.pdf (tres). Build: `dist/`. QA: `.validation/`. Son salidas locales ignoradas por Git. La exportación de 53 páginas anterior se conserva como `planit-completa-53.pdf`.
@@ -100,3 +101,7 @@ Fuentes, contenido implementado y límites de releases: [references/SOURCES.md](
 ## Esfuerzo relativo propuesto
 
 Las 53 historias muestran un círculo de 36 px con un número de 22 px. `data/story-effort.mjs` centraliza puntos, tallas y colores; los enunciados oficiales no cambian. La leyenda de estimación muestra sólo los puntos y colores; se retiraron las tallas por pedido del usuario. Los tableros no llevan aclaraciones de esfuerzo en sus pies. Los valores se asignaron por autorización del usuario para esta presentación, no son estimaciones históricas ni horas. Ver [EFFORT_ESTIMATES.md](references/EFFORT_ESTIMATES.md). Alcance y Limitaciones ocupan ahora dos páginas independientes, siguiendo la referencia editorial Tatool.
+
+## Imágenes aportadas por el usuario
+
+Los nueve recursos originales de `public/assets/tools/` se distribuyen entre Stack tecnológico (TypeScript y Supabase), Priorización y estimación (MoSCoW y Planning Poker) y Herramientas de colaboración (Jira, GitHub, Google Docs, WhatsApp y Discord). `provenance.json` registra origen y SHA-256; `npm run check` comprueba integridad y uso. No se recolorean ni se modifican los archivos. Scrum indica sprints de 2 semanas según confirmación del usuario. Véase [PROVIDED_IMAGES.md](references/PROVIDED_IMAGES.md).

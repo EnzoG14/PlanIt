@@ -63,6 +63,9 @@ try {
       assert.deepEqual(data.collidingWithFooter, [], `Slide ${slide} does not collide with footer`)
       assert.equal(data.titleSize, spec.id === 'cover' ? '142px' : '52px', 'Approved title scale')
       assert.ok(data.imagesLoaded, `Images loaded on slide ${slide}`)
+      const providedImageCounts = { stack: 2, estimation: 2, tools: 5 }
+      if (spec.id in providedImageCounts) assert.equal(await canvas.locator('img[src^="/assets/tools/"]').count(), providedImageCounts[spec.id], 'User-provided images on intended slides')
+      if (spec.id === 'method') assert.equal(await canvas.locator('.scrum-cadence').textContent(), 'Sprints de 2 semanas')
       assert.ok(data.railAbsent, 'No left rail')
       assert.match(data.background, /assets\/backgrounds\/.+\.png/, 'Opaque shared PNG background')
       assert.deepEqual(data.paperNotes.map(note => note.id), spec.storyIds ?? [], 'Expected stories visible on this page')

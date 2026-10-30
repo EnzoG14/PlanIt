@@ -317,15 +317,15 @@ title: Stack tecnológico
 # Stack tecnológico
 
 <div class="stack-list content-section">
-<div><h2>Interfaz</h2><p>React 19 y TypeScript</p></div>
+<div><h2>Interfaz</h2><div class="stack-detail"><img class="stack-brand-image" src="/assets/tools/typescript.png" alt="TypeScript" /><p>React 19 y TypeScript</p></div></div>
 <div><h2>Navegación y PWA</h2><p>React Router, Vite 8, Manifest y Service Worker</p></div>
-<div><h2>Datos y servicios</h2><p>Supabase: Auth, PostgreSQL, RLS, Storage y Realtime</p></div>
+<div><h2>Datos y servicios</h2><div class="stack-detail"><img class="stack-brand-image" src="/assets/tools/supabase.png" alt="Supabase" /><p>Supabase: Auth, PostgreSQL, RLS, Storage y Realtime</p></div></div>
 <div><h2>Mapas y ubicación</h2><p>Mapbox y capacidades de geolocalización del navegador</p></div>
 </div>
 <SlideFooter label="Tecnologías verificadas en la documentación y el repositorio" />
 
 <!--
-Planificación Oficial §2.6, ERS Oficial §2.1, package.json y vite.config.ts. Las versiones mayores React 19 y Vite 8 proceden del código local. No agregar proveedor de hosting, Expo ni React Native. La PWA no garantiza acceso offline a los datos privados.
+Planificación Oficial §2.6, ERS Oficial §2.1, package.json y vite.config.ts. Las versiones mayores React 19 y Vite 8 proceden del código local. No agregar proveedor de hosting, Expo ni React Native. La PWA no garantiza acceso offline a los datos privados. Logos TypeScript y Supabase proporcionados por el usuario, sin modificación del archivo original; procedencia en public/assets/tools/provenance.json.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
@@ -360,6 +360,7 @@ title: Enfoque de trabajo
 # Scrum adaptado al contexto universitario
 
 <p class="slide-lead">Backlog priorizado, entregas incrementales y responsabilidades compartidas.</p>
+<p class="scrum-cadence">Sprints de 2 semanas</p>
 <div class="scrum-process content-section">
 <div><h2>Planificación</h2><p>Seleccionar historias y acordar el objetivo.</p></div><div><h2>Seguimiento</h2><p>Reunión semanal para avances e impedimentos.</p></div><div><h2>Review</h2><p>Revisar el incremento y recibir devoluciones.</p></div><div><h2>Retrospectiva</h2><p>Acordar mejoras para la siguiente iteración.</p></div>
 </div>
@@ -367,7 +368,7 @@ title: Enfoque de trabajo
 <SlideFooter label="Definition of Done: funcionalidad, errores, seguridad y verificaciones" />
 
 <!--
-Planificación Oficial §§2.1–2.4. Scrum está adaptado a disponibilidad y contexto académico. El seguimiento es semanal: no afirmar Daily Scrum diario. No asignar una duración universal de dos semanas a todos los sprints; respetar los períodos de referencia de la planificación.
+Planificación Oficial §§2.1–2.4. Scrum está adaptado a disponibilidad y contexto académico. El seguimiento es semanal: no afirmar Daily Scrum diario. La duración de los sprints de 2 semanas fue indicada expresamente por el usuario para esta presentación el 29/10/2026 y sustituye la cautela editorial anterior. Se conservan los períodos de referencia y fechas de releases sin recalcularlos a partir de esta cadencia.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
@@ -380,13 +381,13 @@ title: Priorización y estimación
 # Priorizar y estimar en equipo
 
 <div class="estimation-split content-section">
-<section><h2>MoSCoW</h2><dl class="moscow"><div><dt>Must</dt><dd>Imprescindible</dd></div><div><dt>Should</dt><dd>Importante</dd></div><div><dt>Could</dt><dd>Deseable</dd></div><div><dt>Won’t</dt><dd>Fuera del alcance</dd></div></dl></section>
-<section><h2>Planning Poker</h2><p>Considerar esfuerzo, dependencias e incertidumbre.</p><EffortLegend /><p class="emphasis">Los puntos expresan esfuerzo relativo, no horas.</p><p class="effort-explanation">Puntos propuestos para esta presentación; no son estimaciones históricas del equipo.</p></section>
+<section><div class="estimation-heading"><h2>MoSCoW</h2></div><dl class="moscow"><div><dt>Must</dt><dd>Imprescindible</dd></div><div><dt>Should</dt><dd>Importante</dd></div><div><dt>Could</dt><dd>Deseable</dd></div><div><dt>Won’t</dt><dd>Fuera del alcance</dd></div></dl><img class="moscow-image" src="/assets/tools/moscow.png" alt="Modelo MoSCoW: Must Have, Should Have, Could Have y Won’t Have" /></section>
+<section><div class="estimation-heading"><h2>Planning Poker</h2><img class="poker-image" src="/assets/tools/planning-poker.png" alt="Cartas de Planning Poker" /></div><p>Considerar esfuerzo, dependencias e incertidumbre.</p><EffortLegend /><p class="emphasis">Los puntos expresan esfuerzo relativo, no horas.</p><p class="effort-explanation">Puntos propuestos para esta presentación; no son estimaciones históricas del equipo.</p></section>
 </div>
 <SlideFooter />
 
 <!--
-Planificación Oficial §2.5. La escala es 1, 2, 3, 5, 8 y 13 puntos. Se estima colaborativamente y se dividen historias demasiado grandes. Por autorización expresa del usuario del 29/10/2026 se asignan estimaciones propuestas a las 53 historias. No representan estimaciones históricas del equipo ni horas. Por corrección posterior del usuario se quitan las tallas de esta página y se conservan los números y colores de Planning Poker. Asignaciones y colores: data/story-effort.mjs.
+Planificación Oficial §2.5. La escala es 1, 2, 3, 5, 8 y 13 puntos. Se estima colaborativamente y se dividen historias demasiado grandes. Por autorización expresa del usuario del 29/10/2026 se asignan estimaciones propuestas a las 53 historias. No representan estimaciones históricas del equipo ni horas. Por corrección posterior del usuario se quitan las tallas de esta página y se conservan los números y colores de Planning Poker. Asignaciones y colores: data/story-effort.mjs. Imágenes MoSCoW y Planning Poker proporcionadas por el usuario; originales y procedencia en public/assets/tools/.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
@@ -398,13 +399,17 @@ title: Herramientas de colaboración
 
 # Herramientas de colaboración
 
-<div class="tools-list content-section">
-<div><h2>Jira</h2><p>Backlog, historias y tareas de cada sprint.</p></div><div><h2>GitHub</h2><p>Código, ramas y Pull Requests.</p></div><div><h2>Google Docs</h2><p>Documentación compartida del proyecto.</p></div><div><h2>WhatsApp</h2><p>Comunicación cotidiana del equipo.</p></div><div><h2>Discord</h2><p>Reuniones de planificación y coordinación.</p></div>
+<div class="tools-list tools-with-images content-section">
+<div><div class="tool-logo-frame jira-logo"><img src="/assets/tools/jira.png" alt="Jira" /></div><h2>Jira</h2><p>Backlog, historias y tareas de cada sprint.</p></div>
+<div><div class="tool-logo-frame"><img src="/assets/tools/github.png" alt="GitHub" /></div><h2>GitHub</h2><p>Código, ramas y Pull Requests.</p></div>
+<div><div class="tool-logo-frame"><img src="/assets/tools/google-docs.png" alt="Google Docs" /></div><h2>Google Docs</h2><p>Documentación compartida del proyecto.</p></div>
+<div><div class="tool-logo-frame"><img src="/assets/tools/whatsapp.png" alt="WhatsApp" /></div><h2>WhatsApp</h2><p>Comunicación cotidiana del equipo.</p></div>
+<div><div class="tool-logo-frame"><img src="/assets/tools/discord.png" alt="Discord" /></div><h2>Discord</h2><p>Reuniones de planificación y coordinación.</p></div>
 </div>
 <SlideFooter />
 
 <!--
-Planificación Oficial §2.6. Se describen únicamente herramientas y usos declarados por el equipo; no se incluyen logos ajenos descargados ni se simulan tableros o conversaciones.
+Planificación Oficial §2.6. Se describen únicamente herramientas y usos declarados por el equipo, sin simular tableros o conversaciones. Los cinco logos fueron proporcionados por el usuario para esta presentación y se conservan sin modificar sus archivos; el viewport CSS de Jira excluye únicamente el margen transparente. Procedencia y SHA-256: public/assets/tools/provenance.json.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 

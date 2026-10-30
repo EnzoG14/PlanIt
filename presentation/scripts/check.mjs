@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { readFile, access } from 'node:fs/promises'
+import { createHash } from 'node:crypto'
 import { deck, releases, sources } from '../data/deck.mjs'
 import { stories } from '../data/release-stories.mjs'
 import { releaseContent } from '../data/release-content.mjs'
@@ -56,4 +57,12 @@ for (const file of ['logos/planit.svg', 'fonts/bricolage-grotesque-latin-wght-no
   await access(new URL(`../public/assets/${file}`, import.meta.url))
 }
 assert.doesNotMatch(slides, /https?:\/\/[^\s"']+\.(png|jpe?g|woff2)/, 'No remote visual dependencies')
+assert.match(slides, /Sprints de 2 semanas/, 'Sprint cadence confirmed by user')
+const providedAssets = JSON.parse(await readFile(new URL('../public/assets/tools/provenance.json', import.meta.url), 'utf8'))
+assert.equal(providedAssets.files.length, 9, 'Nine user-provided images')
+for (const asset of providedAssets.files) {
+  const bytes = await readFile(new URL(`../public/assets/tools/${asset.file}`, import.meta.url))
+  assert.equal(createHash('sha256').update(bytes).digest('hex'), asset.sha256, 'User image preserved byte-for-byte')
+  assert.ok(slides.includes(`/assets/tools/${asset.file}`), `Provided image used: ${asset.file}`)
+}
 console.log(`PASS: ${deck.length} slides, 53 verbatim unique stories, 13 functional sprints, approved narrative, official notes and local assets`)

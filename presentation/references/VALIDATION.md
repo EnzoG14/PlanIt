@@ -4,6 +4,10 @@
 
 Corrección editorial posterior: se retiraron las tallas visibles y sus etiquetas accesibles de la leyenda de estimación, conservando los seis puntos y sus colores. También se retiró la frase de esfuerzo de los pies de los 14 tableros y su CSS; la procedencia permanece en estimación y notas. Las comprobaciones de navegador y PDF verifican expresamente estas ausencias.
 
+Ampliación visual posterior: se incorporaron los nueve PNG proporcionados por el usuario en Stack (2), Estimación (2) y Herramientas (5), conservados byte a byte y comprobados por SHA-256. Scrum muestra «Sprints de 2 semanas» por confirmación del usuario, sin modificar fechas del roadmap. `npm run check`, `npm run build` (683 módulos), `npm run check:visual` (108 capturas) y `scripts/check-pdf.py` pasan. Las 50 páginas ajenas a este ajuste permanecen idénticas píxel a píxel en ambas resoluciones, 100 comparaciones. Se inspeccionaron las cuatro páginas modificadas a tamaño completo en navegador y PDF. Fuentes: [PROVIDED_IMAGES.md](PROVIDED_IMAGES.md).
+
+La exportación inicial sin espera no conservó texto seleccionable y se descartó. Se regeneró mediante `npm run export -- --wait 700`: PASS, 54 páginas, 53 historias completas y 53 números seleccionables, fechas intactas y diferencia de fondo 0/255. La versión previa se preserva como `exports/planit-completa-antes-logos.pdf`.
+
 29/10/2026. Alcance y Limitaciones ocupan páginas independientes. Las 53 historias incorporan estimaciones propuestas expresamente autorizadas por el usuario, con puntos, tallas y colores centralizados; no son estimaciones históricas ni horas. Referencia: [EFFORT_ESTIMATES.md](EFFORT_ESTIMATES.md).
 
 | Verificación ejecutada | Resultado |

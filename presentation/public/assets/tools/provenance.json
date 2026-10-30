@@ -1,0 +1,68 @@
+{
+  "source": "User-provided assets, 29/10/2026",
+  "files": [
+    {
+      "file": "jira.png",
+      "source_filename": "67f1c5e58e84d-Jira.png",
+      "origin": "User-provided attachment for PlanIt presentation",
+      "sha256": "b156f77ba9ae5ccec275d5fb3ffcffb681d69bac811fff77dd77490a14a7c5a4",
+      "modifications": "None; CSS sizing and transparent-padding viewport only"
+    },
+    {
+      "file": "github.png",
+      "source_filename": "github-logo.png",
+      "origin": "User-provided attachment for PlanIt presentation",
+      "sha256": "d83ddf4ea98e9d2e77848869cbe5f0ecabb3058ede22c681bbe07b45a9091909",
+      "modifications": "None; CSS sizing and transparent-padding viewport only"
+    },
+    {
+      "file": "planning-poker.png",
+      "source_filename": "planning-poker-svgrepo-com.png",
+      "origin": "User-provided attachment for PlanIt presentation",
+      "sha256": "971a6737b2a6f2142b3bfef03f52f68b20a1bfb324646138b8f0ded443176602",
+      "modifications": "None; CSS sizing and transparent-padding viewport only"
+    },
+    {
+      "file": "moscow.png",
+      "source_filename": "moscow-model-2.png",
+      "origin": "User-provided attachment for PlanIt presentation",
+      "sha256": "f1a7067abed4388b6f3cf488fbcb4e10b94bfd2b083142fc33cd24afd88b0584",
+      "modifications": "None; CSS sizing and transparent-padding viewport only"
+    },
+    {
+      "file": "typescript.png",
+      "source_filename": "typescript.png",
+      "origin": "User-provided attachment for PlanIt presentation",
+      "sha256": "f01a041f7fd30657029d43bcb9566df46d14d1f038e2ba916c3ea31787ee5bc0",
+      "modifications": "None; CSS sizing and transparent-padding viewport only"
+    },
+    {
+      "file": "supabase.png",
+      "source_filename": "supabase.png",
+      "origin": "User-provided attachment for PlanIt presentation",
+      "sha256": "b5cb74030b97697a91bf019d4973aa3a220d6f6b75f02cdab0906bf708c54a7b",
+      "modifications": "None; CSS sizing and transparent-padding viewport only"
+    },
+    {
+      "file": "google-docs.png",
+      "source_filename": "google-docs.png",
+      "origin": "User-provided attachment for PlanIt presentation",
+      "sha256": "0bada67141c0062341fa19490009a8c115bb22f7e6acd50e4a8c1d9f683d3284",
+      "modifications": "None; CSS sizing and transparent-padding viewport only"
+    },
+    {
+      "file": "discord.png",
+      "source_filename": "discord-logo-png-32876.png",
+      "origin": "User-provided attachment for PlanIt presentation",
+      "sha256": "5aa7555ced24d82ed81bd9b57d269be318238422f4073705ac024dbbf113256c",
+      "modifications": "None; CSS sizing and transparent-padding viewport only"
+    },
+    {
+      "file": "whatsapp.png",
+      "source_filename": "whatsapp-logo-png-2260.png",
+      "origin": "User-provided attachment for PlanIt presentation",
+      "sha256": "fbf8e53385b491f96f8b691c1d33dae837db6e2990df2ee251f25f8cede06a32",
+      "modifications": "None; CSS sizing and transparent-padding viewport only"
+    }
+  ]
+}
