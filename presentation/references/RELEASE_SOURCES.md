@@ -27,7 +27,7 @@ Las portadas conservan los nombres y períodos ya verificados del calendario gen
 
 Los cierres son síntesis editoriales, no citas literales. Cada uno conserva tres categorías: incremento desarrollado, dificultad observada y acuerdo de mejora. Los acuerdos se presentan como tales, sin afirmar que ya se ejecutaron o que produjeron resultados medidos.
 
-Se priorizan los aprendizajes documentados: R1 continuidad/documentación, R2 carga del sprint, R3 estimación/integración, R4 revisiones distribuidas, R5 decisiones registradas, R6 interrupciones por ajustes menores y R7 pruebas de integraciones según navegador y permisos. Estos tres cierres se reescribieron con referencias a la revisión actual; la transcripción de historias conserva su revisión histórica. En R6 las métricas son inscripciones, no asistencia física; R7 no certifica entrega Push ni limpieza programada por mostrarse en la presentación.
+Se priorizan los aprendizajes documentados: R1 continuidad/documentación, R2 carga del sprint, R3 estimación/integración, R4 revisiones distribuidas, R5 decisiones registradas, R6 interrupciones por ajustes menores y R7 organización del cierre del producto (formulación aprobada por el usuario). Estos tres cierres se reescribieron con referencias a la revisión actual; la transcripción de historias conserva su revisión histórica. En R6 las métricas son inscripciones, no asistencia física; R7 no certifica entrega Push ni limpieza programada por mostrarse en la presentación.
 
 La estructura adapta las páginas 22–49 del PDF Equipo 6: separador, portadas, historias por sprint y cierre. No se reutilizan historias, fechas, logos, fotos ni paleta del proyecto ADE Toolkit. No se añadieron gráficos burn-up sin datos de base ni contenidos posteriores a R7.
 
@@ -39,8 +39,17 @@ Se volvió a consultar Planificación Oficial, pestaña `t.q5vok7qr5sti`, revisi
 | --- | --- | --- |
 | R5 | Repetir conversaciones sin una decisión registrada en la tarea | Registrar decisión, motivo y próximo paso. §8.5, filas Hacer menos y Dejar de hacer |
 | R6 | Cambiar de tarea por ajustes menores y perder contexto | Agrupar ajustes y reservar momentos para resolverlos. §9.5, fila Hacer menos |
-| R7 | Resultados distintos al probar calendario, compartir y notificaciones según navegador y permisos | Definir escenarios por navegador con permiso aceptado, rechazado y función no disponible. §10.5, segundo párrafo; §10.3 y CA RF-R7-05/06/07 |
+| R7 | Organizar el cierre de las funcionalidades pendientes y llegar con el producto listo a la entrega final | Priorizar lo indispensable, reservar tiempo de prueba del producto completo y dejar mejoras adicionales para otra versión. Formulación propuesta y aprobada expresamente por el usuario en esta conversación |
 
-No fue necesario modificar el Google Doc: las alternativas ya están respaldadas por sus retrospectivas. Sólo cambian las seis frases de la presentación y su trazabilidad. No se presentan los acuerdos como acciones ya ejecutadas ni se agregan problemas históricos no documentados. Los incrementos, historias, fechas y demás diapositivas se conservan.
+No se modifica el Google Doc: R5 y R6 se respaldan en sus retrospectivas y la formulación final de R7 cuenta con aprobación expresa del usuario, registrada al final de este archivo. Los cambios se limitan a las frases de la presentación y su trazabilidad. No se presentan los acuerdos como acciones ya ejecutadas ni se agregan problemas históricos no documentados. Los incrementos, historias, fechas y demás diapositivas se conservan.
 
-Corrección de R7 a pedido del usuario: se descarta el enfoque de aprendizajes dispersos. Se utiliza la dificultad de las integraciones que la retrospectiva §10.5 describe explícitamente (navegadores, permisos y aplicaciones externas). El acuerdo se formula como una propuesta concreta de pruebas, no como actividad ya realizada. R5 y R6 se conservan.
+Versión previa de R7 (sustituida por la redacción final aprobada): se descartó el enfoque de aprendizajes dispersos. Se utiliza la dificultad de las integraciones que la retrospectiva §10.5 describe explícitamente (navegadores, permisos y aplicaciones externas). El acuerdo se formula como una propuesta concreta de pruebas, no como actividad ya realizada. R5 y R6 se conservan.
+
+## Redacción final aprobada para R7
+
+El usuario aprobó expresamente reemplazar la dificultad técnica por una formulación cercana a la gestión del cierre del producto. Se conserva literalmente el texto aprobado:
+
+- Dificultad: «Organizar el cierre de las funcionalidades pendientes y llegar con el producto listo a la entrega final.»
+- Acuerdo: «Priorizar lo indispensable para la entrega, reservar tiempo para probar el producto completo y dejar las mejoras adicionales para una próxima versión.»
+
+La aprobación del usuario es la fuente de esta formulación. No se atribuye como cita literal a Planificación Oficial ni se modifica retroactivamente el Google Doc. Las referencias §10.4–10.5 continúan como contexto del incremento y la retrospectiva. R5, R6 y las conclusiones se conservan.
