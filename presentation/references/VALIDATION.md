@@ -1,6 +1,62 @@
 # Validación de la presentación
 
-## Entrega vigente: 51 diapositivas con cierre completo
+## Entrega vigente: 54 diapositivas, alcance separado y esfuerzo relativo
+
+Redacción final de R7 aprobada por el usuario: se incorpora literalmente la dificultad de organizar el cierre de pendientes y llegar con el producto listo a la entrega, junto con priorizar lo indispensable, reservar tiempo de prueba integral y postergar mejoras adicionales. Notas y trazabilidad identifican la aprobación del usuario como fuente de esta formulación, sin atribuirla como cita literal al Google Doc. `check`, `build`, `check:visual` (108 capturas), exportación con `--wait 700` y revisión PDF pasan. Las otras 53 diapositivas son idénticas píxel a píxel en ambas resoluciones (106 comparaciones), incluidas las conclusiones. Se inspeccionó R7 en navegador y PDF. Se conserva `exports/planit-completa-antes-r7-aprobada.pdf`.
+
+Corrección anterior de R7 y conclusiones: R7 describe resultados distintos al probar calendario, compartir y notificaciones según navegador y permisos; su acuerdo propone escenarios con permiso aceptado, rechazado y función no disponible. Conclusiones se reescribe con cuatro ejes adaptados de SysAssign p.56 y Tatool p.107: producto, formación, gestión/mejora continua y continuidad. `check`, `build`, `check:visual` (108 capturas), exportación con `--wait 700` y revisión PDF pasan. Las otras 52 diapositivas son idénticas píxel a píxel en ambas resoluciones (104 comparaciones); R5 y R6 se conservan. Se inspeccionaron las páginas 50 y 53 en navegador y PDF, sin desbordes ni colisiones con el pie. No se modificó el Google Doc. Se preserva `exports/planit-completa-antes-conclusiones.pdf`.
+
+Reescritura de R5–R7: dificultades y acuerdos pasan a decisiones sin registrar, interrupciones por ajustes menores y aprendizajes dispersos al cierre. Los nuevos textos se respaldan en las retrospectivas actuales §§8.5, 9.5 y 10.5; se actualizaron notas y trazabilidad sin modificar el Google Doc. `check`, `build`, `check:visual` (108 capturas), exportación con `--wait 700` y revisión PDF pasan. Las otras 51 diapositivas permanecen idénticas píxel a píxel en ambas resoluciones (102 comparaciones). Se inspeccionaron las páginas 42, 46 y 50 en navegador y PDF, sin recortes ni colisión con los pies. Se preserva `exports/planit-completa-antes-retrospectivas.pdf`.
+
+Ampliación puntual de Scrum: viewport de 300 × 150 a 420 × 210 px (+40% en cada dimensión), conservando transparencia y proporción. `check`, `build`, `check:visual` (108 capturas), exportación con `--wait 700` y revisión PDF pasan. Las otras 53 diapositivas permanecen idénticas píxel a píxel en ambas resoluciones (106 comparaciones). Se inspeccionó la página 17 ampliada en navegador y PDF, sin recortes ni colisión con el pie. Se preserva `exports/planit-completa-antes-ampliar-scrum.pdf`.
+
+Incorporación posterior de PWA, Mapbox y Scrum: el stack incluye cuatro imágenes y Scrum una; los otros nueve recursos permanecen. PWA y Mapbox se conservan originales. El fondo blanco de Scrum se retiró con ImageGen por solicitud expresa; se preserva el original y se verificaron PNG RGBA, alfa 0–255 y esquinas totalmente transparentes. `npm run check`, `npm run build` (686 módulos), `npm run check:visual` (108 capturas), `npm run export -- --wait 700` y `scripts/check-pdf.py` pasan. El PDF mantiene 54 páginas, 53 historias y 53 números seleccionables. Las otras 52 diapositivas son idénticas píxel a píxel a la entrega anterior en ambas resoluciones (104 comparaciones). Inspección directa de Stack y Scrum en navegador y PDF. Se conserva `exports/planit-completa-antes-scrum.pdf`.
+
+Corrección editorial posterior: se retiraron las tallas visibles y sus etiquetas accesibles de la leyenda de estimación, conservando los seis puntos y sus colores. También se retiró la frase de esfuerzo de los pies de los 14 tableros y su CSS; la procedencia permanece en estimación y notas. Las comprobaciones de navegador y PDF verifican expresamente estas ausencias.
+
+Ampliación visual posterior: se incorporaron los nueve PNG proporcionados por el usuario en Stack (2), Estimación (2) y Herramientas (5), conservados byte a byte y comprobados por SHA-256. Scrum muestra «Sprints de 2 semanas» por confirmación del usuario, sin modificar fechas del roadmap. `npm run check`, `npm run build` (683 módulos), `npm run check:visual` (108 capturas) y `scripts/check-pdf.py` pasan. Las 50 páginas ajenas a este ajuste permanecen idénticas píxel a píxel en ambas resoluciones, 100 comparaciones. Se inspeccionaron las cuatro páginas modificadas a tamaño completo en navegador y PDF. Fuentes: [PROVIDED_IMAGES.md](PROVIDED_IMAGES.md).
+
+La exportación inicial sin espera no conservó texto seleccionable y se descartó. Se regeneró mediante `npm run export -- --wait 700`: PASS, 54 páginas, 53 historias completas y 53 números seleccionables, fechas intactas y diferencia de fondo 0/255. La versión previa se preserva como `exports/planit-completa-antes-logos.pdf`.
+
+29/10/2026. Alcance y Limitaciones ocupan páginas independientes. Las 53 historias incorporan estimaciones propuestas expresamente autorizadas por el usuario, con puntos, tallas y colores centralizados; no son estimaciones históricas ni horas. Referencia: [EFFORT_ESTIMATES.md](EFFORT_ESTIMATES.md).
+
+| Verificación ejecutada | Resultado |
+| --- | --- |
+| npm run check | PASS: 54 identidades y notas, 53 historias literales, 53 asignaciones válidas, seis colores únicos con contraste ≥4,5:1 |
+| npm run build | PASS: compilación independiente Slidev, 674 módulos |
+| npm run check:visual | PASS: 108 capturas, las 54 páginas a 1280×720 y 1920×1080; sin desbordes ni colisiones con el pie |
+| Círculos de historias | PASS: 53 por resolución, valor/talla/color consistentes, diámetro 36 px, número 22 px, accesibles y dentro del encabezado sin cubrir texto |
+| Historias y arquitectura | PASS: enunciados completos, cuerpo ≥24 px, identificadores ≥20 px, composiciones de tres/cuatro/cinco; teclado y movimiento reducido |
+| npm run export | PASS: exports/planit-completa.pdf, 54 páginas; versión de 53 preservada como planit-completa-53.pdf |
+| scripts/check-pdf.py | PASS: 54 páginas 16:9, 53 historias completas y 53 números de esfuerzo seleccionables en sus círculos; colores comprobados sobre el render PDF |
+| Roadmap y fondos | PASS: fechas intactas, cero recursos /Shading y diferencia de fondo PDF/navegador 0/255 |
+| Regresión visual | PASS: las 37 páginas ajenas al cambio son idénticas píxel a píxel a la versión de 53 páginas en ambas resoluciones, 74 comparaciones |
+| Regresión de contenido | PASS: sin cambios de texto oficial; sólo se añaden notas de esfuerzo en tableros y se modifican alcance/estimación según lo autorizado |
+| Inspección directa | 54 páginas de navegador y PDF en planchas; Alcance, Limitaciones, leyenda y tableros a tamaño completo; tablero de cinco historias a 1080p |
+
+El exportador conserva el diagnóstico no bloqueante conocido de Twoslash/FloatingVue y finaliza con exit 0. Capturas y reportes permanecen en `.validation/`, sin versionar. No se agregan dependencias ni se modifica la PWA. No se ejecutaron pruebas físicas de proyector ni pruebas funcionales remotas de la aplicación.
+
+## Entrega histórica: 53 diapositivas con apertura reorganizada
+
+29/10/2026. Se elimina Escenario, se titulan Problema y Solución y se añaden dos oportunidades de mejora por tipo de usuario y Alcance y limitaciones. Fuentes y decisiones: [NARRATIVE_ADJUSTMENTS.md](NARRATIVE_ADJUSTMENTS.md). Las páginas de funcionalidades y beneficios se mantienen idénticas.
+
+| Verificación ejecutada | Resultado |
+| --- | --- |
+| npm run check | PASS: 53 identidades y notas, orden inicial, 53 historias literales únicas y 13 sprints funcionales |
+| npm run build | PASS: build independiente de Slidev, 667 módulos |
+| npm run check:visual | PASS: 106 capturas, 53 páginas a 1280×720 y 1920×1080; sin desbordes ni colisiones con pies |
+| Arquitectura | PASS: dos pasos por teclado y movimiento reducido; localización por identidad |
+| npm run export | PASS: exports/planit-completa.pdf, 53 páginas |
+| scripts/check-pdf.py | PASS: 53 páginas 16:9, 53 historias completas seleccionables, fechas exactas de roadmap y cero recursos /Shading |
+| Color PDF/navegador | PASS: seis muestras por página, diferencia máxima 0/255; fondos RGB opacos |
+| Regresión de contenido | Funcionalidades, Beneficios y todas las páginas desde Requisitos hasta Agradecimientos conservan contenido y notas respecto a main |
+| Regresión visual | Funcionalidades y Beneficios idénticos píxel a píxel a sus capturas originales, tanto a 720p como a 1080p |
+| Inspección visual | 53 páginas de navegador y PDF en planchas; nuevas páginas y títulos modificados del PDF a tamaño completo; muestra nueva a 1080p |
+| Aislamiento | Cambios limitados a presentation; dependencias y lockfile intactos; cambio local preexistente de supabase/.temp/cli-latest excluido del commit |
+
+La exportación emitió el diagnóstico conocido de Twoslash/FloatingVue y finalizó con exit 0; el PDF pasó la revisión. Los resultados y capturas locales están en `.validation/`, sin versionar. No se ejecutó una prueba física de proyector ni se certifica aceptación funcional remota de la PWA. No se aplicaron migraciones ni se ejecutaron pruebas de la PWA, que no cambia en esta tarea.
+
+## Entrega histórica: 51 diapositivas con cierre completo
 
 27/10/2026. Pedido posterior: agregar las páginas que siguen a las releases en el PDF del Equipo 6. Se añadieron 48 Demo, 49 Evolución del producto, 50 Conclusiones y 51 Agradecimiento; la agenda anuncia el cierre. Fuentes: CLOSING_SOURCES.md y notas del presentador.
 

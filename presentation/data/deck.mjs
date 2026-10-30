@@ -6,8 +6,11 @@ export const sources = {
 }
 export const deck = [
   ['cover', 'Portada'], ['team', 'Equipo de proyecto'], ['agenda', 'Agenda'],
-  ['scenario', 'Escenario'], ['problem', 'Situación disparadora'], ['product', 'Solución propuesta'],
-  ['features', 'Funcionalidades principales'], ['benefits', 'Beneficios esperados'],
+  ['problem', 'Situación problemática'], ['product', 'Solución propuesta'],
+  ['features', 'Funcionalidades principales'],
+  ['participant-opportunity', 'Oportunidad de mejora — Participantes'],
+  ['organizer-opportunity', 'Oportunidad de mejora — Organizadores'],
+  ['benefits', 'Beneficios esperados'], ['scope', 'Alcance'], ['limitations', 'Limitaciones'],
   ['requirements', 'Especificación de requisitos'], ['domains', 'Agrupación funcional y módulos'],
   ['users', 'Usuarios del sistema'], ['stack', 'Stack tecnológico'], ['architecture', 'Arquitectura tecnológica'],
   ['method', 'Enfoque de trabajo'], ['estimation', 'Priorización y estimación'],

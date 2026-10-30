@@ -1,6 +1,6 @@
 # PlanIt · Proyecto Final
 
-Presentación independiente de **51 diapositivas Slidev**, 16:9. Incluye contexto, roadmap, siete releases con sus 53 historias completas en post-its PlanIt y cuatro páginas finales: demo, evolución, conclusiones y agradecimiento. Sigue la estructura del PDF Equipo 6 y la documentación oficial de PlanIt. Identidad B Amanecer, Bricolage local y fondos PNG opacos sin franja izquierda. No modifica la PWA, SQL, dependencias ni despliegue.
+Presentación independiente de **54 diapositivas Slidev**, 16:9. Incluye situación problemática, solución, oportunidades por usuario, alcance, roadmap, siete releases con sus 53 historias completas en post-its PlanIt y cuatro páginas finales: demo, evolución, conclusiones y agradecimiento. Sigue la documentación oficial de PlanIt y el esquema editorial de los modelos Equipo 6, SysAssign y Tatool. La reorganización inicial autorizada el 29/10/2026 se documenta en [NARRATIVE_ADJUSTMENTS.md](references/NARRATIVE_ADJUSTMENTS.md). Identidad B Amanecer, Bricolage local y fondos PNG opacos sin franja izquierda. No modifica la PWA, SQL, dependencias ni despliegue.
 
 ## Requisitos e instalación
 
@@ -24,9 +24,10 @@ npm run check
 npm run check:visual  # requiere npm run dev activo
 npm run build
 npm run export
+# Si el exportador captura antes de completar la carga: npm run export -- --wait 700
 ```
 
-Flechas para navegar. En arquitectura, dos avances revelan Realtime y servicios complementarios; todas las historias están visibles sin clics. Exportación vigente: `exports/planit-completa.pdf` (51 páginas). Se conservan planit-con-releases.pdf y su copia planit-con-releases-47.pdf (47 páginas), planit-hasta-roadmap.pdf (18) y planit-prototipo.pdf (tres). Build: `dist/`. QA: `.validation/`. Son salidas locales ignoradas por Git.
+Flechas para navegar. En arquitectura, dos avances revelan Realtime y servicios complementarios; todas las historias están visibles sin clics. Exportación vigente: `exports/planit-completa.pdf` (54 páginas). Se conservan planit-con-releases.pdf y su copia planit-con-releases-47.pdf (47 páginas), planit-hasta-roadmap.pdf (18) y planit-prototipo.pdf (tres). Build: `dist/`. QA: `.validation/`. Son salidas locales ignoradas por Git. La exportación de 53 páginas anterior se conserva como `planit-completa-53.pdf`.
 
 No configurar variables de Supabase en este proyecto. La presentación funciona con recursos locales.
 
@@ -58,11 +59,11 @@ Los recursos renderizados viven en `public/assets/`, según la convención de Sl
 
 `TeamRoster`, `FunctionalGroups` y `ReleaseRoadmap` consumen los datos oficiales compartidos. `SlideFooter` conserva el pie común. Las cifras distinguen 13 sprints funcionales de R1–R7 y un sprint técnico adicional de R0.
 
-La revisión PDF se ejecuta con `python scripts/check-pdf.py` después de `check:visual` y `export`. Requiere pypdf, pypdfium2 y Pillow, disponibles en el runtime de Codex. Renderiza las 51 páginas y comprueba las 53 historias como texto completo seleccionable, fechas, 16:9 y color frente al navegador. No se agregan estos paquetes a la PWA ni al proyecto Node.
+La revisión PDF se ejecuta con `python scripts/check-pdf.py` después de `check:visual` y `export`. Requiere pypdf, pypdfium2 y Pillow, disponibles en el runtime de Codex. Renderiza las 54 páginas y comprueba las 53 historias como texto completo seleccionable, fechas, 16:9 y color frente al navegador. No se agregan estos paquetes a la PWA ni al proyecto Node.
 
 ## Agregar una diapositiva
 
-Para una ampliación posterior autorizada, separar con `---`, asignar `layout: planit`, `name` estable, título y contenido Markdown. Añadir notas con fuente y sección. Registrar identidad, orden y pasos en el manifiesto. Las 29 páginas de releases se describen en `release-content.mjs`; `StoryBoard` reutiliza composiciones de tres, cuatro o cinco historias. La entrega de 51 páginas finaliza en agradecimientos. Las fuentes del cierre están en `references/CLOSING_SOURCES.md`. Demo es un separador para exposición en vivo; las posibilidades de evolución se identifican como futuras y no comprometidas.
+Para una ampliación posterior autorizada, separar con `---`, asignar `layout: planit`, `name` estable, título y contenido Markdown. Añadir notas con fuente y sección. Registrar identidad, orden y pasos en el manifiesto. Las 29 páginas de releases se describen en `release-content.mjs`; `StoryBoard` reutiliza composiciones de tres, cuatro o cinco historias. La entrega de 54 páginas finaliza en agradecimientos. Las fuentes del cierre están en `references/CLOSING_SOURCES.md`. Demo es un separador para exposición en vivo; las posibilidades de evolución se identifican como futuras y no comprometidas.
 
 La transcripción oficial y su revisión consultada se conservan en `references/release-stories.source.json`. La comprobación permite normalizar espacios y saltos de línea, pero no abreviar los enunciados. R1 ocupa dos páginas del mismo sprint; el total sigue siendo 13 sprints funcionales. No derivar fechas de sprint dividiendo las fechas de una release.
 
@@ -96,3 +97,11 @@ Versiones fijadas y overrides transitivos de DOMPurify/image-size aplicados a co
 El exportador de Slidev 53 emite un diagnóstico capturado de Twoslash/FloatingVue al inicializar su plugin de código, aunque el PDF se genera. No se parchearon dependencias. El contenido de este prototipo no utiliza Twoslash. La prueba headless desactiva Wake Lock mediante la preferencia de usuario de Slidev, porque no existe una pantalla física que mantener activa.
 
 Fuentes, contenido implementado y límites de releases: [references/SOURCES.md](references/SOURCES.md). Continuación: [PLAN.md](PLAN.md). Validaciones y revisión: [references/VALIDATION.md](references/VALIDATION.md).
+
+## Esfuerzo relativo propuesto
+
+Las 53 historias muestran un círculo de 36 px con un número de 22 px. `data/story-effort.mjs` centraliza puntos, tallas y colores; los enunciados oficiales no cambian. La leyenda de estimación muestra sólo los puntos y colores; se retiraron las tallas por pedido del usuario. Los tableros no llevan aclaraciones de esfuerzo en sus pies. Los valores se asignaron por autorización del usuario para esta presentación, no son estimaciones históricas ni horas. Ver [EFFORT_ESTIMATES.md](references/EFFORT_ESTIMATES.md). Alcance y Limitaciones ocupan ahora dos páginas independientes, siguiendo la referencia editorial Tatool.
+
+## Imágenes aportadas por el usuario
+
+Los doce recursos publicados en `public/assets/tools/` se distribuyen entre Stack tecnológico (TypeScript, PWA, Supabase y Mapbox), Priorización y estimación (MoSCoW y Planning Poker) y Herramientas de colaboración (Jira, GitHub, Google Docs, WhatsApp y Discord). `provenance.json` registra origen y SHA-256; `npm run check` comprueba integridad y uso. Once archivos se conservan originales; Scrum se publica con fondo transparente retirado con ImageGen y su original se guarda por separado. Scrum indica sprints de 2 semanas según confirmación del usuario e incorpora el diagrama transparente. Véase [PROVIDED_IMAGES.md](references/PROVIDED_IMAGES.md).

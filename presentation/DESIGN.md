@@ -103,9 +103,9 @@ components:
 
 **Creative North Star: "La agenda con luz difusa"**
 
-Sistema reutilizable para las 51 diapositivas académicas de PlanIt, hasta el agradecimiento. Conserva el contenido de las 47 páginas previas, actualiza la agenda y añade demo, evolución, conclusiones y agradecimiento. Extiende B · Amanecer de [DESIGN.md](../DESIGN.md): nombre, logo, familia local, fondo claro, tinta marina y luz violeta-azul. No reemplaza el sistema de la aplicación.
+Sistema reutilizable para las 54 diapositivas académicas de PlanIt, hasta el agradecimiento. La apertura reorganizada incorpora dos páginas de oportunidades, una por usuario, y alcance; se conservan las releases y el cierre de demo, evolución, conclusiones y agradecimiento. Extiende B · Amanecer de [DESIGN.md](../DESIGN.md): nombre, logo, familia local, fondo claro, tinta marina y luz violeta-azul. No reemplaza el sistema de la aplicación.
 
-La escala cambia para proyección: títulos grandes, texto breve y espacio para la explicación oral. Las capturas prueban recorridos; el diagrama explica relaciones. El propósito del producto sigue definido en [PRODUCT.md](../PRODUCT.md), sin métricas ni ventajas comerciales inventadas. La composición de las 51 diapositivas vive en [DIRECTION.md](references/DIRECTION.md).
+La escala cambia para proyección: títulos grandes, texto breve y espacio para la explicación oral. Las capturas prueban recorridos; el diagrama explica relaciones. El propósito del producto sigue definido en [PRODUCT.md](../PRODUCT.md), sin métricas ni ventajas comerciales inventadas. La composición de las 54 diapositivas vive en [DIRECTION.md](references/DIRECTION.md).
 
 **Key Characteristics:**
 
@@ -136,7 +136,7 @@ Los valores normativos para esta superficie están en el frontmatter, extraídos
 - **Borde de control:** contorno del backend y divisor interno de Realtime.
 - **Divisor translúcido:** separación académica y servicios de apoyo.
 
-**The Light-Not-Fill Rule.** Las 51 diapositivas llevan fondos con luz azul-lavanda suave. Sin franja lateral. Los degradados se rasterizan en PNG opacos sRGB para estabilizar su aspecto en PDF; no se aplican a texto, nodos ni conectores. Los post-its usan superficies planas blancas, lavanda y azul claro.
+**The Light-Not-Fill Rule.** Las 54 diapositivas llevan fondos con luz azul-lavanda suave. Sin franja lateral. Los degradados se rasterizan en PNG opacos sRGB para estabilizar su aspecto en PDF; no se aplican a texto, nodos ni conectores. Los post-its usan superficies planas blancas, lavanda y azul claro.
 
 ## Typography
 
@@ -148,7 +148,7 @@ Variantes observadas del diagrama: título de cliente (44 px), backend (36 px), 
 
 Las composiciones de `styles/extended.css` amplían la escala según la densidad: bajada de 25 px; equipo de 28 px/650 para nombres y 24 px para responsabilidades; áreas funcionales de 26 px y detalle de 20 px; cuerpo editorial de 23–28 px. Los conteos de planificación son de 100 px y los de requisitos de 104 px, con tracking −0,04 em. En el roadmap, año de 34 px, identificador de 25 px, nombre de 23 px/650/1,15 y fechas de 20 px con cifras tabulares. Son roles de exposición y datos documentales, no una nueva escala móvil.
 
-En `styles/closing.css`, demo y agradecimiento recuperan la marca a 118 px/1 con tracking −0,04 em y logo de 104 px. La frase de demo usa 43 px y el propósito final 35 px. Evolución emplea introducción de 25 px, títulos de 29 px y cuerpo de 24 px. Conclusiones usa encabezados de 37 px/1,14 y cuerpo de 24 px/1,3, con énfasis violeta de peso 650. Recorrido e invitación a preguntas usan 29 px/600. Son variantes locales de cierre sobre la misma familia y paleta; no agregan tokens de identidad.
+En `styles/closing.css`, demo y agradecimiento recuperan la marca a 118 px/1 con tracking −0,04 em y logo de 104 px. La frase de demo usa 43 px y el propósito final 35 px. Evolución emplea introducción de 25 px, títulos de 29 px y cuerpo de 24 px. Conclusiones usa encabezados de 30 px/1,14 y cuerpo de 25 px/1,35, con títulos violetas. Recorrido e invitación a preguntas usan 29 px/600. Son variantes locales de cierre sobre la misma familia y paleta; no agregan tokens de identidad.
 
 **The Projection Rule.** Para agregar contenido, dividir o resumir antes de reducir títulos, rótulos y cuerpo. Los 17 px corresponden a créditos o notas, no al argumento principal.
 
@@ -199,9 +199,9 @@ Su geometría reserva una columna de 100 px al año y 24 px de separación hasta
 
 ### Cierre académico
 
-Las páginas 48–51 usan `styles/closing.css`, limitado a las clases del cierre y la nota de agenda. Demo y agradecimiento combinan el logo existente con marca grande y texto abierto. El recorrido de demo separa tres acciones mediante flechas SVG decorativas; la página es un separador para exposición en vivo.
+Las páginas 51–54 usan `styles/closing.css`, limitado a las clases del cierre y la nota de agenda. Demo y agradecimiento combinan el logo existente con marca grande y texto abierto. El recorrido de demo separa tres acciones mediante flechas SVG decorativas; la página es un separador para exposición en vivo.
 
-Evolución organiza seis posibilidades en una grilla de dos columnas, con separación horizontal de 72 px y vertical de 25 px, divisores finos y 16 px de espacio antes de cada título. La introducción y el pie conservan su condición de propuestas futuras fuera de R1–R7. Conclusiones separa dos perspectivas con gap de 82 px y tres ideas por columna; las listas sin viñetas usan divisores, 20 px entre filas y 16 px de espacio superior. Se reserva la banda del pie. No hay nuevos papeles, paneles, imágenes ni animaciones.
+Evolución organiza seis posibilidades en una grilla de dos columnas, con separación horizontal de 72 px y vertical de 25 px, divisores finos y 16 px de espacio antes de cada título. La introducción y el pie conservan su condición de propuestas futuras fuera de R1–R7. Conclusiones presenta cuatro ejes en dos columnas con gap horizontal de 72 px y vertical de 36 px; cada bloque tiene un divisor fino y 20 px de espacio superior. Se reserva la banda del pie. No hay nuevos papeles, paneles, imágenes ni animaciones.
 
 ### Marco de diapositiva
 
@@ -232,3 +232,25 @@ El diagrama tiene dos pasos de `v-click`: primero Realtime/WebSocket y luego ser
 - **Don't** añadir otra familia, fondos oscuros o gradientes en texto y contenedores.
 - **Don't** sustituir flechas SVG por glifos Unicode dependientes de la fuente.
 - **Don't** presentar fixtures, capturas locales o existencia de código como aceptación remota o despliegue verificado.
+
+## Ajuste inicial del 29/10/2026 (histórico: 53 páginas)
+
+La apertura inicial de 53 páginas conserva Funcionalidades y Beneficios, elimina Escenario y añade dos oportunidades y alcance. Oportunidades: composición editorial de 330 px para el usuario y una columna de tres necesidades, con subtítulo de 38 px y textos de 26 px. Alcance: cuatro bloques abiertos en dos columnas, títulos de 30 px y cuerpo de 26 px. Las clases específicas de `styles/extended.css` mantienen la escala y los fondos existentes sin modificar las páginas conservadas.
+
+## Alcance, limitaciones y esfuerzo relativo
+
+Entrega de 54 páginas: Alcance y Limitaciones se separan, con dos bloques por página, títulos de bloque de 34 px y cuerpo de 28 px. Cada historia incorpora encabezado flexible con ID de 20 px y círculo de 36 px con cifra de 22 px, sin reducir el texto de 24 px. La leyenda usa el mismo componente que los post-its. `data/story-effort.mjs` reutiliza lavanda claro, selección lavanda, azul grisáceo, azul principal, violeta y marino; texto marino en los dos fondos claros y blanco en los cuatro oscuros. Colores con contraste ≥4,5:1. La talla es una equivalencia propuesta y los valores no son históricos ni horas.
+
+Corrección posterior: la leyenda de estimación muestra sólo números y colores, sin tallas. Los tableros conservan sus círculos y no repiten la aclaración de esfuerzo en el pie; la procedencia permanece en la página de estimación y en las notas.
+
+## Recursos originales y cadencia Scrum
+
+Stack incorpora logos de 48 px junto al texto de Interfaz y Datos y servicios. Estimación utiliza encabezados de 72 px, la imagen MoSCoW a 420 px de ancho y Planning Poker a 72 px; mantiene números y colores sin tallas. Colaboración usa filas con un área de imagen de 150 × 56 px, nombres y descripciones; los logos se muestran a 56 px, con Jira ajustado mediante viewport CSS para excluir sólo sus márgenes transparentes. Las proporciones y colores originales se conservan. La cadencia de 2 semanas se muestra a 28 px en violeta bajo la introducción de Scrum. Los estilos se limitan a estas cuatro páginas.
+
+## Incorporación de PWA, Mapbox y Scrum
+
+Las cuatro filas del stack tienen ahora un recurso de 48 px junto al texto. Scrum incorpora un diagrama con alfa real, sin placa blanca, en un viewport de 420 × 210 px a la derecha del recorrido Product Backlog → Sprint Backlog → Incremento. El grupo usa dos columnas con separación de 24 px y textos de 25 px; el diagrama es complementario a los textos editables. Los recursos anteriores no cambian.
+
+## Conclusiones adaptadas a los modelos
+
+La página 53 reemplaza las dos perspectivas anteriores por cuatro ejes de contenido: producto integrado, formación profesional, gestión y mejora continua, y continuidad del proyecto. Composición abierta de dos columnas, separación de 72 px y 36 px entre filas, títulos de 30 px y cuerpo de 25 px. Se conserva Amanecer y se evita copiar impactos o promesas de los modelos.

@@ -32,6 +32,21 @@
 .planit-slide .benefit-list { margin-top: 54px; display: grid; gap: 34px; }
 .planit-slide .benefit-list h2 { font-size: 38px; margin-bottom: 8px; color: var(--pi-violet); }
 .planit-slide .benefit-list p { font-size: 26px; }
+/* Opening narrative additions; selectors leave the retained pages unchanged. */
+.planit-slide .opportunity-layout { display: grid; grid-template-columns: 330px 1fr; gap: 72px; margin-top: 64px; }
+.planit-slide .opportunity-user h2 { font-size: 38px; color: var(--pi-violet); }
+.planit-slide .opportunity-user p { font-size: 28px; margin-top: 22px; }
+.planit-slide .opportunity-needs { display: grid; gap: 28px; }
+.planit-slide .opportunity-needs > div { padding-bottom: 24px; border-bottom: 1px solid #060b2720; }
+.planit-slide .opportunity-needs h3 { font-size: 29px; }
+.planit-slide .opportunity-needs p { font-size: 26px; margin-top: 10px; color: var(--pi-muted); }
+.planit-slide .scope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px 72px; margin-top: 64px; }
+.planit-slide .scope-grid > div { padding-top: 22px; border-top: 1px solid #060b2720; }
+.planit-slide .scope-grid h2 { font-size: 30px; max-width: 450px; color: var(--pi-violet); }
+.planit-slide .scope-grid p { font-size: 26px; margin-top: 16px; }
+.planit-slide .scope-separated { margin-top: 90px; }
+.planit-slide .scope-separated h2 { font-size: 34px; }
+.planit-slide .scope-separated p { font-size: 28px; margin-top: 24px; }
 .planit-slide .requirements-counts { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 46px; }
 .planit-slide .requirements-counts strong { font-size: 104px; letter-spacing: -.04em; line-height: 1; color: var(--pi-violet); }
 .planit-slide .requirements-counts p { font-size: 27px; margin-top: 12px; }
@@ -71,6 +86,25 @@
 .planit-slide .tools-list > div { display: grid; grid-template-columns: 250px 1fr; gap: 42px; border-bottom: 1px solid #060b2720; padding-bottom: 20px; }
 .planit-slide .tools-list h2 { font-size: 30px; color: var(--pi-violet); }
 .planit-slide .tools-list p { font-size: 26px; }
+/* User-provided originals retain their colors and aspect ratios. */
+.planit-slide .stack-detail { display: flex; align-items: center; gap: 18px; }
+.planit-slide .stack-brand-image { width: 48px; height: 48px; object-fit: contain; flex: 0 0 48px; }
+.planit-slide .scrum-cadence { margin-top: 18px; font-size: 28px; font-weight: 650; color: var(--pi-violet); }
+.planit-slide:has(.scrum-cadence) .scrum-process { margin-top: 28px; }
+.planit-slide .estimation-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 72px; margin-bottom: 23px; }
+.planit-slide .estimation-heading h2 { margin: 0; }
+.planit-slide .poker-image { width: 72px; height: 72px; object-fit: contain; }
+.planit-slide .moscow-image { display: block; width: 420px; height: auto; margin-top: 24px; }
+.planit-slide .tools-with-images { gap: 18px; }
+.planit-slide .tools-with-images > div { grid-template-columns: 150px 200px 1fr; gap: 32px; align-items: center; padding-bottom: 16px; }
+.planit-slide .tool-logo-frame { position: relative; width: 150px; height: 56px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.planit-slide .tool-logo-frame img { width: 56px; height: 56px; object-fit: contain; }
+.planit-slide .jira-logo img { position: absolute; width: 163px; height: 163px; max-width: none; left: -6px; top: -57px; }
+.planit-slide .method-flow { display: grid; grid-template-columns: 1fr 420px; gap: 24px; align-items: center; margin-top: 28px; }
+.planit-slide .method-flow .artifacts-line { margin-top: 0; gap: 18px; font-size: 25px; }
+.planit-slide .method-flow .artifacts-line svg { width: 50px; }
+.planit-slide .scrum-image-frame { position: relative; width: 420px; height: 210px; overflow: hidden; }
+.planit-slide .scrum-image-frame img { position: absolute; width: 434px; height: auto; max-width: none; left: -10px; top: -95px; }
 .planit-slide .planning-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 58px; margin-top: 65px; }
 .planit-slide .planning-summary strong { font-size: 100px; line-height: 1; letter-spacing: -.04em; color: var(--pi-violet); }
 .planit-slide .planning-summary h2 { font-size: 29px; margin-top: 20px; }

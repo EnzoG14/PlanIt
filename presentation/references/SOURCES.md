@@ -2,7 +2,7 @@
 
 Corte inicial: 26/10/2026; ampliación a 47 diapositivas: 27/10/2026. Rama: `codex/presentation-prototype`, creada desde `codex/release-7-documentation`. La presencia de código no acredita despliegue ni aceptación humana.
 
-La entrega vigente contiene 51 diapositivas. Desarrolla R1–R7 después del roadmap y termina con demo, evolución, conclusiones y agradecimiento. Las 53 historias literales, su asignación a 13 sprints, portadas y cierres proceden de Planificación Oficial: ver [RELEASE_SOURCES.md](RELEASE_SOURCES.md). La trazabilidad del cierre está en [CLOSING_SOURCES.md](CLOSING_SOURCES.md). Las entregas históricas de 18 y 47 páginas se conservan.
+La entrega vigente contiene 54 diapositivas. Alcance y Limitaciones están separados y las historias incluyen esfuerzo relativo propuesto: ver [EFFORT_ESTIMATES.md](EFFORT_ESTIMATES.md). La reorganización de apertura del 29/10/2026 se documenta en [NARRATIVE_ADJUSTMENTS.md](NARRATIVE_ADJUSTMENTS.md). Desarrolla R1–R7 después del roadmap y termina con demo, evolución, conclusiones y agradecimiento. Las 53 historias literales, su asignación a 13 sprints, portadas y cierres proceden de Planificación Oficial: ver [RELEASE_SOURCES.md](RELEASE_SOURCES.md). La trazabilidad del cierre está en [CLOSING_SOURCES.md](CLOSING_SOURCES.md). Las entregas históricas de 18 y 47 páginas se conservan.
 
 ## Documento oficial
 
@@ -42,7 +42,7 @@ No afirmar «R1–R7 totalmente terminadas»: los estados de `docs/implementatio
 - `public/assets/fonts/`: copia de la fuente ya aprobada en src/assets/fonts, junto a su licencia OFL. Sin peticiones a Google Fonts.
 - `public/assets/screenshots/*.png`: app React real desde build local, viewport 390 × 780, con fixtures sintéticos interceptados. Todas las peticiones HTTP externas se interceptaron y los Service Workers se bloquearon. Ningún formulario se envió a producción.
 - `scripts/capture-app.mjs` reproduce la captura; `capture-provenance.json` registra rutas y métodos interceptados. La fecha 2099 sólo mantiene vigente el evento de prueba.
-- La diapositiva de solución (identidad product, posición 6 en la secuencia vigente) aclara visiblemente «Capturas de la app local con datos de prueba». Las imágenes no acreditan funcionalidades en producción ni aceptación de usuario.
+- La diapositiva de solución (identidad product, posición 5 en la secuencia vigente) aclara visiblemente «Capturas de la app local con datos de prueba». Las imágenes no acreditan funcionalidades en producción ni aceptación de usuario.
 
 ## Referencias de composición consultadas
 

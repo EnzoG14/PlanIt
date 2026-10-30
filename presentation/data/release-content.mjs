@@ -141,12 +141,12 @@ export const releaseContent = [
   {
     "release": 5,
     "objective": "Incorporar perfiles sociales, seguimiento de usuarios, mensajería privada y controles de privacidad y bloqueo.",
-    "sourceSection": "9",
-    "reviewSection": "9.4",
-    "retrospectiveSection": "9.5",
+    "sourceSection": "8",
+    "reviewSection": "8.4",
+    "retrospectiveSection": "8.5",
     "increment": "Perfiles, seguimientos y mensajes privados mantienen separados los permisos de cada función.",
-    "difficulty": "Los acuerdos informales y los reportes incompletos dificultaban reproducir problemas.",
-    "agreement": "Registrar las decisiones y reportar pantalla, rol, pasos y resultados esperados y observados.",
+    "difficulty": "Volvíamos a discutir cambios ya conversados porque la decisión no quedaba escrita en la tarea.",
+    "agreement": "Registrar en cada tarea la decisión, su motivo y el próximo paso antes de seguir trabajando.",
     "pages": [
       {
         "part": 1,
@@ -175,12 +175,12 @@ export const releaseContent = [
   {
     "release": 6,
     "objective": "Ofrecer métricas de ocupación y participación, reportes, avisos de cupo completo y comparación de eventos propios.",
-    "sourceSection": "10",
-    "reviewSection": "10.4",
-    "retrospectiveSection": "10.5",
+    "sourceSection": "9",
+    "reviewSection": "9.4",
+    "retrospectiveSection": "9.5",
     "increment": "Ocupación, evolución de inscripciones, reportes y comparación amplían la gestión del organizador.",
-    "difficulty": "Una pantalla correcta en apariencia todavía requería comprobar el significado de sus valores.",
-    "agreement": "Contrastar ejemplos con resultados esperados en paneles, filtros y archivos exportados.",
+    "difficulty": "Cambiábamos de tarea por cada ajuste menor y perdíamos tiempo al retomar el trabajo anterior.",
+    "agreement": "Agrupar los ajustes menores y reservar momentos específicos para resolverlos sin interrumpir otras tareas.",
     "pages": [
       {
         "part": 1,
@@ -207,12 +207,12 @@ export const releaseContent = [
   {
     "release": 7,
     "objective": "Ampliar la interacción con imágenes e historias, calendario, opciones para compartir y notificaciones Web Push.",
-    "sourceSection": "11",
-    "reviewSection": "11.4",
-    "retrospectiveSection": "11.5",
+    "sourceSection": "10",
+    "reviewSection": "10.4",
+    "retrospectiveSection": "10.5",
     "increment": "Imágenes, historias, calendario, compartir y Web Push amplían la interacción y las integraciones.",
-    "difficulty": "Los permisos, navegadores y dispositivos podían cambiar el recorrido de una misma función.",
-    "agreement": "Identificar antes las condiciones del entorno y explicar también cómo continuar, cancelar o volver.",
+    "difficulty": "Organizar el cierre de las funcionalidades pendientes y llegar con el producto listo a la entrega final.",
+    "agreement": "Priorizar lo indispensable para la entrega, reservar tiempo para probar el producto completo y dejar las mejoras adicionales para una próxima versión.",
     "pages": [
       {
         "part": 1,
