@@ -246,3 +246,7 @@ Corrección posterior: la leyenda de estimación muestra sólo números y colore
 ## Recursos originales y cadencia Scrum
 
 Stack incorpora logos de 48 px junto al texto de Interfaz y Datos y servicios. Estimación utiliza encabezados de 72 px, la imagen MoSCoW a 420 px de ancho y Planning Poker a 72 px; mantiene números y colores sin tallas. Colaboración usa filas con un área de imagen de 150 × 56 px, nombres y descripciones; los logos se muestran a 56 px, con Jira ajustado mediante viewport CSS para excluir sólo sus márgenes transparentes. Las proporciones y colores originales se conservan. La cadencia de 2 semanas se muestra a 28 px en violeta bajo la introducción de Scrum. Los estilos se limitan a estas cuatro páginas.
+
+## Incorporación de PWA, Mapbox y Scrum
+
+Las cuatro filas del stack tienen ahora un recurso de 48 px junto al texto. Scrum incorpora un diagrama con alfa real, sin placa blanca, en un viewport de 300 × 150 px a la derecha del recorrido Product Backlog → Sprint Backlog → Incremento. El grupo usa dos columnas con separación de 32 px y textos de 25 px; el diagrama es complementario a los textos editables. Los recursos anteriores no cambian.

@@ -63,6 +63,31 @@
       "origin": "User-provided attachment for PlanIt presentation",
       "sha256": "fbf8e53385b491f96f8b691c1d33dae837db6e2990df2ee251f25f8cede06a32",
       "modifications": "None; CSS sizing and transparent-padding viewport only"
+    },
+    {
+      "file": "pwa.png",
+      "source_filename": "pwa.png",
+      "origin": "User-provided attachment for PlanIt presentation",
+      "sha256": "15427a2207c08254b963857964ad807f81b58029624ae2f3c9cab9d077c58f7d",
+      "modifications": "None; CSS sizing only"
+    },
+    {
+      "file": "mapbox.png",
+      "source_filename": "mapbox_logo_icon_169974.png",
+      "origin": "User-provided attachment for PlanIt presentation",
+      "sha256": "293aa5f74bdd17c931522328e89c75a78be51863d6eb880f6a03da08da86daf5",
+      "modifications": "None; CSS sizing only"
+    },
+    {
+      "file": "scrum-transparent.png",
+      "source_filename": "scrum.png",
+      "source_file": "assets/originals/scrum.png",
+      "source_sha256": "97a85d317e0fef7ce3ae222ac77ed75361eb50b104b88366e1edbb49eacdc4ab",
+      "origin": "User-provided Scrum diagram, background removal with built-in ImageGen as requested",
+      "sha256": "1d45e53c2f2c6484d32d630cb25fc99cdde05f556ac673f8f7c6e9221122f833",
+      "modifications": "ImageGen transparent-background cutout; source preserved separately",
+      "alpha_min": 0,
+      "alpha_max": 255
     }
   ]
 }

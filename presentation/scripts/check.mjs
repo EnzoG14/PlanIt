@@ -59,10 +59,15 @@ for (const file of ['logos/planit.svg', 'fonts/bricolage-grotesque-latin-wght-no
 assert.doesNotMatch(slides, /https?:\/\/[^\s"']+\.(png|jpe?g|woff2)/, 'No remote visual dependencies')
 assert.match(slides, /Sprints de 2 semanas/, 'Sprint cadence confirmed by user')
 const providedAssets = JSON.parse(await readFile(new URL('../public/assets/tools/provenance.json', import.meta.url), 'utf8'))
-assert.equal(providedAssets.files.length, 9, 'Nine user-provided images')
+assert.equal(providedAssets.files.length, 12, 'Twelve user-provided image assets')
 for (const asset of providedAssets.files) {
   const bytes = await readFile(new URL(`../public/assets/tools/${asset.file}`, import.meta.url))
-  assert.equal(createHash('sha256').update(bytes).digest('hex'), asset.sha256, 'User image preserved byte-for-byte')
+  assert.equal(createHash('sha256').update(bytes).digest('hex'), asset.sha256, 'Published image matches recorded hash')
+  if (asset.source_file) {
+    const original = await readFile(new URL(`../${asset.source_file}`, import.meta.url))
+    assert.equal(createHash('sha256').update(original).digest('hex'), asset.source_sha256, 'Original retained for edited asset')
+    assert.equal(bytes[25], 6, 'Scrum cutout has PNG RGBA alpha channel')
+  }
   assert.ok(slides.includes(`/assets/tools/${asset.file}`), `Provided image used: ${asset.file}`)
 }
 console.log(`PASS: ${deck.length} slides, 53 verbatim unique stories, 13 functional sprints, approved narrative, official notes and local assets`)

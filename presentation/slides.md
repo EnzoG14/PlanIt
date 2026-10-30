@@ -318,14 +318,14 @@ title: Stack tecnológico
 
 <div class="stack-list content-section">
 <div><h2>Interfaz</h2><div class="stack-detail"><img class="stack-brand-image" src="/assets/tools/typescript.png" alt="TypeScript" /><p>React 19 y TypeScript</p></div></div>
-<div><h2>Navegación y PWA</h2><p>React Router, Vite 8, Manifest y Service Worker</p></div>
+<div><h2>Navegación y PWA</h2><div class="stack-detail"><img class="stack-brand-image" src="/assets/tools/pwa.png" alt="PWA" /><p>React Router, Vite 8, Manifest y Service Worker</p></div></div>
 <div><h2>Datos y servicios</h2><div class="stack-detail"><img class="stack-brand-image" src="/assets/tools/supabase.png" alt="Supabase" /><p>Supabase: Auth, PostgreSQL, RLS, Storage y Realtime</p></div></div>
-<div><h2>Mapas y ubicación</h2><p>Mapbox y capacidades de geolocalización del navegador</p></div>
+<div><h2>Mapas y ubicación</h2><div class="stack-detail"><img class="stack-brand-image" src="/assets/tools/mapbox.png" alt="Mapbox" /><p>Mapbox y capacidades de geolocalización del navegador</p></div></div>
 </div>
 <SlideFooter label="Tecnologías verificadas en la documentación y el repositorio" />
 
 <!--
-Planificación Oficial §2.6, ERS Oficial §2.1, package.json y vite.config.ts. Las versiones mayores React 19 y Vite 8 proceden del código local. No agregar proveedor de hosting, Expo ni React Native. La PWA no garantiza acceso offline a los datos privados. Logos TypeScript y Supabase proporcionados por el usuario, sin modificación del archivo original; procedencia en public/assets/tools/provenance.json.
+Planificación Oficial §2.6, ERS Oficial §2.1, package.json y vite.config.ts. Las versiones mayores React 19 y Vite 8 proceden del código local. No agregar proveedor de hosting, Expo ni React Native. La PWA no garantiza acceso offline a los datos privados. Logos TypeScript, PWA, Supabase y Mapbox proporcionados por el usuario, sin modificación de los archivos originales; procedencia en public/assets/tools/provenance.json.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
@@ -364,11 +364,11 @@ title: Enfoque de trabajo
 <div class="scrum-process content-section">
 <div><h2>Planificación</h2><p>Seleccionar historias y acordar el objetivo.</p></div><div><h2>Seguimiento</h2><p>Reunión semanal para avances e impedimentos.</p></div><div><h2>Review</h2><p>Revisar el incremento y recibir devoluciones.</p></div><div><h2>Retrospectiva</h2><p>Acordar mejoras para la siguiente iteración.</p></div>
 </div>
-<div class="artifacts-line"><span>Product Backlog</span><FlowConnector :both="false" /><span>Sprint Backlog</span><FlowConnector :both="false" /><strong>Incremento</strong></div>
+<div class="method-flow"><div class="artifacts-line"><span>Product Backlog</span><FlowConnector :both="false" /><span>Sprint Backlog</span><FlowConnector :both="false" /><strong>Incremento</strong></div><div class="scrum-image-frame"><img src="/assets/tools/scrum-transparent.png" alt="Diagrama del ciclo Scrum: backlog, iteraciones e incremento" /></div></div>
 <SlideFooter label="Definition of Done: funcionalidad, errores, seguridad y verificaciones" />
 
 <!--
-Planificación Oficial §§2.1–2.4. Scrum está adaptado a disponibilidad y contexto académico. El seguimiento es semanal: no afirmar Daily Scrum diario. La duración de los sprints de 2 semanas fue indicada expresamente por el usuario para esta presentación el 29/10/2026 y sustituye la cautela editorial anterior. Se conservan los períodos de referencia y fechas de releases sin recalcularlos a partir de esta cadencia.
+Planificación Oficial §§2.1–2.4. Scrum está adaptado a disponibilidad y contexto académico. El seguimiento es semanal: no afirmar Daily Scrum diario. La duración de los sprints de 2 semanas fue indicada expresamente por el usuario para esta presentación el 29/10/2026 y sustituye la cautela editorial anterior. Se conservan los períodos de referencia y fechas de releases sin recalcularlos a partir de esta cadencia. Diagrama Scrum proporcionado por el usuario; fondo blanco retirado con ImageGen por pedido expreso. Original conservado en assets/originals/scrum.png y derivado transparente en public/assets/tools/scrum-transparent.png; procedencia en provenance.json.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 

@@ -41,4 +41,4 @@ Ajuste autorizado el 29/10/2026: el modelo SysAssign, páginas 5–12, aporta el
 
 Ajuste posterior del 29/10/2026: 54 páginas. Tatool páginas 10–11 y 23 aporta separación conceptual y referencia de tallas. Los 53 valores de esfuerzo son propuestas autorizadas para la presentación, no datos de Planificación Oficial. Véase EFFORT_ESTIMATES.md y las notas de los 14 tableros.
 
-Los nueve recursos de marca y métodos fueron proporcionados por el usuario para Stack, Estimación y Herramientas. No se atribuyen a la documentación oficial: ver PROVIDED_IMAGES.md y public/assets/tools/provenance.json.
+Los doce recursos de marca y métodos proceden de imágenes proporcionadas por el usuario para Stack, Scrum, Estimación y Herramientas; Scrum incluye el retiro de fondo solicitado. No se atribuyen a la documentación oficial: ver PROVIDED_IMAGES.md y public/assets/tools/provenance.json.

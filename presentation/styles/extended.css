@@ -100,6 +100,11 @@
 .planit-slide .tool-logo-frame { position: relative; width: 150px; height: 56px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .planit-slide .tool-logo-frame img { width: 56px; height: 56px; object-fit: contain; }
 .planit-slide .jira-logo img { position: absolute; width: 163px; height: 163px; max-width: none; left: -6px; top: -57px; }
+.planit-slide .method-flow { display: grid; grid-template-columns: 1fr 300px; gap: 32px; align-items: center; margin-top: 36px; }
+.planit-slide .method-flow .artifacts-line { margin-top: 0; gap: 18px; font-size: 25px; }
+.planit-slide .method-flow .artifacts-line svg { width: 50px; }
+.planit-slide .scrum-image-frame { position: relative; width: 300px; height: 150px; overflow: hidden; }
+.planit-slide .scrum-image-frame img { position: absolute; width: 310px; height: auto; max-width: none; left: -7px; top: -68px; }
 .planit-slide .planning-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 58px; margin-top: 65px; }
 .planit-slide .planning-summary strong { font-size: 100px; line-height: 1; letter-spacing: -.04em; color: var(--pi-violet); }
 .planit-slide .planning-summary h2 { font-size: 29px; margin-top: 20px; }
