@@ -240,3 +240,5 @@ La apertura inicial de 53 páginas conserva Funcionalidades y Beneficios, elimin
 ## Alcance, limitaciones y esfuerzo relativo
 
 Entrega de 54 páginas: Alcance y Limitaciones se separan, con dos bloques por página, títulos de bloque de 34 px y cuerpo de 28 px. Cada historia incorpora encabezado flexible con ID de 20 px y círculo de 36 px con cifra de 22 px, sin reducir el texto de 24 px. La leyenda usa el mismo componente que los post-its. `data/story-effort.mjs` reutiliza lavanda claro, selección lavanda, azul grisáceo, azul principal, violeta y marino; texto marino en los dos fondos claros y blanco en los cuatro oscuros. Colores con contraste ≥4,5:1. La talla es una equivalencia propuesta y los valores no son históricos ni horas.
+
+Corrección posterior: la leyenda de estimación muestra sólo números y colores, sin tallas. Los tableros conservan sus círculos y no repiten la aclaración de esfuerzo en el pie; la procedencia permanece en la página de estimación y en las notas.

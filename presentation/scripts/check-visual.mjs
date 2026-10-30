@@ -49,7 +49,7 @@ try {
             const r = other.getBoundingClientRect()
             return Math.min(body.right, r.right) - Math.max(body.left, r.left) > 2 && Math.min(body.bottom, r.bottom) - Math.max(body.top, r.top) > 2
           }).map(other => other.dataset.storyId)
-          const badgeOverlaps = [...el.querySelectorAll('.story-copy,.story-id,.story-effort-notice,.story-period')].filter(node => {
+          const badgeOverlaps = [...el.querySelectorAll('.story-copy,.story-id,.story-period')].filter(node => {
             const r = node.getBoundingClientRect()
             return Math.min(badgeBounds.right, r.right) - Math.max(badgeBounds.left, r.left) > 2 && Math.min(badgeBounds.bottom, r.bottom) - Math.max(badgeBounds.top, r.top) > 2
           }).map(node => node.textContent.trim())
@@ -67,7 +67,12 @@ try {
       assert.match(data.background, /assets\/backgrounds\/.+\.png/, 'Opaque shared PNG background')
       assert.deepEqual(data.paperNotes.map(note => note.id), spec.storyIds ?? [], 'Expected stories visible on this page')
       assert.equal(await canvas.locator('.story-effort').count(), spec.storyIds?.length ?? 0, 'Exactly one effort circle per story')
-      if (spec.storyIds) assert.equal(await canvas.locator('.story-effort-notice').textContent(), 'Esfuerzo relativo propuesto para esta presentación')
+      assert.equal(await canvas.locator('.story-effort-notice').count(), 0, 'No effort disclaimer in slide footer')
+      if (spec.id === 'estimation') {
+        assert.doesNotMatch(await canvas.innerText(), /\b(?:XS|XXL|XL)\b|tallas|camiseta/i, 'No shirt sizes in estimation slide')
+        assert.deepEqual(await canvas.locator('.effort-legend .effort-circle').allTextContents(), ['1', '2', '3', '5', '8', '13'], 'Keep numeric effort legend')
+        for (const label of await canvas.locator('.effort-legend .effort-circle').evaluateAll(nodes => nodes.map(node => node.getAttribute('aria-label')))) assert.doesNotMatch(label, /talla/i, 'No shirt size in legend accessible labels')
+      }
       for (const note of data.paperNotes) {
         assert.equal(note.text, stories.find(story => story.id === note.id).text.replace(/\s+/g, ' ').trim(), 'Full official wording rendered')
         assert.ok(note.font >= 24 && note.idFont >= 20, 'Minimum story typography')

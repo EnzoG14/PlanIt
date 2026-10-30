@@ -2,6 +2,8 @@
 
 ## Entrega vigente: 54 diapositivas, alcance separado y esfuerzo relativo
 
+Corrección editorial posterior: se retiraron las tallas visibles y sus etiquetas accesibles de la leyenda de estimación, conservando los seis puntos y sus colores. También se retiró la frase de esfuerzo de los pies de los 14 tableros y su CSS; la procedencia permanece en estimación y notas. Las comprobaciones de navegador y PDF verifican expresamente estas ausencias.
+
 29/10/2026. Alcance y Limitaciones ocupan páginas independientes. Las 53 historias incorporan estimaciones propuestas expresamente autorizadas por el usuario, con puntos, tallas y colores centralizados; no son estimaciones históricas ni horas. Referencia: [EFFORT_ESTIMATES.md](EFFORT_ESTIMATES.md).
 
 | Verificación ejecutada | Resultado |

@@ -381,12 +381,12 @@ title: Priorización y estimación
 
 <div class="estimation-split content-section">
 <section><h2>MoSCoW</h2><dl class="moscow"><div><dt>Must</dt><dd>Imprescindible</dd></div><div><dt>Should</dt><dd>Importante</dd></div><div><dt>Could</dt><dd>Deseable</dd></div><div><dt>Won’t</dt><dd>Fuera del alcance</dd></div></dl></section>
-<section><h2>Planning Poker</h2><p>Considerar esfuerzo, dependencias e incertidumbre.</p><EffortLegend /><p class="emphasis">Los puntos expresan esfuerzo relativo, no horas.</p><p class="effort-explanation">Puntos y tallas propuestos para esta presentación; no son estimaciones históricas del equipo.</p></section>
+<section><h2>Planning Poker</h2><p>Considerar esfuerzo, dependencias e incertidumbre.</p><EffortLegend /><p class="emphasis">Los puntos expresan esfuerzo relativo, no horas.</p><p class="effort-explanation">Puntos propuestos para esta presentación; no son estimaciones históricas del equipo.</p></section>
 </div>
 <SlideFooter />
 
 <!--
-Planificación Oficial §2.5. La escala es 1, 2, 3, 5, 8 y 13 puntos. Se estima colaborativamente y se dividen historias demasiado grandes. Por autorización expresa del usuario del 29/10/2026 se asignan estimaciones propuestas a las 53 historias. No representan estimaciones históricas del equipo ni horas. La equivalencia visual XS–XXL es una convención propuesta para esta presentación, no una conversión universal. Tatool, página 23, aporta la referencia de tallas; se conserva la escala de Planning Poker de PlanIt. Asignaciones y colores: data/story-effort.mjs.
+Planificación Oficial §2.5. La escala es 1, 2, 3, 5, 8 y 13 puntos. Se estima colaborativamente y se dividen historias demasiado grandes. Por autorización expresa del usuario del 29/10/2026 se asignan estimaciones propuestas a las 53 historias. No representan estimaciones históricas del equipo ni horas. Por corrección posterior del usuario se quitan las tallas de esta página y se conservan los números y colores de Planning Poker. Asignaciones y colores: data/story-effort.mjs.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 

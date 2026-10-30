@@ -2,7 +2,7 @@
 
 El usuario autorizó asignar esfuerzo relativo a las 53 historias para esta presentación. No se recuperaron estimaciones históricas del equipo. Los valores no expresan horas, no modifican el calendario y no permiten reconstruir métricas históricas. Los enunciados e IDs oficiales permanecen intactos.
 
-La fuente editable es `data/story-effort.mjs`, separada de las historias oficiales. El valor es estable por ID, sin aleatoriedad ni cálculo durante el renderizado. `EffortCircle` se comparte entre los 14 tableros y la leyenda de estimación. Cada tablero muestra «Esfuerzo relativo propuesto para esta presentación» y conserva la aclaración en notas.
+La fuente editable es `data/story-effort.mjs`, separada de las historias oficiales. El valor es estable por ID, sin aleatoriedad ni cálculo durante el renderizado. `EffortCircle` se comparte entre los 14 tableros y la leyenda de estimación. Por corrección posterior del usuario, los tableros no muestran la aclaración en el pie. Su procedencia se conserva en la página de estimación y las notas. La leyenda muestra sólo los puntos y colores, sin tallas visibles ni en sus etiquetas accesibles.
 
 | Puntos | Talla propuesta | Fondo / texto |
 | --- | --- | --- |

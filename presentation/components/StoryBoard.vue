@@ -19,5 +19,4 @@ function parts(text) {
     </article>
   </div>
   <p v-if="page.period" class="story-period">Período del sprint: {{ page.period }}</p>
-  <p class="story-effort-notice">Esfuerzo relativo propuesto para esta presentación</p>
 </template>

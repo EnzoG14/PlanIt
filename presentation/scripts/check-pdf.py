@@ -4,6 +4,7 @@ Requires pypdf, pypdfium2 and Pillow; supplied by the Codex desktop runtime.
 Run after npm run check:visual and npm run export.
 """
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -28,6 +29,10 @@ output.mkdir(exist_ok=True)
 samples = [(20, 20), (640, 10), (1200, 10), (20, 350), (640, 710), (1200, 700)]
 errors = []
 for index, page in enumerate(reader.pages):
+    page_text = " ".join(document[index].get_textpage().get_text_range().split())
+    assert 'Esfuerzo relativo propuesto para esta presentación' not in page_text, f"Removed effort footer remains on page {index + 1}"
+    if metadata['deck'][index]['id'] == 'estimation':
+        assert not re.search(r'\b(?:XS|XXL|XL)\b|tallas|camiseta', page_text, re.I), 'Shirt sizes remain in estimation PDF'
     assert len(page.extract_text().strip()) > 30, f"Selectable text missing on page {index + 1}"
     assert not page["/Resources"].get("/Shading"), f"PDF shading present on page {index + 1}"
     assert abs(float(page.mediabox.width) / float(page.mediabox.height) - 16 / 9) < .001
