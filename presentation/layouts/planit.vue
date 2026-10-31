@@ -9,5 +9,6 @@
       </svg>
     </div>
     <slot />
+    <SlideFooter />
   </main>
 </template>

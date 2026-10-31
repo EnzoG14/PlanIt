@@ -65,7 +65,7 @@
 .institution strong{display:block;font-size:24px}
 .team{font-size:19px;line-height:1.55;color:var(--pi-muted)}
 .team strong{display:block;font-size:20px;color:var(--pi-ink);margin-bottom:4px}
-.slide-footer{position:absolute!important;bottom:24px;left:64px;right:64px;display:flex;justify-content:space-between;font-size:17px;color:var(--pi-muted)}
+.slide-footer{position:absolute!important;bottom:24px;left:64px;right:64px;display:flex;justify-content:flex-end;font-size:17px;color:var(--pi-muted)}
 .slide-footer .mini-brand{font-weight:700;color:var(--pi-violet)}
 .product-heading{display:flex;align-items:baseline;justify-content:space-between}
 .product-heading p{font-size:21px;color:var(--pi-muted)}

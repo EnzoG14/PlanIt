@@ -239,7 +239,7 @@ export const releaseContent = [
   }
 ]
 
-export const releaseSlideSpecs = [{ id: 'releases', title: 'Releases', clicks: 0 }]
+export const releaseSlideSpecs = [{ id: 'releases', title: 'Releases', clicks: 0 }, { id: 'r0-foundations', title: 'Release 0 · Fundamentos', clicks: 0 }]
 for (const block of releaseContent) {
   releaseSlideSpecs.push({ id: 'r'+block.release+'-cover', title: 'Release '+block.release, kind: 'release-cover', release: block.release, clicks: 0 })
   for (const page of block.pages) releaseSlideSpecs.push({ id: 'r'+block.release+'-stories-'+page.part, title: 'R'+block.release+' · Sprint '+page.sprint+(page.continuation?' · continuación':''), kind: 'stories', release: block.release, sprint: page.sprint, part: page.part, storyIds: page.ids, clicks: 0 })

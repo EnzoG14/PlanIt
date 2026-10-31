@@ -56,9 +56,15 @@ try {
           return { id: note.dataset.storyId, text: copy.textContent.replace(/\s+/g, ' ').trim(), font: parseFloat(getComputedStyle(copy).fontSize), idFont: parseFloat(getComputedStyle(id).fontSize), visible: getComputedStyle(note).opacity === '1' && getComputedStyle(note).visibility === 'visible', insidePaper: body.left >= paper.left - 1 && body.right <= paper.right + 1 && body.top >= paper.top - 1 && body.bottom <= paper.bottom + 1, overlaps,
             effort: { bounds: badgeBox, points: Number(badge.textContent), size: badge.dataset.size, width: badgeStyle.width, height: badgeStyle.height, font: badgeStyle.fontSize, radius: badgeStyle.borderRadius, background: badgeStyle.backgroundColor, foreground: badgeStyle.color, label: badge.getAttribute('aria-label'), visible: badgeStyle.visibility === 'visible' && badgeStyle.opacity === '1', insidePaper: badgeBounds.left >= paper.left - 1 && badgeBounds.right <= paper.right + 1 && badgeBounds.top >= paper.top - 1 && badgeBounds.bottom <= paper.bottom + 1, rightOfId: badgeBounds.left > idBounds.right, overlaps: badgeOverlaps } }
         })
-        return { overflowing, collidingWithFooter, paperNotes, titleSize: getComputedStyle(el.querySelector('h1')).fontSize, background: light && getComputedStyle(light).backgroundImage, railAbsent: !el.querySelector('.background-rail'), imagesLoaded: [...el.querySelectorAll('img')].every(img => img.complete && img.naturalWidth > 0), font: getComputedStyle(el).fontFamily, headings: [...el.querySelectorAll('h1')].map(h => h.textContent) }
+        const scale = bounds.width / el.offsetWidth
+        const brand = el.querySelector('.slide-footer .mini-brand')?.getBoundingClientRect()
+        const footerBrand = { count: el.querySelectorAll('.slide-footer').length, text: el.querySelector('.slide-footer')?.textContent.trim(), right: brand && (bounds.right - brand.right) / scale, bottom: footer && (bounds.bottom - footer.bottom) / scale }
+        return { footerBrand, overflowing, collidingWithFooter, paperNotes, titleSize: getComputedStyle(el.querySelector('h1')).fontSize, background: light && getComputedStyle(light).backgroundImage, railAbsent: !el.querySelector('.background-rail'), imagesLoaded: [...el.querySelectorAll('img')].every(img => img.complete && img.naturalWidth > 0), font: getComputedStyle(el).fontFamily, headings: [...el.querySelectorAll('h1')].map(h => h.textContent) }
       })
       await canvas.screenshot({ path: new URL(`${name}-slide-${slide}.png`, dir).pathname.replace(/^\/(\w:)/, '$1') })
+      assert.equal(data.footerBrand.count, 1, 'One footer per slide')
+      assert.equal(data.footerBrand.text, 'PlanIt', 'Only the brand remains in the footer')
+      assert.ok(Math.abs(data.footerBrand.right - 64) < 1 && Math.abs(data.footerBrand.bottom - 24) < 1, 'Brand retains bottom-right position')
       assert.deepEqual(data.overflowing, [], `Slide ${slide} fits ${width}`)
       assert.deepEqual(data.collidingWithFooter, [], `Slide ${slide} does not collide with footer`)
       assert.equal(data.titleSize, spec.id === 'cover' ? '142px' : '52px', 'Approved title scale')

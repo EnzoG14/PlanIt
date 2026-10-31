@@ -181,3 +181,20 @@ Las primeras capturas fallaron porque el servidor de desarrollo de la app no res
 No se probó en un proyector físico, lector de pantalla ni dispositivos móviles reales. No se ejecutó QA funcional de backend ni se certificaron releases. El documento oficial fue accesible; institución, equipo y ciclo tienen respaldo. No faltan datos obligatorios para estas tres diapositivas.
 
 Las skills quedan instaladas localmente en carpetas ya ignoradas por el repositorio. Para otros clones se debe usar la reinstalación indicada en README. La presentación completa, orden de oradores, tiempo definitivo y demo permanecen fuera del alcance de este prototipo.
+
+
+## Verificación ejecutada — R0 y pies de marca (31/10/2026)
+
+| Comprobación | Resultado |
+| --- | --- |
+| `npm run check` | PASS: 55 diapositivas en orden, 53 historias literales, 13 sprints funcionales, fuentes y recursos locales |
+| `npm run build` | PASS: build estático Slidev/Vite |
+| `npm run check:visual` | PASS: 110 casos, 55 páginas en 1280×720 y 1920×1080, un pie PlanIt por página a 64/24 px, sin desbordes ni colisiones, teclado y reduced-motion |
+| `npm run export` | PASS: `exports/planit-completa.pdf`, 55 páginas |
+| `scripts/check-pdf.py` | PASS: 55 páginas 16:9, marca como único texto en la banda inferior, R0 con fechas/contenido, 53 historias y esfuerzos seleccionables, fechas exactas del roadmap, diferencia de fondos 0/255 |
+| Revisión visual | 55 capturas canvas, 55 projector y 55 páginas PDF revisadas en nueve hojas de contacto; R0 y detalle de marca inspeccionados por separado. Sin defectos visibles |
+| `git diff --check` | PASS |
+
+Evidencia local: `.validation/results.json`, `.validation/pdf-results.json`, `current-{canvas,projector,pdf}-contact-{1,2,3}.png` y capturas individuales. No se versionan estas salidas ni el PDF.
+
+El detector Impeccable se ejecutó sobre los archivos visuales modificados y señaló avisos de tamaños/colores de la composición existente. Se conserva el sistema aprobado, incluida la escala específica de R0 documentada en DESIGN.md. Slidev continúa emitiendo el diagnóstico ya documentado de FloatingVue/Twoslash al iniciar el cliente; no impidió las verificaciones ni la exportación. Los primeros intentos en el sandbox no pudieron acceder al navegador/localhost; la ejecución final utilizó el Chromium ya instalado y procesos locales fuera del sandbox.

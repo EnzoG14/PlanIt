@@ -7,7 +7,7 @@ import { releaseContent } from '../data/release-content.mjs'
 import { effortScale, storyEffort } from '../data/story-effort.mjs'
 
 const slides = await readFile(new URL('../slides.md', import.meta.url), 'utf8')
-assert.equal(deck.length, 54, 'Approved complete deck')
+assert.equal(deck.length, 55, 'Approved complete deck')
 assert.equal((slides.match(/^layout: planit$/gm) || []).length, deck.length, 'One layout per manifest entry')
 assert.deepEqual([...slides.matchAll(/^name: (.+)$/gm)].map(match => match[1]), deck.map(slide => slide.id), 'Approved narrative order')
 assert.match(slides, /aspectRatio: 16\/9/)
@@ -22,6 +22,9 @@ assert.deepEqual(deck.slice(0, 12).map(slide => slide.id), ['cover', 'team', 'ag
 const roadmapIndex = deck.findIndex(slide => slide.id === 'roadmap')
 assert.ok(roadmapIndex >= 0, 'Roadmap present')
 assert.equal(deck[roadmapIndex + 1].id, 'releases', 'Releases follow roadmap')
+assert.deepEqual(deck.slice(roadmapIndex + 1, roadmapIndex + 4).map(slide => slide.id), ['releases', 'r0-foundations', 'r1-cover'], 'R0 immediately before R1')
+assert.doesNotMatch(slides, /<SlideFooter|class="slide-footer"/, 'Footer centralized in layout')
+assert.equal((await readFile(new URL('../layouts/planit.vue', import.meta.url), 'utf8')).match(/<SlideFooter \/>/g)?.length, 1, 'One shared footer per slide')
 assert.equal(deck.filter(slide => slide.id === 'architecture').length, 1, 'One architecture slide')
 assert.deepEqual(deck.slice(-4).map(slide => slide.id), ['demo', 'evolution', 'conclusions', 'thanks'])
 const snapshot = JSON.parse(await readFile(new URL('../references/release-stories.source.json', import.meta.url), 'utf8'))

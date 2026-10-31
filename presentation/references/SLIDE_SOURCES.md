@@ -42,3 +42,7 @@ Ajuste autorizado el 29/10/2026: el modelo SysAssign, páginas 5–12, aporta el
 Ajuste posterior del 29/10/2026: 54 páginas. Tatool páginas 10–11 y 23 aporta separación conceptual y referencia de tallas. Los 53 valores de esfuerzo son propuestas autorizadas para la presentación, no datos de Planificación Oficial. Véase EFFORT_ESTIMATES.md y las notas de los 14 tableros.
 
 Los doce recursos de marca y métodos proceden de imágenes proporcionadas por el usuario para Stack, Scrum, Estimación y Herramientas; Scrum incluye el retiro de fondo solicitado. No se atribuyen a la documentación oficial: ver PROVIDED_IMAGES.md y public/assets/tools/provenance.json.
+
+## Release 0 y pies (31/10/2026)
+
+La diapositiva 23 resume la release técnica R0, desde Planificacion.pdf aportado por el usuario, páginas 46–47. Período 25/08/2025 al 07/09/2025, un sprint técnico y cuatro actividades; los totales funcionales no cambian. Todos los rótulos de pie pasan a notas por autorización del usuario; sólo queda PlanIt. Detalle y trazabilidad: [R0_AND_FOOTERS.md](R0_AND_FOOTERS.md).
