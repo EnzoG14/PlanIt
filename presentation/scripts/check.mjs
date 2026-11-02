@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { readFile, access } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
-import { deck, releases, sources } from '../data/deck.mjs'
+import { deck, releases, sources, acceptanceCriteriaTotal } from '../data/deck.mjs'
 import { stories } from '../data/release-stories.mjs'
 import { releaseContent } from '../data/release-content.mjs'
 import { effortScale, storyEffort } from '../data/story-effort.mjs'
@@ -15,7 +15,8 @@ const notes = slides.match(/<!--[\s\S]*?-->/g) || []
 assert.equal(notes.length, deck.length, 'Speaker notes on every slide')
 assert.ok(notes.every(note => note.includes(sources.planning) || note.includes(sources.requirements)), 'Official source on every slide')
 assert.equal(releases.slice(1).reduce((sum, release) => sum + release.rf, 0), 53)
-assert.equal(releases.slice(1).reduce((sum, release) => sum + release.ca, 0), 218)
+assert.equal(acceptanceCriteriaTotal, 117, 'Acceptance criteria total corrected by user')
+assert.match(slides, new RegExp(`<strong>${acceptanceCriteriaTotal}</strong><p>criterios de aceptación</p>`), 'Displayed criteria total matches approved correction')
 assert.equal(releases.slice(1).reduce((sum, release) => sum + release.sprints, 0), 13)
 assert.equal(releases[0].sprints, 1)
 assert.deepEqual(deck.slice(0, 12).map(slide => slide.id), ['cover', 'team', 'agenda', 'problem', 'product', 'features', 'participant-opportunity', 'organizer-opportunity', 'benefits', 'scope', 'limitations', 'requirements'], 'Approved opening narrative')

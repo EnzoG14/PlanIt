@@ -29,6 +29,7 @@ export const team = [
   { name: 'Rafael Lezcano', role: 'Scrum Master y desarrollo' },
   { name: 'Joaquín González Zago', role: 'Diseño UI/UX y frontend' },
 ]
+// Per-release ca values retain the original planning snapshot; use acceptanceCriteriaTotal for the corrected presentation total.
 export const releases = [
   { id: 'R0', name: 'Fundamentos', start: '25/08/2025', end: '07/09/2025', sprints: 1, rf: 0, ca: 0 },
   { id: 'R1', name: 'Lanzamiento (MVP)', start: '08/09/2025', end: '23/09/2025', sprints: 1, rf: 7, ca: 28 },
@@ -39,3 +40,6 @@ export const releases = [
   { id: 'R6', name: 'Gestión avanzada y analítica', start: '19/08/2026', end: '15/09/2026', sprints: 2, rf: 6, ca: 24 },
   { id: 'R7', name: 'Contenido social e integraciones', start: '16/09/2026', end: '13/10/2026', sprints: 2, rf: 7, ca: 29 },
 ]
+
+// Presentation total corrected by the user on 2026-11-02; no per-release redistribution supplied.
+export const acceptanceCriteriaTotal = 117

@@ -198,3 +198,14 @@ Las skills quedan instaladas localmente en carpetas ya ignoradas por el reposito
 Evidencia local: `.validation/results.json`, `.validation/pdf-results.json`, `current-{canvas,projector,pdf}-contact-{1,2,3}.png` y capturas individuales. No se versionan estas salidas ni el PDF.
 
 El detector Impeccable se ejecutó sobre los archivos visuales modificados y señaló avisos de tamaños/colores de la composición existente. Se conserva el sistema aprobado, incluida la escala específica de R0 documentada en DESIGN.md. Slidev continúa emitiendo el diagnóstico ya documentado de FloatingVue/Twoslash al iniciar el cliente; no impidió las verificaciones ni la exportación. Los primeros intentos en el sandbox no pudieron acceder al navegador/localhost; la ejecución final utilizó el Chromium ya instalado y procesos locales fuera del sandbox.
+
+## Correcciones del 02/11/2026
+
+Por indicación del usuario se retira el período del sprint de los tableros R1 (páginas 25–26) y se actualiza a 117 el total de criterios de aceptación (página 12). El total corregido se registra por separado del desglose histórico, que no se redistribuye sin fuente.
+
+- `npm run check`: PASS, 55 diapositivas, 53 historias intactas, 13 sprints funcionales y total visible de 117 CA.
+- `npm run build`: PASS.
+- `npm run check:visual`: PASS, 110 casos en 720p/1080p, sin períodos en los tableros ni regresiones de geometría, historias, marca, teclado o reduced-motion.
+- `npm run export` y `scripts/check-pdf.py`: PASS, 55 páginas, ausencia de «Período del sprint:», 117 CA en requisitos, 53 historias/esfuerzos seleccionables y fondos idénticos al navegador (0/255).
+- Inspección visual de las páginas 12, 25 y 26 en capturas 720p/1080p y PDF, además de las páginas 12 y 25 del PDF a tamaño completo: sin defectos. Evidencia local: `.validation/correction-review-{canvas,projector,pdf}.png`.
+- `git diff --check`: PASS. Persiste el diagnóstico preexistente FloatingVue/Twoslash al iniciar Slidev, sin impedir las verificaciones.

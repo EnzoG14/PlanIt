@@ -253,12 +253,12 @@ title: Especificación de requisitos
 
 # Especificación de requisitos
 
-<div class="requirements-counts content-section"><div><strong>53</strong><p>requisitos funcionales</p></div><div><strong>218</strong><p>criterios de aceptación</p></div></div>
+<div class="requirements-counts content-section"><div><strong>53</strong><p>requisitos funcionales</p></div><div><strong>117</strong><p>criterios de aceptación</p></div></div>
 <div class="traceability"><div><h2>Requisito</h2><p>Qué necesita el producto</p></div><FlowConnector :both="false" /><div><h2>Historia de usuario</h2><p>Quién, qué y para qué</p></div><FlowConnector :both="false" /><div><h2>Criterio de aceptación</h2><p>Cómo comprobar el resultado</p></div></div>
 
 
 <!--
-Planificación Oficial §§2.5 y 3.2: 53 historias vinculadas a requisitos y 218 CA en las siete releases funcionales. Las cuatro historias técnicas de R0 no se suman a este total. La ERS Oficial §1.5 cita IEEE 830-1998 como referencia estructural histórica, no como certificación de cumplimiento.
+Planificación Oficial §§2.5 y 3.2: 53 historias vinculadas a requisitos. Total de 117 CA corregido expresamente por el usuario el 02/11/2026; reemplaza el conteo anterior de 218 de la documentación de referencia, sin un nuevo reparto por release. Las cuatro historias técnicas de R0 no se suman a este total. La ERS Oficial §1.5 cita IEEE 830-1998 como referencia estructural histórica, no como certificación de cumplimiento.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
@@ -422,9 +422,9 @@ title: Planificación general
 
 
 <!--
-Aclaración conservada del pie: R1–R7: 218 criterios de aceptación · R0 se contabiliza por separado
+Aclaración conservada del pie: R1–R7: 117 criterios de aceptación · R0 se contabiliza por separado
 
-Planificación Oficial §§3.1–3.2 y 4. R1 suma un sprint y R2–R7 dos cada una: 13 funcionales; R0 agrega un sprint técnico. Son siete releases funcionales más R0, no ocho releases funcionales ni 13 sprints totales con preparación. Los 53 RF/historias y 218 CA no incluyen las cuatro historias técnicas de fundamentos.
+Planificación Oficial §§3.1–3.2 y 4. R1 suma un sprint y R2–R7 dos cada una: 13 funcionales; R0 agrega un sprint técnico. Son siete releases funcionales más R0, no ocho releases funcionales ni 13 sprints totales con preparación. Los 53 RF/historias y 117 CA (total corregido por el usuario el 02/11/2026) no incluyen las cuatro historias técnicas de fundamentos.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
@@ -483,7 +483,7 @@ title: Release 0 · Fundamentos
 </div>
 
 <!--
-Fuente aportada por el usuario: Planificacion.pdf, páginas 46–47, sección RELEASE 0 — FUNDAMENTOS; archivo original C:/Users/USUARIO/Downloads/Planificacion.pdf. Los cuatro bloques resumen las cuatro historias técnicas, no historias funcionales ni requisitos adicionales. Objetivo, período y un sprint se conservan de la fuente. Los entregables incluyen aprendizaje, entornos y accesos, alcance/requisitos y acuerdos del equipo. R0 no modifica los totales R1–R7: 53 historias, 218 CA y 13 sprints funcionales. No se asignan puntos de esfuerzo ni se inventa aceptación remota.
+Fuente aportada por el usuario: Planificacion.pdf, páginas 46–47, sección RELEASE 0 — FUNDAMENTOS; archivo original C:/Users/USUARIO/Downloads/Planificacion.pdf. Los cuatro bloques resumen las cuatro historias técnicas, no historias funcionales ni requisitos adicionales. Objetivo, período y un sprint se conservan de la fuente. Los entregables incluyen aprendizaje, entornos y accesos, alcance/requisitos y acuerdos del equipo. R0 no modifica los totales R1–R7: 53 historias, 117 CA (total corregido por el usuario el 02/11/2026) y 13 sprints funcionales. No se asignan puntos de esfuerzo ni se inventa aceptación remota.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 

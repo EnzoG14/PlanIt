@@ -49,7 +49,7 @@ try {
             const r = other.getBoundingClientRect()
             return Math.min(body.right, r.right) - Math.max(body.left, r.left) > 2 && Math.min(body.bottom, r.bottom) - Math.max(body.top, r.top) > 2
           }).map(other => other.dataset.storyId)
-          const badgeOverlaps = [...el.querySelectorAll('.story-copy,.story-id,.story-period')].filter(node => {
+          const badgeOverlaps = [...el.querySelectorAll('.story-copy,.story-id')].filter(node => {
             const r = node.getBoundingClientRect()
             return Math.min(badgeBounds.right, r.right) - Math.max(badgeBounds.left, r.left) > 2 && Math.min(badgeBounds.bottom, r.bottom) - Math.max(badgeBounds.top, r.top) > 2
           }).map(node => node.textContent.trim())
@@ -62,6 +62,7 @@ try {
         return { footerBrand, overflowing, collidingWithFooter, paperNotes, titleSize: getComputedStyle(el.querySelector('h1')).fontSize, background: light && getComputedStyle(light).backgroundImage, railAbsent: !el.querySelector('.background-rail'), imagesLoaded: [...el.querySelectorAll('img')].every(img => img.complete && img.naturalWidth > 0), font: getComputedStyle(el).fontFamily, headings: [...el.querySelectorAll('h1')].map(h => h.textContent) }
       })
       await canvas.screenshot({ path: new URL(`${name}-slide-${slide}.png`, dir).pathname.replace(/^\/(\w:)/, '$1') })
+      assert.equal(await canvas.locator('.story-period').count(), 0, 'Sprint period removed from story boards')
       assert.equal(data.footerBrand.count, 1, 'One footer per slide')
       assert.equal(data.footerBrand.text, 'PlanIt', 'Only the brand remains in the footer')
       assert.ok(Math.abs(data.footerBrand.right - 64) < 1 && Math.abs(data.footerBrand.bottom - 24) < 1, 'Brand retains bottom-right position')

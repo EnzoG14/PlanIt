@@ -33,10 +33,12 @@ Cada cierre separa incremento, dificultad observada y acuerdo de mejora, con fue
 
 Verificar 55 páginas, cobertura literal de 53 historias únicas y distribución por sprint. Recorrer 720p/1080p, incluidos papeles inclinados, interiores, posibles solapamientos y pies. Revisar teclado/reduced-motion de arquitectura y exportar PDF de 55 páginas con historias seleccionables y colores estables. Comparar Funcionalidades y Beneficios con las capturas anteriores al ajuste.
 
-Salida vigente: exports/planit-completa.pdf. Conservar los PDF históricos disponibles. El cierre autorizado consta de 52 Demo (separador para exposición en vivo), 53 Evolución del producto (ERS §2.6), 54 Conclusiones (revisiones y retrospectivas) y 55 Agradecimiento. Los 218 criterios completos no se agregan al deck. Fuentes: references/CLOSING_SOURCES.md.
+Salida vigente: exports/planit-completa.pdf. Conservar los PDF históricos disponibles. El cierre autorizado consta de 52 Demo (separador para exposición en vivo), 53 Evolución del producto (ERS §2.6), 54 Conclusiones (revisiones y retrospectivas) y 55 Agradecimiento. Los 117 criterios completos no se agregan al deck. Fuentes: references/CLOSING_SOURCES.md.
 
 Las estimaciones autorizadas y su equivalencia con tallas se documentan en `references/EFFORT_ESTIMATES.md`. Se verifican 53 círculos, colores por valor y números seleccionables en PDF. No se convierten en horas ni se utilizan para reconstruir métricas históricas.
 
 ## Ajuste del 31/10/2026
 
 R0 ocupa una única diapositiva antes de R1: colaboración, entorno PWA, construcción de interfaz y Supabase/datos; período 25/08/2025 al 07/09/2025, un sprint técnico. Fuente: Planificacion.pdf aportado por el usuario, páginas 46–47. Los totales funcionales no cambian. Todas las diapositivas usan el pie común del layout, con sólo PlanIt a 64 px del borde derecho y 24 px del inferior; las aclaraciones retiradas se conservan en notas.
+
+Total de criterios de aceptación actualizado a 117 por indicación expresa del usuario el 02/11/2026. El reparto histórico en los datos de releases se conserva como referencia documental; no se utiliza para calcular el total corregido.

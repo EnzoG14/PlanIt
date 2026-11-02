@@ -21,7 +21,7 @@ La referencia oficial ya utilizada por el deck es Planificación Oficial, pesta�
 - R0 reutiliza la grilla editorial abierta de dos columnas y los tokens Amanecer; no se incorporan imágenes ni dependencias.
 - `layouts/planit.vue` incluye `SlideFooter` para todas las diapositivas. Sólo proyecta PlanIt, a 64 px del borde derecho y 24 px del inferior. Se retiran las instancias individuales y los dos bloques independientes.
 - Cada rótulo retirado se traslada a las notas de su propia diapositiva, incluidas procedencia de capturas, escala del roadmap, esfuerzo y límites de aceptación.
-- La portada conserva la institución y los integrantes como contenido; las fechas de sprint permanecen en los tableros correspondientes.
+- La portada conserva la institución y los integrantes como contenido; las fechas de sprint se conservan en los datos y las notas, sin proyectarse en los tableros por corrección del usuario del 02/11/2026.
 
 ## Reproducción
 
@@ -35,3 +35,9 @@ Las imágenes, informes JSON y el PDF son salidas locales ignoradas por Git. La 
 ## Resultado
 
 PASS: contenido, build, 110 casos visuales y PDF de 55 páginas. Las 53 historias y los esfuerzos permanecen seleccionables; los fondos coinciden con el navegador (0/255). Se revisaron las nueve hojas de contacto. Registro completo en [VALIDATION.md](VALIDATION.md), sección R0 y pies de marca del 31/10/2026.
+
+## Corrección del 02/11/2026
+
+Se retira «Período del sprint: 08/09/2025 al 23/09/2025» del tablero señalado en la página 25 y de su continuación (26), generados por el mismo componente. Se conservan los períodos oficiales en los datos y las notas.
+
+El usuario corrige el total de criterios de aceptación a 117 el 02/11/2026. Este total reemplaza los 218 del documento original para esta presentación; no se recibió una distribución nueva por release. Se conserva la información histórica y se verifica el total corregido de forma independiente.
