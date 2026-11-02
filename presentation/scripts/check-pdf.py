@@ -15,14 +15,14 @@ import pypdfium2 as pdfium
 root = Path(__file__).resolve().parents[1]
 metadata = json.loads(subprocess.check_output([
     "node", "--input-type=module", "-e",
-    "import {deck,releases} from './data/deck.mjs'; import {stories} from './data/release-stories.mjs'; import {storyEffort,effortScale} from './data/story-effort.mjs'; console.log(JSON.stringify({deck,releases,stories,storyEffort,effortScale}))",
+    "import {deck,releases,acceptanceCriteriaTotal} from './data/deck.mjs'; import {stories} from './data/release-stories.mjs'; import {storyEffort,effortScale} from './data/story-effort.mjs'; console.log(JSON.stringify({deck,releases,stories,storyEffort,effortScale,acceptanceCriteriaTotal}))",
 ], cwd=root, encoding="utf-8"))
 path = root / "exports/planit-completa.pdf"
 reader = PdfReader(path)
 document = pdfium.PdfDocument(str(path))
-assert len(reader.pages) == len(metadata["deck"]) == 54
+assert len(reader.pages) == len(metadata["deck"]) == 55
 visual = json.loads((root / '.validation/results.json').read_text(encoding='utf-8'))
-assert visual['result'] == 'PASS' and len(visual['results']) == 108, 'Current visual validation required'
+assert visual['result'] == 'PASS' and len(visual['results']) == len(metadata['deck']) * 2, 'Current visual validation required'
 effort_count = 0
 output = root / ".validation"
 output.mkdir(exist_ok=True)
@@ -30,7 +30,17 @@ samples = [(20, 20), (640, 10), (1200, 10), (20, 350), (640, 710), (1200, 700)]
 errors = []
 for index, page in enumerate(reader.pages):
     page_text = " ".join(document[index].get_textpage().get_text_range().split())
+    assert 'Período del sprint:' not in page_text, f"Sprint period remains on page {index + 1}"
     assert 'Esfuerzo relativo propuesto para esta presentación' not in page_text, f"Removed effort footer remains on page {index + 1}"
+    page_width, page_height = document[index].get_size()
+    footer_text = document[index].get_textpage().get_text_bounded(0, 0, page_width, page_height * 48 / 720).strip()
+    assert footer_text == 'PlanIt', f"Brand-only footer missing or extra footer text on page {index + 1}: {footer_text!r}"
+    if metadata['deck'][index]['id'] == 'requirements':
+        assert str(metadata['acceptanceCriteriaTotal']) in page_text and '218' not in page_text, 'Corrected criteria total missing'
+    if metadata['deck'][index]['id'] == 'r0-foundations':
+        assert re.search(r'Release\s*0', page_text), 'R0 title missing'
+        for phrase in ['Fundamentos', '25/08/2025', '07/09/2025', 'Un sprint técnico', 'GitHub', 'Jira', 'React', 'TypeScript', 'Vite', 'Service Worker', 'Supabase']:
+            assert phrase in page_text, f"R0 content missing: {phrase}"
     if metadata['deck'][index]['id'] == 'estimation':
         assert not re.search(r'\b(?:XS|XXL|XL)\b|tallas|camiseta', page_text, re.I), 'Shirt sizes remain in estimation PDF'
     if metadata['deck'][index]['id'] == 'method':

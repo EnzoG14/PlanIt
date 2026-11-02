@@ -189,19 +189,19 @@ Todas las historias están visibles por defecto, sin clics ni movimiento continu
 
 ### Composiciones académicas
 
-`styles/extended.css` amplía el sistema, sin reemplazarlo: equipo con cinco filas de 28/24 px, agenda de seis temas en dos columnas, contextos y beneficios editoriales, áreas funcionales en dos columnas y procesos de cuatro etapas. Los conteos de 53 RF/218 CA y 7 releases/13 sprints/53 historias tienen función informativa explícita; no se usan como métricas comerciales.
+`styles/extended.css` amplía el sistema, sin reemplazarlo: equipo con cinco filas de 28/24 px, agenda de seis temas en dos columnas, contextos y beneficios editoriales, áreas funcionales en dos columnas y procesos de cuatro etapas. Los conteos de 53 RF/117 CA y 7 releases/13 sprints/53 historias tienen función informativa explícita; no se usan como métricas comerciales.
 
 `TeamRoster`, `FunctionalGroups` y `ReleaseRoadmap` reutilizan `data/deck.mjs`, fuente única de identidades, equipo y períodos. `SlideFooter` mantiene alineación y escala de los pies. La arquitectura se identifica por `architecture`, aunque cambie su posición en la secuencia.
 
 El roadmap tiene dos filas cronológicas (2025, R0–R3; 2026, R4–R7), hitos SVG y nombres/fechas en texto HTML. El espaciado es secuencial y no representa duración proporcional. Mantener legibles las fechas completas y la aclaración de períodos de referencia. No copiar la carretera ni las versiones del PDF de referencia.
 
-Su geometría reserva una columna de 100 px al año y 24 px de separación hasta la línea; cada fila distribuye cuatro períodos en columnas iguales con gap de 24 px. La línea SVG ocupa una banda de 24 px, con etiquetas debajo mediante padding superior de 35 px. El aviso de escala y aceptación se integra en un único `SlideFooter` para preservar una banda inferior independiente.
+Su geometría reserva una columna de 100 px al año y 24 px de separación hasta la línea; cada fila distribuye cuatro períodos en columnas iguales con gap de 24 px. La línea SVG ocupa una banda de 24 px, con etiquetas debajo mediante padding superior de 35 px. El aviso de escala y aceptación se conserva en notas; `SlideFooter` muestra únicamente la marca.
 
 ### Cierre académico
 
-Las páginas 51–54 usan `styles/closing.css`, limitado a las clases del cierre y la nota de agenda. Demo y agradecimiento combinan el logo existente con marca grande y texto abierto. El recorrido de demo separa tres acciones mediante flechas SVG decorativas; la página es un separador para exposición en vivo.
+Las páginas 52–55 usan `styles/closing.css`, limitado a las clases del cierre y la nota de agenda. Demo y agradecimiento combinan el logo existente con marca grande y texto abierto. El recorrido de demo separa tres acciones mediante flechas SVG decorativas; la página es un separador para exposición en vivo.
 
-Evolución organiza seis posibilidades en una grilla de dos columnas, con separación horizontal de 72 px y vertical de 25 px, divisores finos y 16 px de espacio antes de cada título. La introducción y el pie conservan su condición de propuestas futuras fuera de R1–R7. Conclusiones presenta cuatro ejes en dos columnas con gap horizontal de 72 px y vertical de 36 px; cada bloque tiene un divisor fino y 20 px de espacio superior. Se reserva la banda del pie. No hay nuevos papeles, paneles, imágenes ni animaciones.
+Evolución organiza seis posibilidades en una grilla de dos columnas, con separación horizontal de 72 px y vertical de 25 px, divisores finos y 16 px de espacio antes de cada título. La introducción y las notas conservan su condición de propuestas futuras fuera de R1–R7. Conclusiones presenta cuatro ejes en dos columnas con gap horizontal de 72 px y vertical de 36 px; cada bloque tiene un divisor fino y 20 px de espacio superior. Se reserva la banda del pie. No hay nuevos papeles, paneles, imágenes ni animaciones.
 
 ### Marco de diapositiva
 
@@ -209,7 +209,7 @@ Evolución organiza seis posibilidades en una grilla de dos columnas, con separa
 
 ### Captura de producto
 
-`PhoneCapture.vue` recibe `src`, `alt`, `label` y `detail`. Una figura asocia leyenda e imagen. La imagen se muestra a 212 × 424 con `object-fit: cover` y posición superior; el archivo conserva proporción 390 × 780. Mantener el recorte consistente y el color natural. Los archivos en `public/assets/screenshots/` muestran la app local con fixtures; conservar esta aclaración en el pie y en las notas. El logo en `public/assets/logos/planit.svg` procede de la marca original, no de una recreación tipográfica.
+`PhoneCapture.vue` recibe `src`, `alt`, `label` y `detail`. Una figura asocia leyenda e imagen. La imagen se muestra a 212 × 424 con `object-fit: cover` y posición superior; el archivo conserva proporción 390 × 780. Mantener el recorte consistente y el color natural. Los archivos en `public/assets/screenshots/` muestran la app local con fixtures; conservar esta aclaración en las notas. El logo en `public/assets/logos/planit.svg` procede de la marca original, no de una recreación tipográfica.
 
 ### Diagrama y conectores
 
@@ -253,4 +253,10 @@ Las cuatro filas del stack tienen ahora un recurso de 48 px junto al texto. Scru
 
 ## Conclusiones adaptadas a los modelos
 
-La página 53 reemplaza las dos perspectivas anteriores por cuatro ejes de contenido: producto integrado, formación profesional, gestión y mejora continua, y continuidad del proyecto. Composición abierta de dos columnas, separación de 72 px y 36 px entre filas, títulos de 30 px y cuerpo de 25 px. Se conserva Amanecer y se evita copiar impactos o promesas de los modelos.
+Conclusiones reemplaza las dos perspectivas anteriores por cuatro ejes de contenido: producto integrado, formación profesional, gestión y mejora continua, y continuidad del proyecto. Composición abierta de dos columnas, separación de 72 px y 36 px entre filas, títulos de 30 px y cuerpo de 25 px. Se conserva Amanecer y se evita copiar impactos o promesas de los modelos.
+
+## R0 y pie de marca (31/10/2026)
+
+55 diapositivas. R0 utiliza la composición abierta de dos columnas de Alcance, con cuatro bloques de títulos de 30 px y cuerpos de 26 px. Título de 52 px, objetivo de 25 px y período de 23 px. El layout incorpora un único SlideFooter con PlanIt, alineado a la derecha (64 px) y abajo (24 px), sin rótulos. Las aclaraciones pasan a notas.
+
+Total de criterios de aceptación actualizado a 117 por indicación expresa del usuario el 02/11/2026. El reparto histórico en los datos de releases se conserva como referencia documental; no se utiliza para calcular el total corregido.

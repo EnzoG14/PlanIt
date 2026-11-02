@@ -18,5 +18,4 @@ function parts(text) {
       <p class="story-copy"><span>{{ parts(story.text).role }}</span><strong>{{ parts(story.text).action }}</strong><span>{{ parts(story.text).benefit }}</span></p>
     </article>
   </div>
-  <p v-if="page.period" class="story-period">Período del sprint: {{ page.period }}</p>
 </template>

@@ -37,7 +37,6 @@
 .planit-slide .story-board-5 .story-note-3 { left: 785px; top: 0; transform: rotate(-1deg); }
 .planit-slide .story-board-5 .story-note-4 { left: 209px; top: 267px; transform: rotate(1deg); }
 .planit-slide .story-board-5 .story-note-5 { left: 599px; top: 265px; transform: rotate(-1.2deg); }
-.slidev-layout.planit-slide .story-period { position: absolute; bottom: 50px; left: 64px; font-size: 19px; color: var(--pi-muted); }
 .planit-slide .release-review { margin-top: 50px; display: grid; gap: 24px; }
 .planit-slide .release-review section { display: grid; grid-template-columns: 285px 1fr; gap: 40px; align-items: baseline; padding: 18px 0 25px; border-bottom: 1px solid #060b2720; }
 .planit-slide .release-review h2 { font-size: 29px; color: var(--pi-violet); }

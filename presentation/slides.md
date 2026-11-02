@@ -2,7 +2,7 @@
 theme: default
 title: PlanIt — Proyecto Final
 author: Grupo N.º 1 · UTN FRRe
-info: Presentación completa de PlanIt, releases R1–R7 y cierre. 54 diapositivas. Ingeniería en Sistemas de Información, 2026.
+info: Presentación completa de PlanIt, release técnica R0, releases R1–R7 y cierre. 55 diapositivas. Ingeniería en Sistemas de Información, 2026.
 aspectRatio: 16/9
 canvasWidth: 1280
 colorSchema: light
@@ -48,7 +48,6 @@ title: Equipo de proyecto
 
 <p class="team-note"><strong>Product Owner compartido.</strong> Las responsabilidades pueden combinarse y rotar.</p>
 
-<SlideFooter />
 
 <!--
 Planificación Oficial §2.2: funciones y responsabilidades del equipo. Nombres con grafías de la tabla oficial; los roles se resumen sin asignar funciones nuevas. Enzo Joaquin conserva la grafía de la fuente.
@@ -69,7 +68,6 @@ title: Agenda
 
 <p class="closing-agenda-note">Al final: demo, evolución del producto y conclusiones.</p>
 
-<SlideFooter />
 
 <!--
 Secuencia editorial adaptada de Proyecto Final — Equipo 6 y del modelo SysAssign (páginas 5–12). Ajuste autorizado el 29/10/2026: problema, solución, funcionalidades, oportunidades por usuario, beneficios y alcance. El contenido corresponde a PlanIt. Se conserva demo, evolución, conclusiones y agradecimiento después de R7.
@@ -91,7 +89,6 @@ title: Situación problemática
 <div><h2>Difusión de iniciativas</h2><p>Quienes organizan necesitan dar a conocer sus propuestas.</p></div>
 </div>
 
-<SlideFooter />
 
 <!--
 ERS Oficial §2.1: PlanIt surge ante la dificultad de encontrar y dar a conocer actividades cuya información se encuentra dispersa. Esta síntesis no atribuye estadísticas ni resultados de entrevistas no documentadas.
@@ -112,12 +109,11 @@ title: Solución propuesta
   <PhoneCapture src="/assets/screenshots/participate.png" alt="Detalle real de un evento de prueba con cupos y acción Unirme" label="Participar" detail="Consultar cupos e inscribirse" />
 </div>
 
-<div class="slide-footer"><span>Capturas de la app local con datos de prueba</span><span class="mini-brand">PlanIt</span></div>
-
-
 
 <!--
-Planificación Oficial §§5–11 y ERS Oficial §2.2. Reutiliza las capturas aprobadas de la app React real en localhost con fixtures interceptados. La aclaración visible permanece: no son datos productivos ni aceptación remota. Organizar y participar son formas de uso no excluyentes.
+Aclaración conservada del pie: Capturas de la app local con datos de prueba
+
+Planificación Oficial §§5–11 y ERS Oficial §2.2. Reutiliza las capturas aprobadas de la app React real en localhost con fixtures interceptados. La aclaración se conserva en estas notas: no son datos productivos ni aceptación remota. Organizar y participar son formas de uso no excluyentes.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
@@ -138,7 +134,6 @@ title: Funcionalidades principales
 <div><h2>Gestión e integraciones</h2><p>Analítica, reportes, calendario y avisos.</p></div>
 </div>
 
-<SlideFooter />
 
 <!--
 Planificación Oficial §3.2 y objetivos de R1–R7, §§5–11. Son capacidades del alcance funcional; su agrupación es una síntesis editorial. La existencia de código y las capturas no certifican aceptación integral, despliegue de workers ni pruebas en dispositivos.
@@ -162,7 +157,6 @@ title: Oportunidad de mejora — Participantes
 </div>
 </div>
 
-<SlideFooter />
 
 <!--
 ERS Oficial §§2.1–2.3: información dispersa, descubrimiento por ubicación e intereses, participación, Mis eventos y comunicación según permisos. Son necesidades atendidas por el alcance, no resultados medidos ni entrevistas. Participar y organizar son formas de uso no excluyentes. Referencia editorial: modelo SysAssign, página 8; se conserva la identidad Amanecer y no se reutilizan fotos ni afirmaciones de ese proyecto.
@@ -186,7 +180,6 @@ title: Oportunidad de mejora — Organizadores
 </div>
 </div>
 
-<SlideFooter />
 
 <!--
 ERS Oficial §§2.1–2.3: difusión de iniciativas, creación y actualización de eventos, capacidad y asistentes, comunicación, estadísticas y reportes. Síntesis de necesidades atendidas, sin atribuir eficiencia, adopción o impacto medido. Participar y organizar no son roles excluyentes. Referencia editorial: modelo SysAssign, página 9; sin copiar contenido ni recursos.
@@ -207,7 +200,7 @@ title: Beneficios esperados
 <div><h2>Facilitar el descubrimiento</h2><p>Explorar por cercanía e intereses compartidos.</p></div>
 <div><h2>Simplificar la organización y la participación</h2><p>Acompañar el recorrido del evento desde un mismo espacio.</p></div>
 </div>
-<SlideFooter />
+
 
 <!--
 ERS Oficial §§1.1–1.2 y 2.1. Beneficios esperados derivados del propósito y de la perspectiva del producto. No se presentan como mejoras medidas, validación de mercado ni impacto demostrado.
@@ -227,7 +220,6 @@ title: Alcance
 <div><h2>Organización y comunidad</h2><p>Administrar eventos y asistentes, comunicarse y consultar estadísticas.</p></div>
 </div>
 
-<SlideFooter />
 
 <!--
 ERS Oficial §§1.2 y 2.2: alcance funcional de PlanIt para participantes y organizadores. La página de alcance se separa de limitaciones por pedido del usuario. Referencia editorial: Tatool, página 10; no se copian funciones ni responsabilidades de ese proyecto.
@@ -247,7 +239,6 @@ title: Limitaciones
 <div><h2>Compatibilidad y permisos</h2><p>Ubicación, notificaciones e integraciones dependen del navegador, dispositivo y permisos otorgados.</p></div>
 </div>
 
-<SlideFooter />
 
 <!--
 ERS Oficial §2.5: conexión a Internet, disponibilidad de servicios, capacidades del dispositivo y permisos. §2.4 no define restricciones adicionales: se presentan dependencias documentadas, sin inventar restricciones de edad, mercado o uso offline. Las posibilidades futuras de §2.6 se mantienen en Evolución del producto. Referencia editorial: Tatool, página 11; no se copian sus limitaciones legales ni comerciales.
@@ -262,12 +253,12 @@ title: Especificación de requisitos
 
 # Especificación de requisitos
 
-<div class="requirements-counts content-section"><div><strong>53</strong><p>requisitos funcionales</p></div><div><strong>218</strong><p>criterios de aceptación</p></div></div>
+<div class="requirements-counts content-section"><div><strong>53</strong><p>requisitos funcionales</p></div><div><strong>117</strong><p>criterios de aceptación</p></div></div>
 <div class="traceability"><div><h2>Requisito</h2><p>Qué necesita el producto</p></div><FlowConnector :both="false" /><div><h2>Historia de usuario</h2><p>Quién, qué y para qué</p></div><FlowConnector :both="false" /><div><h2>Criterio de aceptación</h2><p>Cómo comprobar el resultado</p></div></div>
-<SlideFooter />
+
 
 <!--
-Planificación Oficial §§2.5 y 3.2: 53 historias vinculadas a requisitos y 218 CA en las siete releases funcionales. Las cuatro historias técnicas de R0 no se suman a este total. La ERS Oficial §1.5 cita IEEE 830-1998 como referencia estructural histórica, no como certificación de cumplimiento.
+Planificación Oficial §§2.5 y 3.2: 53 historias vinculadas a requisitos. Total de 117 CA corregido expresamente por el usuario el 02/11/2026; reemplaza el conteo anterior de 218 de la documentación de referencia, sin un nuevo reparto por release. Las cuatro historias técnicas de R0 no se suman a este total. La ERS Oficial §1.5 cita IEEE 830-1998 como referencia estructural histórica, no como certificación de cumplimiento.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
@@ -281,9 +272,11 @@ title: Agrupación funcional y módulos
 
 <p class="slide-lead">Siete áreas que amplían un mismo producto.</p>
 <FunctionalGroups />
-<SlideFooter label="Vista conceptual del alcance funcional" />
+
 
 <!--
+Aclaración conservada del pie: Vista conceptual del alcance funcional
+
 Planificación Oficial §3.2: las áreas y cantidades de RF coinciden con las siete releases funcionales. El esquema agrupa capacidades de negocio; no describe servicios desplegados, límites de paquetes ni componentes físicos del código.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -301,7 +294,7 @@ title: Usuarios del sistema
 <section><h2>Organizador</h2><ul><li>Crea y administra eventos.</li><li>Gestiona asistentes y accesos.</li><li>Consulta métricas y reportes.</li></ul></section>
 </div>
 <p class="users-note">La misma persona puede organizar y participar en eventos ajenos.</p>
-<SlideFooter />
+
 
 <!--
 ERS Oficial §§1.4 y 2.3; Planificación Oficial objetivos R1, R3, R5 y R6. No son roles excluyentes ni se introduce un administrador global. El organizador no ocupa cupo en su propio evento.
@@ -322,9 +315,11 @@ title: Stack tecnológico
 <div><h2>Datos y servicios</h2><div class="stack-detail"><img class="stack-brand-image" src="/assets/tools/supabase.png" alt="Supabase" /><p>Supabase: Auth, PostgreSQL, RLS, Storage y Realtime</p></div></div>
 <div><h2>Mapas y ubicación</h2><div class="stack-detail"><img class="stack-brand-image" src="/assets/tools/mapbox.png" alt="Mapbox" /><p>Mapbox y capacidades de geolocalización del navegador</p></div></div>
 </div>
-<SlideFooter label="Tecnologías verificadas en la documentación y el repositorio" />
+
 
 <!--
+Aclaración conservada del pie: Tecnologías verificadas en la documentación y el repositorio
+
 Planificación Oficial §2.6, ERS Oficial §2.1, package.json y vite.config.ts. Las versiones mayores React 19 y Vite 8 proceden del código local. No agregar proveedor de hosting, Expo ni React Native. La PWA no garantiza acceso offline a los datos privados. Logos TypeScript, PWA, Supabase y Mapbox proporcionados por el usuario, sin modificación de los archivos originales; procedencia en public/assets/tools/provenance.json.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -342,11 +337,10 @@ clicks: 2
 
 <ArchitectureDiagram />
 
-<div class="slide-footer"><span>Vista lógica del código actual</span><span class="mini-brand">PlanIt</span></div>
-
-
 
 <!--
+Aclaración conservada del pie: Vista lógica del código actual
+
 Planificación Oficial §2.6 y ERS Oficial §2.1, contrastadas con src/lib/supabase.ts, vite.config.ts y docs/architecture.md. RLS y RPC autorizan y resuelven operaciones transaccionales en datos. [click] Realtime señala cambios y el cliente reconsulta datos autorizados. [click] Mapbox provee mapas y Edge Functions separa operaciones de servidor y medios. Este esquema no certifica el despliegue de cada función ni la aceptación operativa integral.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -365,9 +359,11 @@ title: Enfoque de trabajo
 <div><h2>Planificación</h2><p>Seleccionar historias y acordar el objetivo.</p></div><div><h2>Seguimiento</h2><p>Reunión semanal para avances e impedimentos.</p></div><div><h2>Review</h2><p>Revisar el incremento y recibir devoluciones.</p></div><div><h2>Retrospectiva</h2><p>Acordar mejoras para la siguiente iteración.</p></div>
 </div>
 <div class="method-flow"><div class="artifacts-line"><span>Product Backlog</span><FlowConnector :both="false" /><span>Sprint Backlog</span><FlowConnector :both="false" /><strong>Incremento</strong></div><div class="scrum-image-frame"><img src="/assets/tools/scrum-transparent.png" alt="Diagrama del ciclo Scrum: backlog, iteraciones e incremento" /></div></div>
-<SlideFooter label="Definition of Done: funcionalidad, errores, seguridad y verificaciones" />
+
 
 <!--
+Aclaración conservada del pie: Definition of Done: funcionalidad, errores, seguridad y verificaciones
+
 Planificación Oficial §§2.1–2.4. Scrum está adaptado a disponibilidad y contexto académico. El seguimiento es semanal: no afirmar Daily Scrum diario. La duración de los sprints de 2 semanas fue indicada expresamente por el usuario para esta presentación el 29/10/2026 y sustituye la cautela editorial anterior. Se conservan los períodos de referencia y fechas de releases sin recalcularlos a partir de esta cadencia. Diagrama Scrum proporcionado por el usuario; fondo blanco retirado con ImageGen por pedido expreso. Original conservado en assets/originals/scrum.png y derivado transparente en public/assets/tools/scrum-transparent.png; procedencia en provenance.json.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -384,7 +380,7 @@ title: Priorización y estimación
 <section><div class="estimation-heading"><h2>MoSCoW</h2></div><dl class="moscow"><div><dt>Must</dt><dd>Imprescindible</dd></div><div><dt>Should</dt><dd>Importante</dd></div><div><dt>Could</dt><dd>Deseable</dd></div><div><dt>Won’t</dt><dd>Fuera del alcance</dd></div></dl><img class="moscow-image" src="/assets/tools/moscow.png" alt="Modelo MoSCoW: Must Have, Should Have, Could Have y Won’t Have" /></section>
 <section><div class="estimation-heading"><h2>Planning Poker</h2><img class="poker-image" src="/assets/tools/planning-poker.png" alt="Cartas de Planning Poker" /></div><p>Considerar esfuerzo, dependencias e incertidumbre.</p><EffortLegend /><p class="emphasis">Los puntos expresan esfuerzo relativo, no horas.</p><p class="effort-explanation">Puntos propuestos para esta presentación; no son estimaciones históricas del equipo.</p></section>
 </div>
-<SlideFooter />
+
 
 <!--
 Planificación Oficial §2.5. La escala es 1, 2, 3, 5, 8 y 13 puntos. Se estima colaborativamente y se dividen historias demasiado grandes. Por autorización expresa del usuario del 29/10/2026 se asignan estimaciones propuestas a las 53 historias. No representan estimaciones históricas del equipo ni horas. Por corrección posterior del usuario se quitan las tallas de esta página y se conservan los números y colores de Planning Poker. Asignaciones y colores: data/story-effort.mjs. Imágenes MoSCoW y Planning Poker proporcionadas por el usuario; originales y procedencia en public/assets/tools/.
@@ -406,7 +402,7 @@ title: Herramientas de colaboración
 <div><div class="tool-logo-frame"><img src="/assets/tools/whatsapp.png" alt="WhatsApp" /></div><h2>WhatsApp</h2><p>Comunicación cotidiana del equipo.</p></div>
 <div><div class="tool-logo-frame"><img src="/assets/tools/discord.png" alt="Discord" /></div><h2>Discord</h2><p>Reuniones de planificación y coordinación.</p></div>
 </div>
-<SlideFooter />
+
 
 <!--
 Planificación Oficial §2.6. Se describen únicamente herramientas y usos declarados por el equipo, sin simular tableros o conversaciones. Los cinco logos fueron proporcionados por el usuario para esta presentación y se conservan sin modificar sus archivos; el viewport CSS de Jira excluye únicamente el margen transparente. Procedencia y SHA-256: public/assets/tools/provenance.json.
@@ -423,10 +419,12 @@ title: Planificación general
 
 <div class="planning-summary content-section"><div><strong>7</strong><h2>releases funcionales</h2></div><div><strong>13</strong><h2>sprints funcionales</h2></div><div><strong>53</strong><h2>historias vinculadas<br />a requisitos</h2></div></div>
 <div class="foundation-note"><strong>Además, R0</strong><p>Un sprint de fundamentos: aprender las tecnologías,<br />organizar el trabajo y preparar el entorno.</p></div>
-<SlideFooter label="R1–R7: 218 criterios de aceptación · R0 se contabiliza por separado" />
+
 
 <!--
-Planificación Oficial §§3.1–3.2 y 4. R1 suma un sprint y R2–R7 dos cada una: 13 funcionales; R0 agrega un sprint técnico. Son siete releases funcionales más R0, no ocho releases funcionales ni 13 sprints totales con preparación. Los 53 RF/historias y 218 CA no incluyen las cuatro historias técnicas de fundamentos.
+Aclaración conservada del pie: R1–R7: 117 criterios de aceptación · R0 se contabiliza por separado
+
+Planificación Oficial §§3.1–3.2 y 4. R1 suma un sprint y R2–R7 dos cada una: 13 funcionales; R0 agrega un sprint técnico. Son siete releases funcionales más R0, no ocho releases funcionales ni 13 sprints totales con preparación. Los 53 RF/historias y 117 CA (total corregido por el usuario el 02/11/2026) no incluyen las cuatro historias técnicas de fundamentos.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
@@ -440,9 +438,11 @@ title: Roadmap
 
 <p class="slide-lead">Períodos de referencia de la planificación oficial.</p>
 <ReleaseRoadmap />
-<SlideFooter label="Sin escala proporcional de duración. No certifica aceptación técnica integral." />
+
 
 <!--
+Aclaración conservada del pie: Sin escala proporcional de duración. No certifica aceptación técnica integral.
+
 Planificación Oficial §3.1: reproducir los ocho intervalos exactamente. 2025 reúne R0–R3 y 2026 R4–R7. El intervalo entre R3 y R4 no implica una fase adicional: no rellenarlo con actividades inventadas. No añadir versiones v1.0 u otras tomadas del PDF de referencia. El documento oficial registra releases finalizadas, pero la entrega de código y la aceptación operativa son capas distintas. Este roadmap presenta la secuencia que se desarrolla a continuación.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -456,11 +456,35 @@ title: Releases
 # Releases
 
 <div class="releases-opening"><h2>Del primer evento<br /><span class="emphasis">a las integraciones</span></h2><p>Siete incrementos funcionales que amplían PlanIt.</p></div>
-<SlideFooter label="R1–R7 · 13 sprints funcionales · 53 historias" />
+
 
 <!--
-Separador editorial inspirado en la estructura del PDF Equipo 6, página 22. Contenido de PlanIt: siete releases funcionales; R0 permanece en planificación y roadmap. No se agregan demo ni conclusiones.
+Aclaración conservada del pie: R1–R7 · 13 sprints funcionales · 53 historias
+
+Separador editorial inspirado en la estructura del PDF Equipo 6, página 22. Contenido de PlanIt: siete releases funcionales; R0 se detalla en una diapositiva después de este separador y antes de R1; se mantiene separada de los totales funcionales.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §3.2.
+-->
+
+---
+layout: planit
+name: r0-foundations
+title: Release 0 · Fundamentos
+---
+
+# Release 0 · Fundamentos
+
+<p class="slide-lead">Preparar al equipo para comenzar el desarrollo de PlanIt.</p>
+<p class="foundation-period">25/08/2025 al 07/09/2025 · Un sprint técnico</p>
+<div class="scope-grid content-section foundation-grid">
+<div><h2>Colaboración y versiones</h2><p>Repositorio compartido en GitHub y organización del trabajo en Jira.</p></div>
+<div><h2>Entorno de desarrollo</h2><p>React, TypeScript y Vite. Configuración inicial de PWA, manifiesto y Service Worker.</p></div>
+<div><h2>Construcción de la interfaz</h2><p>Prácticas con componentes reutilizables, navegación básica y diseño adaptable.</p></div>
+<div><h2>Supabase y datos</h2><p>Familiarización con Supabase y modelo inicial de usuarios, eventos y participaciones.</p></div>
+</div>
+
+<!--
+Fuente aportada por el usuario: Planificacion.pdf, páginas 46–47, sección RELEASE 0 — FUNDAMENTOS; archivo original C:/Users/USUARIO/Downloads/Planificacion.pdf. Los cuatro bloques resumen las cuatro historias técnicas, no historias funcionales ni requisitos adicionales. Objetivo, período y un sprint se conservan de la fuente. Los entregables incluyen aprendizaje, entornos y accesos, alcance/requisitos y acuerdos del equipo. R0 no modifica los totales R1–R7: 53 historias, 117 CA (total corregido por el usuario el 02/11/2026) y 13 sprints funcionales. No se asignan puntos de esfuerzo ni se inventa aceptación remota.
+Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
 
 ---
@@ -472,9 +496,11 @@ title: Release 1
 # Release 1
 
 <ReleaseCover :release-number="1" />
-<SlideFooter label="Planificación oficial · Período de referencia de la release" />
+
 
 <!--
+Aclaración conservada del pie: Planificación oficial · Período de referencia de la release
+
 Nombre, objetivo y fechas de R1: calendario oficial §3.1 y capítulo 5. No se deducen versiones ni fechas de sprint. El período de referencia no certifica aceptación técnica integral.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -488,9 +514,11 @@ title: R1 · Sprint 1
 # R1 · Sprint 1
 
 <StoryBoard :release-number="1" :part="1" />
-<SlideFooter label="Historias oficiales completas · 4 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 4 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R1-01, RF-R1-02, RF-R1-03, RF-R1-04. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente explicita el sprint del 08/09/2025 al 23/09/2025. Las dos páginas pertenecen al único sprint funcional de R1.
@@ -506,9 +534,11 @@ title: R1 · Sprint 1 · continuación
 # R1 · Sprint 1 · continuación
 
 <StoryBoard :release-number="1" :part="2" />
-<SlideFooter label="Continuación del mismo sprint · Historias oficiales completas · 3 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Continuación del mismo sprint · Historias oficiales completas · 3 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R1-05, RF-R1-06, RF-R1-07. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente explicita el sprint del 08/09/2025 al 23/09/2025. Las dos páginas pertenecen al único sprint funcional de R1.
@@ -524,9 +554,11 @@ title: R1 · Aspectos destacados
 # R1 · Aspectos destacados
 
 <ReleaseHighlights :release-number="1" />
-<SlideFooter label="Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas" />
+
 
 <!--
+Aclaración conservada del pie: Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas
+
 Síntesis editorial del incremento (§5.3) y la retrospectiva (§5.4). La dificultad y el acuerdo se distinguen: no se convierte una propuesta futura en una solución aplicada ni se atribuyen resultados técnicos no medidos. No se reconstruyen burn-up charts sin datos verificables.
 
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
@@ -541,9 +573,11 @@ title: Release 2
 # Release 2
 
 <ReleaseCover :release-number="2" />
-<SlideFooter label="Planificación oficial · Período de referencia de la release" />
+
 
 <!--
+Aclaración conservada del pie: Planificación oficial · Período de referencia de la release
+
 Nombre, objetivo y fechas de R2: calendario oficial §3.1 y capítulo 6. No se deducen versiones ni fechas de sprint. El período de referencia no certifica aceptación técnica integral.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -557,9 +591,11 @@ title: R2 · Sprint 1
 # R2 · Sprint 1
 
 <StoryBoard :release-number="2" :part="1" />
-<SlideFooter label="Historias oficiales completas · 3 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 3 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R2-01, RF-R2-02, RF-R2-03. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -575,9 +611,11 @@ title: R2 · Sprint 2
 # R2 · Sprint 2
 
 <StoryBoard :release-number="2" :part="2" />
-<SlideFooter label="Historias oficiales completas · 4 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 4 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R2-04, RF-R2-05, RF-R2-06, RF-R2-07. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -593,9 +631,11 @@ title: R2 · Aspectos destacados
 # R2 · Aspectos destacados
 
 <ReleaseHighlights :release-number="2" />
-<SlideFooter label="Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas" />
+
 
 <!--
+Aclaración conservada del pie: Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas
+
 Síntesis editorial del incremento (§6.4) y la retrospectiva (§6.5). La dificultad y el acuerdo se distinguen: no se convierte una propuesta futura en una solución aplicada ni se atribuyen resultados técnicos no medidos. No se reconstruyen burn-up charts sin datos verificables.
 
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
@@ -610,9 +650,11 @@ title: Release 3
 # Release 3
 
 <ReleaseCover :release-number="3" />
-<SlideFooter label="Planificación oficial · Período de referencia de la release" />
+
 
 <!--
+Aclaración conservada del pie: Planificación oficial · Período de referencia de la release
+
 Nombre, objetivo y fechas de R3: calendario oficial §3.1 y capítulo 7. No se deducen versiones ni fechas de sprint. El período de referencia no certifica aceptación técnica integral.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -626,9 +668,11 @@ title: R3 · Sprint 1
 # R3 · Sprint 1
 
 <StoryBoard :release-number="3" :part="1" />
-<SlideFooter label="Historias oficiales completas · 4 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 4 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R3-01, RF-R3-02, RF-R3-03, RF-R3-04. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -644,9 +688,11 @@ title: R3 · Sprint 2
 # R3 · Sprint 2
 
 <StoryBoard :release-number="3" :part="2" />
-<SlideFooter label="Historias oficiales completas · 5 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 5 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R3-05, RF-R3-06, RF-R3-07, RF-R3-08, RF-R3-09. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -662,9 +708,11 @@ title: R3 · Aspectos destacados
 # R3 · Aspectos destacados
 
 <ReleaseHighlights :release-number="3" />
-<SlideFooter label="Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas" />
+
 
 <!--
+Aclaración conservada del pie: Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas
+
 Síntesis editorial del incremento (§7.4) y la retrospectiva (§7.5). La dificultad y el acuerdo se distinguen: no se convierte una propuesta futura en una solución aplicada ni se atribuyen resultados técnicos no medidos. No se reconstruyen burn-up charts sin datos verificables.
 
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
@@ -679,9 +727,11 @@ title: Release 4
 # Release 4
 
 <ReleaseCover :release-number="4" />
-<SlideFooter label="Planificación oficial · Período de referencia de la release" />
+
 
 <!--
+Aclaración conservada del pie: Planificación oficial · Período de referencia de la release
+
 Nombre, objetivo y fechas de R4: calendario oficial §3.1 y capítulo 8. No se deducen versiones ni fechas de sprint. El período de referencia no certifica aceptación técnica integral.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -695,9 +745,11 @@ title: R4 · Sprint 1
 # R4 · Sprint 1
 
 <StoryBoard :release-number="4" :part="1" />
-<SlideFooter label="Historias oficiales completas · 4 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 4 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R4-01, RF-R4-02, RF-R4-03, RF-R4-04. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -713,9 +765,11 @@ title: R4 · Sprint 2
 # R4 · Sprint 2
 
 <StoryBoard :release-number="4" :part="2" />
-<SlideFooter label="Historias oficiales completas · 5 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 5 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R4-05, RF-R4-06, RF-R4-07, RF-R4-08, RF-R4-09. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -731,9 +785,11 @@ title: R4 · Aspectos destacados
 # R4 · Aspectos destacados
 
 <ReleaseHighlights :release-number="4" />
-<SlideFooter label="Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas" />
+
 
 <!--
+Aclaración conservada del pie: Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas
+
 Síntesis editorial del incremento (§8.4) y la retrospectiva (§8.5). La dificultad y el acuerdo se distinguen: no se convierte una propuesta futura en una solución aplicada ni se atribuyen resultados técnicos no medidos. No se reconstruyen burn-up charts sin datos verificables.
 
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
@@ -748,9 +804,11 @@ title: Release 5
 # Release 5
 
 <ReleaseCover :release-number="5" />
-<SlideFooter label="Planificación oficial · Período de referencia de la release" />
+
 
 <!--
+Aclaración conservada del pie: Planificación oficial · Período de referencia de la release
+
 Nombre, objetivo y fechas de R5: calendario oficial §3.1 y capítulo 9. No se deducen versiones ni fechas de sprint. El período de referencia no certifica aceptación técnica integral.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -764,9 +822,11 @@ title: R5 · Sprint 1
 # R5 · Sprint 1
 
 <StoryBoard :release-number="5" :part="1" />
-<SlideFooter label="Historias oficiales completas · 4 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 4 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R5-01, RF-R5-02, RF-R5-03, RF-R5-04. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -782,9 +842,11 @@ title: R5 · Sprint 2
 # R5 · Sprint 2
 
 <StoryBoard :release-number="5" :part="2" />
-<SlideFooter label="Historias oficiales completas · 4 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 4 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R5-05, RF-R5-06, RF-R5-07, RF-R5-08. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -800,9 +862,11 @@ title: R5 · Aspectos destacados
 # R5 · Aspectos destacados
 
 <ReleaseHighlights :release-number="5" />
-<SlideFooter label="Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas" />
+
 
 <!--
+Aclaración conservada del pie: Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas
+
 Síntesis editorial del incremento (§8.4) y la retrospectiva (§8.5) de la revisión actual de Planificación Oficial. Repetición de conversaciones sin una decisión registrada: filas Hacer menos y Dejar de hacer de §8.5. El acuerdo sintetiza registrar decisión, motivo y próximo paso. La dificultad y el acuerdo se distinguen: no se convierte una propuesta futura en una solución aplicada ni se atribuyen resultados técnicos no medidos. No se reconstruyen burn-up charts sin datos verificables.
 
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
@@ -817,9 +881,11 @@ title: Release 6
 # Release 6
 
 <ReleaseCover :release-number="6" />
-<SlideFooter label="Planificación oficial · Período de referencia de la release" />
+
 
 <!--
+Aclaración conservada del pie: Planificación oficial · Período de referencia de la release
+
 Nombre, objetivo y fechas de R6: calendario oficial §3.1 y capítulo 10. No se deducen versiones ni fechas de sprint. El período de referencia no certifica aceptación técnica integral.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -833,9 +899,11 @@ title: R6 · Sprint 1
 # R6 · Sprint 1
 
 <StoryBoard :release-number="6" :part="1" />
-<SlideFooter label="Historias oficiales completas · 3 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 3 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R6-01, RF-R6-02, RF-R6-03. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -851,9 +919,11 @@ title: R6 · Sprint 2
 # R6 · Sprint 2
 
 <StoryBoard :release-number="6" :part="2" />
-<SlideFooter label="Historias oficiales completas · 3 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 3 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R6-04, RF-R6-05, RF-R6-06. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -869,9 +939,11 @@ title: R6 · Aspectos destacados
 # R6 · Aspectos destacados
 
 <ReleaseHighlights :release-number="6" />
-<SlideFooter label="Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas" />
+
 
 <!--
+Aclaración conservada del pie: Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas
+
 Síntesis editorial del incremento (§9.4) y la retrospectiva (§9.5) de la revisión actual de Planificación Oficial. Interrupciones por ajustes menores y pérdida de contexto: fila Hacer menos de §9.5. El acuerdo propone agrupar ajustes y reservar momentos para resolverlos. La dificultad y el acuerdo se distinguen: no se convierte una propuesta futura en una solución aplicada ni se atribuyen resultados técnicos no medidos. No se reconstruyen burn-up charts sin datos verificables.
 Las métricas representan inscripciones registradas, no control de ingreso o asistencia física.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
@@ -886,9 +958,11 @@ title: Release 7
 # Release 7
 
 <ReleaseCover :release-number="7" />
-<SlideFooter label="Planificación oficial · Período de referencia de la release" />
+
 
 <!--
+Aclaración conservada del pie: Planificación oficial · Período de referencia de la release
+
 Nombre, objetivo y fechas de R7: calendario oficial §3.1 y capítulo 11. No se deducen versiones ni fechas de sprint. El período de referencia no certifica aceptación técnica integral.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
 -->
@@ -902,9 +976,11 @@ title: R7 · Sprint 1
 # R7 · Sprint 1
 
 <StoryBoard :release-number="7" :part="1" />
-<SlideFooter label="Historias oficiales completas · 3 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 3 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R7-01, RF-R7-02, RF-R7-03. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -920,9 +996,11 @@ title: R7 · Sprint 2
 # R7 · Sprint 2
 
 <StoryBoard :release-number="7" :part="2" />
-<SlideFooter label="Historias oficiales completas · 4 requisitos" />
+
 
 <!--
+Aclaración conservada del pie: Historias oficiales completas · 4 requisitos
+
 Esfuerzo relativo: estimaciones propuestas por autorización del usuario el 29/10/2026, no históricas del equipo ni horas. Valores estables y colores en data/story-effort.mjs; equivalencia visual XS–XXL explicada en Priorización y estimación.
 Historias: RF-R7-04, RF-R7-05, RF-R7-06, RF-R7-07. Se reproducen literalmente los enunciados oficiales; sólo se destaca la acción. Fuente de transcripción y revisión consultada: references/release-stories.source.json. El texto completo está visible sin clics. No se proyectan los criterios de aceptación completos.
 La fuente identifica sprints locales, pero no explicita sus fechas individuales: no dividir el período de la release para inventarlas.
@@ -938,9 +1016,11 @@ title: R7 · Aspectos destacados
 # R7 · Aspectos destacados
 
 <ReleaseHighlights :release-number="7" />
-<SlideFooter label="Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas" />
+
 
 <!--
+Aclaración conservada del pie: Revisión y retrospectiva oficiales · Los acuerdos no acreditan soluciones ya aplicadas
+
 Síntesis editorial del incremento (§10.4) y la retrospectiva (§10.5) de la revisión actual de Planificación Oficial. La dificultad de cierre del producto y su acuerdo fueron propuestos y aprobados expresamente por el usuario en esta conversación. Se reproduce el texto aprobado: organizar el cierre de pendientes y priorizar entrega, pruebas del producto completo y mejoras futuras. Es una formulación editorial autorizada, no una cita literal de §10.5 ni una afirmación de pruebas o acuerdos ya ejecutados. La dificultad y el acuerdo se distinguen: no se convierte una propuesta futura en una solución aplicada ni se atribuyen resultados técnicos no medidos. No se reconstruyen burn-up charts sin datos verificables.
 Las integraciones dependen de permisos, navegador y dispositivo; la bandeja interna sigue disponible sin Push. No se certifican nuevas entregas Push ni limpieza física por esta presentación.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti
@@ -960,9 +1040,10 @@ title: Demo
 <div class="demo-route"><span>Descubrir</span><svg viewBox="0 0 48 18" aria-hidden="true"><path d="M0 9h44m-8-7 8 7-8 7" fill="none" stroke="currentColor" stroke-width="2" /></svg><span>Organizar</span><svg viewBox="0 0 48 18" aria-hidden="true"><path d="M0 9h44m-8-7 8 7-8 7" fill="none" stroke="currentColor" stroke-width="2" /></svg><span>Participar</span></div>
 </div>
 
-<SlideFooter label="Demostración de PlanIt" />
 
 <!--
+Aclaración conservada del pie: Demostración de PlanIt
+
 Separador para pasar a la demostración en vivo, equivalente a la página 50 del PDF Equipo 6. Esta página no ejecuta operaciones ni acredita una sesión de prueba.
 Recorrido sugerido al expositor: descubrimiento y detalle, publicación de un evento completo, inscripción y comunicación autorizada. Preparar previamente cuentas y datos de demostración; no exponer información privada. No se agregó una URL pública ni un video inexistente.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §§4.1, 4.2 y 5.3 (R1 y R2); ERS §§1.1–1.2 para el propósito.
@@ -986,9 +1067,10 @@ title: Evolución del producto
 <article><h2>Valoraciones posteriores</h2><p>Opiniones de asistentes y controles para prevenir contenido inapropiado.</p></article>
 </div>
 
-<SlideFooter label="Propuestas de la ERS · Fuera de los requisitos comprometidos R1–R7" />
 
 <!--
+Aclaración conservada del pie: Propuestas de la ERS · Fuera de los requisitos comprometidos R1–R7
+
 La página 51 del PDF Equipo 6 aporta sólo el lugar de esta sección en la narrativa. Las seis posibilidades proceden de ERS Oficial §2.6, Evolución previsible del sistema; se resumen editorialmente sin convertirlas en entregas o compromisos aprobados.
 La propia ERS condiciona su implementación a validar necesidades, viabilidad técnica y actualización de requisitos y criterios de aceptación. La IA propuesta es una ampliación de las sugerencias actuales, no una capacidad que se atribuya a R4. La acreditación digital sería distinta de las métricas actuales de inscripciones. No se asignan fechas, prioridades, nuevas releases ni resultados medidos.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.8kvi3flgq86r §2.6.
@@ -1009,9 +1091,10 @@ title: Conclusiones
 <section><h2>Continuidad del proyecto</h2><p>El desarrollo deja una base para futuras mejoras, que deberán priorizarse según las necesidades de los usuarios y su viabilidad.</p></section>
 </div>
 
-<SlideFooter label="Síntesis del producto, el aprendizaje y la continuidad del proyecto" />
 
 <!--
+Aclaración conservada del pie: Síntesis del producto, el aprendizaje y la continuidad del proyecto
+
 Reescritura solicitada por el usuario. Referencias de contenido: SysAssign, página 56 (respuesta a una necesidad, producto y aprendizaje técnico), y Tatool, página 107 (aplicación de conocimientos, gestión, mejora continua y continuidad). Se adaptan los ejes a PlanIt sin copiar impactos, algoritmos, ahorro, mercados B2B ni promesas de escalabilidad de esos proyectos.
 PlanIt: propósito y alcance ERS §§1.1–1.2 y 2.2; posibles ampliaciones ERS §2.6. Metodología y organización: Planificación Oficial §1.1. Colaboración, autonomía y mejora gradual: retrospectivas actuales R5 §8.5, R6 §9.5 y R7 §10.5. Se conserva la distinción entre producto desarrollado, aprendizaje documentado y mejoras futuras. No se afirma adopción, impacto medido ni aceptación técnica integral de R1–R7.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti §§1.1, 8.5, 9.5 y 10.5. ERS: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.8kvi3flgq86r §§1.1–1.2, 2.2 y 2.6.
@@ -1031,9 +1114,10 @@ title: ¡Muchas gracias!
 <p class="thanks-question">Los escuchamos. ¿Preguntas?</p>
 </div>
 
-<SlideFooter label="Grupo N.º 1 · UTN · Facultad Regional Resistencia · 2026" />
 
 <!--
+Aclaración conservada del pie: Grupo N.º 1 · UTN · Facultad Regional Resistencia · 2026
+
 Agradecimiento de cierre y apertura a preguntas, siguiendo el lugar de la página 53 del PDF Equipo 6. Se conserva la identidad original de PlanIt. El propósito y la identificación académica proceden de la documentación oficial; no se agregan canales de contacto ni enlaces no verificados.
 Fuente: https://docs.google.com/document/d/1MUKoIG5TWZXwp6e3ZKHgiKtWU7NnwaE3S3PhUcjsPww/edit?tab=t.q5vok7qr5sti cabecera y §1.2; ERS §1.1.
 -->
