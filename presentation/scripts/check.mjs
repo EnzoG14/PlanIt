@@ -15,7 +15,7 @@ const notes = slides.match(/<!--[\s\S]*?-->/g) || []
 assert.equal(notes.length, deck.length, 'Speaker notes on every slide')
 assert.ok(notes.every(note => note.includes(sources.planning) || note.includes(sources.requirements)), 'Official source on every slide')
 assert.equal(releases.slice(1).reduce((sum, release) => sum + release.rf, 0), 53)
-assert.equal(acceptanceCriteriaTotal, 117, 'Acceptance criteria total corrected by user')
+assert.equal(acceptanceCriteriaTotal, 217, 'Acceptance criteria total corrected by user')
 assert.match(slides, new RegExp(`<strong>${acceptanceCriteriaTotal}</strong><p>criterios de aceptación</p>`), 'Displayed criteria total matches approved correction')
 assert.equal(releases.slice(1).reduce((sum, release) => sum + release.sprints, 0), 13)
 assert.equal(releases[0].sprints, 1)
