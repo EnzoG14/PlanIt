@@ -40,4 +40,4 @@ PASS: contenido, build, 110 casos visuales y PDF de 55 páginas. Las 53 historia
 
 Se retira «Período del sprint: 08/09/2025 al 23/09/2025» del tablero señalado en la página 25 y de su continuación (26), generados por el mismo componente. Se conservan los períodos oficiales en los datos y las notas.
 
-El usuario corrige el total de criterios de aceptación a 117 el 02/11/2026. Este total reemplaza los 218 del documento original para esta presentación; no se recibió una distribución nueva por release. Se conserva la información histórica y se verifica el total corregido de forma independiente.
+El 02/11/2026, el usuario corrigió a 117 el total de 218 del documento original. El 09/11/2026, actualizó el total de la presentación a 217. Se conserva el desglose histórico por release y se verifica el total vigente de forma independiente.

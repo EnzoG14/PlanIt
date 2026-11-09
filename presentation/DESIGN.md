@@ -189,7 +189,7 @@ Todas las historias están visibles por defecto, sin clics ni movimiento continu
 
 ### Composiciones académicas
 
-`styles/extended.css` amplía el sistema, sin reemplazarlo: equipo con cinco filas de 28/24 px, agenda de seis temas en dos columnas, contextos y beneficios editoriales, áreas funcionales en dos columnas y procesos de cuatro etapas. Los conteos de 53 RF/117 CA y 7 releases/13 sprints/53 historias tienen función informativa explícita; no se usan como métricas comerciales.
+`styles/extended.css` amplía el sistema, sin reemplazarlo: equipo con cinco filas de 28/24 px, agenda de seis temas en dos columnas, contextos y beneficios editoriales, áreas funcionales en dos columnas y procesos de cuatro etapas. Los conteos de 53 RF/217 CA y 7 releases/13 sprints/53 historias tienen función informativa explícita; no se usan como métricas comerciales.
 
 `TeamRoster`, `FunctionalGroups` y `ReleaseRoadmap` reutilizan `data/deck.mjs`, fuente única de identidades, equipo y períodos. `SlideFooter` mantiene alineación y escala de los pies. La arquitectura se identifica por `architecture`, aunque cambie su posición en la secuencia.
 
@@ -259,4 +259,4 @@ Conclusiones reemplaza las dos perspectivas anteriores por cuatro ejes de conten
 
 55 diapositivas. R0 utiliza la composición abierta de dos columnas de Alcance, con cuatro bloques de títulos de 30 px y cuerpos de 26 px. Título de 52 px, objetivo de 25 px y período de 23 px. El layout incorpora un único SlideFooter con PlanIt, alineado a la derecha (64 px) y abajo (24 px), sin rótulos. Las aclaraciones pasan a notas.
 
-Total de criterios de aceptación actualizado a 117 por indicación expresa del usuario el 02/11/2026. El reparto histórico en los datos de releases se conserva como referencia documental; no se utiliza para calcular el total corregido.
+Total de criterios de aceptación actualizado a 217 por indicación expresa del usuario el 09/11/2026. El reparto histórico en los datos de releases se conserva como referencia documental; no se utiliza para calcular el total corregido.

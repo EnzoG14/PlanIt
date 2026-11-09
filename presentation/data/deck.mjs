@@ -41,5 +41,5 @@ export const releases = [
   { id: 'R7', name: 'Contenido social e integraciones', start: '16/09/2026', end: '13/10/2026', sprints: 2, rf: 7, ca: 29 },
 ]
 
-// Presentation total corrected by the user on 2026-11-02; no per-release redistribution supplied.
-export const acceptanceCriteriaTotal = 117
+// Presentation total corrected by the user on 2026-11-09; no per-release redistribution supplied.
+export const acceptanceCriteriaTotal = 217
