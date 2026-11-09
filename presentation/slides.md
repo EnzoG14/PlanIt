@@ -418,7 +418,6 @@ title: Planificación general
 # Planificación general
 
 <div class="planning-summary content-section"><div><strong>7</strong><h2>releases funcionales</h2></div><div><strong>13</strong><h2>sprints funcionales</h2></div><div><strong>53</strong><h2>historias vinculadas<br />a requisitos</h2></div></div>
-<div class="foundation-note"><strong>Además, R0</strong><p>Un sprint de fundamentos: aprender las tecnologías,<br />organizar el trabajo y preparar el entorno.</p></div>
 
 
 <!--
