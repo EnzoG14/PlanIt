@@ -378,7 +378,7 @@ title: Priorización y estimación
 
 <div class="estimation-split content-section">
 <section><div class="estimation-heading"><h2>MoSCoW</h2></div><dl class="moscow"><div><dt>Must</dt><dd>Imprescindible</dd></div><div><dt>Should</dt><dd>Importante</dd></div><div><dt>Could</dt><dd>Deseable</dd></div><div><dt>Won’t</dt><dd>Fuera del alcance</dd></div></dl><img class="moscow-image" src="/assets/tools/moscow.png" alt="Modelo MoSCoW: Must Have, Should Have, Could Have y Won’t Have" /></section>
-<section><div class="estimation-heading"><h2>Planning Poker</h2><img class="poker-image" src="/assets/tools/planning-poker.png" alt="Cartas de Planning Poker" /></div><p>Considerar esfuerzo, dependencias e incertidumbre.</p><EffortLegend /><p class="emphasis">Los puntos expresan esfuerzo relativo, no horas.</p><p class="effort-explanation">Puntos propuestos para esta presentación; no son estimaciones históricas del equipo.</p></section>
+<section><div class="estimation-heading"><h2>Planning Poker</h2><img class="poker-image" src="/assets/tools/planning-poker.png" alt="Cartas de Planning Poker" /></div><p>Considerar esfuerzo, dependencias e incertidumbre.</p><EffortLegend /><p class="emphasis">Los puntos expresan esfuerzo relativo.</p></section>
 </div>
 
 
@@ -418,7 +418,6 @@ title: Planificación general
 # Planificación general
 
 <div class="planning-summary content-section"><div><strong>7</strong><h2>releases funcionales</h2></div><div><strong>13</strong><h2>sprints funcionales</h2></div><div><strong>53</strong><h2>historias vinculadas<br />a requisitos</h2></div></div>
-<div class="foundation-note"><strong>Además, R0</strong><p>Un sprint de fundamentos: aprender las tecnologías,<br />organizar el trabajo y preparar el entorno.</p></div>
 
 
 <!--
