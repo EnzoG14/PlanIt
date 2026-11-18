@@ -233,6 +233,11 @@
   color: var(--pi-color-danger-on-bg, #8a1030);
 }
 
+.push-settings-error > .text-button {
+  flex: none;
+  min-height: 44px;
+}
+
 .push-settings-actions {
   display: flex;
   flex-wrap: wrap;
