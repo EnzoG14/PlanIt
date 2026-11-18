@@ -217,6 +217,16 @@ try {
       // Case C: Non-JSON raw text payload falls back to generic notice
       await dispatchPush('<<<non-json-payload>>>')
 
+      const rejoinTarget = '/events/' + eventId + '/rejoin-requests'
+      await dispatchPush({
+        version: 1,
+        notification_id: notifId,
+        recipient_id: recipientId,
+        title: 'Nueva solicitud de reincorporación',
+        body: 'Una persona solicitó volver a participar.',
+        target: rejoinTarget,
+      })
+
       // Case D: PLANIT_CLEAR_NOTIFICATIONS message closes matching notifications
       let clearPromise = Promise.resolve()
       const msgEvt = new Event('message')
@@ -260,7 +270,7 @@ try {
     }
   })
 
-  assert.equal(swBehavior.shown.length, 3)
+  assert.equal(swBehavior.shown.length, 4)
   // Verify Case A sanitization: HTML stripped, URL stripped, body truncated <= 120 chars, internal target preserved
   const first = swBehavior.shown[0]
   assert.equal(first.title, 'Asado en el parque')
@@ -281,6 +291,7 @@ try {
   const third = swBehavior.shown[2]
   assert.equal(third.title, 'Nuevo aviso en PlanIt')
   assert.equal(third.options.data.target, '/notifications')
+  assert.equal(swBehavior.shown[3].options.data.target, '/events/33333333-3333-4333-8333-333333333333/rejoin-requests')
 
   // Verify Case D & E
   assert.ok(swBehavior.closedTags.includes('44444444-4444-4444-8444-444444444444'))

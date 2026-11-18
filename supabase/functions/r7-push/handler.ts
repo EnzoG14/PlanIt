@@ -65,7 +65,7 @@ export function plainText(value: unknown, max: number, fallback: string): string
 export function safeTarget(value: unknown): string {
   if (value === '/me/follow-requests') return value
   if (typeof value === 'string' && (/^\/messages\/[0-9a-f-]{36}$/i.test(value)
-    || /^\/events\/[0-9a-f-]{36}(\/chat)?$/i.test(value))) {
+    || /^\/events\/[0-9a-f-]{36}(\/(?:chat|rejoin-requests))?$/i.test(value))) {
     if (uuid.test(value.split('/')[2])) return value
   }
   return '/notifications'

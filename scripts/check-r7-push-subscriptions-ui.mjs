@@ -153,6 +153,7 @@ try {
   const dbState = {
     [userA]: {
       show_previews: true,
+      event_reminders_enabled: true,
       subscriptions: [
         {
           id: otherDeviceId,
@@ -164,6 +165,7 @@ try {
     },
     [userB]: {
       show_previews: true,
+      event_reminders_enabled: true,
       subscriptions: [],
     },
   }
@@ -341,6 +343,12 @@ try {
       dbState[currentRpcUser].show_previews = Boolean(body.p_show_previews)
       return reply(dbState[currentRpcUser].show_previews)
     }
+    if (url.pathname === '/rest/v1/rpc/set_my_event_reminders') {
+      const body = req.postDataJSON()
+      assert.equal(typeof body.p_enabled, 'boolean')
+      dbState[currentRpcUser].event_reminders_enabled = body.p_enabled
+      return reply(body.p_enabled)
+    }
     return reply([])
   })
 
@@ -364,6 +372,19 @@ try {
   assert.equal(await page.evaluate(() => window.__b9MockState.subscribeCalls), 0, 'Must never request permission or subscribe on mount')
   await page.screenshot({ path: join(screenshotsDir, 'state-default-390.png'), fullPage: true })
   record('R7-B9-TC-01 UI: initial default state renders without auto-prompting Notification.requestPermission and shows multi-device count')
+
+  const reminderCheckbox = page.getByRole('checkbox', { name: /Recordatorios de eventos/i })
+  await reminderCheckbox.focus()
+  assert.equal(await reminderCheckbox.isChecked(), true)
+  await page.keyboard.press('Space')
+  await page.getByText('Desactivaste los recordatorios de eventos.').waitFor()
+  assert.equal(dbState[userA].event_reminders_enabled, false)
+  assert.equal(dbState[userB].event_reminders_enabled, true)
+  await page.reload()
+  await reminderCheckbox.waitFor()
+  assert.equal(await reminderCheckbox.isChecked(), false)
+  assert.equal(await page.evaluate(() => window.__b9MockState.subscribeCalls), 0)
+  record('Reminder preference works by keyboard without push permission and persists across reloads')
 
   // Test uncertain state when PushManager.subscribe succeeds in browser but DB upsert fails
   failNextUpsert = true

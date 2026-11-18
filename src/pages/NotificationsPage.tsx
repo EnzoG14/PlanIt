@@ -9,7 +9,27 @@ import { catchUp, compareRows, createReconciler, mergeRows } from '../lib/reconc
 import { useNotificationsRealtime } from '../features/notifications/realtime-context'
 import './notifications.css'
 
-const notificationKinds: Record<string, string> = { event_full: 'Cupo completo', event_update: 'Evento actualizado', event_cancelled: 'Evento cancelado', chat: 'Conversación', direct_message: 'Mensaje privado', system: 'Sistema', follow_request: 'Seguimiento' }
+const notificationKinds: Record<string, string> = {
+  event_full: 'Cupo completo',
+  event_update: 'Evento actualizado',
+  event_cancelled: 'Evento cancelado',
+  chat: 'Conversación',
+  direct_message: 'Mensaje privado',
+  system: 'Sistema',
+  follow_request: 'Seguimiento',
+  rejoin_requested: 'Reincorporación',
+  rejoin_approved: 'Reincorporación',
+  rejoin_rejected: 'Reincorporación',
+  participation_removed: 'Inscripción',
+  event_reminder: 'Recordatorio',
+}
+
+function notificationActionLabel(target: string): string {
+  if (target === '/me/follow-requests' || target.endsWith('/rejoin-requests')) return 'Ver solicitudes'
+  if (target.startsWith('/messages/')) return 'Ver mensaje'
+  if (target.endsWith('/chat')) return 'Ver chat'
+  return 'Ver evento'
+}
 
 export function NotificationsPage() {
   const { session } = useAuth()
@@ -151,7 +171,7 @@ function NotificationsInbox() {
             <time dateTime={`${item.created_at}-03:00`}>{formatEventTime(item.created_at)}</time>
             <div className="notification-actions"><span className="notification-state">{item.read_at ? 'Leído' : 'No leído'}</span>
               {!item.read_at && <button type="button" className="text-button" disabled={pending !== null || loadingMore} onClick={() => void act(item, false)}>{pending === item.id ? 'Guardando…' : 'Marcar leído'}</button>}
-              {item.target && <button type="button" className="text-button" disabled={pending !== null || loadingMore} onClick={() => void act(item, true)}>{item.target === '/me/follow-requests' ? 'Ver solicitudes' : item.target.startsWith('/messages/') ? 'Ver mensaje' : item.target.endsWith('/chat') ? 'Ver chat' : 'Ver evento'}</button>}
+              {item.target && <button type="button" className="text-button" disabled={pending !== null || loadingMore} onClick={() => void act(item, true)}>{notificationActionLabel(item.target)}</button>}
               {item.type === 'event_full' && !item.target && <span className="notification-state">El evento ya no está disponible o no tenés permiso para consultarlo.</span>}
             </div>
           </div>
