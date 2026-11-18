@@ -62,6 +62,7 @@ async function checks(browser) {
       }
     }, session)
     let state = 'open', denied = false, getDenied = false, uploadFailed = false, rpcFail = '', commitLost = false, validationFailed = false
+    let beforePersist, beforeResponse
     const writes = [], reservations = [], gets = [], uploads = [], sockets = []
     const seed = i => ({ id: `40000000-0000-4000-8000-${String(i).padStart(12,'0')}`, sender_id: 'other', display_name: 'Sofía fixture', username: 'sofia_fixture', body: `Mensaje fixture ${i}`, created_at: `2026-10-11T12:00:00.${String(i).padStart(6,'0')}`, attachment_id: null, file_id: null, bucket_name: null, storage_path: null, mime_type: null, size_bytes: null })
     const rows = Array.from({ length: 65 }, (_, i) => seed(i))
@@ -70,20 +71,23 @@ async function checks(browser) {
       const reservation = reservations.find(r => r.p_file_id === p.p_file_id)
       return { attachment_id: p.p_file_id, file_id: p.p_file_id, bucket_name: 'event_media', storage_path: `r7/chat/${viewer}/${event}/${reservation.p_attempt_id}.png`, mime_type: 'image/png', size_bytes: png.length }
     }
-    await context.routeWebSocket('**/realtime/v1/websocket**', ws => {
+    const routeSocket = ws => {
       const joins = new Map(); sockets.push({ ws, joins })
       ws.onMessage(raw => {
         const [join, ref, topic, type, payload] = JSON.parse(String(raw))
         if (type === 'phx_join') { const bindings = (payload.config?.postgres_changes ?? []).map((b,i) => ({ ...b, id:i+1 })); joins.set(topic,{ join,bindings }); ws.send(JSON.stringify([join,ref,topic,'phx_reply',{status:'ok',response:{postgres_changes:bindings}}])) }
         if (type === 'heartbeat' || type === 'phx_leave') ws.send(JSON.stringify([join,ref,topic,'phx_reply',{status:'ok',response:{}}]))
       })
-    })
+      ws.onClose(() => joins.clear())
+    }
+    await context.routeWebSocket('**/realtime/v1/websocket**', routeSocket)
     const emit = row => { for (const {ws,joins} of sockets) for (const [topic,j] of joins) { const ids = j.bindings.filter(b => b.table === 'messages').map(b => b.id); if (ids.length) ws.send(JSON.stringify([j.join,null,topic,'postgres_changes',{ids,data:{schema:'public',table:'messages',type:'INSERT',record:{...row,conversation_id:'50000000-0000-4000-8000-000000000001'},old_record:{},columns:[],errors:null}}])) } }
-    await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**', async route => {
+    const recipientId = '20000000-0000-4000-8000-000000000002'
+    const routeHttp = async route => {
       const req = route.request(), path = new URL(req.url()).pathname
       const reply = data => route.fulfill({ contentType:'application/json', body:JSON.stringify(data) })
       const fail = (message, code='42501', status=403) => route.fulfill({ status, contentType:'application/json', body:JSON.stringify({message,code}) })
-      if (path === '/auth/v1/user') return reply(user)
+      if (path === '/auth/v1/user') return reply(req.headers().authorization === 'Bearer recipient-token' ? {...user,id:recipientId} : user)
       if (path.endsWith('/get_event_chat')) return denied ? fail('chat_unavailable') : reply([{conversation_id:'50000000-0000-4000-8000-000000000001',title:'Encuentro de música · fixture',event_state:state}])
       if (path.endsWith('/get_event_chat_messages_v2')) {
         if (denied) return fail('chat_unavailable')
@@ -97,13 +101,16 @@ async function checks(browser) {
       if (path === '/functions/v1/r7-chat-image' && req.method() === 'GET') { assert.ok(new URL(req.url()).searchParams.get('message_id'));gets.push({method:req.method(),authorization:req.headers().authorization}); return getDenied ? fail('denied') : route.fulfill({contentType:'image/png',body:png}) }
       if (path.endsWith('/send_event_chat_message_v2')) {
         const p=req.postDataJSON(); writes.push(p)
+        await beforePersist
         if (rpcFail && !commitLost) { const failure=rpcFail; rpcFail=''; return failure === 'lost' ? route.abort('failed') : fail(failure,'P0001',400) }
         if (!rows.some(r => r.id === p.p_message_id)) { const r={...seed(100+writes.length),id:p.p_message_id,sender_id:viewer,body:p.p_body,created_at:`2026-10-11T13:00:00.${String(writes.length).padStart(6,'0')}`,...(p.p_file_id ? mediaFor(p) : {})}; rows.push(r); emit(r) }
+        await beforeResponse
         if (commitLost) { commitLost=false; return route.abort('failed') }
         return reply(p.p_message_id)
       }
       return reply([])
-    })
+    }
+    await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**', routeHttp)
     const page = await context.newPage(), errors=[]
     if (width === 390) await page.clock.install()
     page.on('pageerror', error => errors.push(error.message))
@@ -125,23 +132,50 @@ async function checks(browser) {
       assert.equal(writes.length,0); check('Invalid MIME, size and corrupt bytes reject without send; native picker is single file')
       await select();await shot('preview');await b('Quitar imagen').click();assert.equal(await page.getByAltText('Vista previa de la imagen seleccionada').count(),0)
       await select();await select({...file,name:'reemplazo.png'});assert.equal(await page.getByText('reemplazo.png',{exact:true}).count(),1)
-      await page.locator('#chat-text').fill('Nos vemos en el encuentro');await page.locator('.chat-composer').evaluate(form=>{form.requestSubmit();form.requestSubmit()});await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.equal(writes.length,1)
-      await page.getByAltText('Imagen compartida por Sofía fixture').waitFor();assert.ok(gets.length>0);assert.ok(gets.every(g=>g.authorization==='Bearer fixture-token'));assert.ok(await page.evaluate(()=>window.__downloadCacheModes.length>0&&window.__downloadCacheModes.every(mode=>mode==='no-store')))
+      let releasePersist, releaseResponse
+      const recipientContext=width===390?await browser.newContext({viewport:{width:1280,height:900},serviceWorkers:'block'}):null
+      let recipient
+      if(recipientContext) {
+        await recipientContext.addInitScript(value=>localStorage.setItem('sb-iepeqmvzjguwlhnecsdq-auth-token',JSON.stringify(value)),{...session,access_token:'recipient-token',user:{...user,id:recipientId}})
+        await recipientContext.routeWebSocket('**/realtime/v1/websocket**',routeSocket)
+        await recipientContext.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**',routeHttp)
+        recipient=await recipientContext.newPage();await recipient.goto(`${process.env.PLANIT_UI_ORIGIN}/events/${event}/chat`);await recipient.locator('.chat-composer').waitFor()
+      }
+      beforePersist=new Promise(resolve=>{releasePersist=resolve});beforeResponse=new Promise(resolve=>{releaseResponse=resolve})
+      await page.locator('#chat-text').fill('Nos vemos en el encuentro');await page.locator('.chat-composer').evaluate(form=>{form.requestSubmit();form.requestSubmit()})
+      const pendingBubble=page.locator('[data-message-id]').filter({hasText:'Nos vemos en el encuentro'})
+      await pendingBubble.getByText('Enviando…',{exact:true}).waitFor();await pendingBubble.getByAltText('Imagen adjunta al mensaje').waitFor()
+      const pendingId=await pendingBubble.getAttribute('data-message-id')
+      assert.ok(!rows.some(row=>row.id===pendingId))
+      if(recipient) assert.equal(await recipient.getByText('Nos vemos en el encuentro',{exact:true}).count(),0)
+      releasePersist()
+      await pendingBubble.locator('time').waitFor();assert.equal(await pendingBubble.count(),1)
+      if(recipient) {
+        await recipient.locator('.chat-incoming').getByText('Nos vemos en el encuentro',{exact:true}).waitFor()
+        await recipientContext.close()
+        check('A second user receives the group message only after persistence')
+      }
+      assert.equal(await pendingBubble.getAttribute('data-message-id'),pendingId);releaseResponse()
+      await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.equal(writes.length,1)
+      check('Optimistic text and local image precede persistence; early Realtime replaces the bubble by ID')
+      await page.getByAltText('Imagen compartida por Sofía fixture').waitFor();assert.ok(gets.some(g=>g.authorization==='Bearer fixture-token'));assert.ok(gets.every(g=>['Bearer fixture-token','Bearer recipient-token'].includes(g.authorization)));assert.ok(await page.evaluate(()=>window.__downloadCacheModes.length>0&&window.__downloadCacheModes.every(mode=>mode==='no-store')))
       await shot('text-image');await select();await b('Enviar').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.equal(writes[1].p_body,null)
       await page.reload();await page.getByAltText('Imagen compartida por Sofía fixture').last().waitFor();check('Replace/remove, text+image, image-only, reopen and authorized GET fixture')
-      await select();uploadFailed=true;const n=writes.length;await b('Enviar').click();await page.getByRole('alert').filter({hasText:'carga se interrumpió'}).waitFor();assert.equal(writes.length,n);uploadFailed=false
+      await select();uploadFailed=true;const n=writes.length;await b('Enviar').click();await page.getByRole('alert').filter({hasText:'carga se interrumpió'}).waitFor();await page.locator('.chat-bubble').getByText('No se pudo enviar',{exact:true}).waitFor();assert.equal(writes.length,n);uploadFailed=false
       await b('Enviar').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.equal(reservations.at(-1).p_attempt_id,reservations.at(-2).p_attempt_id);assert.equal(uploads.at(-1),uploads.at(-2));check('Upload failure never commits; retry preserves reservation and path')
       await select();validationFailed=true;await b('Enviar').click();await page.getByRole('alert').filter({hasText:'validar la imagen en el servidor'}).waitFor();validationFailed=false;await b('Enviar').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();check('Validation failure is not success; retry uses original file')
-      await select();await page.locator('#chat-text').fill('Respuesta perdida');commitLost=true;await b('Enviar').click();await b('Consultar estado').waitFor();assert.ok(await page.locator('#chat-text').isDisabled());const written=writes.length;await b('Consultar estado').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.equal(writes.length,written);check('Lost committed reply reconciles without another send')
-      await select();await page.locator('#chat-text').fill('Reintento incierto');rpcFail='lost';await b('Enviar').click();await b('Consultar estado').click();await b('Reintentar mismo mensaje').waitFor();await b('Reintentar mismo mensaje').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.deepEqual(writes.at(-1),writes.at(-2));check('Lost uncommitted reply retries identical UUID/body/file after querying')
-      await page.locator('#chat-text').fill('Sólo texto R2');await b('Enviar').click();await page.locator('.chat-bubble').filter({hasText:'Sólo texto R2'}).waitFor();assert.equal(writes.at(-1).p_file_id,null)
+      await select();await page.locator('#chat-text').fill('Respuesta perdida');commitLost=true;const written=writes.length;await b('Enviar').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.equal(writes.length,written+1);check('Lost committed reply reconciles without another send')
+      await select();await page.locator('#chat-text').fill('Reintento incierto');rpcFail='lost';await b('Enviar').click();await page.locator('.chat-bubble').getByText('Envío sin confirmar',{exact:true}).waitFor();await b('Consultar estado').click();await b('Reintentar mismo mensaje').waitFor();await b('Reintentar mismo mensaje').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.deepEqual(writes.at(-1),writes.at(-2));check('Lost uncommitted reply keeps the bubble and retries identical UUID/body/file after querying')
+      await page.locator('#chat-text').fill('Sólo texto R2');await b('Enviar').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();await page.locator('.chat-bubble').filter({hasText:'Sólo texto R2'}).locator('time').waitFor();assert.equal(writes.at(-1).p_file_id,null)
       assert.equal(await page.locator('#chat-text:focus').count(),1)
       await page.locator('#chat-text').fill('x'.repeat(2001));assert.ok(await b('Enviar').isDisabled());await page.locator('#chat-text').fill('')
       await page.locator('#chat-text').fill('Evento cerrado durante envío');rpcFail='chat_read_only';await b('Enviar').click();await page.getByRole('alert').filter({hasText:'ya no está vigente'}).waitFor();assert.equal(rows.filter(r=>r.body==='Evento cerrado durante envío').length,0);await page.locator('#chat-text').fill('')
       await select();await context.setOffline(true);await page.evaluate(()=>window.dispatchEvent(new Event('offline')));await b('Enviar').click();await page.getByRole('alert').filter({hasText:'sin conexión'}).waitFor();await context.setOffline(false);await page.evaluate(()=>window.dispatchEvent(new Event('online')));await b('Quitar imagen').click();check('Text only, 2000 codepoints and offline preserve content without sending')
-      const history=page.locator('.chat-messages');await history.evaluate(el=>el.scrollTop=300)
+      const history=page.locator('.chat-messages');await b('Cargar mensajes anteriores').focus();await history.evaluate(async el=>{await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));el.scrollTop=300})
       const anchor=await history.evaluate(el=>{const child=[...el.children].find(c=>c.getBoundingClientRect().bottom>el.getBoundingClientRect().top);return {id:child.dataset.messageId,offset:child.getBoundingClientRect().top-el.getBoundingClientRect().top}})
-      await b('Cargar mensajes anteriores').click();await page.getByText('Mensaje fixture 0',{exact:true}).waitFor();const offset=await history.evaluate((el,id)=>el.querySelector(`[data-message-id="${id}"]`).getBoundingClientRect().top-el.getBoundingClientRect().top,anchor.id);assert.ok(Math.abs(offset-anchor.offset)<2)
+      await b('Cargar mensajes anteriores').click();await page.getByText('Mensaje fixture 0',{exact:true}).waitFor()
+      const offset=await history.evaluate((el,id)=>el.querySelector(`[data-message-id="${id}"]`).getBoundingClientRect().top-el.getBoundingClientRect().top,anchor.id)
+      assert.ok(Math.abs(offset-anchor.offset)<24,`History anchor ${anchor.id} shifted more than one text line`)
       const top=await history.evaluate(el=>el.scrollTop);const incoming={...seed(300),id:'incoming-300',body:'Mensaje en reconexión',created_at:'2026-10-11T14:00:00.000000'};rows.push(incoming);emit(incoming);emit(incoming);await page.getByText(incoming.body,{exact:true}).waitFor();assert.equal(await page.getByText(incoming.body,{exact:true}).count(),1);assert.ok(Math.abs(await history.evaluate(el=>el.scrollTop)-top)<2);check('Stable pagination anchor and duplicate Realtime reconciliation preserve reader')
       await history.evaluate(el=>el.scrollTop=el.scrollHeight);await page.locator('#chat-text').focus();await shot('chat')
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))
@@ -162,8 +196,9 @@ async function checks(browser) {
         await page.clock.resume();check('Blob expiry after 30s and hidden document revoke all downloaded URLs')
       }
       getDenied=true;await page.reload();await page.getByRole('alert').filter({hasText:'Imagen no disponible o sin permiso'}).first().waitFor();await shot('image-denied');getDenied=false;check('Denied GET shows explicit error and no image')
-      state='ended';await b('Actualizar chat').click();await page.getByText('Evento finalizado · Chat de sólo lectura.').waitFor();assert.equal(await page.locator('input[type=file]').count(),0);await shot('readonly');check('Closed event retains history without composer')
-      denied=true;await b('Actualizar chat').click();await page.getByText('Chat no disponible',{exact:true}).waitFor();assert.equal(await page.locator('.chat-image').count(),0);assert.equal(await page.evaluate(()=>window.__liveBlobs.size),0);check('Permission loss clears all private Blob URLs')
+      const refresh = () => page.evaluate(() => window.dispatchEvent(new Event('focus')))
+      state='ended';await refresh();await page.getByText('Evento finalizado · Chat de sólo lectura.').waitFor();assert.equal(await page.locator('input[type=file]').count(),0);await shot('readonly');check('Closed event retains history without composer')
+      denied=true;await refresh();await page.getByText('Chat no disponible',{exact:true}).waitFor();assert.equal(await page.locator('.chat-image').count(),0);assert.equal(await page.evaluate(()=>window.__liveBlobs.size),0);check('Permission loss clears all private Blob URLs')
       assert.deepEqual(errors,[])
     } catch(error) { await shot('failure'); throw error }
     finally { await context.close() }

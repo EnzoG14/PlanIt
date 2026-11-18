@@ -134,7 +134,13 @@ function EventDetailContent({ id }: { id: string }) {
     {images.length > 1 && <section className="event-gallery" aria-label="Fotos del evento">{images.slice(1).map((url, index) => <EventImage key={`${url}-${index}`} src={url} alt={`Foto ${index + 2} de ${event.title}`} />)}</section>}
     <section className="event-organizer" aria-labelledby="event-organizer-title">
       <h2 id="event-organizer-title">Organizador</h2>
-      {organizer ? <><strong>{organizer.display_name}</strong><p>@{organizer.username}</p></> : organizerError ? <p role="status">No pudimos cargar los datos del organizador. <button className="text-button" type="button" onClick={retry}>Reintentar</button></p> : <p>Datos del organizador no disponibles.</p>}
+      {organizer ? <Link className="event-organizer-link" to={`/users/${event.organizer_id}`} state={{
+        eventReturnTo: `/events/${event.id}`, myEventsReturnTo: listOrigin, returnTo: discoveryOrigin,
+        socialProfileReturnTo: profileOrigin, socialProfileOrigin: profileBackState,
+      }} aria-label={`Ver perfil de ${organizer.display_name}, organizador`}>
+        <div><strong>{organizer.display_name}</strong><p>@{organizer.username}</p></div>
+        <span aria-hidden="true"><Icon name="back" /></span>
+      </Link> : organizerError ? <p role="status">No pudimos cargar los datos del organizador. <button className="text-button" type="button" onClick={retry}>Reintentar</button></p> : <p>Datos del organizador no disponibles.</p>}
     </section>
     <p className="field-hint">Horarios de Argentina.</p>
     <Link className="secondary-link" to={myEventsReturnTo}>Ir a Mis eventos</Link>

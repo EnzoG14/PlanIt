@@ -24,7 +24,8 @@
 .chat-messages .chat-day-separator { align-self: center; max-width: 100%; text-align: center; }
 .chat-day-separator span { display: inline-block; padding: 6px 12px; border-radius: var(--pi-radius-pill); background: var(--pi-color-surface-soft); color: var(--pi-color-text-muted); font-size: var(--pi-font-meta-size); line-height: 1.4; }
 .chat-bubble time { margin-top: 4px; text-align: right; line-height: 1.4; white-space: nowrap; display: block; font-size: var(--pi-font-meta-size); color: var(--pi-color-text-muted); font-variant-numeric: tabular-nums; }
-.chat-own .chat-bubble time { color: var(--pi-color-dock-text); }
+.chat-own .chat-bubble time, .chat-send-status { color: var(--pi-color-dock-text); }
+.chat-send-status { display: block; margin-top: 4px; text-align: right; font-size: var(--pi-font-meta-size); line-height: 1.4; }
 .chat-composer { background: var(--pi-color-bg); border-top: 1px solid var(--pi-color-divider); padding: 8px 0 max(8px, env(safe-area-inset-bottom)); }
 .chat-composer label { display: block; font-size: var(--pi-font-label-size); font-weight: 650; margin-bottom: 8px; }
 .chat-composer > div { display: flex; align-items: center; gap: 8px; }

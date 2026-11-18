@@ -34,7 +34,7 @@ const InterestsPage = lazy(() => import('./pages/InterestsPage').then(module => 
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route element={<AppLayout />}>
-    <Route index element={<Navigate to="/map" replace />} />
+    <Route index element={<Navigate to="/home" replace />} />
     <Route path="register" element={<AuthPage key="register" mode="register" />} />
     <Route path="login" element={<AuthPage key="login" mode="login" />} />
     <Route path="invite" element={<Suspense fallback={<StatusMessage title="Cargando invitación">Esperá un momento.</StatusMessage>}><InvitePage /></Suspense>} />

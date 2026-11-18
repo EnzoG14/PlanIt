@@ -85,3 +85,7 @@ export function socialError(error: unknown): string {
 export function participantsReturn(value: unknown): string | null {
   return typeof value === 'string' && /^\/events\/[0-9a-f-]{36}\/attendees\?view=social$/i.test(value) && isSocialId(value.split('/')[2]) ? value : null
 }
+
+export function eventDetailReturn(value: unknown): string | null {
+  return typeof value === 'string' && /^\/events\/[^/]+$/.test(value) && isSocialId(value.split('/')[2]) ? value : null
+}

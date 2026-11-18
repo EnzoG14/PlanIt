@@ -75,7 +75,7 @@ export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
       </div>
       {error && <div ref={feedbackRef} tabIndex={-1} className="auth-feedback"><StatusMessage title={register ? 'No se pudo crear la cuenta' : 'No se pudo ingresar'} tone="error">{error}</StatusMessage></div>}
       <GradientButton type="submit" disabled={busy || !supabase}>{busy ? (register ? 'Creando cuenta…' : 'Ingresando…') : (register ? 'Crear cuenta' : 'Continuar')}</GradientButton>
-      <p className="auth-switch">{register ? '¿Ya tenés una cuenta?' : '¿Todavía no tenés cuenta?'} <Link to={`/${register ? 'login' : 'register'}${next !== '/map' ? `?next=${encodeURIComponent(next)}` : ''}`}>{register ? 'Ingresar' : 'Crear cuenta'}</Link></p>
+      <p className="auth-switch">{register ? '¿Ya tenés una cuenta?' : '¿Todavía no tenés cuenta?'} <Link to={`/${register ? 'login' : 'register'}${next !== '/home' ? `?next=${encodeURIComponent(next)}` : ''}`}>{register ? 'Ingresar' : 'Crear cuenta'}</Link></p>
       <span className="sr-only" role="status">{busy ? 'Solicitud en curso. Esperá un momento.' : ''}</span>
     </form>}
   </div>

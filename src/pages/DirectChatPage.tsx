@@ -1,12 +1,13 @@
 import { useBackLocation as useLocation } from '../components/back-navigation-context'
 import { BackButton } from '../components/BackButton'
-import { useEffect, useLayoutEffect, useRef, useState, type FormEvent } from 'react'
+import { useEffect, useEffectEvent, useLayoutEffect, useRef, useState, type FormEvent } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useAuth } from '../features/auth/useAuth'
 import { trimDirectText, directReturn, findDirectMessage, loadDirectHeader, loadDirectMessages, sendDirectMessage, type DirectHeader, type DirectMessage, type DirectCursor } from '../features/social/messages'
 import { socialProfileReturn } from '../features/social/api'
 import { Fragment } from 'react'
 import { ChatDaySeparator, ChatTimestamp } from '../components/ChatDate'
+import { ChatOutgoing, type OutgoingMessage } from '../components/ChatOutgoing'
 import { useChatToday } from '../lib/useChatToday'
 import { chatDay, isChatContinuation } from '../lib/chatDates'
 import { compareRows, createReconciler, mergeRows } from '../lib/reconciliation'
@@ -28,6 +29,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
   const location = useLocation()
   const back = socialProfileReturn(location.state?.directOrigin) ?? directReturn(location.state?.directOrigin) ?? '/messages'
   const [header, setHeader] = useState<DirectHeader | null>(null), [messages, setMessages] = useState<DirectMessage[]>([])
+  const [outgoing, setOutgoing] = useState<OutgoingMessage[]>([])
   const [loading, setLoading] = useState(true), [error, setError] = useState(false), [hasOlder, setHasOlder] = useState(false)
   const [text, setText] = useState('')
   const [operation, setOperation] = useState<{ id: string; body: string; status: 'pending' | 'uncertain' } | null>(null)
@@ -45,7 +47,12 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
     else if (anchor) element.scrollTop += anchor.getBoundingClientRect().top - element.getBoundingClientRect().top - previous.offset
     else element.scrollTop = previous.top + element.scrollHeight - previous.height
     scroll.current = null
-  }, [messages])
+  }, [messages, outgoing])
+  const settleFromHistory = useEffectEvent((rows: DirectMessage[]) => {
+    if (operation?.status === 'uncertain' && rows.some(row => row.id === operation.id && row.sender_id === viewer && row.body === operation.body)) {
+      setOperation(null); setText(''); setNotice('Mensaje confirmado.')
+    }
+  })
   useEffect(() => {
     alive.current = true
     let active = true, revision = 0, controller: AbortController | null = null, stop: (() => void) | null = null
@@ -86,6 +93,9 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
         const anchor = element ? [...element.children].find(row => row.hasAttribute('data-message-id') && row.getBoundingClientRect().bottom > element.getBoundingClientRect().top) : null
         scroll.current = element ? { height: element.scrollHeight, top: element.scrollTop, bottom: !includeOlder && element.scrollHeight - element.scrollTop - element.clientHeight < 64, anchor: anchor?.getAttribute('data-message-id') ?? null, offset: anchor ? anchor.getBoundingClientRect().top - element.getBoundingClientRect().top : 0 } : { height: 0, top: 0, bottom: true, anchor: null, offset: 0 }
         const sorted = mergeRows([], rows)
+        const confirmedIds = new Set(sorted.filter(row => row.sender_id === viewer).map(row => row.id))
+        if (confirmedIds.size) setOutgoing(previous => previous.filter(message => !confirmedIds.has(message.id)))
+        settleFromHistory(sorted)
         boundary = sorted[0] ?? null
         setPeer(finalHeader.peer_id)
         setHeader({ ...current, ...finalHeader }); setMessages(sorted); setHasOlder(more); setLoading(false)
@@ -103,19 +113,38 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
       window.clearInterval(interval); window.removeEventListener('focus', check); window.removeEventListener('online', check); window.removeEventListener('offline', check); document.removeEventListener('visibilitychange', check)
     }
   }, [id, viewer])
+  function updateOutgoing(id: string, status: OutgoingMessage['status']) {
+    const element = list.current
+    if (element && element.scrollHeight - element.scrollTop - element.clientHeight < 64) {
+      scroll.current = { bottom: true, height: 0, top: 0, anchor: null, offset: 0 }
+    }
+    setOutgoing(previous => previous.map(message => message.id === id ? { ...message, status } : message))
+  }
+  function finishSend(item: { id: string; body: string }, status: 'sent' | 'failed' | 'uncertain') {
+    updateOutgoing(item.id, status)
+    setOperation(status === 'uncertain' ? { ...item, status } : null)
+    if (status === 'sent') setText('')
+    if (status === 'failed') setNotice('El servidor rechazó el mensaje. Revisá el contenido o el acceso a la conversación.')
+    refresh.current()
+  }
+  function sendFailure(cause: unknown, signal: AbortSignal) {
+    const code = typeof cause === 'object' && cause !== null && 'code' in cause ? cause.code : ''
+    return !signal.aborted && (code === '22023' || code === '42501') ? 'failed' : 'uncertain'
+  }
   async function send(event: FormEvent) {
     event.preventDefault()
     const body = trimDirectText(text)
     if (blockUnsafe || writing.current || operation || !header || header.read_only || !body || [...body].length > 2000) return
     writing.current = true
     const item = { id: crypto.randomUUID(), body, status: 'pending' as const }, controller = new AbortController()
+    scroll.current = { bottom: true, height: 0, top: 0, anchor: null, offset: 0 }
+    setOutgoing(previous => [...previous.filter(message => message.status !== 'failed'), item])
     writeRequest.current = controller; setOperation(item); setNotice('')
     const timer = window.setTimeout(() => controller.abort(), 10000)
     try {
       await sendDirectMessage(id, item.id, body, controller.signal)
-      if (alive.current && !controller.signal.aborted) { setOperation(null); setText(''); refresh.current() }
-      else if (alive.current) setOperation({ ...item, status: 'uncertain' })
-    } catch { if (alive.current) { setOperation({ ...item, status: 'uncertain' }); refresh.current() } }
+      if (alive.current) finishSend(item, controller.signal.aborted ? 'uncertain' : 'sent')
+    } catch (cause) { if (alive.current) finishSend(item, sendFailure(cause, controller.signal)) }
     finally { clearTimeout(timer); writing.current = false; writeRequest.current = null }
   }
   async function reconcile() {
@@ -128,7 +157,7 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
       const found = await findDirectMessage(id, operation.id, controller.signal)
       if (!alive.current || controller.signal.aborted) return
       if (found && (found.sender_id !== viewer || found.body !== operation.body)) throw new Error('message_conflict')
-      if (found) { setOperation(null); setText(''); setNotice('Mensaje confirmado.'); refresh.current() }
+      if (found) { finishSend(operation, 'sent'); setNotice('Mensaje confirmado.') }
       else setNotice('Todavía no se pudo confirmar. Podés reintentar el mismo mensaje sin duplicarlo.')
     } catch { if (alive.current) setNotice('No pudimos consultar el estado. Revisá tu conexión y reintentá.') }
     finally { clearTimeout(timer); writing.current = false; writeRequest.current = null; if (alive.current) setChecking(false) }
@@ -136,15 +165,15 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
   async function retry() {
     if (blockUnsafe || !operation || writing.current || !header || header.read_only) return
     writing.current = true; setOperation({ ...operation, status: 'pending' }); setNotice('')
+    updateOutgoing(operation.id, 'pending')
     const controller = new AbortController(); writeRequest.current = controller
     const timer = window.setTimeout(() => controller.abort(), 10000)
     try {
       const existing = await findDirectMessage(id, operation.id, controller.signal)
       if (!existing) await sendDirectMessage(id, operation.id, operation.body, controller.signal)
       else if (existing.sender_id !== viewer || existing.body !== operation.body) throw new Error('message_conflict')
-      if (alive.current && !controller.signal.aborted) { setOperation(null); setText(''); refresh.current() }
-      else if (alive.current) setOperation({ ...operation, status: 'uncertain' })
-    } catch { if (alive.current) { setOperation({ ...operation, status: 'uncertain' }); refresh.current() } }
+      if (alive.current) finishSend(operation, controller.signal.aborted ? 'uncertain' : 'sent')
+    } catch (cause) { if (alive.current) finishSend(operation, sendFailure(cause, controller.signal)) }
     finally { clearTimeout(timer); writing.current = false; writeRequest.current = null }
   }
   return <section className="chat-page direct-chat">
@@ -152,7 +181,12 @@ function Chat({ id, viewer }: { id: string; viewer: string }) {
     {error ? <div className="chat-state"><StatusMessage title="Conversación no disponible" tone="error">No pudimos consultar este chat. Revisá tu acceso y conexión.</StatusMessage><button className="text-button" onClick={() => refresh.current()}>Reintentar</button></div> : !header ? <div className="chat-state" role="status">{navigator.onLine ? 'Consultando conversación…' : 'Estás sin conexión. Reconectate para consultar el historial.'}</div> : <>
       {(blockUnsafe || header.read_only) && <p className="chat-read-only" role="status">Perfil no disponible · Conversación de sólo lectura. El historial permanece disponible.</p>}
       {hasOlder && <button className="text-button" disabled={loading} onClick={() => refresh.current(true)}>Cargar mensajes anteriores</button>}
-      <ol className="chat-messages" ref={list} tabIndex={0} aria-label="Historial de mensajes privados" aria-busy={loading}>{!messages.length && <li>Todavía no hay mensajes. Iniciá la conversación con un texto.</li>}{messages.map((row, index) => <Fragment key={row.id}>{(index === 0 || chatDay(messages[index - 1].created_at) !== chatDay(row.created_at)) && <ChatDaySeparator day={chatDay(row.created_at)} today={today} />}<li data-message-id={row.id} className={`${row.sender_id === viewer ? 'chat-own' : 'chat-incoming'}${isChatContinuation(row, messages[index - 1]) ? ' chat-continuation' : ''}`}><div className="chat-bubble"><p className="chat-message-text">{row.body}</p><ChatTimestamp value={row.created_at} /></div></li></Fragment>)}</ol>
+      <ol className="chat-messages" ref={list} tabIndex={0} aria-label="Historial de mensajes privados" aria-busy={loading}>
+        {!messages.length && !outgoing.length && <li>Todavía no hay mensajes. Iniciá la conversación con un texto.</li>}
+        {messages.map((row, index) => <Fragment key={row.id}>{(index === 0 || chatDay(messages[index - 1].created_at) !== chatDay(row.created_at)) && <ChatDaySeparator day={chatDay(row.created_at)} today={today} />}<li data-message-id={row.id} className={`${row.sender_id === viewer ? 'chat-own' : 'chat-incoming'}${isChatContinuation(row, messages[index - 1]) ? ' chat-continuation' : ''}`}><div className="chat-bubble"><p className="chat-message-text">{row.body}</p><ChatTimestamp value={row.created_at} /></div></li></Fragment>)}
+        {outgoing.length > 0 && chatDay(messages.at(-1)?.created_at ?? '') !== today && <ChatDaySeparator day={today} today={today} />}
+        {outgoing.map(message => <ChatOutgoing key={message.id} message={message} />)}
+      </ol>
       <form className="chat-composer" onSubmit={send}><label htmlFor="direct-text">Mensaje privado</label><div><textarea id="direct-text" rows={2} value={text} onChange={event => setText(event.target.value)} disabled={blockUnsafe || header.read_only || !!operation} aria-describedby="direct-limit" /><GradientButton type="submit" disabled={blockUnsafe || header.read_only || !!operation || !trimDirectText(text) || [...trimDirectText(text)].length > 2000}>Enviar</GradientButton></div><p id="direct-limit">{[...trimDirectText(text)].length}/2000 caracteres · Sólo texto</p>
       </form>
     </>}

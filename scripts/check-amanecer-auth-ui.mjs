@@ -197,6 +197,26 @@ try {
     }
     await context.close()
   }
+  if (!before) {
+    for (const [entry, destination] of [['/', '/home'], ['/login', '/home'], ['/login?next=%2Fmap', '/map']]) {
+      const context = await browser.newContext({ serviceWorkers: 'block' })
+      await context.route('**/*', route => {
+        const url = new URL(route.request().url())
+        if (url.origin === origin) return route.continue()
+        const payload = url.pathname === '/auth/v1/token' ? { access_token: 'fixture-session', refresh_token: 'fixture', expires_in: 3600, token_type: 'bearer', user }
+          : url.pathname === '/auth/v1/user' ? user : []
+        return route.fulfill({ contentType: 'application/json', body: JSON.stringify(payload) })
+      })
+      const page = await context.newPage()
+      await page.goto(`${origin}${entry}`)
+      await page.locator('input[name="email"]').fill(user.email)
+      await page.locator('input[name="password"]').fill('fixture-password')
+      await page.getByRole('button', { name: 'Continuar', exact: true }).click()
+      await page.waitForURL(`${origin}${destination}`)
+      await page.locator(`.primary-nav a[href="${destination}"][aria-current="page"]`).waitFor()
+      await context.close()
+    }
+  }
   assert.deepEqual(unexpected, []); assert.deepEqual(pageErrors, [])
   await writeFile(`${output}/results.json`, JSON.stringify({ environment: 'Edge; local app; intercepted Auth fixtures; remote traffic blocked; no Supabase writes', phase: before ? 'before' : 'after', results, unexpected, pageErrors }, null, 2) + '\n')
   console.log(`PASS: ${before ? 'baseline captures' : 'Amanecer Auth styles, accessibility, state fixtures, responsive and isolation'} at six viewports; no remote requests`)
