@@ -49,6 +49,34 @@ try {
     check('Width '+width+': labels, wrapping and screenshot'+(baseline?' before change':' plus enlarged text/short viewport'));
     await context.close();
   }
+  if(!baseline) {
+    notices=[
+      {...notice(4,'rejoin_requested'),title:'Nueva solicitud de reincorporación',body:'Una persona solicitó volver a participar.',target:'/events/'+eventId+'/rejoin-requests'},
+      {...notice(5,'participation_removed'),title:'Inscripción dada de baja',body:'El organizador dio de baja tu inscripción.',target:null},
+      {...notice(6,'event_reminder'),title:'Recordatorio de evento',body:'Inicio previsto: 15/10/2026 a las 17:30 (hora argentina).'},
+    ];
+    targetOverride=undefined;
+    for(const width of [320,375,390,768,1280]) {
+      const {context,page}=await setup(width);
+      await inbox(page);
+      const request=page.locator('.notification-row').filter({has:page.getByRole('heading',{name:'Nueva solicitud de reincorporación'})});
+      const removal=page.locator('.notification-row').filter({has:page.getByRole('heading',{name:'Inscripción dada de baja'})});
+      await request.getByRole('button',{name:'Ver solicitudes'}).waitFor();
+      await removal.getByText('El organizador dio de baja tu inscripción.').waitFor();
+      assert.equal(await removal.getByRole('button',{name:'Ver evento'}).count(),0);
+      await page.getByText('Inicio previsto: 15/10/2026 a las 17:30 (hora argentina).').waitFor();
+      await page.evaluate(()=>document.fonts.ready);
+      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+      await page.screenshot({path:out+'/participation-'+width+'.png',fullPage:true});
+      if(width===390) {
+        await request.getByRole('button',{name:'Ver solicitudes'}).click();
+        await page.waitForURL('**/events/'+eventId+'/rejoin-requests');
+      }
+      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+      await context.close();
+    }
+    check('Participation notices and reminder at five widths; a hidden-event removal has no link; pending rejoin opens requests');
+  }
   assert.deepEqual(errors,[]);
 `;
 const cleanup = source.slice(source.indexOf('} catch (error) { failure = error.stack;'))

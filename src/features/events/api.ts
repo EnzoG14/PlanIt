@@ -94,16 +94,18 @@ export async function publishEvent(attempt: PublishAttempt, userId: string, onPr
     throw new PublicationError('No pudimos confirmar la publicación. Reintentá para comprobarla.', true)
   }
 }
-export async function loadEvent(id: string): Promise<EventRecord | null> {
+export async function loadEvent(id: string, signal?: AbortSignal): Promise<EventRecord | null> {
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) return null
   if (!supabase) throw new Error('La conexión no está configurada.')
-  const { data, error } = await supabase.from('events').select('id,organizer_id,title,description,starts_at,ends_at,address,location_name,latitude,longitude,capacity,category_id,visibility,cancelled_at,archived_at').eq('id', id).maybeSingle()
+  const query = supabase.from('events').select('id,organizer_id,title,description,starts_at,ends_at,address,location_name,latitude,longitude,capacity,category_id,visibility,cancelled_at,archived_at').eq('id', id)
+  const { data, error } = await (signal ? query.abortSignal(signal) : query).maybeSingle()
   if (error) throw error
   return data
 }
-export async function loadEventOrganizer(eventId: string): Promise<{ display_name: string; username: string } | null> {
+export async function loadEventOrganizer(eventId: string, signal?: AbortSignal): Promise<{ display_name: string; username: string } | null> {
   if (!supabase) throw new Error('La conexión no está configurada.')
-  const { data, error } = await supabase.rpc('get_event_organizer', { p_event_id: eventId })
+  const query = supabase.rpc('get_event_organizer', { p_event_id: eventId })
+  const { data, error } = await (signal ? query.abortSignal(signal) : query)
   if (error) throw error
   const organizer = data?.[0]
   return organizer ? { display_name: organizer.display_name, username: organizer.username } : null

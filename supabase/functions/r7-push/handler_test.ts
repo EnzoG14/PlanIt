@@ -49,6 +49,9 @@ Deno.test('B10 payload: strict recipient/job correlation, Unicode limits, plain 
   for (const endpoint of ['https://updates.push.services.mozilla.com/wpush/v2/x', 'https://web.push.apple.com/x', 'https://wns2-par02p.notify.windows.com/w/?x', 'https://jmt17.google.com/fcm/send/fixture']) assert.equal(safeEndpoint(endpoint), true)
   for (const target of ['//evil.invalid', 'https://evil.invalid', '/events/../secret', '/invite#token=secret', '/messages/------------------------------------']) assert.equal(safeTarget(target), '/notifications')
   assert.equal(safeTarget(raw.payload.target), raw.payload.target)
+  const rejoinTarget = '/events/20000000-0000-4000-8000-000000000001/rejoin-requests'
+  assert.equal(safeTarget(rejoinTarget), rejoinTarget)
+  assert.equal(safeTarget(rejoinTarget + '?next=//evil.invalid'), '/notifications')
   assert.throws(() => parseDelivery({ ...raw, payload: { ...raw.payload, notification_id: job.subscription_id } }, job))
   assert.throws(() => parseDelivery({ ...raw, ttl: 0 }, job))
 })

@@ -114,7 +114,7 @@ function sanitizeInternalTarget(value: unknown): string {
   const trimmed = value.trim()
   if (trimmed === '/notifications' || trimmed === '/me/follow-requests') return trimmed
   if (/^\/messages\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(trimmed)) return trimmed
-  if (/^\/events\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(\/chat)?$/i.test(trimmed)) return trimmed
+  if (/^\/events\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(\/(?:chat|rejoin-requests))?$/i.test(trimmed)) return trimmed
   return '/notifications'
 }
 

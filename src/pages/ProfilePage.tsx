@@ -2,13 +2,14 @@ import { useBackLocation as useLocation } from '../components/back-navigation-co
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from '../components/Icon'
+import { BackButton } from '../components/BackButton'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
 import type { OwnProfile } from '../features/profile/api'
 import { loadProfileContent, profileContentKey, type ProfileContent } from '../features/startup/content'
 import { contentUpdatedAt, readContent } from '../lib/session-content'
 import './profile.css'
-import { participantsReturn } from '../features/social/api'
+import { eventDetailReturn, participantsReturn } from '../features/social/api'
 import { OwnSocialCounts } from '../components/SocialCounts'
 import { followsReturn } from '../features/social/follows'
 import { PushSettings } from '../features/notifications/PushSettings'
@@ -23,6 +24,7 @@ export function ProfilePage() {
 
 function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
   const location = useLocation()
+  const eventBack = eventDetailReturn(location.state?.eventReturnTo)
   const interestsLink = useRef<HTMLAnchorElement>(null), editLink = useRef<HTMLAnchorElement>(null)
   const messagesLink = useRef<HTMLAnchorElement>(null)
   const requestsLink = useRef<HTMLAnchorElement>(null)
@@ -67,6 +69,7 @@ function OwnProfileView({ userId, email }: { userId: string; email?: string }) {
     }
   }, [userId, attempt])
   return <div className="profile-page">
+    {eventBack && <BackButton to={eventBack} state={location.state} />}
     {followsReturn(location.state?.followsReturnTo) && <Link className="secondary-link" to={followsReturn(location.state.followsReturnTo)!} state={location.state?.followsOrigin}><Icon name="back" />Volver a la lista</Link>}
     {participantsReturn(location.state?.participantsReturnTo) && <Link className="secondary-link" to={participantsReturn(location.state.participantsReturnTo)!} state={location.state}><Icon name="back" />Volver a participantes</Link>}
     <header className="profile-heading"><h1>Mi perfil</h1></header>

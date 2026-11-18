@@ -32,7 +32,11 @@ export async function notificationTarget(id: string): Promise<string | null> {
   const { data, error } = await supabase.rpc('get_notification_target', { p_id: id })
   if (error) throw error
   // Allow only known internal destinations, never notification text or arbitrary URLs.
-  return typeof data === 'string' && (data === '/me/follow-requests' || (data.startsWith('/messages/') && directReturn(data) !== null) || /^\/events\/[\da-f-]{36}(\/chat)?$/.test(data)) ? data : null
+  if (typeof data !== 'string') return null
+  if (data === '/me/follow-requests' || (data.startsWith('/messages/') && directReturn(data) !== null)) return data
+  return /^\/events\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(\/(?:chat|rejoin-requests))?$/.test(data)
+    ? data
+    : null
 }
 export function notificationsError(error: unknown): string {
   const code = typeof error === 'object' && error !== null && 'code' in error ? String(error.code) : ''

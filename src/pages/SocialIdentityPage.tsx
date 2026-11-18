@@ -6,7 +6,7 @@ import { Icon } from '../components/Icon'
 import { SocialAvatar } from '../components/SocialAvatar'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
-import { loadSocialProfile, loadSocialEvents, socialDenied, participantsReturn, type SocialEvents } from '../features/social/api'
+import { loadSocialProfile, loadSocialEvents, socialDenied, participantsReturn, eventDetailReturn, type SocialEvents } from '../features/social/api'
 import { formatEventTime } from '../features/events/validation'
 import { validatedMyEventsReturn } from '../features/events/my-events'
 import { validatedDiscoveryReturn } from '../features/events/search'
@@ -31,7 +31,8 @@ export function SocialIdentityPage() {
 function IdentityContent({ userId }: { userId: string }) {
   const location = useLocation()
   const listBack = requestsReturn(location.state?.requestsReturnTo) ?? followsReturn(location.state?.followsReturnTo)
-  const back = listBack ?? participantsReturn(location.state?.participantsReturnTo)
+  const participantsBack = participantsReturn(location.state?.participantsReturnTo)
+  const back = listBack ?? participantsBack ?? eventDetailReturn(location.state?.eventReturnTo)
   const [pages, setPages] = useState(1)
   const [unsafeSnapshot, setUnsafeSnapshot] = useState<unknown>(null)
   const [revision, setRevision] = useState(0)
@@ -79,7 +80,7 @@ function IdentityContent({ userId }: { userId: string }) {
   }, [userId, pages])
   const { data, loading, denied, error, refresh } = useSocialRead(load)
   const mutating = !!data && unsafeSnapshot === data
-  const origin = { participantsReturnTo: back, myEventsReturnTo: validatedMyEventsReturn(location.state?.myEventsReturnTo), returnTo: validatedDiscoveryReturn(location.state?.returnTo) }
+  const origin = { participantsReturnTo: participantsBack, myEventsReturnTo: validatedMyEventsReturn(location.state?.myEventsReturnTo), returnTo: validatedDiscoveryReturn(location.state?.returnTo) }
   useEffect(() => { document.title = 'Perfil · PlanIt' }, [])
   return <><section className="management-page social-identity-page">
     <BackButton to={back ?? '/home'} state={listBack ? location.state?.followsOrigin : back ? location.state : undefined} />

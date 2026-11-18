@@ -1,5 +1,5 @@
 import { BackButton } from '../components/BackButton'
-import { useLayoutEffect, useEffect, useRef, useState, type FormEvent } from 'react'
+import { useLayoutEffect, useEffect, useEffectEvent, useRef, useState, type FormEvent } from 'react'
 import { useParams } from 'react-router-dom'
 import { StatusMessage } from '../components/StatusMessage'
 import { useAuth } from '../features/auth/useAuth'
@@ -8,6 +8,7 @@ import { createMediaAttempt, uploadEventMedia, MediaUploadError, type MediaAttem
 import { validateMediaImage } from '../features/events/media/images'
 import { Fragment } from 'react'
 import { ChatDaySeparator, ChatTimestamp } from '../components/ChatDate'
+import { ChatOutgoing, type OutgoingMessage } from '../components/ChatOutgoing'
 import { useChatToday } from '../lib/useChatToday'
 import { chatDay, isChatContinuation } from '../lib/chatDates'
 import { supabase } from '../lib/supabase'
@@ -24,6 +25,7 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
   const today = useChatToday()
   const [header, setHeader] = useState<ChatHeader | null>(null)
   const [messages, setMessages] = useState<ChatMessage[]>([])
+  const [outgoing, setOutgoing] = useState<(OutgoingMessage & { file: File | null })[]>([])
   const [hasOlder, setHasOlder] = useState(false)
   const [pending, setPending] = useState(true)
   const [sending, setSending] = useState(false)
@@ -61,8 +63,8 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
     }
     else if (position.bottom) element.scrollTop = element.scrollHeight
     scroll.current = null
-  }, [messages])
-  const hasMessages = messages.length > 0
+  }, [messages, outgoing])
+  const hasMessages = messages.length > 0 || outgoing.length > 0
   useLayoutEffect(() => {
     const element = list.current
     if (!element) return
@@ -80,6 +82,11 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
     element.addEventListener('scroll', onScroll)
     return () => { observer.disconnect(); element.removeEventListener('scroll', onScroll) }
   }, [hasMessages])
+  const settleFromHistory = useEffectEvent((rows: ChatMessage[]) => {
+    const attempt = retry.current
+    if (uncertain && attempt && rows.some(row => row.id === attempt.id && row.sender_id === userId &&
+      (row.body ?? '') === attempt.body && row.file_id === (attempt.media?.fileId ?? null))) confirmed(attempt.id, false)
+  })
   useEffect(() => {
     let active = true
     mounted.current = true
@@ -135,6 +142,9 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
         height: element?.scrollHeight ?? 0, top: element?.scrollTop ?? 0, older: Boolean(before) }
       cached = mergeRows(cached, rows)
       initialized = true
+      const confirmedIds = new Set(rows.filter(row => row.sender_id === userId).map(row => row.id))
+      if (confirmedIds.size) setOutgoing(previous => previous.filter(message => !confirmedIds.has(message.id)))
+      settleFromHistory(cached)
       setHeader(current); setUnavailable(false); setMessages(cached); setPending(false)
     }, cause => {
       if (!active) return
@@ -155,9 +165,14 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
       window.removeEventListener('focus', onReturn); document.removeEventListener('visibilitychange', onReturn)
     }
   }, [eventId, userId])
-  function confirmed() {
+  function updateOutgoing(id: string, status: OutgoingMessage['status']) {
+    setOutgoing(previous => previous.map(message => message.id === id ? { ...message, status } : message))
+  }
+  function confirmed(id: string, reload = true) {
+    updateOutgoing(id, 'sent')
     retry.current = null; setText(''); setMedia(null); setUncertain(false); setCanRetry(false)
-    setSendError(''); setNotice('Mensaje confirmado.'); refresh.current()
+    setSendError(''); setNotice('Mensaje confirmado.')
+    if (reload) refresh.current()
   }
   async function selectImage(files: FileList | null) {
     const version = ++selectionVersion.current
@@ -181,7 +196,7 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
     try {
       const found = await findChatMessage(eventId, attempt.id)
       if (!mounted.current) return
-      if (found && found.sender_id === userId && (found.body ?? '') === attempt.body && found.file_id === (attempt.media?.fileId ?? null)) confirmed()
+      if (found && found.sender_id === userId && (found.body ?? '') === attempt.body && found.file_id === (attempt.media?.fileId ?? null)) confirmed(attempt.id)
       else if (found) { setSendError('El identificador pertenece a otro contenido. No se reenviará.'); setCanRetry(false) }
       else { setCanRetry(true); setSendError('El mensaje todavía no figura en el historial. Podés reintentar el mismo envío.'); refresh.current() }
     } catch { if (mounted.current) { setCanRetry(false); setSendError('No pudimos consultar el envío. Conservamos el contenido; volvé a consultar.'); refresh.current() } }
@@ -196,6 +211,9 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
     sendBusy.current = true; setSending(true); setSendError(''); setNotice('')
     if (!retry.current || retry.current.body !== body || retry.current.media !== media) retry.current = { id: crypto.randomUUID(), body, media, uploaded: false }
     const attempt = retry.current
+    scroll.current = { bottom: true, height: 0, top: 0, older: false, anchor: null, offset: 0 }
+    setOutgoing(previous => [...previous.filter(message => message.id !== attempt.id && message.status !== 'failed'),
+      { id: attempt.id, body: attempt.body, file: attempt.media?.file ?? null, status: 'pending' }])
     let committing = false
     try {
       if (attempt.media && !attempt.uploaded) {
@@ -207,11 +225,18 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
       if (!mounted.current) return
       committing = true; setPhase('Enviando mensaje…')
       await sendChatMediaMessage(eventId, attempt.id, body, attempt.media?.fileId ?? null)
-      if (mounted.current) confirmed()
+      if (mounted.current) confirmed(attempt.id)
     } catch (cause) {
       if (mounted.current) {
-        if (committing) { const failure = chatSendFailure(cause); setSendError(failure.message); setUncertain(failure.uncertain); setCanRetry(false); if (!failure.uncertain) retry.current = null }
-        else setSendError(cause instanceof MediaUploadError || cause instanceof Error ? cause.message : 'No pudimos subir la imagen. Reintentá con el mismo archivo.')
+        if (committing) {
+          const failure = chatSendFailure(cause)
+          updateOutgoing(attempt.id, failure.uncertain ? 'uncertain' : 'failed')
+          setSendError(failure.message); setUncertain(failure.uncertain); setCanRetry(false)
+          if (!failure.uncertain) retry.current = null
+        } else {
+          updateOutgoing(attempt.id, 'failed')
+          setSendError(cause instanceof MediaUploadError || cause instanceof Error ? cause.message : 'No pudimos subir la imagen. Reintentá con el mismo archivo.')
+        }
         refresh.current()
       }
     } finally { sendBusy.current = false; if (mounted.current) setSending(false) }
@@ -222,7 +247,13 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
     {unavailable ? <div className="chat-state"><StatusMessage title="Chat no disponible">Sólo el organizador y los asistentes confirmados pueden acceder.</StatusMessage></div> : error ? <div className="chat-state"><StatusMessage title="No se pudo cargar" tone="error">{error}</StatusMessage></div> : pending && !header ? <div className="chat-state"><StatusMessage title="Cargando chat">Esperá un momento.</StatusMessage></div> : <>
       {closed && <p className="chat-read-only" role="status">{header.event_state === 'ended' ? 'Evento finalizado' : header.event_state === 'archived' ? 'Evento archivado' : 'Evento cancelado'} · Chat de sólo lectura.</p>}
       {hasOlder && <button className="text-button" disabled={pending || sending} onClick={() => refresh.current(messages[0])}>Cargar mensajes anteriores</button>}
-      {messages.length === 0 ? <div className="chat-state"><StatusMessage title="Todavía no hay mensajes">El historial de este evento está vacío.</StatusMessage></div> : <ol className="chat-messages" ref={list} tabIndex={0} aria-label="Historial de mensajes">{messages.map((message, index) => <Fragment key={message.id}>{(index === 0 || chatDay(messages[index - 1].created_at) !== chatDay(message.created_at)) && <ChatDaySeparator day={chatDay(message.created_at)} today={today} />}<li data-message-id={message.id} className={`${message.sender_id === userId ? 'chat-own' : 'chat-incoming'}${isChatContinuation(message, messages[index - 1]) ? ' chat-continuation' : ''}`}>{!isChatContinuation(message, messages[index - 1]) && <div className="chat-message-meta"><strong>{message.sender_id === userId ? 'Vos' : message.display_name}</strong><span>@{message.username}</span></div>}<div className="chat-bubble">{message.body && <p className="chat-message-text">{message.body}</p>}{message.attachment_id && <ChatImage key={`${message.file_id}:${sessionToken}`} message={message} userId={userId} />}<ChatTimestamp value={message.created_at} /></div></li></Fragment>)}</ol>}
+      {!hasMessages ? <div className="chat-state"><StatusMessage title="Todavía no hay mensajes">El historial de este evento está vacío.</StatusMessage></div> : <ol className="chat-messages" ref={list} tabIndex={0} aria-label="Historial de mensajes">
+        {messages.map((message, index) => <Fragment key={message.id}>{(index === 0 || chatDay(messages[index - 1].created_at) !== chatDay(message.created_at)) && <ChatDaySeparator day={chatDay(message.created_at)} today={today} />}<li data-message-id={message.id} className={`${message.sender_id === userId ? 'chat-own' : 'chat-incoming'}${isChatContinuation(message, messages[index - 1]) ? ' chat-continuation' : ''}`}>{!isChatContinuation(message, messages[index - 1]) && <div className="chat-message-meta"><strong>{message.sender_id === userId ? 'Vos' : message.display_name}</strong><span>@{message.username}</span></div>}<div className="chat-bubble">{message.body && <p className="chat-message-text">{message.body}</p>}{message.attachment_id && <ChatImage key={`${message.file_id}:${sessionToken}`} message={message} userId={userId} />}<ChatTimestamp value={message.created_at} /></div></li></Fragment>)}
+        {outgoing.length > 0 && chatDay(messages.at(-1)?.created_at ?? '') !== today && <ChatDaySeparator day={today} today={today} />}
+        {outgoing.map(message => <ChatOutgoing key={message.id} message={message}>
+          {message.file && <div className="chat-image"><LocalPreview file={message.file} alt="Imagen adjunta al mensaje" /></div>}
+        </ChatOutgoing>)}
+      </ol>}
       {(!closed || uncertain) && <form className="chat-composer" onSubmit={send} aria-busy={sending || selecting}>
         <label htmlFor="chat-text">Mensaje{media ? ' (texto opcional)' : ''}</label>
         {media && <div className="chat-attachment-preview"><LocalPreview key={sessionToken} file={media.file} /><span>{media.file.name}</span><button type="button" className="text-button" disabled={sending || uncertain || selecting} onClick={() => { setMedia(null); retry.current = null; setSendError(''); fileInput.current?.focus() }}>Quitar imagen</button></div>}
@@ -237,7 +268,7 @@ function ChatContent({ eventId, userId, sessionToken }: { eventId: string; userI
   </section>
 }
 
-function LocalPreview({ file }: { file: File }) {
+function LocalPreview({ file, alt = 'Vista previa de la imagen seleccionada' }: { file: File; alt?: string }) {
   const [url, setUrl] = useState('')
   useEffect(() => {
     let current = ''
@@ -249,7 +280,7 @@ function LocalPreview({ file }: { file: File }) {
     sync(); document.addEventListener('visibilitychange', sync); window.addEventListener('offline', sync); window.addEventListener('online', sync)
     return () => { URL.revokeObjectURL(current); document.removeEventListener('visibilitychange', sync); window.removeEventListener('offline', sync); window.removeEventListener('online', sync) }
   }, [file])
-  return url ? <img src={url} alt="Vista previa de la imagen seleccionada" /> : null
+  return url ? <img src={url} alt={alt} /> : null
 }
 
 function ChatImage({ message, userId }: { message: ChatMessage; userId: string }) {

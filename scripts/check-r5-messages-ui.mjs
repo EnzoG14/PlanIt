@@ -29,21 +29,23 @@ try {
   await context.addInitScript(value=>localStorage.setItem('sb-iepeqmvzjguwlhnecsdq-auth-token',JSON.stringify(value)),session);
   const conversation='96000000-0000-4000-8000-000000000001',sockets=[];
   let blocked=false,denied=false,network=false,lost=false,commit=true,writes=0,reads=0;
+  let beforePersist, beforeResponse;
   const seed=i=>({id:'97000000-0000-4000-8000-'+String(i).padStart(12,'0'),sender_id:target,body:'Mensaje fixture '+i,created_at:`2026-10-${i <= 10 ? '12' : i <= 22 ? '13' : '14'}T10:00:00`});
   let rows=Array.from({length:34},(_,i)=>seed(i+1));
-  await context.routeWebSocket('wss://iepeqmvzjguwlhnecsdq.supabase.co/realtime/**',ws=>{
+  const routeSocket=ws=>{
    const socket={ws,joins:new Map()};sockets.push(socket);
    ws.onMessage(raw=>{const [joinRef,ref,topic,event,payload]=JSON.parse(String(raw));
     if(event==='phx_join') {const bindings=(payload.config?.postgres_changes??[]).map((b,i)=>({...b,id:i+1}));socket.joins.set(topic,{joinRef,bindings});ws.send(JSON.stringify([joinRef,ref,topic,'phx_reply',{status:'ok',response:{postgres_changes:bindings}}]));}
     if(event==='phx_leave') {socket.joins.delete(topic);ws.send(JSON.stringify([joinRef,ref,topic,'phx_reply',{status:'ok',response:{}}]));}
     if(event==='heartbeat') ws.send(JSON.stringify([joinRef,ref,topic,'phx_reply',{status:'ok',response:{}}]));
    });ws.onClose(()=>socket.joins.clear());
-  });
+  };
+  await context.routeWebSocket('wss://iepeqmvzjguwlhnecsdq.supabase.co/realtime/**',routeSocket);
   function emit(row) {for(const s of sockets) for(const [topic,j] of s.joins) {const b=j.bindings.filter(b=>b.table==='messages');if(b.length) {assert.equal(b[0].filter,'conversation_id=eq.'+conversation);s.ws.send(JSON.stringify([j.joinRef,null,topic,'postgres_changes',{ids:b.map(x=>x.id),data:{schema:'public',table:'messages',type:'INSERT',commit_timestamp:'2026-10-14T20:00:00Z',errors:null,columns:[],record:row,old_record:{}}}]));}}}
-  await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**',async route=>{
+  const routeHttp=async route=>{
    const url=new URL(route.request().url()),path=url.pathname,args=route.request().postDataJSON();
    const reply=(data,status=200)=>route.fulfill({status,contentType:'application/json',body:JSON.stringify(data)});
-   if(path==='/auth/v1/user') return reply(user);
+   if(path==='/auth/v1/user') return reply(route.request().headers().authorization==='Bearer recipient-token'?{...user,id:target}:user);
    if(path==='/auth/v1/logout') return reply({});
    if(path==='/rest/v1/profiles') return reply({username:'fixture_me',display_name:'Mi cuenta fixture',first_name:null,last_name:null,birth_date:null,sex:null,bio:null,visibility:'private',avatar_file_id:null});
    if(network&&path.includes('/rest/')) return route.abort('failed');
@@ -61,13 +63,19 @@ try {
    }
    if(path.endsWith('/send_direct_message')) {
     writes++;assert.deepEqual(Object.keys(args).sort(),['p_body','p_conversation_id','p_message_id']);
+    await beforePersist;
     if(blocked) return reply({code:'42501'},403);
-    if(commit&&!rows.some(r=>r.id===args.p_message_id)) rows.push({id:args.p_message_id,sender_id:viewer,body:args.p_body.trim(),created_at:'2026-10-14T11:00:00'});
+    if(commit&&!rows.some(r=>r.id===args.p_message_id)) {
+      rows.push({id:args.p_message_id,sender_id:viewer,body:args.p_body.trim(),created_at:'2026-10-14T11:00:00'});
+      emit(rows.at(-1));
+    }
+    await beforeResponse;
     if(lost) {lost=false;return route.abort('failed');}return reply(args.p_message_id);
    }
    if(path==='/rest/v1/messages') {assert.equal(url.searchParams.get('select'),'id,sender_id,body,created_at');return reply(rows.find(r=>'eq.'+r.id===url.searchParams.get('id'))??null);}
    return reply([]);
-  });
+  };
+  await context.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**',routeHttp);
   const page=await context.newPage();lastPage=page;page.setDefaultTimeout(10000);page.on('pageerror',e=>errors.push(e.message));
   const button=name=>page.getByRole('button',{name,exact:true});
   const loaded=()=>page.locator('.chat-composer').waitFor();
@@ -85,9 +93,38 @@ try {
   assert.equal(await page.locator('[data-message-id] > time').count(),0);
   assert.equal(await page.locator('.chat-bubble time').first().textContent(),'10:00');
   await shot('history');check('Own/profile-private entry without follow,secondary dock hidden,focus return,30+4 stable tie pagination,chat shell');
-  await page.locator('#direct-text').fill('Hola fixture');await button('Enviar').click();await page.getByText('Hola fixture',{exact:true}).waitFor();assert.equal(writes,1);
-  lost=true;await page.locator('#direct-text').fill('Respuesta perdida');await button('Enviar').click();await button('Consultar estado').waitFor();await shot('uncertain');await button('Consultar estado').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.equal(writes,2);check('Confirmed text send and lost committed response reconcile by ID without resending');
-  lost=true;commit=false;await page.locator('#direct-text').fill('Reintento seguro');await button('Enviar').click();await button('Consultar estado').click();await button('Reintentar mismo mensaje').waitFor();commit=true;await button('Reintentar mismo mensaje').click();await page.getByText('Reintento seguro',{exact:true}).waitFor();assert.equal(writes,4);check('Uncommitted response keeps draft and retries same UUID only after reconciliation');
+  let releasePersist, releaseResponse;
+  const recipientContext=width===390?await browser.newContext({viewport:{width:1280,height:900}}):null;
+  let recipient;
+  if(recipientContext) {
+    await recipientContext.addInitScript(value=>localStorage.setItem('sb-iepeqmvzjguwlhnecsdq-auth-token',JSON.stringify(value)),{...session,access_token:'recipient-token',user:{...user,id:target}});
+    await recipientContext.routeWebSocket('wss://iepeqmvzjguwlhnecsdq.supabase.co/realtime/**',routeSocket);
+    await recipientContext.route('https://iepeqmvzjguwlhnecsdq.supabase.co/**',routeHttp);
+    recipient=await recipientContext.newPage();await recipient.goto(`${origin}/messages/${conversation}`);await recipient.locator('.chat-composer').waitFor();
+  }
+  beforePersist=new Promise(resolve=>{releasePersist=resolve});beforeResponse=new Promise(resolve=>{releaseResponse=resolve});
+  await page.locator('#direct-text').fill('Hola fixture');await button('Enviar').click();
+  const pendingBubble=page.locator('[data-message-id]').filter({hasText:'Hola fixture'});
+  await pendingBubble.getByText('Enviando…',{exact:true}).waitFor();
+  const pendingId=await pendingBubble.getAttribute('data-message-id');
+  assert.ok(!rows.some(row=>row.id===pendingId));
+  if(recipient) assert.equal(await recipient.getByText('Hola fixture',{exact:true}).count(),0);
+  releasePersist();
+  await pendingBubble.locator('time').waitFor();assert.equal(await pendingBubble.count(),1);
+  if(recipient) {
+    await recipient.locator('.chat-incoming').getByText('Hola fixture',{exact:true}).waitFor();
+    await recipientContext.close();
+    check('A second user receives the private message only after persistence');
+  }
+  assert.equal(await pendingBubble.getAttribute('data-message-id'),pendingId);releaseResponse();
+  await page.waitForFunction(()=>document.querySelector('#direct-text').value==='');assert.equal(writes,1);
+  lost=true;await page.locator('#direct-text').fill('Respuesta perdida');await button('Enviar').click();await page.getByText('Mensaje confirmado.',{exact:true}).waitFor();assert.equal(writes,2);check('Optimistic text precedes persistence, Realtime before RPC reply keeps one bubble, lost committed reply reconciles by ID');
+  lost=true;commit=false;await page.locator('#direct-text').fill('Reintento seguro');await button('Enviar').click();
+  const retryBubble=page.locator('[data-message-id]').filter({hasText:'Reintento seguro'});
+  await retryBubble.getByText('Envío sin confirmar',{exact:true}).waitFor();await shot('uncertain');
+  const retryId=await retryBubble.getAttribute('data-message-id');
+  await button('Consultar estado').click();await button('Reintentar mismo mensaje').waitFor();commit=true;await button('Reintentar mismo mensaje').click();
+  await retryBubble.locator('time').waitFor();assert.equal(await retryBubble.getAttribute('data-message-id'),retryId);assert.equal(writes,4);check('Uncommitted response keeps the bubble and retries the same UUID after reconciliation');
   const old=rows.length;for(let i=35;i<=100;i++) rows.push(seed(i));emit(rows.at(-1));emit(rows.at(-1));await page.waitForFunction(n=>document.querySelectorAll('.chat-bubble').length===n,old+66);assert.equal(await page.getByText('Mensaje fixture 100',{exact:true}).count(),1);check('Realtime burst >30,duplicate notifications and multi-page catch-up without missing or duplicate messages');
   blocked=true;await page.evaluate(() => window.dispatchEvent(new Event('online')));await page.getByText(/Perfil no disponible · Conversación/).waitFor();assert.ok(await page.locator('#direct-text').isDisabled());assert.equal(await page.getByText('Persona privada',{exact:true}).count(),0);assert.ok(await page.locator('.chat-bubble').count()>0);await shot('blocked');check('Bilateral block removes identity,disables composer and retains history');
   assert.equal((await page.locator('body').textContent()).includes('PRIVATE_SENTINEL'),false);

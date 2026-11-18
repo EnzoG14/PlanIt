@@ -11,6 +11,7 @@ import {
   getReadyServiceWorkerRegistration,
   loadMyPushSettings,
   pushErrorMessage,
+  setMyEventReminders,
   setMyPushPreviews,
   upsertMyPushSubscription,
   urlBase64ToUint8Array,
@@ -50,13 +51,15 @@ function PushSettingsPanel({ userId }: { userId: string }) {
   const headingId = useId()
   const privacyId = useId()
   const previewDescId = useId()
+  const reminderId = useId()
+  const reminderDescId = useId()
   const [env, setEnv] = useState<PushEnvironmentCapability>(() => detectPushEnvironment())
   const [settings, setSettings] = useState<PushSettingsData | null>(null)
   const [browserSubId, setBrowserSubId] = useState<string | null>(null)
   const [hasLocalSub, setHasLocalSub] = useState(false)
   const [syncUncertain, setSyncUncertain] = useState(false)
   const [loading, setLoading] = useState(true)
-  const [pendingAction, setPendingAction] = useState<'enable' | 'disable' | 'preview' | 'discard' | null>(null)
+  const [pendingAction, setPendingAction] = useState<'enable' | 'disable' | 'preview' | 'reminder' | 'discard' | null>(null)
   const [showPreviews, setShowPreviews] = useState(true)
   const [notice, setNotice] = useState('')
   const [error, setError] = useState('')
@@ -162,6 +165,27 @@ function PushSettingsPanel({ userId }: { userId: string }) {
       if (!alive.current) return
       setShowPreviews(settings.show_previews)
       setError(pushErrorMessage(failure))
+    } finally {
+      if (alive.current) {
+        busy.current = false
+        setPendingAction(null)
+      }
+    }
+  }
+
+  async function handleToggleReminders(enabled: boolean) {
+    if (busy.current || settings?.event_reminders_enabled === undefined) return
+    busy.current = true
+    setPendingAction('reminder')
+    setError('')
+    setNotice('')
+    try {
+      const persisted = await setMyEventReminders(enabled)
+      if (!alive.current) return
+      setSettings(current => current && { ...current, event_reminders_enabled: persisted })
+      setNotice(persisted ? 'Activaste los recordatorios de eventos.' : 'Desactivaste los recordatorios de eventos.')
+    } catch {
+      if (alive.current) setError('No pudimos confirmar el ajuste. Volvé a consultar tus preferencias.')
     } finally {
       if (alive.current) {
         busy.current = false
@@ -442,6 +466,29 @@ function PushSettingsPanel({ userId }: { userId: string }) {
           onChange={event => void handleTogglePreviews(event.target.checked)}
         />
       </div>
+
+      {settings?.event_reminders_enabled !== undefined && (
+        <div className="push-settings-toggle-row">
+          <label className="push-settings-toggle-label" htmlFor={reminderId}>
+            <span className="push-settings-toggle-title">
+              <Icon name="calendar" />
+              <span>Recordatorios de eventos</span>
+            </span>
+            <span id={reminderDescId} className="push-settings-toggle-hint">
+              Una hora antes de tus eventos confirmados, en la bandeja y por push en tus dispositivos activos.
+            </span>
+          </label>
+          <input
+            id={reminderId}
+            type="checkbox"
+            className="push-settings-checkbox"
+            checked={settings.event_reminders_enabled}
+            disabled={controlsDisabled}
+            aria-describedby={reminderDescId}
+            onChange={event => void handleToggleReminders(event.target.checked)}
+          />
+        </div>
+      )}
 
       {notice && (
         <p className="push-settings-notice" role="status">

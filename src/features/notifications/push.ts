@@ -10,6 +10,7 @@ export type PushSubscriptionSummary = {
 
 export type PushSettingsData = {
   show_previews: boolean
+  event_reminders_enabled?: boolean
   subscriptions: PushSubscriptionSummary[]
 }
 
@@ -228,7 +229,7 @@ export function sanitizePushTargetPath(value: unknown): string {
   const trimmed = value.trim()
   if (trimmed === '/notifications' || trimmed === '/me/follow-requests') return trimmed
   if (/^\/messages\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(trimmed)) return trimmed
-  if (/^\/events\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(\/chat)?$/i.test(trimmed)) return trimmed
+  if (/^\/events\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(\/(?:chat|rejoin-requests))?$/i.test(trimmed)) return trimmed
   return '/notifications'
 }
 
@@ -257,7 +258,10 @@ function parsePushSettingsPayload(raw: unknown): PushSettingsData {
       })
     }
   }
-  return { show_previews: showPreviews, subscriptions }
+  const eventRemindersEnabled = typeof record.event_reminders_enabled === 'boolean'
+    ? record.event_reminders_enabled
+    : undefined
+  return { show_previews: showPreviews, event_reminders_enabled: eventRemindersEnabled, subscriptions }
 }
 
 export async function loadMyPushSettings(): Promise<PushSettingsData> {
@@ -306,6 +310,14 @@ export async function setMyPushPreviews(showPreviews: boolean): Promise<boolean>
   })
   if (error) throw error
   if (typeof data !== 'boolean') throw new Error('No se pudo actualizar la preferencia de vistas previas.')
+  return data
+}
+
+export async function setMyEventReminders(enabled: boolean): Promise<boolean> {
+  if (!supabase) throw new Error('La conexión no está configurada.')
+  const { data, error } = await supabase.rpc('set_my_event_reminders', { p_enabled: enabled })
+  if (error) throw error
+  if (typeof data !== 'boolean') throw new Error('No se pudo confirmar el ajuste de recordatorios.')
   return data
 }
 
