@@ -405,3 +405,14 @@ export function pushErrorMessage(error: unknown): string {
   }
   return 'No pudimos completar la operación de notificaciones Push. Revisá la conexión y volvé a intentar; tu bandeja interna sigue disponible.'
 }
+
+export function browserPushRegistrationErrorMessage(error: unknown): string {
+  if (error instanceof DOMException && error.name === 'AbortError') {
+    const brave = (navigator as Navigator & { brave?: { isBrave?: () => Promise<boolean> } }).brave
+    if (typeof brave?.isBrave === 'function' && !/Android|iPhone|iPad|iPod/.test(navigator.userAgent)) {
+      return 'Brave no pudo registrar las notificaciones. En brave://settings/privacy, revisá que esté activada la opción «Usar los servicios de Google para la mensajería push», reiniciá Brave y volvé a intentar.'
+    }
+    return 'El navegador no pudo conectarse a su servicio de notificaciones Push. Volvé a intentar; tu bandeja interna sigue disponible.'
+  }
+  return pushErrorMessage(error)
+}

@@ -188,6 +188,7 @@ try {
         p256dh,
         auth,
         subscribeCalls: 0,
+        failNextSubscribe: false,
         unsubscribeCalls: 0,
       }
 
@@ -231,6 +232,10 @@ try {
         },
         async subscribe(options) {
           window.__b9MockState.subscribeCalls += 1
+          if (window.__b9MockState.failNextSubscribe) {
+            window.__b9MockState.failNextSubscribe = false
+            throw new DOMException('Registration failed - push service error', 'AbortError')
+          }
           if (
             !options ||
             options.userVisibleOnly !== true ||
@@ -386,10 +391,19 @@ try {
   assert.equal(await page.evaluate(() => window.__b9MockState.subscribeCalls), 0)
   record('Reminder preference works by keyboard without push permission and persists across reloads')
 
-  // Test uncertain state when PushManager.subscribe succeeds in browser but DB upsert fails
+  // First the browser rejects the subscription; the retry then reaches an RPC failure.
   failNextUpsert = true
+  await page.evaluate(() => {
+    Object.defineProperty(navigator, 'brave', { value: { isBrave: async () => true } })
+    window.__b9MockState.failNextSubscribe = true
+  })
   await page.getByRole('button', { name: 'Activar notificaciones Push' }).click()
+  const activationError = page.getByRole('alert')
+  await activationError.getByText(/brave:\/\/settings\/privacy/).waitFor()
+  await page.screenshot({ path: join(screenshotsDir, 'state-browser-error-390.png'), fullPage: true })
+  await activationError.getByRole('button', { name: 'Reintentar', exact: true }).click()
   await page.getByText('Sincronización pendiente').waitFor()
+  record('Brave push service error shows recovery guidance; Retry repeats activation and reaches the server')
   await page.getByRole('button', { name: 'Reintentar sincronización' }).waitFor()
   await page.getByRole('button', { name: 'Cancelar suscripción local' }).waitFor()
   await page.screenshot({ path: join(screenshotsDir, 'state-uncertain-390.png'), fullPage: true })

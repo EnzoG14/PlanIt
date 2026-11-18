@@ -2,6 +2,7 @@ import { useCallback, useEffect, useId, useRef, useState } from 'react'
 import { Icon } from '../../components/Icon'
 import { useAuth } from '../auth/useAuth'
 import {
+  browserPushRegistrationErrorMessage,
   clearDisplayedPushNotifications,
   derivePushSubscriptionId,
   detectPushEnvironment,
@@ -62,7 +63,7 @@ function PushSettingsPanel({ userId }: { userId: string }) {
   const [pendingAction, setPendingAction] = useState<'enable' | 'disable' | 'preview' | 'reminder' | 'discard' | null>(null)
   const [showPreviews, setShowPreviews] = useState(true)
   const [notice, setNotice] = useState('')
-  const [error, setError] = useState('')
+  const [error, setError] = useState<string | { activation: string }>('')
   const alive = useRef(true)
   const busy = useRef(false)
   const revision = useRef(0)
@@ -215,6 +216,7 @@ function PushSettingsPanel({ userId }: { userId: string }) {
 
     busy.current = true
     setPendingAction('enable')
+    let registeringInBrowser = false
     try {
       let permission: NotificationPermission = Notification.permission
       if (permission === 'default') {
@@ -246,10 +248,12 @@ function PushSettingsPanel({ userId }: { userId: string }) {
       }
 
       if (!subscription) {
+        registeringInBrowser = true
         subscription = await registration.pushManager.subscribe({
           userVisibleOnly: true,
           applicationServerKey: urlBase64ToUint8Array(currentEnv.vapidPublicKey),
         })
+        registeringInBrowser = false
       }
 
       if (!alive.current) return
@@ -292,7 +296,11 @@ function PushSettingsPanel({ userId }: { userId: string }) {
       setNotice('Notificaciones Web Push activadas en este navegador.')
     } catch (failure) {
       if (!alive.current) return
-      setError(pushErrorMessage(failure))
+      setError({
+        activation: registeringInBrowser
+          ? browserPushRegistrationErrorMessage(failure)
+          : pushErrorMessage(failure),
+      })
     } finally {
       if (alive.current) {
         busy.current = false
@@ -500,8 +508,21 @@ function PushSettingsPanel({ userId }: { userId: string }) {
       {error && (
         <p className="push-settings-error field-error" role="alert">
           <Icon name="close" />
-          <span>{error}</span>
-          <button type="button" className="text-button" disabled={controlsDisabled} onClick={() => void synchronize()}>Reintentar</button>
+          <span>{typeof error === 'string' ? error : error.activation}</span>
+          <button
+            type="button"
+            className="text-button"
+            disabled={controlsDisabled}
+            onClick={() => {
+              if (typeof error !== 'string' && (browserState === 'inactive' || browserState === 'uncertain')) {
+                void handleEnablePush()
+              } else {
+                void synchronize()
+              }
+            }}
+          >
+            Reintentar
+          </button>
         </p>
       )}
 
